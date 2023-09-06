@@ -68516,7 +68516,7 @@
     "Device": {
       "required": [
         "device_type",
-        "device_role",
+        "role",
         "site"
       ],
       "type": "object",
@@ -68546,7 +68546,7 @@
         "device_type": {
           "$ref": "#/definitions/NestedDeviceType"
         },
-        "device_role": {
+        "role": {
           "$ref": "#/definitions/NestedDeviceRole"
         },
         "tenant": {
@@ -70717,7 +70717,7 @@
     "DeviceWithConfigContext": {
       "required": [
         "device_type",
-        "device_role",
+        "role",
         "site"
       ],
       "type": "object",
@@ -70747,7 +70747,7 @@
         "device_type": {
           "$ref": "#/definitions/NestedDeviceType"
         },
-        "device_role": {
+        "role": {
           "$ref": "#/definitions/NestedDeviceRole"
         },
         "tenant": {
@@ -70957,7 +70957,7 @@
     "WritableDeviceWithConfigContext": {
       "required": [
         "device_type",
-        "device_role",
+        "role",
         "site"
       ],
       "type": "object",
@@ -70988,7 +70988,7 @@
           "title": "Device type",
           "type": "integer"
         },
-        "device_role": {
+        "role": {
           "title": "Device role",
           "type": "integer"
         },

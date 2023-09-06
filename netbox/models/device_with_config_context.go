@@ -67,10 +67,6 @@ type DeviceWithConfigContext struct {
 	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
-	// device role
-	// Required: true
-	DeviceRole *NestedDeviceRole `json:"device_role"`
-
 	// device type
 	// Required: true
 	DeviceType *NestedDeviceType `json:"device_type"`
@@ -122,6 +118,10 @@ type DeviceWithConfigContext struct {
 
 	// rack
 	Rack *NestedRack `json:"rack,omitempty"`
+
+	// role
+	// Required: true
+	Role *NestedDeviceRole `json:"role"`
 
 	// Serial number
 	// Max Length: 50
@@ -183,10 +183,6 @@ func (m *DeviceWithConfigContext) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validateDeviceRole(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateDeviceType(formats); err != nil {
 		res = append(res, err)
 	}
@@ -232,6 +228,10 @@ func (m *DeviceWithConfigContext) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateRack(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateRole(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -346,26 +346,6 @@ func (m *DeviceWithConfigContext) validateDescription(formats strfmt.Registry) e
 
 	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
 		return err
-	}
-
-	return nil
-}
-
-func (m *DeviceWithConfigContext) validateDeviceRole(formats strfmt.Registry) error {
-
-	if err := validate.Required("device_role", "body", m.DeviceRole); err != nil {
-		return err
-	}
-
-	if m.DeviceRole != nil {
-		if err := m.DeviceRole.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("device_role")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("device_role")
-			}
-			return err
-		}
 	}
 
 	return nil
@@ -579,6 +559,26 @@ func (m *DeviceWithConfigContext) validateRack(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *DeviceWithConfigContext) validateRole(formats strfmt.Registry) error {
+
+	if err := validate.Required("role", "body", m.Role); err != nil {
+		return err
+	}
+
+	if m.Role != nil {
+		if err := m.Role.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("role")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("role")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 func (m *DeviceWithConfigContext) validateSerial(formats strfmt.Registry) error {
 	if swag.IsZero(m.Serial) { // not required
 		return nil
@@ -754,10 +754,6 @@ func (m *DeviceWithConfigContext) ContextValidate(ctx context.Context, formats s
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateDeviceRole(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.contextValidateDeviceType(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -803,6 +799,10 @@ func (m *DeviceWithConfigContext) ContextValidate(ctx context.Context, formats s
 	}
 
 	if err := m.contextValidateRack(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateRole(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -872,22 +872,6 @@ func (m *DeviceWithConfigContext) contextValidateCreated(ctx context.Context, fo
 
 	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
 		return err
-	}
-
-	return nil
-}
-
-func (m *DeviceWithConfigContext) contextValidateDeviceRole(ctx context.Context, formats strfmt.Registry) error {
-
-	if m.DeviceRole != nil {
-		if err := m.DeviceRole.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("device_role")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("device_role")
-			}
-			return err
-		}
 	}
 
 	return nil
@@ -1056,6 +1040,22 @@ func (m *DeviceWithConfigContext) contextValidateRack(ctx context.Context, forma
 				return ve.ValidateName("rack")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
 				return ce.ValidateName("rack")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *DeviceWithConfigContext) contextValidateRole(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Role != nil {
+		if err := m.Role.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("role")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("role")
 			}
 			return err
 		}

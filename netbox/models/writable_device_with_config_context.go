@@ -68,10 +68,6 @@ type WritableDeviceWithConfigContext struct {
 	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
-	// Device role
-	// Required: true
-	DeviceRole *int64 `json:"device_role"`
-
 	// Device type
 	// Required: true
 	DeviceType *int64 `json:"device_type"`
@@ -125,6 +121,10 @@ type WritableDeviceWithConfigContext struct {
 
 	// Rack
 	Rack *int64 `json:"rack,omitempty"`
+
+	// Device role
+	// Required: true
+	Role *int64 `json:"role"`
 
 	// Serial number
 	// Max Length: 50
@@ -183,10 +183,6 @@ func (m *WritableDeviceWithConfigContext) Validate(formats strfmt.Registry) erro
 		res = append(res, err)
 	}
 
-	if err := m.validateDeviceRole(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateDeviceType(formats); err != nil {
 		res = append(res, err)
 	}
@@ -208,6 +204,10 @@ func (m *WritableDeviceWithConfigContext) Validate(formats strfmt.Registry) erro
 	}
 
 	if err := m.validatePosition(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateRole(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -338,15 +338,6 @@ func (m *WritableDeviceWithConfigContext) validateDescription(formats strfmt.Reg
 	return nil
 }
 
-func (m *WritableDeviceWithConfigContext) validateDeviceRole(formats strfmt.Registry) error {
-
-	if err := validate.Required("device_role", "body", m.DeviceRole); err != nil {
-		return err
-	}
-
-	return nil
-}
-
 func (m *WritableDeviceWithConfigContext) validateDeviceType(formats strfmt.Registry) error {
 
 	if err := validate.Required("device_type", "body", m.DeviceType); err != nil {
@@ -447,6 +438,15 @@ func (m *WritableDeviceWithConfigContext) validatePosition(formats strfmt.Regist
 	}
 
 	if err := validate.Minimum("position", "body", *m.Position, 0.5, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableDeviceWithConfigContext) validateRole(formats strfmt.Registry) error {
+
+	if err := validate.Required("role", "body", m.Role); err != nil {
 		return err
 	}
 
