@@ -37,7 +37,7 @@ import (
 type WritableCustomField struct {
 
 	// Comma-separated list of available choices (for selection fields)
-	Choices []string `json:"choices"`
+	ChoiceSet []string `json:"choice_set"`
 
 	// content types
 	// Required: true
@@ -166,7 +166,7 @@ type WritableCustomField struct {
 func (m *WritableCustomField) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateChoices(formats); err != nil {
+	if err := m.validateChoiceSet(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -240,18 +240,18 @@ func (m *WritableCustomField) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *WritableCustomField) validateChoices(formats strfmt.Registry) error {
-	if swag.IsZero(m.Choices) { // not required
+func (m *WritableCustomField) validateChoiceSet(formats strfmt.Registry) error {
+	if swag.IsZero(m.ChoiceSet) { // not required
 		return nil
 	}
 
-	for i := 0; i < len(m.Choices); i++ {
+	for i := 0; i < len(m.ChoiceSet); i++ {
 
-		if err := validate.MinLength("choices"+"."+strconv.Itoa(i), "body", m.Choices[i], 1); err != nil {
+		if err := validate.MinLength("choice_set"+"."+strconv.Itoa(i), "body", m.ChoiceSet[i], 1); err != nil {
 			return err
 		}
 
-		if err := validate.MaxLength("choices"+"."+strconv.Itoa(i), "body", m.Choices[i], 100); err != nil {
+		if err := validate.MaxLength("choice_set"+"."+strconv.Itoa(i), "body", m.ChoiceSet[i], 100); err != nil {
 			return err
 		}
 
