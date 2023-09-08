@@ -72580,6 +72580,250 @@
           "type": "integer"
         }
       ]
+    },
+    "/extras/custom-field-choice-sets/": {
+      "get": {
+        "operationId": "extras_custom_field_choice_sets_list",
+        "description": "Get a list of custom field choice set objects.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Number of results to return per page.",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "The initial index from which to return the results.",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "required": [
+                "count",
+                "results"
+              ],
+              "type": "object",
+              "properties": {
+                "count": {
+                  "type": "integer"
+                },
+                "next": {
+                  "type": "string",
+                  "format": "uri",
+                  "x-nullable": true
+                },
+                "previous": {
+                  "type": "string",
+                  "format": "uri",
+                  "x-nullable": true
+                },
+                "results": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/CustomFieldChoiceSet"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "extras"
+        ]
+      },
+      "post": {
+        "operationId": "extras_custom_field_choice_sets_create",
+        "description": "Post a list of custom field choice set objects.",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CustomFieldChoiceSet"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CustomFieldChoiceSet"
+            }
+          }
+        },
+        "tags": [
+          "extras"
+        ]
+      },
+      "put": {
+        "operationId": "extras_custom_field_choice_sets_bulk_update",
+        "description": "Put a list of custom field choice set objects.",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CustomFieldChoiceSet"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CustomFieldChoiceSet"
+            }
+          }
+        },
+        "tags": [
+          "extras"
+        ]
+      },
+      "patch": {
+        "operationId": "extras_custom_field_choice_sets_bulk_partial_update",
+        "description": "Patch a list of custom field choice set objects.",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CustomFieldChoiceSet"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CustomFieldChoiceSet"
+            }
+          }
+        },
+        "tags": [
+          "extras"
+        ]
+      },
+      "delete": {
+        "operationId": "extras_custom_field_choice_sets_bulk_destroy",
+        "description": "Delete a list of custom field choice set objects.",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "extras"
+        ]
+      },
+      "parameters": []
+    },
+    "/extras/custom-field-choice-sets/{id}/": {
+      "get": {
+        "operationId": "extras_custom_field_choice_sets_read",
+        "description": "Get a custom field choice set object.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CustomFieldChoiceSet"
+            }
+          }
+        },
+        "tags": [
+          "extras"
+        ]
+      },
+      "put": {
+        "operationId": "extras_custom_field_choice_sets_update",
+        "description": "Put a custom field choice set object.",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CustomFieldChoiceSet"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CustomFieldChoiceSet"
+            }
+          }
+        },
+        "tags": [
+          "extras"
+        ]
+      },
+      "patch": {
+        "operationId": "extras_custom_field_choice_sets_partial_update",
+        "description": "Patch a custom field choice set object.",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CustomFieldChoiceSet"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CustomFieldChoiceSet"
+            }
+          }
+        },
+        "tags": [
+          "extras"
+        ]
+      },
+      "delete": {
+        "operationId": "extras_custom_field_choice_sets_destroy",
+        "description": "Delete a custom field choice set object.",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "extras"
+        ]
+      },
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "A unique integer value identifying this custom field.",
+          "required": true,
+          "type": "integer"
+        }
+      ]
     }
   },
   "definitions": {
@@ -96918,6 +97162,102 @@
           "title": "Custom fields",
           "type": "object",
           "default": {}
+        },
+        "created": {
+          "title": "Created",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true,
+          "x-nullable": true
+        },
+        "last_updated": {
+          "title": "Last updated",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true,
+          "x-nullable": true
+        }
+      }
+    },
+    "CustomFieldChoiceSet": {
+      "required": [
+        "name"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "type": "integer",
+          "readOnly": true
+        },
+        "url": {
+          "title": "Url",
+          "type": "string",
+          "format": "uri",
+          "readOnly": true
+        },
+        "display": {
+          "title": "Display",
+          "type": "string",
+          "readOnly": true
+        },
+        "name": {
+          "title": "Name",
+          "description": "Internal field name",
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "maxLength": 100,
+          "minLength": 1
+        },
+        "description": {
+          "title": "Description",
+          "type": "string",
+          "maxLength": 200
+        },
+        "base_choices": {
+          "title": "Base choices",
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "string",
+              "enum": [
+                "IATA",
+                "ISO_3166",
+                "UN_LOCODE"
+              ],
+              "description": "* `IATA` - IATA (Airport codes) * `ISO_3166` - ISO 3166 (Country codes) * `UN_LOCODE` - UN/LOCODE (Location codes)"
+            },
+            "label": {
+              "type": "string",
+              "enum": [
+                "IATA (Airport codes)",
+                "ISO 3166 (Country codes)",
+                "UN/LOCODE (Location codes)"
+              ]
+            }
+          }
+        },
+        "extra_choices": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "title": "Extra choices",
+              "maxLength": 100
+            }
+          },
+          "x-nullable": true
+        },
+        "order_alphabetically": {
+          "title": "Order alphabetically",
+          "description": "Choices are automatically ordered alphabetically",
+          "type": "boolean"
+        },
+        "choices_count": {
+          "title": "Choices count",
+          "type": "integer",
+          "readOnly": true
         },
         "created": {
           "title": "Created",

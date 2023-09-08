@@ -294,8 +294,273 @@ data["paths"]["/ipam/prefixes/{id}/available-prefixes/"]["post"]["responses"]["2
 
 # ASNs now have a full RIR object, not just a rir id
 logging.info("Make ASN.rir a full RIR object")
-data["definitions"]["ASN"]["properties"]["rir"] = {
-  "$ref": "#/definitions/NestedRIR"
+data["definitions"]["ASN"]["properties"]["rir"] = {"$ref": "#/definitions/NestedRIR"}
+
+# Add custom field choice set model
+logging.info("Add custom field choice set model")
+data["definitions"]["CustomFieldChoiceSet"] = {
+    "required": ["name"],
+    "type": "object",
+    "properties": {
+        "id": {"title": "ID", "type": "integer", "readOnly": True},
+        "url": {"title": "Url", "type": "string", "format": "uri", "readOnly": True},
+        "display": {"title": "Display", "type": "string", "readOnly": True},
+        "name": {
+            "title": "Name",
+            "description": "Internal field name",
+            "type": "string",
+            "pattern": "^[a-z0-9_]+$",
+            "maxLength": 100,
+            "minLength": 1,
+        },
+        "description": {"title": "Description", "type": "string", "maxLength": 200},
+        "description": {"title": "Description", "type": "string", "maxLength": 200},
+        "base_choices": {
+            "title": "Base choices",
+            "type": "object",
+            "properties": {
+                "value": {
+                    "type": "string",
+                    "enum": ["IATA", "ISO_3166", "UN_LOCODE"],
+                    "description": "* `IATA` - IATA (Airport codes) * `ISO_3166` - ISO 3166 (Country codes) * `UN_LOCODE` - UN/LOCODE (Location codes)",
+                },
+                "label": {
+                    "type": "string",
+                    "enum": [
+                        "IATA (Airport codes)",
+                        "ISO 3166 (Country codes)",
+                        "UN/LOCODE (Location codes)",
+                    ],
+                },
+            },
+        },
+        "extra_choices": {
+            "type": "array",
+            "items": {
+                "type": "array",
+                "items": {"type": "string", "title": "Extra choices", "maxLength": 100},
+            },
+            "x-nullable": True,
+        },
+        "order_alphabetically": {
+            "title": "Order alphabetically",
+            "description": "Choices are automatically ordered alphabetically",
+            "type": "boolean",
+        },
+        "choices_count": {
+            "title": "Choices count",
+            "type": "integer",
+            "readOnly": True,
+        },
+        "created": {
+            "title": "Created",
+            "type": "string",
+            "format": "date-time",
+            "readOnly": True,
+            "x-nullable": True,
+        },
+        "last_updated": {
+            "title": "Last updated",
+            "type": "string",
+            "format": "date-time",
+            "readOnly": True,
+            "x-nullable": True,
+        },
+    },
+}
+
+
+# Add custom field choice set paths
+logging.info("Add custom field choice set paths")
+data["paths"]["/extras/custom-field-choice-sets/"] = {
+    "get": {
+        "operationId": "extras_custom_field_choice_sets_list",
+        "description": "Get a list of custom field choice set objects.",
+        "parameters": [
+            {
+                "name": "id",
+                "in": "query",
+                "description": "",
+                "required": False,
+                "type": "string",
+            },
+            {
+                "name": "limit",
+                "in": "query",
+                "description": "Number of results to return per page.",
+                "required": False,
+                "type": "integer",
+            },
+            {
+                "name": "offset",
+                "in": "query",
+                "description": "The initial index from which to return the results.",
+                "required": False,
+                "type": "integer",
+            },
+        ],
+        "responses": {
+            "200": {
+                "description": "",
+                "schema": {
+                    "required": ["count", "results"],
+                    "type": "object",
+                    "properties": {
+                        "count": {"type": "integer"},
+                        "next": {
+                            "type": "string",
+                            "format": "uri",
+                            "x-nullable": True,
+                        },
+                        "previous": {
+                            "type": "string",
+                            "format": "uri",
+                            "x-nullable": True,
+                        },
+                        "results": {
+                            "type": "array",
+                            "items": {"$ref": "#/definitions/CustomFieldChoiceSet"},
+                        },
+                    },
+                },
+            }
+        },
+        "tags": ["extras"],
+    },
+    "post": {
+        "operationId": "extras_custom_field_choice_sets_create",
+        "description": "Post a list of custom field choice set objects.",
+        "parameters": [
+            {
+                "name": "data",
+                "in": "body",
+                "required": True,
+                "schema": {"$ref": "#/definitions/CustomFieldChoiceSet"},
+            }
+        ],
+        "responses": {
+            "201": {
+                "description": "",
+                "schema": {"$ref": "#/definitions/CustomFieldChoiceSet"},
+            }
+        },
+        "tags": ["extras"],
+    },
+    "put": {
+        "operationId": "extras_custom_field_choice_sets_bulk_update",
+        "description": "Put a list of custom field choice set objects.",
+        "parameters": [
+            {
+                "name": "data",
+                "in": "body",
+                "required": True,
+                "schema": {"$ref": "#/definitions/CustomFieldChoiceSet"},
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "",
+                "schema": {"$ref": "#/definitions/CustomFieldChoiceSet"},
+            }
+        },
+        "tags": ["extras"],
+    },
+    "patch": {
+        "operationId": "extras_custom_field_choice_sets_bulk_partial_update",
+        "description": "Patch a list of custom field choice set objects.",
+        "parameters": [
+            {
+                "name": "data",
+                "in": "body",
+                "required": True,
+                "schema": {"$ref": "#/definitions/CustomFieldChoiceSet"},
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "",
+                "schema": {"$ref": "#/definitions/CustomFieldChoiceSet"},
+            }
+        },
+        "tags": ["extras"],
+    },
+    "delete": {
+        "operationId": "extras_custom_field_choice_sets_bulk_destroy",
+        "description": "Delete a list of custom field choice set objects.",
+        "parameters": [],
+        "responses": {"204": {"description": ""}},
+        "tags": ["extras"],
+    },
+    "parameters": [],
+}
+
+data["paths"]["/extras/custom-field-choice-sets/{id}/"] = {
+    "get": {
+        "operationId": "extras_custom_field_choice_sets_read",
+        "description": "Get a custom field choice set object.",
+        "parameters": [],
+        "responses": {
+            "200": {
+                "description": "",
+                "schema": {"$ref": "#/definitions/CustomFieldChoiceSet"},
+            }
+        },
+        "tags": ["extras"],
+    },
+    "put": {
+        "operationId": "extras_custom_field_choice_sets_update",
+        "description": "Put a custom field choice set object.",
+        "parameters": [
+            {
+                "name": "data",
+                "in": "body",
+                "required": True,
+                "schema": {"$ref": "#/definitions/CustomFieldChoiceSet"},
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "",
+                "schema": {"$ref": "#/definitions/CustomFieldChoiceSet"},
+            }
+        },
+        "tags": ["extras"],
+    },
+    "patch": {
+        "operationId": "extras_custom_field_choice_sets_partial_update",
+        "description": "Patch a custom field choice set object.",
+        "parameters": [
+            {
+                "name": "data",
+                "in": "body",
+                "required": True,
+                "schema": {"$ref": "#/definitions/CustomFieldChoiceSet"},
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "",
+                "schema": {"$ref": "#/definitions/CustomFieldChoiceSet"},
+            }
+        },
+        "tags": ["extras"],
+    },
+    "delete": {
+        "operationId": "extras_custom_field_choice_sets_destroy",
+        "description": "Delete a custom field choice set object.",
+        "parameters": [],
+        "responses": {"204": {"description": ""}},
+        "tags": ["extras"],
+    },
+    "parameters": [
+        {
+            "name": "id",
+            "in": "path",
+            "description": "A unique integer value identifying this custom field.",
+            "required": True,
+            "type": "integer",
+        }
+    ],
 }
 
 # Write output file

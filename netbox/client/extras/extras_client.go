@@ -65,6 +65,24 @@ type ClientService interface {
 
 	ExtrasContentTypesRead(params *ExtrasContentTypesReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasContentTypesReadOK, error)
 
+	ExtrasCustomFieldChoiceSetsBulkDelete(params *ExtrasCustomFieldChoiceSetsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldChoiceSetsBulkDeleteNoContent, error)
+
+	ExtrasCustomFieldChoiceSetsBulkPartialUpdate(params *ExtrasCustomFieldChoiceSetsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldChoiceSetsBulkPartialUpdateOK, error)
+
+	ExtrasCustomFieldChoiceSetsBulkUpdate(params *ExtrasCustomFieldChoiceSetsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldChoiceSetsBulkUpdateOK, error)
+
+	ExtrasCustomFieldChoiceSetsCreate(params *ExtrasCustomFieldChoiceSetsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldChoiceSetsCreateCreated, error)
+
+	ExtrasCustomFieldChoiceSetsDelete(params *ExtrasCustomFieldChoiceSetsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldChoiceSetsDeleteNoContent, error)
+
+	ExtrasCustomFieldChoiceSetsList(params *ExtrasCustomFieldChoiceSetsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldChoiceSetsListOK, error)
+
+	ExtrasCustomFieldChoiceSetsPartialUpdate(params *ExtrasCustomFieldChoiceSetsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldChoiceSetsPartialUpdateOK, error)
+
+	ExtrasCustomFieldChoiceSetsRead(params *ExtrasCustomFieldChoiceSetsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldChoiceSetsReadOK, error)
+
+	ExtrasCustomFieldChoiceSetsUpdate(params *ExtrasCustomFieldChoiceSetsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldChoiceSetsUpdateOK, error)
+
 	ExtrasCustomFieldsBulkDelete(params *ExtrasCustomFieldsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldsBulkDeleteNoContent, error)
 
 	ExtrasCustomFieldsBulkPartialUpdate(params *ExtrasCustomFieldsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldsBulkPartialUpdateOK, error)
@@ -645,6 +663,348 @@ func (a *Client) ExtrasContentTypesRead(params *ExtrasContentTypesReadParams, au
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*ExtrasContentTypesReadDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+ExtrasCustomFieldChoiceSetsBulkDelete Delete a list of custom field choice set objects.
+*/
+func (a *Client) ExtrasCustomFieldChoiceSetsBulkDelete(params *ExtrasCustomFieldChoiceSetsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldChoiceSetsBulkDeleteNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasCustomFieldChoiceSetsBulkDeleteParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "extras_custom-field-choice-sets_bulk_delete",
+		Method:             "DELETE",
+		PathPattern:        "/extras/custom-field-choice-sets/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasCustomFieldChoiceSetsBulkDeleteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExtrasCustomFieldChoiceSetsBulkDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ExtrasCustomFieldChoiceSetsBulkDeleteDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+ExtrasCustomFieldChoiceSetsBulkPartialUpdate Patch a list of custom field choice set objects.
+*/
+func (a *Client) ExtrasCustomFieldChoiceSetsBulkPartialUpdate(params *ExtrasCustomFieldChoiceSetsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldChoiceSetsBulkPartialUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasCustomFieldChoiceSetsBulkPartialUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "extras_custom-field-choice-sets_bulk_partial_update",
+		Method:             "PATCH",
+		PathPattern:        "/extras/custom-field-choice-sets/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasCustomFieldChoiceSetsBulkPartialUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExtrasCustomFieldChoiceSetsBulkPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ExtrasCustomFieldChoiceSetsBulkPartialUpdateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+ExtrasCustomFieldChoiceSetsBulkUpdate Put a list of custom field choice set objects.
+*/
+func (a *Client) ExtrasCustomFieldChoiceSetsBulkUpdate(params *ExtrasCustomFieldChoiceSetsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldChoiceSetsBulkUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasCustomFieldChoiceSetsBulkUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "extras_custom-field-choice-sets_bulk_update",
+		Method:             "PUT",
+		PathPattern:        "/extras/custom-field-choice-sets/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasCustomFieldChoiceSetsBulkUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExtrasCustomFieldChoiceSetsBulkUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ExtrasCustomFieldChoiceSetsBulkUpdateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+ExtrasCustomFieldChoiceSetsCreate Post a list of custom field choice set objects.
+*/
+func (a *Client) ExtrasCustomFieldChoiceSetsCreate(params *ExtrasCustomFieldChoiceSetsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldChoiceSetsCreateCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasCustomFieldChoiceSetsCreateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "extras_custom-field-choice-sets_create",
+		Method:             "POST",
+		PathPattern:        "/extras/custom-field-choice-sets/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasCustomFieldChoiceSetsCreateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExtrasCustomFieldChoiceSetsCreateCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ExtrasCustomFieldChoiceSetsCreateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+ExtrasCustomFieldChoiceSetsDelete Delete a custom field choice set object.
+*/
+func (a *Client) ExtrasCustomFieldChoiceSetsDelete(params *ExtrasCustomFieldChoiceSetsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldChoiceSetsDeleteNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasCustomFieldChoiceSetsDeleteParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "extras_custom-field-choice-sets_delete",
+		Method:             "DELETE",
+		PathPattern:        "/extras/custom-field-choice-sets/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasCustomFieldChoiceSetsDeleteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExtrasCustomFieldChoiceSetsDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ExtrasCustomFieldChoiceSetsDeleteDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+ExtrasCustomFieldChoiceSetsList Get a list of custom field choice set objects.
+*/
+func (a *Client) ExtrasCustomFieldChoiceSetsList(params *ExtrasCustomFieldChoiceSetsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldChoiceSetsListOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasCustomFieldChoiceSetsListParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "extras_custom-field-choice-sets_list",
+		Method:             "GET",
+		PathPattern:        "/extras/custom-field-choice-sets/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasCustomFieldChoiceSetsListReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExtrasCustomFieldChoiceSetsListOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ExtrasCustomFieldChoiceSetsListDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+ExtrasCustomFieldChoiceSetsPartialUpdate Patch a custom field choice set object.
+*/
+func (a *Client) ExtrasCustomFieldChoiceSetsPartialUpdate(params *ExtrasCustomFieldChoiceSetsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldChoiceSetsPartialUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasCustomFieldChoiceSetsPartialUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "extras_custom-field-choice-sets_partial_update",
+		Method:             "PATCH",
+		PathPattern:        "/extras/custom-field-choice-sets/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasCustomFieldChoiceSetsPartialUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExtrasCustomFieldChoiceSetsPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ExtrasCustomFieldChoiceSetsPartialUpdateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+ExtrasCustomFieldChoiceSetsRead Get a custom field choice set object.
+*/
+func (a *Client) ExtrasCustomFieldChoiceSetsRead(params *ExtrasCustomFieldChoiceSetsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldChoiceSetsReadOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasCustomFieldChoiceSetsReadParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "extras_custom-field-choice-sets_read",
+		Method:             "GET",
+		PathPattern:        "/extras/custom-field-choice-sets/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasCustomFieldChoiceSetsReadReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExtrasCustomFieldChoiceSetsReadOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ExtrasCustomFieldChoiceSetsReadDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+ExtrasCustomFieldChoiceSetsUpdate Put a custom field choice set object.
+*/
+func (a *Client) ExtrasCustomFieldChoiceSetsUpdate(params *ExtrasCustomFieldChoiceSetsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldChoiceSetsUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasCustomFieldChoiceSetsUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "extras_custom-field-choice-sets_update",
+		Method:             "PUT",
+		PathPattern:        "/extras/custom-field-choice-sets/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasCustomFieldChoiceSetsUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExtrasCustomFieldChoiceSetsUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ExtrasCustomFieldChoiceSetsUpdateDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
