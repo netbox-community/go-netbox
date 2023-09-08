@@ -292,6 +292,12 @@ data["paths"]["/ipam/prefixes/{id}/available-prefixes/"]["post"]["responses"]["2
     "schema": {"$ref": "#/definitions/Prefix"},
 }
 
+# ASNs now have a full RIR object, not just a rir id
+logging.info("Make ASN.rir a full RIR object")
+data["definitions"]["ASN"]["properties"]["rir"] = {
+  "$ref": "#/definitions/NestedRIR"
+}
+
 # Write output file
 with open("swagger.processed.json", "w") as writefile:
     json.dump(data, writefile, indent=2)

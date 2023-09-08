@@ -90325,8 +90325,7 @@
           "minimum": 1
         },
         "rir": {
-          "title": "RIR",
-          "type": "integer"
+          "$ref": "#/definitions/NestedRIR"
         },
         "tenant": {
           "$ref": "#/definitions/NestedTenant"
