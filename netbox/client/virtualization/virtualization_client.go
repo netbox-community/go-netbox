@@ -43,12 +43,6 @@ type ClientOption func(*runtime.ClientOperation)
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	VirtualizationClusterGroupsBulkDelete(params *VirtualizationClusterGroupsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterGroupsBulkDeleteNoContent, error)
-
-	VirtualizationClusterGroupsBulkPartialUpdate(params *VirtualizationClusterGroupsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterGroupsBulkPartialUpdateOK, error)
-
-	VirtualizationClusterGroupsBulkUpdate(params *VirtualizationClusterGroupsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterGroupsBulkUpdateOK, error)
-
 	VirtualizationClusterGroupsCreate(params *VirtualizationClusterGroupsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterGroupsCreateCreated, error)
 
 	VirtualizationClusterGroupsDelete(params *VirtualizationClusterGroupsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterGroupsDeleteNoContent, error)
@@ -60,12 +54,6 @@ type ClientService interface {
 	VirtualizationClusterGroupsRead(params *VirtualizationClusterGroupsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterGroupsReadOK, error)
 
 	VirtualizationClusterGroupsUpdate(params *VirtualizationClusterGroupsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterGroupsUpdateOK, error)
-
-	VirtualizationClusterTypesBulkDelete(params *VirtualizationClusterTypesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterTypesBulkDeleteNoContent, error)
-
-	VirtualizationClusterTypesBulkPartialUpdate(params *VirtualizationClusterTypesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterTypesBulkPartialUpdateOK, error)
-
-	VirtualizationClusterTypesBulkUpdate(params *VirtualizationClusterTypesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterTypesBulkUpdateOK, error)
 
 	VirtualizationClusterTypesCreate(params *VirtualizationClusterTypesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterTypesCreateCreated, error)
 
@@ -79,12 +67,6 @@ type ClientService interface {
 
 	VirtualizationClusterTypesUpdate(params *VirtualizationClusterTypesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterTypesUpdateOK, error)
 
-	VirtualizationClustersBulkDelete(params *VirtualizationClustersBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClustersBulkDeleteNoContent, error)
-
-	VirtualizationClustersBulkPartialUpdate(params *VirtualizationClustersBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClustersBulkPartialUpdateOK, error)
-
-	VirtualizationClustersBulkUpdate(params *VirtualizationClustersBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClustersBulkUpdateOK, error)
-
 	VirtualizationClustersCreate(params *VirtualizationClustersCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClustersCreateCreated, error)
 
 	VirtualizationClustersDelete(params *VirtualizationClustersDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClustersDeleteNoContent, error)
@@ -97,12 +79,6 @@ type ClientService interface {
 
 	VirtualizationClustersUpdate(params *VirtualizationClustersUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClustersUpdateOK, error)
 
-	VirtualizationInterfacesBulkDelete(params *VirtualizationInterfacesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationInterfacesBulkDeleteNoContent, error)
-
-	VirtualizationInterfacesBulkPartialUpdate(params *VirtualizationInterfacesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationInterfacesBulkPartialUpdateOK, error)
-
-	VirtualizationInterfacesBulkUpdate(params *VirtualizationInterfacesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationInterfacesBulkUpdateOK, error)
-
 	VirtualizationInterfacesCreate(params *VirtualizationInterfacesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationInterfacesCreateCreated, error)
 
 	VirtualizationInterfacesDelete(params *VirtualizationInterfacesDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationInterfacesDeleteNoContent, error)
@@ -114,12 +90,6 @@ type ClientService interface {
 	VirtualizationInterfacesRead(params *VirtualizationInterfacesReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationInterfacesReadOK, error)
 
 	VirtualizationInterfacesUpdate(params *VirtualizationInterfacesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationInterfacesUpdateOK, error)
-
-	VirtualizationVirtualMachinesBulkDelete(params *VirtualizationVirtualMachinesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationVirtualMachinesBulkDeleteNoContent, error)
-
-	VirtualizationVirtualMachinesBulkPartialUpdate(params *VirtualizationVirtualMachinesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationVirtualMachinesBulkPartialUpdateOK, error)
-
-	VirtualizationVirtualMachinesBulkUpdate(params *VirtualizationVirtualMachinesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationVirtualMachinesBulkUpdateOK, error)
 
 	VirtualizationVirtualMachinesCreate(params *VirtualizationVirtualMachinesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationVirtualMachinesCreateCreated, error)
 
@@ -134,120 +104,6 @@ type ClientService interface {
 	VirtualizationVirtualMachinesUpdate(params *VirtualizationVirtualMachinesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationVirtualMachinesUpdateOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
-}
-
-/*
-VirtualizationClusterGroupsBulkDelete virtualization cluster groups bulk delete API
-*/
-func (a *Client) VirtualizationClusterGroupsBulkDelete(params *VirtualizationClusterGroupsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterGroupsBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewVirtualizationClusterGroupsBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "virtualization_cluster-groups_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/virtualization/cluster-groups/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &VirtualizationClusterGroupsBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*VirtualizationClusterGroupsBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*VirtualizationClusterGroupsBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-VirtualizationClusterGroupsBulkPartialUpdate virtualization cluster groups bulk partial update API
-*/
-func (a *Client) VirtualizationClusterGroupsBulkPartialUpdate(params *VirtualizationClusterGroupsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterGroupsBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewVirtualizationClusterGroupsBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "virtualization_cluster-groups_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/virtualization/cluster-groups/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &VirtualizationClusterGroupsBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*VirtualizationClusterGroupsBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*VirtualizationClusterGroupsBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-VirtualizationClusterGroupsBulkUpdate virtualization cluster groups bulk update API
-*/
-func (a *Client) VirtualizationClusterGroupsBulkUpdate(params *VirtualizationClusterGroupsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterGroupsBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewVirtualizationClusterGroupsBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "virtualization_cluster-groups_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/virtualization/cluster-groups/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &VirtualizationClusterGroupsBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*VirtualizationClusterGroupsBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*VirtualizationClusterGroupsBulkUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
 /*
@@ -475,120 +331,6 @@ func (a *Client) VirtualizationClusterGroupsUpdate(params *VirtualizationCluster
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*VirtualizationClusterGroupsUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-VirtualizationClusterTypesBulkDelete virtualization cluster types bulk delete API
-*/
-func (a *Client) VirtualizationClusterTypesBulkDelete(params *VirtualizationClusterTypesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterTypesBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewVirtualizationClusterTypesBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "virtualization_cluster-types_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/virtualization/cluster-types/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &VirtualizationClusterTypesBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*VirtualizationClusterTypesBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*VirtualizationClusterTypesBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-VirtualizationClusterTypesBulkPartialUpdate virtualization cluster types bulk partial update API
-*/
-func (a *Client) VirtualizationClusterTypesBulkPartialUpdate(params *VirtualizationClusterTypesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterTypesBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewVirtualizationClusterTypesBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "virtualization_cluster-types_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/virtualization/cluster-types/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &VirtualizationClusterTypesBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*VirtualizationClusterTypesBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*VirtualizationClusterTypesBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-VirtualizationClusterTypesBulkUpdate virtualization cluster types bulk update API
-*/
-func (a *Client) VirtualizationClusterTypesBulkUpdate(params *VirtualizationClusterTypesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterTypesBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewVirtualizationClusterTypesBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "virtualization_cluster-types_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/virtualization/cluster-types/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &VirtualizationClusterTypesBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*VirtualizationClusterTypesBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*VirtualizationClusterTypesBulkUpdateDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -821,120 +563,6 @@ func (a *Client) VirtualizationClusterTypesUpdate(params *VirtualizationClusterT
 }
 
 /*
-VirtualizationClustersBulkDelete virtualization clusters bulk delete API
-*/
-func (a *Client) VirtualizationClustersBulkDelete(params *VirtualizationClustersBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClustersBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewVirtualizationClustersBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "virtualization_clusters_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/virtualization/clusters/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &VirtualizationClustersBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*VirtualizationClustersBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*VirtualizationClustersBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-VirtualizationClustersBulkPartialUpdate virtualization clusters bulk partial update API
-*/
-func (a *Client) VirtualizationClustersBulkPartialUpdate(params *VirtualizationClustersBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClustersBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewVirtualizationClustersBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "virtualization_clusters_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/virtualization/clusters/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &VirtualizationClustersBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*VirtualizationClustersBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*VirtualizationClustersBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-VirtualizationClustersBulkUpdate virtualization clusters bulk update API
-*/
-func (a *Client) VirtualizationClustersBulkUpdate(params *VirtualizationClustersBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClustersBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewVirtualizationClustersBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "virtualization_clusters_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/virtualization/clusters/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &VirtualizationClustersBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*VirtualizationClustersBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*VirtualizationClustersBulkUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
 VirtualizationClustersCreate virtualization clusters create API
 */
 func (a *Client) VirtualizationClustersCreate(params *VirtualizationClustersCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClustersCreateCreated, error) {
@@ -1163,120 +791,6 @@ func (a *Client) VirtualizationClustersUpdate(params *VirtualizationClustersUpda
 }
 
 /*
-VirtualizationInterfacesBulkDelete virtualization interfaces bulk delete API
-*/
-func (a *Client) VirtualizationInterfacesBulkDelete(params *VirtualizationInterfacesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationInterfacesBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewVirtualizationInterfacesBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "virtualization_interfaces_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/virtualization/interfaces/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &VirtualizationInterfacesBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*VirtualizationInterfacesBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*VirtualizationInterfacesBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-VirtualizationInterfacesBulkPartialUpdate virtualization interfaces bulk partial update API
-*/
-func (a *Client) VirtualizationInterfacesBulkPartialUpdate(params *VirtualizationInterfacesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationInterfacesBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewVirtualizationInterfacesBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "virtualization_interfaces_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/virtualization/interfaces/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &VirtualizationInterfacesBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*VirtualizationInterfacesBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*VirtualizationInterfacesBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-VirtualizationInterfacesBulkUpdate virtualization interfaces bulk update API
-*/
-func (a *Client) VirtualizationInterfacesBulkUpdate(params *VirtualizationInterfacesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationInterfacesBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewVirtualizationInterfacesBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "virtualization_interfaces_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/virtualization/interfaces/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &VirtualizationInterfacesBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*VirtualizationInterfacesBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*VirtualizationInterfacesBulkUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
 VirtualizationInterfacesCreate virtualization interfaces create API
 */
 func (a *Client) VirtualizationInterfacesCreate(params *VirtualizationInterfacesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationInterfacesCreateCreated, error) {
@@ -1501,120 +1015,6 @@ func (a *Client) VirtualizationInterfacesUpdate(params *VirtualizationInterfaces
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*VirtualizationInterfacesUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-VirtualizationVirtualMachinesBulkDelete virtualization virtual machines bulk delete API
-*/
-func (a *Client) VirtualizationVirtualMachinesBulkDelete(params *VirtualizationVirtualMachinesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationVirtualMachinesBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewVirtualizationVirtualMachinesBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "virtualization_virtual-machines_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/virtualization/virtual-machines/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &VirtualizationVirtualMachinesBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*VirtualizationVirtualMachinesBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*VirtualizationVirtualMachinesBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-VirtualizationVirtualMachinesBulkPartialUpdate virtualization virtual machines bulk partial update API
-*/
-func (a *Client) VirtualizationVirtualMachinesBulkPartialUpdate(params *VirtualizationVirtualMachinesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationVirtualMachinesBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewVirtualizationVirtualMachinesBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "virtualization_virtual-machines_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/virtualization/virtual-machines/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &VirtualizationVirtualMachinesBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*VirtualizationVirtualMachinesBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*VirtualizationVirtualMachinesBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-VirtualizationVirtualMachinesBulkUpdate virtualization virtual machines bulk update API
-*/
-func (a *Client) VirtualizationVirtualMachinesBulkUpdate(params *VirtualizationVirtualMachinesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationVirtualMachinesBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewVirtualizationVirtualMachinesBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "virtualization_virtual-machines_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/virtualization/virtual-machines/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &VirtualizationVirtualMachinesBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*VirtualizationVirtualMachinesBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*VirtualizationVirtualMachinesBulkUpdateDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 

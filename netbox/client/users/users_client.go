@@ -45,12 +45,6 @@ type ClientOption func(*runtime.ClientOperation)
 type ClientService interface {
 	UsersConfigList(params *UsersConfigListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersConfigListOK, error)
 
-	UsersGroupsBulkDelete(params *UsersGroupsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersGroupsBulkDeleteNoContent, error)
-
-	UsersGroupsBulkPartialUpdate(params *UsersGroupsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersGroupsBulkPartialUpdateOK, error)
-
-	UsersGroupsBulkUpdate(params *UsersGroupsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersGroupsBulkUpdateOK, error)
-
 	UsersGroupsCreate(params *UsersGroupsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersGroupsCreateCreated, error)
 
 	UsersGroupsDelete(params *UsersGroupsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersGroupsDeleteNoContent, error)
@@ -63,12 +57,6 @@ type ClientService interface {
 
 	UsersGroupsUpdate(params *UsersGroupsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersGroupsUpdateOK, error)
 
-	UsersPermissionsBulkDelete(params *UsersPermissionsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersPermissionsBulkDeleteNoContent, error)
-
-	UsersPermissionsBulkPartialUpdate(params *UsersPermissionsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersPermissionsBulkPartialUpdateOK, error)
-
-	UsersPermissionsBulkUpdate(params *UsersPermissionsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersPermissionsBulkUpdateOK, error)
-
 	UsersPermissionsCreate(params *UsersPermissionsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersPermissionsCreateCreated, error)
 
 	UsersPermissionsDelete(params *UsersPermissionsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersPermissionsDeleteNoContent, error)
@@ -80,12 +68,6 @@ type ClientService interface {
 	UsersPermissionsRead(params *UsersPermissionsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersPermissionsReadOK, error)
 
 	UsersPermissionsUpdate(params *UsersPermissionsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersPermissionsUpdateOK, error)
-
-	UsersTokensBulkDelete(params *UsersTokensBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersTokensBulkDeleteNoContent, error)
-
-	UsersTokensBulkPartialUpdate(params *UsersTokensBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersTokensBulkPartialUpdateOK, error)
-
-	UsersTokensBulkUpdate(params *UsersTokensBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersTokensBulkUpdateOK, error)
 
 	UsersTokensCreate(params *UsersTokensCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersTokensCreateCreated, error)
 
@@ -100,12 +82,6 @@ type ClientService interface {
 	UsersTokensRead(params *UsersTokensReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersTokensReadOK, error)
 
 	UsersTokensUpdate(params *UsersTokensUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersTokensUpdateOK, error)
-
-	UsersUsersBulkDelete(params *UsersUsersBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersUsersBulkDeleteNoContent, error)
-
-	UsersUsersBulkPartialUpdate(params *UsersUsersBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersUsersBulkPartialUpdateOK, error)
-
-	UsersUsersBulkUpdate(params *UsersUsersBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersUsersBulkUpdateOK, error)
 
 	UsersUsersCreate(params *UsersUsersCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersUsersCreateCreated, error)
 
@@ -157,120 +133,6 @@ func (a *Client) UsersConfigList(params *UsersConfigListParams, authInfo runtime
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*UsersConfigListDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-UsersGroupsBulkDelete users groups bulk delete API
-*/
-func (a *Client) UsersGroupsBulkDelete(params *UsersGroupsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersGroupsBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewUsersGroupsBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "users_groups_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/users/groups/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &UsersGroupsBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*UsersGroupsBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*UsersGroupsBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-UsersGroupsBulkPartialUpdate users groups bulk partial update API
-*/
-func (a *Client) UsersGroupsBulkPartialUpdate(params *UsersGroupsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersGroupsBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewUsersGroupsBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "users_groups_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/users/groups/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &UsersGroupsBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*UsersGroupsBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*UsersGroupsBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-UsersGroupsBulkUpdate users groups bulk update API
-*/
-func (a *Client) UsersGroupsBulkUpdate(params *UsersGroupsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersGroupsBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewUsersGroupsBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "users_groups_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/users/groups/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &UsersGroupsBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*UsersGroupsBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*UsersGroupsBulkUpdateDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -503,120 +365,6 @@ func (a *Client) UsersGroupsUpdate(params *UsersGroupsUpdateParams, authInfo run
 }
 
 /*
-UsersPermissionsBulkDelete users permissions bulk delete API
-*/
-func (a *Client) UsersPermissionsBulkDelete(params *UsersPermissionsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersPermissionsBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewUsersPermissionsBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "users_permissions_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/users/permissions/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &UsersPermissionsBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*UsersPermissionsBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*UsersPermissionsBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-UsersPermissionsBulkPartialUpdate users permissions bulk partial update API
-*/
-func (a *Client) UsersPermissionsBulkPartialUpdate(params *UsersPermissionsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersPermissionsBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewUsersPermissionsBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "users_permissions_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/users/permissions/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &UsersPermissionsBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*UsersPermissionsBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*UsersPermissionsBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-UsersPermissionsBulkUpdate users permissions bulk update API
-*/
-func (a *Client) UsersPermissionsBulkUpdate(params *UsersPermissionsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersPermissionsBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewUsersPermissionsBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "users_permissions_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/users/permissions/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &UsersPermissionsBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*UsersPermissionsBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*UsersPermissionsBulkUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
 UsersPermissionsCreate users permissions create API
 */
 func (a *Client) UsersPermissionsCreate(params *UsersPermissionsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersPermissionsCreateCreated, error) {
@@ -841,120 +589,6 @@ func (a *Client) UsersPermissionsUpdate(params *UsersPermissionsUpdateParams, au
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*UsersPermissionsUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-UsersTokensBulkDelete users tokens bulk delete API
-*/
-func (a *Client) UsersTokensBulkDelete(params *UsersTokensBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersTokensBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewUsersTokensBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "users_tokens_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/users/tokens/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &UsersTokensBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*UsersTokensBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*UsersTokensBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-UsersTokensBulkPartialUpdate users tokens bulk partial update API
-*/
-func (a *Client) UsersTokensBulkPartialUpdate(params *UsersTokensBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersTokensBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewUsersTokensBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "users_tokens_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/users/tokens/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &UsersTokensBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*UsersTokensBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*UsersTokensBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-UsersTokensBulkUpdate users tokens bulk update API
-*/
-func (a *Client) UsersTokensBulkUpdate(params *UsersTokensBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersTokensBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewUsersTokensBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "users_tokens_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/users/tokens/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &UsersTokensBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*UsersTokensBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*UsersTokensBulkUpdateDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -1221,120 +855,6 @@ func (a *Client) UsersTokensUpdate(params *UsersTokensUpdateParams, authInfo run
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*UsersTokensUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-UsersUsersBulkDelete users users bulk delete API
-*/
-func (a *Client) UsersUsersBulkDelete(params *UsersUsersBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersUsersBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewUsersUsersBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "users_users_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/users/users/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &UsersUsersBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*UsersUsersBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*UsersUsersBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-UsersUsersBulkPartialUpdate users users bulk partial update API
-*/
-func (a *Client) UsersUsersBulkPartialUpdate(params *UsersUsersBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersUsersBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewUsersUsersBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "users_users_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/users/users/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &UsersUsersBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*UsersUsersBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*UsersUsersBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-UsersUsersBulkUpdate users users bulk update API
-*/
-func (a *Client) UsersUsersBulkUpdate(params *UsersUsersBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersUsersBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewUsersUsersBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "users_users_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/users/users/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &UsersUsersBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*UsersUsersBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*UsersUsersBulkUpdateDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 

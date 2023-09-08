@@ -43,12 +43,6 @@ type ClientOption func(*runtime.ClientOperation)
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	ExtrasConfigContextsBulkDelete(params *ExtrasConfigContextsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasConfigContextsBulkDeleteNoContent, error)
-
-	ExtrasConfigContextsBulkPartialUpdate(params *ExtrasConfigContextsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasConfigContextsBulkPartialUpdateOK, error)
-
-	ExtrasConfigContextsBulkUpdate(params *ExtrasConfigContextsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasConfigContextsBulkUpdateOK, error)
-
 	ExtrasConfigContextsCreate(params *ExtrasConfigContextsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasConfigContextsCreateCreated, error)
 
 	ExtrasConfigContextsDelete(params *ExtrasConfigContextsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasConfigContextsDeleteNoContent, error)
@@ -83,12 +77,6 @@ type ClientService interface {
 
 	ExtrasCustomFieldChoiceSetsUpdate(params *ExtrasCustomFieldChoiceSetsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldChoiceSetsUpdateOK, error)
 
-	ExtrasCustomFieldsBulkDelete(params *ExtrasCustomFieldsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldsBulkDeleteNoContent, error)
-
-	ExtrasCustomFieldsBulkPartialUpdate(params *ExtrasCustomFieldsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldsBulkPartialUpdateOK, error)
-
-	ExtrasCustomFieldsBulkUpdate(params *ExtrasCustomFieldsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldsBulkUpdateOK, error)
-
 	ExtrasCustomFieldsCreate(params *ExtrasCustomFieldsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldsCreateCreated, error)
 
 	ExtrasCustomFieldsDelete(params *ExtrasCustomFieldsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldsDeleteNoContent, error)
@@ -100,12 +88,6 @@ type ClientService interface {
 	ExtrasCustomFieldsRead(params *ExtrasCustomFieldsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldsReadOK, error)
 
 	ExtrasCustomFieldsUpdate(params *ExtrasCustomFieldsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldsUpdateOK, error)
-
-	ExtrasCustomLinksBulkDelete(params *ExtrasCustomLinksBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomLinksBulkDeleteNoContent, error)
-
-	ExtrasCustomLinksBulkPartialUpdate(params *ExtrasCustomLinksBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomLinksBulkPartialUpdateOK, error)
-
-	ExtrasCustomLinksBulkUpdate(params *ExtrasCustomLinksBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomLinksBulkUpdateOK, error)
 
 	ExtrasCustomLinksCreate(params *ExtrasCustomLinksCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomLinksCreateCreated, error)
 
@@ -119,12 +101,6 @@ type ClientService interface {
 
 	ExtrasCustomLinksUpdate(params *ExtrasCustomLinksUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomLinksUpdateOK, error)
 
-	ExtrasExportTemplatesBulkDelete(params *ExtrasExportTemplatesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasExportTemplatesBulkDeleteNoContent, error)
-
-	ExtrasExportTemplatesBulkPartialUpdate(params *ExtrasExportTemplatesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasExportTemplatesBulkPartialUpdateOK, error)
-
-	ExtrasExportTemplatesBulkUpdate(params *ExtrasExportTemplatesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasExportTemplatesBulkUpdateOK, error)
-
 	ExtrasExportTemplatesCreate(params *ExtrasExportTemplatesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasExportTemplatesCreateCreated, error)
 
 	ExtrasExportTemplatesDelete(params *ExtrasExportTemplatesDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasExportTemplatesDeleteNoContent, error)
@@ -136,12 +112,6 @@ type ClientService interface {
 	ExtrasExportTemplatesRead(params *ExtrasExportTemplatesReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasExportTemplatesReadOK, error)
 
 	ExtrasExportTemplatesUpdate(params *ExtrasExportTemplatesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasExportTemplatesUpdateOK, error)
-
-	ExtrasImageAttachmentsBulkDelete(params *ExtrasImageAttachmentsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasImageAttachmentsBulkDeleteNoContent, error)
-
-	ExtrasImageAttachmentsBulkPartialUpdate(params *ExtrasImageAttachmentsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasImageAttachmentsBulkPartialUpdateOK, error)
-
-	ExtrasImageAttachmentsBulkUpdate(params *ExtrasImageAttachmentsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasImageAttachmentsBulkUpdateOK, error)
 
 	ExtrasImageAttachmentsCreate(params *ExtrasImageAttachmentsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasImageAttachmentsCreateCreated, error)
 
@@ -158,12 +128,6 @@ type ClientService interface {
 	ExtrasJobResultsList(params *ExtrasJobResultsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasJobResultsListOK, error)
 
 	ExtrasJobResultsRead(params *ExtrasJobResultsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasJobResultsReadOK, error)
-
-	ExtrasJournalEntriesBulkDelete(params *ExtrasJournalEntriesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasJournalEntriesBulkDeleteNoContent, error)
-
-	ExtrasJournalEntriesBulkPartialUpdate(params *ExtrasJournalEntriesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasJournalEntriesBulkPartialUpdateOK, error)
-
-	ExtrasJournalEntriesBulkUpdate(params *ExtrasJournalEntriesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasJournalEntriesBulkUpdateOK, error)
 
 	ExtrasJournalEntriesCreate(params *ExtrasJournalEntriesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasJournalEntriesCreateCreated, error)
 
@@ -187,12 +151,6 @@ type ClientService interface {
 
 	ExtrasReportsRun(params *ExtrasReportsRunParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasReportsRunCreated, error)
 
-	ExtrasSavedFiltersBulkDelete(params *ExtrasSavedFiltersBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasSavedFiltersBulkDeleteNoContent, error)
-
-	ExtrasSavedFiltersBulkPartialUpdate(params *ExtrasSavedFiltersBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasSavedFiltersBulkPartialUpdateOK, error)
-
-	ExtrasSavedFiltersBulkUpdate(params *ExtrasSavedFiltersBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasSavedFiltersBulkUpdateOK, error)
-
 	ExtrasSavedFiltersCreate(params *ExtrasSavedFiltersCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasSavedFiltersCreateCreated, error)
 
 	ExtrasSavedFiltersDelete(params *ExtrasSavedFiltersDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasSavedFiltersDeleteNoContent, error)
@@ -209,12 +167,6 @@ type ClientService interface {
 
 	ExtrasScriptsRead(params *ExtrasScriptsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasScriptsReadOK, error)
 
-	ExtrasTagsBulkDelete(params *ExtrasTagsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasTagsBulkDeleteNoContent, error)
-
-	ExtrasTagsBulkPartialUpdate(params *ExtrasTagsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasTagsBulkPartialUpdateOK, error)
-
-	ExtrasTagsBulkUpdate(params *ExtrasTagsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasTagsBulkUpdateOK, error)
-
 	ExtrasTagsCreate(params *ExtrasTagsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasTagsCreateCreated, error)
 
 	ExtrasTagsDelete(params *ExtrasTagsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasTagsDeleteNoContent, error)
@@ -226,12 +178,6 @@ type ClientService interface {
 	ExtrasTagsRead(params *ExtrasTagsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasTagsReadOK, error)
 
 	ExtrasTagsUpdate(params *ExtrasTagsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasTagsUpdateOK, error)
-
-	ExtrasWebhooksBulkDelete(params *ExtrasWebhooksBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasWebhooksBulkDeleteNoContent, error)
-
-	ExtrasWebhooksBulkPartialUpdate(params *ExtrasWebhooksBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasWebhooksBulkPartialUpdateOK, error)
-
-	ExtrasWebhooksBulkUpdate(params *ExtrasWebhooksBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasWebhooksBulkUpdateOK, error)
 
 	ExtrasWebhooksCreate(params *ExtrasWebhooksCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasWebhooksCreateCreated, error)
 
@@ -246,120 +192,6 @@ type ClientService interface {
 	ExtrasWebhooksUpdate(params *ExtrasWebhooksUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasWebhooksUpdateOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
-}
-
-/*
-ExtrasConfigContextsBulkDelete extras config contexts bulk delete API
-*/
-func (a *Client) ExtrasConfigContextsBulkDelete(params *ExtrasConfigContextsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasConfigContextsBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewExtrasConfigContextsBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "extras_config-contexts_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/extras/config-contexts/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &ExtrasConfigContextsBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*ExtrasConfigContextsBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*ExtrasConfigContextsBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-ExtrasConfigContextsBulkPartialUpdate extras config contexts bulk partial update API
-*/
-func (a *Client) ExtrasConfigContextsBulkPartialUpdate(params *ExtrasConfigContextsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasConfigContextsBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewExtrasConfigContextsBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "extras_config-contexts_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/extras/config-contexts/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &ExtrasConfigContextsBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*ExtrasConfigContextsBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*ExtrasConfigContextsBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-ExtrasConfigContextsBulkUpdate extras config contexts bulk update API
-*/
-func (a *Client) ExtrasConfigContextsBulkUpdate(params *ExtrasConfigContextsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasConfigContextsBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewExtrasConfigContextsBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "extras_config-contexts_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/extras/config-contexts/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &ExtrasConfigContextsBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*ExtrasConfigContextsBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*ExtrasConfigContextsBulkUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
 /*
@@ -1009,120 +841,6 @@ func (a *Client) ExtrasCustomFieldChoiceSetsUpdate(params *ExtrasCustomFieldChoi
 }
 
 /*
-ExtrasCustomFieldsBulkDelete extras custom fields bulk delete API
-*/
-func (a *Client) ExtrasCustomFieldsBulkDelete(params *ExtrasCustomFieldsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldsBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewExtrasCustomFieldsBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "extras_custom-fields_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/extras/custom-fields/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &ExtrasCustomFieldsBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*ExtrasCustomFieldsBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*ExtrasCustomFieldsBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-ExtrasCustomFieldsBulkPartialUpdate extras custom fields bulk partial update API
-*/
-func (a *Client) ExtrasCustomFieldsBulkPartialUpdate(params *ExtrasCustomFieldsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldsBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewExtrasCustomFieldsBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "extras_custom-fields_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/extras/custom-fields/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &ExtrasCustomFieldsBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*ExtrasCustomFieldsBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*ExtrasCustomFieldsBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-ExtrasCustomFieldsBulkUpdate extras custom fields bulk update API
-*/
-func (a *Client) ExtrasCustomFieldsBulkUpdate(params *ExtrasCustomFieldsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldsBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewExtrasCustomFieldsBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "extras_custom-fields_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/extras/custom-fields/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &ExtrasCustomFieldsBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*ExtrasCustomFieldsBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*ExtrasCustomFieldsBulkUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
 ExtrasCustomFieldsCreate extras custom fields create API
 */
 func (a *Client) ExtrasCustomFieldsCreate(params *ExtrasCustomFieldsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldsCreateCreated, error) {
@@ -1347,120 +1065,6 @@ func (a *Client) ExtrasCustomFieldsUpdate(params *ExtrasCustomFieldsUpdateParams
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*ExtrasCustomFieldsUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-ExtrasCustomLinksBulkDelete extras custom links bulk delete API
-*/
-func (a *Client) ExtrasCustomLinksBulkDelete(params *ExtrasCustomLinksBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomLinksBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewExtrasCustomLinksBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "extras_custom-links_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/extras/custom-links/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &ExtrasCustomLinksBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*ExtrasCustomLinksBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*ExtrasCustomLinksBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-ExtrasCustomLinksBulkPartialUpdate extras custom links bulk partial update API
-*/
-func (a *Client) ExtrasCustomLinksBulkPartialUpdate(params *ExtrasCustomLinksBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomLinksBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewExtrasCustomLinksBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "extras_custom-links_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/extras/custom-links/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &ExtrasCustomLinksBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*ExtrasCustomLinksBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*ExtrasCustomLinksBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-ExtrasCustomLinksBulkUpdate extras custom links bulk update API
-*/
-func (a *Client) ExtrasCustomLinksBulkUpdate(params *ExtrasCustomLinksBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomLinksBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewExtrasCustomLinksBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "extras_custom-links_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/extras/custom-links/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &ExtrasCustomLinksBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*ExtrasCustomLinksBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*ExtrasCustomLinksBulkUpdateDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -1693,120 +1297,6 @@ func (a *Client) ExtrasCustomLinksUpdate(params *ExtrasCustomLinksUpdateParams, 
 }
 
 /*
-ExtrasExportTemplatesBulkDelete extras export templates bulk delete API
-*/
-func (a *Client) ExtrasExportTemplatesBulkDelete(params *ExtrasExportTemplatesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasExportTemplatesBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewExtrasExportTemplatesBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "extras_export-templates_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/extras/export-templates/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &ExtrasExportTemplatesBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*ExtrasExportTemplatesBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*ExtrasExportTemplatesBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-ExtrasExportTemplatesBulkPartialUpdate extras export templates bulk partial update API
-*/
-func (a *Client) ExtrasExportTemplatesBulkPartialUpdate(params *ExtrasExportTemplatesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasExportTemplatesBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewExtrasExportTemplatesBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "extras_export-templates_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/extras/export-templates/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &ExtrasExportTemplatesBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*ExtrasExportTemplatesBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*ExtrasExportTemplatesBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-ExtrasExportTemplatesBulkUpdate extras export templates bulk update API
-*/
-func (a *Client) ExtrasExportTemplatesBulkUpdate(params *ExtrasExportTemplatesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasExportTemplatesBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewExtrasExportTemplatesBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "extras_export-templates_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/extras/export-templates/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &ExtrasExportTemplatesBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*ExtrasExportTemplatesBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*ExtrasExportTemplatesBulkUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
 ExtrasExportTemplatesCreate extras export templates create API
 */
 func (a *Client) ExtrasExportTemplatesCreate(params *ExtrasExportTemplatesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasExportTemplatesCreateCreated, error) {
@@ -2031,120 +1521,6 @@ func (a *Client) ExtrasExportTemplatesUpdate(params *ExtrasExportTemplatesUpdate
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*ExtrasExportTemplatesUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-ExtrasImageAttachmentsBulkDelete extras image attachments bulk delete API
-*/
-func (a *Client) ExtrasImageAttachmentsBulkDelete(params *ExtrasImageAttachmentsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasImageAttachmentsBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewExtrasImageAttachmentsBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "extras_image-attachments_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/extras/image-attachments/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &ExtrasImageAttachmentsBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*ExtrasImageAttachmentsBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*ExtrasImageAttachmentsBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-ExtrasImageAttachmentsBulkPartialUpdate extras image attachments bulk partial update API
-*/
-func (a *Client) ExtrasImageAttachmentsBulkPartialUpdate(params *ExtrasImageAttachmentsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasImageAttachmentsBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewExtrasImageAttachmentsBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "extras_image-attachments_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/extras/image-attachments/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &ExtrasImageAttachmentsBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*ExtrasImageAttachmentsBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*ExtrasImageAttachmentsBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-ExtrasImageAttachmentsBulkUpdate extras image attachments bulk update API
-*/
-func (a *Client) ExtrasImageAttachmentsBulkUpdate(params *ExtrasImageAttachmentsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasImageAttachmentsBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewExtrasImageAttachmentsBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "extras_image-attachments_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/extras/image-attachments/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &ExtrasImageAttachmentsBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*ExtrasImageAttachmentsBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*ExtrasImageAttachmentsBulkUpdateDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -2449,120 +1825,6 @@ func (a *Client) ExtrasJobResultsRead(params *ExtrasJobResultsReadParams, authIn
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*ExtrasJobResultsReadDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-ExtrasJournalEntriesBulkDelete extras journal entries bulk delete API
-*/
-func (a *Client) ExtrasJournalEntriesBulkDelete(params *ExtrasJournalEntriesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasJournalEntriesBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewExtrasJournalEntriesBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "extras_journal-entries_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/extras/journal-entries/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &ExtrasJournalEntriesBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*ExtrasJournalEntriesBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*ExtrasJournalEntriesBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-ExtrasJournalEntriesBulkPartialUpdate extras journal entries bulk partial update API
-*/
-func (a *Client) ExtrasJournalEntriesBulkPartialUpdate(params *ExtrasJournalEntriesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasJournalEntriesBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewExtrasJournalEntriesBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "extras_journal-entries_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/extras/journal-entries/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &ExtrasJournalEntriesBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*ExtrasJournalEntriesBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*ExtrasJournalEntriesBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-ExtrasJournalEntriesBulkUpdate extras journal entries bulk update API
-*/
-func (a *Client) ExtrasJournalEntriesBulkUpdate(params *ExtrasJournalEntriesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasJournalEntriesBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewExtrasJournalEntriesBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "extras_journal-entries_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/extras/journal-entries/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &ExtrasJournalEntriesBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*ExtrasJournalEntriesBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*ExtrasJournalEntriesBulkUpdateDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -2985,120 +2247,6 @@ func (a *Client) ExtrasReportsRun(params *ExtrasReportsRunParams, authInfo runti
 }
 
 /*
-ExtrasSavedFiltersBulkDelete extras saved filters bulk delete API
-*/
-func (a *Client) ExtrasSavedFiltersBulkDelete(params *ExtrasSavedFiltersBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasSavedFiltersBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewExtrasSavedFiltersBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "extras_saved-filters_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/extras/saved-filters/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &ExtrasSavedFiltersBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*ExtrasSavedFiltersBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*ExtrasSavedFiltersBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-ExtrasSavedFiltersBulkPartialUpdate extras saved filters bulk partial update API
-*/
-func (a *Client) ExtrasSavedFiltersBulkPartialUpdate(params *ExtrasSavedFiltersBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasSavedFiltersBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewExtrasSavedFiltersBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "extras_saved-filters_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/extras/saved-filters/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &ExtrasSavedFiltersBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*ExtrasSavedFiltersBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*ExtrasSavedFiltersBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-ExtrasSavedFiltersBulkUpdate extras saved filters bulk update API
-*/
-func (a *Client) ExtrasSavedFiltersBulkUpdate(params *ExtrasSavedFiltersBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasSavedFiltersBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewExtrasSavedFiltersBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "extras_saved-filters_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/extras/saved-filters/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &ExtrasSavedFiltersBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*ExtrasSavedFiltersBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*ExtrasSavedFiltersBulkUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
 ExtrasSavedFiltersCreate extras saved filters create API
 */
 func (a *Client) ExtrasSavedFiltersCreate(params *ExtrasSavedFiltersCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasSavedFiltersCreateCreated, error) {
@@ -3403,120 +2551,6 @@ func (a *Client) ExtrasScriptsRead(params *ExtrasScriptsReadParams, authInfo run
 }
 
 /*
-ExtrasTagsBulkDelete extras tags bulk delete API
-*/
-func (a *Client) ExtrasTagsBulkDelete(params *ExtrasTagsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasTagsBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewExtrasTagsBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "extras_tags_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/extras/tags/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &ExtrasTagsBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*ExtrasTagsBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*ExtrasTagsBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-ExtrasTagsBulkPartialUpdate extras tags bulk partial update API
-*/
-func (a *Client) ExtrasTagsBulkPartialUpdate(params *ExtrasTagsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasTagsBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewExtrasTagsBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "extras_tags_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/extras/tags/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &ExtrasTagsBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*ExtrasTagsBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*ExtrasTagsBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-ExtrasTagsBulkUpdate extras tags bulk update API
-*/
-func (a *Client) ExtrasTagsBulkUpdate(params *ExtrasTagsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasTagsBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewExtrasTagsBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "extras_tags_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/extras/tags/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &ExtrasTagsBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*ExtrasTagsBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*ExtrasTagsBulkUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
 ExtrasTagsCreate extras tags create API
 */
 func (a *Client) ExtrasTagsCreate(params *ExtrasTagsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasTagsCreateCreated, error) {
@@ -3741,120 +2775,6 @@ func (a *Client) ExtrasTagsUpdate(params *ExtrasTagsUpdateParams, authInfo runti
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*ExtrasTagsUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-ExtrasWebhooksBulkDelete extras webhooks bulk delete API
-*/
-func (a *Client) ExtrasWebhooksBulkDelete(params *ExtrasWebhooksBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasWebhooksBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewExtrasWebhooksBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "extras_webhooks_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/extras/webhooks/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &ExtrasWebhooksBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*ExtrasWebhooksBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*ExtrasWebhooksBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-ExtrasWebhooksBulkPartialUpdate extras webhooks bulk partial update API
-*/
-func (a *Client) ExtrasWebhooksBulkPartialUpdate(params *ExtrasWebhooksBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasWebhooksBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewExtrasWebhooksBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "extras_webhooks_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/extras/webhooks/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &ExtrasWebhooksBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*ExtrasWebhooksBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*ExtrasWebhooksBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-ExtrasWebhooksBulkUpdate extras webhooks bulk update API
-*/
-func (a *Client) ExtrasWebhooksBulkUpdate(params *ExtrasWebhooksBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasWebhooksBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewExtrasWebhooksBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "extras_webhooks_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/extras/webhooks/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &ExtrasWebhooksBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*ExtrasWebhooksBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*ExtrasWebhooksBulkUpdateDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 

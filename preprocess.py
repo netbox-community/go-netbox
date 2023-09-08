@@ -10,11 +10,291 @@ logger = logging.getLogger(__name__)
 
 source_file = "swagger.json"
 
-# First, add a default response to all api calls. If these do not exists, we get no error messages from the API.
-# This implements https://github.com/netbox-community/go-netbox/commit/674aa060f07457c7dccfc0597e35899448668ef5
 with open(source_file, "r") as readfile:
     data = json.load(readfile)
 
+# Remove unused bulk endpoints
+for path, path_spec in data["paths"].items():
+    logging.debug("checking path: " + path)
+    todeletes = []
+    for verb, verb_spec in path_spec.items():
+        if ("operationId" in verb_spec and "bulk" in verb_spec["operationId"]) and (
+            verb != "parameters"
+        ):
+            todeletes.append(verb)
+            logging.info(f"delete {verb} {path}")
+    for todelete in todeletes:
+        del data["paths"][path][todelete]
+
+# Add custom field choice set model
+logging.info("Add custom field choice set model")
+data["definitions"]["CustomFieldChoiceSet"] = {
+    "required": ["name"],
+    "type": "object",
+    "properties": {
+        "id": {"title": "ID", "type": "integer", "readOnly": True},
+        "url": {"title": "Url", "type": "string", "format": "uri", "readOnly": True},
+        "display": {"title": "Display", "type": "string", "readOnly": True},
+        "name": {
+            "title": "Name",
+            "description": "Internal field name",
+            "type": "string",
+            "pattern": "^[a-z0-9_]+$",
+            "maxLength": 100,
+            "minLength": 1,
+        },
+        "description": {"title": "Description", "type": "string", "maxLength": 200},
+        "description": {"title": "Description", "type": "string", "maxLength": 200},
+        "base_choices": {
+            "title": "Base choices",
+            "type": "object",
+            "properties": {
+                "value": {
+                    "type": "string",
+                    "enum": ["IATA", "ISO_3166", "UN_LOCODE"],
+                    "description": "* `IATA` - IATA (Airport codes) * `ISO_3166` - ISO 3166 (Country codes) * `UN_LOCODE` - UN/LOCODE (Location codes)",
+                },
+                "label": {
+                    "type": "string",
+                    "enum": [
+                        "IATA (Airport codes)",
+                        "ISO 3166 (Country codes)",
+                        "UN/LOCODE (Location codes)",
+                    ],
+                },
+            },
+        },
+        "extra_choices": {
+            "type": "array",
+            "items": {
+                "type": "array",
+                "items": {"type": "string", "title": "Extra choices", "maxLength": 100},
+            },
+            "x-nullable": True,
+        },
+        "order_alphabetically": {
+            "title": "Order alphabetically",
+            "description": "Choices are automatically ordered alphabetically",
+            "type": "boolean",
+        },
+        "choices_count": {
+            "title": "Choices count",
+            "type": "integer",
+            "readOnly": True,
+        },
+        "created": {
+            "title": "Created",
+            "type": "string",
+            "format": "date-time",
+            "readOnly": True,
+            "x-nullable": True,
+        },
+        "last_updated": {
+            "title": "Last updated",
+            "type": "string",
+            "format": "date-time",
+            "readOnly": True,
+            "x-nullable": True,
+        },
+    },
+}
+
+
+# Add custom field choice set paths
+logging.info("Add custom field choice set paths")
+data["paths"]["/extras/custom-field-choice-sets/"] = {
+    "get": {
+        "operationId": "extras_custom-field-choice-sets_list",
+        "description": "Get a list of custom field choice set objects.",
+        "parameters": [
+            {
+                "name": "id",
+                "in": "query",
+                "description": "",
+                "required": False,
+                "type": "string",
+            },
+            {
+                "name": "limit",
+                "in": "query",
+                "description": "Number of results to return per page.",
+                "required": False,
+                "type": "integer",
+            },
+            {
+                "name": "offset",
+                "in": "query",
+                "description": "The initial index from which to return the results.",
+                "required": False,
+                "type": "integer",
+            },
+        ],
+        "responses": {
+            "200": {
+                "description": "",
+                "schema": {
+                    "required": ["count", "results"],
+                    "type": "object",
+                    "properties": {
+                        "count": {"type": "integer"},
+                        "next": {
+                            "type": "string",
+                            "format": "uri",
+                            "x-nullable": True,
+                        },
+                        "previous": {
+                            "type": "string",
+                            "format": "uri",
+                            "x-nullable": True,
+                        },
+                        "results": {
+                            "type": "array",
+                            "items": {"$ref": "#/definitions/CustomFieldChoiceSet"},
+                        },
+                    },
+                },
+            }
+        },
+        "tags": ["extras"],
+    },
+    "post": {
+        "operationId": "extras_custom-field-choice-sets_create",
+        "description": "Post a list of custom field choice set objects.",
+        "parameters": [
+            {
+                "name": "data",
+                "in": "body",
+                "required": True,
+                "schema": {"$ref": "#/definitions/CustomFieldChoiceSet"},
+            }
+        ],
+        "responses": {
+            "201": {
+                "description": "",
+                "schema": {"$ref": "#/definitions/CustomFieldChoiceSet"},
+            }
+        },
+        "tags": ["extras"],
+    },
+    "put": {
+        "operationId": "extras_custom-field-choice-sets_bulk_update",
+        "description": "Put a list of custom field choice set objects.",
+        "parameters": [
+            {
+                "name": "data",
+                "in": "body",
+                "required": True,
+                "schema": {"$ref": "#/definitions/CustomFieldChoiceSet"},
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "",
+                "schema": {"$ref": "#/definitions/CustomFieldChoiceSet"},
+            }
+        },
+        "tags": ["extras"],
+    },
+    "patch": {
+        "operationId": "extras_custom-field-choice-sets_bulk_partial_update",
+        "description": "Patch a list of custom field choice set objects.",
+        "parameters": [
+            {
+                "name": "data",
+                "in": "body",
+                "required": True,
+                "schema": {"$ref": "#/definitions/CustomFieldChoiceSet"},
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "",
+                "schema": {"$ref": "#/definitions/CustomFieldChoiceSet"},
+            }
+        },
+        "tags": ["extras"],
+    },
+    "delete": {
+        "operationId": "extras_custom-field-choice-sets_bulk_delete",
+        "description": "Delete a list of custom field choice set objects.",
+        "parameters": [],
+        "responses": {"204": {"description": ""}},
+        "tags": ["extras"],
+    },
+    "parameters": [],
+}
+
+data["paths"]["/extras/custom-field-choice-sets/{id}/"] = {
+    "get": {
+        "operationId": "extras_custom-field-choice-sets_read",
+        "description": "Get a custom field choice set object.",
+        "parameters": [],
+        "responses": {
+            "200": {
+                "description": "",
+                "schema": {"$ref": "#/definitions/CustomFieldChoiceSet"},
+            }
+        },
+        "tags": ["extras"],
+    },
+    "put": {
+        "operationId": "extras_custom-field-choice-sets_update",
+        "description": "Put a custom field choice set object.",
+        "parameters": [
+            {
+                "name": "data",
+                "in": "body",
+                "required": True,
+                "schema": {"$ref": "#/definitions/CustomFieldChoiceSet"},
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "",
+                "schema": {"$ref": "#/definitions/CustomFieldChoiceSet"},
+            }
+        },
+        "tags": ["extras"],
+    },
+    "patch": {
+        "operationId": "extras_custom-field-choice-sets_partial_update",
+        "description": "Patch a custom field choice set object.",
+        "parameters": [
+            {
+                "name": "data",
+                "in": "body",
+                "required": True,
+                "schema": {"$ref": "#/definitions/CustomFieldChoiceSet"},
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "",
+                "schema": {"$ref": "#/definitions/CustomFieldChoiceSet"},
+            }
+        },
+        "tags": ["extras"],
+    },
+    "delete": {
+        "operationId": "extras_custom-field-choice-sets_delete",
+        "description": "Delete a custom field choice set object.",
+        "parameters": [],
+        "responses": {"204": {"description": ""}},
+        "tags": ["extras"],
+    },
+    "parameters": [
+        {
+            "name": "id",
+            "in": "path",
+            "description": "A unique integer value identifying this custom field.",
+            "required": True,
+            "type": "integer",
+        }
+    ],
+}
+
+# Add a default response to all api calls. If these do not exists, we get no error messages from the API.
+# This implements https://github.com/netbox-community/go-netbox/commit/674aa060f07457c7dccfc0597e35899448668ef5
 default_response = {
     "description": "",
     "schema": {"type": "object", "additionalProperties": True},
@@ -55,34 +335,7 @@ for path, path_spec in data["paths"].items():
                         "collectionFormat": "multi",
                     }
 
-# Second, fix the config contexts and local context data to our needs
-# This implements https://github.com/fbreckle/go-netbox/commit/987669a91daf2d04a155feaf032a24ed684169b7 and https://github.com/fbreckle/go-netbox/commit/030637bab4bb25cec173035cd2d4a78fb3f47053
-# for definition, definition_spec in data["definitions"].items():
-#    for prop, prop_spec in definition_spec["properties"].items():
-#        # for config_context, change additionalProperties.type from string to object
-#        if prop == "config_context":
-#            if prop_spec["additionalProperties"]["type"] == "string":
-#                logging.debug(
-#                    f"{definition}.{prop}.additionalProperties.type == string"
-#                )
-#                logging.debug("before: " + str(prop_spec))
-#                prop_spec["additionalProperties"] = {"type": "object"}
-#                logging.debug("after: " + str(prop_spec))
-#                logging.info(f"fixed {definition}.{prop}")
-#
-#        # for local_context_data, change type from string to object
-#        # and add additionalProperties with type object
-#        if prop == "local_context_data":
-#            if prop_spec["type"] == "string":
-#                logging.debug(f"{definition}.{prop}.type == string")
-#                logging.debug("before: " + str(prop_spec))
-#                prop_spec["type"] = "object"
-#                prop_spec["additionalProperties"] = {"type": "object"}
-#                logging.debug("after: " + str(prop_spec))
-#                logging.info(f"fixed {definition}.{prop}")
-
-
-# Third, allow unsetting some optional attributes
+# Allow unsetting some optional attributes
 # This implements https://github.com/fbreckle/go-netbox/commit/23f80e06cb3da6f0fd9974a2d986c09826e518b5
 for prop, prop_spec in data["definitions"]["WritableIPAddress"]["properties"].items():
     if (
@@ -168,7 +421,7 @@ for prop, prop_spec in data["definitions"]["WritableVirtualMachineWithConfigCont
             f"set x-omitempty = false on WritableVirtualMachineWithConfigContext.{prop}"
         )
 
-# Fourth, add schema for the 200 response of the /status/ endpoint
+# Add schema for the 200 response of the /status/ endpoint
 data["paths"]["/status/"]["get"]["responses"]["200"]["schema"] = {
     "type": "object",
     "additionalProperties": True,
@@ -295,273 +548,6 @@ data["paths"]["/ipam/prefixes/{id}/available-prefixes/"]["post"]["responses"]["2
 # ASNs now have a full RIR object, not just a rir id
 logging.info("Make ASN.rir a full RIR object")
 data["definitions"]["ASN"]["properties"]["rir"] = {"$ref": "#/definitions/NestedRIR"}
-
-# Add custom field choice set model
-logging.info("Add custom field choice set model")
-data["definitions"]["CustomFieldChoiceSet"] = {
-    "required": ["name"],
-    "type": "object",
-    "properties": {
-        "id": {"title": "ID", "type": "integer", "readOnly": True},
-        "url": {"title": "Url", "type": "string", "format": "uri", "readOnly": True},
-        "display": {"title": "Display", "type": "string", "readOnly": True},
-        "name": {
-            "title": "Name",
-            "description": "Internal field name",
-            "type": "string",
-            "pattern": "^[a-z0-9_]+$",
-            "maxLength": 100,
-            "minLength": 1,
-        },
-        "description": {"title": "Description", "type": "string", "maxLength": 200},
-        "description": {"title": "Description", "type": "string", "maxLength": 200},
-        "base_choices": {
-            "title": "Base choices",
-            "type": "object",
-            "properties": {
-                "value": {
-                    "type": "string",
-                    "enum": ["IATA", "ISO_3166", "UN_LOCODE"],
-                    "description": "* `IATA` - IATA (Airport codes) * `ISO_3166` - ISO 3166 (Country codes) * `UN_LOCODE` - UN/LOCODE (Location codes)",
-                },
-                "label": {
-                    "type": "string",
-                    "enum": [
-                        "IATA (Airport codes)",
-                        "ISO 3166 (Country codes)",
-                        "UN/LOCODE (Location codes)",
-                    ],
-                },
-            },
-        },
-        "extra_choices": {
-            "type": "array",
-            "items": {
-                "type": "array",
-                "items": {"type": "string", "title": "Extra choices", "maxLength": 100},
-            },
-            "x-nullable": True,
-        },
-        "order_alphabetically": {
-            "title": "Order alphabetically",
-            "description": "Choices are automatically ordered alphabetically",
-            "type": "boolean",
-        },
-        "choices_count": {
-            "title": "Choices count",
-            "type": "integer",
-            "readOnly": True,
-        },
-        "created": {
-            "title": "Created",
-            "type": "string",
-            "format": "date-time",
-            "readOnly": True,
-            "x-nullable": True,
-        },
-        "last_updated": {
-            "title": "Last updated",
-            "type": "string",
-            "format": "date-time",
-            "readOnly": True,
-            "x-nullable": True,
-        },
-    },
-}
-
-
-# Add custom field choice set paths
-logging.info("Add custom field choice set paths")
-data["paths"]["/extras/custom-field-choice-sets/"] = {
-    "get": {
-        "operationId": "extras_custom_field_choice_sets_list",
-        "description": "Get a list of custom field choice set objects.",
-        "parameters": [
-            {
-                "name": "id",
-                "in": "query",
-                "description": "",
-                "required": False,
-                "type": "string",
-            },
-            {
-                "name": "limit",
-                "in": "query",
-                "description": "Number of results to return per page.",
-                "required": False,
-                "type": "integer",
-            },
-            {
-                "name": "offset",
-                "in": "query",
-                "description": "The initial index from which to return the results.",
-                "required": False,
-                "type": "integer",
-            },
-        ],
-        "responses": {
-            "200": {
-                "description": "",
-                "schema": {
-                    "required": ["count", "results"],
-                    "type": "object",
-                    "properties": {
-                        "count": {"type": "integer"},
-                        "next": {
-                            "type": "string",
-                            "format": "uri",
-                            "x-nullable": True,
-                        },
-                        "previous": {
-                            "type": "string",
-                            "format": "uri",
-                            "x-nullable": True,
-                        },
-                        "results": {
-                            "type": "array",
-                            "items": {"$ref": "#/definitions/CustomFieldChoiceSet"},
-                        },
-                    },
-                },
-            }
-        },
-        "tags": ["extras"],
-    },
-    "post": {
-        "operationId": "extras_custom_field_choice_sets_create",
-        "description": "Post a list of custom field choice set objects.",
-        "parameters": [
-            {
-                "name": "data",
-                "in": "body",
-                "required": True,
-                "schema": {"$ref": "#/definitions/CustomFieldChoiceSet"},
-            }
-        ],
-        "responses": {
-            "201": {
-                "description": "",
-                "schema": {"$ref": "#/definitions/CustomFieldChoiceSet"},
-            }
-        },
-        "tags": ["extras"],
-    },
-    "put": {
-        "operationId": "extras_custom_field_choice_sets_bulk_update",
-        "description": "Put a list of custom field choice set objects.",
-        "parameters": [
-            {
-                "name": "data",
-                "in": "body",
-                "required": True,
-                "schema": {"$ref": "#/definitions/CustomFieldChoiceSet"},
-            }
-        ],
-        "responses": {
-            "200": {
-                "description": "",
-                "schema": {"$ref": "#/definitions/CustomFieldChoiceSet"},
-            }
-        },
-        "tags": ["extras"],
-    },
-    "patch": {
-        "operationId": "extras_custom_field_choice_sets_bulk_partial_update",
-        "description": "Patch a list of custom field choice set objects.",
-        "parameters": [
-            {
-                "name": "data",
-                "in": "body",
-                "required": True,
-                "schema": {"$ref": "#/definitions/CustomFieldChoiceSet"},
-            }
-        ],
-        "responses": {
-            "200": {
-                "description": "",
-                "schema": {"$ref": "#/definitions/CustomFieldChoiceSet"},
-            }
-        },
-        "tags": ["extras"],
-    },
-    "delete": {
-        "operationId": "extras_custom_field_choice_sets_bulk_destroy",
-        "description": "Delete a list of custom field choice set objects.",
-        "parameters": [],
-        "responses": {"204": {"description": ""}},
-        "tags": ["extras"],
-    },
-    "parameters": [],
-}
-
-data["paths"]["/extras/custom-field-choice-sets/{id}/"] = {
-    "get": {
-        "operationId": "extras_custom_field_choice_sets_read",
-        "description": "Get a custom field choice set object.",
-        "parameters": [],
-        "responses": {
-            "200": {
-                "description": "",
-                "schema": {"$ref": "#/definitions/CustomFieldChoiceSet"},
-            }
-        },
-        "tags": ["extras"],
-    },
-    "put": {
-        "operationId": "extras_custom_field_choice_sets_update",
-        "description": "Put a custom field choice set object.",
-        "parameters": [
-            {
-                "name": "data",
-                "in": "body",
-                "required": True,
-                "schema": {"$ref": "#/definitions/CustomFieldChoiceSet"},
-            }
-        ],
-        "responses": {
-            "200": {
-                "description": "",
-                "schema": {"$ref": "#/definitions/CustomFieldChoiceSet"},
-            }
-        },
-        "tags": ["extras"],
-    },
-    "patch": {
-        "operationId": "extras_custom_field_choice_sets_partial_update",
-        "description": "Patch a custom field choice set object.",
-        "parameters": [
-            {
-                "name": "data",
-                "in": "body",
-                "required": True,
-                "schema": {"$ref": "#/definitions/CustomFieldChoiceSet"},
-            }
-        ],
-        "responses": {
-            "200": {
-                "description": "",
-                "schema": {"$ref": "#/definitions/CustomFieldChoiceSet"},
-            }
-        },
-        "tags": ["extras"],
-    },
-    "delete": {
-        "operationId": "extras_custom_field_choice_sets_destroy",
-        "description": "Delete a custom field choice set object.",
-        "parameters": [],
-        "responses": {"204": {"description": ""}},
-        "tags": ["extras"],
-    },
-    "parameters": [
-        {
-            "name": "id",
-            "in": "path",
-            "description": "A unique integer value identifying this custom field.",
-            "required": True,
-            "type": "integer",
-        }
-    ],
-}
 
 # Write output file
 with open("swagger.processed.json", "w") as writefile:

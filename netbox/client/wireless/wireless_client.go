@@ -43,12 +43,6 @@ type ClientOption func(*runtime.ClientOperation)
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	WirelessWirelessLanGroupsBulkDelete(params *WirelessWirelessLanGroupsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*WirelessWirelessLanGroupsBulkDeleteNoContent, error)
-
-	WirelessWirelessLanGroupsBulkPartialUpdate(params *WirelessWirelessLanGroupsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*WirelessWirelessLanGroupsBulkPartialUpdateOK, error)
-
-	WirelessWirelessLanGroupsBulkUpdate(params *WirelessWirelessLanGroupsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*WirelessWirelessLanGroupsBulkUpdateOK, error)
-
 	WirelessWirelessLanGroupsCreate(params *WirelessWirelessLanGroupsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*WirelessWirelessLanGroupsCreateCreated, error)
 
 	WirelessWirelessLanGroupsDelete(params *WirelessWirelessLanGroupsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*WirelessWirelessLanGroupsDeleteNoContent, error)
@@ -61,12 +55,6 @@ type ClientService interface {
 
 	WirelessWirelessLanGroupsUpdate(params *WirelessWirelessLanGroupsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*WirelessWirelessLanGroupsUpdateOK, error)
 
-	WirelessWirelessLansBulkDelete(params *WirelessWirelessLansBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*WirelessWirelessLansBulkDeleteNoContent, error)
-
-	WirelessWirelessLansBulkPartialUpdate(params *WirelessWirelessLansBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*WirelessWirelessLansBulkPartialUpdateOK, error)
-
-	WirelessWirelessLansBulkUpdate(params *WirelessWirelessLansBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*WirelessWirelessLansBulkUpdateOK, error)
-
 	WirelessWirelessLansCreate(params *WirelessWirelessLansCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*WirelessWirelessLansCreateCreated, error)
 
 	WirelessWirelessLansDelete(params *WirelessWirelessLansDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*WirelessWirelessLansDeleteNoContent, error)
@@ -78,12 +66,6 @@ type ClientService interface {
 	WirelessWirelessLansRead(params *WirelessWirelessLansReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*WirelessWirelessLansReadOK, error)
 
 	WirelessWirelessLansUpdate(params *WirelessWirelessLansUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*WirelessWirelessLansUpdateOK, error)
-
-	WirelessWirelessLinksBulkDelete(params *WirelessWirelessLinksBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*WirelessWirelessLinksBulkDeleteNoContent, error)
-
-	WirelessWirelessLinksBulkPartialUpdate(params *WirelessWirelessLinksBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*WirelessWirelessLinksBulkPartialUpdateOK, error)
-
-	WirelessWirelessLinksBulkUpdate(params *WirelessWirelessLinksBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*WirelessWirelessLinksBulkUpdateOK, error)
 
 	WirelessWirelessLinksCreate(params *WirelessWirelessLinksCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*WirelessWirelessLinksCreateCreated, error)
 
@@ -98,120 +80,6 @@ type ClientService interface {
 	WirelessWirelessLinksUpdate(params *WirelessWirelessLinksUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*WirelessWirelessLinksUpdateOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
-}
-
-/*
-WirelessWirelessLanGroupsBulkDelete wireless wireless lan groups bulk delete API
-*/
-func (a *Client) WirelessWirelessLanGroupsBulkDelete(params *WirelessWirelessLanGroupsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*WirelessWirelessLanGroupsBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewWirelessWirelessLanGroupsBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "wireless_wireless-lan-groups_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/wireless/wireless-lan-groups/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &WirelessWirelessLanGroupsBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*WirelessWirelessLanGroupsBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*WirelessWirelessLanGroupsBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-WirelessWirelessLanGroupsBulkPartialUpdate wireless wireless lan groups bulk partial update API
-*/
-func (a *Client) WirelessWirelessLanGroupsBulkPartialUpdate(params *WirelessWirelessLanGroupsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*WirelessWirelessLanGroupsBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewWirelessWirelessLanGroupsBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "wireless_wireless-lan-groups_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/wireless/wireless-lan-groups/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &WirelessWirelessLanGroupsBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*WirelessWirelessLanGroupsBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*WirelessWirelessLanGroupsBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-WirelessWirelessLanGroupsBulkUpdate wireless wireless lan groups bulk update API
-*/
-func (a *Client) WirelessWirelessLanGroupsBulkUpdate(params *WirelessWirelessLanGroupsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*WirelessWirelessLanGroupsBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewWirelessWirelessLanGroupsBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "wireless_wireless-lan-groups_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/wireless/wireless-lan-groups/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &WirelessWirelessLanGroupsBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*WirelessWirelessLanGroupsBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*WirelessWirelessLanGroupsBulkUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
 /*
@@ -443,120 +311,6 @@ func (a *Client) WirelessWirelessLanGroupsUpdate(params *WirelessWirelessLanGrou
 }
 
 /*
-WirelessWirelessLansBulkDelete wireless wireless lans bulk delete API
-*/
-func (a *Client) WirelessWirelessLansBulkDelete(params *WirelessWirelessLansBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*WirelessWirelessLansBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewWirelessWirelessLansBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "wireless_wireless-lans_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/wireless/wireless-lans/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &WirelessWirelessLansBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*WirelessWirelessLansBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*WirelessWirelessLansBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-WirelessWirelessLansBulkPartialUpdate wireless wireless lans bulk partial update API
-*/
-func (a *Client) WirelessWirelessLansBulkPartialUpdate(params *WirelessWirelessLansBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*WirelessWirelessLansBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewWirelessWirelessLansBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "wireless_wireless-lans_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/wireless/wireless-lans/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &WirelessWirelessLansBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*WirelessWirelessLansBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*WirelessWirelessLansBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-WirelessWirelessLansBulkUpdate wireless wireless lans bulk update API
-*/
-func (a *Client) WirelessWirelessLansBulkUpdate(params *WirelessWirelessLansBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*WirelessWirelessLansBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewWirelessWirelessLansBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "wireless_wireless-lans_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/wireless/wireless-lans/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &WirelessWirelessLansBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*WirelessWirelessLansBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*WirelessWirelessLansBulkUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
 WirelessWirelessLansCreate wireless wireless lans create API
 */
 func (a *Client) WirelessWirelessLansCreate(params *WirelessWirelessLansCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*WirelessWirelessLansCreateCreated, error) {
@@ -781,120 +535,6 @@ func (a *Client) WirelessWirelessLansUpdate(params *WirelessWirelessLansUpdatePa
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*WirelessWirelessLansUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-WirelessWirelessLinksBulkDelete wireless wireless links bulk delete API
-*/
-func (a *Client) WirelessWirelessLinksBulkDelete(params *WirelessWirelessLinksBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*WirelessWirelessLinksBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewWirelessWirelessLinksBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "wireless_wireless-links_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/wireless/wireless-links/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &WirelessWirelessLinksBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*WirelessWirelessLinksBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*WirelessWirelessLinksBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-WirelessWirelessLinksBulkPartialUpdate wireless wireless links bulk partial update API
-*/
-func (a *Client) WirelessWirelessLinksBulkPartialUpdate(params *WirelessWirelessLinksBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*WirelessWirelessLinksBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewWirelessWirelessLinksBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "wireless_wireless-links_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/wireless/wireless-links/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &WirelessWirelessLinksBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*WirelessWirelessLinksBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*WirelessWirelessLinksBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-WirelessWirelessLinksBulkUpdate wireless wireless links bulk update API
-*/
-func (a *Client) WirelessWirelessLinksBulkUpdate(params *WirelessWirelessLinksBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*WirelessWirelessLinksBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewWirelessWirelessLinksBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "wireless_wireless-links_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/wireless/wireless-links/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &WirelessWirelessLinksBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*WirelessWirelessLinksBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*WirelessWirelessLinksBulkUpdateDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 

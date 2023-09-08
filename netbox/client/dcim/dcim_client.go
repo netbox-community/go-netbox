@@ -43,12 +43,6 @@ type ClientOption func(*runtime.ClientOperation)
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	DcimCableTerminationsBulkDelete(params *DcimCableTerminationsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimCableTerminationsBulkDeleteNoContent, error)
-
-	DcimCableTerminationsBulkPartialUpdate(params *DcimCableTerminationsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimCableTerminationsBulkPartialUpdateOK, error)
-
-	DcimCableTerminationsBulkUpdate(params *DcimCableTerminationsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimCableTerminationsBulkUpdateOK, error)
-
 	DcimCableTerminationsCreate(params *DcimCableTerminationsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimCableTerminationsCreateCreated, error)
 
 	DcimCableTerminationsDelete(params *DcimCableTerminationsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimCableTerminationsDeleteNoContent, error)
@@ -60,12 +54,6 @@ type ClientService interface {
 	DcimCableTerminationsRead(params *DcimCableTerminationsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimCableTerminationsReadOK, error)
 
 	DcimCableTerminationsUpdate(params *DcimCableTerminationsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimCableTerminationsUpdateOK, error)
-
-	DcimCablesBulkDelete(params *DcimCablesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimCablesBulkDeleteNoContent, error)
-
-	DcimCablesBulkPartialUpdate(params *DcimCablesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimCablesBulkPartialUpdateOK, error)
-
-	DcimCablesBulkUpdate(params *DcimCablesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimCablesBulkUpdateOK, error)
 
 	DcimCablesCreate(params *DcimCablesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimCablesCreateCreated, error)
 
@@ -81,12 +69,6 @@ type ClientService interface {
 
 	DcimConnectedDeviceList(params *DcimConnectedDeviceListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConnectedDeviceListOK, error)
 
-	DcimConsolePortTemplatesBulkDelete(params *DcimConsolePortTemplatesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsolePortTemplatesBulkDeleteNoContent, error)
-
-	DcimConsolePortTemplatesBulkPartialUpdate(params *DcimConsolePortTemplatesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsolePortTemplatesBulkPartialUpdateOK, error)
-
-	DcimConsolePortTemplatesBulkUpdate(params *DcimConsolePortTemplatesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsolePortTemplatesBulkUpdateOK, error)
-
 	DcimConsolePortTemplatesCreate(params *DcimConsolePortTemplatesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsolePortTemplatesCreateCreated, error)
 
 	DcimConsolePortTemplatesDelete(params *DcimConsolePortTemplatesDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsolePortTemplatesDeleteNoContent, error)
@@ -98,12 +80,6 @@ type ClientService interface {
 	DcimConsolePortTemplatesRead(params *DcimConsolePortTemplatesReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsolePortTemplatesReadOK, error)
 
 	DcimConsolePortTemplatesUpdate(params *DcimConsolePortTemplatesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsolePortTemplatesUpdateOK, error)
-
-	DcimConsolePortsBulkDelete(params *DcimConsolePortsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsolePortsBulkDeleteNoContent, error)
-
-	DcimConsolePortsBulkPartialUpdate(params *DcimConsolePortsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsolePortsBulkPartialUpdateOK, error)
-
-	DcimConsolePortsBulkUpdate(params *DcimConsolePortsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsolePortsBulkUpdateOK, error)
 
 	DcimConsolePortsCreate(params *DcimConsolePortsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsolePortsCreateCreated, error)
 
@@ -119,12 +95,6 @@ type ClientService interface {
 
 	DcimConsolePortsUpdate(params *DcimConsolePortsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsolePortsUpdateOK, error)
 
-	DcimConsoleServerPortTemplatesBulkDelete(params *DcimConsoleServerPortTemplatesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsoleServerPortTemplatesBulkDeleteNoContent, error)
-
-	DcimConsoleServerPortTemplatesBulkPartialUpdate(params *DcimConsoleServerPortTemplatesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsoleServerPortTemplatesBulkPartialUpdateOK, error)
-
-	DcimConsoleServerPortTemplatesBulkUpdate(params *DcimConsoleServerPortTemplatesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsoleServerPortTemplatesBulkUpdateOK, error)
-
 	DcimConsoleServerPortTemplatesCreate(params *DcimConsoleServerPortTemplatesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsoleServerPortTemplatesCreateCreated, error)
 
 	DcimConsoleServerPortTemplatesDelete(params *DcimConsoleServerPortTemplatesDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsoleServerPortTemplatesDeleteNoContent, error)
@@ -136,12 +106,6 @@ type ClientService interface {
 	DcimConsoleServerPortTemplatesRead(params *DcimConsoleServerPortTemplatesReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsoleServerPortTemplatesReadOK, error)
 
 	DcimConsoleServerPortTemplatesUpdate(params *DcimConsoleServerPortTemplatesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsoleServerPortTemplatesUpdateOK, error)
-
-	DcimConsoleServerPortsBulkDelete(params *DcimConsoleServerPortsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsoleServerPortsBulkDeleteNoContent, error)
-
-	DcimConsoleServerPortsBulkPartialUpdate(params *DcimConsoleServerPortsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsoleServerPortsBulkPartialUpdateOK, error)
-
-	DcimConsoleServerPortsBulkUpdate(params *DcimConsoleServerPortsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsoleServerPortsBulkUpdateOK, error)
 
 	DcimConsoleServerPortsCreate(params *DcimConsoleServerPortsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsoleServerPortsCreateCreated, error)
 
@@ -157,12 +121,6 @@ type ClientService interface {
 
 	DcimConsoleServerPortsUpdate(params *DcimConsoleServerPortsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsoleServerPortsUpdateOK, error)
 
-	DcimDeviceBayTemplatesBulkDelete(params *DcimDeviceBayTemplatesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceBayTemplatesBulkDeleteNoContent, error)
-
-	DcimDeviceBayTemplatesBulkPartialUpdate(params *DcimDeviceBayTemplatesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceBayTemplatesBulkPartialUpdateOK, error)
-
-	DcimDeviceBayTemplatesBulkUpdate(params *DcimDeviceBayTemplatesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceBayTemplatesBulkUpdateOK, error)
-
 	DcimDeviceBayTemplatesCreate(params *DcimDeviceBayTemplatesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceBayTemplatesCreateCreated, error)
 
 	DcimDeviceBayTemplatesDelete(params *DcimDeviceBayTemplatesDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceBayTemplatesDeleteNoContent, error)
@@ -174,12 +132,6 @@ type ClientService interface {
 	DcimDeviceBayTemplatesRead(params *DcimDeviceBayTemplatesReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceBayTemplatesReadOK, error)
 
 	DcimDeviceBayTemplatesUpdate(params *DcimDeviceBayTemplatesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceBayTemplatesUpdateOK, error)
-
-	DcimDeviceBaysBulkDelete(params *DcimDeviceBaysBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceBaysBulkDeleteNoContent, error)
-
-	DcimDeviceBaysBulkPartialUpdate(params *DcimDeviceBaysBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceBaysBulkPartialUpdateOK, error)
-
-	DcimDeviceBaysBulkUpdate(params *DcimDeviceBaysBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceBaysBulkUpdateOK, error)
 
 	DcimDeviceBaysCreate(params *DcimDeviceBaysCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceBaysCreateCreated, error)
 
@@ -193,12 +145,6 @@ type ClientService interface {
 
 	DcimDeviceBaysUpdate(params *DcimDeviceBaysUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceBaysUpdateOK, error)
 
-	DcimDeviceRolesBulkDelete(params *DcimDeviceRolesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceRolesBulkDeleteNoContent, error)
-
-	DcimDeviceRolesBulkPartialUpdate(params *DcimDeviceRolesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceRolesBulkPartialUpdateOK, error)
-
-	DcimDeviceRolesBulkUpdate(params *DcimDeviceRolesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceRolesBulkUpdateOK, error)
-
 	DcimDeviceRolesCreate(params *DcimDeviceRolesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceRolesCreateCreated, error)
 
 	DcimDeviceRolesDelete(params *DcimDeviceRolesDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceRolesDeleteNoContent, error)
@@ -211,12 +157,6 @@ type ClientService interface {
 
 	DcimDeviceRolesUpdate(params *DcimDeviceRolesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceRolesUpdateOK, error)
 
-	DcimDeviceTypesBulkDelete(params *DcimDeviceTypesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceTypesBulkDeleteNoContent, error)
-
-	DcimDeviceTypesBulkPartialUpdate(params *DcimDeviceTypesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceTypesBulkPartialUpdateOK, error)
-
-	DcimDeviceTypesBulkUpdate(params *DcimDeviceTypesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceTypesBulkUpdateOK, error)
-
 	DcimDeviceTypesCreate(params *DcimDeviceTypesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceTypesCreateCreated, error)
 
 	DcimDeviceTypesDelete(params *DcimDeviceTypesDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceTypesDeleteNoContent, error)
@@ -228,12 +168,6 @@ type ClientService interface {
 	DcimDeviceTypesRead(params *DcimDeviceTypesReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceTypesReadOK, error)
 
 	DcimDeviceTypesUpdate(params *DcimDeviceTypesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceTypesUpdateOK, error)
-
-	DcimDevicesBulkDelete(params *DcimDevicesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDevicesBulkDeleteNoContent, error)
-
-	DcimDevicesBulkPartialUpdate(params *DcimDevicesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDevicesBulkPartialUpdateOK, error)
-
-	DcimDevicesBulkUpdate(params *DcimDevicesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDevicesBulkUpdateOK, error)
 
 	DcimDevicesCreate(params *DcimDevicesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDevicesCreateCreated, error)
 
@@ -249,12 +183,6 @@ type ClientService interface {
 
 	DcimDevicesUpdate(params *DcimDevicesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDevicesUpdateOK, error)
 
-	DcimFrontPortTemplatesBulkDelete(params *DcimFrontPortTemplatesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimFrontPortTemplatesBulkDeleteNoContent, error)
-
-	DcimFrontPortTemplatesBulkPartialUpdate(params *DcimFrontPortTemplatesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimFrontPortTemplatesBulkPartialUpdateOK, error)
-
-	DcimFrontPortTemplatesBulkUpdate(params *DcimFrontPortTemplatesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimFrontPortTemplatesBulkUpdateOK, error)
-
 	DcimFrontPortTemplatesCreate(params *DcimFrontPortTemplatesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimFrontPortTemplatesCreateCreated, error)
 
 	DcimFrontPortTemplatesDelete(params *DcimFrontPortTemplatesDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimFrontPortTemplatesDeleteNoContent, error)
@@ -266,12 +194,6 @@ type ClientService interface {
 	DcimFrontPortTemplatesRead(params *DcimFrontPortTemplatesReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimFrontPortTemplatesReadOK, error)
 
 	DcimFrontPortTemplatesUpdate(params *DcimFrontPortTemplatesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimFrontPortTemplatesUpdateOK, error)
-
-	DcimFrontPortsBulkDelete(params *DcimFrontPortsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimFrontPortsBulkDeleteNoContent, error)
-
-	DcimFrontPortsBulkPartialUpdate(params *DcimFrontPortsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimFrontPortsBulkPartialUpdateOK, error)
-
-	DcimFrontPortsBulkUpdate(params *DcimFrontPortsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimFrontPortsBulkUpdateOK, error)
 
 	DcimFrontPortsCreate(params *DcimFrontPortsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimFrontPortsCreateCreated, error)
 
@@ -287,12 +209,6 @@ type ClientService interface {
 
 	DcimFrontPortsUpdate(params *DcimFrontPortsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimFrontPortsUpdateOK, error)
 
-	DcimInterfaceTemplatesBulkDelete(params *DcimInterfaceTemplatesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInterfaceTemplatesBulkDeleteNoContent, error)
-
-	DcimInterfaceTemplatesBulkPartialUpdate(params *DcimInterfaceTemplatesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInterfaceTemplatesBulkPartialUpdateOK, error)
-
-	DcimInterfaceTemplatesBulkUpdate(params *DcimInterfaceTemplatesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInterfaceTemplatesBulkUpdateOK, error)
-
 	DcimInterfaceTemplatesCreate(params *DcimInterfaceTemplatesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInterfaceTemplatesCreateCreated, error)
 
 	DcimInterfaceTemplatesDelete(params *DcimInterfaceTemplatesDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInterfaceTemplatesDeleteNoContent, error)
@@ -304,12 +220,6 @@ type ClientService interface {
 	DcimInterfaceTemplatesRead(params *DcimInterfaceTemplatesReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInterfaceTemplatesReadOK, error)
 
 	DcimInterfaceTemplatesUpdate(params *DcimInterfaceTemplatesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInterfaceTemplatesUpdateOK, error)
-
-	DcimInterfacesBulkDelete(params *DcimInterfacesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInterfacesBulkDeleteNoContent, error)
-
-	DcimInterfacesBulkPartialUpdate(params *DcimInterfacesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInterfacesBulkPartialUpdateOK, error)
-
-	DcimInterfacesBulkUpdate(params *DcimInterfacesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInterfacesBulkUpdateOK, error)
 
 	DcimInterfacesCreate(params *DcimInterfacesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInterfacesCreateCreated, error)
 
@@ -325,12 +235,6 @@ type ClientService interface {
 
 	DcimInterfacesUpdate(params *DcimInterfacesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInterfacesUpdateOK, error)
 
-	DcimInventoryItemRolesBulkDelete(params *DcimInventoryItemRolesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInventoryItemRolesBulkDeleteNoContent, error)
-
-	DcimInventoryItemRolesBulkPartialUpdate(params *DcimInventoryItemRolesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInventoryItemRolesBulkPartialUpdateOK, error)
-
-	DcimInventoryItemRolesBulkUpdate(params *DcimInventoryItemRolesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInventoryItemRolesBulkUpdateOK, error)
-
 	DcimInventoryItemRolesCreate(params *DcimInventoryItemRolesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInventoryItemRolesCreateCreated, error)
 
 	DcimInventoryItemRolesDelete(params *DcimInventoryItemRolesDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInventoryItemRolesDeleteNoContent, error)
@@ -342,12 +246,6 @@ type ClientService interface {
 	DcimInventoryItemRolesRead(params *DcimInventoryItemRolesReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInventoryItemRolesReadOK, error)
 
 	DcimInventoryItemRolesUpdate(params *DcimInventoryItemRolesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInventoryItemRolesUpdateOK, error)
-
-	DcimInventoryItemTemplatesBulkDelete(params *DcimInventoryItemTemplatesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInventoryItemTemplatesBulkDeleteNoContent, error)
-
-	DcimInventoryItemTemplatesBulkPartialUpdate(params *DcimInventoryItemTemplatesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInventoryItemTemplatesBulkPartialUpdateOK, error)
-
-	DcimInventoryItemTemplatesBulkUpdate(params *DcimInventoryItemTemplatesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInventoryItemTemplatesBulkUpdateOK, error)
 
 	DcimInventoryItemTemplatesCreate(params *DcimInventoryItemTemplatesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInventoryItemTemplatesCreateCreated, error)
 
@@ -361,12 +259,6 @@ type ClientService interface {
 
 	DcimInventoryItemTemplatesUpdate(params *DcimInventoryItemTemplatesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInventoryItemTemplatesUpdateOK, error)
 
-	DcimInventoryItemsBulkDelete(params *DcimInventoryItemsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInventoryItemsBulkDeleteNoContent, error)
-
-	DcimInventoryItemsBulkPartialUpdate(params *DcimInventoryItemsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInventoryItemsBulkPartialUpdateOK, error)
-
-	DcimInventoryItemsBulkUpdate(params *DcimInventoryItemsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInventoryItemsBulkUpdateOK, error)
-
 	DcimInventoryItemsCreate(params *DcimInventoryItemsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInventoryItemsCreateCreated, error)
 
 	DcimInventoryItemsDelete(params *DcimInventoryItemsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInventoryItemsDeleteNoContent, error)
@@ -378,12 +270,6 @@ type ClientService interface {
 	DcimInventoryItemsRead(params *DcimInventoryItemsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInventoryItemsReadOK, error)
 
 	DcimInventoryItemsUpdate(params *DcimInventoryItemsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInventoryItemsUpdateOK, error)
-
-	DcimLocationsBulkDelete(params *DcimLocationsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimLocationsBulkDeleteNoContent, error)
-
-	DcimLocationsBulkPartialUpdate(params *DcimLocationsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimLocationsBulkPartialUpdateOK, error)
-
-	DcimLocationsBulkUpdate(params *DcimLocationsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimLocationsBulkUpdateOK, error)
 
 	DcimLocationsCreate(params *DcimLocationsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimLocationsCreateCreated, error)
 
@@ -397,12 +283,6 @@ type ClientService interface {
 
 	DcimLocationsUpdate(params *DcimLocationsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimLocationsUpdateOK, error)
 
-	DcimManufacturersBulkDelete(params *DcimManufacturersBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimManufacturersBulkDeleteNoContent, error)
-
-	DcimManufacturersBulkPartialUpdate(params *DcimManufacturersBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimManufacturersBulkPartialUpdateOK, error)
-
-	DcimManufacturersBulkUpdate(params *DcimManufacturersBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimManufacturersBulkUpdateOK, error)
-
 	DcimManufacturersCreate(params *DcimManufacturersCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimManufacturersCreateCreated, error)
 
 	DcimManufacturersDelete(params *DcimManufacturersDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimManufacturersDeleteNoContent, error)
@@ -414,12 +294,6 @@ type ClientService interface {
 	DcimManufacturersRead(params *DcimManufacturersReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimManufacturersReadOK, error)
 
 	DcimManufacturersUpdate(params *DcimManufacturersUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimManufacturersUpdateOK, error)
-
-	DcimModuleBayTemplatesBulkDelete(params *DcimModuleBayTemplatesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimModuleBayTemplatesBulkDeleteNoContent, error)
-
-	DcimModuleBayTemplatesBulkPartialUpdate(params *DcimModuleBayTemplatesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimModuleBayTemplatesBulkPartialUpdateOK, error)
-
-	DcimModuleBayTemplatesBulkUpdate(params *DcimModuleBayTemplatesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimModuleBayTemplatesBulkUpdateOK, error)
 
 	DcimModuleBayTemplatesCreate(params *DcimModuleBayTemplatesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimModuleBayTemplatesCreateCreated, error)
 
@@ -433,12 +307,6 @@ type ClientService interface {
 
 	DcimModuleBayTemplatesUpdate(params *DcimModuleBayTemplatesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimModuleBayTemplatesUpdateOK, error)
 
-	DcimModuleBaysBulkDelete(params *DcimModuleBaysBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimModuleBaysBulkDeleteNoContent, error)
-
-	DcimModuleBaysBulkPartialUpdate(params *DcimModuleBaysBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimModuleBaysBulkPartialUpdateOK, error)
-
-	DcimModuleBaysBulkUpdate(params *DcimModuleBaysBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimModuleBaysBulkUpdateOK, error)
-
 	DcimModuleBaysCreate(params *DcimModuleBaysCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimModuleBaysCreateCreated, error)
 
 	DcimModuleBaysDelete(params *DcimModuleBaysDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimModuleBaysDeleteNoContent, error)
@@ -450,12 +318,6 @@ type ClientService interface {
 	DcimModuleBaysRead(params *DcimModuleBaysReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimModuleBaysReadOK, error)
 
 	DcimModuleBaysUpdate(params *DcimModuleBaysUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimModuleBaysUpdateOK, error)
-
-	DcimModuleTypesBulkDelete(params *DcimModuleTypesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimModuleTypesBulkDeleteNoContent, error)
-
-	DcimModuleTypesBulkPartialUpdate(params *DcimModuleTypesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimModuleTypesBulkPartialUpdateOK, error)
-
-	DcimModuleTypesBulkUpdate(params *DcimModuleTypesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimModuleTypesBulkUpdateOK, error)
 
 	DcimModuleTypesCreate(params *DcimModuleTypesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimModuleTypesCreateCreated, error)
 
@@ -469,12 +331,6 @@ type ClientService interface {
 
 	DcimModuleTypesUpdate(params *DcimModuleTypesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimModuleTypesUpdateOK, error)
 
-	DcimModulesBulkDelete(params *DcimModulesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimModulesBulkDeleteNoContent, error)
-
-	DcimModulesBulkPartialUpdate(params *DcimModulesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimModulesBulkPartialUpdateOK, error)
-
-	DcimModulesBulkUpdate(params *DcimModulesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimModulesBulkUpdateOK, error)
-
 	DcimModulesCreate(params *DcimModulesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimModulesCreateCreated, error)
 
 	DcimModulesDelete(params *DcimModulesDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimModulesDeleteNoContent, error)
@@ -487,12 +343,6 @@ type ClientService interface {
 
 	DcimModulesUpdate(params *DcimModulesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimModulesUpdateOK, error)
 
-	DcimPlatformsBulkDelete(params *DcimPlatformsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPlatformsBulkDeleteNoContent, error)
-
-	DcimPlatformsBulkPartialUpdate(params *DcimPlatformsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPlatformsBulkPartialUpdateOK, error)
-
-	DcimPlatformsBulkUpdate(params *DcimPlatformsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPlatformsBulkUpdateOK, error)
-
 	DcimPlatformsCreate(params *DcimPlatformsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPlatformsCreateCreated, error)
 
 	DcimPlatformsDelete(params *DcimPlatformsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPlatformsDeleteNoContent, error)
@@ -504,12 +354,6 @@ type ClientService interface {
 	DcimPlatformsRead(params *DcimPlatformsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPlatformsReadOK, error)
 
 	DcimPlatformsUpdate(params *DcimPlatformsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPlatformsUpdateOK, error)
-
-	DcimPowerFeedsBulkDelete(params *DcimPowerFeedsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerFeedsBulkDeleteNoContent, error)
-
-	DcimPowerFeedsBulkPartialUpdate(params *DcimPowerFeedsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerFeedsBulkPartialUpdateOK, error)
-
-	DcimPowerFeedsBulkUpdate(params *DcimPowerFeedsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerFeedsBulkUpdateOK, error)
 
 	DcimPowerFeedsCreate(params *DcimPowerFeedsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerFeedsCreateCreated, error)
 
@@ -525,12 +369,6 @@ type ClientService interface {
 
 	DcimPowerFeedsUpdate(params *DcimPowerFeedsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerFeedsUpdateOK, error)
 
-	DcimPowerOutletTemplatesBulkDelete(params *DcimPowerOutletTemplatesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerOutletTemplatesBulkDeleteNoContent, error)
-
-	DcimPowerOutletTemplatesBulkPartialUpdate(params *DcimPowerOutletTemplatesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerOutletTemplatesBulkPartialUpdateOK, error)
-
-	DcimPowerOutletTemplatesBulkUpdate(params *DcimPowerOutletTemplatesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerOutletTemplatesBulkUpdateOK, error)
-
 	DcimPowerOutletTemplatesCreate(params *DcimPowerOutletTemplatesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerOutletTemplatesCreateCreated, error)
 
 	DcimPowerOutletTemplatesDelete(params *DcimPowerOutletTemplatesDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerOutletTemplatesDeleteNoContent, error)
@@ -542,12 +380,6 @@ type ClientService interface {
 	DcimPowerOutletTemplatesRead(params *DcimPowerOutletTemplatesReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerOutletTemplatesReadOK, error)
 
 	DcimPowerOutletTemplatesUpdate(params *DcimPowerOutletTemplatesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerOutletTemplatesUpdateOK, error)
-
-	DcimPowerOutletsBulkDelete(params *DcimPowerOutletsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerOutletsBulkDeleteNoContent, error)
-
-	DcimPowerOutletsBulkPartialUpdate(params *DcimPowerOutletsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerOutletsBulkPartialUpdateOK, error)
-
-	DcimPowerOutletsBulkUpdate(params *DcimPowerOutletsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerOutletsBulkUpdateOK, error)
 
 	DcimPowerOutletsCreate(params *DcimPowerOutletsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerOutletsCreateCreated, error)
 
@@ -563,12 +395,6 @@ type ClientService interface {
 
 	DcimPowerOutletsUpdate(params *DcimPowerOutletsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerOutletsUpdateOK, error)
 
-	DcimPowerPanelsBulkDelete(params *DcimPowerPanelsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerPanelsBulkDeleteNoContent, error)
-
-	DcimPowerPanelsBulkPartialUpdate(params *DcimPowerPanelsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerPanelsBulkPartialUpdateOK, error)
-
-	DcimPowerPanelsBulkUpdate(params *DcimPowerPanelsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerPanelsBulkUpdateOK, error)
-
 	DcimPowerPanelsCreate(params *DcimPowerPanelsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerPanelsCreateCreated, error)
 
 	DcimPowerPanelsDelete(params *DcimPowerPanelsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerPanelsDeleteNoContent, error)
@@ -581,12 +407,6 @@ type ClientService interface {
 
 	DcimPowerPanelsUpdate(params *DcimPowerPanelsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerPanelsUpdateOK, error)
 
-	DcimPowerPortTemplatesBulkDelete(params *DcimPowerPortTemplatesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerPortTemplatesBulkDeleteNoContent, error)
-
-	DcimPowerPortTemplatesBulkPartialUpdate(params *DcimPowerPortTemplatesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerPortTemplatesBulkPartialUpdateOK, error)
-
-	DcimPowerPortTemplatesBulkUpdate(params *DcimPowerPortTemplatesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerPortTemplatesBulkUpdateOK, error)
-
 	DcimPowerPortTemplatesCreate(params *DcimPowerPortTemplatesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerPortTemplatesCreateCreated, error)
 
 	DcimPowerPortTemplatesDelete(params *DcimPowerPortTemplatesDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerPortTemplatesDeleteNoContent, error)
@@ -598,12 +418,6 @@ type ClientService interface {
 	DcimPowerPortTemplatesRead(params *DcimPowerPortTemplatesReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerPortTemplatesReadOK, error)
 
 	DcimPowerPortTemplatesUpdate(params *DcimPowerPortTemplatesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerPortTemplatesUpdateOK, error)
-
-	DcimPowerPortsBulkDelete(params *DcimPowerPortsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerPortsBulkDeleteNoContent, error)
-
-	DcimPowerPortsBulkPartialUpdate(params *DcimPowerPortsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerPortsBulkPartialUpdateOK, error)
-
-	DcimPowerPortsBulkUpdate(params *DcimPowerPortsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerPortsBulkUpdateOK, error)
 
 	DcimPowerPortsCreate(params *DcimPowerPortsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerPortsCreateCreated, error)
 
@@ -619,12 +433,6 @@ type ClientService interface {
 
 	DcimPowerPortsUpdate(params *DcimPowerPortsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerPortsUpdateOK, error)
 
-	DcimRackReservationsBulkDelete(params *DcimRackReservationsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRackReservationsBulkDeleteNoContent, error)
-
-	DcimRackReservationsBulkPartialUpdate(params *DcimRackReservationsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRackReservationsBulkPartialUpdateOK, error)
-
-	DcimRackReservationsBulkUpdate(params *DcimRackReservationsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRackReservationsBulkUpdateOK, error)
-
 	DcimRackReservationsCreate(params *DcimRackReservationsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRackReservationsCreateCreated, error)
 
 	DcimRackReservationsDelete(params *DcimRackReservationsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRackReservationsDeleteNoContent, error)
@@ -637,12 +445,6 @@ type ClientService interface {
 
 	DcimRackReservationsUpdate(params *DcimRackReservationsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRackReservationsUpdateOK, error)
 
-	DcimRackRolesBulkDelete(params *DcimRackRolesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRackRolesBulkDeleteNoContent, error)
-
-	DcimRackRolesBulkPartialUpdate(params *DcimRackRolesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRackRolesBulkPartialUpdateOK, error)
-
-	DcimRackRolesBulkUpdate(params *DcimRackRolesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRackRolesBulkUpdateOK, error)
-
 	DcimRackRolesCreate(params *DcimRackRolesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRackRolesCreateCreated, error)
 
 	DcimRackRolesDelete(params *DcimRackRolesDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRackRolesDeleteNoContent, error)
@@ -654,12 +456,6 @@ type ClientService interface {
 	DcimRackRolesRead(params *DcimRackRolesReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRackRolesReadOK, error)
 
 	DcimRackRolesUpdate(params *DcimRackRolesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRackRolesUpdateOK, error)
-
-	DcimRacksBulkDelete(params *DcimRacksBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRacksBulkDeleteNoContent, error)
-
-	DcimRacksBulkPartialUpdate(params *DcimRacksBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRacksBulkPartialUpdateOK, error)
-
-	DcimRacksBulkUpdate(params *DcimRacksBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRacksBulkUpdateOK, error)
 
 	DcimRacksCreate(params *DcimRacksCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRacksCreateCreated, error)
 
@@ -675,12 +471,6 @@ type ClientService interface {
 
 	DcimRacksUpdate(params *DcimRacksUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRacksUpdateOK, error)
 
-	DcimRearPortTemplatesBulkDelete(params *DcimRearPortTemplatesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRearPortTemplatesBulkDeleteNoContent, error)
-
-	DcimRearPortTemplatesBulkPartialUpdate(params *DcimRearPortTemplatesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRearPortTemplatesBulkPartialUpdateOK, error)
-
-	DcimRearPortTemplatesBulkUpdate(params *DcimRearPortTemplatesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRearPortTemplatesBulkUpdateOK, error)
-
 	DcimRearPortTemplatesCreate(params *DcimRearPortTemplatesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRearPortTemplatesCreateCreated, error)
 
 	DcimRearPortTemplatesDelete(params *DcimRearPortTemplatesDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRearPortTemplatesDeleteNoContent, error)
@@ -692,12 +482,6 @@ type ClientService interface {
 	DcimRearPortTemplatesRead(params *DcimRearPortTemplatesReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRearPortTemplatesReadOK, error)
 
 	DcimRearPortTemplatesUpdate(params *DcimRearPortTemplatesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRearPortTemplatesUpdateOK, error)
-
-	DcimRearPortsBulkDelete(params *DcimRearPortsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRearPortsBulkDeleteNoContent, error)
-
-	DcimRearPortsBulkPartialUpdate(params *DcimRearPortsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRearPortsBulkPartialUpdateOK, error)
-
-	DcimRearPortsBulkUpdate(params *DcimRearPortsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRearPortsBulkUpdateOK, error)
 
 	DcimRearPortsCreate(params *DcimRearPortsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRearPortsCreateCreated, error)
 
@@ -713,12 +497,6 @@ type ClientService interface {
 
 	DcimRearPortsUpdate(params *DcimRearPortsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRearPortsUpdateOK, error)
 
-	DcimRegionsBulkDelete(params *DcimRegionsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRegionsBulkDeleteNoContent, error)
-
-	DcimRegionsBulkPartialUpdate(params *DcimRegionsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRegionsBulkPartialUpdateOK, error)
-
-	DcimRegionsBulkUpdate(params *DcimRegionsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRegionsBulkUpdateOK, error)
-
 	DcimRegionsCreate(params *DcimRegionsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRegionsCreateCreated, error)
 
 	DcimRegionsDelete(params *DcimRegionsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRegionsDeleteNoContent, error)
@@ -730,12 +508,6 @@ type ClientService interface {
 	DcimRegionsRead(params *DcimRegionsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRegionsReadOK, error)
 
 	DcimRegionsUpdate(params *DcimRegionsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRegionsUpdateOK, error)
-
-	DcimSiteGroupsBulkDelete(params *DcimSiteGroupsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimSiteGroupsBulkDeleteNoContent, error)
-
-	DcimSiteGroupsBulkPartialUpdate(params *DcimSiteGroupsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimSiteGroupsBulkPartialUpdateOK, error)
-
-	DcimSiteGroupsBulkUpdate(params *DcimSiteGroupsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimSiteGroupsBulkUpdateOK, error)
 
 	DcimSiteGroupsCreate(params *DcimSiteGroupsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimSiteGroupsCreateCreated, error)
 
@@ -749,12 +521,6 @@ type ClientService interface {
 
 	DcimSiteGroupsUpdate(params *DcimSiteGroupsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimSiteGroupsUpdateOK, error)
 
-	DcimSitesBulkDelete(params *DcimSitesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimSitesBulkDeleteNoContent, error)
-
-	DcimSitesBulkPartialUpdate(params *DcimSitesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimSitesBulkPartialUpdateOK, error)
-
-	DcimSitesBulkUpdate(params *DcimSitesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimSitesBulkUpdateOK, error)
-
 	DcimSitesCreate(params *DcimSitesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimSitesCreateCreated, error)
 
 	DcimSitesDelete(params *DcimSitesDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimSitesDeleteNoContent, error)
@@ -767,12 +533,6 @@ type ClientService interface {
 
 	DcimSitesUpdate(params *DcimSitesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimSitesUpdateOK, error)
 
-	DcimVirtualChassisBulkDelete(params *DcimVirtualChassisBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimVirtualChassisBulkDeleteNoContent, error)
-
-	DcimVirtualChassisBulkPartialUpdate(params *DcimVirtualChassisBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimVirtualChassisBulkPartialUpdateOK, error)
-
-	DcimVirtualChassisBulkUpdate(params *DcimVirtualChassisBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimVirtualChassisBulkUpdateOK, error)
-
 	DcimVirtualChassisCreate(params *DcimVirtualChassisCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimVirtualChassisCreateCreated, error)
 
 	DcimVirtualChassisDelete(params *DcimVirtualChassisDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimVirtualChassisDeleteNoContent, error)
@@ -784,12 +544,6 @@ type ClientService interface {
 	DcimVirtualChassisRead(params *DcimVirtualChassisReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimVirtualChassisReadOK, error)
 
 	DcimVirtualChassisUpdate(params *DcimVirtualChassisUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimVirtualChassisUpdateOK, error)
-
-	DcimVirtualDeviceContextsBulkDelete(params *DcimVirtualDeviceContextsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimVirtualDeviceContextsBulkDeleteNoContent, error)
-
-	DcimVirtualDeviceContextsBulkPartialUpdate(params *DcimVirtualDeviceContextsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimVirtualDeviceContextsBulkPartialUpdateOK, error)
-
-	DcimVirtualDeviceContextsBulkUpdate(params *DcimVirtualDeviceContextsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimVirtualDeviceContextsBulkUpdateOK, error)
 
 	DcimVirtualDeviceContextsCreate(params *DcimVirtualDeviceContextsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimVirtualDeviceContextsCreateCreated, error)
 
@@ -804,120 +558,6 @@ type ClientService interface {
 	DcimVirtualDeviceContextsUpdate(params *DcimVirtualDeviceContextsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimVirtualDeviceContextsUpdateOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
-}
-
-/*
-DcimCableTerminationsBulkDelete dcim cable terminations bulk delete API
-*/
-func (a *Client) DcimCableTerminationsBulkDelete(params *DcimCableTerminationsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimCableTerminationsBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimCableTerminationsBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_cable-terminations_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/dcim/cable-terminations/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimCableTerminationsBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimCableTerminationsBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimCableTerminationsBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimCableTerminationsBulkPartialUpdate dcim cable terminations bulk partial update API
-*/
-func (a *Client) DcimCableTerminationsBulkPartialUpdate(params *DcimCableTerminationsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimCableTerminationsBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimCableTerminationsBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_cable-terminations_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/dcim/cable-terminations/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimCableTerminationsBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimCableTerminationsBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimCableTerminationsBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimCableTerminationsBulkUpdate dcim cable terminations bulk update API
-*/
-func (a *Client) DcimCableTerminationsBulkUpdate(params *DcimCableTerminationsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimCableTerminationsBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimCableTerminationsBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_cable-terminations_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/dcim/cable-terminations/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimCableTerminationsBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimCableTerminationsBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimCableTerminationsBulkUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
 /*
@@ -1145,120 +785,6 @@ func (a *Client) DcimCableTerminationsUpdate(params *DcimCableTerminationsUpdate
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*DcimCableTerminationsUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimCablesBulkDelete dcim cables bulk delete API
-*/
-func (a *Client) DcimCablesBulkDelete(params *DcimCablesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimCablesBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimCablesBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_cables_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/dcim/cables/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimCablesBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimCablesBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimCablesBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimCablesBulkPartialUpdate dcim cables bulk partial update API
-*/
-func (a *Client) DcimCablesBulkPartialUpdate(params *DcimCablesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimCablesBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimCablesBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_cables_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/dcim/cables/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimCablesBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimCablesBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimCablesBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimCablesBulkUpdate dcim cables bulk update API
-*/
-func (a *Client) DcimCablesBulkUpdate(params *DcimCablesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimCablesBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimCablesBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_cables_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/dcim/cables/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimCablesBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimCablesBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimCablesBulkUpdateDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -1535,120 +1061,6 @@ func (a *Client) DcimConnectedDeviceList(params *DcimConnectedDeviceListParams, 
 }
 
 /*
-DcimConsolePortTemplatesBulkDelete dcim console port templates bulk delete API
-*/
-func (a *Client) DcimConsolePortTemplatesBulkDelete(params *DcimConsolePortTemplatesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsolePortTemplatesBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimConsolePortTemplatesBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_console-port-templates_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/dcim/console-port-templates/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimConsolePortTemplatesBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimConsolePortTemplatesBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimConsolePortTemplatesBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimConsolePortTemplatesBulkPartialUpdate dcim console port templates bulk partial update API
-*/
-func (a *Client) DcimConsolePortTemplatesBulkPartialUpdate(params *DcimConsolePortTemplatesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsolePortTemplatesBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimConsolePortTemplatesBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_console-port-templates_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/dcim/console-port-templates/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimConsolePortTemplatesBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimConsolePortTemplatesBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimConsolePortTemplatesBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimConsolePortTemplatesBulkUpdate dcim console port templates bulk update API
-*/
-func (a *Client) DcimConsolePortTemplatesBulkUpdate(params *DcimConsolePortTemplatesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsolePortTemplatesBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimConsolePortTemplatesBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_console-port-templates_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/dcim/console-port-templates/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimConsolePortTemplatesBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimConsolePortTemplatesBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimConsolePortTemplatesBulkUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
 DcimConsolePortTemplatesCreate dcim console port templates create API
 */
 func (a *Client) DcimConsolePortTemplatesCreate(params *DcimConsolePortTemplatesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsolePortTemplatesCreateCreated, error) {
@@ -1873,120 +1285,6 @@ func (a *Client) DcimConsolePortTemplatesUpdate(params *DcimConsolePortTemplates
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*DcimConsolePortTemplatesUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimConsolePortsBulkDelete dcim console ports bulk delete API
-*/
-func (a *Client) DcimConsolePortsBulkDelete(params *DcimConsolePortsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsolePortsBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimConsolePortsBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_console-ports_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/dcim/console-ports/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimConsolePortsBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimConsolePortsBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimConsolePortsBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimConsolePortsBulkPartialUpdate dcim console ports bulk partial update API
-*/
-func (a *Client) DcimConsolePortsBulkPartialUpdate(params *DcimConsolePortsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsolePortsBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimConsolePortsBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_console-ports_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/dcim/console-ports/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimConsolePortsBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimConsolePortsBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimConsolePortsBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimConsolePortsBulkUpdate dcim console ports bulk update API
-*/
-func (a *Client) DcimConsolePortsBulkUpdate(params *DcimConsolePortsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsolePortsBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimConsolePortsBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_console-ports_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/dcim/console-ports/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimConsolePortsBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimConsolePortsBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimConsolePortsBulkUpdateDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -2257,120 +1555,6 @@ func (a *Client) DcimConsolePortsUpdate(params *DcimConsolePortsUpdateParams, au
 }
 
 /*
-DcimConsoleServerPortTemplatesBulkDelete dcim console server port templates bulk delete API
-*/
-func (a *Client) DcimConsoleServerPortTemplatesBulkDelete(params *DcimConsoleServerPortTemplatesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsoleServerPortTemplatesBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimConsoleServerPortTemplatesBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_console-server-port-templates_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/dcim/console-server-port-templates/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimConsoleServerPortTemplatesBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimConsoleServerPortTemplatesBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimConsoleServerPortTemplatesBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimConsoleServerPortTemplatesBulkPartialUpdate dcim console server port templates bulk partial update API
-*/
-func (a *Client) DcimConsoleServerPortTemplatesBulkPartialUpdate(params *DcimConsoleServerPortTemplatesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsoleServerPortTemplatesBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimConsoleServerPortTemplatesBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_console-server-port-templates_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/dcim/console-server-port-templates/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimConsoleServerPortTemplatesBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimConsoleServerPortTemplatesBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimConsoleServerPortTemplatesBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimConsoleServerPortTemplatesBulkUpdate dcim console server port templates bulk update API
-*/
-func (a *Client) DcimConsoleServerPortTemplatesBulkUpdate(params *DcimConsoleServerPortTemplatesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsoleServerPortTemplatesBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimConsoleServerPortTemplatesBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_console-server-port-templates_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/dcim/console-server-port-templates/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimConsoleServerPortTemplatesBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimConsoleServerPortTemplatesBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimConsoleServerPortTemplatesBulkUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
 DcimConsoleServerPortTemplatesCreate dcim console server port templates create API
 */
 func (a *Client) DcimConsoleServerPortTemplatesCreate(params *DcimConsoleServerPortTemplatesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsoleServerPortTemplatesCreateCreated, error) {
@@ -2595,120 +1779,6 @@ func (a *Client) DcimConsoleServerPortTemplatesUpdate(params *DcimConsoleServerP
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*DcimConsoleServerPortTemplatesUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimConsoleServerPortsBulkDelete dcim console server ports bulk delete API
-*/
-func (a *Client) DcimConsoleServerPortsBulkDelete(params *DcimConsoleServerPortsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsoleServerPortsBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimConsoleServerPortsBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_console-server-ports_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/dcim/console-server-ports/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimConsoleServerPortsBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimConsoleServerPortsBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimConsoleServerPortsBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimConsoleServerPortsBulkPartialUpdate dcim console server ports bulk partial update API
-*/
-func (a *Client) DcimConsoleServerPortsBulkPartialUpdate(params *DcimConsoleServerPortsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsoleServerPortsBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimConsoleServerPortsBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_console-server-ports_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/dcim/console-server-ports/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimConsoleServerPortsBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimConsoleServerPortsBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimConsoleServerPortsBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimConsoleServerPortsBulkUpdate dcim console server ports bulk update API
-*/
-func (a *Client) DcimConsoleServerPortsBulkUpdate(params *DcimConsoleServerPortsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsoleServerPortsBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimConsoleServerPortsBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_console-server-ports_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/dcim/console-server-ports/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimConsoleServerPortsBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimConsoleServerPortsBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimConsoleServerPortsBulkUpdateDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -2979,120 +2049,6 @@ func (a *Client) DcimConsoleServerPortsUpdate(params *DcimConsoleServerPortsUpda
 }
 
 /*
-DcimDeviceBayTemplatesBulkDelete dcim device bay templates bulk delete API
-*/
-func (a *Client) DcimDeviceBayTemplatesBulkDelete(params *DcimDeviceBayTemplatesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceBayTemplatesBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimDeviceBayTemplatesBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_device-bay-templates_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/dcim/device-bay-templates/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimDeviceBayTemplatesBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimDeviceBayTemplatesBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimDeviceBayTemplatesBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimDeviceBayTemplatesBulkPartialUpdate dcim device bay templates bulk partial update API
-*/
-func (a *Client) DcimDeviceBayTemplatesBulkPartialUpdate(params *DcimDeviceBayTemplatesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceBayTemplatesBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimDeviceBayTemplatesBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_device-bay-templates_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/dcim/device-bay-templates/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimDeviceBayTemplatesBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimDeviceBayTemplatesBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimDeviceBayTemplatesBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimDeviceBayTemplatesBulkUpdate dcim device bay templates bulk update API
-*/
-func (a *Client) DcimDeviceBayTemplatesBulkUpdate(params *DcimDeviceBayTemplatesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceBayTemplatesBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimDeviceBayTemplatesBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_device-bay-templates_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/dcim/device-bay-templates/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimDeviceBayTemplatesBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimDeviceBayTemplatesBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimDeviceBayTemplatesBulkUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
 DcimDeviceBayTemplatesCreate dcim device bay templates create API
 */
 func (a *Client) DcimDeviceBayTemplatesCreate(params *DcimDeviceBayTemplatesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceBayTemplatesCreateCreated, error) {
@@ -3317,120 +2273,6 @@ func (a *Client) DcimDeviceBayTemplatesUpdate(params *DcimDeviceBayTemplatesUpda
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*DcimDeviceBayTemplatesUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimDeviceBaysBulkDelete dcim device bays bulk delete API
-*/
-func (a *Client) DcimDeviceBaysBulkDelete(params *DcimDeviceBaysBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceBaysBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimDeviceBaysBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_device-bays_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/dcim/device-bays/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimDeviceBaysBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimDeviceBaysBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimDeviceBaysBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimDeviceBaysBulkPartialUpdate dcim device bays bulk partial update API
-*/
-func (a *Client) DcimDeviceBaysBulkPartialUpdate(params *DcimDeviceBaysBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceBaysBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimDeviceBaysBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_device-bays_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/dcim/device-bays/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimDeviceBaysBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimDeviceBaysBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimDeviceBaysBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimDeviceBaysBulkUpdate dcim device bays bulk update API
-*/
-func (a *Client) DcimDeviceBaysBulkUpdate(params *DcimDeviceBaysBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceBaysBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimDeviceBaysBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_device-bays_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/dcim/device-bays/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimDeviceBaysBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimDeviceBaysBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimDeviceBaysBulkUpdateDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -3663,120 +2505,6 @@ func (a *Client) DcimDeviceBaysUpdate(params *DcimDeviceBaysUpdateParams, authIn
 }
 
 /*
-DcimDeviceRolesBulkDelete dcim device roles bulk delete API
-*/
-func (a *Client) DcimDeviceRolesBulkDelete(params *DcimDeviceRolesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceRolesBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimDeviceRolesBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_device-roles_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/dcim/device-roles/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimDeviceRolesBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimDeviceRolesBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimDeviceRolesBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimDeviceRolesBulkPartialUpdate dcim device roles bulk partial update API
-*/
-func (a *Client) DcimDeviceRolesBulkPartialUpdate(params *DcimDeviceRolesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceRolesBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimDeviceRolesBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_device-roles_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/dcim/device-roles/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimDeviceRolesBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimDeviceRolesBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimDeviceRolesBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimDeviceRolesBulkUpdate dcim device roles bulk update API
-*/
-func (a *Client) DcimDeviceRolesBulkUpdate(params *DcimDeviceRolesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceRolesBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimDeviceRolesBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_device-roles_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/dcim/device-roles/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimDeviceRolesBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimDeviceRolesBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimDeviceRolesBulkUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
 DcimDeviceRolesCreate dcim device roles create API
 */
 func (a *Client) DcimDeviceRolesCreate(params *DcimDeviceRolesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceRolesCreateCreated, error) {
@@ -4005,120 +2733,6 @@ func (a *Client) DcimDeviceRolesUpdate(params *DcimDeviceRolesUpdateParams, auth
 }
 
 /*
-DcimDeviceTypesBulkDelete dcim device types bulk delete API
-*/
-func (a *Client) DcimDeviceTypesBulkDelete(params *DcimDeviceTypesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceTypesBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimDeviceTypesBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_device-types_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/dcim/device-types/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimDeviceTypesBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimDeviceTypesBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimDeviceTypesBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimDeviceTypesBulkPartialUpdate dcim device types bulk partial update API
-*/
-func (a *Client) DcimDeviceTypesBulkPartialUpdate(params *DcimDeviceTypesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceTypesBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimDeviceTypesBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_device-types_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/dcim/device-types/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimDeviceTypesBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimDeviceTypesBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimDeviceTypesBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimDeviceTypesBulkUpdate dcim device types bulk update API
-*/
-func (a *Client) DcimDeviceTypesBulkUpdate(params *DcimDeviceTypesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceTypesBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimDeviceTypesBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_device-types_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/dcim/device-types/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimDeviceTypesBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimDeviceTypesBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimDeviceTypesBulkUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
 DcimDeviceTypesCreate dcim device types create API
 */
 func (a *Client) DcimDeviceTypesCreate(params *DcimDeviceTypesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceTypesCreateCreated, error) {
@@ -4343,120 +2957,6 @@ func (a *Client) DcimDeviceTypesUpdate(params *DcimDeviceTypesUpdateParams, auth
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*DcimDeviceTypesUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimDevicesBulkDelete dcim devices bulk delete API
-*/
-func (a *Client) DcimDevicesBulkDelete(params *DcimDevicesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDevicesBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimDevicesBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_devices_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/dcim/devices/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimDevicesBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimDevicesBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimDevicesBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimDevicesBulkPartialUpdate dcim devices bulk partial update API
-*/
-func (a *Client) DcimDevicesBulkPartialUpdate(params *DcimDevicesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDevicesBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimDevicesBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_devices_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/dcim/devices/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimDevicesBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimDevicesBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimDevicesBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimDevicesBulkUpdate dcim devices bulk update API
-*/
-func (a *Client) DcimDevicesBulkUpdate(params *DcimDevicesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDevicesBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimDevicesBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_devices_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/dcim/devices/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimDevicesBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimDevicesBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimDevicesBulkUpdateDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -4727,120 +3227,6 @@ func (a *Client) DcimDevicesUpdate(params *DcimDevicesUpdateParams, authInfo run
 }
 
 /*
-DcimFrontPortTemplatesBulkDelete dcim front port templates bulk delete API
-*/
-func (a *Client) DcimFrontPortTemplatesBulkDelete(params *DcimFrontPortTemplatesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimFrontPortTemplatesBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimFrontPortTemplatesBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_front-port-templates_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/dcim/front-port-templates/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimFrontPortTemplatesBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimFrontPortTemplatesBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimFrontPortTemplatesBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimFrontPortTemplatesBulkPartialUpdate dcim front port templates bulk partial update API
-*/
-func (a *Client) DcimFrontPortTemplatesBulkPartialUpdate(params *DcimFrontPortTemplatesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimFrontPortTemplatesBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimFrontPortTemplatesBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_front-port-templates_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/dcim/front-port-templates/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimFrontPortTemplatesBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimFrontPortTemplatesBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimFrontPortTemplatesBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimFrontPortTemplatesBulkUpdate dcim front port templates bulk update API
-*/
-func (a *Client) DcimFrontPortTemplatesBulkUpdate(params *DcimFrontPortTemplatesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimFrontPortTemplatesBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimFrontPortTemplatesBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_front-port-templates_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/dcim/front-port-templates/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimFrontPortTemplatesBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimFrontPortTemplatesBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimFrontPortTemplatesBulkUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
 DcimFrontPortTemplatesCreate dcim front port templates create API
 */
 func (a *Client) DcimFrontPortTemplatesCreate(params *DcimFrontPortTemplatesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimFrontPortTemplatesCreateCreated, error) {
@@ -5065,120 +3451,6 @@ func (a *Client) DcimFrontPortTemplatesUpdate(params *DcimFrontPortTemplatesUpda
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*DcimFrontPortTemplatesUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimFrontPortsBulkDelete dcim front ports bulk delete API
-*/
-func (a *Client) DcimFrontPortsBulkDelete(params *DcimFrontPortsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimFrontPortsBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimFrontPortsBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_front-ports_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/dcim/front-ports/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimFrontPortsBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimFrontPortsBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimFrontPortsBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimFrontPortsBulkPartialUpdate dcim front ports bulk partial update API
-*/
-func (a *Client) DcimFrontPortsBulkPartialUpdate(params *DcimFrontPortsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimFrontPortsBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimFrontPortsBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_front-ports_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/dcim/front-ports/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimFrontPortsBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimFrontPortsBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimFrontPortsBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimFrontPortsBulkUpdate dcim front ports bulk update API
-*/
-func (a *Client) DcimFrontPortsBulkUpdate(params *DcimFrontPortsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimFrontPortsBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimFrontPortsBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_front-ports_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/dcim/front-ports/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimFrontPortsBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimFrontPortsBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimFrontPortsBulkUpdateDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -5449,120 +3721,6 @@ func (a *Client) DcimFrontPortsUpdate(params *DcimFrontPortsUpdateParams, authIn
 }
 
 /*
-DcimInterfaceTemplatesBulkDelete dcim interface templates bulk delete API
-*/
-func (a *Client) DcimInterfaceTemplatesBulkDelete(params *DcimInterfaceTemplatesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInterfaceTemplatesBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimInterfaceTemplatesBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_interface-templates_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/dcim/interface-templates/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimInterfaceTemplatesBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimInterfaceTemplatesBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimInterfaceTemplatesBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimInterfaceTemplatesBulkPartialUpdate dcim interface templates bulk partial update API
-*/
-func (a *Client) DcimInterfaceTemplatesBulkPartialUpdate(params *DcimInterfaceTemplatesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInterfaceTemplatesBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimInterfaceTemplatesBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_interface-templates_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/dcim/interface-templates/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimInterfaceTemplatesBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimInterfaceTemplatesBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimInterfaceTemplatesBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimInterfaceTemplatesBulkUpdate dcim interface templates bulk update API
-*/
-func (a *Client) DcimInterfaceTemplatesBulkUpdate(params *DcimInterfaceTemplatesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInterfaceTemplatesBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimInterfaceTemplatesBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_interface-templates_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/dcim/interface-templates/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimInterfaceTemplatesBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimInterfaceTemplatesBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimInterfaceTemplatesBulkUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
 DcimInterfaceTemplatesCreate dcim interface templates create API
 */
 func (a *Client) DcimInterfaceTemplatesCreate(params *DcimInterfaceTemplatesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInterfaceTemplatesCreateCreated, error) {
@@ -5787,120 +3945,6 @@ func (a *Client) DcimInterfaceTemplatesUpdate(params *DcimInterfaceTemplatesUpda
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*DcimInterfaceTemplatesUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimInterfacesBulkDelete dcim interfaces bulk delete API
-*/
-func (a *Client) DcimInterfacesBulkDelete(params *DcimInterfacesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInterfacesBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimInterfacesBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_interfaces_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/dcim/interfaces/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimInterfacesBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimInterfacesBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimInterfacesBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimInterfacesBulkPartialUpdate dcim interfaces bulk partial update API
-*/
-func (a *Client) DcimInterfacesBulkPartialUpdate(params *DcimInterfacesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInterfacesBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimInterfacesBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_interfaces_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/dcim/interfaces/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimInterfacesBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimInterfacesBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimInterfacesBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimInterfacesBulkUpdate dcim interfaces bulk update API
-*/
-func (a *Client) DcimInterfacesBulkUpdate(params *DcimInterfacesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInterfacesBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimInterfacesBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_interfaces_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/dcim/interfaces/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimInterfacesBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimInterfacesBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimInterfacesBulkUpdateDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -6171,120 +4215,6 @@ func (a *Client) DcimInterfacesUpdate(params *DcimInterfacesUpdateParams, authIn
 }
 
 /*
-DcimInventoryItemRolesBulkDelete dcim inventory item roles bulk delete API
-*/
-func (a *Client) DcimInventoryItemRolesBulkDelete(params *DcimInventoryItemRolesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInventoryItemRolesBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimInventoryItemRolesBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_inventory-item-roles_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/dcim/inventory-item-roles/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimInventoryItemRolesBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimInventoryItemRolesBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimInventoryItemRolesBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimInventoryItemRolesBulkPartialUpdate dcim inventory item roles bulk partial update API
-*/
-func (a *Client) DcimInventoryItemRolesBulkPartialUpdate(params *DcimInventoryItemRolesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInventoryItemRolesBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimInventoryItemRolesBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_inventory-item-roles_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/dcim/inventory-item-roles/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimInventoryItemRolesBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimInventoryItemRolesBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimInventoryItemRolesBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimInventoryItemRolesBulkUpdate dcim inventory item roles bulk update API
-*/
-func (a *Client) DcimInventoryItemRolesBulkUpdate(params *DcimInventoryItemRolesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInventoryItemRolesBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimInventoryItemRolesBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_inventory-item-roles_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/dcim/inventory-item-roles/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimInventoryItemRolesBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimInventoryItemRolesBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimInventoryItemRolesBulkUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
 DcimInventoryItemRolesCreate dcim inventory item roles create API
 */
 func (a *Client) DcimInventoryItemRolesCreate(params *DcimInventoryItemRolesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInventoryItemRolesCreateCreated, error) {
@@ -6509,120 +4439,6 @@ func (a *Client) DcimInventoryItemRolesUpdate(params *DcimInventoryItemRolesUpda
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*DcimInventoryItemRolesUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimInventoryItemTemplatesBulkDelete dcim inventory item templates bulk delete API
-*/
-func (a *Client) DcimInventoryItemTemplatesBulkDelete(params *DcimInventoryItemTemplatesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInventoryItemTemplatesBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimInventoryItemTemplatesBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_inventory-item-templates_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/dcim/inventory-item-templates/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimInventoryItemTemplatesBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimInventoryItemTemplatesBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimInventoryItemTemplatesBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimInventoryItemTemplatesBulkPartialUpdate dcim inventory item templates bulk partial update API
-*/
-func (a *Client) DcimInventoryItemTemplatesBulkPartialUpdate(params *DcimInventoryItemTemplatesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInventoryItemTemplatesBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimInventoryItemTemplatesBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_inventory-item-templates_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/dcim/inventory-item-templates/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimInventoryItemTemplatesBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimInventoryItemTemplatesBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimInventoryItemTemplatesBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimInventoryItemTemplatesBulkUpdate dcim inventory item templates bulk update API
-*/
-func (a *Client) DcimInventoryItemTemplatesBulkUpdate(params *DcimInventoryItemTemplatesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInventoryItemTemplatesBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimInventoryItemTemplatesBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_inventory-item-templates_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/dcim/inventory-item-templates/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimInventoryItemTemplatesBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimInventoryItemTemplatesBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimInventoryItemTemplatesBulkUpdateDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -6855,120 +4671,6 @@ func (a *Client) DcimInventoryItemTemplatesUpdate(params *DcimInventoryItemTempl
 }
 
 /*
-DcimInventoryItemsBulkDelete dcim inventory items bulk delete API
-*/
-func (a *Client) DcimInventoryItemsBulkDelete(params *DcimInventoryItemsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInventoryItemsBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimInventoryItemsBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_inventory-items_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/dcim/inventory-items/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimInventoryItemsBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimInventoryItemsBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimInventoryItemsBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimInventoryItemsBulkPartialUpdate dcim inventory items bulk partial update API
-*/
-func (a *Client) DcimInventoryItemsBulkPartialUpdate(params *DcimInventoryItemsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInventoryItemsBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimInventoryItemsBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_inventory-items_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/dcim/inventory-items/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimInventoryItemsBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimInventoryItemsBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimInventoryItemsBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimInventoryItemsBulkUpdate dcim inventory items bulk update API
-*/
-func (a *Client) DcimInventoryItemsBulkUpdate(params *DcimInventoryItemsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInventoryItemsBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimInventoryItemsBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_inventory-items_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/dcim/inventory-items/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimInventoryItemsBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimInventoryItemsBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimInventoryItemsBulkUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
 DcimInventoryItemsCreate dcim inventory items create API
 */
 func (a *Client) DcimInventoryItemsCreate(params *DcimInventoryItemsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInventoryItemsCreateCreated, error) {
@@ -7193,120 +4895,6 @@ func (a *Client) DcimInventoryItemsUpdate(params *DcimInventoryItemsUpdateParams
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*DcimInventoryItemsUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimLocationsBulkDelete dcim locations bulk delete API
-*/
-func (a *Client) DcimLocationsBulkDelete(params *DcimLocationsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimLocationsBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimLocationsBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_locations_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/dcim/locations/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimLocationsBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimLocationsBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimLocationsBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimLocationsBulkPartialUpdate dcim locations bulk partial update API
-*/
-func (a *Client) DcimLocationsBulkPartialUpdate(params *DcimLocationsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimLocationsBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimLocationsBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_locations_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/dcim/locations/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimLocationsBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimLocationsBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimLocationsBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimLocationsBulkUpdate dcim locations bulk update API
-*/
-func (a *Client) DcimLocationsBulkUpdate(params *DcimLocationsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimLocationsBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimLocationsBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_locations_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/dcim/locations/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimLocationsBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimLocationsBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimLocationsBulkUpdateDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -7539,120 +5127,6 @@ func (a *Client) DcimLocationsUpdate(params *DcimLocationsUpdateParams, authInfo
 }
 
 /*
-DcimManufacturersBulkDelete dcim manufacturers bulk delete API
-*/
-func (a *Client) DcimManufacturersBulkDelete(params *DcimManufacturersBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimManufacturersBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimManufacturersBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_manufacturers_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/dcim/manufacturers/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimManufacturersBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimManufacturersBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimManufacturersBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimManufacturersBulkPartialUpdate dcim manufacturers bulk partial update API
-*/
-func (a *Client) DcimManufacturersBulkPartialUpdate(params *DcimManufacturersBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimManufacturersBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimManufacturersBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_manufacturers_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/dcim/manufacturers/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimManufacturersBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimManufacturersBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimManufacturersBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimManufacturersBulkUpdate dcim manufacturers bulk update API
-*/
-func (a *Client) DcimManufacturersBulkUpdate(params *DcimManufacturersBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimManufacturersBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimManufacturersBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_manufacturers_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/dcim/manufacturers/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimManufacturersBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimManufacturersBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimManufacturersBulkUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
 DcimManufacturersCreate dcim manufacturers create API
 */
 func (a *Client) DcimManufacturersCreate(params *DcimManufacturersCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimManufacturersCreateCreated, error) {
@@ -7877,120 +5351,6 @@ func (a *Client) DcimManufacturersUpdate(params *DcimManufacturersUpdateParams, 
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*DcimManufacturersUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimModuleBayTemplatesBulkDelete dcim module bay templates bulk delete API
-*/
-func (a *Client) DcimModuleBayTemplatesBulkDelete(params *DcimModuleBayTemplatesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimModuleBayTemplatesBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimModuleBayTemplatesBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_module-bay-templates_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/dcim/module-bay-templates/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimModuleBayTemplatesBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimModuleBayTemplatesBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimModuleBayTemplatesBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimModuleBayTemplatesBulkPartialUpdate dcim module bay templates bulk partial update API
-*/
-func (a *Client) DcimModuleBayTemplatesBulkPartialUpdate(params *DcimModuleBayTemplatesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimModuleBayTemplatesBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimModuleBayTemplatesBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_module-bay-templates_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/dcim/module-bay-templates/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimModuleBayTemplatesBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimModuleBayTemplatesBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimModuleBayTemplatesBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimModuleBayTemplatesBulkUpdate dcim module bay templates bulk update API
-*/
-func (a *Client) DcimModuleBayTemplatesBulkUpdate(params *DcimModuleBayTemplatesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimModuleBayTemplatesBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimModuleBayTemplatesBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_module-bay-templates_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/dcim/module-bay-templates/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimModuleBayTemplatesBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimModuleBayTemplatesBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimModuleBayTemplatesBulkUpdateDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -8223,120 +5583,6 @@ func (a *Client) DcimModuleBayTemplatesUpdate(params *DcimModuleBayTemplatesUpda
 }
 
 /*
-DcimModuleBaysBulkDelete dcim module bays bulk delete API
-*/
-func (a *Client) DcimModuleBaysBulkDelete(params *DcimModuleBaysBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimModuleBaysBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimModuleBaysBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_module-bays_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/dcim/module-bays/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimModuleBaysBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimModuleBaysBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimModuleBaysBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimModuleBaysBulkPartialUpdate dcim module bays bulk partial update API
-*/
-func (a *Client) DcimModuleBaysBulkPartialUpdate(params *DcimModuleBaysBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimModuleBaysBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimModuleBaysBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_module-bays_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/dcim/module-bays/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimModuleBaysBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimModuleBaysBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimModuleBaysBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimModuleBaysBulkUpdate dcim module bays bulk update API
-*/
-func (a *Client) DcimModuleBaysBulkUpdate(params *DcimModuleBaysBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimModuleBaysBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimModuleBaysBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_module-bays_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/dcim/module-bays/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimModuleBaysBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimModuleBaysBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimModuleBaysBulkUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
 DcimModuleBaysCreate dcim module bays create API
 */
 func (a *Client) DcimModuleBaysCreate(params *DcimModuleBaysCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimModuleBaysCreateCreated, error) {
@@ -8561,120 +5807,6 @@ func (a *Client) DcimModuleBaysUpdate(params *DcimModuleBaysUpdateParams, authIn
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*DcimModuleBaysUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimModuleTypesBulkDelete dcim module types bulk delete API
-*/
-func (a *Client) DcimModuleTypesBulkDelete(params *DcimModuleTypesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimModuleTypesBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimModuleTypesBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_module-types_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/dcim/module-types/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimModuleTypesBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimModuleTypesBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimModuleTypesBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimModuleTypesBulkPartialUpdate dcim module types bulk partial update API
-*/
-func (a *Client) DcimModuleTypesBulkPartialUpdate(params *DcimModuleTypesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimModuleTypesBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimModuleTypesBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_module-types_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/dcim/module-types/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimModuleTypesBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimModuleTypesBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimModuleTypesBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimModuleTypesBulkUpdate dcim module types bulk update API
-*/
-func (a *Client) DcimModuleTypesBulkUpdate(params *DcimModuleTypesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimModuleTypesBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimModuleTypesBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_module-types_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/dcim/module-types/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimModuleTypesBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimModuleTypesBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimModuleTypesBulkUpdateDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -8907,120 +6039,6 @@ func (a *Client) DcimModuleTypesUpdate(params *DcimModuleTypesUpdateParams, auth
 }
 
 /*
-DcimModulesBulkDelete dcim modules bulk delete API
-*/
-func (a *Client) DcimModulesBulkDelete(params *DcimModulesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimModulesBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimModulesBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_modules_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/dcim/modules/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimModulesBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimModulesBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimModulesBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimModulesBulkPartialUpdate dcim modules bulk partial update API
-*/
-func (a *Client) DcimModulesBulkPartialUpdate(params *DcimModulesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimModulesBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimModulesBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_modules_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/dcim/modules/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimModulesBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimModulesBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimModulesBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimModulesBulkUpdate dcim modules bulk update API
-*/
-func (a *Client) DcimModulesBulkUpdate(params *DcimModulesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimModulesBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimModulesBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_modules_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/dcim/modules/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimModulesBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimModulesBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimModulesBulkUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
 DcimModulesCreate dcim modules create API
 */
 func (a *Client) DcimModulesCreate(params *DcimModulesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimModulesCreateCreated, error) {
@@ -9249,120 +6267,6 @@ func (a *Client) DcimModulesUpdate(params *DcimModulesUpdateParams, authInfo run
 }
 
 /*
-DcimPlatformsBulkDelete dcim platforms bulk delete API
-*/
-func (a *Client) DcimPlatformsBulkDelete(params *DcimPlatformsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPlatformsBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimPlatformsBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_platforms_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/dcim/platforms/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimPlatformsBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimPlatformsBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimPlatformsBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimPlatformsBulkPartialUpdate dcim platforms bulk partial update API
-*/
-func (a *Client) DcimPlatformsBulkPartialUpdate(params *DcimPlatformsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPlatformsBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimPlatformsBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_platforms_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/dcim/platforms/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimPlatformsBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimPlatformsBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimPlatformsBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimPlatformsBulkUpdate dcim platforms bulk update API
-*/
-func (a *Client) DcimPlatformsBulkUpdate(params *DcimPlatformsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPlatformsBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimPlatformsBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_platforms_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/dcim/platforms/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimPlatformsBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimPlatformsBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimPlatformsBulkUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
 DcimPlatformsCreate dcim platforms create API
 */
 func (a *Client) DcimPlatformsCreate(params *DcimPlatformsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPlatformsCreateCreated, error) {
@@ -9587,120 +6491,6 @@ func (a *Client) DcimPlatformsUpdate(params *DcimPlatformsUpdateParams, authInfo
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*DcimPlatformsUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimPowerFeedsBulkDelete dcim power feeds bulk delete API
-*/
-func (a *Client) DcimPowerFeedsBulkDelete(params *DcimPowerFeedsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerFeedsBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimPowerFeedsBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_power-feeds_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/dcim/power-feeds/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimPowerFeedsBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimPowerFeedsBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimPowerFeedsBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimPowerFeedsBulkPartialUpdate dcim power feeds bulk partial update API
-*/
-func (a *Client) DcimPowerFeedsBulkPartialUpdate(params *DcimPowerFeedsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerFeedsBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimPowerFeedsBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_power-feeds_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/dcim/power-feeds/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimPowerFeedsBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimPowerFeedsBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimPowerFeedsBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimPowerFeedsBulkUpdate dcim power feeds bulk update API
-*/
-func (a *Client) DcimPowerFeedsBulkUpdate(params *DcimPowerFeedsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerFeedsBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimPowerFeedsBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_power-feeds_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/dcim/power-feeds/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimPowerFeedsBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimPowerFeedsBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimPowerFeedsBulkUpdateDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -9971,120 +6761,6 @@ func (a *Client) DcimPowerFeedsUpdate(params *DcimPowerFeedsUpdateParams, authIn
 }
 
 /*
-DcimPowerOutletTemplatesBulkDelete dcim power outlet templates bulk delete API
-*/
-func (a *Client) DcimPowerOutletTemplatesBulkDelete(params *DcimPowerOutletTemplatesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerOutletTemplatesBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimPowerOutletTemplatesBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_power-outlet-templates_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/dcim/power-outlet-templates/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimPowerOutletTemplatesBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimPowerOutletTemplatesBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimPowerOutletTemplatesBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimPowerOutletTemplatesBulkPartialUpdate dcim power outlet templates bulk partial update API
-*/
-func (a *Client) DcimPowerOutletTemplatesBulkPartialUpdate(params *DcimPowerOutletTemplatesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerOutletTemplatesBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimPowerOutletTemplatesBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_power-outlet-templates_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/dcim/power-outlet-templates/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimPowerOutletTemplatesBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimPowerOutletTemplatesBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimPowerOutletTemplatesBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimPowerOutletTemplatesBulkUpdate dcim power outlet templates bulk update API
-*/
-func (a *Client) DcimPowerOutletTemplatesBulkUpdate(params *DcimPowerOutletTemplatesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerOutletTemplatesBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimPowerOutletTemplatesBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_power-outlet-templates_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/dcim/power-outlet-templates/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimPowerOutletTemplatesBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimPowerOutletTemplatesBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimPowerOutletTemplatesBulkUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
 DcimPowerOutletTemplatesCreate dcim power outlet templates create API
 */
 func (a *Client) DcimPowerOutletTemplatesCreate(params *DcimPowerOutletTemplatesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerOutletTemplatesCreateCreated, error) {
@@ -10309,120 +6985,6 @@ func (a *Client) DcimPowerOutletTemplatesUpdate(params *DcimPowerOutletTemplates
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*DcimPowerOutletTemplatesUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimPowerOutletsBulkDelete dcim power outlets bulk delete API
-*/
-func (a *Client) DcimPowerOutletsBulkDelete(params *DcimPowerOutletsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerOutletsBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimPowerOutletsBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_power-outlets_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/dcim/power-outlets/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimPowerOutletsBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimPowerOutletsBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimPowerOutletsBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimPowerOutletsBulkPartialUpdate dcim power outlets bulk partial update API
-*/
-func (a *Client) DcimPowerOutletsBulkPartialUpdate(params *DcimPowerOutletsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerOutletsBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimPowerOutletsBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_power-outlets_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/dcim/power-outlets/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimPowerOutletsBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimPowerOutletsBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimPowerOutletsBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimPowerOutletsBulkUpdate dcim power outlets bulk update API
-*/
-func (a *Client) DcimPowerOutletsBulkUpdate(params *DcimPowerOutletsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerOutletsBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimPowerOutletsBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_power-outlets_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/dcim/power-outlets/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimPowerOutletsBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimPowerOutletsBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimPowerOutletsBulkUpdateDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -10693,120 +7255,6 @@ func (a *Client) DcimPowerOutletsUpdate(params *DcimPowerOutletsUpdateParams, au
 }
 
 /*
-DcimPowerPanelsBulkDelete dcim power panels bulk delete API
-*/
-func (a *Client) DcimPowerPanelsBulkDelete(params *DcimPowerPanelsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerPanelsBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimPowerPanelsBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_power-panels_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/dcim/power-panels/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimPowerPanelsBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimPowerPanelsBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimPowerPanelsBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimPowerPanelsBulkPartialUpdate dcim power panels bulk partial update API
-*/
-func (a *Client) DcimPowerPanelsBulkPartialUpdate(params *DcimPowerPanelsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerPanelsBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimPowerPanelsBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_power-panels_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/dcim/power-panels/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimPowerPanelsBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimPowerPanelsBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimPowerPanelsBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimPowerPanelsBulkUpdate dcim power panels bulk update API
-*/
-func (a *Client) DcimPowerPanelsBulkUpdate(params *DcimPowerPanelsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerPanelsBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimPowerPanelsBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_power-panels_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/dcim/power-panels/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimPowerPanelsBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimPowerPanelsBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimPowerPanelsBulkUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
 DcimPowerPanelsCreate dcim power panels create API
 */
 func (a *Client) DcimPowerPanelsCreate(params *DcimPowerPanelsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerPanelsCreateCreated, error) {
@@ -11035,120 +7483,6 @@ func (a *Client) DcimPowerPanelsUpdate(params *DcimPowerPanelsUpdateParams, auth
 }
 
 /*
-DcimPowerPortTemplatesBulkDelete dcim power port templates bulk delete API
-*/
-func (a *Client) DcimPowerPortTemplatesBulkDelete(params *DcimPowerPortTemplatesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerPortTemplatesBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimPowerPortTemplatesBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_power-port-templates_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/dcim/power-port-templates/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimPowerPortTemplatesBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimPowerPortTemplatesBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimPowerPortTemplatesBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimPowerPortTemplatesBulkPartialUpdate dcim power port templates bulk partial update API
-*/
-func (a *Client) DcimPowerPortTemplatesBulkPartialUpdate(params *DcimPowerPortTemplatesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerPortTemplatesBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimPowerPortTemplatesBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_power-port-templates_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/dcim/power-port-templates/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimPowerPortTemplatesBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimPowerPortTemplatesBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimPowerPortTemplatesBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimPowerPortTemplatesBulkUpdate dcim power port templates bulk update API
-*/
-func (a *Client) DcimPowerPortTemplatesBulkUpdate(params *DcimPowerPortTemplatesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerPortTemplatesBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimPowerPortTemplatesBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_power-port-templates_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/dcim/power-port-templates/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimPowerPortTemplatesBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimPowerPortTemplatesBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimPowerPortTemplatesBulkUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
 DcimPowerPortTemplatesCreate dcim power port templates create API
 */
 func (a *Client) DcimPowerPortTemplatesCreate(params *DcimPowerPortTemplatesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerPortTemplatesCreateCreated, error) {
@@ -11373,120 +7707,6 @@ func (a *Client) DcimPowerPortTemplatesUpdate(params *DcimPowerPortTemplatesUpda
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*DcimPowerPortTemplatesUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimPowerPortsBulkDelete dcim power ports bulk delete API
-*/
-func (a *Client) DcimPowerPortsBulkDelete(params *DcimPowerPortsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerPortsBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimPowerPortsBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_power-ports_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/dcim/power-ports/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimPowerPortsBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimPowerPortsBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimPowerPortsBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimPowerPortsBulkPartialUpdate dcim power ports bulk partial update API
-*/
-func (a *Client) DcimPowerPortsBulkPartialUpdate(params *DcimPowerPortsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerPortsBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimPowerPortsBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_power-ports_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/dcim/power-ports/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimPowerPortsBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimPowerPortsBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimPowerPortsBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimPowerPortsBulkUpdate dcim power ports bulk update API
-*/
-func (a *Client) DcimPowerPortsBulkUpdate(params *DcimPowerPortsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerPortsBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimPowerPortsBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_power-ports_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/dcim/power-ports/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimPowerPortsBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimPowerPortsBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimPowerPortsBulkUpdateDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -11757,120 +7977,6 @@ func (a *Client) DcimPowerPortsUpdate(params *DcimPowerPortsUpdateParams, authIn
 }
 
 /*
-DcimRackReservationsBulkDelete dcim rack reservations bulk delete API
-*/
-func (a *Client) DcimRackReservationsBulkDelete(params *DcimRackReservationsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRackReservationsBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimRackReservationsBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_rack-reservations_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/dcim/rack-reservations/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimRackReservationsBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimRackReservationsBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimRackReservationsBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimRackReservationsBulkPartialUpdate dcim rack reservations bulk partial update API
-*/
-func (a *Client) DcimRackReservationsBulkPartialUpdate(params *DcimRackReservationsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRackReservationsBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimRackReservationsBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_rack-reservations_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/dcim/rack-reservations/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimRackReservationsBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimRackReservationsBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimRackReservationsBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimRackReservationsBulkUpdate dcim rack reservations bulk update API
-*/
-func (a *Client) DcimRackReservationsBulkUpdate(params *DcimRackReservationsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRackReservationsBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimRackReservationsBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_rack-reservations_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/dcim/rack-reservations/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimRackReservationsBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimRackReservationsBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimRackReservationsBulkUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
 DcimRackReservationsCreate dcim rack reservations create API
 */
 func (a *Client) DcimRackReservationsCreate(params *DcimRackReservationsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRackReservationsCreateCreated, error) {
@@ -12099,120 +8205,6 @@ func (a *Client) DcimRackReservationsUpdate(params *DcimRackReservationsUpdatePa
 }
 
 /*
-DcimRackRolesBulkDelete dcim rack roles bulk delete API
-*/
-func (a *Client) DcimRackRolesBulkDelete(params *DcimRackRolesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRackRolesBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimRackRolesBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_rack-roles_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/dcim/rack-roles/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimRackRolesBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimRackRolesBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimRackRolesBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimRackRolesBulkPartialUpdate dcim rack roles bulk partial update API
-*/
-func (a *Client) DcimRackRolesBulkPartialUpdate(params *DcimRackRolesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRackRolesBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimRackRolesBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_rack-roles_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/dcim/rack-roles/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimRackRolesBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimRackRolesBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimRackRolesBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimRackRolesBulkUpdate dcim rack roles bulk update API
-*/
-func (a *Client) DcimRackRolesBulkUpdate(params *DcimRackRolesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRackRolesBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimRackRolesBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_rack-roles_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/dcim/rack-roles/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimRackRolesBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimRackRolesBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimRackRolesBulkUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
 DcimRackRolesCreate dcim rack roles create API
 */
 func (a *Client) DcimRackRolesCreate(params *DcimRackRolesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRackRolesCreateCreated, error) {
@@ -12437,120 +8429,6 @@ func (a *Client) DcimRackRolesUpdate(params *DcimRackRolesUpdateParams, authInfo
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*DcimRackRolesUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimRacksBulkDelete dcim racks bulk delete API
-*/
-func (a *Client) DcimRacksBulkDelete(params *DcimRacksBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRacksBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimRacksBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_racks_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/dcim/racks/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimRacksBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimRacksBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimRacksBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimRacksBulkPartialUpdate dcim racks bulk partial update API
-*/
-func (a *Client) DcimRacksBulkPartialUpdate(params *DcimRacksBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRacksBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimRacksBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_racks_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/dcim/racks/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimRacksBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimRacksBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimRacksBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimRacksBulkUpdate dcim racks bulk update API
-*/
-func (a *Client) DcimRacksBulkUpdate(params *DcimRacksBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRacksBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimRacksBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_racks_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/dcim/racks/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimRacksBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimRacksBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimRacksBulkUpdateDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -12821,120 +8699,6 @@ func (a *Client) DcimRacksUpdate(params *DcimRacksUpdateParams, authInfo runtime
 }
 
 /*
-DcimRearPortTemplatesBulkDelete dcim rear port templates bulk delete API
-*/
-func (a *Client) DcimRearPortTemplatesBulkDelete(params *DcimRearPortTemplatesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRearPortTemplatesBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimRearPortTemplatesBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_rear-port-templates_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/dcim/rear-port-templates/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimRearPortTemplatesBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimRearPortTemplatesBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimRearPortTemplatesBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimRearPortTemplatesBulkPartialUpdate dcim rear port templates bulk partial update API
-*/
-func (a *Client) DcimRearPortTemplatesBulkPartialUpdate(params *DcimRearPortTemplatesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRearPortTemplatesBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimRearPortTemplatesBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_rear-port-templates_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/dcim/rear-port-templates/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimRearPortTemplatesBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimRearPortTemplatesBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimRearPortTemplatesBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimRearPortTemplatesBulkUpdate dcim rear port templates bulk update API
-*/
-func (a *Client) DcimRearPortTemplatesBulkUpdate(params *DcimRearPortTemplatesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRearPortTemplatesBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimRearPortTemplatesBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_rear-port-templates_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/dcim/rear-port-templates/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimRearPortTemplatesBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimRearPortTemplatesBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimRearPortTemplatesBulkUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
 DcimRearPortTemplatesCreate dcim rear port templates create API
 */
 func (a *Client) DcimRearPortTemplatesCreate(params *DcimRearPortTemplatesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRearPortTemplatesCreateCreated, error) {
@@ -13159,120 +8923,6 @@ func (a *Client) DcimRearPortTemplatesUpdate(params *DcimRearPortTemplatesUpdate
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*DcimRearPortTemplatesUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimRearPortsBulkDelete dcim rear ports bulk delete API
-*/
-func (a *Client) DcimRearPortsBulkDelete(params *DcimRearPortsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRearPortsBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimRearPortsBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_rear-ports_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/dcim/rear-ports/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimRearPortsBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimRearPortsBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimRearPortsBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimRearPortsBulkPartialUpdate dcim rear ports bulk partial update API
-*/
-func (a *Client) DcimRearPortsBulkPartialUpdate(params *DcimRearPortsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRearPortsBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimRearPortsBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_rear-ports_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/dcim/rear-ports/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimRearPortsBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimRearPortsBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimRearPortsBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimRearPortsBulkUpdate dcim rear ports bulk update API
-*/
-func (a *Client) DcimRearPortsBulkUpdate(params *DcimRearPortsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRearPortsBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimRearPortsBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_rear-ports_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/dcim/rear-ports/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimRearPortsBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimRearPortsBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimRearPortsBulkUpdateDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -13543,120 +9193,6 @@ func (a *Client) DcimRearPortsUpdate(params *DcimRearPortsUpdateParams, authInfo
 }
 
 /*
-DcimRegionsBulkDelete dcim regions bulk delete API
-*/
-func (a *Client) DcimRegionsBulkDelete(params *DcimRegionsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRegionsBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimRegionsBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_regions_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/dcim/regions/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimRegionsBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimRegionsBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimRegionsBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimRegionsBulkPartialUpdate dcim regions bulk partial update API
-*/
-func (a *Client) DcimRegionsBulkPartialUpdate(params *DcimRegionsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRegionsBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimRegionsBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_regions_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/dcim/regions/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimRegionsBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimRegionsBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimRegionsBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimRegionsBulkUpdate dcim regions bulk update API
-*/
-func (a *Client) DcimRegionsBulkUpdate(params *DcimRegionsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRegionsBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimRegionsBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_regions_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/dcim/regions/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimRegionsBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimRegionsBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimRegionsBulkUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
 DcimRegionsCreate dcim regions create API
 */
 func (a *Client) DcimRegionsCreate(params *DcimRegionsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRegionsCreateCreated, error) {
@@ -13881,120 +9417,6 @@ func (a *Client) DcimRegionsUpdate(params *DcimRegionsUpdateParams, authInfo run
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*DcimRegionsUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimSiteGroupsBulkDelete dcim site groups bulk delete API
-*/
-func (a *Client) DcimSiteGroupsBulkDelete(params *DcimSiteGroupsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimSiteGroupsBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimSiteGroupsBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_site-groups_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/dcim/site-groups/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimSiteGroupsBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimSiteGroupsBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimSiteGroupsBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimSiteGroupsBulkPartialUpdate dcim site groups bulk partial update API
-*/
-func (a *Client) DcimSiteGroupsBulkPartialUpdate(params *DcimSiteGroupsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimSiteGroupsBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimSiteGroupsBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_site-groups_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/dcim/site-groups/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimSiteGroupsBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimSiteGroupsBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimSiteGroupsBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimSiteGroupsBulkUpdate dcim site groups bulk update API
-*/
-func (a *Client) DcimSiteGroupsBulkUpdate(params *DcimSiteGroupsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimSiteGroupsBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimSiteGroupsBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_site-groups_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/dcim/site-groups/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimSiteGroupsBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimSiteGroupsBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimSiteGroupsBulkUpdateDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -14227,120 +9649,6 @@ func (a *Client) DcimSiteGroupsUpdate(params *DcimSiteGroupsUpdateParams, authIn
 }
 
 /*
-DcimSitesBulkDelete dcim sites bulk delete API
-*/
-func (a *Client) DcimSitesBulkDelete(params *DcimSitesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimSitesBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimSitesBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_sites_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/dcim/sites/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimSitesBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimSitesBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimSitesBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimSitesBulkPartialUpdate dcim sites bulk partial update API
-*/
-func (a *Client) DcimSitesBulkPartialUpdate(params *DcimSitesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimSitesBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimSitesBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_sites_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/dcim/sites/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimSitesBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimSitesBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimSitesBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimSitesBulkUpdate dcim sites bulk update API
-*/
-func (a *Client) DcimSitesBulkUpdate(params *DcimSitesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimSitesBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimSitesBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_sites_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/dcim/sites/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimSitesBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimSitesBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimSitesBulkUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
 DcimSitesCreate dcim sites create API
 */
 func (a *Client) DcimSitesCreate(params *DcimSitesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimSitesCreateCreated, error) {
@@ -14569,120 +9877,6 @@ func (a *Client) DcimSitesUpdate(params *DcimSitesUpdateParams, authInfo runtime
 }
 
 /*
-DcimVirtualChassisBulkDelete dcim virtual chassis bulk delete API
-*/
-func (a *Client) DcimVirtualChassisBulkDelete(params *DcimVirtualChassisBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimVirtualChassisBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimVirtualChassisBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_virtual-chassis_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/dcim/virtual-chassis/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimVirtualChassisBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimVirtualChassisBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimVirtualChassisBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimVirtualChassisBulkPartialUpdate dcim virtual chassis bulk partial update API
-*/
-func (a *Client) DcimVirtualChassisBulkPartialUpdate(params *DcimVirtualChassisBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimVirtualChassisBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimVirtualChassisBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_virtual-chassis_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/dcim/virtual-chassis/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimVirtualChassisBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimVirtualChassisBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimVirtualChassisBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimVirtualChassisBulkUpdate dcim virtual chassis bulk update API
-*/
-func (a *Client) DcimVirtualChassisBulkUpdate(params *DcimVirtualChassisBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimVirtualChassisBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimVirtualChassisBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_virtual-chassis_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/dcim/virtual-chassis/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimVirtualChassisBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimVirtualChassisBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimVirtualChassisBulkUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
 DcimVirtualChassisCreate dcim virtual chassis create API
 */
 func (a *Client) DcimVirtualChassisCreate(params *DcimVirtualChassisCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimVirtualChassisCreateCreated, error) {
@@ -14907,120 +10101,6 @@ func (a *Client) DcimVirtualChassisUpdate(params *DcimVirtualChassisUpdateParams
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*DcimVirtualChassisUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimVirtualDeviceContextsBulkDelete dcim virtual device contexts bulk delete API
-*/
-func (a *Client) DcimVirtualDeviceContextsBulkDelete(params *DcimVirtualDeviceContextsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimVirtualDeviceContextsBulkDeleteNoContent, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimVirtualDeviceContextsBulkDeleteParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_virtual-device-contexts_bulk_delete",
-		Method:             "DELETE",
-		PathPattern:        "/dcim/virtual-device-contexts/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimVirtualDeviceContextsBulkDeleteReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimVirtualDeviceContextsBulkDeleteNoContent)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimVirtualDeviceContextsBulkDeleteDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimVirtualDeviceContextsBulkPartialUpdate dcim virtual device contexts bulk partial update API
-*/
-func (a *Client) DcimVirtualDeviceContextsBulkPartialUpdate(params *DcimVirtualDeviceContextsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimVirtualDeviceContextsBulkPartialUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimVirtualDeviceContextsBulkPartialUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_virtual-device-contexts_bulk_partial_update",
-		Method:             "PATCH",
-		PathPattern:        "/dcim/virtual-device-contexts/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimVirtualDeviceContextsBulkPartialUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimVirtualDeviceContextsBulkPartialUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimVirtualDeviceContextsBulkPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-DcimVirtualDeviceContextsBulkUpdate dcim virtual device contexts bulk update API
-*/
-func (a *Client) DcimVirtualDeviceContextsBulkUpdate(params *DcimVirtualDeviceContextsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimVirtualDeviceContextsBulkUpdateOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimVirtualDeviceContextsBulkUpdateParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_virtual-device-contexts_bulk_update",
-		Method:             "PUT",
-		PathPattern:        "/dcim/virtual-device-contexts/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimVirtualDeviceContextsBulkUpdateReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimVirtualDeviceContextsBulkUpdateOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimVirtualDeviceContextsBulkUpdateDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
