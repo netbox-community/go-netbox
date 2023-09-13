@@ -23,7 +23,6 @@ package models
 import (
 	"context"
 	"encoding/json"
-	"strconv"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -36,8 +35,8 @@ import (
 // swagger:model CustomField
 type CustomField struct {
 
-	// Comma-separated list of available choices (for selection fields)
-	ChoiceSet []string `json:"choice_set"`
+	// choice set
+	ChoiceSet *CustomFieldChoiceSet `json:"choice_set,omitempty"`
 
 	// content types
 	// Required: true
@@ -237,16 +236,15 @@ func (m *CustomField) validateChoiceSet(formats strfmt.Registry) error {
 		return nil
 	}
 
-	for i := 0; i < len(m.ChoiceSet); i++ {
-
-		if err := validate.MinLength("choice_set"+"."+strconv.Itoa(i), "body", m.ChoiceSet[i], 1); err != nil {
+	if m.ChoiceSet != nil {
+		if err := m.ChoiceSet.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("choice_set")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("choice_set")
+			}
 			return err
 		}
-
-		if err := validate.MaxLength("choice_set"+"."+strconv.Itoa(i), "body", m.ChoiceSet[i], 100); err != nil {
-			return err
-		}
-
 	}
 
 	return nil
@@ -496,6 +494,10 @@ func (m *CustomField) validateWeight(formats strfmt.Registry) error {
 func (m *CustomField) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateChoiceSet(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateCreated(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -535,6 +537,22 @@ func (m *CustomField) ContextValidate(ctx context.Context, formats strfmt.Regist
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *CustomField) contextValidateChoiceSet(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.ChoiceSet != nil {
+		if err := m.ChoiceSet.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("choice_set")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("choice_set")
+			}
+			return err
+		}
+	}
+
 	return nil
 }
 

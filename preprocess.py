@@ -549,6 +549,19 @@ data["paths"]["/ipam/prefixes/{id}/available-prefixes/"]["post"]["responses"]["2
 logging.info("Make ASN.rir a full RIR object")
 data["definitions"]["ASN"]["properties"]["rir"] = {"$ref": "#/definitions/NestedRIR"}
 
+# Change custom fields choices to ChoiceSet reference
+logging.info("Change custom field choices to ChoiceSet ref")
+del data["definitions"]["CustomField"]["properties"]["choices"]
+data["definitions"]["CustomField"]["properties"]["choice_set"] = {
+    "$ref": "#/definitions/CustomFieldChoiceSet"
+}
+del data["definitions"]["WritableCustomField"]["properties"]["choices"]
+data["definitions"]["WritableCustomField"]["properties"]["choice_set"] = {
+    "title": "ChoiceSet",
+    "type": "integer",
+    "x-nullable": True,
+}
+
 # Write output file
 with open("swagger.processed.json", "w") as writefile:
     json.dump(data, writefile, indent=2)

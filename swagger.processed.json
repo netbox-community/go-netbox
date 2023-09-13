@@ -81648,17 +81648,6 @@
           "type": "string",
           "maxLength": 500
         },
-        "choice_set": {
-          "description": "Comma-separated list of available choices (for selection fields)",
-          "type": "array",
-          "items": {
-            "title": "Choices",
-            "type": "string",
-            "maxLength": 100,
-            "minLength": 1
-          },
-          "x-nullable": true
-        },
         "created": {
           "title": "Created",
           "type": "string",
@@ -81672,6 +81661,9 @@
           "format": "date-time",
           "readOnly": true,
           "x-nullable": true
+        },
+        "choice_set": {
+          "$ref": "#/definitions/CustomFieldChoiceSet"
         }
       }
     },
@@ -81826,17 +81818,6 @@
           "type": "string",
           "maxLength": 500
         },
-        "choice_set": {
-          "description": "Comma-separated list of available choices (for selection fields)",
-          "type": "array",
-          "items": {
-            "title": "Choices",
-            "type": "string",
-            "maxLength": 100,
-            "minLength": 1
-          },
-          "x-nullable": true
-        },
         "created": {
           "title": "Created",
           "type": "string",
@@ -81849,6 +81830,11 @@
           "type": "string",
           "format": "date-time",
           "readOnly": true,
+          "x-nullable": true
+        },
+        "choice_set": {
+          "title": "ChoiceSet",
+          "type": "integer",
           "x-nullable": true
         }
       }

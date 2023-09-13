@@ -82654,7 +82654,7 @@
           "type": "string",
           "maxLength": 500
         },
-        "choice_set": {
+        "choices": {
           "description": "Comma-separated list of available choices (for selection fields)",
           "type": "array",
           "items": {
@@ -82831,7 +82831,7 @@
           "type": "string",
           "maxLength": 500
         },
-        "choice_set": {
+        "choices": {
           "description": "Comma-separated list of available choices (for selection fields)",
           "type": "array",
           "items": {

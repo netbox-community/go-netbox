@@ -23,7 +23,6 @@ package models
 import (
 	"context"
 	"encoding/json"
-	"strconv"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -36,8 +35,8 @@ import (
 // swagger:model WritableCustomField
 type WritableCustomField struct {
 
-	// Comma-separated list of available choices (for selection fields)
-	ChoiceSet []string `json:"choice_set"`
+	// ChoiceSet
+	ChoiceSet *int64 `json:"choice_set,omitempty"`
 
 	// content types
 	// Required: true
@@ -166,10 +165,6 @@ type WritableCustomField struct {
 func (m *WritableCustomField) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateChoiceSet(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateContentTypes(formats); err != nil {
 		res = append(res, err)
 	}
@@ -237,26 +232,6 @@ func (m *WritableCustomField) Validate(formats strfmt.Registry) error {
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
-	return nil
-}
-
-func (m *WritableCustomField) validateChoiceSet(formats strfmt.Registry) error {
-	if swag.IsZero(m.ChoiceSet) { // not required
-		return nil
-	}
-
-	for i := 0; i < len(m.ChoiceSet); i++ {
-
-		if err := validate.MinLength("choice_set"+"."+strconv.Itoa(i), "body", m.ChoiceSet[i], 1); err != nil {
-			return err
-		}
-
-		if err := validate.MaxLength("choice_set"+"."+strconv.Itoa(i), "body", m.ChoiceSet[i], 100); err != nil {
-			return err
-		}
-
-	}
-
 	return nil
 }
 
