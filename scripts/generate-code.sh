@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli:v6.6.0 generate \
+docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli:v7.0.1 generate \
     --config /local/.openapi-generator/config.yaml \
     --input-spec /local/api/openapi.yaml \
     --output /local \
