@@ -29,12 +29,13 @@ Name | Type | Description | Notes
 **ConfigContext** | **map[string]interface{}** |  | [readonly] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
+**InterfaceCount** | **int32** |  | [readonly] 
 
 ## Methods
 
 ### NewVirtualMachineWithConfigContext
 
-`func NewVirtualMachineWithConfigContext(id int32, url string, display string, name string, primaryIp NestedIPAddress, configContext map[string]interface{}, created NullableTime, lastUpdated NullableTime, ) *VirtualMachineWithConfigContext`
+`func NewVirtualMachineWithConfigContext(id int32, url string, display string, name string, primaryIp NestedIPAddress, configContext map[string]interface{}, created NullableTime, lastUpdated NullableTime, interfaceCount int32, ) *VirtualMachineWithConfigContext`
 
 NewVirtualMachineWithConfigContext instantiates a new VirtualMachineWithConfigContext object
 This constructor will assign default values to properties that have it defined,
@@ -784,6 +785,26 @@ SetLastUpdated sets LastUpdated field to given value.
 `func (o *VirtualMachineWithConfigContext) UnsetLastUpdated()`
 
 UnsetLastUpdated ensures that no value is present for LastUpdated, not even an explicit nil
+### GetInterfaceCount
+
+`func (o *VirtualMachineWithConfigContext) GetInterfaceCount() int32`
+
+GetInterfaceCount returns the InterfaceCount field if non-nil, zero value otherwise.
+
+### GetInterfaceCountOk
+
+`func (o *VirtualMachineWithConfigContext) GetInterfaceCountOk() (*int32, bool)`
+
+GetInterfaceCountOk returns a tuple with the InterfaceCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInterfaceCount
+
+`func (o *VirtualMachineWithConfigContext) SetInterfaceCount(v int32)`
+
+SetInterfaceCount sets InterfaceCount field to given value.
+
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

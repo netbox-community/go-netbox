@@ -1,389 +1,389 @@
-# \DcimApi
+# \DcimAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DcimCableTerminationsBulkDestroy**](DcimApi.md#DcimCableTerminationsBulkDestroy) | **Delete** /api/dcim/cable-terminations/ | 
-[**DcimCableTerminationsBulkPartialUpdate**](DcimApi.md#DcimCableTerminationsBulkPartialUpdate) | **Patch** /api/dcim/cable-terminations/ | 
-[**DcimCableTerminationsBulkUpdate**](DcimApi.md#DcimCableTerminationsBulkUpdate) | **Put** /api/dcim/cable-terminations/ | 
-[**DcimCableTerminationsCreate**](DcimApi.md#DcimCableTerminationsCreate) | **Post** /api/dcim/cable-terminations/ | 
-[**DcimCableTerminationsDestroy**](DcimApi.md#DcimCableTerminationsDestroy) | **Delete** /api/dcim/cable-terminations/{id}/ | 
-[**DcimCableTerminationsList**](DcimApi.md#DcimCableTerminationsList) | **Get** /api/dcim/cable-terminations/ | 
-[**DcimCableTerminationsPartialUpdate**](DcimApi.md#DcimCableTerminationsPartialUpdate) | **Patch** /api/dcim/cable-terminations/{id}/ | 
-[**DcimCableTerminationsRetrieve**](DcimApi.md#DcimCableTerminationsRetrieve) | **Get** /api/dcim/cable-terminations/{id}/ | 
-[**DcimCableTerminationsUpdate**](DcimApi.md#DcimCableTerminationsUpdate) | **Put** /api/dcim/cable-terminations/{id}/ | 
-[**DcimCablesBulkDestroy**](DcimApi.md#DcimCablesBulkDestroy) | **Delete** /api/dcim/cables/ | 
-[**DcimCablesBulkPartialUpdate**](DcimApi.md#DcimCablesBulkPartialUpdate) | **Patch** /api/dcim/cables/ | 
-[**DcimCablesBulkUpdate**](DcimApi.md#DcimCablesBulkUpdate) | **Put** /api/dcim/cables/ | 
-[**DcimCablesCreate**](DcimApi.md#DcimCablesCreate) | **Post** /api/dcim/cables/ | 
-[**DcimCablesDestroy**](DcimApi.md#DcimCablesDestroy) | **Delete** /api/dcim/cables/{id}/ | 
-[**DcimCablesList**](DcimApi.md#DcimCablesList) | **Get** /api/dcim/cables/ | 
-[**DcimCablesPartialUpdate**](DcimApi.md#DcimCablesPartialUpdate) | **Patch** /api/dcim/cables/{id}/ | 
-[**DcimCablesRetrieve**](DcimApi.md#DcimCablesRetrieve) | **Get** /api/dcim/cables/{id}/ | 
-[**DcimCablesUpdate**](DcimApi.md#DcimCablesUpdate) | **Put** /api/dcim/cables/{id}/ | 
-[**DcimConnectedDeviceList**](DcimApi.md#DcimConnectedDeviceList) | **Get** /api/dcim/connected-device/ | 
-[**DcimConsolePortTemplatesBulkDestroy**](DcimApi.md#DcimConsolePortTemplatesBulkDestroy) | **Delete** /api/dcim/console-port-templates/ | 
-[**DcimConsolePortTemplatesBulkPartialUpdate**](DcimApi.md#DcimConsolePortTemplatesBulkPartialUpdate) | **Patch** /api/dcim/console-port-templates/ | 
-[**DcimConsolePortTemplatesBulkUpdate**](DcimApi.md#DcimConsolePortTemplatesBulkUpdate) | **Put** /api/dcim/console-port-templates/ | 
-[**DcimConsolePortTemplatesCreate**](DcimApi.md#DcimConsolePortTemplatesCreate) | **Post** /api/dcim/console-port-templates/ | 
-[**DcimConsolePortTemplatesDestroy**](DcimApi.md#DcimConsolePortTemplatesDestroy) | **Delete** /api/dcim/console-port-templates/{id}/ | 
-[**DcimConsolePortTemplatesList**](DcimApi.md#DcimConsolePortTemplatesList) | **Get** /api/dcim/console-port-templates/ | 
-[**DcimConsolePortTemplatesPartialUpdate**](DcimApi.md#DcimConsolePortTemplatesPartialUpdate) | **Patch** /api/dcim/console-port-templates/{id}/ | 
-[**DcimConsolePortTemplatesRetrieve**](DcimApi.md#DcimConsolePortTemplatesRetrieve) | **Get** /api/dcim/console-port-templates/{id}/ | 
-[**DcimConsolePortTemplatesUpdate**](DcimApi.md#DcimConsolePortTemplatesUpdate) | **Put** /api/dcim/console-port-templates/{id}/ | 
-[**DcimConsolePortsBulkDestroy**](DcimApi.md#DcimConsolePortsBulkDestroy) | **Delete** /api/dcim/console-ports/ | 
-[**DcimConsolePortsBulkPartialUpdate**](DcimApi.md#DcimConsolePortsBulkPartialUpdate) | **Patch** /api/dcim/console-ports/ | 
-[**DcimConsolePortsBulkUpdate**](DcimApi.md#DcimConsolePortsBulkUpdate) | **Put** /api/dcim/console-ports/ | 
-[**DcimConsolePortsCreate**](DcimApi.md#DcimConsolePortsCreate) | **Post** /api/dcim/console-ports/ | 
-[**DcimConsolePortsDestroy**](DcimApi.md#DcimConsolePortsDestroy) | **Delete** /api/dcim/console-ports/{id}/ | 
-[**DcimConsolePortsList**](DcimApi.md#DcimConsolePortsList) | **Get** /api/dcim/console-ports/ | 
-[**DcimConsolePortsPartialUpdate**](DcimApi.md#DcimConsolePortsPartialUpdate) | **Patch** /api/dcim/console-ports/{id}/ | 
-[**DcimConsolePortsRetrieve**](DcimApi.md#DcimConsolePortsRetrieve) | **Get** /api/dcim/console-ports/{id}/ | 
-[**DcimConsolePortsTraceRetrieve**](DcimApi.md#DcimConsolePortsTraceRetrieve) | **Get** /api/dcim/console-ports/{id}/trace/ | 
-[**DcimConsolePortsUpdate**](DcimApi.md#DcimConsolePortsUpdate) | **Put** /api/dcim/console-ports/{id}/ | 
-[**DcimConsoleServerPortTemplatesBulkDestroy**](DcimApi.md#DcimConsoleServerPortTemplatesBulkDestroy) | **Delete** /api/dcim/console-server-port-templates/ | 
-[**DcimConsoleServerPortTemplatesBulkPartialUpdate**](DcimApi.md#DcimConsoleServerPortTemplatesBulkPartialUpdate) | **Patch** /api/dcim/console-server-port-templates/ | 
-[**DcimConsoleServerPortTemplatesBulkUpdate**](DcimApi.md#DcimConsoleServerPortTemplatesBulkUpdate) | **Put** /api/dcim/console-server-port-templates/ | 
-[**DcimConsoleServerPortTemplatesCreate**](DcimApi.md#DcimConsoleServerPortTemplatesCreate) | **Post** /api/dcim/console-server-port-templates/ | 
-[**DcimConsoleServerPortTemplatesDestroy**](DcimApi.md#DcimConsoleServerPortTemplatesDestroy) | **Delete** /api/dcim/console-server-port-templates/{id}/ | 
-[**DcimConsoleServerPortTemplatesList**](DcimApi.md#DcimConsoleServerPortTemplatesList) | **Get** /api/dcim/console-server-port-templates/ | 
-[**DcimConsoleServerPortTemplatesPartialUpdate**](DcimApi.md#DcimConsoleServerPortTemplatesPartialUpdate) | **Patch** /api/dcim/console-server-port-templates/{id}/ | 
-[**DcimConsoleServerPortTemplatesRetrieve**](DcimApi.md#DcimConsoleServerPortTemplatesRetrieve) | **Get** /api/dcim/console-server-port-templates/{id}/ | 
-[**DcimConsoleServerPortTemplatesUpdate**](DcimApi.md#DcimConsoleServerPortTemplatesUpdate) | **Put** /api/dcim/console-server-port-templates/{id}/ | 
-[**DcimConsoleServerPortsBulkDestroy**](DcimApi.md#DcimConsoleServerPortsBulkDestroy) | **Delete** /api/dcim/console-server-ports/ | 
-[**DcimConsoleServerPortsBulkPartialUpdate**](DcimApi.md#DcimConsoleServerPortsBulkPartialUpdate) | **Patch** /api/dcim/console-server-ports/ | 
-[**DcimConsoleServerPortsBulkUpdate**](DcimApi.md#DcimConsoleServerPortsBulkUpdate) | **Put** /api/dcim/console-server-ports/ | 
-[**DcimConsoleServerPortsCreate**](DcimApi.md#DcimConsoleServerPortsCreate) | **Post** /api/dcim/console-server-ports/ | 
-[**DcimConsoleServerPortsDestroy**](DcimApi.md#DcimConsoleServerPortsDestroy) | **Delete** /api/dcim/console-server-ports/{id}/ | 
-[**DcimConsoleServerPortsList**](DcimApi.md#DcimConsoleServerPortsList) | **Get** /api/dcim/console-server-ports/ | 
-[**DcimConsoleServerPortsPartialUpdate**](DcimApi.md#DcimConsoleServerPortsPartialUpdate) | **Patch** /api/dcim/console-server-ports/{id}/ | 
-[**DcimConsoleServerPortsRetrieve**](DcimApi.md#DcimConsoleServerPortsRetrieve) | **Get** /api/dcim/console-server-ports/{id}/ | 
-[**DcimConsoleServerPortsTraceRetrieve**](DcimApi.md#DcimConsoleServerPortsTraceRetrieve) | **Get** /api/dcim/console-server-ports/{id}/trace/ | 
-[**DcimConsoleServerPortsUpdate**](DcimApi.md#DcimConsoleServerPortsUpdate) | **Put** /api/dcim/console-server-ports/{id}/ | 
-[**DcimDeviceBayTemplatesBulkDestroy**](DcimApi.md#DcimDeviceBayTemplatesBulkDestroy) | **Delete** /api/dcim/device-bay-templates/ | 
-[**DcimDeviceBayTemplatesBulkPartialUpdate**](DcimApi.md#DcimDeviceBayTemplatesBulkPartialUpdate) | **Patch** /api/dcim/device-bay-templates/ | 
-[**DcimDeviceBayTemplatesBulkUpdate**](DcimApi.md#DcimDeviceBayTemplatesBulkUpdate) | **Put** /api/dcim/device-bay-templates/ | 
-[**DcimDeviceBayTemplatesCreate**](DcimApi.md#DcimDeviceBayTemplatesCreate) | **Post** /api/dcim/device-bay-templates/ | 
-[**DcimDeviceBayTemplatesDestroy**](DcimApi.md#DcimDeviceBayTemplatesDestroy) | **Delete** /api/dcim/device-bay-templates/{id}/ | 
-[**DcimDeviceBayTemplatesList**](DcimApi.md#DcimDeviceBayTemplatesList) | **Get** /api/dcim/device-bay-templates/ | 
-[**DcimDeviceBayTemplatesPartialUpdate**](DcimApi.md#DcimDeviceBayTemplatesPartialUpdate) | **Patch** /api/dcim/device-bay-templates/{id}/ | 
-[**DcimDeviceBayTemplatesRetrieve**](DcimApi.md#DcimDeviceBayTemplatesRetrieve) | **Get** /api/dcim/device-bay-templates/{id}/ | 
-[**DcimDeviceBayTemplatesUpdate**](DcimApi.md#DcimDeviceBayTemplatesUpdate) | **Put** /api/dcim/device-bay-templates/{id}/ | 
-[**DcimDeviceBaysBulkDestroy**](DcimApi.md#DcimDeviceBaysBulkDestroy) | **Delete** /api/dcim/device-bays/ | 
-[**DcimDeviceBaysBulkPartialUpdate**](DcimApi.md#DcimDeviceBaysBulkPartialUpdate) | **Patch** /api/dcim/device-bays/ | 
-[**DcimDeviceBaysBulkUpdate**](DcimApi.md#DcimDeviceBaysBulkUpdate) | **Put** /api/dcim/device-bays/ | 
-[**DcimDeviceBaysCreate**](DcimApi.md#DcimDeviceBaysCreate) | **Post** /api/dcim/device-bays/ | 
-[**DcimDeviceBaysDestroy**](DcimApi.md#DcimDeviceBaysDestroy) | **Delete** /api/dcim/device-bays/{id}/ | 
-[**DcimDeviceBaysList**](DcimApi.md#DcimDeviceBaysList) | **Get** /api/dcim/device-bays/ | 
-[**DcimDeviceBaysPartialUpdate**](DcimApi.md#DcimDeviceBaysPartialUpdate) | **Patch** /api/dcim/device-bays/{id}/ | 
-[**DcimDeviceBaysRetrieve**](DcimApi.md#DcimDeviceBaysRetrieve) | **Get** /api/dcim/device-bays/{id}/ | 
-[**DcimDeviceBaysUpdate**](DcimApi.md#DcimDeviceBaysUpdate) | **Put** /api/dcim/device-bays/{id}/ | 
-[**DcimDeviceRolesBulkDestroy**](DcimApi.md#DcimDeviceRolesBulkDestroy) | **Delete** /api/dcim/device-roles/ | 
-[**DcimDeviceRolesBulkPartialUpdate**](DcimApi.md#DcimDeviceRolesBulkPartialUpdate) | **Patch** /api/dcim/device-roles/ | 
-[**DcimDeviceRolesBulkUpdate**](DcimApi.md#DcimDeviceRolesBulkUpdate) | **Put** /api/dcim/device-roles/ | 
-[**DcimDeviceRolesCreate**](DcimApi.md#DcimDeviceRolesCreate) | **Post** /api/dcim/device-roles/ | 
-[**DcimDeviceRolesDestroy**](DcimApi.md#DcimDeviceRolesDestroy) | **Delete** /api/dcim/device-roles/{id}/ | 
-[**DcimDeviceRolesList**](DcimApi.md#DcimDeviceRolesList) | **Get** /api/dcim/device-roles/ | 
-[**DcimDeviceRolesPartialUpdate**](DcimApi.md#DcimDeviceRolesPartialUpdate) | **Patch** /api/dcim/device-roles/{id}/ | 
-[**DcimDeviceRolesRetrieve**](DcimApi.md#DcimDeviceRolesRetrieve) | **Get** /api/dcim/device-roles/{id}/ | 
-[**DcimDeviceRolesUpdate**](DcimApi.md#DcimDeviceRolesUpdate) | **Put** /api/dcim/device-roles/{id}/ | 
-[**DcimDeviceTypesBulkDestroy**](DcimApi.md#DcimDeviceTypesBulkDestroy) | **Delete** /api/dcim/device-types/ | 
-[**DcimDeviceTypesBulkPartialUpdate**](DcimApi.md#DcimDeviceTypesBulkPartialUpdate) | **Patch** /api/dcim/device-types/ | 
-[**DcimDeviceTypesBulkUpdate**](DcimApi.md#DcimDeviceTypesBulkUpdate) | **Put** /api/dcim/device-types/ | 
-[**DcimDeviceTypesCreate**](DcimApi.md#DcimDeviceTypesCreate) | **Post** /api/dcim/device-types/ | 
-[**DcimDeviceTypesDestroy**](DcimApi.md#DcimDeviceTypesDestroy) | **Delete** /api/dcim/device-types/{id}/ | 
-[**DcimDeviceTypesList**](DcimApi.md#DcimDeviceTypesList) | **Get** /api/dcim/device-types/ | 
-[**DcimDeviceTypesPartialUpdate**](DcimApi.md#DcimDeviceTypesPartialUpdate) | **Patch** /api/dcim/device-types/{id}/ | 
-[**DcimDeviceTypesRetrieve**](DcimApi.md#DcimDeviceTypesRetrieve) | **Get** /api/dcim/device-types/{id}/ | 
-[**DcimDeviceTypesUpdate**](DcimApi.md#DcimDeviceTypesUpdate) | **Put** /api/dcim/device-types/{id}/ | 
-[**DcimDevicesBulkDestroy**](DcimApi.md#DcimDevicesBulkDestroy) | **Delete** /api/dcim/devices/ | 
-[**DcimDevicesBulkPartialUpdate**](DcimApi.md#DcimDevicesBulkPartialUpdate) | **Patch** /api/dcim/devices/ | 
-[**DcimDevicesBulkUpdate**](DcimApi.md#DcimDevicesBulkUpdate) | **Put** /api/dcim/devices/ | 
-[**DcimDevicesCreate**](DcimApi.md#DcimDevicesCreate) | **Post** /api/dcim/devices/ | 
-[**DcimDevicesDestroy**](DcimApi.md#DcimDevicesDestroy) | **Delete** /api/dcim/devices/{id}/ | 
-[**DcimDevicesList**](DcimApi.md#DcimDevicesList) | **Get** /api/dcim/devices/ | 
-[**DcimDevicesPartialUpdate**](DcimApi.md#DcimDevicesPartialUpdate) | **Patch** /api/dcim/devices/{id}/ | 
-[**DcimDevicesRenderConfigCreate**](DcimApi.md#DcimDevicesRenderConfigCreate) | **Post** /api/dcim/devices/{id}/render-config/ | 
-[**DcimDevicesRetrieve**](DcimApi.md#DcimDevicesRetrieve) | **Get** /api/dcim/devices/{id}/ | 
-[**DcimDevicesUpdate**](DcimApi.md#DcimDevicesUpdate) | **Put** /api/dcim/devices/{id}/ | 
-[**DcimFrontPortTemplatesBulkDestroy**](DcimApi.md#DcimFrontPortTemplatesBulkDestroy) | **Delete** /api/dcim/front-port-templates/ | 
-[**DcimFrontPortTemplatesBulkPartialUpdate**](DcimApi.md#DcimFrontPortTemplatesBulkPartialUpdate) | **Patch** /api/dcim/front-port-templates/ | 
-[**DcimFrontPortTemplatesBulkUpdate**](DcimApi.md#DcimFrontPortTemplatesBulkUpdate) | **Put** /api/dcim/front-port-templates/ | 
-[**DcimFrontPortTemplatesCreate**](DcimApi.md#DcimFrontPortTemplatesCreate) | **Post** /api/dcim/front-port-templates/ | 
-[**DcimFrontPortTemplatesDestroy**](DcimApi.md#DcimFrontPortTemplatesDestroy) | **Delete** /api/dcim/front-port-templates/{id}/ | 
-[**DcimFrontPortTemplatesList**](DcimApi.md#DcimFrontPortTemplatesList) | **Get** /api/dcim/front-port-templates/ | 
-[**DcimFrontPortTemplatesPartialUpdate**](DcimApi.md#DcimFrontPortTemplatesPartialUpdate) | **Patch** /api/dcim/front-port-templates/{id}/ | 
-[**DcimFrontPortTemplatesRetrieve**](DcimApi.md#DcimFrontPortTemplatesRetrieve) | **Get** /api/dcim/front-port-templates/{id}/ | 
-[**DcimFrontPortTemplatesUpdate**](DcimApi.md#DcimFrontPortTemplatesUpdate) | **Put** /api/dcim/front-port-templates/{id}/ | 
-[**DcimFrontPortsBulkDestroy**](DcimApi.md#DcimFrontPortsBulkDestroy) | **Delete** /api/dcim/front-ports/ | 
-[**DcimFrontPortsBulkPartialUpdate**](DcimApi.md#DcimFrontPortsBulkPartialUpdate) | **Patch** /api/dcim/front-ports/ | 
-[**DcimFrontPortsBulkUpdate**](DcimApi.md#DcimFrontPortsBulkUpdate) | **Put** /api/dcim/front-ports/ | 
-[**DcimFrontPortsCreate**](DcimApi.md#DcimFrontPortsCreate) | **Post** /api/dcim/front-ports/ | 
-[**DcimFrontPortsDestroy**](DcimApi.md#DcimFrontPortsDestroy) | **Delete** /api/dcim/front-ports/{id}/ | 
-[**DcimFrontPortsList**](DcimApi.md#DcimFrontPortsList) | **Get** /api/dcim/front-ports/ | 
-[**DcimFrontPortsPartialUpdate**](DcimApi.md#DcimFrontPortsPartialUpdate) | **Patch** /api/dcim/front-ports/{id}/ | 
-[**DcimFrontPortsPathsRetrieve**](DcimApi.md#DcimFrontPortsPathsRetrieve) | **Get** /api/dcim/front-ports/{id}/paths/ | 
-[**DcimFrontPortsRetrieve**](DcimApi.md#DcimFrontPortsRetrieve) | **Get** /api/dcim/front-ports/{id}/ | 
-[**DcimFrontPortsUpdate**](DcimApi.md#DcimFrontPortsUpdate) | **Put** /api/dcim/front-ports/{id}/ | 
-[**DcimInterfaceTemplatesBulkDestroy**](DcimApi.md#DcimInterfaceTemplatesBulkDestroy) | **Delete** /api/dcim/interface-templates/ | 
-[**DcimInterfaceTemplatesBulkPartialUpdate**](DcimApi.md#DcimInterfaceTemplatesBulkPartialUpdate) | **Patch** /api/dcim/interface-templates/ | 
-[**DcimInterfaceTemplatesBulkUpdate**](DcimApi.md#DcimInterfaceTemplatesBulkUpdate) | **Put** /api/dcim/interface-templates/ | 
-[**DcimInterfaceTemplatesCreate**](DcimApi.md#DcimInterfaceTemplatesCreate) | **Post** /api/dcim/interface-templates/ | 
-[**DcimInterfaceTemplatesDestroy**](DcimApi.md#DcimInterfaceTemplatesDestroy) | **Delete** /api/dcim/interface-templates/{id}/ | 
-[**DcimInterfaceTemplatesList**](DcimApi.md#DcimInterfaceTemplatesList) | **Get** /api/dcim/interface-templates/ | 
-[**DcimInterfaceTemplatesPartialUpdate**](DcimApi.md#DcimInterfaceTemplatesPartialUpdate) | **Patch** /api/dcim/interface-templates/{id}/ | 
-[**DcimInterfaceTemplatesRetrieve**](DcimApi.md#DcimInterfaceTemplatesRetrieve) | **Get** /api/dcim/interface-templates/{id}/ | 
-[**DcimInterfaceTemplatesUpdate**](DcimApi.md#DcimInterfaceTemplatesUpdate) | **Put** /api/dcim/interface-templates/{id}/ | 
-[**DcimInterfacesBulkDestroy**](DcimApi.md#DcimInterfacesBulkDestroy) | **Delete** /api/dcim/interfaces/ | 
-[**DcimInterfacesBulkPartialUpdate**](DcimApi.md#DcimInterfacesBulkPartialUpdate) | **Patch** /api/dcim/interfaces/ | 
-[**DcimInterfacesBulkUpdate**](DcimApi.md#DcimInterfacesBulkUpdate) | **Put** /api/dcim/interfaces/ | 
-[**DcimInterfacesCreate**](DcimApi.md#DcimInterfacesCreate) | **Post** /api/dcim/interfaces/ | 
-[**DcimInterfacesDestroy**](DcimApi.md#DcimInterfacesDestroy) | **Delete** /api/dcim/interfaces/{id}/ | 
-[**DcimInterfacesList**](DcimApi.md#DcimInterfacesList) | **Get** /api/dcim/interfaces/ | 
-[**DcimInterfacesPartialUpdate**](DcimApi.md#DcimInterfacesPartialUpdate) | **Patch** /api/dcim/interfaces/{id}/ | 
-[**DcimInterfacesRetrieve**](DcimApi.md#DcimInterfacesRetrieve) | **Get** /api/dcim/interfaces/{id}/ | 
-[**DcimInterfacesTraceRetrieve**](DcimApi.md#DcimInterfacesTraceRetrieve) | **Get** /api/dcim/interfaces/{id}/trace/ | 
-[**DcimInterfacesUpdate**](DcimApi.md#DcimInterfacesUpdate) | **Put** /api/dcim/interfaces/{id}/ | 
-[**DcimInventoryItemRolesBulkDestroy**](DcimApi.md#DcimInventoryItemRolesBulkDestroy) | **Delete** /api/dcim/inventory-item-roles/ | 
-[**DcimInventoryItemRolesBulkPartialUpdate**](DcimApi.md#DcimInventoryItemRolesBulkPartialUpdate) | **Patch** /api/dcim/inventory-item-roles/ | 
-[**DcimInventoryItemRolesBulkUpdate**](DcimApi.md#DcimInventoryItemRolesBulkUpdate) | **Put** /api/dcim/inventory-item-roles/ | 
-[**DcimInventoryItemRolesCreate**](DcimApi.md#DcimInventoryItemRolesCreate) | **Post** /api/dcim/inventory-item-roles/ | 
-[**DcimInventoryItemRolesDestroy**](DcimApi.md#DcimInventoryItemRolesDestroy) | **Delete** /api/dcim/inventory-item-roles/{id}/ | 
-[**DcimInventoryItemRolesList**](DcimApi.md#DcimInventoryItemRolesList) | **Get** /api/dcim/inventory-item-roles/ | 
-[**DcimInventoryItemRolesPartialUpdate**](DcimApi.md#DcimInventoryItemRolesPartialUpdate) | **Patch** /api/dcim/inventory-item-roles/{id}/ | 
-[**DcimInventoryItemRolesRetrieve**](DcimApi.md#DcimInventoryItemRolesRetrieve) | **Get** /api/dcim/inventory-item-roles/{id}/ | 
-[**DcimInventoryItemRolesUpdate**](DcimApi.md#DcimInventoryItemRolesUpdate) | **Put** /api/dcim/inventory-item-roles/{id}/ | 
-[**DcimInventoryItemTemplatesBulkDestroy**](DcimApi.md#DcimInventoryItemTemplatesBulkDestroy) | **Delete** /api/dcim/inventory-item-templates/ | 
-[**DcimInventoryItemTemplatesBulkPartialUpdate**](DcimApi.md#DcimInventoryItemTemplatesBulkPartialUpdate) | **Patch** /api/dcim/inventory-item-templates/ | 
-[**DcimInventoryItemTemplatesBulkUpdate**](DcimApi.md#DcimInventoryItemTemplatesBulkUpdate) | **Put** /api/dcim/inventory-item-templates/ | 
-[**DcimInventoryItemTemplatesCreate**](DcimApi.md#DcimInventoryItemTemplatesCreate) | **Post** /api/dcim/inventory-item-templates/ | 
-[**DcimInventoryItemTemplatesDestroy**](DcimApi.md#DcimInventoryItemTemplatesDestroy) | **Delete** /api/dcim/inventory-item-templates/{id}/ | 
-[**DcimInventoryItemTemplatesList**](DcimApi.md#DcimInventoryItemTemplatesList) | **Get** /api/dcim/inventory-item-templates/ | 
-[**DcimInventoryItemTemplatesPartialUpdate**](DcimApi.md#DcimInventoryItemTemplatesPartialUpdate) | **Patch** /api/dcim/inventory-item-templates/{id}/ | 
-[**DcimInventoryItemTemplatesRetrieve**](DcimApi.md#DcimInventoryItemTemplatesRetrieve) | **Get** /api/dcim/inventory-item-templates/{id}/ | 
-[**DcimInventoryItemTemplatesUpdate**](DcimApi.md#DcimInventoryItemTemplatesUpdate) | **Put** /api/dcim/inventory-item-templates/{id}/ | 
-[**DcimInventoryItemsBulkDestroy**](DcimApi.md#DcimInventoryItemsBulkDestroy) | **Delete** /api/dcim/inventory-items/ | 
-[**DcimInventoryItemsBulkPartialUpdate**](DcimApi.md#DcimInventoryItemsBulkPartialUpdate) | **Patch** /api/dcim/inventory-items/ | 
-[**DcimInventoryItemsBulkUpdate**](DcimApi.md#DcimInventoryItemsBulkUpdate) | **Put** /api/dcim/inventory-items/ | 
-[**DcimInventoryItemsCreate**](DcimApi.md#DcimInventoryItemsCreate) | **Post** /api/dcim/inventory-items/ | 
-[**DcimInventoryItemsDestroy**](DcimApi.md#DcimInventoryItemsDestroy) | **Delete** /api/dcim/inventory-items/{id}/ | 
-[**DcimInventoryItemsList**](DcimApi.md#DcimInventoryItemsList) | **Get** /api/dcim/inventory-items/ | 
-[**DcimInventoryItemsPartialUpdate**](DcimApi.md#DcimInventoryItemsPartialUpdate) | **Patch** /api/dcim/inventory-items/{id}/ | 
-[**DcimInventoryItemsRetrieve**](DcimApi.md#DcimInventoryItemsRetrieve) | **Get** /api/dcim/inventory-items/{id}/ | 
-[**DcimInventoryItemsUpdate**](DcimApi.md#DcimInventoryItemsUpdate) | **Put** /api/dcim/inventory-items/{id}/ | 
-[**DcimLocationsBulkDestroy**](DcimApi.md#DcimLocationsBulkDestroy) | **Delete** /api/dcim/locations/ | 
-[**DcimLocationsBulkPartialUpdate**](DcimApi.md#DcimLocationsBulkPartialUpdate) | **Patch** /api/dcim/locations/ | 
-[**DcimLocationsBulkUpdate**](DcimApi.md#DcimLocationsBulkUpdate) | **Put** /api/dcim/locations/ | 
-[**DcimLocationsCreate**](DcimApi.md#DcimLocationsCreate) | **Post** /api/dcim/locations/ | 
-[**DcimLocationsDestroy**](DcimApi.md#DcimLocationsDestroy) | **Delete** /api/dcim/locations/{id}/ | 
-[**DcimLocationsList**](DcimApi.md#DcimLocationsList) | **Get** /api/dcim/locations/ | 
-[**DcimLocationsPartialUpdate**](DcimApi.md#DcimLocationsPartialUpdate) | **Patch** /api/dcim/locations/{id}/ | 
-[**DcimLocationsRetrieve**](DcimApi.md#DcimLocationsRetrieve) | **Get** /api/dcim/locations/{id}/ | 
-[**DcimLocationsUpdate**](DcimApi.md#DcimLocationsUpdate) | **Put** /api/dcim/locations/{id}/ | 
-[**DcimManufacturersBulkDestroy**](DcimApi.md#DcimManufacturersBulkDestroy) | **Delete** /api/dcim/manufacturers/ | 
-[**DcimManufacturersBulkPartialUpdate**](DcimApi.md#DcimManufacturersBulkPartialUpdate) | **Patch** /api/dcim/manufacturers/ | 
-[**DcimManufacturersBulkUpdate**](DcimApi.md#DcimManufacturersBulkUpdate) | **Put** /api/dcim/manufacturers/ | 
-[**DcimManufacturersCreate**](DcimApi.md#DcimManufacturersCreate) | **Post** /api/dcim/manufacturers/ | 
-[**DcimManufacturersDestroy**](DcimApi.md#DcimManufacturersDestroy) | **Delete** /api/dcim/manufacturers/{id}/ | 
-[**DcimManufacturersList**](DcimApi.md#DcimManufacturersList) | **Get** /api/dcim/manufacturers/ | 
-[**DcimManufacturersPartialUpdate**](DcimApi.md#DcimManufacturersPartialUpdate) | **Patch** /api/dcim/manufacturers/{id}/ | 
-[**DcimManufacturersRetrieve**](DcimApi.md#DcimManufacturersRetrieve) | **Get** /api/dcim/manufacturers/{id}/ | 
-[**DcimManufacturersUpdate**](DcimApi.md#DcimManufacturersUpdate) | **Put** /api/dcim/manufacturers/{id}/ | 
-[**DcimModuleBayTemplatesBulkDestroy**](DcimApi.md#DcimModuleBayTemplatesBulkDestroy) | **Delete** /api/dcim/module-bay-templates/ | 
-[**DcimModuleBayTemplatesBulkPartialUpdate**](DcimApi.md#DcimModuleBayTemplatesBulkPartialUpdate) | **Patch** /api/dcim/module-bay-templates/ | 
-[**DcimModuleBayTemplatesBulkUpdate**](DcimApi.md#DcimModuleBayTemplatesBulkUpdate) | **Put** /api/dcim/module-bay-templates/ | 
-[**DcimModuleBayTemplatesCreate**](DcimApi.md#DcimModuleBayTemplatesCreate) | **Post** /api/dcim/module-bay-templates/ | 
-[**DcimModuleBayTemplatesDestroy**](DcimApi.md#DcimModuleBayTemplatesDestroy) | **Delete** /api/dcim/module-bay-templates/{id}/ | 
-[**DcimModuleBayTemplatesList**](DcimApi.md#DcimModuleBayTemplatesList) | **Get** /api/dcim/module-bay-templates/ | 
-[**DcimModuleBayTemplatesPartialUpdate**](DcimApi.md#DcimModuleBayTemplatesPartialUpdate) | **Patch** /api/dcim/module-bay-templates/{id}/ | 
-[**DcimModuleBayTemplatesRetrieve**](DcimApi.md#DcimModuleBayTemplatesRetrieve) | **Get** /api/dcim/module-bay-templates/{id}/ | 
-[**DcimModuleBayTemplatesUpdate**](DcimApi.md#DcimModuleBayTemplatesUpdate) | **Put** /api/dcim/module-bay-templates/{id}/ | 
-[**DcimModuleBaysBulkDestroy**](DcimApi.md#DcimModuleBaysBulkDestroy) | **Delete** /api/dcim/module-bays/ | 
-[**DcimModuleBaysBulkPartialUpdate**](DcimApi.md#DcimModuleBaysBulkPartialUpdate) | **Patch** /api/dcim/module-bays/ | 
-[**DcimModuleBaysBulkUpdate**](DcimApi.md#DcimModuleBaysBulkUpdate) | **Put** /api/dcim/module-bays/ | 
-[**DcimModuleBaysCreate**](DcimApi.md#DcimModuleBaysCreate) | **Post** /api/dcim/module-bays/ | 
-[**DcimModuleBaysDestroy**](DcimApi.md#DcimModuleBaysDestroy) | **Delete** /api/dcim/module-bays/{id}/ | 
-[**DcimModuleBaysList**](DcimApi.md#DcimModuleBaysList) | **Get** /api/dcim/module-bays/ | 
-[**DcimModuleBaysPartialUpdate**](DcimApi.md#DcimModuleBaysPartialUpdate) | **Patch** /api/dcim/module-bays/{id}/ | 
-[**DcimModuleBaysRetrieve**](DcimApi.md#DcimModuleBaysRetrieve) | **Get** /api/dcim/module-bays/{id}/ | 
-[**DcimModuleBaysUpdate**](DcimApi.md#DcimModuleBaysUpdate) | **Put** /api/dcim/module-bays/{id}/ | 
-[**DcimModuleTypesBulkDestroy**](DcimApi.md#DcimModuleTypesBulkDestroy) | **Delete** /api/dcim/module-types/ | 
-[**DcimModuleTypesBulkPartialUpdate**](DcimApi.md#DcimModuleTypesBulkPartialUpdate) | **Patch** /api/dcim/module-types/ | 
-[**DcimModuleTypesBulkUpdate**](DcimApi.md#DcimModuleTypesBulkUpdate) | **Put** /api/dcim/module-types/ | 
-[**DcimModuleTypesCreate**](DcimApi.md#DcimModuleTypesCreate) | **Post** /api/dcim/module-types/ | 
-[**DcimModuleTypesDestroy**](DcimApi.md#DcimModuleTypesDestroy) | **Delete** /api/dcim/module-types/{id}/ | 
-[**DcimModuleTypesList**](DcimApi.md#DcimModuleTypesList) | **Get** /api/dcim/module-types/ | 
-[**DcimModuleTypesPartialUpdate**](DcimApi.md#DcimModuleTypesPartialUpdate) | **Patch** /api/dcim/module-types/{id}/ | 
-[**DcimModuleTypesRetrieve**](DcimApi.md#DcimModuleTypesRetrieve) | **Get** /api/dcim/module-types/{id}/ | 
-[**DcimModuleTypesUpdate**](DcimApi.md#DcimModuleTypesUpdate) | **Put** /api/dcim/module-types/{id}/ | 
-[**DcimModulesBulkDestroy**](DcimApi.md#DcimModulesBulkDestroy) | **Delete** /api/dcim/modules/ | 
-[**DcimModulesBulkPartialUpdate**](DcimApi.md#DcimModulesBulkPartialUpdate) | **Patch** /api/dcim/modules/ | 
-[**DcimModulesBulkUpdate**](DcimApi.md#DcimModulesBulkUpdate) | **Put** /api/dcim/modules/ | 
-[**DcimModulesCreate**](DcimApi.md#DcimModulesCreate) | **Post** /api/dcim/modules/ | 
-[**DcimModulesDestroy**](DcimApi.md#DcimModulesDestroy) | **Delete** /api/dcim/modules/{id}/ | 
-[**DcimModulesList**](DcimApi.md#DcimModulesList) | **Get** /api/dcim/modules/ | 
-[**DcimModulesPartialUpdate**](DcimApi.md#DcimModulesPartialUpdate) | **Patch** /api/dcim/modules/{id}/ | 
-[**DcimModulesRetrieve**](DcimApi.md#DcimModulesRetrieve) | **Get** /api/dcim/modules/{id}/ | 
-[**DcimModulesUpdate**](DcimApi.md#DcimModulesUpdate) | **Put** /api/dcim/modules/{id}/ | 
-[**DcimPlatformsBulkDestroy**](DcimApi.md#DcimPlatformsBulkDestroy) | **Delete** /api/dcim/platforms/ | 
-[**DcimPlatformsBulkPartialUpdate**](DcimApi.md#DcimPlatformsBulkPartialUpdate) | **Patch** /api/dcim/platforms/ | 
-[**DcimPlatformsBulkUpdate**](DcimApi.md#DcimPlatformsBulkUpdate) | **Put** /api/dcim/platforms/ | 
-[**DcimPlatformsCreate**](DcimApi.md#DcimPlatformsCreate) | **Post** /api/dcim/platforms/ | 
-[**DcimPlatformsDestroy**](DcimApi.md#DcimPlatformsDestroy) | **Delete** /api/dcim/platforms/{id}/ | 
-[**DcimPlatformsList**](DcimApi.md#DcimPlatformsList) | **Get** /api/dcim/platforms/ | 
-[**DcimPlatformsPartialUpdate**](DcimApi.md#DcimPlatformsPartialUpdate) | **Patch** /api/dcim/platforms/{id}/ | 
-[**DcimPlatformsRetrieve**](DcimApi.md#DcimPlatformsRetrieve) | **Get** /api/dcim/platforms/{id}/ | 
-[**DcimPlatformsUpdate**](DcimApi.md#DcimPlatformsUpdate) | **Put** /api/dcim/platforms/{id}/ | 
-[**DcimPowerFeedsBulkDestroy**](DcimApi.md#DcimPowerFeedsBulkDestroy) | **Delete** /api/dcim/power-feeds/ | 
-[**DcimPowerFeedsBulkPartialUpdate**](DcimApi.md#DcimPowerFeedsBulkPartialUpdate) | **Patch** /api/dcim/power-feeds/ | 
-[**DcimPowerFeedsBulkUpdate**](DcimApi.md#DcimPowerFeedsBulkUpdate) | **Put** /api/dcim/power-feeds/ | 
-[**DcimPowerFeedsCreate**](DcimApi.md#DcimPowerFeedsCreate) | **Post** /api/dcim/power-feeds/ | 
-[**DcimPowerFeedsDestroy**](DcimApi.md#DcimPowerFeedsDestroy) | **Delete** /api/dcim/power-feeds/{id}/ | 
-[**DcimPowerFeedsList**](DcimApi.md#DcimPowerFeedsList) | **Get** /api/dcim/power-feeds/ | 
-[**DcimPowerFeedsPartialUpdate**](DcimApi.md#DcimPowerFeedsPartialUpdate) | **Patch** /api/dcim/power-feeds/{id}/ | 
-[**DcimPowerFeedsRetrieve**](DcimApi.md#DcimPowerFeedsRetrieve) | **Get** /api/dcim/power-feeds/{id}/ | 
-[**DcimPowerFeedsTraceRetrieve**](DcimApi.md#DcimPowerFeedsTraceRetrieve) | **Get** /api/dcim/power-feeds/{id}/trace/ | 
-[**DcimPowerFeedsUpdate**](DcimApi.md#DcimPowerFeedsUpdate) | **Put** /api/dcim/power-feeds/{id}/ | 
-[**DcimPowerOutletTemplatesBulkDestroy**](DcimApi.md#DcimPowerOutletTemplatesBulkDestroy) | **Delete** /api/dcim/power-outlet-templates/ | 
-[**DcimPowerOutletTemplatesBulkPartialUpdate**](DcimApi.md#DcimPowerOutletTemplatesBulkPartialUpdate) | **Patch** /api/dcim/power-outlet-templates/ | 
-[**DcimPowerOutletTemplatesBulkUpdate**](DcimApi.md#DcimPowerOutletTemplatesBulkUpdate) | **Put** /api/dcim/power-outlet-templates/ | 
-[**DcimPowerOutletTemplatesCreate**](DcimApi.md#DcimPowerOutletTemplatesCreate) | **Post** /api/dcim/power-outlet-templates/ | 
-[**DcimPowerOutletTemplatesDestroy**](DcimApi.md#DcimPowerOutletTemplatesDestroy) | **Delete** /api/dcim/power-outlet-templates/{id}/ | 
-[**DcimPowerOutletTemplatesList**](DcimApi.md#DcimPowerOutletTemplatesList) | **Get** /api/dcim/power-outlet-templates/ | 
-[**DcimPowerOutletTemplatesPartialUpdate**](DcimApi.md#DcimPowerOutletTemplatesPartialUpdate) | **Patch** /api/dcim/power-outlet-templates/{id}/ | 
-[**DcimPowerOutletTemplatesRetrieve**](DcimApi.md#DcimPowerOutletTemplatesRetrieve) | **Get** /api/dcim/power-outlet-templates/{id}/ | 
-[**DcimPowerOutletTemplatesUpdate**](DcimApi.md#DcimPowerOutletTemplatesUpdate) | **Put** /api/dcim/power-outlet-templates/{id}/ | 
-[**DcimPowerOutletsBulkDestroy**](DcimApi.md#DcimPowerOutletsBulkDestroy) | **Delete** /api/dcim/power-outlets/ | 
-[**DcimPowerOutletsBulkPartialUpdate**](DcimApi.md#DcimPowerOutletsBulkPartialUpdate) | **Patch** /api/dcim/power-outlets/ | 
-[**DcimPowerOutletsBulkUpdate**](DcimApi.md#DcimPowerOutletsBulkUpdate) | **Put** /api/dcim/power-outlets/ | 
-[**DcimPowerOutletsCreate**](DcimApi.md#DcimPowerOutletsCreate) | **Post** /api/dcim/power-outlets/ | 
-[**DcimPowerOutletsDestroy**](DcimApi.md#DcimPowerOutletsDestroy) | **Delete** /api/dcim/power-outlets/{id}/ | 
-[**DcimPowerOutletsList**](DcimApi.md#DcimPowerOutletsList) | **Get** /api/dcim/power-outlets/ | 
-[**DcimPowerOutletsPartialUpdate**](DcimApi.md#DcimPowerOutletsPartialUpdate) | **Patch** /api/dcim/power-outlets/{id}/ | 
-[**DcimPowerOutletsRetrieve**](DcimApi.md#DcimPowerOutletsRetrieve) | **Get** /api/dcim/power-outlets/{id}/ | 
-[**DcimPowerOutletsTraceRetrieve**](DcimApi.md#DcimPowerOutletsTraceRetrieve) | **Get** /api/dcim/power-outlets/{id}/trace/ | 
-[**DcimPowerOutletsUpdate**](DcimApi.md#DcimPowerOutletsUpdate) | **Put** /api/dcim/power-outlets/{id}/ | 
-[**DcimPowerPanelsBulkDestroy**](DcimApi.md#DcimPowerPanelsBulkDestroy) | **Delete** /api/dcim/power-panels/ | 
-[**DcimPowerPanelsBulkPartialUpdate**](DcimApi.md#DcimPowerPanelsBulkPartialUpdate) | **Patch** /api/dcim/power-panels/ | 
-[**DcimPowerPanelsBulkUpdate**](DcimApi.md#DcimPowerPanelsBulkUpdate) | **Put** /api/dcim/power-panels/ | 
-[**DcimPowerPanelsCreate**](DcimApi.md#DcimPowerPanelsCreate) | **Post** /api/dcim/power-panels/ | 
-[**DcimPowerPanelsDestroy**](DcimApi.md#DcimPowerPanelsDestroy) | **Delete** /api/dcim/power-panels/{id}/ | 
-[**DcimPowerPanelsList**](DcimApi.md#DcimPowerPanelsList) | **Get** /api/dcim/power-panels/ | 
-[**DcimPowerPanelsPartialUpdate**](DcimApi.md#DcimPowerPanelsPartialUpdate) | **Patch** /api/dcim/power-panels/{id}/ | 
-[**DcimPowerPanelsRetrieve**](DcimApi.md#DcimPowerPanelsRetrieve) | **Get** /api/dcim/power-panels/{id}/ | 
-[**DcimPowerPanelsUpdate**](DcimApi.md#DcimPowerPanelsUpdate) | **Put** /api/dcim/power-panels/{id}/ | 
-[**DcimPowerPortTemplatesBulkDestroy**](DcimApi.md#DcimPowerPortTemplatesBulkDestroy) | **Delete** /api/dcim/power-port-templates/ | 
-[**DcimPowerPortTemplatesBulkPartialUpdate**](DcimApi.md#DcimPowerPortTemplatesBulkPartialUpdate) | **Patch** /api/dcim/power-port-templates/ | 
-[**DcimPowerPortTemplatesBulkUpdate**](DcimApi.md#DcimPowerPortTemplatesBulkUpdate) | **Put** /api/dcim/power-port-templates/ | 
-[**DcimPowerPortTemplatesCreate**](DcimApi.md#DcimPowerPortTemplatesCreate) | **Post** /api/dcim/power-port-templates/ | 
-[**DcimPowerPortTemplatesDestroy**](DcimApi.md#DcimPowerPortTemplatesDestroy) | **Delete** /api/dcim/power-port-templates/{id}/ | 
-[**DcimPowerPortTemplatesList**](DcimApi.md#DcimPowerPortTemplatesList) | **Get** /api/dcim/power-port-templates/ | 
-[**DcimPowerPortTemplatesPartialUpdate**](DcimApi.md#DcimPowerPortTemplatesPartialUpdate) | **Patch** /api/dcim/power-port-templates/{id}/ | 
-[**DcimPowerPortTemplatesRetrieve**](DcimApi.md#DcimPowerPortTemplatesRetrieve) | **Get** /api/dcim/power-port-templates/{id}/ | 
-[**DcimPowerPortTemplatesUpdate**](DcimApi.md#DcimPowerPortTemplatesUpdate) | **Put** /api/dcim/power-port-templates/{id}/ | 
-[**DcimPowerPortsBulkDestroy**](DcimApi.md#DcimPowerPortsBulkDestroy) | **Delete** /api/dcim/power-ports/ | 
-[**DcimPowerPortsBulkPartialUpdate**](DcimApi.md#DcimPowerPortsBulkPartialUpdate) | **Patch** /api/dcim/power-ports/ | 
-[**DcimPowerPortsBulkUpdate**](DcimApi.md#DcimPowerPortsBulkUpdate) | **Put** /api/dcim/power-ports/ | 
-[**DcimPowerPortsCreate**](DcimApi.md#DcimPowerPortsCreate) | **Post** /api/dcim/power-ports/ | 
-[**DcimPowerPortsDestroy**](DcimApi.md#DcimPowerPortsDestroy) | **Delete** /api/dcim/power-ports/{id}/ | 
-[**DcimPowerPortsList**](DcimApi.md#DcimPowerPortsList) | **Get** /api/dcim/power-ports/ | 
-[**DcimPowerPortsPartialUpdate**](DcimApi.md#DcimPowerPortsPartialUpdate) | **Patch** /api/dcim/power-ports/{id}/ | 
-[**DcimPowerPortsRetrieve**](DcimApi.md#DcimPowerPortsRetrieve) | **Get** /api/dcim/power-ports/{id}/ | 
-[**DcimPowerPortsTraceRetrieve**](DcimApi.md#DcimPowerPortsTraceRetrieve) | **Get** /api/dcim/power-ports/{id}/trace/ | 
-[**DcimPowerPortsUpdate**](DcimApi.md#DcimPowerPortsUpdate) | **Put** /api/dcim/power-ports/{id}/ | 
-[**DcimRackReservationsBulkDestroy**](DcimApi.md#DcimRackReservationsBulkDestroy) | **Delete** /api/dcim/rack-reservations/ | 
-[**DcimRackReservationsBulkPartialUpdate**](DcimApi.md#DcimRackReservationsBulkPartialUpdate) | **Patch** /api/dcim/rack-reservations/ | 
-[**DcimRackReservationsBulkUpdate**](DcimApi.md#DcimRackReservationsBulkUpdate) | **Put** /api/dcim/rack-reservations/ | 
-[**DcimRackReservationsCreate**](DcimApi.md#DcimRackReservationsCreate) | **Post** /api/dcim/rack-reservations/ | 
-[**DcimRackReservationsDestroy**](DcimApi.md#DcimRackReservationsDestroy) | **Delete** /api/dcim/rack-reservations/{id}/ | 
-[**DcimRackReservationsList**](DcimApi.md#DcimRackReservationsList) | **Get** /api/dcim/rack-reservations/ | 
-[**DcimRackReservationsPartialUpdate**](DcimApi.md#DcimRackReservationsPartialUpdate) | **Patch** /api/dcim/rack-reservations/{id}/ | 
-[**DcimRackReservationsRetrieve**](DcimApi.md#DcimRackReservationsRetrieve) | **Get** /api/dcim/rack-reservations/{id}/ | 
-[**DcimRackReservationsUpdate**](DcimApi.md#DcimRackReservationsUpdate) | **Put** /api/dcim/rack-reservations/{id}/ | 
-[**DcimRackRolesBulkDestroy**](DcimApi.md#DcimRackRolesBulkDestroy) | **Delete** /api/dcim/rack-roles/ | 
-[**DcimRackRolesBulkPartialUpdate**](DcimApi.md#DcimRackRolesBulkPartialUpdate) | **Patch** /api/dcim/rack-roles/ | 
-[**DcimRackRolesBulkUpdate**](DcimApi.md#DcimRackRolesBulkUpdate) | **Put** /api/dcim/rack-roles/ | 
-[**DcimRackRolesCreate**](DcimApi.md#DcimRackRolesCreate) | **Post** /api/dcim/rack-roles/ | 
-[**DcimRackRolesDestroy**](DcimApi.md#DcimRackRolesDestroy) | **Delete** /api/dcim/rack-roles/{id}/ | 
-[**DcimRackRolesList**](DcimApi.md#DcimRackRolesList) | **Get** /api/dcim/rack-roles/ | 
-[**DcimRackRolesPartialUpdate**](DcimApi.md#DcimRackRolesPartialUpdate) | **Patch** /api/dcim/rack-roles/{id}/ | 
-[**DcimRackRolesRetrieve**](DcimApi.md#DcimRackRolesRetrieve) | **Get** /api/dcim/rack-roles/{id}/ | 
-[**DcimRackRolesUpdate**](DcimApi.md#DcimRackRolesUpdate) | **Put** /api/dcim/rack-roles/{id}/ | 
-[**DcimRacksBulkDestroy**](DcimApi.md#DcimRacksBulkDestroy) | **Delete** /api/dcim/racks/ | 
-[**DcimRacksBulkPartialUpdate**](DcimApi.md#DcimRacksBulkPartialUpdate) | **Patch** /api/dcim/racks/ | 
-[**DcimRacksBulkUpdate**](DcimApi.md#DcimRacksBulkUpdate) | **Put** /api/dcim/racks/ | 
-[**DcimRacksCreate**](DcimApi.md#DcimRacksCreate) | **Post** /api/dcim/racks/ | 
-[**DcimRacksDestroy**](DcimApi.md#DcimRacksDestroy) | **Delete** /api/dcim/racks/{id}/ | 
-[**DcimRacksElevationRetrieve**](DcimApi.md#DcimRacksElevationRetrieve) | **Get** /api/dcim/racks/{id}/elevation/ | 
-[**DcimRacksList**](DcimApi.md#DcimRacksList) | **Get** /api/dcim/racks/ | 
-[**DcimRacksPartialUpdate**](DcimApi.md#DcimRacksPartialUpdate) | **Patch** /api/dcim/racks/{id}/ | 
-[**DcimRacksRetrieve**](DcimApi.md#DcimRacksRetrieve) | **Get** /api/dcim/racks/{id}/ | 
-[**DcimRacksUpdate**](DcimApi.md#DcimRacksUpdate) | **Put** /api/dcim/racks/{id}/ | 
-[**DcimRearPortTemplatesBulkDestroy**](DcimApi.md#DcimRearPortTemplatesBulkDestroy) | **Delete** /api/dcim/rear-port-templates/ | 
-[**DcimRearPortTemplatesBulkPartialUpdate**](DcimApi.md#DcimRearPortTemplatesBulkPartialUpdate) | **Patch** /api/dcim/rear-port-templates/ | 
-[**DcimRearPortTemplatesBulkUpdate**](DcimApi.md#DcimRearPortTemplatesBulkUpdate) | **Put** /api/dcim/rear-port-templates/ | 
-[**DcimRearPortTemplatesCreate**](DcimApi.md#DcimRearPortTemplatesCreate) | **Post** /api/dcim/rear-port-templates/ | 
-[**DcimRearPortTemplatesDestroy**](DcimApi.md#DcimRearPortTemplatesDestroy) | **Delete** /api/dcim/rear-port-templates/{id}/ | 
-[**DcimRearPortTemplatesList**](DcimApi.md#DcimRearPortTemplatesList) | **Get** /api/dcim/rear-port-templates/ | 
-[**DcimRearPortTemplatesPartialUpdate**](DcimApi.md#DcimRearPortTemplatesPartialUpdate) | **Patch** /api/dcim/rear-port-templates/{id}/ | 
-[**DcimRearPortTemplatesRetrieve**](DcimApi.md#DcimRearPortTemplatesRetrieve) | **Get** /api/dcim/rear-port-templates/{id}/ | 
-[**DcimRearPortTemplatesUpdate**](DcimApi.md#DcimRearPortTemplatesUpdate) | **Put** /api/dcim/rear-port-templates/{id}/ | 
-[**DcimRearPortsBulkDestroy**](DcimApi.md#DcimRearPortsBulkDestroy) | **Delete** /api/dcim/rear-ports/ | 
-[**DcimRearPortsBulkPartialUpdate**](DcimApi.md#DcimRearPortsBulkPartialUpdate) | **Patch** /api/dcim/rear-ports/ | 
-[**DcimRearPortsBulkUpdate**](DcimApi.md#DcimRearPortsBulkUpdate) | **Put** /api/dcim/rear-ports/ | 
-[**DcimRearPortsCreate**](DcimApi.md#DcimRearPortsCreate) | **Post** /api/dcim/rear-ports/ | 
-[**DcimRearPortsDestroy**](DcimApi.md#DcimRearPortsDestroy) | **Delete** /api/dcim/rear-ports/{id}/ | 
-[**DcimRearPortsList**](DcimApi.md#DcimRearPortsList) | **Get** /api/dcim/rear-ports/ | 
-[**DcimRearPortsPartialUpdate**](DcimApi.md#DcimRearPortsPartialUpdate) | **Patch** /api/dcim/rear-ports/{id}/ | 
-[**DcimRearPortsPathsRetrieve**](DcimApi.md#DcimRearPortsPathsRetrieve) | **Get** /api/dcim/rear-ports/{id}/paths/ | 
-[**DcimRearPortsRetrieve**](DcimApi.md#DcimRearPortsRetrieve) | **Get** /api/dcim/rear-ports/{id}/ | 
-[**DcimRearPortsUpdate**](DcimApi.md#DcimRearPortsUpdate) | **Put** /api/dcim/rear-ports/{id}/ | 
-[**DcimRegionsBulkDestroy**](DcimApi.md#DcimRegionsBulkDestroy) | **Delete** /api/dcim/regions/ | 
-[**DcimRegionsBulkPartialUpdate**](DcimApi.md#DcimRegionsBulkPartialUpdate) | **Patch** /api/dcim/regions/ | 
-[**DcimRegionsBulkUpdate**](DcimApi.md#DcimRegionsBulkUpdate) | **Put** /api/dcim/regions/ | 
-[**DcimRegionsCreate**](DcimApi.md#DcimRegionsCreate) | **Post** /api/dcim/regions/ | 
-[**DcimRegionsDestroy**](DcimApi.md#DcimRegionsDestroy) | **Delete** /api/dcim/regions/{id}/ | 
-[**DcimRegionsList**](DcimApi.md#DcimRegionsList) | **Get** /api/dcim/regions/ | 
-[**DcimRegionsPartialUpdate**](DcimApi.md#DcimRegionsPartialUpdate) | **Patch** /api/dcim/regions/{id}/ | 
-[**DcimRegionsRetrieve**](DcimApi.md#DcimRegionsRetrieve) | **Get** /api/dcim/regions/{id}/ | 
-[**DcimRegionsUpdate**](DcimApi.md#DcimRegionsUpdate) | **Put** /api/dcim/regions/{id}/ | 
-[**DcimSiteGroupsBulkDestroy**](DcimApi.md#DcimSiteGroupsBulkDestroy) | **Delete** /api/dcim/site-groups/ | 
-[**DcimSiteGroupsBulkPartialUpdate**](DcimApi.md#DcimSiteGroupsBulkPartialUpdate) | **Patch** /api/dcim/site-groups/ | 
-[**DcimSiteGroupsBulkUpdate**](DcimApi.md#DcimSiteGroupsBulkUpdate) | **Put** /api/dcim/site-groups/ | 
-[**DcimSiteGroupsCreate**](DcimApi.md#DcimSiteGroupsCreate) | **Post** /api/dcim/site-groups/ | 
-[**DcimSiteGroupsDestroy**](DcimApi.md#DcimSiteGroupsDestroy) | **Delete** /api/dcim/site-groups/{id}/ | 
-[**DcimSiteGroupsList**](DcimApi.md#DcimSiteGroupsList) | **Get** /api/dcim/site-groups/ | 
-[**DcimSiteGroupsPartialUpdate**](DcimApi.md#DcimSiteGroupsPartialUpdate) | **Patch** /api/dcim/site-groups/{id}/ | 
-[**DcimSiteGroupsRetrieve**](DcimApi.md#DcimSiteGroupsRetrieve) | **Get** /api/dcim/site-groups/{id}/ | 
-[**DcimSiteGroupsUpdate**](DcimApi.md#DcimSiteGroupsUpdate) | **Put** /api/dcim/site-groups/{id}/ | 
-[**DcimSitesBulkDestroy**](DcimApi.md#DcimSitesBulkDestroy) | **Delete** /api/dcim/sites/ | 
-[**DcimSitesBulkPartialUpdate**](DcimApi.md#DcimSitesBulkPartialUpdate) | **Patch** /api/dcim/sites/ | 
-[**DcimSitesBulkUpdate**](DcimApi.md#DcimSitesBulkUpdate) | **Put** /api/dcim/sites/ | 
-[**DcimSitesCreate**](DcimApi.md#DcimSitesCreate) | **Post** /api/dcim/sites/ | 
-[**DcimSitesDestroy**](DcimApi.md#DcimSitesDestroy) | **Delete** /api/dcim/sites/{id}/ | 
-[**DcimSitesList**](DcimApi.md#DcimSitesList) | **Get** /api/dcim/sites/ | 
-[**DcimSitesPartialUpdate**](DcimApi.md#DcimSitesPartialUpdate) | **Patch** /api/dcim/sites/{id}/ | 
-[**DcimSitesRetrieve**](DcimApi.md#DcimSitesRetrieve) | **Get** /api/dcim/sites/{id}/ | 
-[**DcimSitesUpdate**](DcimApi.md#DcimSitesUpdate) | **Put** /api/dcim/sites/{id}/ | 
-[**DcimVirtualChassisBulkDestroy**](DcimApi.md#DcimVirtualChassisBulkDestroy) | **Delete** /api/dcim/virtual-chassis/ | 
-[**DcimVirtualChassisBulkPartialUpdate**](DcimApi.md#DcimVirtualChassisBulkPartialUpdate) | **Patch** /api/dcim/virtual-chassis/ | 
-[**DcimVirtualChassisBulkUpdate**](DcimApi.md#DcimVirtualChassisBulkUpdate) | **Put** /api/dcim/virtual-chassis/ | 
-[**DcimVirtualChassisCreate**](DcimApi.md#DcimVirtualChassisCreate) | **Post** /api/dcim/virtual-chassis/ | 
-[**DcimVirtualChassisDestroy**](DcimApi.md#DcimVirtualChassisDestroy) | **Delete** /api/dcim/virtual-chassis/{id}/ | 
-[**DcimVirtualChassisList**](DcimApi.md#DcimVirtualChassisList) | **Get** /api/dcim/virtual-chassis/ | 
-[**DcimVirtualChassisPartialUpdate**](DcimApi.md#DcimVirtualChassisPartialUpdate) | **Patch** /api/dcim/virtual-chassis/{id}/ | 
-[**DcimVirtualChassisRetrieve**](DcimApi.md#DcimVirtualChassisRetrieve) | **Get** /api/dcim/virtual-chassis/{id}/ | 
-[**DcimVirtualChassisUpdate**](DcimApi.md#DcimVirtualChassisUpdate) | **Put** /api/dcim/virtual-chassis/{id}/ | 
-[**DcimVirtualDeviceContextsBulkDestroy**](DcimApi.md#DcimVirtualDeviceContextsBulkDestroy) | **Delete** /api/dcim/virtual-device-contexts/ | 
-[**DcimVirtualDeviceContextsBulkPartialUpdate**](DcimApi.md#DcimVirtualDeviceContextsBulkPartialUpdate) | **Patch** /api/dcim/virtual-device-contexts/ | 
-[**DcimVirtualDeviceContextsBulkUpdate**](DcimApi.md#DcimVirtualDeviceContextsBulkUpdate) | **Put** /api/dcim/virtual-device-contexts/ | 
-[**DcimVirtualDeviceContextsCreate**](DcimApi.md#DcimVirtualDeviceContextsCreate) | **Post** /api/dcim/virtual-device-contexts/ | 
-[**DcimVirtualDeviceContextsDestroy**](DcimApi.md#DcimVirtualDeviceContextsDestroy) | **Delete** /api/dcim/virtual-device-contexts/{id}/ | 
-[**DcimVirtualDeviceContextsList**](DcimApi.md#DcimVirtualDeviceContextsList) | **Get** /api/dcim/virtual-device-contexts/ | 
-[**DcimVirtualDeviceContextsPartialUpdate**](DcimApi.md#DcimVirtualDeviceContextsPartialUpdate) | **Patch** /api/dcim/virtual-device-contexts/{id}/ | 
-[**DcimVirtualDeviceContextsRetrieve**](DcimApi.md#DcimVirtualDeviceContextsRetrieve) | **Get** /api/dcim/virtual-device-contexts/{id}/ | 
-[**DcimVirtualDeviceContextsUpdate**](DcimApi.md#DcimVirtualDeviceContextsUpdate) | **Put** /api/dcim/virtual-device-contexts/{id}/ | 
+[**DcimCableTerminationsBulkDestroy**](DcimAPI.md#DcimCableTerminationsBulkDestroy) | **Delete** /api/dcim/cable-terminations/ | 
+[**DcimCableTerminationsBulkPartialUpdate**](DcimAPI.md#DcimCableTerminationsBulkPartialUpdate) | **Patch** /api/dcim/cable-terminations/ | 
+[**DcimCableTerminationsBulkUpdate**](DcimAPI.md#DcimCableTerminationsBulkUpdate) | **Put** /api/dcim/cable-terminations/ | 
+[**DcimCableTerminationsCreate**](DcimAPI.md#DcimCableTerminationsCreate) | **Post** /api/dcim/cable-terminations/ | 
+[**DcimCableTerminationsDestroy**](DcimAPI.md#DcimCableTerminationsDestroy) | **Delete** /api/dcim/cable-terminations/{id}/ | 
+[**DcimCableTerminationsList**](DcimAPI.md#DcimCableTerminationsList) | **Get** /api/dcim/cable-terminations/ | 
+[**DcimCableTerminationsPartialUpdate**](DcimAPI.md#DcimCableTerminationsPartialUpdate) | **Patch** /api/dcim/cable-terminations/{id}/ | 
+[**DcimCableTerminationsRetrieve**](DcimAPI.md#DcimCableTerminationsRetrieve) | **Get** /api/dcim/cable-terminations/{id}/ | 
+[**DcimCableTerminationsUpdate**](DcimAPI.md#DcimCableTerminationsUpdate) | **Put** /api/dcim/cable-terminations/{id}/ | 
+[**DcimCablesBulkDestroy**](DcimAPI.md#DcimCablesBulkDestroy) | **Delete** /api/dcim/cables/ | 
+[**DcimCablesBulkPartialUpdate**](DcimAPI.md#DcimCablesBulkPartialUpdate) | **Patch** /api/dcim/cables/ | 
+[**DcimCablesBulkUpdate**](DcimAPI.md#DcimCablesBulkUpdate) | **Put** /api/dcim/cables/ | 
+[**DcimCablesCreate**](DcimAPI.md#DcimCablesCreate) | **Post** /api/dcim/cables/ | 
+[**DcimCablesDestroy**](DcimAPI.md#DcimCablesDestroy) | **Delete** /api/dcim/cables/{id}/ | 
+[**DcimCablesList**](DcimAPI.md#DcimCablesList) | **Get** /api/dcim/cables/ | 
+[**DcimCablesPartialUpdate**](DcimAPI.md#DcimCablesPartialUpdate) | **Patch** /api/dcim/cables/{id}/ | 
+[**DcimCablesRetrieve**](DcimAPI.md#DcimCablesRetrieve) | **Get** /api/dcim/cables/{id}/ | 
+[**DcimCablesUpdate**](DcimAPI.md#DcimCablesUpdate) | **Put** /api/dcim/cables/{id}/ | 
+[**DcimConnectedDeviceList**](DcimAPI.md#DcimConnectedDeviceList) | **Get** /api/dcim/connected-device/ | 
+[**DcimConsolePortTemplatesBulkDestroy**](DcimAPI.md#DcimConsolePortTemplatesBulkDestroy) | **Delete** /api/dcim/console-port-templates/ | 
+[**DcimConsolePortTemplatesBulkPartialUpdate**](DcimAPI.md#DcimConsolePortTemplatesBulkPartialUpdate) | **Patch** /api/dcim/console-port-templates/ | 
+[**DcimConsolePortTemplatesBulkUpdate**](DcimAPI.md#DcimConsolePortTemplatesBulkUpdate) | **Put** /api/dcim/console-port-templates/ | 
+[**DcimConsolePortTemplatesCreate**](DcimAPI.md#DcimConsolePortTemplatesCreate) | **Post** /api/dcim/console-port-templates/ | 
+[**DcimConsolePortTemplatesDestroy**](DcimAPI.md#DcimConsolePortTemplatesDestroy) | **Delete** /api/dcim/console-port-templates/{id}/ | 
+[**DcimConsolePortTemplatesList**](DcimAPI.md#DcimConsolePortTemplatesList) | **Get** /api/dcim/console-port-templates/ | 
+[**DcimConsolePortTemplatesPartialUpdate**](DcimAPI.md#DcimConsolePortTemplatesPartialUpdate) | **Patch** /api/dcim/console-port-templates/{id}/ | 
+[**DcimConsolePortTemplatesRetrieve**](DcimAPI.md#DcimConsolePortTemplatesRetrieve) | **Get** /api/dcim/console-port-templates/{id}/ | 
+[**DcimConsolePortTemplatesUpdate**](DcimAPI.md#DcimConsolePortTemplatesUpdate) | **Put** /api/dcim/console-port-templates/{id}/ | 
+[**DcimConsolePortsBulkDestroy**](DcimAPI.md#DcimConsolePortsBulkDestroy) | **Delete** /api/dcim/console-ports/ | 
+[**DcimConsolePortsBulkPartialUpdate**](DcimAPI.md#DcimConsolePortsBulkPartialUpdate) | **Patch** /api/dcim/console-ports/ | 
+[**DcimConsolePortsBulkUpdate**](DcimAPI.md#DcimConsolePortsBulkUpdate) | **Put** /api/dcim/console-ports/ | 
+[**DcimConsolePortsCreate**](DcimAPI.md#DcimConsolePortsCreate) | **Post** /api/dcim/console-ports/ | 
+[**DcimConsolePortsDestroy**](DcimAPI.md#DcimConsolePortsDestroy) | **Delete** /api/dcim/console-ports/{id}/ | 
+[**DcimConsolePortsList**](DcimAPI.md#DcimConsolePortsList) | **Get** /api/dcim/console-ports/ | 
+[**DcimConsolePortsPartialUpdate**](DcimAPI.md#DcimConsolePortsPartialUpdate) | **Patch** /api/dcim/console-ports/{id}/ | 
+[**DcimConsolePortsRetrieve**](DcimAPI.md#DcimConsolePortsRetrieve) | **Get** /api/dcim/console-ports/{id}/ | 
+[**DcimConsolePortsTraceRetrieve**](DcimAPI.md#DcimConsolePortsTraceRetrieve) | **Get** /api/dcim/console-ports/{id}/trace/ | 
+[**DcimConsolePortsUpdate**](DcimAPI.md#DcimConsolePortsUpdate) | **Put** /api/dcim/console-ports/{id}/ | 
+[**DcimConsoleServerPortTemplatesBulkDestroy**](DcimAPI.md#DcimConsoleServerPortTemplatesBulkDestroy) | **Delete** /api/dcim/console-server-port-templates/ | 
+[**DcimConsoleServerPortTemplatesBulkPartialUpdate**](DcimAPI.md#DcimConsoleServerPortTemplatesBulkPartialUpdate) | **Patch** /api/dcim/console-server-port-templates/ | 
+[**DcimConsoleServerPortTemplatesBulkUpdate**](DcimAPI.md#DcimConsoleServerPortTemplatesBulkUpdate) | **Put** /api/dcim/console-server-port-templates/ | 
+[**DcimConsoleServerPortTemplatesCreate**](DcimAPI.md#DcimConsoleServerPortTemplatesCreate) | **Post** /api/dcim/console-server-port-templates/ | 
+[**DcimConsoleServerPortTemplatesDestroy**](DcimAPI.md#DcimConsoleServerPortTemplatesDestroy) | **Delete** /api/dcim/console-server-port-templates/{id}/ | 
+[**DcimConsoleServerPortTemplatesList**](DcimAPI.md#DcimConsoleServerPortTemplatesList) | **Get** /api/dcim/console-server-port-templates/ | 
+[**DcimConsoleServerPortTemplatesPartialUpdate**](DcimAPI.md#DcimConsoleServerPortTemplatesPartialUpdate) | **Patch** /api/dcim/console-server-port-templates/{id}/ | 
+[**DcimConsoleServerPortTemplatesRetrieve**](DcimAPI.md#DcimConsoleServerPortTemplatesRetrieve) | **Get** /api/dcim/console-server-port-templates/{id}/ | 
+[**DcimConsoleServerPortTemplatesUpdate**](DcimAPI.md#DcimConsoleServerPortTemplatesUpdate) | **Put** /api/dcim/console-server-port-templates/{id}/ | 
+[**DcimConsoleServerPortsBulkDestroy**](DcimAPI.md#DcimConsoleServerPortsBulkDestroy) | **Delete** /api/dcim/console-server-ports/ | 
+[**DcimConsoleServerPortsBulkPartialUpdate**](DcimAPI.md#DcimConsoleServerPortsBulkPartialUpdate) | **Patch** /api/dcim/console-server-ports/ | 
+[**DcimConsoleServerPortsBulkUpdate**](DcimAPI.md#DcimConsoleServerPortsBulkUpdate) | **Put** /api/dcim/console-server-ports/ | 
+[**DcimConsoleServerPortsCreate**](DcimAPI.md#DcimConsoleServerPortsCreate) | **Post** /api/dcim/console-server-ports/ | 
+[**DcimConsoleServerPortsDestroy**](DcimAPI.md#DcimConsoleServerPortsDestroy) | **Delete** /api/dcim/console-server-ports/{id}/ | 
+[**DcimConsoleServerPortsList**](DcimAPI.md#DcimConsoleServerPortsList) | **Get** /api/dcim/console-server-ports/ | 
+[**DcimConsoleServerPortsPartialUpdate**](DcimAPI.md#DcimConsoleServerPortsPartialUpdate) | **Patch** /api/dcim/console-server-ports/{id}/ | 
+[**DcimConsoleServerPortsRetrieve**](DcimAPI.md#DcimConsoleServerPortsRetrieve) | **Get** /api/dcim/console-server-ports/{id}/ | 
+[**DcimConsoleServerPortsTraceRetrieve**](DcimAPI.md#DcimConsoleServerPortsTraceRetrieve) | **Get** /api/dcim/console-server-ports/{id}/trace/ | 
+[**DcimConsoleServerPortsUpdate**](DcimAPI.md#DcimConsoleServerPortsUpdate) | **Put** /api/dcim/console-server-ports/{id}/ | 
+[**DcimDeviceBayTemplatesBulkDestroy**](DcimAPI.md#DcimDeviceBayTemplatesBulkDestroy) | **Delete** /api/dcim/device-bay-templates/ | 
+[**DcimDeviceBayTemplatesBulkPartialUpdate**](DcimAPI.md#DcimDeviceBayTemplatesBulkPartialUpdate) | **Patch** /api/dcim/device-bay-templates/ | 
+[**DcimDeviceBayTemplatesBulkUpdate**](DcimAPI.md#DcimDeviceBayTemplatesBulkUpdate) | **Put** /api/dcim/device-bay-templates/ | 
+[**DcimDeviceBayTemplatesCreate**](DcimAPI.md#DcimDeviceBayTemplatesCreate) | **Post** /api/dcim/device-bay-templates/ | 
+[**DcimDeviceBayTemplatesDestroy**](DcimAPI.md#DcimDeviceBayTemplatesDestroy) | **Delete** /api/dcim/device-bay-templates/{id}/ | 
+[**DcimDeviceBayTemplatesList**](DcimAPI.md#DcimDeviceBayTemplatesList) | **Get** /api/dcim/device-bay-templates/ | 
+[**DcimDeviceBayTemplatesPartialUpdate**](DcimAPI.md#DcimDeviceBayTemplatesPartialUpdate) | **Patch** /api/dcim/device-bay-templates/{id}/ | 
+[**DcimDeviceBayTemplatesRetrieve**](DcimAPI.md#DcimDeviceBayTemplatesRetrieve) | **Get** /api/dcim/device-bay-templates/{id}/ | 
+[**DcimDeviceBayTemplatesUpdate**](DcimAPI.md#DcimDeviceBayTemplatesUpdate) | **Put** /api/dcim/device-bay-templates/{id}/ | 
+[**DcimDeviceBaysBulkDestroy**](DcimAPI.md#DcimDeviceBaysBulkDestroy) | **Delete** /api/dcim/device-bays/ | 
+[**DcimDeviceBaysBulkPartialUpdate**](DcimAPI.md#DcimDeviceBaysBulkPartialUpdate) | **Patch** /api/dcim/device-bays/ | 
+[**DcimDeviceBaysBulkUpdate**](DcimAPI.md#DcimDeviceBaysBulkUpdate) | **Put** /api/dcim/device-bays/ | 
+[**DcimDeviceBaysCreate**](DcimAPI.md#DcimDeviceBaysCreate) | **Post** /api/dcim/device-bays/ | 
+[**DcimDeviceBaysDestroy**](DcimAPI.md#DcimDeviceBaysDestroy) | **Delete** /api/dcim/device-bays/{id}/ | 
+[**DcimDeviceBaysList**](DcimAPI.md#DcimDeviceBaysList) | **Get** /api/dcim/device-bays/ | 
+[**DcimDeviceBaysPartialUpdate**](DcimAPI.md#DcimDeviceBaysPartialUpdate) | **Patch** /api/dcim/device-bays/{id}/ | 
+[**DcimDeviceBaysRetrieve**](DcimAPI.md#DcimDeviceBaysRetrieve) | **Get** /api/dcim/device-bays/{id}/ | 
+[**DcimDeviceBaysUpdate**](DcimAPI.md#DcimDeviceBaysUpdate) | **Put** /api/dcim/device-bays/{id}/ | 
+[**DcimDeviceRolesBulkDestroy**](DcimAPI.md#DcimDeviceRolesBulkDestroy) | **Delete** /api/dcim/device-roles/ | 
+[**DcimDeviceRolesBulkPartialUpdate**](DcimAPI.md#DcimDeviceRolesBulkPartialUpdate) | **Patch** /api/dcim/device-roles/ | 
+[**DcimDeviceRolesBulkUpdate**](DcimAPI.md#DcimDeviceRolesBulkUpdate) | **Put** /api/dcim/device-roles/ | 
+[**DcimDeviceRolesCreate**](DcimAPI.md#DcimDeviceRolesCreate) | **Post** /api/dcim/device-roles/ | 
+[**DcimDeviceRolesDestroy**](DcimAPI.md#DcimDeviceRolesDestroy) | **Delete** /api/dcim/device-roles/{id}/ | 
+[**DcimDeviceRolesList**](DcimAPI.md#DcimDeviceRolesList) | **Get** /api/dcim/device-roles/ | 
+[**DcimDeviceRolesPartialUpdate**](DcimAPI.md#DcimDeviceRolesPartialUpdate) | **Patch** /api/dcim/device-roles/{id}/ | 
+[**DcimDeviceRolesRetrieve**](DcimAPI.md#DcimDeviceRolesRetrieve) | **Get** /api/dcim/device-roles/{id}/ | 
+[**DcimDeviceRolesUpdate**](DcimAPI.md#DcimDeviceRolesUpdate) | **Put** /api/dcim/device-roles/{id}/ | 
+[**DcimDeviceTypesBulkDestroy**](DcimAPI.md#DcimDeviceTypesBulkDestroy) | **Delete** /api/dcim/device-types/ | 
+[**DcimDeviceTypesBulkPartialUpdate**](DcimAPI.md#DcimDeviceTypesBulkPartialUpdate) | **Patch** /api/dcim/device-types/ | 
+[**DcimDeviceTypesBulkUpdate**](DcimAPI.md#DcimDeviceTypesBulkUpdate) | **Put** /api/dcim/device-types/ | 
+[**DcimDeviceTypesCreate**](DcimAPI.md#DcimDeviceTypesCreate) | **Post** /api/dcim/device-types/ | 
+[**DcimDeviceTypesDestroy**](DcimAPI.md#DcimDeviceTypesDestroy) | **Delete** /api/dcim/device-types/{id}/ | 
+[**DcimDeviceTypesList**](DcimAPI.md#DcimDeviceTypesList) | **Get** /api/dcim/device-types/ | 
+[**DcimDeviceTypesPartialUpdate**](DcimAPI.md#DcimDeviceTypesPartialUpdate) | **Patch** /api/dcim/device-types/{id}/ | 
+[**DcimDeviceTypesRetrieve**](DcimAPI.md#DcimDeviceTypesRetrieve) | **Get** /api/dcim/device-types/{id}/ | 
+[**DcimDeviceTypesUpdate**](DcimAPI.md#DcimDeviceTypesUpdate) | **Put** /api/dcim/device-types/{id}/ | 
+[**DcimDevicesBulkDestroy**](DcimAPI.md#DcimDevicesBulkDestroy) | **Delete** /api/dcim/devices/ | 
+[**DcimDevicesBulkPartialUpdate**](DcimAPI.md#DcimDevicesBulkPartialUpdate) | **Patch** /api/dcim/devices/ | 
+[**DcimDevicesBulkUpdate**](DcimAPI.md#DcimDevicesBulkUpdate) | **Put** /api/dcim/devices/ | 
+[**DcimDevicesCreate**](DcimAPI.md#DcimDevicesCreate) | **Post** /api/dcim/devices/ | 
+[**DcimDevicesDestroy**](DcimAPI.md#DcimDevicesDestroy) | **Delete** /api/dcim/devices/{id}/ | 
+[**DcimDevicesList**](DcimAPI.md#DcimDevicesList) | **Get** /api/dcim/devices/ | 
+[**DcimDevicesPartialUpdate**](DcimAPI.md#DcimDevicesPartialUpdate) | **Patch** /api/dcim/devices/{id}/ | 
+[**DcimDevicesRenderConfigCreate**](DcimAPI.md#DcimDevicesRenderConfigCreate) | **Post** /api/dcim/devices/{id}/render-config/ | 
+[**DcimDevicesRetrieve**](DcimAPI.md#DcimDevicesRetrieve) | **Get** /api/dcim/devices/{id}/ | 
+[**DcimDevicesUpdate**](DcimAPI.md#DcimDevicesUpdate) | **Put** /api/dcim/devices/{id}/ | 
+[**DcimFrontPortTemplatesBulkDestroy**](DcimAPI.md#DcimFrontPortTemplatesBulkDestroy) | **Delete** /api/dcim/front-port-templates/ | 
+[**DcimFrontPortTemplatesBulkPartialUpdate**](DcimAPI.md#DcimFrontPortTemplatesBulkPartialUpdate) | **Patch** /api/dcim/front-port-templates/ | 
+[**DcimFrontPortTemplatesBulkUpdate**](DcimAPI.md#DcimFrontPortTemplatesBulkUpdate) | **Put** /api/dcim/front-port-templates/ | 
+[**DcimFrontPortTemplatesCreate**](DcimAPI.md#DcimFrontPortTemplatesCreate) | **Post** /api/dcim/front-port-templates/ | 
+[**DcimFrontPortTemplatesDestroy**](DcimAPI.md#DcimFrontPortTemplatesDestroy) | **Delete** /api/dcim/front-port-templates/{id}/ | 
+[**DcimFrontPortTemplatesList**](DcimAPI.md#DcimFrontPortTemplatesList) | **Get** /api/dcim/front-port-templates/ | 
+[**DcimFrontPortTemplatesPartialUpdate**](DcimAPI.md#DcimFrontPortTemplatesPartialUpdate) | **Patch** /api/dcim/front-port-templates/{id}/ | 
+[**DcimFrontPortTemplatesRetrieve**](DcimAPI.md#DcimFrontPortTemplatesRetrieve) | **Get** /api/dcim/front-port-templates/{id}/ | 
+[**DcimFrontPortTemplatesUpdate**](DcimAPI.md#DcimFrontPortTemplatesUpdate) | **Put** /api/dcim/front-port-templates/{id}/ | 
+[**DcimFrontPortsBulkDestroy**](DcimAPI.md#DcimFrontPortsBulkDestroy) | **Delete** /api/dcim/front-ports/ | 
+[**DcimFrontPortsBulkPartialUpdate**](DcimAPI.md#DcimFrontPortsBulkPartialUpdate) | **Patch** /api/dcim/front-ports/ | 
+[**DcimFrontPortsBulkUpdate**](DcimAPI.md#DcimFrontPortsBulkUpdate) | **Put** /api/dcim/front-ports/ | 
+[**DcimFrontPortsCreate**](DcimAPI.md#DcimFrontPortsCreate) | **Post** /api/dcim/front-ports/ | 
+[**DcimFrontPortsDestroy**](DcimAPI.md#DcimFrontPortsDestroy) | **Delete** /api/dcim/front-ports/{id}/ | 
+[**DcimFrontPortsList**](DcimAPI.md#DcimFrontPortsList) | **Get** /api/dcim/front-ports/ | 
+[**DcimFrontPortsPartialUpdate**](DcimAPI.md#DcimFrontPortsPartialUpdate) | **Patch** /api/dcim/front-ports/{id}/ | 
+[**DcimFrontPortsPathsRetrieve**](DcimAPI.md#DcimFrontPortsPathsRetrieve) | **Get** /api/dcim/front-ports/{id}/paths/ | 
+[**DcimFrontPortsRetrieve**](DcimAPI.md#DcimFrontPortsRetrieve) | **Get** /api/dcim/front-ports/{id}/ | 
+[**DcimFrontPortsUpdate**](DcimAPI.md#DcimFrontPortsUpdate) | **Put** /api/dcim/front-ports/{id}/ | 
+[**DcimInterfaceTemplatesBulkDestroy**](DcimAPI.md#DcimInterfaceTemplatesBulkDestroy) | **Delete** /api/dcim/interface-templates/ | 
+[**DcimInterfaceTemplatesBulkPartialUpdate**](DcimAPI.md#DcimInterfaceTemplatesBulkPartialUpdate) | **Patch** /api/dcim/interface-templates/ | 
+[**DcimInterfaceTemplatesBulkUpdate**](DcimAPI.md#DcimInterfaceTemplatesBulkUpdate) | **Put** /api/dcim/interface-templates/ | 
+[**DcimInterfaceTemplatesCreate**](DcimAPI.md#DcimInterfaceTemplatesCreate) | **Post** /api/dcim/interface-templates/ | 
+[**DcimInterfaceTemplatesDestroy**](DcimAPI.md#DcimInterfaceTemplatesDestroy) | **Delete** /api/dcim/interface-templates/{id}/ | 
+[**DcimInterfaceTemplatesList**](DcimAPI.md#DcimInterfaceTemplatesList) | **Get** /api/dcim/interface-templates/ | 
+[**DcimInterfaceTemplatesPartialUpdate**](DcimAPI.md#DcimInterfaceTemplatesPartialUpdate) | **Patch** /api/dcim/interface-templates/{id}/ | 
+[**DcimInterfaceTemplatesRetrieve**](DcimAPI.md#DcimInterfaceTemplatesRetrieve) | **Get** /api/dcim/interface-templates/{id}/ | 
+[**DcimInterfaceTemplatesUpdate**](DcimAPI.md#DcimInterfaceTemplatesUpdate) | **Put** /api/dcim/interface-templates/{id}/ | 
+[**DcimInterfacesBulkDestroy**](DcimAPI.md#DcimInterfacesBulkDestroy) | **Delete** /api/dcim/interfaces/ | 
+[**DcimInterfacesBulkPartialUpdate**](DcimAPI.md#DcimInterfacesBulkPartialUpdate) | **Patch** /api/dcim/interfaces/ | 
+[**DcimInterfacesBulkUpdate**](DcimAPI.md#DcimInterfacesBulkUpdate) | **Put** /api/dcim/interfaces/ | 
+[**DcimInterfacesCreate**](DcimAPI.md#DcimInterfacesCreate) | **Post** /api/dcim/interfaces/ | 
+[**DcimInterfacesDestroy**](DcimAPI.md#DcimInterfacesDestroy) | **Delete** /api/dcim/interfaces/{id}/ | 
+[**DcimInterfacesList**](DcimAPI.md#DcimInterfacesList) | **Get** /api/dcim/interfaces/ | 
+[**DcimInterfacesPartialUpdate**](DcimAPI.md#DcimInterfacesPartialUpdate) | **Patch** /api/dcim/interfaces/{id}/ | 
+[**DcimInterfacesRetrieve**](DcimAPI.md#DcimInterfacesRetrieve) | **Get** /api/dcim/interfaces/{id}/ | 
+[**DcimInterfacesTraceRetrieve**](DcimAPI.md#DcimInterfacesTraceRetrieve) | **Get** /api/dcim/interfaces/{id}/trace/ | 
+[**DcimInterfacesUpdate**](DcimAPI.md#DcimInterfacesUpdate) | **Put** /api/dcim/interfaces/{id}/ | 
+[**DcimInventoryItemRolesBulkDestroy**](DcimAPI.md#DcimInventoryItemRolesBulkDestroy) | **Delete** /api/dcim/inventory-item-roles/ | 
+[**DcimInventoryItemRolesBulkPartialUpdate**](DcimAPI.md#DcimInventoryItemRolesBulkPartialUpdate) | **Patch** /api/dcim/inventory-item-roles/ | 
+[**DcimInventoryItemRolesBulkUpdate**](DcimAPI.md#DcimInventoryItemRolesBulkUpdate) | **Put** /api/dcim/inventory-item-roles/ | 
+[**DcimInventoryItemRolesCreate**](DcimAPI.md#DcimInventoryItemRolesCreate) | **Post** /api/dcim/inventory-item-roles/ | 
+[**DcimInventoryItemRolesDestroy**](DcimAPI.md#DcimInventoryItemRolesDestroy) | **Delete** /api/dcim/inventory-item-roles/{id}/ | 
+[**DcimInventoryItemRolesList**](DcimAPI.md#DcimInventoryItemRolesList) | **Get** /api/dcim/inventory-item-roles/ | 
+[**DcimInventoryItemRolesPartialUpdate**](DcimAPI.md#DcimInventoryItemRolesPartialUpdate) | **Patch** /api/dcim/inventory-item-roles/{id}/ | 
+[**DcimInventoryItemRolesRetrieve**](DcimAPI.md#DcimInventoryItemRolesRetrieve) | **Get** /api/dcim/inventory-item-roles/{id}/ | 
+[**DcimInventoryItemRolesUpdate**](DcimAPI.md#DcimInventoryItemRolesUpdate) | **Put** /api/dcim/inventory-item-roles/{id}/ | 
+[**DcimInventoryItemTemplatesBulkDestroy**](DcimAPI.md#DcimInventoryItemTemplatesBulkDestroy) | **Delete** /api/dcim/inventory-item-templates/ | 
+[**DcimInventoryItemTemplatesBulkPartialUpdate**](DcimAPI.md#DcimInventoryItemTemplatesBulkPartialUpdate) | **Patch** /api/dcim/inventory-item-templates/ | 
+[**DcimInventoryItemTemplatesBulkUpdate**](DcimAPI.md#DcimInventoryItemTemplatesBulkUpdate) | **Put** /api/dcim/inventory-item-templates/ | 
+[**DcimInventoryItemTemplatesCreate**](DcimAPI.md#DcimInventoryItemTemplatesCreate) | **Post** /api/dcim/inventory-item-templates/ | 
+[**DcimInventoryItemTemplatesDestroy**](DcimAPI.md#DcimInventoryItemTemplatesDestroy) | **Delete** /api/dcim/inventory-item-templates/{id}/ | 
+[**DcimInventoryItemTemplatesList**](DcimAPI.md#DcimInventoryItemTemplatesList) | **Get** /api/dcim/inventory-item-templates/ | 
+[**DcimInventoryItemTemplatesPartialUpdate**](DcimAPI.md#DcimInventoryItemTemplatesPartialUpdate) | **Patch** /api/dcim/inventory-item-templates/{id}/ | 
+[**DcimInventoryItemTemplatesRetrieve**](DcimAPI.md#DcimInventoryItemTemplatesRetrieve) | **Get** /api/dcim/inventory-item-templates/{id}/ | 
+[**DcimInventoryItemTemplatesUpdate**](DcimAPI.md#DcimInventoryItemTemplatesUpdate) | **Put** /api/dcim/inventory-item-templates/{id}/ | 
+[**DcimInventoryItemsBulkDestroy**](DcimAPI.md#DcimInventoryItemsBulkDestroy) | **Delete** /api/dcim/inventory-items/ | 
+[**DcimInventoryItemsBulkPartialUpdate**](DcimAPI.md#DcimInventoryItemsBulkPartialUpdate) | **Patch** /api/dcim/inventory-items/ | 
+[**DcimInventoryItemsBulkUpdate**](DcimAPI.md#DcimInventoryItemsBulkUpdate) | **Put** /api/dcim/inventory-items/ | 
+[**DcimInventoryItemsCreate**](DcimAPI.md#DcimInventoryItemsCreate) | **Post** /api/dcim/inventory-items/ | 
+[**DcimInventoryItemsDestroy**](DcimAPI.md#DcimInventoryItemsDestroy) | **Delete** /api/dcim/inventory-items/{id}/ | 
+[**DcimInventoryItemsList**](DcimAPI.md#DcimInventoryItemsList) | **Get** /api/dcim/inventory-items/ | 
+[**DcimInventoryItemsPartialUpdate**](DcimAPI.md#DcimInventoryItemsPartialUpdate) | **Patch** /api/dcim/inventory-items/{id}/ | 
+[**DcimInventoryItemsRetrieve**](DcimAPI.md#DcimInventoryItemsRetrieve) | **Get** /api/dcim/inventory-items/{id}/ | 
+[**DcimInventoryItemsUpdate**](DcimAPI.md#DcimInventoryItemsUpdate) | **Put** /api/dcim/inventory-items/{id}/ | 
+[**DcimLocationsBulkDestroy**](DcimAPI.md#DcimLocationsBulkDestroy) | **Delete** /api/dcim/locations/ | 
+[**DcimLocationsBulkPartialUpdate**](DcimAPI.md#DcimLocationsBulkPartialUpdate) | **Patch** /api/dcim/locations/ | 
+[**DcimLocationsBulkUpdate**](DcimAPI.md#DcimLocationsBulkUpdate) | **Put** /api/dcim/locations/ | 
+[**DcimLocationsCreate**](DcimAPI.md#DcimLocationsCreate) | **Post** /api/dcim/locations/ | 
+[**DcimLocationsDestroy**](DcimAPI.md#DcimLocationsDestroy) | **Delete** /api/dcim/locations/{id}/ | 
+[**DcimLocationsList**](DcimAPI.md#DcimLocationsList) | **Get** /api/dcim/locations/ | 
+[**DcimLocationsPartialUpdate**](DcimAPI.md#DcimLocationsPartialUpdate) | **Patch** /api/dcim/locations/{id}/ | 
+[**DcimLocationsRetrieve**](DcimAPI.md#DcimLocationsRetrieve) | **Get** /api/dcim/locations/{id}/ | 
+[**DcimLocationsUpdate**](DcimAPI.md#DcimLocationsUpdate) | **Put** /api/dcim/locations/{id}/ | 
+[**DcimManufacturersBulkDestroy**](DcimAPI.md#DcimManufacturersBulkDestroy) | **Delete** /api/dcim/manufacturers/ | 
+[**DcimManufacturersBulkPartialUpdate**](DcimAPI.md#DcimManufacturersBulkPartialUpdate) | **Patch** /api/dcim/manufacturers/ | 
+[**DcimManufacturersBulkUpdate**](DcimAPI.md#DcimManufacturersBulkUpdate) | **Put** /api/dcim/manufacturers/ | 
+[**DcimManufacturersCreate**](DcimAPI.md#DcimManufacturersCreate) | **Post** /api/dcim/manufacturers/ | 
+[**DcimManufacturersDestroy**](DcimAPI.md#DcimManufacturersDestroy) | **Delete** /api/dcim/manufacturers/{id}/ | 
+[**DcimManufacturersList**](DcimAPI.md#DcimManufacturersList) | **Get** /api/dcim/manufacturers/ | 
+[**DcimManufacturersPartialUpdate**](DcimAPI.md#DcimManufacturersPartialUpdate) | **Patch** /api/dcim/manufacturers/{id}/ | 
+[**DcimManufacturersRetrieve**](DcimAPI.md#DcimManufacturersRetrieve) | **Get** /api/dcim/manufacturers/{id}/ | 
+[**DcimManufacturersUpdate**](DcimAPI.md#DcimManufacturersUpdate) | **Put** /api/dcim/manufacturers/{id}/ | 
+[**DcimModuleBayTemplatesBulkDestroy**](DcimAPI.md#DcimModuleBayTemplatesBulkDestroy) | **Delete** /api/dcim/module-bay-templates/ | 
+[**DcimModuleBayTemplatesBulkPartialUpdate**](DcimAPI.md#DcimModuleBayTemplatesBulkPartialUpdate) | **Patch** /api/dcim/module-bay-templates/ | 
+[**DcimModuleBayTemplatesBulkUpdate**](DcimAPI.md#DcimModuleBayTemplatesBulkUpdate) | **Put** /api/dcim/module-bay-templates/ | 
+[**DcimModuleBayTemplatesCreate**](DcimAPI.md#DcimModuleBayTemplatesCreate) | **Post** /api/dcim/module-bay-templates/ | 
+[**DcimModuleBayTemplatesDestroy**](DcimAPI.md#DcimModuleBayTemplatesDestroy) | **Delete** /api/dcim/module-bay-templates/{id}/ | 
+[**DcimModuleBayTemplatesList**](DcimAPI.md#DcimModuleBayTemplatesList) | **Get** /api/dcim/module-bay-templates/ | 
+[**DcimModuleBayTemplatesPartialUpdate**](DcimAPI.md#DcimModuleBayTemplatesPartialUpdate) | **Patch** /api/dcim/module-bay-templates/{id}/ | 
+[**DcimModuleBayTemplatesRetrieve**](DcimAPI.md#DcimModuleBayTemplatesRetrieve) | **Get** /api/dcim/module-bay-templates/{id}/ | 
+[**DcimModuleBayTemplatesUpdate**](DcimAPI.md#DcimModuleBayTemplatesUpdate) | **Put** /api/dcim/module-bay-templates/{id}/ | 
+[**DcimModuleBaysBulkDestroy**](DcimAPI.md#DcimModuleBaysBulkDestroy) | **Delete** /api/dcim/module-bays/ | 
+[**DcimModuleBaysBulkPartialUpdate**](DcimAPI.md#DcimModuleBaysBulkPartialUpdate) | **Patch** /api/dcim/module-bays/ | 
+[**DcimModuleBaysBulkUpdate**](DcimAPI.md#DcimModuleBaysBulkUpdate) | **Put** /api/dcim/module-bays/ | 
+[**DcimModuleBaysCreate**](DcimAPI.md#DcimModuleBaysCreate) | **Post** /api/dcim/module-bays/ | 
+[**DcimModuleBaysDestroy**](DcimAPI.md#DcimModuleBaysDestroy) | **Delete** /api/dcim/module-bays/{id}/ | 
+[**DcimModuleBaysList**](DcimAPI.md#DcimModuleBaysList) | **Get** /api/dcim/module-bays/ | 
+[**DcimModuleBaysPartialUpdate**](DcimAPI.md#DcimModuleBaysPartialUpdate) | **Patch** /api/dcim/module-bays/{id}/ | 
+[**DcimModuleBaysRetrieve**](DcimAPI.md#DcimModuleBaysRetrieve) | **Get** /api/dcim/module-bays/{id}/ | 
+[**DcimModuleBaysUpdate**](DcimAPI.md#DcimModuleBaysUpdate) | **Put** /api/dcim/module-bays/{id}/ | 
+[**DcimModuleTypesBulkDestroy**](DcimAPI.md#DcimModuleTypesBulkDestroy) | **Delete** /api/dcim/module-types/ | 
+[**DcimModuleTypesBulkPartialUpdate**](DcimAPI.md#DcimModuleTypesBulkPartialUpdate) | **Patch** /api/dcim/module-types/ | 
+[**DcimModuleTypesBulkUpdate**](DcimAPI.md#DcimModuleTypesBulkUpdate) | **Put** /api/dcim/module-types/ | 
+[**DcimModuleTypesCreate**](DcimAPI.md#DcimModuleTypesCreate) | **Post** /api/dcim/module-types/ | 
+[**DcimModuleTypesDestroy**](DcimAPI.md#DcimModuleTypesDestroy) | **Delete** /api/dcim/module-types/{id}/ | 
+[**DcimModuleTypesList**](DcimAPI.md#DcimModuleTypesList) | **Get** /api/dcim/module-types/ | 
+[**DcimModuleTypesPartialUpdate**](DcimAPI.md#DcimModuleTypesPartialUpdate) | **Patch** /api/dcim/module-types/{id}/ | 
+[**DcimModuleTypesRetrieve**](DcimAPI.md#DcimModuleTypesRetrieve) | **Get** /api/dcim/module-types/{id}/ | 
+[**DcimModuleTypesUpdate**](DcimAPI.md#DcimModuleTypesUpdate) | **Put** /api/dcim/module-types/{id}/ | 
+[**DcimModulesBulkDestroy**](DcimAPI.md#DcimModulesBulkDestroy) | **Delete** /api/dcim/modules/ | 
+[**DcimModulesBulkPartialUpdate**](DcimAPI.md#DcimModulesBulkPartialUpdate) | **Patch** /api/dcim/modules/ | 
+[**DcimModulesBulkUpdate**](DcimAPI.md#DcimModulesBulkUpdate) | **Put** /api/dcim/modules/ | 
+[**DcimModulesCreate**](DcimAPI.md#DcimModulesCreate) | **Post** /api/dcim/modules/ | 
+[**DcimModulesDestroy**](DcimAPI.md#DcimModulesDestroy) | **Delete** /api/dcim/modules/{id}/ | 
+[**DcimModulesList**](DcimAPI.md#DcimModulesList) | **Get** /api/dcim/modules/ | 
+[**DcimModulesPartialUpdate**](DcimAPI.md#DcimModulesPartialUpdate) | **Patch** /api/dcim/modules/{id}/ | 
+[**DcimModulesRetrieve**](DcimAPI.md#DcimModulesRetrieve) | **Get** /api/dcim/modules/{id}/ | 
+[**DcimModulesUpdate**](DcimAPI.md#DcimModulesUpdate) | **Put** /api/dcim/modules/{id}/ | 
+[**DcimPlatformsBulkDestroy**](DcimAPI.md#DcimPlatformsBulkDestroy) | **Delete** /api/dcim/platforms/ | 
+[**DcimPlatformsBulkPartialUpdate**](DcimAPI.md#DcimPlatformsBulkPartialUpdate) | **Patch** /api/dcim/platforms/ | 
+[**DcimPlatformsBulkUpdate**](DcimAPI.md#DcimPlatformsBulkUpdate) | **Put** /api/dcim/platforms/ | 
+[**DcimPlatformsCreate**](DcimAPI.md#DcimPlatformsCreate) | **Post** /api/dcim/platforms/ | 
+[**DcimPlatformsDestroy**](DcimAPI.md#DcimPlatformsDestroy) | **Delete** /api/dcim/platforms/{id}/ | 
+[**DcimPlatformsList**](DcimAPI.md#DcimPlatformsList) | **Get** /api/dcim/platforms/ | 
+[**DcimPlatformsPartialUpdate**](DcimAPI.md#DcimPlatformsPartialUpdate) | **Patch** /api/dcim/platforms/{id}/ | 
+[**DcimPlatformsRetrieve**](DcimAPI.md#DcimPlatformsRetrieve) | **Get** /api/dcim/platforms/{id}/ | 
+[**DcimPlatformsUpdate**](DcimAPI.md#DcimPlatformsUpdate) | **Put** /api/dcim/platforms/{id}/ | 
+[**DcimPowerFeedsBulkDestroy**](DcimAPI.md#DcimPowerFeedsBulkDestroy) | **Delete** /api/dcim/power-feeds/ | 
+[**DcimPowerFeedsBulkPartialUpdate**](DcimAPI.md#DcimPowerFeedsBulkPartialUpdate) | **Patch** /api/dcim/power-feeds/ | 
+[**DcimPowerFeedsBulkUpdate**](DcimAPI.md#DcimPowerFeedsBulkUpdate) | **Put** /api/dcim/power-feeds/ | 
+[**DcimPowerFeedsCreate**](DcimAPI.md#DcimPowerFeedsCreate) | **Post** /api/dcim/power-feeds/ | 
+[**DcimPowerFeedsDestroy**](DcimAPI.md#DcimPowerFeedsDestroy) | **Delete** /api/dcim/power-feeds/{id}/ | 
+[**DcimPowerFeedsList**](DcimAPI.md#DcimPowerFeedsList) | **Get** /api/dcim/power-feeds/ | 
+[**DcimPowerFeedsPartialUpdate**](DcimAPI.md#DcimPowerFeedsPartialUpdate) | **Patch** /api/dcim/power-feeds/{id}/ | 
+[**DcimPowerFeedsRetrieve**](DcimAPI.md#DcimPowerFeedsRetrieve) | **Get** /api/dcim/power-feeds/{id}/ | 
+[**DcimPowerFeedsTraceRetrieve**](DcimAPI.md#DcimPowerFeedsTraceRetrieve) | **Get** /api/dcim/power-feeds/{id}/trace/ | 
+[**DcimPowerFeedsUpdate**](DcimAPI.md#DcimPowerFeedsUpdate) | **Put** /api/dcim/power-feeds/{id}/ | 
+[**DcimPowerOutletTemplatesBulkDestroy**](DcimAPI.md#DcimPowerOutletTemplatesBulkDestroy) | **Delete** /api/dcim/power-outlet-templates/ | 
+[**DcimPowerOutletTemplatesBulkPartialUpdate**](DcimAPI.md#DcimPowerOutletTemplatesBulkPartialUpdate) | **Patch** /api/dcim/power-outlet-templates/ | 
+[**DcimPowerOutletTemplatesBulkUpdate**](DcimAPI.md#DcimPowerOutletTemplatesBulkUpdate) | **Put** /api/dcim/power-outlet-templates/ | 
+[**DcimPowerOutletTemplatesCreate**](DcimAPI.md#DcimPowerOutletTemplatesCreate) | **Post** /api/dcim/power-outlet-templates/ | 
+[**DcimPowerOutletTemplatesDestroy**](DcimAPI.md#DcimPowerOutletTemplatesDestroy) | **Delete** /api/dcim/power-outlet-templates/{id}/ | 
+[**DcimPowerOutletTemplatesList**](DcimAPI.md#DcimPowerOutletTemplatesList) | **Get** /api/dcim/power-outlet-templates/ | 
+[**DcimPowerOutletTemplatesPartialUpdate**](DcimAPI.md#DcimPowerOutletTemplatesPartialUpdate) | **Patch** /api/dcim/power-outlet-templates/{id}/ | 
+[**DcimPowerOutletTemplatesRetrieve**](DcimAPI.md#DcimPowerOutletTemplatesRetrieve) | **Get** /api/dcim/power-outlet-templates/{id}/ | 
+[**DcimPowerOutletTemplatesUpdate**](DcimAPI.md#DcimPowerOutletTemplatesUpdate) | **Put** /api/dcim/power-outlet-templates/{id}/ | 
+[**DcimPowerOutletsBulkDestroy**](DcimAPI.md#DcimPowerOutletsBulkDestroy) | **Delete** /api/dcim/power-outlets/ | 
+[**DcimPowerOutletsBulkPartialUpdate**](DcimAPI.md#DcimPowerOutletsBulkPartialUpdate) | **Patch** /api/dcim/power-outlets/ | 
+[**DcimPowerOutletsBulkUpdate**](DcimAPI.md#DcimPowerOutletsBulkUpdate) | **Put** /api/dcim/power-outlets/ | 
+[**DcimPowerOutletsCreate**](DcimAPI.md#DcimPowerOutletsCreate) | **Post** /api/dcim/power-outlets/ | 
+[**DcimPowerOutletsDestroy**](DcimAPI.md#DcimPowerOutletsDestroy) | **Delete** /api/dcim/power-outlets/{id}/ | 
+[**DcimPowerOutletsList**](DcimAPI.md#DcimPowerOutletsList) | **Get** /api/dcim/power-outlets/ | 
+[**DcimPowerOutletsPartialUpdate**](DcimAPI.md#DcimPowerOutletsPartialUpdate) | **Patch** /api/dcim/power-outlets/{id}/ | 
+[**DcimPowerOutletsRetrieve**](DcimAPI.md#DcimPowerOutletsRetrieve) | **Get** /api/dcim/power-outlets/{id}/ | 
+[**DcimPowerOutletsTraceRetrieve**](DcimAPI.md#DcimPowerOutletsTraceRetrieve) | **Get** /api/dcim/power-outlets/{id}/trace/ | 
+[**DcimPowerOutletsUpdate**](DcimAPI.md#DcimPowerOutletsUpdate) | **Put** /api/dcim/power-outlets/{id}/ | 
+[**DcimPowerPanelsBulkDestroy**](DcimAPI.md#DcimPowerPanelsBulkDestroy) | **Delete** /api/dcim/power-panels/ | 
+[**DcimPowerPanelsBulkPartialUpdate**](DcimAPI.md#DcimPowerPanelsBulkPartialUpdate) | **Patch** /api/dcim/power-panels/ | 
+[**DcimPowerPanelsBulkUpdate**](DcimAPI.md#DcimPowerPanelsBulkUpdate) | **Put** /api/dcim/power-panels/ | 
+[**DcimPowerPanelsCreate**](DcimAPI.md#DcimPowerPanelsCreate) | **Post** /api/dcim/power-panels/ | 
+[**DcimPowerPanelsDestroy**](DcimAPI.md#DcimPowerPanelsDestroy) | **Delete** /api/dcim/power-panels/{id}/ | 
+[**DcimPowerPanelsList**](DcimAPI.md#DcimPowerPanelsList) | **Get** /api/dcim/power-panels/ | 
+[**DcimPowerPanelsPartialUpdate**](DcimAPI.md#DcimPowerPanelsPartialUpdate) | **Patch** /api/dcim/power-panels/{id}/ | 
+[**DcimPowerPanelsRetrieve**](DcimAPI.md#DcimPowerPanelsRetrieve) | **Get** /api/dcim/power-panels/{id}/ | 
+[**DcimPowerPanelsUpdate**](DcimAPI.md#DcimPowerPanelsUpdate) | **Put** /api/dcim/power-panels/{id}/ | 
+[**DcimPowerPortTemplatesBulkDestroy**](DcimAPI.md#DcimPowerPortTemplatesBulkDestroy) | **Delete** /api/dcim/power-port-templates/ | 
+[**DcimPowerPortTemplatesBulkPartialUpdate**](DcimAPI.md#DcimPowerPortTemplatesBulkPartialUpdate) | **Patch** /api/dcim/power-port-templates/ | 
+[**DcimPowerPortTemplatesBulkUpdate**](DcimAPI.md#DcimPowerPortTemplatesBulkUpdate) | **Put** /api/dcim/power-port-templates/ | 
+[**DcimPowerPortTemplatesCreate**](DcimAPI.md#DcimPowerPortTemplatesCreate) | **Post** /api/dcim/power-port-templates/ | 
+[**DcimPowerPortTemplatesDestroy**](DcimAPI.md#DcimPowerPortTemplatesDestroy) | **Delete** /api/dcim/power-port-templates/{id}/ | 
+[**DcimPowerPortTemplatesList**](DcimAPI.md#DcimPowerPortTemplatesList) | **Get** /api/dcim/power-port-templates/ | 
+[**DcimPowerPortTemplatesPartialUpdate**](DcimAPI.md#DcimPowerPortTemplatesPartialUpdate) | **Patch** /api/dcim/power-port-templates/{id}/ | 
+[**DcimPowerPortTemplatesRetrieve**](DcimAPI.md#DcimPowerPortTemplatesRetrieve) | **Get** /api/dcim/power-port-templates/{id}/ | 
+[**DcimPowerPortTemplatesUpdate**](DcimAPI.md#DcimPowerPortTemplatesUpdate) | **Put** /api/dcim/power-port-templates/{id}/ | 
+[**DcimPowerPortsBulkDestroy**](DcimAPI.md#DcimPowerPortsBulkDestroy) | **Delete** /api/dcim/power-ports/ | 
+[**DcimPowerPortsBulkPartialUpdate**](DcimAPI.md#DcimPowerPortsBulkPartialUpdate) | **Patch** /api/dcim/power-ports/ | 
+[**DcimPowerPortsBulkUpdate**](DcimAPI.md#DcimPowerPortsBulkUpdate) | **Put** /api/dcim/power-ports/ | 
+[**DcimPowerPortsCreate**](DcimAPI.md#DcimPowerPortsCreate) | **Post** /api/dcim/power-ports/ | 
+[**DcimPowerPortsDestroy**](DcimAPI.md#DcimPowerPortsDestroy) | **Delete** /api/dcim/power-ports/{id}/ | 
+[**DcimPowerPortsList**](DcimAPI.md#DcimPowerPortsList) | **Get** /api/dcim/power-ports/ | 
+[**DcimPowerPortsPartialUpdate**](DcimAPI.md#DcimPowerPortsPartialUpdate) | **Patch** /api/dcim/power-ports/{id}/ | 
+[**DcimPowerPortsRetrieve**](DcimAPI.md#DcimPowerPortsRetrieve) | **Get** /api/dcim/power-ports/{id}/ | 
+[**DcimPowerPortsTraceRetrieve**](DcimAPI.md#DcimPowerPortsTraceRetrieve) | **Get** /api/dcim/power-ports/{id}/trace/ | 
+[**DcimPowerPortsUpdate**](DcimAPI.md#DcimPowerPortsUpdate) | **Put** /api/dcim/power-ports/{id}/ | 
+[**DcimRackReservationsBulkDestroy**](DcimAPI.md#DcimRackReservationsBulkDestroy) | **Delete** /api/dcim/rack-reservations/ | 
+[**DcimRackReservationsBulkPartialUpdate**](DcimAPI.md#DcimRackReservationsBulkPartialUpdate) | **Patch** /api/dcim/rack-reservations/ | 
+[**DcimRackReservationsBulkUpdate**](DcimAPI.md#DcimRackReservationsBulkUpdate) | **Put** /api/dcim/rack-reservations/ | 
+[**DcimRackReservationsCreate**](DcimAPI.md#DcimRackReservationsCreate) | **Post** /api/dcim/rack-reservations/ | 
+[**DcimRackReservationsDestroy**](DcimAPI.md#DcimRackReservationsDestroy) | **Delete** /api/dcim/rack-reservations/{id}/ | 
+[**DcimRackReservationsList**](DcimAPI.md#DcimRackReservationsList) | **Get** /api/dcim/rack-reservations/ | 
+[**DcimRackReservationsPartialUpdate**](DcimAPI.md#DcimRackReservationsPartialUpdate) | **Patch** /api/dcim/rack-reservations/{id}/ | 
+[**DcimRackReservationsRetrieve**](DcimAPI.md#DcimRackReservationsRetrieve) | **Get** /api/dcim/rack-reservations/{id}/ | 
+[**DcimRackReservationsUpdate**](DcimAPI.md#DcimRackReservationsUpdate) | **Put** /api/dcim/rack-reservations/{id}/ | 
+[**DcimRackRolesBulkDestroy**](DcimAPI.md#DcimRackRolesBulkDestroy) | **Delete** /api/dcim/rack-roles/ | 
+[**DcimRackRolesBulkPartialUpdate**](DcimAPI.md#DcimRackRolesBulkPartialUpdate) | **Patch** /api/dcim/rack-roles/ | 
+[**DcimRackRolesBulkUpdate**](DcimAPI.md#DcimRackRolesBulkUpdate) | **Put** /api/dcim/rack-roles/ | 
+[**DcimRackRolesCreate**](DcimAPI.md#DcimRackRolesCreate) | **Post** /api/dcim/rack-roles/ | 
+[**DcimRackRolesDestroy**](DcimAPI.md#DcimRackRolesDestroy) | **Delete** /api/dcim/rack-roles/{id}/ | 
+[**DcimRackRolesList**](DcimAPI.md#DcimRackRolesList) | **Get** /api/dcim/rack-roles/ | 
+[**DcimRackRolesPartialUpdate**](DcimAPI.md#DcimRackRolesPartialUpdate) | **Patch** /api/dcim/rack-roles/{id}/ | 
+[**DcimRackRolesRetrieve**](DcimAPI.md#DcimRackRolesRetrieve) | **Get** /api/dcim/rack-roles/{id}/ | 
+[**DcimRackRolesUpdate**](DcimAPI.md#DcimRackRolesUpdate) | **Put** /api/dcim/rack-roles/{id}/ | 
+[**DcimRacksBulkDestroy**](DcimAPI.md#DcimRacksBulkDestroy) | **Delete** /api/dcim/racks/ | 
+[**DcimRacksBulkPartialUpdate**](DcimAPI.md#DcimRacksBulkPartialUpdate) | **Patch** /api/dcim/racks/ | 
+[**DcimRacksBulkUpdate**](DcimAPI.md#DcimRacksBulkUpdate) | **Put** /api/dcim/racks/ | 
+[**DcimRacksCreate**](DcimAPI.md#DcimRacksCreate) | **Post** /api/dcim/racks/ | 
+[**DcimRacksDestroy**](DcimAPI.md#DcimRacksDestroy) | **Delete** /api/dcim/racks/{id}/ | 
+[**DcimRacksElevationRetrieve**](DcimAPI.md#DcimRacksElevationRetrieve) | **Get** /api/dcim/racks/{id}/elevation/ | 
+[**DcimRacksList**](DcimAPI.md#DcimRacksList) | **Get** /api/dcim/racks/ | 
+[**DcimRacksPartialUpdate**](DcimAPI.md#DcimRacksPartialUpdate) | **Patch** /api/dcim/racks/{id}/ | 
+[**DcimRacksRetrieve**](DcimAPI.md#DcimRacksRetrieve) | **Get** /api/dcim/racks/{id}/ | 
+[**DcimRacksUpdate**](DcimAPI.md#DcimRacksUpdate) | **Put** /api/dcim/racks/{id}/ | 
+[**DcimRearPortTemplatesBulkDestroy**](DcimAPI.md#DcimRearPortTemplatesBulkDestroy) | **Delete** /api/dcim/rear-port-templates/ | 
+[**DcimRearPortTemplatesBulkPartialUpdate**](DcimAPI.md#DcimRearPortTemplatesBulkPartialUpdate) | **Patch** /api/dcim/rear-port-templates/ | 
+[**DcimRearPortTemplatesBulkUpdate**](DcimAPI.md#DcimRearPortTemplatesBulkUpdate) | **Put** /api/dcim/rear-port-templates/ | 
+[**DcimRearPortTemplatesCreate**](DcimAPI.md#DcimRearPortTemplatesCreate) | **Post** /api/dcim/rear-port-templates/ | 
+[**DcimRearPortTemplatesDestroy**](DcimAPI.md#DcimRearPortTemplatesDestroy) | **Delete** /api/dcim/rear-port-templates/{id}/ | 
+[**DcimRearPortTemplatesList**](DcimAPI.md#DcimRearPortTemplatesList) | **Get** /api/dcim/rear-port-templates/ | 
+[**DcimRearPortTemplatesPartialUpdate**](DcimAPI.md#DcimRearPortTemplatesPartialUpdate) | **Patch** /api/dcim/rear-port-templates/{id}/ | 
+[**DcimRearPortTemplatesRetrieve**](DcimAPI.md#DcimRearPortTemplatesRetrieve) | **Get** /api/dcim/rear-port-templates/{id}/ | 
+[**DcimRearPortTemplatesUpdate**](DcimAPI.md#DcimRearPortTemplatesUpdate) | **Put** /api/dcim/rear-port-templates/{id}/ | 
+[**DcimRearPortsBulkDestroy**](DcimAPI.md#DcimRearPortsBulkDestroy) | **Delete** /api/dcim/rear-ports/ | 
+[**DcimRearPortsBulkPartialUpdate**](DcimAPI.md#DcimRearPortsBulkPartialUpdate) | **Patch** /api/dcim/rear-ports/ | 
+[**DcimRearPortsBulkUpdate**](DcimAPI.md#DcimRearPortsBulkUpdate) | **Put** /api/dcim/rear-ports/ | 
+[**DcimRearPortsCreate**](DcimAPI.md#DcimRearPortsCreate) | **Post** /api/dcim/rear-ports/ | 
+[**DcimRearPortsDestroy**](DcimAPI.md#DcimRearPortsDestroy) | **Delete** /api/dcim/rear-ports/{id}/ | 
+[**DcimRearPortsList**](DcimAPI.md#DcimRearPortsList) | **Get** /api/dcim/rear-ports/ | 
+[**DcimRearPortsPartialUpdate**](DcimAPI.md#DcimRearPortsPartialUpdate) | **Patch** /api/dcim/rear-ports/{id}/ | 
+[**DcimRearPortsPathsRetrieve**](DcimAPI.md#DcimRearPortsPathsRetrieve) | **Get** /api/dcim/rear-ports/{id}/paths/ | 
+[**DcimRearPortsRetrieve**](DcimAPI.md#DcimRearPortsRetrieve) | **Get** /api/dcim/rear-ports/{id}/ | 
+[**DcimRearPortsUpdate**](DcimAPI.md#DcimRearPortsUpdate) | **Put** /api/dcim/rear-ports/{id}/ | 
+[**DcimRegionsBulkDestroy**](DcimAPI.md#DcimRegionsBulkDestroy) | **Delete** /api/dcim/regions/ | 
+[**DcimRegionsBulkPartialUpdate**](DcimAPI.md#DcimRegionsBulkPartialUpdate) | **Patch** /api/dcim/regions/ | 
+[**DcimRegionsBulkUpdate**](DcimAPI.md#DcimRegionsBulkUpdate) | **Put** /api/dcim/regions/ | 
+[**DcimRegionsCreate**](DcimAPI.md#DcimRegionsCreate) | **Post** /api/dcim/regions/ | 
+[**DcimRegionsDestroy**](DcimAPI.md#DcimRegionsDestroy) | **Delete** /api/dcim/regions/{id}/ | 
+[**DcimRegionsList**](DcimAPI.md#DcimRegionsList) | **Get** /api/dcim/regions/ | 
+[**DcimRegionsPartialUpdate**](DcimAPI.md#DcimRegionsPartialUpdate) | **Patch** /api/dcim/regions/{id}/ | 
+[**DcimRegionsRetrieve**](DcimAPI.md#DcimRegionsRetrieve) | **Get** /api/dcim/regions/{id}/ | 
+[**DcimRegionsUpdate**](DcimAPI.md#DcimRegionsUpdate) | **Put** /api/dcim/regions/{id}/ | 
+[**DcimSiteGroupsBulkDestroy**](DcimAPI.md#DcimSiteGroupsBulkDestroy) | **Delete** /api/dcim/site-groups/ | 
+[**DcimSiteGroupsBulkPartialUpdate**](DcimAPI.md#DcimSiteGroupsBulkPartialUpdate) | **Patch** /api/dcim/site-groups/ | 
+[**DcimSiteGroupsBulkUpdate**](DcimAPI.md#DcimSiteGroupsBulkUpdate) | **Put** /api/dcim/site-groups/ | 
+[**DcimSiteGroupsCreate**](DcimAPI.md#DcimSiteGroupsCreate) | **Post** /api/dcim/site-groups/ | 
+[**DcimSiteGroupsDestroy**](DcimAPI.md#DcimSiteGroupsDestroy) | **Delete** /api/dcim/site-groups/{id}/ | 
+[**DcimSiteGroupsList**](DcimAPI.md#DcimSiteGroupsList) | **Get** /api/dcim/site-groups/ | 
+[**DcimSiteGroupsPartialUpdate**](DcimAPI.md#DcimSiteGroupsPartialUpdate) | **Patch** /api/dcim/site-groups/{id}/ | 
+[**DcimSiteGroupsRetrieve**](DcimAPI.md#DcimSiteGroupsRetrieve) | **Get** /api/dcim/site-groups/{id}/ | 
+[**DcimSiteGroupsUpdate**](DcimAPI.md#DcimSiteGroupsUpdate) | **Put** /api/dcim/site-groups/{id}/ | 
+[**DcimSitesBulkDestroy**](DcimAPI.md#DcimSitesBulkDestroy) | **Delete** /api/dcim/sites/ | 
+[**DcimSitesBulkPartialUpdate**](DcimAPI.md#DcimSitesBulkPartialUpdate) | **Patch** /api/dcim/sites/ | 
+[**DcimSitesBulkUpdate**](DcimAPI.md#DcimSitesBulkUpdate) | **Put** /api/dcim/sites/ | 
+[**DcimSitesCreate**](DcimAPI.md#DcimSitesCreate) | **Post** /api/dcim/sites/ | 
+[**DcimSitesDestroy**](DcimAPI.md#DcimSitesDestroy) | **Delete** /api/dcim/sites/{id}/ | 
+[**DcimSitesList**](DcimAPI.md#DcimSitesList) | **Get** /api/dcim/sites/ | 
+[**DcimSitesPartialUpdate**](DcimAPI.md#DcimSitesPartialUpdate) | **Patch** /api/dcim/sites/{id}/ | 
+[**DcimSitesRetrieve**](DcimAPI.md#DcimSitesRetrieve) | **Get** /api/dcim/sites/{id}/ | 
+[**DcimSitesUpdate**](DcimAPI.md#DcimSitesUpdate) | **Put** /api/dcim/sites/{id}/ | 
+[**DcimVirtualChassisBulkDestroy**](DcimAPI.md#DcimVirtualChassisBulkDestroy) | **Delete** /api/dcim/virtual-chassis/ | 
+[**DcimVirtualChassisBulkPartialUpdate**](DcimAPI.md#DcimVirtualChassisBulkPartialUpdate) | **Patch** /api/dcim/virtual-chassis/ | 
+[**DcimVirtualChassisBulkUpdate**](DcimAPI.md#DcimVirtualChassisBulkUpdate) | **Put** /api/dcim/virtual-chassis/ | 
+[**DcimVirtualChassisCreate**](DcimAPI.md#DcimVirtualChassisCreate) | **Post** /api/dcim/virtual-chassis/ | 
+[**DcimVirtualChassisDestroy**](DcimAPI.md#DcimVirtualChassisDestroy) | **Delete** /api/dcim/virtual-chassis/{id}/ | 
+[**DcimVirtualChassisList**](DcimAPI.md#DcimVirtualChassisList) | **Get** /api/dcim/virtual-chassis/ | 
+[**DcimVirtualChassisPartialUpdate**](DcimAPI.md#DcimVirtualChassisPartialUpdate) | **Patch** /api/dcim/virtual-chassis/{id}/ | 
+[**DcimVirtualChassisRetrieve**](DcimAPI.md#DcimVirtualChassisRetrieve) | **Get** /api/dcim/virtual-chassis/{id}/ | 
+[**DcimVirtualChassisUpdate**](DcimAPI.md#DcimVirtualChassisUpdate) | **Put** /api/dcim/virtual-chassis/{id}/ | 
+[**DcimVirtualDeviceContextsBulkDestroy**](DcimAPI.md#DcimVirtualDeviceContextsBulkDestroy) | **Delete** /api/dcim/virtual-device-contexts/ | 
+[**DcimVirtualDeviceContextsBulkPartialUpdate**](DcimAPI.md#DcimVirtualDeviceContextsBulkPartialUpdate) | **Patch** /api/dcim/virtual-device-contexts/ | 
+[**DcimVirtualDeviceContextsBulkUpdate**](DcimAPI.md#DcimVirtualDeviceContextsBulkUpdate) | **Put** /api/dcim/virtual-device-contexts/ | 
+[**DcimVirtualDeviceContextsCreate**](DcimAPI.md#DcimVirtualDeviceContextsCreate) | **Post** /api/dcim/virtual-device-contexts/ | 
+[**DcimVirtualDeviceContextsDestroy**](DcimAPI.md#DcimVirtualDeviceContextsDestroy) | **Delete** /api/dcim/virtual-device-contexts/{id}/ | 
+[**DcimVirtualDeviceContextsList**](DcimAPI.md#DcimVirtualDeviceContextsList) | **Get** /api/dcim/virtual-device-contexts/ | 
+[**DcimVirtualDeviceContextsPartialUpdate**](DcimAPI.md#DcimVirtualDeviceContextsPartialUpdate) | **Patch** /api/dcim/virtual-device-contexts/{id}/ | 
+[**DcimVirtualDeviceContextsRetrieve**](DcimAPI.md#DcimVirtualDeviceContextsRetrieve) | **Get** /api/dcim/virtual-device-contexts/{id}/ | 
+[**DcimVirtualDeviceContextsUpdate**](DcimAPI.md#DcimVirtualDeviceContextsUpdate) | **Put** /api/dcim/virtual-device-contexts/{id}/ | 
 
 
 
@@ -412,9 +412,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimCableTerminationsBulkDestroy(context.Background()).CableTerminationRequest(cableTerminationRequest).Execute()
+    r, err := apiClient.DcimAPI.DcimCableTerminationsBulkDestroy(context.Background()).CableTerminationRequest(cableTerminationRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimCableTerminationsBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimCableTerminationsBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -476,13 +476,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimCableTerminationsBulkPartialUpdate(context.Background()).CableTerminationRequest(cableTerminationRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimCableTerminationsBulkPartialUpdate(context.Background()).CableTerminationRequest(cableTerminationRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimCableTerminationsBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimCableTerminationsBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimCableTerminationsBulkPartialUpdate`: []CableTermination
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimCableTerminationsBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimCableTerminationsBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -542,13 +542,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimCableTerminationsBulkUpdate(context.Background()).CableTerminationRequest(cableTerminationRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimCableTerminationsBulkUpdate(context.Background()).CableTerminationRequest(cableTerminationRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimCableTerminationsBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimCableTerminationsBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimCableTerminationsBulkUpdate`: []CableTermination
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimCableTerminationsBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimCableTerminationsBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -608,13 +608,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimCableTerminationsCreate(context.Background()).CableTerminationRequest(cableTerminationRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimCableTerminationsCreate(context.Background()).CableTerminationRequest(cableTerminationRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimCableTerminationsCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimCableTerminationsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimCableTerminationsCreate`: CableTermination
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimCableTerminationsCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimCableTerminationsCreate`: %v\n", resp)
 }
 ```
 
@@ -674,9 +674,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimCableTerminationsDestroy(context.Background(), id).Execute()
+    r, err := apiClient.DcimAPI.DcimCableTerminationsDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimCableTerminationsDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimCableTerminationsDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -719,7 +719,7 @@ Name | Type | Description  | Notes
 
 ## DcimCableTerminationsList
 
-> PaginatedCableTerminationList DcimCableTerminationsList(ctx).Cable(cable).CableN(cableN).CableEnd(cableEnd).CableEndN(cableEndN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).Offset(offset).Ordering(ordering).TerminationId(terminationId).TerminationIdGt(terminationIdGt).TerminationIdGte(terminationIdGte).TerminationIdLt(terminationIdLt).TerminationIdLte(terminationIdLte).TerminationIdN(terminationIdN).TerminationType(terminationType).TerminationTypeN(terminationTypeN).Execute()
+> PaginatedCableTerminationList DcimCableTerminationsList(ctx).Cable(cable).CableN(cableN).CableEnd(cableEnd).CableEndN(cableEndN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).Offset(offset).Ordering(ordering).TerminationId(terminationId).TerminationIdEmpty(terminationIdEmpty).TerminationIdGt(terminationIdGt).TerminationIdGte(terminationIdGte).TerminationIdLt(terminationIdLt).TerminationIdLte(terminationIdLte).TerminationIdN(terminationIdN).TerminationType(terminationType).TerminationTypeN(terminationTypeN).Execute()
 
 
 
@@ -743,6 +743,7 @@ func main() {
     cableEnd := "cableEnd_example" // string |  (optional)
     cableEndN := "cableEndN_example" // string |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
@@ -752,6 +753,7 @@ func main() {
     offset := int32(56) // int32 | The initial index from which to return the results. (optional)
     ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
     terminationId := []int32{int32(123)} // []int32 |  (optional)
+    terminationIdEmpty := true // bool |  (optional)
     terminationIdGt := []int32{int32(123)} // []int32 |  (optional)
     terminationIdGte := []int32{int32(123)} // []int32 |  (optional)
     terminationIdLt := []int32{int32(123)} // []int32 |  (optional)
@@ -762,13 +764,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimCableTerminationsList(context.Background()).Cable(cable).CableN(cableN).CableEnd(cableEnd).CableEndN(cableEndN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).Offset(offset).Ordering(ordering).TerminationId(terminationId).TerminationIdGt(terminationIdGt).TerminationIdGte(terminationIdGte).TerminationIdLt(terminationIdLt).TerminationIdLte(terminationIdLte).TerminationIdN(terminationIdN).TerminationType(terminationType).TerminationTypeN(terminationTypeN).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimCableTerminationsList(context.Background()).Cable(cable).CableN(cableN).CableEnd(cableEnd).CableEndN(cableEndN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).Offset(offset).Ordering(ordering).TerminationId(terminationId).TerminationIdEmpty(terminationIdEmpty).TerminationIdGt(terminationIdGt).TerminationIdGte(terminationIdGte).TerminationIdLt(terminationIdLt).TerminationIdLte(terminationIdLte).TerminationIdN(terminationIdN).TerminationType(terminationType).TerminationTypeN(terminationTypeN).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimCableTerminationsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimCableTerminationsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimCableTerminationsList`: PaginatedCableTerminationList
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimCableTerminationsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimCableTerminationsList`: %v\n", resp)
 }
 ```
 
@@ -788,6 +790,7 @@ Name | Type | Description  | Notes
  **cableEnd** | **string** |  | 
  **cableEndN** | **string** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
@@ -797,6 +800,7 @@ Name | Type | Description  | Notes
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **terminationId** | **[]int32** |  | 
+ **terminationIdEmpty** | **bool** |  | 
  **terminationIdGt** | **[]int32** |  | 
  **terminationIdGte** | **[]int32** |  | 
  **terminationIdLt** | **[]int32** |  | 
@@ -849,13 +853,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimCableTerminationsPartialUpdate(context.Background(), id).PatchedCableTerminationRequest(patchedCableTerminationRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimCableTerminationsPartialUpdate(context.Background(), id).PatchedCableTerminationRequest(patchedCableTerminationRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimCableTerminationsPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimCableTerminationsPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimCableTerminationsPartialUpdate`: CableTermination
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimCableTerminationsPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimCableTerminationsPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -920,13 +924,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimCableTerminationsRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimCableTerminationsRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimCableTerminationsRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimCableTerminationsRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimCableTerminationsRetrieve`: CableTermination
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimCableTerminationsRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimCableTerminationsRetrieve`: %v\n", resp)
 }
 ```
 
@@ -991,13 +995,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimCableTerminationsUpdate(context.Background(), id).CableTerminationRequest(cableTerminationRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimCableTerminationsUpdate(context.Background(), id).CableTerminationRequest(cableTerminationRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimCableTerminationsUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimCableTerminationsUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimCableTerminationsUpdate`: CableTermination
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimCableTerminationsUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimCableTerminationsUpdate`: %v\n", resp)
 }
 ```
 
@@ -1062,9 +1066,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimCablesBulkDestroy(context.Background()).CableRequest(cableRequest).Execute()
+    r, err := apiClient.DcimAPI.DcimCablesBulkDestroy(context.Background()).CableRequest(cableRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimCablesBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimCablesBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1126,13 +1130,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimCablesBulkPartialUpdate(context.Background()).CableRequest(cableRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimCablesBulkPartialUpdate(context.Background()).CableRequest(cableRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimCablesBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimCablesBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimCablesBulkPartialUpdate`: []Cable
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimCablesBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimCablesBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -1192,13 +1196,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimCablesBulkUpdate(context.Background()).CableRequest(cableRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimCablesBulkUpdate(context.Background()).CableRequest(cableRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimCablesBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimCablesBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimCablesBulkUpdate`: []Cable
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimCablesBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimCablesBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -1258,13 +1262,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimCablesCreate(context.Background()).WritableCableRequest(writableCableRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimCablesCreate(context.Background()).WritableCableRequest(writableCableRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimCablesCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimCablesCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimCablesCreate`: Cable
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimCablesCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimCablesCreate`: %v\n", resp)
 }
 ```
 
@@ -1324,9 +1328,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimCablesDestroy(context.Background(), id).Execute()
+    r, err := apiClient.DcimAPI.DcimCablesDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimCablesDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimCablesDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1369,7 +1373,7 @@ Name | Type | Description  | Notes
 
 ## DcimCablesList
 
-> PaginatedCableList DcimCablesList(ctx).Color(color).ColorN(colorN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Device(device).DeviceId(deviceId).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Length(length).LengthGt(lengthGt).LengthGte(lengthGte).LengthLt(lengthLt).LengthLte(lengthLte).LengthN(lengthN).LengthUnit(lengthUnit).LengthUnitN(lengthUnitN).Limit(limit).Location(location).LocationId(locationId).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackId(rackId).Site(site).SiteId(siteId).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).TerminationAId(terminationAId).TerminationAType(terminationAType).TerminationATypeN(terminationATypeN).TerminationBId(terminationBId).TerminationBType(terminationBType).TerminationBTypeN(terminationBTypeN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedCableList DcimCablesList(ctx).Color(color).ColorN(colorN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Device(device).DeviceId(deviceId).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Length(length).LengthEmpty(lengthEmpty).LengthGt(lengthGt).LengthGte(lengthGte).LengthLt(lengthLt).LengthLte(lengthLte).LengthN(lengthN).LengthUnit(lengthUnit).LengthUnitN(lengthUnitN).Limit(limit).Location(location).LocationId(locationId).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackId(rackId).Site(site).SiteId(siteId).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).TerminationAId(terminationAId).TerminationAType(terminationAType).TerminationATypeN(terminationATypeN).TerminationBId(terminationBId).TerminationBType(terminationBType).TerminationBTypeN(terminationBTypeN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -1392,6 +1396,7 @@ func main() {
     color := []string{"Inner_example"} // []string |  (optional)
     colorN := []string{"Inner_example"} // []string |  (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -1401,6 +1406,7 @@ func main() {
     device := []string{"Inner_example"} // []string |  (optional)
     deviceId := []int32{int32(123)} // []int32 |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
@@ -1418,12 +1424,14 @@ func main() {
     labelNiew := []string{"Inner_example"} // []string |  (optional)
     labelNisw := []string{"Inner_example"} // []string |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     length := []float64{float64(123)} // []float64 |  (optional)
+    lengthEmpty := true // bool |  (optional)
     lengthGt := []float64{float64(123)} // []float64 |  (optional)
     lengthGte := []float64{float64(123)} // []float64 |  (optional)
     lengthLt := []float64{float64(123)} // []float64 |  (optional)
@@ -1434,6 +1442,7 @@ func main() {
     limit := int32(56) // int32 | Number of results to return per page. (optional)
     location := []string{"Inner_example"} // []string |  (optional)
     locationId := []int32{int32(123)} // []int32 |  (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     offset := int32(56) // int32 | The initial index from which to return the results. (optional)
     ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
     q := "q_example" // string | Search (optional)
@@ -1465,13 +1474,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimCablesList(context.Background()).Color(color).ColorN(colorN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Device(device).DeviceId(deviceId).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Length(length).LengthGt(lengthGt).LengthGte(lengthGte).LengthLt(lengthLt).LengthLte(lengthLte).LengthN(lengthN).LengthUnit(lengthUnit).LengthUnitN(lengthUnitN).Limit(limit).Location(location).LocationId(locationId).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackId(rackId).Site(site).SiteId(siteId).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).TerminationAId(terminationAId).TerminationAType(terminationAType).TerminationATypeN(terminationATypeN).TerminationBId(terminationBId).TerminationBType(terminationBType).TerminationBTypeN(terminationBTypeN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimCablesList(context.Background()).Color(color).ColorN(colorN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Device(device).DeviceId(deviceId).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Length(length).LengthEmpty(lengthEmpty).LengthGt(lengthGt).LengthGte(lengthGte).LengthLt(lengthLt).LengthLte(lengthLte).LengthN(lengthN).LengthUnit(lengthUnit).LengthUnitN(lengthUnitN).Limit(limit).Location(location).LocationId(locationId).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackId(rackId).Site(site).SiteId(siteId).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).TerminationAId(terminationAId).TerminationAType(terminationAType).TerminationATypeN(terminationATypeN).TerminationBId(terminationBId).TerminationBType(terminationBType).TerminationBTypeN(terminationBTypeN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimCablesList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimCablesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimCablesList`: PaginatedCableList
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimCablesList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimCablesList`: %v\n", resp)
 }
 ```
 
@@ -1489,6 +1498,7 @@ Name | Type | Description  | Notes
  **color** | **[]string** |  | 
  **colorN** | **[]string** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -1498,6 +1508,7 @@ Name | Type | Description  | Notes
  **device** | **[]string** |  | 
  **deviceId** | **[]int32** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
@@ -1515,12 +1526,14 @@ Name | Type | Description  | Notes
  **labelNiew** | **[]string** |  | 
  **labelNisw** | **[]string** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **length** | **[]float64** |  | 
+ **lengthEmpty** | **bool** |  | 
  **lengthGt** | **[]float64** |  | 
  **lengthGte** | **[]float64** |  | 
  **lengthLt** | **[]float64** |  | 
@@ -1531,6 +1544,7 @@ Name | Type | Description  | Notes
  **limit** | **int32** | Number of results to return per page. | 
  **location** | **[]string** |  | 
  **locationId** | **[]int32** |  | 
+ **modifiedByRequest** | **string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **q** | **string** | Search | 
@@ -1604,13 +1618,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimCablesPartialUpdate(context.Background(), id).PatchedWritableCableRequest(patchedWritableCableRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimCablesPartialUpdate(context.Background(), id).PatchedWritableCableRequest(patchedWritableCableRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimCablesPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimCablesPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimCablesPartialUpdate`: Cable
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimCablesPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimCablesPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -1675,13 +1689,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimCablesRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimCablesRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimCablesRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimCablesRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimCablesRetrieve`: Cable
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimCablesRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimCablesRetrieve`: %v\n", resp)
 }
 ```
 
@@ -1746,13 +1760,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimCablesUpdate(context.Background(), id).WritableCableRequest(writableCableRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimCablesUpdate(context.Background(), id).WritableCableRequest(writableCableRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimCablesUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimCablesUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimCablesUpdate`: Cable
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimCablesUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimCablesUpdate`: %v\n", resp)
 }
 ```
 
@@ -1818,13 +1832,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimConnectedDeviceList(context.Background()).PeerDevice(peerDevice).PeerInterface(peerInterface).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimConnectedDeviceList(context.Background()).PeerDevice(peerDevice).PeerInterface(peerInterface).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimConnectedDeviceList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConnectedDeviceList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimConnectedDeviceList`: []Device
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimConnectedDeviceList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimConnectedDeviceList`: %v\n", resp)
 }
 ```
 
@@ -1885,9 +1899,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimConsolePortTemplatesBulkDestroy(context.Background()).ConsolePortTemplateRequest(consolePortTemplateRequest).Execute()
+    r, err := apiClient.DcimAPI.DcimConsolePortTemplatesBulkDestroy(context.Background()).ConsolePortTemplateRequest(consolePortTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimConsolePortTemplatesBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConsolePortTemplatesBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1949,13 +1963,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimConsolePortTemplatesBulkPartialUpdate(context.Background()).ConsolePortTemplateRequest(consolePortTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimConsolePortTemplatesBulkPartialUpdate(context.Background()).ConsolePortTemplateRequest(consolePortTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimConsolePortTemplatesBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConsolePortTemplatesBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimConsolePortTemplatesBulkPartialUpdate`: []ConsolePortTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimConsolePortTemplatesBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimConsolePortTemplatesBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -2015,13 +2029,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimConsolePortTemplatesBulkUpdate(context.Background()).ConsolePortTemplateRequest(consolePortTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimConsolePortTemplatesBulkUpdate(context.Background()).ConsolePortTemplateRequest(consolePortTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimConsolePortTemplatesBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConsolePortTemplatesBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimConsolePortTemplatesBulkUpdate`: []ConsolePortTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimConsolePortTemplatesBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimConsolePortTemplatesBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -2081,13 +2095,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimConsolePortTemplatesCreate(context.Background()).WritableConsolePortTemplateRequest(writableConsolePortTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimConsolePortTemplatesCreate(context.Background()).WritableConsolePortTemplateRequest(writableConsolePortTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimConsolePortTemplatesCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConsolePortTemplatesCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimConsolePortTemplatesCreate`: ConsolePortTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimConsolePortTemplatesCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimConsolePortTemplatesCreate`: %v\n", resp)
 }
 ```
 
@@ -2147,9 +2161,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimConsolePortTemplatesDestroy(context.Background(), id).Execute()
+    r, err := apiClient.DcimAPI.DcimConsolePortTemplatesDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimConsolePortTemplatesDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConsolePortTemplatesDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2192,7 +2206,7 @@ Name | Type | Description  | Notes
 
 ## DcimConsolePortTemplatesList
 
-> PaginatedConsolePortTemplateList DcimConsolePortTemplatesList(ctx).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedConsolePortTemplateList DcimConsolePortTemplatesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -2213,6 +2227,7 @@ import (
 
 func main() {
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -2222,18 +2237,21 @@ func main() {
     devicetypeId := []*int32{int32(123)} // []*int32 | Device type (ID) (optional)
     devicetypeIdN := []*int32{int32(123)} // []*int32 | Device type (ID) (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     moduletypeId := []*int32{int32(123)} // []*int32 | Module type (ID) (optional)
     moduletypeIdN := []*int32{int32(123)} // []*int32 | Module type (ID) (optional)
     name := []string{"Inner_example"} // []string |  (optional)
@@ -2256,13 +2274,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimConsolePortTemplatesList(context.Background()).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimConsolePortTemplatesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimConsolePortTemplatesList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConsolePortTemplatesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimConsolePortTemplatesList`: PaginatedConsolePortTemplateList
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimConsolePortTemplatesList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimConsolePortTemplatesList`: %v\n", resp)
 }
 ```
 
@@ -2278,6 +2296,7 @@ Other parameters are passed through a pointer to a apiDcimConsolePortTemplatesLi
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -2287,18 +2306,21 @@ Name | Type | Description  | Notes
  **devicetypeId** | **[]int32** | Device type (ID) | 
  **devicetypeIdN** | **[]int32** | Device type (ID) | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **moduletypeId** | **[]int32** | Module type (ID) | 
  **moduletypeIdN** | **[]int32** | Module type (ID) | 
  **name** | **[]string** |  | 
@@ -2363,13 +2385,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimConsolePortTemplatesPartialUpdate(context.Background(), id).PatchedWritableConsolePortTemplateRequest(patchedWritableConsolePortTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimConsolePortTemplatesPartialUpdate(context.Background(), id).PatchedWritableConsolePortTemplateRequest(patchedWritableConsolePortTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimConsolePortTemplatesPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConsolePortTemplatesPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimConsolePortTemplatesPartialUpdate`: ConsolePortTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimConsolePortTemplatesPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimConsolePortTemplatesPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -2434,13 +2456,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimConsolePortTemplatesRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimConsolePortTemplatesRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimConsolePortTemplatesRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConsolePortTemplatesRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimConsolePortTemplatesRetrieve`: ConsolePortTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimConsolePortTemplatesRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimConsolePortTemplatesRetrieve`: %v\n", resp)
 }
 ```
 
@@ -2505,13 +2527,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimConsolePortTemplatesUpdate(context.Background(), id).WritableConsolePortTemplateRequest(writableConsolePortTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimConsolePortTemplatesUpdate(context.Background(), id).WritableConsolePortTemplateRequest(writableConsolePortTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimConsolePortTemplatesUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConsolePortTemplatesUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimConsolePortTemplatesUpdate`: ConsolePortTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimConsolePortTemplatesUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimConsolePortTemplatesUpdate`: %v\n", resp)
 }
 ```
 
@@ -2576,9 +2598,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimConsolePortsBulkDestroy(context.Background()).ConsolePortRequest(consolePortRequest).Execute()
+    r, err := apiClient.DcimAPI.DcimConsolePortsBulkDestroy(context.Background()).ConsolePortRequest(consolePortRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimConsolePortsBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConsolePortsBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2640,13 +2662,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimConsolePortsBulkPartialUpdate(context.Background()).ConsolePortRequest(consolePortRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimConsolePortsBulkPartialUpdate(context.Background()).ConsolePortRequest(consolePortRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimConsolePortsBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConsolePortsBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimConsolePortsBulkPartialUpdate`: []ConsolePort
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimConsolePortsBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimConsolePortsBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -2706,13 +2728,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimConsolePortsBulkUpdate(context.Background()).ConsolePortRequest(consolePortRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimConsolePortsBulkUpdate(context.Background()).ConsolePortRequest(consolePortRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimConsolePortsBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConsolePortsBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimConsolePortsBulkUpdate`: []ConsolePort
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimConsolePortsBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimConsolePortsBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -2772,13 +2794,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimConsolePortsCreate(context.Background()).WritableConsolePortRequest(writableConsolePortRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimConsolePortsCreate(context.Background()).WritableConsolePortRequest(writableConsolePortRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimConsolePortsCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConsolePortsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimConsolePortsCreate`: ConsolePort
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimConsolePortsCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimConsolePortsCreate`: %v\n", resp)
 }
 ```
 
@@ -2838,9 +2860,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimConsolePortsDestroy(context.Background(), id).Execute()
+    r, err := apiClient.DcimAPI.DcimConsolePortsDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimConsolePortsDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConsolePortsDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2883,7 +2905,7 @@ Name | Type | Description  | Notes
 
 ## DcimConsolePortsList
 
-> PaginatedConsolePortList DcimConsolePortsList(ctx).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Connected(connected).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
+> PaginatedConsolePortList DcimConsolePortsList(ctx).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Connected(connected).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
 
 
 
@@ -2908,6 +2930,7 @@ func main() {
     cabled := true // bool |  (optional)
     connected := true // bool |  (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -2938,6 +2961,7 @@ func main() {
     deviceTypeId := []int32{int32(123)} // []int32 | Device type (ID) (optional)
     deviceTypeIdN := []int32{int32(123)} // []int32 | Device type (ID) (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
@@ -2955,6 +2979,7 @@ func main() {
     labelNiew := []string{"Inner_example"} // []string |  (optional)
     labelNisw := []string{"Inner_example"} // []string |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -2965,6 +2990,7 @@ func main() {
     locationN := []string{"Inner_example"} // []string | Location (slug) (optional)
     locationId := []int32{int32(123)} // []int32 | Location (ID) (optional)
     locationIdN := []int32{int32(123)} // []int32 | Location (ID) (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     moduleId := []*int32{int32(123)} // []*int32 | Module (ID) (optional)
     moduleIdN := []*int32{int32(123)} // []*int32 | Module (ID) (optional)
     name := []string{"Inner_example"} // []string |  (optional)
@@ -2990,6 +3016,10 @@ func main() {
     regionN := []int32{int32(123)} // []int32 | Region (slug) (optional)
     regionId := []int32{int32(123)} // []int32 | Region (ID) (optional)
     regionIdN := []int32{int32(123)} // []int32 | Region (ID) (optional)
+    role := []string{"Inner_example"} // []string | Device role (slug) (optional)
+    roleN := []string{"Inner_example"} // []string | Device role (slug) (optional)
+    roleId := []int32{int32(123)} // []int32 | Device role (ID) (optional)
+    roleIdN := []int32{int32(123)} // []int32 | Device role (ID) (optional)
     site := []string{"Inner_example"} // []string | Site name (slug) (optional)
     siteN := []string{"Inner_example"} // []string | Site name (slug) (optional)
     siteGroup := []int32{int32(123)} // []int32 | Site group (slug) (optional)
@@ -3010,13 +3040,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimConsolePortsList(context.Background()).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Connected(connected).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimConsolePortsList(context.Background()).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Connected(connected).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimConsolePortsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConsolePortsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimConsolePortsList`: PaginatedConsolePortList
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimConsolePortsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimConsolePortsList`: %v\n", resp)
 }
 ```
 
@@ -3036,6 +3066,7 @@ Name | Type | Description  | Notes
  **cabled** | **bool** |  | 
  **connected** | **bool** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -3066,6 +3097,7 @@ Name | Type | Description  | Notes
  **deviceTypeId** | **[]int32** | Device type (ID) | 
  **deviceTypeIdN** | **[]int32** | Device type (ID) | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
@@ -3083,6 +3115,7 @@ Name | Type | Description  | Notes
  **labelNiew** | **[]string** |  | 
  **labelNisw** | **[]string** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -3093,6 +3126,7 @@ Name | Type | Description  | Notes
  **locationN** | **[]string** | Location (slug) | 
  **locationId** | **[]int32** | Location (ID) | 
  **locationIdN** | **[]int32** | Location (ID) | 
+ **modifiedByRequest** | **string** |  | 
  **moduleId** | **[]int32** | Module (ID) | 
  **moduleIdN** | **[]int32** | Module (ID) | 
  **name** | **[]string** |  | 
@@ -3118,6 +3152,10 @@ Name | Type | Description  | Notes
  **regionN** | **[]int32** | Region (slug) | 
  **regionId** | **[]int32** | Region (ID) | 
  **regionIdN** | **[]int32** | Region (ID) | 
+ **role** | **[]string** | Device role (slug) | 
+ **roleN** | **[]string** | Device role (slug) | 
+ **roleId** | **[]int32** | Device role (ID) | 
+ **roleIdN** | **[]int32** | Device role (ID) | 
  **site** | **[]string** | Site name (slug) | 
  **siteN** | **[]string** | Site name (slug) | 
  **siteGroup** | **[]int32** | Site group (slug) | 
@@ -3180,13 +3218,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimConsolePortsPartialUpdate(context.Background(), id).PatchedWritableConsolePortRequest(patchedWritableConsolePortRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimConsolePortsPartialUpdate(context.Background(), id).PatchedWritableConsolePortRequest(patchedWritableConsolePortRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimConsolePortsPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConsolePortsPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimConsolePortsPartialUpdate`: ConsolePort
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimConsolePortsPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimConsolePortsPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -3251,13 +3289,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimConsolePortsRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimConsolePortsRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimConsolePortsRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConsolePortsRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimConsolePortsRetrieve`: ConsolePort
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimConsolePortsRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimConsolePortsRetrieve`: %v\n", resp)
 }
 ```
 
@@ -3321,13 +3359,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimConsolePortsTraceRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimConsolePortsTraceRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimConsolePortsTraceRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConsolePortsTraceRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimConsolePortsTraceRetrieve`: ConsolePort
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimConsolePortsTraceRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimConsolePortsTraceRetrieve`: %v\n", resp)
 }
 ```
 
@@ -3392,13 +3430,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimConsolePortsUpdate(context.Background(), id).WritableConsolePortRequest(writableConsolePortRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimConsolePortsUpdate(context.Background(), id).WritableConsolePortRequest(writableConsolePortRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimConsolePortsUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConsolePortsUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimConsolePortsUpdate`: ConsolePort
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimConsolePortsUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimConsolePortsUpdate`: %v\n", resp)
 }
 ```
 
@@ -3463,9 +3501,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimConsoleServerPortTemplatesBulkDestroy(context.Background()).ConsoleServerPortTemplateRequest(consoleServerPortTemplateRequest).Execute()
+    r, err := apiClient.DcimAPI.DcimConsoleServerPortTemplatesBulkDestroy(context.Background()).ConsoleServerPortTemplateRequest(consoleServerPortTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimConsoleServerPortTemplatesBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConsoleServerPortTemplatesBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3527,13 +3565,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimConsoleServerPortTemplatesBulkPartialUpdate(context.Background()).ConsoleServerPortTemplateRequest(consoleServerPortTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimConsoleServerPortTemplatesBulkPartialUpdate(context.Background()).ConsoleServerPortTemplateRequest(consoleServerPortTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimConsoleServerPortTemplatesBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConsoleServerPortTemplatesBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimConsoleServerPortTemplatesBulkPartialUpdate`: []ConsoleServerPortTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimConsoleServerPortTemplatesBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimConsoleServerPortTemplatesBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -3593,13 +3631,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimConsoleServerPortTemplatesBulkUpdate(context.Background()).ConsoleServerPortTemplateRequest(consoleServerPortTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimConsoleServerPortTemplatesBulkUpdate(context.Background()).ConsoleServerPortTemplateRequest(consoleServerPortTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimConsoleServerPortTemplatesBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConsoleServerPortTemplatesBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimConsoleServerPortTemplatesBulkUpdate`: []ConsoleServerPortTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimConsoleServerPortTemplatesBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimConsoleServerPortTemplatesBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -3659,13 +3697,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimConsoleServerPortTemplatesCreate(context.Background()).WritableConsoleServerPortTemplateRequest(writableConsoleServerPortTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimConsoleServerPortTemplatesCreate(context.Background()).WritableConsoleServerPortTemplateRequest(writableConsoleServerPortTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimConsoleServerPortTemplatesCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConsoleServerPortTemplatesCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimConsoleServerPortTemplatesCreate`: ConsoleServerPortTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimConsoleServerPortTemplatesCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimConsoleServerPortTemplatesCreate`: %v\n", resp)
 }
 ```
 
@@ -3725,9 +3763,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimConsoleServerPortTemplatesDestroy(context.Background(), id).Execute()
+    r, err := apiClient.DcimAPI.DcimConsoleServerPortTemplatesDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimConsoleServerPortTemplatesDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConsoleServerPortTemplatesDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3770,7 +3808,7 @@ Name | Type | Description  | Notes
 
 ## DcimConsoleServerPortTemplatesList
 
-> PaginatedConsoleServerPortTemplateList DcimConsoleServerPortTemplatesList(ctx).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedConsoleServerPortTemplateList DcimConsoleServerPortTemplatesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -3791,6 +3829,7 @@ import (
 
 func main() {
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -3800,18 +3839,21 @@ func main() {
     devicetypeId := []*int32{int32(123)} // []*int32 | Device type (ID) (optional)
     devicetypeIdN := []*int32{int32(123)} // []*int32 | Device type (ID) (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     moduletypeId := []*int32{int32(123)} // []*int32 | Module type (ID) (optional)
     moduletypeIdN := []*int32{int32(123)} // []*int32 | Module type (ID) (optional)
     name := []string{"Inner_example"} // []string |  (optional)
@@ -3834,13 +3876,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimConsoleServerPortTemplatesList(context.Background()).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimConsoleServerPortTemplatesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimConsoleServerPortTemplatesList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConsoleServerPortTemplatesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimConsoleServerPortTemplatesList`: PaginatedConsoleServerPortTemplateList
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimConsoleServerPortTemplatesList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimConsoleServerPortTemplatesList`: %v\n", resp)
 }
 ```
 
@@ -3856,6 +3898,7 @@ Other parameters are passed through a pointer to a apiDcimConsoleServerPortTempl
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -3865,18 +3908,21 @@ Name | Type | Description  | Notes
  **devicetypeId** | **[]int32** | Device type (ID) | 
  **devicetypeIdN** | **[]int32** | Device type (ID) | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **moduletypeId** | **[]int32** | Module type (ID) | 
  **moduletypeIdN** | **[]int32** | Module type (ID) | 
  **name** | **[]string** |  | 
@@ -3941,13 +3987,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimConsoleServerPortTemplatesPartialUpdate(context.Background(), id).PatchedWritableConsoleServerPortTemplateRequest(patchedWritableConsoleServerPortTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimConsoleServerPortTemplatesPartialUpdate(context.Background(), id).PatchedWritableConsoleServerPortTemplateRequest(patchedWritableConsoleServerPortTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimConsoleServerPortTemplatesPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConsoleServerPortTemplatesPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimConsoleServerPortTemplatesPartialUpdate`: ConsoleServerPortTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimConsoleServerPortTemplatesPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimConsoleServerPortTemplatesPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -4012,13 +4058,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimConsoleServerPortTemplatesRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimConsoleServerPortTemplatesRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimConsoleServerPortTemplatesRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConsoleServerPortTemplatesRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimConsoleServerPortTemplatesRetrieve`: ConsoleServerPortTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimConsoleServerPortTemplatesRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimConsoleServerPortTemplatesRetrieve`: %v\n", resp)
 }
 ```
 
@@ -4083,13 +4129,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimConsoleServerPortTemplatesUpdate(context.Background(), id).WritableConsoleServerPortTemplateRequest(writableConsoleServerPortTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimConsoleServerPortTemplatesUpdate(context.Background(), id).WritableConsoleServerPortTemplateRequest(writableConsoleServerPortTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimConsoleServerPortTemplatesUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConsoleServerPortTemplatesUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimConsoleServerPortTemplatesUpdate`: ConsoleServerPortTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimConsoleServerPortTemplatesUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimConsoleServerPortTemplatesUpdate`: %v\n", resp)
 }
 ```
 
@@ -4154,9 +4200,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimConsoleServerPortsBulkDestroy(context.Background()).ConsoleServerPortRequest(consoleServerPortRequest).Execute()
+    r, err := apiClient.DcimAPI.DcimConsoleServerPortsBulkDestroy(context.Background()).ConsoleServerPortRequest(consoleServerPortRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimConsoleServerPortsBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConsoleServerPortsBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -4218,13 +4264,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimConsoleServerPortsBulkPartialUpdate(context.Background()).ConsoleServerPortRequest(consoleServerPortRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimConsoleServerPortsBulkPartialUpdate(context.Background()).ConsoleServerPortRequest(consoleServerPortRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimConsoleServerPortsBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConsoleServerPortsBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimConsoleServerPortsBulkPartialUpdate`: []ConsoleServerPort
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimConsoleServerPortsBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimConsoleServerPortsBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -4284,13 +4330,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimConsoleServerPortsBulkUpdate(context.Background()).ConsoleServerPortRequest(consoleServerPortRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimConsoleServerPortsBulkUpdate(context.Background()).ConsoleServerPortRequest(consoleServerPortRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimConsoleServerPortsBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConsoleServerPortsBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimConsoleServerPortsBulkUpdate`: []ConsoleServerPort
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimConsoleServerPortsBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimConsoleServerPortsBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -4350,13 +4396,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimConsoleServerPortsCreate(context.Background()).WritableConsoleServerPortRequest(writableConsoleServerPortRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimConsoleServerPortsCreate(context.Background()).WritableConsoleServerPortRequest(writableConsoleServerPortRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimConsoleServerPortsCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConsoleServerPortsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimConsoleServerPortsCreate`: ConsoleServerPort
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimConsoleServerPortsCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimConsoleServerPortsCreate`: %v\n", resp)
 }
 ```
 
@@ -4416,9 +4462,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimConsoleServerPortsDestroy(context.Background(), id).Execute()
+    r, err := apiClient.DcimAPI.DcimConsoleServerPortsDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimConsoleServerPortsDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConsoleServerPortsDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -4461,7 +4507,7 @@ Name | Type | Description  | Notes
 
 ## DcimConsoleServerPortsList
 
-> PaginatedConsoleServerPortList DcimConsoleServerPortsList(ctx).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Connected(connected).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
+> PaginatedConsoleServerPortList DcimConsoleServerPortsList(ctx).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Connected(connected).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
 
 
 
@@ -4486,6 +4532,7 @@ func main() {
     cabled := true // bool |  (optional)
     connected := true // bool |  (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -4516,6 +4563,7 @@ func main() {
     deviceTypeId := []int32{int32(123)} // []int32 | Device type (ID) (optional)
     deviceTypeIdN := []int32{int32(123)} // []int32 | Device type (ID) (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
@@ -4533,6 +4581,7 @@ func main() {
     labelNiew := []string{"Inner_example"} // []string |  (optional)
     labelNisw := []string{"Inner_example"} // []string |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -4543,6 +4592,7 @@ func main() {
     locationN := []string{"Inner_example"} // []string | Location (slug) (optional)
     locationId := []int32{int32(123)} // []int32 | Location (ID) (optional)
     locationIdN := []int32{int32(123)} // []int32 | Location (ID) (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     moduleId := []*int32{int32(123)} // []*int32 | Module (ID) (optional)
     moduleIdN := []*int32{int32(123)} // []*int32 | Module (ID) (optional)
     name := []string{"Inner_example"} // []string |  (optional)
@@ -4568,6 +4618,10 @@ func main() {
     regionN := []int32{int32(123)} // []int32 | Region (slug) (optional)
     regionId := []int32{int32(123)} // []int32 | Region (ID) (optional)
     regionIdN := []int32{int32(123)} // []int32 | Region (ID) (optional)
+    role := []string{"Inner_example"} // []string | Device role (slug) (optional)
+    roleN := []string{"Inner_example"} // []string | Device role (slug) (optional)
+    roleId := []int32{int32(123)} // []int32 | Device role (ID) (optional)
+    roleIdN := []int32{int32(123)} // []int32 | Device role (ID) (optional)
     site := []string{"Inner_example"} // []string | Site name (slug) (optional)
     siteN := []string{"Inner_example"} // []string | Site name (slug) (optional)
     siteGroup := []int32{int32(123)} // []int32 | Site group (slug) (optional)
@@ -4588,13 +4642,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimConsoleServerPortsList(context.Background()).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Connected(connected).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimConsoleServerPortsList(context.Background()).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Connected(connected).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimConsoleServerPortsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConsoleServerPortsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimConsoleServerPortsList`: PaginatedConsoleServerPortList
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimConsoleServerPortsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimConsoleServerPortsList`: %v\n", resp)
 }
 ```
 
@@ -4614,6 +4668,7 @@ Name | Type | Description  | Notes
  **cabled** | **bool** |  | 
  **connected** | **bool** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -4644,6 +4699,7 @@ Name | Type | Description  | Notes
  **deviceTypeId** | **[]int32** | Device type (ID) | 
  **deviceTypeIdN** | **[]int32** | Device type (ID) | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
@@ -4661,6 +4717,7 @@ Name | Type | Description  | Notes
  **labelNiew** | **[]string** |  | 
  **labelNisw** | **[]string** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -4671,6 +4728,7 @@ Name | Type | Description  | Notes
  **locationN** | **[]string** | Location (slug) | 
  **locationId** | **[]int32** | Location (ID) | 
  **locationIdN** | **[]int32** | Location (ID) | 
+ **modifiedByRequest** | **string** |  | 
  **moduleId** | **[]int32** | Module (ID) | 
  **moduleIdN** | **[]int32** | Module (ID) | 
  **name** | **[]string** |  | 
@@ -4696,6 +4754,10 @@ Name | Type | Description  | Notes
  **regionN** | **[]int32** | Region (slug) | 
  **regionId** | **[]int32** | Region (ID) | 
  **regionIdN** | **[]int32** | Region (ID) | 
+ **role** | **[]string** | Device role (slug) | 
+ **roleN** | **[]string** | Device role (slug) | 
+ **roleId** | **[]int32** | Device role (ID) | 
+ **roleIdN** | **[]int32** | Device role (ID) | 
  **site** | **[]string** | Site name (slug) | 
  **siteN** | **[]string** | Site name (slug) | 
  **siteGroup** | **[]int32** | Site group (slug) | 
@@ -4758,13 +4820,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimConsoleServerPortsPartialUpdate(context.Background(), id).PatchedWritableConsoleServerPortRequest(patchedWritableConsoleServerPortRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimConsoleServerPortsPartialUpdate(context.Background(), id).PatchedWritableConsoleServerPortRequest(patchedWritableConsoleServerPortRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimConsoleServerPortsPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConsoleServerPortsPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimConsoleServerPortsPartialUpdate`: ConsoleServerPort
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimConsoleServerPortsPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimConsoleServerPortsPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -4829,13 +4891,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimConsoleServerPortsRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimConsoleServerPortsRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimConsoleServerPortsRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConsoleServerPortsRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimConsoleServerPortsRetrieve`: ConsoleServerPort
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimConsoleServerPortsRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimConsoleServerPortsRetrieve`: %v\n", resp)
 }
 ```
 
@@ -4899,13 +4961,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimConsoleServerPortsTraceRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimConsoleServerPortsTraceRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimConsoleServerPortsTraceRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConsoleServerPortsTraceRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimConsoleServerPortsTraceRetrieve`: ConsoleServerPort
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimConsoleServerPortsTraceRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimConsoleServerPortsTraceRetrieve`: %v\n", resp)
 }
 ```
 
@@ -4970,13 +5032,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimConsoleServerPortsUpdate(context.Background(), id).WritableConsoleServerPortRequest(writableConsoleServerPortRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimConsoleServerPortsUpdate(context.Background(), id).WritableConsoleServerPortRequest(writableConsoleServerPortRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimConsoleServerPortsUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConsoleServerPortsUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimConsoleServerPortsUpdate`: ConsoleServerPort
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimConsoleServerPortsUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimConsoleServerPortsUpdate`: %v\n", resp)
 }
 ```
 
@@ -5041,9 +5103,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimDeviceBayTemplatesBulkDestroy(context.Background()).DeviceBayTemplateRequest(deviceBayTemplateRequest).Execute()
+    r, err := apiClient.DcimAPI.DcimDeviceBayTemplatesBulkDestroy(context.Background()).DeviceBayTemplateRequest(deviceBayTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDeviceBayTemplatesBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceBayTemplatesBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -5105,13 +5167,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimDeviceBayTemplatesBulkPartialUpdate(context.Background()).DeviceBayTemplateRequest(deviceBayTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimDeviceBayTemplatesBulkPartialUpdate(context.Background()).DeviceBayTemplateRequest(deviceBayTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDeviceBayTemplatesBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceBayTemplatesBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimDeviceBayTemplatesBulkPartialUpdate`: []DeviceBayTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimDeviceBayTemplatesBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimDeviceBayTemplatesBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -5171,13 +5233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimDeviceBayTemplatesBulkUpdate(context.Background()).DeviceBayTemplateRequest(deviceBayTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimDeviceBayTemplatesBulkUpdate(context.Background()).DeviceBayTemplateRequest(deviceBayTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDeviceBayTemplatesBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceBayTemplatesBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimDeviceBayTemplatesBulkUpdate`: []DeviceBayTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimDeviceBayTemplatesBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimDeviceBayTemplatesBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -5237,13 +5299,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimDeviceBayTemplatesCreate(context.Background()).WritableDeviceBayTemplateRequest(writableDeviceBayTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimDeviceBayTemplatesCreate(context.Background()).WritableDeviceBayTemplateRequest(writableDeviceBayTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDeviceBayTemplatesCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceBayTemplatesCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimDeviceBayTemplatesCreate`: DeviceBayTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimDeviceBayTemplatesCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimDeviceBayTemplatesCreate`: %v\n", resp)
 }
 ```
 
@@ -5303,9 +5365,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimDeviceBayTemplatesDestroy(context.Background(), id).Execute()
+    r, err := apiClient.DcimAPI.DcimDeviceBayTemplatesDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDeviceBayTemplatesDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceBayTemplatesDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -5348,7 +5410,7 @@ Name | Type | Description  | Notes
 
 ## DcimDeviceBayTemplatesList
 
-> PaginatedDeviceBayTemplateList DcimDeviceBayTemplatesList(ctx).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedDeviceBayTemplateList DcimDeviceBayTemplatesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -5369,6 +5431,7 @@ import (
 
 func main() {
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -5378,18 +5441,21 @@ func main() {
     devicetypeId := []int32{int32(123)} // []int32 | Device type (ID) (optional)
     devicetypeIdN := []int32{int32(123)} // []int32 | Device type (ID) (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -5408,13 +5474,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimDeviceBayTemplatesList(context.Background()).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimDeviceBayTemplatesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDeviceBayTemplatesList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceBayTemplatesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimDeviceBayTemplatesList`: PaginatedDeviceBayTemplateList
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimDeviceBayTemplatesList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimDeviceBayTemplatesList`: %v\n", resp)
 }
 ```
 
@@ -5430,6 +5496,7 @@ Other parameters are passed through a pointer to a apiDcimDeviceBayTemplatesList
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -5439,18 +5506,21 @@ Name | Type | Description  | Notes
  **devicetypeId** | **[]int32** | Device type (ID) | 
  **devicetypeIdN** | **[]int32** | Device type (ID) | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -5511,13 +5581,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimDeviceBayTemplatesPartialUpdate(context.Background(), id).PatchedWritableDeviceBayTemplateRequest(patchedWritableDeviceBayTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimDeviceBayTemplatesPartialUpdate(context.Background(), id).PatchedWritableDeviceBayTemplateRequest(patchedWritableDeviceBayTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDeviceBayTemplatesPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceBayTemplatesPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimDeviceBayTemplatesPartialUpdate`: DeviceBayTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimDeviceBayTemplatesPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimDeviceBayTemplatesPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -5582,13 +5652,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimDeviceBayTemplatesRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimDeviceBayTemplatesRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDeviceBayTemplatesRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceBayTemplatesRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimDeviceBayTemplatesRetrieve`: DeviceBayTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimDeviceBayTemplatesRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimDeviceBayTemplatesRetrieve`: %v\n", resp)
 }
 ```
 
@@ -5653,13 +5723,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimDeviceBayTemplatesUpdate(context.Background(), id).WritableDeviceBayTemplateRequest(writableDeviceBayTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimDeviceBayTemplatesUpdate(context.Background(), id).WritableDeviceBayTemplateRequest(writableDeviceBayTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDeviceBayTemplatesUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceBayTemplatesUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimDeviceBayTemplatesUpdate`: DeviceBayTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimDeviceBayTemplatesUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimDeviceBayTemplatesUpdate`: %v\n", resp)
 }
 ```
 
@@ -5724,9 +5794,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimDeviceBaysBulkDestroy(context.Background()).DeviceBayRequest(deviceBayRequest).Execute()
+    r, err := apiClient.DcimAPI.DcimDeviceBaysBulkDestroy(context.Background()).DeviceBayRequest(deviceBayRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDeviceBaysBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceBaysBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -5788,13 +5858,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimDeviceBaysBulkPartialUpdate(context.Background()).DeviceBayRequest(deviceBayRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimDeviceBaysBulkPartialUpdate(context.Background()).DeviceBayRequest(deviceBayRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDeviceBaysBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceBaysBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimDeviceBaysBulkPartialUpdate`: []DeviceBay
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimDeviceBaysBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimDeviceBaysBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -5854,13 +5924,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimDeviceBaysBulkUpdate(context.Background()).DeviceBayRequest(deviceBayRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimDeviceBaysBulkUpdate(context.Background()).DeviceBayRequest(deviceBayRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDeviceBaysBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceBaysBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimDeviceBaysBulkUpdate`: []DeviceBay
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimDeviceBaysBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimDeviceBaysBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -5920,13 +5990,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimDeviceBaysCreate(context.Background()).WritableDeviceBayRequest(writableDeviceBayRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimDeviceBaysCreate(context.Background()).WritableDeviceBayRequest(writableDeviceBayRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDeviceBaysCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceBaysCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimDeviceBaysCreate`: DeviceBay
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimDeviceBaysCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimDeviceBaysCreate`: %v\n", resp)
 }
 ```
 
@@ -5986,9 +6056,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimDeviceBaysDestroy(context.Background(), id).Execute()
+    r, err := apiClient.DcimAPI.DcimDeviceBaysDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDeviceBaysDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceBaysDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -6031,7 +6101,7 @@ Name | Type | Description  | Notes
 
 ## DcimDeviceBaysList
 
-> PaginatedDeviceBayList DcimDeviceBaysList(ctx).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
+> PaginatedDeviceBayList DcimDeviceBaysList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
 
 
 
@@ -6052,6 +6122,7 @@ import (
 
 func main() {
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -6082,6 +6153,7 @@ func main() {
     deviceTypeId := []int32{int32(123)} // []int32 | Device type (ID) (optional)
     deviceTypeIdN := []int32{int32(123)} // []int32 | Device type (ID) (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
@@ -6099,6 +6171,7 @@ func main() {
     labelNiew := []string{"Inner_example"} // []string |  (optional)
     labelNisw := []string{"Inner_example"} // []string |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -6109,6 +6182,7 @@ func main() {
     locationN := []string{"Inner_example"} // []string | Location (slug) (optional)
     locationId := []int32{int32(123)} // []int32 | Location (ID) (optional)
     locationIdN := []int32{int32(123)} // []int32 | Location (ID) (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -6131,6 +6205,10 @@ func main() {
     regionN := []int32{int32(123)} // []int32 | Region (slug) (optional)
     regionId := []int32{int32(123)} // []int32 | Region (ID) (optional)
     regionIdN := []int32{int32(123)} // []int32 | Region (ID) (optional)
+    role := []string{"Inner_example"} // []string | Device role (slug) (optional)
+    roleN := []string{"Inner_example"} // []string | Device role (slug) (optional)
+    roleId := []int32{int32(123)} // []int32 | Device role (ID) (optional)
+    roleIdN := []int32{int32(123)} // []int32 | Device role (ID) (optional)
     site := []string{"Inner_example"} // []string | Site name (slug) (optional)
     siteN := []string{"Inner_example"} // []string | Site name (slug) (optional)
     siteGroup := []int32{int32(123)} // []int32 | Site group (slug) (optional)
@@ -6149,13 +6227,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimDeviceBaysList(context.Background()).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimDeviceBaysList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDeviceBaysList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceBaysList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimDeviceBaysList`: PaginatedDeviceBayList
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimDeviceBaysList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimDeviceBaysList`: %v\n", resp)
 }
 ```
 
@@ -6171,6 +6249,7 @@ Other parameters are passed through a pointer to a apiDcimDeviceBaysListRequest 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -6201,6 +6280,7 @@ Name | Type | Description  | Notes
  **deviceTypeId** | **[]int32** | Device type (ID) | 
  **deviceTypeIdN** | **[]int32** | Device type (ID) | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
@@ -6218,6 +6298,7 @@ Name | Type | Description  | Notes
  **labelNiew** | **[]string** |  | 
  **labelNisw** | **[]string** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -6228,6 +6309,7 @@ Name | Type | Description  | Notes
  **locationN** | **[]string** | Location (slug) | 
  **locationId** | **[]int32** | Location (ID) | 
  **locationIdN** | **[]int32** | Location (ID) | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -6250,6 +6332,10 @@ Name | Type | Description  | Notes
  **regionN** | **[]int32** | Region (slug) | 
  **regionId** | **[]int32** | Region (ID) | 
  **regionIdN** | **[]int32** | Region (ID) | 
+ **role** | **[]string** | Device role (slug) | 
+ **roleN** | **[]string** | Device role (slug) | 
+ **roleId** | **[]int32** | Device role (ID) | 
+ **roleIdN** | **[]int32** | Device role (ID) | 
  **site** | **[]string** | Site name (slug) | 
  **siteN** | **[]string** | Site name (slug) | 
  **siteGroup** | **[]int32** | Site group (slug) | 
@@ -6310,13 +6396,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimDeviceBaysPartialUpdate(context.Background(), id).PatchedWritableDeviceBayRequest(patchedWritableDeviceBayRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimDeviceBaysPartialUpdate(context.Background(), id).PatchedWritableDeviceBayRequest(patchedWritableDeviceBayRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDeviceBaysPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceBaysPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimDeviceBaysPartialUpdate`: DeviceBay
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimDeviceBaysPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimDeviceBaysPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -6381,13 +6467,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimDeviceBaysRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimDeviceBaysRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDeviceBaysRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceBaysRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimDeviceBaysRetrieve`: DeviceBay
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimDeviceBaysRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimDeviceBaysRetrieve`: %v\n", resp)
 }
 ```
 
@@ -6452,13 +6538,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimDeviceBaysUpdate(context.Background(), id).WritableDeviceBayRequest(writableDeviceBayRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimDeviceBaysUpdate(context.Background(), id).WritableDeviceBayRequest(writableDeviceBayRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDeviceBaysUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceBaysUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimDeviceBaysUpdate`: DeviceBay
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimDeviceBaysUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimDeviceBaysUpdate`: %v\n", resp)
 }
 ```
 
@@ -6523,9 +6609,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimDeviceRolesBulkDestroy(context.Background()).DeviceRoleRequest(deviceRoleRequest).Execute()
+    r, err := apiClient.DcimAPI.DcimDeviceRolesBulkDestroy(context.Background()).DeviceRoleRequest(deviceRoleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDeviceRolesBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceRolesBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -6587,13 +6673,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimDeviceRolesBulkPartialUpdate(context.Background()).DeviceRoleRequest(deviceRoleRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimDeviceRolesBulkPartialUpdate(context.Background()).DeviceRoleRequest(deviceRoleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDeviceRolesBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceRolesBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimDeviceRolesBulkPartialUpdate`: []DeviceRole
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimDeviceRolesBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimDeviceRolesBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -6653,13 +6739,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimDeviceRolesBulkUpdate(context.Background()).DeviceRoleRequest(deviceRoleRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimDeviceRolesBulkUpdate(context.Background()).DeviceRoleRequest(deviceRoleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDeviceRolesBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceRolesBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimDeviceRolesBulkUpdate`: []DeviceRole
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimDeviceRolesBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimDeviceRolesBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -6719,13 +6805,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimDeviceRolesCreate(context.Background()).WritableDeviceRoleRequest(writableDeviceRoleRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimDeviceRolesCreate(context.Background()).WritableDeviceRoleRequest(writableDeviceRoleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDeviceRolesCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceRolesCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimDeviceRolesCreate`: DeviceRole
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimDeviceRolesCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimDeviceRolesCreate`: %v\n", resp)
 }
 ```
 
@@ -6785,9 +6871,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimDeviceRolesDestroy(context.Background(), id).Execute()
+    r, err := apiClient.DcimAPI.DcimDeviceRolesDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDeviceRolesDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceRolesDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -6830,7 +6916,7 @@ Name | Type | Description  | Notes
 
 ## DcimDeviceRolesList
 
-> PaginatedDeviceRoleList DcimDeviceRolesList(ctx).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).ConfigTemplateId(configTemplateId).ConfigTemplateIdN(configTemplateIdN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VmRole(vmRole).Execute()
+> PaginatedDeviceRoleList DcimDeviceRolesList(ctx).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).ConfigTemplateId(configTemplateId).ConfigTemplateIdN(configTemplateIdN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VmRole(vmRole).Execute()
 
 
 
@@ -6864,6 +6950,7 @@ func main() {
     configTemplateId := []*int32{int32(123)} // []*int32 | Config template (ID) (optional)
     configTemplateIdN := []*int32{int32(123)} // []*int32 | Config template (ID) (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -6882,18 +6969,21 @@ func main() {
     descriptionNiew := []string{"Inner_example"} // []string |  (optional)
     descriptionNisw := []string{"Inner_example"} // []string |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -6926,13 +7016,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimDeviceRolesList(context.Background()).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).ConfigTemplateId(configTemplateId).ConfigTemplateIdN(configTemplateIdN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VmRole(vmRole).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimDeviceRolesList(context.Background()).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).ConfigTemplateId(configTemplateId).ConfigTemplateIdN(configTemplateIdN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VmRole(vmRole).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDeviceRolesList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceRolesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimDeviceRolesList`: PaginatedDeviceRoleList
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimDeviceRolesList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimDeviceRolesList`: %v\n", resp)
 }
 ```
 
@@ -6961,6 +7051,7 @@ Name | Type | Description  | Notes
  **configTemplateId** | **[]int32** | Config template (ID) | 
  **configTemplateIdN** | **[]int32** | Config template (ID) | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -6979,18 +7070,21 @@ Name | Type | Description  | Notes
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -7065,13 +7159,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimDeviceRolesPartialUpdate(context.Background(), id).PatchedWritableDeviceRoleRequest(patchedWritableDeviceRoleRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimDeviceRolesPartialUpdate(context.Background(), id).PatchedWritableDeviceRoleRequest(patchedWritableDeviceRoleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDeviceRolesPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceRolesPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimDeviceRolesPartialUpdate`: DeviceRole
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimDeviceRolesPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimDeviceRolesPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -7136,13 +7230,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimDeviceRolesRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimDeviceRolesRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDeviceRolesRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceRolesRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimDeviceRolesRetrieve`: DeviceRole
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimDeviceRolesRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimDeviceRolesRetrieve`: %v\n", resp)
 }
 ```
 
@@ -7207,13 +7301,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimDeviceRolesUpdate(context.Background(), id).WritableDeviceRoleRequest(writableDeviceRoleRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimDeviceRolesUpdate(context.Background(), id).WritableDeviceRoleRequest(writableDeviceRoleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDeviceRolesUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceRolesUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimDeviceRolesUpdate`: DeviceRole
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimDeviceRolesUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimDeviceRolesUpdate`: %v\n", resp)
 }
 ```
 
@@ -7278,9 +7372,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimDeviceTypesBulkDestroy(context.Background()).DeviceTypeRequest(deviceTypeRequest).Execute()
+    r, err := apiClient.DcimAPI.DcimDeviceTypesBulkDestroy(context.Background()).DeviceTypeRequest(deviceTypeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDeviceTypesBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceTypesBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -7342,13 +7436,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimDeviceTypesBulkPartialUpdate(context.Background()).DeviceTypeRequest(deviceTypeRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimDeviceTypesBulkPartialUpdate(context.Background()).DeviceTypeRequest(deviceTypeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDeviceTypesBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceTypesBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimDeviceTypesBulkPartialUpdate`: []DeviceType
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimDeviceTypesBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimDeviceTypesBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -7408,13 +7502,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimDeviceTypesBulkUpdate(context.Background()).DeviceTypeRequest(deviceTypeRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimDeviceTypesBulkUpdate(context.Background()).DeviceTypeRequest(deviceTypeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDeviceTypesBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceTypesBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimDeviceTypesBulkUpdate`: []DeviceType
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimDeviceTypesBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimDeviceTypesBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -7474,13 +7568,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimDeviceTypesCreate(context.Background()).WritableDeviceTypeRequest(writableDeviceTypeRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimDeviceTypesCreate(context.Background()).WritableDeviceTypeRequest(writableDeviceTypeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDeviceTypesCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceTypesCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimDeviceTypesCreate`: DeviceType
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimDeviceTypesCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimDeviceTypesCreate`: %v\n", resp)
 }
 ```
 
@@ -7540,9 +7634,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimDeviceTypesDestroy(context.Background(), id).Execute()
+    r, err := apiClient.DcimAPI.DcimDeviceTypesDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDeviceTypesDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceTypesDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -7585,7 +7679,7 @@ Name | Type | Description  | Notes
 
 ## DcimDeviceTypesList
 
-> PaginatedDeviceTypeList DcimDeviceTypesList(ctx).Airflow(airflow).AirflowN(airflowN).ConsolePorts(consolePorts).ConsoleServerPorts(consoleServerPorts).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DefaultPlatform(defaultPlatform).DefaultPlatformN(defaultPlatformN).DefaultPlatformId(defaultPlatformId).DefaultPlatformIdN(defaultPlatformIdN).DeviceBays(deviceBays).HasFrontImage(hasFrontImage).HasRearImage(hasRearImage).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interfaces(interfaces).InventoryItems(inventoryItems).IsFullDepth(isFullDepth).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).Model(model).ModelEmpty(modelEmpty).ModelIc(modelIc).ModelIe(modelIe).ModelIew(modelIew).ModelIsw(modelIsw).ModelN(modelN).ModelNic(modelNic).ModelNie(modelNie).ModelNiew(modelNiew).ModelNisw(modelNisw).ModuleBays(moduleBays).Offset(offset).Ordering(ordering).PartNumber(partNumber).PartNumberEmpty(partNumberEmpty).PartNumberIc(partNumberIc).PartNumberIe(partNumberIe).PartNumberIew(partNumberIew).PartNumberIsw(partNumberIsw).PartNumberN(partNumberN).PartNumberNic(partNumberNic).PartNumberNie(partNumberNie).PartNumberNiew(partNumberNiew).PartNumberNisw(partNumberNisw).PassThroughPorts(passThroughPorts).PowerOutlets(powerOutlets).PowerPorts(powerPorts).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SubdeviceRole(subdeviceRole).SubdeviceRoleN(subdeviceRoleN).Tag(tag).TagN(tagN).UHeight(uHeight).UHeightGt(uHeightGt).UHeightGte(uHeightGte).UHeightLt(uHeightLt).UHeightLte(uHeightLte).UHeightN(uHeightN).UpdatedByRequest(updatedByRequest).Weight(weight).WeightGt(weightGt).WeightGte(weightGte).WeightLt(weightLt).WeightLte(weightLte).WeightN(weightN).WeightUnit(weightUnit).WeightUnitN(weightUnitN).Execute()
+> PaginatedDeviceTypeList DcimDeviceTypesList(ctx).Airflow(airflow).AirflowN(airflowN).ConsolePorts(consolePorts).ConsoleServerPorts(consoleServerPorts).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DefaultPlatform(defaultPlatform).DefaultPlatformN(defaultPlatformN).DefaultPlatformId(defaultPlatformId).DefaultPlatformIdN(defaultPlatformIdN).DeviceBays(deviceBays).HasFrontImage(hasFrontImage).HasRearImage(hasRearImage).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interfaces(interfaces).InventoryItems(inventoryItems).IsFullDepth(isFullDepth).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).Model(model).ModelEmpty(modelEmpty).ModelIc(modelIc).ModelIe(modelIe).ModelIew(modelIew).ModelIsw(modelIsw).ModelN(modelN).ModelNic(modelNic).ModelNie(modelNie).ModelNiew(modelNiew).ModelNisw(modelNisw).ModifiedByRequest(modifiedByRequest).ModuleBays(moduleBays).Offset(offset).Ordering(ordering).PartNumber(partNumber).PartNumberEmpty(partNumberEmpty).PartNumberIc(partNumberIc).PartNumberIe(partNumberIe).PartNumberIew(partNumberIew).PartNumberIsw(partNumberIsw).PartNumberN(partNumberN).PartNumberNic(partNumberNic).PartNumberNie(partNumberNie).PartNumberNiew(partNumberNiew).PartNumberNisw(partNumberNisw).PassThroughPorts(passThroughPorts).PowerOutlets(powerOutlets).PowerPorts(powerPorts).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SubdeviceRole(subdeviceRole).SubdeviceRoleN(subdeviceRoleN).Tag(tag).TagN(tagN).UHeight(uHeight).UHeightEmpty(uHeightEmpty).UHeightGt(uHeightGt).UHeightGte(uHeightGte).UHeightLt(uHeightLt).UHeightLte(uHeightLte).UHeightN(uHeightN).UpdatedByRequest(updatedByRequest).Weight(weight).WeightEmpty(weightEmpty).WeightGt(weightGt).WeightGte(weightGte).WeightLt(weightLt).WeightLte(weightLte).WeightN(weightN).WeightUnit(weightUnit).WeightUnitN(weightUnitN).Execute()
 
 
 
@@ -7610,6 +7704,7 @@ func main() {
     consolePorts := true // bool | Has console ports (optional)
     consoleServerPorts := true // bool | Has console server ports (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -7624,6 +7719,7 @@ func main() {
     hasFrontImage := true // bool | Has a front image (optional)
     hasRearImage := true // bool | Has a rear image (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
@@ -7633,6 +7729,7 @@ func main() {
     inventoryItems := true // bool | Has inventory items (optional)
     isFullDepth := true // bool |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -7654,6 +7751,7 @@ func main() {
     modelNie := []string{"Inner_example"} // []string |  (optional)
     modelNiew := []string{"Inner_example"} // []string |  (optional)
     modelNisw := []string{"Inner_example"} // []string |  (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     moduleBays := true // bool | Has module bays (optional)
     offset := int32(56) // int32 | The initial index from which to return the results. (optional)
     ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
@@ -7688,6 +7786,7 @@ func main() {
     tag := []string{"Inner_example"} // []string |  (optional)
     tagN := []string{"Inner_example"} // []string |  (optional)
     uHeight := []float64{float64(123)} // []float64 |  (optional)
+    uHeightEmpty := true // bool |  (optional)
     uHeightGt := []float64{float64(123)} // []float64 |  (optional)
     uHeightGte := []float64{float64(123)} // []float64 |  (optional)
     uHeightLt := []float64{float64(123)} // []float64 |  (optional)
@@ -7695,6 +7794,7 @@ func main() {
     uHeightN := []float64{float64(123)} // []float64 |  (optional)
     updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     weight := []float64{float64(123)} // []float64 |  (optional)
+    weightEmpty := true // bool |  (optional)
     weightGt := []float64{float64(123)} // []float64 |  (optional)
     weightGte := []float64{float64(123)} // []float64 |  (optional)
     weightLt := []float64{float64(123)} // []float64 |  (optional)
@@ -7705,13 +7805,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimDeviceTypesList(context.Background()).Airflow(airflow).AirflowN(airflowN).ConsolePorts(consolePorts).ConsoleServerPorts(consoleServerPorts).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DefaultPlatform(defaultPlatform).DefaultPlatformN(defaultPlatformN).DefaultPlatformId(defaultPlatformId).DefaultPlatformIdN(defaultPlatformIdN).DeviceBays(deviceBays).HasFrontImage(hasFrontImage).HasRearImage(hasRearImage).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interfaces(interfaces).InventoryItems(inventoryItems).IsFullDepth(isFullDepth).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).Model(model).ModelEmpty(modelEmpty).ModelIc(modelIc).ModelIe(modelIe).ModelIew(modelIew).ModelIsw(modelIsw).ModelN(modelN).ModelNic(modelNic).ModelNie(modelNie).ModelNiew(modelNiew).ModelNisw(modelNisw).ModuleBays(moduleBays).Offset(offset).Ordering(ordering).PartNumber(partNumber).PartNumberEmpty(partNumberEmpty).PartNumberIc(partNumberIc).PartNumberIe(partNumberIe).PartNumberIew(partNumberIew).PartNumberIsw(partNumberIsw).PartNumberN(partNumberN).PartNumberNic(partNumberNic).PartNumberNie(partNumberNie).PartNumberNiew(partNumberNiew).PartNumberNisw(partNumberNisw).PassThroughPorts(passThroughPorts).PowerOutlets(powerOutlets).PowerPorts(powerPorts).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SubdeviceRole(subdeviceRole).SubdeviceRoleN(subdeviceRoleN).Tag(tag).TagN(tagN).UHeight(uHeight).UHeightGt(uHeightGt).UHeightGte(uHeightGte).UHeightLt(uHeightLt).UHeightLte(uHeightLte).UHeightN(uHeightN).UpdatedByRequest(updatedByRequest).Weight(weight).WeightGt(weightGt).WeightGte(weightGte).WeightLt(weightLt).WeightLte(weightLte).WeightN(weightN).WeightUnit(weightUnit).WeightUnitN(weightUnitN).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimDeviceTypesList(context.Background()).Airflow(airflow).AirflowN(airflowN).ConsolePorts(consolePorts).ConsoleServerPorts(consoleServerPorts).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DefaultPlatform(defaultPlatform).DefaultPlatformN(defaultPlatformN).DefaultPlatformId(defaultPlatformId).DefaultPlatformIdN(defaultPlatformIdN).DeviceBays(deviceBays).HasFrontImage(hasFrontImage).HasRearImage(hasRearImage).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interfaces(interfaces).InventoryItems(inventoryItems).IsFullDepth(isFullDepth).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).Model(model).ModelEmpty(modelEmpty).ModelIc(modelIc).ModelIe(modelIe).ModelIew(modelIew).ModelIsw(modelIsw).ModelN(modelN).ModelNic(modelNic).ModelNie(modelNie).ModelNiew(modelNiew).ModelNisw(modelNisw).ModifiedByRequest(modifiedByRequest).ModuleBays(moduleBays).Offset(offset).Ordering(ordering).PartNumber(partNumber).PartNumberEmpty(partNumberEmpty).PartNumberIc(partNumberIc).PartNumberIe(partNumberIe).PartNumberIew(partNumberIew).PartNumberIsw(partNumberIsw).PartNumberN(partNumberN).PartNumberNic(partNumberNic).PartNumberNie(partNumberNie).PartNumberNiew(partNumberNiew).PartNumberNisw(partNumberNisw).PassThroughPorts(passThroughPorts).PowerOutlets(powerOutlets).PowerPorts(powerPorts).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SubdeviceRole(subdeviceRole).SubdeviceRoleN(subdeviceRoleN).Tag(tag).TagN(tagN).UHeight(uHeight).UHeightEmpty(uHeightEmpty).UHeightGt(uHeightGt).UHeightGte(uHeightGte).UHeightLt(uHeightLt).UHeightLte(uHeightLte).UHeightN(uHeightN).UpdatedByRequest(updatedByRequest).Weight(weight).WeightEmpty(weightEmpty).WeightGt(weightGt).WeightGte(weightGte).WeightLt(weightLt).WeightLte(weightLte).WeightN(weightN).WeightUnit(weightUnit).WeightUnitN(weightUnitN).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDeviceTypesList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceTypesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimDeviceTypesList`: PaginatedDeviceTypeList
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimDeviceTypesList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimDeviceTypesList`: %v\n", resp)
 }
 ```
 
@@ -7731,6 +7831,7 @@ Name | Type | Description  | Notes
  **consolePorts** | **bool** | Has console ports | 
  **consoleServerPorts** | **bool** | Has console server ports | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -7745,6 +7846,7 @@ Name | Type | Description  | Notes
  **hasFrontImage** | **bool** | Has a front image | 
  **hasRearImage** | **bool** | Has a rear image | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
@@ -7754,6 +7856,7 @@ Name | Type | Description  | Notes
  **inventoryItems** | **bool** | Has inventory items | 
  **isFullDepth** | **bool** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -7775,6 +7878,7 @@ Name | Type | Description  | Notes
  **modelNie** | **[]string** |  | 
  **modelNiew** | **[]string** |  | 
  **modelNisw** | **[]string** |  | 
+ **modifiedByRequest** | **string** |  | 
  **moduleBays** | **bool** | Has module bays | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
@@ -7809,6 +7913,7 @@ Name | Type | Description  | Notes
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
  **uHeight** | **[]float64** |  | 
+ **uHeightEmpty** | **bool** |  | 
  **uHeightGt** | **[]float64** |  | 
  **uHeightGte** | **[]float64** |  | 
  **uHeightLt** | **[]float64** |  | 
@@ -7816,6 +7921,7 @@ Name | Type | Description  | Notes
  **uHeightN** | **[]float64** |  | 
  **updatedByRequest** | **string** |  | 
  **weight** | **[]float64** |  | 
+ **weightEmpty** | **bool** |  | 
  **weightGt** | **[]float64** |  | 
  **weightGte** | **[]float64** |  | 
  **weightLt** | **[]float64** |  | 
@@ -7868,13 +7974,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimDeviceTypesPartialUpdate(context.Background(), id).PatchedWritableDeviceTypeRequest(patchedWritableDeviceTypeRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimDeviceTypesPartialUpdate(context.Background(), id).PatchedWritableDeviceTypeRequest(patchedWritableDeviceTypeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDeviceTypesPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceTypesPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimDeviceTypesPartialUpdate`: DeviceType
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimDeviceTypesPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimDeviceTypesPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -7939,13 +8045,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimDeviceTypesRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimDeviceTypesRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDeviceTypesRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceTypesRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimDeviceTypesRetrieve`: DeviceType
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimDeviceTypesRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimDeviceTypesRetrieve`: %v\n", resp)
 }
 ```
 
@@ -8010,13 +8116,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimDeviceTypesUpdate(context.Background(), id).WritableDeviceTypeRequest(writableDeviceTypeRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimDeviceTypesUpdate(context.Background(), id).WritableDeviceTypeRequest(writableDeviceTypeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDeviceTypesUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceTypesUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimDeviceTypesUpdate`: DeviceType
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimDeviceTypesUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimDeviceTypesUpdate`: %v\n", resp)
 }
 ```
 
@@ -8081,9 +8187,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimDevicesBulkDestroy(context.Background()).DeviceWithConfigContextRequest(deviceWithConfigContextRequest).Execute()
+    r, err := apiClient.DcimAPI.DcimDevicesBulkDestroy(context.Background()).DeviceWithConfigContextRequest(deviceWithConfigContextRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDevicesBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDevicesBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -8145,13 +8251,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimDevicesBulkPartialUpdate(context.Background()).DeviceWithConfigContextRequest(deviceWithConfigContextRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimDevicesBulkPartialUpdate(context.Background()).DeviceWithConfigContextRequest(deviceWithConfigContextRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDevicesBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDevicesBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimDevicesBulkPartialUpdate`: []DeviceWithConfigContext
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimDevicesBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimDevicesBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -8211,13 +8317,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimDevicesBulkUpdate(context.Background()).DeviceWithConfigContextRequest(deviceWithConfigContextRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimDevicesBulkUpdate(context.Background()).DeviceWithConfigContextRequest(deviceWithConfigContextRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDevicesBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDevicesBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimDevicesBulkUpdate`: []DeviceWithConfigContext
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimDevicesBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimDevicesBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -8277,13 +8383,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimDevicesCreate(context.Background()).WritableDeviceWithConfigContextRequest(writableDeviceWithConfigContextRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimDevicesCreate(context.Background()).WritableDeviceWithConfigContextRequest(writableDeviceWithConfigContextRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDevicesCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDevicesCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimDevicesCreate`: DeviceWithConfigContext
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimDevicesCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimDevicesCreate`: %v\n", resp)
 }
 ```
 
@@ -8343,9 +8449,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimDevicesDestroy(context.Background(), id).Execute()
+    r, err := apiClient.DcimAPI.DcimDevicesDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDevicesDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDevicesDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -8388,7 +8494,7 @@ Name | Type | Description  | Notes
 
 ## DcimDevicesList
 
-> PaginatedDeviceWithConfigContextList DcimDevicesList(ctx).Airflow(airflow).AirflowN(airflowN).AssetTag(assetTag).AssetTagEmpty(assetTagEmpty).AssetTagIc(assetTagIc).AssetTagIe(assetTagIe).AssetTagIew(assetTagIew).AssetTagIsw(assetTagIsw).AssetTagN(assetTagN).AssetTagNic(assetTagNic).AssetTagNie(assetTagNie).AssetTagNiew(assetTagNiew).AssetTagNisw(assetTagNisw).ClusterId(clusterId).ClusterIdN(clusterIdN).ConfigTemplateId(configTemplateId).ConfigTemplateIdN(configTemplateIdN).ConsolePorts(consolePorts).ConsoleServerPorts(consoleServerPorts).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DeviceBays(deviceBays).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Face(face).FaceN(faceN).HasPrimaryIp(hasPrimaryIp).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interfaces(interfaces).IsFullDepth(isFullDepth).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).LocalContextData(localContextData).LocationId(locationId).LocationIdN(locationIdN).MacAddress(macAddress).MacAddressIc(macAddressIc).MacAddressIe(macAddressIe).MacAddressIew(macAddressIew).MacAddressIsw(macAddressIsw).MacAddressN(macAddressN).MacAddressNic(macAddressNic).MacAddressNie(macAddressNie).MacAddressNiew(macAddressNiew).MacAddressNisw(macAddressNisw).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).Model(model).ModelN(modelN).ModuleBays(moduleBays).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).ParentDeviceId(parentDeviceId).ParentDeviceIdN(parentDeviceIdN).PassThroughPorts(passThroughPorts).Platform(platform).PlatformN(platformN).PlatformId(platformId).PlatformIdN(platformIdN).Position(position).PositionGt(positionGt).PositionGte(positionGte).PositionLt(positionLt).PositionLte(positionLte).PositionN(positionN).PowerOutlets(powerOutlets).PowerPorts(powerPorts).PrimaryIp4Id(primaryIp4Id).PrimaryIp4IdN(primaryIp4IdN).PrimaryIp6Id(primaryIp6Id).PrimaryIp6IdN(primaryIp6IdN).Q(q).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Serial(serial).SerialEmpty(serialEmpty).SerialIc(serialIc).SerialIe(serialIe).SerialIew(serialIew).SerialIsw(serialIsw).SerialN(serialN).SerialNic(serialNic).SerialNie(serialNie).SerialNiew(serialNiew).SerialNisw(serialNisw).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).VcPosition(vcPosition).VcPositionGt(vcPositionGt).VcPositionGte(vcPositionGte).VcPositionLt(vcPositionLt).VcPositionLte(vcPositionLte).VcPositionN(vcPositionN).VcPriority(vcPriority).VcPriorityGt(vcPriorityGt).VcPriorityGte(vcPriorityGte).VcPriorityLt(vcPriorityLt).VcPriorityLte(vcPriorityLte).VcPriorityN(vcPriorityN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).VirtualChassisMember(virtualChassisMember).Execute()
+> PaginatedDeviceWithConfigContextList DcimDevicesList(ctx).Airflow(airflow).AirflowN(airflowN).AssetTag(assetTag).AssetTagEmpty(assetTagEmpty).AssetTagIc(assetTagIc).AssetTagIe(assetTagIe).AssetTagIew(assetTagIew).AssetTagIsw(assetTagIsw).AssetTagN(assetTagN).AssetTagNic(assetTagNic).AssetTagNie(assetTagNie).AssetTagNiew(assetTagNiew).AssetTagNisw(assetTagNisw).ClusterId(clusterId).ClusterIdN(clusterIdN).ConfigTemplateId(configTemplateId).ConfigTemplateIdN(configTemplateIdN).ConsolePorts(consolePorts).ConsoleServerPorts(consoleServerPorts).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DeviceBays(deviceBays).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Face(face).FaceN(faceN).HasOobIp(hasOobIp).HasPrimaryIp(hasPrimaryIp).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interfaces(interfaces).IsFullDepth(isFullDepth).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Latitude(latitude).LatitudeEmpty(latitudeEmpty).LatitudeGt(latitudeGt).LatitudeGte(latitudeGte).LatitudeLt(latitudeLt).LatitudeLte(latitudeLte).LatitudeN(latitudeN).Limit(limit).LocalContextData(localContextData).LocationId(locationId).LocationIdN(locationIdN).Longitude(longitude).LongitudeEmpty(longitudeEmpty).LongitudeGt(longitudeGt).LongitudeGte(longitudeGte).LongitudeLt(longitudeLt).LongitudeLte(longitudeLte).LongitudeN(longitudeN).MacAddress(macAddress).MacAddressIc(macAddressIc).MacAddressIe(macAddressIe).MacAddressIew(macAddressIew).MacAddressIsw(macAddressIsw).MacAddressN(macAddressN).MacAddressNic(macAddressNic).MacAddressNie(macAddressNie).MacAddressNiew(macAddressNiew).MacAddressNisw(macAddressNisw).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).Model(model).ModelN(modelN).ModifiedByRequest(modifiedByRequest).ModuleBays(moduleBays).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).OobIpId(oobIpId).OobIpIdN(oobIpIdN).Ordering(ordering).ParentDeviceId(parentDeviceId).ParentDeviceIdN(parentDeviceIdN).PassThroughPorts(passThroughPorts).Platform(platform).PlatformN(platformN).PlatformId(platformId).PlatformIdN(platformIdN).Position(position).PositionEmpty(positionEmpty).PositionGt(positionGt).PositionGte(positionGte).PositionLt(positionLt).PositionLte(positionLte).PositionN(positionN).PowerOutlets(powerOutlets).PowerPorts(powerPorts).PrimaryIp4Id(primaryIp4Id).PrimaryIp4IdN(primaryIp4IdN).PrimaryIp6Id(primaryIp6Id).PrimaryIp6IdN(primaryIp6IdN).Q(q).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Serial(serial).SerialEmpty(serialEmpty).SerialIc(serialIc).SerialIe(serialIe).SerialIew(serialIew).SerialIsw(serialIsw).SerialN(serialN).SerialNic(serialNic).SerialNie(serialNie).SerialNiew(serialNiew).SerialNisw(serialNisw).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).VcPosition(vcPosition).VcPositionEmpty(vcPositionEmpty).VcPositionGt(vcPositionGt).VcPositionGte(vcPositionGte).VcPositionLt(vcPositionLt).VcPositionLte(vcPositionLte).VcPositionN(vcPositionN).VcPriority(vcPriority).VcPriorityEmpty(vcPriorityEmpty).VcPriorityGt(vcPriorityGt).VcPriorityGte(vcPriorityGte).VcPriorityLt(vcPriorityLt).VcPriorityLte(vcPriorityLte).VcPriorityN(vcPriorityN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).VirtualChassisMember(virtualChassisMember).Execute()
 
 
 
@@ -8434,6 +8540,7 @@ func main() {
     contactRole := []int32{int32(123)} // []int32 | Contact Role (optional)
     contactRoleN := []int32{int32(123)} // []int32 | Contact Role (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -8447,8 +8554,10 @@ func main() {
     deviceTypeIdN := []int32{int32(123)} // []int32 | Device type (ID) (optional)
     face := "face_example" // string |  (optional)
     faceN := "faceN_example" // string |  (optional)
+    hasOobIp := true // bool | Has an out-of-band IP (optional)
     hasPrimaryIp := true // bool | Has a primary IP (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
@@ -8457,15 +8566,30 @@ func main() {
     interfaces := true // bool | Has interfaces (optional)
     isFullDepth := true // bool | Is full depth (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
+    latitude := []float64{float64(123)} // []float64 |  (optional)
+    latitudeEmpty := true // bool |  (optional)
+    latitudeGt := []float64{float64(123)} // []float64 |  (optional)
+    latitudeGte := []float64{float64(123)} // []float64 |  (optional)
+    latitudeLt := []float64{float64(123)} // []float64 |  (optional)
+    latitudeLte := []float64{float64(123)} // []float64 |  (optional)
+    latitudeN := []float64{float64(123)} // []float64 |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
     localContextData := true // bool | Has local config context data (optional)
     locationId := []int32{int32(123)} // []int32 | Location (ID) (optional)
     locationIdN := []int32{int32(123)} // []int32 | Location (ID) (optional)
+    longitude := []float64{float64(123)} // []float64 |  (optional)
+    longitudeEmpty := true // bool |  (optional)
+    longitudeGt := []float64{float64(123)} // []float64 |  (optional)
+    longitudeGte := []float64{float64(123)} // []float64 |  (optional)
+    longitudeLt := []float64{float64(123)} // []float64 |  (optional)
+    longitudeLte := []float64{float64(123)} // []float64 |  (optional)
+    longitudeN := []float64{float64(123)} // []float64 |  (optional)
     macAddress := []string{"Inner_example"} // []string |  (optional)
     macAddressIc := []string{"Inner_example"} // []string |  (optional)
     macAddressIe := []string{"Inner_example"} // []string |  (optional)
@@ -8482,6 +8606,7 @@ func main() {
     manufacturerIdN := []int32{int32(123)} // []int32 | Manufacturer (ID) (optional)
     model := []string{"Inner_example"} // []string | Device model (slug) (optional)
     modelN := []string{"Inner_example"} // []string | Device model (slug) (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     moduleBays := true // bool | Has module bays (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
@@ -8495,6 +8620,8 @@ func main() {
     nameNiew := []string{"Inner_example"} // []string |  (optional)
     nameNisw := []string{"Inner_example"} // []string |  (optional)
     offset := int32(56) // int32 | The initial index from which to return the results. (optional)
+    oobIpId := []int32{int32(123)} // []int32 | OOB IP (ID) (optional)
+    oobIpIdN := []int32{int32(123)} // []int32 | OOB IP (ID) (optional)
     ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
     parentDeviceId := []int32{int32(123)} // []int32 | Parent Device (ID) (optional)
     parentDeviceIdN := []int32{int32(123)} // []int32 | Parent Device (ID) (optional)
@@ -8504,6 +8631,7 @@ func main() {
     platformId := []*int32{int32(123)} // []*int32 | Platform (ID) (optional)
     platformIdN := []*int32{int32(123)} // []*int32 | Platform (ID) (optional)
     position := []float64{float64(123)} // []float64 |  (optional)
+    positionEmpty := true // bool |  (optional)
     positionGt := []float64{float64(123)} // []float64 |  (optional)
     positionGte := []float64{float64(123)} // []float64 |  (optional)
     positionLt := []float64{float64(123)} // []float64 |  (optional)
@@ -8559,12 +8687,14 @@ func main() {
     tenantIdN := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
     updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     vcPosition := []int32{int32(123)} // []int32 |  (optional)
+    vcPositionEmpty := true // bool |  (optional)
     vcPositionGt := []int32{int32(123)} // []int32 |  (optional)
     vcPositionGte := []int32{int32(123)} // []int32 |  (optional)
     vcPositionLt := []int32{int32(123)} // []int32 |  (optional)
     vcPositionLte := []int32{int32(123)} // []int32 |  (optional)
     vcPositionN := []int32{int32(123)} // []int32 |  (optional)
     vcPriority := []int32{int32(123)} // []int32 |  (optional)
+    vcPriorityEmpty := true // bool |  (optional)
     vcPriorityGt := []int32{int32(123)} // []int32 |  (optional)
     vcPriorityGte := []int32{int32(123)} // []int32 |  (optional)
     vcPriorityLt := []int32{int32(123)} // []int32 |  (optional)
@@ -8576,13 +8706,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimDevicesList(context.Background()).Airflow(airflow).AirflowN(airflowN).AssetTag(assetTag).AssetTagEmpty(assetTagEmpty).AssetTagIc(assetTagIc).AssetTagIe(assetTagIe).AssetTagIew(assetTagIew).AssetTagIsw(assetTagIsw).AssetTagN(assetTagN).AssetTagNic(assetTagNic).AssetTagNie(assetTagNie).AssetTagNiew(assetTagNiew).AssetTagNisw(assetTagNisw).ClusterId(clusterId).ClusterIdN(clusterIdN).ConfigTemplateId(configTemplateId).ConfigTemplateIdN(configTemplateIdN).ConsolePorts(consolePorts).ConsoleServerPorts(consoleServerPorts).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DeviceBays(deviceBays).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Face(face).FaceN(faceN).HasPrimaryIp(hasPrimaryIp).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interfaces(interfaces).IsFullDepth(isFullDepth).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).LocalContextData(localContextData).LocationId(locationId).LocationIdN(locationIdN).MacAddress(macAddress).MacAddressIc(macAddressIc).MacAddressIe(macAddressIe).MacAddressIew(macAddressIew).MacAddressIsw(macAddressIsw).MacAddressN(macAddressN).MacAddressNic(macAddressNic).MacAddressNie(macAddressNie).MacAddressNiew(macAddressNiew).MacAddressNisw(macAddressNisw).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).Model(model).ModelN(modelN).ModuleBays(moduleBays).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).ParentDeviceId(parentDeviceId).ParentDeviceIdN(parentDeviceIdN).PassThroughPorts(passThroughPorts).Platform(platform).PlatformN(platformN).PlatformId(platformId).PlatformIdN(platformIdN).Position(position).PositionGt(positionGt).PositionGte(positionGte).PositionLt(positionLt).PositionLte(positionLte).PositionN(positionN).PowerOutlets(powerOutlets).PowerPorts(powerPorts).PrimaryIp4Id(primaryIp4Id).PrimaryIp4IdN(primaryIp4IdN).PrimaryIp6Id(primaryIp6Id).PrimaryIp6IdN(primaryIp6IdN).Q(q).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Serial(serial).SerialEmpty(serialEmpty).SerialIc(serialIc).SerialIe(serialIe).SerialIew(serialIew).SerialIsw(serialIsw).SerialN(serialN).SerialNic(serialNic).SerialNie(serialNie).SerialNiew(serialNiew).SerialNisw(serialNisw).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).VcPosition(vcPosition).VcPositionGt(vcPositionGt).VcPositionGte(vcPositionGte).VcPositionLt(vcPositionLt).VcPositionLte(vcPositionLte).VcPositionN(vcPositionN).VcPriority(vcPriority).VcPriorityGt(vcPriorityGt).VcPriorityGte(vcPriorityGte).VcPriorityLt(vcPriorityLt).VcPriorityLte(vcPriorityLte).VcPriorityN(vcPriorityN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).VirtualChassisMember(virtualChassisMember).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimDevicesList(context.Background()).Airflow(airflow).AirflowN(airflowN).AssetTag(assetTag).AssetTagEmpty(assetTagEmpty).AssetTagIc(assetTagIc).AssetTagIe(assetTagIe).AssetTagIew(assetTagIew).AssetTagIsw(assetTagIsw).AssetTagN(assetTagN).AssetTagNic(assetTagNic).AssetTagNie(assetTagNie).AssetTagNiew(assetTagNiew).AssetTagNisw(assetTagNisw).ClusterId(clusterId).ClusterIdN(clusterIdN).ConfigTemplateId(configTemplateId).ConfigTemplateIdN(configTemplateIdN).ConsolePorts(consolePorts).ConsoleServerPorts(consoleServerPorts).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DeviceBays(deviceBays).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Face(face).FaceN(faceN).HasOobIp(hasOobIp).HasPrimaryIp(hasPrimaryIp).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interfaces(interfaces).IsFullDepth(isFullDepth).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Latitude(latitude).LatitudeEmpty(latitudeEmpty).LatitudeGt(latitudeGt).LatitudeGte(latitudeGte).LatitudeLt(latitudeLt).LatitudeLte(latitudeLte).LatitudeN(latitudeN).Limit(limit).LocalContextData(localContextData).LocationId(locationId).LocationIdN(locationIdN).Longitude(longitude).LongitudeEmpty(longitudeEmpty).LongitudeGt(longitudeGt).LongitudeGte(longitudeGte).LongitudeLt(longitudeLt).LongitudeLte(longitudeLte).LongitudeN(longitudeN).MacAddress(macAddress).MacAddressIc(macAddressIc).MacAddressIe(macAddressIe).MacAddressIew(macAddressIew).MacAddressIsw(macAddressIsw).MacAddressN(macAddressN).MacAddressNic(macAddressNic).MacAddressNie(macAddressNie).MacAddressNiew(macAddressNiew).MacAddressNisw(macAddressNisw).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).Model(model).ModelN(modelN).ModifiedByRequest(modifiedByRequest).ModuleBays(moduleBays).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).OobIpId(oobIpId).OobIpIdN(oobIpIdN).Ordering(ordering).ParentDeviceId(parentDeviceId).ParentDeviceIdN(parentDeviceIdN).PassThroughPorts(passThroughPorts).Platform(platform).PlatformN(platformN).PlatformId(platformId).PlatformIdN(platformIdN).Position(position).PositionEmpty(positionEmpty).PositionGt(positionGt).PositionGte(positionGte).PositionLt(positionLt).PositionLte(positionLte).PositionN(positionN).PowerOutlets(powerOutlets).PowerPorts(powerPorts).PrimaryIp4Id(primaryIp4Id).PrimaryIp4IdN(primaryIp4IdN).PrimaryIp6Id(primaryIp6Id).PrimaryIp6IdN(primaryIp6IdN).Q(q).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Serial(serial).SerialEmpty(serialEmpty).SerialIc(serialIc).SerialIe(serialIe).SerialIew(serialIew).SerialIsw(serialIsw).SerialN(serialN).SerialNic(serialNic).SerialNie(serialNie).SerialNiew(serialNiew).SerialNisw(serialNisw).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).VcPosition(vcPosition).VcPositionEmpty(vcPositionEmpty).VcPositionGt(vcPositionGt).VcPositionGte(vcPositionGte).VcPositionLt(vcPositionLt).VcPositionLte(vcPositionLte).VcPositionN(vcPositionN).VcPriority(vcPriority).VcPriorityEmpty(vcPriorityEmpty).VcPriorityGt(vcPriorityGt).VcPriorityGte(vcPriorityGte).VcPriorityLt(vcPriorityLt).VcPriorityLte(vcPriorityLte).VcPriorityN(vcPriorityN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).VirtualChassisMember(virtualChassisMember).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDevicesList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDevicesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimDevicesList`: PaginatedDeviceWithConfigContextList
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimDevicesList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimDevicesList`: %v\n", resp)
 }
 ```
 
@@ -8623,6 +8753,7 @@ Name | Type | Description  | Notes
  **contactRole** | **[]int32** | Contact Role | 
  **contactRoleN** | **[]int32** | Contact Role | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -8636,8 +8767,10 @@ Name | Type | Description  | Notes
  **deviceTypeIdN** | **[]int32** | Device type (ID) | 
  **face** | **string** |  | 
  **faceN** | **string** |  | 
+ **hasOobIp** | **bool** | Has an out-of-band IP | 
  **hasPrimaryIp** | **bool** | Has a primary IP | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
@@ -8646,15 +8779,30 @@ Name | Type | Description  | Notes
  **interfaces** | **bool** | Has interfaces | 
  **isFullDepth** | **bool** | Is full depth | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
+ **latitude** | **[]float64** |  | 
+ **latitudeEmpty** | **bool** |  | 
+ **latitudeGt** | **[]float64** |  | 
+ **latitudeGte** | **[]float64** |  | 
+ **latitudeLt** | **[]float64** |  | 
+ **latitudeLte** | **[]float64** |  | 
+ **latitudeN** | **[]float64** |  | 
  **limit** | **int32** | Number of results to return per page. | 
  **localContextData** | **bool** | Has local config context data | 
  **locationId** | **[]int32** | Location (ID) | 
  **locationIdN** | **[]int32** | Location (ID) | 
+ **longitude** | **[]float64** |  | 
+ **longitudeEmpty** | **bool** |  | 
+ **longitudeGt** | **[]float64** |  | 
+ **longitudeGte** | **[]float64** |  | 
+ **longitudeLt** | **[]float64** |  | 
+ **longitudeLte** | **[]float64** |  | 
+ **longitudeN** | **[]float64** |  | 
  **macAddress** | **[]string** |  | 
  **macAddressIc** | **[]string** |  | 
  **macAddressIe** | **[]string** |  | 
@@ -8671,6 +8819,7 @@ Name | Type | Description  | Notes
  **manufacturerIdN** | **[]int32** | Manufacturer (ID) | 
  **model** | **[]string** | Device model (slug) | 
  **modelN** | **[]string** | Device model (slug) | 
+ **modifiedByRequest** | **string** |  | 
  **moduleBays** | **bool** | Has module bays | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
@@ -8684,6 +8833,8 @@ Name | Type | Description  | Notes
  **nameNiew** | **[]string** |  | 
  **nameNisw** | **[]string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
+ **oobIpId** | **[]int32** | OOB IP (ID) | 
+ **oobIpIdN** | **[]int32** | OOB IP (ID) | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **parentDeviceId** | **[]int32** | Parent Device (ID) | 
  **parentDeviceIdN** | **[]int32** | Parent Device (ID) | 
@@ -8693,6 +8844,7 @@ Name | Type | Description  | Notes
  **platformId** | **[]int32** | Platform (ID) | 
  **platformIdN** | **[]int32** | Platform (ID) | 
  **position** | **[]float64** |  | 
+ **positionEmpty** | **bool** |  | 
  **positionGt** | **[]float64** |  | 
  **positionGte** | **[]float64** |  | 
  **positionLt** | **[]float64** |  | 
@@ -8748,12 +8900,14 @@ Name | Type | Description  | Notes
  **tenantIdN** | **[]int32** | Tenant (ID) | 
  **updatedByRequest** | **string** |  | 
  **vcPosition** | **[]int32** |  | 
+ **vcPositionEmpty** | **bool** |  | 
  **vcPositionGt** | **[]int32** |  | 
  **vcPositionGte** | **[]int32** |  | 
  **vcPositionLt** | **[]int32** |  | 
  **vcPositionLte** | **[]int32** |  | 
  **vcPositionN** | **[]int32** |  | 
  **vcPriority** | **[]int32** |  | 
+ **vcPriorityEmpty** | **bool** |  | 
  **vcPriorityGt** | **[]int32** |  | 
  **vcPriorityGte** | **[]int32** |  | 
  **vcPriorityLt** | **[]int32** |  | 
@@ -8807,13 +8961,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimDevicesPartialUpdate(context.Background(), id).PatchedWritableDeviceWithConfigContextRequest(patchedWritableDeviceWithConfigContextRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimDevicesPartialUpdate(context.Background(), id).PatchedWritableDeviceWithConfigContextRequest(patchedWritableDeviceWithConfigContextRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDevicesPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDevicesPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimDevicesPartialUpdate`: DeviceWithConfigContext
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimDevicesPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimDevicesPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -8880,13 +9034,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimDevicesRenderConfigCreate(context.Background(), id).WritableDeviceWithConfigContextRequest(writableDeviceWithConfigContextRequest).Format(format).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimDevicesRenderConfigCreate(context.Background(), id).WritableDeviceWithConfigContextRequest(writableDeviceWithConfigContextRequest).Format(format).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDevicesRenderConfigCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDevicesRenderConfigCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimDevicesRenderConfigCreate`: DeviceWithConfigContext
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimDevicesRenderConfigCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimDevicesRenderConfigCreate`: %v\n", resp)
 }
 ```
 
@@ -8952,13 +9106,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimDevicesRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimDevicesRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDevicesRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDevicesRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimDevicesRetrieve`: DeviceWithConfigContext
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimDevicesRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimDevicesRetrieve`: %v\n", resp)
 }
 ```
 
@@ -9023,13 +9177,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimDevicesUpdate(context.Background(), id).WritableDeviceWithConfigContextRequest(writableDeviceWithConfigContextRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimDevicesUpdate(context.Background(), id).WritableDeviceWithConfigContextRequest(writableDeviceWithConfigContextRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimDevicesUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDevicesUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimDevicesUpdate`: DeviceWithConfigContext
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimDevicesUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimDevicesUpdate`: %v\n", resp)
 }
 ```
 
@@ -9094,9 +9248,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimFrontPortTemplatesBulkDestroy(context.Background()).FrontPortTemplateRequest(frontPortTemplateRequest).Execute()
+    r, err := apiClient.DcimAPI.DcimFrontPortTemplatesBulkDestroy(context.Background()).FrontPortTemplateRequest(frontPortTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimFrontPortTemplatesBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimFrontPortTemplatesBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -9158,13 +9312,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimFrontPortTemplatesBulkPartialUpdate(context.Background()).FrontPortTemplateRequest(frontPortTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimFrontPortTemplatesBulkPartialUpdate(context.Background()).FrontPortTemplateRequest(frontPortTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimFrontPortTemplatesBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimFrontPortTemplatesBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimFrontPortTemplatesBulkPartialUpdate`: []FrontPortTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimFrontPortTemplatesBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimFrontPortTemplatesBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -9224,13 +9378,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimFrontPortTemplatesBulkUpdate(context.Background()).FrontPortTemplateRequest(frontPortTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimFrontPortTemplatesBulkUpdate(context.Background()).FrontPortTemplateRequest(frontPortTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimFrontPortTemplatesBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimFrontPortTemplatesBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimFrontPortTemplatesBulkUpdate`: []FrontPortTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimFrontPortTemplatesBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimFrontPortTemplatesBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -9290,13 +9444,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimFrontPortTemplatesCreate(context.Background()).WritableFrontPortTemplateRequest(writableFrontPortTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimFrontPortTemplatesCreate(context.Background()).WritableFrontPortTemplateRequest(writableFrontPortTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimFrontPortTemplatesCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimFrontPortTemplatesCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimFrontPortTemplatesCreate`: FrontPortTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimFrontPortTemplatesCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimFrontPortTemplatesCreate`: %v\n", resp)
 }
 ```
 
@@ -9356,9 +9510,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimFrontPortTemplatesDestroy(context.Background(), id).Execute()
+    r, err := apiClient.DcimAPI.DcimFrontPortTemplatesDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimFrontPortTemplatesDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimFrontPortTemplatesDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -9401,7 +9555,7 @@ Name | Type | Description  | Notes
 
 ## DcimFrontPortTemplatesList
 
-> PaginatedFrontPortTemplateList DcimFrontPortTemplatesList(ctx).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedFrontPortTemplateList DcimFrontPortTemplatesList(ctx).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -9433,6 +9587,7 @@ func main() {
     colorNiew := []string{"Inner_example"} // []string |  (optional)
     colorNisw := []string{"Inner_example"} // []string |  (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -9442,18 +9597,21 @@ func main() {
     devicetypeId := []*int32{int32(123)} // []*int32 | Device type (ID) (optional)
     devicetypeIdN := []*int32{int32(123)} // []*int32 | Device type (ID) (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     moduletypeId := []*int32{int32(123)} // []*int32 | Module type (ID) (optional)
     moduletypeIdN := []*int32{int32(123)} // []*int32 | Module type (ID) (optional)
     name := []string{"Inner_example"} // []string |  (optional)
@@ -9476,13 +9634,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimFrontPortTemplatesList(context.Background()).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimFrontPortTemplatesList(context.Background()).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimFrontPortTemplatesList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimFrontPortTemplatesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimFrontPortTemplatesList`: PaginatedFrontPortTemplateList
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimFrontPortTemplatesList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimFrontPortTemplatesList`: %v\n", resp)
 }
 ```
 
@@ -9509,6 +9667,7 @@ Name | Type | Description  | Notes
  **colorNiew** | **[]string** |  | 
  **colorNisw** | **[]string** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -9518,18 +9677,21 @@ Name | Type | Description  | Notes
  **devicetypeId** | **[]int32** | Device type (ID) | 
  **devicetypeIdN** | **[]int32** | Device type (ID) | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **moduletypeId** | **[]int32** | Module type (ID) | 
  **moduletypeIdN** | **[]int32** | Module type (ID) | 
  **name** | **[]string** |  | 
@@ -9594,13 +9756,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimFrontPortTemplatesPartialUpdate(context.Background(), id).PatchedWritableFrontPortTemplateRequest(patchedWritableFrontPortTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimFrontPortTemplatesPartialUpdate(context.Background(), id).PatchedWritableFrontPortTemplateRequest(patchedWritableFrontPortTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimFrontPortTemplatesPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimFrontPortTemplatesPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimFrontPortTemplatesPartialUpdate`: FrontPortTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimFrontPortTemplatesPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimFrontPortTemplatesPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -9665,13 +9827,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimFrontPortTemplatesRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimFrontPortTemplatesRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimFrontPortTemplatesRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimFrontPortTemplatesRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimFrontPortTemplatesRetrieve`: FrontPortTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimFrontPortTemplatesRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimFrontPortTemplatesRetrieve`: %v\n", resp)
 }
 ```
 
@@ -9736,13 +9898,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimFrontPortTemplatesUpdate(context.Background(), id).WritableFrontPortTemplateRequest(writableFrontPortTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimFrontPortTemplatesUpdate(context.Background(), id).WritableFrontPortTemplateRequest(writableFrontPortTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimFrontPortTemplatesUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimFrontPortTemplatesUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimFrontPortTemplatesUpdate`: FrontPortTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimFrontPortTemplatesUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimFrontPortTemplatesUpdate`: %v\n", resp)
 }
 ```
 
@@ -9807,9 +9969,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimFrontPortsBulkDestroy(context.Background()).FrontPortRequest(frontPortRequest).Execute()
+    r, err := apiClient.DcimAPI.DcimFrontPortsBulkDestroy(context.Background()).FrontPortRequest(frontPortRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimFrontPortsBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimFrontPortsBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -9871,13 +10033,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimFrontPortsBulkPartialUpdate(context.Background()).FrontPortRequest(frontPortRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimFrontPortsBulkPartialUpdate(context.Background()).FrontPortRequest(frontPortRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimFrontPortsBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimFrontPortsBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimFrontPortsBulkPartialUpdate`: []FrontPort
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimFrontPortsBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimFrontPortsBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -9937,13 +10099,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimFrontPortsBulkUpdate(context.Background()).FrontPortRequest(frontPortRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimFrontPortsBulkUpdate(context.Background()).FrontPortRequest(frontPortRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimFrontPortsBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimFrontPortsBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimFrontPortsBulkUpdate`: []FrontPort
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimFrontPortsBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimFrontPortsBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -10003,13 +10165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimFrontPortsCreate(context.Background()).WritableFrontPortRequest(writableFrontPortRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimFrontPortsCreate(context.Background()).WritableFrontPortRequest(writableFrontPortRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimFrontPortsCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimFrontPortsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimFrontPortsCreate`: FrontPort
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimFrontPortsCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimFrontPortsCreate`: %v\n", resp)
 }
 ```
 
@@ -10069,9 +10231,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimFrontPortsDestroy(context.Background(), id).Execute()
+    r, err := apiClient.DcimAPI.DcimFrontPortsDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimFrontPortsDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimFrontPortsDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -10114,7 +10276,7 @@ Name | Type | Description  | Notes
 
 ## DcimFrontPortsList
 
-> PaginatedFrontPortList DcimFrontPortsList(ctx).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
+> PaginatedFrontPortList DcimFrontPortsList(ctx).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
 
 
 
@@ -10149,6 +10311,7 @@ func main() {
     colorNiew := []string{"Inner_example"} // []string |  (optional)
     colorNisw := []string{"Inner_example"} // []string |  (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -10179,6 +10342,7 @@ func main() {
     deviceTypeId := []int32{int32(123)} // []int32 | Device type (ID) (optional)
     deviceTypeIdN := []int32{int32(123)} // []int32 | Device type (ID) (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
@@ -10196,6 +10360,7 @@ func main() {
     labelNiew := []string{"Inner_example"} // []string |  (optional)
     labelNisw := []string{"Inner_example"} // []string |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -10206,6 +10371,7 @@ func main() {
     locationN := []string{"Inner_example"} // []string | Location (slug) (optional)
     locationId := []int32{int32(123)} // []int32 | Location (ID) (optional)
     locationIdN := []int32{int32(123)} // []int32 | Location (ID) (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     moduleId := []*int32{int32(123)} // []*int32 | Module (ID) (optional)
     moduleIdN := []*int32{int32(123)} // []*int32 | Module (ID) (optional)
     name := []string{"Inner_example"} // []string |  (optional)
@@ -10231,6 +10397,10 @@ func main() {
     regionN := []int32{int32(123)} // []int32 | Region (slug) (optional)
     regionId := []int32{int32(123)} // []int32 | Region (ID) (optional)
     regionIdN := []int32{int32(123)} // []int32 | Region (ID) (optional)
+    role := []string{"Inner_example"} // []string | Device role (slug) (optional)
+    roleN := []string{"Inner_example"} // []string | Device role (slug) (optional)
+    roleId := []int32{int32(123)} // []int32 | Device role (ID) (optional)
+    roleIdN := []int32{int32(123)} // []int32 | Device role (ID) (optional)
     site := []string{"Inner_example"} // []string | Site name (slug) (optional)
     siteN := []string{"Inner_example"} // []string | Site name (slug) (optional)
     siteGroup := []int32{int32(123)} // []int32 | Site group (slug) (optional)
@@ -10251,13 +10421,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimFrontPortsList(context.Background()).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimFrontPortsList(context.Background()).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimFrontPortsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimFrontPortsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimFrontPortsList`: PaginatedFrontPortList
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimFrontPortsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimFrontPortsList`: %v\n", resp)
 }
 ```
 
@@ -10287,6 +10457,7 @@ Name | Type | Description  | Notes
  **colorNiew** | **[]string** |  | 
  **colorNisw** | **[]string** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -10317,6 +10488,7 @@ Name | Type | Description  | Notes
  **deviceTypeId** | **[]int32** | Device type (ID) | 
  **deviceTypeIdN** | **[]int32** | Device type (ID) | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
@@ -10334,6 +10506,7 @@ Name | Type | Description  | Notes
  **labelNiew** | **[]string** |  | 
  **labelNisw** | **[]string** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -10344,6 +10517,7 @@ Name | Type | Description  | Notes
  **locationN** | **[]string** | Location (slug) | 
  **locationId** | **[]int32** | Location (ID) | 
  **locationIdN** | **[]int32** | Location (ID) | 
+ **modifiedByRequest** | **string** |  | 
  **moduleId** | **[]int32** | Module (ID) | 
  **moduleIdN** | **[]int32** | Module (ID) | 
  **name** | **[]string** |  | 
@@ -10369,6 +10543,10 @@ Name | Type | Description  | Notes
  **regionN** | **[]int32** | Region (slug) | 
  **regionId** | **[]int32** | Region (ID) | 
  **regionIdN** | **[]int32** | Region (ID) | 
+ **role** | **[]string** | Device role (slug) | 
+ **roleN** | **[]string** | Device role (slug) | 
+ **roleId** | **[]int32** | Device role (ID) | 
+ **roleIdN** | **[]int32** | Device role (ID) | 
  **site** | **[]string** | Site name (slug) | 
  **siteN** | **[]string** | Site name (slug) | 
  **siteGroup** | **[]int32** | Site group (slug) | 
@@ -10431,13 +10609,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimFrontPortsPartialUpdate(context.Background(), id).PatchedWritableFrontPortRequest(patchedWritableFrontPortRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimFrontPortsPartialUpdate(context.Background(), id).PatchedWritableFrontPortRequest(patchedWritableFrontPortRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimFrontPortsPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimFrontPortsPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimFrontPortsPartialUpdate`: FrontPort
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimFrontPortsPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimFrontPortsPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -10502,13 +10680,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimFrontPortsPathsRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimFrontPortsPathsRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimFrontPortsPathsRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimFrontPortsPathsRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimFrontPortsPathsRetrieve`: FrontPort
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimFrontPortsPathsRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimFrontPortsPathsRetrieve`: %v\n", resp)
 }
 ```
 
@@ -10572,13 +10750,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimFrontPortsRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimFrontPortsRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimFrontPortsRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimFrontPortsRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimFrontPortsRetrieve`: FrontPort
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimFrontPortsRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimFrontPortsRetrieve`: %v\n", resp)
 }
 ```
 
@@ -10643,13 +10821,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimFrontPortsUpdate(context.Background(), id).WritableFrontPortRequest(writableFrontPortRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimFrontPortsUpdate(context.Background(), id).WritableFrontPortRequest(writableFrontPortRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimFrontPortsUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimFrontPortsUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimFrontPortsUpdate`: FrontPort
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimFrontPortsUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimFrontPortsUpdate`: %v\n", resp)
 }
 ```
 
@@ -10714,9 +10892,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimInterfaceTemplatesBulkDestroy(context.Background()).InterfaceTemplateRequest(interfaceTemplateRequest).Execute()
+    r, err := apiClient.DcimAPI.DcimInterfaceTemplatesBulkDestroy(context.Background()).InterfaceTemplateRequest(interfaceTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInterfaceTemplatesBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInterfaceTemplatesBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -10778,13 +10956,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimInterfaceTemplatesBulkPartialUpdate(context.Background()).InterfaceTemplateRequest(interfaceTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimInterfaceTemplatesBulkPartialUpdate(context.Background()).InterfaceTemplateRequest(interfaceTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInterfaceTemplatesBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInterfaceTemplatesBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimInterfaceTemplatesBulkPartialUpdate`: []InterfaceTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimInterfaceTemplatesBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimInterfaceTemplatesBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -10844,13 +11022,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimInterfaceTemplatesBulkUpdate(context.Background()).InterfaceTemplateRequest(interfaceTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimInterfaceTemplatesBulkUpdate(context.Background()).InterfaceTemplateRequest(interfaceTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInterfaceTemplatesBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInterfaceTemplatesBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimInterfaceTemplatesBulkUpdate`: []InterfaceTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimInterfaceTemplatesBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimInterfaceTemplatesBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -10910,13 +11088,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimInterfaceTemplatesCreate(context.Background()).WritableInterfaceTemplateRequest(writableInterfaceTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimInterfaceTemplatesCreate(context.Background()).WritableInterfaceTemplateRequest(writableInterfaceTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInterfaceTemplatesCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInterfaceTemplatesCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimInterfaceTemplatesCreate`: InterfaceTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimInterfaceTemplatesCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimInterfaceTemplatesCreate`: %v\n", resp)
 }
 ```
 
@@ -10976,9 +11154,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimInterfaceTemplatesDestroy(context.Background(), id).Execute()
+    r, err := apiClient.DcimAPI.DcimInterfaceTemplatesDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInterfaceTemplatesDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInterfaceTemplatesDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -11021,7 +11199,7 @@ Name | Type | Description  | Notes
 
 ## DcimInterfaceTemplatesList
 
-> PaginatedInterfaceTemplateList DcimInterfaceTemplatesList(ctx).BridgeId(bridgeId).BridgeIdN(bridgeIdN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Enabled(enabled).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MgmtOnly(mgmtOnly).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).PoeMode(poeMode).PoeModeN(poeModeN).PoeType(poeType).PoeTypeN(poeTypeN).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedInterfaceTemplateList DcimInterfaceTemplatesList(ctx).BridgeId(bridgeId).BridgeIdN(bridgeIdN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Enabled(enabled).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MgmtOnly(mgmtOnly).ModifiedByRequest(modifiedByRequest).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).PoeMode(poeMode).PoeModeN(poeModeN).PoeType(poeType).PoeTypeN(poeTypeN).Q(q).RfRole(rfRole).RfRoleN(rfRoleN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -11044,6 +11222,7 @@ func main() {
     bridgeId := []int32{int32(123)} // []int32 |  (optional)
     bridgeIdN := []int32{int32(123)} // []int32 |  (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -11054,12 +11233,14 @@ func main() {
     devicetypeIdN := []*int32{int32(123)} // []*int32 | Device type (ID) (optional)
     enabled := true // bool |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -11067,6 +11248,7 @@ func main() {
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
     mgmtOnly := true // bool |  (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     moduletypeId := []*int32{int32(123)} // []*int32 | Module type (ID) (optional)
     moduletypeIdN := []*int32{int32(123)} // []*int32 | Module type (ID) (optional)
     name := []string{"Inner_example"} // []string |  (optional)
@@ -11087,19 +11269,21 @@ func main() {
     poeType := []string{"Inner_example"} // []string |  (optional)
     poeTypeN := []string{"Inner_example"} // []string |  (optional)
     q := "q_example" // string | Search (optional)
+    rfRole := []string{"Inner_example"} // []string |  (optional)
+    rfRoleN := []string{"Inner_example"} // []string |  (optional)
     type_ := []string{"Inner_example"} // []string |  (optional)
     typeN := []string{"Inner_example"} // []string |  (optional)
     updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimInterfaceTemplatesList(context.Background()).BridgeId(bridgeId).BridgeIdN(bridgeIdN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Enabled(enabled).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MgmtOnly(mgmtOnly).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).PoeMode(poeMode).PoeModeN(poeModeN).PoeType(poeType).PoeTypeN(poeTypeN).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimInterfaceTemplatesList(context.Background()).BridgeId(bridgeId).BridgeIdN(bridgeIdN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Enabled(enabled).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MgmtOnly(mgmtOnly).ModifiedByRequest(modifiedByRequest).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).PoeMode(poeMode).PoeModeN(poeModeN).PoeType(poeType).PoeTypeN(poeTypeN).Q(q).RfRole(rfRole).RfRoleN(rfRoleN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInterfaceTemplatesList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInterfaceTemplatesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimInterfaceTemplatesList`: PaginatedInterfaceTemplateList
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimInterfaceTemplatesList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimInterfaceTemplatesList`: %v\n", resp)
 }
 ```
 
@@ -11117,6 +11301,7 @@ Name | Type | Description  | Notes
  **bridgeId** | **[]int32** |  | 
  **bridgeIdN** | **[]int32** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -11127,12 +11312,14 @@ Name | Type | Description  | Notes
  **devicetypeIdN** | **[]int32** | Device type (ID) | 
  **enabled** | **bool** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -11140,6 +11327,7 @@ Name | Type | Description  | Notes
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
  **mgmtOnly** | **bool** |  | 
+ **modifiedByRequest** | **string** |  | 
  **moduletypeId** | **[]int32** | Module type (ID) | 
  **moduletypeIdN** | **[]int32** | Module type (ID) | 
  **name** | **[]string** |  | 
@@ -11160,6 +11348,8 @@ Name | Type | Description  | Notes
  **poeType** | **[]string** |  | 
  **poeTypeN** | **[]string** |  | 
  **q** | **string** | Search | 
+ **rfRole** | **[]string** |  | 
+ **rfRoleN** | **[]string** |  | 
  **type_** | **[]string** |  | 
  **typeN** | **[]string** |  | 
  **updatedByRequest** | **string** |  | 
@@ -11208,13 +11398,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimInterfaceTemplatesPartialUpdate(context.Background(), id).PatchedWritableInterfaceTemplateRequest(patchedWritableInterfaceTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimInterfaceTemplatesPartialUpdate(context.Background(), id).PatchedWritableInterfaceTemplateRequest(patchedWritableInterfaceTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInterfaceTemplatesPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInterfaceTemplatesPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimInterfaceTemplatesPartialUpdate`: InterfaceTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimInterfaceTemplatesPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimInterfaceTemplatesPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -11279,13 +11469,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimInterfaceTemplatesRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimInterfaceTemplatesRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInterfaceTemplatesRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInterfaceTemplatesRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimInterfaceTemplatesRetrieve`: InterfaceTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimInterfaceTemplatesRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimInterfaceTemplatesRetrieve`: %v\n", resp)
 }
 ```
 
@@ -11350,13 +11540,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimInterfaceTemplatesUpdate(context.Background(), id).WritableInterfaceTemplateRequest(writableInterfaceTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimInterfaceTemplatesUpdate(context.Background(), id).WritableInterfaceTemplateRequest(writableInterfaceTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInterfaceTemplatesUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInterfaceTemplatesUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimInterfaceTemplatesUpdate`: InterfaceTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimInterfaceTemplatesUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimInterfaceTemplatesUpdate`: %v\n", resp)
 }
 ```
 
@@ -11421,9 +11611,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimInterfacesBulkDestroy(context.Background()).InterfaceRequest(interfaceRequest).Execute()
+    r, err := apiClient.DcimAPI.DcimInterfacesBulkDestroy(context.Background()).InterfaceRequest(interfaceRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInterfacesBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInterfacesBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -11485,13 +11675,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimInterfacesBulkPartialUpdate(context.Background()).InterfaceRequest(interfaceRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimInterfacesBulkPartialUpdate(context.Background()).InterfaceRequest(interfaceRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInterfacesBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInterfacesBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimInterfacesBulkPartialUpdate`: []Interface
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimInterfacesBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimInterfacesBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -11551,13 +11741,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimInterfacesBulkUpdate(context.Background()).InterfaceRequest(interfaceRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimInterfacesBulkUpdate(context.Background()).InterfaceRequest(interfaceRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInterfacesBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInterfacesBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimInterfacesBulkUpdate`: []Interface
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimInterfacesBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimInterfacesBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -11617,13 +11807,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimInterfacesCreate(context.Background()).WritableInterfaceRequest(writableInterfaceRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimInterfacesCreate(context.Background()).WritableInterfaceRequest(writableInterfaceRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInterfacesCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInterfacesCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimInterfacesCreate`: Interface
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimInterfacesCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimInterfacesCreate`: %v\n", resp)
 }
 ```
 
@@ -11683,9 +11873,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimInterfacesDestroy(context.Background(), id).Execute()
+    r, err := apiClient.DcimAPI.DcimInterfacesDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInterfacesDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInterfacesDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -11728,7 +11918,7 @@ Name | Type | Description  | Notes
 
 ## DcimInterfacesList
 
-> PaginatedInterfaceList DcimInterfacesList(ctx).BridgeId(bridgeId).BridgeIdN(bridgeIdN).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Connected(connected).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceId(deviceId).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Duplex(duplex).DuplexN(duplexN).Enabled(enabled).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Kind(kind).L2vpn(l2vpn).L2vpnN(l2vpnN).L2vpnId(l2vpnId).L2vpnIdN(l2vpnIdN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LagId(lagId).LagIdN(lagIdN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).MacAddress(macAddress).MacAddressIc(macAddressIc).MacAddressIe(macAddressIe).MacAddressIew(macAddressIew).MacAddressIsw(macAddressIsw).MacAddressN(macAddressN).MacAddressNic(macAddressNic).MacAddressNie(macAddressNie).MacAddressNiew(macAddressNiew).MacAddressNisw(macAddressNisw).MgmtOnly(mgmtOnly).Mode(mode).ModeN(modeN).ModuleId(moduleId).ModuleIdN(moduleIdN).Mtu(mtu).MtuGt(mtuGt).MtuGte(mtuGte).MtuLt(mtuLt).MtuLte(mtuLte).MtuN(mtuN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).ParentId(parentId).ParentIdN(parentIdN).PoeMode(poeMode).PoeModeN(poeModeN).PoeType(poeType).PoeTypeN(poeTypeN).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).RfChannel(rfChannel).RfChannelN(rfChannelN).RfChannelFrequency(rfChannelFrequency).RfChannelFrequencyGt(rfChannelFrequencyGt).RfChannelFrequencyGte(rfChannelFrequencyGte).RfChannelFrequencyLt(rfChannelFrequencyLt).RfChannelFrequencyLte(rfChannelFrequencyLte).RfChannelFrequencyN(rfChannelFrequencyN).RfChannelWidth(rfChannelWidth).RfChannelWidthGt(rfChannelWidthGt).RfChannelWidthGte(rfChannelWidthGte).RfChannelWidthLt(rfChannelWidthLt).RfChannelWidthLte(rfChannelWidthLte).RfChannelWidthN(rfChannelWidthN).RfRole(rfRole).RfRoleN(rfRoleN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Speed(speed).SpeedGt(speedGt).SpeedGte(speedGte).SpeedLt(speedLt).SpeedLte(speedLte).SpeedN(speedN).Tag(tag).TagN(tagN).TxPower(txPower).TxPowerGt(txPowerGt).TxPowerGte(txPowerGte).TxPowerLt(txPowerLt).TxPowerLte(txPowerLte).TxPowerN(txPowerN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Vdc(vdc).VdcN(vdcN).VdcId(vdcId).VdcIdN(vdcIdN).VdcIdentifier(vdcIdentifier).VdcIdentifierN(vdcIdentifierN).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Vlan(vlan).VlanId(vlanId).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Wwn(wwn).WwnIc(wwnIc).WwnIe(wwnIe).WwnIew(wwnIew).WwnIsw(wwnIsw).WwnN(wwnN).WwnNic(wwnNic).WwnNie(wwnNie).WwnNiew(wwnNiew).WwnNisw(wwnNisw).Execute()
+> PaginatedInterfaceList DcimInterfacesList(ctx).BridgeId(bridgeId).BridgeIdN(bridgeIdN).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Connected(connected).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Duplex(duplex).DuplexN(duplexN).Enabled(enabled).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Kind(kind).L2vpn(l2vpn).L2vpnN(l2vpnN).L2vpnId(l2vpnId).L2vpnIdN(l2vpnIdN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LagId(lagId).LagIdN(lagIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).MacAddress(macAddress).MacAddressIc(macAddressIc).MacAddressIe(macAddressIe).MacAddressIew(macAddressIew).MacAddressIsw(macAddressIsw).MacAddressN(macAddressN).MacAddressNic(macAddressNic).MacAddressNie(macAddressNie).MacAddressNiew(macAddressNiew).MacAddressNisw(macAddressNisw).MgmtOnly(mgmtOnly).Mode(mode).ModeN(modeN).ModifiedByRequest(modifiedByRequest).ModuleId(moduleId).ModuleIdN(moduleIdN).Mtu(mtu).MtuEmpty(mtuEmpty).MtuGt(mtuGt).MtuGte(mtuGte).MtuLt(mtuLt).MtuLte(mtuLte).MtuN(mtuN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).ParentId(parentId).ParentIdN(parentIdN).PoeMode(poeMode).PoeModeN(poeModeN).PoeType(poeType).PoeTypeN(poeTypeN).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).RfChannel(rfChannel).RfChannelN(rfChannelN).RfChannelFrequency(rfChannelFrequency).RfChannelFrequencyEmpty(rfChannelFrequencyEmpty).RfChannelFrequencyGt(rfChannelFrequencyGt).RfChannelFrequencyGte(rfChannelFrequencyGte).RfChannelFrequencyLt(rfChannelFrequencyLt).RfChannelFrequencyLte(rfChannelFrequencyLte).RfChannelFrequencyN(rfChannelFrequencyN).RfChannelWidth(rfChannelWidth).RfChannelWidthEmpty(rfChannelWidthEmpty).RfChannelWidthGt(rfChannelWidthGt).RfChannelWidthGte(rfChannelWidthGte).RfChannelWidthLt(rfChannelWidthLt).RfChannelWidthLte(rfChannelWidthLte).RfChannelWidthN(rfChannelWidthN).RfRole(rfRole).RfRoleN(rfRoleN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Speed(speed).SpeedEmpty(speedEmpty).SpeedGt(speedGt).SpeedGte(speedGte).SpeedLt(speedLt).SpeedLte(speedLte).SpeedN(speedN).Tag(tag).TagN(tagN).TxPower(txPower).TxPowerEmpty(txPowerEmpty).TxPowerGt(txPowerGt).TxPowerGte(txPowerGte).TxPowerLt(txPowerLt).TxPowerLte(txPowerLte).TxPowerN(txPowerN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Vdc(vdc).VdcN(vdcN).VdcId(vdcId).VdcIdN(vdcIdN).VdcIdentifier(vdcIdentifier).VdcIdentifierN(vdcIdentifierN).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).VirtualChassisMember(virtualChassisMember).VirtualChassisMemberId(virtualChassisMemberId).Vlan(vlan).VlanId(vlanId).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Wwn(wwn).WwnIc(wwnIc).WwnIe(wwnIe).WwnIew(wwnIew).WwnIsw(wwnIsw).WwnN(wwnN).WwnNic(wwnNic).WwnNie(wwnNie).WwnNiew(wwnNiew).WwnNisw(wwnNisw).Execute()
 
 
 
@@ -11755,6 +11945,7 @@ func main() {
     cabled := true // bool |  (optional)
     connected := true // bool |  (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -11772,8 +11963,10 @@ func main() {
     descriptionNie := []string{"Inner_example"} // []string |  (optional)
     descriptionNiew := []string{"Inner_example"} // []string |  (optional)
     descriptionNisw := []string{"Inner_example"} // []string |  (optional)
-    device := []string{"Inner_example"} // []string |  (optional)
-    deviceId := []int32{int32(123)} // []int32 |  (optional)
+    device := []*string{"Inner_example"} // []*string | Device (name) (optional)
+    deviceN := []*string{"Inner_example"} // []*string | Device (name) (optional)
+    deviceId := []int32{int32(123)} // []int32 | Device (ID) (optional)
+    deviceIdN := []int32{int32(123)} // []int32 | Device (ID) (optional)
     deviceRole := []string{"Inner_example"} // []string | Device role (slug) (optional)
     deviceRoleN := []string{"Inner_example"} // []string | Device role (slug) (optional)
     deviceRoleId := []int32{int32(123)} // []int32 | Device role (ID) (optional)
@@ -11786,6 +11979,7 @@ func main() {
     duplexN := []*string{"Inner_example"} // []*string |  (optional)
     enabled := true // bool |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
@@ -11810,6 +12004,7 @@ func main() {
     lagId := []int32{int32(123)} // []int32 | LAG interface (ID) (optional)
     lagIdN := []int32{int32(123)} // []int32 | LAG interface (ID) (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -11833,9 +12028,11 @@ func main() {
     mgmtOnly := true // bool |  (optional)
     mode := "mode_example" // string | IEEE 802.1Q tagging strategy (optional)
     modeN := "modeN_example" // string | IEEE 802.1Q tagging strategy (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     moduleId := []*int32{int32(123)} // []*int32 | Module (ID) (optional)
     moduleIdN := []*int32{int32(123)} // []*int32 | Module (ID) (optional)
     mtu := []int32{int32(123)} // []int32 |  (optional)
+    mtuEmpty := true // bool |  (optional)
     mtuGt := []int32{int32(123)} // []int32 |  (optional)
     mtuGte := []int32{int32(123)} // []int32 |  (optional)
     mtuLt := []int32{int32(123)} // []int32 |  (optional)
@@ -11873,12 +12070,14 @@ func main() {
     rfChannel := []string{"Inner_example"} // []string |  (optional)
     rfChannelN := []string{"Inner_example"} // []string |  (optional)
     rfChannelFrequency := []float64{float64(123)} // []float64 |  (optional)
+    rfChannelFrequencyEmpty := true // bool |  (optional)
     rfChannelFrequencyGt := []float64{float64(123)} // []float64 |  (optional)
     rfChannelFrequencyGte := []float64{float64(123)} // []float64 |  (optional)
     rfChannelFrequencyLt := []float64{float64(123)} // []float64 |  (optional)
     rfChannelFrequencyLte := []float64{float64(123)} // []float64 |  (optional)
     rfChannelFrequencyN := []float64{float64(123)} // []float64 |  (optional)
     rfChannelWidth := []float64{float64(123)} // []float64 |  (optional)
+    rfChannelWidthEmpty := true // bool |  (optional)
     rfChannelWidthGt := []float64{float64(123)} // []float64 |  (optional)
     rfChannelWidthGte := []float64{float64(123)} // []float64 |  (optional)
     rfChannelWidthLt := []float64{float64(123)} // []float64 |  (optional)
@@ -11886,6 +12085,10 @@ func main() {
     rfChannelWidthN := []float64{float64(123)} // []float64 |  (optional)
     rfRole := []string{"Inner_example"} // []string |  (optional)
     rfRoleN := []string{"Inner_example"} // []string |  (optional)
+    role := []string{"Inner_example"} // []string | Device role (slug) (optional)
+    roleN := []string{"Inner_example"} // []string | Device role (slug) (optional)
+    roleId := []int32{int32(123)} // []int32 | Device role (ID) (optional)
+    roleIdN := []int32{int32(123)} // []int32 | Device role (ID) (optional)
     site := []string{"Inner_example"} // []string | Site name (slug) (optional)
     siteN := []string{"Inner_example"} // []string | Site name (slug) (optional)
     siteGroup := []int32{int32(123)} // []int32 | Site group (slug) (optional)
@@ -11895,6 +12098,7 @@ func main() {
     siteId := []int32{int32(123)} // []int32 | Site (ID) (optional)
     siteIdN := []int32{int32(123)} // []int32 | Site (ID) (optional)
     speed := []int32{int32(123)} // []int32 |  (optional)
+    speedEmpty := []int32{int32(123)} // []int32 |  (optional)
     speedGt := []int32{int32(123)} // []int32 |  (optional)
     speedGte := []int32{int32(123)} // []int32 |  (optional)
     speedLt := []int32{int32(123)} // []int32 |  (optional)
@@ -11903,6 +12107,7 @@ func main() {
     tag := []string{"Inner_example"} // []string |  (optional)
     tagN := []string{"Inner_example"} // []string |  (optional)
     txPower := []int32{int32(123)} // []int32 |  (optional)
+    txPowerEmpty := true // bool |  (optional)
     txPowerGt := []int32{int32(123)} // []int32 |  (optional)
     txPowerGte := []int32{int32(123)} // []int32 |  (optional)
     txPowerLt := []int32{int32(123)} // []int32 |  (optional)
@@ -11921,6 +12126,8 @@ func main() {
     virtualChassisN := []string{"Inner_example"} // []string | Virtual Chassis (optional)
     virtualChassisId := []int32{int32(123)} // []int32 | Virtual Chassis (ID) (optional)
     virtualChassisIdN := []int32{int32(123)} // []int32 | Virtual Chassis (ID) (optional)
+    virtualChassisMember := []string{"Inner_example"} // []string |  (optional)
+    virtualChassisMemberId := []int32{int32(123)} // []int32 |  (optional)
     vlan := "vlan_example" // string | Assigned VID (optional)
     vlanId := "vlanId_example" // string | Assigned VLAN (optional)
     vrf := []*string{"Inner_example"} // []*string | VRF (RD) (optional)
@@ -11940,13 +12147,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimInterfacesList(context.Background()).BridgeId(bridgeId).BridgeIdN(bridgeIdN).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Connected(connected).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceId(deviceId).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Duplex(duplex).DuplexN(duplexN).Enabled(enabled).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Kind(kind).L2vpn(l2vpn).L2vpnN(l2vpnN).L2vpnId(l2vpnId).L2vpnIdN(l2vpnIdN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LagId(lagId).LagIdN(lagIdN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).MacAddress(macAddress).MacAddressIc(macAddressIc).MacAddressIe(macAddressIe).MacAddressIew(macAddressIew).MacAddressIsw(macAddressIsw).MacAddressN(macAddressN).MacAddressNic(macAddressNic).MacAddressNie(macAddressNie).MacAddressNiew(macAddressNiew).MacAddressNisw(macAddressNisw).MgmtOnly(mgmtOnly).Mode(mode).ModeN(modeN).ModuleId(moduleId).ModuleIdN(moduleIdN).Mtu(mtu).MtuGt(mtuGt).MtuGte(mtuGte).MtuLt(mtuLt).MtuLte(mtuLte).MtuN(mtuN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).ParentId(parentId).ParentIdN(parentIdN).PoeMode(poeMode).PoeModeN(poeModeN).PoeType(poeType).PoeTypeN(poeTypeN).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).RfChannel(rfChannel).RfChannelN(rfChannelN).RfChannelFrequency(rfChannelFrequency).RfChannelFrequencyGt(rfChannelFrequencyGt).RfChannelFrequencyGte(rfChannelFrequencyGte).RfChannelFrequencyLt(rfChannelFrequencyLt).RfChannelFrequencyLte(rfChannelFrequencyLte).RfChannelFrequencyN(rfChannelFrequencyN).RfChannelWidth(rfChannelWidth).RfChannelWidthGt(rfChannelWidthGt).RfChannelWidthGte(rfChannelWidthGte).RfChannelWidthLt(rfChannelWidthLt).RfChannelWidthLte(rfChannelWidthLte).RfChannelWidthN(rfChannelWidthN).RfRole(rfRole).RfRoleN(rfRoleN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Speed(speed).SpeedGt(speedGt).SpeedGte(speedGte).SpeedLt(speedLt).SpeedLte(speedLte).SpeedN(speedN).Tag(tag).TagN(tagN).TxPower(txPower).TxPowerGt(txPowerGt).TxPowerGte(txPowerGte).TxPowerLt(txPowerLt).TxPowerLte(txPowerLte).TxPowerN(txPowerN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Vdc(vdc).VdcN(vdcN).VdcId(vdcId).VdcIdN(vdcIdN).VdcIdentifier(vdcIdentifier).VdcIdentifierN(vdcIdentifierN).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Vlan(vlan).VlanId(vlanId).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Wwn(wwn).WwnIc(wwnIc).WwnIe(wwnIe).WwnIew(wwnIew).WwnIsw(wwnIsw).WwnN(wwnN).WwnNic(wwnNic).WwnNie(wwnNie).WwnNiew(wwnNiew).WwnNisw(wwnNisw).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimInterfacesList(context.Background()).BridgeId(bridgeId).BridgeIdN(bridgeIdN).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Connected(connected).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Duplex(duplex).DuplexN(duplexN).Enabled(enabled).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Kind(kind).L2vpn(l2vpn).L2vpnN(l2vpnN).L2vpnId(l2vpnId).L2vpnIdN(l2vpnIdN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LagId(lagId).LagIdN(lagIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).MacAddress(macAddress).MacAddressIc(macAddressIc).MacAddressIe(macAddressIe).MacAddressIew(macAddressIew).MacAddressIsw(macAddressIsw).MacAddressN(macAddressN).MacAddressNic(macAddressNic).MacAddressNie(macAddressNie).MacAddressNiew(macAddressNiew).MacAddressNisw(macAddressNisw).MgmtOnly(mgmtOnly).Mode(mode).ModeN(modeN).ModifiedByRequest(modifiedByRequest).ModuleId(moduleId).ModuleIdN(moduleIdN).Mtu(mtu).MtuEmpty(mtuEmpty).MtuGt(mtuGt).MtuGte(mtuGte).MtuLt(mtuLt).MtuLte(mtuLte).MtuN(mtuN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).ParentId(parentId).ParentIdN(parentIdN).PoeMode(poeMode).PoeModeN(poeModeN).PoeType(poeType).PoeTypeN(poeTypeN).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).RfChannel(rfChannel).RfChannelN(rfChannelN).RfChannelFrequency(rfChannelFrequency).RfChannelFrequencyEmpty(rfChannelFrequencyEmpty).RfChannelFrequencyGt(rfChannelFrequencyGt).RfChannelFrequencyGte(rfChannelFrequencyGte).RfChannelFrequencyLt(rfChannelFrequencyLt).RfChannelFrequencyLte(rfChannelFrequencyLte).RfChannelFrequencyN(rfChannelFrequencyN).RfChannelWidth(rfChannelWidth).RfChannelWidthEmpty(rfChannelWidthEmpty).RfChannelWidthGt(rfChannelWidthGt).RfChannelWidthGte(rfChannelWidthGte).RfChannelWidthLt(rfChannelWidthLt).RfChannelWidthLte(rfChannelWidthLte).RfChannelWidthN(rfChannelWidthN).RfRole(rfRole).RfRoleN(rfRoleN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Speed(speed).SpeedEmpty(speedEmpty).SpeedGt(speedGt).SpeedGte(speedGte).SpeedLt(speedLt).SpeedLte(speedLte).SpeedN(speedN).Tag(tag).TagN(tagN).TxPower(txPower).TxPowerEmpty(txPowerEmpty).TxPowerGt(txPowerGt).TxPowerGte(txPowerGte).TxPowerLt(txPowerLt).TxPowerLte(txPowerLte).TxPowerN(txPowerN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Vdc(vdc).VdcN(vdcN).VdcId(vdcId).VdcIdN(vdcIdN).VdcIdentifier(vdcIdentifier).VdcIdentifierN(vdcIdentifierN).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).VirtualChassisMember(virtualChassisMember).VirtualChassisMemberId(virtualChassisMemberId).Vlan(vlan).VlanId(vlanId).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Wwn(wwn).WwnIc(wwnIc).WwnIe(wwnIe).WwnIew(wwnIew).WwnIsw(wwnIsw).WwnN(wwnN).WwnNic(wwnNic).WwnNie(wwnNie).WwnNiew(wwnNiew).WwnNisw(wwnNisw).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInterfacesList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInterfacesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimInterfacesList`: PaginatedInterfaceList
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimInterfacesList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimInterfacesList`: %v\n", resp)
 }
 ```
 
@@ -11968,6 +12175,7 @@ Name | Type | Description  | Notes
  **cabled** | **bool** |  | 
  **connected** | **bool** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -11985,8 +12193,10 @@ Name | Type | Description  | Notes
  **descriptionNie** | **[]string** |  | 
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
- **device** | **[]string** |  | 
- **deviceId** | **[]int32** |  | 
+ **device** | **[]string** | Device (name) | 
+ **deviceN** | **[]string** | Device (name) | 
+ **deviceId** | **[]int32** | Device (ID) | 
+ **deviceIdN** | **[]int32** | Device (ID) | 
  **deviceRole** | **[]string** | Device role (slug) | 
  **deviceRoleN** | **[]string** | Device role (slug) | 
  **deviceRoleId** | **[]int32** | Device role (ID) | 
@@ -11999,6 +12209,7 @@ Name | Type | Description  | Notes
  **duplexN** | **[]string** |  | 
  **enabled** | **bool** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
@@ -12023,6 +12234,7 @@ Name | Type | Description  | Notes
  **lagId** | **[]int32** | LAG interface (ID) | 
  **lagIdN** | **[]int32** | LAG interface (ID) | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -12046,9 +12258,11 @@ Name | Type | Description  | Notes
  **mgmtOnly** | **bool** |  | 
  **mode** | **string** | IEEE 802.1Q tagging strategy | 
  **modeN** | **string** | IEEE 802.1Q tagging strategy | 
+ **modifiedByRequest** | **string** |  | 
  **moduleId** | **[]int32** | Module (ID) | 
  **moduleIdN** | **[]int32** | Module (ID) | 
  **mtu** | **[]int32** |  | 
+ **mtuEmpty** | **bool** |  | 
  **mtuGt** | **[]int32** |  | 
  **mtuGte** | **[]int32** |  | 
  **mtuLt** | **[]int32** |  | 
@@ -12086,12 +12300,14 @@ Name | Type | Description  | Notes
  **rfChannel** | **[]string** |  | 
  **rfChannelN** | **[]string** |  | 
  **rfChannelFrequency** | **[]float64** |  | 
+ **rfChannelFrequencyEmpty** | **bool** |  | 
  **rfChannelFrequencyGt** | **[]float64** |  | 
  **rfChannelFrequencyGte** | **[]float64** |  | 
  **rfChannelFrequencyLt** | **[]float64** |  | 
  **rfChannelFrequencyLte** | **[]float64** |  | 
  **rfChannelFrequencyN** | **[]float64** |  | 
  **rfChannelWidth** | **[]float64** |  | 
+ **rfChannelWidthEmpty** | **bool** |  | 
  **rfChannelWidthGt** | **[]float64** |  | 
  **rfChannelWidthGte** | **[]float64** |  | 
  **rfChannelWidthLt** | **[]float64** |  | 
@@ -12099,6 +12315,10 @@ Name | Type | Description  | Notes
  **rfChannelWidthN** | **[]float64** |  | 
  **rfRole** | **[]string** |  | 
  **rfRoleN** | **[]string** |  | 
+ **role** | **[]string** | Device role (slug) | 
+ **roleN** | **[]string** | Device role (slug) | 
+ **roleId** | **[]int32** | Device role (ID) | 
+ **roleIdN** | **[]int32** | Device role (ID) | 
  **site** | **[]string** | Site name (slug) | 
  **siteN** | **[]string** | Site name (slug) | 
  **siteGroup** | **[]int32** | Site group (slug) | 
@@ -12108,6 +12328,7 @@ Name | Type | Description  | Notes
  **siteId** | **[]int32** | Site (ID) | 
  **siteIdN** | **[]int32** | Site (ID) | 
  **speed** | **[]int32** |  | 
+ **speedEmpty** | **[]int32** |  | 
  **speedGt** | **[]int32** |  | 
  **speedGte** | **[]int32** |  | 
  **speedLt** | **[]int32** |  | 
@@ -12116,6 +12337,7 @@ Name | Type | Description  | Notes
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
  **txPower** | **[]int32** |  | 
+ **txPowerEmpty** | **bool** |  | 
  **txPowerGt** | **[]int32** |  | 
  **txPowerGte** | **[]int32** |  | 
  **txPowerLt** | **[]int32** |  | 
@@ -12134,6 +12356,8 @@ Name | Type | Description  | Notes
  **virtualChassisN** | **[]string** | Virtual Chassis | 
  **virtualChassisId** | **[]int32** | Virtual Chassis (ID) | 
  **virtualChassisIdN** | **[]int32** | Virtual Chassis (ID) | 
+ **virtualChassisMember** | **[]string** |  | 
+ **virtualChassisMemberId** | **[]int32** |  | 
  **vlan** | **string** | Assigned VID | 
  **vlanId** | **string** | Assigned VLAN | 
  **vrf** | **[]string** | VRF (RD) | 
@@ -12195,13 +12419,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimInterfacesPartialUpdate(context.Background(), id).PatchedWritableInterfaceRequest(patchedWritableInterfaceRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimInterfacesPartialUpdate(context.Background(), id).PatchedWritableInterfaceRequest(patchedWritableInterfaceRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInterfacesPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInterfacesPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimInterfacesPartialUpdate`: Interface
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimInterfacesPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimInterfacesPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -12266,13 +12490,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimInterfacesRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimInterfacesRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInterfacesRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInterfacesRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimInterfacesRetrieve`: Interface
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimInterfacesRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimInterfacesRetrieve`: %v\n", resp)
 }
 ```
 
@@ -12336,13 +12560,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimInterfacesTraceRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimInterfacesTraceRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInterfacesTraceRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInterfacesTraceRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimInterfacesTraceRetrieve`: Interface
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimInterfacesTraceRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimInterfacesTraceRetrieve`: %v\n", resp)
 }
 ```
 
@@ -12407,13 +12631,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimInterfacesUpdate(context.Background(), id).WritableInterfaceRequest(writableInterfaceRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimInterfacesUpdate(context.Background(), id).WritableInterfaceRequest(writableInterfaceRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInterfacesUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInterfacesUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimInterfacesUpdate`: Interface
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimInterfacesUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimInterfacesUpdate`: %v\n", resp)
 }
 ```
 
@@ -12478,9 +12702,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimInventoryItemRolesBulkDestroy(context.Background()).InventoryItemRoleRequest(inventoryItemRoleRequest).Execute()
+    r, err := apiClient.DcimAPI.DcimInventoryItemRolesBulkDestroy(context.Background()).InventoryItemRoleRequest(inventoryItemRoleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInventoryItemRolesBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInventoryItemRolesBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -12542,13 +12766,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimInventoryItemRolesBulkPartialUpdate(context.Background()).InventoryItemRoleRequest(inventoryItemRoleRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimInventoryItemRolesBulkPartialUpdate(context.Background()).InventoryItemRoleRequest(inventoryItemRoleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInventoryItemRolesBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInventoryItemRolesBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimInventoryItemRolesBulkPartialUpdate`: []InventoryItemRole
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimInventoryItemRolesBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimInventoryItemRolesBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -12608,13 +12832,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimInventoryItemRolesBulkUpdate(context.Background()).InventoryItemRoleRequest(inventoryItemRoleRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimInventoryItemRolesBulkUpdate(context.Background()).InventoryItemRoleRequest(inventoryItemRoleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInventoryItemRolesBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInventoryItemRolesBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimInventoryItemRolesBulkUpdate`: []InventoryItemRole
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimInventoryItemRolesBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimInventoryItemRolesBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -12674,13 +12898,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimInventoryItemRolesCreate(context.Background()).InventoryItemRoleRequest(inventoryItemRoleRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimInventoryItemRolesCreate(context.Background()).InventoryItemRoleRequest(inventoryItemRoleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInventoryItemRolesCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInventoryItemRolesCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimInventoryItemRolesCreate`: InventoryItemRole
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimInventoryItemRolesCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimInventoryItemRolesCreate`: %v\n", resp)
 }
 ```
 
@@ -12740,9 +12964,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimInventoryItemRolesDestroy(context.Background(), id).Execute()
+    r, err := apiClient.DcimAPI.DcimInventoryItemRolesDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInventoryItemRolesDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInventoryItemRolesDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -12785,7 +13009,7 @@ Name | Type | Description  | Notes
 
 ## DcimInventoryItemRolesList
 
-> PaginatedInventoryItemRoleList DcimInventoryItemRolesList(ctx).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedInventoryItemRoleList DcimInventoryItemRolesList(ctx).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -12817,6 +13041,7 @@ func main() {
     colorNiew := []string{"Inner_example"} // []string |  (optional)
     colorNisw := []string{"Inner_example"} // []string |  (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -12824,18 +13049,21 @@ func main() {
     createdN := []time.Time{time.Now()} // []time.Time |  (optional)
     createdByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -12867,13 +13095,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimInventoryItemRolesList(context.Background()).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimInventoryItemRolesList(context.Background()).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInventoryItemRolesList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInventoryItemRolesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimInventoryItemRolesList`: PaginatedInventoryItemRoleList
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimInventoryItemRolesList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimInventoryItemRolesList`: %v\n", resp)
 }
 ```
 
@@ -12900,6 +13128,7 @@ Name | Type | Description  | Notes
  **colorNiew** | **[]string** |  | 
  **colorNisw** | **[]string** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -12907,18 +13136,21 @@ Name | Type | Description  | Notes
  **createdN** | [**[]time.Time**](time.Time.md) |  | 
  **createdByRequest** | **string** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -12992,13 +13224,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimInventoryItemRolesPartialUpdate(context.Background(), id).PatchedInventoryItemRoleRequest(patchedInventoryItemRoleRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimInventoryItemRolesPartialUpdate(context.Background(), id).PatchedInventoryItemRoleRequest(patchedInventoryItemRoleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInventoryItemRolesPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInventoryItemRolesPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimInventoryItemRolesPartialUpdate`: InventoryItemRole
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimInventoryItemRolesPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimInventoryItemRolesPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -13063,13 +13295,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimInventoryItemRolesRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimInventoryItemRolesRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInventoryItemRolesRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInventoryItemRolesRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimInventoryItemRolesRetrieve`: InventoryItemRole
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimInventoryItemRolesRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimInventoryItemRolesRetrieve`: %v\n", resp)
 }
 ```
 
@@ -13134,13 +13366,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimInventoryItemRolesUpdate(context.Background(), id).InventoryItemRoleRequest(inventoryItemRoleRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimInventoryItemRolesUpdate(context.Background(), id).InventoryItemRoleRequest(inventoryItemRoleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInventoryItemRolesUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInventoryItemRolesUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimInventoryItemRolesUpdate`: InventoryItemRole
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimInventoryItemRolesUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimInventoryItemRolesUpdate`: %v\n", resp)
 }
 ```
 
@@ -13205,9 +13437,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimInventoryItemTemplatesBulkDestroy(context.Background()).InventoryItemTemplateRequest(inventoryItemTemplateRequest).Execute()
+    r, err := apiClient.DcimAPI.DcimInventoryItemTemplatesBulkDestroy(context.Background()).InventoryItemTemplateRequest(inventoryItemTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInventoryItemTemplatesBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInventoryItemTemplatesBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -13269,13 +13501,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimInventoryItemTemplatesBulkPartialUpdate(context.Background()).InventoryItemTemplateRequest(inventoryItemTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimInventoryItemTemplatesBulkPartialUpdate(context.Background()).InventoryItemTemplateRequest(inventoryItemTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInventoryItemTemplatesBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInventoryItemTemplatesBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimInventoryItemTemplatesBulkPartialUpdate`: []InventoryItemTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimInventoryItemTemplatesBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimInventoryItemTemplatesBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -13335,13 +13567,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimInventoryItemTemplatesBulkUpdate(context.Background()).InventoryItemTemplateRequest(inventoryItemTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimInventoryItemTemplatesBulkUpdate(context.Background()).InventoryItemTemplateRequest(inventoryItemTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInventoryItemTemplatesBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInventoryItemTemplatesBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimInventoryItemTemplatesBulkUpdate`: []InventoryItemTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimInventoryItemTemplatesBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimInventoryItemTemplatesBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -13401,13 +13633,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimInventoryItemTemplatesCreate(context.Background()).WritableInventoryItemTemplateRequest(writableInventoryItemTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimInventoryItemTemplatesCreate(context.Background()).WritableInventoryItemTemplateRequest(writableInventoryItemTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInventoryItemTemplatesCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInventoryItemTemplatesCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimInventoryItemTemplatesCreate`: InventoryItemTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimInventoryItemTemplatesCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimInventoryItemTemplatesCreate`: %v\n", resp)
 }
 ```
 
@@ -13467,9 +13699,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimInventoryItemTemplatesDestroy(context.Background(), id).Execute()
+    r, err := apiClient.DcimAPI.DcimInventoryItemTemplatesDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInventoryItemTemplatesDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInventoryItemTemplatesDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -13512,7 +13744,7 @@ Name | Type | Description  | Notes
 
 ## DcimInventoryItemTemplatesList
 
-> PaginatedInventoryItemTemplateList DcimInventoryItemTemplatesList(ctx).ComponentId(componentId).ComponentIdGt(componentIdGt).ComponentIdGte(componentIdGte).ComponentIdLt(componentIdLt).ComponentIdLte(componentIdLte).ComponentIdN(componentIdN).ComponentType(componentType).ComponentTypeN(componentTypeN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).ParentId(parentId).ParentIdN(parentIdN).PartId(partId).PartIdEmpty(partIdEmpty).PartIdIc(partIdIc).PartIdIe(partIdIe).PartIdIew(partIdIew).PartIdIsw(partIdIsw).PartIdN(partIdN).PartIdNic(partIdNic).PartIdNie(partIdNie).PartIdNiew(partIdNiew).PartIdNisw(partIdNisw).Q(q).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedInventoryItemTemplateList DcimInventoryItemTemplatesList(ctx).ComponentId(componentId).ComponentIdEmpty(componentIdEmpty).ComponentIdGt(componentIdGt).ComponentIdGte(componentIdGte).ComponentIdLt(componentIdLt).ComponentIdLte(componentIdLte).ComponentIdN(componentIdN).ComponentType(componentType).ComponentTypeN(componentTypeN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).ParentId(parentId).ParentIdN(parentIdN).PartId(partId).PartIdEmpty(partIdEmpty).PartIdIc(partIdIc).PartIdIe(partIdIe).PartIdIew(partIdIew).PartIdIsw(partIdIsw).PartIdN(partIdN).PartIdNic(partIdNic).PartIdNie(partIdNie).PartIdNiew(partIdNiew).PartIdNisw(partIdNisw).Q(q).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -13533,6 +13765,7 @@ import (
 
 func main() {
     componentId := []int32{int32(123)} // []int32 |  (optional)
+    componentIdEmpty := []int32{int32(123)} // []int32 |  (optional)
     componentIdGt := []int32{int32(123)} // []int32 |  (optional)
     componentIdGte := []int32{int32(123)} // []int32 |  (optional)
     componentIdLt := []int32{int32(123)} // []int32 |  (optional)
@@ -13541,6 +13774,7 @@ func main() {
     componentType := "componentType_example" // string |  (optional)
     componentTypeN := "componentTypeN_example" // string |  (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -13550,6 +13784,7 @@ func main() {
     devicetypeId := []int32{int32(123)} // []int32 | Device type (ID) (optional)
     devicetypeIdN := []int32{int32(123)} // []int32 | Device type (ID) (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
@@ -13567,6 +13802,7 @@ func main() {
     labelNiew := []string{"Inner_example"} // []string |  (optional)
     labelNisw := []string{"Inner_example"} // []string |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -13577,6 +13813,7 @@ func main() {
     manufacturerN := []string{"Inner_example"} // []string | Manufacturer (slug) (optional)
     manufacturerId := []*int32{int32(123)} // []*int32 | Manufacturer (ID) (optional)
     manufacturerIdN := []*int32{int32(123)} // []*int32 | Manufacturer (ID) (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -13612,13 +13849,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimInventoryItemTemplatesList(context.Background()).ComponentId(componentId).ComponentIdGt(componentIdGt).ComponentIdGte(componentIdGte).ComponentIdLt(componentIdLt).ComponentIdLte(componentIdLte).ComponentIdN(componentIdN).ComponentType(componentType).ComponentTypeN(componentTypeN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).ParentId(parentId).ParentIdN(parentIdN).PartId(partId).PartIdEmpty(partIdEmpty).PartIdIc(partIdIc).PartIdIe(partIdIe).PartIdIew(partIdIew).PartIdIsw(partIdIsw).PartIdN(partIdN).PartIdNic(partIdNic).PartIdNie(partIdNie).PartIdNiew(partIdNiew).PartIdNisw(partIdNisw).Q(q).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimInventoryItemTemplatesList(context.Background()).ComponentId(componentId).ComponentIdEmpty(componentIdEmpty).ComponentIdGt(componentIdGt).ComponentIdGte(componentIdGte).ComponentIdLt(componentIdLt).ComponentIdLte(componentIdLte).ComponentIdN(componentIdN).ComponentType(componentType).ComponentTypeN(componentTypeN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).ParentId(parentId).ParentIdN(parentIdN).PartId(partId).PartIdEmpty(partIdEmpty).PartIdIc(partIdIc).PartIdIe(partIdIe).PartIdIew(partIdIew).PartIdIsw(partIdIsw).PartIdN(partIdN).PartIdNic(partIdNic).PartIdNie(partIdNie).PartIdNiew(partIdNiew).PartIdNisw(partIdNisw).Q(q).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInventoryItemTemplatesList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInventoryItemTemplatesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimInventoryItemTemplatesList`: PaginatedInventoryItemTemplateList
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimInventoryItemTemplatesList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimInventoryItemTemplatesList`: %v\n", resp)
 }
 ```
 
@@ -13634,6 +13871,7 @@ Other parameters are passed through a pointer to a apiDcimInventoryItemTemplates
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **componentId** | **[]int32** |  | 
+ **componentIdEmpty** | **[]int32** |  | 
  **componentIdGt** | **[]int32** |  | 
  **componentIdGte** | **[]int32** |  | 
  **componentIdLt** | **[]int32** |  | 
@@ -13642,6 +13880,7 @@ Name | Type | Description  | Notes
  **componentType** | **string** |  | 
  **componentTypeN** | **string** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -13651,6 +13890,7 @@ Name | Type | Description  | Notes
  **devicetypeId** | **[]int32** | Device type (ID) | 
  **devicetypeIdN** | **[]int32** | Device type (ID) | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
@@ -13668,6 +13908,7 @@ Name | Type | Description  | Notes
  **labelNiew** | **[]string** |  | 
  **labelNisw** | **[]string** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -13678,6 +13919,7 @@ Name | Type | Description  | Notes
  **manufacturerN** | **[]string** | Manufacturer (slug) | 
  **manufacturerId** | **[]int32** | Manufacturer (ID) | 
  **manufacturerIdN** | **[]int32** | Manufacturer (ID) | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -13755,13 +13997,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimInventoryItemTemplatesPartialUpdate(context.Background(), id).PatchedWritableInventoryItemTemplateRequest(patchedWritableInventoryItemTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimInventoryItemTemplatesPartialUpdate(context.Background(), id).PatchedWritableInventoryItemTemplateRequest(patchedWritableInventoryItemTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInventoryItemTemplatesPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInventoryItemTemplatesPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimInventoryItemTemplatesPartialUpdate`: InventoryItemTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimInventoryItemTemplatesPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimInventoryItemTemplatesPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -13826,13 +14068,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimInventoryItemTemplatesRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimInventoryItemTemplatesRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInventoryItemTemplatesRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInventoryItemTemplatesRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimInventoryItemTemplatesRetrieve`: InventoryItemTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimInventoryItemTemplatesRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimInventoryItemTemplatesRetrieve`: %v\n", resp)
 }
 ```
 
@@ -13897,13 +14139,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimInventoryItemTemplatesUpdate(context.Background(), id).WritableInventoryItemTemplateRequest(writableInventoryItemTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimInventoryItemTemplatesUpdate(context.Background(), id).WritableInventoryItemTemplateRequest(writableInventoryItemTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInventoryItemTemplatesUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInventoryItemTemplatesUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimInventoryItemTemplatesUpdate`: InventoryItemTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimInventoryItemTemplatesUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimInventoryItemTemplatesUpdate`: %v\n", resp)
 }
 ```
 
@@ -13968,9 +14210,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimInventoryItemsBulkDestroy(context.Background()).InventoryItemRequest(inventoryItemRequest).Execute()
+    r, err := apiClient.DcimAPI.DcimInventoryItemsBulkDestroy(context.Background()).InventoryItemRequest(inventoryItemRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInventoryItemsBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInventoryItemsBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -14032,13 +14274,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimInventoryItemsBulkPartialUpdate(context.Background()).InventoryItemRequest(inventoryItemRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimInventoryItemsBulkPartialUpdate(context.Background()).InventoryItemRequest(inventoryItemRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInventoryItemsBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInventoryItemsBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimInventoryItemsBulkPartialUpdate`: []InventoryItem
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimInventoryItemsBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimInventoryItemsBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -14098,13 +14340,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimInventoryItemsBulkUpdate(context.Background()).InventoryItemRequest(inventoryItemRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimInventoryItemsBulkUpdate(context.Background()).InventoryItemRequest(inventoryItemRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInventoryItemsBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInventoryItemsBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimInventoryItemsBulkUpdate`: []InventoryItem
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimInventoryItemsBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimInventoryItemsBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -14164,13 +14406,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimInventoryItemsCreate(context.Background()).WritableInventoryItemRequest(writableInventoryItemRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimInventoryItemsCreate(context.Background()).WritableInventoryItemRequest(writableInventoryItemRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInventoryItemsCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInventoryItemsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimInventoryItemsCreate`: InventoryItem
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimInventoryItemsCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimInventoryItemsCreate`: %v\n", resp)
 }
 ```
 
@@ -14230,9 +14472,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimInventoryItemsDestroy(context.Background(), id).Execute()
+    r, err := apiClient.DcimAPI.DcimInventoryItemsDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInventoryItemsDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInventoryItemsDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -14275,7 +14517,7 @@ Name | Type | Description  | Notes
 
 ## DcimInventoryItemsList
 
-> PaginatedInventoryItemList DcimInventoryItemsList(ctx).AssetTag(assetTag).AssetTagEmpty(assetTagEmpty).AssetTagIc(assetTagIc).AssetTagIe(assetTagIe).AssetTagIew(assetTagIew).AssetTagIsw(assetTagIsw).AssetTagN(assetTagN).AssetTagNic(assetTagNic).AssetTagNie(assetTagNie).AssetTagNiew(assetTagNiew).AssetTagNisw(assetTagNisw).ComponentId(componentId).ComponentIdGt(componentIdGt).ComponentIdGte(componentIdGte).ComponentIdLt(componentIdLt).ComponentIdLte(componentIdLte).ComponentIdN(componentIdN).ComponentType(componentType).ComponentTypeN(componentTypeN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Discovered(discovered).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).ParentId(parentId).ParentIdN(parentIdN).PartId(partId).PartIdEmpty(partIdEmpty).PartIdIc(partIdIc).PartIdIe(partIdIe).PartIdIew(partIdIew).PartIdIsw(partIdIsw).PartIdN(partIdN).PartIdNic(partIdNic).PartIdNie(partIdNie).PartIdNiew(partIdNiew).PartIdNisw(partIdNisw).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Serial(serial).SerialEmpty(serialEmpty).SerialIc(serialIc).SerialIe(serialIe).SerialIew(serialIew).SerialIsw(serialIsw).SerialN(serialN).SerialNic(serialNic).SerialNie(serialNie).SerialNiew(serialNiew).SerialNisw(serialNisw).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
+> PaginatedInventoryItemList DcimInventoryItemsList(ctx).AssetTag(assetTag).AssetTagEmpty(assetTagEmpty).AssetTagIc(assetTagIc).AssetTagIe(assetTagIe).AssetTagIew(assetTagIew).AssetTagIsw(assetTagIsw).AssetTagN(assetTagN).AssetTagNic(assetTagNic).AssetTagNie(assetTagNie).AssetTagNiew(assetTagNiew).AssetTagNisw(assetTagNisw).ComponentId(componentId).ComponentIdEmpty(componentIdEmpty).ComponentIdGt(componentIdGt).ComponentIdGte(componentIdGte).ComponentIdLt(componentIdLt).ComponentIdLte(componentIdLte).ComponentIdN(componentIdN).ComponentType(componentType).ComponentTypeN(componentTypeN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Discovered(discovered).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).ParentId(parentId).ParentIdN(parentIdN).PartId(partId).PartIdEmpty(partIdEmpty).PartIdIc(partIdIc).PartIdIe(partIdIe).PartIdIew(partIdIew).PartIdIsw(partIdIsw).PartIdN(partIdN).PartIdNic(partIdNic).PartIdNie(partIdNie).PartIdNiew(partIdNiew).PartIdNisw(partIdNisw).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Serial(serial).SerialEmpty(serialEmpty).SerialIc(serialIc).SerialIe(serialIe).SerialIew(serialIew).SerialIsw(serialIsw).SerialN(serialN).SerialNic(serialNic).SerialNie(serialNie).SerialNiew(serialNiew).SerialNisw(serialNisw).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
 
 
 
@@ -14307,6 +14549,7 @@ func main() {
     assetTagNiew := []string{"Inner_example"} // []string |  (optional)
     assetTagNisw := []string{"Inner_example"} // []string |  (optional)
     componentId := []int32{int32(123)} // []int32 |  (optional)
+    componentIdEmpty := []int32{int32(123)} // []int32 |  (optional)
     componentIdGt := []int32{int32(123)} // []int32 |  (optional)
     componentIdGte := []int32{int32(123)} // []int32 |  (optional)
     componentIdLt := []int32{int32(123)} // []int32 |  (optional)
@@ -14315,6 +14558,7 @@ func main() {
     componentType := "componentType_example" // string |  (optional)
     componentTypeN := "componentTypeN_example" // string |  (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -14335,6 +14579,7 @@ func main() {
     deviceTypeIdN := []int32{int32(123)} // []int32 | Device type (ID) (optional)
     discovered := true // bool |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
@@ -14352,6 +14597,7 @@ func main() {
     labelNiew := []string{"Inner_example"} // []string |  (optional)
     labelNisw := []string{"Inner_example"} // []string |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -14366,6 +14612,7 @@ func main() {
     manufacturerN := []string{"Inner_example"} // []string | Manufacturer (slug) (optional)
     manufacturerId := []*int32{int32(123)} // []*int32 | Manufacturer (ID) (optional)
     manufacturerIdN := []*int32{int32(123)} // []*int32 | Manufacturer (ID) (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -14434,13 +14681,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimInventoryItemsList(context.Background()).AssetTag(assetTag).AssetTagEmpty(assetTagEmpty).AssetTagIc(assetTagIc).AssetTagIe(assetTagIe).AssetTagIew(assetTagIew).AssetTagIsw(assetTagIsw).AssetTagN(assetTagN).AssetTagNic(assetTagNic).AssetTagNie(assetTagNie).AssetTagNiew(assetTagNiew).AssetTagNisw(assetTagNisw).ComponentId(componentId).ComponentIdGt(componentIdGt).ComponentIdGte(componentIdGte).ComponentIdLt(componentIdLt).ComponentIdLte(componentIdLte).ComponentIdN(componentIdN).ComponentType(componentType).ComponentTypeN(componentTypeN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Discovered(discovered).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).ParentId(parentId).ParentIdN(parentIdN).PartId(partId).PartIdEmpty(partIdEmpty).PartIdIc(partIdIc).PartIdIe(partIdIe).PartIdIew(partIdIew).PartIdIsw(partIdIsw).PartIdN(partIdN).PartIdNic(partIdNic).PartIdNie(partIdNie).PartIdNiew(partIdNiew).PartIdNisw(partIdNisw).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Serial(serial).SerialEmpty(serialEmpty).SerialIc(serialIc).SerialIe(serialIe).SerialIew(serialIew).SerialIsw(serialIsw).SerialN(serialN).SerialNic(serialNic).SerialNie(serialNie).SerialNiew(serialNiew).SerialNisw(serialNisw).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimInventoryItemsList(context.Background()).AssetTag(assetTag).AssetTagEmpty(assetTagEmpty).AssetTagIc(assetTagIc).AssetTagIe(assetTagIe).AssetTagIew(assetTagIew).AssetTagIsw(assetTagIsw).AssetTagN(assetTagN).AssetTagNic(assetTagNic).AssetTagNie(assetTagNie).AssetTagNiew(assetTagNiew).AssetTagNisw(assetTagNisw).ComponentId(componentId).ComponentIdEmpty(componentIdEmpty).ComponentIdGt(componentIdGt).ComponentIdGte(componentIdGte).ComponentIdLt(componentIdLt).ComponentIdLte(componentIdLte).ComponentIdN(componentIdN).ComponentType(componentType).ComponentTypeN(componentTypeN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Discovered(discovered).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).ParentId(parentId).ParentIdN(parentIdN).PartId(partId).PartIdEmpty(partIdEmpty).PartIdIc(partIdIc).PartIdIe(partIdIe).PartIdIew(partIdIew).PartIdIsw(partIdIsw).PartIdN(partIdN).PartIdNic(partIdNic).PartIdNie(partIdNie).PartIdNiew(partIdNiew).PartIdNisw(partIdNisw).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Serial(serial).SerialEmpty(serialEmpty).SerialIc(serialIc).SerialIe(serialIe).SerialIew(serialIew).SerialIsw(serialIsw).SerialN(serialN).SerialNic(serialNic).SerialNie(serialNie).SerialNiew(serialNiew).SerialNisw(serialNisw).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInventoryItemsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInventoryItemsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimInventoryItemsList`: PaginatedInventoryItemList
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimInventoryItemsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimInventoryItemsList`: %v\n", resp)
 }
 ```
 
@@ -14467,6 +14714,7 @@ Name | Type | Description  | Notes
  **assetTagNiew** | **[]string** |  | 
  **assetTagNisw** | **[]string** |  | 
  **componentId** | **[]int32** |  | 
+ **componentIdEmpty** | **[]int32** |  | 
  **componentIdGt** | **[]int32** |  | 
  **componentIdGte** | **[]int32** |  | 
  **componentIdLt** | **[]int32** |  | 
@@ -14475,6 +14723,7 @@ Name | Type | Description  | Notes
  **componentType** | **string** |  | 
  **componentTypeN** | **string** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -14495,6 +14744,7 @@ Name | Type | Description  | Notes
  **deviceTypeIdN** | **[]int32** | Device type (ID) | 
  **discovered** | **bool** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
@@ -14512,6 +14762,7 @@ Name | Type | Description  | Notes
  **labelNiew** | **[]string** |  | 
  **labelNisw** | **[]string** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -14526,6 +14777,7 @@ Name | Type | Description  | Notes
  **manufacturerN** | **[]string** | Manufacturer (slug) | 
  **manufacturerId** | **[]int32** | Manufacturer (ID) | 
  **manufacturerIdN** | **[]int32** | Manufacturer (ID) | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -14636,13 +14888,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimInventoryItemsPartialUpdate(context.Background(), id).PatchedWritableInventoryItemRequest(patchedWritableInventoryItemRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimInventoryItemsPartialUpdate(context.Background(), id).PatchedWritableInventoryItemRequest(patchedWritableInventoryItemRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInventoryItemsPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInventoryItemsPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimInventoryItemsPartialUpdate`: InventoryItem
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimInventoryItemsPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimInventoryItemsPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -14707,13 +14959,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimInventoryItemsRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimInventoryItemsRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInventoryItemsRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInventoryItemsRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimInventoryItemsRetrieve`: InventoryItem
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimInventoryItemsRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimInventoryItemsRetrieve`: %v\n", resp)
 }
 ```
 
@@ -14778,13 +15030,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimInventoryItemsUpdate(context.Background(), id).WritableInventoryItemRequest(writableInventoryItemRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimInventoryItemsUpdate(context.Background(), id).WritableInventoryItemRequest(writableInventoryItemRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimInventoryItemsUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInventoryItemsUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimInventoryItemsUpdate`: InventoryItem
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimInventoryItemsUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimInventoryItemsUpdate`: %v\n", resp)
 }
 ```
 
@@ -14849,9 +15101,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimLocationsBulkDestroy(context.Background()).LocationRequest(locationRequest).Execute()
+    r, err := apiClient.DcimAPI.DcimLocationsBulkDestroy(context.Background()).LocationRequest(locationRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimLocationsBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimLocationsBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -14913,13 +15165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimLocationsBulkPartialUpdate(context.Background()).LocationRequest(locationRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimLocationsBulkPartialUpdate(context.Background()).LocationRequest(locationRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimLocationsBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimLocationsBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimLocationsBulkPartialUpdate`: []Location
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimLocationsBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimLocationsBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -14979,13 +15231,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimLocationsBulkUpdate(context.Background()).LocationRequest(locationRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimLocationsBulkUpdate(context.Background()).LocationRequest(locationRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimLocationsBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimLocationsBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimLocationsBulkUpdate`: []Location
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimLocationsBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimLocationsBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -15045,13 +15297,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimLocationsCreate(context.Background()).WritableLocationRequest(writableLocationRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimLocationsCreate(context.Background()).WritableLocationRequest(writableLocationRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimLocationsCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimLocationsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimLocationsCreate`: Location
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimLocationsCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimLocationsCreate`: %v\n", resp)
 }
 ```
 
@@ -15111,9 +15363,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimLocationsDestroy(context.Background(), id).Execute()
+    r, err := apiClient.DcimAPI.DcimLocationsDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimLocationsDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimLocationsDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -15156,7 +15408,7 @@ Name | Type | Description  | Notes
 
 ## DcimLocationsList
 
-> PaginatedLocationList DcimLocationsList(ctx).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Parent(parent).ParentN(parentN).ParentId(parentId).ParentIdN(parentIdN).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedLocationList DcimLocationsList(ctx).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Parent(parent).ParentN(parentN).ParentId(parentId).ParentIdN(parentIdN).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -15183,6 +15435,7 @@ func main() {
     contactRole := []int32{int32(123)} // []int32 | Contact Role (optional)
     contactRoleN := []int32{int32(123)} // []int32 | Contact Role (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -15201,18 +15454,21 @@ func main() {
     descriptionNiew := []string{"Inner_example"} // []string |  (optional)
     descriptionNisw := []string{"Inner_example"} // []string |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -15270,13 +15526,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimLocationsList(context.Background()).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Parent(parent).ParentN(parentN).ParentId(parentId).ParentIdN(parentIdN).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimLocationsList(context.Background()).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Parent(parent).ParentN(parentN).ParentId(parentId).ParentIdN(parentIdN).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimLocationsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimLocationsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimLocationsList`: PaginatedLocationList
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimLocationsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimLocationsList`: %v\n", resp)
 }
 ```
 
@@ -15298,6 +15554,7 @@ Name | Type | Description  | Notes
  **contactRole** | **[]int32** | Contact Role | 
  **contactRoleN** | **[]int32** | Contact Role | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -15316,18 +15573,21 @@ Name | Type | Description  | Notes
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -15427,13 +15687,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimLocationsPartialUpdate(context.Background(), id).PatchedWritableLocationRequest(patchedWritableLocationRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimLocationsPartialUpdate(context.Background(), id).PatchedWritableLocationRequest(patchedWritableLocationRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimLocationsPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimLocationsPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimLocationsPartialUpdate`: Location
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimLocationsPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimLocationsPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -15498,13 +15758,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimLocationsRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimLocationsRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimLocationsRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimLocationsRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimLocationsRetrieve`: Location
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimLocationsRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimLocationsRetrieve`: %v\n", resp)
 }
 ```
 
@@ -15569,13 +15829,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimLocationsUpdate(context.Background(), id).WritableLocationRequest(writableLocationRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimLocationsUpdate(context.Background(), id).WritableLocationRequest(writableLocationRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimLocationsUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimLocationsUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimLocationsUpdate`: Location
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimLocationsUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimLocationsUpdate`: %v\n", resp)
 }
 ```
 
@@ -15640,9 +15900,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimManufacturersBulkDestroy(context.Background()).ManufacturerRequest(manufacturerRequest).Execute()
+    r, err := apiClient.DcimAPI.DcimManufacturersBulkDestroy(context.Background()).ManufacturerRequest(manufacturerRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimManufacturersBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimManufacturersBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -15704,13 +15964,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimManufacturersBulkPartialUpdate(context.Background()).ManufacturerRequest(manufacturerRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimManufacturersBulkPartialUpdate(context.Background()).ManufacturerRequest(manufacturerRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimManufacturersBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimManufacturersBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimManufacturersBulkPartialUpdate`: []Manufacturer
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimManufacturersBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimManufacturersBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -15770,13 +16030,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimManufacturersBulkUpdate(context.Background()).ManufacturerRequest(manufacturerRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimManufacturersBulkUpdate(context.Background()).ManufacturerRequest(manufacturerRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimManufacturersBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimManufacturersBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimManufacturersBulkUpdate`: []Manufacturer
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimManufacturersBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimManufacturersBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -15836,13 +16096,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimManufacturersCreate(context.Background()).ManufacturerRequest(manufacturerRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimManufacturersCreate(context.Background()).ManufacturerRequest(manufacturerRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimManufacturersCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimManufacturersCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimManufacturersCreate`: Manufacturer
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimManufacturersCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimManufacturersCreate`: %v\n", resp)
 }
 ```
 
@@ -15902,9 +16162,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimManufacturersDestroy(context.Background(), id).Execute()
+    r, err := apiClient.DcimAPI.DcimManufacturersDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimManufacturersDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimManufacturersDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -15947,7 +16207,7 @@ Name | Type | Description  | Notes
 
 ## DcimManufacturersList
 
-> PaginatedManufacturerList DcimManufacturersList(ctx).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedManufacturerList DcimManufacturersList(ctx).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -15974,6 +16234,7 @@ func main() {
     contactRole := []int32{int32(123)} // []int32 | Contact Role (optional)
     contactRoleN := []int32{int32(123)} // []int32 | Contact Role (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -15992,18 +16253,21 @@ func main() {
     descriptionNiew := []string{"Inner_example"} // []string |  (optional)
     descriptionNisw := []string{"Inner_example"} // []string |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -16035,13 +16299,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimManufacturersList(context.Background()).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimManufacturersList(context.Background()).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimManufacturersList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimManufacturersList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimManufacturersList`: PaginatedManufacturerList
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimManufacturersList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimManufacturersList`: %v\n", resp)
 }
 ```
 
@@ -16063,6 +16327,7 @@ Name | Type | Description  | Notes
  **contactRole** | **[]int32** | Contact Role | 
  **contactRoleN** | **[]int32** | Contact Role | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -16081,18 +16346,21 @@ Name | Type | Description  | Notes
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -16166,13 +16434,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimManufacturersPartialUpdate(context.Background(), id).PatchedManufacturerRequest(patchedManufacturerRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimManufacturersPartialUpdate(context.Background(), id).PatchedManufacturerRequest(patchedManufacturerRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimManufacturersPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimManufacturersPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimManufacturersPartialUpdate`: Manufacturer
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimManufacturersPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimManufacturersPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -16237,13 +16505,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimManufacturersRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimManufacturersRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimManufacturersRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimManufacturersRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimManufacturersRetrieve`: Manufacturer
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimManufacturersRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimManufacturersRetrieve`: %v\n", resp)
 }
 ```
 
@@ -16308,13 +16576,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimManufacturersUpdate(context.Background(), id).ManufacturerRequest(manufacturerRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimManufacturersUpdate(context.Background(), id).ManufacturerRequest(manufacturerRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimManufacturersUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimManufacturersUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimManufacturersUpdate`: Manufacturer
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimManufacturersUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimManufacturersUpdate`: %v\n", resp)
 }
 ```
 
@@ -16379,9 +16647,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimModuleBayTemplatesBulkDestroy(context.Background()).ModuleBayTemplateRequest(moduleBayTemplateRequest).Execute()
+    r, err := apiClient.DcimAPI.DcimModuleBayTemplatesBulkDestroy(context.Background()).ModuleBayTemplateRequest(moduleBayTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimModuleBayTemplatesBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModuleBayTemplatesBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -16443,13 +16711,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimModuleBayTemplatesBulkPartialUpdate(context.Background()).ModuleBayTemplateRequest(moduleBayTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimModuleBayTemplatesBulkPartialUpdate(context.Background()).ModuleBayTemplateRequest(moduleBayTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimModuleBayTemplatesBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModuleBayTemplatesBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimModuleBayTemplatesBulkPartialUpdate`: []ModuleBayTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimModuleBayTemplatesBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimModuleBayTemplatesBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -16509,13 +16777,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimModuleBayTemplatesBulkUpdate(context.Background()).ModuleBayTemplateRequest(moduleBayTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimModuleBayTemplatesBulkUpdate(context.Background()).ModuleBayTemplateRequest(moduleBayTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimModuleBayTemplatesBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModuleBayTemplatesBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimModuleBayTemplatesBulkUpdate`: []ModuleBayTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimModuleBayTemplatesBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimModuleBayTemplatesBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -16575,13 +16843,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimModuleBayTemplatesCreate(context.Background()).WritableModuleBayTemplateRequest(writableModuleBayTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimModuleBayTemplatesCreate(context.Background()).WritableModuleBayTemplateRequest(writableModuleBayTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimModuleBayTemplatesCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModuleBayTemplatesCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimModuleBayTemplatesCreate`: ModuleBayTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimModuleBayTemplatesCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimModuleBayTemplatesCreate`: %v\n", resp)
 }
 ```
 
@@ -16641,9 +16909,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimModuleBayTemplatesDestroy(context.Background(), id).Execute()
+    r, err := apiClient.DcimAPI.DcimModuleBayTemplatesDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimModuleBayTemplatesDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModuleBayTemplatesDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -16686,7 +16954,7 @@ Name | Type | Description  | Notes
 
 ## DcimModuleBayTemplatesList
 
-> PaginatedModuleBayTemplateList DcimModuleBayTemplatesList(ctx).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedModuleBayTemplateList DcimModuleBayTemplatesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -16707,6 +16975,7 @@ import (
 
 func main() {
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -16716,18 +16985,21 @@ func main() {
     devicetypeId := []int32{int32(123)} // []int32 | Device type (ID) (optional)
     devicetypeIdN := []int32{int32(123)} // []int32 | Device type (ID) (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -16746,13 +17018,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimModuleBayTemplatesList(context.Background()).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimModuleBayTemplatesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimModuleBayTemplatesList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModuleBayTemplatesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimModuleBayTemplatesList`: PaginatedModuleBayTemplateList
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimModuleBayTemplatesList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimModuleBayTemplatesList`: %v\n", resp)
 }
 ```
 
@@ -16768,6 +17040,7 @@ Other parameters are passed through a pointer to a apiDcimModuleBayTemplatesList
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -16777,18 +17050,21 @@ Name | Type | Description  | Notes
  **devicetypeId** | **[]int32** | Device type (ID) | 
  **devicetypeIdN** | **[]int32** | Device type (ID) | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -16849,13 +17125,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimModuleBayTemplatesPartialUpdate(context.Background(), id).PatchedWritableModuleBayTemplateRequest(patchedWritableModuleBayTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimModuleBayTemplatesPartialUpdate(context.Background(), id).PatchedWritableModuleBayTemplateRequest(patchedWritableModuleBayTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimModuleBayTemplatesPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModuleBayTemplatesPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimModuleBayTemplatesPartialUpdate`: ModuleBayTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimModuleBayTemplatesPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimModuleBayTemplatesPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -16920,13 +17196,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimModuleBayTemplatesRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimModuleBayTemplatesRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimModuleBayTemplatesRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModuleBayTemplatesRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimModuleBayTemplatesRetrieve`: ModuleBayTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimModuleBayTemplatesRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimModuleBayTemplatesRetrieve`: %v\n", resp)
 }
 ```
 
@@ -16991,13 +17267,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimModuleBayTemplatesUpdate(context.Background(), id).WritableModuleBayTemplateRequest(writableModuleBayTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimModuleBayTemplatesUpdate(context.Background(), id).WritableModuleBayTemplateRequest(writableModuleBayTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimModuleBayTemplatesUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModuleBayTemplatesUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimModuleBayTemplatesUpdate`: ModuleBayTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimModuleBayTemplatesUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimModuleBayTemplatesUpdate`: %v\n", resp)
 }
 ```
 
@@ -17062,9 +17338,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimModuleBaysBulkDestroy(context.Background()).ModuleBayRequest(moduleBayRequest).Execute()
+    r, err := apiClient.DcimAPI.DcimModuleBaysBulkDestroy(context.Background()).ModuleBayRequest(moduleBayRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimModuleBaysBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModuleBaysBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -17126,13 +17402,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimModuleBaysBulkPartialUpdate(context.Background()).ModuleBayRequest(moduleBayRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimModuleBaysBulkPartialUpdate(context.Background()).ModuleBayRequest(moduleBayRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimModuleBaysBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModuleBaysBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimModuleBaysBulkPartialUpdate`: []ModuleBay
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimModuleBaysBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimModuleBaysBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -17192,13 +17468,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimModuleBaysBulkUpdate(context.Background()).ModuleBayRequest(moduleBayRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimModuleBaysBulkUpdate(context.Background()).ModuleBayRequest(moduleBayRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimModuleBaysBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModuleBaysBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimModuleBaysBulkUpdate`: []ModuleBay
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimModuleBaysBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimModuleBaysBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -17258,13 +17534,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimModuleBaysCreate(context.Background()).WritableModuleBayRequest(writableModuleBayRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimModuleBaysCreate(context.Background()).WritableModuleBayRequest(writableModuleBayRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimModuleBaysCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModuleBaysCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimModuleBaysCreate`: ModuleBay
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimModuleBaysCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimModuleBaysCreate`: %v\n", resp)
 }
 ```
 
@@ -17324,9 +17600,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimModuleBaysDestroy(context.Background(), id).Execute()
+    r, err := apiClient.DcimAPI.DcimModuleBaysDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimModuleBaysDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModuleBaysDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -17369,7 +17645,7 @@ Name | Type | Description  | Notes
 
 ## DcimModuleBaysList
 
-> PaginatedModuleBayList DcimModuleBaysList(ctx).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
+> PaginatedModuleBayList DcimModuleBaysList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
 
 
 
@@ -17390,6 +17666,7 @@ import (
 
 func main() {
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -17420,6 +17697,7 @@ func main() {
     deviceTypeId := []int32{int32(123)} // []int32 | Device type (ID) (optional)
     deviceTypeIdN := []int32{int32(123)} // []int32 | Device type (ID) (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
@@ -17437,6 +17715,7 @@ func main() {
     labelNiew := []string{"Inner_example"} // []string |  (optional)
     labelNisw := []string{"Inner_example"} // []string |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -17447,6 +17726,7 @@ func main() {
     locationN := []string{"Inner_example"} // []string | Location (slug) (optional)
     locationId := []int32{int32(123)} // []int32 | Location (ID) (optional)
     locationIdN := []int32{int32(123)} // []int32 | Location (ID) (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -17469,6 +17749,10 @@ func main() {
     regionN := []int32{int32(123)} // []int32 | Region (slug) (optional)
     regionId := []int32{int32(123)} // []int32 | Region (ID) (optional)
     regionIdN := []int32{int32(123)} // []int32 | Region (ID) (optional)
+    role := []string{"Inner_example"} // []string | Device role (slug) (optional)
+    roleN := []string{"Inner_example"} // []string | Device role (slug) (optional)
+    roleId := []int32{int32(123)} // []int32 | Device role (ID) (optional)
+    roleIdN := []int32{int32(123)} // []int32 | Device role (ID) (optional)
     site := []string{"Inner_example"} // []string | Site name (slug) (optional)
     siteN := []string{"Inner_example"} // []string | Site name (slug) (optional)
     siteGroup := []int32{int32(123)} // []int32 | Site group (slug) (optional)
@@ -17487,13 +17771,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimModuleBaysList(context.Background()).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimModuleBaysList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimModuleBaysList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModuleBaysList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimModuleBaysList`: PaginatedModuleBayList
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimModuleBaysList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimModuleBaysList`: %v\n", resp)
 }
 ```
 
@@ -17509,6 +17793,7 @@ Other parameters are passed through a pointer to a apiDcimModuleBaysListRequest 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -17539,6 +17824,7 @@ Name | Type | Description  | Notes
  **deviceTypeId** | **[]int32** | Device type (ID) | 
  **deviceTypeIdN** | **[]int32** | Device type (ID) | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
@@ -17556,6 +17842,7 @@ Name | Type | Description  | Notes
  **labelNiew** | **[]string** |  | 
  **labelNisw** | **[]string** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -17566,6 +17853,7 @@ Name | Type | Description  | Notes
  **locationN** | **[]string** | Location (slug) | 
  **locationId** | **[]int32** | Location (ID) | 
  **locationIdN** | **[]int32** | Location (ID) | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -17588,6 +17876,10 @@ Name | Type | Description  | Notes
  **regionN** | **[]int32** | Region (slug) | 
  **regionId** | **[]int32** | Region (ID) | 
  **regionIdN** | **[]int32** | Region (ID) | 
+ **role** | **[]string** | Device role (slug) | 
+ **roleN** | **[]string** | Device role (slug) | 
+ **roleId** | **[]int32** | Device role (ID) | 
+ **roleIdN** | **[]int32** | Device role (ID) | 
  **site** | **[]string** | Site name (slug) | 
  **siteN** | **[]string** | Site name (slug) | 
  **siteGroup** | **[]int32** | Site group (slug) | 
@@ -17648,13 +17940,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimModuleBaysPartialUpdate(context.Background(), id).PatchedWritableModuleBayRequest(patchedWritableModuleBayRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimModuleBaysPartialUpdate(context.Background(), id).PatchedWritableModuleBayRequest(patchedWritableModuleBayRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimModuleBaysPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModuleBaysPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimModuleBaysPartialUpdate`: ModuleBay
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimModuleBaysPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimModuleBaysPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -17719,13 +18011,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimModuleBaysRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimModuleBaysRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimModuleBaysRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModuleBaysRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimModuleBaysRetrieve`: ModuleBay
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimModuleBaysRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimModuleBaysRetrieve`: %v\n", resp)
 }
 ```
 
@@ -17790,13 +18082,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimModuleBaysUpdate(context.Background(), id).WritableModuleBayRequest(writableModuleBayRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimModuleBaysUpdate(context.Background(), id).WritableModuleBayRequest(writableModuleBayRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimModuleBaysUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModuleBaysUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimModuleBaysUpdate`: ModuleBay
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimModuleBaysUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimModuleBaysUpdate`: %v\n", resp)
 }
 ```
 
@@ -17861,9 +18153,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimModuleTypesBulkDestroy(context.Background()).ModuleTypeRequest(moduleTypeRequest).Execute()
+    r, err := apiClient.DcimAPI.DcimModuleTypesBulkDestroy(context.Background()).ModuleTypeRequest(moduleTypeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimModuleTypesBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModuleTypesBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -17925,13 +18217,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimModuleTypesBulkPartialUpdate(context.Background()).ModuleTypeRequest(moduleTypeRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimModuleTypesBulkPartialUpdate(context.Background()).ModuleTypeRequest(moduleTypeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimModuleTypesBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModuleTypesBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimModuleTypesBulkPartialUpdate`: []ModuleType
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimModuleTypesBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimModuleTypesBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -17991,13 +18283,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimModuleTypesBulkUpdate(context.Background()).ModuleTypeRequest(moduleTypeRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimModuleTypesBulkUpdate(context.Background()).ModuleTypeRequest(moduleTypeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimModuleTypesBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModuleTypesBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimModuleTypesBulkUpdate`: []ModuleType
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimModuleTypesBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimModuleTypesBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -18057,13 +18349,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimModuleTypesCreate(context.Background()).WritableModuleTypeRequest(writableModuleTypeRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimModuleTypesCreate(context.Background()).WritableModuleTypeRequest(writableModuleTypeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimModuleTypesCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModuleTypesCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimModuleTypesCreate`: ModuleType
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimModuleTypesCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimModuleTypesCreate`: %v\n", resp)
 }
 ```
 
@@ -18123,9 +18415,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimModuleTypesDestroy(context.Background(), id).Execute()
+    r, err := apiClient.DcimAPI.DcimModuleTypesDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimModuleTypesDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModuleTypesDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -18168,7 +18460,7 @@ Name | Type | Description  | Notes
 
 ## DcimModuleTypesList
 
-> PaginatedModuleTypeList DcimModuleTypesList(ctx).ConsolePorts(consolePorts).ConsoleServerPorts(consoleServerPorts).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interfaces(interfaces).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).Model(model).ModelEmpty(modelEmpty).ModelIc(modelIc).ModelIe(modelIe).ModelIew(modelIew).ModelIsw(modelIsw).ModelN(modelN).ModelNic(modelNic).ModelNie(modelNie).ModelNiew(modelNiew).ModelNisw(modelNisw).Offset(offset).Ordering(ordering).PartNumber(partNumber).PartNumberEmpty(partNumberEmpty).PartNumberIc(partNumberIc).PartNumberIe(partNumberIe).PartNumberIew(partNumberIew).PartNumberIsw(partNumberIsw).PartNumberN(partNumberN).PartNumberNic(partNumberNic).PartNumberNie(partNumberNie).PartNumberNiew(partNumberNiew).PartNumberNisw(partNumberNisw).PassThroughPorts(passThroughPorts).PowerOutlets(powerOutlets).PowerPorts(powerPorts).Q(q).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Weight(weight).WeightGt(weightGt).WeightGte(weightGte).WeightLt(weightLt).WeightLte(weightLte).WeightN(weightN).WeightUnit(weightUnit).WeightUnitN(weightUnitN).Execute()
+> PaginatedModuleTypeList DcimModuleTypesList(ctx).ConsolePorts(consolePorts).ConsoleServerPorts(consoleServerPorts).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interfaces(interfaces).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).Model(model).ModelEmpty(modelEmpty).ModelIc(modelIc).ModelIe(modelIe).ModelIew(modelIew).ModelIsw(modelIsw).ModelN(modelN).ModelNic(modelNic).ModelNie(modelNie).ModelNiew(modelNiew).ModelNisw(modelNisw).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).PartNumber(partNumber).PartNumberEmpty(partNumberEmpty).PartNumberIc(partNumberIc).PartNumberIe(partNumberIe).PartNumberIew(partNumberIew).PartNumberIsw(partNumberIsw).PartNumberN(partNumberN).PartNumberNic(partNumberNic).PartNumberNie(partNumberNie).PartNumberNiew(partNumberNiew).PartNumberNisw(partNumberNisw).PassThroughPorts(passThroughPorts).PowerOutlets(powerOutlets).PowerPorts(powerPorts).Q(q).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Weight(weight).WeightEmpty(weightEmpty).WeightGt(weightGt).WeightGte(weightGte).WeightLt(weightLt).WeightLte(weightLte).WeightN(weightN).WeightUnit(weightUnit).WeightUnitN(weightUnitN).Execute()
 
 
 
@@ -18191,6 +18483,7 @@ func main() {
     consolePorts := true // bool | Has console ports (optional)
     consoleServerPorts := true // bool | Has console server ports (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -18198,6 +18491,7 @@ func main() {
     createdN := []time.Time{time.Now()} // []time.Time |  (optional)
     createdByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
@@ -18205,6 +18499,7 @@ func main() {
     idN := []int32{int32(123)} // []int32 |  (optional)
     interfaces := true // bool | Has interfaces (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -18226,6 +18521,7 @@ func main() {
     modelNie := []string{"Inner_example"} // []string |  (optional)
     modelNiew := []string{"Inner_example"} // []string |  (optional)
     modelNisw := []string{"Inner_example"} // []string |  (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     offset := int32(56) // int32 | The initial index from which to return the results. (optional)
     ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
     partNumber := []string{"Inner_example"} // []string |  (optional)
@@ -18247,6 +18543,7 @@ func main() {
     tagN := []string{"Inner_example"} // []string |  (optional)
     updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     weight := []float64{float64(123)} // []float64 |  (optional)
+    weightEmpty := true // bool |  (optional)
     weightGt := []float64{float64(123)} // []float64 |  (optional)
     weightGte := []float64{float64(123)} // []float64 |  (optional)
     weightLt := []float64{float64(123)} // []float64 |  (optional)
@@ -18257,13 +18554,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimModuleTypesList(context.Background()).ConsolePorts(consolePorts).ConsoleServerPorts(consoleServerPorts).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interfaces(interfaces).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).Model(model).ModelEmpty(modelEmpty).ModelIc(modelIc).ModelIe(modelIe).ModelIew(modelIew).ModelIsw(modelIsw).ModelN(modelN).ModelNic(modelNic).ModelNie(modelNie).ModelNiew(modelNiew).ModelNisw(modelNisw).Offset(offset).Ordering(ordering).PartNumber(partNumber).PartNumberEmpty(partNumberEmpty).PartNumberIc(partNumberIc).PartNumberIe(partNumberIe).PartNumberIew(partNumberIew).PartNumberIsw(partNumberIsw).PartNumberN(partNumberN).PartNumberNic(partNumberNic).PartNumberNie(partNumberNie).PartNumberNiew(partNumberNiew).PartNumberNisw(partNumberNisw).PassThroughPorts(passThroughPorts).PowerOutlets(powerOutlets).PowerPorts(powerPorts).Q(q).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Weight(weight).WeightGt(weightGt).WeightGte(weightGte).WeightLt(weightLt).WeightLte(weightLte).WeightN(weightN).WeightUnit(weightUnit).WeightUnitN(weightUnitN).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimModuleTypesList(context.Background()).ConsolePorts(consolePorts).ConsoleServerPorts(consoleServerPorts).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interfaces(interfaces).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).Model(model).ModelEmpty(modelEmpty).ModelIc(modelIc).ModelIe(modelIe).ModelIew(modelIew).ModelIsw(modelIsw).ModelN(modelN).ModelNic(modelNic).ModelNie(modelNie).ModelNiew(modelNiew).ModelNisw(modelNisw).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).PartNumber(partNumber).PartNumberEmpty(partNumberEmpty).PartNumberIc(partNumberIc).PartNumberIe(partNumberIe).PartNumberIew(partNumberIew).PartNumberIsw(partNumberIsw).PartNumberN(partNumberN).PartNumberNic(partNumberNic).PartNumberNie(partNumberNie).PartNumberNiew(partNumberNiew).PartNumberNisw(partNumberNisw).PassThroughPorts(passThroughPorts).PowerOutlets(powerOutlets).PowerPorts(powerPorts).Q(q).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Weight(weight).WeightEmpty(weightEmpty).WeightGt(weightGt).WeightGte(weightGte).WeightLt(weightLt).WeightLte(weightLte).WeightN(weightN).WeightUnit(weightUnit).WeightUnitN(weightUnitN).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimModuleTypesList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModuleTypesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimModuleTypesList`: PaginatedModuleTypeList
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimModuleTypesList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimModuleTypesList`: %v\n", resp)
 }
 ```
 
@@ -18281,6 +18578,7 @@ Name | Type | Description  | Notes
  **consolePorts** | **bool** | Has console ports | 
  **consoleServerPorts** | **bool** | Has console server ports | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -18288,6 +18586,7 @@ Name | Type | Description  | Notes
  **createdN** | [**[]time.Time**](time.Time.md) |  | 
  **createdByRequest** | **string** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
@@ -18295,6 +18594,7 @@ Name | Type | Description  | Notes
  **idN** | **[]int32** |  | 
  **interfaces** | **bool** | Has interfaces | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -18316,6 +18616,7 @@ Name | Type | Description  | Notes
  **modelNie** | **[]string** |  | 
  **modelNiew** | **[]string** |  | 
  **modelNisw** | **[]string** |  | 
+ **modifiedByRequest** | **string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **partNumber** | **[]string** |  | 
@@ -18337,6 +18638,7 @@ Name | Type | Description  | Notes
  **tagN** | **[]string** |  | 
  **updatedByRequest** | **string** |  | 
  **weight** | **[]float64** |  | 
+ **weightEmpty** | **bool** |  | 
  **weightGt** | **[]float64** |  | 
  **weightGte** | **[]float64** |  | 
  **weightLt** | **[]float64** |  | 
@@ -18389,13 +18691,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimModuleTypesPartialUpdate(context.Background(), id).PatchedWritableModuleTypeRequest(patchedWritableModuleTypeRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimModuleTypesPartialUpdate(context.Background(), id).PatchedWritableModuleTypeRequest(patchedWritableModuleTypeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimModuleTypesPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModuleTypesPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimModuleTypesPartialUpdate`: ModuleType
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimModuleTypesPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimModuleTypesPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -18460,13 +18762,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimModuleTypesRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimModuleTypesRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimModuleTypesRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModuleTypesRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimModuleTypesRetrieve`: ModuleType
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimModuleTypesRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimModuleTypesRetrieve`: %v\n", resp)
 }
 ```
 
@@ -18531,13 +18833,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimModuleTypesUpdate(context.Background(), id).WritableModuleTypeRequest(writableModuleTypeRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimModuleTypesUpdate(context.Background(), id).WritableModuleTypeRequest(writableModuleTypeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimModuleTypesUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModuleTypesUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimModuleTypesUpdate`: ModuleType
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimModuleTypesUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimModuleTypesUpdate`: %v\n", resp)
 }
 ```
 
@@ -18602,9 +18904,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimModulesBulkDestroy(context.Background()).ModuleRequest(moduleRequest).Execute()
+    r, err := apiClient.DcimAPI.DcimModulesBulkDestroy(context.Background()).ModuleRequest(moduleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimModulesBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModulesBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -18666,13 +18968,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimModulesBulkPartialUpdate(context.Background()).ModuleRequest(moduleRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimModulesBulkPartialUpdate(context.Background()).ModuleRequest(moduleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimModulesBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModulesBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimModulesBulkPartialUpdate`: []Module
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimModulesBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimModulesBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -18732,13 +19034,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimModulesBulkUpdate(context.Background()).ModuleRequest(moduleRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimModulesBulkUpdate(context.Background()).ModuleRequest(moduleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimModulesBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModulesBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimModulesBulkUpdate`: []Module
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimModulesBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimModulesBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -18798,13 +19100,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimModulesCreate(context.Background()).WritableModuleRequest(writableModuleRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimModulesCreate(context.Background()).WritableModuleRequest(writableModuleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimModulesCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModulesCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimModulesCreate`: Module
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimModulesCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimModulesCreate`: %v\n", resp)
 }
 ```
 
@@ -18864,9 +19166,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimModulesDestroy(context.Background(), id).Execute()
+    r, err := apiClient.DcimAPI.DcimModulesDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimModulesDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModulesDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -18909,7 +19211,7 @@ Name | Type | Description  | Notes
 
 ## DcimModulesList
 
-> PaginatedModuleList DcimModulesList(ctx).AssetTag(assetTag).AssetTagEmpty(assetTagEmpty).AssetTagIc(assetTagIc).AssetTagIe(assetTagIe).AssetTagIew(assetTagIew).AssetTagIsw(assetTagIsw).AssetTagN(assetTagN).AssetTagNic(assetTagNic).AssetTagNie(assetTagNie).AssetTagNiew(assetTagNiew).AssetTagNisw(assetTagNisw).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DeviceId(deviceId).DeviceIdN(deviceIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).ModuleBayId(moduleBayId).ModuleBayIdN(moduleBayIdN).ModuleType(moduleType).ModuleTypeN(moduleTypeN).ModuleTypeId(moduleTypeId).ModuleTypeIdN(moduleTypeIdN).Offset(offset).Ordering(ordering).Q(q).Serial(serial).SerialEmpty(serialEmpty).SerialIc(serialIc).SerialIe(serialIe).SerialIew(serialIew).SerialIsw(serialIsw).SerialN(serialN).SerialNic(serialNic).SerialNie(serialNie).SerialNiew(serialNiew).SerialNisw(serialNisw).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedModuleList DcimModulesList(ctx).AssetTag(assetTag).AssetTagEmpty(assetTagEmpty).AssetTagIc(assetTagIc).AssetTagIe(assetTagIe).AssetTagIew(assetTagIew).AssetTagIsw(assetTagIsw).AssetTagN(assetTagN).AssetTagNic(assetTagNic).AssetTagNie(assetTagNie).AssetTagNiew(assetTagNiew).AssetTagNisw(assetTagNisw).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DeviceId(deviceId).DeviceIdN(deviceIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).ModifiedByRequest(modifiedByRequest).ModuleBayId(moduleBayId).ModuleBayIdN(moduleBayIdN).ModuleType(moduleType).ModuleTypeN(moduleTypeN).ModuleTypeId(moduleTypeId).ModuleTypeIdN(moduleTypeIdN).Offset(offset).Ordering(ordering).Q(q).Serial(serial).SerialEmpty(serialEmpty).SerialIc(serialIc).SerialIe(serialIe).SerialIew(serialIew).SerialIsw(serialIsw).SerialN(serialN).SerialNic(serialNic).SerialNie(serialNie).SerialNiew(serialNiew).SerialNisw(serialNisw).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -18941,6 +19243,7 @@ func main() {
     assetTagNiew := []string{"Inner_example"} // []string |  (optional)
     assetTagNisw := []string{"Inner_example"} // []string |  (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -18950,12 +19253,14 @@ func main() {
     deviceId := []int32{int32(123)} // []int32 | Device (ID) (optional)
     deviceIdN := []int32{int32(123)} // []int32 | Device (ID) (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -18966,6 +19271,7 @@ func main() {
     manufacturerN := []string{"Inner_example"} // []string | Manufacturer (slug) (optional)
     manufacturerId := []int32{int32(123)} // []int32 | Manufacturer (ID) (optional)
     manufacturerIdN := []int32{int32(123)} // []int32 | Manufacturer (ID) (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     moduleBayId := []int32{int32(123)} // []int32 | Module Bay (ID) (optional)
     moduleBayIdN := []int32{int32(123)} // []int32 | Module Bay (ID) (optional)
     moduleType := []string{"Inner_example"} // []string | Module type (model) (optional)
@@ -18994,13 +19300,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimModulesList(context.Background()).AssetTag(assetTag).AssetTagEmpty(assetTagEmpty).AssetTagIc(assetTagIc).AssetTagIe(assetTagIe).AssetTagIew(assetTagIew).AssetTagIsw(assetTagIsw).AssetTagN(assetTagN).AssetTagNic(assetTagNic).AssetTagNie(assetTagNie).AssetTagNiew(assetTagNiew).AssetTagNisw(assetTagNisw).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DeviceId(deviceId).DeviceIdN(deviceIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).ModuleBayId(moduleBayId).ModuleBayIdN(moduleBayIdN).ModuleType(moduleType).ModuleTypeN(moduleTypeN).ModuleTypeId(moduleTypeId).ModuleTypeIdN(moduleTypeIdN).Offset(offset).Ordering(ordering).Q(q).Serial(serial).SerialEmpty(serialEmpty).SerialIc(serialIc).SerialIe(serialIe).SerialIew(serialIew).SerialIsw(serialIsw).SerialN(serialN).SerialNic(serialNic).SerialNie(serialNie).SerialNiew(serialNiew).SerialNisw(serialNisw).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimModulesList(context.Background()).AssetTag(assetTag).AssetTagEmpty(assetTagEmpty).AssetTagIc(assetTagIc).AssetTagIe(assetTagIe).AssetTagIew(assetTagIew).AssetTagIsw(assetTagIsw).AssetTagN(assetTagN).AssetTagNic(assetTagNic).AssetTagNie(assetTagNie).AssetTagNiew(assetTagNiew).AssetTagNisw(assetTagNisw).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DeviceId(deviceId).DeviceIdN(deviceIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).ModifiedByRequest(modifiedByRequest).ModuleBayId(moduleBayId).ModuleBayIdN(moduleBayIdN).ModuleType(moduleType).ModuleTypeN(moduleTypeN).ModuleTypeId(moduleTypeId).ModuleTypeIdN(moduleTypeIdN).Offset(offset).Ordering(ordering).Q(q).Serial(serial).SerialEmpty(serialEmpty).SerialIc(serialIc).SerialIe(serialIe).SerialIew(serialIew).SerialIsw(serialIsw).SerialN(serialN).SerialNic(serialNic).SerialNie(serialNie).SerialNiew(serialNiew).SerialNisw(serialNisw).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimModulesList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModulesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimModulesList`: PaginatedModuleList
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimModulesList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimModulesList`: %v\n", resp)
 }
 ```
 
@@ -19027,6 +19333,7 @@ Name | Type | Description  | Notes
  **assetTagNiew** | **[]string** |  | 
  **assetTagNisw** | **[]string** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -19036,12 +19343,14 @@ Name | Type | Description  | Notes
  **deviceId** | **[]int32** | Device (ID) | 
  **deviceIdN** | **[]int32** | Device (ID) | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -19052,6 +19361,7 @@ Name | Type | Description  | Notes
  **manufacturerN** | **[]string** | Manufacturer (slug) | 
  **manufacturerId** | **[]int32** | Manufacturer (ID) | 
  **manufacturerIdN** | **[]int32** | Manufacturer (ID) | 
+ **modifiedByRequest** | **string** |  | 
  **moduleBayId** | **[]int32** | Module Bay (ID) | 
  **moduleBayIdN** | **[]int32** | Module Bay (ID) | 
  **moduleType** | **[]string** | Module type (model) | 
@@ -19122,13 +19432,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimModulesPartialUpdate(context.Background(), id).PatchedWritableModuleRequest(patchedWritableModuleRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimModulesPartialUpdate(context.Background(), id).PatchedWritableModuleRequest(patchedWritableModuleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimModulesPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModulesPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimModulesPartialUpdate`: Module
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimModulesPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimModulesPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -19193,13 +19503,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimModulesRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimModulesRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimModulesRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModulesRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimModulesRetrieve`: Module
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimModulesRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimModulesRetrieve`: %v\n", resp)
 }
 ```
 
@@ -19264,13 +19574,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimModulesUpdate(context.Background(), id).WritableModuleRequest(writableModuleRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimModulesUpdate(context.Background(), id).WritableModuleRequest(writableModuleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimModulesUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModulesUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimModulesUpdate`: Module
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimModulesUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimModulesUpdate`: %v\n", resp)
 }
 ```
 
@@ -19335,9 +19645,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimPlatformsBulkDestroy(context.Background()).PlatformRequest(platformRequest).Execute()
+    r, err := apiClient.DcimAPI.DcimPlatformsBulkDestroy(context.Background()).PlatformRequest(platformRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPlatformsBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPlatformsBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -19399,13 +19709,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPlatformsBulkPartialUpdate(context.Background()).PlatformRequest(platformRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPlatformsBulkPartialUpdate(context.Background()).PlatformRequest(platformRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPlatformsBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPlatformsBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPlatformsBulkPartialUpdate`: []Platform
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPlatformsBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPlatformsBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -19465,13 +19775,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPlatformsBulkUpdate(context.Background()).PlatformRequest(platformRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPlatformsBulkUpdate(context.Background()).PlatformRequest(platformRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPlatformsBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPlatformsBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPlatformsBulkUpdate`: []Platform
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPlatformsBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPlatformsBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -19531,13 +19841,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPlatformsCreate(context.Background()).WritablePlatformRequest(writablePlatformRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPlatformsCreate(context.Background()).WritablePlatformRequest(writablePlatformRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPlatformsCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPlatformsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPlatformsCreate`: Platform
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPlatformsCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPlatformsCreate`: %v\n", resp)
 }
 ```
 
@@ -19597,9 +19907,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimPlatformsDestroy(context.Background(), id).Execute()
+    r, err := apiClient.DcimAPI.DcimPlatformsDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPlatformsDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPlatformsDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -19642,7 +19952,7 @@ Name | Type | Description  | Notes
 
 ## DcimPlatformsList
 
-> PaginatedPlatformList DcimPlatformsList(ctx).ConfigTemplateId(configTemplateId).ConfigTemplateIdN(configTemplateIdN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NapalmDriver(napalmDriver).NapalmDriverEmpty(napalmDriverEmpty).NapalmDriverIc(napalmDriverIc).NapalmDriverIe(napalmDriverIe).NapalmDriverIew(napalmDriverIew).NapalmDriverIsw(napalmDriverIsw).NapalmDriverN(napalmDriverN).NapalmDriverNic(napalmDriverNic).NapalmDriverNie(napalmDriverNie).NapalmDriverNiew(napalmDriverNiew).NapalmDriverNisw(napalmDriverNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedPlatformList DcimPlatformsList(ctx).ConfigTemplateId(configTemplateId).ConfigTemplateIdN(configTemplateIdN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -19665,6 +19975,7 @@ func main() {
     configTemplateId := []*int32{int32(123)} // []*int32 | Config template (ID) (optional)
     configTemplateIdN := []*int32{int32(123)} // []*int32 | Config template (ID) (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -19683,12 +19994,14 @@ func main() {
     descriptionNiew := []string{"Inner_example"} // []string |  (optional)
     descriptionNisw := []string{"Inner_example"} // []string |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -19699,6 +20012,7 @@ func main() {
     manufacturerN := []string{"Inner_example"} // []string | Manufacturer (slug) (optional)
     manufacturerId := []int32{int32(123)} // []int32 | Manufacturer (ID) (optional)
     manufacturerIdN := []int32{int32(123)} // []int32 | Manufacturer (ID) (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -19710,17 +20024,6 @@ func main() {
     nameNie := []string{"Inner_example"} // []string |  (optional)
     nameNiew := []string{"Inner_example"} // []string |  (optional)
     nameNisw := []string{"Inner_example"} // []string |  (optional)
-    napalmDriver := []string{"Inner_example"} // []string |  (optional)
-    napalmDriverEmpty := true // bool |  (optional)
-    napalmDriverIc := []string{"Inner_example"} // []string |  (optional)
-    napalmDriverIe := []string{"Inner_example"} // []string |  (optional)
-    napalmDriverIew := []string{"Inner_example"} // []string |  (optional)
-    napalmDriverIsw := []string{"Inner_example"} // []string |  (optional)
-    napalmDriverN := []string{"Inner_example"} // []string |  (optional)
-    napalmDriverNic := []string{"Inner_example"} // []string |  (optional)
-    napalmDriverNie := []string{"Inner_example"} // []string |  (optional)
-    napalmDriverNiew := []string{"Inner_example"} // []string |  (optional)
-    napalmDriverNisw := []string{"Inner_example"} // []string |  (optional)
     offset := int32(56) // int32 | The initial index from which to return the results. (optional)
     ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
     q := "q_example" // string | Search (optional)
@@ -19741,13 +20044,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPlatformsList(context.Background()).ConfigTemplateId(configTemplateId).ConfigTemplateIdN(configTemplateIdN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NapalmDriver(napalmDriver).NapalmDriverEmpty(napalmDriverEmpty).NapalmDriverIc(napalmDriverIc).NapalmDriverIe(napalmDriverIe).NapalmDriverIew(napalmDriverIew).NapalmDriverIsw(napalmDriverIsw).NapalmDriverN(napalmDriverN).NapalmDriverNic(napalmDriverNic).NapalmDriverNie(napalmDriverNie).NapalmDriverNiew(napalmDriverNiew).NapalmDriverNisw(napalmDriverNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPlatformsList(context.Background()).ConfigTemplateId(configTemplateId).ConfigTemplateIdN(configTemplateIdN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPlatformsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPlatformsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPlatformsList`: PaginatedPlatformList
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPlatformsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPlatformsList`: %v\n", resp)
 }
 ```
 
@@ -19765,6 +20068,7 @@ Name | Type | Description  | Notes
  **configTemplateId** | **[]int32** | Config template (ID) | 
  **configTemplateIdN** | **[]int32** | Config template (ID) | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -19783,12 +20087,14 @@ Name | Type | Description  | Notes
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -19799,6 +20105,7 @@ Name | Type | Description  | Notes
  **manufacturerN** | **[]string** | Manufacturer (slug) | 
  **manufacturerId** | **[]int32** | Manufacturer (ID) | 
  **manufacturerIdN** | **[]int32** | Manufacturer (ID) | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -19810,17 +20117,6 @@ Name | Type | Description  | Notes
  **nameNie** | **[]string** |  | 
  **nameNiew** | **[]string** |  | 
  **nameNisw** | **[]string** |  | 
- **napalmDriver** | **[]string** |  | 
- **napalmDriverEmpty** | **bool** |  | 
- **napalmDriverIc** | **[]string** |  | 
- **napalmDriverIe** | **[]string** |  | 
- **napalmDriverIew** | **[]string** |  | 
- **napalmDriverIsw** | **[]string** |  | 
- **napalmDriverN** | **[]string** |  | 
- **napalmDriverNic** | **[]string** |  | 
- **napalmDriverNie** | **[]string** |  | 
- **napalmDriverNiew** | **[]string** |  | 
- **napalmDriverNisw** | **[]string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **q** | **string** | Search | 
@@ -19883,13 +20179,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPlatformsPartialUpdate(context.Background(), id).PatchedWritablePlatformRequest(patchedWritablePlatformRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPlatformsPartialUpdate(context.Background(), id).PatchedWritablePlatformRequest(patchedWritablePlatformRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPlatformsPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPlatformsPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPlatformsPartialUpdate`: Platform
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPlatformsPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPlatformsPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -19954,13 +20250,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPlatformsRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPlatformsRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPlatformsRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPlatformsRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPlatformsRetrieve`: Platform
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPlatformsRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPlatformsRetrieve`: %v\n", resp)
 }
 ```
 
@@ -20025,13 +20321,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPlatformsUpdate(context.Background(), id).WritablePlatformRequest(writablePlatformRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPlatformsUpdate(context.Background(), id).WritablePlatformRequest(writablePlatformRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPlatformsUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPlatformsUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPlatformsUpdate`: Platform
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPlatformsUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPlatformsUpdate`: %v\n", resp)
 }
 ```
 
@@ -20096,9 +20392,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimPowerFeedsBulkDestroy(context.Background()).PowerFeedRequest(powerFeedRequest).Execute()
+    r, err := apiClient.DcimAPI.DcimPowerFeedsBulkDestroy(context.Background()).PowerFeedRequest(powerFeedRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerFeedsBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerFeedsBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -20160,13 +20456,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerFeedsBulkPartialUpdate(context.Background()).PowerFeedRequest(powerFeedRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerFeedsBulkPartialUpdate(context.Background()).PowerFeedRequest(powerFeedRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerFeedsBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerFeedsBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerFeedsBulkPartialUpdate`: []PowerFeed
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerFeedsBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerFeedsBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -20226,13 +20522,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerFeedsBulkUpdate(context.Background()).PowerFeedRequest(powerFeedRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerFeedsBulkUpdate(context.Background()).PowerFeedRequest(powerFeedRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerFeedsBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerFeedsBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerFeedsBulkUpdate`: []PowerFeed
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerFeedsBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerFeedsBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -20292,13 +20588,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerFeedsCreate(context.Background()).WritablePowerFeedRequest(writablePowerFeedRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerFeedsCreate(context.Background()).WritablePowerFeedRequest(writablePowerFeedRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerFeedsCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerFeedsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerFeedsCreate`: PowerFeed
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerFeedsCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerFeedsCreate`: %v\n", resp)
 }
 ```
 
@@ -20358,9 +20654,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimPowerFeedsDestroy(context.Background(), id).Execute()
+    r, err := apiClient.DcimAPI.DcimPowerFeedsDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerFeedsDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerFeedsDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -20403,7 +20699,7 @@ Name | Type | Description  | Notes
 
 ## DcimPowerFeedsList
 
-> PaginatedPowerFeedList DcimPowerFeedsList(ctx).Amperage(amperage).AmperageGt(amperageGt).AmperageGte(amperageGte).AmperageLt(amperageLt).AmperageLte(amperageLte).AmperageN(amperageN).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Connected(connected).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MaxUtilization(maxUtilization).MaxUtilizationGt(maxUtilizationGt).MaxUtilizationGte(maxUtilizationGte).MaxUtilizationLt(maxUtilizationLt).MaxUtilizationLte(maxUtilizationLte).MaxUtilizationN(maxUtilizationN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Phase(phase).PhaseN(phaseN).PowerPanelId(powerPanelId).PowerPanelIdN(powerPanelIdN).Q(q).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusN(statusN).Supply(supply).SupplyN(supplyN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Voltage(voltage).VoltageGt(voltageGt).VoltageGte(voltageGte).VoltageLt(voltageLt).VoltageLte(voltageLte).VoltageN(voltageN).Execute()
+> PaginatedPowerFeedList DcimPowerFeedsList(ctx).Amperage(amperage).AmperageEmpty(amperageEmpty).AmperageGt(amperageGt).AmperageGte(amperageGte).AmperageLt(amperageLt).AmperageLte(amperageLte).AmperageN(amperageN).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Connected(connected).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MaxUtilization(maxUtilization).MaxUtilizationEmpty(maxUtilizationEmpty).MaxUtilizationGt(maxUtilizationGt).MaxUtilizationGte(maxUtilizationGte).MaxUtilizationLt(maxUtilizationLt).MaxUtilizationLte(maxUtilizationLte).MaxUtilizationN(maxUtilizationN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Phase(phase).PhaseN(phaseN).PowerPanelId(powerPanelId).PowerPanelIdN(powerPanelIdN).Q(q).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusN(statusN).Supply(supply).SupplyN(supplyN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Voltage(voltage).VoltageEmpty(voltageEmpty).VoltageGt(voltageGt).VoltageGte(voltageGte).VoltageLt(voltageLt).VoltageLte(voltageLte).VoltageN(voltageN).Execute()
 
 
 
@@ -20424,6 +20720,7 @@ import (
 
 func main() {
     amperage := []int32{int32(123)} // []int32 |  (optional)
+    amperageEmpty := true // bool |  (optional)
     amperageGt := []int32{int32(123)} // []int32 |  (optional)
     amperageGte := []int32{int32(123)} // []int32 |  (optional)
     amperageLt := []int32{int32(123)} // []int32 |  (optional)
@@ -20434,6 +20731,7 @@ func main() {
     cabled := true // bool |  (optional)
     connected := true // bool |  (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -20441,12 +20739,14 @@ func main() {
     createdN := []time.Time{time.Now()} // []time.Time |  (optional)
     createdByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -20454,11 +20754,13 @@ func main() {
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
     maxUtilization := []int32{int32(123)} // []int32 |  (optional)
+    maxUtilizationEmpty := true // bool |  (optional)
     maxUtilizationGt := []int32{int32(123)} // []int32 |  (optional)
     maxUtilizationGte := []int32{int32(123)} // []int32 |  (optional)
     maxUtilizationLt := []int32{int32(123)} // []int32 |  (optional)
     maxUtilizationLte := []int32{int32(123)} // []int32 |  (optional)
     maxUtilizationN := []int32{int32(123)} // []int32 |  (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -20498,10 +20800,19 @@ func main() {
     supplyN := "supplyN_example" // string |  (optional)
     tag := []string{"Inner_example"} // []string |  (optional)
     tagN := []string{"Inner_example"} // []string |  (optional)
+    tenant := []string{"Inner_example"} // []string | Tenant (slug) (optional)
+    tenantN := []string{"Inner_example"} // []string | Tenant (slug) (optional)
+    tenantGroup := []int32{int32(123)} // []int32 | Tenant Group (slug) (optional)
+    tenantGroupN := []int32{int32(123)} // []int32 | Tenant Group (slug) (optional)
+    tenantGroupId := []int32{int32(123)} // []int32 | Tenant Group (ID) (optional)
+    tenantGroupIdN := []int32{int32(123)} // []int32 | Tenant Group (ID) (optional)
+    tenantId := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
+    tenantIdN := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
     type_ := "type__example" // string |  (optional)
     typeN := "typeN_example" // string |  (optional)
     updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     voltage := []int32{int32(123)} // []int32 |  (optional)
+    voltageEmpty := true // bool |  (optional)
     voltageGt := []int32{int32(123)} // []int32 |  (optional)
     voltageGte := []int32{int32(123)} // []int32 |  (optional)
     voltageLt := []int32{int32(123)} // []int32 |  (optional)
@@ -20510,13 +20821,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerFeedsList(context.Background()).Amperage(amperage).AmperageGt(amperageGt).AmperageGte(amperageGte).AmperageLt(amperageLt).AmperageLte(amperageLte).AmperageN(amperageN).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Connected(connected).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MaxUtilization(maxUtilization).MaxUtilizationGt(maxUtilizationGt).MaxUtilizationGte(maxUtilizationGte).MaxUtilizationLt(maxUtilizationLt).MaxUtilizationLte(maxUtilizationLte).MaxUtilizationN(maxUtilizationN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Phase(phase).PhaseN(phaseN).PowerPanelId(powerPanelId).PowerPanelIdN(powerPanelIdN).Q(q).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusN(statusN).Supply(supply).SupplyN(supplyN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Voltage(voltage).VoltageGt(voltageGt).VoltageGte(voltageGte).VoltageLt(voltageLt).VoltageLte(voltageLte).VoltageN(voltageN).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerFeedsList(context.Background()).Amperage(amperage).AmperageEmpty(amperageEmpty).AmperageGt(amperageGt).AmperageGte(amperageGte).AmperageLt(amperageLt).AmperageLte(amperageLte).AmperageN(amperageN).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Connected(connected).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MaxUtilization(maxUtilization).MaxUtilizationEmpty(maxUtilizationEmpty).MaxUtilizationGt(maxUtilizationGt).MaxUtilizationGte(maxUtilizationGte).MaxUtilizationLt(maxUtilizationLt).MaxUtilizationLte(maxUtilizationLte).MaxUtilizationN(maxUtilizationN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Phase(phase).PhaseN(phaseN).PowerPanelId(powerPanelId).PowerPanelIdN(powerPanelIdN).Q(q).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusN(statusN).Supply(supply).SupplyN(supplyN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Voltage(voltage).VoltageEmpty(voltageEmpty).VoltageGt(voltageGt).VoltageGte(voltageGte).VoltageLt(voltageLt).VoltageLte(voltageLte).VoltageN(voltageN).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerFeedsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerFeedsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerFeedsList`: PaginatedPowerFeedList
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerFeedsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerFeedsList`: %v\n", resp)
 }
 ```
 
@@ -20532,6 +20843,7 @@ Other parameters are passed through a pointer to a apiDcimPowerFeedsListRequest 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **amperage** | **[]int32** |  | 
+ **amperageEmpty** | **bool** |  | 
  **amperageGt** | **[]int32** |  | 
  **amperageGte** | **[]int32** |  | 
  **amperageLt** | **[]int32** |  | 
@@ -20542,6 +20854,7 @@ Name | Type | Description  | Notes
  **cabled** | **bool** |  | 
  **connected** | **bool** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -20549,12 +20862,14 @@ Name | Type | Description  | Notes
  **createdN** | [**[]time.Time**](time.Time.md) |  | 
  **createdByRequest** | **string** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -20562,11 +20877,13 @@ Name | Type | Description  | Notes
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
  **maxUtilization** | **[]int32** |  | 
+ **maxUtilizationEmpty** | **bool** |  | 
  **maxUtilizationGt** | **[]int32** |  | 
  **maxUtilizationGte** | **[]int32** |  | 
  **maxUtilizationLt** | **[]int32** |  | 
  **maxUtilizationLte** | **[]int32** |  | 
  **maxUtilizationN** | **[]int32** |  | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -20606,10 +20923,19 @@ Name | Type | Description  | Notes
  **supplyN** | **string** |  | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
+ **tenant** | **[]string** | Tenant (slug) | 
+ **tenantN** | **[]string** | Tenant (slug) | 
+ **tenantGroup** | **[]int32** | Tenant Group (slug) | 
+ **tenantGroupN** | **[]int32** | Tenant Group (slug) | 
+ **tenantGroupId** | **[]int32** | Tenant Group (ID) | 
+ **tenantGroupIdN** | **[]int32** | Tenant Group (ID) | 
+ **tenantId** | **[]int32** | Tenant (ID) | 
+ **tenantIdN** | **[]int32** | Tenant (ID) | 
  **type_** | **string** |  | 
  **typeN** | **string** |  | 
  **updatedByRequest** | **string** |  | 
  **voltage** | **[]int32** |  | 
+ **voltageEmpty** | **bool** |  | 
  **voltageGt** | **[]int32** |  | 
  **voltageGte** | **[]int32** |  | 
  **voltageLt** | **[]int32** |  | 
@@ -20660,13 +20986,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerFeedsPartialUpdate(context.Background(), id).PatchedWritablePowerFeedRequest(patchedWritablePowerFeedRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerFeedsPartialUpdate(context.Background(), id).PatchedWritablePowerFeedRequest(patchedWritablePowerFeedRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerFeedsPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerFeedsPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerFeedsPartialUpdate`: PowerFeed
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerFeedsPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerFeedsPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -20731,13 +21057,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerFeedsRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerFeedsRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerFeedsRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerFeedsRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerFeedsRetrieve`: PowerFeed
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerFeedsRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerFeedsRetrieve`: %v\n", resp)
 }
 ```
 
@@ -20801,13 +21127,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerFeedsTraceRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerFeedsTraceRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerFeedsTraceRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerFeedsTraceRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerFeedsTraceRetrieve`: PowerFeed
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerFeedsTraceRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerFeedsTraceRetrieve`: %v\n", resp)
 }
 ```
 
@@ -20872,13 +21198,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerFeedsUpdate(context.Background(), id).WritablePowerFeedRequest(writablePowerFeedRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerFeedsUpdate(context.Background(), id).WritablePowerFeedRequest(writablePowerFeedRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerFeedsUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerFeedsUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerFeedsUpdate`: PowerFeed
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerFeedsUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerFeedsUpdate`: %v\n", resp)
 }
 ```
 
@@ -20943,9 +21269,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimPowerOutletTemplatesBulkDestroy(context.Background()).PowerOutletTemplateRequest(powerOutletTemplateRequest).Execute()
+    r, err := apiClient.DcimAPI.DcimPowerOutletTemplatesBulkDestroy(context.Background()).PowerOutletTemplateRequest(powerOutletTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerOutletTemplatesBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerOutletTemplatesBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -21007,13 +21333,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerOutletTemplatesBulkPartialUpdate(context.Background()).PowerOutletTemplateRequest(powerOutletTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerOutletTemplatesBulkPartialUpdate(context.Background()).PowerOutletTemplateRequest(powerOutletTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerOutletTemplatesBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerOutletTemplatesBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerOutletTemplatesBulkPartialUpdate`: []PowerOutletTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerOutletTemplatesBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerOutletTemplatesBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -21073,13 +21399,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerOutletTemplatesBulkUpdate(context.Background()).PowerOutletTemplateRequest(powerOutletTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerOutletTemplatesBulkUpdate(context.Background()).PowerOutletTemplateRequest(powerOutletTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerOutletTemplatesBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerOutletTemplatesBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerOutletTemplatesBulkUpdate`: []PowerOutletTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerOutletTemplatesBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerOutletTemplatesBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -21139,13 +21465,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerOutletTemplatesCreate(context.Background()).WritablePowerOutletTemplateRequest(writablePowerOutletTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerOutletTemplatesCreate(context.Background()).WritablePowerOutletTemplateRequest(writablePowerOutletTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerOutletTemplatesCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerOutletTemplatesCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerOutletTemplatesCreate`: PowerOutletTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerOutletTemplatesCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerOutletTemplatesCreate`: %v\n", resp)
 }
 ```
 
@@ -21205,9 +21531,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimPowerOutletTemplatesDestroy(context.Background(), id).Execute()
+    r, err := apiClient.DcimAPI.DcimPowerOutletTemplatesDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerOutletTemplatesDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerOutletTemplatesDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -21250,7 +21576,7 @@ Name | Type | Description  | Notes
 
 ## DcimPowerOutletTemplatesList
 
-> PaginatedPowerOutletTemplateList DcimPowerOutletTemplatesList(ctx).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).FeedLeg(feedLeg).FeedLegN(feedLegN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedPowerOutletTemplateList DcimPowerOutletTemplatesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).FeedLeg(feedLeg).FeedLegN(feedLegN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -21271,6 +21597,7 @@ import (
 
 func main() {
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -21282,18 +21609,21 @@ func main() {
     feedLeg := []string{"Inner_example"} // []string | Phase (for three-phase feeds) (optional)
     feedLegN := []string{"Inner_example"} // []string | Phase (for three-phase feeds) (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     moduletypeId := []*int32{int32(123)} // []*int32 | Module type (ID) (optional)
     moduletypeIdN := []*int32{int32(123)} // []*int32 | Module type (ID) (optional)
     name := []string{"Inner_example"} // []string |  (optional)
@@ -21316,13 +21646,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerOutletTemplatesList(context.Background()).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).FeedLeg(feedLeg).FeedLegN(feedLegN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerOutletTemplatesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).FeedLeg(feedLeg).FeedLegN(feedLegN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerOutletTemplatesList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerOutletTemplatesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerOutletTemplatesList`: PaginatedPowerOutletTemplateList
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerOutletTemplatesList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerOutletTemplatesList`: %v\n", resp)
 }
 ```
 
@@ -21338,6 +21668,7 @@ Other parameters are passed through a pointer to a apiDcimPowerOutletTemplatesLi
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -21349,18 +21680,21 @@ Name | Type | Description  | Notes
  **feedLeg** | **[]string** | Phase (for three-phase feeds) | 
  **feedLegN** | **[]string** | Phase (for three-phase feeds) | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **moduletypeId** | **[]int32** | Module type (ID) | 
  **moduletypeIdN** | **[]int32** | Module type (ID) | 
  **name** | **[]string** |  | 
@@ -21425,13 +21759,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerOutletTemplatesPartialUpdate(context.Background(), id).PatchedWritablePowerOutletTemplateRequest(patchedWritablePowerOutletTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerOutletTemplatesPartialUpdate(context.Background(), id).PatchedWritablePowerOutletTemplateRequest(patchedWritablePowerOutletTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerOutletTemplatesPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerOutletTemplatesPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerOutletTemplatesPartialUpdate`: PowerOutletTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerOutletTemplatesPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerOutletTemplatesPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -21496,13 +21830,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerOutletTemplatesRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerOutletTemplatesRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerOutletTemplatesRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerOutletTemplatesRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerOutletTemplatesRetrieve`: PowerOutletTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerOutletTemplatesRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerOutletTemplatesRetrieve`: %v\n", resp)
 }
 ```
 
@@ -21567,13 +21901,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerOutletTemplatesUpdate(context.Background(), id).WritablePowerOutletTemplateRequest(writablePowerOutletTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerOutletTemplatesUpdate(context.Background(), id).WritablePowerOutletTemplateRequest(writablePowerOutletTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerOutletTemplatesUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerOutletTemplatesUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerOutletTemplatesUpdate`: PowerOutletTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerOutletTemplatesUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerOutletTemplatesUpdate`: %v\n", resp)
 }
 ```
 
@@ -21638,9 +21972,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimPowerOutletsBulkDestroy(context.Background()).PowerOutletRequest(powerOutletRequest).Execute()
+    r, err := apiClient.DcimAPI.DcimPowerOutletsBulkDestroy(context.Background()).PowerOutletRequest(powerOutletRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerOutletsBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerOutletsBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -21702,13 +22036,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerOutletsBulkPartialUpdate(context.Background()).PowerOutletRequest(powerOutletRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerOutletsBulkPartialUpdate(context.Background()).PowerOutletRequest(powerOutletRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerOutletsBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerOutletsBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerOutletsBulkPartialUpdate`: []PowerOutlet
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerOutletsBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerOutletsBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -21768,13 +22102,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerOutletsBulkUpdate(context.Background()).PowerOutletRequest(powerOutletRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerOutletsBulkUpdate(context.Background()).PowerOutletRequest(powerOutletRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerOutletsBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerOutletsBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerOutletsBulkUpdate`: []PowerOutlet
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerOutletsBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerOutletsBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -21834,13 +22168,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerOutletsCreate(context.Background()).WritablePowerOutletRequest(writablePowerOutletRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerOutletsCreate(context.Background()).WritablePowerOutletRequest(writablePowerOutletRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerOutletsCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerOutletsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerOutletsCreate`: PowerOutlet
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerOutletsCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerOutletsCreate`: %v\n", resp)
 }
 ```
 
@@ -21900,9 +22234,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimPowerOutletsDestroy(context.Background(), id).Execute()
+    r, err := apiClient.DcimAPI.DcimPowerOutletsDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerOutletsDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerOutletsDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -21945,7 +22279,7 @@ Name | Type | Description  | Notes
 
 ## DcimPowerOutletsList
 
-> PaginatedPowerOutletList DcimPowerOutletsList(ctx).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Connected(connected).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).FeedLeg(feedLeg).FeedLegN(feedLegN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
+> PaginatedPowerOutletList DcimPowerOutletsList(ctx).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Connected(connected).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).FeedLeg(feedLeg).FeedLegN(feedLegN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
 
 
 
@@ -21970,6 +22304,7 @@ func main() {
     cabled := true // bool |  (optional)
     connected := true // bool |  (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -22002,6 +22337,7 @@ func main() {
     feedLeg := []string{"Inner_example"} // []string | Phase (for three-phase feeds) (optional)
     feedLegN := []string{"Inner_example"} // []string | Phase (for three-phase feeds) (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
@@ -22019,6 +22355,7 @@ func main() {
     labelNiew := []string{"Inner_example"} // []string |  (optional)
     labelNisw := []string{"Inner_example"} // []string |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -22029,6 +22366,7 @@ func main() {
     locationN := []string{"Inner_example"} // []string | Location (slug) (optional)
     locationId := []int32{int32(123)} // []int32 | Location (ID) (optional)
     locationIdN := []int32{int32(123)} // []int32 | Location (ID) (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     moduleId := []*int32{int32(123)} // []*int32 | Module (ID) (optional)
     moduleIdN := []*int32{int32(123)} // []*int32 | Module (ID) (optional)
     name := []string{"Inner_example"} // []string |  (optional)
@@ -22054,6 +22392,10 @@ func main() {
     regionN := []int32{int32(123)} // []int32 | Region (slug) (optional)
     regionId := []int32{int32(123)} // []int32 | Region (ID) (optional)
     regionIdN := []int32{int32(123)} // []int32 | Region (ID) (optional)
+    role := []string{"Inner_example"} // []string | Device role (slug) (optional)
+    roleN := []string{"Inner_example"} // []string | Device role (slug) (optional)
+    roleId := []int32{int32(123)} // []int32 | Device role (ID) (optional)
+    roleIdN := []int32{int32(123)} // []int32 | Device role (ID) (optional)
     site := []string{"Inner_example"} // []string | Site name (slug) (optional)
     siteN := []string{"Inner_example"} // []string | Site name (slug) (optional)
     siteGroup := []int32{int32(123)} // []int32 | Site group (slug) (optional)
@@ -22074,13 +22416,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerOutletsList(context.Background()).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Connected(connected).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).FeedLeg(feedLeg).FeedLegN(feedLegN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerOutletsList(context.Background()).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Connected(connected).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).FeedLeg(feedLeg).FeedLegN(feedLegN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerOutletsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerOutletsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerOutletsList`: PaginatedPowerOutletList
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerOutletsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerOutletsList`: %v\n", resp)
 }
 ```
 
@@ -22100,6 +22442,7 @@ Name | Type | Description  | Notes
  **cabled** | **bool** |  | 
  **connected** | **bool** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -22132,6 +22475,7 @@ Name | Type | Description  | Notes
  **feedLeg** | **[]string** | Phase (for three-phase feeds) | 
  **feedLegN** | **[]string** | Phase (for three-phase feeds) | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
@@ -22149,6 +22493,7 @@ Name | Type | Description  | Notes
  **labelNiew** | **[]string** |  | 
  **labelNisw** | **[]string** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -22159,6 +22504,7 @@ Name | Type | Description  | Notes
  **locationN** | **[]string** | Location (slug) | 
  **locationId** | **[]int32** | Location (ID) | 
  **locationIdN** | **[]int32** | Location (ID) | 
+ **modifiedByRequest** | **string** |  | 
  **moduleId** | **[]int32** | Module (ID) | 
  **moduleIdN** | **[]int32** | Module (ID) | 
  **name** | **[]string** |  | 
@@ -22184,6 +22530,10 @@ Name | Type | Description  | Notes
  **regionN** | **[]int32** | Region (slug) | 
  **regionId** | **[]int32** | Region (ID) | 
  **regionIdN** | **[]int32** | Region (ID) | 
+ **role** | **[]string** | Device role (slug) | 
+ **roleN** | **[]string** | Device role (slug) | 
+ **roleId** | **[]int32** | Device role (ID) | 
+ **roleIdN** | **[]int32** | Device role (ID) | 
  **site** | **[]string** | Site name (slug) | 
  **siteN** | **[]string** | Site name (slug) | 
  **siteGroup** | **[]int32** | Site group (slug) | 
@@ -22246,13 +22596,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerOutletsPartialUpdate(context.Background(), id).PatchedWritablePowerOutletRequest(patchedWritablePowerOutletRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerOutletsPartialUpdate(context.Background(), id).PatchedWritablePowerOutletRequest(patchedWritablePowerOutletRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerOutletsPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerOutletsPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerOutletsPartialUpdate`: PowerOutlet
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerOutletsPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerOutletsPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -22317,13 +22667,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerOutletsRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerOutletsRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerOutletsRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerOutletsRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerOutletsRetrieve`: PowerOutlet
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerOutletsRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerOutletsRetrieve`: %v\n", resp)
 }
 ```
 
@@ -22387,13 +22737,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerOutletsTraceRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerOutletsTraceRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerOutletsTraceRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerOutletsTraceRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerOutletsTraceRetrieve`: PowerOutlet
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerOutletsTraceRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerOutletsTraceRetrieve`: %v\n", resp)
 }
 ```
 
@@ -22458,13 +22808,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerOutletsUpdate(context.Background(), id).WritablePowerOutletRequest(writablePowerOutletRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerOutletsUpdate(context.Background(), id).WritablePowerOutletRequest(writablePowerOutletRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerOutletsUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerOutletsUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerOutletsUpdate`: PowerOutlet
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerOutletsUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerOutletsUpdate`: %v\n", resp)
 }
 ```
 
@@ -22529,9 +22879,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimPowerPanelsBulkDestroy(context.Background()).PowerPanelRequest(powerPanelRequest).Execute()
+    r, err := apiClient.DcimAPI.DcimPowerPanelsBulkDestroy(context.Background()).PowerPanelRequest(powerPanelRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerPanelsBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerPanelsBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -22593,13 +22943,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerPanelsBulkPartialUpdate(context.Background()).PowerPanelRequest(powerPanelRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerPanelsBulkPartialUpdate(context.Background()).PowerPanelRequest(powerPanelRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerPanelsBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerPanelsBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerPanelsBulkPartialUpdate`: []PowerPanel
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerPanelsBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerPanelsBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -22659,13 +23009,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerPanelsBulkUpdate(context.Background()).PowerPanelRequest(powerPanelRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerPanelsBulkUpdate(context.Background()).PowerPanelRequest(powerPanelRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerPanelsBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerPanelsBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerPanelsBulkUpdate`: []PowerPanel
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerPanelsBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerPanelsBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -22725,13 +23075,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerPanelsCreate(context.Background()).WritablePowerPanelRequest(writablePowerPanelRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerPanelsCreate(context.Background()).WritablePowerPanelRequest(writablePowerPanelRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerPanelsCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerPanelsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerPanelsCreate`: PowerPanel
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerPanelsCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerPanelsCreate`: %v\n", resp)
 }
 ```
 
@@ -22791,9 +23141,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimPowerPanelsDestroy(context.Background(), id).Execute()
+    r, err := apiClient.DcimAPI.DcimPowerPanelsDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerPanelsDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerPanelsDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -22836,7 +23186,7 @@ Name | Type | Description  | Notes
 
 ## DcimPowerPanelsList
 
-> PaginatedPowerPanelList DcimPowerPanelsList(ctx).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).LocationId(locationId).LocationIdN(locationIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedPowerPanelList DcimPowerPanelsList(ctx).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -22863,6 +23213,7 @@ func main() {
     contactRole := []int32{int32(123)} // []int32 | Contact Role (optional)
     contactRoleN := []int32{int32(123)} // []int32 | Contact Role (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -22870,12 +23221,14 @@ func main() {
     createdN := []time.Time{time.Now()} // []time.Time |  (optional)
     createdByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -22884,6 +23237,7 @@ func main() {
     limit := int32(56) // int32 | Number of results to return per page. (optional)
     locationId := []int32{int32(123)} // []int32 | Location (ID) (optional)
     locationIdN := []int32{int32(123)} // []int32 | Location (ID) (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -22916,13 +23270,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerPanelsList(context.Background()).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).LocationId(locationId).LocationIdN(locationIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerPanelsList(context.Background()).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerPanelsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerPanelsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerPanelsList`: PaginatedPowerPanelList
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerPanelsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerPanelsList`: %v\n", resp)
 }
 ```
 
@@ -22944,6 +23298,7 @@ Name | Type | Description  | Notes
  **contactRole** | **[]int32** | Contact Role | 
  **contactRoleN** | **[]int32** | Contact Role | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -22951,12 +23306,14 @@ Name | Type | Description  | Notes
  **createdN** | [**[]time.Time**](time.Time.md) |  | 
  **createdByRequest** | **string** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -22965,6 +23322,7 @@ Name | Type | Description  | Notes
  **limit** | **int32** | Number of results to return per page. | 
  **locationId** | **[]int32** | Location (ID) | 
  **locationIdN** | **[]int32** | Location (ID) | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -23039,13 +23397,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerPanelsPartialUpdate(context.Background(), id).PatchedWritablePowerPanelRequest(patchedWritablePowerPanelRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerPanelsPartialUpdate(context.Background(), id).PatchedWritablePowerPanelRequest(patchedWritablePowerPanelRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerPanelsPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerPanelsPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerPanelsPartialUpdate`: PowerPanel
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerPanelsPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerPanelsPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -23110,13 +23468,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerPanelsRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerPanelsRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerPanelsRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerPanelsRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerPanelsRetrieve`: PowerPanel
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerPanelsRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerPanelsRetrieve`: %v\n", resp)
 }
 ```
 
@@ -23181,13 +23539,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerPanelsUpdate(context.Background(), id).WritablePowerPanelRequest(writablePowerPanelRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerPanelsUpdate(context.Background(), id).WritablePowerPanelRequest(writablePowerPanelRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerPanelsUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerPanelsUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerPanelsUpdate`: PowerPanel
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerPanelsUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerPanelsUpdate`: %v\n", resp)
 }
 ```
 
@@ -23252,9 +23610,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimPowerPortTemplatesBulkDestroy(context.Background()).PowerPortTemplateRequest(powerPortTemplateRequest).Execute()
+    r, err := apiClient.DcimAPI.DcimPowerPortTemplatesBulkDestroy(context.Background()).PowerPortTemplateRequest(powerPortTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerPortTemplatesBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerPortTemplatesBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -23316,13 +23674,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerPortTemplatesBulkPartialUpdate(context.Background()).PowerPortTemplateRequest(powerPortTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerPortTemplatesBulkPartialUpdate(context.Background()).PowerPortTemplateRequest(powerPortTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerPortTemplatesBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerPortTemplatesBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerPortTemplatesBulkPartialUpdate`: []PowerPortTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerPortTemplatesBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerPortTemplatesBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -23382,13 +23740,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerPortTemplatesBulkUpdate(context.Background()).PowerPortTemplateRequest(powerPortTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerPortTemplatesBulkUpdate(context.Background()).PowerPortTemplateRequest(powerPortTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerPortTemplatesBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerPortTemplatesBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerPortTemplatesBulkUpdate`: []PowerPortTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerPortTemplatesBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerPortTemplatesBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -23448,13 +23806,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerPortTemplatesCreate(context.Background()).WritablePowerPortTemplateRequest(writablePowerPortTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerPortTemplatesCreate(context.Background()).WritablePowerPortTemplateRequest(writablePowerPortTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerPortTemplatesCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerPortTemplatesCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerPortTemplatesCreate`: PowerPortTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerPortTemplatesCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerPortTemplatesCreate`: %v\n", resp)
 }
 ```
 
@@ -23514,9 +23872,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimPowerPortTemplatesDestroy(context.Background(), id).Execute()
+    r, err := apiClient.DcimAPI.DcimPowerPortTemplatesDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerPortTemplatesDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerPortTemplatesDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -23559,7 +23917,7 @@ Name | Type | Description  | Notes
 
 ## DcimPowerPortTemplatesList
 
-> PaginatedPowerPortTemplateList DcimPowerPortTemplatesList(ctx).AllocatedDraw(allocatedDraw).AllocatedDrawGt(allocatedDrawGt).AllocatedDrawGte(allocatedDrawGte).AllocatedDrawLt(allocatedDrawLt).AllocatedDrawLte(allocatedDrawLte).AllocatedDrawN(allocatedDrawN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MaximumDraw(maximumDraw).MaximumDrawGt(maximumDrawGt).MaximumDrawGte(maximumDrawGte).MaximumDrawLt(maximumDrawLt).MaximumDrawLte(maximumDrawLte).MaximumDrawN(maximumDrawN).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedPowerPortTemplateList DcimPowerPortTemplatesList(ctx).AllocatedDraw(allocatedDraw).AllocatedDrawEmpty(allocatedDrawEmpty).AllocatedDrawGt(allocatedDrawGt).AllocatedDrawGte(allocatedDrawGte).AllocatedDrawLt(allocatedDrawLt).AllocatedDrawLte(allocatedDrawLte).AllocatedDrawN(allocatedDrawN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MaximumDraw(maximumDraw).MaximumDrawEmpty(maximumDrawEmpty).MaximumDrawGt(maximumDrawGt).MaximumDrawGte(maximumDrawGte).MaximumDrawLt(maximumDrawLt).MaximumDrawLte(maximumDrawLte).MaximumDrawN(maximumDrawN).ModifiedByRequest(modifiedByRequest).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -23580,12 +23938,14 @@ import (
 
 func main() {
     allocatedDraw := []int32{int32(123)} // []int32 |  (optional)
+    allocatedDrawEmpty := true // bool |  (optional)
     allocatedDrawGt := []int32{int32(123)} // []int32 |  (optional)
     allocatedDrawGte := []int32{int32(123)} // []int32 |  (optional)
     allocatedDrawLt := []int32{int32(123)} // []int32 |  (optional)
     allocatedDrawLte := []int32{int32(123)} // []int32 |  (optional)
     allocatedDrawN := []int32{int32(123)} // []int32 |  (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -23595,12 +23955,14 @@ func main() {
     devicetypeId := []*int32{int32(123)} // []*int32 | Device type (ID) (optional)
     devicetypeIdN := []*int32{int32(123)} // []*int32 | Device type (ID) (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -23608,11 +23970,13 @@ func main() {
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
     maximumDraw := []int32{int32(123)} // []int32 |  (optional)
+    maximumDrawEmpty := true // bool |  (optional)
     maximumDrawGt := []int32{int32(123)} // []int32 |  (optional)
     maximumDrawGte := []int32{int32(123)} // []int32 |  (optional)
     maximumDrawLt := []int32{int32(123)} // []int32 |  (optional)
     maximumDrawLte := []int32{int32(123)} // []int32 |  (optional)
     maximumDrawN := []int32{int32(123)} // []int32 |  (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     moduletypeId := []*int32{int32(123)} // []*int32 | Module type (ID) (optional)
     moduletypeIdN := []*int32{int32(123)} // []*int32 | Module type (ID) (optional)
     name := []string{"Inner_example"} // []string |  (optional)
@@ -23635,13 +23999,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerPortTemplatesList(context.Background()).AllocatedDraw(allocatedDraw).AllocatedDrawGt(allocatedDrawGt).AllocatedDrawGte(allocatedDrawGte).AllocatedDrawLt(allocatedDrawLt).AllocatedDrawLte(allocatedDrawLte).AllocatedDrawN(allocatedDrawN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MaximumDraw(maximumDraw).MaximumDrawGt(maximumDrawGt).MaximumDrawGte(maximumDrawGte).MaximumDrawLt(maximumDrawLt).MaximumDrawLte(maximumDrawLte).MaximumDrawN(maximumDrawN).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerPortTemplatesList(context.Background()).AllocatedDraw(allocatedDraw).AllocatedDrawEmpty(allocatedDrawEmpty).AllocatedDrawGt(allocatedDrawGt).AllocatedDrawGte(allocatedDrawGte).AllocatedDrawLt(allocatedDrawLt).AllocatedDrawLte(allocatedDrawLte).AllocatedDrawN(allocatedDrawN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MaximumDraw(maximumDraw).MaximumDrawEmpty(maximumDrawEmpty).MaximumDrawGt(maximumDrawGt).MaximumDrawGte(maximumDrawGte).MaximumDrawLt(maximumDrawLt).MaximumDrawLte(maximumDrawLte).MaximumDrawN(maximumDrawN).ModifiedByRequest(modifiedByRequest).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerPortTemplatesList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerPortTemplatesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerPortTemplatesList`: PaginatedPowerPortTemplateList
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerPortTemplatesList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerPortTemplatesList`: %v\n", resp)
 }
 ```
 
@@ -23657,12 +24021,14 @@ Other parameters are passed through a pointer to a apiDcimPowerPortTemplatesList
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **allocatedDraw** | **[]int32** |  | 
+ **allocatedDrawEmpty** | **bool** |  | 
  **allocatedDrawGt** | **[]int32** |  | 
  **allocatedDrawGte** | **[]int32** |  | 
  **allocatedDrawLt** | **[]int32** |  | 
  **allocatedDrawLte** | **[]int32** |  | 
  **allocatedDrawN** | **[]int32** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -23672,12 +24038,14 @@ Name | Type | Description  | Notes
  **devicetypeId** | **[]int32** | Device type (ID) | 
  **devicetypeIdN** | **[]int32** | Device type (ID) | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -23685,11 +24053,13 @@ Name | Type | Description  | Notes
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
  **maximumDraw** | **[]int32** |  | 
+ **maximumDrawEmpty** | **bool** |  | 
  **maximumDrawGt** | **[]int32** |  | 
  **maximumDrawGte** | **[]int32** |  | 
  **maximumDrawLt** | **[]int32** |  | 
  **maximumDrawLte** | **[]int32** |  | 
  **maximumDrawN** | **[]int32** |  | 
+ **modifiedByRequest** | **string** |  | 
  **moduletypeId** | **[]int32** | Module type (ID) | 
  **moduletypeIdN** | **[]int32** | Module type (ID) | 
  **name** | **[]string** |  | 
@@ -23754,13 +24124,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerPortTemplatesPartialUpdate(context.Background(), id).PatchedWritablePowerPortTemplateRequest(patchedWritablePowerPortTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerPortTemplatesPartialUpdate(context.Background(), id).PatchedWritablePowerPortTemplateRequest(patchedWritablePowerPortTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerPortTemplatesPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerPortTemplatesPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerPortTemplatesPartialUpdate`: PowerPortTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerPortTemplatesPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerPortTemplatesPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -23825,13 +24195,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerPortTemplatesRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerPortTemplatesRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerPortTemplatesRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerPortTemplatesRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerPortTemplatesRetrieve`: PowerPortTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerPortTemplatesRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerPortTemplatesRetrieve`: %v\n", resp)
 }
 ```
 
@@ -23896,13 +24266,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerPortTemplatesUpdate(context.Background(), id).WritablePowerPortTemplateRequest(writablePowerPortTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerPortTemplatesUpdate(context.Background(), id).WritablePowerPortTemplateRequest(writablePowerPortTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerPortTemplatesUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerPortTemplatesUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerPortTemplatesUpdate`: PowerPortTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerPortTemplatesUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerPortTemplatesUpdate`: %v\n", resp)
 }
 ```
 
@@ -23967,9 +24337,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimPowerPortsBulkDestroy(context.Background()).PowerPortRequest(powerPortRequest).Execute()
+    r, err := apiClient.DcimAPI.DcimPowerPortsBulkDestroy(context.Background()).PowerPortRequest(powerPortRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerPortsBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerPortsBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -24031,13 +24401,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerPortsBulkPartialUpdate(context.Background()).PowerPortRequest(powerPortRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerPortsBulkPartialUpdate(context.Background()).PowerPortRequest(powerPortRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerPortsBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerPortsBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerPortsBulkPartialUpdate`: []PowerPort
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerPortsBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerPortsBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -24097,13 +24467,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerPortsBulkUpdate(context.Background()).PowerPortRequest(powerPortRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerPortsBulkUpdate(context.Background()).PowerPortRequest(powerPortRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerPortsBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerPortsBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerPortsBulkUpdate`: []PowerPort
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerPortsBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerPortsBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -24163,13 +24533,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerPortsCreate(context.Background()).WritablePowerPortRequest(writablePowerPortRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerPortsCreate(context.Background()).WritablePowerPortRequest(writablePowerPortRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerPortsCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerPortsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerPortsCreate`: PowerPort
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerPortsCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerPortsCreate`: %v\n", resp)
 }
 ```
 
@@ -24229,9 +24599,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimPowerPortsDestroy(context.Background(), id).Execute()
+    r, err := apiClient.DcimAPI.DcimPowerPortsDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerPortsDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerPortsDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -24274,7 +24644,7 @@ Name | Type | Description  | Notes
 
 ## DcimPowerPortsList
 
-> PaginatedPowerPortList DcimPowerPortsList(ctx).AllocatedDraw(allocatedDraw).AllocatedDrawGt(allocatedDrawGt).AllocatedDrawGte(allocatedDrawGte).AllocatedDrawLt(allocatedDrawLt).AllocatedDrawLte(allocatedDrawLte).AllocatedDrawN(allocatedDrawN).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Connected(connected).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).MaximumDraw(maximumDraw).MaximumDrawGt(maximumDrawGt).MaximumDrawGte(maximumDrawGte).MaximumDrawLt(maximumDrawLt).MaximumDrawLte(maximumDrawLte).MaximumDrawN(maximumDrawN).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
+> PaginatedPowerPortList DcimPowerPortsList(ctx).AllocatedDraw(allocatedDraw).AllocatedDrawEmpty(allocatedDrawEmpty).AllocatedDrawGt(allocatedDrawGt).AllocatedDrawGte(allocatedDrawGte).AllocatedDrawLt(allocatedDrawLt).AllocatedDrawLte(allocatedDrawLte).AllocatedDrawN(allocatedDrawN).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Connected(connected).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).MaximumDraw(maximumDraw).MaximumDrawEmpty(maximumDrawEmpty).MaximumDrawGt(maximumDrawGt).MaximumDrawGte(maximumDrawGte).MaximumDrawLt(maximumDrawLt).MaximumDrawLte(maximumDrawLte).MaximumDrawN(maximumDrawN).ModifiedByRequest(modifiedByRequest).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
 
 
 
@@ -24295,6 +24665,7 @@ import (
 
 func main() {
     allocatedDraw := []int32{int32(123)} // []int32 |  (optional)
+    allocatedDrawEmpty := true // bool |  (optional)
     allocatedDrawGt := []int32{int32(123)} // []int32 |  (optional)
     allocatedDrawGte := []int32{int32(123)} // []int32 |  (optional)
     allocatedDrawLt := []int32{int32(123)} // []int32 |  (optional)
@@ -24305,6 +24676,7 @@ func main() {
     cabled := true // bool |  (optional)
     connected := true // bool |  (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -24335,6 +24707,7 @@ func main() {
     deviceTypeId := []int32{int32(123)} // []int32 | Device type (ID) (optional)
     deviceTypeIdN := []int32{int32(123)} // []int32 | Device type (ID) (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
@@ -24352,6 +24725,7 @@ func main() {
     labelNiew := []string{"Inner_example"} // []string |  (optional)
     labelNisw := []string{"Inner_example"} // []string |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -24363,11 +24737,13 @@ func main() {
     locationId := []int32{int32(123)} // []int32 | Location (ID) (optional)
     locationIdN := []int32{int32(123)} // []int32 | Location (ID) (optional)
     maximumDraw := []int32{int32(123)} // []int32 |  (optional)
+    maximumDrawEmpty := true // bool |  (optional)
     maximumDrawGt := []int32{int32(123)} // []int32 |  (optional)
     maximumDrawGte := []int32{int32(123)} // []int32 |  (optional)
     maximumDrawLt := []int32{int32(123)} // []int32 |  (optional)
     maximumDrawLte := []int32{int32(123)} // []int32 |  (optional)
     maximumDrawN := []int32{int32(123)} // []int32 |  (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     moduleId := []*int32{int32(123)} // []*int32 | Module (ID) (optional)
     moduleIdN := []*int32{int32(123)} // []*int32 | Module (ID) (optional)
     name := []string{"Inner_example"} // []string |  (optional)
@@ -24393,6 +24769,10 @@ func main() {
     regionN := []int32{int32(123)} // []int32 | Region (slug) (optional)
     regionId := []int32{int32(123)} // []int32 | Region (ID) (optional)
     regionIdN := []int32{int32(123)} // []int32 | Region (ID) (optional)
+    role := []string{"Inner_example"} // []string | Device role (slug) (optional)
+    roleN := []string{"Inner_example"} // []string | Device role (slug) (optional)
+    roleId := []int32{int32(123)} // []int32 | Device role (ID) (optional)
+    roleIdN := []int32{int32(123)} // []int32 | Device role (ID) (optional)
     site := []string{"Inner_example"} // []string | Site name (slug) (optional)
     siteN := []string{"Inner_example"} // []string | Site name (slug) (optional)
     siteGroup := []int32{int32(123)} // []int32 | Site group (slug) (optional)
@@ -24413,13 +24793,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerPortsList(context.Background()).AllocatedDraw(allocatedDraw).AllocatedDrawGt(allocatedDrawGt).AllocatedDrawGte(allocatedDrawGte).AllocatedDrawLt(allocatedDrawLt).AllocatedDrawLte(allocatedDrawLte).AllocatedDrawN(allocatedDrawN).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Connected(connected).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).MaximumDraw(maximumDraw).MaximumDrawGt(maximumDrawGt).MaximumDrawGte(maximumDrawGte).MaximumDrawLt(maximumDrawLt).MaximumDrawLte(maximumDrawLte).MaximumDrawN(maximumDrawN).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerPortsList(context.Background()).AllocatedDraw(allocatedDraw).AllocatedDrawEmpty(allocatedDrawEmpty).AllocatedDrawGt(allocatedDrawGt).AllocatedDrawGte(allocatedDrawGte).AllocatedDrawLt(allocatedDrawLt).AllocatedDrawLte(allocatedDrawLte).AllocatedDrawN(allocatedDrawN).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Connected(connected).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).MaximumDraw(maximumDraw).MaximumDrawEmpty(maximumDrawEmpty).MaximumDrawGt(maximumDrawGt).MaximumDrawGte(maximumDrawGte).MaximumDrawLt(maximumDrawLt).MaximumDrawLte(maximumDrawLte).MaximumDrawN(maximumDrawN).ModifiedByRequest(modifiedByRequest).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerPortsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerPortsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerPortsList`: PaginatedPowerPortList
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerPortsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerPortsList`: %v\n", resp)
 }
 ```
 
@@ -24435,6 +24815,7 @@ Other parameters are passed through a pointer to a apiDcimPowerPortsListRequest 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **allocatedDraw** | **[]int32** |  | 
+ **allocatedDrawEmpty** | **bool** |  | 
  **allocatedDrawGt** | **[]int32** |  | 
  **allocatedDrawGte** | **[]int32** |  | 
  **allocatedDrawLt** | **[]int32** |  | 
@@ -24445,6 +24826,7 @@ Name | Type | Description  | Notes
  **cabled** | **bool** |  | 
  **connected** | **bool** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -24475,6 +24857,7 @@ Name | Type | Description  | Notes
  **deviceTypeId** | **[]int32** | Device type (ID) | 
  **deviceTypeIdN** | **[]int32** | Device type (ID) | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
@@ -24492,6 +24875,7 @@ Name | Type | Description  | Notes
  **labelNiew** | **[]string** |  | 
  **labelNisw** | **[]string** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -24503,11 +24887,13 @@ Name | Type | Description  | Notes
  **locationId** | **[]int32** | Location (ID) | 
  **locationIdN** | **[]int32** | Location (ID) | 
  **maximumDraw** | **[]int32** |  | 
+ **maximumDrawEmpty** | **bool** |  | 
  **maximumDrawGt** | **[]int32** |  | 
  **maximumDrawGte** | **[]int32** |  | 
  **maximumDrawLt** | **[]int32** |  | 
  **maximumDrawLte** | **[]int32** |  | 
  **maximumDrawN** | **[]int32** |  | 
+ **modifiedByRequest** | **string** |  | 
  **moduleId** | **[]int32** | Module (ID) | 
  **moduleIdN** | **[]int32** | Module (ID) | 
  **name** | **[]string** |  | 
@@ -24533,6 +24919,10 @@ Name | Type | Description  | Notes
  **regionN** | **[]int32** | Region (slug) | 
  **regionId** | **[]int32** | Region (ID) | 
  **regionIdN** | **[]int32** | Region (ID) | 
+ **role** | **[]string** | Device role (slug) | 
+ **roleN** | **[]string** | Device role (slug) | 
+ **roleId** | **[]int32** | Device role (ID) | 
+ **roleIdN** | **[]int32** | Device role (ID) | 
  **site** | **[]string** | Site name (slug) | 
  **siteN** | **[]string** | Site name (slug) | 
  **siteGroup** | **[]int32** | Site group (slug) | 
@@ -24595,13 +24985,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerPortsPartialUpdate(context.Background(), id).PatchedWritablePowerPortRequest(patchedWritablePowerPortRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerPortsPartialUpdate(context.Background(), id).PatchedWritablePowerPortRequest(patchedWritablePowerPortRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerPortsPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerPortsPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerPortsPartialUpdate`: PowerPort
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerPortsPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerPortsPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -24666,13 +25056,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerPortsRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerPortsRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerPortsRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerPortsRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerPortsRetrieve`: PowerPort
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerPortsRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerPortsRetrieve`: %v\n", resp)
 }
 ```
 
@@ -24736,13 +25126,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerPortsTraceRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerPortsTraceRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerPortsTraceRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerPortsTraceRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerPortsTraceRetrieve`: PowerPort
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerPortsTraceRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerPortsTraceRetrieve`: %v\n", resp)
 }
 ```
 
@@ -24807,13 +25197,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimPowerPortsUpdate(context.Background(), id).WritablePowerPortRequest(writablePowerPortRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimPowerPortsUpdate(context.Background(), id).WritablePowerPortRequest(writablePowerPortRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimPowerPortsUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerPortsUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimPowerPortsUpdate`: PowerPort
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimPowerPortsUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimPowerPortsUpdate`: %v\n", resp)
 }
 ```
 
@@ -24878,9 +25268,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimRackReservationsBulkDestroy(context.Background()).RackReservationRequest(rackReservationRequest).Execute()
+    r, err := apiClient.DcimAPI.DcimRackReservationsBulkDestroy(context.Background()).RackReservationRequest(rackReservationRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRackReservationsBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRackReservationsBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -24942,13 +25332,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRackReservationsBulkPartialUpdate(context.Background()).RackReservationRequest(rackReservationRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRackReservationsBulkPartialUpdate(context.Background()).RackReservationRequest(rackReservationRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRackReservationsBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRackReservationsBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRackReservationsBulkPartialUpdate`: []RackReservation
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRackReservationsBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRackReservationsBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -25008,13 +25398,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRackReservationsBulkUpdate(context.Background()).RackReservationRequest(rackReservationRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRackReservationsBulkUpdate(context.Background()).RackReservationRequest(rackReservationRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRackReservationsBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRackReservationsBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRackReservationsBulkUpdate`: []RackReservation
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRackReservationsBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRackReservationsBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -25074,13 +25464,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRackReservationsCreate(context.Background()).WritableRackReservationRequest(writableRackReservationRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRackReservationsCreate(context.Background()).WritableRackReservationRequest(writableRackReservationRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRackReservationsCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRackReservationsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRackReservationsCreate`: RackReservation
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRackReservationsCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRackReservationsCreate`: %v\n", resp)
 }
 ```
 
@@ -25140,9 +25530,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimRackReservationsDestroy(context.Background(), id).Execute()
+    r, err := apiClient.DcimAPI.DcimRackReservationsDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRackReservationsDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRackReservationsDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -25185,7 +25575,7 @@ Name | Type | Description  | Notes
 
 ## DcimRackReservationsList
 
-> PaginatedRackReservationList DcimRackReservationsList(ctx).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).Offset(offset).Ordering(ordering).Q(q).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).User(user).UserN(userN).UserId(userId).UserIdN(userIdN).Execute()
+> PaginatedRackReservationList DcimRackReservationsList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Q(q).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).User(user).UserN(userN).UserId(userId).UserIdN(userIdN).Execute()
 
 
 
@@ -25206,6 +25596,7 @@ import (
 
 func main() {
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -25224,12 +25615,14 @@ func main() {
     descriptionNiew := []string{"Inner_example"} // []string |  (optional)
     descriptionNisw := []string{"Inner_example"} // []string |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -25240,6 +25633,7 @@ func main() {
     locationN := []int32{int32(123)} // []int32 | Location (slug) (optional)
     locationId := []int32{int32(123)} // []int32 | Location (ID) (optional)
     locationIdN := []int32{int32(123)} // []int32 | Location (ID) (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     offset := int32(56) // int32 | The initial index from which to return the results. (optional)
     ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
     q := "q_example" // string | Search (optional)
@@ -25275,13 +25669,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRackReservationsList(context.Background()).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).Offset(offset).Ordering(ordering).Q(q).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).User(user).UserN(userN).UserId(userId).UserIdN(userIdN).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRackReservationsList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Q(q).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).User(user).UserN(userN).UserId(userId).UserIdN(userIdN).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRackReservationsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRackReservationsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRackReservationsList`: PaginatedRackReservationList
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRackReservationsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRackReservationsList`: %v\n", resp)
 }
 ```
 
@@ -25297,6 +25691,7 @@ Other parameters are passed through a pointer to a apiDcimRackReservationsListRe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -25315,12 +25710,14 @@ Name | Type | Description  | Notes
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -25331,6 +25728,7 @@ Name | Type | Description  | Notes
  **locationN** | **[]int32** | Location (slug) | 
  **locationId** | **[]int32** | Location (ID) | 
  **locationIdN** | **[]int32** | Location (ID) | 
+ **modifiedByRequest** | **string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **q** | **string** | Search | 
@@ -25408,13 +25806,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRackReservationsPartialUpdate(context.Background(), id).PatchedWritableRackReservationRequest(patchedWritableRackReservationRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRackReservationsPartialUpdate(context.Background(), id).PatchedWritableRackReservationRequest(patchedWritableRackReservationRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRackReservationsPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRackReservationsPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRackReservationsPartialUpdate`: RackReservation
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRackReservationsPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRackReservationsPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -25479,13 +25877,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRackReservationsRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRackReservationsRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRackReservationsRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRackReservationsRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRackReservationsRetrieve`: RackReservation
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRackReservationsRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRackReservationsRetrieve`: %v\n", resp)
 }
 ```
 
@@ -25550,13 +25948,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRackReservationsUpdate(context.Background(), id).WritableRackReservationRequest(writableRackReservationRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRackReservationsUpdate(context.Background(), id).WritableRackReservationRequest(writableRackReservationRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRackReservationsUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRackReservationsUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRackReservationsUpdate`: RackReservation
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRackReservationsUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRackReservationsUpdate`: %v\n", resp)
 }
 ```
 
@@ -25621,9 +26019,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimRackRolesBulkDestroy(context.Background()).RackRoleRequest(rackRoleRequest).Execute()
+    r, err := apiClient.DcimAPI.DcimRackRolesBulkDestroy(context.Background()).RackRoleRequest(rackRoleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRackRolesBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRackRolesBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -25685,13 +26083,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRackRolesBulkPartialUpdate(context.Background()).RackRoleRequest(rackRoleRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRackRolesBulkPartialUpdate(context.Background()).RackRoleRequest(rackRoleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRackRolesBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRackRolesBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRackRolesBulkPartialUpdate`: []RackRole
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRackRolesBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRackRolesBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -25751,13 +26149,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRackRolesBulkUpdate(context.Background()).RackRoleRequest(rackRoleRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRackRolesBulkUpdate(context.Background()).RackRoleRequest(rackRoleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRackRolesBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRackRolesBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRackRolesBulkUpdate`: []RackRole
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRackRolesBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRackRolesBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -25817,13 +26215,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRackRolesCreate(context.Background()).RackRoleRequest(rackRoleRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRackRolesCreate(context.Background()).RackRoleRequest(rackRoleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRackRolesCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRackRolesCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRackRolesCreate`: RackRole
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRackRolesCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRackRolesCreate`: %v\n", resp)
 }
 ```
 
@@ -25883,9 +26281,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimRackRolesDestroy(context.Background(), id).Execute()
+    r, err := apiClient.DcimAPI.DcimRackRolesDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRackRolesDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRackRolesDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -25928,7 +26326,7 @@ Name | Type | Description  | Notes
 
 ## DcimRackRolesList
 
-> PaginatedRackRoleList DcimRackRolesList(ctx).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedRackRoleList DcimRackRolesList(ctx).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -25960,6 +26358,7 @@ func main() {
     colorNiew := []string{"Inner_example"} // []string |  (optional)
     colorNisw := []string{"Inner_example"} // []string |  (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -25978,18 +26377,21 @@ func main() {
     descriptionNiew := []string{"Inner_example"} // []string |  (optional)
     descriptionNisw := []string{"Inner_example"} // []string |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -26021,13 +26423,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRackRolesList(context.Background()).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRackRolesList(context.Background()).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRackRolesList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRackRolesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRackRolesList`: PaginatedRackRoleList
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRackRolesList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRackRolesList`: %v\n", resp)
 }
 ```
 
@@ -26054,6 +26456,7 @@ Name | Type | Description  | Notes
  **colorNiew** | **[]string** |  | 
  **colorNisw** | **[]string** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -26072,18 +26475,21 @@ Name | Type | Description  | Notes
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -26157,13 +26563,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRackRolesPartialUpdate(context.Background(), id).PatchedRackRoleRequest(patchedRackRoleRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRackRolesPartialUpdate(context.Background(), id).PatchedRackRoleRequest(patchedRackRoleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRackRolesPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRackRolesPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRackRolesPartialUpdate`: RackRole
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRackRolesPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRackRolesPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -26228,13 +26634,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRackRolesRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRackRolesRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRackRolesRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRackRolesRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRackRolesRetrieve`: RackRole
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRackRolesRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRackRolesRetrieve`: %v\n", resp)
 }
 ```
 
@@ -26299,13 +26705,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRackRolesUpdate(context.Background(), id).RackRoleRequest(rackRoleRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRackRolesUpdate(context.Background(), id).RackRoleRequest(rackRoleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRackRolesUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRackRolesUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRackRolesUpdate`: RackRole
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRackRolesUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRackRolesUpdate`: %v\n", resp)
 }
 ```
 
@@ -26370,9 +26776,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimRacksBulkDestroy(context.Background()).RackRequest(rackRequest).Execute()
+    r, err := apiClient.DcimAPI.DcimRacksBulkDestroy(context.Background()).RackRequest(rackRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRacksBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRacksBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -26434,13 +26840,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRacksBulkPartialUpdate(context.Background()).RackRequest(rackRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRacksBulkPartialUpdate(context.Background()).RackRequest(rackRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRacksBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRacksBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRacksBulkPartialUpdate`: []Rack
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRacksBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRacksBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -26500,13 +26906,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRacksBulkUpdate(context.Background()).RackRequest(rackRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRacksBulkUpdate(context.Background()).RackRequest(rackRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRacksBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRacksBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRacksBulkUpdate`: []Rack
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRacksBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRacksBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -26566,13 +26972,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRacksCreate(context.Background()).WritableRackRequest(writableRackRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRacksCreate(context.Background()).WritableRackRequest(writableRackRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRacksCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRacksCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRacksCreate`: Rack
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRacksCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRacksCreate`: %v\n", resp)
 }
 ```
 
@@ -26632,9 +27038,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimRacksDestroy(context.Background(), id).Execute()
+    r, err := apiClient.DcimAPI.DcimRacksDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRacksDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRacksDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -26700,13 +27106,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRacksElevationRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRacksElevationRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRacksElevationRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRacksElevationRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRacksElevationRetrieve`: Rack
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRacksElevationRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRacksElevationRetrieve`: %v\n", resp)
 }
 ```
 
@@ -26747,7 +27153,7 @@ Name | Type | Description  | Notes
 
 ## DcimRacksList
 
-> PaginatedRackList DcimRacksList(ctx).AssetTag(assetTag).AssetTagEmpty(assetTagEmpty).AssetTagIc(assetTagIc).AssetTagIe(assetTagIe).AssetTagIew(assetTagIew).AssetTagIsw(assetTagIsw).AssetTagN(assetTagN).AssetTagNic(assetTagNic).AssetTagNie(assetTagNie).AssetTagNiew(assetTagNiew).AssetTagNisw(assetTagNisw).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DescUnits(descUnits).FacilityId(facilityId).FacilityIdEmpty(facilityIdEmpty).FacilityIdIc(facilityIdIc).FacilityIdIe(facilityIdIe).FacilityIdIew(facilityIdIew).FacilityIdIsw(facilityIdIsw).FacilityIdN(facilityIdN).FacilityIdNic(facilityIdNic).FacilityIdNie(facilityIdNie).FacilityIdNiew(facilityIdNiew).FacilityIdNisw(facilityIdNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).MaxWeight(maxWeight).MaxWeightGt(maxWeightGt).MaxWeightGte(maxWeightGte).MaxWeightLt(maxWeightLt).MaxWeightLte(maxWeightLte).MaxWeightN(maxWeightN).MountingDepth(mountingDepth).MountingDepthGt(mountingDepthGt).MountingDepthGte(mountingDepthGte).MountingDepthLt(mountingDepthLt).MountingDepthLte(mountingDepthLte).MountingDepthN(mountingDepthN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).OuterDepth(outerDepth).OuterDepthGt(outerDepthGt).OuterDepthGte(outerDepthGte).OuterDepthLt(outerDepthLt).OuterDepthLte(outerDepthLte).OuterDepthN(outerDepthN).OuterUnit(outerUnit).OuterUnitN(outerUnitN).OuterWidth(outerWidth).OuterWidthGt(outerWidthGt).OuterWidthGte(outerWidthGte).OuterWidthLt(outerWidthLt).OuterWidthLte(outerWidthLte).OuterWidthN(outerWidthN).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Serial(serial).SerialEmpty(serialEmpty).SerialIc(serialIc).SerialIe(serialIe).SerialIew(serialIew).SerialIsw(serialIsw).SerialN(serialN).SerialNic(serialNic).SerialNie(serialNie).SerialNiew(serialNiew).SerialNisw(serialNisw).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).Type_(type_).TypeN(typeN).UHeight(uHeight).UHeightGt(uHeightGt).UHeightGte(uHeightGte).UHeightLt(uHeightLt).UHeightLte(uHeightLte).UHeightN(uHeightN).UpdatedByRequest(updatedByRequest).Weight(weight).WeightGt(weightGt).WeightGte(weightGte).WeightLt(weightLt).WeightLte(weightLte).WeightN(weightN).WeightUnit(weightUnit).WeightUnitN(weightUnitN).Width(width).WidthN(widthN).Execute()
+> PaginatedRackList DcimRacksList(ctx).AssetTag(assetTag).AssetTagEmpty(assetTagEmpty).AssetTagIc(assetTagIc).AssetTagIe(assetTagIe).AssetTagIew(assetTagIew).AssetTagIsw(assetTagIsw).AssetTagN(assetTagN).AssetTagNic(assetTagNic).AssetTagNie(assetTagNie).AssetTagNiew(assetTagNiew).AssetTagNisw(assetTagNisw).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DescUnits(descUnits).FacilityId(facilityId).FacilityIdEmpty(facilityIdEmpty).FacilityIdIc(facilityIdIc).FacilityIdIe(facilityIdIe).FacilityIdIew(facilityIdIew).FacilityIdIsw(facilityIdIsw).FacilityIdN(facilityIdN).FacilityIdNic(facilityIdNic).FacilityIdNie(facilityIdNie).FacilityIdNiew(facilityIdNiew).FacilityIdNisw(facilityIdNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).MaxWeight(maxWeight).MaxWeightEmpty(maxWeightEmpty).MaxWeightGt(maxWeightGt).MaxWeightGte(maxWeightGte).MaxWeightLt(maxWeightLt).MaxWeightLte(maxWeightLte).MaxWeightN(maxWeightN).ModifiedByRequest(modifiedByRequest).MountingDepth(mountingDepth).MountingDepthEmpty(mountingDepthEmpty).MountingDepthGt(mountingDepthGt).MountingDepthGte(mountingDepthGte).MountingDepthLt(mountingDepthLt).MountingDepthLte(mountingDepthLte).MountingDepthN(mountingDepthN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).OuterDepth(outerDepth).OuterDepthEmpty(outerDepthEmpty).OuterDepthGt(outerDepthGt).OuterDepthGte(outerDepthGte).OuterDepthLt(outerDepthLt).OuterDepthLte(outerDepthLte).OuterDepthN(outerDepthN).OuterUnit(outerUnit).OuterUnitN(outerUnitN).OuterWidth(outerWidth).OuterWidthEmpty(outerWidthEmpty).OuterWidthGt(outerWidthGt).OuterWidthGte(outerWidthGte).OuterWidthLt(outerWidthLt).OuterWidthLte(outerWidthLte).OuterWidthN(outerWidthN).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Serial(serial).SerialEmpty(serialEmpty).SerialIc(serialIc).SerialIe(serialIe).SerialIew(serialIew).SerialIsw(serialIsw).SerialN(serialN).SerialNic(serialNic).SerialNie(serialNie).SerialNiew(serialNiew).SerialNisw(serialNisw).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).StartingUnit(startingUnit).StartingUnitEmpty(startingUnitEmpty).StartingUnitGt(startingUnitGt).StartingUnitGte(startingUnitGte).StartingUnitLt(startingUnitLt).StartingUnitLte(startingUnitLte).StartingUnitN(startingUnitN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).Type_(type_).TypeN(typeN).UHeight(uHeight).UHeightEmpty(uHeightEmpty).UHeightGt(uHeightGt).UHeightGte(uHeightGte).UHeightLt(uHeightLt).UHeightLte(uHeightLte).UHeightN(uHeightN).UpdatedByRequest(updatedByRequest).Weight(weight).WeightEmpty(weightEmpty).WeightGt(weightGt).WeightGte(weightGte).WeightLt(weightLt).WeightLte(weightLte).WeightN(weightN).WeightUnit(weightUnit).WeightUnitN(weightUnitN).Width(width).WidthN(widthN).Execute()
 
 
 
@@ -26785,6 +27191,7 @@ func main() {
     contactRole := []int32{int32(123)} // []int32 | Contact Role (optional)
     contactRoleN := []int32{int32(123)} // []int32 | Contact Role (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -26804,12 +27211,14 @@ func main() {
     facilityIdNiew := []string{"Inner_example"} // []string |  (optional)
     facilityIdNisw := []string{"Inner_example"} // []string |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -26821,12 +27230,15 @@ func main() {
     locationId := []int32{int32(123)} // []int32 | Location (ID) (optional)
     locationIdN := []int32{int32(123)} // []int32 | Location (ID) (optional)
     maxWeight := []int32{int32(123)} // []int32 |  (optional)
+    maxWeightEmpty := true // bool |  (optional)
     maxWeightGt := []int32{int32(123)} // []int32 |  (optional)
     maxWeightGte := []int32{int32(123)} // []int32 |  (optional)
     maxWeightLt := []int32{int32(123)} // []int32 |  (optional)
     maxWeightLte := []int32{int32(123)} // []int32 |  (optional)
     maxWeightN := []int32{int32(123)} // []int32 |  (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     mountingDepth := []int32{int32(123)} // []int32 |  (optional)
+    mountingDepthEmpty := true // bool |  (optional)
     mountingDepthGt := []int32{int32(123)} // []int32 |  (optional)
     mountingDepthGte := []int32{int32(123)} // []int32 |  (optional)
     mountingDepthLt := []int32{int32(123)} // []int32 |  (optional)
@@ -26846,6 +27258,7 @@ func main() {
     offset := int32(56) // int32 | The initial index from which to return the results. (optional)
     ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
     outerDepth := []int32{int32(123)} // []int32 |  (optional)
+    outerDepthEmpty := true // bool |  (optional)
     outerDepthGt := []int32{int32(123)} // []int32 |  (optional)
     outerDepthGte := []int32{int32(123)} // []int32 |  (optional)
     outerDepthLt := []int32{int32(123)} // []int32 |  (optional)
@@ -26854,6 +27267,7 @@ func main() {
     outerUnit := "outerUnit_example" // string |  (optional)
     outerUnitN := "outerUnitN_example" // string |  (optional)
     outerWidth := []int32{int32(123)} // []int32 |  (optional)
+    outerWidthEmpty := true // bool |  (optional)
     outerWidthGt := []int32{int32(123)} // []int32 |  (optional)
     outerWidthGte := []int32{int32(123)} // []int32 |  (optional)
     outerWidthLt := []int32{int32(123)} // []int32 |  (optional)
@@ -26887,6 +27301,13 @@ func main() {
     siteGroupIdN := []int32{int32(123)} // []int32 | Site group (ID) (optional)
     siteId := []int32{int32(123)} // []int32 | Site (ID) (optional)
     siteIdN := []int32{int32(123)} // []int32 | Site (ID) (optional)
+    startingUnit := []int32{int32(123)} // []int32 |  (optional)
+    startingUnitEmpty := true // bool |  (optional)
+    startingUnitGt := []int32{int32(123)} // []int32 |  (optional)
+    startingUnitGte := []int32{int32(123)} // []int32 |  (optional)
+    startingUnitLt := []int32{int32(123)} // []int32 |  (optional)
+    startingUnitLte := []int32{int32(123)} // []int32 |  (optional)
+    startingUnitN := []int32{int32(123)} // []int32 |  (optional)
     status := []string{"Inner_example"} // []string |  (optional)
     statusN := []string{"Inner_example"} // []string |  (optional)
     tag := []string{"Inner_example"} // []string |  (optional)
@@ -26902,6 +27323,7 @@ func main() {
     type_ := []string{"Inner_example"} // []string |  (optional)
     typeN := []string{"Inner_example"} // []string |  (optional)
     uHeight := []int32{int32(123)} // []int32 |  (optional)
+    uHeightEmpty := true // bool |  (optional)
     uHeightGt := []int32{int32(123)} // []int32 |  (optional)
     uHeightGte := []int32{int32(123)} // []int32 |  (optional)
     uHeightLt := []int32{int32(123)} // []int32 |  (optional)
@@ -26909,6 +27331,7 @@ func main() {
     uHeightN := []int32{int32(123)} // []int32 |  (optional)
     updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     weight := []float64{float64(123)} // []float64 |  (optional)
+    weightEmpty := true // bool |  (optional)
     weightGt := []float64{float64(123)} // []float64 |  (optional)
     weightGte := []float64{float64(123)} // []float64 |  (optional)
     weightLt := []float64{float64(123)} // []float64 |  (optional)
@@ -26921,13 +27344,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRacksList(context.Background()).AssetTag(assetTag).AssetTagEmpty(assetTagEmpty).AssetTagIc(assetTagIc).AssetTagIe(assetTagIe).AssetTagIew(assetTagIew).AssetTagIsw(assetTagIsw).AssetTagN(assetTagN).AssetTagNic(assetTagNic).AssetTagNie(assetTagNie).AssetTagNiew(assetTagNiew).AssetTagNisw(assetTagNisw).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DescUnits(descUnits).FacilityId(facilityId).FacilityIdEmpty(facilityIdEmpty).FacilityIdIc(facilityIdIc).FacilityIdIe(facilityIdIe).FacilityIdIew(facilityIdIew).FacilityIdIsw(facilityIdIsw).FacilityIdN(facilityIdN).FacilityIdNic(facilityIdNic).FacilityIdNie(facilityIdNie).FacilityIdNiew(facilityIdNiew).FacilityIdNisw(facilityIdNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).MaxWeight(maxWeight).MaxWeightGt(maxWeightGt).MaxWeightGte(maxWeightGte).MaxWeightLt(maxWeightLt).MaxWeightLte(maxWeightLte).MaxWeightN(maxWeightN).MountingDepth(mountingDepth).MountingDepthGt(mountingDepthGt).MountingDepthGte(mountingDepthGte).MountingDepthLt(mountingDepthLt).MountingDepthLte(mountingDepthLte).MountingDepthN(mountingDepthN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).OuterDepth(outerDepth).OuterDepthGt(outerDepthGt).OuterDepthGte(outerDepthGte).OuterDepthLt(outerDepthLt).OuterDepthLte(outerDepthLte).OuterDepthN(outerDepthN).OuterUnit(outerUnit).OuterUnitN(outerUnitN).OuterWidth(outerWidth).OuterWidthGt(outerWidthGt).OuterWidthGte(outerWidthGte).OuterWidthLt(outerWidthLt).OuterWidthLte(outerWidthLte).OuterWidthN(outerWidthN).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Serial(serial).SerialEmpty(serialEmpty).SerialIc(serialIc).SerialIe(serialIe).SerialIew(serialIew).SerialIsw(serialIsw).SerialN(serialN).SerialNic(serialNic).SerialNie(serialNie).SerialNiew(serialNiew).SerialNisw(serialNisw).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).Type_(type_).TypeN(typeN).UHeight(uHeight).UHeightGt(uHeightGt).UHeightGte(uHeightGte).UHeightLt(uHeightLt).UHeightLte(uHeightLte).UHeightN(uHeightN).UpdatedByRequest(updatedByRequest).Weight(weight).WeightGt(weightGt).WeightGte(weightGte).WeightLt(weightLt).WeightLte(weightLte).WeightN(weightN).WeightUnit(weightUnit).WeightUnitN(weightUnitN).Width(width).WidthN(widthN).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRacksList(context.Background()).AssetTag(assetTag).AssetTagEmpty(assetTagEmpty).AssetTagIc(assetTagIc).AssetTagIe(assetTagIe).AssetTagIew(assetTagIew).AssetTagIsw(assetTagIsw).AssetTagN(assetTagN).AssetTagNic(assetTagNic).AssetTagNie(assetTagNie).AssetTagNiew(assetTagNiew).AssetTagNisw(assetTagNisw).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DescUnits(descUnits).FacilityId(facilityId).FacilityIdEmpty(facilityIdEmpty).FacilityIdIc(facilityIdIc).FacilityIdIe(facilityIdIe).FacilityIdIew(facilityIdIew).FacilityIdIsw(facilityIdIsw).FacilityIdN(facilityIdN).FacilityIdNic(facilityIdNic).FacilityIdNie(facilityIdNie).FacilityIdNiew(facilityIdNiew).FacilityIdNisw(facilityIdNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).MaxWeight(maxWeight).MaxWeightEmpty(maxWeightEmpty).MaxWeightGt(maxWeightGt).MaxWeightGte(maxWeightGte).MaxWeightLt(maxWeightLt).MaxWeightLte(maxWeightLte).MaxWeightN(maxWeightN).ModifiedByRequest(modifiedByRequest).MountingDepth(mountingDepth).MountingDepthEmpty(mountingDepthEmpty).MountingDepthGt(mountingDepthGt).MountingDepthGte(mountingDepthGte).MountingDepthLt(mountingDepthLt).MountingDepthLte(mountingDepthLte).MountingDepthN(mountingDepthN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).OuterDepth(outerDepth).OuterDepthEmpty(outerDepthEmpty).OuterDepthGt(outerDepthGt).OuterDepthGte(outerDepthGte).OuterDepthLt(outerDepthLt).OuterDepthLte(outerDepthLte).OuterDepthN(outerDepthN).OuterUnit(outerUnit).OuterUnitN(outerUnitN).OuterWidth(outerWidth).OuterWidthEmpty(outerWidthEmpty).OuterWidthGt(outerWidthGt).OuterWidthGte(outerWidthGte).OuterWidthLt(outerWidthLt).OuterWidthLte(outerWidthLte).OuterWidthN(outerWidthN).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Serial(serial).SerialEmpty(serialEmpty).SerialIc(serialIc).SerialIe(serialIe).SerialIew(serialIew).SerialIsw(serialIsw).SerialN(serialN).SerialNic(serialNic).SerialNie(serialNie).SerialNiew(serialNiew).SerialNisw(serialNisw).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).StartingUnit(startingUnit).StartingUnitEmpty(startingUnitEmpty).StartingUnitGt(startingUnitGt).StartingUnitGte(startingUnitGte).StartingUnitLt(startingUnitLt).StartingUnitLte(startingUnitLte).StartingUnitN(startingUnitN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).Type_(type_).TypeN(typeN).UHeight(uHeight).UHeightEmpty(uHeightEmpty).UHeightGt(uHeightGt).UHeightGte(uHeightGte).UHeightLt(uHeightLt).UHeightLte(uHeightLte).UHeightN(uHeightN).UpdatedByRequest(updatedByRequest).Weight(weight).WeightEmpty(weightEmpty).WeightGt(weightGt).WeightGte(weightGte).WeightLt(weightLt).WeightLte(weightLte).WeightN(weightN).WeightUnit(weightUnit).WeightUnitN(weightUnitN).Width(width).WidthN(widthN).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRacksList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRacksList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRacksList`: PaginatedRackList
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRacksList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRacksList`: %v\n", resp)
 }
 ```
 
@@ -26960,6 +27383,7 @@ Name | Type | Description  | Notes
  **contactRole** | **[]int32** | Contact Role | 
  **contactRoleN** | **[]int32** | Contact Role | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -26979,12 +27403,14 @@ Name | Type | Description  | Notes
  **facilityIdNiew** | **[]string** |  | 
  **facilityIdNisw** | **[]string** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -26996,12 +27422,15 @@ Name | Type | Description  | Notes
  **locationId** | **[]int32** | Location (ID) | 
  **locationIdN** | **[]int32** | Location (ID) | 
  **maxWeight** | **[]int32** |  | 
+ **maxWeightEmpty** | **bool** |  | 
  **maxWeightGt** | **[]int32** |  | 
  **maxWeightGte** | **[]int32** |  | 
  **maxWeightLt** | **[]int32** |  | 
  **maxWeightLte** | **[]int32** |  | 
  **maxWeightN** | **[]int32** |  | 
+ **modifiedByRequest** | **string** |  | 
  **mountingDepth** | **[]int32** |  | 
+ **mountingDepthEmpty** | **bool** |  | 
  **mountingDepthGt** | **[]int32** |  | 
  **mountingDepthGte** | **[]int32** |  | 
  **mountingDepthLt** | **[]int32** |  | 
@@ -27021,6 +27450,7 @@ Name | Type | Description  | Notes
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **outerDepth** | **[]int32** |  | 
+ **outerDepthEmpty** | **bool** |  | 
  **outerDepthGt** | **[]int32** |  | 
  **outerDepthGte** | **[]int32** |  | 
  **outerDepthLt** | **[]int32** |  | 
@@ -27029,6 +27459,7 @@ Name | Type | Description  | Notes
  **outerUnit** | **string** |  | 
  **outerUnitN** | **string** |  | 
  **outerWidth** | **[]int32** |  | 
+ **outerWidthEmpty** | **bool** |  | 
  **outerWidthGt** | **[]int32** |  | 
  **outerWidthGte** | **[]int32** |  | 
  **outerWidthLt** | **[]int32** |  | 
@@ -27062,6 +27493,13 @@ Name | Type | Description  | Notes
  **siteGroupIdN** | **[]int32** | Site group (ID) | 
  **siteId** | **[]int32** | Site (ID) | 
  **siteIdN** | **[]int32** | Site (ID) | 
+ **startingUnit** | **[]int32** |  | 
+ **startingUnitEmpty** | **bool** |  | 
+ **startingUnitGt** | **[]int32** |  | 
+ **startingUnitGte** | **[]int32** |  | 
+ **startingUnitLt** | **[]int32** |  | 
+ **startingUnitLte** | **[]int32** |  | 
+ **startingUnitN** | **[]int32** |  | 
  **status** | **[]string** |  | 
  **statusN** | **[]string** |  | 
  **tag** | **[]string** |  | 
@@ -27077,6 +27515,7 @@ Name | Type | Description  | Notes
  **type_** | **[]string** |  | 
  **typeN** | **[]string** |  | 
  **uHeight** | **[]int32** |  | 
+ **uHeightEmpty** | **bool** |  | 
  **uHeightGt** | **[]int32** |  | 
  **uHeightGte** | **[]int32** |  | 
  **uHeightLt** | **[]int32** |  | 
@@ -27084,6 +27523,7 @@ Name | Type | Description  | Notes
  **uHeightN** | **[]int32** |  | 
  **updatedByRequest** | **string** |  | 
  **weight** | **[]float64** |  | 
+ **weightEmpty** | **bool** |  | 
  **weightGt** | **[]float64** |  | 
  **weightGte** | **[]float64** |  | 
  **weightLt** | **[]float64** |  | 
@@ -27138,13 +27578,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRacksPartialUpdate(context.Background(), id).PatchedWritableRackRequest(patchedWritableRackRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRacksPartialUpdate(context.Background(), id).PatchedWritableRackRequest(patchedWritableRackRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRacksPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRacksPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRacksPartialUpdate`: Rack
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRacksPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRacksPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -27209,13 +27649,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRacksRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRacksRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRacksRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRacksRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRacksRetrieve`: Rack
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRacksRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRacksRetrieve`: %v\n", resp)
 }
 ```
 
@@ -27280,13 +27720,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRacksUpdate(context.Background(), id).WritableRackRequest(writableRackRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRacksUpdate(context.Background(), id).WritableRackRequest(writableRackRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRacksUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRacksUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRacksUpdate`: Rack
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRacksUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRacksUpdate`: %v\n", resp)
 }
 ```
 
@@ -27351,9 +27791,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimRearPortTemplatesBulkDestroy(context.Background()).RearPortTemplateRequest(rearPortTemplateRequest).Execute()
+    r, err := apiClient.DcimAPI.DcimRearPortTemplatesBulkDestroy(context.Background()).RearPortTemplateRequest(rearPortTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRearPortTemplatesBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRearPortTemplatesBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -27415,13 +27855,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRearPortTemplatesBulkPartialUpdate(context.Background()).RearPortTemplateRequest(rearPortTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRearPortTemplatesBulkPartialUpdate(context.Background()).RearPortTemplateRequest(rearPortTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRearPortTemplatesBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRearPortTemplatesBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRearPortTemplatesBulkPartialUpdate`: []RearPortTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRearPortTemplatesBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRearPortTemplatesBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -27481,13 +27921,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRearPortTemplatesBulkUpdate(context.Background()).RearPortTemplateRequest(rearPortTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRearPortTemplatesBulkUpdate(context.Background()).RearPortTemplateRequest(rearPortTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRearPortTemplatesBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRearPortTemplatesBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRearPortTemplatesBulkUpdate`: []RearPortTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRearPortTemplatesBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRearPortTemplatesBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -27547,13 +27987,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRearPortTemplatesCreate(context.Background()).WritableRearPortTemplateRequest(writableRearPortTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRearPortTemplatesCreate(context.Background()).WritableRearPortTemplateRequest(writableRearPortTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRearPortTemplatesCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRearPortTemplatesCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRearPortTemplatesCreate`: RearPortTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRearPortTemplatesCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRearPortTemplatesCreate`: %v\n", resp)
 }
 ```
 
@@ -27613,9 +28053,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimRearPortTemplatesDestroy(context.Background(), id).Execute()
+    r, err := apiClient.DcimAPI.DcimRearPortTemplatesDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRearPortTemplatesDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRearPortTemplatesDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -27658,7 +28098,7 @@ Name | Type | Description  | Notes
 
 ## DcimRearPortTemplatesList
 
-> PaginatedRearPortTemplateList DcimRearPortTemplatesList(ctx).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Positions(positions).PositionsGt(positionsGt).PositionsGte(positionsGte).PositionsLt(positionsLt).PositionsLte(positionsLte).PositionsN(positionsN).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedRearPortTemplateList DcimRearPortTemplatesList(ctx).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Positions(positions).PositionsEmpty(positionsEmpty).PositionsGt(positionsGt).PositionsGte(positionsGte).PositionsLt(positionsLt).PositionsLte(positionsLte).PositionsN(positionsN).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -27690,6 +28130,7 @@ func main() {
     colorNiew := []string{"Inner_example"} // []string |  (optional)
     colorNisw := []string{"Inner_example"} // []string |  (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -27699,18 +28140,21 @@ func main() {
     devicetypeId := []*int32{int32(123)} // []*int32 | Device type (ID) (optional)
     devicetypeIdN := []*int32{int32(123)} // []*int32 | Device type (ID) (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     moduletypeId := []*int32{int32(123)} // []*int32 | Module type (ID) (optional)
     moduletypeIdN := []*int32{int32(123)} // []*int32 | Module type (ID) (optional)
     name := []string{"Inner_example"} // []string |  (optional)
@@ -27727,6 +28171,7 @@ func main() {
     offset := int32(56) // int32 | The initial index from which to return the results. (optional)
     ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
     positions := []int32{int32(123)} // []int32 |  (optional)
+    positionsEmpty := true // bool |  (optional)
     positionsGt := []int32{int32(123)} // []int32 |  (optional)
     positionsGte := []int32{int32(123)} // []int32 |  (optional)
     positionsLt := []int32{int32(123)} // []int32 |  (optional)
@@ -27739,13 +28184,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRearPortTemplatesList(context.Background()).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Positions(positions).PositionsGt(positionsGt).PositionsGte(positionsGte).PositionsLt(positionsLt).PositionsLte(positionsLte).PositionsN(positionsN).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRearPortTemplatesList(context.Background()).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Positions(positions).PositionsEmpty(positionsEmpty).PositionsGt(positionsGt).PositionsGte(positionsGte).PositionsLt(positionsLt).PositionsLte(positionsLte).PositionsN(positionsN).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRearPortTemplatesList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRearPortTemplatesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRearPortTemplatesList`: PaginatedRearPortTemplateList
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRearPortTemplatesList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRearPortTemplatesList`: %v\n", resp)
 }
 ```
 
@@ -27772,6 +28217,7 @@ Name | Type | Description  | Notes
  **colorNiew** | **[]string** |  | 
  **colorNisw** | **[]string** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -27781,18 +28227,21 @@ Name | Type | Description  | Notes
  **devicetypeId** | **[]int32** | Device type (ID) | 
  **devicetypeIdN** | **[]int32** | Device type (ID) | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **moduletypeId** | **[]int32** | Module type (ID) | 
  **moduletypeIdN** | **[]int32** | Module type (ID) | 
  **name** | **[]string** |  | 
@@ -27809,6 +28258,7 @@ Name | Type | Description  | Notes
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **positions** | **[]int32** |  | 
+ **positionsEmpty** | **bool** |  | 
  **positionsGt** | **[]int32** |  | 
  **positionsGte** | **[]int32** |  | 
  **positionsLt** | **[]int32** |  | 
@@ -27863,13 +28313,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRearPortTemplatesPartialUpdate(context.Background(), id).PatchedWritableRearPortTemplateRequest(patchedWritableRearPortTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRearPortTemplatesPartialUpdate(context.Background(), id).PatchedWritableRearPortTemplateRequest(patchedWritableRearPortTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRearPortTemplatesPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRearPortTemplatesPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRearPortTemplatesPartialUpdate`: RearPortTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRearPortTemplatesPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRearPortTemplatesPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -27934,13 +28384,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRearPortTemplatesRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRearPortTemplatesRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRearPortTemplatesRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRearPortTemplatesRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRearPortTemplatesRetrieve`: RearPortTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRearPortTemplatesRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRearPortTemplatesRetrieve`: %v\n", resp)
 }
 ```
 
@@ -28005,13 +28455,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRearPortTemplatesUpdate(context.Background(), id).WritableRearPortTemplateRequest(writableRearPortTemplateRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRearPortTemplatesUpdate(context.Background(), id).WritableRearPortTemplateRequest(writableRearPortTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRearPortTemplatesUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRearPortTemplatesUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRearPortTemplatesUpdate`: RearPortTemplate
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRearPortTemplatesUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRearPortTemplatesUpdate`: %v\n", resp)
 }
 ```
 
@@ -28076,9 +28526,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimRearPortsBulkDestroy(context.Background()).RearPortRequest(rearPortRequest).Execute()
+    r, err := apiClient.DcimAPI.DcimRearPortsBulkDestroy(context.Background()).RearPortRequest(rearPortRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRearPortsBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRearPortsBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -28140,13 +28590,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRearPortsBulkPartialUpdate(context.Background()).RearPortRequest(rearPortRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRearPortsBulkPartialUpdate(context.Background()).RearPortRequest(rearPortRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRearPortsBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRearPortsBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRearPortsBulkPartialUpdate`: []RearPort
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRearPortsBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRearPortsBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -28206,13 +28656,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRearPortsBulkUpdate(context.Background()).RearPortRequest(rearPortRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRearPortsBulkUpdate(context.Background()).RearPortRequest(rearPortRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRearPortsBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRearPortsBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRearPortsBulkUpdate`: []RearPort
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRearPortsBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRearPortsBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -28272,13 +28722,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRearPortsCreate(context.Background()).WritableRearPortRequest(writableRearPortRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRearPortsCreate(context.Background()).WritableRearPortRequest(writableRearPortRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRearPortsCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRearPortsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRearPortsCreate`: RearPort
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRearPortsCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRearPortsCreate`: %v\n", resp)
 }
 ```
 
@@ -28338,9 +28788,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimRearPortsDestroy(context.Background(), id).Execute()
+    r, err := apiClient.DcimAPI.DcimRearPortsDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRearPortsDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRearPortsDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -28383,7 +28833,7 @@ Name | Type | Description  | Notes
 
 ## DcimRearPortsList
 
-> PaginatedRearPortList DcimRearPortsList(ctx).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Positions(positions).PositionsGt(positionsGt).PositionsGte(positionsGte).PositionsLt(positionsLt).PositionsLte(positionsLte).PositionsN(positionsN).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
+> PaginatedRearPortList DcimRearPortsList(ctx).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Positions(positions).PositionsEmpty(positionsEmpty).PositionsGt(positionsGt).PositionsGte(positionsGte).PositionsLt(positionsLt).PositionsLte(positionsLte).PositionsN(positionsN).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
 
 
 
@@ -28418,6 +28868,7 @@ func main() {
     colorNiew := []string{"Inner_example"} // []string |  (optional)
     colorNisw := []string{"Inner_example"} // []string |  (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -28448,6 +28899,7 @@ func main() {
     deviceTypeId := []int32{int32(123)} // []int32 | Device type (ID) (optional)
     deviceTypeIdN := []int32{int32(123)} // []int32 | Device type (ID) (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
@@ -28465,6 +28917,7 @@ func main() {
     labelNiew := []string{"Inner_example"} // []string |  (optional)
     labelNisw := []string{"Inner_example"} // []string |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -28475,6 +28928,7 @@ func main() {
     locationN := []string{"Inner_example"} // []string | Location (slug) (optional)
     locationId := []int32{int32(123)} // []int32 | Location (ID) (optional)
     locationIdN := []int32{int32(123)} // []int32 | Location (ID) (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     moduleId := []*int32{int32(123)} // []*int32 | Module (ID) (optional)
     moduleIdN := []*int32{int32(123)} // []*int32 | Module (ID) (optional)
     name := []string{"Inner_example"} // []string |  (optional)
@@ -28492,6 +28946,7 @@ func main() {
     offset := int32(56) // int32 | The initial index from which to return the results. (optional)
     ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
     positions := []int32{int32(123)} // []int32 |  (optional)
+    positionsEmpty := true // bool |  (optional)
     positionsGt := []int32{int32(123)} // []int32 |  (optional)
     positionsGte := []int32{int32(123)} // []int32 |  (optional)
     positionsLt := []int32{int32(123)} // []int32 |  (optional)
@@ -28506,6 +28961,10 @@ func main() {
     regionN := []int32{int32(123)} // []int32 | Region (slug) (optional)
     regionId := []int32{int32(123)} // []int32 | Region (ID) (optional)
     regionIdN := []int32{int32(123)} // []int32 | Region (ID) (optional)
+    role := []string{"Inner_example"} // []string | Device role (slug) (optional)
+    roleN := []string{"Inner_example"} // []string | Device role (slug) (optional)
+    roleId := []int32{int32(123)} // []int32 | Device role (ID) (optional)
+    roleIdN := []int32{int32(123)} // []int32 | Device role (ID) (optional)
     site := []string{"Inner_example"} // []string | Site name (slug) (optional)
     siteN := []string{"Inner_example"} // []string | Site name (slug) (optional)
     siteGroup := []int32{int32(123)} // []int32 | Site group (slug) (optional)
@@ -28526,13 +28985,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRearPortsList(context.Background()).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Positions(positions).PositionsGt(positionsGt).PositionsGte(positionsGte).PositionsLt(positionsLt).PositionsLte(positionsLte).PositionsN(positionsN).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRearPortsList(context.Background()).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Positions(positions).PositionsEmpty(positionsEmpty).PositionsGt(positionsGt).PositionsGte(positionsGte).PositionsLt(positionsLt).PositionsLte(positionsLte).PositionsN(positionsN).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRearPortsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRearPortsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRearPortsList`: PaginatedRearPortList
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRearPortsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRearPortsList`: %v\n", resp)
 }
 ```
 
@@ -28562,6 +29021,7 @@ Name | Type | Description  | Notes
  **colorNiew** | **[]string** |  | 
  **colorNisw** | **[]string** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -28592,6 +29052,7 @@ Name | Type | Description  | Notes
  **deviceTypeId** | **[]int32** | Device type (ID) | 
  **deviceTypeIdN** | **[]int32** | Device type (ID) | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
@@ -28609,6 +29070,7 @@ Name | Type | Description  | Notes
  **labelNiew** | **[]string** |  | 
  **labelNisw** | **[]string** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -28619,6 +29081,7 @@ Name | Type | Description  | Notes
  **locationN** | **[]string** | Location (slug) | 
  **locationId** | **[]int32** | Location (ID) | 
  **locationIdN** | **[]int32** | Location (ID) | 
+ **modifiedByRequest** | **string** |  | 
  **moduleId** | **[]int32** | Module (ID) | 
  **moduleIdN** | **[]int32** | Module (ID) | 
  **name** | **[]string** |  | 
@@ -28636,6 +29099,7 @@ Name | Type | Description  | Notes
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **positions** | **[]int32** |  | 
+ **positionsEmpty** | **bool** |  | 
  **positionsGt** | **[]int32** |  | 
  **positionsGte** | **[]int32** |  | 
  **positionsLt** | **[]int32** |  | 
@@ -28650,6 +29114,10 @@ Name | Type | Description  | Notes
  **regionN** | **[]int32** | Region (slug) | 
  **regionId** | **[]int32** | Region (ID) | 
  **regionIdN** | **[]int32** | Region (ID) | 
+ **role** | **[]string** | Device role (slug) | 
+ **roleN** | **[]string** | Device role (slug) | 
+ **roleId** | **[]int32** | Device role (ID) | 
+ **roleIdN** | **[]int32** | Device role (ID) | 
  **site** | **[]string** | Site name (slug) | 
  **siteN** | **[]string** | Site name (slug) | 
  **siteGroup** | **[]int32** | Site group (slug) | 
@@ -28712,13 +29180,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRearPortsPartialUpdate(context.Background(), id).PatchedWritableRearPortRequest(patchedWritableRearPortRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRearPortsPartialUpdate(context.Background(), id).PatchedWritableRearPortRequest(patchedWritableRearPortRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRearPortsPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRearPortsPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRearPortsPartialUpdate`: RearPort
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRearPortsPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRearPortsPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -28783,13 +29251,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRearPortsPathsRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRearPortsPathsRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRearPortsPathsRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRearPortsPathsRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRearPortsPathsRetrieve`: RearPort
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRearPortsPathsRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRearPortsPathsRetrieve`: %v\n", resp)
 }
 ```
 
@@ -28853,13 +29321,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRearPortsRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRearPortsRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRearPortsRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRearPortsRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRearPortsRetrieve`: RearPort
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRearPortsRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRearPortsRetrieve`: %v\n", resp)
 }
 ```
 
@@ -28924,13 +29392,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRearPortsUpdate(context.Background(), id).WritableRearPortRequest(writableRearPortRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRearPortsUpdate(context.Background(), id).WritableRearPortRequest(writableRearPortRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRearPortsUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRearPortsUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRearPortsUpdate`: RearPort
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRearPortsUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRearPortsUpdate`: %v\n", resp)
 }
 ```
 
@@ -28995,9 +29463,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimRegionsBulkDestroy(context.Background()).RegionRequest(regionRequest).Execute()
+    r, err := apiClient.DcimAPI.DcimRegionsBulkDestroy(context.Background()).RegionRequest(regionRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRegionsBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRegionsBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -29059,13 +29527,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRegionsBulkPartialUpdate(context.Background()).RegionRequest(regionRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRegionsBulkPartialUpdate(context.Background()).RegionRequest(regionRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRegionsBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRegionsBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRegionsBulkPartialUpdate`: []Region
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRegionsBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRegionsBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -29125,13 +29593,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRegionsBulkUpdate(context.Background()).RegionRequest(regionRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRegionsBulkUpdate(context.Background()).RegionRequest(regionRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRegionsBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRegionsBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRegionsBulkUpdate`: []Region
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRegionsBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRegionsBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -29191,13 +29659,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRegionsCreate(context.Background()).WritableRegionRequest(writableRegionRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRegionsCreate(context.Background()).WritableRegionRequest(writableRegionRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRegionsCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRegionsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRegionsCreate`: Region
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRegionsCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRegionsCreate`: %v\n", resp)
 }
 ```
 
@@ -29257,9 +29725,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimRegionsDestroy(context.Background(), id).Execute()
+    r, err := apiClient.DcimAPI.DcimRegionsDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRegionsDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRegionsDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -29302,7 +29770,7 @@ Name | Type | Description  | Notes
 
 ## DcimRegionsList
 
-> PaginatedRegionList DcimRegionsList(ctx).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Parent(parent).ParentN(parentN).ParentId(parentId).ParentIdN(parentIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedRegionList DcimRegionsList(ctx).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Parent(parent).ParentN(parentN).ParentId(parentId).ParentIdN(parentIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -29329,6 +29797,7 @@ func main() {
     contactRole := []int32{int32(123)} // []int32 | Contact Role (optional)
     contactRoleN := []int32{int32(123)} // []int32 | Contact Role (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -29347,18 +29816,21 @@ func main() {
     descriptionNiew := []string{"Inner_example"} // []string |  (optional)
     descriptionNisw := []string{"Inner_example"} // []string |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -29394,13 +29866,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRegionsList(context.Background()).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Parent(parent).ParentN(parentN).ParentId(parentId).ParentIdN(parentIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRegionsList(context.Background()).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Parent(parent).ParentN(parentN).ParentId(parentId).ParentIdN(parentIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRegionsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRegionsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRegionsList`: PaginatedRegionList
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRegionsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRegionsList`: %v\n", resp)
 }
 ```
 
@@ -29422,6 +29894,7 @@ Name | Type | Description  | Notes
  **contactRole** | **[]int32** | Contact Role | 
  **contactRoleN** | **[]int32** | Contact Role | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -29440,18 +29913,21 @@ Name | Type | Description  | Notes
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -29529,13 +30005,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRegionsPartialUpdate(context.Background(), id).PatchedWritableRegionRequest(patchedWritableRegionRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRegionsPartialUpdate(context.Background(), id).PatchedWritableRegionRequest(patchedWritableRegionRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRegionsPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRegionsPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRegionsPartialUpdate`: Region
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRegionsPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRegionsPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -29600,13 +30076,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRegionsRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRegionsRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRegionsRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRegionsRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRegionsRetrieve`: Region
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRegionsRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRegionsRetrieve`: %v\n", resp)
 }
 ```
 
@@ -29671,13 +30147,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimRegionsUpdate(context.Background(), id).WritableRegionRequest(writableRegionRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimRegionsUpdate(context.Background(), id).WritableRegionRequest(writableRegionRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimRegionsUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRegionsUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimRegionsUpdate`: Region
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimRegionsUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRegionsUpdate`: %v\n", resp)
 }
 ```
 
@@ -29742,9 +30218,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimSiteGroupsBulkDestroy(context.Background()).SiteGroupRequest(siteGroupRequest).Execute()
+    r, err := apiClient.DcimAPI.DcimSiteGroupsBulkDestroy(context.Background()).SiteGroupRequest(siteGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimSiteGroupsBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimSiteGroupsBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -29806,13 +30282,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimSiteGroupsBulkPartialUpdate(context.Background()).SiteGroupRequest(siteGroupRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimSiteGroupsBulkPartialUpdate(context.Background()).SiteGroupRequest(siteGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimSiteGroupsBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimSiteGroupsBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimSiteGroupsBulkPartialUpdate`: []SiteGroup
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimSiteGroupsBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimSiteGroupsBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -29872,13 +30348,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimSiteGroupsBulkUpdate(context.Background()).SiteGroupRequest(siteGroupRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimSiteGroupsBulkUpdate(context.Background()).SiteGroupRequest(siteGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimSiteGroupsBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimSiteGroupsBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimSiteGroupsBulkUpdate`: []SiteGroup
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimSiteGroupsBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimSiteGroupsBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -29938,13 +30414,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimSiteGroupsCreate(context.Background()).WritableSiteGroupRequest(writableSiteGroupRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimSiteGroupsCreate(context.Background()).WritableSiteGroupRequest(writableSiteGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimSiteGroupsCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimSiteGroupsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimSiteGroupsCreate`: SiteGroup
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimSiteGroupsCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimSiteGroupsCreate`: %v\n", resp)
 }
 ```
 
@@ -30004,9 +30480,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimSiteGroupsDestroy(context.Background(), id).Execute()
+    r, err := apiClient.DcimAPI.DcimSiteGroupsDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimSiteGroupsDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimSiteGroupsDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -30049,7 +30525,7 @@ Name | Type | Description  | Notes
 
 ## DcimSiteGroupsList
 
-> PaginatedSiteGroupList DcimSiteGroupsList(ctx).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Parent(parent).ParentN(parentN).ParentId(parentId).ParentIdN(parentIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedSiteGroupList DcimSiteGroupsList(ctx).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Parent(parent).ParentN(parentN).ParentId(parentId).ParentIdN(parentIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -30076,6 +30552,7 @@ func main() {
     contactRole := []int32{int32(123)} // []int32 | Contact Role (optional)
     contactRoleN := []int32{int32(123)} // []int32 | Contact Role (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -30094,18 +30571,21 @@ func main() {
     descriptionNiew := []string{"Inner_example"} // []string |  (optional)
     descriptionNisw := []string{"Inner_example"} // []string |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -30141,13 +30621,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimSiteGroupsList(context.Background()).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Parent(parent).ParentN(parentN).ParentId(parentId).ParentIdN(parentIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimSiteGroupsList(context.Background()).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Parent(parent).ParentN(parentN).ParentId(parentId).ParentIdN(parentIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimSiteGroupsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimSiteGroupsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimSiteGroupsList`: PaginatedSiteGroupList
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimSiteGroupsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimSiteGroupsList`: %v\n", resp)
 }
 ```
 
@@ -30169,6 +30649,7 @@ Name | Type | Description  | Notes
  **contactRole** | **[]int32** | Contact Role | 
  **contactRoleN** | **[]int32** | Contact Role | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -30187,18 +30668,21 @@ Name | Type | Description  | Notes
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -30276,13 +30760,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimSiteGroupsPartialUpdate(context.Background(), id).PatchedWritableSiteGroupRequest(patchedWritableSiteGroupRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimSiteGroupsPartialUpdate(context.Background(), id).PatchedWritableSiteGroupRequest(patchedWritableSiteGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimSiteGroupsPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimSiteGroupsPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimSiteGroupsPartialUpdate`: SiteGroup
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimSiteGroupsPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimSiteGroupsPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -30347,13 +30831,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimSiteGroupsRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimSiteGroupsRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimSiteGroupsRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimSiteGroupsRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimSiteGroupsRetrieve`: SiteGroup
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimSiteGroupsRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimSiteGroupsRetrieve`: %v\n", resp)
 }
 ```
 
@@ -30418,13 +30902,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimSiteGroupsUpdate(context.Background(), id).WritableSiteGroupRequest(writableSiteGroupRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimSiteGroupsUpdate(context.Background(), id).WritableSiteGroupRequest(writableSiteGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimSiteGroupsUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimSiteGroupsUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimSiteGroupsUpdate`: SiteGroup
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimSiteGroupsUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimSiteGroupsUpdate`: %v\n", resp)
 }
 ```
 
@@ -30489,9 +30973,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimSitesBulkDestroy(context.Background()).SiteRequest(siteRequest).Execute()
+    r, err := apiClient.DcimAPI.DcimSitesBulkDestroy(context.Background()).SiteRequest(siteRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimSitesBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimSitesBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -30553,13 +31037,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimSitesBulkPartialUpdate(context.Background()).SiteRequest(siteRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimSitesBulkPartialUpdate(context.Background()).SiteRequest(siteRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimSitesBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimSitesBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimSitesBulkPartialUpdate`: []Site
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimSitesBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimSitesBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -30619,13 +31103,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimSitesBulkUpdate(context.Background()).SiteRequest(siteRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimSitesBulkUpdate(context.Background()).SiteRequest(siteRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimSitesBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimSitesBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimSitesBulkUpdate`: []Site
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimSitesBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimSitesBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -30685,13 +31169,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimSitesCreate(context.Background()).WritableSiteRequest(writableSiteRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimSitesCreate(context.Background()).WritableSiteRequest(writableSiteRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimSitesCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimSitesCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimSitesCreate`: Site
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimSitesCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimSitesCreate`: %v\n", resp)
 }
 ```
 
@@ -30751,9 +31235,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimSitesDestroy(context.Background(), id).Execute()
+    r, err := apiClient.DcimAPI.DcimSitesDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimSitesDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimSitesDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -30796,7 +31280,7 @@ Name | Type | Description  | Notes
 
 ## DcimSitesList
 
-> PaginatedSiteList DcimSitesList(ctx).Asn(asn).AsnN(asnN).AsnId(asnId).AsnIdN(asnIdN).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Facility(facility).FacilityEmpty(facilityEmpty).FacilityIc(facilityIc).FacilityIe(facilityIe).FacilityIew(facilityIew).FacilityIsw(facilityIsw).FacilityN(facilityN).FacilityNic(facilityNic).FacilityNie(facilityNie).FacilityNiew(facilityNiew).FacilityNisw(facilityNisw).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Latitude(latitude).LatitudeGt(latitudeGt).LatitudeGte(latitudeGte).LatitudeLt(latitudeLt).LatitudeLte(latitudeLte).LatitudeN(latitudeN).Limit(limit).Longitude(longitude).LongitudeGt(longitudeGt).LongitudeGte(longitudeGte).LongitudeLt(longitudeLt).LongitudeLte(longitudeLte).LongitudeN(longitudeN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedSiteList DcimSitesList(ctx).Asn(asn).AsnN(asnN).AsnId(asnId).AsnIdN(asnIdN).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Facility(facility).FacilityEmpty(facilityEmpty).FacilityIc(facilityIc).FacilityIe(facilityIe).FacilityIew(facilityIew).FacilityIsw(facilityIsw).FacilityN(facilityN).FacilityNic(facilityNic).FacilityNie(facilityNie).FacilityNiew(facilityNiew).FacilityNisw(facilityNisw).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Latitude(latitude).LatitudeEmpty(latitudeEmpty).LatitudeGt(latitudeGt).LatitudeGte(latitudeGte).LatitudeLt(latitudeLt).LatitudeLte(latitudeLte).LatitudeN(latitudeN).Limit(limit).Longitude(longitude).LongitudeEmpty(longitudeEmpty).LongitudeGt(longitudeGt).LongitudeGte(longitudeGte).LongitudeLt(longitudeLt).LongitudeLte(longitudeLte).LongitudeN(longitudeN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -30827,6 +31311,7 @@ func main() {
     contactRole := []int32{int32(123)} // []int32 | Contact Role (optional)
     contactRoleN := []int32{int32(123)} // []int32 | Contact Role (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -30860,18 +31345,21 @@ func main() {
     groupId := []int32{int32(123)} // []int32 | Group (ID) (optional)
     groupIdN := []int32{int32(123)} // []int32 | Group (ID) (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     latitude := []float64{float64(123)} // []float64 |  (optional)
+    latitudeEmpty := true // bool |  (optional)
     latitudeGt := []float64{float64(123)} // []float64 |  (optional)
     latitudeGte := []float64{float64(123)} // []float64 |  (optional)
     latitudeLt := []float64{float64(123)} // []float64 |  (optional)
@@ -30879,11 +31367,13 @@ func main() {
     latitudeN := []float64{float64(123)} // []float64 |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
     longitude := []float64{float64(123)} // []float64 |  (optional)
+    longitudeEmpty := true // bool |  (optional)
     longitudeGt := []float64{float64(123)} // []float64 |  (optional)
     longitudeGte := []float64{float64(123)} // []float64 |  (optional)
     longitudeLt := []float64{float64(123)} // []float64 |  (optional)
     longitudeLte := []float64{float64(123)} // []float64 |  (optional)
     longitudeN := []float64{float64(123)} // []float64 |  (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -30929,13 +31419,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimSitesList(context.Background()).Asn(asn).AsnN(asnN).AsnId(asnId).AsnIdN(asnIdN).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Facility(facility).FacilityEmpty(facilityEmpty).FacilityIc(facilityIc).FacilityIe(facilityIe).FacilityIew(facilityIew).FacilityIsw(facilityIsw).FacilityN(facilityN).FacilityNic(facilityNic).FacilityNie(facilityNie).FacilityNiew(facilityNiew).FacilityNisw(facilityNisw).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Latitude(latitude).LatitudeGt(latitudeGt).LatitudeGte(latitudeGte).LatitudeLt(latitudeLt).LatitudeLte(latitudeLte).LatitudeN(latitudeN).Limit(limit).Longitude(longitude).LongitudeGt(longitudeGt).LongitudeGte(longitudeGte).LongitudeLt(longitudeLt).LongitudeLte(longitudeLte).LongitudeN(longitudeN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimSitesList(context.Background()).Asn(asn).AsnN(asnN).AsnId(asnId).AsnIdN(asnIdN).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Facility(facility).FacilityEmpty(facilityEmpty).FacilityIc(facilityIc).FacilityIe(facilityIe).FacilityIew(facilityIew).FacilityIsw(facilityIsw).FacilityN(facilityN).FacilityNic(facilityNic).FacilityNie(facilityNie).FacilityNiew(facilityNiew).FacilityNisw(facilityNisw).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Latitude(latitude).LatitudeEmpty(latitudeEmpty).LatitudeGt(latitudeGt).LatitudeGte(latitudeGte).LatitudeLt(latitudeLt).LatitudeLte(latitudeLte).LatitudeN(latitudeN).Limit(limit).Longitude(longitude).LongitudeEmpty(longitudeEmpty).LongitudeGt(longitudeGt).LongitudeGte(longitudeGte).LongitudeLt(longitudeLt).LongitudeLte(longitudeLte).LongitudeN(longitudeN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimSitesList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimSitesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimSitesList`: PaginatedSiteList
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimSitesList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimSitesList`: %v\n", resp)
 }
 ```
 
@@ -30961,6 +31451,7 @@ Name | Type | Description  | Notes
  **contactRole** | **[]int32** | Contact Role | 
  **contactRoleN** | **[]int32** | Contact Role | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -30994,18 +31485,21 @@ Name | Type | Description  | Notes
  **groupId** | **[]int32** | Group (ID) | 
  **groupIdN** | **[]int32** | Group (ID) | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **latitude** | **[]float64** |  | 
+ **latitudeEmpty** | **bool** |  | 
  **latitudeGt** | **[]float64** |  | 
  **latitudeGte** | **[]float64** |  | 
  **latitudeLt** | **[]float64** |  | 
@@ -31013,11 +31507,13 @@ Name | Type | Description  | Notes
  **latitudeN** | **[]float64** |  | 
  **limit** | **int32** | Number of results to return per page. | 
  **longitude** | **[]float64** |  | 
+ **longitudeEmpty** | **bool** |  | 
  **longitudeGt** | **[]float64** |  | 
  **longitudeGte** | **[]float64** |  | 
  **longitudeLt** | **[]float64** |  | 
  **longitudeLte** | **[]float64** |  | 
  **longitudeN** | **[]float64** |  | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -31105,13 +31601,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimSitesPartialUpdate(context.Background(), id).PatchedWritableSiteRequest(patchedWritableSiteRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimSitesPartialUpdate(context.Background(), id).PatchedWritableSiteRequest(patchedWritableSiteRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimSitesPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimSitesPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimSitesPartialUpdate`: Site
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimSitesPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimSitesPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -31176,13 +31672,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimSitesRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimSitesRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimSitesRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimSitesRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimSitesRetrieve`: Site
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimSitesRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimSitesRetrieve`: %v\n", resp)
 }
 ```
 
@@ -31247,13 +31743,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimSitesUpdate(context.Background(), id).WritableSiteRequest(writableSiteRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimSitesUpdate(context.Background(), id).WritableSiteRequest(writableSiteRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimSitesUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimSitesUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimSitesUpdate`: Site
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimSitesUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimSitesUpdate`: %v\n", resp)
 }
 ```
 
@@ -31318,9 +31814,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimVirtualChassisBulkDestroy(context.Background()).VirtualChassisRequest(virtualChassisRequest).Execute()
+    r, err := apiClient.DcimAPI.DcimVirtualChassisBulkDestroy(context.Background()).VirtualChassisRequest(virtualChassisRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimVirtualChassisBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimVirtualChassisBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -31382,13 +31878,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimVirtualChassisBulkPartialUpdate(context.Background()).VirtualChassisRequest(virtualChassisRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimVirtualChassisBulkPartialUpdate(context.Background()).VirtualChassisRequest(virtualChassisRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimVirtualChassisBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimVirtualChassisBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimVirtualChassisBulkPartialUpdate`: []VirtualChassis
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimVirtualChassisBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimVirtualChassisBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -31448,13 +31944,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimVirtualChassisBulkUpdate(context.Background()).VirtualChassisRequest(virtualChassisRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimVirtualChassisBulkUpdate(context.Background()).VirtualChassisRequest(virtualChassisRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimVirtualChassisBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimVirtualChassisBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimVirtualChassisBulkUpdate`: []VirtualChassis
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimVirtualChassisBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimVirtualChassisBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -31514,13 +32010,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimVirtualChassisCreate(context.Background()).WritableVirtualChassisRequest(writableVirtualChassisRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimVirtualChassisCreate(context.Background()).WritableVirtualChassisRequest(writableVirtualChassisRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimVirtualChassisCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimVirtualChassisCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimVirtualChassisCreate`: VirtualChassis
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimVirtualChassisCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimVirtualChassisCreate`: %v\n", resp)
 }
 ```
 
@@ -31580,9 +32076,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimVirtualChassisDestroy(context.Background(), id).Execute()
+    r, err := apiClient.DcimAPI.DcimVirtualChassisDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimVirtualChassisDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimVirtualChassisDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -31625,7 +32121,7 @@ Name | Type | Description  | Notes
 
 ## DcimVirtualChassisList
 
-> PaginatedVirtualChassisList DcimVirtualChassisList(ctx).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Domain(domain).DomainEmpty(domainEmpty).DomainIc(domainIc).DomainIe(domainIe).DomainIew(domainIew).DomainIsw(domainIsw).DomainN(domainN).DomainNic(domainNic).DomainNie(domainNie).DomainNiew(domainNiew).DomainNisw(domainNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Master(master).MasterN(masterN).MasterId(masterId).MasterIdN(masterIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedVirtualChassisList DcimVirtualChassisList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Domain(domain).DomainEmpty(domainEmpty).DomainIc(domainIc).DomainIe(domainIe).DomainIew(domainIew).DomainIsw(domainIsw).DomainN(domainN).DomainNic(domainNic).DomainNie(domainNie).DomainNiew(domainNiew).DomainNisw(domainNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Master(master).MasterN(masterN).MasterId(masterId).MasterIdN(masterIdN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -31646,6 +32142,7 @@ import (
 
 func main() {
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -31664,12 +32161,14 @@ func main() {
     domainNiew := []string{"Inner_example"} // []string |  (optional)
     domainNisw := []string{"Inner_example"} // []string |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -31680,6 +32179,7 @@ func main() {
     masterN := []*string{"Inner_example"} // []*string | Master (name) (optional)
     masterId := []*int32{int32(123)} // []*int32 | Master (ID) (optional)
     masterIdN := []*int32{int32(123)} // []*int32 | Master (ID) (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -31716,13 +32216,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimVirtualChassisList(context.Background()).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Domain(domain).DomainEmpty(domainEmpty).DomainIc(domainIc).DomainIe(domainIe).DomainIew(domainIew).DomainIsw(domainIsw).DomainN(domainN).DomainNic(domainNic).DomainNie(domainNie).DomainNiew(domainNiew).DomainNisw(domainNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Master(master).MasterN(masterN).MasterId(masterId).MasterIdN(masterIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimVirtualChassisList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Domain(domain).DomainEmpty(domainEmpty).DomainIc(domainIc).DomainIe(domainIe).DomainIew(domainIew).DomainIsw(domainIsw).DomainN(domainN).DomainNic(domainNic).DomainNie(domainNie).DomainNiew(domainNiew).DomainNisw(domainNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Master(master).MasterN(masterN).MasterId(masterId).MasterIdN(masterIdN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimVirtualChassisList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimVirtualChassisList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimVirtualChassisList`: PaginatedVirtualChassisList
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimVirtualChassisList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimVirtualChassisList`: %v\n", resp)
 }
 ```
 
@@ -31738,6 +32238,7 @@ Other parameters are passed through a pointer to a apiDcimVirtualChassisListRequ
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -31756,12 +32257,14 @@ Name | Type | Description  | Notes
  **domainNiew** | **[]string** |  | 
  **domainNisw** | **[]string** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -31772,6 +32275,7 @@ Name | Type | Description  | Notes
  **masterN** | **[]string** | Master (name) | 
  **masterId** | **[]int32** | Master (ID) | 
  **masterIdN** | **[]int32** | Master (ID) | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -31850,13 +32354,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimVirtualChassisPartialUpdate(context.Background(), id).PatchedWritableVirtualChassisRequest(patchedWritableVirtualChassisRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimVirtualChassisPartialUpdate(context.Background(), id).PatchedWritableVirtualChassisRequest(patchedWritableVirtualChassisRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimVirtualChassisPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimVirtualChassisPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimVirtualChassisPartialUpdate`: VirtualChassis
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimVirtualChassisPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimVirtualChassisPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -31921,13 +32425,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimVirtualChassisRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimVirtualChassisRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimVirtualChassisRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimVirtualChassisRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimVirtualChassisRetrieve`: VirtualChassis
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimVirtualChassisRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimVirtualChassisRetrieve`: %v\n", resp)
 }
 ```
 
@@ -31992,13 +32496,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimVirtualChassisUpdate(context.Background(), id).WritableVirtualChassisRequest(writableVirtualChassisRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimVirtualChassisUpdate(context.Background(), id).WritableVirtualChassisRequest(writableVirtualChassisRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimVirtualChassisUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimVirtualChassisUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimVirtualChassisUpdate`: VirtualChassis
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimVirtualChassisUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimVirtualChassisUpdate`: %v\n", resp)
 }
 ```
 
@@ -32063,9 +32567,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimVirtualDeviceContextsBulkDestroy(context.Background()).VirtualDeviceContextRequest(virtualDeviceContextRequest).Execute()
+    r, err := apiClient.DcimAPI.DcimVirtualDeviceContextsBulkDestroy(context.Background()).VirtualDeviceContextRequest(virtualDeviceContextRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimVirtualDeviceContextsBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimVirtualDeviceContextsBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -32127,13 +32631,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimVirtualDeviceContextsBulkPartialUpdate(context.Background()).VirtualDeviceContextRequest(virtualDeviceContextRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimVirtualDeviceContextsBulkPartialUpdate(context.Background()).VirtualDeviceContextRequest(virtualDeviceContextRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimVirtualDeviceContextsBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimVirtualDeviceContextsBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimVirtualDeviceContextsBulkPartialUpdate`: []VirtualDeviceContext
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimVirtualDeviceContextsBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimVirtualDeviceContextsBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -32193,13 +32697,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimVirtualDeviceContextsBulkUpdate(context.Background()).VirtualDeviceContextRequest(virtualDeviceContextRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimVirtualDeviceContextsBulkUpdate(context.Background()).VirtualDeviceContextRequest(virtualDeviceContextRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimVirtualDeviceContextsBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimVirtualDeviceContextsBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimVirtualDeviceContextsBulkUpdate`: []VirtualDeviceContext
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimVirtualDeviceContextsBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimVirtualDeviceContextsBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -32259,13 +32763,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimVirtualDeviceContextsCreate(context.Background()).WritableVirtualDeviceContextRequest(writableVirtualDeviceContextRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimVirtualDeviceContextsCreate(context.Background()).WritableVirtualDeviceContextRequest(writableVirtualDeviceContextRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimVirtualDeviceContextsCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimVirtualDeviceContextsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimVirtualDeviceContextsCreate`: VirtualDeviceContext
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimVirtualDeviceContextsCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimVirtualDeviceContextsCreate`: %v\n", resp)
 }
 ```
 
@@ -32325,9 +32829,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DcimApi.DcimVirtualDeviceContextsDestroy(context.Background(), id).Execute()
+    r, err := apiClient.DcimAPI.DcimVirtualDeviceContextsDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimVirtualDeviceContextsDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimVirtualDeviceContextsDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -32370,7 +32874,7 @@ Name | Type | Description  | Notes
 
 ## DcimVirtualDeviceContextsList
 
-> PaginatedVirtualDeviceContextList DcimVirtualDeviceContextsList(ctx).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).HasPrimaryIp(hasPrimaryIp).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedVirtualDeviceContextList DcimVirtualDeviceContextsList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).HasPrimaryIp(hasPrimaryIp).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -32391,6 +32895,7 @@ import (
 
 func main() {
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -32403,18 +32908,21 @@ func main() {
     deviceIdN := []int32{int32(123)} // []int32 | VDC (ID) (optional)
     hasPrimaryIp := true // bool | Has a primary IP (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -32445,13 +32953,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimVirtualDeviceContextsList(context.Background()).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).HasPrimaryIp(hasPrimaryIp).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimVirtualDeviceContextsList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).HasPrimaryIp(hasPrimaryIp).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimVirtualDeviceContextsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimVirtualDeviceContextsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimVirtualDeviceContextsList`: PaginatedVirtualDeviceContextList
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimVirtualDeviceContextsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimVirtualDeviceContextsList`: %v\n", resp)
 }
 ```
 
@@ -32467,6 +32975,7 @@ Other parameters are passed through a pointer to a apiDcimVirtualDeviceContextsL
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -32479,18 +32988,21 @@ Name | Type | Description  | Notes
  **deviceIdN** | **[]int32** | VDC (ID) | 
  **hasPrimaryIp** | **bool** | Has a primary IP | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -32563,13 +33075,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimVirtualDeviceContextsPartialUpdate(context.Background(), id).PatchedWritableVirtualDeviceContextRequest(patchedWritableVirtualDeviceContextRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimVirtualDeviceContextsPartialUpdate(context.Background(), id).PatchedWritableVirtualDeviceContextRequest(patchedWritableVirtualDeviceContextRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimVirtualDeviceContextsPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimVirtualDeviceContextsPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimVirtualDeviceContextsPartialUpdate`: VirtualDeviceContext
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimVirtualDeviceContextsPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimVirtualDeviceContextsPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -32634,13 +33146,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimVirtualDeviceContextsRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimVirtualDeviceContextsRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimVirtualDeviceContextsRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimVirtualDeviceContextsRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimVirtualDeviceContextsRetrieve`: VirtualDeviceContext
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimVirtualDeviceContextsRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimVirtualDeviceContextsRetrieve`: %v\n", resp)
 }
 ```
 
@@ -32705,13 +33217,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DcimApi.DcimVirtualDeviceContextsUpdate(context.Background(), id).WritableVirtualDeviceContextRequest(writableVirtualDeviceContextRequest).Execute()
+    resp, r, err := apiClient.DcimAPI.DcimVirtualDeviceContextsUpdate(context.Background(), id).WritableVirtualDeviceContextRequest(writableVirtualDeviceContextRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DcimApi.DcimVirtualDeviceContextsUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimVirtualDeviceContextsUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `DcimVirtualDeviceContextsUpdate`: VirtualDeviceContext
-    fmt.Fprintf(os.Stdout, "Response from `DcimApi.DcimVirtualDeviceContextsUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimVirtualDeviceContextsUpdate`: %v\n", resp)
 }
 ```
 

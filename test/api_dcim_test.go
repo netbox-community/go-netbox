@@ -1,7 +1,7 @@
 /*
 NetBox REST API
 
-Testing DcimApiService
+Testing DcimAPIService
 
 */
 
@@ -18,27 +18,27 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func Test_netbox_DcimApiService(t *testing.T) {
+func Test_netbox_DcimAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test DcimApiService DcimCableTerminationsBulkDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimCableTerminationsBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.DcimApi.DcimCableTerminationsBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimCableTerminationsBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimCableTerminationsBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimCableTerminationsBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimCableTerminationsBulkPartialUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimCableTerminationsBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -46,11 +46,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimCableTerminationsBulkUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimCableTerminationsBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimCableTerminationsBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimCableTerminationsBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -58,11 +58,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimCableTerminationsCreate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimCableTerminationsCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimCableTerminationsCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimCableTerminationsCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -70,24 +70,24 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimCableTerminationsDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimCableTerminationsDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.DcimApi.DcimCableTerminationsDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimCableTerminationsDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimCableTerminationsList", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimCableTerminationsList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimCableTerminationsList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimCableTerminationsList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -95,13 +95,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimCableTerminationsPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimCableTerminationsPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimCableTerminationsPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimCableTerminationsPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -109,13 +109,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimCableTerminationsRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimCableTerminationsRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimCableTerminationsRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimCableTerminationsRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -123,13 +123,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimCableTerminationsUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimCableTerminationsUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimCableTerminationsUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimCableTerminationsUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -137,22 +137,22 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimCablesBulkDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimCablesBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.DcimApi.DcimCablesBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimCablesBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimCablesBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimCablesBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimCablesBulkPartialUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimCablesBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -160,11 +160,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimCablesBulkUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimCablesBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimCablesBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimCablesBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -172,11 +172,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimCablesCreate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimCablesCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimCablesCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimCablesCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -184,24 +184,24 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimCablesDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimCablesDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.DcimApi.DcimCablesDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimCablesDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimCablesList", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimCablesList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimCablesList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimCablesList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -209,13 +209,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimCablesPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimCablesPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimCablesPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimCablesPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -223,13 +223,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimCablesRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimCablesRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimCablesRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimCablesRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -237,13 +237,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimCablesUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimCablesUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimCablesUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimCablesUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -251,11 +251,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimConnectedDeviceList", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimConnectedDeviceList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimConnectedDeviceList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimConnectedDeviceList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -263,22 +263,22 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimConsolePortTemplatesBulkDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimConsolePortTemplatesBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.DcimApi.DcimConsolePortTemplatesBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimConsolePortTemplatesBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimConsolePortTemplatesBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimConsolePortTemplatesBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimConsolePortTemplatesBulkPartialUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimConsolePortTemplatesBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -286,11 +286,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimConsolePortTemplatesBulkUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimConsolePortTemplatesBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimConsolePortTemplatesBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimConsolePortTemplatesBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -298,11 +298,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimConsolePortTemplatesCreate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimConsolePortTemplatesCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimConsolePortTemplatesCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimConsolePortTemplatesCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -310,24 +310,24 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimConsolePortTemplatesDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimConsolePortTemplatesDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.DcimApi.DcimConsolePortTemplatesDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimConsolePortTemplatesDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimConsolePortTemplatesList", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimConsolePortTemplatesList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimConsolePortTemplatesList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimConsolePortTemplatesList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -335,13 +335,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimConsolePortTemplatesPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimConsolePortTemplatesPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimConsolePortTemplatesPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimConsolePortTemplatesPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -349,13 +349,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimConsolePortTemplatesRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimConsolePortTemplatesRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimConsolePortTemplatesRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimConsolePortTemplatesRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -363,13 +363,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimConsolePortTemplatesUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimConsolePortTemplatesUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimConsolePortTemplatesUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimConsolePortTemplatesUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -377,22 +377,22 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimConsolePortsBulkDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimConsolePortsBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.DcimApi.DcimConsolePortsBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimConsolePortsBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimConsolePortsBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimConsolePortsBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimConsolePortsBulkPartialUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimConsolePortsBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -400,11 +400,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimConsolePortsBulkUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimConsolePortsBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimConsolePortsBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimConsolePortsBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -412,11 +412,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimConsolePortsCreate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimConsolePortsCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimConsolePortsCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimConsolePortsCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -424,24 +424,24 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimConsolePortsDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimConsolePortsDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.DcimApi.DcimConsolePortsDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimConsolePortsDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimConsolePortsList", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimConsolePortsList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimConsolePortsList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimConsolePortsList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -449,13 +449,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimConsolePortsPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimConsolePortsPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimConsolePortsPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimConsolePortsPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -463,13 +463,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimConsolePortsRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimConsolePortsRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimConsolePortsRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimConsolePortsRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -477,13 +477,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimConsolePortsTraceRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimConsolePortsTraceRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimConsolePortsTraceRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimConsolePortsTraceRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -491,13 +491,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimConsolePortsUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimConsolePortsUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimConsolePortsUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimConsolePortsUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -505,22 +505,22 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimConsoleServerPortTemplatesBulkDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimConsoleServerPortTemplatesBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.DcimApi.DcimConsoleServerPortTemplatesBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimConsoleServerPortTemplatesBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimConsoleServerPortTemplatesBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimConsoleServerPortTemplatesBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimConsoleServerPortTemplatesBulkPartialUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimConsoleServerPortTemplatesBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -528,11 +528,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimConsoleServerPortTemplatesBulkUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimConsoleServerPortTemplatesBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimConsoleServerPortTemplatesBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimConsoleServerPortTemplatesBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -540,11 +540,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimConsoleServerPortTemplatesCreate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimConsoleServerPortTemplatesCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimConsoleServerPortTemplatesCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimConsoleServerPortTemplatesCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -552,24 +552,24 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimConsoleServerPortTemplatesDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimConsoleServerPortTemplatesDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.DcimApi.DcimConsoleServerPortTemplatesDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimConsoleServerPortTemplatesDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimConsoleServerPortTemplatesList", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimConsoleServerPortTemplatesList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimConsoleServerPortTemplatesList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimConsoleServerPortTemplatesList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -577,13 +577,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimConsoleServerPortTemplatesPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimConsoleServerPortTemplatesPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimConsoleServerPortTemplatesPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimConsoleServerPortTemplatesPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -591,13 +591,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimConsoleServerPortTemplatesRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimConsoleServerPortTemplatesRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimConsoleServerPortTemplatesRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimConsoleServerPortTemplatesRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -605,13 +605,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimConsoleServerPortTemplatesUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimConsoleServerPortTemplatesUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimConsoleServerPortTemplatesUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimConsoleServerPortTemplatesUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -619,22 +619,22 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimConsoleServerPortsBulkDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimConsoleServerPortsBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.DcimApi.DcimConsoleServerPortsBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimConsoleServerPortsBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimConsoleServerPortsBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimConsoleServerPortsBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimConsoleServerPortsBulkPartialUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimConsoleServerPortsBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -642,11 +642,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimConsoleServerPortsBulkUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimConsoleServerPortsBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimConsoleServerPortsBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimConsoleServerPortsBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -654,11 +654,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimConsoleServerPortsCreate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimConsoleServerPortsCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimConsoleServerPortsCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimConsoleServerPortsCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -666,24 +666,24 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimConsoleServerPortsDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimConsoleServerPortsDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.DcimApi.DcimConsoleServerPortsDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimConsoleServerPortsDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimConsoleServerPortsList", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimConsoleServerPortsList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimConsoleServerPortsList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimConsoleServerPortsList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -691,13 +691,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimConsoleServerPortsPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimConsoleServerPortsPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimConsoleServerPortsPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimConsoleServerPortsPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -705,13 +705,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimConsoleServerPortsRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimConsoleServerPortsRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimConsoleServerPortsRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimConsoleServerPortsRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -719,13 +719,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimConsoleServerPortsTraceRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimConsoleServerPortsTraceRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimConsoleServerPortsTraceRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimConsoleServerPortsTraceRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -733,13 +733,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimConsoleServerPortsUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimConsoleServerPortsUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimConsoleServerPortsUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimConsoleServerPortsUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -747,22 +747,22 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimDeviceBayTemplatesBulkDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDeviceBayTemplatesBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.DcimApi.DcimDeviceBayTemplatesBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimDeviceBayTemplatesBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimDeviceBayTemplatesBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDeviceBayTemplatesBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimDeviceBayTemplatesBulkPartialUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimDeviceBayTemplatesBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -770,11 +770,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimDeviceBayTemplatesBulkUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDeviceBayTemplatesBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimDeviceBayTemplatesBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimDeviceBayTemplatesBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -782,11 +782,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimDeviceBayTemplatesCreate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDeviceBayTemplatesCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimDeviceBayTemplatesCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimDeviceBayTemplatesCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -794,24 +794,24 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimDeviceBayTemplatesDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDeviceBayTemplatesDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.DcimApi.DcimDeviceBayTemplatesDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimDeviceBayTemplatesDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimDeviceBayTemplatesList", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDeviceBayTemplatesList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimDeviceBayTemplatesList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimDeviceBayTemplatesList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -819,13 +819,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimDeviceBayTemplatesPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDeviceBayTemplatesPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimDeviceBayTemplatesPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimDeviceBayTemplatesPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -833,13 +833,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimDeviceBayTemplatesRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDeviceBayTemplatesRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimDeviceBayTemplatesRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimDeviceBayTemplatesRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -847,13 +847,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimDeviceBayTemplatesUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDeviceBayTemplatesUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimDeviceBayTemplatesUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimDeviceBayTemplatesUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -861,22 +861,22 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimDeviceBaysBulkDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDeviceBaysBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.DcimApi.DcimDeviceBaysBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimDeviceBaysBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimDeviceBaysBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDeviceBaysBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimDeviceBaysBulkPartialUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimDeviceBaysBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -884,11 +884,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimDeviceBaysBulkUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDeviceBaysBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimDeviceBaysBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimDeviceBaysBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -896,11 +896,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimDeviceBaysCreate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDeviceBaysCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimDeviceBaysCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimDeviceBaysCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -908,24 +908,24 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimDeviceBaysDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDeviceBaysDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.DcimApi.DcimDeviceBaysDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimDeviceBaysDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimDeviceBaysList", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDeviceBaysList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimDeviceBaysList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimDeviceBaysList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -933,13 +933,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimDeviceBaysPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDeviceBaysPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimDeviceBaysPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimDeviceBaysPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -947,13 +947,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimDeviceBaysRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDeviceBaysRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimDeviceBaysRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimDeviceBaysRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -961,13 +961,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimDeviceBaysUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDeviceBaysUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimDeviceBaysUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimDeviceBaysUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -975,22 +975,22 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimDeviceRolesBulkDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDeviceRolesBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.DcimApi.DcimDeviceRolesBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimDeviceRolesBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimDeviceRolesBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDeviceRolesBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimDeviceRolesBulkPartialUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimDeviceRolesBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -998,11 +998,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimDeviceRolesBulkUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDeviceRolesBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimDeviceRolesBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimDeviceRolesBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1010,11 +1010,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimDeviceRolesCreate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDeviceRolesCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimDeviceRolesCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimDeviceRolesCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1022,24 +1022,24 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimDeviceRolesDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDeviceRolesDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.DcimApi.DcimDeviceRolesDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimDeviceRolesDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimDeviceRolesList", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDeviceRolesList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimDeviceRolesList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimDeviceRolesList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1047,13 +1047,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimDeviceRolesPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDeviceRolesPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimDeviceRolesPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimDeviceRolesPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1061,13 +1061,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimDeviceRolesRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDeviceRolesRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimDeviceRolesRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimDeviceRolesRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1075,13 +1075,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimDeviceRolesUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDeviceRolesUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimDeviceRolesUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimDeviceRolesUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1089,22 +1089,22 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimDeviceTypesBulkDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDeviceTypesBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.DcimApi.DcimDeviceTypesBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimDeviceTypesBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimDeviceTypesBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDeviceTypesBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimDeviceTypesBulkPartialUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimDeviceTypesBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1112,11 +1112,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimDeviceTypesBulkUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDeviceTypesBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimDeviceTypesBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimDeviceTypesBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1124,11 +1124,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimDeviceTypesCreate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDeviceTypesCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimDeviceTypesCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimDeviceTypesCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1136,24 +1136,24 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimDeviceTypesDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDeviceTypesDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.DcimApi.DcimDeviceTypesDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimDeviceTypesDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimDeviceTypesList", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDeviceTypesList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimDeviceTypesList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimDeviceTypesList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1161,13 +1161,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimDeviceTypesPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDeviceTypesPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimDeviceTypesPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimDeviceTypesPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1175,13 +1175,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimDeviceTypesRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDeviceTypesRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimDeviceTypesRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimDeviceTypesRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1189,13 +1189,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimDeviceTypesUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDeviceTypesUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimDeviceTypesUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimDeviceTypesUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1203,22 +1203,22 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimDevicesBulkDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDevicesBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.DcimApi.DcimDevicesBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimDevicesBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimDevicesBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDevicesBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimDevicesBulkPartialUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimDevicesBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1226,11 +1226,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimDevicesBulkUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDevicesBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimDevicesBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimDevicesBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1238,11 +1238,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimDevicesCreate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDevicesCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimDevicesCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimDevicesCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1250,24 +1250,24 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimDevicesDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDevicesDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.DcimApi.DcimDevicesDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimDevicesDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimDevicesList", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDevicesList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimDevicesList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimDevicesList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1275,13 +1275,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimDevicesPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDevicesPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimDevicesPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimDevicesPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1289,13 +1289,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimDevicesRenderConfigCreate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDevicesRenderConfigCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimDevicesRenderConfigCreate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimDevicesRenderConfigCreate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1303,13 +1303,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimDevicesRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDevicesRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimDevicesRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimDevicesRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1317,13 +1317,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimDevicesUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimDevicesUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimDevicesUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimDevicesUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1331,22 +1331,22 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimFrontPortTemplatesBulkDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimFrontPortTemplatesBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.DcimApi.DcimFrontPortTemplatesBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimFrontPortTemplatesBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimFrontPortTemplatesBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimFrontPortTemplatesBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimFrontPortTemplatesBulkPartialUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimFrontPortTemplatesBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1354,11 +1354,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimFrontPortTemplatesBulkUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimFrontPortTemplatesBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimFrontPortTemplatesBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimFrontPortTemplatesBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1366,11 +1366,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimFrontPortTemplatesCreate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimFrontPortTemplatesCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimFrontPortTemplatesCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimFrontPortTemplatesCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1378,24 +1378,24 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimFrontPortTemplatesDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimFrontPortTemplatesDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.DcimApi.DcimFrontPortTemplatesDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimFrontPortTemplatesDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimFrontPortTemplatesList", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimFrontPortTemplatesList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimFrontPortTemplatesList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimFrontPortTemplatesList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1403,13 +1403,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimFrontPortTemplatesPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimFrontPortTemplatesPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimFrontPortTemplatesPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimFrontPortTemplatesPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1417,13 +1417,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimFrontPortTemplatesRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimFrontPortTemplatesRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimFrontPortTemplatesRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimFrontPortTemplatesRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1431,13 +1431,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimFrontPortTemplatesUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimFrontPortTemplatesUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimFrontPortTemplatesUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimFrontPortTemplatesUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1445,22 +1445,22 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimFrontPortsBulkDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimFrontPortsBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.DcimApi.DcimFrontPortsBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimFrontPortsBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimFrontPortsBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimFrontPortsBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimFrontPortsBulkPartialUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimFrontPortsBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1468,11 +1468,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimFrontPortsBulkUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimFrontPortsBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimFrontPortsBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimFrontPortsBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1480,11 +1480,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimFrontPortsCreate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimFrontPortsCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimFrontPortsCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimFrontPortsCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1492,24 +1492,24 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimFrontPortsDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimFrontPortsDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.DcimApi.DcimFrontPortsDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimFrontPortsDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimFrontPortsList", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimFrontPortsList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimFrontPortsList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimFrontPortsList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1517,13 +1517,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimFrontPortsPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimFrontPortsPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimFrontPortsPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimFrontPortsPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1531,13 +1531,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimFrontPortsPathsRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimFrontPortsPathsRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimFrontPortsPathsRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimFrontPortsPathsRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1545,13 +1545,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimFrontPortsRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimFrontPortsRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimFrontPortsRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimFrontPortsRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1559,13 +1559,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimFrontPortsUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimFrontPortsUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimFrontPortsUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimFrontPortsUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1573,22 +1573,22 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimInterfaceTemplatesBulkDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInterfaceTemplatesBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.DcimApi.DcimInterfaceTemplatesBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimInterfaceTemplatesBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimInterfaceTemplatesBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInterfaceTemplatesBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimInterfaceTemplatesBulkPartialUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimInterfaceTemplatesBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1596,11 +1596,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimInterfaceTemplatesBulkUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInterfaceTemplatesBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimInterfaceTemplatesBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimInterfaceTemplatesBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1608,11 +1608,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimInterfaceTemplatesCreate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInterfaceTemplatesCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimInterfaceTemplatesCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimInterfaceTemplatesCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1620,24 +1620,24 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimInterfaceTemplatesDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInterfaceTemplatesDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.DcimApi.DcimInterfaceTemplatesDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimInterfaceTemplatesDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimInterfaceTemplatesList", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInterfaceTemplatesList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimInterfaceTemplatesList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimInterfaceTemplatesList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1645,13 +1645,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimInterfaceTemplatesPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInterfaceTemplatesPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimInterfaceTemplatesPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimInterfaceTemplatesPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1659,13 +1659,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimInterfaceTemplatesRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInterfaceTemplatesRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimInterfaceTemplatesRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimInterfaceTemplatesRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1673,13 +1673,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimInterfaceTemplatesUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInterfaceTemplatesUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimInterfaceTemplatesUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimInterfaceTemplatesUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1687,22 +1687,22 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimInterfacesBulkDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInterfacesBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.DcimApi.DcimInterfacesBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimInterfacesBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimInterfacesBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInterfacesBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimInterfacesBulkPartialUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimInterfacesBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1710,11 +1710,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimInterfacesBulkUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInterfacesBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimInterfacesBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimInterfacesBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1722,11 +1722,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimInterfacesCreate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInterfacesCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimInterfacesCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimInterfacesCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1734,24 +1734,24 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimInterfacesDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInterfacesDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.DcimApi.DcimInterfacesDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimInterfacesDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimInterfacesList", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInterfacesList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimInterfacesList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimInterfacesList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1759,13 +1759,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimInterfacesPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInterfacesPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimInterfacesPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimInterfacesPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1773,13 +1773,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimInterfacesRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInterfacesRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimInterfacesRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimInterfacesRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1787,13 +1787,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimInterfacesTraceRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInterfacesTraceRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimInterfacesTraceRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimInterfacesTraceRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1801,13 +1801,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimInterfacesUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInterfacesUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimInterfacesUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimInterfacesUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1815,22 +1815,22 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimInventoryItemRolesBulkDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInventoryItemRolesBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.DcimApi.DcimInventoryItemRolesBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimInventoryItemRolesBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimInventoryItemRolesBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInventoryItemRolesBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimInventoryItemRolesBulkPartialUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimInventoryItemRolesBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1838,11 +1838,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimInventoryItemRolesBulkUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInventoryItemRolesBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimInventoryItemRolesBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimInventoryItemRolesBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1850,11 +1850,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimInventoryItemRolesCreate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInventoryItemRolesCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimInventoryItemRolesCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimInventoryItemRolesCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1862,24 +1862,24 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimInventoryItemRolesDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInventoryItemRolesDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.DcimApi.DcimInventoryItemRolesDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimInventoryItemRolesDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimInventoryItemRolesList", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInventoryItemRolesList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimInventoryItemRolesList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimInventoryItemRolesList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1887,13 +1887,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimInventoryItemRolesPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInventoryItemRolesPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimInventoryItemRolesPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimInventoryItemRolesPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1901,13 +1901,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimInventoryItemRolesRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInventoryItemRolesRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimInventoryItemRolesRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimInventoryItemRolesRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1915,13 +1915,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimInventoryItemRolesUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInventoryItemRolesUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimInventoryItemRolesUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimInventoryItemRolesUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1929,22 +1929,22 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimInventoryItemTemplatesBulkDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInventoryItemTemplatesBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.DcimApi.DcimInventoryItemTemplatesBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimInventoryItemTemplatesBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimInventoryItemTemplatesBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInventoryItemTemplatesBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimInventoryItemTemplatesBulkPartialUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimInventoryItemTemplatesBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1952,11 +1952,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimInventoryItemTemplatesBulkUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInventoryItemTemplatesBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimInventoryItemTemplatesBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimInventoryItemTemplatesBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1964,11 +1964,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimInventoryItemTemplatesCreate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInventoryItemTemplatesCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimInventoryItemTemplatesCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimInventoryItemTemplatesCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1976,24 +1976,24 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimInventoryItemTemplatesDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInventoryItemTemplatesDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.DcimApi.DcimInventoryItemTemplatesDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimInventoryItemTemplatesDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimInventoryItemTemplatesList", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInventoryItemTemplatesList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimInventoryItemTemplatesList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimInventoryItemTemplatesList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2001,13 +2001,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimInventoryItemTemplatesPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInventoryItemTemplatesPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimInventoryItemTemplatesPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimInventoryItemTemplatesPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2015,13 +2015,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimInventoryItemTemplatesRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInventoryItemTemplatesRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimInventoryItemTemplatesRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimInventoryItemTemplatesRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2029,13 +2029,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimInventoryItemTemplatesUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInventoryItemTemplatesUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimInventoryItemTemplatesUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimInventoryItemTemplatesUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2043,22 +2043,22 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimInventoryItemsBulkDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInventoryItemsBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.DcimApi.DcimInventoryItemsBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimInventoryItemsBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimInventoryItemsBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInventoryItemsBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimInventoryItemsBulkPartialUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimInventoryItemsBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2066,11 +2066,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimInventoryItemsBulkUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInventoryItemsBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimInventoryItemsBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimInventoryItemsBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2078,11 +2078,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimInventoryItemsCreate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInventoryItemsCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimInventoryItemsCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimInventoryItemsCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2090,24 +2090,24 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimInventoryItemsDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInventoryItemsDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.DcimApi.DcimInventoryItemsDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimInventoryItemsDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimInventoryItemsList", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInventoryItemsList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimInventoryItemsList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimInventoryItemsList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2115,13 +2115,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimInventoryItemsPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInventoryItemsPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimInventoryItemsPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimInventoryItemsPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2129,13 +2129,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimInventoryItemsRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInventoryItemsRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimInventoryItemsRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimInventoryItemsRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2143,13 +2143,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimInventoryItemsUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimInventoryItemsUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimInventoryItemsUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimInventoryItemsUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2157,22 +2157,22 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimLocationsBulkDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimLocationsBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.DcimApi.DcimLocationsBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimLocationsBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimLocationsBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimLocationsBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimLocationsBulkPartialUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimLocationsBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2180,11 +2180,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimLocationsBulkUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimLocationsBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimLocationsBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimLocationsBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2192,11 +2192,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimLocationsCreate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimLocationsCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimLocationsCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimLocationsCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2204,24 +2204,24 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimLocationsDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimLocationsDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.DcimApi.DcimLocationsDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimLocationsDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimLocationsList", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimLocationsList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimLocationsList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimLocationsList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2229,13 +2229,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimLocationsPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimLocationsPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimLocationsPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimLocationsPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2243,13 +2243,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimLocationsRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimLocationsRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimLocationsRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimLocationsRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2257,13 +2257,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimLocationsUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimLocationsUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimLocationsUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimLocationsUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2271,22 +2271,22 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimManufacturersBulkDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimManufacturersBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.DcimApi.DcimManufacturersBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimManufacturersBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimManufacturersBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimManufacturersBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimManufacturersBulkPartialUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimManufacturersBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2294,11 +2294,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimManufacturersBulkUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimManufacturersBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimManufacturersBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimManufacturersBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2306,11 +2306,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimManufacturersCreate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimManufacturersCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimManufacturersCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimManufacturersCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2318,24 +2318,24 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimManufacturersDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimManufacturersDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.DcimApi.DcimManufacturersDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimManufacturersDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimManufacturersList", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimManufacturersList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimManufacturersList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimManufacturersList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2343,13 +2343,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimManufacturersPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimManufacturersPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimManufacturersPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimManufacturersPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2357,13 +2357,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimManufacturersRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimManufacturersRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimManufacturersRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimManufacturersRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2371,13 +2371,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimManufacturersUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimManufacturersUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimManufacturersUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimManufacturersUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2385,22 +2385,22 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimModuleBayTemplatesBulkDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimModuleBayTemplatesBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.DcimApi.DcimModuleBayTemplatesBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimModuleBayTemplatesBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimModuleBayTemplatesBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimModuleBayTemplatesBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimModuleBayTemplatesBulkPartialUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimModuleBayTemplatesBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2408,11 +2408,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimModuleBayTemplatesBulkUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimModuleBayTemplatesBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimModuleBayTemplatesBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimModuleBayTemplatesBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2420,11 +2420,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimModuleBayTemplatesCreate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimModuleBayTemplatesCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimModuleBayTemplatesCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimModuleBayTemplatesCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2432,24 +2432,24 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimModuleBayTemplatesDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimModuleBayTemplatesDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.DcimApi.DcimModuleBayTemplatesDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimModuleBayTemplatesDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimModuleBayTemplatesList", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimModuleBayTemplatesList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimModuleBayTemplatesList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimModuleBayTemplatesList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2457,13 +2457,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimModuleBayTemplatesPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimModuleBayTemplatesPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimModuleBayTemplatesPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimModuleBayTemplatesPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2471,13 +2471,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimModuleBayTemplatesRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimModuleBayTemplatesRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimModuleBayTemplatesRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimModuleBayTemplatesRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2485,13 +2485,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimModuleBayTemplatesUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimModuleBayTemplatesUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimModuleBayTemplatesUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimModuleBayTemplatesUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2499,22 +2499,22 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimModuleBaysBulkDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimModuleBaysBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.DcimApi.DcimModuleBaysBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimModuleBaysBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimModuleBaysBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimModuleBaysBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimModuleBaysBulkPartialUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimModuleBaysBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2522,11 +2522,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimModuleBaysBulkUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimModuleBaysBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimModuleBaysBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimModuleBaysBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2534,11 +2534,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimModuleBaysCreate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimModuleBaysCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimModuleBaysCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimModuleBaysCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2546,24 +2546,24 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimModuleBaysDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimModuleBaysDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.DcimApi.DcimModuleBaysDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimModuleBaysDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimModuleBaysList", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimModuleBaysList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimModuleBaysList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimModuleBaysList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2571,13 +2571,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimModuleBaysPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimModuleBaysPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimModuleBaysPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimModuleBaysPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2585,13 +2585,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimModuleBaysRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimModuleBaysRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimModuleBaysRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimModuleBaysRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2599,13 +2599,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimModuleBaysUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimModuleBaysUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimModuleBaysUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimModuleBaysUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2613,22 +2613,22 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimModuleTypesBulkDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimModuleTypesBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.DcimApi.DcimModuleTypesBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimModuleTypesBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimModuleTypesBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimModuleTypesBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimModuleTypesBulkPartialUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimModuleTypesBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2636,11 +2636,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimModuleTypesBulkUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimModuleTypesBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimModuleTypesBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimModuleTypesBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2648,11 +2648,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimModuleTypesCreate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimModuleTypesCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimModuleTypesCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimModuleTypesCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2660,24 +2660,24 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimModuleTypesDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimModuleTypesDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.DcimApi.DcimModuleTypesDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimModuleTypesDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimModuleTypesList", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimModuleTypesList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimModuleTypesList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimModuleTypesList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2685,13 +2685,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimModuleTypesPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimModuleTypesPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimModuleTypesPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimModuleTypesPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2699,13 +2699,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimModuleTypesRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimModuleTypesRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimModuleTypesRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimModuleTypesRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2713,13 +2713,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimModuleTypesUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimModuleTypesUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimModuleTypesUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimModuleTypesUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2727,22 +2727,22 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimModulesBulkDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimModulesBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.DcimApi.DcimModulesBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimModulesBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimModulesBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimModulesBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimModulesBulkPartialUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimModulesBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2750,11 +2750,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimModulesBulkUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimModulesBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimModulesBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimModulesBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2762,11 +2762,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimModulesCreate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimModulesCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimModulesCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimModulesCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2774,24 +2774,24 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimModulesDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimModulesDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.DcimApi.DcimModulesDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimModulesDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimModulesList", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimModulesList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimModulesList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimModulesList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2799,13 +2799,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimModulesPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimModulesPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimModulesPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimModulesPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2813,13 +2813,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimModulesRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimModulesRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimModulesRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimModulesRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2827,13 +2827,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimModulesUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimModulesUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimModulesUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimModulesUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2841,22 +2841,22 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPlatformsBulkDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPlatformsBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.DcimApi.DcimPlatformsBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimPlatformsBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimPlatformsBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPlatformsBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPlatformsBulkPartialUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPlatformsBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2864,11 +2864,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPlatformsBulkUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPlatformsBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPlatformsBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPlatformsBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2876,11 +2876,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPlatformsCreate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPlatformsCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPlatformsCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPlatformsCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2888,24 +2888,24 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPlatformsDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPlatformsDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.DcimApi.DcimPlatformsDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimPlatformsDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimPlatformsList", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPlatformsList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPlatformsList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPlatformsList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2913,13 +2913,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPlatformsPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPlatformsPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPlatformsPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPlatformsPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2927,13 +2927,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPlatformsRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPlatformsRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPlatformsRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPlatformsRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2941,13 +2941,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPlatformsUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPlatformsUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPlatformsUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPlatformsUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2955,22 +2955,22 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerFeedsBulkDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerFeedsBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.DcimApi.DcimPowerFeedsBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimPowerFeedsBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerFeedsBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerFeedsBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerFeedsBulkPartialUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerFeedsBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2978,11 +2978,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerFeedsBulkUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerFeedsBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerFeedsBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerFeedsBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2990,11 +2990,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerFeedsCreate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerFeedsCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerFeedsCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerFeedsCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3002,24 +3002,24 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerFeedsDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerFeedsDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.DcimApi.DcimPowerFeedsDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimPowerFeedsDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerFeedsList", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerFeedsList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerFeedsList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerFeedsList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3027,13 +3027,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerFeedsPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerFeedsPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerFeedsPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerFeedsPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3041,13 +3041,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerFeedsRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerFeedsRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerFeedsRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerFeedsRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3055,13 +3055,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerFeedsTraceRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerFeedsTraceRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerFeedsTraceRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerFeedsTraceRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3069,13 +3069,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerFeedsUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerFeedsUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerFeedsUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerFeedsUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3083,22 +3083,22 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerOutletTemplatesBulkDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerOutletTemplatesBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.DcimApi.DcimPowerOutletTemplatesBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimPowerOutletTemplatesBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerOutletTemplatesBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerOutletTemplatesBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerOutletTemplatesBulkPartialUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerOutletTemplatesBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3106,11 +3106,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerOutletTemplatesBulkUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerOutletTemplatesBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerOutletTemplatesBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerOutletTemplatesBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3118,11 +3118,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerOutletTemplatesCreate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerOutletTemplatesCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerOutletTemplatesCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerOutletTemplatesCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3130,24 +3130,24 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerOutletTemplatesDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerOutletTemplatesDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.DcimApi.DcimPowerOutletTemplatesDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimPowerOutletTemplatesDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerOutletTemplatesList", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerOutletTemplatesList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerOutletTemplatesList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerOutletTemplatesList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3155,13 +3155,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerOutletTemplatesPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerOutletTemplatesPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerOutletTemplatesPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerOutletTemplatesPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3169,13 +3169,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerOutletTemplatesRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerOutletTemplatesRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerOutletTemplatesRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerOutletTemplatesRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3183,13 +3183,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerOutletTemplatesUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerOutletTemplatesUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerOutletTemplatesUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerOutletTemplatesUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3197,22 +3197,22 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerOutletsBulkDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerOutletsBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.DcimApi.DcimPowerOutletsBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimPowerOutletsBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerOutletsBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerOutletsBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerOutletsBulkPartialUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerOutletsBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3220,11 +3220,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerOutletsBulkUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerOutletsBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerOutletsBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerOutletsBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3232,11 +3232,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerOutletsCreate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerOutletsCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerOutletsCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerOutletsCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3244,24 +3244,24 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerOutletsDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerOutletsDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.DcimApi.DcimPowerOutletsDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimPowerOutletsDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerOutletsList", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerOutletsList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerOutletsList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerOutletsList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3269,13 +3269,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerOutletsPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerOutletsPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerOutletsPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerOutletsPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3283,13 +3283,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerOutletsRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerOutletsRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerOutletsRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerOutletsRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3297,13 +3297,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerOutletsTraceRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerOutletsTraceRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerOutletsTraceRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerOutletsTraceRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3311,13 +3311,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerOutletsUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerOutletsUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerOutletsUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerOutletsUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3325,22 +3325,22 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerPanelsBulkDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerPanelsBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.DcimApi.DcimPowerPanelsBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimPowerPanelsBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerPanelsBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerPanelsBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerPanelsBulkPartialUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerPanelsBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3348,11 +3348,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerPanelsBulkUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerPanelsBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerPanelsBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerPanelsBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3360,11 +3360,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerPanelsCreate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerPanelsCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerPanelsCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerPanelsCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3372,24 +3372,24 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerPanelsDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerPanelsDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.DcimApi.DcimPowerPanelsDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimPowerPanelsDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerPanelsList", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerPanelsList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerPanelsList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerPanelsList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3397,13 +3397,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerPanelsPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerPanelsPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerPanelsPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerPanelsPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3411,13 +3411,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerPanelsRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerPanelsRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerPanelsRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerPanelsRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3425,13 +3425,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerPanelsUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerPanelsUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerPanelsUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerPanelsUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3439,22 +3439,22 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerPortTemplatesBulkDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerPortTemplatesBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.DcimApi.DcimPowerPortTemplatesBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimPowerPortTemplatesBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerPortTemplatesBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerPortTemplatesBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerPortTemplatesBulkPartialUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerPortTemplatesBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3462,11 +3462,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerPortTemplatesBulkUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerPortTemplatesBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerPortTemplatesBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerPortTemplatesBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3474,11 +3474,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerPortTemplatesCreate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerPortTemplatesCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerPortTemplatesCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerPortTemplatesCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3486,24 +3486,24 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerPortTemplatesDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerPortTemplatesDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.DcimApi.DcimPowerPortTemplatesDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimPowerPortTemplatesDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerPortTemplatesList", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerPortTemplatesList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerPortTemplatesList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerPortTemplatesList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3511,13 +3511,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerPortTemplatesPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerPortTemplatesPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerPortTemplatesPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerPortTemplatesPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3525,13 +3525,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerPortTemplatesRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerPortTemplatesRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerPortTemplatesRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerPortTemplatesRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3539,13 +3539,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerPortTemplatesUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerPortTemplatesUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerPortTemplatesUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerPortTemplatesUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3553,22 +3553,22 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerPortsBulkDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerPortsBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.DcimApi.DcimPowerPortsBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimPowerPortsBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerPortsBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerPortsBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerPortsBulkPartialUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerPortsBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3576,11 +3576,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerPortsBulkUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerPortsBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerPortsBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerPortsBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3588,11 +3588,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerPortsCreate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerPortsCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerPortsCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerPortsCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3600,24 +3600,24 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerPortsDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerPortsDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.DcimApi.DcimPowerPortsDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimPowerPortsDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerPortsList", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerPortsList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerPortsList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerPortsList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3625,13 +3625,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerPortsPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerPortsPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerPortsPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerPortsPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3639,13 +3639,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerPortsRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerPortsRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerPortsRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerPortsRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3653,13 +3653,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerPortsTraceRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerPortsTraceRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerPortsTraceRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerPortsTraceRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3667,13 +3667,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimPowerPortsUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimPowerPortsUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimPowerPortsUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimPowerPortsUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3681,22 +3681,22 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRackReservationsBulkDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRackReservationsBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.DcimApi.DcimRackReservationsBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimRackReservationsBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimRackReservationsBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRackReservationsBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRackReservationsBulkPartialUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRackReservationsBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3704,11 +3704,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRackReservationsBulkUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRackReservationsBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRackReservationsBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRackReservationsBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3716,11 +3716,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRackReservationsCreate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRackReservationsCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRackReservationsCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRackReservationsCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3728,24 +3728,24 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRackReservationsDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRackReservationsDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.DcimApi.DcimRackReservationsDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimRackReservationsDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimRackReservationsList", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRackReservationsList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRackReservationsList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRackReservationsList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3753,13 +3753,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRackReservationsPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRackReservationsPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRackReservationsPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRackReservationsPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3767,13 +3767,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRackReservationsRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRackReservationsRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRackReservationsRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRackReservationsRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3781,13 +3781,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRackReservationsUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRackReservationsUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRackReservationsUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRackReservationsUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3795,22 +3795,22 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRackRolesBulkDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRackRolesBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.DcimApi.DcimRackRolesBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimRackRolesBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimRackRolesBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRackRolesBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRackRolesBulkPartialUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRackRolesBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3818,11 +3818,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRackRolesBulkUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRackRolesBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRackRolesBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRackRolesBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3830,11 +3830,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRackRolesCreate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRackRolesCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRackRolesCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRackRolesCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3842,24 +3842,24 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRackRolesDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRackRolesDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.DcimApi.DcimRackRolesDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimRackRolesDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimRackRolesList", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRackRolesList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRackRolesList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRackRolesList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3867,13 +3867,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRackRolesPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRackRolesPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRackRolesPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRackRolesPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3881,13 +3881,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRackRolesRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRackRolesRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRackRolesRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRackRolesRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3895,13 +3895,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRackRolesUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRackRolesUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRackRolesUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRackRolesUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3909,22 +3909,22 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRacksBulkDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRacksBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.DcimApi.DcimRacksBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimRacksBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimRacksBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRacksBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRacksBulkPartialUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRacksBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3932,11 +3932,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRacksBulkUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRacksBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRacksBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRacksBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3944,11 +3944,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRacksCreate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRacksCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRacksCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRacksCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3956,26 +3956,26 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRacksDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRacksDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.DcimApi.DcimRacksDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimRacksDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimRacksElevationRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRacksElevationRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRacksElevationRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRacksElevationRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3983,11 +3983,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRacksList", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRacksList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRacksList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRacksList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3995,13 +3995,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRacksPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRacksPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRacksPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRacksPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4009,13 +4009,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRacksRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRacksRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRacksRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRacksRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4023,13 +4023,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRacksUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRacksUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRacksUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRacksUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4037,22 +4037,22 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRearPortTemplatesBulkDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRearPortTemplatesBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.DcimApi.DcimRearPortTemplatesBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimRearPortTemplatesBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimRearPortTemplatesBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRearPortTemplatesBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRearPortTemplatesBulkPartialUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRearPortTemplatesBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4060,11 +4060,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRearPortTemplatesBulkUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRearPortTemplatesBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRearPortTemplatesBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRearPortTemplatesBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4072,11 +4072,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRearPortTemplatesCreate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRearPortTemplatesCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRearPortTemplatesCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRearPortTemplatesCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4084,24 +4084,24 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRearPortTemplatesDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRearPortTemplatesDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.DcimApi.DcimRearPortTemplatesDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimRearPortTemplatesDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimRearPortTemplatesList", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRearPortTemplatesList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRearPortTemplatesList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRearPortTemplatesList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4109,13 +4109,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRearPortTemplatesPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRearPortTemplatesPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRearPortTemplatesPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRearPortTemplatesPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4123,13 +4123,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRearPortTemplatesRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRearPortTemplatesRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRearPortTemplatesRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRearPortTemplatesRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4137,13 +4137,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRearPortTemplatesUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRearPortTemplatesUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRearPortTemplatesUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRearPortTemplatesUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4151,22 +4151,22 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRearPortsBulkDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRearPortsBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.DcimApi.DcimRearPortsBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimRearPortsBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimRearPortsBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRearPortsBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRearPortsBulkPartialUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRearPortsBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4174,11 +4174,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRearPortsBulkUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRearPortsBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRearPortsBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRearPortsBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4186,11 +4186,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRearPortsCreate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRearPortsCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRearPortsCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRearPortsCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4198,24 +4198,24 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRearPortsDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRearPortsDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.DcimApi.DcimRearPortsDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimRearPortsDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimRearPortsList", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRearPortsList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRearPortsList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRearPortsList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4223,13 +4223,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRearPortsPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRearPortsPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRearPortsPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRearPortsPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4237,13 +4237,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRearPortsPathsRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRearPortsPathsRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRearPortsPathsRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRearPortsPathsRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4251,13 +4251,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRearPortsRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRearPortsRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRearPortsRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRearPortsRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4265,13 +4265,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRearPortsUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRearPortsUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRearPortsUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRearPortsUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4279,22 +4279,22 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRegionsBulkDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRegionsBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.DcimApi.DcimRegionsBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimRegionsBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimRegionsBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRegionsBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRegionsBulkPartialUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRegionsBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4302,11 +4302,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRegionsBulkUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRegionsBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRegionsBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRegionsBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4314,11 +4314,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRegionsCreate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRegionsCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRegionsCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRegionsCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4326,24 +4326,24 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRegionsDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRegionsDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.DcimApi.DcimRegionsDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimRegionsDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimRegionsList", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRegionsList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRegionsList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRegionsList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4351,13 +4351,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRegionsPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRegionsPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRegionsPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRegionsPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4365,13 +4365,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRegionsRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRegionsRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRegionsRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRegionsRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4379,13 +4379,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimRegionsUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimRegionsUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimRegionsUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimRegionsUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4393,22 +4393,22 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimSiteGroupsBulkDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimSiteGroupsBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.DcimApi.DcimSiteGroupsBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimSiteGroupsBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimSiteGroupsBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimSiteGroupsBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimSiteGroupsBulkPartialUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimSiteGroupsBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4416,11 +4416,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimSiteGroupsBulkUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimSiteGroupsBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimSiteGroupsBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimSiteGroupsBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4428,11 +4428,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimSiteGroupsCreate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimSiteGroupsCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimSiteGroupsCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimSiteGroupsCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4440,24 +4440,24 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimSiteGroupsDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimSiteGroupsDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.DcimApi.DcimSiteGroupsDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimSiteGroupsDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimSiteGroupsList", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimSiteGroupsList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimSiteGroupsList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimSiteGroupsList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4465,13 +4465,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimSiteGroupsPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimSiteGroupsPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimSiteGroupsPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimSiteGroupsPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4479,13 +4479,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimSiteGroupsRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimSiteGroupsRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimSiteGroupsRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimSiteGroupsRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4493,13 +4493,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimSiteGroupsUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimSiteGroupsUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimSiteGroupsUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimSiteGroupsUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4507,22 +4507,22 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimSitesBulkDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimSitesBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.DcimApi.DcimSitesBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimSitesBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimSitesBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimSitesBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimSitesBulkPartialUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimSitesBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4530,11 +4530,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimSitesBulkUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimSitesBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimSitesBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimSitesBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4542,11 +4542,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimSitesCreate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimSitesCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimSitesCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimSitesCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4554,24 +4554,24 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimSitesDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimSitesDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.DcimApi.DcimSitesDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimSitesDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimSitesList", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimSitesList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimSitesList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimSitesList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4579,13 +4579,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimSitesPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimSitesPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimSitesPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimSitesPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4593,13 +4593,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimSitesRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimSitesRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimSitesRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimSitesRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4607,13 +4607,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimSitesUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimSitesUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimSitesUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimSitesUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4621,22 +4621,22 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimVirtualChassisBulkDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimVirtualChassisBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.DcimApi.DcimVirtualChassisBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimVirtualChassisBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimVirtualChassisBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimVirtualChassisBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimVirtualChassisBulkPartialUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimVirtualChassisBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4644,11 +4644,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimVirtualChassisBulkUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimVirtualChassisBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimVirtualChassisBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimVirtualChassisBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4656,11 +4656,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimVirtualChassisCreate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimVirtualChassisCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimVirtualChassisCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimVirtualChassisCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4668,24 +4668,24 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimVirtualChassisDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimVirtualChassisDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.DcimApi.DcimVirtualChassisDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimVirtualChassisDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimVirtualChassisList", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimVirtualChassisList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimVirtualChassisList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimVirtualChassisList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4693,13 +4693,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimVirtualChassisPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimVirtualChassisPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimVirtualChassisPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimVirtualChassisPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4707,13 +4707,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimVirtualChassisRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimVirtualChassisRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimVirtualChassisRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimVirtualChassisRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4721,13 +4721,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimVirtualChassisUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimVirtualChassisUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimVirtualChassisUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimVirtualChassisUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4735,22 +4735,22 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimVirtualDeviceContextsBulkDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimVirtualDeviceContextsBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.DcimApi.DcimVirtualDeviceContextsBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimVirtualDeviceContextsBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimVirtualDeviceContextsBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimVirtualDeviceContextsBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimVirtualDeviceContextsBulkPartialUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimVirtualDeviceContextsBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4758,11 +4758,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimVirtualDeviceContextsBulkUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimVirtualDeviceContextsBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimVirtualDeviceContextsBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimVirtualDeviceContextsBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4770,11 +4770,11 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimVirtualDeviceContextsCreate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimVirtualDeviceContextsCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimVirtualDeviceContextsCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimVirtualDeviceContextsCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4782,24 +4782,24 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimVirtualDeviceContextsDestroy", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimVirtualDeviceContextsDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.DcimApi.DcimVirtualDeviceContextsDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.DcimAPI.DcimVirtualDeviceContextsDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DcimApiService DcimVirtualDeviceContextsList", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimVirtualDeviceContextsList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.DcimApi.DcimVirtualDeviceContextsList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimVirtualDeviceContextsList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4807,13 +4807,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimVirtualDeviceContextsPartialUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimVirtualDeviceContextsPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimVirtualDeviceContextsPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimVirtualDeviceContextsPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4821,13 +4821,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimVirtualDeviceContextsRetrieve", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimVirtualDeviceContextsRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimVirtualDeviceContextsRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimVirtualDeviceContextsRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4835,13 +4835,13 @@ func Test_netbox_DcimApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DcimApiService DcimVirtualDeviceContextsUpdate", func(t *testing.T) {
+	t.Run("Test DcimAPIService DcimVirtualDeviceContextsUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.DcimApi.DcimVirtualDeviceContextsUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.DcimAPI.DcimVirtualDeviceContextsUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

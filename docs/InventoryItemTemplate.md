@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Display** | **string** |  | [readonly] 
 **DeviceType** | [**NestedDeviceType**](NestedDeviceType.md) |  | 
 **Parent** | Pointer to **NullableInt32** |  | [optional] 
-**Name** | **string** |          {module} is accepted as a substitution for the module bay position when attached to a module type.          | 
+**Name** | **string** | {module} is accepted as a substitution for the module bay position when attached to a module type. | 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Role** | Pointer to [**NullableNestedInventoryItemRole**](NestedInventoryItemRole.md) |  | [optional] 
 **Manufacturer** | Pointer to [**NullableNestedManufacturer**](NestedManufacturer.md) |  | [optional] 

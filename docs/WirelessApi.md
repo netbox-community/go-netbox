@@ -1,36 +1,36 @@
-# \WirelessApi
+# \WirelessAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**WirelessWirelessLanGroupsBulkDestroy**](WirelessApi.md#WirelessWirelessLanGroupsBulkDestroy) | **Delete** /api/wireless/wireless-lan-groups/ | 
-[**WirelessWirelessLanGroupsBulkPartialUpdate**](WirelessApi.md#WirelessWirelessLanGroupsBulkPartialUpdate) | **Patch** /api/wireless/wireless-lan-groups/ | 
-[**WirelessWirelessLanGroupsBulkUpdate**](WirelessApi.md#WirelessWirelessLanGroupsBulkUpdate) | **Put** /api/wireless/wireless-lan-groups/ | 
-[**WirelessWirelessLanGroupsCreate**](WirelessApi.md#WirelessWirelessLanGroupsCreate) | **Post** /api/wireless/wireless-lan-groups/ | 
-[**WirelessWirelessLanGroupsDestroy**](WirelessApi.md#WirelessWirelessLanGroupsDestroy) | **Delete** /api/wireless/wireless-lan-groups/{id}/ | 
-[**WirelessWirelessLanGroupsList**](WirelessApi.md#WirelessWirelessLanGroupsList) | **Get** /api/wireless/wireless-lan-groups/ | 
-[**WirelessWirelessLanGroupsPartialUpdate**](WirelessApi.md#WirelessWirelessLanGroupsPartialUpdate) | **Patch** /api/wireless/wireless-lan-groups/{id}/ | 
-[**WirelessWirelessLanGroupsRetrieve**](WirelessApi.md#WirelessWirelessLanGroupsRetrieve) | **Get** /api/wireless/wireless-lan-groups/{id}/ | 
-[**WirelessWirelessLanGroupsUpdate**](WirelessApi.md#WirelessWirelessLanGroupsUpdate) | **Put** /api/wireless/wireless-lan-groups/{id}/ | 
-[**WirelessWirelessLansBulkDestroy**](WirelessApi.md#WirelessWirelessLansBulkDestroy) | **Delete** /api/wireless/wireless-lans/ | 
-[**WirelessWirelessLansBulkPartialUpdate**](WirelessApi.md#WirelessWirelessLansBulkPartialUpdate) | **Patch** /api/wireless/wireless-lans/ | 
-[**WirelessWirelessLansBulkUpdate**](WirelessApi.md#WirelessWirelessLansBulkUpdate) | **Put** /api/wireless/wireless-lans/ | 
-[**WirelessWirelessLansCreate**](WirelessApi.md#WirelessWirelessLansCreate) | **Post** /api/wireless/wireless-lans/ | 
-[**WirelessWirelessLansDestroy**](WirelessApi.md#WirelessWirelessLansDestroy) | **Delete** /api/wireless/wireless-lans/{id}/ | 
-[**WirelessWirelessLansList**](WirelessApi.md#WirelessWirelessLansList) | **Get** /api/wireless/wireless-lans/ | 
-[**WirelessWirelessLansPartialUpdate**](WirelessApi.md#WirelessWirelessLansPartialUpdate) | **Patch** /api/wireless/wireless-lans/{id}/ | 
-[**WirelessWirelessLansRetrieve**](WirelessApi.md#WirelessWirelessLansRetrieve) | **Get** /api/wireless/wireless-lans/{id}/ | 
-[**WirelessWirelessLansUpdate**](WirelessApi.md#WirelessWirelessLansUpdate) | **Put** /api/wireless/wireless-lans/{id}/ | 
-[**WirelessWirelessLinksBulkDestroy**](WirelessApi.md#WirelessWirelessLinksBulkDestroy) | **Delete** /api/wireless/wireless-links/ | 
-[**WirelessWirelessLinksBulkPartialUpdate**](WirelessApi.md#WirelessWirelessLinksBulkPartialUpdate) | **Patch** /api/wireless/wireless-links/ | 
-[**WirelessWirelessLinksBulkUpdate**](WirelessApi.md#WirelessWirelessLinksBulkUpdate) | **Put** /api/wireless/wireless-links/ | 
-[**WirelessWirelessLinksCreate**](WirelessApi.md#WirelessWirelessLinksCreate) | **Post** /api/wireless/wireless-links/ | 
-[**WirelessWirelessLinksDestroy**](WirelessApi.md#WirelessWirelessLinksDestroy) | **Delete** /api/wireless/wireless-links/{id}/ | 
-[**WirelessWirelessLinksList**](WirelessApi.md#WirelessWirelessLinksList) | **Get** /api/wireless/wireless-links/ | 
-[**WirelessWirelessLinksPartialUpdate**](WirelessApi.md#WirelessWirelessLinksPartialUpdate) | **Patch** /api/wireless/wireless-links/{id}/ | 
-[**WirelessWirelessLinksRetrieve**](WirelessApi.md#WirelessWirelessLinksRetrieve) | **Get** /api/wireless/wireless-links/{id}/ | 
-[**WirelessWirelessLinksUpdate**](WirelessApi.md#WirelessWirelessLinksUpdate) | **Put** /api/wireless/wireless-links/{id}/ | 
+[**WirelessWirelessLanGroupsBulkDestroy**](WirelessAPI.md#WirelessWirelessLanGroupsBulkDestroy) | **Delete** /api/wireless/wireless-lan-groups/ | 
+[**WirelessWirelessLanGroupsBulkPartialUpdate**](WirelessAPI.md#WirelessWirelessLanGroupsBulkPartialUpdate) | **Patch** /api/wireless/wireless-lan-groups/ | 
+[**WirelessWirelessLanGroupsBulkUpdate**](WirelessAPI.md#WirelessWirelessLanGroupsBulkUpdate) | **Put** /api/wireless/wireless-lan-groups/ | 
+[**WirelessWirelessLanGroupsCreate**](WirelessAPI.md#WirelessWirelessLanGroupsCreate) | **Post** /api/wireless/wireless-lan-groups/ | 
+[**WirelessWirelessLanGroupsDestroy**](WirelessAPI.md#WirelessWirelessLanGroupsDestroy) | **Delete** /api/wireless/wireless-lan-groups/{id}/ | 
+[**WirelessWirelessLanGroupsList**](WirelessAPI.md#WirelessWirelessLanGroupsList) | **Get** /api/wireless/wireless-lan-groups/ | 
+[**WirelessWirelessLanGroupsPartialUpdate**](WirelessAPI.md#WirelessWirelessLanGroupsPartialUpdate) | **Patch** /api/wireless/wireless-lan-groups/{id}/ | 
+[**WirelessWirelessLanGroupsRetrieve**](WirelessAPI.md#WirelessWirelessLanGroupsRetrieve) | **Get** /api/wireless/wireless-lan-groups/{id}/ | 
+[**WirelessWirelessLanGroupsUpdate**](WirelessAPI.md#WirelessWirelessLanGroupsUpdate) | **Put** /api/wireless/wireless-lan-groups/{id}/ | 
+[**WirelessWirelessLansBulkDestroy**](WirelessAPI.md#WirelessWirelessLansBulkDestroy) | **Delete** /api/wireless/wireless-lans/ | 
+[**WirelessWirelessLansBulkPartialUpdate**](WirelessAPI.md#WirelessWirelessLansBulkPartialUpdate) | **Patch** /api/wireless/wireless-lans/ | 
+[**WirelessWirelessLansBulkUpdate**](WirelessAPI.md#WirelessWirelessLansBulkUpdate) | **Put** /api/wireless/wireless-lans/ | 
+[**WirelessWirelessLansCreate**](WirelessAPI.md#WirelessWirelessLansCreate) | **Post** /api/wireless/wireless-lans/ | 
+[**WirelessWirelessLansDestroy**](WirelessAPI.md#WirelessWirelessLansDestroy) | **Delete** /api/wireless/wireless-lans/{id}/ | 
+[**WirelessWirelessLansList**](WirelessAPI.md#WirelessWirelessLansList) | **Get** /api/wireless/wireless-lans/ | 
+[**WirelessWirelessLansPartialUpdate**](WirelessAPI.md#WirelessWirelessLansPartialUpdate) | **Patch** /api/wireless/wireless-lans/{id}/ | 
+[**WirelessWirelessLansRetrieve**](WirelessAPI.md#WirelessWirelessLansRetrieve) | **Get** /api/wireless/wireless-lans/{id}/ | 
+[**WirelessWirelessLansUpdate**](WirelessAPI.md#WirelessWirelessLansUpdate) | **Put** /api/wireless/wireless-lans/{id}/ | 
+[**WirelessWirelessLinksBulkDestroy**](WirelessAPI.md#WirelessWirelessLinksBulkDestroy) | **Delete** /api/wireless/wireless-links/ | 
+[**WirelessWirelessLinksBulkPartialUpdate**](WirelessAPI.md#WirelessWirelessLinksBulkPartialUpdate) | **Patch** /api/wireless/wireless-links/ | 
+[**WirelessWirelessLinksBulkUpdate**](WirelessAPI.md#WirelessWirelessLinksBulkUpdate) | **Put** /api/wireless/wireless-links/ | 
+[**WirelessWirelessLinksCreate**](WirelessAPI.md#WirelessWirelessLinksCreate) | **Post** /api/wireless/wireless-links/ | 
+[**WirelessWirelessLinksDestroy**](WirelessAPI.md#WirelessWirelessLinksDestroy) | **Delete** /api/wireless/wireless-links/{id}/ | 
+[**WirelessWirelessLinksList**](WirelessAPI.md#WirelessWirelessLinksList) | **Get** /api/wireless/wireless-links/ | 
+[**WirelessWirelessLinksPartialUpdate**](WirelessAPI.md#WirelessWirelessLinksPartialUpdate) | **Patch** /api/wireless/wireless-links/{id}/ | 
+[**WirelessWirelessLinksRetrieve**](WirelessAPI.md#WirelessWirelessLinksRetrieve) | **Get** /api/wireless/wireless-links/{id}/ | 
+[**WirelessWirelessLinksUpdate**](WirelessAPI.md#WirelessWirelessLinksUpdate) | **Put** /api/wireless/wireless-links/{id}/ | 
 
 
 
@@ -59,9 +59,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.WirelessApi.WirelessWirelessLanGroupsBulkDestroy(context.Background()).WirelessLANGroupRequest(wirelessLANGroupRequest).Execute()
+    r, err := apiClient.WirelessAPI.WirelessWirelessLanGroupsBulkDestroy(context.Background()).WirelessLANGroupRequest(wirelessLANGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WirelessApi.WirelessWirelessLanGroupsBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WirelessAPI.WirelessWirelessLanGroupsBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -123,13 +123,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WirelessApi.WirelessWirelessLanGroupsBulkPartialUpdate(context.Background()).WirelessLANGroupRequest(wirelessLANGroupRequest).Execute()
+    resp, r, err := apiClient.WirelessAPI.WirelessWirelessLanGroupsBulkPartialUpdate(context.Background()).WirelessLANGroupRequest(wirelessLANGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WirelessApi.WirelessWirelessLanGroupsBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WirelessAPI.WirelessWirelessLanGroupsBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `WirelessWirelessLanGroupsBulkPartialUpdate`: []WirelessLANGroup
-    fmt.Fprintf(os.Stdout, "Response from `WirelessApi.WirelessWirelessLanGroupsBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `WirelessAPI.WirelessWirelessLanGroupsBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -189,13 +189,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WirelessApi.WirelessWirelessLanGroupsBulkUpdate(context.Background()).WirelessLANGroupRequest(wirelessLANGroupRequest).Execute()
+    resp, r, err := apiClient.WirelessAPI.WirelessWirelessLanGroupsBulkUpdate(context.Background()).WirelessLANGroupRequest(wirelessLANGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WirelessApi.WirelessWirelessLanGroupsBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WirelessAPI.WirelessWirelessLanGroupsBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `WirelessWirelessLanGroupsBulkUpdate`: []WirelessLANGroup
-    fmt.Fprintf(os.Stdout, "Response from `WirelessApi.WirelessWirelessLanGroupsBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `WirelessAPI.WirelessWirelessLanGroupsBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -255,13 +255,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WirelessApi.WirelessWirelessLanGroupsCreate(context.Background()).WritableWirelessLANGroupRequest(writableWirelessLANGroupRequest).Execute()
+    resp, r, err := apiClient.WirelessAPI.WirelessWirelessLanGroupsCreate(context.Background()).WritableWirelessLANGroupRequest(writableWirelessLANGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WirelessApi.WirelessWirelessLanGroupsCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WirelessAPI.WirelessWirelessLanGroupsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `WirelessWirelessLanGroupsCreate`: WirelessLANGroup
-    fmt.Fprintf(os.Stdout, "Response from `WirelessApi.WirelessWirelessLanGroupsCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `WirelessAPI.WirelessWirelessLanGroupsCreate`: %v\n", resp)
 }
 ```
 
@@ -317,13 +317,13 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | A unique integer value identifying this Wireless LAN Group.
+    id := int32(56) // int32 | A unique integer value identifying this wireless LAN group.
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.WirelessApi.WirelessWirelessLanGroupsDestroy(context.Background(), id).Execute()
+    r, err := apiClient.WirelessAPI.WirelessWirelessLanGroupsDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WirelessApi.WirelessWirelessLanGroupsDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WirelessAPI.WirelessWirelessLanGroupsDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -335,7 +335,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this Wireless LAN Group. | 
+**id** | **int32** | A unique integer value identifying this wireless LAN group. | 
 
 ### Other Parameters
 
@@ -366,7 +366,7 @@ Name | Type | Description  | Notes
 
 ## WirelessWirelessLanGroupsList
 
-> PaginatedWirelessLANGroupList WirelessWirelessLanGroupsList(ctx).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Parent(parent).ParentN(parentN).ParentId(parentId).ParentIdN(parentIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedWirelessLANGroupList WirelessWirelessLanGroupsList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Parent(parent).ParentN(parentN).ParentId(parentId).ParentIdN(parentIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -387,6 +387,7 @@ import (
 
 func main() {
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -405,18 +406,21 @@ func main() {
     descriptionNiew := []string{"Inner_example"} // []string |  (optional)
     descriptionNisw := []string{"Inner_example"} // []string |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -452,13 +456,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WirelessApi.WirelessWirelessLanGroupsList(context.Background()).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Parent(parent).ParentN(parentN).ParentId(parentId).ParentIdN(parentIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.WirelessAPI.WirelessWirelessLanGroupsList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Parent(parent).ParentN(parentN).ParentId(parentId).ParentIdN(parentIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WirelessApi.WirelessWirelessLanGroupsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WirelessAPI.WirelessWirelessLanGroupsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `WirelessWirelessLanGroupsList`: PaginatedWirelessLANGroupList
-    fmt.Fprintf(os.Stdout, "Response from `WirelessApi.WirelessWirelessLanGroupsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `WirelessAPI.WirelessWirelessLanGroupsList`: %v\n", resp)
 }
 ```
 
@@ -474,6 +478,7 @@ Other parameters are passed through a pointer to a apiWirelessWirelessLanGroupsL
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -492,18 +497,21 @@ Name | Type | Description  | Notes
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -576,18 +584,18 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | A unique integer value identifying this Wireless LAN Group.
+    id := int32(56) // int32 | A unique integer value identifying this wireless LAN group.
     patchedWritableWirelessLANGroupRequest := *openapiclient.NewPatchedWritableWirelessLANGroupRequest() // PatchedWritableWirelessLANGroupRequest |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WirelessApi.WirelessWirelessLanGroupsPartialUpdate(context.Background(), id).PatchedWritableWirelessLANGroupRequest(patchedWritableWirelessLANGroupRequest).Execute()
+    resp, r, err := apiClient.WirelessAPI.WirelessWirelessLanGroupsPartialUpdate(context.Background(), id).PatchedWritableWirelessLANGroupRequest(patchedWritableWirelessLANGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WirelessApi.WirelessWirelessLanGroupsPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WirelessAPI.WirelessWirelessLanGroupsPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `WirelessWirelessLanGroupsPartialUpdate`: WirelessLANGroup
-    fmt.Fprintf(os.Stdout, "Response from `WirelessApi.WirelessWirelessLanGroupsPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `WirelessAPI.WirelessWirelessLanGroupsPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -597,7 +605,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this Wireless LAN Group. | 
+**id** | **int32** | A unique integer value identifying this wireless LAN group. | 
 
 ### Other Parameters
 
@@ -648,17 +656,17 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | A unique integer value identifying this Wireless LAN Group.
+    id := int32(56) // int32 | A unique integer value identifying this wireless LAN group.
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WirelessApi.WirelessWirelessLanGroupsRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.WirelessAPI.WirelessWirelessLanGroupsRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WirelessApi.WirelessWirelessLanGroupsRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WirelessAPI.WirelessWirelessLanGroupsRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `WirelessWirelessLanGroupsRetrieve`: WirelessLANGroup
-    fmt.Fprintf(os.Stdout, "Response from `WirelessApi.WirelessWirelessLanGroupsRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `WirelessAPI.WirelessWirelessLanGroupsRetrieve`: %v\n", resp)
 }
 ```
 
@@ -668,7 +676,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this Wireless LAN Group. | 
+**id** | **int32** | A unique integer value identifying this wireless LAN group. | 
 
 ### Other Parameters
 
@@ -718,18 +726,18 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | A unique integer value identifying this Wireless LAN Group.
+    id := int32(56) // int32 | A unique integer value identifying this wireless LAN group.
     writableWirelessLANGroupRequest := *openapiclient.NewWritableWirelessLANGroupRequest("Name_example", "Slug_example") // WritableWirelessLANGroupRequest | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WirelessApi.WirelessWirelessLanGroupsUpdate(context.Background(), id).WritableWirelessLANGroupRequest(writableWirelessLANGroupRequest).Execute()
+    resp, r, err := apiClient.WirelessAPI.WirelessWirelessLanGroupsUpdate(context.Background(), id).WritableWirelessLANGroupRequest(writableWirelessLANGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WirelessApi.WirelessWirelessLanGroupsUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WirelessAPI.WirelessWirelessLanGroupsUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `WirelessWirelessLanGroupsUpdate`: WirelessLANGroup
-    fmt.Fprintf(os.Stdout, "Response from `WirelessApi.WirelessWirelessLanGroupsUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `WirelessAPI.WirelessWirelessLanGroupsUpdate`: %v\n", resp)
 }
 ```
 
@@ -739,7 +747,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this Wireless LAN Group. | 
+**id** | **int32** | A unique integer value identifying this wireless LAN group. | 
 
 ### Other Parameters
 
@@ -794,9 +802,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.WirelessApi.WirelessWirelessLansBulkDestroy(context.Background()).WirelessLANRequest(wirelessLANRequest).Execute()
+    r, err := apiClient.WirelessAPI.WirelessWirelessLansBulkDestroy(context.Background()).WirelessLANRequest(wirelessLANRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WirelessApi.WirelessWirelessLansBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WirelessAPI.WirelessWirelessLansBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -858,13 +866,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WirelessApi.WirelessWirelessLansBulkPartialUpdate(context.Background()).WirelessLANRequest(wirelessLANRequest).Execute()
+    resp, r, err := apiClient.WirelessAPI.WirelessWirelessLansBulkPartialUpdate(context.Background()).WirelessLANRequest(wirelessLANRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WirelessApi.WirelessWirelessLansBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WirelessAPI.WirelessWirelessLansBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `WirelessWirelessLansBulkPartialUpdate`: []WirelessLAN
-    fmt.Fprintf(os.Stdout, "Response from `WirelessApi.WirelessWirelessLansBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `WirelessAPI.WirelessWirelessLansBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -924,13 +932,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WirelessApi.WirelessWirelessLansBulkUpdate(context.Background()).WirelessLANRequest(wirelessLANRequest).Execute()
+    resp, r, err := apiClient.WirelessAPI.WirelessWirelessLansBulkUpdate(context.Background()).WirelessLANRequest(wirelessLANRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WirelessApi.WirelessWirelessLansBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WirelessAPI.WirelessWirelessLansBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `WirelessWirelessLansBulkUpdate`: []WirelessLAN
-    fmt.Fprintf(os.Stdout, "Response from `WirelessApi.WirelessWirelessLansBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `WirelessAPI.WirelessWirelessLansBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -990,13 +998,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WirelessApi.WirelessWirelessLansCreate(context.Background()).WritableWirelessLANRequest(writableWirelessLANRequest).Execute()
+    resp, r, err := apiClient.WirelessAPI.WirelessWirelessLansCreate(context.Background()).WritableWirelessLANRequest(writableWirelessLANRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WirelessApi.WirelessWirelessLansCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WirelessAPI.WirelessWirelessLansCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `WirelessWirelessLansCreate`: WirelessLAN
-    fmt.Fprintf(os.Stdout, "Response from `WirelessApi.WirelessWirelessLansCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `WirelessAPI.WirelessWirelessLansCreate`: %v\n", resp)
 }
 ```
 
@@ -1052,13 +1060,13 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | A unique integer value identifying this Wireless LAN.
+    id := int32(56) // int32 | A unique integer value identifying this wireless LAN.
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.WirelessApi.WirelessWirelessLansDestroy(context.Background(), id).Execute()
+    r, err := apiClient.WirelessAPI.WirelessWirelessLansDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WirelessApi.WirelessWirelessLansDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WirelessAPI.WirelessWirelessLansDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1070,7 +1078,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this Wireless LAN. | 
+**id** | **int32** | A unique integer value identifying this wireless LAN. | 
 
 ### Other Parameters
 
@@ -1101,7 +1109,7 @@ Name | Type | Description  | Notes
 
 ## WirelessWirelessLansList
 
-> PaginatedWirelessLANList WirelessWirelessLansList(ctx).AuthCipher(authCipher).AuthCipherN(authCipherN).AuthPsk(authPsk).AuthPskEmpty(authPskEmpty).AuthPskIc(authPskIc).AuthPskIe(authPskIe).AuthPskIew(authPskIew).AuthPskIsw(authPskIsw).AuthPskN(authPskN).AuthPskNic(authPskNic).AuthPskNie(authPskNie).AuthPskNiew(authPskNiew).AuthPskNisw(authPskNisw).AuthType(authType).AuthTypeN(authTypeN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Offset(offset).Ordering(ordering).Q(q).Ssid(ssid).SsidEmpty(ssidEmpty).SsidIc(ssidIc).SsidIe(ssidIe).SsidIew(ssidIew).SsidIsw(ssidIsw).SsidN(ssidN).SsidNic(ssidNic).SsidNie(ssidNie).SsidNiew(ssidNiew).SsidNisw(ssidNisw).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).VlanId(vlanId).VlanIdN(vlanIdN).Execute()
+> PaginatedWirelessLANList WirelessWirelessLansList(ctx).AuthCipher(authCipher).AuthCipherN(authCipherN).AuthPsk(authPsk).AuthPskEmpty(authPskEmpty).AuthPskIc(authPskIc).AuthPskIe(authPskIe).AuthPskIew(authPskIew).AuthPskIsw(authPskIsw).AuthPskN(authPskN).AuthPskNic(authPskNic).AuthPskNie(authPskNie).AuthPskNiew(authPskNiew).AuthPskNisw(authPskNisw).AuthType(authType).AuthTypeN(authTypeN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Q(q).Ssid(ssid).SsidEmpty(ssidEmpty).SsidIc(ssidIc).SsidIe(ssidIe).SsidIew(ssidIew).SsidIsw(ssidIsw).SsidN(ssidN).SsidNic(ssidNic).SsidNie(ssidNie).SsidNiew(ssidNiew).SsidNisw(ssidNisw).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).VlanId(vlanId).VlanIdN(vlanIdN).Execute()
 
 
 
@@ -1137,6 +1145,7 @@ func main() {
     authType := []string{"Inner_example"} // []string |  (optional)
     authTypeN := []string{"Inner_example"} // []string |  (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -1159,18 +1168,21 @@ func main() {
     groupId := []int32{int32(123)} // []int32 |  (optional)
     groupIdN := []int32{int32(123)} // []int32 |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     offset := int32(56) // int32 | The initial index from which to return the results. (optional)
     ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
     q := "q_example" // string | Search (optional)
@@ -1203,13 +1215,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WirelessApi.WirelessWirelessLansList(context.Background()).AuthCipher(authCipher).AuthCipherN(authCipherN).AuthPsk(authPsk).AuthPskEmpty(authPskEmpty).AuthPskIc(authPskIc).AuthPskIe(authPskIe).AuthPskIew(authPskIew).AuthPskIsw(authPskIsw).AuthPskN(authPskN).AuthPskNic(authPskNic).AuthPskNie(authPskNie).AuthPskNiew(authPskNiew).AuthPskNisw(authPskNisw).AuthType(authType).AuthTypeN(authTypeN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Offset(offset).Ordering(ordering).Q(q).Ssid(ssid).SsidEmpty(ssidEmpty).SsidIc(ssidIc).SsidIe(ssidIe).SsidIew(ssidIew).SsidIsw(ssidIsw).SsidN(ssidN).SsidNic(ssidNic).SsidNie(ssidNie).SsidNiew(ssidNiew).SsidNisw(ssidNisw).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).VlanId(vlanId).VlanIdN(vlanIdN).Execute()
+    resp, r, err := apiClient.WirelessAPI.WirelessWirelessLansList(context.Background()).AuthCipher(authCipher).AuthCipherN(authCipherN).AuthPsk(authPsk).AuthPskEmpty(authPskEmpty).AuthPskIc(authPskIc).AuthPskIe(authPskIe).AuthPskIew(authPskIew).AuthPskIsw(authPskIsw).AuthPskN(authPskN).AuthPskNic(authPskNic).AuthPskNie(authPskNie).AuthPskNiew(authPskNiew).AuthPskNisw(authPskNisw).AuthType(authType).AuthTypeN(authTypeN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Q(q).Ssid(ssid).SsidEmpty(ssidEmpty).SsidIc(ssidIc).SsidIe(ssidIe).SsidIew(ssidIew).SsidIsw(ssidIsw).SsidN(ssidN).SsidNic(ssidNic).SsidNie(ssidNie).SsidNiew(ssidNiew).SsidNisw(ssidNisw).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).VlanId(vlanId).VlanIdN(vlanIdN).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WirelessApi.WirelessWirelessLansList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WirelessAPI.WirelessWirelessLansList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `WirelessWirelessLansList`: PaginatedWirelessLANList
-    fmt.Fprintf(os.Stdout, "Response from `WirelessApi.WirelessWirelessLansList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `WirelessAPI.WirelessWirelessLansList`: %v\n", resp)
 }
 ```
 
@@ -1240,6 +1252,7 @@ Name | Type | Description  | Notes
  **authType** | **[]string** |  | 
  **authTypeN** | **[]string** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -1262,18 +1275,21 @@ Name | Type | Description  | Notes
  **groupId** | **[]int32** |  | 
  **groupIdN** | **[]int32** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **q** | **string** | Search | 
@@ -1343,18 +1359,18 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | A unique integer value identifying this Wireless LAN.
+    id := int32(56) // int32 | A unique integer value identifying this wireless LAN.
     patchedWritableWirelessLANRequest := *openapiclient.NewPatchedWritableWirelessLANRequest() // PatchedWritableWirelessLANRequest |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WirelessApi.WirelessWirelessLansPartialUpdate(context.Background(), id).PatchedWritableWirelessLANRequest(patchedWritableWirelessLANRequest).Execute()
+    resp, r, err := apiClient.WirelessAPI.WirelessWirelessLansPartialUpdate(context.Background(), id).PatchedWritableWirelessLANRequest(patchedWritableWirelessLANRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WirelessApi.WirelessWirelessLansPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WirelessAPI.WirelessWirelessLansPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `WirelessWirelessLansPartialUpdate`: WirelessLAN
-    fmt.Fprintf(os.Stdout, "Response from `WirelessApi.WirelessWirelessLansPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `WirelessAPI.WirelessWirelessLansPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -1364,7 +1380,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this Wireless LAN. | 
+**id** | **int32** | A unique integer value identifying this wireless LAN. | 
 
 ### Other Parameters
 
@@ -1415,17 +1431,17 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | A unique integer value identifying this Wireless LAN.
+    id := int32(56) // int32 | A unique integer value identifying this wireless LAN.
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WirelessApi.WirelessWirelessLansRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.WirelessAPI.WirelessWirelessLansRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WirelessApi.WirelessWirelessLansRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WirelessAPI.WirelessWirelessLansRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `WirelessWirelessLansRetrieve`: WirelessLAN
-    fmt.Fprintf(os.Stdout, "Response from `WirelessApi.WirelessWirelessLansRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `WirelessAPI.WirelessWirelessLansRetrieve`: %v\n", resp)
 }
 ```
 
@@ -1435,7 +1451,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this Wireless LAN. | 
+**id** | **int32** | A unique integer value identifying this wireless LAN. | 
 
 ### Other Parameters
 
@@ -1485,18 +1501,18 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | A unique integer value identifying this Wireless LAN.
+    id := int32(56) // int32 | A unique integer value identifying this wireless LAN.
     writableWirelessLANRequest := *openapiclient.NewWritableWirelessLANRequest("Ssid_example") // WritableWirelessLANRequest | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WirelessApi.WirelessWirelessLansUpdate(context.Background(), id).WritableWirelessLANRequest(writableWirelessLANRequest).Execute()
+    resp, r, err := apiClient.WirelessAPI.WirelessWirelessLansUpdate(context.Background(), id).WritableWirelessLANRequest(writableWirelessLANRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WirelessApi.WirelessWirelessLansUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WirelessAPI.WirelessWirelessLansUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `WirelessWirelessLansUpdate`: WirelessLAN
-    fmt.Fprintf(os.Stdout, "Response from `WirelessApi.WirelessWirelessLansUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `WirelessAPI.WirelessWirelessLansUpdate`: %v\n", resp)
 }
 ```
 
@@ -1506,7 +1522,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this Wireless LAN. | 
+**id** | **int32** | A unique integer value identifying this wireless LAN. | 
 
 ### Other Parameters
 
@@ -1561,9 +1577,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.WirelessApi.WirelessWirelessLinksBulkDestroy(context.Background()).WirelessLinkRequest(wirelessLinkRequest).Execute()
+    r, err := apiClient.WirelessAPI.WirelessWirelessLinksBulkDestroy(context.Background()).WirelessLinkRequest(wirelessLinkRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WirelessApi.WirelessWirelessLinksBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WirelessAPI.WirelessWirelessLinksBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1625,13 +1641,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WirelessApi.WirelessWirelessLinksBulkPartialUpdate(context.Background()).WirelessLinkRequest(wirelessLinkRequest).Execute()
+    resp, r, err := apiClient.WirelessAPI.WirelessWirelessLinksBulkPartialUpdate(context.Background()).WirelessLinkRequest(wirelessLinkRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WirelessApi.WirelessWirelessLinksBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WirelessAPI.WirelessWirelessLinksBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `WirelessWirelessLinksBulkPartialUpdate`: []WirelessLink
-    fmt.Fprintf(os.Stdout, "Response from `WirelessApi.WirelessWirelessLinksBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `WirelessAPI.WirelessWirelessLinksBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -1691,13 +1707,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WirelessApi.WirelessWirelessLinksBulkUpdate(context.Background()).WirelessLinkRequest(wirelessLinkRequest).Execute()
+    resp, r, err := apiClient.WirelessAPI.WirelessWirelessLinksBulkUpdate(context.Background()).WirelessLinkRequest(wirelessLinkRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WirelessApi.WirelessWirelessLinksBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WirelessAPI.WirelessWirelessLinksBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `WirelessWirelessLinksBulkUpdate`: []WirelessLink
-    fmt.Fprintf(os.Stdout, "Response from `WirelessApi.WirelessWirelessLinksBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `WirelessAPI.WirelessWirelessLinksBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -1757,13 +1773,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WirelessApi.WirelessWirelessLinksCreate(context.Background()).WritableWirelessLinkRequest(writableWirelessLinkRequest).Execute()
+    resp, r, err := apiClient.WirelessAPI.WirelessWirelessLinksCreate(context.Background()).WritableWirelessLinkRequest(writableWirelessLinkRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WirelessApi.WirelessWirelessLinksCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WirelessAPI.WirelessWirelessLinksCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `WirelessWirelessLinksCreate`: WirelessLink
-    fmt.Fprintf(os.Stdout, "Response from `WirelessApi.WirelessWirelessLinksCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `WirelessAPI.WirelessWirelessLinksCreate`: %v\n", resp)
 }
 ```
 
@@ -1823,9 +1839,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.WirelessApi.WirelessWirelessLinksDestroy(context.Background(), id).Execute()
+    r, err := apiClient.WirelessAPI.WirelessWirelessLinksDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WirelessApi.WirelessWirelessLinksDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WirelessAPI.WirelessWirelessLinksDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1868,7 +1884,7 @@ Name | Type | Description  | Notes
 
 ## WirelessWirelessLinksList
 
-> PaginatedWirelessLinkList WirelessWirelessLinksList(ctx).AuthCipher(authCipher).AuthCipherN(authCipherN).AuthPsk(authPsk).AuthPskEmpty(authPskEmpty).AuthPskIc(authPskIc).AuthPskIe(authPskIe).AuthPskIew(authPskIew).AuthPskIsw(authPskIsw).AuthPskN(authPskN).AuthPskNic(authPskNic).AuthPskNie(authPskNie).AuthPskNiew(authPskNiew).AuthPskNisw(authPskNisw).AuthType(authType).AuthTypeN(authTypeN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InterfaceAId(interfaceAId).InterfaceAIdGt(interfaceAIdGt).InterfaceAIdGte(interfaceAIdGte).InterfaceAIdLt(interfaceAIdLt).InterfaceAIdLte(interfaceAIdLte).InterfaceAIdN(interfaceAIdN).InterfaceBId(interfaceBId).InterfaceBIdGt(interfaceBIdGt).InterfaceBIdGte(interfaceBIdGte).InterfaceBIdLt(interfaceBIdLt).InterfaceBIdLte(interfaceBIdLte).InterfaceBIdN(interfaceBIdN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Offset(offset).Ordering(ordering).Q(q).Ssid(ssid).SsidEmpty(ssidEmpty).SsidIc(ssidIc).SsidIe(ssidIe).SsidIew(ssidIew).SsidIsw(ssidIsw).SsidN(ssidN).SsidNic(ssidNic).SsidNie(ssidNie).SsidNiew(ssidNiew).SsidNisw(ssidNisw).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedWirelessLinkList WirelessWirelessLinksList(ctx).AuthCipher(authCipher).AuthCipherN(authCipherN).AuthPsk(authPsk).AuthPskEmpty(authPskEmpty).AuthPskIc(authPskIc).AuthPskIe(authPskIe).AuthPskIew(authPskIew).AuthPskIsw(authPskIsw).AuthPskN(authPskN).AuthPskNic(authPskNic).AuthPskNie(authPskNie).AuthPskNiew(authPskNiew).AuthPskNisw(authPskNisw).AuthType(authType).AuthTypeN(authTypeN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InterfaceAId(interfaceAId).InterfaceAIdEmpty(interfaceAIdEmpty).InterfaceAIdGt(interfaceAIdGt).InterfaceAIdGte(interfaceAIdGte).InterfaceAIdLt(interfaceAIdLt).InterfaceAIdLte(interfaceAIdLte).InterfaceAIdN(interfaceAIdN).InterfaceBId(interfaceBId).InterfaceBIdEmpty(interfaceBIdEmpty).InterfaceBIdGt(interfaceBIdGt).InterfaceBIdGte(interfaceBIdGte).InterfaceBIdLt(interfaceBIdLt).InterfaceBIdLte(interfaceBIdLte).InterfaceBIdN(interfaceBIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Q(q).Ssid(ssid).SsidEmpty(ssidEmpty).SsidIc(ssidIc).SsidIe(ssidIe).SsidIew(ssidIew).SsidIsw(ssidIsw).SsidN(ssidN).SsidNic(ssidNic).SsidNie(ssidNie).SsidNiew(ssidNiew).SsidNisw(ssidNisw).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -1904,6 +1920,7 @@ func main() {
     authType := []string{"Inner_example"} // []string |  (optional)
     authTypeN := []string{"Inner_example"} // []string |  (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -1922,30 +1939,35 @@ func main() {
     descriptionNiew := []string{"Inner_example"} // []string |  (optional)
     descriptionNisw := []string{"Inner_example"} // []string |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     interfaceAId := []int32{int32(123)} // []int32 |  (optional)
+    interfaceAIdEmpty := []int32{int32(123)} // []int32 |  (optional)
     interfaceAIdGt := []int32{int32(123)} // []int32 |  (optional)
     interfaceAIdGte := []int32{int32(123)} // []int32 |  (optional)
     interfaceAIdLt := []int32{int32(123)} // []int32 |  (optional)
     interfaceAIdLte := []int32{int32(123)} // []int32 |  (optional)
     interfaceAIdN := []int32{int32(123)} // []int32 |  (optional)
     interfaceBId := []int32{int32(123)} // []int32 |  (optional)
+    interfaceBIdEmpty := []int32{int32(123)} // []int32 |  (optional)
     interfaceBIdGt := []int32{int32(123)} // []int32 |  (optional)
     interfaceBIdGte := []int32{int32(123)} // []int32 |  (optional)
     interfaceBIdLt := []int32{int32(123)} // []int32 |  (optional)
     interfaceBIdLte := []int32{int32(123)} // []int32 |  (optional)
     interfaceBIdN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     offset := int32(56) // int32 | The initial index from which to return the results. (optional)
     ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
     q := "q_example" // string | Search (optional)
@@ -1976,13 +1998,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WirelessApi.WirelessWirelessLinksList(context.Background()).AuthCipher(authCipher).AuthCipherN(authCipherN).AuthPsk(authPsk).AuthPskEmpty(authPskEmpty).AuthPskIc(authPskIc).AuthPskIe(authPskIe).AuthPskIew(authPskIew).AuthPskIsw(authPskIsw).AuthPskN(authPskN).AuthPskNic(authPskNic).AuthPskNie(authPskNie).AuthPskNiew(authPskNiew).AuthPskNisw(authPskNisw).AuthType(authType).AuthTypeN(authTypeN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InterfaceAId(interfaceAId).InterfaceAIdGt(interfaceAIdGt).InterfaceAIdGte(interfaceAIdGte).InterfaceAIdLt(interfaceAIdLt).InterfaceAIdLte(interfaceAIdLte).InterfaceAIdN(interfaceAIdN).InterfaceBId(interfaceBId).InterfaceBIdGt(interfaceBIdGt).InterfaceBIdGte(interfaceBIdGte).InterfaceBIdLt(interfaceBIdLt).InterfaceBIdLte(interfaceBIdLte).InterfaceBIdN(interfaceBIdN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Offset(offset).Ordering(ordering).Q(q).Ssid(ssid).SsidEmpty(ssidEmpty).SsidIc(ssidIc).SsidIe(ssidIe).SsidIew(ssidIew).SsidIsw(ssidIsw).SsidN(ssidN).SsidNic(ssidNic).SsidNie(ssidNie).SsidNiew(ssidNiew).SsidNisw(ssidNisw).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.WirelessAPI.WirelessWirelessLinksList(context.Background()).AuthCipher(authCipher).AuthCipherN(authCipherN).AuthPsk(authPsk).AuthPskEmpty(authPskEmpty).AuthPskIc(authPskIc).AuthPskIe(authPskIe).AuthPskIew(authPskIew).AuthPskIsw(authPskIsw).AuthPskN(authPskN).AuthPskNic(authPskNic).AuthPskNie(authPskNie).AuthPskNiew(authPskNiew).AuthPskNisw(authPskNisw).AuthType(authType).AuthTypeN(authTypeN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InterfaceAId(interfaceAId).InterfaceAIdEmpty(interfaceAIdEmpty).InterfaceAIdGt(interfaceAIdGt).InterfaceAIdGte(interfaceAIdGte).InterfaceAIdLt(interfaceAIdLt).InterfaceAIdLte(interfaceAIdLte).InterfaceAIdN(interfaceAIdN).InterfaceBId(interfaceBId).InterfaceBIdEmpty(interfaceBIdEmpty).InterfaceBIdGt(interfaceBIdGt).InterfaceBIdGte(interfaceBIdGte).InterfaceBIdLt(interfaceBIdLt).InterfaceBIdLte(interfaceBIdLte).InterfaceBIdN(interfaceBIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Q(q).Ssid(ssid).SsidEmpty(ssidEmpty).SsidIc(ssidIc).SsidIe(ssidIe).SsidIew(ssidIew).SsidIsw(ssidIsw).SsidN(ssidN).SsidNic(ssidNic).SsidNie(ssidNie).SsidNiew(ssidNiew).SsidNisw(ssidNisw).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WirelessApi.WirelessWirelessLinksList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WirelessAPI.WirelessWirelessLinksList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `WirelessWirelessLinksList`: PaginatedWirelessLinkList
-    fmt.Fprintf(os.Stdout, "Response from `WirelessApi.WirelessWirelessLinksList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `WirelessAPI.WirelessWirelessLinksList`: %v\n", resp)
 }
 ```
 
@@ -2013,6 +2035,7 @@ Name | Type | Description  | Notes
  **authType** | **[]string** |  | 
  **authTypeN** | **[]string** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -2031,30 +2054,35 @@ Name | Type | Description  | Notes
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **interfaceAId** | **[]int32** |  | 
+ **interfaceAIdEmpty** | **[]int32** |  | 
  **interfaceAIdGt** | **[]int32** |  | 
  **interfaceAIdGte** | **[]int32** |  | 
  **interfaceAIdLt** | **[]int32** |  | 
  **interfaceAIdLte** | **[]int32** |  | 
  **interfaceAIdN** | **[]int32** |  | 
  **interfaceBId** | **[]int32** |  | 
+ **interfaceBIdEmpty** | **[]int32** |  | 
  **interfaceBIdGt** | **[]int32** |  | 
  **interfaceBIdGte** | **[]int32** |  | 
  **interfaceBIdLt** | **[]int32** |  | 
  **interfaceBIdLte** | **[]int32** |  | 
  **interfaceBIdN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **q** | **string** | Search | 
@@ -2127,13 +2155,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WirelessApi.WirelessWirelessLinksPartialUpdate(context.Background(), id).PatchedWritableWirelessLinkRequest(patchedWritableWirelessLinkRequest).Execute()
+    resp, r, err := apiClient.WirelessAPI.WirelessWirelessLinksPartialUpdate(context.Background(), id).PatchedWritableWirelessLinkRequest(patchedWritableWirelessLinkRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WirelessApi.WirelessWirelessLinksPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WirelessAPI.WirelessWirelessLinksPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `WirelessWirelessLinksPartialUpdate`: WirelessLink
-    fmt.Fprintf(os.Stdout, "Response from `WirelessApi.WirelessWirelessLinksPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `WirelessAPI.WirelessWirelessLinksPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -2198,13 +2226,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WirelessApi.WirelessWirelessLinksRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.WirelessAPI.WirelessWirelessLinksRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WirelessApi.WirelessWirelessLinksRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WirelessAPI.WirelessWirelessLinksRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `WirelessWirelessLinksRetrieve`: WirelessLink
-    fmt.Fprintf(os.Stdout, "Response from `WirelessApi.WirelessWirelessLinksRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `WirelessAPI.WirelessWirelessLinksRetrieve`: %v\n", resp)
 }
 ```
 
@@ -2269,13 +2297,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WirelessApi.WirelessWirelessLinksUpdate(context.Background(), id).WritableWirelessLinkRequest(writableWirelessLinkRequest).Execute()
+    resp, r, err := apiClient.WirelessAPI.WirelessWirelessLinksUpdate(context.Background(), id).WritableWirelessLinkRequest(writableWirelessLinkRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WirelessApi.WirelessWirelessLinksUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WirelessAPI.WirelessWirelessLinksUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `WirelessWirelessLinksUpdate`: WirelessLink
-    fmt.Fprintf(os.Stdout, "Response from `WirelessApi.WirelessWirelessLinksUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `WirelessAPI.WirelessWirelessLinksUpdate`: %v\n", resp)
 }
 ```
 

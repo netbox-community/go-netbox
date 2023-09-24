@@ -9,7 +9,8 @@ Name | Type | Description | Notes
 **Display** | **string** |  | [readonly] 
 **Name** | Pointer to **NullableString** |  | [optional] 
 **DeviceType** | [**NestedDeviceType**](NestedDeviceType.md) |  | 
-**DeviceRole** | [**NestedDeviceRole**](NestedDeviceRole.md) |  | 
+**Role** | [**NestedDeviceRole**](NestedDeviceRole.md) |  | 
+**DeviceRole** | [**DeviceDeviceRole**](DeviceDeviceRole.md) |  | 
 **Tenant** | Pointer to [**NullableNestedTenant**](NestedTenant.md) |  | [optional] 
 **Platform** | Pointer to [**NullableNestedPlatform**](NestedPlatform.md) |  | [optional] 
 **Serial** | Pointer to **string** | Chassis serial number, assigned by the manufacturer | [optional] 
@@ -19,31 +20,44 @@ Name | Type | Description | Notes
 **Rack** | Pointer to [**NullableNestedRack**](NestedRack.md) |  | [optional] 
 **Position** | Pointer to **NullableFloat64** |  | [optional] 
 **Face** | Pointer to [**DeviceFace**](DeviceFace.md) |  | [optional] 
+**Latitude** | Pointer to **NullableFloat64** | GPS coordinate in decimal format (xx.yyyyyy) | [optional] 
+**Longitude** | Pointer to **NullableFloat64** | GPS coordinate in decimal format (xx.yyyyyy) | [optional] 
 **ParentDevice** | [**NestedDevice**](NestedDevice.md) |  | [readonly] 
 **Status** | Pointer to [**DeviceStatus**](DeviceStatus.md) |  | [optional] 
 **Airflow** | Pointer to [**DeviceAirflow**](DeviceAirflow.md) |  | [optional] 
 **PrimaryIp** | [**NestedIPAddress**](NestedIPAddress.md) |  | [readonly] 
 **PrimaryIp4** | Pointer to [**NullableNestedIPAddress**](NestedIPAddress.md) |  | [optional] 
 **PrimaryIp6** | Pointer to [**NullableNestedIPAddress**](NestedIPAddress.md) |  | [optional] 
+**OobIp** | Pointer to [**NullableNestedIPAddress**](NestedIPAddress.md) |  | [optional] 
 **Cluster** | Pointer to [**NullableNestedCluster**](NestedCluster.md) |  | [optional] 
 **VirtualChassis** | Pointer to [**NullableNestedVirtualChassis**](NestedVirtualChassis.md) |  | [optional] 
 **VcPosition** | Pointer to **NullableInt32** |  | [optional] 
 **VcPriority** | Pointer to **NullableInt32** | Virtual chassis master election priority | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
+**ConfigTemplate** | Pointer to [**NullableNestedConfigTemplate**](NestedConfigTemplate.md) |  | [optional] 
+**ConfigContext** | **map[string]interface{}** |  | [readonly] 
 **LocalContextData** | Pointer to **map[string]interface{}** | Local config context data takes precedence over source contexts in the final rendered config context | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**ConfigContext** | **map[string]interface{}** |  | [readonly] 
-**ConfigTemplate** | Pointer to [**NullableNestedConfigTemplate**](NestedConfigTemplate.md) |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
+**ConsolePortCount** | **int32** |  | [readonly] 
+**ConsoleServerPortCount** | **int32** |  | [readonly] 
+**PowerPortCount** | **int32** |  | [readonly] 
+**PowerOutletCount** | **int32** |  | [readonly] 
+**InterfaceCount** | **int32** |  | [readonly] 
+**FrontPortCount** | **int32** |  | [readonly] 
+**RearPortCount** | **int32** |  | [readonly] 
+**DeviceBayCount** | **int32** |  | [readonly] 
+**ModuleBayCount** | **int32** |  | [readonly] 
+**InventoryItemCount** | **int32** |  | [readonly] 
 
 ## Methods
 
 ### NewDeviceWithConfigContext
 
-`func NewDeviceWithConfigContext(id int32, url string, display string, deviceType NestedDeviceType, deviceRole NestedDeviceRole, site NestedSite, parentDevice NestedDevice, primaryIp NestedIPAddress, configContext map[string]interface{}, created NullableTime, lastUpdated NullableTime, ) *DeviceWithConfigContext`
+`func NewDeviceWithConfigContext(id int32, url string, display string, deviceType NestedDeviceType, role NestedDeviceRole, deviceRole DeviceDeviceRole, site NestedSite, parentDevice NestedDevice, primaryIp NestedIPAddress, configContext map[string]interface{}, created NullableTime, lastUpdated NullableTime, consolePortCount int32, consoleServerPortCount int32, powerPortCount int32, powerOutletCount int32, interfaceCount int32, frontPortCount int32, rearPortCount int32, deviceBayCount int32, moduleBayCount int32, inventoryItemCount int32, ) *DeviceWithConfigContext`
 
 NewDeviceWithConfigContext instantiates a new DeviceWithConfigContext object
 This constructor will assign default values to properties that have it defined,
@@ -173,22 +187,42 @@ and a boolean to check if the value has been set.
 SetDeviceType sets DeviceType field to given value.
 
 
+### GetRole
+
+`func (o *DeviceWithConfigContext) GetRole() NestedDeviceRole`
+
+GetRole returns the Role field if non-nil, zero value otherwise.
+
+### GetRoleOk
+
+`func (o *DeviceWithConfigContext) GetRoleOk() (*NestedDeviceRole, bool)`
+
+GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRole
+
+`func (o *DeviceWithConfigContext) SetRole(v NestedDeviceRole)`
+
+SetRole sets Role field to given value.
+
+
 ### GetDeviceRole
 
-`func (o *DeviceWithConfigContext) GetDeviceRole() NestedDeviceRole`
+`func (o *DeviceWithConfigContext) GetDeviceRole() DeviceDeviceRole`
 
 GetDeviceRole returns the DeviceRole field if non-nil, zero value otherwise.
 
 ### GetDeviceRoleOk
 
-`func (o *DeviceWithConfigContext) GetDeviceRoleOk() (*NestedDeviceRole, bool)`
+`func (o *DeviceWithConfigContext) GetDeviceRoleOk() (*DeviceDeviceRole, bool)`
 
 GetDeviceRoleOk returns a tuple with the DeviceRole field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeviceRole
 
-`func (o *DeviceWithConfigContext) SetDeviceRole(v NestedDeviceRole)`
+`func (o *DeviceWithConfigContext) SetDeviceRole(v DeviceDeviceRole)`
 
 SetDeviceRole sets DeviceRole field to given value.
 
@@ -473,6 +507,76 @@ SetFace sets Face field to given value.
 
 HasFace returns a boolean if a field has been set.
 
+### GetLatitude
+
+`func (o *DeviceWithConfigContext) GetLatitude() float64`
+
+GetLatitude returns the Latitude field if non-nil, zero value otherwise.
+
+### GetLatitudeOk
+
+`func (o *DeviceWithConfigContext) GetLatitudeOk() (*float64, bool)`
+
+GetLatitudeOk returns a tuple with the Latitude field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLatitude
+
+`func (o *DeviceWithConfigContext) SetLatitude(v float64)`
+
+SetLatitude sets Latitude field to given value.
+
+### HasLatitude
+
+`func (o *DeviceWithConfigContext) HasLatitude() bool`
+
+HasLatitude returns a boolean if a field has been set.
+
+### SetLatitudeNil
+
+`func (o *DeviceWithConfigContext) SetLatitudeNil(b bool)`
+
+ SetLatitudeNil sets the value for Latitude to be an explicit nil
+
+### UnsetLatitude
+`func (o *DeviceWithConfigContext) UnsetLatitude()`
+
+UnsetLatitude ensures that no value is present for Latitude, not even an explicit nil
+### GetLongitude
+
+`func (o *DeviceWithConfigContext) GetLongitude() float64`
+
+GetLongitude returns the Longitude field if non-nil, zero value otherwise.
+
+### GetLongitudeOk
+
+`func (o *DeviceWithConfigContext) GetLongitudeOk() (*float64, bool)`
+
+GetLongitudeOk returns a tuple with the Longitude field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLongitude
+
+`func (o *DeviceWithConfigContext) SetLongitude(v float64)`
+
+SetLongitude sets Longitude field to given value.
+
+### HasLongitude
+
+`func (o *DeviceWithConfigContext) HasLongitude() bool`
+
+HasLongitude returns a boolean if a field has been set.
+
+### SetLongitudeNil
+
+`func (o *DeviceWithConfigContext) SetLongitudeNil(b bool)`
+
+ SetLongitudeNil sets the value for Longitude to be an explicit nil
+
+### UnsetLongitude
+`func (o *DeviceWithConfigContext) UnsetLongitude()`
+
+UnsetLongitude ensures that no value is present for Longitude, not even an explicit nil
 ### GetParentDevice
 
 `func (o *DeviceWithConfigContext) GetParentDevice() NestedDevice`
@@ -633,6 +737,41 @@ HasPrimaryIp6 returns a boolean if a field has been set.
 `func (o *DeviceWithConfigContext) UnsetPrimaryIp6()`
 
 UnsetPrimaryIp6 ensures that no value is present for PrimaryIp6, not even an explicit nil
+### GetOobIp
+
+`func (o *DeviceWithConfigContext) GetOobIp() NestedIPAddress`
+
+GetOobIp returns the OobIp field if non-nil, zero value otherwise.
+
+### GetOobIpOk
+
+`func (o *DeviceWithConfigContext) GetOobIpOk() (*NestedIPAddress, bool)`
+
+GetOobIpOk returns a tuple with the OobIp field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOobIp
+
+`func (o *DeviceWithConfigContext) SetOobIp(v NestedIPAddress)`
+
+SetOobIp sets OobIp field to given value.
+
+### HasOobIp
+
+`func (o *DeviceWithConfigContext) HasOobIp() bool`
+
+HasOobIp returns a boolean if a field has been set.
+
+### SetOobIpNil
+
+`func (o *DeviceWithConfigContext) SetOobIpNil(b bool)`
+
+ SetOobIpNil sets the value for OobIp to be an explicit nil
+
+### UnsetOobIp
+`func (o *DeviceWithConfigContext) UnsetOobIp()`
+
+UnsetOobIp ensures that no value is present for OobIp, not even an explicit nil
 ### GetCluster
 
 `func (o *DeviceWithConfigContext) GetCluster() NestedCluster`
@@ -823,6 +962,71 @@ SetComments sets Comments field to given value.
 
 HasComments returns a boolean if a field has been set.
 
+### GetConfigTemplate
+
+`func (o *DeviceWithConfigContext) GetConfigTemplate() NestedConfigTemplate`
+
+GetConfigTemplate returns the ConfigTemplate field if non-nil, zero value otherwise.
+
+### GetConfigTemplateOk
+
+`func (o *DeviceWithConfigContext) GetConfigTemplateOk() (*NestedConfigTemplate, bool)`
+
+GetConfigTemplateOk returns a tuple with the ConfigTemplate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConfigTemplate
+
+`func (o *DeviceWithConfigContext) SetConfigTemplate(v NestedConfigTemplate)`
+
+SetConfigTemplate sets ConfigTemplate field to given value.
+
+### HasConfigTemplate
+
+`func (o *DeviceWithConfigContext) HasConfigTemplate() bool`
+
+HasConfigTemplate returns a boolean if a field has been set.
+
+### SetConfigTemplateNil
+
+`func (o *DeviceWithConfigContext) SetConfigTemplateNil(b bool)`
+
+ SetConfigTemplateNil sets the value for ConfigTemplate to be an explicit nil
+
+### UnsetConfigTemplate
+`func (o *DeviceWithConfigContext) UnsetConfigTemplate()`
+
+UnsetConfigTemplate ensures that no value is present for ConfigTemplate, not even an explicit nil
+### GetConfigContext
+
+`func (o *DeviceWithConfigContext) GetConfigContext() map[string]interface{}`
+
+GetConfigContext returns the ConfigContext field if non-nil, zero value otherwise.
+
+### GetConfigContextOk
+
+`func (o *DeviceWithConfigContext) GetConfigContextOk() (*map[string]interface{}, bool)`
+
+GetConfigContextOk returns a tuple with the ConfigContext field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConfigContext
+
+`func (o *DeviceWithConfigContext) SetConfigContext(v map[string]interface{})`
+
+SetConfigContext sets ConfigContext field to given value.
+
+
+### SetConfigContextNil
+
+`func (o *DeviceWithConfigContext) SetConfigContextNil(b bool)`
+
+ SetConfigContextNil sets the value for ConfigContext to be an explicit nil
+
+### UnsetConfigContext
+`func (o *DeviceWithConfigContext) UnsetConfigContext()`
+
+UnsetConfigContext ensures that no value is present for ConfigContext, not even an explicit nil
 ### GetLocalContextData
 
 `func (o *DeviceWithConfigContext) GetLocalContextData() map[string]interface{}`
@@ -908,71 +1112,6 @@ SetCustomFields sets CustomFields field to given value.
 
 HasCustomFields returns a boolean if a field has been set.
 
-### GetConfigContext
-
-`func (o *DeviceWithConfigContext) GetConfigContext() map[string]interface{}`
-
-GetConfigContext returns the ConfigContext field if non-nil, zero value otherwise.
-
-### GetConfigContextOk
-
-`func (o *DeviceWithConfigContext) GetConfigContextOk() (*map[string]interface{}, bool)`
-
-GetConfigContextOk returns a tuple with the ConfigContext field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetConfigContext
-
-`func (o *DeviceWithConfigContext) SetConfigContext(v map[string]interface{})`
-
-SetConfigContext sets ConfigContext field to given value.
-
-
-### SetConfigContextNil
-
-`func (o *DeviceWithConfigContext) SetConfigContextNil(b bool)`
-
- SetConfigContextNil sets the value for ConfigContext to be an explicit nil
-
-### UnsetConfigContext
-`func (o *DeviceWithConfigContext) UnsetConfigContext()`
-
-UnsetConfigContext ensures that no value is present for ConfigContext, not even an explicit nil
-### GetConfigTemplate
-
-`func (o *DeviceWithConfigContext) GetConfigTemplate() NestedConfigTemplate`
-
-GetConfigTemplate returns the ConfigTemplate field if non-nil, zero value otherwise.
-
-### GetConfigTemplateOk
-
-`func (o *DeviceWithConfigContext) GetConfigTemplateOk() (*NestedConfigTemplate, bool)`
-
-GetConfigTemplateOk returns a tuple with the ConfigTemplate field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetConfigTemplate
-
-`func (o *DeviceWithConfigContext) SetConfigTemplate(v NestedConfigTemplate)`
-
-SetConfigTemplate sets ConfigTemplate field to given value.
-
-### HasConfigTemplate
-
-`func (o *DeviceWithConfigContext) HasConfigTemplate() bool`
-
-HasConfigTemplate returns a boolean if a field has been set.
-
-### SetConfigTemplateNil
-
-`func (o *DeviceWithConfigContext) SetConfigTemplateNil(b bool)`
-
- SetConfigTemplateNil sets the value for ConfigTemplate to be an explicit nil
-
-### UnsetConfigTemplate
-`func (o *DeviceWithConfigContext) UnsetConfigTemplate()`
-
-UnsetConfigTemplate ensures that no value is present for ConfigTemplate, not even an explicit nil
 ### GetCreated
 
 `func (o *DeviceWithConfigContext) GetCreated() time.Time`
@@ -1033,6 +1172,206 @@ SetLastUpdated sets LastUpdated field to given value.
 `func (o *DeviceWithConfigContext) UnsetLastUpdated()`
 
 UnsetLastUpdated ensures that no value is present for LastUpdated, not even an explicit nil
+### GetConsolePortCount
+
+`func (o *DeviceWithConfigContext) GetConsolePortCount() int32`
+
+GetConsolePortCount returns the ConsolePortCount field if non-nil, zero value otherwise.
+
+### GetConsolePortCountOk
+
+`func (o *DeviceWithConfigContext) GetConsolePortCountOk() (*int32, bool)`
+
+GetConsolePortCountOk returns a tuple with the ConsolePortCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConsolePortCount
+
+`func (o *DeviceWithConfigContext) SetConsolePortCount(v int32)`
+
+SetConsolePortCount sets ConsolePortCount field to given value.
+
+
+### GetConsoleServerPortCount
+
+`func (o *DeviceWithConfigContext) GetConsoleServerPortCount() int32`
+
+GetConsoleServerPortCount returns the ConsoleServerPortCount field if non-nil, zero value otherwise.
+
+### GetConsoleServerPortCountOk
+
+`func (o *DeviceWithConfigContext) GetConsoleServerPortCountOk() (*int32, bool)`
+
+GetConsoleServerPortCountOk returns a tuple with the ConsoleServerPortCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConsoleServerPortCount
+
+`func (o *DeviceWithConfigContext) SetConsoleServerPortCount(v int32)`
+
+SetConsoleServerPortCount sets ConsoleServerPortCount field to given value.
+
+
+### GetPowerPortCount
+
+`func (o *DeviceWithConfigContext) GetPowerPortCount() int32`
+
+GetPowerPortCount returns the PowerPortCount field if non-nil, zero value otherwise.
+
+### GetPowerPortCountOk
+
+`func (o *DeviceWithConfigContext) GetPowerPortCountOk() (*int32, bool)`
+
+GetPowerPortCountOk returns a tuple with the PowerPortCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPowerPortCount
+
+`func (o *DeviceWithConfigContext) SetPowerPortCount(v int32)`
+
+SetPowerPortCount sets PowerPortCount field to given value.
+
+
+### GetPowerOutletCount
+
+`func (o *DeviceWithConfigContext) GetPowerOutletCount() int32`
+
+GetPowerOutletCount returns the PowerOutletCount field if non-nil, zero value otherwise.
+
+### GetPowerOutletCountOk
+
+`func (o *DeviceWithConfigContext) GetPowerOutletCountOk() (*int32, bool)`
+
+GetPowerOutletCountOk returns a tuple with the PowerOutletCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPowerOutletCount
+
+`func (o *DeviceWithConfigContext) SetPowerOutletCount(v int32)`
+
+SetPowerOutletCount sets PowerOutletCount field to given value.
+
+
+### GetInterfaceCount
+
+`func (o *DeviceWithConfigContext) GetInterfaceCount() int32`
+
+GetInterfaceCount returns the InterfaceCount field if non-nil, zero value otherwise.
+
+### GetInterfaceCountOk
+
+`func (o *DeviceWithConfigContext) GetInterfaceCountOk() (*int32, bool)`
+
+GetInterfaceCountOk returns a tuple with the InterfaceCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInterfaceCount
+
+`func (o *DeviceWithConfigContext) SetInterfaceCount(v int32)`
+
+SetInterfaceCount sets InterfaceCount field to given value.
+
+
+### GetFrontPortCount
+
+`func (o *DeviceWithConfigContext) GetFrontPortCount() int32`
+
+GetFrontPortCount returns the FrontPortCount field if non-nil, zero value otherwise.
+
+### GetFrontPortCountOk
+
+`func (o *DeviceWithConfigContext) GetFrontPortCountOk() (*int32, bool)`
+
+GetFrontPortCountOk returns a tuple with the FrontPortCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFrontPortCount
+
+`func (o *DeviceWithConfigContext) SetFrontPortCount(v int32)`
+
+SetFrontPortCount sets FrontPortCount field to given value.
+
+
+### GetRearPortCount
+
+`func (o *DeviceWithConfigContext) GetRearPortCount() int32`
+
+GetRearPortCount returns the RearPortCount field if non-nil, zero value otherwise.
+
+### GetRearPortCountOk
+
+`func (o *DeviceWithConfigContext) GetRearPortCountOk() (*int32, bool)`
+
+GetRearPortCountOk returns a tuple with the RearPortCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRearPortCount
+
+`func (o *DeviceWithConfigContext) SetRearPortCount(v int32)`
+
+SetRearPortCount sets RearPortCount field to given value.
+
+
+### GetDeviceBayCount
+
+`func (o *DeviceWithConfigContext) GetDeviceBayCount() int32`
+
+GetDeviceBayCount returns the DeviceBayCount field if non-nil, zero value otherwise.
+
+### GetDeviceBayCountOk
+
+`func (o *DeviceWithConfigContext) GetDeviceBayCountOk() (*int32, bool)`
+
+GetDeviceBayCountOk returns a tuple with the DeviceBayCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDeviceBayCount
+
+`func (o *DeviceWithConfigContext) SetDeviceBayCount(v int32)`
+
+SetDeviceBayCount sets DeviceBayCount field to given value.
+
+
+### GetModuleBayCount
+
+`func (o *DeviceWithConfigContext) GetModuleBayCount() int32`
+
+GetModuleBayCount returns the ModuleBayCount field if non-nil, zero value otherwise.
+
+### GetModuleBayCountOk
+
+`func (o *DeviceWithConfigContext) GetModuleBayCountOk() (*int32, bool)`
+
+GetModuleBayCountOk returns a tuple with the ModuleBayCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetModuleBayCount
+
+`func (o *DeviceWithConfigContext) SetModuleBayCount(v int32)`
+
+SetModuleBayCount sets ModuleBayCount field to given value.
+
+
+### GetInventoryItemCount
+
+`func (o *DeviceWithConfigContext) GetInventoryItemCount() int32`
+
+GetInventoryItemCount returns the InventoryItemCount field if non-nil, zero value otherwise.
+
+### GetInventoryItemCountOk
+
+`func (o *DeviceWithConfigContext) GetInventoryItemCountOk() (*int32, bool)`
+
+GetInventoryItemCountOk returns a tuple with the InventoryItemCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInventoryItemCount
+
+`func (o *DeviceWithConfigContext) SetInventoryItemCount(v int32)`
+
+SetInventoryItemCount sets InventoryItemCount field to given value.
+
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

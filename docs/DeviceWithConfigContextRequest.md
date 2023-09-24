@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **NullableString** |  | [optional] 
 **DeviceType** | [**NestedDeviceTypeRequest**](NestedDeviceTypeRequest.md) |  | 
-**DeviceRole** | [**NestedDeviceRoleRequest**](NestedDeviceRoleRequest.md) |  | 
+**Role** | [**NestedDeviceRoleRequest**](NestedDeviceRoleRequest.md) |  | 
 **Tenant** | Pointer to [**NullableNestedTenantRequest**](NestedTenantRequest.md) |  | [optional] 
 **Platform** | Pointer to [**NullableNestedPlatformRequest**](NestedPlatformRequest.md) |  | [optional] 
 **Serial** | Pointer to **string** | Chassis serial number, assigned by the manufacturer | [optional] 
@@ -16,26 +16,29 @@ Name | Type | Description | Notes
 **Rack** | Pointer to [**NullableNestedRackRequest**](NestedRackRequest.md) |  | [optional] 
 **Position** | Pointer to **NullableFloat64** |  | [optional] 
 **Face** | Pointer to **string** | * &#x60;front&#x60; - Front * &#x60;rear&#x60; - Rear | [optional] 
+**Latitude** | Pointer to **NullableFloat64** | GPS coordinate in decimal format (xx.yyyyyy) | [optional] 
+**Longitude** | Pointer to **NullableFloat64** | GPS coordinate in decimal format (xx.yyyyyy) | [optional] 
 **Status** | Pointer to **string** | * &#x60;offline&#x60; - Offline * &#x60;active&#x60; - Active * &#x60;planned&#x60; - Planned * &#x60;staged&#x60; - Staged * &#x60;failed&#x60; - Failed * &#x60;inventory&#x60; - Inventory * &#x60;decommissioning&#x60; - Decommissioning | [optional] 
 **Airflow** | Pointer to **string** | * &#x60;front-to-rear&#x60; - Front to rear * &#x60;rear-to-front&#x60; - Rear to front * &#x60;left-to-right&#x60; - Left to right * &#x60;right-to-left&#x60; - Right to left * &#x60;side-to-rear&#x60; - Side to rear * &#x60;passive&#x60; - Passive * &#x60;mixed&#x60; - Mixed | [optional] 
 **PrimaryIp4** | Pointer to [**NullableNestedIPAddressRequest**](NestedIPAddressRequest.md) |  | [optional] 
 **PrimaryIp6** | Pointer to [**NullableNestedIPAddressRequest**](NestedIPAddressRequest.md) |  | [optional] 
+**OobIp** | Pointer to [**NullableNestedIPAddressRequest**](NestedIPAddressRequest.md) |  | [optional] 
 **Cluster** | Pointer to [**NullableNestedClusterRequest**](NestedClusterRequest.md) |  | [optional] 
 **VirtualChassis** | Pointer to [**NullableNestedVirtualChassisRequest**](NestedVirtualChassisRequest.md) |  | [optional] 
 **VcPosition** | Pointer to **NullableInt32** |  | [optional] 
 **VcPriority** | Pointer to **NullableInt32** | Virtual chassis master election priority | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
+**ConfigTemplate** | Pointer to [**NullableNestedConfigTemplateRequest**](NestedConfigTemplateRequest.md) |  | [optional] 
 **LocalContextData** | Pointer to **map[string]interface{}** | Local config context data takes precedence over source contexts in the final rendered config context | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**ConfigTemplate** | Pointer to [**NullableNestedConfigTemplateRequest**](NestedConfigTemplateRequest.md) |  | [optional] 
 
 ## Methods
 
 ### NewDeviceWithConfigContextRequest
 
-`func NewDeviceWithConfigContextRequest(deviceType NestedDeviceTypeRequest, deviceRole NestedDeviceRoleRequest, site NestedSiteRequest, ) *DeviceWithConfigContextRequest`
+`func NewDeviceWithConfigContextRequest(deviceType NestedDeviceTypeRequest, role NestedDeviceRoleRequest, site NestedSiteRequest, ) *DeviceWithConfigContextRequest`
 
 NewDeviceWithConfigContextRequest instantiates a new DeviceWithConfigContextRequest object
 This constructor will assign default values to properties that have it defined,
@@ -105,24 +108,24 @@ and a boolean to check if the value has been set.
 SetDeviceType sets DeviceType field to given value.
 
 
-### GetDeviceRole
+### GetRole
 
-`func (o *DeviceWithConfigContextRequest) GetDeviceRole() NestedDeviceRoleRequest`
+`func (o *DeviceWithConfigContextRequest) GetRole() NestedDeviceRoleRequest`
 
-GetDeviceRole returns the DeviceRole field if non-nil, zero value otherwise.
+GetRole returns the Role field if non-nil, zero value otherwise.
 
-### GetDeviceRoleOk
+### GetRoleOk
 
-`func (o *DeviceWithConfigContextRequest) GetDeviceRoleOk() (*NestedDeviceRoleRequest, bool)`
+`func (o *DeviceWithConfigContextRequest) GetRoleOk() (*NestedDeviceRoleRequest, bool)`
 
-GetDeviceRoleOk returns a tuple with the DeviceRole field if it's non-nil, zero value otherwise
+GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDeviceRole
+### SetRole
 
-`func (o *DeviceWithConfigContextRequest) SetDeviceRole(v NestedDeviceRoleRequest)`
+`func (o *DeviceWithConfigContextRequest) SetRole(v NestedDeviceRoleRequest)`
 
-SetDeviceRole sets DeviceRole field to given value.
+SetRole sets Role field to given value.
 
 
 ### GetTenant
@@ -405,6 +408,76 @@ SetFace sets Face field to given value.
 
 HasFace returns a boolean if a field has been set.
 
+### GetLatitude
+
+`func (o *DeviceWithConfigContextRequest) GetLatitude() float64`
+
+GetLatitude returns the Latitude field if non-nil, zero value otherwise.
+
+### GetLatitudeOk
+
+`func (o *DeviceWithConfigContextRequest) GetLatitudeOk() (*float64, bool)`
+
+GetLatitudeOk returns a tuple with the Latitude field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLatitude
+
+`func (o *DeviceWithConfigContextRequest) SetLatitude(v float64)`
+
+SetLatitude sets Latitude field to given value.
+
+### HasLatitude
+
+`func (o *DeviceWithConfigContextRequest) HasLatitude() bool`
+
+HasLatitude returns a boolean if a field has been set.
+
+### SetLatitudeNil
+
+`func (o *DeviceWithConfigContextRequest) SetLatitudeNil(b bool)`
+
+ SetLatitudeNil sets the value for Latitude to be an explicit nil
+
+### UnsetLatitude
+`func (o *DeviceWithConfigContextRequest) UnsetLatitude()`
+
+UnsetLatitude ensures that no value is present for Latitude, not even an explicit nil
+### GetLongitude
+
+`func (o *DeviceWithConfigContextRequest) GetLongitude() float64`
+
+GetLongitude returns the Longitude field if non-nil, zero value otherwise.
+
+### GetLongitudeOk
+
+`func (o *DeviceWithConfigContextRequest) GetLongitudeOk() (*float64, bool)`
+
+GetLongitudeOk returns a tuple with the Longitude field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLongitude
+
+`func (o *DeviceWithConfigContextRequest) SetLongitude(v float64)`
+
+SetLongitude sets Longitude field to given value.
+
+### HasLongitude
+
+`func (o *DeviceWithConfigContextRequest) HasLongitude() bool`
+
+HasLongitude returns a boolean if a field has been set.
+
+### SetLongitudeNil
+
+`func (o *DeviceWithConfigContextRequest) SetLongitudeNil(b bool)`
+
+ SetLongitudeNil sets the value for Longitude to be an explicit nil
+
+### UnsetLongitude
+`func (o *DeviceWithConfigContextRequest) UnsetLongitude()`
+
+UnsetLongitude ensures that no value is present for Longitude, not even an explicit nil
 ### GetStatus
 
 `func (o *DeviceWithConfigContextRequest) GetStatus() string`
@@ -525,6 +598,41 @@ HasPrimaryIp6 returns a boolean if a field has been set.
 `func (o *DeviceWithConfigContextRequest) UnsetPrimaryIp6()`
 
 UnsetPrimaryIp6 ensures that no value is present for PrimaryIp6, not even an explicit nil
+### GetOobIp
+
+`func (o *DeviceWithConfigContextRequest) GetOobIp() NestedIPAddressRequest`
+
+GetOobIp returns the OobIp field if non-nil, zero value otherwise.
+
+### GetOobIpOk
+
+`func (o *DeviceWithConfigContextRequest) GetOobIpOk() (*NestedIPAddressRequest, bool)`
+
+GetOobIpOk returns a tuple with the OobIp field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOobIp
+
+`func (o *DeviceWithConfigContextRequest) SetOobIp(v NestedIPAddressRequest)`
+
+SetOobIp sets OobIp field to given value.
+
+### HasOobIp
+
+`func (o *DeviceWithConfigContextRequest) HasOobIp() bool`
+
+HasOobIp returns a boolean if a field has been set.
+
+### SetOobIpNil
+
+`func (o *DeviceWithConfigContextRequest) SetOobIpNil(b bool)`
+
+ SetOobIpNil sets the value for OobIp to be an explicit nil
+
+### UnsetOobIp
+`func (o *DeviceWithConfigContextRequest) UnsetOobIp()`
+
+UnsetOobIp ensures that no value is present for OobIp, not even an explicit nil
 ### GetCluster
 
 `func (o *DeviceWithConfigContextRequest) GetCluster() NestedClusterRequest`
@@ -715,6 +823,41 @@ SetComments sets Comments field to given value.
 
 HasComments returns a boolean if a field has been set.
 
+### GetConfigTemplate
+
+`func (o *DeviceWithConfigContextRequest) GetConfigTemplate() NestedConfigTemplateRequest`
+
+GetConfigTemplate returns the ConfigTemplate field if non-nil, zero value otherwise.
+
+### GetConfigTemplateOk
+
+`func (o *DeviceWithConfigContextRequest) GetConfigTemplateOk() (*NestedConfigTemplateRequest, bool)`
+
+GetConfigTemplateOk returns a tuple with the ConfigTemplate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConfigTemplate
+
+`func (o *DeviceWithConfigContextRequest) SetConfigTemplate(v NestedConfigTemplateRequest)`
+
+SetConfigTemplate sets ConfigTemplate field to given value.
+
+### HasConfigTemplate
+
+`func (o *DeviceWithConfigContextRequest) HasConfigTemplate() bool`
+
+HasConfigTemplate returns a boolean if a field has been set.
+
+### SetConfigTemplateNil
+
+`func (o *DeviceWithConfigContextRequest) SetConfigTemplateNil(b bool)`
+
+ SetConfigTemplateNil sets the value for ConfigTemplate to be an explicit nil
+
+### UnsetConfigTemplate
+`func (o *DeviceWithConfigContextRequest) UnsetConfigTemplate()`
+
+UnsetConfigTemplate ensures that no value is present for ConfigTemplate, not even an explicit nil
 ### GetLocalContextData
 
 `func (o *DeviceWithConfigContextRequest) GetLocalContextData() map[string]interface{}`
@@ -800,41 +943,6 @@ SetCustomFields sets CustomFields field to given value.
 
 HasCustomFields returns a boolean if a field has been set.
 
-### GetConfigTemplate
-
-`func (o *DeviceWithConfigContextRequest) GetConfigTemplate() NestedConfigTemplateRequest`
-
-GetConfigTemplate returns the ConfigTemplate field if non-nil, zero value otherwise.
-
-### GetConfigTemplateOk
-
-`func (o *DeviceWithConfigContextRequest) GetConfigTemplateOk() (*NestedConfigTemplateRequest, bool)`
-
-GetConfigTemplateOk returns a tuple with the ConfigTemplate field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetConfigTemplate
-
-`func (o *DeviceWithConfigContextRequest) SetConfigTemplate(v NestedConfigTemplateRequest)`
-
-SetConfigTemplate sets ConfigTemplate field to given value.
-
-### HasConfigTemplate
-
-`func (o *DeviceWithConfigContextRequest) HasConfigTemplate() bool`
-
-HasConfigTemplate returns a boolean if a field has been set.
-
-### SetConfigTemplateNil
-
-`func (o *DeviceWithConfigContextRequest) SetConfigTemplateNil(b bool)`
-
- SetConfigTemplateNil sets the value for ConfigTemplate to be an explicit nil
-
-### UnsetConfigTemplate
-`func (o *DeviceWithConfigContextRequest) UnsetConfigTemplate()`
-
-UnsetConfigTemplate ensures that no value is present for ConfigTemplate, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

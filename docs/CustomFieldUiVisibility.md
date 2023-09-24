@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to **string** | * &#x60;read-write&#x60; - Read/Write * &#x60;read-only&#x60; - Read-only * &#x60;hidden&#x60; - Hidden * &#x60;hidden-ifunset&#x60; - Hidden (if unset) | [optional] 
+**Value** | Pointer to **string** | * &#x60;read-write&#x60; - Read/write * &#x60;read-only&#x60; - Read-only * &#x60;hidden&#x60; - Hidden * &#x60;hidden-ifunset&#x60; - Hidden (if unset) | [optional] 
 **Label** | Pointer to **string** |  | [optional] 
 
 ## Methods

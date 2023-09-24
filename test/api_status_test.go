@@ -1,7 +1,7 @@
 /*
 NetBox REST API
 
-Testing StatusApiService
+Testing StatusAPIService
 
 */
 
@@ -18,16 +18,16 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func Test_netbox_StatusApiService(t *testing.T) {
+func Test_netbox_StatusAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test StatusApiService StatusRetrieve", func(t *testing.T) {
+	t.Run("Test StatusAPIService StatusRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.StatusApi.StatusRetrieve(context.Background()).Execute()
+		resp, httpRes, err := apiClient.StatusAPI.StatusRetrieve(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

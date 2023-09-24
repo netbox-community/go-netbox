@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DeviceType** | **int32** |  | 
 **Parent** | Pointer to **NullableInt32** |  | [optional] 
-**Name** | **string** |          {module} is accepted as a substitution for the module bay position when attached to a module type.          | 
+**Name** | **string** | {module} is accepted as a substitution for the module bay position when attached to a module type. | 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Role** | Pointer to **NullableInt32** |  | [optional] 
 **Manufacturer** | Pointer to **NullableInt32** |  | [optional] 

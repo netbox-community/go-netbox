@@ -1,54 +1,54 @@
-# \VirtualizationApi
+# \VirtualizationAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**VirtualizationClusterGroupsBulkDestroy**](VirtualizationApi.md#VirtualizationClusterGroupsBulkDestroy) | **Delete** /api/virtualization/cluster-groups/ | 
-[**VirtualizationClusterGroupsBulkPartialUpdate**](VirtualizationApi.md#VirtualizationClusterGroupsBulkPartialUpdate) | **Patch** /api/virtualization/cluster-groups/ | 
-[**VirtualizationClusterGroupsBulkUpdate**](VirtualizationApi.md#VirtualizationClusterGroupsBulkUpdate) | **Put** /api/virtualization/cluster-groups/ | 
-[**VirtualizationClusterGroupsCreate**](VirtualizationApi.md#VirtualizationClusterGroupsCreate) | **Post** /api/virtualization/cluster-groups/ | 
-[**VirtualizationClusterGroupsDestroy**](VirtualizationApi.md#VirtualizationClusterGroupsDestroy) | **Delete** /api/virtualization/cluster-groups/{id}/ | 
-[**VirtualizationClusterGroupsList**](VirtualizationApi.md#VirtualizationClusterGroupsList) | **Get** /api/virtualization/cluster-groups/ | 
-[**VirtualizationClusterGroupsPartialUpdate**](VirtualizationApi.md#VirtualizationClusterGroupsPartialUpdate) | **Patch** /api/virtualization/cluster-groups/{id}/ | 
-[**VirtualizationClusterGroupsRetrieve**](VirtualizationApi.md#VirtualizationClusterGroupsRetrieve) | **Get** /api/virtualization/cluster-groups/{id}/ | 
-[**VirtualizationClusterGroupsUpdate**](VirtualizationApi.md#VirtualizationClusterGroupsUpdate) | **Put** /api/virtualization/cluster-groups/{id}/ | 
-[**VirtualizationClusterTypesBulkDestroy**](VirtualizationApi.md#VirtualizationClusterTypesBulkDestroy) | **Delete** /api/virtualization/cluster-types/ | 
-[**VirtualizationClusterTypesBulkPartialUpdate**](VirtualizationApi.md#VirtualizationClusterTypesBulkPartialUpdate) | **Patch** /api/virtualization/cluster-types/ | 
-[**VirtualizationClusterTypesBulkUpdate**](VirtualizationApi.md#VirtualizationClusterTypesBulkUpdate) | **Put** /api/virtualization/cluster-types/ | 
-[**VirtualizationClusterTypesCreate**](VirtualizationApi.md#VirtualizationClusterTypesCreate) | **Post** /api/virtualization/cluster-types/ | 
-[**VirtualizationClusterTypesDestroy**](VirtualizationApi.md#VirtualizationClusterTypesDestroy) | **Delete** /api/virtualization/cluster-types/{id}/ | 
-[**VirtualizationClusterTypesList**](VirtualizationApi.md#VirtualizationClusterTypesList) | **Get** /api/virtualization/cluster-types/ | 
-[**VirtualizationClusterTypesPartialUpdate**](VirtualizationApi.md#VirtualizationClusterTypesPartialUpdate) | **Patch** /api/virtualization/cluster-types/{id}/ | 
-[**VirtualizationClusterTypesRetrieve**](VirtualizationApi.md#VirtualizationClusterTypesRetrieve) | **Get** /api/virtualization/cluster-types/{id}/ | 
-[**VirtualizationClusterTypesUpdate**](VirtualizationApi.md#VirtualizationClusterTypesUpdate) | **Put** /api/virtualization/cluster-types/{id}/ | 
-[**VirtualizationClustersBulkDestroy**](VirtualizationApi.md#VirtualizationClustersBulkDestroy) | **Delete** /api/virtualization/clusters/ | 
-[**VirtualizationClustersBulkPartialUpdate**](VirtualizationApi.md#VirtualizationClustersBulkPartialUpdate) | **Patch** /api/virtualization/clusters/ | 
-[**VirtualizationClustersBulkUpdate**](VirtualizationApi.md#VirtualizationClustersBulkUpdate) | **Put** /api/virtualization/clusters/ | 
-[**VirtualizationClustersCreate**](VirtualizationApi.md#VirtualizationClustersCreate) | **Post** /api/virtualization/clusters/ | 
-[**VirtualizationClustersDestroy**](VirtualizationApi.md#VirtualizationClustersDestroy) | **Delete** /api/virtualization/clusters/{id}/ | 
-[**VirtualizationClustersList**](VirtualizationApi.md#VirtualizationClustersList) | **Get** /api/virtualization/clusters/ | 
-[**VirtualizationClustersPartialUpdate**](VirtualizationApi.md#VirtualizationClustersPartialUpdate) | **Patch** /api/virtualization/clusters/{id}/ | 
-[**VirtualizationClustersRetrieve**](VirtualizationApi.md#VirtualizationClustersRetrieve) | **Get** /api/virtualization/clusters/{id}/ | 
-[**VirtualizationClustersUpdate**](VirtualizationApi.md#VirtualizationClustersUpdate) | **Put** /api/virtualization/clusters/{id}/ | 
-[**VirtualizationInterfacesBulkDestroy**](VirtualizationApi.md#VirtualizationInterfacesBulkDestroy) | **Delete** /api/virtualization/interfaces/ | 
-[**VirtualizationInterfacesBulkPartialUpdate**](VirtualizationApi.md#VirtualizationInterfacesBulkPartialUpdate) | **Patch** /api/virtualization/interfaces/ | 
-[**VirtualizationInterfacesBulkUpdate**](VirtualizationApi.md#VirtualizationInterfacesBulkUpdate) | **Put** /api/virtualization/interfaces/ | 
-[**VirtualizationInterfacesCreate**](VirtualizationApi.md#VirtualizationInterfacesCreate) | **Post** /api/virtualization/interfaces/ | 
-[**VirtualizationInterfacesDestroy**](VirtualizationApi.md#VirtualizationInterfacesDestroy) | **Delete** /api/virtualization/interfaces/{id}/ | 
-[**VirtualizationInterfacesList**](VirtualizationApi.md#VirtualizationInterfacesList) | **Get** /api/virtualization/interfaces/ | 
-[**VirtualizationInterfacesPartialUpdate**](VirtualizationApi.md#VirtualizationInterfacesPartialUpdate) | **Patch** /api/virtualization/interfaces/{id}/ | 
-[**VirtualizationInterfacesRetrieve**](VirtualizationApi.md#VirtualizationInterfacesRetrieve) | **Get** /api/virtualization/interfaces/{id}/ | 
-[**VirtualizationInterfacesUpdate**](VirtualizationApi.md#VirtualizationInterfacesUpdate) | **Put** /api/virtualization/interfaces/{id}/ | 
-[**VirtualizationVirtualMachinesBulkDestroy**](VirtualizationApi.md#VirtualizationVirtualMachinesBulkDestroy) | **Delete** /api/virtualization/virtual-machines/ | 
-[**VirtualizationVirtualMachinesBulkPartialUpdate**](VirtualizationApi.md#VirtualizationVirtualMachinesBulkPartialUpdate) | **Patch** /api/virtualization/virtual-machines/ | 
-[**VirtualizationVirtualMachinesBulkUpdate**](VirtualizationApi.md#VirtualizationVirtualMachinesBulkUpdate) | **Put** /api/virtualization/virtual-machines/ | 
-[**VirtualizationVirtualMachinesCreate**](VirtualizationApi.md#VirtualizationVirtualMachinesCreate) | **Post** /api/virtualization/virtual-machines/ | 
-[**VirtualizationVirtualMachinesDestroy**](VirtualizationApi.md#VirtualizationVirtualMachinesDestroy) | **Delete** /api/virtualization/virtual-machines/{id}/ | 
-[**VirtualizationVirtualMachinesList**](VirtualizationApi.md#VirtualizationVirtualMachinesList) | **Get** /api/virtualization/virtual-machines/ | 
-[**VirtualizationVirtualMachinesPartialUpdate**](VirtualizationApi.md#VirtualizationVirtualMachinesPartialUpdate) | **Patch** /api/virtualization/virtual-machines/{id}/ | 
-[**VirtualizationVirtualMachinesRetrieve**](VirtualizationApi.md#VirtualizationVirtualMachinesRetrieve) | **Get** /api/virtualization/virtual-machines/{id}/ | 
-[**VirtualizationVirtualMachinesUpdate**](VirtualizationApi.md#VirtualizationVirtualMachinesUpdate) | **Put** /api/virtualization/virtual-machines/{id}/ | 
+[**VirtualizationClusterGroupsBulkDestroy**](VirtualizationAPI.md#VirtualizationClusterGroupsBulkDestroy) | **Delete** /api/virtualization/cluster-groups/ | 
+[**VirtualizationClusterGroupsBulkPartialUpdate**](VirtualizationAPI.md#VirtualizationClusterGroupsBulkPartialUpdate) | **Patch** /api/virtualization/cluster-groups/ | 
+[**VirtualizationClusterGroupsBulkUpdate**](VirtualizationAPI.md#VirtualizationClusterGroupsBulkUpdate) | **Put** /api/virtualization/cluster-groups/ | 
+[**VirtualizationClusterGroupsCreate**](VirtualizationAPI.md#VirtualizationClusterGroupsCreate) | **Post** /api/virtualization/cluster-groups/ | 
+[**VirtualizationClusterGroupsDestroy**](VirtualizationAPI.md#VirtualizationClusterGroupsDestroy) | **Delete** /api/virtualization/cluster-groups/{id}/ | 
+[**VirtualizationClusterGroupsList**](VirtualizationAPI.md#VirtualizationClusterGroupsList) | **Get** /api/virtualization/cluster-groups/ | 
+[**VirtualizationClusterGroupsPartialUpdate**](VirtualizationAPI.md#VirtualizationClusterGroupsPartialUpdate) | **Patch** /api/virtualization/cluster-groups/{id}/ | 
+[**VirtualizationClusterGroupsRetrieve**](VirtualizationAPI.md#VirtualizationClusterGroupsRetrieve) | **Get** /api/virtualization/cluster-groups/{id}/ | 
+[**VirtualizationClusterGroupsUpdate**](VirtualizationAPI.md#VirtualizationClusterGroupsUpdate) | **Put** /api/virtualization/cluster-groups/{id}/ | 
+[**VirtualizationClusterTypesBulkDestroy**](VirtualizationAPI.md#VirtualizationClusterTypesBulkDestroy) | **Delete** /api/virtualization/cluster-types/ | 
+[**VirtualizationClusterTypesBulkPartialUpdate**](VirtualizationAPI.md#VirtualizationClusterTypesBulkPartialUpdate) | **Patch** /api/virtualization/cluster-types/ | 
+[**VirtualizationClusterTypesBulkUpdate**](VirtualizationAPI.md#VirtualizationClusterTypesBulkUpdate) | **Put** /api/virtualization/cluster-types/ | 
+[**VirtualizationClusterTypesCreate**](VirtualizationAPI.md#VirtualizationClusterTypesCreate) | **Post** /api/virtualization/cluster-types/ | 
+[**VirtualizationClusterTypesDestroy**](VirtualizationAPI.md#VirtualizationClusterTypesDestroy) | **Delete** /api/virtualization/cluster-types/{id}/ | 
+[**VirtualizationClusterTypesList**](VirtualizationAPI.md#VirtualizationClusterTypesList) | **Get** /api/virtualization/cluster-types/ | 
+[**VirtualizationClusterTypesPartialUpdate**](VirtualizationAPI.md#VirtualizationClusterTypesPartialUpdate) | **Patch** /api/virtualization/cluster-types/{id}/ | 
+[**VirtualizationClusterTypesRetrieve**](VirtualizationAPI.md#VirtualizationClusterTypesRetrieve) | **Get** /api/virtualization/cluster-types/{id}/ | 
+[**VirtualizationClusterTypesUpdate**](VirtualizationAPI.md#VirtualizationClusterTypesUpdate) | **Put** /api/virtualization/cluster-types/{id}/ | 
+[**VirtualizationClustersBulkDestroy**](VirtualizationAPI.md#VirtualizationClustersBulkDestroy) | **Delete** /api/virtualization/clusters/ | 
+[**VirtualizationClustersBulkPartialUpdate**](VirtualizationAPI.md#VirtualizationClustersBulkPartialUpdate) | **Patch** /api/virtualization/clusters/ | 
+[**VirtualizationClustersBulkUpdate**](VirtualizationAPI.md#VirtualizationClustersBulkUpdate) | **Put** /api/virtualization/clusters/ | 
+[**VirtualizationClustersCreate**](VirtualizationAPI.md#VirtualizationClustersCreate) | **Post** /api/virtualization/clusters/ | 
+[**VirtualizationClustersDestroy**](VirtualizationAPI.md#VirtualizationClustersDestroy) | **Delete** /api/virtualization/clusters/{id}/ | 
+[**VirtualizationClustersList**](VirtualizationAPI.md#VirtualizationClustersList) | **Get** /api/virtualization/clusters/ | 
+[**VirtualizationClustersPartialUpdate**](VirtualizationAPI.md#VirtualizationClustersPartialUpdate) | **Patch** /api/virtualization/clusters/{id}/ | 
+[**VirtualizationClustersRetrieve**](VirtualizationAPI.md#VirtualizationClustersRetrieve) | **Get** /api/virtualization/clusters/{id}/ | 
+[**VirtualizationClustersUpdate**](VirtualizationAPI.md#VirtualizationClustersUpdate) | **Put** /api/virtualization/clusters/{id}/ | 
+[**VirtualizationInterfacesBulkDestroy**](VirtualizationAPI.md#VirtualizationInterfacesBulkDestroy) | **Delete** /api/virtualization/interfaces/ | 
+[**VirtualizationInterfacesBulkPartialUpdate**](VirtualizationAPI.md#VirtualizationInterfacesBulkPartialUpdate) | **Patch** /api/virtualization/interfaces/ | 
+[**VirtualizationInterfacesBulkUpdate**](VirtualizationAPI.md#VirtualizationInterfacesBulkUpdate) | **Put** /api/virtualization/interfaces/ | 
+[**VirtualizationInterfacesCreate**](VirtualizationAPI.md#VirtualizationInterfacesCreate) | **Post** /api/virtualization/interfaces/ | 
+[**VirtualizationInterfacesDestroy**](VirtualizationAPI.md#VirtualizationInterfacesDestroy) | **Delete** /api/virtualization/interfaces/{id}/ | 
+[**VirtualizationInterfacesList**](VirtualizationAPI.md#VirtualizationInterfacesList) | **Get** /api/virtualization/interfaces/ | 
+[**VirtualizationInterfacesPartialUpdate**](VirtualizationAPI.md#VirtualizationInterfacesPartialUpdate) | **Patch** /api/virtualization/interfaces/{id}/ | 
+[**VirtualizationInterfacesRetrieve**](VirtualizationAPI.md#VirtualizationInterfacesRetrieve) | **Get** /api/virtualization/interfaces/{id}/ | 
+[**VirtualizationInterfacesUpdate**](VirtualizationAPI.md#VirtualizationInterfacesUpdate) | **Put** /api/virtualization/interfaces/{id}/ | 
+[**VirtualizationVirtualMachinesBulkDestroy**](VirtualizationAPI.md#VirtualizationVirtualMachinesBulkDestroy) | **Delete** /api/virtualization/virtual-machines/ | 
+[**VirtualizationVirtualMachinesBulkPartialUpdate**](VirtualizationAPI.md#VirtualizationVirtualMachinesBulkPartialUpdate) | **Patch** /api/virtualization/virtual-machines/ | 
+[**VirtualizationVirtualMachinesBulkUpdate**](VirtualizationAPI.md#VirtualizationVirtualMachinesBulkUpdate) | **Put** /api/virtualization/virtual-machines/ | 
+[**VirtualizationVirtualMachinesCreate**](VirtualizationAPI.md#VirtualizationVirtualMachinesCreate) | **Post** /api/virtualization/virtual-machines/ | 
+[**VirtualizationVirtualMachinesDestroy**](VirtualizationAPI.md#VirtualizationVirtualMachinesDestroy) | **Delete** /api/virtualization/virtual-machines/{id}/ | 
+[**VirtualizationVirtualMachinesList**](VirtualizationAPI.md#VirtualizationVirtualMachinesList) | **Get** /api/virtualization/virtual-machines/ | 
+[**VirtualizationVirtualMachinesPartialUpdate**](VirtualizationAPI.md#VirtualizationVirtualMachinesPartialUpdate) | **Patch** /api/virtualization/virtual-machines/{id}/ | 
+[**VirtualizationVirtualMachinesRetrieve**](VirtualizationAPI.md#VirtualizationVirtualMachinesRetrieve) | **Get** /api/virtualization/virtual-machines/{id}/ | 
+[**VirtualizationVirtualMachinesUpdate**](VirtualizationAPI.md#VirtualizationVirtualMachinesUpdate) | **Put** /api/virtualization/virtual-machines/{id}/ | 
 
 
 
@@ -77,9 +77,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.VirtualizationApi.VirtualizationClusterGroupsBulkDestroy(context.Background()).ClusterGroupRequest(clusterGroupRequest).Execute()
+    r, err := apiClient.VirtualizationAPI.VirtualizationClusterGroupsBulkDestroy(context.Background()).ClusterGroupRequest(clusterGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationClusterGroupsBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationClusterGroupsBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -141,13 +141,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualizationApi.VirtualizationClusterGroupsBulkPartialUpdate(context.Background()).ClusterGroupRequest(clusterGroupRequest).Execute()
+    resp, r, err := apiClient.VirtualizationAPI.VirtualizationClusterGroupsBulkPartialUpdate(context.Background()).ClusterGroupRequest(clusterGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationClusterGroupsBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationClusterGroupsBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `VirtualizationClusterGroupsBulkPartialUpdate`: []ClusterGroup
-    fmt.Fprintf(os.Stdout, "Response from `VirtualizationApi.VirtualizationClusterGroupsBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VirtualizationAPI.VirtualizationClusterGroupsBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -207,13 +207,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualizationApi.VirtualizationClusterGroupsBulkUpdate(context.Background()).ClusterGroupRequest(clusterGroupRequest).Execute()
+    resp, r, err := apiClient.VirtualizationAPI.VirtualizationClusterGroupsBulkUpdate(context.Background()).ClusterGroupRequest(clusterGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationClusterGroupsBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationClusterGroupsBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `VirtualizationClusterGroupsBulkUpdate`: []ClusterGroup
-    fmt.Fprintf(os.Stdout, "Response from `VirtualizationApi.VirtualizationClusterGroupsBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VirtualizationAPI.VirtualizationClusterGroupsBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -273,13 +273,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualizationApi.VirtualizationClusterGroupsCreate(context.Background()).ClusterGroupRequest(clusterGroupRequest).Execute()
+    resp, r, err := apiClient.VirtualizationAPI.VirtualizationClusterGroupsCreate(context.Background()).ClusterGroupRequest(clusterGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationClusterGroupsCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationClusterGroupsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `VirtualizationClusterGroupsCreate`: ClusterGroup
-    fmt.Fprintf(os.Stdout, "Response from `VirtualizationApi.VirtualizationClusterGroupsCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VirtualizationAPI.VirtualizationClusterGroupsCreate`: %v\n", resp)
 }
 ```
 
@@ -339,9 +339,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.VirtualizationApi.VirtualizationClusterGroupsDestroy(context.Background(), id).Execute()
+    r, err := apiClient.VirtualizationAPI.VirtualizationClusterGroupsDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationClusterGroupsDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationClusterGroupsDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -384,7 +384,7 @@ Name | Type | Description  | Notes
 
 ## VirtualizationClusterGroupsList
 
-> PaginatedClusterGroupList VirtualizationClusterGroupsList(ctx).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedClusterGroupList VirtualizationClusterGroupsList(ctx).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -411,6 +411,7 @@ func main() {
     contactRole := []int32{int32(123)} // []int32 | Contact Role (optional)
     contactRoleN := []int32{int32(123)} // []int32 | Contact Role (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -429,18 +430,21 @@ func main() {
     descriptionNiew := []string{"Inner_example"} // []string |  (optional)
     descriptionNisw := []string{"Inner_example"} // []string |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -472,13 +476,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualizationApi.VirtualizationClusterGroupsList(context.Background()).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.VirtualizationAPI.VirtualizationClusterGroupsList(context.Background()).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationClusterGroupsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationClusterGroupsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `VirtualizationClusterGroupsList`: PaginatedClusterGroupList
-    fmt.Fprintf(os.Stdout, "Response from `VirtualizationApi.VirtualizationClusterGroupsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VirtualizationAPI.VirtualizationClusterGroupsList`: %v\n", resp)
 }
 ```
 
@@ -500,6 +504,7 @@ Name | Type | Description  | Notes
  **contactRole** | **[]int32** | Contact Role | 
  **contactRoleN** | **[]int32** | Contact Role | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -518,18 +523,21 @@ Name | Type | Description  | Notes
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -603,13 +611,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualizationApi.VirtualizationClusterGroupsPartialUpdate(context.Background(), id).PatchedClusterGroupRequest(patchedClusterGroupRequest).Execute()
+    resp, r, err := apiClient.VirtualizationAPI.VirtualizationClusterGroupsPartialUpdate(context.Background(), id).PatchedClusterGroupRequest(patchedClusterGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationClusterGroupsPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationClusterGroupsPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `VirtualizationClusterGroupsPartialUpdate`: ClusterGroup
-    fmt.Fprintf(os.Stdout, "Response from `VirtualizationApi.VirtualizationClusterGroupsPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VirtualizationAPI.VirtualizationClusterGroupsPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -674,13 +682,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualizationApi.VirtualizationClusterGroupsRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.VirtualizationAPI.VirtualizationClusterGroupsRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationClusterGroupsRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationClusterGroupsRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `VirtualizationClusterGroupsRetrieve`: ClusterGroup
-    fmt.Fprintf(os.Stdout, "Response from `VirtualizationApi.VirtualizationClusterGroupsRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VirtualizationAPI.VirtualizationClusterGroupsRetrieve`: %v\n", resp)
 }
 ```
 
@@ -745,13 +753,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualizationApi.VirtualizationClusterGroupsUpdate(context.Background(), id).ClusterGroupRequest(clusterGroupRequest).Execute()
+    resp, r, err := apiClient.VirtualizationAPI.VirtualizationClusterGroupsUpdate(context.Background(), id).ClusterGroupRequest(clusterGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationClusterGroupsUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationClusterGroupsUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `VirtualizationClusterGroupsUpdate`: ClusterGroup
-    fmt.Fprintf(os.Stdout, "Response from `VirtualizationApi.VirtualizationClusterGroupsUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VirtualizationAPI.VirtualizationClusterGroupsUpdate`: %v\n", resp)
 }
 ```
 
@@ -816,9 +824,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.VirtualizationApi.VirtualizationClusterTypesBulkDestroy(context.Background()).ClusterTypeRequest(clusterTypeRequest).Execute()
+    r, err := apiClient.VirtualizationAPI.VirtualizationClusterTypesBulkDestroy(context.Background()).ClusterTypeRequest(clusterTypeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationClusterTypesBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationClusterTypesBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -880,13 +888,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualizationApi.VirtualizationClusterTypesBulkPartialUpdate(context.Background()).ClusterTypeRequest(clusterTypeRequest).Execute()
+    resp, r, err := apiClient.VirtualizationAPI.VirtualizationClusterTypesBulkPartialUpdate(context.Background()).ClusterTypeRequest(clusterTypeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationClusterTypesBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationClusterTypesBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `VirtualizationClusterTypesBulkPartialUpdate`: []ClusterType
-    fmt.Fprintf(os.Stdout, "Response from `VirtualizationApi.VirtualizationClusterTypesBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VirtualizationAPI.VirtualizationClusterTypesBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -946,13 +954,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualizationApi.VirtualizationClusterTypesBulkUpdate(context.Background()).ClusterTypeRequest(clusterTypeRequest).Execute()
+    resp, r, err := apiClient.VirtualizationAPI.VirtualizationClusterTypesBulkUpdate(context.Background()).ClusterTypeRequest(clusterTypeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationClusterTypesBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationClusterTypesBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `VirtualizationClusterTypesBulkUpdate`: []ClusterType
-    fmt.Fprintf(os.Stdout, "Response from `VirtualizationApi.VirtualizationClusterTypesBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VirtualizationAPI.VirtualizationClusterTypesBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -1012,13 +1020,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualizationApi.VirtualizationClusterTypesCreate(context.Background()).ClusterTypeRequest(clusterTypeRequest).Execute()
+    resp, r, err := apiClient.VirtualizationAPI.VirtualizationClusterTypesCreate(context.Background()).ClusterTypeRequest(clusterTypeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationClusterTypesCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationClusterTypesCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `VirtualizationClusterTypesCreate`: ClusterType
-    fmt.Fprintf(os.Stdout, "Response from `VirtualizationApi.VirtualizationClusterTypesCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VirtualizationAPI.VirtualizationClusterTypesCreate`: %v\n", resp)
 }
 ```
 
@@ -1078,9 +1086,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.VirtualizationApi.VirtualizationClusterTypesDestroy(context.Background(), id).Execute()
+    r, err := apiClient.VirtualizationAPI.VirtualizationClusterTypesDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationClusterTypesDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationClusterTypesDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1123,7 +1131,7 @@ Name | Type | Description  | Notes
 
 ## VirtualizationClusterTypesList
 
-> PaginatedClusterTypeList VirtualizationClusterTypesList(ctx).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedClusterTypeList VirtualizationClusterTypesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -1144,6 +1152,7 @@ import (
 
 func main() {
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -1162,18 +1171,21 @@ func main() {
     descriptionNiew := []string{"Inner_example"} // []string |  (optional)
     descriptionNisw := []string{"Inner_example"} // []string |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -1205,13 +1217,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualizationApi.VirtualizationClusterTypesList(context.Background()).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.VirtualizationAPI.VirtualizationClusterTypesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationClusterTypesList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationClusterTypesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `VirtualizationClusterTypesList`: PaginatedClusterTypeList
-    fmt.Fprintf(os.Stdout, "Response from `VirtualizationApi.VirtualizationClusterTypesList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VirtualizationAPI.VirtualizationClusterTypesList`: %v\n", resp)
 }
 ```
 
@@ -1227,6 +1239,7 @@ Other parameters are passed through a pointer to a apiVirtualizationClusterTypes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -1245,18 +1258,21 @@ Name | Type | Description  | Notes
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -1330,13 +1346,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualizationApi.VirtualizationClusterTypesPartialUpdate(context.Background(), id).PatchedClusterTypeRequest(patchedClusterTypeRequest).Execute()
+    resp, r, err := apiClient.VirtualizationAPI.VirtualizationClusterTypesPartialUpdate(context.Background(), id).PatchedClusterTypeRequest(patchedClusterTypeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationClusterTypesPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationClusterTypesPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `VirtualizationClusterTypesPartialUpdate`: ClusterType
-    fmt.Fprintf(os.Stdout, "Response from `VirtualizationApi.VirtualizationClusterTypesPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VirtualizationAPI.VirtualizationClusterTypesPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -1401,13 +1417,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualizationApi.VirtualizationClusterTypesRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.VirtualizationAPI.VirtualizationClusterTypesRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationClusterTypesRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationClusterTypesRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `VirtualizationClusterTypesRetrieve`: ClusterType
-    fmt.Fprintf(os.Stdout, "Response from `VirtualizationApi.VirtualizationClusterTypesRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VirtualizationAPI.VirtualizationClusterTypesRetrieve`: %v\n", resp)
 }
 ```
 
@@ -1472,13 +1488,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualizationApi.VirtualizationClusterTypesUpdate(context.Background(), id).ClusterTypeRequest(clusterTypeRequest).Execute()
+    resp, r, err := apiClient.VirtualizationAPI.VirtualizationClusterTypesUpdate(context.Background(), id).ClusterTypeRequest(clusterTypeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationClusterTypesUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationClusterTypesUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `VirtualizationClusterTypesUpdate`: ClusterType
-    fmt.Fprintf(os.Stdout, "Response from `VirtualizationApi.VirtualizationClusterTypesUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VirtualizationAPI.VirtualizationClusterTypesUpdate`: %v\n", resp)
 }
 ```
 
@@ -1543,9 +1559,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.VirtualizationApi.VirtualizationClustersBulkDestroy(context.Background()).ClusterRequest(clusterRequest).Execute()
+    r, err := apiClient.VirtualizationAPI.VirtualizationClustersBulkDestroy(context.Background()).ClusterRequest(clusterRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationClustersBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationClustersBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1607,13 +1623,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualizationApi.VirtualizationClustersBulkPartialUpdate(context.Background()).ClusterRequest(clusterRequest).Execute()
+    resp, r, err := apiClient.VirtualizationAPI.VirtualizationClustersBulkPartialUpdate(context.Background()).ClusterRequest(clusterRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationClustersBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationClustersBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `VirtualizationClustersBulkPartialUpdate`: []Cluster
-    fmt.Fprintf(os.Stdout, "Response from `VirtualizationApi.VirtualizationClustersBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VirtualizationAPI.VirtualizationClustersBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -1673,13 +1689,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualizationApi.VirtualizationClustersBulkUpdate(context.Background()).ClusterRequest(clusterRequest).Execute()
+    resp, r, err := apiClient.VirtualizationAPI.VirtualizationClustersBulkUpdate(context.Background()).ClusterRequest(clusterRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationClustersBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationClustersBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `VirtualizationClustersBulkUpdate`: []Cluster
-    fmt.Fprintf(os.Stdout, "Response from `VirtualizationApi.VirtualizationClustersBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VirtualizationAPI.VirtualizationClustersBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -1739,13 +1755,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualizationApi.VirtualizationClustersCreate(context.Background()).WritableClusterRequest(writableClusterRequest).Execute()
+    resp, r, err := apiClient.VirtualizationAPI.VirtualizationClustersCreate(context.Background()).WritableClusterRequest(writableClusterRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationClustersCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationClustersCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `VirtualizationClustersCreate`: Cluster
-    fmt.Fprintf(os.Stdout, "Response from `VirtualizationApi.VirtualizationClustersCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VirtualizationAPI.VirtualizationClustersCreate`: %v\n", resp)
 }
 ```
 
@@ -1805,9 +1821,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.VirtualizationApi.VirtualizationClustersDestroy(context.Background(), id).Execute()
+    r, err := apiClient.VirtualizationAPI.VirtualizationClustersDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationClustersDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationClustersDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1850,7 +1866,7 @@ Name | Type | Description  | Notes
 
 ## VirtualizationClustersList
 
-> PaginatedClusterList VirtualizationClustersList(ctx).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).Type_(type_).TypeN(typeN).TypeId(typeId).TypeIdN(typeIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedClusterList VirtualizationClustersList(ctx).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).Type_(type_).TypeN(typeN).TypeId(typeId).TypeIdN(typeIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -1877,6 +1893,7 @@ func main() {
     contactRole := []int32{int32(123)} // []int32 | Contact Role (optional)
     contactRoleN := []int32{int32(123)} // []int32 | Contact Role (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -1888,18 +1905,21 @@ func main() {
     groupId := []*int32{int32(123)} // []*int32 | Parent group (ID) (optional)
     groupIdN := []*int32{int32(123)} // []*int32 | Parent group (ID) (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -1946,13 +1966,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualizationApi.VirtualizationClustersList(context.Background()).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).Type_(type_).TypeN(typeN).TypeId(typeId).TypeIdN(typeIdN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.VirtualizationAPI.VirtualizationClustersList(context.Background()).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).Type_(type_).TypeN(typeN).TypeId(typeId).TypeIdN(typeIdN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationClustersList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationClustersList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `VirtualizationClustersList`: PaginatedClusterList
-    fmt.Fprintf(os.Stdout, "Response from `VirtualizationApi.VirtualizationClustersList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VirtualizationAPI.VirtualizationClustersList`: %v\n", resp)
 }
 ```
 
@@ -1974,6 +1994,7 @@ Name | Type | Description  | Notes
  **contactRole** | **[]int32** | Contact Role | 
  **contactRoleN** | **[]int32** | Contact Role | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -1985,18 +2006,21 @@ Name | Type | Description  | Notes
  **groupId** | **[]int32** | Parent group (ID) | 
  **groupIdN** | **[]int32** | Parent group (ID) | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -2085,13 +2109,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualizationApi.VirtualizationClustersPartialUpdate(context.Background(), id).PatchedWritableClusterRequest(patchedWritableClusterRequest).Execute()
+    resp, r, err := apiClient.VirtualizationAPI.VirtualizationClustersPartialUpdate(context.Background(), id).PatchedWritableClusterRequest(patchedWritableClusterRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationClustersPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationClustersPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `VirtualizationClustersPartialUpdate`: Cluster
-    fmt.Fprintf(os.Stdout, "Response from `VirtualizationApi.VirtualizationClustersPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VirtualizationAPI.VirtualizationClustersPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -2156,13 +2180,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualizationApi.VirtualizationClustersRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.VirtualizationAPI.VirtualizationClustersRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationClustersRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationClustersRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `VirtualizationClustersRetrieve`: Cluster
-    fmt.Fprintf(os.Stdout, "Response from `VirtualizationApi.VirtualizationClustersRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VirtualizationAPI.VirtualizationClustersRetrieve`: %v\n", resp)
 }
 ```
 
@@ -2227,13 +2251,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualizationApi.VirtualizationClustersUpdate(context.Background(), id).WritableClusterRequest(writableClusterRequest).Execute()
+    resp, r, err := apiClient.VirtualizationAPI.VirtualizationClustersUpdate(context.Background(), id).WritableClusterRequest(writableClusterRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationClustersUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationClustersUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `VirtualizationClustersUpdate`: Cluster
-    fmt.Fprintf(os.Stdout, "Response from `VirtualizationApi.VirtualizationClustersUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VirtualizationAPI.VirtualizationClustersUpdate`: %v\n", resp)
 }
 ```
 
@@ -2298,9 +2322,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.VirtualizationApi.VirtualizationInterfacesBulkDestroy(context.Background()).VMInterfaceRequest(vMInterfaceRequest).Execute()
+    r, err := apiClient.VirtualizationAPI.VirtualizationInterfacesBulkDestroy(context.Background()).VMInterfaceRequest(vMInterfaceRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationInterfacesBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationInterfacesBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2362,13 +2386,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualizationApi.VirtualizationInterfacesBulkPartialUpdate(context.Background()).VMInterfaceRequest(vMInterfaceRequest).Execute()
+    resp, r, err := apiClient.VirtualizationAPI.VirtualizationInterfacesBulkPartialUpdate(context.Background()).VMInterfaceRequest(vMInterfaceRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationInterfacesBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationInterfacesBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `VirtualizationInterfacesBulkPartialUpdate`: []VMInterface
-    fmt.Fprintf(os.Stdout, "Response from `VirtualizationApi.VirtualizationInterfacesBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VirtualizationAPI.VirtualizationInterfacesBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -2428,13 +2452,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualizationApi.VirtualizationInterfacesBulkUpdate(context.Background()).VMInterfaceRequest(vMInterfaceRequest).Execute()
+    resp, r, err := apiClient.VirtualizationAPI.VirtualizationInterfacesBulkUpdate(context.Background()).VMInterfaceRequest(vMInterfaceRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationInterfacesBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationInterfacesBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `VirtualizationInterfacesBulkUpdate`: []VMInterface
-    fmt.Fprintf(os.Stdout, "Response from `VirtualizationApi.VirtualizationInterfacesBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VirtualizationAPI.VirtualizationInterfacesBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -2494,13 +2518,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualizationApi.VirtualizationInterfacesCreate(context.Background()).WritableVMInterfaceRequest(writableVMInterfaceRequest).Execute()
+    resp, r, err := apiClient.VirtualizationAPI.VirtualizationInterfacesCreate(context.Background()).WritableVMInterfaceRequest(writableVMInterfaceRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationInterfacesCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationInterfacesCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `VirtualizationInterfacesCreate`: VMInterface
-    fmt.Fprintf(os.Stdout, "Response from `VirtualizationApi.VirtualizationInterfacesCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VirtualizationAPI.VirtualizationInterfacesCreate`: %v\n", resp)
 }
 ```
 
@@ -2560,9 +2584,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.VirtualizationApi.VirtualizationInterfacesDestroy(context.Background(), id).Execute()
+    r, err := apiClient.VirtualizationAPI.VirtualizationInterfacesDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationInterfacesDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationInterfacesDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2605,7 +2629,7 @@ Name | Type | Description  | Notes
 
 ## VirtualizationInterfacesList
 
-> PaginatedVMInterfaceList VirtualizationInterfacesList(ctx).BridgeId(bridgeId).BridgeIdN(bridgeIdN).Cluster(cluster).ClusterN(clusterN).ClusterId(clusterId).ClusterIdN(clusterIdN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Enabled(enabled).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).L2vpn(l2vpn).L2vpnN(l2vpnN).L2vpnId(l2vpnId).L2vpnIdN(l2vpnIdN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MacAddress(macAddress).MacAddressIc(macAddressIc).MacAddressIe(macAddressIe).MacAddressIew(macAddressIew).MacAddressIsw(macAddressIsw).MacAddressN(macAddressN).MacAddressNic(macAddressNic).MacAddressNie(macAddressNie).MacAddressNiew(macAddressNiew).MacAddressNisw(macAddressNisw).Mtu(mtu).MtuGt(mtuGt).MtuGte(mtuGte).MtuLt(mtuLt).MtuLte(mtuLte).MtuN(mtuN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).ParentId(parentId).ParentIdN(parentIdN).Q(q).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineN(virtualMachineN).VirtualMachineId(virtualMachineId).VirtualMachineIdN(virtualMachineIdN).Vlan(vlan).VlanId(vlanId).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Execute()
+> PaginatedVMInterfaceList VirtualizationInterfacesList(ctx).BridgeId(bridgeId).BridgeIdN(bridgeIdN).Cluster(cluster).ClusterN(clusterN).ClusterId(clusterId).ClusterIdN(clusterIdN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Enabled(enabled).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).L2vpn(l2vpn).L2vpnN(l2vpnN).L2vpnId(l2vpnId).L2vpnIdN(l2vpnIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MacAddress(macAddress).MacAddressIc(macAddressIc).MacAddressIe(macAddressIe).MacAddressIew(macAddressIew).MacAddressIsw(macAddressIsw).MacAddressN(macAddressN).MacAddressNic(macAddressNic).MacAddressNie(macAddressNie).MacAddressNiew(macAddressNiew).MacAddressNisw(macAddressNisw).ModifiedByRequest(modifiedByRequest).Mtu(mtu).MtuEmpty(mtuEmpty).MtuGt(mtuGt).MtuGte(mtuGte).MtuLt(mtuLt).MtuLte(mtuLte).MtuN(mtuN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).ParentId(parentId).ParentIdN(parentIdN).Q(q).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineN(virtualMachineN).VirtualMachineId(virtualMachineId).VirtualMachineIdN(virtualMachineIdN).Vlan(vlan).VlanId(vlanId).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Execute()
 
 
 
@@ -2632,6 +2656,7 @@ func main() {
     clusterId := []int32{int32(123)} // []int32 | Cluster (ID) (optional)
     clusterIdN := []int32{int32(123)} // []int32 | Cluster (ID) (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -2651,6 +2676,7 @@ func main() {
     descriptionNisw := []string{"Inner_example"} // []string |  (optional)
     enabled := true // bool |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
@@ -2661,6 +2687,7 @@ func main() {
     l2vpnId := []int32{int32(123)} // []int32 | L2VPN (ID) (optional)
     l2vpnIdN := []int32{int32(123)} // []int32 | L2VPN (ID) (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -2677,7 +2704,9 @@ func main() {
     macAddressNie := []string{"Inner_example"} // []string |  (optional)
     macAddressNiew := []string{"Inner_example"} // []string |  (optional)
     macAddressNisw := []string{"Inner_example"} // []string |  (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     mtu := []int32{int32(123)} // []int32 |  (optional)
+    mtuEmpty := true // bool |  (optional)
     mtuGt := []int32{int32(123)} // []int32 |  (optional)
     mtuGte := []int32{int32(123)} // []int32 |  (optional)
     mtuLt := []int32{int32(123)} // []int32 |  (optional)
@@ -2715,13 +2744,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualizationApi.VirtualizationInterfacesList(context.Background()).BridgeId(bridgeId).BridgeIdN(bridgeIdN).Cluster(cluster).ClusterN(clusterN).ClusterId(clusterId).ClusterIdN(clusterIdN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Enabled(enabled).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).L2vpn(l2vpn).L2vpnN(l2vpnN).L2vpnId(l2vpnId).L2vpnIdN(l2vpnIdN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MacAddress(macAddress).MacAddressIc(macAddressIc).MacAddressIe(macAddressIe).MacAddressIew(macAddressIew).MacAddressIsw(macAddressIsw).MacAddressN(macAddressN).MacAddressNic(macAddressNic).MacAddressNie(macAddressNie).MacAddressNiew(macAddressNiew).MacAddressNisw(macAddressNisw).Mtu(mtu).MtuGt(mtuGt).MtuGte(mtuGte).MtuLt(mtuLt).MtuLte(mtuLte).MtuN(mtuN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).ParentId(parentId).ParentIdN(parentIdN).Q(q).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineN(virtualMachineN).VirtualMachineId(virtualMachineId).VirtualMachineIdN(virtualMachineIdN).Vlan(vlan).VlanId(vlanId).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Execute()
+    resp, r, err := apiClient.VirtualizationAPI.VirtualizationInterfacesList(context.Background()).BridgeId(bridgeId).BridgeIdN(bridgeIdN).Cluster(cluster).ClusterN(clusterN).ClusterId(clusterId).ClusterIdN(clusterIdN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Enabled(enabled).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).L2vpn(l2vpn).L2vpnN(l2vpnN).L2vpnId(l2vpnId).L2vpnIdN(l2vpnIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MacAddress(macAddress).MacAddressIc(macAddressIc).MacAddressIe(macAddressIe).MacAddressIew(macAddressIew).MacAddressIsw(macAddressIsw).MacAddressN(macAddressN).MacAddressNic(macAddressNic).MacAddressNie(macAddressNie).MacAddressNiew(macAddressNiew).MacAddressNisw(macAddressNisw).ModifiedByRequest(modifiedByRequest).Mtu(mtu).MtuEmpty(mtuEmpty).MtuGt(mtuGt).MtuGte(mtuGte).MtuLt(mtuLt).MtuLte(mtuLte).MtuN(mtuN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).ParentId(parentId).ParentIdN(parentIdN).Q(q).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineN(virtualMachineN).VirtualMachineId(virtualMachineId).VirtualMachineIdN(virtualMachineIdN).Vlan(vlan).VlanId(vlanId).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationInterfacesList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationInterfacesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `VirtualizationInterfacesList`: PaginatedVMInterfaceList
-    fmt.Fprintf(os.Stdout, "Response from `VirtualizationApi.VirtualizationInterfacesList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VirtualizationAPI.VirtualizationInterfacesList`: %v\n", resp)
 }
 ```
 
@@ -2743,6 +2772,7 @@ Name | Type | Description  | Notes
  **clusterId** | **[]int32** | Cluster (ID) | 
  **clusterIdN** | **[]int32** | Cluster (ID) | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -2762,6 +2792,7 @@ Name | Type | Description  | Notes
  **descriptionNisw** | **[]string** |  | 
  **enabled** | **bool** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
@@ -2772,6 +2803,7 @@ Name | Type | Description  | Notes
  **l2vpnId** | **[]int32** | L2VPN (ID) | 
  **l2vpnIdN** | **[]int32** | L2VPN (ID) | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -2788,7 +2820,9 @@ Name | Type | Description  | Notes
  **macAddressNie** | **[]string** |  | 
  **macAddressNiew** | **[]string** |  | 
  **macAddressNisw** | **[]string** |  | 
+ **modifiedByRequest** | **string** |  | 
  **mtu** | **[]int32** |  | 
+ **mtuEmpty** | **bool** |  | 
  **mtuGt** | **[]int32** |  | 
  **mtuGte** | **[]int32** |  | 
  **mtuLt** | **[]int32** |  | 
@@ -2868,13 +2902,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualizationApi.VirtualizationInterfacesPartialUpdate(context.Background(), id).PatchedWritableVMInterfaceRequest(patchedWritableVMInterfaceRequest).Execute()
+    resp, r, err := apiClient.VirtualizationAPI.VirtualizationInterfacesPartialUpdate(context.Background(), id).PatchedWritableVMInterfaceRequest(patchedWritableVMInterfaceRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationInterfacesPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationInterfacesPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `VirtualizationInterfacesPartialUpdate`: VMInterface
-    fmt.Fprintf(os.Stdout, "Response from `VirtualizationApi.VirtualizationInterfacesPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VirtualizationAPI.VirtualizationInterfacesPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -2939,13 +2973,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualizationApi.VirtualizationInterfacesRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.VirtualizationAPI.VirtualizationInterfacesRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationInterfacesRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationInterfacesRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `VirtualizationInterfacesRetrieve`: VMInterface
-    fmt.Fprintf(os.Stdout, "Response from `VirtualizationApi.VirtualizationInterfacesRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VirtualizationAPI.VirtualizationInterfacesRetrieve`: %v\n", resp)
 }
 ```
 
@@ -3010,13 +3044,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualizationApi.VirtualizationInterfacesUpdate(context.Background(), id).WritableVMInterfaceRequest(writableVMInterfaceRequest).Execute()
+    resp, r, err := apiClient.VirtualizationAPI.VirtualizationInterfacesUpdate(context.Background(), id).WritableVMInterfaceRequest(writableVMInterfaceRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationInterfacesUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationInterfacesUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `VirtualizationInterfacesUpdate`: VMInterface
-    fmt.Fprintf(os.Stdout, "Response from `VirtualizationApi.VirtualizationInterfacesUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VirtualizationAPI.VirtualizationInterfacesUpdate`: %v\n", resp)
 }
 ```
 
@@ -3081,9 +3115,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.VirtualizationApi.VirtualizationVirtualMachinesBulkDestroy(context.Background()).VirtualMachineWithConfigContextRequest(virtualMachineWithConfigContextRequest).Execute()
+    r, err := apiClient.VirtualizationAPI.VirtualizationVirtualMachinesBulkDestroy(context.Background()).VirtualMachineWithConfigContextRequest(virtualMachineWithConfigContextRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationVirtualMachinesBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationVirtualMachinesBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3145,13 +3179,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualizationApi.VirtualizationVirtualMachinesBulkPartialUpdate(context.Background()).VirtualMachineWithConfigContextRequest(virtualMachineWithConfigContextRequest).Execute()
+    resp, r, err := apiClient.VirtualizationAPI.VirtualizationVirtualMachinesBulkPartialUpdate(context.Background()).VirtualMachineWithConfigContextRequest(virtualMachineWithConfigContextRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationVirtualMachinesBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationVirtualMachinesBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `VirtualizationVirtualMachinesBulkPartialUpdate`: []VirtualMachineWithConfigContext
-    fmt.Fprintf(os.Stdout, "Response from `VirtualizationApi.VirtualizationVirtualMachinesBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VirtualizationAPI.VirtualizationVirtualMachinesBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -3211,13 +3245,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualizationApi.VirtualizationVirtualMachinesBulkUpdate(context.Background()).VirtualMachineWithConfigContextRequest(virtualMachineWithConfigContextRequest).Execute()
+    resp, r, err := apiClient.VirtualizationAPI.VirtualizationVirtualMachinesBulkUpdate(context.Background()).VirtualMachineWithConfigContextRequest(virtualMachineWithConfigContextRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationVirtualMachinesBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationVirtualMachinesBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `VirtualizationVirtualMachinesBulkUpdate`: []VirtualMachineWithConfigContext
-    fmt.Fprintf(os.Stdout, "Response from `VirtualizationApi.VirtualizationVirtualMachinesBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VirtualizationAPI.VirtualizationVirtualMachinesBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -3277,13 +3311,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualizationApi.VirtualizationVirtualMachinesCreate(context.Background()).WritableVirtualMachineWithConfigContextRequest(writableVirtualMachineWithConfigContextRequest).Execute()
+    resp, r, err := apiClient.VirtualizationAPI.VirtualizationVirtualMachinesCreate(context.Background()).WritableVirtualMachineWithConfigContextRequest(writableVirtualMachineWithConfigContextRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationVirtualMachinesCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationVirtualMachinesCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `VirtualizationVirtualMachinesCreate`: VirtualMachineWithConfigContext
-    fmt.Fprintf(os.Stdout, "Response from `VirtualizationApi.VirtualizationVirtualMachinesCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VirtualizationAPI.VirtualizationVirtualMachinesCreate`: %v\n", resp)
 }
 ```
 
@@ -3343,9 +3377,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.VirtualizationApi.VirtualizationVirtualMachinesDestroy(context.Background(), id).Execute()
+    r, err := apiClient.VirtualizationAPI.VirtualizationVirtualMachinesDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationVirtualMachinesDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationVirtualMachinesDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3388,7 +3422,7 @@ Name | Type | Description  | Notes
 
 ## VirtualizationVirtualMachinesList
 
-> PaginatedVirtualMachineWithConfigContextList VirtualizationVirtualMachinesList(ctx).Cluster(cluster).ClusterN(clusterN).ClusterGroup(clusterGroup).ClusterGroupN(clusterGroupN).ClusterGroupId(clusterGroupId).ClusterGroupIdN(clusterGroupIdN).ClusterId(clusterId).ClusterIdN(clusterIdN).ClusterType(clusterType).ClusterTypeN(clusterTypeN).ClusterTypeId(clusterTypeId).ClusterTypeIdN(clusterTypeIdN).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).Disk(disk).DiskGt(diskGt).DiskGte(diskGte).DiskLt(diskLt).DiskLte(diskLte).DiskN(diskN).HasPrimaryIp(hasPrimaryIp).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).LocalContextData(localContextData).MacAddress(macAddress).MacAddressIc(macAddressIc).MacAddressIe(macAddressIe).MacAddressIew(macAddressIew).MacAddressIsw(macAddressIsw).MacAddressN(macAddressN).MacAddressNic(macAddressNic).MacAddressNie(macAddressNie).MacAddressNiew(macAddressNiew).MacAddressNisw(macAddressNisw).Memory(memory).MemoryGt(memoryGt).MemoryGte(memoryGte).MemoryLt(memoryLt).MemoryLte(memoryLte).MemoryN(memoryN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Platform(platform).PlatformN(platformN).PlatformId(platformId).PlatformIdN(platformIdN).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Vcpus(vcpus).VcpusGt(vcpusGt).VcpusGte(vcpusGte).VcpusLt(vcpusLt).VcpusLte(vcpusLte).VcpusN(vcpusN).Execute()
+> PaginatedVirtualMachineWithConfigContextList VirtualizationVirtualMachinesList(ctx).Cluster(cluster).ClusterN(clusterN).ClusterGroup(clusterGroup).ClusterGroupN(clusterGroupN).ClusterGroupId(clusterGroupId).ClusterGroupIdN(clusterGroupIdN).ClusterId(clusterId).ClusterIdN(clusterIdN).ClusterType(clusterType).ClusterTypeN(clusterTypeN).ClusterTypeId(clusterTypeId).ClusterTypeIdN(clusterTypeIdN).ConfigTemplateId(configTemplateId).ConfigTemplateIdN(configTemplateIdN).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).Disk(disk).DiskEmpty(diskEmpty).DiskGt(diskGt).DiskGte(diskGte).DiskLt(diskLt).DiskLte(diskLte).DiskN(diskN).HasPrimaryIp(hasPrimaryIp).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).LocalContextData(localContextData).MacAddress(macAddress).MacAddressIc(macAddressIc).MacAddressIe(macAddressIe).MacAddressIew(macAddressIew).MacAddressIsw(macAddressIsw).MacAddressN(macAddressN).MacAddressNic(macAddressNic).MacAddressNie(macAddressNie).MacAddressNiew(macAddressNiew).MacAddressNisw(macAddressNisw).Memory(memory).MemoryEmpty(memoryEmpty).MemoryGt(memoryGt).MemoryGte(memoryGte).MemoryLt(memoryLt).MemoryLte(memoryLte).MemoryN(memoryN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Platform(platform).PlatformN(platformN).PlatformId(platformId).PlatformIdN(platformIdN).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Vcpus(vcpus).VcpusEmpty(vcpusEmpty).VcpusGt(vcpusGt).VcpusGte(vcpusGte).VcpusLt(vcpusLt).VcpusLte(vcpusLte).VcpusN(vcpusN).Execute()
 
 
 
@@ -3420,6 +3454,8 @@ func main() {
     clusterTypeN := []string{"Inner_example"} // []string | Cluster type (slug) (optional)
     clusterTypeId := []int32{int32(123)} // []int32 | Cluster type (ID) (optional)
     clusterTypeIdN := []int32{int32(123)} // []int32 | Cluster type (ID) (optional)
+    configTemplateId := []*int32{int32(123)} // []*int32 | Config template (ID) (optional)
+    configTemplateIdN := []*int32{int32(123)} // []*int32 | Config template (ID) (optional)
     contact := []int32{int32(123)} // []int32 | Contact (optional)
     contactN := []int32{int32(123)} // []int32 | Contact (optional)
     contactGroup := []int32{int32(123)} // []int32 | Contact group (optional)
@@ -3427,6 +3463,7 @@ func main() {
     contactRole := []int32{int32(123)} // []int32 | Contact Role (optional)
     contactRoleN := []int32{int32(123)} // []int32 | Contact Role (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -3438,6 +3475,7 @@ func main() {
     deviceId := []*int32{int32(123)} // []*int32 | Device (ID) (optional)
     deviceIdN := []*int32{int32(123)} // []*int32 | Device (ID) (optional)
     disk := []int32{int32(123)} // []int32 |  (optional)
+    diskEmpty := true // bool |  (optional)
     diskGt := []int32{int32(123)} // []int32 |  (optional)
     diskGte := []int32{int32(123)} // []int32 |  (optional)
     diskLt := []int32{int32(123)} // []int32 |  (optional)
@@ -3445,12 +3483,14 @@ func main() {
     diskN := []int32{int32(123)} // []int32 |  (optional)
     hasPrimaryIp := true // bool | Has a primary IP (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -3469,11 +3509,13 @@ func main() {
     macAddressNiew := []string{"Inner_example"} // []string |  (optional)
     macAddressNisw := []string{"Inner_example"} // []string |  (optional)
     memory := []int32{int32(123)} // []int32 |  (optional)
+    memoryEmpty := true // bool |  (optional)
     memoryGt := []int32{int32(123)} // []int32 |  (optional)
     memoryGte := []int32{int32(123)} // []int32 |  (optional)
     memoryLt := []int32{int32(123)} // []int32 |  (optional)
     memoryLte := []int32{int32(123)} // []int32 |  (optional)
     memoryN := []int32{int32(123)} // []int32 |  (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -3522,6 +3564,7 @@ func main() {
     tenantIdN := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
     updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     vcpus := []float64{float64(123)} // []float64 |  (optional)
+    vcpusEmpty := true // bool |  (optional)
     vcpusGt := []float64{float64(123)} // []float64 |  (optional)
     vcpusGte := []float64{float64(123)} // []float64 |  (optional)
     vcpusLt := []float64{float64(123)} // []float64 |  (optional)
@@ -3530,13 +3573,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualizationApi.VirtualizationVirtualMachinesList(context.Background()).Cluster(cluster).ClusterN(clusterN).ClusterGroup(clusterGroup).ClusterGroupN(clusterGroupN).ClusterGroupId(clusterGroupId).ClusterGroupIdN(clusterGroupIdN).ClusterId(clusterId).ClusterIdN(clusterIdN).ClusterType(clusterType).ClusterTypeN(clusterTypeN).ClusterTypeId(clusterTypeId).ClusterTypeIdN(clusterTypeIdN).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).Disk(disk).DiskGt(diskGt).DiskGte(diskGte).DiskLt(diskLt).DiskLte(diskLte).DiskN(diskN).HasPrimaryIp(hasPrimaryIp).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).LocalContextData(localContextData).MacAddress(macAddress).MacAddressIc(macAddressIc).MacAddressIe(macAddressIe).MacAddressIew(macAddressIew).MacAddressIsw(macAddressIsw).MacAddressN(macAddressN).MacAddressNic(macAddressNic).MacAddressNie(macAddressNie).MacAddressNiew(macAddressNiew).MacAddressNisw(macAddressNisw).Memory(memory).MemoryGt(memoryGt).MemoryGte(memoryGte).MemoryLt(memoryLt).MemoryLte(memoryLte).MemoryN(memoryN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Platform(platform).PlatformN(platformN).PlatformId(platformId).PlatformIdN(platformIdN).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Vcpus(vcpus).VcpusGt(vcpusGt).VcpusGte(vcpusGte).VcpusLt(vcpusLt).VcpusLte(vcpusLte).VcpusN(vcpusN).Execute()
+    resp, r, err := apiClient.VirtualizationAPI.VirtualizationVirtualMachinesList(context.Background()).Cluster(cluster).ClusterN(clusterN).ClusterGroup(clusterGroup).ClusterGroupN(clusterGroupN).ClusterGroupId(clusterGroupId).ClusterGroupIdN(clusterGroupIdN).ClusterId(clusterId).ClusterIdN(clusterIdN).ClusterType(clusterType).ClusterTypeN(clusterTypeN).ClusterTypeId(clusterTypeId).ClusterTypeIdN(clusterTypeIdN).ConfigTemplateId(configTemplateId).ConfigTemplateIdN(configTemplateIdN).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).Disk(disk).DiskEmpty(diskEmpty).DiskGt(diskGt).DiskGte(diskGte).DiskLt(diskLt).DiskLte(diskLte).DiskN(diskN).HasPrimaryIp(hasPrimaryIp).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).LocalContextData(localContextData).MacAddress(macAddress).MacAddressIc(macAddressIc).MacAddressIe(macAddressIe).MacAddressIew(macAddressIew).MacAddressIsw(macAddressIsw).MacAddressN(macAddressN).MacAddressNic(macAddressNic).MacAddressNie(macAddressNie).MacAddressNiew(macAddressNiew).MacAddressNisw(macAddressNisw).Memory(memory).MemoryEmpty(memoryEmpty).MemoryGt(memoryGt).MemoryGte(memoryGte).MemoryLt(memoryLt).MemoryLte(memoryLte).MemoryN(memoryN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Platform(platform).PlatformN(platformN).PlatformId(platformId).PlatformIdN(platformIdN).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Vcpus(vcpus).VcpusEmpty(vcpusEmpty).VcpusGt(vcpusGt).VcpusGte(vcpusGte).VcpusLt(vcpusLt).VcpusLte(vcpusLte).VcpusN(vcpusN).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationVirtualMachinesList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationVirtualMachinesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `VirtualizationVirtualMachinesList`: PaginatedVirtualMachineWithConfigContextList
-    fmt.Fprintf(os.Stdout, "Response from `VirtualizationApi.VirtualizationVirtualMachinesList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VirtualizationAPI.VirtualizationVirtualMachinesList`: %v\n", resp)
 }
 ```
 
@@ -3563,6 +3606,8 @@ Name | Type | Description  | Notes
  **clusterTypeN** | **[]string** | Cluster type (slug) | 
  **clusterTypeId** | **[]int32** | Cluster type (ID) | 
  **clusterTypeIdN** | **[]int32** | Cluster type (ID) | 
+ **configTemplateId** | **[]int32** | Config template (ID) | 
+ **configTemplateIdN** | **[]int32** | Config template (ID) | 
  **contact** | **[]int32** | Contact | 
  **contactN** | **[]int32** | Contact | 
  **contactGroup** | **[]int32** | Contact group | 
@@ -3570,6 +3615,7 @@ Name | Type | Description  | Notes
  **contactRole** | **[]int32** | Contact Role | 
  **contactRoleN** | **[]int32** | Contact Role | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -3581,6 +3627,7 @@ Name | Type | Description  | Notes
  **deviceId** | **[]int32** | Device (ID) | 
  **deviceIdN** | **[]int32** | Device (ID) | 
  **disk** | **[]int32** |  | 
+ **diskEmpty** | **bool** |  | 
  **diskGt** | **[]int32** |  | 
  **diskGte** | **[]int32** |  | 
  **diskLt** | **[]int32** |  | 
@@ -3588,12 +3635,14 @@ Name | Type | Description  | Notes
  **diskN** | **[]int32** |  | 
  **hasPrimaryIp** | **bool** | Has a primary IP | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -3612,11 +3661,13 @@ Name | Type | Description  | Notes
  **macAddressNiew** | **[]string** |  | 
  **macAddressNisw** | **[]string** |  | 
  **memory** | **[]int32** |  | 
+ **memoryEmpty** | **bool** |  | 
  **memoryGt** | **[]int32** |  | 
  **memoryGte** | **[]int32** |  | 
  **memoryLt** | **[]int32** |  | 
  **memoryLte** | **[]int32** |  | 
  **memoryN** | **[]int32** |  | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -3665,6 +3716,7 @@ Name | Type | Description  | Notes
  **tenantIdN** | **[]int32** | Tenant (ID) | 
  **updatedByRequest** | **string** |  | 
  **vcpus** | **[]float64** |  | 
+ **vcpusEmpty** | **bool** |  | 
  **vcpusGt** | **[]float64** |  | 
  **vcpusGte** | **[]float64** |  | 
  **vcpusLt** | **[]float64** |  | 
@@ -3715,13 +3767,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualizationApi.VirtualizationVirtualMachinesPartialUpdate(context.Background(), id).PatchedWritableVirtualMachineWithConfigContextRequest(patchedWritableVirtualMachineWithConfigContextRequest).Execute()
+    resp, r, err := apiClient.VirtualizationAPI.VirtualizationVirtualMachinesPartialUpdate(context.Background(), id).PatchedWritableVirtualMachineWithConfigContextRequest(patchedWritableVirtualMachineWithConfigContextRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationVirtualMachinesPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationVirtualMachinesPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `VirtualizationVirtualMachinesPartialUpdate`: VirtualMachineWithConfigContext
-    fmt.Fprintf(os.Stdout, "Response from `VirtualizationApi.VirtualizationVirtualMachinesPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VirtualizationAPI.VirtualizationVirtualMachinesPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -3786,13 +3838,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualizationApi.VirtualizationVirtualMachinesRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.VirtualizationAPI.VirtualizationVirtualMachinesRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationVirtualMachinesRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationVirtualMachinesRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `VirtualizationVirtualMachinesRetrieve`: VirtualMachineWithConfigContext
-    fmt.Fprintf(os.Stdout, "Response from `VirtualizationApi.VirtualizationVirtualMachinesRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VirtualizationAPI.VirtualizationVirtualMachinesRetrieve`: %v\n", resp)
 }
 ```
 
@@ -3857,13 +3909,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualizationApi.VirtualizationVirtualMachinesUpdate(context.Background(), id).WritableVirtualMachineWithConfigContextRequest(writableVirtualMachineWithConfigContextRequest).Execute()
+    resp, r, err := apiClient.VirtualizationAPI.VirtualizationVirtualMachinesUpdate(context.Background(), id).WritableVirtualMachineWithConfigContextRequest(writableVirtualMachineWithConfigContextRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationApi.VirtualizationVirtualMachinesUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualizationAPI.VirtualizationVirtualMachinesUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `VirtualizationVirtualMachinesUpdate`: VirtualMachineWithConfigContext
-    fmt.Fprintf(os.Stdout, "Response from `VirtualizationApi.VirtualizationVirtualMachinesUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VirtualizationAPI.VirtualizationVirtualMachinesUpdate`: %v\n", resp)
 }
 ```
 

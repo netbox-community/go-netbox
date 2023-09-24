@@ -1,47 +1,47 @@
-# \UsersApi
+# \UsersAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**UsersConfigRetrieve**](UsersApi.md#UsersConfigRetrieve) | **Get** /api/users/config/ | 
-[**UsersGroupsBulkDestroy**](UsersApi.md#UsersGroupsBulkDestroy) | **Delete** /api/users/groups/ | 
-[**UsersGroupsBulkPartialUpdate**](UsersApi.md#UsersGroupsBulkPartialUpdate) | **Patch** /api/users/groups/ | 
-[**UsersGroupsBulkUpdate**](UsersApi.md#UsersGroupsBulkUpdate) | **Put** /api/users/groups/ | 
-[**UsersGroupsCreate**](UsersApi.md#UsersGroupsCreate) | **Post** /api/users/groups/ | 
-[**UsersGroupsDestroy**](UsersApi.md#UsersGroupsDestroy) | **Delete** /api/users/groups/{id}/ | 
-[**UsersGroupsList**](UsersApi.md#UsersGroupsList) | **Get** /api/users/groups/ | 
-[**UsersGroupsPartialUpdate**](UsersApi.md#UsersGroupsPartialUpdate) | **Patch** /api/users/groups/{id}/ | 
-[**UsersGroupsRetrieve**](UsersApi.md#UsersGroupsRetrieve) | **Get** /api/users/groups/{id}/ | 
-[**UsersGroupsUpdate**](UsersApi.md#UsersGroupsUpdate) | **Put** /api/users/groups/{id}/ | 
-[**UsersPermissionsBulkDestroy**](UsersApi.md#UsersPermissionsBulkDestroy) | **Delete** /api/users/permissions/ | 
-[**UsersPermissionsBulkPartialUpdate**](UsersApi.md#UsersPermissionsBulkPartialUpdate) | **Patch** /api/users/permissions/ | 
-[**UsersPermissionsBulkUpdate**](UsersApi.md#UsersPermissionsBulkUpdate) | **Put** /api/users/permissions/ | 
-[**UsersPermissionsCreate**](UsersApi.md#UsersPermissionsCreate) | **Post** /api/users/permissions/ | 
-[**UsersPermissionsDestroy**](UsersApi.md#UsersPermissionsDestroy) | **Delete** /api/users/permissions/{id}/ | 
-[**UsersPermissionsList**](UsersApi.md#UsersPermissionsList) | **Get** /api/users/permissions/ | 
-[**UsersPermissionsPartialUpdate**](UsersApi.md#UsersPermissionsPartialUpdate) | **Patch** /api/users/permissions/{id}/ | 
-[**UsersPermissionsRetrieve**](UsersApi.md#UsersPermissionsRetrieve) | **Get** /api/users/permissions/{id}/ | 
-[**UsersPermissionsUpdate**](UsersApi.md#UsersPermissionsUpdate) | **Put** /api/users/permissions/{id}/ | 
-[**UsersTokensBulkDestroy**](UsersApi.md#UsersTokensBulkDestroy) | **Delete** /api/users/tokens/ | 
-[**UsersTokensBulkPartialUpdate**](UsersApi.md#UsersTokensBulkPartialUpdate) | **Patch** /api/users/tokens/ | 
-[**UsersTokensBulkUpdate**](UsersApi.md#UsersTokensBulkUpdate) | **Put** /api/users/tokens/ | 
-[**UsersTokensCreate**](UsersApi.md#UsersTokensCreate) | **Post** /api/users/tokens/ | 
-[**UsersTokensDestroy**](UsersApi.md#UsersTokensDestroy) | **Delete** /api/users/tokens/{id}/ | 
-[**UsersTokensList**](UsersApi.md#UsersTokensList) | **Get** /api/users/tokens/ | 
-[**UsersTokensPartialUpdate**](UsersApi.md#UsersTokensPartialUpdate) | **Patch** /api/users/tokens/{id}/ | 
-[**UsersTokensProvisionCreate**](UsersApi.md#UsersTokensProvisionCreate) | **Post** /api/users/tokens/provision/ | 
-[**UsersTokensRetrieve**](UsersApi.md#UsersTokensRetrieve) | **Get** /api/users/tokens/{id}/ | 
-[**UsersTokensUpdate**](UsersApi.md#UsersTokensUpdate) | **Put** /api/users/tokens/{id}/ | 
-[**UsersUsersBulkDestroy**](UsersApi.md#UsersUsersBulkDestroy) | **Delete** /api/users/users/ | 
-[**UsersUsersBulkPartialUpdate**](UsersApi.md#UsersUsersBulkPartialUpdate) | **Patch** /api/users/users/ | 
-[**UsersUsersBulkUpdate**](UsersApi.md#UsersUsersBulkUpdate) | **Put** /api/users/users/ | 
-[**UsersUsersCreate**](UsersApi.md#UsersUsersCreate) | **Post** /api/users/users/ | 
-[**UsersUsersDestroy**](UsersApi.md#UsersUsersDestroy) | **Delete** /api/users/users/{id}/ | 
-[**UsersUsersList**](UsersApi.md#UsersUsersList) | **Get** /api/users/users/ | 
-[**UsersUsersPartialUpdate**](UsersApi.md#UsersUsersPartialUpdate) | **Patch** /api/users/users/{id}/ | 
-[**UsersUsersRetrieve**](UsersApi.md#UsersUsersRetrieve) | **Get** /api/users/users/{id}/ | 
-[**UsersUsersUpdate**](UsersApi.md#UsersUsersUpdate) | **Put** /api/users/users/{id}/ | 
+[**UsersConfigRetrieve**](UsersAPI.md#UsersConfigRetrieve) | **Get** /api/users/config/ | 
+[**UsersGroupsBulkDestroy**](UsersAPI.md#UsersGroupsBulkDestroy) | **Delete** /api/users/groups/ | 
+[**UsersGroupsBulkPartialUpdate**](UsersAPI.md#UsersGroupsBulkPartialUpdate) | **Patch** /api/users/groups/ | 
+[**UsersGroupsBulkUpdate**](UsersAPI.md#UsersGroupsBulkUpdate) | **Put** /api/users/groups/ | 
+[**UsersGroupsCreate**](UsersAPI.md#UsersGroupsCreate) | **Post** /api/users/groups/ | 
+[**UsersGroupsDestroy**](UsersAPI.md#UsersGroupsDestroy) | **Delete** /api/users/groups/{id}/ | 
+[**UsersGroupsList**](UsersAPI.md#UsersGroupsList) | **Get** /api/users/groups/ | 
+[**UsersGroupsPartialUpdate**](UsersAPI.md#UsersGroupsPartialUpdate) | **Patch** /api/users/groups/{id}/ | 
+[**UsersGroupsRetrieve**](UsersAPI.md#UsersGroupsRetrieve) | **Get** /api/users/groups/{id}/ | 
+[**UsersGroupsUpdate**](UsersAPI.md#UsersGroupsUpdate) | **Put** /api/users/groups/{id}/ | 
+[**UsersPermissionsBulkDestroy**](UsersAPI.md#UsersPermissionsBulkDestroy) | **Delete** /api/users/permissions/ | 
+[**UsersPermissionsBulkPartialUpdate**](UsersAPI.md#UsersPermissionsBulkPartialUpdate) | **Patch** /api/users/permissions/ | 
+[**UsersPermissionsBulkUpdate**](UsersAPI.md#UsersPermissionsBulkUpdate) | **Put** /api/users/permissions/ | 
+[**UsersPermissionsCreate**](UsersAPI.md#UsersPermissionsCreate) | **Post** /api/users/permissions/ | 
+[**UsersPermissionsDestroy**](UsersAPI.md#UsersPermissionsDestroy) | **Delete** /api/users/permissions/{id}/ | 
+[**UsersPermissionsList**](UsersAPI.md#UsersPermissionsList) | **Get** /api/users/permissions/ | 
+[**UsersPermissionsPartialUpdate**](UsersAPI.md#UsersPermissionsPartialUpdate) | **Patch** /api/users/permissions/{id}/ | 
+[**UsersPermissionsRetrieve**](UsersAPI.md#UsersPermissionsRetrieve) | **Get** /api/users/permissions/{id}/ | 
+[**UsersPermissionsUpdate**](UsersAPI.md#UsersPermissionsUpdate) | **Put** /api/users/permissions/{id}/ | 
+[**UsersTokensBulkDestroy**](UsersAPI.md#UsersTokensBulkDestroy) | **Delete** /api/users/tokens/ | 
+[**UsersTokensBulkPartialUpdate**](UsersAPI.md#UsersTokensBulkPartialUpdate) | **Patch** /api/users/tokens/ | 
+[**UsersTokensBulkUpdate**](UsersAPI.md#UsersTokensBulkUpdate) | **Put** /api/users/tokens/ | 
+[**UsersTokensCreate**](UsersAPI.md#UsersTokensCreate) | **Post** /api/users/tokens/ | 
+[**UsersTokensDestroy**](UsersAPI.md#UsersTokensDestroy) | **Delete** /api/users/tokens/{id}/ | 
+[**UsersTokensList**](UsersAPI.md#UsersTokensList) | **Get** /api/users/tokens/ | 
+[**UsersTokensPartialUpdate**](UsersAPI.md#UsersTokensPartialUpdate) | **Patch** /api/users/tokens/{id}/ | 
+[**UsersTokensProvisionCreate**](UsersAPI.md#UsersTokensProvisionCreate) | **Post** /api/users/tokens/provision/ | 
+[**UsersTokensRetrieve**](UsersAPI.md#UsersTokensRetrieve) | **Get** /api/users/tokens/{id}/ | 
+[**UsersTokensUpdate**](UsersAPI.md#UsersTokensUpdate) | **Put** /api/users/tokens/{id}/ | 
+[**UsersUsersBulkDestroy**](UsersAPI.md#UsersUsersBulkDestroy) | **Delete** /api/users/users/ | 
+[**UsersUsersBulkPartialUpdate**](UsersAPI.md#UsersUsersBulkPartialUpdate) | **Patch** /api/users/users/ | 
+[**UsersUsersBulkUpdate**](UsersAPI.md#UsersUsersBulkUpdate) | **Put** /api/users/users/ | 
+[**UsersUsersCreate**](UsersAPI.md#UsersUsersCreate) | **Post** /api/users/users/ | 
+[**UsersUsersDestroy**](UsersAPI.md#UsersUsersDestroy) | **Delete** /api/users/users/{id}/ | 
+[**UsersUsersList**](UsersAPI.md#UsersUsersList) | **Get** /api/users/users/ | 
+[**UsersUsersPartialUpdate**](UsersAPI.md#UsersUsersPartialUpdate) | **Patch** /api/users/users/{id}/ | 
+[**UsersUsersRetrieve**](UsersAPI.md#UsersUsersRetrieve) | **Get** /api/users/users/{id}/ | 
+[**UsersUsersUpdate**](UsersAPI.md#UsersUsersUpdate) | **Put** /api/users/users/{id}/ | 
 
 
 
@@ -69,13 +69,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersApi.UsersConfigRetrieve(context.Background()).Execute()
+    resp, r, err := apiClient.UsersAPI.UsersConfigRetrieve(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersConfigRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersConfigRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UsersConfigRetrieve`: map[string]interface{}
-    fmt.Fprintf(os.Stdout, "Response from `UsersApi.UsersConfigRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersConfigRetrieve`: %v\n", resp)
 }
 ```
 
@@ -131,9 +131,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.UsersApi.UsersGroupsBulkDestroy(context.Background()).GroupRequest(groupRequest).Execute()
+    r, err := apiClient.UsersAPI.UsersGroupsBulkDestroy(context.Background()).GroupRequest(groupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersGroupsBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersGroupsBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -195,13 +195,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersApi.UsersGroupsBulkPartialUpdate(context.Background()).GroupRequest(groupRequest).Execute()
+    resp, r, err := apiClient.UsersAPI.UsersGroupsBulkPartialUpdate(context.Background()).GroupRequest(groupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersGroupsBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersGroupsBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UsersGroupsBulkPartialUpdate`: []Group
-    fmt.Fprintf(os.Stdout, "Response from `UsersApi.UsersGroupsBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersGroupsBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -261,13 +261,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersApi.UsersGroupsBulkUpdate(context.Background()).GroupRequest(groupRequest).Execute()
+    resp, r, err := apiClient.UsersAPI.UsersGroupsBulkUpdate(context.Background()).GroupRequest(groupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersGroupsBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersGroupsBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UsersGroupsBulkUpdate`: []Group
-    fmt.Fprintf(os.Stdout, "Response from `UsersApi.UsersGroupsBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersGroupsBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -327,13 +327,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersApi.UsersGroupsCreate(context.Background()).GroupRequest(groupRequest).Execute()
+    resp, r, err := apiClient.UsersAPI.UsersGroupsCreate(context.Background()).GroupRequest(groupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersGroupsCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersGroupsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UsersGroupsCreate`: Group
-    fmt.Fprintf(os.Stdout, "Response from `UsersApi.UsersGroupsCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersGroupsCreate`: %v\n", resp)
 }
 ```
 
@@ -393,9 +393,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.UsersApi.UsersGroupsDestroy(context.Background(), id).Execute()
+    r, err := apiClient.UsersAPI.UsersGroupsDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersGroupsDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersGroupsDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -438,7 +438,7 @@ Name | Type | Description  | Notes
 
 ## UsersGroupsList
 
-> PaginatedGroupList UsersGroupsList(ctx).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Execute()
+> PaginatedGroupList UsersGroupsList(ctx).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Execute()
 
 
 
@@ -458,6 +458,7 @@ import (
 
 func main() {
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
@@ -481,13 +482,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersApi.UsersGroupsList(context.Background()).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Execute()
+    resp, r, err := apiClient.UsersAPI.UsersGroupsList(context.Background()).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersGroupsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersGroupsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UsersGroupsList`: PaginatedGroupList
-    fmt.Fprintf(os.Stdout, "Response from `UsersApi.UsersGroupsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersGroupsList`: %v\n", resp)
 }
 ```
 
@@ -503,6 +504,7 @@ Other parameters are passed through a pointer to a apiUsersGroupsListRequest str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
@@ -568,13 +570,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersApi.UsersGroupsPartialUpdate(context.Background(), id).PatchedGroupRequest(patchedGroupRequest).Execute()
+    resp, r, err := apiClient.UsersAPI.UsersGroupsPartialUpdate(context.Background(), id).PatchedGroupRequest(patchedGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersGroupsPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersGroupsPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UsersGroupsPartialUpdate`: Group
-    fmt.Fprintf(os.Stdout, "Response from `UsersApi.UsersGroupsPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersGroupsPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -639,13 +641,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersApi.UsersGroupsRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.UsersAPI.UsersGroupsRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersGroupsRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersGroupsRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UsersGroupsRetrieve`: Group
-    fmt.Fprintf(os.Stdout, "Response from `UsersApi.UsersGroupsRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersGroupsRetrieve`: %v\n", resp)
 }
 ```
 
@@ -710,13 +712,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersApi.UsersGroupsUpdate(context.Background(), id).GroupRequest(groupRequest).Execute()
+    resp, r, err := apiClient.UsersAPI.UsersGroupsUpdate(context.Background(), id).GroupRequest(groupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersGroupsUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersGroupsUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UsersGroupsUpdate`: Group
-    fmt.Fprintf(os.Stdout, "Response from `UsersApi.UsersGroupsUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersGroupsUpdate`: %v\n", resp)
 }
 ```
 
@@ -781,9 +783,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.UsersApi.UsersPermissionsBulkDestroy(context.Background()).ObjectPermissionRequest(objectPermissionRequest).Execute()
+    r, err := apiClient.UsersAPI.UsersPermissionsBulkDestroy(context.Background()).ObjectPermissionRequest(objectPermissionRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersPermissionsBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersPermissionsBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -845,13 +847,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersApi.UsersPermissionsBulkPartialUpdate(context.Background()).ObjectPermissionRequest(objectPermissionRequest).Execute()
+    resp, r, err := apiClient.UsersAPI.UsersPermissionsBulkPartialUpdate(context.Background()).ObjectPermissionRequest(objectPermissionRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersPermissionsBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersPermissionsBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UsersPermissionsBulkPartialUpdate`: []ObjectPermission
-    fmt.Fprintf(os.Stdout, "Response from `UsersApi.UsersPermissionsBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersPermissionsBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -911,13 +913,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersApi.UsersPermissionsBulkUpdate(context.Background()).ObjectPermissionRequest(objectPermissionRequest).Execute()
+    resp, r, err := apiClient.UsersAPI.UsersPermissionsBulkUpdate(context.Background()).ObjectPermissionRequest(objectPermissionRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersPermissionsBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersPermissionsBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UsersPermissionsBulkUpdate`: []ObjectPermission
-    fmt.Fprintf(os.Stdout, "Response from `UsersApi.UsersPermissionsBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersPermissionsBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -977,13 +979,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersApi.UsersPermissionsCreate(context.Background()).WritableObjectPermissionRequest(writableObjectPermissionRequest).Execute()
+    resp, r, err := apiClient.UsersAPI.UsersPermissionsCreate(context.Background()).WritableObjectPermissionRequest(writableObjectPermissionRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersPermissionsCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersPermissionsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UsersPermissionsCreate`: ObjectPermission
-    fmt.Fprintf(os.Stdout, "Response from `UsersApi.UsersPermissionsCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersPermissionsCreate`: %v\n", resp)
 }
 ```
 
@@ -1043,9 +1045,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.UsersApi.UsersPermissionsDestroy(context.Background(), id).Execute()
+    r, err := apiClient.UsersAPI.UsersPermissionsDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersPermissionsDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersPermissionsDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1088,7 +1090,7 @@ Name | Type | Description  | Notes
 
 ## UsersPermissionsList
 
-> PaginatedObjectPermissionList UsersPermissionsList(ctx).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Enabled(enabled).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).ObjectTypes(objectTypes).ObjectTypesN(objectTypesN).Offset(offset).Ordering(ordering).Q(q).User(user).UserN(userN).UserId(userId).UserIdN(userIdN).Execute()
+> PaginatedObjectPermissionList UsersPermissionsList(ctx).CanAdd(canAdd).CanChange(canChange).CanDelete(canDelete).CanView(canView).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Enabled(enabled).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).ObjectTypes(objectTypes).ObjectTypesN(objectTypesN).Offset(offset).Ordering(ordering).Q(q).User(user).UserN(userN).UserId(userId).UserIdN(userIdN).Execute()
 
 
 
@@ -1107,6 +1109,10 @@ import (
 )
 
 func main() {
+    canAdd := true // bool |  (optional)
+    canChange := true // bool |  (optional)
+    canDelete := true // bool |  (optional)
+    canView := true // bool |  (optional)
     description := []string{"Inner_example"} // []string |  (optional)
     descriptionEmpty := true // bool |  (optional)
     descriptionIc := []string{"Inner_example"} // []string |  (optional)
@@ -1124,6 +1130,7 @@ func main() {
     groupId := []int32{int32(123)} // []int32 | Group (optional)
     groupIdN := []int32{int32(123)} // []int32 | Group (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
@@ -1153,13 +1160,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersApi.UsersPermissionsList(context.Background()).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Enabled(enabled).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).ObjectTypes(objectTypes).ObjectTypesN(objectTypesN).Offset(offset).Ordering(ordering).Q(q).User(user).UserN(userN).UserId(userId).UserIdN(userIdN).Execute()
+    resp, r, err := apiClient.UsersAPI.UsersPermissionsList(context.Background()).CanAdd(canAdd).CanChange(canChange).CanDelete(canDelete).CanView(canView).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Enabled(enabled).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).ObjectTypes(objectTypes).ObjectTypesN(objectTypesN).Offset(offset).Ordering(ordering).Q(q).User(user).UserN(userN).UserId(userId).UserIdN(userIdN).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersPermissionsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersPermissionsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UsersPermissionsList`: PaginatedObjectPermissionList
-    fmt.Fprintf(os.Stdout, "Response from `UsersApi.UsersPermissionsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersPermissionsList`: %v\n", resp)
 }
 ```
 
@@ -1174,6 +1181,10 @@ Other parameters are passed through a pointer to a apiUsersPermissionsListReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **canAdd** | **bool** |  | 
+ **canChange** | **bool** |  | 
+ **canDelete** | **bool** |  | 
+ **canView** | **bool** |  | 
  **description** | **[]string** |  | 
  **descriptionEmpty** | **bool** |  | 
  **descriptionIc** | **[]string** |  | 
@@ -1191,6 +1202,7 @@ Name | Type | Description  | Notes
  **groupId** | **[]int32** | Group | 
  **groupIdN** | **[]int32** | Group | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
@@ -1262,13 +1274,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersApi.UsersPermissionsPartialUpdate(context.Background(), id).PatchedWritableObjectPermissionRequest(patchedWritableObjectPermissionRequest).Execute()
+    resp, r, err := apiClient.UsersAPI.UsersPermissionsPartialUpdate(context.Background(), id).PatchedWritableObjectPermissionRequest(patchedWritableObjectPermissionRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersPermissionsPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersPermissionsPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UsersPermissionsPartialUpdate`: ObjectPermission
-    fmt.Fprintf(os.Stdout, "Response from `UsersApi.UsersPermissionsPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersPermissionsPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -1333,13 +1345,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersApi.UsersPermissionsRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.UsersAPI.UsersPermissionsRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersPermissionsRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersPermissionsRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UsersPermissionsRetrieve`: ObjectPermission
-    fmt.Fprintf(os.Stdout, "Response from `UsersApi.UsersPermissionsRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersPermissionsRetrieve`: %v\n", resp)
 }
 ```
 
@@ -1404,13 +1416,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersApi.UsersPermissionsUpdate(context.Background(), id).WritableObjectPermissionRequest(writableObjectPermissionRequest).Execute()
+    resp, r, err := apiClient.UsersAPI.UsersPermissionsUpdate(context.Background(), id).WritableObjectPermissionRequest(writableObjectPermissionRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersPermissionsUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersPermissionsUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UsersPermissionsUpdate`: ObjectPermission
-    fmt.Fprintf(os.Stdout, "Response from `UsersApi.UsersPermissionsUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersPermissionsUpdate`: %v\n", resp)
 }
 ```
 
@@ -1475,9 +1487,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.UsersApi.UsersTokensBulkDestroy(context.Background()).TokenRequest(tokenRequest).Execute()
+    r, err := apiClient.UsersAPI.UsersTokensBulkDestroy(context.Background()).TokenRequest(tokenRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersTokensBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersTokensBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1539,13 +1551,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersApi.UsersTokensBulkPartialUpdate(context.Background()).TokenRequest(tokenRequest).Execute()
+    resp, r, err := apiClient.UsersAPI.UsersTokensBulkPartialUpdate(context.Background()).TokenRequest(tokenRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersTokensBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersTokensBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UsersTokensBulkPartialUpdate`: []Token
-    fmt.Fprintf(os.Stdout, "Response from `UsersApi.UsersTokensBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersTokensBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -1605,13 +1617,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersApi.UsersTokensBulkUpdate(context.Background()).TokenRequest(tokenRequest).Execute()
+    resp, r, err := apiClient.UsersAPI.UsersTokensBulkUpdate(context.Background()).TokenRequest(tokenRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersTokensBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersTokensBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UsersTokensBulkUpdate`: []Token
-    fmt.Fprintf(os.Stdout, "Response from `UsersApi.UsersTokensBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersTokensBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -1671,13 +1683,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersApi.UsersTokensCreate(context.Background()).WritableTokenRequest(writableTokenRequest).Execute()
+    resp, r, err := apiClient.UsersAPI.UsersTokensCreate(context.Background()).WritableTokenRequest(writableTokenRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersTokensCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersTokensCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UsersTokensCreate`: Token
-    fmt.Fprintf(os.Stdout, "Response from `UsersApi.UsersTokensCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersTokensCreate`: %v\n", resp)
 }
 ```
 
@@ -1737,9 +1749,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.UsersApi.UsersTokensDestroy(context.Background(), id).Execute()
+    r, err := apiClient.UsersAPI.UsersTokensDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersTokensDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersTokensDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1782,7 +1794,7 @@ Name | Type | Description  | Notes
 
 ## UsersTokensList
 
-> PaginatedTokenList UsersTokensList(ctx).Created(created).CreatedGte(createdGte).CreatedLte(createdLte).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Expires(expires).ExpiresGte(expiresGte).ExpiresLte(expiresLte).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Key(key).KeyEmpty(keyEmpty).KeyIc(keyIc).KeyIe(keyIe).KeyIew(keyIew).KeyIsw(keyIsw).KeyN(keyN).KeyNic(keyNic).KeyNie(keyNie).KeyNiew(keyNiew).KeyNisw(keyNisw).Limit(limit).Offset(offset).Ordering(ordering).Q(q).User(user).UserN(userN).UserId(userId).UserIdN(userIdN).WriteEnabled(writeEnabled).Execute()
+> PaginatedTokenList UsersTokensList(ctx).Created(created).CreatedGte(createdGte).CreatedLte(createdLte).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Expires(expires).ExpiresGte(expiresGte).ExpiresLte(expiresLte).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Key(key).KeyEmpty(keyEmpty).KeyIc(keyIc).KeyIe(keyIe).KeyIew(keyIew).KeyIsw(keyIsw).KeyN(keyN).KeyNic(keyNic).KeyNie(keyNie).KeyNiew(keyNiew).KeyNisw(keyNisw).Limit(limit).Offset(offset).Ordering(ordering).Q(q).User(user).UserN(userN).UserId(userId).UserIdN(userIdN).WriteEnabled(writeEnabled).Execute()
 
 
 
@@ -1820,6 +1832,7 @@ func main() {
     expiresGte := time.Now() // time.Time |  (optional)
     expiresLte := time.Now() // time.Time |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
@@ -1848,13 +1861,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersApi.UsersTokensList(context.Background()).Created(created).CreatedGte(createdGte).CreatedLte(createdLte).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Expires(expires).ExpiresGte(expiresGte).ExpiresLte(expiresLte).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Key(key).KeyEmpty(keyEmpty).KeyIc(keyIc).KeyIe(keyIe).KeyIew(keyIew).KeyIsw(keyIsw).KeyN(keyN).KeyNic(keyNic).KeyNie(keyNie).KeyNiew(keyNiew).KeyNisw(keyNisw).Limit(limit).Offset(offset).Ordering(ordering).Q(q).User(user).UserN(userN).UserId(userId).UserIdN(userIdN).WriteEnabled(writeEnabled).Execute()
+    resp, r, err := apiClient.UsersAPI.UsersTokensList(context.Background()).Created(created).CreatedGte(createdGte).CreatedLte(createdLte).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Expires(expires).ExpiresGte(expiresGte).ExpiresLte(expiresLte).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Key(key).KeyEmpty(keyEmpty).KeyIc(keyIc).KeyIe(keyIe).KeyIew(keyIew).KeyIsw(keyIsw).KeyN(keyN).KeyNic(keyNic).KeyNie(keyNie).KeyNiew(keyNiew).KeyNisw(keyNisw).Limit(limit).Offset(offset).Ordering(ordering).Q(q).User(user).UserN(userN).UserId(userId).UserIdN(userIdN).WriteEnabled(writeEnabled).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersTokensList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersTokensList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UsersTokensList`: PaginatedTokenList
-    fmt.Fprintf(os.Stdout, "Response from `UsersApi.UsersTokensList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersTokensList`: %v\n", resp)
 }
 ```
 
@@ -1887,6 +1900,7 @@ Name | Type | Description  | Notes
  **expiresGte** | **time.Time** |  | 
  **expiresLte** | **time.Time** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
@@ -1957,13 +1971,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersApi.UsersTokensPartialUpdate(context.Background(), id).PatchedWritableTokenRequest(patchedWritableTokenRequest).Execute()
+    resp, r, err := apiClient.UsersAPI.UsersTokensPartialUpdate(context.Background(), id).PatchedWritableTokenRequest(patchedWritableTokenRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersTokensPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersTokensPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UsersTokensPartialUpdate`: Token
-    fmt.Fprintf(os.Stdout, "Response from `UsersApi.UsersTokensPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersTokensPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -2005,7 +2019,7 @@ Name | Type | Description  | Notes
 
 ## UsersTokensProvisionCreate
 
-> Token UsersTokensProvisionCreate(ctx).WritableTokenRequest(writableTokenRequest).Execute()
+> TokenProvision UsersTokensProvisionCreate(ctx).TokenProvisionRequest(tokenProvisionRequest).Execute()
 
 
 
@@ -2024,17 +2038,17 @@ import (
 )
 
 func main() {
-    writableTokenRequest := *openapiclient.NewWritableTokenRequest(int32(123)) // WritableTokenRequest | 
+    tokenProvisionRequest := *openapiclient.NewTokenProvisionRequest("Username_example", "Password_example") // TokenProvisionRequest | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersApi.UsersTokensProvisionCreate(context.Background()).WritableTokenRequest(writableTokenRequest).Execute()
+    resp, r, err := apiClient.UsersAPI.UsersTokensProvisionCreate(context.Background()).TokenProvisionRequest(tokenProvisionRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersTokensProvisionCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersTokensProvisionCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UsersTokensProvisionCreate`: Token
-    fmt.Fprintf(os.Stdout, "Response from `UsersApi.UsersTokensProvisionCreate`: %v\n", resp)
+    // response from `UsersTokensProvisionCreate`: TokenProvision
+    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersTokensProvisionCreate`: %v\n", resp)
 }
 ```
 
@@ -2049,11 +2063,11 @@ Other parameters are passed through a pointer to a apiUsersTokensProvisionCreate
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writableTokenRequest** | [**WritableTokenRequest**](WritableTokenRequest.md) |  | 
+ **tokenProvisionRequest** | [**TokenProvisionRequest**](TokenProvisionRequest.md) |  | 
 
 ### Return type
 
-[**Token**](Token.md)
+[**TokenProvision**](TokenProvision.md)
 
 ### Authorization
 
@@ -2094,13 +2108,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersApi.UsersTokensRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.UsersAPI.UsersTokensRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersTokensRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersTokensRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UsersTokensRetrieve`: Token
-    fmt.Fprintf(os.Stdout, "Response from `UsersApi.UsersTokensRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersTokensRetrieve`: %v\n", resp)
 }
 ```
 
@@ -2165,13 +2179,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersApi.UsersTokensUpdate(context.Background(), id).WritableTokenRequest(writableTokenRequest).Execute()
+    resp, r, err := apiClient.UsersAPI.UsersTokensUpdate(context.Background(), id).WritableTokenRequest(writableTokenRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersTokensUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersTokensUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UsersTokensUpdate`: Token
-    fmt.Fprintf(os.Stdout, "Response from `UsersApi.UsersTokensUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersTokensUpdate`: %v\n", resp)
 }
 ```
 
@@ -2236,9 +2250,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.UsersApi.UsersUsersBulkDestroy(context.Background()).UserRequest(userRequest).Execute()
+    r, err := apiClient.UsersAPI.UsersUsersBulkDestroy(context.Background()).UserRequest(userRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersUsersBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersUsersBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2300,13 +2314,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersApi.UsersUsersBulkPartialUpdate(context.Background()).UserRequest(userRequest).Execute()
+    resp, r, err := apiClient.UsersAPI.UsersUsersBulkPartialUpdate(context.Background()).UserRequest(userRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersUsersBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersUsersBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UsersUsersBulkPartialUpdate`: []User
-    fmt.Fprintf(os.Stdout, "Response from `UsersApi.UsersUsersBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersUsersBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -2366,13 +2380,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersApi.UsersUsersBulkUpdate(context.Background()).UserRequest(userRequest).Execute()
+    resp, r, err := apiClient.UsersAPI.UsersUsersBulkUpdate(context.Background()).UserRequest(userRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersUsersBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersUsersBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UsersUsersBulkUpdate`: []User
-    fmt.Fprintf(os.Stdout, "Response from `UsersApi.UsersUsersBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersUsersBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -2432,13 +2446,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersApi.UsersUsersCreate(context.Background()).WritableUserRequest(writableUserRequest).Execute()
+    resp, r, err := apiClient.UsersAPI.UsersUsersCreate(context.Background()).WritableUserRequest(writableUserRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersUsersCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersUsersCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UsersUsersCreate`: User
-    fmt.Fprintf(os.Stdout, "Response from `UsersApi.UsersUsersCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersUsersCreate`: %v\n", resp)
 }
 ```
 
@@ -2498,9 +2512,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.UsersApi.UsersUsersDestroy(context.Background(), id).Execute()
+    r, err := apiClient.UsersAPI.UsersUsersDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersUsersDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersUsersDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2543,7 +2557,7 @@ Name | Type | Description  | Notes
 
 ## UsersUsersList
 
-> PaginatedUserList UsersUsersList(ctx).Email(email).EmailEmpty(emailEmpty).EmailIc(emailIc).EmailIe(emailIe).EmailIew(emailIew).EmailIsw(emailIsw).EmailN(emailN).EmailNic(emailNic).EmailNie(emailNie).EmailNiew(emailNiew).EmailNisw(emailNisw).FirstName(firstName).FirstNameEmpty(firstNameEmpty).FirstNameIc(firstNameIc).FirstNameIe(firstNameIe).FirstNameIew(firstNameIew).FirstNameIsw(firstNameIsw).FirstNameN(firstNameN).FirstNameNic(firstNameNic).FirstNameNie(firstNameNie).FirstNameNiew(firstNameNiew).FirstNameNisw(firstNameNisw).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsActive(isActive).IsStaff(isStaff).LastName(lastName).LastNameEmpty(lastNameEmpty).LastNameIc(lastNameIc).LastNameIe(lastNameIe).LastNameIew(lastNameIew).LastNameIsw(lastNameIsw).LastNameN(lastNameN).LastNameNic(lastNameNic).LastNameNie(lastNameNie).LastNameNiew(lastNameNiew).LastNameNisw(lastNameNisw).Limit(limit).Offset(offset).Ordering(ordering).Q(q).Username(username).UsernameEmpty(usernameEmpty).UsernameIc(usernameIc).UsernameIe(usernameIe).UsernameIew(usernameIew).UsernameIsw(usernameIsw).UsernameN(usernameN).UsernameNic(usernameNic).UsernameNie(usernameNie).UsernameNiew(usernameNiew).UsernameNisw(usernameNisw).Execute()
+> PaginatedUserList UsersUsersList(ctx).Email(email).EmailEmpty(emailEmpty).EmailIc(emailIc).EmailIe(emailIe).EmailIew(emailIew).EmailIsw(emailIsw).EmailN(emailN).EmailNic(emailNic).EmailNie(emailNie).EmailNiew(emailNiew).EmailNisw(emailNisw).FirstName(firstName).FirstNameEmpty(firstNameEmpty).FirstNameIc(firstNameIc).FirstNameIe(firstNameIe).FirstNameIew(firstNameIew).FirstNameIsw(firstNameIsw).FirstNameN(firstNameN).FirstNameNic(firstNameNic).FirstNameNie(firstNameNie).FirstNameNiew(firstNameNiew).FirstNameNisw(firstNameNisw).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsActive(isActive).IsStaff(isStaff).IsSuperuser(isSuperuser).LastName(lastName).LastNameEmpty(lastNameEmpty).LastNameIc(lastNameIc).LastNameIe(lastNameIe).LastNameIew(lastNameIew).LastNameIsw(lastNameIsw).LastNameN(lastNameN).LastNameNic(lastNameNic).LastNameNie(lastNameNie).LastNameNiew(lastNameNiew).LastNameNisw(lastNameNisw).Limit(limit).Offset(offset).Ordering(ordering).Q(q).Username(username).UsernameEmpty(usernameEmpty).UsernameIc(usernameIc).UsernameIe(usernameIe).UsernameIew(usernameIew).UsernameIsw(usernameIsw).UsernameN(usernameN).UsernameNic(usernameNic).UsernameNie(usernameNie).UsernameNiew(usernameNiew).UsernameNisw(usernameNisw).Execute()
 
 
 
@@ -2589,6 +2603,7 @@ func main() {
     groupId := []int32{int32(123)} // []int32 | Group (optional)
     groupIdN := []int32{int32(123)} // []int32 | Group (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
@@ -2596,6 +2611,7 @@ func main() {
     idN := []int32{int32(123)} // []int32 |  (optional)
     isActive := true // bool |  (optional)
     isStaff := true // bool |  (optional)
+    isSuperuser := true // bool |  (optional)
     lastName := []string{"Inner_example"} // []string |  (optional)
     lastNameEmpty := true // bool |  (optional)
     lastNameIc := []string{"Inner_example"} // []string |  (optional)
@@ -2625,13 +2641,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersApi.UsersUsersList(context.Background()).Email(email).EmailEmpty(emailEmpty).EmailIc(emailIc).EmailIe(emailIe).EmailIew(emailIew).EmailIsw(emailIsw).EmailN(emailN).EmailNic(emailNic).EmailNie(emailNie).EmailNiew(emailNiew).EmailNisw(emailNisw).FirstName(firstName).FirstNameEmpty(firstNameEmpty).FirstNameIc(firstNameIc).FirstNameIe(firstNameIe).FirstNameIew(firstNameIew).FirstNameIsw(firstNameIsw).FirstNameN(firstNameN).FirstNameNic(firstNameNic).FirstNameNie(firstNameNie).FirstNameNiew(firstNameNiew).FirstNameNisw(firstNameNisw).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsActive(isActive).IsStaff(isStaff).LastName(lastName).LastNameEmpty(lastNameEmpty).LastNameIc(lastNameIc).LastNameIe(lastNameIe).LastNameIew(lastNameIew).LastNameIsw(lastNameIsw).LastNameN(lastNameN).LastNameNic(lastNameNic).LastNameNie(lastNameNie).LastNameNiew(lastNameNiew).LastNameNisw(lastNameNisw).Limit(limit).Offset(offset).Ordering(ordering).Q(q).Username(username).UsernameEmpty(usernameEmpty).UsernameIc(usernameIc).UsernameIe(usernameIe).UsernameIew(usernameIew).UsernameIsw(usernameIsw).UsernameN(usernameN).UsernameNic(usernameNic).UsernameNie(usernameNie).UsernameNiew(usernameNiew).UsernameNisw(usernameNisw).Execute()
+    resp, r, err := apiClient.UsersAPI.UsersUsersList(context.Background()).Email(email).EmailEmpty(emailEmpty).EmailIc(emailIc).EmailIe(emailIe).EmailIew(emailIew).EmailIsw(emailIsw).EmailN(emailN).EmailNic(emailNic).EmailNie(emailNie).EmailNiew(emailNiew).EmailNisw(emailNisw).FirstName(firstName).FirstNameEmpty(firstNameEmpty).FirstNameIc(firstNameIc).FirstNameIe(firstNameIe).FirstNameIew(firstNameIew).FirstNameIsw(firstNameIsw).FirstNameN(firstNameN).FirstNameNic(firstNameNic).FirstNameNie(firstNameNie).FirstNameNiew(firstNameNiew).FirstNameNisw(firstNameNisw).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsActive(isActive).IsStaff(isStaff).IsSuperuser(isSuperuser).LastName(lastName).LastNameEmpty(lastNameEmpty).LastNameIc(lastNameIc).LastNameIe(lastNameIe).LastNameIew(lastNameIew).LastNameIsw(lastNameIsw).LastNameN(lastNameN).LastNameNic(lastNameNic).LastNameNie(lastNameNie).LastNameNiew(lastNameNiew).LastNameNisw(lastNameNisw).Limit(limit).Offset(offset).Ordering(ordering).Q(q).Username(username).UsernameEmpty(usernameEmpty).UsernameIc(usernameIc).UsernameIe(usernameIe).UsernameIew(usernameIew).UsernameIsw(usernameIsw).UsernameN(usernameN).UsernameNic(usernameNic).UsernameNie(usernameNie).UsernameNiew(usernameNiew).UsernameNisw(usernameNisw).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersUsersList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersUsersList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UsersUsersList`: PaginatedUserList
-    fmt.Fprintf(os.Stdout, "Response from `UsersApi.UsersUsersList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersUsersList`: %v\n", resp)
 }
 ```
 
@@ -2673,6 +2689,7 @@ Name | Type | Description  | Notes
  **groupId** | **[]int32** | Group | 
  **groupIdN** | **[]int32** | Group | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
@@ -2680,6 +2697,7 @@ Name | Type | Description  | Notes
  **idN** | **[]int32** |  | 
  **isActive** | **bool** |  | 
  **isStaff** | **bool** |  | 
+ **isSuperuser** | **bool** |  | 
  **lastName** | **[]string** |  | 
  **lastNameEmpty** | **bool** |  | 
  **lastNameIc** | **[]string** |  | 
@@ -2751,13 +2769,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersApi.UsersUsersPartialUpdate(context.Background(), id).PatchedWritableUserRequest(patchedWritableUserRequest).Execute()
+    resp, r, err := apiClient.UsersAPI.UsersUsersPartialUpdate(context.Background(), id).PatchedWritableUserRequest(patchedWritableUserRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersUsersPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersUsersPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UsersUsersPartialUpdate`: User
-    fmt.Fprintf(os.Stdout, "Response from `UsersApi.UsersUsersPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersUsersPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -2822,13 +2840,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersApi.UsersUsersRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.UsersAPI.UsersUsersRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersUsersRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersUsersRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UsersUsersRetrieve`: User
-    fmt.Fprintf(os.Stdout, "Response from `UsersApi.UsersUsersRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersUsersRetrieve`: %v\n", resp)
 }
 ```
 
@@ -2893,13 +2911,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersApi.UsersUsersUpdate(context.Background(), id).WritableUserRequest(writableUserRequest).Execute()
+    resp, r, err := apiClient.UsersAPI.UsersUsersUpdate(context.Background(), id).WritableUserRequest(writableUserRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersUsersUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersUsersUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UsersUsersUpdate`: User
-    fmt.Fprintf(os.Stdout, "Response from `UsersApi.UsersUsersUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersUsersUpdate`: %v\n", resp)
 }
 ```
 

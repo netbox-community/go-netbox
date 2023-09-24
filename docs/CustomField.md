@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **ObjectType** | Pointer to **string** |  | [optional] 
 **DataType** | **string** |  | [readonly] 
 **Name** | **string** | Internal field name | 
-**Label** | Pointer to **string** | Name of the field as displayed to users (if not provided, the field&#39;s name will be used) | [optional] 
+**Label** | Pointer to **string** | Name of the field as displayed to users (if not provided, &#39;the field&#39;s name will be used) | [optional] 
 **GroupName** | Pointer to **string** | Custom fields within the same group will be displayed together | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Required** | Pointer to **bool** | If true, this field is required when creating new objects or editing an existing object. | [optional] 
@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **ValidationMinimum** | Pointer to **NullableInt32** | Minimum allowed value (for numeric fields) | [optional] 
 **ValidationMaximum** | Pointer to **NullableInt32** | Maximum allowed value (for numeric fields) | [optional] 
 **ValidationRegex** | Pointer to **string** | Regular expression to enforce on text field values. Use ^ and $ to force matching of entire string. For example, &lt;code&gt;^[A-Z]{3}$&lt;/code&gt; will limit values to exactly three uppercase letters. | [optional] 
-**Choices** | Pointer to **[]string** | Comma-separated list of available choices (for selection fields) | [optional] 
+**ChoiceSet** | Pointer to [**NestedCustomFieldChoiceSet**](NestedCustomFieldChoiceSet.md) |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 
@@ -568,41 +568,31 @@ SetValidationRegex sets ValidationRegex field to given value.
 
 HasValidationRegex returns a boolean if a field has been set.
 
-### GetChoices
+### GetChoiceSet
 
-`func (o *CustomField) GetChoices() []string`
+`func (o *CustomField) GetChoiceSet() NestedCustomFieldChoiceSet`
 
-GetChoices returns the Choices field if non-nil, zero value otherwise.
+GetChoiceSet returns the ChoiceSet field if non-nil, zero value otherwise.
 
-### GetChoicesOk
+### GetChoiceSetOk
 
-`func (o *CustomField) GetChoicesOk() (*[]string, bool)`
+`func (o *CustomField) GetChoiceSetOk() (*NestedCustomFieldChoiceSet, bool)`
 
-GetChoicesOk returns a tuple with the Choices field if it's non-nil, zero value otherwise
+GetChoiceSetOk returns a tuple with the ChoiceSet field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetChoices
+### SetChoiceSet
 
-`func (o *CustomField) SetChoices(v []string)`
+`func (o *CustomField) SetChoiceSet(v NestedCustomFieldChoiceSet)`
 
-SetChoices sets Choices field to given value.
+SetChoiceSet sets ChoiceSet field to given value.
 
-### HasChoices
+### HasChoiceSet
 
-`func (o *CustomField) HasChoices() bool`
+`func (o *CustomField) HasChoiceSet() bool`
 
-HasChoices returns a boolean if a field has been set.
+HasChoiceSet returns a boolean if a field has been set.
 
-### SetChoicesNil
-
-`func (o *CustomField) SetChoicesNil(b bool)`
-
- SetChoicesNil sets the value for Choices to be an explicit nil
-
-### UnsetChoices
-`func (o *CustomField) UnsetChoices()`
-
-UnsetChoices ensures that no value is present for Choices, not even an explicit nil
 ### GetCreated
 
 `func (o *CustomField) GetCreated() time.Time`

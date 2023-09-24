@@ -1,63 +1,63 @@
-# \TenancyApi
+# \TenancyAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**TenancyContactAssignmentsBulkDestroy**](TenancyApi.md#TenancyContactAssignmentsBulkDestroy) | **Delete** /api/tenancy/contact-assignments/ | 
-[**TenancyContactAssignmentsBulkPartialUpdate**](TenancyApi.md#TenancyContactAssignmentsBulkPartialUpdate) | **Patch** /api/tenancy/contact-assignments/ | 
-[**TenancyContactAssignmentsBulkUpdate**](TenancyApi.md#TenancyContactAssignmentsBulkUpdate) | **Put** /api/tenancy/contact-assignments/ | 
-[**TenancyContactAssignmentsCreate**](TenancyApi.md#TenancyContactAssignmentsCreate) | **Post** /api/tenancy/contact-assignments/ | 
-[**TenancyContactAssignmentsDestroy**](TenancyApi.md#TenancyContactAssignmentsDestroy) | **Delete** /api/tenancy/contact-assignments/{id}/ | 
-[**TenancyContactAssignmentsList**](TenancyApi.md#TenancyContactAssignmentsList) | **Get** /api/tenancy/contact-assignments/ | 
-[**TenancyContactAssignmentsPartialUpdate**](TenancyApi.md#TenancyContactAssignmentsPartialUpdate) | **Patch** /api/tenancy/contact-assignments/{id}/ | 
-[**TenancyContactAssignmentsRetrieve**](TenancyApi.md#TenancyContactAssignmentsRetrieve) | **Get** /api/tenancy/contact-assignments/{id}/ | 
-[**TenancyContactAssignmentsUpdate**](TenancyApi.md#TenancyContactAssignmentsUpdate) | **Put** /api/tenancy/contact-assignments/{id}/ | 
-[**TenancyContactGroupsBulkDestroy**](TenancyApi.md#TenancyContactGroupsBulkDestroy) | **Delete** /api/tenancy/contact-groups/ | 
-[**TenancyContactGroupsBulkPartialUpdate**](TenancyApi.md#TenancyContactGroupsBulkPartialUpdate) | **Patch** /api/tenancy/contact-groups/ | 
-[**TenancyContactGroupsBulkUpdate**](TenancyApi.md#TenancyContactGroupsBulkUpdate) | **Put** /api/tenancy/contact-groups/ | 
-[**TenancyContactGroupsCreate**](TenancyApi.md#TenancyContactGroupsCreate) | **Post** /api/tenancy/contact-groups/ | 
-[**TenancyContactGroupsDestroy**](TenancyApi.md#TenancyContactGroupsDestroy) | **Delete** /api/tenancy/contact-groups/{id}/ | 
-[**TenancyContactGroupsList**](TenancyApi.md#TenancyContactGroupsList) | **Get** /api/tenancy/contact-groups/ | 
-[**TenancyContactGroupsPartialUpdate**](TenancyApi.md#TenancyContactGroupsPartialUpdate) | **Patch** /api/tenancy/contact-groups/{id}/ | 
-[**TenancyContactGroupsRetrieve**](TenancyApi.md#TenancyContactGroupsRetrieve) | **Get** /api/tenancy/contact-groups/{id}/ | 
-[**TenancyContactGroupsUpdate**](TenancyApi.md#TenancyContactGroupsUpdate) | **Put** /api/tenancy/contact-groups/{id}/ | 
-[**TenancyContactRolesBulkDestroy**](TenancyApi.md#TenancyContactRolesBulkDestroy) | **Delete** /api/tenancy/contact-roles/ | 
-[**TenancyContactRolesBulkPartialUpdate**](TenancyApi.md#TenancyContactRolesBulkPartialUpdate) | **Patch** /api/tenancy/contact-roles/ | 
-[**TenancyContactRolesBulkUpdate**](TenancyApi.md#TenancyContactRolesBulkUpdate) | **Put** /api/tenancy/contact-roles/ | 
-[**TenancyContactRolesCreate**](TenancyApi.md#TenancyContactRolesCreate) | **Post** /api/tenancy/contact-roles/ | 
-[**TenancyContactRolesDestroy**](TenancyApi.md#TenancyContactRolesDestroy) | **Delete** /api/tenancy/contact-roles/{id}/ | 
-[**TenancyContactRolesList**](TenancyApi.md#TenancyContactRolesList) | **Get** /api/tenancy/contact-roles/ | 
-[**TenancyContactRolesPartialUpdate**](TenancyApi.md#TenancyContactRolesPartialUpdate) | **Patch** /api/tenancy/contact-roles/{id}/ | 
-[**TenancyContactRolesRetrieve**](TenancyApi.md#TenancyContactRolesRetrieve) | **Get** /api/tenancy/contact-roles/{id}/ | 
-[**TenancyContactRolesUpdate**](TenancyApi.md#TenancyContactRolesUpdate) | **Put** /api/tenancy/contact-roles/{id}/ | 
-[**TenancyContactsBulkDestroy**](TenancyApi.md#TenancyContactsBulkDestroy) | **Delete** /api/tenancy/contacts/ | 
-[**TenancyContactsBulkPartialUpdate**](TenancyApi.md#TenancyContactsBulkPartialUpdate) | **Patch** /api/tenancy/contacts/ | 
-[**TenancyContactsBulkUpdate**](TenancyApi.md#TenancyContactsBulkUpdate) | **Put** /api/tenancy/contacts/ | 
-[**TenancyContactsCreate**](TenancyApi.md#TenancyContactsCreate) | **Post** /api/tenancy/contacts/ | 
-[**TenancyContactsDestroy**](TenancyApi.md#TenancyContactsDestroy) | **Delete** /api/tenancy/contacts/{id}/ | 
-[**TenancyContactsList**](TenancyApi.md#TenancyContactsList) | **Get** /api/tenancy/contacts/ | 
-[**TenancyContactsPartialUpdate**](TenancyApi.md#TenancyContactsPartialUpdate) | **Patch** /api/tenancy/contacts/{id}/ | 
-[**TenancyContactsRetrieve**](TenancyApi.md#TenancyContactsRetrieve) | **Get** /api/tenancy/contacts/{id}/ | 
-[**TenancyContactsUpdate**](TenancyApi.md#TenancyContactsUpdate) | **Put** /api/tenancy/contacts/{id}/ | 
-[**TenancyTenantGroupsBulkDestroy**](TenancyApi.md#TenancyTenantGroupsBulkDestroy) | **Delete** /api/tenancy/tenant-groups/ | 
-[**TenancyTenantGroupsBulkPartialUpdate**](TenancyApi.md#TenancyTenantGroupsBulkPartialUpdate) | **Patch** /api/tenancy/tenant-groups/ | 
-[**TenancyTenantGroupsBulkUpdate**](TenancyApi.md#TenancyTenantGroupsBulkUpdate) | **Put** /api/tenancy/tenant-groups/ | 
-[**TenancyTenantGroupsCreate**](TenancyApi.md#TenancyTenantGroupsCreate) | **Post** /api/tenancy/tenant-groups/ | 
-[**TenancyTenantGroupsDestroy**](TenancyApi.md#TenancyTenantGroupsDestroy) | **Delete** /api/tenancy/tenant-groups/{id}/ | 
-[**TenancyTenantGroupsList**](TenancyApi.md#TenancyTenantGroupsList) | **Get** /api/tenancy/tenant-groups/ | 
-[**TenancyTenantGroupsPartialUpdate**](TenancyApi.md#TenancyTenantGroupsPartialUpdate) | **Patch** /api/tenancy/tenant-groups/{id}/ | 
-[**TenancyTenantGroupsRetrieve**](TenancyApi.md#TenancyTenantGroupsRetrieve) | **Get** /api/tenancy/tenant-groups/{id}/ | 
-[**TenancyTenantGroupsUpdate**](TenancyApi.md#TenancyTenantGroupsUpdate) | **Put** /api/tenancy/tenant-groups/{id}/ | 
-[**TenancyTenantsBulkDestroy**](TenancyApi.md#TenancyTenantsBulkDestroy) | **Delete** /api/tenancy/tenants/ | 
-[**TenancyTenantsBulkPartialUpdate**](TenancyApi.md#TenancyTenantsBulkPartialUpdate) | **Patch** /api/tenancy/tenants/ | 
-[**TenancyTenantsBulkUpdate**](TenancyApi.md#TenancyTenantsBulkUpdate) | **Put** /api/tenancy/tenants/ | 
-[**TenancyTenantsCreate**](TenancyApi.md#TenancyTenantsCreate) | **Post** /api/tenancy/tenants/ | 
-[**TenancyTenantsDestroy**](TenancyApi.md#TenancyTenantsDestroy) | **Delete** /api/tenancy/tenants/{id}/ | 
-[**TenancyTenantsList**](TenancyApi.md#TenancyTenantsList) | **Get** /api/tenancy/tenants/ | 
-[**TenancyTenantsPartialUpdate**](TenancyApi.md#TenancyTenantsPartialUpdate) | **Patch** /api/tenancy/tenants/{id}/ | 
-[**TenancyTenantsRetrieve**](TenancyApi.md#TenancyTenantsRetrieve) | **Get** /api/tenancy/tenants/{id}/ | 
-[**TenancyTenantsUpdate**](TenancyApi.md#TenancyTenantsUpdate) | **Put** /api/tenancy/tenants/{id}/ | 
+[**TenancyContactAssignmentsBulkDestroy**](TenancyAPI.md#TenancyContactAssignmentsBulkDestroy) | **Delete** /api/tenancy/contact-assignments/ | 
+[**TenancyContactAssignmentsBulkPartialUpdate**](TenancyAPI.md#TenancyContactAssignmentsBulkPartialUpdate) | **Patch** /api/tenancy/contact-assignments/ | 
+[**TenancyContactAssignmentsBulkUpdate**](TenancyAPI.md#TenancyContactAssignmentsBulkUpdate) | **Put** /api/tenancy/contact-assignments/ | 
+[**TenancyContactAssignmentsCreate**](TenancyAPI.md#TenancyContactAssignmentsCreate) | **Post** /api/tenancy/contact-assignments/ | 
+[**TenancyContactAssignmentsDestroy**](TenancyAPI.md#TenancyContactAssignmentsDestroy) | **Delete** /api/tenancy/contact-assignments/{id}/ | 
+[**TenancyContactAssignmentsList**](TenancyAPI.md#TenancyContactAssignmentsList) | **Get** /api/tenancy/contact-assignments/ | 
+[**TenancyContactAssignmentsPartialUpdate**](TenancyAPI.md#TenancyContactAssignmentsPartialUpdate) | **Patch** /api/tenancy/contact-assignments/{id}/ | 
+[**TenancyContactAssignmentsRetrieve**](TenancyAPI.md#TenancyContactAssignmentsRetrieve) | **Get** /api/tenancy/contact-assignments/{id}/ | 
+[**TenancyContactAssignmentsUpdate**](TenancyAPI.md#TenancyContactAssignmentsUpdate) | **Put** /api/tenancy/contact-assignments/{id}/ | 
+[**TenancyContactGroupsBulkDestroy**](TenancyAPI.md#TenancyContactGroupsBulkDestroy) | **Delete** /api/tenancy/contact-groups/ | 
+[**TenancyContactGroupsBulkPartialUpdate**](TenancyAPI.md#TenancyContactGroupsBulkPartialUpdate) | **Patch** /api/tenancy/contact-groups/ | 
+[**TenancyContactGroupsBulkUpdate**](TenancyAPI.md#TenancyContactGroupsBulkUpdate) | **Put** /api/tenancy/contact-groups/ | 
+[**TenancyContactGroupsCreate**](TenancyAPI.md#TenancyContactGroupsCreate) | **Post** /api/tenancy/contact-groups/ | 
+[**TenancyContactGroupsDestroy**](TenancyAPI.md#TenancyContactGroupsDestroy) | **Delete** /api/tenancy/contact-groups/{id}/ | 
+[**TenancyContactGroupsList**](TenancyAPI.md#TenancyContactGroupsList) | **Get** /api/tenancy/contact-groups/ | 
+[**TenancyContactGroupsPartialUpdate**](TenancyAPI.md#TenancyContactGroupsPartialUpdate) | **Patch** /api/tenancy/contact-groups/{id}/ | 
+[**TenancyContactGroupsRetrieve**](TenancyAPI.md#TenancyContactGroupsRetrieve) | **Get** /api/tenancy/contact-groups/{id}/ | 
+[**TenancyContactGroupsUpdate**](TenancyAPI.md#TenancyContactGroupsUpdate) | **Put** /api/tenancy/contact-groups/{id}/ | 
+[**TenancyContactRolesBulkDestroy**](TenancyAPI.md#TenancyContactRolesBulkDestroy) | **Delete** /api/tenancy/contact-roles/ | 
+[**TenancyContactRolesBulkPartialUpdate**](TenancyAPI.md#TenancyContactRolesBulkPartialUpdate) | **Patch** /api/tenancy/contact-roles/ | 
+[**TenancyContactRolesBulkUpdate**](TenancyAPI.md#TenancyContactRolesBulkUpdate) | **Put** /api/tenancy/contact-roles/ | 
+[**TenancyContactRolesCreate**](TenancyAPI.md#TenancyContactRolesCreate) | **Post** /api/tenancy/contact-roles/ | 
+[**TenancyContactRolesDestroy**](TenancyAPI.md#TenancyContactRolesDestroy) | **Delete** /api/tenancy/contact-roles/{id}/ | 
+[**TenancyContactRolesList**](TenancyAPI.md#TenancyContactRolesList) | **Get** /api/tenancy/contact-roles/ | 
+[**TenancyContactRolesPartialUpdate**](TenancyAPI.md#TenancyContactRolesPartialUpdate) | **Patch** /api/tenancy/contact-roles/{id}/ | 
+[**TenancyContactRolesRetrieve**](TenancyAPI.md#TenancyContactRolesRetrieve) | **Get** /api/tenancy/contact-roles/{id}/ | 
+[**TenancyContactRolesUpdate**](TenancyAPI.md#TenancyContactRolesUpdate) | **Put** /api/tenancy/contact-roles/{id}/ | 
+[**TenancyContactsBulkDestroy**](TenancyAPI.md#TenancyContactsBulkDestroy) | **Delete** /api/tenancy/contacts/ | 
+[**TenancyContactsBulkPartialUpdate**](TenancyAPI.md#TenancyContactsBulkPartialUpdate) | **Patch** /api/tenancy/contacts/ | 
+[**TenancyContactsBulkUpdate**](TenancyAPI.md#TenancyContactsBulkUpdate) | **Put** /api/tenancy/contacts/ | 
+[**TenancyContactsCreate**](TenancyAPI.md#TenancyContactsCreate) | **Post** /api/tenancy/contacts/ | 
+[**TenancyContactsDestroy**](TenancyAPI.md#TenancyContactsDestroy) | **Delete** /api/tenancy/contacts/{id}/ | 
+[**TenancyContactsList**](TenancyAPI.md#TenancyContactsList) | **Get** /api/tenancy/contacts/ | 
+[**TenancyContactsPartialUpdate**](TenancyAPI.md#TenancyContactsPartialUpdate) | **Patch** /api/tenancy/contacts/{id}/ | 
+[**TenancyContactsRetrieve**](TenancyAPI.md#TenancyContactsRetrieve) | **Get** /api/tenancy/contacts/{id}/ | 
+[**TenancyContactsUpdate**](TenancyAPI.md#TenancyContactsUpdate) | **Put** /api/tenancy/contacts/{id}/ | 
+[**TenancyTenantGroupsBulkDestroy**](TenancyAPI.md#TenancyTenantGroupsBulkDestroy) | **Delete** /api/tenancy/tenant-groups/ | 
+[**TenancyTenantGroupsBulkPartialUpdate**](TenancyAPI.md#TenancyTenantGroupsBulkPartialUpdate) | **Patch** /api/tenancy/tenant-groups/ | 
+[**TenancyTenantGroupsBulkUpdate**](TenancyAPI.md#TenancyTenantGroupsBulkUpdate) | **Put** /api/tenancy/tenant-groups/ | 
+[**TenancyTenantGroupsCreate**](TenancyAPI.md#TenancyTenantGroupsCreate) | **Post** /api/tenancy/tenant-groups/ | 
+[**TenancyTenantGroupsDestroy**](TenancyAPI.md#TenancyTenantGroupsDestroy) | **Delete** /api/tenancy/tenant-groups/{id}/ | 
+[**TenancyTenantGroupsList**](TenancyAPI.md#TenancyTenantGroupsList) | **Get** /api/tenancy/tenant-groups/ | 
+[**TenancyTenantGroupsPartialUpdate**](TenancyAPI.md#TenancyTenantGroupsPartialUpdate) | **Patch** /api/tenancy/tenant-groups/{id}/ | 
+[**TenancyTenantGroupsRetrieve**](TenancyAPI.md#TenancyTenantGroupsRetrieve) | **Get** /api/tenancy/tenant-groups/{id}/ | 
+[**TenancyTenantGroupsUpdate**](TenancyAPI.md#TenancyTenantGroupsUpdate) | **Put** /api/tenancy/tenant-groups/{id}/ | 
+[**TenancyTenantsBulkDestroy**](TenancyAPI.md#TenancyTenantsBulkDestroy) | **Delete** /api/tenancy/tenants/ | 
+[**TenancyTenantsBulkPartialUpdate**](TenancyAPI.md#TenancyTenantsBulkPartialUpdate) | **Patch** /api/tenancy/tenants/ | 
+[**TenancyTenantsBulkUpdate**](TenancyAPI.md#TenancyTenantsBulkUpdate) | **Put** /api/tenancy/tenants/ | 
+[**TenancyTenantsCreate**](TenancyAPI.md#TenancyTenantsCreate) | **Post** /api/tenancy/tenants/ | 
+[**TenancyTenantsDestroy**](TenancyAPI.md#TenancyTenantsDestroy) | **Delete** /api/tenancy/tenants/{id}/ | 
+[**TenancyTenantsList**](TenancyAPI.md#TenancyTenantsList) | **Get** /api/tenancy/tenants/ | 
+[**TenancyTenantsPartialUpdate**](TenancyAPI.md#TenancyTenantsPartialUpdate) | **Patch** /api/tenancy/tenants/{id}/ | 
+[**TenancyTenantsRetrieve**](TenancyAPI.md#TenancyTenantsRetrieve) | **Get** /api/tenancy/tenants/{id}/ | 
+[**TenancyTenantsUpdate**](TenancyAPI.md#TenancyTenantsUpdate) | **Put** /api/tenancy/tenants/{id}/ | 
 
 
 
@@ -86,9 +86,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.TenancyApi.TenancyContactAssignmentsBulkDestroy(context.Background()).ContactAssignmentRequest(contactAssignmentRequest).Execute()
+    r, err := apiClient.TenancyAPI.TenancyContactAssignmentsBulkDestroy(context.Background()).ContactAssignmentRequest(contactAssignmentRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyContactAssignmentsBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyContactAssignmentsBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -150,13 +150,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TenancyApi.TenancyContactAssignmentsBulkPartialUpdate(context.Background()).ContactAssignmentRequest(contactAssignmentRequest).Execute()
+    resp, r, err := apiClient.TenancyAPI.TenancyContactAssignmentsBulkPartialUpdate(context.Background()).ContactAssignmentRequest(contactAssignmentRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyContactAssignmentsBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyContactAssignmentsBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TenancyContactAssignmentsBulkPartialUpdate`: []ContactAssignment
-    fmt.Fprintf(os.Stdout, "Response from `TenancyApi.TenancyContactAssignmentsBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TenancyAPI.TenancyContactAssignmentsBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -216,13 +216,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TenancyApi.TenancyContactAssignmentsBulkUpdate(context.Background()).ContactAssignmentRequest(contactAssignmentRequest).Execute()
+    resp, r, err := apiClient.TenancyAPI.TenancyContactAssignmentsBulkUpdate(context.Background()).ContactAssignmentRequest(contactAssignmentRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyContactAssignmentsBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyContactAssignmentsBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TenancyContactAssignmentsBulkUpdate`: []ContactAssignment
-    fmt.Fprintf(os.Stdout, "Response from `TenancyApi.TenancyContactAssignmentsBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TenancyAPI.TenancyContactAssignmentsBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -282,13 +282,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TenancyApi.TenancyContactAssignmentsCreate(context.Background()).WritableContactAssignmentRequest(writableContactAssignmentRequest).Execute()
+    resp, r, err := apiClient.TenancyAPI.TenancyContactAssignmentsCreate(context.Background()).WritableContactAssignmentRequest(writableContactAssignmentRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyContactAssignmentsCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyContactAssignmentsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TenancyContactAssignmentsCreate`: ContactAssignment
-    fmt.Fprintf(os.Stdout, "Response from `TenancyApi.TenancyContactAssignmentsCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TenancyAPI.TenancyContactAssignmentsCreate`: %v\n", resp)
 }
 ```
 
@@ -348,9 +348,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.TenancyApi.TenancyContactAssignmentsDestroy(context.Background(), id).Execute()
+    r, err := apiClient.TenancyAPI.TenancyContactAssignmentsDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyContactAssignmentsDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyContactAssignmentsDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -393,7 +393,7 @@ Name | Type | Description  | Notes
 
 ## TenancyContactAssignmentsList
 
-> PaginatedContactAssignmentList TenancyContactAssignmentsList(ctx).ContactId(contactId).ContactIdN(contactIdN).ContentType(contentType).ContentTypeN(contentTypeN).ContentTypeId(contentTypeId).ContentTypeIdN(contentTypeIdN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ObjectId(objectId).ObjectIdGt(objectIdGt).ObjectIdGte(objectIdGte).ObjectIdLt(objectIdLt).ObjectIdLte(objectIdLte).ObjectIdN(objectIdN).Offset(offset).Ordering(ordering).Priority(priority).PriorityN(priorityN).Q(q).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedContactAssignmentList TenancyContactAssignmentsList(ctx).ContactId(contactId).ContactIdN(contactIdN).ContentType(contentType).ContentTypeN(contentTypeN).ContentTypeId(contentTypeId).ContentTypeIdN(contentTypeIdN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).ObjectId(objectId).ObjectIdEmpty(objectIdEmpty).ObjectIdGt(objectIdGt).ObjectIdGte(objectIdGte).ObjectIdLt(objectIdLt).ObjectIdLte(objectIdLte).ObjectIdN(objectIdN).Offset(offset).Ordering(ordering).Priority(priority).PriorityN(priorityN).Q(q).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -420,6 +420,7 @@ func main() {
     contentTypeId := int32(56) // int32 |  (optional)
     contentTypeIdN := int32(56) // int32 |  (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -427,19 +428,23 @@ func main() {
     createdN := []time.Time{time.Now()} // []time.Time |  (optional)
     createdByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     objectId := []int32{int32(123)} // []int32 |  (optional)
+    objectIdEmpty := true // bool |  (optional)
     objectIdGt := []int32{int32(123)} // []int32 |  (optional)
     objectIdGte := []int32{int32(123)} // []int32 |  (optional)
     objectIdLt := []int32{int32(123)} // []int32 |  (optional)
@@ -454,17 +459,19 @@ func main() {
     roleN := []string{"Inner_example"} // []string | Contact role (slug) (optional)
     roleId := []int32{int32(123)} // []int32 | Contact role (ID) (optional)
     roleIdN := []int32{int32(123)} // []int32 | Contact role (ID) (optional)
+    tag := []string{"Inner_example"} // []string |  (optional)
+    tagN := []string{"Inner_example"} // []string |  (optional)
     updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TenancyApi.TenancyContactAssignmentsList(context.Background()).ContactId(contactId).ContactIdN(contactIdN).ContentType(contentType).ContentTypeN(contentTypeN).ContentTypeId(contentTypeId).ContentTypeIdN(contentTypeIdN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ObjectId(objectId).ObjectIdGt(objectIdGt).ObjectIdGte(objectIdGte).ObjectIdLt(objectIdLt).ObjectIdLte(objectIdLte).ObjectIdN(objectIdN).Offset(offset).Ordering(ordering).Priority(priority).PriorityN(priorityN).Q(q).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.TenancyAPI.TenancyContactAssignmentsList(context.Background()).ContactId(contactId).ContactIdN(contactIdN).ContentType(contentType).ContentTypeN(contentTypeN).ContentTypeId(contentTypeId).ContentTypeIdN(contentTypeIdN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).ObjectId(objectId).ObjectIdEmpty(objectIdEmpty).ObjectIdGt(objectIdGt).ObjectIdGte(objectIdGte).ObjectIdLt(objectIdLt).ObjectIdLte(objectIdLte).ObjectIdN(objectIdN).Offset(offset).Ordering(ordering).Priority(priority).PriorityN(priorityN).Q(q).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyContactAssignmentsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyContactAssignmentsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TenancyContactAssignmentsList`: PaginatedContactAssignmentList
-    fmt.Fprintf(os.Stdout, "Response from `TenancyApi.TenancyContactAssignmentsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TenancyAPI.TenancyContactAssignmentsList`: %v\n", resp)
 }
 ```
 
@@ -486,6 +493,7 @@ Name | Type | Description  | Notes
  **contentTypeId** | **int32** |  | 
  **contentTypeIdN** | **int32** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -493,19 +501,23 @@ Name | Type | Description  | Notes
  **createdN** | [**[]time.Time**](time.Time.md) |  | 
  **createdByRequest** | **string** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **objectId** | **[]int32** |  | 
+ **objectIdEmpty** | **bool** |  | 
  **objectIdGt** | **[]int32** |  | 
  **objectIdGte** | **[]int32** |  | 
  **objectIdLt** | **[]int32** |  | 
@@ -520,6 +532,8 @@ Name | Type | Description  | Notes
  **roleN** | **[]string** | Contact role (slug) | 
  **roleId** | **[]int32** | Contact role (ID) | 
  **roleIdN** | **[]int32** | Contact role (ID) | 
+ **tag** | **[]string** |  | 
+ **tagN** | **[]string** |  | 
  **updatedByRequest** | **string** |  | 
 
 ### Return type
@@ -566,13 +580,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TenancyApi.TenancyContactAssignmentsPartialUpdate(context.Background(), id).PatchedWritableContactAssignmentRequest(patchedWritableContactAssignmentRequest).Execute()
+    resp, r, err := apiClient.TenancyAPI.TenancyContactAssignmentsPartialUpdate(context.Background(), id).PatchedWritableContactAssignmentRequest(patchedWritableContactAssignmentRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyContactAssignmentsPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyContactAssignmentsPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TenancyContactAssignmentsPartialUpdate`: ContactAssignment
-    fmt.Fprintf(os.Stdout, "Response from `TenancyApi.TenancyContactAssignmentsPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TenancyAPI.TenancyContactAssignmentsPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -637,13 +651,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TenancyApi.TenancyContactAssignmentsRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.TenancyAPI.TenancyContactAssignmentsRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyContactAssignmentsRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyContactAssignmentsRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TenancyContactAssignmentsRetrieve`: ContactAssignment
-    fmt.Fprintf(os.Stdout, "Response from `TenancyApi.TenancyContactAssignmentsRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TenancyAPI.TenancyContactAssignmentsRetrieve`: %v\n", resp)
 }
 ```
 
@@ -708,13 +722,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TenancyApi.TenancyContactAssignmentsUpdate(context.Background(), id).WritableContactAssignmentRequest(writableContactAssignmentRequest).Execute()
+    resp, r, err := apiClient.TenancyAPI.TenancyContactAssignmentsUpdate(context.Background(), id).WritableContactAssignmentRequest(writableContactAssignmentRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyContactAssignmentsUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyContactAssignmentsUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TenancyContactAssignmentsUpdate`: ContactAssignment
-    fmt.Fprintf(os.Stdout, "Response from `TenancyApi.TenancyContactAssignmentsUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TenancyAPI.TenancyContactAssignmentsUpdate`: %v\n", resp)
 }
 ```
 
@@ -779,9 +793,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.TenancyApi.TenancyContactGroupsBulkDestroy(context.Background()).ContactGroupRequest(contactGroupRequest).Execute()
+    r, err := apiClient.TenancyAPI.TenancyContactGroupsBulkDestroy(context.Background()).ContactGroupRequest(contactGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyContactGroupsBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyContactGroupsBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -843,13 +857,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TenancyApi.TenancyContactGroupsBulkPartialUpdate(context.Background()).ContactGroupRequest(contactGroupRequest).Execute()
+    resp, r, err := apiClient.TenancyAPI.TenancyContactGroupsBulkPartialUpdate(context.Background()).ContactGroupRequest(contactGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyContactGroupsBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyContactGroupsBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TenancyContactGroupsBulkPartialUpdate`: []ContactGroup
-    fmt.Fprintf(os.Stdout, "Response from `TenancyApi.TenancyContactGroupsBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TenancyAPI.TenancyContactGroupsBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -909,13 +923,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TenancyApi.TenancyContactGroupsBulkUpdate(context.Background()).ContactGroupRequest(contactGroupRequest).Execute()
+    resp, r, err := apiClient.TenancyAPI.TenancyContactGroupsBulkUpdate(context.Background()).ContactGroupRequest(contactGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyContactGroupsBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyContactGroupsBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TenancyContactGroupsBulkUpdate`: []ContactGroup
-    fmt.Fprintf(os.Stdout, "Response from `TenancyApi.TenancyContactGroupsBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TenancyAPI.TenancyContactGroupsBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -975,13 +989,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TenancyApi.TenancyContactGroupsCreate(context.Background()).WritableContactGroupRequest(writableContactGroupRequest).Execute()
+    resp, r, err := apiClient.TenancyAPI.TenancyContactGroupsCreate(context.Background()).WritableContactGroupRequest(writableContactGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyContactGroupsCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyContactGroupsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TenancyContactGroupsCreate`: ContactGroup
-    fmt.Fprintf(os.Stdout, "Response from `TenancyApi.TenancyContactGroupsCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TenancyAPI.TenancyContactGroupsCreate`: %v\n", resp)
 }
 ```
 
@@ -1041,9 +1055,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.TenancyApi.TenancyContactGroupsDestroy(context.Background(), id).Execute()
+    r, err := apiClient.TenancyAPI.TenancyContactGroupsDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyContactGroupsDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyContactGroupsDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1086,7 +1100,7 @@ Name | Type | Description  | Notes
 
 ## TenancyContactGroupsList
 
-> PaginatedContactGroupList TenancyContactGroupsList(ctx).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Parent(parent).ParentN(parentN).ParentId(parentId).ParentIdN(parentIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedContactGroupList TenancyContactGroupsList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Parent(parent).ParentN(parentN).ParentId(parentId).ParentIdN(parentIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -1107,6 +1121,7 @@ import (
 
 func main() {
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -1125,18 +1140,21 @@ func main() {
     descriptionNiew := []string{"Inner_example"} // []string |  (optional)
     descriptionNisw := []string{"Inner_example"} // []string |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -1172,13 +1190,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TenancyApi.TenancyContactGroupsList(context.Background()).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Parent(parent).ParentN(parentN).ParentId(parentId).ParentIdN(parentIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.TenancyAPI.TenancyContactGroupsList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Parent(parent).ParentN(parentN).ParentId(parentId).ParentIdN(parentIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyContactGroupsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyContactGroupsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TenancyContactGroupsList`: PaginatedContactGroupList
-    fmt.Fprintf(os.Stdout, "Response from `TenancyApi.TenancyContactGroupsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TenancyAPI.TenancyContactGroupsList`: %v\n", resp)
 }
 ```
 
@@ -1194,6 +1212,7 @@ Other parameters are passed through a pointer to a apiTenancyContactGroupsListRe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -1212,18 +1231,21 @@ Name | Type | Description  | Notes
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -1301,13 +1323,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TenancyApi.TenancyContactGroupsPartialUpdate(context.Background(), id).PatchedWritableContactGroupRequest(patchedWritableContactGroupRequest).Execute()
+    resp, r, err := apiClient.TenancyAPI.TenancyContactGroupsPartialUpdate(context.Background(), id).PatchedWritableContactGroupRequest(patchedWritableContactGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyContactGroupsPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyContactGroupsPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TenancyContactGroupsPartialUpdate`: ContactGroup
-    fmt.Fprintf(os.Stdout, "Response from `TenancyApi.TenancyContactGroupsPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TenancyAPI.TenancyContactGroupsPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -1372,13 +1394,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TenancyApi.TenancyContactGroupsRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.TenancyAPI.TenancyContactGroupsRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyContactGroupsRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyContactGroupsRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TenancyContactGroupsRetrieve`: ContactGroup
-    fmt.Fprintf(os.Stdout, "Response from `TenancyApi.TenancyContactGroupsRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TenancyAPI.TenancyContactGroupsRetrieve`: %v\n", resp)
 }
 ```
 
@@ -1443,13 +1465,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TenancyApi.TenancyContactGroupsUpdate(context.Background(), id).WritableContactGroupRequest(writableContactGroupRequest).Execute()
+    resp, r, err := apiClient.TenancyAPI.TenancyContactGroupsUpdate(context.Background(), id).WritableContactGroupRequest(writableContactGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyContactGroupsUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyContactGroupsUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TenancyContactGroupsUpdate`: ContactGroup
-    fmt.Fprintf(os.Stdout, "Response from `TenancyApi.TenancyContactGroupsUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TenancyAPI.TenancyContactGroupsUpdate`: %v\n", resp)
 }
 ```
 
@@ -1514,9 +1536,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.TenancyApi.TenancyContactRolesBulkDestroy(context.Background()).ContactRoleRequest(contactRoleRequest).Execute()
+    r, err := apiClient.TenancyAPI.TenancyContactRolesBulkDestroy(context.Background()).ContactRoleRequest(contactRoleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyContactRolesBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyContactRolesBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1578,13 +1600,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TenancyApi.TenancyContactRolesBulkPartialUpdate(context.Background()).ContactRoleRequest(contactRoleRequest).Execute()
+    resp, r, err := apiClient.TenancyAPI.TenancyContactRolesBulkPartialUpdate(context.Background()).ContactRoleRequest(contactRoleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyContactRolesBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyContactRolesBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TenancyContactRolesBulkPartialUpdate`: []ContactRole
-    fmt.Fprintf(os.Stdout, "Response from `TenancyApi.TenancyContactRolesBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TenancyAPI.TenancyContactRolesBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -1644,13 +1666,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TenancyApi.TenancyContactRolesBulkUpdate(context.Background()).ContactRoleRequest(contactRoleRequest).Execute()
+    resp, r, err := apiClient.TenancyAPI.TenancyContactRolesBulkUpdate(context.Background()).ContactRoleRequest(contactRoleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyContactRolesBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyContactRolesBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TenancyContactRolesBulkUpdate`: []ContactRole
-    fmt.Fprintf(os.Stdout, "Response from `TenancyApi.TenancyContactRolesBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TenancyAPI.TenancyContactRolesBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -1710,13 +1732,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TenancyApi.TenancyContactRolesCreate(context.Background()).ContactRoleRequest(contactRoleRequest).Execute()
+    resp, r, err := apiClient.TenancyAPI.TenancyContactRolesCreate(context.Background()).ContactRoleRequest(contactRoleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyContactRolesCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyContactRolesCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TenancyContactRolesCreate`: ContactRole
-    fmt.Fprintf(os.Stdout, "Response from `TenancyApi.TenancyContactRolesCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TenancyAPI.TenancyContactRolesCreate`: %v\n", resp)
 }
 ```
 
@@ -1776,9 +1798,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.TenancyApi.TenancyContactRolesDestroy(context.Background(), id).Execute()
+    r, err := apiClient.TenancyAPI.TenancyContactRolesDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyContactRolesDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyContactRolesDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1821,7 +1843,7 @@ Name | Type | Description  | Notes
 
 ## TenancyContactRolesList
 
-> PaginatedContactRoleList TenancyContactRolesList(ctx).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedContactRoleList TenancyContactRolesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -1842,6 +1864,7 @@ import (
 
 func main() {
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -1860,18 +1883,21 @@ func main() {
     descriptionNiew := []string{"Inner_example"} // []string |  (optional)
     descriptionNisw := []string{"Inner_example"} // []string |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -1903,13 +1929,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TenancyApi.TenancyContactRolesList(context.Background()).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.TenancyAPI.TenancyContactRolesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyContactRolesList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyContactRolesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TenancyContactRolesList`: PaginatedContactRoleList
-    fmt.Fprintf(os.Stdout, "Response from `TenancyApi.TenancyContactRolesList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TenancyAPI.TenancyContactRolesList`: %v\n", resp)
 }
 ```
 
@@ -1925,6 +1951,7 @@ Other parameters are passed through a pointer to a apiTenancyContactRolesListReq
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -1943,18 +1970,21 @@ Name | Type | Description  | Notes
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -2028,13 +2058,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TenancyApi.TenancyContactRolesPartialUpdate(context.Background(), id).PatchedContactRoleRequest(patchedContactRoleRequest).Execute()
+    resp, r, err := apiClient.TenancyAPI.TenancyContactRolesPartialUpdate(context.Background(), id).PatchedContactRoleRequest(patchedContactRoleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyContactRolesPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyContactRolesPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TenancyContactRolesPartialUpdate`: ContactRole
-    fmt.Fprintf(os.Stdout, "Response from `TenancyApi.TenancyContactRolesPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TenancyAPI.TenancyContactRolesPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -2099,13 +2129,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TenancyApi.TenancyContactRolesRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.TenancyAPI.TenancyContactRolesRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyContactRolesRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyContactRolesRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TenancyContactRolesRetrieve`: ContactRole
-    fmt.Fprintf(os.Stdout, "Response from `TenancyApi.TenancyContactRolesRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TenancyAPI.TenancyContactRolesRetrieve`: %v\n", resp)
 }
 ```
 
@@ -2170,13 +2200,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TenancyApi.TenancyContactRolesUpdate(context.Background(), id).ContactRoleRequest(contactRoleRequest).Execute()
+    resp, r, err := apiClient.TenancyAPI.TenancyContactRolesUpdate(context.Background(), id).ContactRoleRequest(contactRoleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyContactRolesUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyContactRolesUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TenancyContactRolesUpdate`: ContactRole
-    fmt.Fprintf(os.Stdout, "Response from `TenancyApi.TenancyContactRolesUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TenancyAPI.TenancyContactRolesUpdate`: %v\n", resp)
 }
 ```
 
@@ -2241,9 +2271,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.TenancyApi.TenancyContactsBulkDestroy(context.Background()).ContactRequest(contactRequest).Execute()
+    r, err := apiClient.TenancyAPI.TenancyContactsBulkDestroy(context.Background()).ContactRequest(contactRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyContactsBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyContactsBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2305,13 +2335,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TenancyApi.TenancyContactsBulkPartialUpdate(context.Background()).ContactRequest(contactRequest).Execute()
+    resp, r, err := apiClient.TenancyAPI.TenancyContactsBulkPartialUpdate(context.Background()).ContactRequest(contactRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyContactsBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyContactsBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TenancyContactsBulkPartialUpdate`: []Contact
-    fmt.Fprintf(os.Stdout, "Response from `TenancyApi.TenancyContactsBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TenancyAPI.TenancyContactsBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -2371,13 +2401,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TenancyApi.TenancyContactsBulkUpdate(context.Background()).ContactRequest(contactRequest).Execute()
+    resp, r, err := apiClient.TenancyAPI.TenancyContactsBulkUpdate(context.Background()).ContactRequest(contactRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyContactsBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyContactsBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TenancyContactsBulkUpdate`: []Contact
-    fmt.Fprintf(os.Stdout, "Response from `TenancyApi.TenancyContactsBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TenancyAPI.TenancyContactsBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -2437,13 +2467,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TenancyApi.TenancyContactsCreate(context.Background()).WritableContactRequest(writableContactRequest).Execute()
+    resp, r, err := apiClient.TenancyAPI.TenancyContactsCreate(context.Background()).WritableContactRequest(writableContactRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyContactsCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyContactsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TenancyContactsCreate`: Contact
-    fmt.Fprintf(os.Stdout, "Response from `TenancyApi.TenancyContactsCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TenancyAPI.TenancyContactsCreate`: %v\n", resp)
 }
 ```
 
@@ -2503,9 +2533,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.TenancyApi.TenancyContactsDestroy(context.Background(), id).Execute()
+    r, err := apiClient.TenancyAPI.TenancyContactsDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyContactsDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyContactsDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2548,7 +2578,7 @@ Name | Type | Description  | Notes
 
 ## TenancyContactsList
 
-> PaginatedContactList TenancyContactsList(ctx).Address(address).AddressEmpty(addressEmpty).AddressIc(addressIc).AddressIe(addressIe).AddressIew(addressIew).AddressIsw(addressIsw).AddressN(addressN).AddressNic(addressNic).AddressNie(addressNie).AddressNiew(addressNiew).AddressNisw(addressNisw).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Email(email).EmailEmpty(emailEmpty).EmailIc(emailIc).EmailIe(emailIe).EmailIew(emailIew).EmailIsw(emailIsw).EmailN(emailN).EmailNic(emailNic).EmailNie(emailNie).EmailNiew(emailNiew).EmailNisw(emailNisw).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Link(link).LinkEmpty(linkEmpty).LinkIc(linkIc).LinkIe(linkIe).LinkIew(linkIew).LinkIsw(linkIsw).LinkN(linkN).LinkNic(linkNic).LinkNie(linkNie).LinkNiew(linkNiew).LinkNisw(linkNisw).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Phone(phone).PhoneEmpty(phoneEmpty).PhoneIc(phoneIc).PhoneIe(phoneIe).PhoneIew(phoneIew).PhoneIsw(phoneIsw).PhoneN(phoneN).PhoneNic(phoneNic).PhoneNie(phoneNie).PhoneNiew(phoneNiew).PhoneNisw(phoneNisw).Q(q).Tag(tag).TagN(tagN).Title(title).TitleEmpty(titleEmpty).TitleIc(titleIc).TitleIe(titleIe).TitleIew(titleIew).TitleIsw(titleIsw).TitleN(titleN).TitleNic(titleNic).TitleNie(titleNie).TitleNiew(titleNiew).TitleNisw(titleNisw).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedContactList TenancyContactsList(ctx).Address(address).AddressEmpty(addressEmpty).AddressIc(addressIc).AddressIe(addressIe).AddressIew(addressIew).AddressIsw(addressIsw).AddressN(addressN).AddressNic(addressNic).AddressNie(addressNie).AddressNiew(addressNiew).AddressNisw(addressNisw).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Email(email).EmailEmpty(emailEmpty).EmailIc(emailIc).EmailIe(emailIe).EmailIew(emailIew).EmailIsw(emailIsw).EmailN(emailN).EmailNic(emailNic).EmailNie(emailNie).EmailNiew(emailNiew).EmailNisw(emailNisw).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Link(link).LinkEmpty(linkEmpty).LinkIc(linkIc).LinkIe(linkIe).LinkIew(linkIew).LinkIsw(linkIsw).LinkN(linkN).LinkNic(linkNic).LinkNie(linkNie).LinkNiew(linkNiew).LinkNisw(linkNisw).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Phone(phone).PhoneEmpty(phoneEmpty).PhoneIc(phoneIc).PhoneIe(phoneIe).PhoneIew(phoneIew).PhoneIsw(phoneIsw).PhoneN(phoneN).PhoneNic(phoneNic).PhoneNie(phoneNie).PhoneNiew(phoneNiew).PhoneNisw(phoneNisw).Q(q).Tag(tag).TagN(tagN).Title(title).TitleEmpty(titleEmpty).TitleIc(titleIc).TitleIe(titleIe).TitleIew(titleIew).TitleIsw(titleIsw).TitleN(titleN).TitleNic(titleNic).TitleNie(titleNie).TitleNiew(titleNiew).TitleNisw(titleNisw).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -2580,6 +2610,7 @@ func main() {
     addressNiew := []string{"Inner_example"} // []string |  (optional)
     addressNisw := []string{"Inner_example"} // []string |  (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -2602,12 +2633,14 @@ func main() {
     groupId := []int32{int32(123)} // []int32 | Contact group (ID) (optional)
     groupIdN := []int32{int32(123)} // []int32 | Contact group (ID) (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -2625,6 +2658,7 @@ func main() {
     linkNie := []string{"Inner_example"} // []string |  (optional)
     linkNiew := []string{"Inner_example"} // []string |  (optional)
     linkNisw := []string{"Inner_example"} // []string |  (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -2667,13 +2701,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TenancyApi.TenancyContactsList(context.Background()).Address(address).AddressEmpty(addressEmpty).AddressIc(addressIc).AddressIe(addressIe).AddressIew(addressIew).AddressIsw(addressIsw).AddressN(addressN).AddressNic(addressNic).AddressNie(addressNie).AddressNiew(addressNiew).AddressNisw(addressNisw).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Email(email).EmailEmpty(emailEmpty).EmailIc(emailIc).EmailIe(emailIe).EmailIew(emailIew).EmailIsw(emailIsw).EmailN(emailN).EmailNic(emailNic).EmailNie(emailNie).EmailNiew(emailNiew).EmailNisw(emailNisw).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Link(link).LinkEmpty(linkEmpty).LinkIc(linkIc).LinkIe(linkIe).LinkIew(linkIew).LinkIsw(linkIsw).LinkN(linkN).LinkNic(linkNic).LinkNie(linkNie).LinkNiew(linkNiew).LinkNisw(linkNisw).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Phone(phone).PhoneEmpty(phoneEmpty).PhoneIc(phoneIc).PhoneIe(phoneIe).PhoneIew(phoneIew).PhoneIsw(phoneIsw).PhoneN(phoneN).PhoneNic(phoneNic).PhoneNie(phoneNie).PhoneNiew(phoneNiew).PhoneNisw(phoneNisw).Q(q).Tag(tag).TagN(tagN).Title(title).TitleEmpty(titleEmpty).TitleIc(titleIc).TitleIe(titleIe).TitleIew(titleIew).TitleIsw(titleIsw).TitleN(titleN).TitleNic(titleNic).TitleNie(titleNie).TitleNiew(titleNiew).TitleNisw(titleNisw).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.TenancyAPI.TenancyContactsList(context.Background()).Address(address).AddressEmpty(addressEmpty).AddressIc(addressIc).AddressIe(addressIe).AddressIew(addressIew).AddressIsw(addressIsw).AddressN(addressN).AddressNic(addressNic).AddressNie(addressNie).AddressNiew(addressNiew).AddressNisw(addressNisw).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Email(email).EmailEmpty(emailEmpty).EmailIc(emailIc).EmailIe(emailIe).EmailIew(emailIew).EmailIsw(emailIsw).EmailN(emailN).EmailNic(emailNic).EmailNie(emailNie).EmailNiew(emailNiew).EmailNisw(emailNisw).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Link(link).LinkEmpty(linkEmpty).LinkIc(linkIc).LinkIe(linkIe).LinkIew(linkIew).LinkIsw(linkIsw).LinkN(linkN).LinkNic(linkNic).LinkNie(linkNie).LinkNiew(linkNiew).LinkNisw(linkNisw).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Phone(phone).PhoneEmpty(phoneEmpty).PhoneIc(phoneIc).PhoneIe(phoneIe).PhoneIew(phoneIew).PhoneIsw(phoneIsw).PhoneN(phoneN).PhoneNic(phoneNic).PhoneNie(phoneNie).PhoneNiew(phoneNiew).PhoneNisw(phoneNisw).Q(q).Tag(tag).TagN(tagN).Title(title).TitleEmpty(titleEmpty).TitleIc(titleIc).TitleIe(titleIe).TitleIew(titleIew).TitleIsw(titleIsw).TitleN(titleN).TitleNic(titleNic).TitleNie(titleNie).TitleNiew(titleNiew).TitleNisw(titleNisw).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyContactsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyContactsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TenancyContactsList`: PaginatedContactList
-    fmt.Fprintf(os.Stdout, "Response from `TenancyApi.TenancyContactsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TenancyAPI.TenancyContactsList`: %v\n", resp)
 }
 ```
 
@@ -2700,6 +2734,7 @@ Name | Type | Description  | Notes
  **addressNiew** | **[]string** |  | 
  **addressNisw** | **[]string** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -2722,12 +2757,14 @@ Name | Type | Description  | Notes
  **groupId** | **[]int32** | Contact group (ID) | 
  **groupIdN** | **[]int32** | Contact group (ID) | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -2745,6 +2782,7 @@ Name | Type | Description  | Notes
  **linkNie** | **[]string** |  | 
  **linkNiew** | **[]string** |  | 
  **linkNisw** | **[]string** |  | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -2829,13 +2867,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TenancyApi.TenancyContactsPartialUpdate(context.Background(), id).PatchedWritableContactRequest(patchedWritableContactRequest).Execute()
+    resp, r, err := apiClient.TenancyAPI.TenancyContactsPartialUpdate(context.Background(), id).PatchedWritableContactRequest(patchedWritableContactRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyContactsPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyContactsPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TenancyContactsPartialUpdate`: Contact
-    fmt.Fprintf(os.Stdout, "Response from `TenancyApi.TenancyContactsPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TenancyAPI.TenancyContactsPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -2900,13 +2938,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TenancyApi.TenancyContactsRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.TenancyAPI.TenancyContactsRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyContactsRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyContactsRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TenancyContactsRetrieve`: Contact
-    fmt.Fprintf(os.Stdout, "Response from `TenancyApi.TenancyContactsRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TenancyAPI.TenancyContactsRetrieve`: %v\n", resp)
 }
 ```
 
@@ -2971,13 +3009,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TenancyApi.TenancyContactsUpdate(context.Background(), id).WritableContactRequest(writableContactRequest).Execute()
+    resp, r, err := apiClient.TenancyAPI.TenancyContactsUpdate(context.Background(), id).WritableContactRequest(writableContactRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyContactsUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyContactsUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TenancyContactsUpdate`: Contact
-    fmt.Fprintf(os.Stdout, "Response from `TenancyApi.TenancyContactsUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TenancyAPI.TenancyContactsUpdate`: %v\n", resp)
 }
 ```
 
@@ -3042,9 +3080,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.TenancyApi.TenancyTenantGroupsBulkDestroy(context.Background()).TenantGroupRequest(tenantGroupRequest).Execute()
+    r, err := apiClient.TenancyAPI.TenancyTenantGroupsBulkDestroy(context.Background()).TenantGroupRequest(tenantGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyTenantGroupsBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyTenantGroupsBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3106,13 +3144,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TenancyApi.TenancyTenantGroupsBulkPartialUpdate(context.Background()).TenantGroupRequest(tenantGroupRequest).Execute()
+    resp, r, err := apiClient.TenancyAPI.TenancyTenantGroupsBulkPartialUpdate(context.Background()).TenantGroupRequest(tenantGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyTenantGroupsBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyTenantGroupsBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TenancyTenantGroupsBulkPartialUpdate`: []TenantGroup
-    fmt.Fprintf(os.Stdout, "Response from `TenancyApi.TenancyTenantGroupsBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TenancyAPI.TenancyTenantGroupsBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -3172,13 +3210,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TenancyApi.TenancyTenantGroupsBulkUpdate(context.Background()).TenantGroupRequest(tenantGroupRequest).Execute()
+    resp, r, err := apiClient.TenancyAPI.TenancyTenantGroupsBulkUpdate(context.Background()).TenantGroupRequest(tenantGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyTenantGroupsBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyTenantGroupsBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TenancyTenantGroupsBulkUpdate`: []TenantGroup
-    fmt.Fprintf(os.Stdout, "Response from `TenancyApi.TenancyTenantGroupsBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TenancyAPI.TenancyTenantGroupsBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -3238,13 +3276,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TenancyApi.TenancyTenantGroupsCreate(context.Background()).WritableTenantGroupRequest(writableTenantGroupRequest).Execute()
+    resp, r, err := apiClient.TenancyAPI.TenancyTenantGroupsCreate(context.Background()).WritableTenantGroupRequest(writableTenantGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyTenantGroupsCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyTenantGroupsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TenancyTenantGroupsCreate`: TenantGroup
-    fmt.Fprintf(os.Stdout, "Response from `TenancyApi.TenancyTenantGroupsCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TenancyAPI.TenancyTenantGroupsCreate`: %v\n", resp)
 }
 ```
 
@@ -3304,9 +3342,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.TenancyApi.TenancyTenantGroupsDestroy(context.Background(), id).Execute()
+    r, err := apiClient.TenancyAPI.TenancyTenantGroupsDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyTenantGroupsDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyTenantGroupsDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3349,7 +3387,7 @@ Name | Type | Description  | Notes
 
 ## TenancyTenantGroupsList
 
-> PaginatedTenantGroupList TenancyTenantGroupsList(ctx).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Parent(parent).ParentN(parentN).ParentId(parentId).ParentIdN(parentIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedTenantGroupList TenancyTenantGroupsList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Parent(parent).ParentN(parentN).ParentId(parentId).ParentIdN(parentIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -3370,6 +3408,7 @@ import (
 
 func main() {
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -3388,18 +3427,21 @@ func main() {
     descriptionNiew := []string{"Inner_example"} // []string |  (optional)
     descriptionNisw := []string{"Inner_example"} // []string |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -3435,13 +3477,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TenancyApi.TenancyTenantGroupsList(context.Background()).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Parent(parent).ParentN(parentN).ParentId(parentId).ParentIdN(parentIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.TenancyAPI.TenancyTenantGroupsList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Parent(parent).ParentN(parentN).ParentId(parentId).ParentIdN(parentIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyTenantGroupsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyTenantGroupsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TenancyTenantGroupsList`: PaginatedTenantGroupList
-    fmt.Fprintf(os.Stdout, "Response from `TenancyApi.TenancyTenantGroupsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TenancyAPI.TenancyTenantGroupsList`: %v\n", resp)
 }
 ```
 
@@ -3457,6 +3499,7 @@ Other parameters are passed through a pointer to a apiTenancyTenantGroupsListReq
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -3475,18 +3518,21 @@ Name | Type | Description  | Notes
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -3564,13 +3610,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TenancyApi.TenancyTenantGroupsPartialUpdate(context.Background(), id).PatchedWritableTenantGroupRequest(patchedWritableTenantGroupRequest).Execute()
+    resp, r, err := apiClient.TenancyAPI.TenancyTenantGroupsPartialUpdate(context.Background(), id).PatchedWritableTenantGroupRequest(patchedWritableTenantGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyTenantGroupsPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyTenantGroupsPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TenancyTenantGroupsPartialUpdate`: TenantGroup
-    fmt.Fprintf(os.Stdout, "Response from `TenancyApi.TenancyTenantGroupsPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TenancyAPI.TenancyTenantGroupsPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -3635,13 +3681,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TenancyApi.TenancyTenantGroupsRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.TenancyAPI.TenancyTenantGroupsRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyTenantGroupsRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyTenantGroupsRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TenancyTenantGroupsRetrieve`: TenantGroup
-    fmt.Fprintf(os.Stdout, "Response from `TenancyApi.TenancyTenantGroupsRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TenancyAPI.TenancyTenantGroupsRetrieve`: %v\n", resp)
 }
 ```
 
@@ -3706,13 +3752,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TenancyApi.TenancyTenantGroupsUpdate(context.Background(), id).WritableTenantGroupRequest(writableTenantGroupRequest).Execute()
+    resp, r, err := apiClient.TenancyAPI.TenancyTenantGroupsUpdate(context.Background(), id).WritableTenantGroupRequest(writableTenantGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyTenantGroupsUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyTenantGroupsUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TenancyTenantGroupsUpdate`: TenantGroup
-    fmt.Fprintf(os.Stdout, "Response from `TenancyApi.TenancyTenantGroupsUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TenancyAPI.TenancyTenantGroupsUpdate`: %v\n", resp)
 }
 ```
 
@@ -3777,9 +3823,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.TenancyApi.TenancyTenantsBulkDestroy(context.Background()).TenantRequest(tenantRequest).Execute()
+    r, err := apiClient.TenancyAPI.TenancyTenantsBulkDestroy(context.Background()).TenantRequest(tenantRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyTenantsBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyTenantsBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3841,13 +3887,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TenancyApi.TenancyTenantsBulkPartialUpdate(context.Background()).TenantRequest(tenantRequest).Execute()
+    resp, r, err := apiClient.TenancyAPI.TenancyTenantsBulkPartialUpdate(context.Background()).TenantRequest(tenantRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyTenantsBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyTenantsBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TenancyTenantsBulkPartialUpdate`: []Tenant
-    fmt.Fprintf(os.Stdout, "Response from `TenancyApi.TenancyTenantsBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TenancyAPI.TenancyTenantsBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -3907,13 +3953,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TenancyApi.TenancyTenantsBulkUpdate(context.Background()).TenantRequest(tenantRequest).Execute()
+    resp, r, err := apiClient.TenancyAPI.TenancyTenantsBulkUpdate(context.Background()).TenantRequest(tenantRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyTenantsBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyTenantsBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TenancyTenantsBulkUpdate`: []Tenant
-    fmt.Fprintf(os.Stdout, "Response from `TenancyApi.TenancyTenantsBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TenancyAPI.TenancyTenantsBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -3973,13 +4019,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TenancyApi.TenancyTenantsCreate(context.Background()).WritableTenantRequest(writableTenantRequest).Execute()
+    resp, r, err := apiClient.TenancyAPI.TenancyTenantsCreate(context.Background()).WritableTenantRequest(writableTenantRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyTenantsCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyTenantsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TenancyTenantsCreate`: Tenant
-    fmt.Fprintf(os.Stdout, "Response from `TenancyApi.TenancyTenantsCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TenancyAPI.TenancyTenantsCreate`: %v\n", resp)
 }
 ```
 
@@ -4039,9 +4085,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.TenancyApi.TenancyTenantsDestroy(context.Background(), id).Execute()
+    r, err := apiClient.TenancyAPI.TenancyTenantsDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyTenantsDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyTenantsDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -4084,7 +4130,7 @@ Name | Type | Description  | Notes
 
 ## TenancyTenantsList
 
-> PaginatedTenantList TenancyTenantsList(ctx).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedTenantList TenancyTenantsList(ctx).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -4111,6 +4157,7 @@ func main() {
     contactRole := []int32{int32(123)} // []int32 | Contact Role (optional)
     contactRoleN := []int32{int32(123)} // []int32 | Contact Role (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -4133,18 +4180,21 @@ func main() {
     groupId := []int32{int32(123)} // []int32 | Tenant group (ID) (optional)
     groupIdN := []int32{int32(123)} // []int32 | Tenant group (ID) (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -4176,13 +4226,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TenancyApi.TenancyTenantsList(context.Background()).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.TenancyAPI.TenancyTenantsList(context.Background()).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyTenantsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyTenantsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TenancyTenantsList`: PaginatedTenantList
-    fmt.Fprintf(os.Stdout, "Response from `TenancyApi.TenancyTenantsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TenancyAPI.TenancyTenantsList`: %v\n", resp)
 }
 ```
 
@@ -4204,6 +4254,7 @@ Name | Type | Description  | Notes
  **contactRole** | **[]int32** | Contact Role | 
  **contactRoleN** | **[]int32** | Contact Role | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -4226,18 +4277,21 @@ Name | Type | Description  | Notes
  **groupId** | **[]int32** | Tenant group (ID) | 
  **groupIdN** | **[]int32** | Tenant group (ID) | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -4311,13 +4365,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TenancyApi.TenancyTenantsPartialUpdate(context.Background(), id).PatchedWritableTenantRequest(patchedWritableTenantRequest).Execute()
+    resp, r, err := apiClient.TenancyAPI.TenancyTenantsPartialUpdate(context.Background(), id).PatchedWritableTenantRequest(patchedWritableTenantRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyTenantsPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyTenantsPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TenancyTenantsPartialUpdate`: Tenant
-    fmt.Fprintf(os.Stdout, "Response from `TenancyApi.TenancyTenantsPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TenancyAPI.TenancyTenantsPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -4382,13 +4436,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TenancyApi.TenancyTenantsRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.TenancyAPI.TenancyTenantsRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyTenantsRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyTenantsRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TenancyTenantsRetrieve`: Tenant
-    fmt.Fprintf(os.Stdout, "Response from `TenancyApi.TenancyTenantsRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TenancyAPI.TenancyTenantsRetrieve`: %v\n", resp)
 }
 ```
 
@@ -4453,13 +4507,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TenancyApi.TenancyTenantsUpdate(context.Background(), id).WritableTenantRequest(writableTenantRequest).Execute()
+    resp, r, err := apiClient.TenancyAPI.TenancyTenantsUpdate(context.Background(), id).WritableTenantRequest(writableTenantRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TenancyApi.TenancyTenantsUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TenancyAPI.TenancyTenantsUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `TenancyTenantsUpdate`: Tenant
-    fmt.Fprintf(os.Stdout, "Response from `TenancyApi.TenancyTenantsUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TenancyAPI.TenancyTenantsUpdate`: %v\n", resp)
 }
 ```
 

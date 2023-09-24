@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **PrimaryIp** | [**NullableNestedIPAddress**](NestedIPAddress.md) |  | [readonly] 
 **PrimaryIp4** | Pointer to [**NullableNestedIPAddress**](NestedIPAddress.md) |  | [optional] 
 **PrimaryIp6** | Pointer to [**NullableNestedIPAddress**](NestedIPAddress.md) |  | [optional] 
-**Status** | **string** | * &#x60;active&#x60; - Active * &#x60;planned&#x60; - Planned * &#x60;offline&#x60; - Offline | 
+**Status** | [**VirtualDeviceContextStatus**](VirtualDeviceContextStatus.md) |  | 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 
 ### NewVirtualDeviceContext
 
-`func NewVirtualDeviceContext(id int32, url string, display string, name string, device NestedDevice, primaryIp NullableNestedIPAddress, status string, created NullableTime, lastUpdated NullableTime, interfaceCount int32, ) *VirtualDeviceContext`
+`func NewVirtualDeviceContext(id int32, url string, display string, name string, device NestedDevice, primaryIp NullableNestedIPAddress, status VirtualDeviceContextStatus, created NullableTime, lastUpdated NullableTime, interfaceCount int32, ) *VirtualDeviceContext`
 
 NewVirtualDeviceContext instantiates a new VirtualDeviceContext object
 This constructor will assign default values to properties that have it defined,
@@ -314,20 +314,20 @@ HasPrimaryIp6 returns a boolean if a field has been set.
 UnsetPrimaryIp6 ensures that no value is present for PrimaryIp6, not even an explicit nil
 ### GetStatus
 
-`func (o *VirtualDeviceContext) GetStatus() string`
+`func (o *VirtualDeviceContext) GetStatus() VirtualDeviceContextStatus`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *VirtualDeviceContext) GetStatusOk() (*string, bool)`
+`func (o *VirtualDeviceContext) GetStatusOk() (*VirtualDeviceContextStatus, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *VirtualDeviceContext) SetStatus(v string)`
+`func (o *VirtualDeviceContext) SetStatus(v VirtualDeviceContextStatus)`
 
 SetStatus sets Status field to given value.
 

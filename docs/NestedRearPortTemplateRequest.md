@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** |          {module} is accepted as a substitution for the module bay position when attached to a module type.          | 
+**Name** | **string** | {module} is accepted as a substitution for the module bay position when attached to a module type. | 
 
 ## Methods
 

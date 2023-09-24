@@ -1,64 +1,64 @@
-# \CircuitsApi
+# \CircuitsAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CircuitsCircuitTerminationsBulkDestroy**](CircuitsApi.md#CircuitsCircuitTerminationsBulkDestroy) | **Delete** /api/circuits/circuit-terminations/ | 
-[**CircuitsCircuitTerminationsBulkPartialUpdate**](CircuitsApi.md#CircuitsCircuitTerminationsBulkPartialUpdate) | **Patch** /api/circuits/circuit-terminations/ | 
-[**CircuitsCircuitTerminationsBulkUpdate**](CircuitsApi.md#CircuitsCircuitTerminationsBulkUpdate) | **Put** /api/circuits/circuit-terminations/ | 
-[**CircuitsCircuitTerminationsCreate**](CircuitsApi.md#CircuitsCircuitTerminationsCreate) | **Post** /api/circuits/circuit-terminations/ | 
-[**CircuitsCircuitTerminationsDestroy**](CircuitsApi.md#CircuitsCircuitTerminationsDestroy) | **Delete** /api/circuits/circuit-terminations/{id}/ | 
-[**CircuitsCircuitTerminationsList**](CircuitsApi.md#CircuitsCircuitTerminationsList) | **Get** /api/circuits/circuit-terminations/ | 
-[**CircuitsCircuitTerminationsPartialUpdate**](CircuitsApi.md#CircuitsCircuitTerminationsPartialUpdate) | **Patch** /api/circuits/circuit-terminations/{id}/ | 
-[**CircuitsCircuitTerminationsPathsRetrieve**](CircuitsApi.md#CircuitsCircuitTerminationsPathsRetrieve) | **Get** /api/circuits/circuit-terminations/{id}/paths/ | 
-[**CircuitsCircuitTerminationsRetrieve**](CircuitsApi.md#CircuitsCircuitTerminationsRetrieve) | **Get** /api/circuits/circuit-terminations/{id}/ | 
-[**CircuitsCircuitTerminationsUpdate**](CircuitsApi.md#CircuitsCircuitTerminationsUpdate) | **Put** /api/circuits/circuit-terminations/{id}/ | 
-[**CircuitsCircuitTypesBulkDestroy**](CircuitsApi.md#CircuitsCircuitTypesBulkDestroy) | **Delete** /api/circuits/circuit-types/ | 
-[**CircuitsCircuitTypesBulkPartialUpdate**](CircuitsApi.md#CircuitsCircuitTypesBulkPartialUpdate) | **Patch** /api/circuits/circuit-types/ | 
-[**CircuitsCircuitTypesBulkUpdate**](CircuitsApi.md#CircuitsCircuitTypesBulkUpdate) | **Put** /api/circuits/circuit-types/ | 
-[**CircuitsCircuitTypesCreate**](CircuitsApi.md#CircuitsCircuitTypesCreate) | **Post** /api/circuits/circuit-types/ | 
-[**CircuitsCircuitTypesDestroy**](CircuitsApi.md#CircuitsCircuitTypesDestroy) | **Delete** /api/circuits/circuit-types/{id}/ | 
-[**CircuitsCircuitTypesList**](CircuitsApi.md#CircuitsCircuitTypesList) | **Get** /api/circuits/circuit-types/ | 
-[**CircuitsCircuitTypesPartialUpdate**](CircuitsApi.md#CircuitsCircuitTypesPartialUpdate) | **Patch** /api/circuits/circuit-types/{id}/ | 
-[**CircuitsCircuitTypesRetrieve**](CircuitsApi.md#CircuitsCircuitTypesRetrieve) | **Get** /api/circuits/circuit-types/{id}/ | 
-[**CircuitsCircuitTypesUpdate**](CircuitsApi.md#CircuitsCircuitTypesUpdate) | **Put** /api/circuits/circuit-types/{id}/ | 
-[**CircuitsCircuitsBulkDestroy**](CircuitsApi.md#CircuitsCircuitsBulkDestroy) | **Delete** /api/circuits/circuits/ | 
-[**CircuitsCircuitsBulkPartialUpdate**](CircuitsApi.md#CircuitsCircuitsBulkPartialUpdate) | **Patch** /api/circuits/circuits/ | 
-[**CircuitsCircuitsBulkUpdate**](CircuitsApi.md#CircuitsCircuitsBulkUpdate) | **Put** /api/circuits/circuits/ | 
-[**CircuitsCircuitsCreate**](CircuitsApi.md#CircuitsCircuitsCreate) | **Post** /api/circuits/circuits/ | 
-[**CircuitsCircuitsDestroy**](CircuitsApi.md#CircuitsCircuitsDestroy) | **Delete** /api/circuits/circuits/{id}/ | 
-[**CircuitsCircuitsList**](CircuitsApi.md#CircuitsCircuitsList) | **Get** /api/circuits/circuits/ | 
-[**CircuitsCircuitsPartialUpdate**](CircuitsApi.md#CircuitsCircuitsPartialUpdate) | **Patch** /api/circuits/circuits/{id}/ | 
-[**CircuitsCircuitsRetrieve**](CircuitsApi.md#CircuitsCircuitsRetrieve) | **Get** /api/circuits/circuits/{id}/ | 
-[**CircuitsCircuitsUpdate**](CircuitsApi.md#CircuitsCircuitsUpdate) | **Put** /api/circuits/circuits/{id}/ | 
-[**CircuitsProviderAccountsBulkDestroy**](CircuitsApi.md#CircuitsProviderAccountsBulkDestroy) | **Delete** /api/circuits/provider-accounts/ | 
-[**CircuitsProviderAccountsBulkPartialUpdate**](CircuitsApi.md#CircuitsProviderAccountsBulkPartialUpdate) | **Patch** /api/circuits/provider-accounts/ | 
-[**CircuitsProviderAccountsBulkUpdate**](CircuitsApi.md#CircuitsProviderAccountsBulkUpdate) | **Put** /api/circuits/provider-accounts/ | 
-[**CircuitsProviderAccountsCreate**](CircuitsApi.md#CircuitsProviderAccountsCreate) | **Post** /api/circuits/provider-accounts/ | 
-[**CircuitsProviderAccountsDestroy**](CircuitsApi.md#CircuitsProviderAccountsDestroy) | **Delete** /api/circuits/provider-accounts/{id}/ | 
-[**CircuitsProviderAccountsList**](CircuitsApi.md#CircuitsProviderAccountsList) | **Get** /api/circuits/provider-accounts/ | 
-[**CircuitsProviderAccountsPartialUpdate**](CircuitsApi.md#CircuitsProviderAccountsPartialUpdate) | **Patch** /api/circuits/provider-accounts/{id}/ | 
-[**CircuitsProviderAccountsRetrieve**](CircuitsApi.md#CircuitsProviderAccountsRetrieve) | **Get** /api/circuits/provider-accounts/{id}/ | 
-[**CircuitsProviderAccountsUpdate**](CircuitsApi.md#CircuitsProviderAccountsUpdate) | **Put** /api/circuits/provider-accounts/{id}/ | 
-[**CircuitsProviderNetworksBulkDestroy**](CircuitsApi.md#CircuitsProviderNetworksBulkDestroy) | **Delete** /api/circuits/provider-networks/ | 
-[**CircuitsProviderNetworksBulkPartialUpdate**](CircuitsApi.md#CircuitsProviderNetworksBulkPartialUpdate) | **Patch** /api/circuits/provider-networks/ | 
-[**CircuitsProviderNetworksBulkUpdate**](CircuitsApi.md#CircuitsProviderNetworksBulkUpdate) | **Put** /api/circuits/provider-networks/ | 
-[**CircuitsProviderNetworksCreate**](CircuitsApi.md#CircuitsProviderNetworksCreate) | **Post** /api/circuits/provider-networks/ | 
-[**CircuitsProviderNetworksDestroy**](CircuitsApi.md#CircuitsProviderNetworksDestroy) | **Delete** /api/circuits/provider-networks/{id}/ | 
-[**CircuitsProviderNetworksList**](CircuitsApi.md#CircuitsProviderNetworksList) | **Get** /api/circuits/provider-networks/ | 
-[**CircuitsProviderNetworksPartialUpdate**](CircuitsApi.md#CircuitsProviderNetworksPartialUpdate) | **Patch** /api/circuits/provider-networks/{id}/ | 
-[**CircuitsProviderNetworksRetrieve**](CircuitsApi.md#CircuitsProviderNetworksRetrieve) | **Get** /api/circuits/provider-networks/{id}/ | 
-[**CircuitsProviderNetworksUpdate**](CircuitsApi.md#CircuitsProviderNetworksUpdate) | **Put** /api/circuits/provider-networks/{id}/ | 
-[**CircuitsProvidersBulkDestroy**](CircuitsApi.md#CircuitsProvidersBulkDestroy) | **Delete** /api/circuits/providers/ | 
-[**CircuitsProvidersBulkPartialUpdate**](CircuitsApi.md#CircuitsProvidersBulkPartialUpdate) | **Patch** /api/circuits/providers/ | 
-[**CircuitsProvidersBulkUpdate**](CircuitsApi.md#CircuitsProvidersBulkUpdate) | **Put** /api/circuits/providers/ | 
-[**CircuitsProvidersCreate**](CircuitsApi.md#CircuitsProvidersCreate) | **Post** /api/circuits/providers/ | 
-[**CircuitsProvidersDestroy**](CircuitsApi.md#CircuitsProvidersDestroy) | **Delete** /api/circuits/providers/{id}/ | 
-[**CircuitsProvidersList**](CircuitsApi.md#CircuitsProvidersList) | **Get** /api/circuits/providers/ | 
-[**CircuitsProvidersPartialUpdate**](CircuitsApi.md#CircuitsProvidersPartialUpdate) | **Patch** /api/circuits/providers/{id}/ | 
-[**CircuitsProvidersRetrieve**](CircuitsApi.md#CircuitsProvidersRetrieve) | **Get** /api/circuits/providers/{id}/ | 
-[**CircuitsProvidersUpdate**](CircuitsApi.md#CircuitsProvidersUpdate) | **Put** /api/circuits/providers/{id}/ | 
+[**CircuitsCircuitTerminationsBulkDestroy**](CircuitsAPI.md#CircuitsCircuitTerminationsBulkDestroy) | **Delete** /api/circuits/circuit-terminations/ | 
+[**CircuitsCircuitTerminationsBulkPartialUpdate**](CircuitsAPI.md#CircuitsCircuitTerminationsBulkPartialUpdate) | **Patch** /api/circuits/circuit-terminations/ | 
+[**CircuitsCircuitTerminationsBulkUpdate**](CircuitsAPI.md#CircuitsCircuitTerminationsBulkUpdate) | **Put** /api/circuits/circuit-terminations/ | 
+[**CircuitsCircuitTerminationsCreate**](CircuitsAPI.md#CircuitsCircuitTerminationsCreate) | **Post** /api/circuits/circuit-terminations/ | 
+[**CircuitsCircuitTerminationsDestroy**](CircuitsAPI.md#CircuitsCircuitTerminationsDestroy) | **Delete** /api/circuits/circuit-terminations/{id}/ | 
+[**CircuitsCircuitTerminationsList**](CircuitsAPI.md#CircuitsCircuitTerminationsList) | **Get** /api/circuits/circuit-terminations/ | 
+[**CircuitsCircuitTerminationsPartialUpdate**](CircuitsAPI.md#CircuitsCircuitTerminationsPartialUpdate) | **Patch** /api/circuits/circuit-terminations/{id}/ | 
+[**CircuitsCircuitTerminationsPathsRetrieve**](CircuitsAPI.md#CircuitsCircuitTerminationsPathsRetrieve) | **Get** /api/circuits/circuit-terminations/{id}/paths/ | 
+[**CircuitsCircuitTerminationsRetrieve**](CircuitsAPI.md#CircuitsCircuitTerminationsRetrieve) | **Get** /api/circuits/circuit-terminations/{id}/ | 
+[**CircuitsCircuitTerminationsUpdate**](CircuitsAPI.md#CircuitsCircuitTerminationsUpdate) | **Put** /api/circuits/circuit-terminations/{id}/ | 
+[**CircuitsCircuitTypesBulkDestroy**](CircuitsAPI.md#CircuitsCircuitTypesBulkDestroy) | **Delete** /api/circuits/circuit-types/ | 
+[**CircuitsCircuitTypesBulkPartialUpdate**](CircuitsAPI.md#CircuitsCircuitTypesBulkPartialUpdate) | **Patch** /api/circuits/circuit-types/ | 
+[**CircuitsCircuitTypesBulkUpdate**](CircuitsAPI.md#CircuitsCircuitTypesBulkUpdate) | **Put** /api/circuits/circuit-types/ | 
+[**CircuitsCircuitTypesCreate**](CircuitsAPI.md#CircuitsCircuitTypesCreate) | **Post** /api/circuits/circuit-types/ | 
+[**CircuitsCircuitTypesDestroy**](CircuitsAPI.md#CircuitsCircuitTypesDestroy) | **Delete** /api/circuits/circuit-types/{id}/ | 
+[**CircuitsCircuitTypesList**](CircuitsAPI.md#CircuitsCircuitTypesList) | **Get** /api/circuits/circuit-types/ | 
+[**CircuitsCircuitTypesPartialUpdate**](CircuitsAPI.md#CircuitsCircuitTypesPartialUpdate) | **Patch** /api/circuits/circuit-types/{id}/ | 
+[**CircuitsCircuitTypesRetrieve**](CircuitsAPI.md#CircuitsCircuitTypesRetrieve) | **Get** /api/circuits/circuit-types/{id}/ | 
+[**CircuitsCircuitTypesUpdate**](CircuitsAPI.md#CircuitsCircuitTypesUpdate) | **Put** /api/circuits/circuit-types/{id}/ | 
+[**CircuitsCircuitsBulkDestroy**](CircuitsAPI.md#CircuitsCircuitsBulkDestroy) | **Delete** /api/circuits/circuits/ | 
+[**CircuitsCircuitsBulkPartialUpdate**](CircuitsAPI.md#CircuitsCircuitsBulkPartialUpdate) | **Patch** /api/circuits/circuits/ | 
+[**CircuitsCircuitsBulkUpdate**](CircuitsAPI.md#CircuitsCircuitsBulkUpdate) | **Put** /api/circuits/circuits/ | 
+[**CircuitsCircuitsCreate**](CircuitsAPI.md#CircuitsCircuitsCreate) | **Post** /api/circuits/circuits/ | 
+[**CircuitsCircuitsDestroy**](CircuitsAPI.md#CircuitsCircuitsDestroy) | **Delete** /api/circuits/circuits/{id}/ | 
+[**CircuitsCircuitsList**](CircuitsAPI.md#CircuitsCircuitsList) | **Get** /api/circuits/circuits/ | 
+[**CircuitsCircuitsPartialUpdate**](CircuitsAPI.md#CircuitsCircuitsPartialUpdate) | **Patch** /api/circuits/circuits/{id}/ | 
+[**CircuitsCircuitsRetrieve**](CircuitsAPI.md#CircuitsCircuitsRetrieve) | **Get** /api/circuits/circuits/{id}/ | 
+[**CircuitsCircuitsUpdate**](CircuitsAPI.md#CircuitsCircuitsUpdate) | **Put** /api/circuits/circuits/{id}/ | 
+[**CircuitsProviderAccountsBulkDestroy**](CircuitsAPI.md#CircuitsProviderAccountsBulkDestroy) | **Delete** /api/circuits/provider-accounts/ | 
+[**CircuitsProviderAccountsBulkPartialUpdate**](CircuitsAPI.md#CircuitsProviderAccountsBulkPartialUpdate) | **Patch** /api/circuits/provider-accounts/ | 
+[**CircuitsProviderAccountsBulkUpdate**](CircuitsAPI.md#CircuitsProviderAccountsBulkUpdate) | **Put** /api/circuits/provider-accounts/ | 
+[**CircuitsProviderAccountsCreate**](CircuitsAPI.md#CircuitsProviderAccountsCreate) | **Post** /api/circuits/provider-accounts/ | 
+[**CircuitsProviderAccountsDestroy**](CircuitsAPI.md#CircuitsProviderAccountsDestroy) | **Delete** /api/circuits/provider-accounts/{id}/ | 
+[**CircuitsProviderAccountsList**](CircuitsAPI.md#CircuitsProviderAccountsList) | **Get** /api/circuits/provider-accounts/ | 
+[**CircuitsProviderAccountsPartialUpdate**](CircuitsAPI.md#CircuitsProviderAccountsPartialUpdate) | **Patch** /api/circuits/provider-accounts/{id}/ | 
+[**CircuitsProviderAccountsRetrieve**](CircuitsAPI.md#CircuitsProviderAccountsRetrieve) | **Get** /api/circuits/provider-accounts/{id}/ | 
+[**CircuitsProviderAccountsUpdate**](CircuitsAPI.md#CircuitsProviderAccountsUpdate) | **Put** /api/circuits/provider-accounts/{id}/ | 
+[**CircuitsProviderNetworksBulkDestroy**](CircuitsAPI.md#CircuitsProviderNetworksBulkDestroy) | **Delete** /api/circuits/provider-networks/ | 
+[**CircuitsProviderNetworksBulkPartialUpdate**](CircuitsAPI.md#CircuitsProviderNetworksBulkPartialUpdate) | **Patch** /api/circuits/provider-networks/ | 
+[**CircuitsProviderNetworksBulkUpdate**](CircuitsAPI.md#CircuitsProviderNetworksBulkUpdate) | **Put** /api/circuits/provider-networks/ | 
+[**CircuitsProviderNetworksCreate**](CircuitsAPI.md#CircuitsProviderNetworksCreate) | **Post** /api/circuits/provider-networks/ | 
+[**CircuitsProviderNetworksDestroy**](CircuitsAPI.md#CircuitsProviderNetworksDestroy) | **Delete** /api/circuits/provider-networks/{id}/ | 
+[**CircuitsProviderNetworksList**](CircuitsAPI.md#CircuitsProviderNetworksList) | **Get** /api/circuits/provider-networks/ | 
+[**CircuitsProviderNetworksPartialUpdate**](CircuitsAPI.md#CircuitsProviderNetworksPartialUpdate) | **Patch** /api/circuits/provider-networks/{id}/ | 
+[**CircuitsProviderNetworksRetrieve**](CircuitsAPI.md#CircuitsProviderNetworksRetrieve) | **Get** /api/circuits/provider-networks/{id}/ | 
+[**CircuitsProviderNetworksUpdate**](CircuitsAPI.md#CircuitsProviderNetworksUpdate) | **Put** /api/circuits/provider-networks/{id}/ | 
+[**CircuitsProvidersBulkDestroy**](CircuitsAPI.md#CircuitsProvidersBulkDestroy) | **Delete** /api/circuits/providers/ | 
+[**CircuitsProvidersBulkPartialUpdate**](CircuitsAPI.md#CircuitsProvidersBulkPartialUpdate) | **Patch** /api/circuits/providers/ | 
+[**CircuitsProvidersBulkUpdate**](CircuitsAPI.md#CircuitsProvidersBulkUpdate) | **Put** /api/circuits/providers/ | 
+[**CircuitsProvidersCreate**](CircuitsAPI.md#CircuitsProvidersCreate) | **Post** /api/circuits/providers/ | 
+[**CircuitsProvidersDestroy**](CircuitsAPI.md#CircuitsProvidersDestroy) | **Delete** /api/circuits/providers/{id}/ | 
+[**CircuitsProvidersList**](CircuitsAPI.md#CircuitsProvidersList) | **Get** /api/circuits/providers/ | 
+[**CircuitsProvidersPartialUpdate**](CircuitsAPI.md#CircuitsProvidersPartialUpdate) | **Patch** /api/circuits/providers/{id}/ | 
+[**CircuitsProvidersRetrieve**](CircuitsAPI.md#CircuitsProvidersRetrieve) | **Get** /api/circuits/providers/{id}/ | 
+[**CircuitsProvidersUpdate**](CircuitsAPI.md#CircuitsProvidersUpdate) | **Put** /api/circuits/providers/{id}/ | 
 
 
 
@@ -87,9 +87,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CircuitsApi.CircuitsCircuitTerminationsBulkDestroy(context.Background()).CircuitTerminationRequest(circuitTerminationRequest).Execute()
+    r, err := apiClient.CircuitsAPI.CircuitsCircuitTerminationsBulkDestroy(context.Background()).CircuitTerminationRequest(circuitTerminationRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsCircuitTerminationsBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsCircuitTerminationsBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -151,13 +151,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsCircuitTerminationsBulkPartialUpdate(context.Background()).CircuitTerminationRequest(circuitTerminationRequest).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsCircuitTerminationsBulkPartialUpdate(context.Background()).CircuitTerminationRequest(circuitTerminationRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsCircuitTerminationsBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsCircuitTerminationsBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsCircuitTerminationsBulkPartialUpdate`: []CircuitTermination
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsCircuitTerminationsBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsCircuitTerminationsBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -217,13 +217,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsCircuitTerminationsBulkUpdate(context.Background()).CircuitTerminationRequest(circuitTerminationRequest).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsCircuitTerminationsBulkUpdate(context.Background()).CircuitTerminationRequest(circuitTerminationRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsCircuitTerminationsBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsCircuitTerminationsBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsCircuitTerminationsBulkUpdate`: []CircuitTermination
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsCircuitTerminationsBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsCircuitTerminationsBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -283,13 +283,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsCircuitTerminationsCreate(context.Background()).WritableCircuitTerminationRequest(writableCircuitTerminationRequest).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsCircuitTerminationsCreate(context.Background()).WritableCircuitTerminationRequest(writableCircuitTerminationRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsCircuitTerminationsCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsCircuitTerminationsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsCircuitTerminationsCreate`: CircuitTermination
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsCircuitTerminationsCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsCircuitTerminationsCreate`: %v\n", resp)
 }
 ```
 
@@ -349,9 +349,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CircuitsApi.CircuitsCircuitTerminationsDestroy(context.Background(), id).Execute()
+    r, err := apiClient.CircuitsAPI.CircuitsCircuitTerminationsDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsCircuitTerminationsDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsCircuitTerminationsDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -394,7 +394,7 @@ Name | Type | Description  | Notes
 
 ## CircuitsCircuitTerminationsList
 
-> PaginatedCircuitTerminationList CircuitsCircuitTerminationsList(ctx).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).CircuitId(circuitId).CircuitIdN(circuitIdN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Occupied(occupied).Offset(offset).Ordering(ordering).PortSpeed(portSpeed).PortSpeedGt(portSpeedGt).PortSpeedGte(portSpeedGte).PortSpeedLt(portSpeedLt).PortSpeedLte(portSpeedLte).PortSpeedN(portSpeedN).ProviderNetworkId(providerNetworkId).ProviderNetworkIdN(providerNetworkIdN).Q(q).Site(site).SiteN(siteN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).TermSide(termSide).TermSideN(termSideN).UpdatedByRequest(updatedByRequest).UpstreamSpeed(upstreamSpeed).UpstreamSpeedGt(upstreamSpeedGt).UpstreamSpeedGte(upstreamSpeedGte).UpstreamSpeedLt(upstreamSpeedLt).UpstreamSpeedLte(upstreamSpeedLte).UpstreamSpeedN(upstreamSpeedN).XconnectId(xconnectId).XconnectIdEmpty(xconnectIdEmpty).XconnectIdIc(xconnectIdIc).XconnectIdIe(xconnectIdIe).XconnectIdIew(xconnectIdIew).XconnectIdIsw(xconnectIdIsw).XconnectIdN(xconnectIdN).XconnectIdNic(xconnectIdNic).XconnectIdNie(xconnectIdNie).XconnectIdNiew(xconnectIdNiew).XconnectIdNisw(xconnectIdNisw).Execute()
+> PaginatedCircuitTerminationList CircuitsCircuitTerminationsList(ctx).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).CircuitId(circuitId).CircuitIdN(circuitIdN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Occupied(occupied).Offset(offset).Ordering(ordering).PortSpeed(portSpeed).PortSpeedEmpty(portSpeedEmpty).PortSpeedGt(portSpeedGt).PortSpeedGte(portSpeedGte).PortSpeedLt(portSpeedLt).PortSpeedLte(portSpeedLte).PortSpeedN(portSpeedN).ProviderNetworkId(providerNetworkId).ProviderNetworkIdN(providerNetworkIdN).Q(q).Site(site).SiteN(siteN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).TermSide(termSide).TermSideN(termSideN).UpdatedByRequest(updatedByRequest).UpstreamSpeed(upstreamSpeed).UpstreamSpeedEmpty(upstreamSpeedEmpty).UpstreamSpeedGt(upstreamSpeedGt).UpstreamSpeedGte(upstreamSpeedGte).UpstreamSpeedLt(upstreamSpeedLt).UpstreamSpeedLte(upstreamSpeedLte).UpstreamSpeedN(upstreamSpeedN).XconnectId(xconnectId).XconnectIdEmpty(xconnectIdEmpty).XconnectIdIc(xconnectIdIc).XconnectIdIe(xconnectIdIe).XconnectIdIew(xconnectIdIew).XconnectIdIsw(xconnectIdIsw).XconnectIdN(xconnectIdN).XconnectIdNic(xconnectIdNic).XconnectIdNie(xconnectIdNie).XconnectIdNiew(xconnectIdNiew).XconnectIdNisw(xconnectIdNisw).Execute()
 
 
 
@@ -420,6 +420,7 @@ func main() {
     circuitId := []int32{int32(123)} // []int32 | Circuit (optional)
     circuitIdN := []int32{int32(123)} // []int32 | Circuit (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -438,22 +439,26 @@ func main() {
     descriptionNiew := []string{"Inner_example"} // []string |  (optional)
     descriptionNisw := []string{"Inner_example"} // []string |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     occupied := true // bool |  (optional)
     offset := int32(56) // int32 | The initial index from which to return the results. (optional)
     ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
     portSpeed := []int32{int32(123)} // []int32 |  (optional)
+    portSpeedEmpty := true // bool |  (optional)
     portSpeedGt := []int32{int32(123)} // []int32 |  (optional)
     portSpeedGte := []int32{int32(123)} // []int32 |  (optional)
     portSpeedLt := []int32{int32(123)} // []int32 |  (optional)
@@ -472,6 +477,7 @@ func main() {
     termSideN := "termSideN_example" // string |  (optional)
     updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     upstreamSpeed := []int32{int32(123)} // []int32 |  (optional)
+    upstreamSpeedEmpty := true // bool |  (optional)
     upstreamSpeedGt := []int32{int32(123)} // []int32 |  (optional)
     upstreamSpeedGte := []int32{int32(123)} // []int32 |  (optional)
     upstreamSpeedLt := []int32{int32(123)} // []int32 |  (optional)
@@ -491,13 +497,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsCircuitTerminationsList(context.Background()).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).CircuitId(circuitId).CircuitIdN(circuitIdN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Occupied(occupied).Offset(offset).Ordering(ordering).PortSpeed(portSpeed).PortSpeedGt(portSpeedGt).PortSpeedGte(portSpeedGte).PortSpeedLt(portSpeedLt).PortSpeedLte(portSpeedLte).PortSpeedN(portSpeedN).ProviderNetworkId(providerNetworkId).ProviderNetworkIdN(providerNetworkIdN).Q(q).Site(site).SiteN(siteN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).TermSide(termSide).TermSideN(termSideN).UpdatedByRequest(updatedByRequest).UpstreamSpeed(upstreamSpeed).UpstreamSpeedGt(upstreamSpeedGt).UpstreamSpeedGte(upstreamSpeedGte).UpstreamSpeedLt(upstreamSpeedLt).UpstreamSpeedLte(upstreamSpeedLte).UpstreamSpeedN(upstreamSpeedN).XconnectId(xconnectId).XconnectIdEmpty(xconnectIdEmpty).XconnectIdIc(xconnectIdIc).XconnectIdIe(xconnectIdIe).XconnectIdIew(xconnectIdIew).XconnectIdIsw(xconnectIdIsw).XconnectIdN(xconnectIdN).XconnectIdNic(xconnectIdNic).XconnectIdNie(xconnectIdNie).XconnectIdNiew(xconnectIdNiew).XconnectIdNisw(xconnectIdNisw).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsCircuitTerminationsList(context.Background()).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).CircuitId(circuitId).CircuitIdN(circuitIdN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Occupied(occupied).Offset(offset).Ordering(ordering).PortSpeed(portSpeed).PortSpeedEmpty(portSpeedEmpty).PortSpeedGt(portSpeedGt).PortSpeedGte(portSpeedGte).PortSpeedLt(portSpeedLt).PortSpeedLte(portSpeedLte).PortSpeedN(portSpeedN).ProviderNetworkId(providerNetworkId).ProviderNetworkIdN(providerNetworkIdN).Q(q).Site(site).SiteN(siteN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).TermSide(termSide).TermSideN(termSideN).UpdatedByRequest(updatedByRequest).UpstreamSpeed(upstreamSpeed).UpstreamSpeedEmpty(upstreamSpeedEmpty).UpstreamSpeedGt(upstreamSpeedGt).UpstreamSpeedGte(upstreamSpeedGte).UpstreamSpeedLt(upstreamSpeedLt).UpstreamSpeedLte(upstreamSpeedLte).UpstreamSpeedN(upstreamSpeedN).XconnectId(xconnectId).XconnectIdEmpty(xconnectIdEmpty).XconnectIdIc(xconnectIdIc).XconnectIdIe(xconnectIdIe).XconnectIdIew(xconnectIdIew).XconnectIdIsw(xconnectIdIsw).XconnectIdN(xconnectIdN).XconnectIdNic(xconnectIdNic).XconnectIdNie(xconnectIdNie).XconnectIdNiew(xconnectIdNiew).XconnectIdNisw(xconnectIdNisw).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsCircuitTerminationsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsCircuitTerminationsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsCircuitTerminationsList`: PaginatedCircuitTerminationList
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsCircuitTerminationsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsCircuitTerminationsList`: %v\n", resp)
 }
 ```
 
@@ -518,6 +524,7 @@ Name | Type | Description  | Notes
  **circuitId** | **[]int32** | Circuit | 
  **circuitIdN** | **[]int32** | Circuit | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -536,22 +543,26 @@ Name | Type | Description  | Notes
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **occupied** | **bool** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **portSpeed** | **[]int32** |  | 
+ **portSpeedEmpty** | **bool** |  | 
  **portSpeedGt** | **[]int32** |  | 
  **portSpeedGte** | **[]int32** |  | 
  **portSpeedLt** | **[]int32** |  | 
@@ -570,6 +581,7 @@ Name | Type | Description  | Notes
  **termSideN** | **string** |  | 
  **updatedByRequest** | **string** |  | 
  **upstreamSpeed** | **[]int32** |  | 
+ **upstreamSpeedEmpty** | **bool** |  | 
  **upstreamSpeedGt** | **[]int32** |  | 
  **upstreamSpeedGte** | **[]int32** |  | 
  **upstreamSpeedLt** | **[]int32** |  | 
@@ -631,13 +643,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsCircuitTerminationsPartialUpdate(context.Background(), id).PatchedWritableCircuitTerminationRequest(patchedWritableCircuitTerminationRequest).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsCircuitTerminationsPartialUpdate(context.Background(), id).PatchedWritableCircuitTerminationRequest(patchedWritableCircuitTerminationRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsCircuitTerminationsPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsCircuitTerminationsPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsCircuitTerminationsPartialUpdate`: CircuitTermination
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsCircuitTerminationsPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsCircuitTerminationsPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -702,13 +714,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsCircuitTerminationsPathsRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsCircuitTerminationsPathsRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsCircuitTerminationsPathsRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsCircuitTerminationsPathsRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsCircuitTerminationsPathsRetrieve`: CircuitTermination
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsCircuitTerminationsPathsRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsCircuitTerminationsPathsRetrieve`: %v\n", resp)
 }
 ```
 
@@ -772,13 +784,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsCircuitTerminationsRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsCircuitTerminationsRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsCircuitTerminationsRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsCircuitTerminationsRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsCircuitTerminationsRetrieve`: CircuitTermination
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsCircuitTerminationsRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsCircuitTerminationsRetrieve`: %v\n", resp)
 }
 ```
 
@@ -843,13 +855,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsCircuitTerminationsUpdate(context.Background(), id).WritableCircuitTerminationRequest(writableCircuitTerminationRequest).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsCircuitTerminationsUpdate(context.Background(), id).WritableCircuitTerminationRequest(writableCircuitTerminationRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsCircuitTerminationsUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsCircuitTerminationsUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsCircuitTerminationsUpdate`: CircuitTermination
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsCircuitTerminationsUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsCircuitTerminationsUpdate`: %v\n", resp)
 }
 ```
 
@@ -914,9 +926,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CircuitsApi.CircuitsCircuitTypesBulkDestroy(context.Background()).CircuitTypeRequest(circuitTypeRequest).Execute()
+    r, err := apiClient.CircuitsAPI.CircuitsCircuitTypesBulkDestroy(context.Background()).CircuitTypeRequest(circuitTypeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsCircuitTypesBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsCircuitTypesBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -978,13 +990,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsCircuitTypesBulkPartialUpdate(context.Background()).CircuitTypeRequest(circuitTypeRequest).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsCircuitTypesBulkPartialUpdate(context.Background()).CircuitTypeRequest(circuitTypeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsCircuitTypesBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsCircuitTypesBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsCircuitTypesBulkPartialUpdate`: []CircuitType
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsCircuitTypesBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsCircuitTypesBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -1044,13 +1056,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsCircuitTypesBulkUpdate(context.Background()).CircuitTypeRequest(circuitTypeRequest).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsCircuitTypesBulkUpdate(context.Background()).CircuitTypeRequest(circuitTypeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsCircuitTypesBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsCircuitTypesBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsCircuitTypesBulkUpdate`: []CircuitType
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsCircuitTypesBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsCircuitTypesBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -1110,13 +1122,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsCircuitTypesCreate(context.Background()).CircuitTypeRequest(circuitTypeRequest).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsCircuitTypesCreate(context.Background()).CircuitTypeRequest(circuitTypeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsCircuitTypesCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsCircuitTypesCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsCircuitTypesCreate`: CircuitType
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsCircuitTypesCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsCircuitTypesCreate`: %v\n", resp)
 }
 ```
 
@@ -1176,9 +1188,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CircuitsApi.CircuitsCircuitTypesDestroy(context.Background(), id).Execute()
+    r, err := apiClient.CircuitsAPI.CircuitsCircuitTypesDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsCircuitTypesDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsCircuitTypesDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1221,7 +1233,7 @@ Name | Type | Description  | Notes
 
 ## CircuitsCircuitTypesList
 
-> PaginatedCircuitTypeList CircuitsCircuitTypesList(ctx).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedCircuitTypeList CircuitsCircuitTypesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -1242,6 +1254,7 @@ import (
 
 func main() {
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -1260,18 +1273,21 @@ func main() {
     descriptionNiew := []string{"Inner_example"} // []string |  (optional)
     descriptionNisw := []string{"Inner_example"} // []string |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -1303,13 +1319,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsCircuitTypesList(context.Background()).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsCircuitTypesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsCircuitTypesList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsCircuitTypesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsCircuitTypesList`: PaginatedCircuitTypeList
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsCircuitTypesList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsCircuitTypesList`: %v\n", resp)
 }
 ```
 
@@ -1325,6 +1341,7 @@ Other parameters are passed through a pointer to a apiCircuitsCircuitTypesListRe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -1343,18 +1360,21 @@ Name | Type | Description  | Notes
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -1428,13 +1448,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsCircuitTypesPartialUpdate(context.Background(), id).PatchedCircuitTypeRequest(patchedCircuitTypeRequest).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsCircuitTypesPartialUpdate(context.Background(), id).PatchedCircuitTypeRequest(patchedCircuitTypeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsCircuitTypesPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsCircuitTypesPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsCircuitTypesPartialUpdate`: CircuitType
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsCircuitTypesPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsCircuitTypesPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -1499,13 +1519,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsCircuitTypesRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsCircuitTypesRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsCircuitTypesRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsCircuitTypesRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsCircuitTypesRetrieve`: CircuitType
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsCircuitTypesRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsCircuitTypesRetrieve`: %v\n", resp)
 }
 ```
 
@@ -1570,13 +1590,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsCircuitTypesUpdate(context.Background(), id).CircuitTypeRequest(circuitTypeRequest).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsCircuitTypesUpdate(context.Background(), id).CircuitTypeRequest(circuitTypeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsCircuitTypesUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsCircuitTypesUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsCircuitTypesUpdate`: CircuitType
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsCircuitTypesUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsCircuitTypesUpdate`: %v\n", resp)
 }
 ```
 
@@ -1641,9 +1661,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CircuitsApi.CircuitsCircuitsBulkDestroy(context.Background()).CircuitRequest(circuitRequest).Execute()
+    r, err := apiClient.CircuitsAPI.CircuitsCircuitsBulkDestroy(context.Background()).CircuitRequest(circuitRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsCircuitsBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsCircuitsBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1705,13 +1725,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsCircuitsBulkPartialUpdate(context.Background()).CircuitRequest(circuitRequest).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsCircuitsBulkPartialUpdate(context.Background()).CircuitRequest(circuitRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsCircuitsBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsCircuitsBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsCircuitsBulkPartialUpdate`: []Circuit
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsCircuitsBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsCircuitsBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -1771,13 +1791,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsCircuitsBulkUpdate(context.Background()).CircuitRequest(circuitRequest).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsCircuitsBulkUpdate(context.Background()).CircuitRequest(circuitRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsCircuitsBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsCircuitsBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsCircuitsBulkUpdate`: []Circuit
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsCircuitsBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsCircuitsBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -1837,13 +1857,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsCircuitsCreate(context.Background()).WritableCircuitRequest(writableCircuitRequest).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsCircuitsCreate(context.Background()).WritableCircuitRequest(writableCircuitRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsCircuitsCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsCircuitsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsCircuitsCreate`: Circuit
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsCircuitsCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsCircuitsCreate`: %v\n", resp)
 }
 ```
 
@@ -1903,9 +1923,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CircuitsApi.CircuitsCircuitsDestroy(context.Background(), id).Execute()
+    r, err := apiClient.CircuitsAPI.CircuitsCircuitsDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsCircuitsDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsCircuitsDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1948,7 +1968,7 @@ Name | Type | Description  | Notes
 
 ## CircuitsCircuitsList
 
-> PaginatedCircuitList CircuitsCircuitsList(ctx).Cid(cid).CidEmpty(cidEmpty).CidIc(cidIc).CidIe(cidIe).CidIew(cidIew).CidIsw(cidIsw).CidN(cidN).CidNic(cidNic).CidNie(cidNie).CidNiew(cidNiew).CidNisw(cidNisw).CommitRate(commitRate).CommitRateGt(commitRateGt).CommitRateGte(commitRateGte).CommitRateLt(commitRateLt).CommitRateLte(commitRateLte).CommitRateN(commitRateN).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InstallDate(installDate).InstallDateGt(installDateGt).InstallDateGte(installDateGte).InstallDateLt(installDateLt).InstallDateLte(installDateLte).InstallDateN(installDateN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Offset(offset).Ordering(ordering).Provider(provider).ProviderN(providerN).ProviderAccountId(providerAccountId).ProviderAccountIdN(providerAccountIdN).ProviderId(providerId).ProviderIdN(providerIdN).ProviderNetworkId(providerNetworkId).ProviderNetworkIdN(providerNetworkIdN).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).TerminationDate(terminationDate).TerminationDateGt(terminationDateGt).TerminationDateGte(terminationDateGte).TerminationDateLt(terminationDateLt).TerminationDateLte(terminationDateLte).TerminationDateN(terminationDateN).Type_(type_).TypeN(typeN).TypeId(typeId).TypeIdN(typeIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedCircuitList CircuitsCircuitsList(ctx).Cid(cid).CidEmpty(cidEmpty).CidIc(cidIc).CidIe(cidIe).CidIew(cidIew).CidIsw(cidIsw).CidN(cidN).CidNic(cidNic).CidNie(cidNie).CidNiew(cidNiew).CidNisw(cidNisw).CommitRate(commitRate).CommitRateEmpty(commitRateEmpty).CommitRateGt(commitRateGt).CommitRateGte(commitRateGte).CommitRateLt(commitRateLt).CommitRateLte(commitRateLte).CommitRateN(commitRateN).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InstallDate(installDate).InstallDateEmpty(installDateEmpty).InstallDateGt(installDateGt).InstallDateGte(installDateGte).InstallDateLt(installDateLt).InstallDateLte(installDateLte).InstallDateN(installDateN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Provider(provider).ProviderN(providerN).ProviderAccountId(providerAccountId).ProviderAccountIdN(providerAccountIdN).ProviderId(providerId).ProviderIdN(providerIdN).ProviderNetworkId(providerNetworkId).ProviderNetworkIdN(providerNetworkIdN).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).TerminationDate(terminationDate).TerminationDateEmpty(terminationDateEmpty).TerminationDateGt(terminationDateGt).TerminationDateGte(terminationDateGte).TerminationDateLt(terminationDateLt).TerminationDateLte(terminationDateLte).TerminationDateN(terminationDateN).Type_(type_).TypeN(typeN).TypeId(typeId).TypeIdN(typeIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -1980,6 +2000,7 @@ func main() {
     cidNiew := []string{"Inner_example"} // []string |  (optional)
     cidNisw := []string{"Inner_example"} // []string |  (optional)
     commitRate := []int32{int32(123)} // []int32 |  (optional)
+    commitRateEmpty := true // bool |  (optional)
     commitRateGt := []int32{int32(123)} // []int32 |  (optional)
     commitRateGte := []int32{int32(123)} // []int32 |  (optional)
     commitRateLt := []int32{int32(123)} // []int32 |  (optional)
@@ -1992,6 +2013,7 @@ func main() {
     contactRole := []int32{int32(123)} // []int32 | Contact Role (optional)
     contactRoleN := []int32{int32(123)} // []int32 | Contact Role (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -2010,24 +2032,28 @@ func main() {
     descriptionNiew := []string{"Inner_example"} // []string |  (optional)
     descriptionNisw := []string{"Inner_example"} // []string |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     installDate := []string{time.Now()} // []string |  (optional)
+    installDateEmpty := true // bool |  (optional)
     installDateGt := []string{time.Now()} // []string |  (optional)
     installDateGte := []string{time.Now()} // []string |  (optional)
     installDateLt := []string{time.Now()} // []string |  (optional)
     installDateLte := []string{time.Now()} // []string |  (optional)
     installDateN := []string{time.Now()} // []string |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     offset := int32(56) // int32 | The initial index from which to return the results. (optional)
     ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
     provider := []string{"Inner_example"} // []string | Provider (slug) (optional)
@@ -2064,6 +2090,7 @@ func main() {
     tenantId := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
     tenantIdN := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
     terminationDate := []string{time.Now()} // []string |  (optional)
+    terminationDateEmpty := true // bool |  (optional)
     terminationDateGt := []string{time.Now()} // []string |  (optional)
     terminationDateGte := []string{time.Now()} // []string |  (optional)
     terminationDateLt := []string{time.Now()} // []string |  (optional)
@@ -2077,13 +2104,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsCircuitsList(context.Background()).Cid(cid).CidEmpty(cidEmpty).CidIc(cidIc).CidIe(cidIe).CidIew(cidIew).CidIsw(cidIsw).CidN(cidN).CidNic(cidNic).CidNie(cidNie).CidNiew(cidNiew).CidNisw(cidNisw).CommitRate(commitRate).CommitRateGt(commitRateGt).CommitRateGte(commitRateGte).CommitRateLt(commitRateLt).CommitRateLte(commitRateLte).CommitRateN(commitRateN).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InstallDate(installDate).InstallDateGt(installDateGt).InstallDateGte(installDateGte).InstallDateLt(installDateLt).InstallDateLte(installDateLte).InstallDateN(installDateN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Offset(offset).Ordering(ordering).Provider(provider).ProviderN(providerN).ProviderAccountId(providerAccountId).ProviderAccountIdN(providerAccountIdN).ProviderId(providerId).ProviderIdN(providerIdN).ProviderNetworkId(providerNetworkId).ProviderNetworkIdN(providerNetworkIdN).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).TerminationDate(terminationDate).TerminationDateGt(terminationDateGt).TerminationDateGte(terminationDateGte).TerminationDateLt(terminationDateLt).TerminationDateLte(terminationDateLte).TerminationDateN(terminationDateN).Type_(type_).TypeN(typeN).TypeId(typeId).TypeIdN(typeIdN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsCircuitsList(context.Background()).Cid(cid).CidEmpty(cidEmpty).CidIc(cidIc).CidIe(cidIe).CidIew(cidIew).CidIsw(cidIsw).CidN(cidN).CidNic(cidNic).CidNie(cidNie).CidNiew(cidNiew).CidNisw(cidNisw).CommitRate(commitRate).CommitRateEmpty(commitRateEmpty).CommitRateGt(commitRateGt).CommitRateGte(commitRateGte).CommitRateLt(commitRateLt).CommitRateLte(commitRateLte).CommitRateN(commitRateN).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InstallDate(installDate).InstallDateEmpty(installDateEmpty).InstallDateGt(installDateGt).InstallDateGte(installDateGte).InstallDateLt(installDateLt).InstallDateLte(installDateLte).InstallDateN(installDateN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Provider(provider).ProviderN(providerN).ProviderAccountId(providerAccountId).ProviderAccountIdN(providerAccountIdN).ProviderId(providerId).ProviderIdN(providerIdN).ProviderNetworkId(providerNetworkId).ProviderNetworkIdN(providerNetworkIdN).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).TerminationDate(terminationDate).TerminationDateEmpty(terminationDateEmpty).TerminationDateGt(terminationDateGt).TerminationDateGte(terminationDateGte).TerminationDateLt(terminationDateLt).TerminationDateLte(terminationDateLte).TerminationDateN(terminationDateN).Type_(type_).TypeN(typeN).TypeId(typeId).TypeIdN(typeIdN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsCircuitsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsCircuitsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsCircuitsList`: PaginatedCircuitList
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsCircuitsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsCircuitsList`: %v\n", resp)
 }
 ```
 
@@ -2110,6 +2137,7 @@ Name | Type | Description  | Notes
  **cidNiew** | **[]string** |  | 
  **cidNisw** | **[]string** |  | 
  **commitRate** | **[]int32** |  | 
+ **commitRateEmpty** | **bool** |  | 
  **commitRateGt** | **[]int32** |  | 
  **commitRateGte** | **[]int32** |  | 
  **commitRateLt** | **[]int32** |  | 
@@ -2122,6 +2150,7 @@ Name | Type | Description  | Notes
  **contactRole** | **[]int32** | Contact Role | 
  **contactRoleN** | **[]int32** | Contact Role | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -2140,24 +2169,28 @@ Name | Type | Description  | Notes
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **installDate** | **[]string** |  | 
+ **installDateEmpty** | **bool** |  | 
  **installDateGt** | **[]string** |  | 
  **installDateGte** | **[]string** |  | 
  **installDateLt** | **[]string** |  | 
  **installDateLte** | **[]string** |  | 
  **installDateN** | **[]string** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **provider** | **[]string** | Provider (slug) | 
@@ -2194,6 +2227,7 @@ Name | Type | Description  | Notes
  **tenantId** | **[]int32** | Tenant (ID) | 
  **tenantIdN** | **[]int32** | Tenant (ID) | 
  **terminationDate** | **[]string** |  | 
+ **terminationDateEmpty** | **bool** |  | 
  **terminationDateGt** | **[]string** |  | 
  **terminationDateGte** | **[]string** |  | 
  **terminationDateLt** | **[]string** |  | 
@@ -2249,13 +2283,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsCircuitsPartialUpdate(context.Background(), id).PatchedWritableCircuitRequest(patchedWritableCircuitRequest).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsCircuitsPartialUpdate(context.Background(), id).PatchedWritableCircuitRequest(patchedWritableCircuitRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsCircuitsPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsCircuitsPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsCircuitsPartialUpdate`: Circuit
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsCircuitsPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsCircuitsPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -2320,13 +2354,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsCircuitsRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsCircuitsRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsCircuitsRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsCircuitsRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsCircuitsRetrieve`: Circuit
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsCircuitsRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsCircuitsRetrieve`: %v\n", resp)
 }
 ```
 
@@ -2391,13 +2425,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsCircuitsUpdate(context.Background(), id).WritableCircuitRequest(writableCircuitRequest).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsCircuitsUpdate(context.Background(), id).WritableCircuitRequest(writableCircuitRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsCircuitsUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsCircuitsUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsCircuitsUpdate`: Circuit
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsCircuitsUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsCircuitsUpdate`: %v\n", resp)
 }
 ```
 
@@ -2462,9 +2496,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CircuitsApi.CircuitsProviderAccountsBulkDestroy(context.Background()).ProviderAccountRequest(providerAccountRequest).Execute()
+    r, err := apiClient.CircuitsAPI.CircuitsProviderAccountsBulkDestroy(context.Background()).ProviderAccountRequest(providerAccountRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsProviderAccountsBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsProviderAccountsBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2526,13 +2560,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsProviderAccountsBulkPartialUpdate(context.Background()).ProviderAccountRequest(providerAccountRequest).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsProviderAccountsBulkPartialUpdate(context.Background()).ProviderAccountRequest(providerAccountRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsProviderAccountsBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsProviderAccountsBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsProviderAccountsBulkPartialUpdate`: []ProviderAccount
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsProviderAccountsBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsProviderAccountsBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -2592,13 +2626,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsProviderAccountsBulkUpdate(context.Background()).ProviderAccountRequest(providerAccountRequest).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsProviderAccountsBulkUpdate(context.Background()).ProviderAccountRequest(providerAccountRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsProviderAccountsBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsProviderAccountsBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsProviderAccountsBulkUpdate`: []ProviderAccount
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsProviderAccountsBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsProviderAccountsBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -2658,13 +2692,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsProviderAccountsCreate(context.Background()).WritableProviderAccountRequest(writableProviderAccountRequest).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsProviderAccountsCreate(context.Background()).WritableProviderAccountRequest(writableProviderAccountRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsProviderAccountsCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsProviderAccountsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsProviderAccountsCreate`: ProviderAccount
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsProviderAccountsCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsProviderAccountsCreate`: %v\n", resp)
 }
 ```
 
@@ -2724,9 +2758,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CircuitsApi.CircuitsProviderAccountsDestroy(context.Background(), id).Execute()
+    r, err := apiClient.CircuitsAPI.CircuitsProviderAccountsDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsProviderAccountsDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsProviderAccountsDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2769,7 +2803,7 @@ Name | Type | Description  | Notes
 
 ## CircuitsProviderAccountsList
 
-> PaginatedProviderAccountList CircuitsProviderAccountsList(ctx).Account(account).AccountEmpty(accountEmpty).AccountIc(accountIc).AccountIe(accountIe).AccountIew(accountIew).AccountIsw(accountIsw).AccountN(accountN).AccountNic(accountNic).AccountNie(accountNie).AccountNiew(accountNiew).AccountNisw(accountNisw).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Provider(provider).ProviderN(providerN).ProviderId(providerId).ProviderIdN(providerIdN).Q(q).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedProviderAccountList CircuitsProviderAccountsList(ctx).Account(account).AccountEmpty(accountEmpty).AccountIc(accountIc).AccountIe(accountIe).AccountIew(accountIew).AccountIsw(accountIsw).AccountN(accountN).AccountNic(accountNic).AccountNie(accountNie).AccountNiew(accountNiew).AccountNisw(accountNisw).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Provider(provider).ProviderN(providerN).ProviderId(providerId).ProviderIdN(providerIdN).Q(q).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -2801,6 +2835,7 @@ func main() {
     accountNiew := []string{"Inner_example"} // []string |  (optional)
     accountNisw := []string{"Inner_example"} // []string |  (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -2819,18 +2854,21 @@ func main() {
     descriptionNiew := []string{"Inner_example"} // []string |  (optional)
     descriptionNisw := []string{"Inner_example"} // []string |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -2855,13 +2893,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsProviderAccountsList(context.Background()).Account(account).AccountEmpty(accountEmpty).AccountIc(accountIc).AccountIe(accountIe).AccountIew(accountIew).AccountIsw(accountIsw).AccountN(accountN).AccountNic(accountNic).AccountNie(accountNie).AccountNiew(accountNiew).AccountNisw(accountNisw).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Provider(provider).ProviderN(providerN).ProviderId(providerId).ProviderIdN(providerIdN).Q(q).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsProviderAccountsList(context.Background()).Account(account).AccountEmpty(accountEmpty).AccountIc(accountIc).AccountIe(accountIe).AccountIew(accountIew).AccountIsw(accountIsw).AccountN(accountN).AccountNic(accountNic).AccountNie(accountNie).AccountNiew(accountNiew).AccountNisw(accountNisw).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Provider(provider).ProviderN(providerN).ProviderId(providerId).ProviderIdN(providerIdN).Q(q).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsProviderAccountsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsProviderAccountsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsProviderAccountsList`: PaginatedProviderAccountList
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsProviderAccountsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsProviderAccountsList`: %v\n", resp)
 }
 ```
 
@@ -2888,6 +2926,7 @@ Name | Type | Description  | Notes
  **accountNiew** | **[]string** |  | 
  **accountNisw** | **[]string** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -2906,18 +2945,21 @@ Name | Type | Description  | Notes
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -2984,13 +3026,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsProviderAccountsPartialUpdate(context.Background(), id).PatchedWritableProviderAccountRequest(patchedWritableProviderAccountRequest).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsProviderAccountsPartialUpdate(context.Background(), id).PatchedWritableProviderAccountRequest(patchedWritableProviderAccountRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsProviderAccountsPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsProviderAccountsPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsProviderAccountsPartialUpdate`: ProviderAccount
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsProviderAccountsPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsProviderAccountsPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -3055,13 +3097,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsProviderAccountsRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsProviderAccountsRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsProviderAccountsRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsProviderAccountsRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsProviderAccountsRetrieve`: ProviderAccount
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsProviderAccountsRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsProviderAccountsRetrieve`: %v\n", resp)
 }
 ```
 
@@ -3126,13 +3168,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsProviderAccountsUpdate(context.Background(), id).WritableProviderAccountRequest(writableProviderAccountRequest).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsProviderAccountsUpdate(context.Background(), id).WritableProviderAccountRequest(writableProviderAccountRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsProviderAccountsUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsProviderAccountsUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsProviderAccountsUpdate`: ProviderAccount
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsProviderAccountsUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsProviderAccountsUpdate`: %v\n", resp)
 }
 ```
 
@@ -3197,9 +3239,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CircuitsApi.CircuitsProviderNetworksBulkDestroy(context.Background()).ProviderNetworkRequest(providerNetworkRequest).Execute()
+    r, err := apiClient.CircuitsAPI.CircuitsProviderNetworksBulkDestroy(context.Background()).ProviderNetworkRequest(providerNetworkRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsProviderNetworksBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsProviderNetworksBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3261,13 +3303,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsProviderNetworksBulkPartialUpdate(context.Background()).ProviderNetworkRequest(providerNetworkRequest).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsProviderNetworksBulkPartialUpdate(context.Background()).ProviderNetworkRequest(providerNetworkRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsProviderNetworksBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsProviderNetworksBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsProviderNetworksBulkPartialUpdate`: []ProviderNetwork
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsProviderNetworksBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsProviderNetworksBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -3327,13 +3369,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsProviderNetworksBulkUpdate(context.Background()).ProviderNetworkRequest(providerNetworkRequest).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsProviderNetworksBulkUpdate(context.Background()).ProviderNetworkRequest(providerNetworkRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsProviderNetworksBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsProviderNetworksBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsProviderNetworksBulkUpdate`: []ProviderNetwork
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsProviderNetworksBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsProviderNetworksBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -3393,13 +3435,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsProviderNetworksCreate(context.Background()).WritableProviderNetworkRequest(writableProviderNetworkRequest).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsProviderNetworksCreate(context.Background()).WritableProviderNetworkRequest(writableProviderNetworkRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsProviderNetworksCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsProviderNetworksCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsProviderNetworksCreate`: ProviderNetwork
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsProviderNetworksCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsProviderNetworksCreate`: %v\n", resp)
 }
 ```
 
@@ -3459,9 +3501,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CircuitsApi.CircuitsProviderNetworksDestroy(context.Background(), id).Execute()
+    r, err := apiClient.CircuitsAPI.CircuitsProviderNetworksDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsProviderNetworksDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsProviderNetworksDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3504,7 +3546,7 @@ Name | Type | Description  | Notes
 
 ## CircuitsProviderNetworksList
 
-> PaginatedProviderNetworkList CircuitsProviderNetworksList(ctx).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Provider(provider).ProviderN(providerN).ProviderId(providerId).ProviderIdN(providerIdN).Q(q).ServiceId(serviceId).ServiceIdEmpty(serviceIdEmpty).ServiceIdIc(serviceIdIc).ServiceIdIe(serviceIdIe).ServiceIdIew(serviceIdIew).ServiceIdIsw(serviceIdIsw).ServiceIdN(serviceIdN).ServiceIdNic(serviceIdNic).ServiceIdNie(serviceIdNie).ServiceIdNiew(serviceIdNiew).ServiceIdNisw(serviceIdNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedProviderNetworkList CircuitsProviderNetworksList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Provider(provider).ProviderN(providerN).ProviderId(providerId).ProviderIdN(providerIdN).Q(q).ServiceId(serviceId).ServiceIdEmpty(serviceIdEmpty).ServiceIdIc(serviceIdIc).ServiceIdIe(serviceIdIe).ServiceIdIew(serviceIdIew).ServiceIdIsw(serviceIdIsw).ServiceIdN(serviceIdN).ServiceIdNic(serviceIdNic).ServiceIdNie(serviceIdNie).ServiceIdNiew(serviceIdNiew).ServiceIdNisw(serviceIdNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -3525,6 +3567,7 @@ import (
 
 func main() {
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -3543,18 +3586,21 @@ func main() {
     descriptionNiew := []string{"Inner_example"} // []string |  (optional)
     descriptionNisw := []string{"Inner_example"} // []string |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -3590,13 +3636,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsProviderNetworksList(context.Background()).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Provider(provider).ProviderN(providerN).ProviderId(providerId).ProviderIdN(providerIdN).Q(q).ServiceId(serviceId).ServiceIdEmpty(serviceIdEmpty).ServiceIdIc(serviceIdIc).ServiceIdIe(serviceIdIe).ServiceIdIew(serviceIdIew).ServiceIdIsw(serviceIdIsw).ServiceIdN(serviceIdN).ServiceIdNic(serviceIdNic).ServiceIdNie(serviceIdNie).ServiceIdNiew(serviceIdNiew).ServiceIdNisw(serviceIdNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsProviderNetworksList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Provider(provider).ProviderN(providerN).ProviderId(providerId).ProviderIdN(providerIdN).Q(q).ServiceId(serviceId).ServiceIdEmpty(serviceIdEmpty).ServiceIdIc(serviceIdIc).ServiceIdIe(serviceIdIe).ServiceIdIew(serviceIdIew).ServiceIdIsw(serviceIdIsw).ServiceIdN(serviceIdN).ServiceIdNic(serviceIdNic).ServiceIdNie(serviceIdNie).ServiceIdNiew(serviceIdNiew).ServiceIdNisw(serviceIdNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsProviderNetworksList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsProviderNetworksList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsProviderNetworksList`: PaginatedProviderNetworkList
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsProviderNetworksList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsProviderNetworksList`: %v\n", resp)
 }
 ```
 
@@ -3612,6 +3658,7 @@ Other parameters are passed through a pointer to a apiCircuitsProviderNetworksLi
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -3630,18 +3677,21 @@ Name | Type | Description  | Notes
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -3719,13 +3769,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsProviderNetworksPartialUpdate(context.Background(), id).PatchedWritableProviderNetworkRequest(patchedWritableProviderNetworkRequest).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsProviderNetworksPartialUpdate(context.Background(), id).PatchedWritableProviderNetworkRequest(patchedWritableProviderNetworkRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsProviderNetworksPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsProviderNetworksPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsProviderNetworksPartialUpdate`: ProviderNetwork
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsProviderNetworksPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsProviderNetworksPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -3790,13 +3840,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsProviderNetworksRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsProviderNetworksRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsProviderNetworksRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsProviderNetworksRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsProviderNetworksRetrieve`: ProviderNetwork
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsProviderNetworksRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsProviderNetworksRetrieve`: %v\n", resp)
 }
 ```
 
@@ -3861,13 +3911,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsProviderNetworksUpdate(context.Background(), id).WritableProviderNetworkRequest(writableProviderNetworkRequest).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsProviderNetworksUpdate(context.Background(), id).WritableProviderNetworkRequest(writableProviderNetworkRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsProviderNetworksUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsProviderNetworksUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsProviderNetworksUpdate`: ProviderNetwork
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsProviderNetworksUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsProviderNetworksUpdate`: %v\n", resp)
 }
 ```
 
@@ -3932,9 +3982,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CircuitsApi.CircuitsProvidersBulkDestroy(context.Background()).ProviderRequest(providerRequest).Execute()
+    r, err := apiClient.CircuitsAPI.CircuitsProvidersBulkDestroy(context.Background()).ProviderRequest(providerRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsProvidersBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsProvidersBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3996,13 +4046,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsProvidersBulkPartialUpdate(context.Background()).ProviderRequest(providerRequest).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsProvidersBulkPartialUpdate(context.Background()).ProviderRequest(providerRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsProvidersBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsProvidersBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsProvidersBulkPartialUpdate`: []Provider
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsProvidersBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsProvidersBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -4062,13 +4112,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsProvidersBulkUpdate(context.Background()).ProviderRequest(providerRequest).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsProvidersBulkUpdate(context.Background()).ProviderRequest(providerRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsProvidersBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsProvidersBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsProvidersBulkUpdate`: []Provider
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsProvidersBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsProvidersBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -4128,13 +4178,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsProvidersCreate(context.Background()).WritableProviderRequest(writableProviderRequest).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsProvidersCreate(context.Background()).WritableProviderRequest(writableProviderRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsProvidersCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsProvidersCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsProvidersCreate`: Provider
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsProvidersCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsProvidersCreate`: %v\n", resp)
 }
 ```
 
@@ -4194,9 +4244,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CircuitsApi.CircuitsProvidersDestroy(context.Background(), id).Execute()
+    r, err := apiClient.CircuitsAPI.CircuitsProvidersDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsProvidersDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsProvidersDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -4239,7 +4289,7 @@ Name | Type | Description  | Notes
 
 ## CircuitsProvidersList
 
-> PaginatedProviderList CircuitsProvidersList(ctx).AsnId(asnId).AsnIdN(asnIdN).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedProviderList CircuitsProvidersList(ctx).AsnId(asnId).AsnIdN(asnIdN).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -4268,6 +4318,7 @@ func main() {
     contactRole := []int32{int32(123)} // []int32 | Contact Role (optional)
     contactRoleN := []int32{int32(123)} // []int32 | Contact Role (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -4275,18 +4326,21 @@ func main() {
     createdN := []time.Time{time.Now()} // []time.Time |  (optional)
     createdByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -4330,13 +4384,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsProvidersList(context.Background()).AsnId(asnId).AsnIdN(asnIdN).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsProvidersList(context.Background()).AsnId(asnId).AsnIdN(asnIdN).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsProvidersList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsProvidersList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsProvidersList`: PaginatedProviderList
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsProvidersList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsProvidersList`: %v\n", resp)
 }
 ```
 
@@ -4360,6 +4414,7 @@ Name | Type | Description  | Notes
  **contactRole** | **[]int32** | Contact Role | 
  **contactRoleN** | **[]int32** | Contact Role | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -4367,18 +4422,21 @@ Name | Type | Description  | Notes
  **createdN** | [**[]time.Time**](time.Time.md) |  | 
  **createdByRequest** | **string** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -4464,13 +4522,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsProvidersPartialUpdate(context.Background(), id).PatchedWritableProviderRequest(patchedWritableProviderRequest).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsProvidersPartialUpdate(context.Background(), id).PatchedWritableProviderRequest(patchedWritableProviderRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsProvidersPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsProvidersPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsProvidersPartialUpdate`: Provider
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsProvidersPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsProvidersPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -4535,13 +4593,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsProvidersRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsProvidersRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsProvidersRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsProvidersRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsProvidersRetrieve`: Provider
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsProvidersRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsProvidersRetrieve`: %v\n", resp)
 }
 ```
 
@@ -4606,13 +4664,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CircuitsApi.CircuitsProvidersUpdate(context.Background(), id).WritableProviderRequest(writableProviderRequest).Execute()
+    resp, r, err := apiClient.CircuitsAPI.CircuitsProvidersUpdate(context.Background(), id).WritableProviderRequest(writableProviderRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsApi.CircuitsProvidersUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsProvidersUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CircuitsProvidersUpdate`: Provider
-    fmt.Fprintf(os.Stdout, "Response from `CircuitsApi.CircuitsProvidersUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CircuitsAPI.CircuitsProvidersUpdate`: %v\n", resp)
 }
 ```
 

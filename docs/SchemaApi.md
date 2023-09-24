@@ -1,10 +1,10 @@
-# \SchemaApi
+# \SchemaAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**SchemaRetrieve**](SchemaApi.md#SchemaRetrieve) | **Get** /api/schema/ | 
+[**SchemaRetrieve**](SchemaAPI.md#SchemaRetrieve) | **Get** /api/schema/ | 
 
 
 
@@ -33,13 +33,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SchemaApi.SchemaRetrieve(context.Background()).Format(format).Execute()
+    resp, r, err := apiClient.SchemaAPI.SchemaRetrieve(context.Background()).Format(format).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SchemaApi.SchemaRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SchemaAPI.SchemaRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `SchemaRetrieve`: map[string]interface{}
-    fmt.Fprintf(os.Stdout, "Response from `SchemaApi.SchemaRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SchemaAPI.SchemaRetrieve`: %v\n", resp)
 }
 ```
 

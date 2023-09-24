@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Display** | **string** |  | [readonly] 
 **DeviceType** | Pointer to [**NullableNestedDeviceType**](NestedDeviceType.md) |  | [optional] 
 **ModuleType** | Pointer to [**NullableNestedModuleType**](NestedModuleType.md) |  | [optional] 
-**Name** | **string** |          {module} is accepted as a substitution for the module bay position when attached to a module type.          | 
+**Name** | **string** | {module} is accepted as a substitution for the module bay position when attached to a module type. | 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Type** | Pointer to [**NullablePowerPortType**](PowerPortType.md) |  | [optional] 
 **MaximumDraw** | Pointer to **NullableInt32** | Maximum power draw (watts) | [optional] 

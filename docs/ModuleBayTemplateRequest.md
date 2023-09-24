@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DeviceType** | [**NestedDeviceTypeRequest**](NestedDeviceTypeRequest.md) |  | 
-**Name** | **string** |          {module} is accepted as a substitution for the module bay position when attached to a module type.          | 
+**Name** | **string** | {module} is accepted as a substitution for the module bay position when attached to a module type. | 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Position** | Pointer to **string** | Identifier to reference when renaming installed components | [optional] 
 **Description** | Pointer to **string** |  | [optional] 

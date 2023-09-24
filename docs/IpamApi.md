@@ -1,181 +1,181 @@
-# \IpamApi
+# \IpamAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**IpamAggregatesBulkDestroy**](IpamApi.md#IpamAggregatesBulkDestroy) | **Delete** /api/ipam/aggregates/ | 
-[**IpamAggregatesBulkPartialUpdate**](IpamApi.md#IpamAggregatesBulkPartialUpdate) | **Patch** /api/ipam/aggregates/ | 
-[**IpamAggregatesBulkUpdate**](IpamApi.md#IpamAggregatesBulkUpdate) | **Put** /api/ipam/aggregates/ | 
-[**IpamAggregatesCreate**](IpamApi.md#IpamAggregatesCreate) | **Post** /api/ipam/aggregates/ | 
-[**IpamAggregatesDestroy**](IpamApi.md#IpamAggregatesDestroy) | **Delete** /api/ipam/aggregates/{id}/ | 
-[**IpamAggregatesList**](IpamApi.md#IpamAggregatesList) | **Get** /api/ipam/aggregates/ | 
-[**IpamAggregatesPartialUpdate**](IpamApi.md#IpamAggregatesPartialUpdate) | **Patch** /api/ipam/aggregates/{id}/ | 
-[**IpamAggregatesRetrieve**](IpamApi.md#IpamAggregatesRetrieve) | **Get** /api/ipam/aggregates/{id}/ | 
-[**IpamAggregatesUpdate**](IpamApi.md#IpamAggregatesUpdate) | **Put** /api/ipam/aggregates/{id}/ | 
-[**IpamAsnRangesAvailableAsnsCreate**](IpamApi.md#IpamAsnRangesAvailableAsnsCreate) | **Post** /api/ipam/asn-ranges/{id}/available-asns/ | 
-[**IpamAsnRangesAvailableAsnsList**](IpamApi.md#IpamAsnRangesAvailableAsnsList) | **Get** /api/ipam/asn-ranges/{id}/available-asns/ | 
-[**IpamAsnRangesBulkDestroy**](IpamApi.md#IpamAsnRangesBulkDestroy) | **Delete** /api/ipam/asn-ranges/ | 
-[**IpamAsnRangesBulkPartialUpdate**](IpamApi.md#IpamAsnRangesBulkPartialUpdate) | **Patch** /api/ipam/asn-ranges/ | 
-[**IpamAsnRangesBulkUpdate**](IpamApi.md#IpamAsnRangesBulkUpdate) | **Put** /api/ipam/asn-ranges/ | 
-[**IpamAsnRangesCreate**](IpamApi.md#IpamAsnRangesCreate) | **Post** /api/ipam/asn-ranges/ | 
-[**IpamAsnRangesDestroy**](IpamApi.md#IpamAsnRangesDestroy) | **Delete** /api/ipam/asn-ranges/{id}/ | 
-[**IpamAsnRangesList**](IpamApi.md#IpamAsnRangesList) | **Get** /api/ipam/asn-ranges/ | 
-[**IpamAsnRangesPartialUpdate**](IpamApi.md#IpamAsnRangesPartialUpdate) | **Patch** /api/ipam/asn-ranges/{id}/ | 
-[**IpamAsnRangesRetrieve**](IpamApi.md#IpamAsnRangesRetrieve) | **Get** /api/ipam/asn-ranges/{id}/ | 
-[**IpamAsnRangesUpdate**](IpamApi.md#IpamAsnRangesUpdate) | **Put** /api/ipam/asn-ranges/{id}/ | 
-[**IpamAsnsBulkDestroy**](IpamApi.md#IpamAsnsBulkDestroy) | **Delete** /api/ipam/asns/ | 
-[**IpamAsnsBulkPartialUpdate**](IpamApi.md#IpamAsnsBulkPartialUpdate) | **Patch** /api/ipam/asns/ | 
-[**IpamAsnsBulkUpdate**](IpamApi.md#IpamAsnsBulkUpdate) | **Put** /api/ipam/asns/ | 
-[**IpamAsnsCreate**](IpamApi.md#IpamAsnsCreate) | **Post** /api/ipam/asns/ | 
-[**IpamAsnsDestroy**](IpamApi.md#IpamAsnsDestroy) | **Delete** /api/ipam/asns/{id}/ | 
-[**IpamAsnsList**](IpamApi.md#IpamAsnsList) | **Get** /api/ipam/asns/ | 
-[**IpamAsnsPartialUpdate**](IpamApi.md#IpamAsnsPartialUpdate) | **Patch** /api/ipam/asns/{id}/ | 
-[**IpamAsnsRetrieve**](IpamApi.md#IpamAsnsRetrieve) | **Get** /api/ipam/asns/{id}/ | 
-[**IpamAsnsUpdate**](IpamApi.md#IpamAsnsUpdate) | **Put** /api/ipam/asns/{id}/ | 
-[**IpamFhrpGroupAssignmentsBulkDestroy**](IpamApi.md#IpamFhrpGroupAssignmentsBulkDestroy) | **Delete** /api/ipam/fhrp-group-assignments/ | 
-[**IpamFhrpGroupAssignmentsBulkPartialUpdate**](IpamApi.md#IpamFhrpGroupAssignmentsBulkPartialUpdate) | **Patch** /api/ipam/fhrp-group-assignments/ | 
-[**IpamFhrpGroupAssignmentsBulkUpdate**](IpamApi.md#IpamFhrpGroupAssignmentsBulkUpdate) | **Put** /api/ipam/fhrp-group-assignments/ | 
-[**IpamFhrpGroupAssignmentsCreate**](IpamApi.md#IpamFhrpGroupAssignmentsCreate) | **Post** /api/ipam/fhrp-group-assignments/ | 
-[**IpamFhrpGroupAssignmentsDestroy**](IpamApi.md#IpamFhrpGroupAssignmentsDestroy) | **Delete** /api/ipam/fhrp-group-assignments/{id}/ | 
-[**IpamFhrpGroupAssignmentsList**](IpamApi.md#IpamFhrpGroupAssignmentsList) | **Get** /api/ipam/fhrp-group-assignments/ | 
-[**IpamFhrpGroupAssignmentsPartialUpdate**](IpamApi.md#IpamFhrpGroupAssignmentsPartialUpdate) | **Patch** /api/ipam/fhrp-group-assignments/{id}/ | 
-[**IpamFhrpGroupAssignmentsRetrieve**](IpamApi.md#IpamFhrpGroupAssignmentsRetrieve) | **Get** /api/ipam/fhrp-group-assignments/{id}/ | 
-[**IpamFhrpGroupAssignmentsUpdate**](IpamApi.md#IpamFhrpGroupAssignmentsUpdate) | **Put** /api/ipam/fhrp-group-assignments/{id}/ | 
-[**IpamFhrpGroupsBulkDestroy**](IpamApi.md#IpamFhrpGroupsBulkDestroy) | **Delete** /api/ipam/fhrp-groups/ | 
-[**IpamFhrpGroupsBulkPartialUpdate**](IpamApi.md#IpamFhrpGroupsBulkPartialUpdate) | **Patch** /api/ipam/fhrp-groups/ | 
-[**IpamFhrpGroupsBulkUpdate**](IpamApi.md#IpamFhrpGroupsBulkUpdate) | **Put** /api/ipam/fhrp-groups/ | 
-[**IpamFhrpGroupsCreate**](IpamApi.md#IpamFhrpGroupsCreate) | **Post** /api/ipam/fhrp-groups/ | 
-[**IpamFhrpGroupsDestroy**](IpamApi.md#IpamFhrpGroupsDestroy) | **Delete** /api/ipam/fhrp-groups/{id}/ | 
-[**IpamFhrpGroupsList**](IpamApi.md#IpamFhrpGroupsList) | **Get** /api/ipam/fhrp-groups/ | 
-[**IpamFhrpGroupsPartialUpdate**](IpamApi.md#IpamFhrpGroupsPartialUpdate) | **Patch** /api/ipam/fhrp-groups/{id}/ | 
-[**IpamFhrpGroupsRetrieve**](IpamApi.md#IpamFhrpGroupsRetrieve) | **Get** /api/ipam/fhrp-groups/{id}/ | 
-[**IpamFhrpGroupsUpdate**](IpamApi.md#IpamFhrpGroupsUpdate) | **Put** /api/ipam/fhrp-groups/{id}/ | 
-[**IpamIpAddressesBulkDestroy**](IpamApi.md#IpamIpAddressesBulkDestroy) | **Delete** /api/ipam/ip-addresses/ | 
-[**IpamIpAddressesBulkPartialUpdate**](IpamApi.md#IpamIpAddressesBulkPartialUpdate) | **Patch** /api/ipam/ip-addresses/ | 
-[**IpamIpAddressesBulkUpdate**](IpamApi.md#IpamIpAddressesBulkUpdate) | **Put** /api/ipam/ip-addresses/ | 
-[**IpamIpAddressesCreate**](IpamApi.md#IpamIpAddressesCreate) | **Post** /api/ipam/ip-addresses/ | 
-[**IpamIpAddressesDestroy**](IpamApi.md#IpamIpAddressesDestroy) | **Delete** /api/ipam/ip-addresses/{id}/ | 
-[**IpamIpAddressesList**](IpamApi.md#IpamIpAddressesList) | **Get** /api/ipam/ip-addresses/ | 
-[**IpamIpAddressesPartialUpdate**](IpamApi.md#IpamIpAddressesPartialUpdate) | **Patch** /api/ipam/ip-addresses/{id}/ | 
-[**IpamIpAddressesRetrieve**](IpamApi.md#IpamIpAddressesRetrieve) | **Get** /api/ipam/ip-addresses/{id}/ | 
-[**IpamIpAddressesUpdate**](IpamApi.md#IpamIpAddressesUpdate) | **Put** /api/ipam/ip-addresses/{id}/ | 
-[**IpamIpRangesAvailableIpsCreate**](IpamApi.md#IpamIpRangesAvailableIpsCreate) | **Post** /api/ipam/ip-ranges/{id}/available-ips/ | 
-[**IpamIpRangesAvailableIpsList**](IpamApi.md#IpamIpRangesAvailableIpsList) | **Get** /api/ipam/ip-ranges/{id}/available-ips/ | 
-[**IpamIpRangesBulkDestroy**](IpamApi.md#IpamIpRangesBulkDestroy) | **Delete** /api/ipam/ip-ranges/ | 
-[**IpamIpRangesBulkPartialUpdate**](IpamApi.md#IpamIpRangesBulkPartialUpdate) | **Patch** /api/ipam/ip-ranges/ | 
-[**IpamIpRangesBulkUpdate**](IpamApi.md#IpamIpRangesBulkUpdate) | **Put** /api/ipam/ip-ranges/ | 
-[**IpamIpRangesCreate**](IpamApi.md#IpamIpRangesCreate) | **Post** /api/ipam/ip-ranges/ | 
-[**IpamIpRangesDestroy**](IpamApi.md#IpamIpRangesDestroy) | **Delete** /api/ipam/ip-ranges/{id}/ | 
-[**IpamIpRangesList**](IpamApi.md#IpamIpRangesList) | **Get** /api/ipam/ip-ranges/ | 
-[**IpamIpRangesPartialUpdate**](IpamApi.md#IpamIpRangesPartialUpdate) | **Patch** /api/ipam/ip-ranges/{id}/ | 
-[**IpamIpRangesRetrieve**](IpamApi.md#IpamIpRangesRetrieve) | **Get** /api/ipam/ip-ranges/{id}/ | 
-[**IpamIpRangesUpdate**](IpamApi.md#IpamIpRangesUpdate) | **Put** /api/ipam/ip-ranges/{id}/ | 
-[**IpamL2vpnTerminationsBulkDestroy**](IpamApi.md#IpamL2vpnTerminationsBulkDestroy) | **Delete** /api/ipam/l2vpn-terminations/ | 
-[**IpamL2vpnTerminationsBulkPartialUpdate**](IpamApi.md#IpamL2vpnTerminationsBulkPartialUpdate) | **Patch** /api/ipam/l2vpn-terminations/ | 
-[**IpamL2vpnTerminationsBulkUpdate**](IpamApi.md#IpamL2vpnTerminationsBulkUpdate) | **Put** /api/ipam/l2vpn-terminations/ | 
-[**IpamL2vpnTerminationsCreate**](IpamApi.md#IpamL2vpnTerminationsCreate) | **Post** /api/ipam/l2vpn-terminations/ | 
-[**IpamL2vpnTerminationsDestroy**](IpamApi.md#IpamL2vpnTerminationsDestroy) | **Delete** /api/ipam/l2vpn-terminations/{id}/ | 
-[**IpamL2vpnTerminationsList**](IpamApi.md#IpamL2vpnTerminationsList) | **Get** /api/ipam/l2vpn-terminations/ | 
-[**IpamL2vpnTerminationsPartialUpdate**](IpamApi.md#IpamL2vpnTerminationsPartialUpdate) | **Patch** /api/ipam/l2vpn-terminations/{id}/ | 
-[**IpamL2vpnTerminationsRetrieve**](IpamApi.md#IpamL2vpnTerminationsRetrieve) | **Get** /api/ipam/l2vpn-terminations/{id}/ | 
-[**IpamL2vpnTerminationsUpdate**](IpamApi.md#IpamL2vpnTerminationsUpdate) | **Put** /api/ipam/l2vpn-terminations/{id}/ | 
-[**IpamL2vpnsBulkDestroy**](IpamApi.md#IpamL2vpnsBulkDestroy) | **Delete** /api/ipam/l2vpns/ | 
-[**IpamL2vpnsBulkPartialUpdate**](IpamApi.md#IpamL2vpnsBulkPartialUpdate) | **Patch** /api/ipam/l2vpns/ | 
-[**IpamL2vpnsBulkUpdate**](IpamApi.md#IpamL2vpnsBulkUpdate) | **Put** /api/ipam/l2vpns/ | 
-[**IpamL2vpnsCreate**](IpamApi.md#IpamL2vpnsCreate) | **Post** /api/ipam/l2vpns/ | 
-[**IpamL2vpnsDestroy**](IpamApi.md#IpamL2vpnsDestroy) | **Delete** /api/ipam/l2vpns/{id}/ | 
-[**IpamL2vpnsList**](IpamApi.md#IpamL2vpnsList) | **Get** /api/ipam/l2vpns/ | 
-[**IpamL2vpnsPartialUpdate**](IpamApi.md#IpamL2vpnsPartialUpdate) | **Patch** /api/ipam/l2vpns/{id}/ | 
-[**IpamL2vpnsRetrieve**](IpamApi.md#IpamL2vpnsRetrieve) | **Get** /api/ipam/l2vpns/{id}/ | 
-[**IpamL2vpnsUpdate**](IpamApi.md#IpamL2vpnsUpdate) | **Put** /api/ipam/l2vpns/{id}/ | 
-[**IpamPrefixesAvailableIpsCreate**](IpamApi.md#IpamPrefixesAvailableIpsCreate) | **Post** /api/ipam/prefixes/{id}/available-ips/ | 
-[**IpamPrefixesAvailableIpsList**](IpamApi.md#IpamPrefixesAvailableIpsList) | **Get** /api/ipam/prefixes/{id}/available-ips/ | 
-[**IpamPrefixesAvailablePrefixesCreate**](IpamApi.md#IpamPrefixesAvailablePrefixesCreate) | **Post** /api/ipam/prefixes/{id}/available-prefixes/ | 
-[**IpamPrefixesAvailablePrefixesList**](IpamApi.md#IpamPrefixesAvailablePrefixesList) | **Get** /api/ipam/prefixes/{id}/available-prefixes/ | 
-[**IpamPrefixesBulkDestroy**](IpamApi.md#IpamPrefixesBulkDestroy) | **Delete** /api/ipam/prefixes/ | 
-[**IpamPrefixesBulkPartialUpdate**](IpamApi.md#IpamPrefixesBulkPartialUpdate) | **Patch** /api/ipam/prefixes/ | 
-[**IpamPrefixesBulkUpdate**](IpamApi.md#IpamPrefixesBulkUpdate) | **Put** /api/ipam/prefixes/ | 
-[**IpamPrefixesCreate**](IpamApi.md#IpamPrefixesCreate) | **Post** /api/ipam/prefixes/ | 
-[**IpamPrefixesDestroy**](IpamApi.md#IpamPrefixesDestroy) | **Delete** /api/ipam/prefixes/{id}/ | 
-[**IpamPrefixesList**](IpamApi.md#IpamPrefixesList) | **Get** /api/ipam/prefixes/ | 
-[**IpamPrefixesPartialUpdate**](IpamApi.md#IpamPrefixesPartialUpdate) | **Patch** /api/ipam/prefixes/{id}/ | 
-[**IpamPrefixesRetrieve**](IpamApi.md#IpamPrefixesRetrieve) | **Get** /api/ipam/prefixes/{id}/ | 
-[**IpamPrefixesUpdate**](IpamApi.md#IpamPrefixesUpdate) | **Put** /api/ipam/prefixes/{id}/ | 
-[**IpamRirsBulkDestroy**](IpamApi.md#IpamRirsBulkDestroy) | **Delete** /api/ipam/rirs/ | 
-[**IpamRirsBulkPartialUpdate**](IpamApi.md#IpamRirsBulkPartialUpdate) | **Patch** /api/ipam/rirs/ | 
-[**IpamRirsBulkUpdate**](IpamApi.md#IpamRirsBulkUpdate) | **Put** /api/ipam/rirs/ | 
-[**IpamRirsCreate**](IpamApi.md#IpamRirsCreate) | **Post** /api/ipam/rirs/ | 
-[**IpamRirsDestroy**](IpamApi.md#IpamRirsDestroy) | **Delete** /api/ipam/rirs/{id}/ | 
-[**IpamRirsList**](IpamApi.md#IpamRirsList) | **Get** /api/ipam/rirs/ | 
-[**IpamRirsPartialUpdate**](IpamApi.md#IpamRirsPartialUpdate) | **Patch** /api/ipam/rirs/{id}/ | 
-[**IpamRirsRetrieve**](IpamApi.md#IpamRirsRetrieve) | **Get** /api/ipam/rirs/{id}/ | 
-[**IpamRirsUpdate**](IpamApi.md#IpamRirsUpdate) | **Put** /api/ipam/rirs/{id}/ | 
-[**IpamRolesBulkDestroy**](IpamApi.md#IpamRolesBulkDestroy) | **Delete** /api/ipam/roles/ | 
-[**IpamRolesBulkPartialUpdate**](IpamApi.md#IpamRolesBulkPartialUpdate) | **Patch** /api/ipam/roles/ | 
-[**IpamRolesBulkUpdate**](IpamApi.md#IpamRolesBulkUpdate) | **Put** /api/ipam/roles/ | 
-[**IpamRolesCreate**](IpamApi.md#IpamRolesCreate) | **Post** /api/ipam/roles/ | 
-[**IpamRolesDestroy**](IpamApi.md#IpamRolesDestroy) | **Delete** /api/ipam/roles/{id}/ | 
-[**IpamRolesList**](IpamApi.md#IpamRolesList) | **Get** /api/ipam/roles/ | 
-[**IpamRolesPartialUpdate**](IpamApi.md#IpamRolesPartialUpdate) | **Patch** /api/ipam/roles/{id}/ | 
-[**IpamRolesRetrieve**](IpamApi.md#IpamRolesRetrieve) | **Get** /api/ipam/roles/{id}/ | 
-[**IpamRolesUpdate**](IpamApi.md#IpamRolesUpdate) | **Put** /api/ipam/roles/{id}/ | 
-[**IpamRouteTargetsBulkDestroy**](IpamApi.md#IpamRouteTargetsBulkDestroy) | **Delete** /api/ipam/route-targets/ | 
-[**IpamRouteTargetsBulkPartialUpdate**](IpamApi.md#IpamRouteTargetsBulkPartialUpdate) | **Patch** /api/ipam/route-targets/ | 
-[**IpamRouteTargetsBulkUpdate**](IpamApi.md#IpamRouteTargetsBulkUpdate) | **Put** /api/ipam/route-targets/ | 
-[**IpamRouteTargetsCreate**](IpamApi.md#IpamRouteTargetsCreate) | **Post** /api/ipam/route-targets/ | 
-[**IpamRouteTargetsDestroy**](IpamApi.md#IpamRouteTargetsDestroy) | **Delete** /api/ipam/route-targets/{id}/ | 
-[**IpamRouteTargetsList**](IpamApi.md#IpamRouteTargetsList) | **Get** /api/ipam/route-targets/ | 
-[**IpamRouteTargetsPartialUpdate**](IpamApi.md#IpamRouteTargetsPartialUpdate) | **Patch** /api/ipam/route-targets/{id}/ | 
-[**IpamRouteTargetsRetrieve**](IpamApi.md#IpamRouteTargetsRetrieve) | **Get** /api/ipam/route-targets/{id}/ | 
-[**IpamRouteTargetsUpdate**](IpamApi.md#IpamRouteTargetsUpdate) | **Put** /api/ipam/route-targets/{id}/ | 
-[**IpamServiceTemplatesBulkDestroy**](IpamApi.md#IpamServiceTemplatesBulkDestroy) | **Delete** /api/ipam/service-templates/ | 
-[**IpamServiceTemplatesBulkPartialUpdate**](IpamApi.md#IpamServiceTemplatesBulkPartialUpdate) | **Patch** /api/ipam/service-templates/ | 
-[**IpamServiceTemplatesBulkUpdate**](IpamApi.md#IpamServiceTemplatesBulkUpdate) | **Put** /api/ipam/service-templates/ | 
-[**IpamServiceTemplatesCreate**](IpamApi.md#IpamServiceTemplatesCreate) | **Post** /api/ipam/service-templates/ | 
-[**IpamServiceTemplatesDestroy**](IpamApi.md#IpamServiceTemplatesDestroy) | **Delete** /api/ipam/service-templates/{id}/ | 
-[**IpamServiceTemplatesList**](IpamApi.md#IpamServiceTemplatesList) | **Get** /api/ipam/service-templates/ | 
-[**IpamServiceTemplatesPartialUpdate**](IpamApi.md#IpamServiceTemplatesPartialUpdate) | **Patch** /api/ipam/service-templates/{id}/ | 
-[**IpamServiceTemplatesRetrieve**](IpamApi.md#IpamServiceTemplatesRetrieve) | **Get** /api/ipam/service-templates/{id}/ | 
-[**IpamServiceTemplatesUpdate**](IpamApi.md#IpamServiceTemplatesUpdate) | **Put** /api/ipam/service-templates/{id}/ | 
-[**IpamServicesBulkDestroy**](IpamApi.md#IpamServicesBulkDestroy) | **Delete** /api/ipam/services/ | 
-[**IpamServicesBulkPartialUpdate**](IpamApi.md#IpamServicesBulkPartialUpdate) | **Patch** /api/ipam/services/ | 
-[**IpamServicesBulkUpdate**](IpamApi.md#IpamServicesBulkUpdate) | **Put** /api/ipam/services/ | 
-[**IpamServicesCreate**](IpamApi.md#IpamServicesCreate) | **Post** /api/ipam/services/ | 
-[**IpamServicesDestroy**](IpamApi.md#IpamServicesDestroy) | **Delete** /api/ipam/services/{id}/ | 
-[**IpamServicesList**](IpamApi.md#IpamServicesList) | **Get** /api/ipam/services/ | 
-[**IpamServicesPartialUpdate**](IpamApi.md#IpamServicesPartialUpdate) | **Patch** /api/ipam/services/{id}/ | 
-[**IpamServicesRetrieve**](IpamApi.md#IpamServicesRetrieve) | **Get** /api/ipam/services/{id}/ | 
-[**IpamServicesUpdate**](IpamApi.md#IpamServicesUpdate) | **Put** /api/ipam/services/{id}/ | 
-[**IpamVlanGroupsAvailableVlansCreate**](IpamApi.md#IpamVlanGroupsAvailableVlansCreate) | **Post** /api/ipam/vlan-groups/{id}/available-vlans/ | 
-[**IpamVlanGroupsAvailableVlansList**](IpamApi.md#IpamVlanGroupsAvailableVlansList) | **Get** /api/ipam/vlan-groups/{id}/available-vlans/ | 
-[**IpamVlanGroupsBulkDestroy**](IpamApi.md#IpamVlanGroupsBulkDestroy) | **Delete** /api/ipam/vlan-groups/ | 
-[**IpamVlanGroupsBulkPartialUpdate**](IpamApi.md#IpamVlanGroupsBulkPartialUpdate) | **Patch** /api/ipam/vlan-groups/ | 
-[**IpamVlanGroupsBulkUpdate**](IpamApi.md#IpamVlanGroupsBulkUpdate) | **Put** /api/ipam/vlan-groups/ | 
-[**IpamVlanGroupsCreate**](IpamApi.md#IpamVlanGroupsCreate) | **Post** /api/ipam/vlan-groups/ | 
-[**IpamVlanGroupsDestroy**](IpamApi.md#IpamVlanGroupsDestroy) | **Delete** /api/ipam/vlan-groups/{id}/ | 
-[**IpamVlanGroupsList**](IpamApi.md#IpamVlanGroupsList) | **Get** /api/ipam/vlan-groups/ | 
-[**IpamVlanGroupsPartialUpdate**](IpamApi.md#IpamVlanGroupsPartialUpdate) | **Patch** /api/ipam/vlan-groups/{id}/ | 
-[**IpamVlanGroupsRetrieve**](IpamApi.md#IpamVlanGroupsRetrieve) | **Get** /api/ipam/vlan-groups/{id}/ | 
-[**IpamVlanGroupsUpdate**](IpamApi.md#IpamVlanGroupsUpdate) | **Put** /api/ipam/vlan-groups/{id}/ | 
-[**IpamVlansBulkDestroy**](IpamApi.md#IpamVlansBulkDestroy) | **Delete** /api/ipam/vlans/ | 
-[**IpamVlansBulkPartialUpdate**](IpamApi.md#IpamVlansBulkPartialUpdate) | **Patch** /api/ipam/vlans/ | 
-[**IpamVlansBulkUpdate**](IpamApi.md#IpamVlansBulkUpdate) | **Put** /api/ipam/vlans/ | 
-[**IpamVlansCreate**](IpamApi.md#IpamVlansCreate) | **Post** /api/ipam/vlans/ | 
-[**IpamVlansDestroy**](IpamApi.md#IpamVlansDestroy) | **Delete** /api/ipam/vlans/{id}/ | 
-[**IpamVlansList**](IpamApi.md#IpamVlansList) | **Get** /api/ipam/vlans/ | 
-[**IpamVlansPartialUpdate**](IpamApi.md#IpamVlansPartialUpdate) | **Patch** /api/ipam/vlans/{id}/ | 
-[**IpamVlansRetrieve**](IpamApi.md#IpamVlansRetrieve) | **Get** /api/ipam/vlans/{id}/ | 
-[**IpamVlansUpdate**](IpamApi.md#IpamVlansUpdate) | **Put** /api/ipam/vlans/{id}/ | 
-[**IpamVrfsBulkDestroy**](IpamApi.md#IpamVrfsBulkDestroy) | **Delete** /api/ipam/vrfs/ | 
-[**IpamVrfsBulkPartialUpdate**](IpamApi.md#IpamVrfsBulkPartialUpdate) | **Patch** /api/ipam/vrfs/ | 
-[**IpamVrfsBulkUpdate**](IpamApi.md#IpamVrfsBulkUpdate) | **Put** /api/ipam/vrfs/ | 
-[**IpamVrfsCreate**](IpamApi.md#IpamVrfsCreate) | **Post** /api/ipam/vrfs/ | 
-[**IpamVrfsDestroy**](IpamApi.md#IpamVrfsDestroy) | **Delete** /api/ipam/vrfs/{id}/ | 
-[**IpamVrfsList**](IpamApi.md#IpamVrfsList) | **Get** /api/ipam/vrfs/ | 
-[**IpamVrfsPartialUpdate**](IpamApi.md#IpamVrfsPartialUpdate) | **Patch** /api/ipam/vrfs/{id}/ | 
-[**IpamVrfsRetrieve**](IpamApi.md#IpamVrfsRetrieve) | **Get** /api/ipam/vrfs/{id}/ | 
-[**IpamVrfsUpdate**](IpamApi.md#IpamVrfsUpdate) | **Put** /api/ipam/vrfs/{id}/ | 
+[**IpamAggregatesBulkDestroy**](IpamAPI.md#IpamAggregatesBulkDestroy) | **Delete** /api/ipam/aggregates/ | 
+[**IpamAggregatesBulkPartialUpdate**](IpamAPI.md#IpamAggregatesBulkPartialUpdate) | **Patch** /api/ipam/aggregates/ | 
+[**IpamAggregatesBulkUpdate**](IpamAPI.md#IpamAggregatesBulkUpdate) | **Put** /api/ipam/aggregates/ | 
+[**IpamAggregatesCreate**](IpamAPI.md#IpamAggregatesCreate) | **Post** /api/ipam/aggregates/ | 
+[**IpamAggregatesDestroy**](IpamAPI.md#IpamAggregatesDestroy) | **Delete** /api/ipam/aggregates/{id}/ | 
+[**IpamAggregatesList**](IpamAPI.md#IpamAggregatesList) | **Get** /api/ipam/aggregates/ | 
+[**IpamAggregatesPartialUpdate**](IpamAPI.md#IpamAggregatesPartialUpdate) | **Patch** /api/ipam/aggregates/{id}/ | 
+[**IpamAggregatesRetrieve**](IpamAPI.md#IpamAggregatesRetrieve) | **Get** /api/ipam/aggregates/{id}/ | 
+[**IpamAggregatesUpdate**](IpamAPI.md#IpamAggregatesUpdate) | **Put** /api/ipam/aggregates/{id}/ | 
+[**IpamAsnRangesAvailableAsnsCreate**](IpamAPI.md#IpamAsnRangesAvailableAsnsCreate) | **Post** /api/ipam/asn-ranges/{id}/available-asns/ | 
+[**IpamAsnRangesAvailableAsnsList**](IpamAPI.md#IpamAsnRangesAvailableAsnsList) | **Get** /api/ipam/asn-ranges/{id}/available-asns/ | 
+[**IpamAsnRangesBulkDestroy**](IpamAPI.md#IpamAsnRangesBulkDestroy) | **Delete** /api/ipam/asn-ranges/ | 
+[**IpamAsnRangesBulkPartialUpdate**](IpamAPI.md#IpamAsnRangesBulkPartialUpdate) | **Patch** /api/ipam/asn-ranges/ | 
+[**IpamAsnRangesBulkUpdate**](IpamAPI.md#IpamAsnRangesBulkUpdate) | **Put** /api/ipam/asn-ranges/ | 
+[**IpamAsnRangesCreate**](IpamAPI.md#IpamAsnRangesCreate) | **Post** /api/ipam/asn-ranges/ | 
+[**IpamAsnRangesDestroy**](IpamAPI.md#IpamAsnRangesDestroy) | **Delete** /api/ipam/asn-ranges/{id}/ | 
+[**IpamAsnRangesList**](IpamAPI.md#IpamAsnRangesList) | **Get** /api/ipam/asn-ranges/ | 
+[**IpamAsnRangesPartialUpdate**](IpamAPI.md#IpamAsnRangesPartialUpdate) | **Patch** /api/ipam/asn-ranges/{id}/ | 
+[**IpamAsnRangesRetrieve**](IpamAPI.md#IpamAsnRangesRetrieve) | **Get** /api/ipam/asn-ranges/{id}/ | 
+[**IpamAsnRangesUpdate**](IpamAPI.md#IpamAsnRangesUpdate) | **Put** /api/ipam/asn-ranges/{id}/ | 
+[**IpamAsnsBulkDestroy**](IpamAPI.md#IpamAsnsBulkDestroy) | **Delete** /api/ipam/asns/ | 
+[**IpamAsnsBulkPartialUpdate**](IpamAPI.md#IpamAsnsBulkPartialUpdate) | **Patch** /api/ipam/asns/ | 
+[**IpamAsnsBulkUpdate**](IpamAPI.md#IpamAsnsBulkUpdate) | **Put** /api/ipam/asns/ | 
+[**IpamAsnsCreate**](IpamAPI.md#IpamAsnsCreate) | **Post** /api/ipam/asns/ | 
+[**IpamAsnsDestroy**](IpamAPI.md#IpamAsnsDestroy) | **Delete** /api/ipam/asns/{id}/ | 
+[**IpamAsnsList**](IpamAPI.md#IpamAsnsList) | **Get** /api/ipam/asns/ | 
+[**IpamAsnsPartialUpdate**](IpamAPI.md#IpamAsnsPartialUpdate) | **Patch** /api/ipam/asns/{id}/ | 
+[**IpamAsnsRetrieve**](IpamAPI.md#IpamAsnsRetrieve) | **Get** /api/ipam/asns/{id}/ | 
+[**IpamAsnsUpdate**](IpamAPI.md#IpamAsnsUpdate) | **Put** /api/ipam/asns/{id}/ | 
+[**IpamFhrpGroupAssignmentsBulkDestroy**](IpamAPI.md#IpamFhrpGroupAssignmentsBulkDestroy) | **Delete** /api/ipam/fhrp-group-assignments/ | 
+[**IpamFhrpGroupAssignmentsBulkPartialUpdate**](IpamAPI.md#IpamFhrpGroupAssignmentsBulkPartialUpdate) | **Patch** /api/ipam/fhrp-group-assignments/ | 
+[**IpamFhrpGroupAssignmentsBulkUpdate**](IpamAPI.md#IpamFhrpGroupAssignmentsBulkUpdate) | **Put** /api/ipam/fhrp-group-assignments/ | 
+[**IpamFhrpGroupAssignmentsCreate**](IpamAPI.md#IpamFhrpGroupAssignmentsCreate) | **Post** /api/ipam/fhrp-group-assignments/ | 
+[**IpamFhrpGroupAssignmentsDestroy**](IpamAPI.md#IpamFhrpGroupAssignmentsDestroy) | **Delete** /api/ipam/fhrp-group-assignments/{id}/ | 
+[**IpamFhrpGroupAssignmentsList**](IpamAPI.md#IpamFhrpGroupAssignmentsList) | **Get** /api/ipam/fhrp-group-assignments/ | 
+[**IpamFhrpGroupAssignmentsPartialUpdate**](IpamAPI.md#IpamFhrpGroupAssignmentsPartialUpdate) | **Patch** /api/ipam/fhrp-group-assignments/{id}/ | 
+[**IpamFhrpGroupAssignmentsRetrieve**](IpamAPI.md#IpamFhrpGroupAssignmentsRetrieve) | **Get** /api/ipam/fhrp-group-assignments/{id}/ | 
+[**IpamFhrpGroupAssignmentsUpdate**](IpamAPI.md#IpamFhrpGroupAssignmentsUpdate) | **Put** /api/ipam/fhrp-group-assignments/{id}/ | 
+[**IpamFhrpGroupsBulkDestroy**](IpamAPI.md#IpamFhrpGroupsBulkDestroy) | **Delete** /api/ipam/fhrp-groups/ | 
+[**IpamFhrpGroupsBulkPartialUpdate**](IpamAPI.md#IpamFhrpGroupsBulkPartialUpdate) | **Patch** /api/ipam/fhrp-groups/ | 
+[**IpamFhrpGroupsBulkUpdate**](IpamAPI.md#IpamFhrpGroupsBulkUpdate) | **Put** /api/ipam/fhrp-groups/ | 
+[**IpamFhrpGroupsCreate**](IpamAPI.md#IpamFhrpGroupsCreate) | **Post** /api/ipam/fhrp-groups/ | 
+[**IpamFhrpGroupsDestroy**](IpamAPI.md#IpamFhrpGroupsDestroy) | **Delete** /api/ipam/fhrp-groups/{id}/ | 
+[**IpamFhrpGroupsList**](IpamAPI.md#IpamFhrpGroupsList) | **Get** /api/ipam/fhrp-groups/ | 
+[**IpamFhrpGroupsPartialUpdate**](IpamAPI.md#IpamFhrpGroupsPartialUpdate) | **Patch** /api/ipam/fhrp-groups/{id}/ | 
+[**IpamFhrpGroupsRetrieve**](IpamAPI.md#IpamFhrpGroupsRetrieve) | **Get** /api/ipam/fhrp-groups/{id}/ | 
+[**IpamFhrpGroupsUpdate**](IpamAPI.md#IpamFhrpGroupsUpdate) | **Put** /api/ipam/fhrp-groups/{id}/ | 
+[**IpamIpAddressesBulkDestroy**](IpamAPI.md#IpamIpAddressesBulkDestroy) | **Delete** /api/ipam/ip-addresses/ | 
+[**IpamIpAddressesBulkPartialUpdate**](IpamAPI.md#IpamIpAddressesBulkPartialUpdate) | **Patch** /api/ipam/ip-addresses/ | 
+[**IpamIpAddressesBulkUpdate**](IpamAPI.md#IpamIpAddressesBulkUpdate) | **Put** /api/ipam/ip-addresses/ | 
+[**IpamIpAddressesCreate**](IpamAPI.md#IpamIpAddressesCreate) | **Post** /api/ipam/ip-addresses/ | 
+[**IpamIpAddressesDestroy**](IpamAPI.md#IpamIpAddressesDestroy) | **Delete** /api/ipam/ip-addresses/{id}/ | 
+[**IpamIpAddressesList**](IpamAPI.md#IpamIpAddressesList) | **Get** /api/ipam/ip-addresses/ | 
+[**IpamIpAddressesPartialUpdate**](IpamAPI.md#IpamIpAddressesPartialUpdate) | **Patch** /api/ipam/ip-addresses/{id}/ | 
+[**IpamIpAddressesRetrieve**](IpamAPI.md#IpamIpAddressesRetrieve) | **Get** /api/ipam/ip-addresses/{id}/ | 
+[**IpamIpAddressesUpdate**](IpamAPI.md#IpamIpAddressesUpdate) | **Put** /api/ipam/ip-addresses/{id}/ | 
+[**IpamIpRangesAvailableIpsCreate**](IpamAPI.md#IpamIpRangesAvailableIpsCreate) | **Post** /api/ipam/ip-ranges/{id}/available-ips/ | 
+[**IpamIpRangesAvailableIpsList**](IpamAPI.md#IpamIpRangesAvailableIpsList) | **Get** /api/ipam/ip-ranges/{id}/available-ips/ | 
+[**IpamIpRangesBulkDestroy**](IpamAPI.md#IpamIpRangesBulkDestroy) | **Delete** /api/ipam/ip-ranges/ | 
+[**IpamIpRangesBulkPartialUpdate**](IpamAPI.md#IpamIpRangesBulkPartialUpdate) | **Patch** /api/ipam/ip-ranges/ | 
+[**IpamIpRangesBulkUpdate**](IpamAPI.md#IpamIpRangesBulkUpdate) | **Put** /api/ipam/ip-ranges/ | 
+[**IpamIpRangesCreate**](IpamAPI.md#IpamIpRangesCreate) | **Post** /api/ipam/ip-ranges/ | 
+[**IpamIpRangesDestroy**](IpamAPI.md#IpamIpRangesDestroy) | **Delete** /api/ipam/ip-ranges/{id}/ | 
+[**IpamIpRangesList**](IpamAPI.md#IpamIpRangesList) | **Get** /api/ipam/ip-ranges/ | 
+[**IpamIpRangesPartialUpdate**](IpamAPI.md#IpamIpRangesPartialUpdate) | **Patch** /api/ipam/ip-ranges/{id}/ | 
+[**IpamIpRangesRetrieve**](IpamAPI.md#IpamIpRangesRetrieve) | **Get** /api/ipam/ip-ranges/{id}/ | 
+[**IpamIpRangesUpdate**](IpamAPI.md#IpamIpRangesUpdate) | **Put** /api/ipam/ip-ranges/{id}/ | 
+[**IpamL2vpnTerminationsBulkDestroy**](IpamAPI.md#IpamL2vpnTerminationsBulkDestroy) | **Delete** /api/ipam/l2vpn-terminations/ | 
+[**IpamL2vpnTerminationsBulkPartialUpdate**](IpamAPI.md#IpamL2vpnTerminationsBulkPartialUpdate) | **Patch** /api/ipam/l2vpn-terminations/ | 
+[**IpamL2vpnTerminationsBulkUpdate**](IpamAPI.md#IpamL2vpnTerminationsBulkUpdate) | **Put** /api/ipam/l2vpn-terminations/ | 
+[**IpamL2vpnTerminationsCreate**](IpamAPI.md#IpamL2vpnTerminationsCreate) | **Post** /api/ipam/l2vpn-terminations/ | 
+[**IpamL2vpnTerminationsDestroy**](IpamAPI.md#IpamL2vpnTerminationsDestroy) | **Delete** /api/ipam/l2vpn-terminations/{id}/ | 
+[**IpamL2vpnTerminationsList**](IpamAPI.md#IpamL2vpnTerminationsList) | **Get** /api/ipam/l2vpn-terminations/ | 
+[**IpamL2vpnTerminationsPartialUpdate**](IpamAPI.md#IpamL2vpnTerminationsPartialUpdate) | **Patch** /api/ipam/l2vpn-terminations/{id}/ | 
+[**IpamL2vpnTerminationsRetrieve**](IpamAPI.md#IpamL2vpnTerminationsRetrieve) | **Get** /api/ipam/l2vpn-terminations/{id}/ | 
+[**IpamL2vpnTerminationsUpdate**](IpamAPI.md#IpamL2vpnTerminationsUpdate) | **Put** /api/ipam/l2vpn-terminations/{id}/ | 
+[**IpamL2vpnsBulkDestroy**](IpamAPI.md#IpamL2vpnsBulkDestroy) | **Delete** /api/ipam/l2vpns/ | 
+[**IpamL2vpnsBulkPartialUpdate**](IpamAPI.md#IpamL2vpnsBulkPartialUpdate) | **Patch** /api/ipam/l2vpns/ | 
+[**IpamL2vpnsBulkUpdate**](IpamAPI.md#IpamL2vpnsBulkUpdate) | **Put** /api/ipam/l2vpns/ | 
+[**IpamL2vpnsCreate**](IpamAPI.md#IpamL2vpnsCreate) | **Post** /api/ipam/l2vpns/ | 
+[**IpamL2vpnsDestroy**](IpamAPI.md#IpamL2vpnsDestroy) | **Delete** /api/ipam/l2vpns/{id}/ | 
+[**IpamL2vpnsList**](IpamAPI.md#IpamL2vpnsList) | **Get** /api/ipam/l2vpns/ | 
+[**IpamL2vpnsPartialUpdate**](IpamAPI.md#IpamL2vpnsPartialUpdate) | **Patch** /api/ipam/l2vpns/{id}/ | 
+[**IpamL2vpnsRetrieve**](IpamAPI.md#IpamL2vpnsRetrieve) | **Get** /api/ipam/l2vpns/{id}/ | 
+[**IpamL2vpnsUpdate**](IpamAPI.md#IpamL2vpnsUpdate) | **Put** /api/ipam/l2vpns/{id}/ | 
+[**IpamPrefixesAvailableIpsCreate**](IpamAPI.md#IpamPrefixesAvailableIpsCreate) | **Post** /api/ipam/prefixes/{id}/available-ips/ | 
+[**IpamPrefixesAvailableIpsList**](IpamAPI.md#IpamPrefixesAvailableIpsList) | **Get** /api/ipam/prefixes/{id}/available-ips/ | 
+[**IpamPrefixesAvailablePrefixesCreate**](IpamAPI.md#IpamPrefixesAvailablePrefixesCreate) | **Post** /api/ipam/prefixes/{id}/available-prefixes/ | 
+[**IpamPrefixesAvailablePrefixesList**](IpamAPI.md#IpamPrefixesAvailablePrefixesList) | **Get** /api/ipam/prefixes/{id}/available-prefixes/ | 
+[**IpamPrefixesBulkDestroy**](IpamAPI.md#IpamPrefixesBulkDestroy) | **Delete** /api/ipam/prefixes/ | 
+[**IpamPrefixesBulkPartialUpdate**](IpamAPI.md#IpamPrefixesBulkPartialUpdate) | **Patch** /api/ipam/prefixes/ | 
+[**IpamPrefixesBulkUpdate**](IpamAPI.md#IpamPrefixesBulkUpdate) | **Put** /api/ipam/prefixes/ | 
+[**IpamPrefixesCreate**](IpamAPI.md#IpamPrefixesCreate) | **Post** /api/ipam/prefixes/ | 
+[**IpamPrefixesDestroy**](IpamAPI.md#IpamPrefixesDestroy) | **Delete** /api/ipam/prefixes/{id}/ | 
+[**IpamPrefixesList**](IpamAPI.md#IpamPrefixesList) | **Get** /api/ipam/prefixes/ | 
+[**IpamPrefixesPartialUpdate**](IpamAPI.md#IpamPrefixesPartialUpdate) | **Patch** /api/ipam/prefixes/{id}/ | 
+[**IpamPrefixesRetrieve**](IpamAPI.md#IpamPrefixesRetrieve) | **Get** /api/ipam/prefixes/{id}/ | 
+[**IpamPrefixesUpdate**](IpamAPI.md#IpamPrefixesUpdate) | **Put** /api/ipam/prefixes/{id}/ | 
+[**IpamRirsBulkDestroy**](IpamAPI.md#IpamRirsBulkDestroy) | **Delete** /api/ipam/rirs/ | 
+[**IpamRirsBulkPartialUpdate**](IpamAPI.md#IpamRirsBulkPartialUpdate) | **Patch** /api/ipam/rirs/ | 
+[**IpamRirsBulkUpdate**](IpamAPI.md#IpamRirsBulkUpdate) | **Put** /api/ipam/rirs/ | 
+[**IpamRirsCreate**](IpamAPI.md#IpamRirsCreate) | **Post** /api/ipam/rirs/ | 
+[**IpamRirsDestroy**](IpamAPI.md#IpamRirsDestroy) | **Delete** /api/ipam/rirs/{id}/ | 
+[**IpamRirsList**](IpamAPI.md#IpamRirsList) | **Get** /api/ipam/rirs/ | 
+[**IpamRirsPartialUpdate**](IpamAPI.md#IpamRirsPartialUpdate) | **Patch** /api/ipam/rirs/{id}/ | 
+[**IpamRirsRetrieve**](IpamAPI.md#IpamRirsRetrieve) | **Get** /api/ipam/rirs/{id}/ | 
+[**IpamRirsUpdate**](IpamAPI.md#IpamRirsUpdate) | **Put** /api/ipam/rirs/{id}/ | 
+[**IpamRolesBulkDestroy**](IpamAPI.md#IpamRolesBulkDestroy) | **Delete** /api/ipam/roles/ | 
+[**IpamRolesBulkPartialUpdate**](IpamAPI.md#IpamRolesBulkPartialUpdate) | **Patch** /api/ipam/roles/ | 
+[**IpamRolesBulkUpdate**](IpamAPI.md#IpamRolesBulkUpdate) | **Put** /api/ipam/roles/ | 
+[**IpamRolesCreate**](IpamAPI.md#IpamRolesCreate) | **Post** /api/ipam/roles/ | 
+[**IpamRolesDestroy**](IpamAPI.md#IpamRolesDestroy) | **Delete** /api/ipam/roles/{id}/ | 
+[**IpamRolesList**](IpamAPI.md#IpamRolesList) | **Get** /api/ipam/roles/ | 
+[**IpamRolesPartialUpdate**](IpamAPI.md#IpamRolesPartialUpdate) | **Patch** /api/ipam/roles/{id}/ | 
+[**IpamRolesRetrieve**](IpamAPI.md#IpamRolesRetrieve) | **Get** /api/ipam/roles/{id}/ | 
+[**IpamRolesUpdate**](IpamAPI.md#IpamRolesUpdate) | **Put** /api/ipam/roles/{id}/ | 
+[**IpamRouteTargetsBulkDestroy**](IpamAPI.md#IpamRouteTargetsBulkDestroy) | **Delete** /api/ipam/route-targets/ | 
+[**IpamRouteTargetsBulkPartialUpdate**](IpamAPI.md#IpamRouteTargetsBulkPartialUpdate) | **Patch** /api/ipam/route-targets/ | 
+[**IpamRouteTargetsBulkUpdate**](IpamAPI.md#IpamRouteTargetsBulkUpdate) | **Put** /api/ipam/route-targets/ | 
+[**IpamRouteTargetsCreate**](IpamAPI.md#IpamRouteTargetsCreate) | **Post** /api/ipam/route-targets/ | 
+[**IpamRouteTargetsDestroy**](IpamAPI.md#IpamRouteTargetsDestroy) | **Delete** /api/ipam/route-targets/{id}/ | 
+[**IpamRouteTargetsList**](IpamAPI.md#IpamRouteTargetsList) | **Get** /api/ipam/route-targets/ | 
+[**IpamRouteTargetsPartialUpdate**](IpamAPI.md#IpamRouteTargetsPartialUpdate) | **Patch** /api/ipam/route-targets/{id}/ | 
+[**IpamRouteTargetsRetrieve**](IpamAPI.md#IpamRouteTargetsRetrieve) | **Get** /api/ipam/route-targets/{id}/ | 
+[**IpamRouteTargetsUpdate**](IpamAPI.md#IpamRouteTargetsUpdate) | **Put** /api/ipam/route-targets/{id}/ | 
+[**IpamServiceTemplatesBulkDestroy**](IpamAPI.md#IpamServiceTemplatesBulkDestroy) | **Delete** /api/ipam/service-templates/ | 
+[**IpamServiceTemplatesBulkPartialUpdate**](IpamAPI.md#IpamServiceTemplatesBulkPartialUpdate) | **Patch** /api/ipam/service-templates/ | 
+[**IpamServiceTemplatesBulkUpdate**](IpamAPI.md#IpamServiceTemplatesBulkUpdate) | **Put** /api/ipam/service-templates/ | 
+[**IpamServiceTemplatesCreate**](IpamAPI.md#IpamServiceTemplatesCreate) | **Post** /api/ipam/service-templates/ | 
+[**IpamServiceTemplatesDestroy**](IpamAPI.md#IpamServiceTemplatesDestroy) | **Delete** /api/ipam/service-templates/{id}/ | 
+[**IpamServiceTemplatesList**](IpamAPI.md#IpamServiceTemplatesList) | **Get** /api/ipam/service-templates/ | 
+[**IpamServiceTemplatesPartialUpdate**](IpamAPI.md#IpamServiceTemplatesPartialUpdate) | **Patch** /api/ipam/service-templates/{id}/ | 
+[**IpamServiceTemplatesRetrieve**](IpamAPI.md#IpamServiceTemplatesRetrieve) | **Get** /api/ipam/service-templates/{id}/ | 
+[**IpamServiceTemplatesUpdate**](IpamAPI.md#IpamServiceTemplatesUpdate) | **Put** /api/ipam/service-templates/{id}/ | 
+[**IpamServicesBulkDestroy**](IpamAPI.md#IpamServicesBulkDestroy) | **Delete** /api/ipam/services/ | 
+[**IpamServicesBulkPartialUpdate**](IpamAPI.md#IpamServicesBulkPartialUpdate) | **Patch** /api/ipam/services/ | 
+[**IpamServicesBulkUpdate**](IpamAPI.md#IpamServicesBulkUpdate) | **Put** /api/ipam/services/ | 
+[**IpamServicesCreate**](IpamAPI.md#IpamServicesCreate) | **Post** /api/ipam/services/ | 
+[**IpamServicesDestroy**](IpamAPI.md#IpamServicesDestroy) | **Delete** /api/ipam/services/{id}/ | 
+[**IpamServicesList**](IpamAPI.md#IpamServicesList) | **Get** /api/ipam/services/ | 
+[**IpamServicesPartialUpdate**](IpamAPI.md#IpamServicesPartialUpdate) | **Patch** /api/ipam/services/{id}/ | 
+[**IpamServicesRetrieve**](IpamAPI.md#IpamServicesRetrieve) | **Get** /api/ipam/services/{id}/ | 
+[**IpamServicesUpdate**](IpamAPI.md#IpamServicesUpdate) | **Put** /api/ipam/services/{id}/ | 
+[**IpamVlanGroupsAvailableVlansCreate**](IpamAPI.md#IpamVlanGroupsAvailableVlansCreate) | **Post** /api/ipam/vlan-groups/{id}/available-vlans/ | 
+[**IpamVlanGroupsAvailableVlansList**](IpamAPI.md#IpamVlanGroupsAvailableVlansList) | **Get** /api/ipam/vlan-groups/{id}/available-vlans/ | 
+[**IpamVlanGroupsBulkDestroy**](IpamAPI.md#IpamVlanGroupsBulkDestroy) | **Delete** /api/ipam/vlan-groups/ | 
+[**IpamVlanGroupsBulkPartialUpdate**](IpamAPI.md#IpamVlanGroupsBulkPartialUpdate) | **Patch** /api/ipam/vlan-groups/ | 
+[**IpamVlanGroupsBulkUpdate**](IpamAPI.md#IpamVlanGroupsBulkUpdate) | **Put** /api/ipam/vlan-groups/ | 
+[**IpamVlanGroupsCreate**](IpamAPI.md#IpamVlanGroupsCreate) | **Post** /api/ipam/vlan-groups/ | 
+[**IpamVlanGroupsDestroy**](IpamAPI.md#IpamVlanGroupsDestroy) | **Delete** /api/ipam/vlan-groups/{id}/ | 
+[**IpamVlanGroupsList**](IpamAPI.md#IpamVlanGroupsList) | **Get** /api/ipam/vlan-groups/ | 
+[**IpamVlanGroupsPartialUpdate**](IpamAPI.md#IpamVlanGroupsPartialUpdate) | **Patch** /api/ipam/vlan-groups/{id}/ | 
+[**IpamVlanGroupsRetrieve**](IpamAPI.md#IpamVlanGroupsRetrieve) | **Get** /api/ipam/vlan-groups/{id}/ | 
+[**IpamVlanGroupsUpdate**](IpamAPI.md#IpamVlanGroupsUpdate) | **Put** /api/ipam/vlan-groups/{id}/ | 
+[**IpamVlansBulkDestroy**](IpamAPI.md#IpamVlansBulkDestroy) | **Delete** /api/ipam/vlans/ | 
+[**IpamVlansBulkPartialUpdate**](IpamAPI.md#IpamVlansBulkPartialUpdate) | **Patch** /api/ipam/vlans/ | 
+[**IpamVlansBulkUpdate**](IpamAPI.md#IpamVlansBulkUpdate) | **Put** /api/ipam/vlans/ | 
+[**IpamVlansCreate**](IpamAPI.md#IpamVlansCreate) | **Post** /api/ipam/vlans/ | 
+[**IpamVlansDestroy**](IpamAPI.md#IpamVlansDestroy) | **Delete** /api/ipam/vlans/{id}/ | 
+[**IpamVlansList**](IpamAPI.md#IpamVlansList) | **Get** /api/ipam/vlans/ | 
+[**IpamVlansPartialUpdate**](IpamAPI.md#IpamVlansPartialUpdate) | **Patch** /api/ipam/vlans/{id}/ | 
+[**IpamVlansRetrieve**](IpamAPI.md#IpamVlansRetrieve) | **Get** /api/ipam/vlans/{id}/ | 
+[**IpamVlansUpdate**](IpamAPI.md#IpamVlansUpdate) | **Put** /api/ipam/vlans/{id}/ | 
+[**IpamVrfsBulkDestroy**](IpamAPI.md#IpamVrfsBulkDestroy) | **Delete** /api/ipam/vrfs/ | 
+[**IpamVrfsBulkPartialUpdate**](IpamAPI.md#IpamVrfsBulkPartialUpdate) | **Patch** /api/ipam/vrfs/ | 
+[**IpamVrfsBulkUpdate**](IpamAPI.md#IpamVrfsBulkUpdate) | **Put** /api/ipam/vrfs/ | 
+[**IpamVrfsCreate**](IpamAPI.md#IpamVrfsCreate) | **Post** /api/ipam/vrfs/ | 
+[**IpamVrfsDestroy**](IpamAPI.md#IpamVrfsDestroy) | **Delete** /api/ipam/vrfs/{id}/ | 
+[**IpamVrfsList**](IpamAPI.md#IpamVrfsList) | **Get** /api/ipam/vrfs/ | 
+[**IpamVrfsPartialUpdate**](IpamAPI.md#IpamVrfsPartialUpdate) | **Patch** /api/ipam/vrfs/{id}/ | 
+[**IpamVrfsRetrieve**](IpamAPI.md#IpamVrfsRetrieve) | **Get** /api/ipam/vrfs/{id}/ | 
+[**IpamVrfsUpdate**](IpamAPI.md#IpamVrfsUpdate) | **Put** /api/ipam/vrfs/{id}/ | 
 
 
 
@@ -204,9 +204,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IpamApi.IpamAggregatesBulkDestroy(context.Background()).AggregateRequest(aggregateRequest).Execute()
+    r, err := apiClient.IpamAPI.IpamAggregatesBulkDestroy(context.Background()).AggregateRequest(aggregateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamAggregatesBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAggregatesBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -268,13 +268,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamAggregatesBulkPartialUpdate(context.Background()).AggregateRequest(aggregateRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamAggregatesBulkPartialUpdate(context.Background()).AggregateRequest(aggregateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamAggregatesBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAggregatesBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamAggregatesBulkPartialUpdate`: []Aggregate
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamAggregatesBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamAggregatesBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -334,13 +334,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamAggregatesBulkUpdate(context.Background()).AggregateRequest(aggregateRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamAggregatesBulkUpdate(context.Background()).AggregateRequest(aggregateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamAggregatesBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAggregatesBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamAggregatesBulkUpdate`: []Aggregate
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamAggregatesBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamAggregatesBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -400,13 +400,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamAggregatesCreate(context.Background()).WritableAggregateRequest(writableAggregateRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamAggregatesCreate(context.Background()).WritableAggregateRequest(writableAggregateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamAggregatesCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAggregatesCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamAggregatesCreate`: Aggregate
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamAggregatesCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamAggregatesCreate`: %v\n", resp)
 }
 ```
 
@@ -466,9 +466,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IpamApi.IpamAggregatesDestroy(context.Background(), id).Execute()
+    r, err := apiClient.IpamAPI.IpamAggregatesDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamAggregatesDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAggregatesDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -511,7 +511,7 @@ Name | Type | Description  | Notes
 
 ## IpamAggregatesList
 
-> PaginatedAggregateList IpamAggregatesList(ctx).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DateAdded(dateAdded).DateAddedGt(dateAddedGt).DateAddedGte(dateAddedGte).DateAddedLt(dateAddedLt).DateAddedLte(dateAddedLte).DateAddedN(dateAddedN).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Family(family).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Offset(offset).Ordering(ordering).Prefix(prefix).Q(q).Rir(rir).RirN(rirN).RirId(rirId).RirIdN(rirIdN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedAggregateList IpamAggregatesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DateAdded(dateAdded).DateAddedEmpty(dateAddedEmpty).DateAddedGt(dateAddedGt).DateAddedGte(dateAddedGte).DateAddedLt(dateAddedLt).DateAddedLte(dateAddedLte).DateAddedN(dateAddedN).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Family(family).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Prefix(prefix).Q(q).Rir(rir).RirN(rirN).RirId(rirId).RirIdN(rirIdN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -532,6 +532,7 @@ import (
 
 func main() {
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -539,6 +540,7 @@ func main() {
     createdN := []time.Time{time.Now()} // []time.Time |  (optional)
     createdByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     dateAdded := []string{time.Now()} // []string |  (optional)
+    dateAddedEmpty := true // bool |  (optional)
     dateAddedGt := []string{time.Now()} // []string |  (optional)
     dateAddedGte := []string{time.Now()} // []string |  (optional)
     dateAddedLt := []string{time.Now()} // []string |  (optional)
@@ -557,18 +559,21 @@ func main() {
     descriptionNisw := []string{"Inner_example"} // []string |  (optional)
     family := float32(8.14) // float32 |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     offset := int32(56) // int32 | The initial index from which to return the results. (optional)
     ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
     prefix := "prefix_example" // string | Prefix (optional)
@@ -591,13 +596,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamAggregatesList(context.Background()).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DateAdded(dateAdded).DateAddedGt(dateAddedGt).DateAddedGte(dateAddedGte).DateAddedLt(dateAddedLt).DateAddedLte(dateAddedLte).DateAddedN(dateAddedN).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Family(family).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Offset(offset).Ordering(ordering).Prefix(prefix).Q(q).Rir(rir).RirN(rirN).RirId(rirId).RirIdN(rirIdN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamAggregatesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DateAdded(dateAdded).DateAddedEmpty(dateAddedEmpty).DateAddedGt(dateAddedGt).DateAddedGte(dateAddedGte).DateAddedLt(dateAddedLt).DateAddedLte(dateAddedLte).DateAddedN(dateAddedN).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Family(family).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Prefix(prefix).Q(q).Rir(rir).RirN(rirN).RirId(rirId).RirIdN(rirIdN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamAggregatesList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAggregatesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamAggregatesList`: PaginatedAggregateList
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamAggregatesList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamAggregatesList`: %v\n", resp)
 }
 ```
 
@@ -613,6 +618,7 @@ Other parameters are passed through a pointer to a apiIpamAggregatesListRequest 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -620,6 +626,7 @@ Name | Type | Description  | Notes
  **createdN** | [**[]time.Time**](time.Time.md) |  | 
  **createdByRequest** | **string** |  | 
  **dateAdded** | **[]string** |  | 
+ **dateAddedEmpty** | **bool** |  | 
  **dateAddedGt** | **[]string** |  | 
  **dateAddedGte** | **[]string** |  | 
  **dateAddedLt** | **[]string** |  | 
@@ -638,18 +645,21 @@ Name | Type | Description  | Notes
  **descriptionNisw** | **[]string** |  | 
  **family** | **float32** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **prefix** | **string** | Prefix | 
@@ -714,13 +724,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamAggregatesPartialUpdate(context.Background(), id).PatchedWritableAggregateRequest(patchedWritableAggregateRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamAggregatesPartialUpdate(context.Background(), id).PatchedWritableAggregateRequest(patchedWritableAggregateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamAggregatesPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAggregatesPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamAggregatesPartialUpdate`: Aggregate
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamAggregatesPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamAggregatesPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -785,13 +795,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamAggregatesRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamAggregatesRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamAggregatesRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAggregatesRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamAggregatesRetrieve`: Aggregate
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamAggregatesRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamAggregatesRetrieve`: %v\n", resp)
 }
 ```
 
@@ -856,13 +866,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamAggregatesUpdate(context.Background(), id).WritableAggregateRequest(writableAggregateRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamAggregatesUpdate(context.Background(), id).WritableAggregateRequest(writableAggregateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamAggregatesUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAggregatesUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamAggregatesUpdate`: Aggregate
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamAggregatesUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamAggregatesUpdate`: %v\n", resp)
 }
 ```
 
@@ -928,13 +938,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamAsnRangesAvailableAsnsCreate(context.Background(), id).ASNRequest(aSNRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamAsnRangesAvailableAsnsCreate(context.Background(), id).ASNRequest(aSNRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamAsnRangesAvailableAsnsCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAsnRangesAvailableAsnsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamAsnRangesAvailableAsnsCreate`: []ASN
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamAsnRangesAvailableAsnsCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamAsnRangesAvailableAsnsCreate`: %v\n", resp)
 }
 ```
 
@@ -999,13 +1009,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamAsnRangesAvailableAsnsList(context.Background(), id).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamAsnRangesAvailableAsnsList(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamAsnRangesAvailableAsnsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAsnRangesAvailableAsnsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamAsnRangesAvailableAsnsList`: []AvailableASN
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamAsnRangesAvailableAsnsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamAsnRangesAvailableAsnsList`: %v\n", resp)
 }
 ```
 
@@ -1069,9 +1079,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IpamApi.IpamAsnRangesBulkDestroy(context.Background()).ASNRangeRequest(aSNRangeRequest).Execute()
+    r, err := apiClient.IpamAPI.IpamAsnRangesBulkDestroy(context.Background()).ASNRangeRequest(aSNRangeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamAsnRangesBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAsnRangesBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1133,13 +1143,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamAsnRangesBulkPartialUpdate(context.Background()).ASNRangeRequest(aSNRangeRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamAsnRangesBulkPartialUpdate(context.Background()).ASNRangeRequest(aSNRangeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamAsnRangesBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAsnRangesBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamAsnRangesBulkPartialUpdate`: []ASNRange
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamAsnRangesBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamAsnRangesBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -1199,13 +1209,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamAsnRangesBulkUpdate(context.Background()).ASNRangeRequest(aSNRangeRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamAsnRangesBulkUpdate(context.Background()).ASNRangeRequest(aSNRangeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamAsnRangesBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAsnRangesBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamAsnRangesBulkUpdate`: []ASNRange
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamAsnRangesBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamAsnRangesBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -1265,13 +1275,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamAsnRangesCreate(context.Background()).WritableASNRangeRequest(writableASNRangeRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamAsnRangesCreate(context.Background()).WritableASNRangeRequest(writableASNRangeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamAsnRangesCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAsnRangesCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamAsnRangesCreate`: ASNRange
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamAsnRangesCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamAsnRangesCreate`: %v\n", resp)
 }
 ```
 
@@ -1331,9 +1341,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IpamApi.IpamAsnRangesDestroy(context.Background(), id).Execute()
+    r, err := apiClient.IpamAPI.IpamAsnRangesDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamAsnRangesDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAsnRangesDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1376,7 +1386,7 @@ Name | Type | Description  | Notes
 
 ## IpamAsnRangesList
 
-> PaginatedASNRangeList IpamAsnRangesList(ctx).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).End(end).EndGt(endGt).EndGte(endGte).EndLt(endLt).EndLte(endLte).EndN(endN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Rir(rir).RirN(rirN).RirId(rirId).RirIdN(rirIdN).Start(start).StartGt(startGt).StartGte(startGte).StartLt(startLt).StartLte(startLte).StartN(startN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedASNRangeList IpamAsnRangesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).End(end).EndEmpty(endEmpty).EndGt(endGt).EndGte(endGte).EndLt(endLt).EndLte(endLte).EndN(endN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Rir(rir).RirN(rirN).RirId(rirId).RirIdN(rirIdN).Start(start).StartEmpty(startEmpty).StartGt(startGt).StartGte(startGte).StartLt(startLt).StartLte(startLte).StartN(startN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -1397,6 +1407,7 @@ import (
 
 func main() {
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -1415,24 +1426,28 @@ func main() {
     descriptionNiew := []string{"Inner_example"} // []string |  (optional)
     descriptionNisw := []string{"Inner_example"} // []string |  (optional)
     end := []int32{int32(123)} // []int32 |  (optional)
+    endEmpty := true // bool |  (optional)
     endGt := []int32{int32(123)} // []int32 |  (optional)
     endGte := []int32{int32(123)} // []int32 |  (optional)
     endLt := []int32{int32(123)} // []int32 |  (optional)
     endLte := []int32{int32(123)} // []int32 |  (optional)
     endN := []int32{int32(123)} // []int32 |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -1452,6 +1467,7 @@ func main() {
     rirId := []int32{int32(123)} // []int32 | RIR (ID) (optional)
     rirIdN := []int32{int32(123)} // []int32 | RIR (ID) (optional)
     start := []int32{int32(123)} // []int32 |  (optional)
+    startEmpty := true // bool |  (optional)
     startGt := []int32{int32(123)} // []int32 |  (optional)
     startGte := []int32{int32(123)} // []int32 |  (optional)
     startLt := []int32{int32(123)} // []int32 |  (optional)
@@ -1471,13 +1487,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamAsnRangesList(context.Background()).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).End(end).EndGt(endGt).EndGte(endGte).EndLt(endLt).EndLte(endLte).EndN(endN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Rir(rir).RirN(rirN).RirId(rirId).RirIdN(rirIdN).Start(start).StartGt(startGt).StartGte(startGte).StartLt(startLt).StartLte(startLte).StartN(startN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamAsnRangesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).End(end).EndEmpty(endEmpty).EndGt(endGt).EndGte(endGte).EndLt(endLt).EndLte(endLte).EndN(endN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Rir(rir).RirN(rirN).RirId(rirId).RirIdN(rirIdN).Start(start).StartEmpty(startEmpty).StartGt(startGt).StartGte(startGte).StartLt(startLt).StartLte(startLte).StartN(startN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamAsnRangesList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAsnRangesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamAsnRangesList`: PaginatedASNRangeList
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamAsnRangesList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamAsnRangesList`: %v\n", resp)
 }
 ```
 
@@ -1493,6 +1509,7 @@ Other parameters are passed through a pointer to a apiIpamAsnRangesListRequest s
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -1511,24 +1528,28 @@ Name | Type | Description  | Notes
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
  **end** | **[]int32** |  | 
+ **endEmpty** | **bool** |  | 
  **endGt** | **[]int32** |  | 
  **endGte** | **[]int32** |  | 
  **endLt** | **[]int32** |  | 
  **endLte** | **[]int32** |  | 
  **endN** | **[]int32** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -1548,6 +1569,7 @@ Name | Type | Description  | Notes
  **rirId** | **[]int32** | RIR (ID) | 
  **rirIdN** | **[]int32** | RIR (ID) | 
  **start** | **[]int32** |  | 
+ **startEmpty** | **bool** |  | 
  **startGt** | **[]int32** |  | 
  **startGte** | **[]int32** |  | 
  **startLt** | **[]int32** |  | 
@@ -1609,13 +1631,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamAsnRangesPartialUpdate(context.Background(), id).PatchedWritableASNRangeRequest(patchedWritableASNRangeRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamAsnRangesPartialUpdate(context.Background(), id).PatchedWritableASNRangeRequest(patchedWritableASNRangeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamAsnRangesPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAsnRangesPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamAsnRangesPartialUpdate`: ASNRange
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamAsnRangesPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamAsnRangesPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -1680,13 +1702,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamAsnRangesRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamAsnRangesRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamAsnRangesRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAsnRangesRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamAsnRangesRetrieve`: ASNRange
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamAsnRangesRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamAsnRangesRetrieve`: %v\n", resp)
 }
 ```
 
@@ -1751,13 +1773,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamAsnRangesUpdate(context.Background(), id).WritableASNRangeRequest(writableASNRangeRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamAsnRangesUpdate(context.Background(), id).WritableASNRangeRequest(writableASNRangeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamAsnRangesUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAsnRangesUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamAsnRangesUpdate`: ASNRange
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamAsnRangesUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamAsnRangesUpdate`: %v\n", resp)
 }
 ```
 
@@ -1822,9 +1844,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IpamApi.IpamAsnsBulkDestroy(context.Background()).ASNRequest(aSNRequest).Execute()
+    r, err := apiClient.IpamAPI.IpamAsnsBulkDestroy(context.Background()).ASNRequest(aSNRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamAsnsBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAsnsBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1886,13 +1908,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamAsnsBulkPartialUpdate(context.Background()).ASNRequest(aSNRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamAsnsBulkPartialUpdate(context.Background()).ASNRequest(aSNRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamAsnsBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAsnsBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamAsnsBulkPartialUpdate`: []ASN
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamAsnsBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamAsnsBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -1952,13 +1974,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamAsnsBulkUpdate(context.Background()).ASNRequest(aSNRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamAsnsBulkUpdate(context.Background()).ASNRequest(aSNRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamAsnsBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAsnsBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamAsnsBulkUpdate`: []ASN
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamAsnsBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamAsnsBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -2018,13 +2040,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamAsnsCreate(context.Background()).WritableASNRequest(writableASNRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamAsnsCreate(context.Background()).WritableASNRequest(writableASNRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamAsnsCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAsnsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamAsnsCreate`: ASN
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamAsnsCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamAsnsCreate`: %v\n", resp)
 }
 ```
 
@@ -2084,9 +2106,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IpamApi.IpamAsnsDestroy(context.Background(), id).Execute()
+    r, err := apiClient.IpamAPI.IpamAsnsDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamAsnsDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAsnsDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2129,7 +2151,7 @@ Name | Type | Description  | Notes
 
 ## IpamAsnsList
 
-> PaginatedASNList IpamAsnsList(ctx).Asn(asn).AsnGt(asnGt).AsnGte(asnGte).AsnLt(asnLt).AsnLte(asnLte).AsnN(asnN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Offset(offset).Ordering(ordering).Q(q).Rir(rir).RirN(rirN).RirId(rirId).RirIdN(rirIdN).Site(site).SiteN(siteN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedASNList IpamAsnsList(ctx).Asn(asn).AsnEmpty(asnEmpty).AsnGt(asnGt).AsnGte(asnGte).AsnLt(asnLt).AsnLte(asnLte).AsnN(asnN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Q(q).Rir(rir).RirN(rirN).RirId(rirId).RirIdN(rirIdN).Site(site).SiteN(siteN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -2150,12 +2172,14 @@ import (
 
 func main() {
     asn := []int32{int32(123)} // []int32 |  (optional)
+    asnEmpty := true // bool |  (optional)
     asnGt := []int32{int32(123)} // []int32 |  (optional)
     asnGte := []int32{int32(123)} // []int32 |  (optional)
     asnLt := []int32{int32(123)} // []int32 |  (optional)
     asnLte := []int32{int32(123)} // []int32 |  (optional)
     asnN := []int32{int32(123)} // []int32 |  (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -2174,18 +2198,21 @@ func main() {
     descriptionNiew := []string{"Inner_example"} // []string |  (optional)
     descriptionNisw := []string{"Inner_example"} // []string |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     offset := int32(56) // int32 | The initial index from which to return the results. (optional)
     ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
     q := "q_example" // string | Search (optional)
@@ -2211,13 +2238,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamAsnsList(context.Background()).Asn(asn).AsnGt(asnGt).AsnGte(asnGte).AsnLt(asnLt).AsnLte(asnLte).AsnN(asnN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Offset(offset).Ordering(ordering).Q(q).Rir(rir).RirN(rirN).RirId(rirId).RirIdN(rirIdN).Site(site).SiteN(siteN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamAsnsList(context.Background()).Asn(asn).AsnEmpty(asnEmpty).AsnGt(asnGt).AsnGte(asnGte).AsnLt(asnLt).AsnLte(asnLte).AsnN(asnN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Q(q).Rir(rir).RirN(rirN).RirId(rirId).RirIdN(rirIdN).Site(site).SiteN(siteN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamAsnsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAsnsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamAsnsList`: PaginatedASNList
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamAsnsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamAsnsList`: %v\n", resp)
 }
 ```
 
@@ -2233,12 +2260,14 @@ Other parameters are passed through a pointer to a apiIpamAsnsListRequest struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **asn** | **[]int32** |  | 
+ **asnEmpty** | **bool** |  | 
  **asnGt** | **[]int32** |  | 
  **asnGte** | **[]int32** |  | 
  **asnLt** | **[]int32** |  | 
  **asnLte** | **[]int32** |  | 
  **asnN** | **[]int32** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -2257,18 +2286,21 @@ Name | Type | Description  | Notes
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **q** | **string** | Search | 
@@ -2336,13 +2368,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamAsnsPartialUpdate(context.Background(), id).PatchedWritableASNRequest(patchedWritableASNRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamAsnsPartialUpdate(context.Background(), id).PatchedWritableASNRequest(patchedWritableASNRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamAsnsPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAsnsPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamAsnsPartialUpdate`: ASN
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamAsnsPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamAsnsPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -2407,13 +2439,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamAsnsRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamAsnsRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamAsnsRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAsnsRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamAsnsRetrieve`: ASN
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamAsnsRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamAsnsRetrieve`: %v\n", resp)
 }
 ```
 
@@ -2478,13 +2510,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamAsnsUpdate(context.Background(), id).WritableASNRequest(writableASNRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamAsnsUpdate(context.Background(), id).WritableASNRequest(writableASNRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamAsnsUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAsnsUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamAsnsUpdate`: ASN
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamAsnsUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamAsnsUpdate`: %v\n", resp)
 }
 ```
 
@@ -2549,9 +2581,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IpamApi.IpamFhrpGroupAssignmentsBulkDestroy(context.Background()).FHRPGroupAssignmentRequest(fHRPGroupAssignmentRequest).Execute()
+    r, err := apiClient.IpamAPI.IpamFhrpGroupAssignmentsBulkDestroy(context.Background()).FHRPGroupAssignmentRequest(fHRPGroupAssignmentRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamFhrpGroupAssignmentsBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamFhrpGroupAssignmentsBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2613,13 +2645,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamFhrpGroupAssignmentsBulkPartialUpdate(context.Background()).FHRPGroupAssignmentRequest(fHRPGroupAssignmentRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamFhrpGroupAssignmentsBulkPartialUpdate(context.Background()).FHRPGroupAssignmentRequest(fHRPGroupAssignmentRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamFhrpGroupAssignmentsBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamFhrpGroupAssignmentsBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamFhrpGroupAssignmentsBulkPartialUpdate`: []FHRPGroupAssignment
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamFhrpGroupAssignmentsBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamFhrpGroupAssignmentsBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -2679,13 +2711,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamFhrpGroupAssignmentsBulkUpdate(context.Background()).FHRPGroupAssignmentRequest(fHRPGroupAssignmentRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamFhrpGroupAssignmentsBulkUpdate(context.Background()).FHRPGroupAssignmentRequest(fHRPGroupAssignmentRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamFhrpGroupAssignmentsBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamFhrpGroupAssignmentsBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamFhrpGroupAssignmentsBulkUpdate`: []FHRPGroupAssignment
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamFhrpGroupAssignmentsBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamFhrpGroupAssignmentsBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -2745,13 +2777,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamFhrpGroupAssignmentsCreate(context.Background()).WritableFHRPGroupAssignmentRequest(writableFHRPGroupAssignmentRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamFhrpGroupAssignmentsCreate(context.Background()).WritableFHRPGroupAssignmentRequest(writableFHRPGroupAssignmentRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamFhrpGroupAssignmentsCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamFhrpGroupAssignmentsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamFhrpGroupAssignmentsCreate`: FHRPGroupAssignment
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamFhrpGroupAssignmentsCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamFhrpGroupAssignmentsCreate`: %v\n", resp)
 }
 ```
 
@@ -2811,9 +2843,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IpamApi.IpamFhrpGroupAssignmentsDestroy(context.Background(), id).Execute()
+    r, err := apiClient.IpamAPI.IpamFhrpGroupAssignmentsDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamFhrpGroupAssignmentsDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamFhrpGroupAssignmentsDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2856,7 +2888,7 @@ Name | Type | Description  | Notes
 
 ## IpamFhrpGroupAssignmentsList
 
-> PaginatedFHRPGroupAssignmentList IpamFhrpGroupAssignmentsList(ctx).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Device(device).DeviceId(deviceId).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InterfaceId(interfaceId).InterfaceIdGt(interfaceIdGt).InterfaceIdGte(interfaceIdGte).InterfaceIdLt(interfaceIdLt).InterfaceIdLte(interfaceIdLte).InterfaceIdN(interfaceIdN).InterfaceType(interfaceType).InterfaceTypeN(interfaceTypeN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Offset(offset).Ordering(ordering).Priority(priority).PriorityGt(priorityGt).PriorityGte(priorityGte).PriorityLt(priorityLt).PriorityLte(priorityLte).PriorityN(priorityN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineId(virtualMachineId).Execute()
+> PaginatedFHRPGroupAssignmentList IpamFhrpGroupAssignmentsList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Device(device).DeviceId(deviceId).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InterfaceId(interfaceId).InterfaceIdEmpty(interfaceIdEmpty).InterfaceIdGt(interfaceIdGt).InterfaceIdGte(interfaceIdGte).InterfaceIdLt(interfaceIdLt).InterfaceIdLte(interfaceIdLte).InterfaceIdN(interfaceIdN).InterfaceType(interfaceType).InterfaceTypeN(interfaceTypeN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Priority(priority).PriorityEmpty(priorityEmpty).PriorityGt(priorityGt).PriorityGte(priorityGte).PriorityLt(priorityLt).PriorityLte(priorityLte).PriorityN(priorityN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineId(virtualMachineId).Execute()
 
 
 
@@ -2877,6 +2909,7 @@ import (
 
 func main() {
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -2888,12 +2921,14 @@ func main() {
     groupId := []int32{int32(123)} // []int32 | Group (ID) (optional)
     groupIdN := []int32{int32(123)} // []int32 | Group (ID) (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     interfaceId := []int32{int32(123)} // []int32 |  (optional)
+    interfaceIdEmpty := true // bool |  (optional)
     interfaceIdGt := []int32{int32(123)} // []int32 |  (optional)
     interfaceIdGte := []int32{int32(123)} // []int32 |  (optional)
     interfaceIdLt := []int32{int32(123)} // []int32 |  (optional)
@@ -2902,15 +2937,18 @@ func main() {
     interfaceType := "interfaceType_example" // string |  (optional)
     interfaceTypeN := "interfaceTypeN_example" // string |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     offset := int32(56) // int32 | The initial index from which to return the results. (optional)
     ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
     priority := []int32{int32(123)} // []int32 |  (optional)
+    priorityEmpty := true // bool |  (optional)
     priorityGt := []int32{int32(123)} // []int32 |  (optional)
     priorityGte := []int32{int32(123)} // []int32 |  (optional)
     priorityLt := []int32{int32(123)} // []int32 |  (optional)
@@ -2922,13 +2960,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamFhrpGroupAssignmentsList(context.Background()).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Device(device).DeviceId(deviceId).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InterfaceId(interfaceId).InterfaceIdGt(interfaceIdGt).InterfaceIdGte(interfaceIdGte).InterfaceIdLt(interfaceIdLt).InterfaceIdLte(interfaceIdLte).InterfaceIdN(interfaceIdN).InterfaceType(interfaceType).InterfaceTypeN(interfaceTypeN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Offset(offset).Ordering(ordering).Priority(priority).PriorityGt(priorityGt).PriorityGte(priorityGte).PriorityLt(priorityLt).PriorityLte(priorityLte).PriorityN(priorityN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineId(virtualMachineId).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamFhrpGroupAssignmentsList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Device(device).DeviceId(deviceId).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InterfaceId(interfaceId).InterfaceIdEmpty(interfaceIdEmpty).InterfaceIdGt(interfaceIdGt).InterfaceIdGte(interfaceIdGte).InterfaceIdLt(interfaceIdLt).InterfaceIdLte(interfaceIdLte).InterfaceIdN(interfaceIdN).InterfaceType(interfaceType).InterfaceTypeN(interfaceTypeN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Priority(priority).PriorityEmpty(priorityEmpty).PriorityGt(priorityGt).PriorityGte(priorityGte).PriorityLt(priorityLt).PriorityLte(priorityLte).PriorityN(priorityN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineId(virtualMachineId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamFhrpGroupAssignmentsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamFhrpGroupAssignmentsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamFhrpGroupAssignmentsList`: PaginatedFHRPGroupAssignmentList
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamFhrpGroupAssignmentsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamFhrpGroupAssignmentsList`: %v\n", resp)
 }
 ```
 
@@ -2944,6 +2982,7 @@ Other parameters are passed through a pointer to a apiIpamFhrpGroupAssignmentsLi
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -2955,12 +2994,14 @@ Name | Type | Description  | Notes
  **groupId** | **[]int32** | Group (ID) | 
  **groupIdN** | **[]int32** | Group (ID) | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **interfaceId** | **[]int32** |  | 
+ **interfaceIdEmpty** | **bool** |  | 
  **interfaceIdGt** | **[]int32** |  | 
  **interfaceIdGte** | **[]int32** |  | 
  **interfaceIdLt** | **[]int32** |  | 
@@ -2969,15 +3010,18 @@ Name | Type | Description  | Notes
  **interfaceType** | **string** |  | 
  **interfaceTypeN** | **string** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **priority** | **[]int32** |  | 
+ **priorityEmpty** | **bool** |  | 
  **priorityGt** | **[]int32** |  | 
  **priorityGte** | **[]int32** |  | 
  **priorityLt** | **[]int32** |  | 
@@ -3031,13 +3075,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamFhrpGroupAssignmentsPartialUpdate(context.Background(), id).PatchedWritableFHRPGroupAssignmentRequest(patchedWritableFHRPGroupAssignmentRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamFhrpGroupAssignmentsPartialUpdate(context.Background(), id).PatchedWritableFHRPGroupAssignmentRequest(patchedWritableFHRPGroupAssignmentRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamFhrpGroupAssignmentsPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamFhrpGroupAssignmentsPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamFhrpGroupAssignmentsPartialUpdate`: FHRPGroupAssignment
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamFhrpGroupAssignmentsPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamFhrpGroupAssignmentsPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -3102,13 +3146,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamFhrpGroupAssignmentsRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamFhrpGroupAssignmentsRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamFhrpGroupAssignmentsRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamFhrpGroupAssignmentsRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamFhrpGroupAssignmentsRetrieve`: FHRPGroupAssignment
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamFhrpGroupAssignmentsRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamFhrpGroupAssignmentsRetrieve`: %v\n", resp)
 }
 ```
 
@@ -3173,13 +3217,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamFhrpGroupAssignmentsUpdate(context.Background(), id).WritableFHRPGroupAssignmentRequest(writableFHRPGroupAssignmentRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamFhrpGroupAssignmentsUpdate(context.Background(), id).WritableFHRPGroupAssignmentRequest(writableFHRPGroupAssignmentRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamFhrpGroupAssignmentsUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamFhrpGroupAssignmentsUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamFhrpGroupAssignmentsUpdate`: FHRPGroupAssignment
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamFhrpGroupAssignmentsUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamFhrpGroupAssignmentsUpdate`: %v\n", resp)
 }
 ```
 
@@ -3244,9 +3288,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IpamApi.IpamFhrpGroupsBulkDestroy(context.Background()).FHRPGroupRequest(fHRPGroupRequest).Execute()
+    r, err := apiClient.IpamAPI.IpamFhrpGroupsBulkDestroy(context.Background()).FHRPGroupRequest(fHRPGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamFhrpGroupsBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamFhrpGroupsBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3308,13 +3352,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamFhrpGroupsBulkPartialUpdate(context.Background()).FHRPGroupRequest(fHRPGroupRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamFhrpGroupsBulkPartialUpdate(context.Background()).FHRPGroupRequest(fHRPGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamFhrpGroupsBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamFhrpGroupsBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamFhrpGroupsBulkPartialUpdate`: []FHRPGroup
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamFhrpGroupsBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamFhrpGroupsBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -3374,13 +3418,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamFhrpGroupsBulkUpdate(context.Background()).FHRPGroupRequest(fHRPGroupRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamFhrpGroupsBulkUpdate(context.Background()).FHRPGroupRequest(fHRPGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamFhrpGroupsBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamFhrpGroupsBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamFhrpGroupsBulkUpdate`: []FHRPGroup
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamFhrpGroupsBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamFhrpGroupsBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -3440,13 +3484,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamFhrpGroupsCreate(context.Background()).FHRPGroupRequest(fHRPGroupRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamFhrpGroupsCreate(context.Background()).FHRPGroupRequest(fHRPGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamFhrpGroupsCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamFhrpGroupsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamFhrpGroupsCreate`: FHRPGroup
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamFhrpGroupsCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamFhrpGroupsCreate`: %v\n", resp)
 }
 ```
 
@@ -3506,9 +3550,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IpamApi.IpamFhrpGroupsDestroy(context.Background(), id).Execute()
+    r, err := apiClient.IpamAPI.IpamFhrpGroupsDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamFhrpGroupsDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamFhrpGroupsDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3551,7 +3595,7 @@ Name | Type | Description  | Notes
 
 ## IpamFhrpGroupsList
 
-> PaginatedFHRPGroupList IpamFhrpGroupsList(ctx).AuthKey(authKey).AuthKeyEmpty(authKeyEmpty).AuthKeyIc(authKeyIc).AuthKeyIe(authKeyIe).AuthKeyIew(authKeyIew).AuthKeyIsw(authKeyIsw).AuthKeyN(authKeyN).AuthKeyNic(authKeyNic).AuthKeyNie(authKeyNie).AuthKeyNiew(authKeyNiew).AuthKeyNisw(authKeyNisw).AuthType(authType).AuthTypeN(authTypeN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).GroupId(groupId).GroupIdGt(groupIdGt).GroupIdGte(groupIdGte).GroupIdLt(groupIdLt).GroupIdLte(groupIdLte).GroupIdN(groupIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Protocol(protocol).ProtocolN(protocolN).Q(q).RelatedIp(relatedIp).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedFHRPGroupList IpamFhrpGroupsList(ctx).AuthKey(authKey).AuthKeyEmpty(authKeyEmpty).AuthKeyIc(authKeyIc).AuthKeyIe(authKeyIe).AuthKeyIew(authKeyIew).AuthKeyIsw(authKeyIsw).AuthKeyN(authKeyN).AuthKeyNic(authKeyNic).AuthKeyNie(authKeyNie).AuthKeyNiew(authKeyNiew).AuthKeyNisw(authKeyNisw).AuthType(authType).AuthTypeN(authTypeN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).GroupId(groupId).GroupIdEmpty(groupIdEmpty).GroupIdGt(groupIdGt).GroupIdGte(groupIdGte).GroupIdLt(groupIdLt).GroupIdLte(groupIdLte).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Protocol(protocol).ProtocolN(protocolN).Q(q).RelatedIp(relatedIp).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -3585,6 +3629,7 @@ func main() {
     authType := []string{"Inner_example"} // []string |  (optional)
     authTypeN := []string{"Inner_example"} // []string |  (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -3592,24 +3637,28 @@ func main() {
     createdN := []time.Time{time.Now()} // []time.Time |  (optional)
     createdByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     groupId := []int32{int32(123)} // []int32 |  (optional)
+    groupIdEmpty := true // bool |  (optional)
     groupIdGt := []int32{int32(123)} // []int32 |  (optional)
     groupIdGte := []int32{int32(123)} // []int32 |  (optional)
     groupIdLt := []int32{int32(123)} // []int32 |  (optional)
     groupIdLte := []int32{int32(123)} // []int32 |  (optional)
     groupIdN := []int32{int32(123)} // []int32 |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -3633,13 +3682,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamFhrpGroupsList(context.Background()).AuthKey(authKey).AuthKeyEmpty(authKeyEmpty).AuthKeyIc(authKeyIc).AuthKeyIe(authKeyIe).AuthKeyIew(authKeyIew).AuthKeyIsw(authKeyIsw).AuthKeyN(authKeyN).AuthKeyNic(authKeyNic).AuthKeyNie(authKeyNie).AuthKeyNiew(authKeyNiew).AuthKeyNisw(authKeyNisw).AuthType(authType).AuthTypeN(authTypeN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).GroupId(groupId).GroupIdGt(groupIdGt).GroupIdGte(groupIdGte).GroupIdLt(groupIdLt).GroupIdLte(groupIdLte).GroupIdN(groupIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Protocol(protocol).ProtocolN(protocolN).Q(q).RelatedIp(relatedIp).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamFhrpGroupsList(context.Background()).AuthKey(authKey).AuthKeyEmpty(authKeyEmpty).AuthKeyIc(authKeyIc).AuthKeyIe(authKeyIe).AuthKeyIew(authKeyIew).AuthKeyIsw(authKeyIsw).AuthKeyN(authKeyN).AuthKeyNic(authKeyNic).AuthKeyNie(authKeyNie).AuthKeyNiew(authKeyNiew).AuthKeyNisw(authKeyNisw).AuthType(authType).AuthTypeN(authTypeN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).GroupId(groupId).GroupIdEmpty(groupIdEmpty).GroupIdGt(groupIdGt).GroupIdGte(groupIdGte).GroupIdLt(groupIdLt).GroupIdLte(groupIdLte).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Protocol(protocol).ProtocolN(protocolN).Q(q).RelatedIp(relatedIp).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamFhrpGroupsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamFhrpGroupsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamFhrpGroupsList`: PaginatedFHRPGroupList
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamFhrpGroupsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamFhrpGroupsList`: %v\n", resp)
 }
 ```
 
@@ -3668,6 +3717,7 @@ Name | Type | Description  | Notes
  **authType** | **[]string** |  | 
  **authTypeN** | **[]string** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -3675,24 +3725,28 @@ Name | Type | Description  | Notes
  **createdN** | [**[]time.Time**](time.Time.md) |  | 
  **createdByRequest** | **string** |  | 
  **groupId** | **[]int32** |  | 
+ **groupIdEmpty** | **bool** |  | 
  **groupIdGt** | **[]int32** |  | 
  **groupIdGte** | **[]int32** |  | 
  **groupIdLt** | **[]int32** |  | 
  **groupIdLte** | **[]int32** |  | 
  **groupIdN** | **[]int32** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -3758,13 +3812,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamFhrpGroupsPartialUpdate(context.Background(), id).PatchedFHRPGroupRequest(patchedFHRPGroupRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamFhrpGroupsPartialUpdate(context.Background(), id).PatchedFHRPGroupRequest(patchedFHRPGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamFhrpGroupsPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamFhrpGroupsPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamFhrpGroupsPartialUpdate`: FHRPGroup
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamFhrpGroupsPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamFhrpGroupsPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -3829,13 +3883,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamFhrpGroupsRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamFhrpGroupsRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamFhrpGroupsRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamFhrpGroupsRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamFhrpGroupsRetrieve`: FHRPGroup
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamFhrpGroupsRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamFhrpGroupsRetrieve`: %v\n", resp)
 }
 ```
 
@@ -3900,13 +3954,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamFhrpGroupsUpdate(context.Background(), id).FHRPGroupRequest(fHRPGroupRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamFhrpGroupsUpdate(context.Background(), id).FHRPGroupRequest(fHRPGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamFhrpGroupsUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamFhrpGroupsUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamFhrpGroupsUpdate`: FHRPGroup
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamFhrpGroupsUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamFhrpGroupsUpdate`: %v\n", resp)
 }
 ```
 
@@ -3971,9 +4025,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IpamApi.IpamIpAddressesBulkDestroy(context.Background()).IPAddressRequest(iPAddressRequest).Execute()
+    r, err := apiClient.IpamAPI.IpamIpAddressesBulkDestroy(context.Background()).IPAddressRequest(iPAddressRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamIpAddressesBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamIpAddressesBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -4035,13 +4089,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamIpAddressesBulkPartialUpdate(context.Background()).IPAddressRequest(iPAddressRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamIpAddressesBulkPartialUpdate(context.Background()).IPAddressRequest(iPAddressRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamIpAddressesBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamIpAddressesBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamIpAddressesBulkPartialUpdate`: []IPAddress
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamIpAddressesBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamIpAddressesBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -4101,13 +4155,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamIpAddressesBulkUpdate(context.Background()).IPAddressRequest(iPAddressRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamIpAddressesBulkUpdate(context.Background()).IPAddressRequest(iPAddressRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamIpAddressesBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamIpAddressesBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamIpAddressesBulkUpdate`: []IPAddress
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamIpAddressesBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamIpAddressesBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -4167,13 +4221,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamIpAddressesCreate(context.Background()).WritableIPAddressRequest(writableIPAddressRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamIpAddressesCreate(context.Background()).WritableIPAddressRequest(writableIPAddressRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamIpAddressesCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamIpAddressesCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamIpAddressesCreate`: IPAddress
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamIpAddressesCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamIpAddressesCreate`: %v\n", resp)
 }
 ```
 
@@ -4233,9 +4287,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IpamApi.IpamIpAddressesDestroy(context.Background(), id).Execute()
+    r, err := apiClient.IpamAPI.IpamIpAddressesDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamIpAddressesDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamIpAddressesDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -4278,7 +4332,7 @@ Name | Type | Description  | Notes
 
 ## IpamIpAddressesList
 
-> PaginatedIPAddressList IpamIpAddressesList(ctx).Address(address).Assigned(assigned).AssignedToInterface(assignedToInterface).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceId(deviceId).DnsName(dnsName).DnsNameEmpty(dnsNameEmpty).DnsNameIc(dnsNameIc).DnsNameIe(dnsNameIe).DnsNameIew(dnsNameIew).DnsNameIsw(dnsNameIsw).DnsNameN(dnsNameN).DnsNameNic(dnsNameNic).DnsNameNie(dnsNameNie).DnsNameNiew(dnsNameNiew).DnsNameNisw(dnsNameNisw).Family(family).FhrpgroupId(fhrpgroupId).FhrpgroupIdN(fhrpgroupIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interface_(interface_).InterfaceN(interfaceN).InterfaceId(interfaceId).InterfaceIdN(interfaceIdN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MaskLength(maskLength).Offset(offset).Ordering(ordering).Parent(parent).PresentInVrf(presentInVrf).PresentInVrfId(presentInVrfId).Q(q).Role(role).RoleN(roleN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineId(virtualMachineId).Vminterface(vminterface).VminterfaceN(vminterfaceN).VminterfaceId(vminterfaceId).VminterfaceIdN(vminterfaceIdN).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Execute()
+> PaginatedIPAddressList IpamIpAddressesList(ctx).Address(address).Assigned(assigned).AssignedToInterface(assignedToInterface).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceId(deviceId).DnsName(dnsName).DnsNameEmpty(dnsNameEmpty).DnsNameIc(dnsNameIc).DnsNameIe(dnsNameIe).DnsNameIew(dnsNameIew).DnsNameIsw(dnsNameIsw).DnsNameN(dnsNameN).DnsNameNic(dnsNameNic).DnsNameNie(dnsNameNie).DnsNameNiew(dnsNameNiew).DnsNameNisw(dnsNameNisw).Family(family).FhrpgroupId(fhrpgroupId).FhrpgroupIdN(fhrpgroupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interface_(interface_).InterfaceN(interfaceN).InterfaceId(interfaceId).InterfaceIdN(interfaceIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MaskLength(maskLength).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Parent(parent).PresentInVrf(presentInVrf).PresentInVrfId(presentInVrfId).Q(q).Role(role).RoleN(roleN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineId(virtualMachineId).Vminterface(vminterface).VminterfaceN(vminterfaceN).VminterfaceId(vminterfaceId).VminterfaceIdN(vminterfaceIdN).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Execute()
 
 
 
@@ -4302,6 +4356,7 @@ func main() {
     assigned := true // bool | Is assigned (optional)
     assignedToInterface := true // bool | Is assigned to an interface (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -4336,6 +4391,7 @@ func main() {
     fhrpgroupId := []int32{int32(123)} // []int32 | FHRP group (ID) (optional)
     fhrpgroupIdN := []int32{int32(123)} // []int32 | FHRP group (ID) (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
@@ -4346,6 +4402,7 @@ func main() {
     interfaceId := []int32{int32(123)} // []int32 | Interface (ID) (optional)
     interfaceIdN := []int32{int32(123)} // []int32 | Interface (ID) (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -4353,6 +4410,7 @@ func main() {
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
     maskLength := float32(8.14) // float32 | Mask length (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     offset := int32(56) // int32 | The initial index from which to return the results. (optional)
     ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
     parent := []string{"Inner_example"} // []string |  (optional)
@@ -4387,13 +4445,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamIpAddressesList(context.Background()).Address(address).Assigned(assigned).AssignedToInterface(assignedToInterface).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceId(deviceId).DnsName(dnsName).DnsNameEmpty(dnsNameEmpty).DnsNameIc(dnsNameIc).DnsNameIe(dnsNameIe).DnsNameIew(dnsNameIew).DnsNameIsw(dnsNameIsw).DnsNameN(dnsNameN).DnsNameNic(dnsNameNic).DnsNameNie(dnsNameNie).DnsNameNiew(dnsNameNiew).DnsNameNisw(dnsNameNisw).Family(family).FhrpgroupId(fhrpgroupId).FhrpgroupIdN(fhrpgroupIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interface_(interface_).InterfaceN(interfaceN).InterfaceId(interfaceId).InterfaceIdN(interfaceIdN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MaskLength(maskLength).Offset(offset).Ordering(ordering).Parent(parent).PresentInVrf(presentInVrf).PresentInVrfId(presentInVrfId).Q(q).Role(role).RoleN(roleN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineId(virtualMachineId).Vminterface(vminterface).VminterfaceN(vminterfaceN).VminterfaceId(vminterfaceId).VminterfaceIdN(vminterfaceIdN).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamIpAddressesList(context.Background()).Address(address).Assigned(assigned).AssignedToInterface(assignedToInterface).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceId(deviceId).DnsName(dnsName).DnsNameEmpty(dnsNameEmpty).DnsNameIc(dnsNameIc).DnsNameIe(dnsNameIe).DnsNameIew(dnsNameIew).DnsNameIsw(dnsNameIsw).DnsNameN(dnsNameN).DnsNameNic(dnsNameNic).DnsNameNie(dnsNameNie).DnsNameNiew(dnsNameNiew).DnsNameNisw(dnsNameNisw).Family(family).FhrpgroupId(fhrpgroupId).FhrpgroupIdN(fhrpgroupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interface_(interface_).InterfaceN(interfaceN).InterfaceId(interfaceId).InterfaceIdN(interfaceIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MaskLength(maskLength).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Parent(parent).PresentInVrf(presentInVrf).PresentInVrfId(presentInVrfId).Q(q).Role(role).RoleN(roleN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineId(virtualMachineId).Vminterface(vminterface).VminterfaceN(vminterfaceN).VminterfaceId(vminterfaceId).VminterfaceIdN(vminterfaceIdN).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamIpAddressesList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamIpAddressesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamIpAddressesList`: PaginatedIPAddressList
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamIpAddressesList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamIpAddressesList`: %v\n", resp)
 }
 ```
 
@@ -4412,6 +4470,7 @@ Name | Type | Description  | Notes
  **assigned** | **bool** | Is assigned | 
  **assignedToInterface** | **bool** | Is assigned to an interface | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -4446,6 +4505,7 @@ Name | Type | Description  | Notes
  **fhrpgroupId** | **[]int32** | FHRP group (ID) | 
  **fhrpgroupIdN** | **[]int32** | FHRP group (ID) | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
@@ -4456,6 +4516,7 @@ Name | Type | Description  | Notes
  **interfaceId** | **[]int32** | Interface (ID) | 
  **interfaceIdN** | **[]int32** | Interface (ID) | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -4463,6 +4524,7 @@ Name | Type | Description  | Notes
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
  **maskLength** | **float32** | Mask length | 
+ **modifiedByRequest** | **string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **parent** | **[]string** |  | 
@@ -4539,13 +4601,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamIpAddressesPartialUpdate(context.Background(), id).PatchedWritableIPAddressRequest(patchedWritableIPAddressRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamIpAddressesPartialUpdate(context.Background(), id).PatchedWritableIPAddressRequest(patchedWritableIPAddressRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamIpAddressesPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamIpAddressesPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamIpAddressesPartialUpdate`: IPAddress
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamIpAddressesPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamIpAddressesPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -4610,13 +4672,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamIpAddressesRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamIpAddressesRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamIpAddressesRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamIpAddressesRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamIpAddressesRetrieve`: IPAddress
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamIpAddressesRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamIpAddressesRetrieve`: %v\n", resp)
 }
 ```
 
@@ -4681,13 +4743,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamIpAddressesUpdate(context.Background(), id).WritableIPAddressRequest(writableIPAddressRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamIpAddressesUpdate(context.Background(), id).WritableIPAddressRequest(writableIPAddressRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamIpAddressesUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamIpAddressesUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamIpAddressesUpdate`: IPAddress
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamIpAddressesUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamIpAddressesUpdate`: %v\n", resp)
 }
 ```
 
@@ -4753,13 +4815,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamIpRangesAvailableIpsCreate(context.Background(), id).IPAddressRequest(iPAddressRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamIpRangesAvailableIpsCreate(context.Background(), id).IPAddressRequest(iPAddressRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamIpRangesAvailableIpsCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamIpRangesAvailableIpsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamIpRangesAvailableIpsCreate`: []IPAddress
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamIpRangesAvailableIpsCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamIpRangesAvailableIpsCreate`: %v\n", resp)
 }
 ```
 
@@ -4824,13 +4886,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamIpRangesAvailableIpsList(context.Background(), id).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamIpRangesAvailableIpsList(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamIpRangesAvailableIpsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamIpRangesAvailableIpsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamIpRangesAvailableIpsList`: []AvailableIP
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamIpRangesAvailableIpsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamIpRangesAvailableIpsList`: %v\n", resp)
 }
 ```
 
@@ -4894,9 +4956,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IpamApi.IpamIpRangesBulkDestroy(context.Background()).IPRangeRequest(iPRangeRequest).Execute()
+    r, err := apiClient.IpamAPI.IpamIpRangesBulkDestroy(context.Background()).IPRangeRequest(iPRangeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamIpRangesBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamIpRangesBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -4958,13 +5020,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamIpRangesBulkPartialUpdate(context.Background()).IPRangeRequest(iPRangeRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamIpRangesBulkPartialUpdate(context.Background()).IPRangeRequest(iPRangeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamIpRangesBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamIpRangesBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamIpRangesBulkPartialUpdate`: []IPRange
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamIpRangesBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamIpRangesBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -5024,13 +5086,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamIpRangesBulkUpdate(context.Background()).IPRangeRequest(iPRangeRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamIpRangesBulkUpdate(context.Background()).IPRangeRequest(iPRangeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamIpRangesBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamIpRangesBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamIpRangesBulkUpdate`: []IPRange
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamIpRangesBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamIpRangesBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -5090,13 +5152,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamIpRangesCreate(context.Background()).WritableIPRangeRequest(writableIPRangeRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamIpRangesCreate(context.Background()).WritableIPRangeRequest(writableIPRangeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamIpRangesCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamIpRangesCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamIpRangesCreate`: IPRange
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamIpRangesCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamIpRangesCreate`: %v\n", resp)
 }
 ```
 
@@ -5156,9 +5218,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IpamApi.IpamIpRangesDestroy(context.Background(), id).Execute()
+    r, err := apiClient.IpamAPI.IpamIpRangesDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamIpRangesDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamIpRangesDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -5201,7 +5263,7 @@ Name | Type | Description  | Notes
 
 ## IpamIpRangesList
 
-> PaginatedIPRangeList IpamIpRangesList(ctx).Contains(contains).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).EndAddress(endAddress).Family(family).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MarkUtilized(markUtilized).Offset(offset).Ordering(ordering).Q(q).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).StartAddress(startAddress).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Execute()
+> PaginatedIPRangeList IpamIpRangesList(ctx).Contains(contains).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).EndAddress(endAddress).Family(family).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MarkUtilized(markUtilized).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Parent(parent).Q(q).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).StartAddress(startAddress).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Execute()
 
 
 
@@ -5223,6 +5285,7 @@ import (
 func main() {
     contains := "contains_example" // string | Ranges which contain this prefix or IP (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -5243,12 +5306,14 @@ func main() {
     endAddress := []string{"Inner_example"} // []string |  (optional)
     family := float32(8.14) // float32 |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -5256,8 +5321,10 @@ func main() {
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
     markUtilized := true // bool |  (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     offset := int32(56) // int32 | The initial index from which to return the results. (optional)
     ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+    parent := []string{"Inner_example"} // []string |  (optional)
     q := "q_example" // string | Search (optional)
     role := []string{"Inner_example"} // []string | Role (slug) (optional)
     roleN := []string{"Inner_example"} // []string | Role (slug) (optional)
@@ -5284,13 +5351,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamIpRangesList(context.Background()).Contains(contains).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).EndAddress(endAddress).Family(family).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MarkUtilized(markUtilized).Offset(offset).Ordering(ordering).Q(q).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).StartAddress(startAddress).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamIpRangesList(context.Background()).Contains(contains).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).EndAddress(endAddress).Family(family).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MarkUtilized(markUtilized).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Parent(parent).Q(q).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).StartAddress(startAddress).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamIpRangesList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamIpRangesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamIpRangesList`: PaginatedIPRangeList
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamIpRangesList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamIpRangesList`: %v\n", resp)
 }
 ```
 
@@ -5307,6 +5374,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **contains** | **string** | Ranges which contain this prefix or IP | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -5327,12 +5395,14 @@ Name | Type | Description  | Notes
  **endAddress** | **[]string** |  | 
  **family** | **float32** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -5340,8 +5410,10 @@ Name | Type | Description  | Notes
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
  **markUtilized** | **bool** |  | 
+ **modifiedByRequest** | **string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **parent** | **[]string** |  | 
  **q** | **string** | Search | 
  **role** | **[]string** | Role (slug) | 
  **roleN** | **[]string** | Role (slug) | 
@@ -5410,13 +5482,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamIpRangesPartialUpdate(context.Background(), id).PatchedWritableIPRangeRequest(patchedWritableIPRangeRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamIpRangesPartialUpdate(context.Background(), id).PatchedWritableIPRangeRequest(patchedWritableIPRangeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamIpRangesPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamIpRangesPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamIpRangesPartialUpdate`: IPRange
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamIpRangesPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamIpRangesPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -5481,13 +5553,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamIpRangesRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamIpRangesRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamIpRangesRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamIpRangesRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamIpRangesRetrieve`: IPRange
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamIpRangesRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamIpRangesRetrieve`: %v\n", resp)
 }
 ```
 
@@ -5552,13 +5624,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamIpRangesUpdate(context.Background(), id).WritableIPRangeRequest(writableIPRangeRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamIpRangesUpdate(context.Background(), id).WritableIPRangeRequest(writableIPRangeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamIpRangesUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamIpRangesUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamIpRangesUpdate`: IPRange
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamIpRangesUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamIpRangesUpdate`: %v\n", resp)
 }
 ```
 
@@ -5623,9 +5695,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IpamApi.IpamL2vpnTerminationsBulkDestroy(context.Background()).L2VPNTerminationRequest(l2VPNTerminationRequest).Execute()
+    r, err := apiClient.IpamAPI.IpamL2vpnTerminationsBulkDestroy(context.Background()).L2VPNTerminationRequest(l2VPNTerminationRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamL2vpnTerminationsBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamL2vpnTerminationsBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -5687,13 +5759,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamL2vpnTerminationsBulkPartialUpdate(context.Background()).L2VPNTerminationRequest(l2VPNTerminationRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamL2vpnTerminationsBulkPartialUpdate(context.Background()).L2VPNTerminationRequest(l2VPNTerminationRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamL2vpnTerminationsBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamL2vpnTerminationsBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamL2vpnTerminationsBulkPartialUpdate`: []L2VPNTermination
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamL2vpnTerminationsBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamL2vpnTerminationsBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -5753,13 +5825,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamL2vpnTerminationsBulkUpdate(context.Background()).L2VPNTerminationRequest(l2VPNTerminationRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamL2vpnTerminationsBulkUpdate(context.Background()).L2VPNTerminationRequest(l2VPNTerminationRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamL2vpnTerminationsBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamL2vpnTerminationsBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamL2vpnTerminationsBulkUpdate`: []L2VPNTermination
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamL2vpnTerminationsBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamL2vpnTerminationsBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -5819,13 +5891,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamL2vpnTerminationsCreate(context.Background()).WritableL2VPNTerminationRequest(writableL2VPNTerminationRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamL2vpnTerminationsCreate(context.Background()).WritableL2VPNTerminationRequest(writableL2VPNTerminationRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamL2vpnTerminationsCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamL2vpnTerminationsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamL2vpnTerminationsCreate`: L2VPNTermination
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamL2vpnTerminationsCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamL2vpnTerminationsCreate`: %v\n", resp)
 }
 ```
 
@@ -5885,9 +5957,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IpamApi.IpamL2vpnTerminationsDestroy(context.Background(), id).Execute()
+    r, err := apiClient.IpamAPI.IpamL2vpnTerminationsDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamL2vpnTerminationsDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamL2vpnTerminationsDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -5930,7 +6002,7 @@ Name | Type | Description  | Notes
 
 ## IpamL2vpnTerminationsList
 
-> PaginatedL2VPNTerminationList IpamL2vpnTerminationsList(ctx).AssignedObjectType(assignedObjectType).AssignedObjectTypeN(assignedObjectTypeN).AssignedObjectTypeId(assignedObjectTypeId).AssignedObjectTypeIdN(assignedObjectTypeIdN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interface_(interface_).InterfaceN(interfaceN).InterfaceId(interfaceId).InterfaceIdN(interfaceIdN).L2vpn(l2vpn).L2vpnN(l2vpnN).L2vpnId(l2vpnId).L2vpnIdN(l2vpnIdN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionId(regionId).Site(site).SiteId(siteId).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineN(virtualMachineN).VirtualMachineId(virtualMachineId).VirtualMachineIdN(virtualMachineIdN).Vlan(vlan).VlanN(vlanN).VlanId(vlanId).VlanIdN(vlanIdN).VlanVid(vlanVid).VlanVidGt(vlanVidGt).VlanVidGte(vlanVidGte).VlanVidLt(vlanVidLt).VlanVidLte(vlanVidLte).VlanVidN(vlanVidN).Vminterface(vminterface).VminterfaceN(vminterfaceN).VminterfaceId(vminterfaceId).VminterfaceIdN(vminterfaceIdN).Execute()
+> PaginatedL2VPNTerminationList IpamL2vpnTerminationsList(ctx).AssignedObjectType(assignedObjectType).AssignedObjectTypeN(assignedObjectTypeN).AssignedObjectTypeId(assignedObjectTypeId).AssignedObjectTypeIdN(assignedObjectTypeIdN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interface_(interface_).InterfaceN(interfaceN).InterfaceId(interfaceId).InterfaceIdN(interfaceIdN).L2vpn(l2vpn).L2vpnN(l2vpnN).L2vpnId(l2vpnId).L2vpnIdN(l2vpnIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionId(regionId).Site(site).SiteId(siteId).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineN(virtualMachineN).VirtualMachineId(virtualMachineId).VirtualMachineIdN(virtualMachineIdN).Vlan(vlan).VlanN(vlanN).VlanId(vlanId).VlanIdN(vlanIdN).VlanVid(vlanVid).VlanVidEmpty(vlanVidEmpty).VlanVidGt(vlanVidGt).VlanVidGte(vlanVidGte).VlanVidLt(vlanVidLt).VlanVidLte(vlanVidLte).VlanVidN(vlanVidN).Vminterface(vminterface).VminterfaceN(vminterfaceN).VminterfaceId(vminterfaceId).VminterfaceIdN(vminterfaceIdN).Execute()
 
 
 
@@ -5955,6 +6027,7 @@ func main() {
     assignedObjectTypeId := int32(56) // int32 |  (optional)
     assignedObjectTypeIdN := int32(56) // int32 |  (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -5966,6 +6039,7 @@ func main() {
     deviceId := []int32{int32(123)} // []int32 | Device (ID) (optional)
     deviceIdN := []int32{int32(123)} // []int32 | Device (ID) (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
@@ -5980,12 +6054,14 @@ func main() {
     l2vpnId := []int32{int32(123)} // []int32 | L2VPN (ID) (optional)
     l2vpnIdN := []int32{int32(123)} // []int32 | L2VPN (ID) (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     offset := int32(56) // int32 | The initial index from which to return the results. (optional)
     ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
     q := "q_example" // string | Search (optional)
@@ -6005,6 +6081,7 @@ func main() {
     vlanId := []int32{int32(123)} // []int32 | VLAN (ID) (optional)
     vlanIdN := []int32{int32(123)} // []int32 | VLAN (ID) (optional)
     vlanVid := int32(56) // int32 | VLAN number (1-4094) (optional)
+    vlanVidEmpty := int32(56) // int32 | VLAN number (1-4094) (optional)
     vlanVidGt := int32(56) // int32 | VLAN number (1-4094) (optional)
     vlanVidGte := int32(56) // int32 | VLAN number (1-4094) (optional)
     vlanVidLt := int32(56) // int32 | VLAN number (1-4094) (optional)
@@ -6017,13 +6094,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamL2vpnTerminationsList(context.Background()).AssignedObjectType(assignedObjectType).AssignedObjectTypeN(assignedObjectTypeN).AssignedObjectTypeId(assignedObjectTypeId).AssignedObjectTypeIdN(assignedObjectTypeIdN).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interface_(interface_).InterfaceN(interfaceN).InterfaceId(interfaceId).InterfaceIdN(interfaceIdN).L2vpn(l2vpn).L2vpnN(l2vpnN).L2vpnId(l2vpnId).L2vpnIdN(l2vpnIdN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionId(regionId).Site(site).SiteId(siteId).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineN(virtualMachineN).VirtualMachineId(virtualMachineId).VirtualMachineIdN(virtualMachineIdN).Vlan(vlan).VlanN(vlanN).VlanId(vlanId).VlanIdN(vlanIdN).VlanVid(vlanVid).VlanVidGt(vlanVidGt).VlanVidGte(vlanVidGte).VlanVidLt(vlanVidLt).VlanVidLte(vlanVidLte).VlanVidN(vlanVidN).Vminterface(vminterface).VminterfaceN(vminterfaceN).VminterfaceId(vminterfaceId).VminterfaceIdN(vminterfaceIdN).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamL2vpnTerminationsList(context.Background()).AssignedObjectType(assignedObjectType).AssignedObjectTypeN(assignedObjectTypeN).AssignedObjectTypeId(assignedObjectTypeId).AssignedObjectTypeIdN(assignedObjectTypeIdN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interface_(interface_).InterfaceN(interfaceN).InterfaceId(interfaceId).InterfaceIdN(interfaceIdN).L2vpn(l2vpn).L2vpnN(l2vpnN).L2vpnId(l2vpnId).L2vpnIdN(l2vpnIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionId(regionId).Site(site).SiteId(siteId).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineN(virtualMachineN).VirtualMachineId(virtualMachineId).VirtualMachineIdN(virtualMachineIdN).Vlan(vlan).VlanN(vlanN).VlanId(vlanId).VlanIdN(vlanIdN).VlanVid(vlanVid).VlanVidEmpty(vlanVidEmpty).VlanVidGt(vlanVidGt).VlanVidGte(vlanVidGte).VlanVidLt(vlanVidLt).VlanVidLte(vlanVidLte).VlanVidN(vlanVidN).Vminterface(vminterface).VminterfaceN(vminterfaceN).VminterfaceId(vminterfaceId).VminterfaceIdN(vminterfaceIdN).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamL2vpnTerminationsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamL2vpnTerminationsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamL2vpnTerminationsList`: PaginatedL2VPNTerminationList
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamL2vpnTerminationsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamL2vpnTerminationsList`: %v\n", resp)
 }
 ```
 
@@ -6043,6 +6120,7 @@ Name | Type | Description  | Notes
  **assignedObjectTypeId** | **int32** |  | 
  **assignedObjectTypeIdN** | **int32** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -6054,6 +6132,7 @@ Name | Type | Description  | Notes
  **deviceId** | **[]int32** | Device (ID) | 
  **deviceIdN** | **[]int32** | Device (ID) | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
@@ -6068,12 +6147,14 @@ Name | Type | Description  | Notes
  **l2vpnId** | **[]int32** | L2VPN (ID) | 
  **l2vpnIdN** | **[]int32** | L2VPN (ID) | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **q** | **string** | Search | 
@@ -6093,6 +6174,7 @@ Name | Type | Description  | Notes
  **vlanId** | **[]int32** | VLAN (ID) | 
  **vlanIdN** | **[]int32** | VLAN (ID) | 
  **vlanVid** | **int32** | VLAN number (1-4094) | 
+ **vlanVidEmpty** | **int32** | VLAN number (1-4094) | 
  **vlanVidGt** | **int32** | VLAN number (1-4094) | 
  **vlanVidGte** | **int32** | VLAN number (1-4094) | 
  **vlanVidLt** | **int32** | VLAN number (1-4094) | 
@@ -6147,13 +6229,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamL2vpnTerminationsPartialUpdate(context.Background(), id).PatchedWritableL2VPNTerminationRequest(patchedWritableL2VPNTerminationRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamL2vpnTerminationsPartialUpdate(context.Background(), id).PatchedWritableL2VPNTerminationRequest(patchedWritableL2VPNTerminationRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamL2vpnTerminationsPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamL2vpnTerminationsPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamL2vpnTerminationsPartialUpdate`: L2VPNTermination
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamL2vpnTerminationsPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamL2vpnTerminationsPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -6218,13 +6300,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamL2vpnTerminationsRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamL2vpnTerminationsRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamL2vpnTerminationsRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamL2vpnTerminationsRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamL2vpnTerminationsRetrieve`: L2VPNTermination
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamL2vpnTerminationsRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamL2vpnTerminationsRetrieve`: %v\n", resp)
 }
 ```
 
@@ -6289,13 +6371,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamL2vpnTerminationsUpdate(context.Background(), id).WritableL2VPNTerminationRequest(writableL2VPNTerminationRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamL2vpnTerminationsUpdate(context.Background(), id).WritableL2VPNTerminationRequest(writableL2VPNTerminationRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamL2vpnTerminationsUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamL2vpnTerminationsUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamL2vpnTerminationsUpdate`: L2VPNTermination
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamL2vpnTerminationsUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamL2vpnTerminationsUpdate`: %v\n", resp)
 }
 ```
 
@@ -6360,9 +6442,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IpamApi.IpamL2vpnsBulkDestroy(context.Background()).L2VPNRequest(l2VPNRequest).Execute()
+    r, err := apiClient.IpamAPI.IpamL2vpnsBulkDestroy(context.Background()).L2VPNRequest(l2VPNRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamL2vpnsBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamL2vpnsBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -6424,13 +6506,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamL2vpnsBulkPartialUpdate(context.Background()).L2VPNRequest(l2VPNRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamL2vpnsBulkPartialUpdate(context.Background()).L2VPNRequest(l2VPNRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamL2vpnsBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamL2vpnsBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamL2vpnsBulkPartialUpdate`: []L2VPN
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamL2vpnsBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamL2vpnsBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -6490,13 +6572,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamL2vpnsBulkUpdate(context.Background()).L2VPNRequest(l2VPNRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamL2vpnsBulkUpdate(context.Background()).L2VPNRequest(l2VPNRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamL2vpnsBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamL2vpnsBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamL2vpnsBulkUpdate`: []L2VPN
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamL2vpnsBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamL2vpnsBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -6556,13 +6638,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamL2vpnsCreate(context.Background()).WritableL2VPNRequest(writableL2VPNRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamL2vpnsCreate(context.Background()).WritableL2VPNRequest(writableL2VPNRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamL2vpnsCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamL2vpnsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamL2vpnsCreate`: L2VPN
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamL2vpnsCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamL2vpnsCreate`: %v\n", resp)
 }
 ```
 
@@ -6622,9 +6704,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IpamApi.IpamL2vpnsDestroy(context.Background(), id).Execute()
+    r, err := apiClient.IpamAPI.IpamL2vpnsDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamL2vpnsDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamL2vpnsDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -6667,7 +6749,7 @@ Name | Type | Description  | Notes
 
 ## IpamL2vpnsList
 
-> PaginatedL2VPNList IpamL2vpnsList(ctx).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).ExportTarget(exportTarget).ExportTargetN(exportTargetN).ExportTargetId(exportTargetId).ExportTargetIdN(exportTargetIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Identifier(identifier).IdentifierGt(identifierGt).IdentifierGte(identifierGte).IdentifierLt(identifierLt).IdentifierLte(identifierLte).IdentifierN(identifierN).ImportTarget(importTarget).ImportTargetN(importTargetN).ImportTargetId(importTargetId).ImportTargetIdN(importTargetIdN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedL2VPNList IpamL2vpnsList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).ExportTarget(exportTarget).ExportTargetN(exportTargetN).ExportTargetId(exportTargetId).ExportTargetIdN(exportTargetIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Identifier(identifier).IdentifierEmpty(identifierEmpty).IdentifierGt(identifierGt).IdentifierGte(identifierGte).IdentifierLt(identifierLt).IdentifierLte(identifierLte).IdentifierN(identifierN).ImportTarget(importTarget).ImportTargetN(importTargetN).ImportTargetId(importTargetId).ImportTargetIdN(importTargetIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -6688,6 +6770,7 @@ import (
 
 func main() {
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -6710,12 +6793,14 @@ func main() {
     exportTargetId := []int32{int32(123)} // []int32 | Export target (optional)
     exportTargetIdN := []int32{int32(123)} // []int32 | Export target (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     identifier := []int32{int32(123)} // []int32 |  (optional)
+    identifierEmpty := true // bool |  (optional)
     identifierGt := []int32{int32(123)} // []int32 |  (optional)
     identifierGte := []int32{int32(123)} // []int32 |  (optional)
     identifierLt := []int32{int32(123)} // []int32 |  (optional)
@@ -6726,12 +6811,14 @@ func main() {
     importTargetId := []int32{int32(123)} // []int32 | Import target (optional)
     importTargetIdN := []int32{int32(123)} // []int32 | Import target (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -6773,13 +6860,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamL2vpnsList(context.Background()).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).ExportTarget(exportTarget).ExportTargetN(exportTargetN).ExportTargetId(exportTargetId).ExportTargetIdN(exportTargetIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Identifier(identifier).IdentifierGt(identifierGt).IdentifierGte(identifierGte).IdentifierLt(identifierLt).IdentifierLte(identifierLte).IdentifierN(identifierN).ImportTarget(importTarget).ImportTargetN(importTargetN).ImportTargetId(importTargetId).ImportTargetIdN(importTargetIdN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamL2vpnsList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).ExportTarget(exportTarget).ExportTargetN(exportTargetN).ExportTargetId(exportTargetId).ExportTargetIdN(exportTargetIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Identifier(identifier).IdentifierEmpty(identifierEmpty).IdentifierGt(identifierGt).IdentifierGte(identifierGte).IdentifierLt(identifierLt).IdentifierLte(identifierLte).IdentifierN(identifierN).ImportTarget(importTarget).ImportTargetN(importTargetN).ImportTargetId(importTargetId).ImportTargetIdN(importTargetIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamL2vpnsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamL2vpnsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamL2vpnsList`: PaginatedL2VPNList
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamL2vpnsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamL2vpnsList`: %v\n", resp)
 }
 ```
 
@@ -6795,6 +6882,7 @@ Other parameters are passed through a pointer to a apiIpamL2vpnsListRequest stru
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -6817,12 +6905,14 @@ Name | Type | Description  | Notes
  **exportTargetId** | **[]int32** | Export target | 
  **exportTargetIdN** | **[]int32** | Export target | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **identifier** | **[]int32** |  | 
+ **identifierEmpty** | **bool** |  | 
  **identifierGt** | **[]int32** |  | 
  **identifierGte** | **[]int32** |  | 
  **identifierLt** | **[]int32** |  | 
@@ -6833,12 +6923,14 @@ Name | Type | Description  | Notes
  **importTargetId** | **[]int32** | Import target | 
  **importTargetIdN** | **[]int32** | Import target | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -6922,13 +7014,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamL2vpnsPartialUpdate(context.Background(), id).PatchedWritableL2VPNRequest(patchedWritableL2VPNRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamL2vpnsPartialUpdate(context.Background(), id).PatchedWritableL2VPNRequest(patchedWritableL2VPNRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamL2vpnsPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamL2vpnsPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamL2vpnsPartialUpdate`: L2VPN
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamL2vpnsPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamL2vpnsPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -6993,13 +7085,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamL2vpnsRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamL2vpnsRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamL2vpnsRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamL2vpnsRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamL2vpnsRetrieve`: L2VPN
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamL2vpnsRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamL2vpnsRetrieve`: %v\n", resp)
 }
 ```
 
@@ -7064,13 +7156,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamL2vpnsUpdate(context.Background(), id).WritableL2VPNRequest(writableL2VPNRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamL2vpnsUpdate(context.Background(), id).WritableL2VPNRequest(writableL2VPNRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamL2vpnsUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamL2vpnsUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamL2vpnsUpdate`: L2VPN
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamL2vpnsUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamL2vpnsUpdate`: %v\n", resp)
 }
 ```
 
@@ -7136,13 +7228,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamPrefixesAvailableIpsCreate(context.Background(), id).IPAddressRequest(iPAddressRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamPrefixesAvailableIpsCreate(context.Background(), id).IPAddressRequest(iPAddressRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamPrefixesAvailableIpsCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamPrefixesAvailableIpsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamPrefixesAvailableIpsCreate`: []IPAddress
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamPrefixesAvailableIpsCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamPrefixesAvailableIpsCreate`: %v\n", resp)
 }
 ```
 
@@ -7207,13 +7299,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamPrefixesAvailableIpsList(context.Background(), id).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamPrefixesAvailableIpsList(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamPrefixesAvailableIpsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamPrefixesAvailableIpsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamPrefixesAvailableIpsList`: []AvailableIP
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamPrefixesAvailableIpsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamPrefixesAvailableIpsList`: %v\n", resp)
 }
 ```
 
@@ -7278,13 +7370,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamPrefixesAvailablePrefixesCreate(context.Background(), id).PrefixRequest(prefixRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamPrefixesAvailablePrefixesCreate(context.Background(), id).PrefixRequest(prefixRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamPrefixesAvailablePrefixesCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamPrefixesAvailablePrefixesCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamPrefixesAvailablePrefixesCreate`: []Prefix
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamPrefixesAvailablePrefixesCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamPrefixesAvailablePrefixesCreate`: %v\n", resp)
 }
 ```
 
@@ -7349,13 +7441,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamPrefixesAvailablePrefixesList(context.Background(), id).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamPrefixesAvailablePrefixesList(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamPrefixesAvailablePrefixesList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamPrefixesAvailablePrefixesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamPrefixesAvailablePrefixesList`: []AvailablePrefix
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamPrefixesAvailablePrefixesList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamPrefixesAvailablePrefixesList`: %v\n", resp)
 }
 ```
 
@@ -7419,9 +7511,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IpamApi.IpamPrefixesBulkDestroy(context.Background()).PrefixRequest(prefixRequest).Execute()
+    r, err := apiClient.IpamAPI.IpamPrefixesBulkDestroy(context.Background()).PrefixRequest(prefixRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamPrefixesBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamPrefixesBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -7483,13 +7575,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamPrefixesBulkPartialUpdate(context.Background()).PrefixRequest(prefixRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamPrefixesBulkPartialUpdate(context.Background()).PrefixRequest(prefixRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamPrefixesBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamPrefixesBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamPrefixesBulkPartialUpdate`: []Prefix
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamPrefixesBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamPrefixesBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -7549,13 +7641,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamPrefixesBulkUpdate(context.Background()).PrefixRequest(prefixRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamPrefixesBulkUpdate(context.Background()).PrefixRequest(prefixRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamPrefixesBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamPrefixesBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamPrefixesBulkUpdate`: []Prefix
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamPrefixesBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamPrefixesBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -7615,13 +7707,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamPrefixesCreate(context.Background()).WritablePrefixRequest(writablePrefixRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamPrefixesCreate(context.Background()).WritablePrefixRequest(writablePrefixRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamPrefixesCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamPrefixesCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamPrefixesCreate`: Prefix
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamPrefixesCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamPrefixesCreate`: %v\n", resp)
 }
 ```
 
@@ -7681,9 +7773,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IpamApi.IpamPrefixesDestroy(context.Background(), id).Execute()
+    r, err := apiClient.IpamAPI.IpamPrefixesDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamPrefixesDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamPrefixesDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -7726,7 +7818,7 @@ Name | Type | Description  | Notes
 
 ## IpamPrefixesList
 
-> PaginatedPrefixList IpamPrefixesList(ctx).Children(children).ChildrenGt(childrenGt).ChildrenGte(childrenGte).ChildrenLt(childrenLt).ChildrenLte(childrenLte).ChildrenN(childrenN).Contains(contains).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Depth(depth).DepthGt(depthGt).DepthGte(depthGte).DepthLt(depthLt).DepthLte(depthLte).DepthN(depthN).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Family(family).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsPool(isPool).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MarkUtilized(markUtilized).MaskLength(maskLength).MaskLengthGte(maskLengthGte).MaskLengthLte(maskLengthLte).Offset(offset).Ordering(ordering).Prefix(prefix).PresentInVrf(presentInVrf).PresentInVrfId(presentInVrfId).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).VlanId(vlanId).VlanIdN(vlanIdN).VlanVid(vlanVid).VlanVidGt(vlanVidGt).VlanVidGte(vlanVidGte).VlanVidLt(vlanVidLt).VlanVidLte(vlanVidLte).VlanVidN(vlanVidN).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Within(within).WithinInclude(withinInclude).Execute()
+> PaginatedPrefixList IpamPrefixesList(ctx).Children(children).ChildrenEmpty(childrenEmpty).ChildrenGt(childrenGt).ChildrenGte(childrenGte).ChildrenLt(childrenLt).ChildrenLte(childrenLte).ChildrenN(childrenN).Contains(contains).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Depth(depth).DepthEmpty(depthEmpty).DepthGt(depthGt).DepthGte(depthGte).DepthLt(depthLt).DepthLte(depthLte).DepthN(depthN).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Family(family).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsPool(isPool).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MarkUtilized(markUtilized).MaskLength(maskLength).MaskLengthGte(maskLengthGte).MaskLengthLte(maskLengthLte).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Prefix(prefix).PresentInVrf(presentInVrf).PresentInVrfId(presentInVrfId).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).VlanId(vlanId).VlanIdN(vlanIdN).VlanVid(vlanVid).VlanVidEmpty(vlanVidEmpty).VlanVidGt(vlanVidGt).VlanVidGte(vlanVidGte).VlanVidLt(vlanVidLt).VlanVidLte(vlanVidLte).VlanVidN(vlanVidN).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Within(within).WithinInclude(withinInclude).Execute()
 
 
 
@@ -7747,6 +7839,7 @@ import (
 
 func main() {
     children := []int32{int32(123)} // []int32 |  (optional)
+    childrenEmpty := []int32{int32(123)} // []int32 |  (optional)
     childrenGt := []int32{int32(123)} // []int32 |  (optional)
     childrenGte := []int32{int32(123)} // []int32 |  (optional)
     childrenLt := []int32{int32(123)} // []int32 |  (optional)
@@ -7754,6 +7847,7 @@ func main() {
     childrenN := []int32{int32(123)} // []int32 |  (optional)
     contains := "contains_example" // string | Prefixes which contain this prefix or IP (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -7761,6 +7855,7 @@ func main() {
     createdN := []time.Time{time.Now()} // []time.Time |  (optional)
     createdByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     depth := []int32{int32(123)} // []int32 |  (optional)
+    depthEmpty := []int32{int32(123)} // []int32 |  (optional)
     depthGt := []int32{int32(123)} // []int32 |  (optional)
     depthGte := []int32{int32(123)} // []int32 |  (optional)
     depthLt := []int32{int32(123)} // []int32 |  (optional)
@@ -7779,6 +7874,7 @@ func main() {
     descriptionNisw := []string{"Inner_example"} // []string |  (optional)
     family := float32(8.14) // float32 |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
@@ -7786,6 +7882,7 @@ func main() {
     idN := []int32{int32(123)} // []int32 |  (optional)
     isPool := true // bool |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -7796,6 +7893,7 @@ func main() {
     maskLength := []int32{int32(123)} // []int32 |  (optional)
     maskLengthGte := float32(8.14) // float32 |  (optional)
     maskLengthLte := float32(8.14) // float32 |  (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     offset := int32(56) // int32 | The initial index from which to return the results. (optional)
     ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
     prefix := []string{"Inner_example"} // []string |  (optional)
@@ -7834,6 +7932,7 @@ func main() {
     vlanId := []*int32{int32(123)} // []*int32 | VLAN (ID) (optional)
     vlanIdN := []*int32{int32(123)} // []*int32 | VLAN (ID) (optional)
     vlanVid := int32(56) // int32 | VLAN number (1-4094) (optional)
+    vlanVidEmpty := int32(56) // int32 | VLAN number (1-4094) (optional)
     vlanVidGt := int32(56) // int32 | VLAN number (1-4094) (optional)
     vlanVidGte := int32(56) // int32 | VLAN number (1-4094) (optional)
     vlanVidLt := int32(56) // int32 | VLAN number (1-4094) (optional)
@@ -7848,13 +7947,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamPrefixesList(context.Background()).Children(children).ChildrenGt(childrenGt).ChildrenGte(childrenGte).ChildrenLt(childrenLt).ChildrenLte(childrenLte).ChildrenN(childrenN).Contains(contains).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Depth(depth).DepthGt(depthGt).DepthGte(depthGte).DepthLt(depthLt).DepthLte(depthLte).DepthN(depthN).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Family(family).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsPool(isPool).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MarkUtilized(markUtilized).MaskLength(maskLength).MaskLengthGte(maskLengthGte).MaskLengthLte(maskLengthLte).Offset(offset).Ordering(ordering).Prefix(prefix).PresentInVrf(presentInVrf).PresentInVrfId(presentInVrfId).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).VlanId(vlanId).VlanIdN(vlanIdN).VlanVid(vlanVid).VlanVidGt(vlanVidGt).VlanVidGte(vlanVidGte).VlanVidLt(vlanVidLt).VlanVidLte(vlanVidLte).VlanVidN(vlanVidN).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Within(within).WithinInclude(withinInclude).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamPrefixesList(context.Background()).Children(children).ChildrenEmpty(childrenEmpty).ChildrenGt(childrenGt).ChildrenGte(childrenGte).ChildrenLt(childrenLt).ChildrenLte(childrenLte).ChildrenN(childrenN).Contains(contains).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Depth(depth).DepthEmpty(depthEmpty).DepthGt(depthGt).DepthGte(depthGte).DepthLt(depthLt).DepthLte(depthLte).DepthN(depthN).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Family(family).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsPool(isPool).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MarkUtilized(markUtilized).MaskLength(maskLength).MaskLengthGte(maskLengthGte).MaskLengthLte(maskLengthLte).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Prefix(prefix).PresentInVrf(presentInVrf).PresentInVrfId(presentInVrfId).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).VlanId(vlanId).VlanIdN(vlanIdN).VlanVid(vlanVid).VlanVidEmpty(vlanVidEmpty).VlanVidGt(vlanVidGt).VlanVidGte(vlanVidGte).VlanVidLt(vlanVidLt).VlanVidLte(vlanVidLte).VlanVidN(vlanVidN).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Within(within).WithinInclude(withinInclude).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamPrefixesList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamPrefixesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamPrefixesList`: PaginatedPrefixList
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamPrefixesList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamPrefixesList`: %v\n", resp)
 }
 ```
 
@@ -7870,6 +7969,7 @@ Other parameters are passed through a pointer to a apiIpamPrefixesListRequest st
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **children** | **[]int32** |  | 
+ **childrenEmpty** | **[]int32** |  | 
  **childrenGt** | **[]int32** |  | 
  **childrenGte** | **[]int32** |  | 
  **childrenLt** | **[]int32** |  | 
@@ -7877,6 +7977,7 @@ Name | Type | Description  | Notes
  **childrenN** | **[]int32** |  | 
  **contains** | **string** | Prefixes which contain this prefix or IP | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -7884,6 +7985,7 @@ Name | Type | Description  | Notes
  **createdN** | [**[]time.Time**](time.Time.md) |  | 
  **createdByRequest** | **string** |  | 
  **depth** | **[]int32** |  | 
+ **depthEmpty** | **[]int32** |  | 
  **depthGt** | **[]int32** |  | 
  **depthGte** | **[]int32** |  | 
  **depthLt** | **[]int32** |  | 
@@ -7902,6 +8004,7 @@ Name | Type | Description  | Notes
  **descriptionNisw** | **[]string** |  | 
  **family** | **float32** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
@@ -7909,6 +8012,7 @@ Name | Type | Description  | Notes
  **idN** | **[]int32** |  | 
  **isPool** | **bool** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -7919,6 +8023,7 @@ Name | Type | Description  | Notes
  **maskLength** | **[]int32** |  | 
  **maskLengthGte** | **float32** |  | 
  **maskLengthLte** | **float32** |  | 
+ **modifiedByRequest** | **string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **prefix** | **[]string** |  | 
@@ -7957,6 +8062,7 @@ Name | Type | Description  | Notes
  **vlanId** | **[]int32** | VLAN (ID) | 
  **vlanIdN** | **[]int32** | VLAN (ID) | 
  **vlanVid** | **int32** | VLAN number (1-4094) | 
+ **vlanVidEmpty** | **int32** | VLAN number (1-4094) | 
  **vlanVidGt** | **int32** | VLAN number (1-4094) | 
  **vlanVidGte** | **int32** | VLAN number (1-4094) | 
  **vlanVidLt** | **int32** | VLAN number (1-4094) | 
@@ -8013,13 +8119,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamPrefixesPartialUpdate(context.Background(), id).PatchedWritablePrefixRequest(patchedWritablePrefixRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamPrefixesPartialUpdate(context.Background(), id).PatchedWritablePrefixRequest(patchedWritablePrefixRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamPrefixesPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamPrefixesPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamPrefixesPartialUpdate`: Prefix
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamPrefixesPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamPrefixesPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -8084,13 +8190,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamPrefixesRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamPrefixesRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamPrefixesRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamPrefixesRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamPrefixesRetrieve`: Prefix
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamPrefixesRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamPrefixesRetrieve`: %v\n", resp)
 }
 ```
 
@@ -8155,13 +8261,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamPrefixesUpdate(context.Background(), id).WritablePrefixRequest(writablePrefixRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamPrefixesUpdate(context.Background(), id).WritablePrefixRequest(writablePrefixRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamPrefixesUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamPrefixesUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamPrefixesUpdate`: Prefix
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamPrefixesUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamPrefixesUpdate`: %v\n", resp)
 }
 ```
 
@@ -8226,9 +8332,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IpamApi.IpamRirsBulkDestroy(context.Background()).RIRRequest(rIRRequest).Execute()
+    r, err := apiClient.IpamAPI.IpamRirsBulkDestroy(context.Background()).RIRRequest(rIRRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamRirsBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamRirsBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -8290,13 +8396,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamRirsBulkPartialUpdate(context.Background()).RIRRequest(rIRRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamRirsBulkPartialUpdate(context.Background()).RIRRequest(rIRRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamRirsBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamRirsBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamRirsBulkPartialUpdate`: []RIR
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamRirsBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamRirsBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -8356,13 +8462,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamRirsBulkUpdate(context.Background()).RIRRequest(rIRRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamRirsBulkUpdate(context.Background()).RIRRequest(rIRRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamRirsBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamRirsBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamRirsBulkUpdate`: []RIR
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamRirsBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamRirsBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -8422,13 +8528,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamRirsCreate(context.Background()).RIRRequest(rIRRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamRirsCreate(context.Background()).RIRRequest(rIRRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamRirsCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamRirsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamRirsCreate`: RIR
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamRirsCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamRirsCreate`: %v\n", resp)
 }
 ```
 
@@ -8488,9 +8594,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IpamApi.IpamRirsDestroy(context.Background(), id).Execute()
+    r, err := apiClient.IpamAPI.IpamRirsDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamRirsDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamRirsDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -8533,7 +8639,7 @@ Name | Type | Description  | Notes
 
 ## IpamRirsList
 
-> PaginatedRIRList IpamRirsList(ctx).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsPrivate(isPrivate).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedRIRList IpamRirsList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsPrivate(isPrivate).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -8554,6 +8660,7 @@ import (
 
 func main() {
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -8572,6 +8679,7 @@ func main() {
     descriptionNiew := []string{"Inner_example"} // []string |  (optional)
     descriptionNisw := []string{"Inner_example"} // []string |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
@@ -8579,12 +8687,14 @@ func main() {
     idN := []int32{int32(123)} // []int32 |  (optional)
     isPrivate := true // bool |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -8616,13 +8726,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamRirsList(context.Background()).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsPrivate(isPrivate).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamRirsList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsPrivate(isPrivate).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamRirsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamRirsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamRirsList`: PaginatedRIRList
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamRirsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamRirsList`: %v\n", resp)
 }
 ```
 
@@ -8638,6 +8748,7 @@ Other parameters are passed through a pointer to a apiIpamRirsListRequest struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -8656,6 +8767,7 @@ Name | Type | Description  | Notes
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
@@ -8663,12 +8775,14 @@ Name | Type | Description  | Notes
  **idN** | **[]int32** |  | 
  **isPrivate** | **bool** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -8742,13 +8856,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamRirsPartialUpdate(context.Background(), id).PatchedRIRRequest(patchedRIRRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamRirsPartialUpdate(context.Background(), id).PatchedRIRRequest(patchedRIRRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamRirsPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamRirsPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamRirsPartialUpdate`: RIR
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamRirsPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamRirsPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -8813,13 +8927,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamRirsRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamRirsRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamRirsRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamRirsRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamRirsRetrieve`: RIR
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamRirsRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamRirsRetrieve`: %v\n", resp)
 }
 ```
 
@@ -8884,13 +8998,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamRirsUpdate(context.Background(), id).RIRRequest(rIRRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamRirsUpdate(context.Background(), id).RIRRequest(rIRRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamRirsUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamRirsUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamRirsUpdate`: RIR
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamRirsUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamRirsUpdate`: %v\n", resp)
 }
 ```
 
@@ -8955,9 +9069,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IpamApi.IpamRolesBulkDestroy(context.Background()).RoleRequest(roleRequest).Execute()
+    r, err := apiClient.IpamAPI.IpamRolesBulkDestroy(context.Background()).RoleRequest(roleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamRolesBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamRolesBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -9019,13 +9133,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamRolesBulkPartialUpdate(context.Background()).RoleRequest(roleRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamRolesBulkPartialUpdate(context.Background()).RoleRequest(roleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamRolesBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamRolesBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamRolesBulkPartialUpdate`: []Role
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamRolesBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamRolesBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -9085,13 +9199,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamRolesBulkUpdate(context.Background()).RoleRequest(roleRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamRolesBulkUpdate(context.Background()).RoleRequest(roleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamRolesBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamRolesBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamRolesBulkUpdate`: []Role
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamRolesBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamRolesBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -9151,13 +9265,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamRolesCreate(context.Background()).RoleRequest(roleRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamRolesCreate(context.Background()).RoleRequest(roleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamRolesCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamRolesCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamRolesCreate`: Role
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamRolesCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamRolesCreate`: %v\n", resp)
 }
 ```
 
@@ -9217,9 +9331,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IpamApi.IpamRolesDestroy(context.Background(), id).Execute()
+    r, err := apiClient.IpamAPI.IpamRolesDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamRolesDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamRolesDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -9262,7 +9376,7 @@ Name | Type | Description  | Notes
 
 ## IpamRolesList
 
-> PaginatedRoleList IpamRolesList(ctx).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedRoleList IpamRolesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -9283,6 +9397,7 @@ import (
 
 func main() {
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -9301,18 +9416,21 @@ func main() {
     descriptionNiew := []string{"Inner_example"} // []string |  (optional)
     descriptionNisw := []string{"Inner_example"} // []string |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -9344,13 +9462,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamRolesList(context.Background()).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamRolesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamRolesList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamRolesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamRolesList`: PaginatedRoleList
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamRolesList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamRolesList`: %v\n", resp)
 }
 ```
 
@@ -9366,6 +9484,7 @@ Other parameters are passed through a pointer to a apiIpamRolesListRequest struc
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -9384,18 +9503,21 @@ Name | Type | Description  | Notes
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -9469,13 +9591,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamRolesPartialUpdate(context.Background(), id).PatchedRoleRequest(patchedRoleRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamRolesPartialUpdate(context.Background(), id).PatchedRoleRequest(patchedRoleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamRolesPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamRolesPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamRolesPartialUpdate`: Role
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamRolesPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamRolesPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -9540,13 +9662,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamRolesRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamRolesRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamRolesRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamRolesRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamRolesRetrieve`: Role
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamRolesRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamRolesRetrieve`: %v\n", resp)
 }
 ```
 
@@ -9611,13 +9733,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamRolesUpdate(context.Background(), id).RoleRequest(roleRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamRolesUpdate(context.Background(), id).RoleRequest(roleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamRolesUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamRolesUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamRolesUpdate`: Role
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamRolesUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamRolesUpdate`: %v\n", resp)
 }
 ```
 
@@ -9682,9 +9804,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IpamApi.IpamRouteTargetsBulkDestroy(context.Background()).RouteTargetRequest(routeTargetRequest).Execute()
+    r, err := apiClient.IpamAPI.IpamRouteTargetsBulkDestroy(context.Background()).RouteTargetRequest(routeTargetRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamRouteTargetsBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamRouteTargetsBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -9746,13 +9868,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamRouteTargetsBulkPartialUpdate(context.Background()).RouteTargetRequest(routeTargetRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamRouteTargetsBulkPartialUpdate(context.Background()).RouteTargetRequest(routeTargetRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamRouteTargetsBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamRouteTargetsBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamRouteTargetsBulkPartialUpdate`: []RouteTarget
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamRouteTargetsBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamRouteTargetsBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -9812,13 +9934,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamRouteTargetsBulkUpdate(context.Background()).RouteTargetRequest(routeTargetRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamRouteTargetsBulkUpdate(context.Background()).RouteTargetRequest(routeTargetRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamRouteTargetsBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamRouteTargetsBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamRouteTargetsBulkUpdate`: []RouteTarget
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamRouteTargetsBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamRouteTargetsBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -9878,13 +10000,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamRouteTargetsCreate(context.Background()).WritableRouteTargetRequest(writableRouteTargetRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamRouteTargetsCreate(context.Background()).WritableRouteTargetRequest(writableRouteTargetRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamRouteTargetsCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamRouteTargetsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamRouteTargetsCreate`: RouteTarget
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamRouteTargetsCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamRouteTargetsCreate`: %v\n", resp)
 }
 ```
 
@@ -9944,9 +10066,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IpamApi.IpamRouteTargetsDestroy(context.Background(), id).Execute()
+    r, err := apiClient.IpamAPI.IpamRouteTargetsDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamRouteTargetsDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamRouteTargetsDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -9989,7 +10111,7 @@ Name | Type | Description  | Notes
 
 ## IpamRouteTargetsList
 
-> PaginatedRouteTargetList IpamRouteTargetsList(ctx).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).ExportingVrf(exportingVrf).ExportingVrfN(exportingVrfN).ExportingVrfId(exportingVrfId).ExportingVrfIdN(exportingVrfIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).ImportingVrf(importingVrf).ImportingVrfN(importingVrfN).ImportingVrfId(importingVrfId).ImportingVrfIdN(importingVrfIdN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedRouteTargetList IpamRouteTargetsList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).ExportingVrf(exportingVrf).ExportingVrfN(exportingVrfN).ExportingVrfId(exportingVrfId).ExportingVrfIdN(exportingVrfIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).ImportingVrf(importingVrf).ImportingVrfN(importingVrfN).ImportingVrfId(importingVrfId).ImportingVrfIdN(importingVrfIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -10010,6 +10132,7 @@ import (
 
 func main() {
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -10032,6 +10155,7 @@ func main() {
     exportingVrfId := []int32{int32(123)} // []int32 | Exporting VRF (optional)
     exportingVrfIdN := []int32{int32(123)} // []int32 | Exporting VRF (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
@@ -10042,12 +10166,14 @@ func main() {
     importingVrfId := []int32{int32(123)} // []int32 | Importing VRF (optional)
     importingVrfIdN := []int32{int32(123)} // []int32 | Importing VRF (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -10076,13 +10202,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamRouteTargetsList(context.Background()).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).ExportingVrf(exportingVrf).ExportingVrfN(exportingVrfN).ExportingVrfId(exportingVrfId).ExportingVrfIdN(exportingVrfIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).ImportingVrf(importingVrf).ImportingVrfN(importingVrfN).ImportingVrfId(importingVrfId).ImportingVrfIdN(importingVrfIdN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamRouteTargetsList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).ExportingVrf(exportingVrf).ExportingVrfN(exportingVrfN).ExportingVrfId(exportingVrfId).ExportingVrfIdN(exportingVrfIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).ImportingVrf(importingVrf).ImportingVrfN(importingVrfN).ImportingVrfId(importingVrfId).ImportingVrfIdN(importingVrfIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamRouteTargetsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamRouteTargetsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamRouteTargetsList`: PaginatedRouteTargetList
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamRouteTargetsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamRouteTargetsList`: %v\n", resp)
 }
 ```
 
@@ -10098,6 +10224,7 @@ Other parameters are passed through a pointer to a apiIpamRouteTargetsListReques
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -10120,6 +10247,7 @@ Name | Type | Description  | Notes
  **exportingVrfId** | **[]int32** | Exporting VRF | 
  **exportingVrfIdN** | **[]int32** | Exporting VRF | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
@@ -10130,12 +10258,14 @@ Name | Type | Description  | Notes
  **importingVrfId** | **[]int32** | Importing VRF | 
  **importingVrfIdN** | **[]int32** | Importing VRF | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -10206,13 +10336,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamRouteTargetsPartialUpdate(context.Background(), id).PatchedWritableRouteTargetRequest(patchedWritableRouteTargetRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamRouteTargetsPartialUpdate(context.Background(), id).PatchedWritableRouteTargetRequest(patchedWritableRouteTargetRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamRouteTargetsPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamRouteTargetsPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamRouteTargetsPartialUpdate`: RouteTarget
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamRouteTargetsPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamRouteTargetsPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -10277,13 +10407,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamRouteTargetsRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamRouteTargetsRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamRouteTargetsRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamRouteTargetsRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamRouteTargetsRetrieve`: RouteTarget
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamRouteTargetsRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamRouteTargetsRetrieve`: %v\n", resp)
 }
 ```
 
@@ -10348,13 +10478,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamRouteTargetsUpdate(context.Background(), id).WritableRouteTargetRequest(writableRouteTargetRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamRouteTargetsUpdate(context.Background(), id).WritableRouteTargetRequest(writableRouteTargetRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamRouteTargetsUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamRouteTargetsUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamRouteTargetsUpdate`: RouteTarget
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamRouteTargetsUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamRouteTargetsUpdate`: %v\n", resp)
 }
 ```
 
@@ -10419,9 +10549,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IpamApi.IpamServiceTemplatesBulkDestroy(context.Background()).ServiceTemplateRequest(serviceTemplateRequest).Execute()
+    r, err := apiClient.IpamAPI.IpamServiceTemplatesBulkDestroy(context.Background()).ServiceTemplateRequest(serviceTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamServiceTemplatesBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamServiceTemplatesBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -10483,13 +10613,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamServiceTemplatesBulkPartialUpdate(context.Background()).ServiceTemplateRequest(serviceTemplateRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamServiceTemplatesBulkPartialUpdate(context.Background()).ServiceTemplateRequest(serviceTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamServiceTemplatesBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamServiceTemplatesBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamServiceTemplatesBulkPartialUpdate`: []ServiceTemplate
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamServiceTemplatesBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamServiceTemplatesBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -10549,13 +10679,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamServiceTemplatesBulkUpdate(context.Background()).ServiceTemplateRequest(serviceTemplateRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamServiceTemplatesBulkUpdate(context.Background()).ServiceTemplateRequest(serviceTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamServiceTemplatesBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamServiceTemplatesBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamServiceTemplatesBulkUpdate`: []ServiceTemplate
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamServiceTemplatesBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamServiceTemplatesBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -10615,13 +10745,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamServiceTemplatesCreate(context.Background()).WritableServiceTemplateRequest(writableServiceTemplateRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamServiceTemplatesCreate(context.Background()).WritableServiceTemplateRequest(writableServiceTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamServiceTemplatesCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamServiceTemplatesCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamServiceTemplatesCreate`: ServiceTemplate
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamServiceTemplatesCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamServiceTemplatesCreate`: %v\n", resp)
 }
 ```
 
@@ -10681,9 +10811,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IpamApi.IpamServiceTemplatesDestroy(context.Background(), id).Execute()
+    r, err := apiClient.IpamAPI.IpamServiceTemplatesDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamServiceTemplatesDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamServiceTemplatesDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -10726,7 +10856,7 @@ Name | Type | Description  | Notes
 
 ## IpamServiceTemplatesList
 
-> PaginatedServiceTemplateList IpamServiceTemplatesList(ctx).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Port(port).Protocol(protocol).ProtocolN(protocolN).Q(q).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedServiceTemplateList IpamServiceTemplatesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Port(port).Protocol(protocol).ProtocolN(protocolN).Q(q).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -10747,6 +10877,7 @@ import (
 
 func main() {
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -10754,18 +10885,21 @@ func main() {
     createdN := []time.Time{time.Now()} // []time.Time |  (optional)
     createdByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -10789,13 +10923,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamServiceTemplatesList(context.Background()).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Port(port).Protocol(protocol).ProtocolN(protocolN).Q(q).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamServiceTemplatesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Port(port).Protocol(protocol).ProtocolN(protocolN).Q(q).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamServiceTemplatesList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamServiceTemplatesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamServiceTemplatesList`: PaginatedServiceTemplateList
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamServiceTemplatesList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamServiceTemplatesList`: %v\n", resp)
 }
 ```
 
@@ -10811,6 +10945,7 @@ Other parameters are passed through a pointer to a apiIpamServiceTemplatesListRe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -10818,18 +10953,21 @@ Name | Type | Description  | Notes
  **createdN** | [**[]time.Time**](time.Time.md) |  | 
  **createdByRequest** | **string** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -10895,13 +11033,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamServiceTemplatesPartialUpdate(context.Background(), id).PatchedWritableServiceTemplateRequest(patchedWritableServiceTemplateRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamServiceTemplatesPartialUpdate(context.Background(), id).PatchedWritableServiceTemplateRequest(patchedWritableServiceTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamServiceTemplatesPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamServiceTemplatesPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamServiceTemplatesPartialUpdate`: ServiceTemplate
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamServiceTemplatesPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamServiceTemplatesPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -10966,13 +11104,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamServiceTemplatesRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamServiceTemplatesRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamServiceTemplatesRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamServiceTemplatesRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamServiceTemplatesRetrieve`: ServiceTemplate
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamServiceTemplatesRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamServiceTemplatesRetrieve`: %v\n", resp)
 }
 ```
 
@@ -11037,13 +11175,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamServiceTemplatesUpdate(context.Background(), id).WritableServiceTemplateRequest(writableServiceTemplateRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamServiceTemplatesUpdate(context.Background(), id).WritableServiceTemplateRequest(writableServiceTemplateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamServiceTemplatesUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamServiceTemplatesUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamServiceTemplatesUpdate`: ServiceTemplate
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamServiceTemplatesUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamServiceTemplatesUpdate`: %v\n", resp)
 }
 ```
 
@@ -11108,9 +11246,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IpamApi.IpamServicesBulkDestroy(context.Background()).ServiceRequest(serviceRequest).Execute()
+    r, err := apiClient.IpamAPI.IpamServicesBulkDestroy(context.Background()).ServiceRequest(serviceRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamServicesBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamServicesBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -11172,13 +11310,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamServicesBulkPartialUpdate(context.Background()).ServiceRequest(serviceRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamServicesBulkPartialUpdate(context.Background()).ServiceRequest(serviceRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamServicesBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamServicesBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamServicesBulkPartialUpdate`: []Service
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamServicesBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamServicesBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -11238,13 +11376,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamServicesBulkUpdate(context.Background()).ServiceRequest(serviceRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamServicesBulkUpdate(context.Background()).ServiceRequest(serviceRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamServicesBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamServicesBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamServicesBulkUpdate`: []Service
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamServicesBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamServicesBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -11304,13 +11442,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamServicesCreate(context.Background()).WritableServiceRequest(writableServiceRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamServicesCreate(context.Background()).WritableServiceRequest(writableServiceRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamServicesCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamServicesCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamServicesCreate`: Service
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamServicesCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamServicesCreate`: %v\n", resp)
 }
 ```
 
@@ -11370,9 +11508,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IpamApi.IpamServicesDestroy(context.Background(), id).Execute()
+    r, err := apiClient.IpamAPI.IpamServicesDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamServicesDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamServicesDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -11415,7 +11553,7 @@ Name | Type | Description  | Notes
 
 ## IpamServicesList
 
-> PaginatedServiceList IpamServicesList(ctx).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Ipaddress(ipaddress).IpaddressN(ipaddressN).IpaddressId(ipaddressId).IpaddressIdN(ipaddressIdN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Port(port).Protocol(protocol).ProtocolN(protocolN).Q(q).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineN(virtualMachineN).VirtualMachineId(virtualMachineId).VirtualMachineIdN(virtualMachineIdN).Execute()
+> PaginatedServiceList IpamServicesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Ipaddress(ipaddress).IpaddressN(ipaddressN).IpaddressId(ipaddressId).IpaddressIdN(ipaddressIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Port(port).Protocol(protocol).ProtocolN(protocolN).Q(q).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineN(virtualMachineN).VirtualMachineId(virtualMachineId).VirtualMachineIdN(virtualMachineIdN).Execute()
 
 
 
@@ -11436,6 +11574,7 @@ import (
 
 func main() {
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -11458,6 +11597,7 @@ func main() {
     deviceId := []*int32{int32(123)} // []*int32 | Device (ID) (optional)
     deviceIdN := []*int32{int32(123)} // []*int32 | Device (ID) (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
@@ -11468,12 +11608,14 @@ func main() {
     ipaddressId := []int32{int32(123)} // []int32 | IP address (ID) (optional)
     ipaddressIdN := []int32{int32(123)} // []int32 | IP address (ID) (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -11501,13 +11643,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamServicesList(context.Background()).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Ipaddress(ipaddress).IpaddressN(ipaddressN).IpaddressId(ipaddressId).IpaddressIdN(ipaddressIdN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Port(port).Protocol(protocol).ProtocolN(protocolN).Q(q).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineN(virtualMachineN).VirtualMachineId(virtualMachineId).VirtualMachineIdN(virtualMachineIdN).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamServicesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Ipaddress(ipaddress).IpaddressN(ipaddressN).IpaddressId(ipaddressId).IpaddressIdN(ipaddressIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Port(port).Protocol(protocol).ProtocolN(protocolN).Q(q).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineN(virtualMachineN).VirtualMachineId(virtualMachineId).VirtualMachineIdN(virtualMachineIdN).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamServicesList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamServicesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamServicesList`: PaginatedServiceList
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamServicesList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamServicesList`: %v\n", resp)
 }
 ```
 
@@ -11523,6 +11665,7 @@ Other parameters are passed through a pointer to a apiIpamServicesListRequest st
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -11545,6 +11688,7 @@ Name | Type | Description  | Notes
  **deviceId** | **[]int32** | Device (ID) | 
  **deviceIdN** | **[]int32** | Device (ID) | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
@@ -11555,12 +11699,14 @@ Name | Type | Description  | Notes
  **ipaddressId** | **[]int32** | IP address (ID) | 
  **ipaddressIdN** | **[]int32** | IP address (ID) | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -11630,13 +11776,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamServicesPartialUpdate(context.Background(), id).PatchedWritableServiceRequest(patchedWritableServiceRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamServicesPartialUpdate(context.Background(), id).PatchedWritableServiceRequest(patchedWritableServiceRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamServicesPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamServicesPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamServicesPartialUpdate`: Service
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamServicesPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamServicesPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -11701,13 +11847,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamServicesRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamServicesRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamServicesRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamServicesRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamServicesRetrieve`: Service
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamServicesRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamServicesRetrieve`: %v\n", resp)
 }
 ```
 
@@ -11772,13 +11918,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamServicesUpdate(context.Background(), id).WritableServiceRequest(writableServiceRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamServicesUpdate(context.Background(), id).WritableServiceRequest(writableServiceRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamServicesUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamServicesUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamServicesUpdate`: Service
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamServicesUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamServicesUpdate`: %v\n", resp)
 }
 ```
 
@@ -11844,13 +11990,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamVlanGroupsAvailableVlansCreate(context.Background(), id).VLANRequest(vLANRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamVlanGroupsAvailableVlansCreate(context.Background(), id).VLANRequest(vLANRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamVlanGroupsAvailableVlansCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVlanGroupsAvailableVlansCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamVlanGroupsAvailableVlansCreate`: []VLAN
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamVlanGroupsAvailableVlansCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamVlanGroupsAvailableVlansCreate`: %v\n", resp)
 }
 ```
 
@@ -11915,13 +12061,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamVlanGroupsAvailableVlansList(context.Background(), id).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamVlanGroupsAvailableVlansList(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamVlanGroupsAvailableVlansList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVlanGroupsAvailableVlansList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamVlanGroupsAvailableVlansList`: []AvailableVLAN
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamVlanGroupsAvailableVlansList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamVlanGroupsAvailableVlansList`: %v\n", resp)
 }
 ```
 
@@ -11985,9 +12131,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IpamApi.IpamVlanGroupsBulkDestroy(context.Background()).VLANGroupRequest(vLANGroupRequest).Execute()
+    r, err := apiClient.IpamAPI.IpamVlanGroupsBulkDestroy(context.Background()).VLANGroupRequest(vLANGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamVlanGroupsBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVlanGroupsBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -12049,13 +12195,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamVlanGroupsBulkPartialUpdate(context.Background()).VLANGroupRequest(vLANGroupRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamVlanGroupsBulkPartialUpdate(context.Background()).VLANGroupRequest(vLANGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamVlanGroupsBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVlanGroupsBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamVlanGroupsBulkPartialUpdate`: []VLANGroup
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamVlanGroupsBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamVlanGroupsBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -12115,13 +12261,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamVlanGroupsBulkUpdate(context.Background()).VLANGroupRequest(vLANGroupRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamVlanGroupsBulkUpdate(context.Background()).VLANGroupRequest(vLANGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamVlanGroupsBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVlanGroupsBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamVlanGroupsBulkUpdate`: []VLANGroup
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamVlanGroupsBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamVlanGroupsBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -12181,13 +12327,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamVlanGroupsCreate(context.Background()).VLANGroupRequest(vLANGroupRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamVlanGroupsCreate(context.Background()).VLANGroupRequest(vLANGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamVlanGroupsCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVlanGroupsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamVlanGroupsCreate`: VLANGroup
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamVlanGroupsCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamVlanGroupsCreate`: %v\n", resp)
 }
 ```
 
@@ -12247,9 +12393,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IpamApi.IpamVlanGroupsDestroy(context.Background(), id).Execute()
+    r, err := apiClient.IpamAPI.IpamVlanGroupsDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamVlanGroupsDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVlanGroupsDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -12292,7 +12438,7 @@ Name | Type | Description  | Notes
 
 ## IpamVlanGroupsList
 
-> PaginatedVLANGroupList IpamVlanGroupsList(ctx).Cluster(cluster).Clustergroup(clustergroup).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).MaxVid(maxVid).MaxVidGt(maxVidGt).MaxVidGte(maxVidGte).MaxVidLt(maxVidLt).MaxVidLte(maxVidLte).MaxVidN(maxVidN).MinVid(minVid).MinVidGt(minVidGt).MinVidGte(minVidGte).MinVidLt(minVidLt).MinVidLte(minVidLte).MinVidN(minVidN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Rack(rack).Region(region).ScopeId(scopeId).ScopeIdGt(scopeIdGt).ScopeIdGte(scopeIdGte).ScopeIdLt(scopeIdLt).ScopeIdLte(scopeIdLte).ScopeIdN(scopeIdN).ScopeType(scopeType).ScopeTypeN(scopeTypeN).Site(site).Sitegroup(sitegroup).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedVLANGroupList IpamVlanGroupsList(ctx).Cluster(cluster).Clustergroup(clustergroup).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).MaxVid(maxVid).MaxVidEmpty(maxVidEmpty).MaxVidGt(maxVidGt).MaxVidGte(maxVidGte).MaxVidLt(maxVidLt).MaxVidLte(maxVidLte).MaxVidN(maxVidN).MinVid(minVid).MinVidEmpty(minVidEmpty).MinVidGt(minVidGt).MinVidGte(minVidGte).MinVidLt(minVidLt).MinVidLte(minVidLte).MinVidN(minVidN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Rack(rack).Region(region).ScopeId(scopeId).ScopeIdEmpty(scopeIdEmpty).ScopeIdGt(scopeIdGt).ScopeIdGte(scopeIdGte).ScopeIdLt(scopeIdLt).ScopeIdLte(scopeIdLte).ScopeIdN(scopeIdN).ScopeType(scopeType).ScopeTypeN(scopeTypeN).Site(site).Sitegroup(sitegroup).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -12315,6 +12461,7 @@ func main() {
     cluster := int32(56) // int32 |  (optional)
     clustergroup := float32(8.14) // float32 |  (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -12333,12 +12480,14 @@ func main() {
     descriptionNiew := []string{"Inner_example"} // []string |  (optional)
     descriptionNisw := []string{"Inner_example"} // []string |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -12347,17 +12496,20 @@ func main() {
     limit := int32(56) // int32 | Number of results to return per page. (optional)
     location := int32(56) // int32 |  (optional)
     maxVid := []int32{int32(123)} // []int32 |  (optional)
+    maxVidEmpty := true // bool |  (optional)
     maxVidGt := []int32{int32(123)} // []int32 |  (optional)
     maxVidGte := []int32{int32(123)} // []int32 |  (optional)
     maxVidLt := []int32{int32(123)} // []int32 |  (optional)
     maxVidLte := []int32{int32(123)} // []int32 |  (optional)
     maxVidN := []int32{int32(123)} // []int32 |  (optional)
     minVid := []int32{int32(123)} // []int32 |  (optional)
+    minVidEmpty := true // bool |  (optional)
     minVidGt := []int32{int32(123)} // []int32 |  (optional)
     minVidGte := []int32{int32(123)} // []int32 |  (optional)
     minVidLt := []int32{int32(123)} // []int32 |  (optional)
     minVidLte := []int32{int32(123)} // []int32 |  (optional)
     minVidN := []int32{int32(123)} // []int32 |  (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -12375,6 +12527,7 @@ func main() {
     rack := int32(56) // int32 |  (optional)
     region := int32(56) // int32 |  (optional)
     scopeId := []int32{int32(123)} // []int32 |  (optional)
+    scopeIdEmpty := true // bool |  (optional)
     scopeIdGt := []int32{int32(123)} // []int32 |  (optional)
     scopeIdGte := []int32{int32(123)} // []int32 |  (optional)
     scopeIdLt := []int32{int32(123)} // []int32 |  (optional)
@@ -12401,13 +12554,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamVlanGroupsList(context.Background()).Cluster(cluster).Clustergroup(clustergroup).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).MaxVid(maxVid).MaxVidGt(maxVidGt).MaxVidGte(maxVidGte).MaxVidLt(maxVidLt).MaxVidLte(maxVidLte).MaxVidN(maxVidN).MinVid(minVid).MinVidGt(minVidGt).MinVidGte(minVidGte).MinVidLt(minVidLt).MinVidLte(minVidLte).MinVidN(minVidN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Rack(rack).Region(region).ScopeId(scopeId).ScopeIdGt(scopeIdGt).ScopeIdGte(scopeIdGte).ScopeIdLt(scopeIdLt).ScopeIdLte(scopeIdLte).ScopeIdN(scopeIdN).ScopeType(scopeType).ScopeTypeN(scopeTypeN).Site(site).Sitegroup(sitegroup).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamVlanGroupsList(context.Background()).Cluster(cluster).Clustergroup(clustergroup).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).MaxVid(maxVid).MaxVidEmpty(maxVidEmpty).MaxVidGt(maxVidGt).MaxVidGte(maxVidGte).MaxVidLt(maxVidLt).MaxVidLte(maxVidLte).MaxVidN(maxVidN).MinVid(minVid).MinVidEmpty(minVidEmpty).MinVidGt(minVidGt).MinVidGte(minVidGte).MinVidLt(minVidLt).MinVidLte(minVidLte).MinVidN(minVidN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Rack(rack).Region(region).ScopeId(scopeId).ScopeIdEmpty(scopeIdEmpty).ScopeIdGt(scopeIdGt).ScopeIdGte(scopeIdGte).ScopeIdLt(scopeIdLt).ScopeIdLte(scopeIdLte).ScopeIdN(scopeIdN).ScopeType(scopeType).ScopeTypeN(scopeTypeN).Site(site).Sitegroup(sitegroup).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamVlanGroupsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVlanGroupsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamVlanGroupsList`: PaginatedVLANGroupList
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamVlanGroupsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamVlanGroupsList`: %v\n", resp)
 }
 ```
 
@@ -12425,6 +12578,7 @@ Name | Type | Description  | Notes
  **cluster** | **int32** |  | 
  **clustergroup** | **float32** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -12443,12 +12597,14 @@ Name | Type | Description  | Notes
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -12457,17 +12613,20 @@ Name | Type | Description  | Notes
  **limit** | **int32** | Number of results to return per page. | 
  **location** | **int32** |  | 
  **maxVid** | **[]int32** |  | 
+ **maxVidEmpty** | **bool** |  | 
  **maxVidGt** | **[]int32** |  | 
  **maxVidGte** | **[]int32** |  | 
  **maxVidLt** | **[]int32** |  | 
  **maxVidLte** | **[]int32** |  | 
  **maxVidN** | **[]int32** |  | 
  **minVid** | **[]int32** |  | 
+ **minVidEmpty** | **bool** |  | 
  **minVidGt** | **[]int32** |  | 
  **minVidGte** | **[]int32** |  | 
  **minVidLt** | **[]int32** |  | 
  **minVidLte** | **[]int32** |  | 
  **minVidN** | **[]int32** |  | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -12485,6 +12644,7 @@ Name | Type | Description  | Notes
  **rack** | **int32** |  | 
  **region** | **int32** |  | 
  **scopeId** | **[]int32** |  | 
+ **scopeIdEmpty** | **bool** |  | 
  **scopeIdGt** | **[]int32** |  | 
  **scopeIdGte** | **[]int32** |  | 
  **scopeIdLt** | **[]int32** |  | 
@@ -12553,13 +12713,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamVlanGroupsPartialUpdate(context.Background(), id).PatchedVLANGroupRequest(patchedVLANGroupRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamVlanGroupsPartialUpdate(context.Background(), id).PatchedVLANGroupRequest(patchedVLANGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamVlanGroupsPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVlanGroupsPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamVlanGroupsPartialUpdate`: VLANGroup
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamVlanGroupsPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamVlanGroupsPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -12624,13 +12784,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamVlanGroupsRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamVlanGroupsRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamVlanGroupsRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVlanGroupsRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamVlanGroupsRetrieve`: VLANGroup
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamVlanGroupsRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamVlanGroupsRetrieve`: %v\n", resp)
 }
 ```
 
@@ -12695,13 +12855,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamVlanGroupsUpdate(context.Background(), id).VLANGroupRequest(vLANGroupRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamVlanGroupsUpdate(context.Background(), id).VLANGroupRequest(vLANGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamVlanGroupsUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVlanGroupsUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamVlanGroupsUpdate`: VLANGroup
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamVlanGroupsUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamVlanGroupsUpdate`: %v\n", resp)
 }
 ```
 
@@ -12766,9 +12926,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IpamApi.IpamVlansBulkDestroy(context.Background()).VLANRequest(vLANRequest).Execute()
+    r, err := apiClient.IpamAPI.IpamVlansBulkDestroy(context.Background()).VLANRequest(vLANRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamVlansBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVlansBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -12830,13 +12990,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamVlansBulkPartialUpdate(context.Background()).VLANRequest(vLANRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamVlansBulkPartialUpdate(context.Background()).VLANRequest(vLANRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamVlansBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVlansBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamVlansBulkPartialUpdate`: []VLAN
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamVlansBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamVlansBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -12896,13 +13056,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamVlansBulkUpdate(context.Background()).VLANRequest(vLANRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamVlansBulkUpdate(context.Background()).VLANRequest(vLANRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamVlansBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVlansBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamVlansBulkUpdate`: []VLAN
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamVlansBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamVlansBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -12962,13 +13122,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamVlansCreate(context.Background()).WritableVLANRequest(writableVLANRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamVlansCreate(context.Background()).WritableVLANRequest(writableVLANRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamVlansCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVlansCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamVlansCreate`: VLAN
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamVlansCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamVlansCreate`: %v\n", resp)
 }
 ```
 
@@ -13028,9 +13188,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IpamApi.IpamVlansDestroy(context.Background(), id).Execute()
+    r, err := apiClient.IpamAPI.IpamVlansDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamVlansDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVlansDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -13073,7 +13233,7 @@ Name | Type | Description  | Notes
 
 ## IpamVlansList
 
-> PaginatedVLANList IpamVlansList(ctx).AvailableOnDevice(availableOnDevice).AvailableOnVirtualmachine(availableOnVirtualmachine).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).L2vpn(l2vpn).L2vpnN(l2vpnN).L2vpnId(l2vpnId).L2vpnIdN(l2vpnIdN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Vid(vid).VidGt(vidGt).VidGte(vidGte).VidLt(vidLt).VidLte(vidLte).VidN(vidN).Execute()
+> PaginatedVLANList IpamVlansList(ctx).AvailableOnDevice(availableOnDevice).AvailableOnVirtualmachine(availableOnVirtualmachine).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).L2vpn(l2vpn).L2vpnN(l2vpnN).L2vpnId(l2vpnId).L2vpnIdN(l2vpnIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Vid(vid).VidEmpty(vidEmpty).VidGt(vidGt).VidGte(vidGte).VidLt(vidLt).VidLte(vidLte).VidN(vidN).Execute()
 
 
 
@@ -13096,6 +13256,7 @@ func main() {
     availableOnDevice := "availableOnDevice_example" // string |  (optional)
     availableOnVirtualmachine := "availableOnVirtualmachine_example" // string |  (optional)
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -13118,6 +13279,7 @@ func main() {
     groupId := []*int32{int32(123)} // []*int32 | Group (ID) (optional)
     groupIdN := []*int32{int32(123)} // []*int32 | Group (ID) (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
@@ -13128,12 +13290,14 @@ func main() {
     l2vpnId := []int32{int32(123)} // []int32 | L2VPN (ID) (optional)
     l2vpnIdN := []int32{int32(123)} // []int32 | L2VPN (ID) (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -13178,6 +13342,7 @@ func main() {
     tenantIdN := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
     updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     vid := []int32{int32(123)} // []int32 |  (optional)
+    vidEmpty := true // bool |  (optional)
     vidGt := []int32{int32(123)} // []int32 |  (optional)
     vidGte := []int32{int32(123)} // []int32 |  (optional)
     vidLt := []int32{int32(123)} // []int32 |  (optional)
@@ -13186,13 +13351,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamVlansList(context.Background()).AvailableOnDevice(availableOnDevice).AvailableOnVirtualmachine(availableOnVirtualmachine).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).L2vpn(l2vpn).L2vpnN(l2vpnN).L2vpnId(l2vpnId).L2vpnIdN(l2vpnIdN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Vid(vid).VidGt(vidGt).VidGte(vidGte).VidLt(vidLt).VidLte(vidLte).VidN(vidN).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamVlansList(context.Background()).AvailableOnDevice(availableOnDevice).AvailableOnVirtualmachine(availableOnVirtualmachine).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).L2vpn(l2vpn).L2vpnN(l2vpnN).L2vpnId(l2vpnId).L2vpnIdN(l2vpnIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Vid(vid).VidEmpty(vidEmpty).VidGt(vidGt).VidGte(vidGte).VidLt(vidLt).VidLte(vidLte).VidN(vidN).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamVlansList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVlansList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamVlansList`: PaginatedVLANList
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamVlansList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamVlansList`: %v\n", resp)
 }
 ```
 
@@ -13210,6 +13375,7 @@ Name | Type | Description  | Notes
  **availableOnDevice** | **string** |  | 
  **availableOnVirtualmachine** | **string** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -13232,6 +13398,7 @@ Name | Type | Description  | Notes
  **groupId** | **[]int32** | Group (ID) | 
  **groupIdN** | **[]int32** | Group (ID) | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
@@ -13242,12 +13409,14 @@ Name | Type | Description  | Notes
  **l2vpnId** | **[]int32** | L2VPN (ID) | 
  **l2vpnIdN** | **[]int32** | L2VPN (ID) | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -13292,6 +13461,7 @@ Name | Type | Description  | Notes
  **tenantIdN** | **[]int32** | Tenant (ID) | 
  **updatedByRequest** | **string** |  | 
  **vid** | **[]int32** |  | 
+ **vidEmpty** | **bool** |  | 
  **vidGt** | **[]int32** |  | 
  **vidGte** | **[]int32** |  | 
  **vidLt** | **[]int32** |  | 
@@ -13342,13 +13512,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamVlansPartialUpdate(context.Background(), id).PatchedWritableVLANRequest(patchedWritableVLANRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamVlansPartialUpdate(context.Background(), id).PatchedWritableVLANRequest(patchedWritableVLANRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamVlansPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVlansPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamVlansPartialUpdate`: VLAN
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamVlansPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamVlansPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -13413,13 +13583,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamVlansRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamVlansRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamVlansRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVlansRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamVlansRetrieve`: VLAN
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamVlansRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamVlansRetrieve`: %v\n", resp)
 }
 ```
 
@@ -13484,13 +13654,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamVlansUpdate(context.Background(), id).WritableVLANRequest(writableVLANRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamVlansUpdate(context.Background(), id).WritableVLANRequest(writableVLANRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamVlansUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVlansUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamVlansUpdate`: VLAN
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamVlansUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamVlansUpdate`: %v\n", resp)
 }
 ```
 
@@ -13555,9 +13725,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IpamApi.IpamVrfsBulkDestroy(context.Background()).VRFRequest(vRFRequest).Execute()
+    r, err := apiClient.IpamAPI.IpamVrfsBulkDestroy(context.Background()).VRFRequest(vRFRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamVrfsBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVrfsBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -13619,13 +13789,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamVrfsBulkPartialUpdate(context.Background()).VRFRequest(vRFRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamVrfsBulkPartialUpdate(context.Background()).VRFRequest(vRFRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamVrfsBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVrfsBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamVrfsBulkPartialUpdate`: []VRF
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamVrfsBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamVrfsBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -13685,13 +13855,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamVrfsBulkUpdate(context.Background()).VRFRequest(vRFRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamVrfsBulkUpdate(context.Background()).VRFRequest(vRFRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamVrfsBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVrfsBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamVrfsBulkUpdate`: []VRF
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamVrfsBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamVrfsBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -13751,13 +13921,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamVrfsCreate(context.Background()).WritableVRFRequest(writableVRFRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamVrfsCreate(context.Background()).WritableVRFRequest(writableVRFRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamVrfsCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVrfsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamVrfsCreate`: VRF
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamVrfsCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamVrfsCreate`: %v\n", resp)
 }
 ```
 
@@ -13817,9 +13987,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IpamApi.IpamVrfsDestroy(context.Background(), id).Execute()
+    r, err := apiClient.IpamAPI.IpamVrfsDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamVrfsDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVrfsDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -13862,7 +14032,7 @@ Name | Type | Description  | Notes
 
 ## IpamVrfsList
 
-> PaginatedVRFList IpamVrfsList(ctx).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).EnforceUnique(enforceUnique).ExportTarget(exportTarget).ExportTargetN(exportTargetN).ExportTargetId(exportTargetId).ExportTargetIdN(exportTargetIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).ImportTarget(importTarget).ImportTargetN(importTargetN).ImportTargetId(importTargetId).ImportTargetIdN(importTargetIdN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Rd(rd).RdEmpty(rdEmpty).RdIc(rdIc).RdIe(rdIe).RdIew(rdIew).RdIsw(rdIsw).RdN(rdN).RdNic(rdNic).RdNie(rdNie).RdNiew(rdNiew).RdNisw(rdNisw).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedVRFList IpamVrfsList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).EnforceUnique(enforceUnique).ExportTarget(exportTarget).ExportTargetN(exportTargetN).ExportTargetId(exportTargetId).ExportTargetIdN(exportTargetIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).ImportTarget(importTarget).ImportTargetN(importTargetN).ImportTargetId(importTargetId).ImportTargetIdN(importTargetIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Rd(rd).RdEmpty(rdEmpty).RdIc(rdIc).RdIe(rdIe).RdIew(rdIew).RdIsw(rdIsw).RdN(rdN).RdNic(rdNic).RdNie(rdNie).RdNiew(rdNiew).RdNisw(rdNisw).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -13883,6 +14053,7 @@ import (
 
 func main() {
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -13906,6 +14077,7 @@ func main() {
     exportTargetId := []int32{int32(123)} // []int32 | Export target (optional)
     exportTargetIdN := []int32{int32(123)} // []int32 | Export target (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
@@ -13916,12 +14088,14 @@ func main() {
     importTargetId := []int32{int32(123)} // []int32 | Import target (optional)
     importTargetIdN := []int32{int32(123)} // []int32 | Import target (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -13961,13 +14135,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamVrfsList(context.Background()).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).EnforceUnique(enforceUnique).ExportTarget(exportTarget).ExportTargetN(exportTargetN).ExportTargetId(exportTargetId).ExportTargetIdN(exportTargetIdN).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).ImportTarget(importTarget).ImportTargetN(importTargetN).ImportTargetId(importTargetId).ImportTargetIdN(importTargetIdN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Rd(rd).RdEmpty(rdEmpty).RdIc(rdIc).RdIe(rdIe).RdIew(rdIew).RdIsw(rdIsw).RdN(rdN).RdNic(rdNic).RdNie(rdNie).RdNiew(rdNiew).RdNisw(rdNisw).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamVrfsList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).EnforceUnique(enforceUnique).ExportTarget(exportTarget).ExportTargetN(exportTargetN).ExportTargetId(exportTargetId).ExportTargetIdN(exportTargetIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).ImportTarget(importTarget).ImportTargetN(importTargetN).ImportTargetId(importTargetId).ImportTargetIdN(importTargetIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Rd(rd).RdEmpty(rdEmpty).RdIc(rdIc).RdIe(rdIe).RdIew(rdIew).RdIsw(rdIsw).RdN(rdN).RdNic(rdNic).RdNie(rdNie).RdNiew(rdNiew).RdNisw(rdNisw).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamVrfsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVrfsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamVrfsList`: PaginatedVRFList
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamVrfsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamVrfsList`: %v\n", resp)
 }
 ```
 
@@ -13983,6 +14157,7 @@ Other parameters are passed through a pointer to a apiIpamVrfsListRequest struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -14006,6 +14181,7 @@ Name | Type | Description  | Notes
  **exportTargetId** | **[]int32** | Export target | 
  **exportTargetIdN** | **[]int32** | Export target | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
@@ -14016,12 +14192,14 @@ Name | Type | Description  | Notes
  **importTargetId** | **[]int32** | Import target | 
  **importTargetIdN** | **[]int32** | Import target | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -14103,13 +14281,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamVrfsPartialUpdate(context.Background(), id).PatchedWritableVRFRequest(patchedWritableVRFRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamVrfsPartialUpdate(context.Background(), id).PatchedWritableVRFRequest(patchedWritableVRFRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamVrfsPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVrfsPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamVrfsPartialUpdate`: VRF
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamVrfsPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamVrfsPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -14174,13 +14352,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamVrfsRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamVrfsRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamVrfsRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVrfsRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamVrfsRetrieve`: VRF
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamVrfsRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamVrfsRetrieve`: %v\n", resp)
 }
 ```
 
@@ -14245,13 +14423,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IpamApi.IpamVrfsUpdate(context.Background(), id).WritableVRFRequest(writableVRFRequest).Execute()
+    resp, r, err := apiClient.IpamAPI.IpamVrfsUpdate(context.Background(), id).WritableVRFRequest(writableVRFRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IpamApi.IpamVrfsUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVrfsUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `IpamVrfsUpdate`: VRF
-    fmt.Fprintf(os.Stdout, "Response from `IpamApi.IpamVrfsUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IpamAPI.IpamVrfsUpdate`: %v\n", resp)
 }
 ```
 

@@ -8,8 +8,6 @@ Name | Type | Description | Notes
 **Slug** | Pointer to **string** |  | [optional] 
 **Manufacturer** | Pointer to **NullableInt32** | Optionally limit this platform to devices of a certain manufacturer | [optional] 
 **ConfigTemplate** | Pointer to **NullableInt32** |  | [optional] 
-**NapalmDriver** | Pointer to **string** | The name of the NAPALM driver to use when interacting with devices | [optional] 
-**NapalmArgs** | Pointer to **map[string]interface{}** | Additional arguments to pass when initiating the NAPALM driver (JSON format) | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -153,66 +151,6 @@ HasConfigTemplate returns a boolean if a field has been set.
 `func (o *PatchedWritablePlatformRequest) UnsetConfigTemplate()`
 
 UnsetConfigTemplate ensures that no value is present for ConfigTemplate, not even an explicit nil
-### GetNapalmDriver
-
-`func (o *PatchedWritablePlatformRequest) GetNapalmDriver() string`
-
-GetNapalmDriver returns the NapalmDriver field if non-nil, zero value otherwise.
-
-### GetNapalmDriverOk
-
-`func (o *PatchedWritablePlatformRequest) GetNapalmDriverOk() (*string, bool)`
-
-GetNapalmDriverOk returns a tuple with the NapalmDriver field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNapalmDriver
-
-`func (o *PatchedWritablePlatformRequest) SetNapalmDriver(v string)`
-
-SetNapalmDriver sets NapalmDriver field to given value.
-
-### HasNapalmDriver
-
-`func (o *PatchedWritablePlatformRequest) HasNapalmDriver() bool`
-
-HasNapalmDriver returns a boolean if a field has been set.
-
-### GetNapalmArgs
-
-`func (o *PatchedWritablePlatformRequest) GetNapalmArgs() map[string]interface{}`
-
-GetNapalmArgs returns the NapalmArgs field if non-nil, zero value otherwise.
-
-### GetNapalmArgsOk
-
-`func (o *PatchedWritablePlatformRequest) GetNapalmArgsOk() (*map[string]interface{}, bool)`
-
-GetNapalmArgsOk returns a tuple with the NapalmArgs field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNapalmArgs
-
-`func (o *PatchedWritablePlatformRequest) SetNapalmArgs(v map[string]interface{})`
-
-SetNapalmArgs sets NapalmArgs field to given value.
-
-### HasNapalmArgs
-
-`func (o *PatchedWritablePlatformRequest) HasNapalmArgs() bool`
-
-HasNapalmArgs returns a boolean if a field has been set.
-
-### SetNapalmArgsNil
-
-`func (o *PatchedWritablePlatformRequest) SetNapalmArgsNil(b bool)`
-
- SetNapalmArgsNil sets the value for NapalmArgs to be an explicit nil
-
-### UnsetNapalmArgs
-`func (o *PatchedWritablePlatformRequest) UnsetNapalmArgs()`
-
-UnsetNapalmArgs ensures that no value is present for NapalmArgs, not even an explicit nil
 ### GetDescription
 
 `func (o *PatchedWritablePlatformRequest) GetDescription() string`

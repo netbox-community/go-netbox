@@ -1,10 +1,10 @@
-# \StatusApi
+# \StatusAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**StatusRetrieve**](StatusApi.md#StatusRetrieve) | **Get** /api/status/ | 
+[**StatusRetrieve**](StatusAPI.md#StatusRetrieve) | **Get** /api/status/ | 
 
 
 
@@ -32,13 +32,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.StatusApi.StatusRetrieve(context.Background()).Execute()
+    resp, r, err := apiClient.StatusAPI.StatusRetrieve(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `StatusApi.StatusRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `StatusAPI.StatusRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `StatusRetrieve`: map[string]interface{}
-    fmt.Fprintf(os.Stdout, "Response from `StatusApi.StatusRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `StatusAPI.StatusRetrieve`: %v\n", resp)
 }
 ```
 

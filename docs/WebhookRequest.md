@@ -17,10 +17,12 @@ Name | Type | Description | Notes
 **HttpContentType** | Pointer to **string** | The complete list of official content types is available &lt;a href&#x3D;\&quot;https://www.iana.org/assignments/media-types/media-types.xhtml\&quot;&gt;here&lt;/a&gt;. | [optional] 
 **AdditionalHeaders** | Pointer to **string** | User-supplied HTTP headers to be sent with the request in addition to the HTTP content type. Headers should be defined in the format &lt;code&gt;Name: Value&lt;/code&gt;. Jinja2 template processing is supported with the same context as the request body (below). | [optional] 
 **BodyTemplate** | Pointer to **string** | Jinja2 template for a custom request body. If blank, a JSON object representing the change will be included. Available context data includes: &lt;code&gt;event&lt;/code&gt;, &lt;code&gt;model&lt;/code&gt;, &lt;code&gt;timestamp&lt;/code&gt;, &lt;code&gt;username&lt;/code&gt;, &lt;code&gt;request_id&lt;/code&gt;, and &lt;code&gt;data&lt;/code&gt;. | [optional] 
-**Secret** | Pointer to **string** | When provided, the request will include a &#39;X-Hook-Signature&#39; header containing a HMAC hex digest of the payload body using the secret as the key. The secret is not transmitted in the request. | [optional] 
+**Secret** | Pointer to **string** | When provided, the request will include a &lt;code&gt;X-Hook-Signature&lt;/code&gt; header containing a HMAC hex digest of the payload body using the secret as the key. The secret is not transmitted in the request. | [optional] 
 **Conditions** | Pointer to **map[string]interface{}** | A set of conditions which determine whether the webhook will be generated. | [optional] 
 **SslVerification** | Pointer to **bool** | Enable SSL certificate verification. Disable with caution! | [optional] 
 **CaFilePath** | Pointer to **NullableString** | The specific CA certificate file to use for SSL verification. Leave blank to use the system defaults. | [optional] 
+**CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
+**Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 
 ## Methods
 
@@ -471,6 +473,56 @@ HasCaFilePath returns a boolean if a field has been set.
 `func (o *WebhookRequest) UnsetCaFilePath()`
 
 UnsetCaFilePath ensures that no value is present for CaFilePath, not even an explicit nil
+### GetCustomFields
+
+`func (o *WebhookRequest) GetCustomFields() map[string]interface{}`
+
+GetCustomFields returns the CustomFields field if non-nil, zero value otherwise.
+
+### GetCustomFieldsOk
+
+`func (o *WebhookRequest) GetCustomFieldsOk() (*map[string]interface{}, bool)`
+
+GetCustomFieldsOk returns a tuple with the CustomFields field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomFields
+
+`func (o *WebhookRequest) SetCustomFields(v map[string]interface{})`
+
+SetCustomFields sets CustomFields field to given value.
+
+### HasCustomFields
+
+`func (o *WebhookRequest) HasCustomFields() bool`
+
+HasCustomFields returns a boolean if a field has been set.
+
+### GetTags
+
+`func (o *WebhookRequest) GetTags() []NestedTagRequest`
+
+GetTags returns the Tags field if non-nil, zero value otherwise.
+
+### GetTagsOk
+
+`func (o *WebhookRequest) GetTagsOk() (*[]NestedTagRequest, bool)`
+
+GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTags
+
+`func (o *WebhookRequest) SetTags(v []NestedTagRequest)`
+
+SetTags sets Tags field to given value.
+
+### HasTags
+
+`func (o *WebhookRequest) HasTags() bool`
+
+HasTags returns a boolean if a field has been set.
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

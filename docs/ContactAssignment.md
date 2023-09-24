@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **Contact** | [**NestedContact**](NestedContact.md) |  | 
 **Role** | Pointer to [**NullableNestedContactRole**](NestedContactRole.md) |  | [optional] 
 **Priority** | Pointer to [**ContactAssignmentPriority**](ContactAssignmentPriority.md) |  | [optional] 
+**Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 
@@ -234,6 +235,31 @@ SetPriority sets Priority field to given value.
 `func (o *ContactAssignment) HasPriority() bool`
 
 HasPriority returns a boolean if a field has been set.
+
+### GetTags
+
+`func (o *ContactAssignment) GetTags() []NestedTag`
+
+GetTags returns the Tags field if non-nil, zero value otherwise.
+
+### GetTagsOk
+
+`func (o *ContactAssignment) GetTagsOk() (*[]NestedTag, bool)`
+
+GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTags
+
+`func (o *ContactAssignment) SetTags(v []NestedTag)`
+
+SetTags sets Tags field to given value.
+
+### HasTags
+
+`func (o *ContactAssignment) HasTags() bool`
+
+HasTags returns a boolean if a field has been set.
 
 ### GetCreated
 

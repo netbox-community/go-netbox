@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** | * &#x60;2-post-frame&#x60; - 2-post frame * &#x60;4-post-frame&#x60; - 4-post frame * &#x60;4-post-cabinet&#x60; - 4-post cabinet * &#x60;wall-frame&#x60; - Wall-mounted frame * &#x60;wall-frame-vertical&#x60; - Wall-mounted frame (vertical) * &#x60;wall-cabinet&#x60; - Wall-mounted cabinet * &#x60;wall-cabinet-vertical&#x60; - Wall-mounted cabinet (vertical) | [optional] 
 **Width** | Pointer to **int32** | Rail-to-rail width  * &#x60;10&#x60; - 10 inches * &#x60;19&#x60; - 19 inches * &#x60;21&#x60; - 21 inches * &#x60;23&#x60; - 23 inches | [optional] 
 **UHeight** | Pointer to **int32** | Height in rack units | [optional] 
+**StartingUnit** | Pointer to **int32** | Starting unit for rack | [optional] 
 **Weight** | Pointer to **NullableFloat64** |  | [optional] 
 **MaxWeight** | Pointer to **NullableInt32** | Maximum load capacity for the rack | [optional] 
 **WeightUnit** | Pointer to **string** | * &#x60;kg&#x60; - Kilograms * &#x60;g&#x60; - Grams * &#x60;lb&#x60; - Pounds * &#x60;oz&#x60; - Ounces | [optional] 
@@ -387,6 +388,31 @@ SetUHeight sets UHeight field to given value.
 `func (o *WritableRackRequest) HasUHeight() bool`
 
 HasUHeight returns a boolean if a field has been set.
+
+### GetStartingUnit
+
+`func (o *WritableRackRequest) GetStartingUnit() int32`
+
+GetStartingUnit returns the StartingUnit field if non-nil, zero value otherwise.
+
+### GetStartingUnitOk
+
+`func (o *WritableRackRequest) GetStartingUnitOk() (*int32, bool)`
+
+GetStartingUnitOk returns a tuple with the StartingUnit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStartingUnit
+
+`func (o *WritableRackRequest) SetStartingUnit(v int32)`
+
+SetStartingUnit sets StartingUnit field to given value.
+
+### HasStartingUnit
+
+`func (o *WritableRackRequest) HasStartingUnit() bool`
+
+HasStartingUnit returns a boolean if a field has been set.
 
 ### GetWeight
 

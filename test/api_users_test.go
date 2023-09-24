@@ -1,7 +1,7 @@
 /*
 NetBox REST API
 
-Testing UsersApiService
+Testing UsersAPIService
 
 */
 
@@ -18,16 +18,16 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func Test_netbox_UsersApiService(t *testing.T) {
+func Test_netbox_UsersAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test UsersApiService UsersConfigRetrieve", func(t *testing.T) {
+	t.Run("Test UsersAPIService UsersConfigRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.UsersApi.UsersConfigRetrieve(context.Background()).Execute()
+		resp, httpRes, err := apiClient.UsersAPI.UsersConfigRetrieve(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -35,34 +35,22 @@ func Test_netbox_UsersApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test UsersApiService UsersGroupsBulkDestroy", func(t *testing.T) {
+	t.Run("Test UsersAPIService UsersGroupsBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.UsersApi.UsersGroupsBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.UsersAPI.UsersGroupsBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test UsersApiService UsersGroupsBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test UsersAPIService UsersGroupsBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.UsersApi.UsersGroupsBulkPartialUpdate(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test UsersApiService UsersGroupsBulkUpdate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.UsersApi.UsersGroupsBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.UsersAPI.UsersGroupsBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -70,11 +58,11 @@ func Test_netbox_UsersApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test UsersApiService UsersGroupsCreate", func(t *testing.T) {
+	t.Run("Test UsersAPIService UsersGroupsBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.UsersApi.UsersGroupsCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.UsersAPI.UsersGroupsBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -82,24 +70,36 @@ func Test_netbox_UsersApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test UsersApiService UsersGroupsDestroy", func(t *testing.T) {
+	t.Run("Test UsersAPIService UsersGroupsCreate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.UsersAPI.UsersGroupsCreate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test UsersAPIService UsersGroupsDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.UsersApi.UsersGroupsDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.UsersAPI.UsersGroupsDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test UsersApiService UsersGroupsList", func(t *testing.T) {
+	t.Run("Test UsersAPIService UsersGroupsList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.UsersApi.UsersGroupsList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.UsersAPI.UsersGroupsList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -107,13 +107,13 @@ func Test_netbox_UsersApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test UsersApiService UsersGroupsPartialUpdate", func(t *testing.T) {
+	t.Run("Test UsersAPIService UsersGroupsPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.UsersApi.UsersGroupsPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.UsersAPI.UsersGroupsPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -121,13 +121,13 @@ func Test_netbox_UsersApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test UsersApiService UsersGroupsRetrieve", func(t *testing.T) {
+	t.Run("Test UsersAPIService UsersGroupsRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.UsersApi.UsersGroupsRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.UsersAPI.UsersGroupsRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -135,13 +135,13 @@ func Test_netbox_UsersApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test UsersApiService UsersGroupsUpdate", func(t *testing.T) {
+	t.Run("Test UsersAPIService UsersGroupsUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.UsersApi.UsersGroupsUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.UsersAPI.UsersGroupsUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -149,34 +149,22 @@ func Test_netbox_UsersApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test UsersApiService UsersPermissionsBulkDestroy", func(t *testing.T) {
+	t.Run("Test UsersAPIService UsersPermissionsBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.UsersApi.UsersPermissionsBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.UsersAPI.UsersPermissionsBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test UsersApiService UsersPermissionsBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test UsersAPIService UsersPermissionsBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.UsersApi.UsersPermissionsBulkPartialUpdate(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test UsersApiService UsersPermissionsBulkUpdate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.UsersApi.UsersPermissionsBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.UsersAPI.UsersPermissionsBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -184,11 +172,11 @@ func Test_netbox_UsersApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test UsersApiService UsersPermissionsCreate", func(t *testing.T) {
+	t.Run("Test UsersAPIService UsersPermissionsBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.UsersApi.UsersPermissionsCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.UsersAPI.UsersPermissionsBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -196,24 +184,36 @@ func Test_netbox_UsersApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test UsersApiService UsersPermissionsDestroy", func(t *testing.T) {
+	t.Run("Test UsersAPIService UsersPermissionsCreate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.UsersAPI.UsersPermissionsCreate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test UsersAPIService UsersPermissionsDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.UsersApi.UsersPermissionsDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.UsersAPI.UsersPermissionsDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test UsersApiService UsersPermissionsList", func(t *testing.T) {
+	t.Run("Test UsersAPIService UsersPermissionsList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.UsersApi.UsersPermissionsList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.UsersAPI.UsersPermissionsList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -221,13 +221,13 @@ func Test_netbox_UsersApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test UsersApiService UsersPermissionsPartialUpdate", func(t *testing.T) {
+	t.Run("Test UsersAPIService UsersPermissionsPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.UsersApi.UsersPermissionsPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.UsersAPI.UsersPermissionsPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -235,13 +235,13 @@ func Test_netbox_UsersApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test UsersApiService UsersPermissionsRetrieve", func(t *testing.T) {
+	t.Run("Test UsersAPIService UsersPermissionsRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.UsersApi.UsersPermissionsRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.UsersAPI.UsersPermissionsRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -249,13 +249,13 @@ func Test_netbox_UsersApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test UsersApiService UsersPermissionsUpdate", func(t *testing.T) {
+	t.Run("Test UsersAPIService UsersPermissionsUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.UsersApi.UsersPermissionsUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.UsersAPI.UsersPermissionsUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -263,34 +263,22 @@ func Test_netbox_UsersApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test UsersApiService UsersTokensBulkDestroy", func(t *testing.T) {
+	t.Run("Test UsersAPIService UsersTokensBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.UsersApi.UsersTokensBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.UsersAPI.UsersTokensBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test UsersApiService UsersTokensBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test UsersAPIService UsersTokensBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.UsersApi.UsersTokensBulkPartialUpdate(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test UsersApiService UsersTokensBulkUpdate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.UsersApi.UsersTokensBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.UsersAPI.UsersTokensBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -298,11 +286,11 @@ func Test_netbox_UsersApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test UsersApiService UsersTokensCreate", func(t *testing.T) {
+	t.Run("Test UsersAPIService UsersTokensBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.UsersApi.UsersTokensCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.UsersAPI.UsersTokensBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -310,24 +298,36 @@ func Test_netbox_UsersApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test UsersApiService UsersTokensDestroy", func(t *testing.T) {
+	t.Run("Test UsersAPIService UsersTokensCreate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.UsersAPI.UsersTokensCreate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test UsersAPIService UsersTokensDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.UsersApi.UsersTokensDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.UsersAPI.UsersTokensDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test UsersApiService UsersTokensList", func(t *testing.T) {
+	t.Run("Test UsersAPIService UsersTokensList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.UsersApi.UsersTokensList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.UsersAPI.UsersTokensList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -335,13 +335,13 @@ func Test_netbox_UsersApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test UsersApiService UsersTokensPartialUpdate", func(t *testing.T) {
+	t.Run("Test UsersAPIService UsersTokensPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.UsersApi.UsersTokensPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.UsersAPI.UsersTokensPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -349,11 +349,11 @@ func Test_netbox_UsersApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test UsersApiService UsersTokensProvisionCreate", func(t *testing.T) {
+	t.Run("Test UsersAPIService UsersTokensProvisionCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.UsersApi.UsersTokensProvisionCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.UsersAPI.UsersTokensProvisionCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -361,13 +361,13 @@ func Test_netbox_UsersApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test UsersApiService UsersTokensRetrieve", func(t *testing.T) {
+	t.Run("Test UsersAPIService UsersTokensRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.UsersApi.UsersTokensRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.UsersAPI.UsersTokensRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -375,13 +375,13 @@ func Test_netbox_UsersApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test UsersApiService UsersTokensUpdate", func(t *testing.T) {
+	t.Run("Test UsersAPIService UsersTokensUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.UsersApi.UsersTokensUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.UsersAPI.UsersTokensUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -389,34 +389,22 @@ func Test_netbox_UsersApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test UsersApiService UsersUsersBulkDestroy", func(t *testing.T) {
+	t.Run("Test UsersAPIService UsersUsersBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.UsersApi.UsersUsersBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.UsersAPI.UsersUsersBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test UsersApiService UsersUsersBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test UsersAPIService UsersUsersBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.UsersApi.UsersUsersBulkPartialUpdate(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test UsersApiService UsersUsersBulkUpdate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.UsersApi.UsersUsersBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.UsersAPI.UsersUsersBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -424,11 +412,11 @@ func Test_netbox_UsersApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test UsersApiService UsersUsersCreate", func(t *testing.T) {
+	t.Run("Test UsersAPIService UsersUsersBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.UsersApi.UsersUsersCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.UsersAPI.UsersUsersBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -436,38 +424,36 @@ func Test_netbox_UsersApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test UsersApiService UsersUsersDestroy", func(t *testing.T) {
+	t.Run("Test UsersAPIService UsersUsersCreate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.UsersAPI.UsersUsersCreate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test UsersAPIService UsersUsersDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.UsersApi.UsersUsersDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.UsersAPI.UsersUsersDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test UsersApiService UsersUsersList", func(t *testing.T) {
+	t.Run("Test UsersAPIService UsersUsersList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.UsersApi.UsersUsersList(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test UsersApiService UsersUsersPartialUpdate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		var id int32
-
-		resp, httpRes, err := apiClient.UsersApi.UsersUsersPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.UsersAPI.UsersUsersList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -475,13 +461,13 @@ func Test_netbox_UsersApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test UsersApiService UsersUsersRetrieve", func(t *testing.T) {
+	t.Run("Test UsersAPIService UsersUsersPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.UsersApi.UsersUsersRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.UsersAPI.UsersUsersPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -489,13 +475,27 @@ func Test_netbox_UsersApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test UsersApiService UsersUsersUpdate", func(t *testing.T) {
+	t.Run("Test UsersAPIService UsersUsersRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.UsersApi.UsersUsersUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.UsersAPI.UsersUsersRetrieve(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test UsersAPIService UsersUsersUpdate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var id int32
+
+		resp, httpRes, err := apiClient.UsersAPI.UsersUsersUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

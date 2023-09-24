@@ -14,15 +14,15 @@ Name | Type | Description | Notes
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**MemberCount** | **int32** |  | [readonly] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
+**MemberCount** | **int32** |  | [readonly] 
 
 ## Methods
 
 ### NewVirtualChassis
 
-`func NewVirtualChassis(id int32, url string, display string, name string, memberCount int32, created NullableTime, lastUpdated NullableTime, ) *VirtualChassis`
+`func NewVirtualChassis(id int32, url string, display string, name string, created NullableTime, lastUpdated NullableTime, memberCount int32, ) *VirtualChassis`
 
 NewVirtualChassis instantiates a new VirtualChassis object
 This constructor will assign default values to properties that have it defined,
@@ -277,26 +277,6 @@ SetCustomFields sets CustomFields field to given value.
 
 HasCustomFields returns a boolean if a field has been set.
 
-### GetMemberCount
-
-`func (o *VirtualChassis) GetMemberCount() int32`
-
-GetMemberCount returns the MemberCount field if non-nil, zero value otherwise.
-
-### GetMemberCountOk
-
-`func (o *VirtualChassis) GetMemberCountOk() (*int32, bool)`
-
-GetMemberCountOk returns a tuple with the MemberCount field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMemberCount
-
-`func (o *VirtualChassis) SetMemberCount(v int32)`
-
-SetMemberCount sets MemberCount field to given value.
-
-
 ### GetCreated
 
 `func (o *VirtualChassis) GetCreated() time.Time`
@@ -357,6 +337,26 @@ SetLastUpdated sets LastUpdated field to given value.
 `func (o *VirtualChassis) UnsetLastUpdated()`
 
 UnsetLastUpdated ensures that no value is present for LastUpdated, not even an explicit nil
+### GetMemberCount
+
+`func (o *VirtualChassis) GetMemberCount() int32`
+
+GetMemberCount returns the MemberCount field if non-nil, zero value otherwise.
+
+### GetMemberCountOk
+
+`func (o *VirtualChassis) GetMemberCountOk() (*int32, bool)`
+
+GetMemberCountOk returns a tuple with the MemberCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMemberCount
+
+`func (o *VirtualChassis) SetMemberCount(v int32)`
+
+SetMemberCount sets MemberCount field to given value.
+
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

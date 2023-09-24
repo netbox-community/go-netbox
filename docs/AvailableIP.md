@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Family** | **int32** |  | [readonly] 
 **Address** | **string** |  | [readonly] 
 **Vrf** | [**NestedVRF**](NestedVRF.md) |  | [readonly] 
+**Description** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -86,6 +87,31 @@ and a boolean to check if the value has been set.
 
 SetVrf sets Vrf field to given value.
 
+
+### GetDescription
+
+`func (o *AvailableIP) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *AvailableIP) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *AvailableIP) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *AvailableIP) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

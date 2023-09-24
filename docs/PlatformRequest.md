@@ -8,8 +8,6 @@ Name | Type | Description | Notes
 **Slug** | **string** |  | 
 **Manufacturer** | Pointer to [**NullableNestedManufacturerRequest**](NestedManufacturerRequest.md) |  | [optional] 
 **ConfigTemplate** | Pointer to [**NullableNestedConfigTemplateRequest**](NestedConfigTemplateRequest.md) |  | [optional] 
-**NapalmDriver** | Pointer to **string** | The name of the NAPALM driver to use when interacting with devices | [optional] 
-**NapalmArgs** | Pointer to **map[string]interface{}** | Additional arguments to pass when initiating the NAPALM driver (JSON format) | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -143,66 +141,6 @@ HasConfigTemplate returns a boolean if a field has been set.
 `func (o *PlatformRequest) UnsetConfigTemplate()`
 
 UnsetConfigTemplate ensures that no value is present for ConfigTemplate, not even an explicit nil
-### GetNapalmDriver
-
-`func (o *PlatformRequest) GetNapalmDriver() string`
-
-GetNapalmDriver returns the NapalmDriver field if non-nil, zero value otherwise.
-
-### GetNapalmDriverOk
-
-`func (o *PlatformRequest) GetNapalmDriverOk() (*string, bool)`
-
-GetNapalmDriverOk returns a tuple with the NapalmDriver field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNapalmDriver
-
-`func (o *PlatformRequest) SetNapalmDriver(v string)`
-
-SetNapalmDriver sets NapalmDriver field to given value.
-
-### HasNapalmDriver
-
-`func (o *PlatformRequest) HasNapalmDriver() bool`
-
-HasNapalmDriver returns a boolean if a field has been set.
-
-### GetNapalmArgs
-
-`func (o *PlatformRequest) GetNapalmArgs() map[string]interface{}`
-
-GetNapalmArgs returns the NapalmArgs field if non-nil, zero value otherwise.
-
-### GetNapalmArgsOk
-
-`func (o *PlatformRequest) GetNapalmArgsOk() (*map[string]interface{}, bool)`
-
-GetNapalmArgsOk returns a tuple with the NapalmArgs field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNapalmArgs
-
-`func (o *PlatformRequest) SetNapalmArgs(v map[string]interface{})`
-
-SetNapalmArgs sets NapalmArgs field to given value.
-
-### HasNapalmArgs
-
-`func (o *PlatformRequest) HasNapalmArgs() bool`
-
-HasNapalmArgs returns a boolean if a field has been set.
-
-### SetNapalmArgsNil
-
-`func (o *PlatformRequest) SetNapalmArgsNil(b bool)`
-
- SetNapalmArgsNil sets the value for NapalmArgs to be an explicit nil
-
-### UnsetNapalmArgs
-`func (o *PlatformRequest) UnsetNapalmArgs()`
-
-UnsetNapalmArgs ensures that no value is present for NapalmArgs, not even an explicit nil
 ### GetDescription
 
 `func (o *PlatformRequest) GetDescription() string`

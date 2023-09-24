@@ -1,7 +1,7 @@
 /*
 NetBox REST API
 
-Testing ExtrasApiService
+Testing ExtrasAPIService
 
 */
 
@@ -18,39 +18,27 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func Test_netbox_ExtrasApiService(t *testing.T) {
+func Test_netbox_ExtrasAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test ExtrasApiService ExtrasConfigContextsBulkDestroy", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasBookmarksBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.ExtrasApi.ExtrasConfigContextsBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.ExtrasAPI.ExtrasBookmarksBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasConfigContextsBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasBookmarksBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasConfigContextsBulkPartialUpdate(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasConfigContextsBulkUpdate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasConfigContextsBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasBookmarksBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -58,11 +46,11 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasConfigContextsCreate", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasBookmarksBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasConfigContextsCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasBookmarksBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -70,24 +58,11 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasConfigContextsDestroy", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasBookmarksCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
-
-		httpRes, err := apiClient.ExtrasApi.ExtrasConfigContextsDestroy(context.Background(), id).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasConfigContextsList", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasConfigContextsList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasBookmarksCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -95,27 +70,24 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasConfigContextsPartialUpdate", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasBookmarksDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasConfigContextsPartialUpdate(context.Background(), id).Execute()
+		httpRes, err := apiClient.ExtrasAPI.ExtrasBookmarksDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasConfigContextsRetrieve", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasBookmarksList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasConfigContextsRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasBookmarksList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -123,13 +95,13 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasConfigContextsSyncCreate", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasBookmarksPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasConfigContextsSyncCreate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasBookmarksPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -137,85 +109,13 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasConfigContextsUpdate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		var id int32
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasConfigContextsUpdate(context.Background(), id).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasConfigTemplatesBulkDestroy", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		httpRes, err := apiClient.ExtrasApi.ExtrasConfigTemplatesBulkDestroy(context.Background()).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasConfigTemplatesBulkPartialUpdate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasConfigTemplatesBulkPartialUpdate(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasConfigTemplatesBulkUpdate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasConfigTemplatesBulkUpdate(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasConfigTemplatesCreate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasConfigTemplatesCreate(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasConfigTemplatesDestroy", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasBookmarksRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.ExtrasApi.ExtrasConfigTemplatesDestroy(context.Background(), id).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasConfigTemplatesList", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasConfigTemplatesList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasBookmarksRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -223,13 +123,13 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasConfigTemplatesPartialUpdate", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasBookmarksUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasConfigTemplatesPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasBookmarksUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -237,27 +137,22 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasConfigTemplatesRenderCreate", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasConfigContextsBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasConfigTemplatesRenderCreate(context.Background(), id).Execute()
+		httpRes, err := apiClient.ExtrasAPI.ExtrasConfigContextsBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasConfigTemplatesRetrieve", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasConfigContextsBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasConfigTemplatesRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasConfigContextsBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -265,13 +160,11 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasConfigTemplatesSyncCreate", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasConfigContextsBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasConfigTemplatesSyncCreate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasConfigContextsBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -279,13 +172,11 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasConfigTemplatesUpdate", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasConfigContextsCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasConfigTemplatesUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasConfigContextsCreate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -293,25 +184,24 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasContentTypesList", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasContentTypesList(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasContentTypesRetrieve", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasConfigContextsDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasContentTypesRetrieve(context.Background(), id).Execute()
+		httpRes, err := apiClient.ExtrasAPI.ExtrasConfigContextsDestroy(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasConfigContextsList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasConfigContextsList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -319,71 +209,13 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasCustomFieldsBulkDestroy", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		httpRes, err := apiClient.ExtrasApi.ExtrasCustomFieldsBulkDestroy(context.Background()).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasCustomFieldsBulkPartialUpdate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasCustomFieldsBulkPartialUpdate(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasCustomFieldsBulkUpdate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasCustomFieldsBulkUpdate(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasCustomFieldsCreate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasCustomFieldsCreate(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasCustomFieldsDestroy", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasConfigContextsPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.ExtrasApi.ExtrasCustomFieldsDestroy(context.Background(), id).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasCustomFieldsList", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasCustomFieldsList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasConfigContextsPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -391,13 +223,13 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasCustomFieldsPartialUpdate", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasConfigContextsRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasCustomFieldsPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasConfigContextsRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -405,13 +237,13 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasCustomFieldsRetrieve", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasConfigContextsSyncCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasCustomFieldsRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasConfigContextsSyncCreate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -419,13 +251,13 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasCustomFieldsUpdate", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasConfigContextsUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasCustomFieldsUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasConfigContextsUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -433,34 +265,22 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasCustomLinksBulkDestroy", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasConfigTemplatesBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.ExtrasApi.ExtrasCustomLinksBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.ExtrasAPI.ExtrasConfigTemplatesBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasCustomLinksBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasConfigTemplatesBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasCustomLinksBulkPartialUpdate(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasCustomLinksBulkUpdate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasCustomLinksBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasConfigTemplatesBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -468,11 +288,11 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasCustomLinksCreate", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasConfigTemplatesBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasCustomLinksCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasConfigTemplatesBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -480,24 +300,36 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasCustomLinksDestroy", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasConfigTemplatesCreate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasConfigTemplatesCreate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasConfigTemplatesDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.ExtrasApi.ExtrasCustomLinksDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.ExtrasAPI.ExtrasConfigTemplatesDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasCustomLinksList", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasConfigTemplatesList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasCustomLinksList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasConfigTemplatesList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -505,13 +337,13 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasCustomLinksPartialUpdate", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasConfigTemplatesPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasCustomLinksPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasConfigTemplatesPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -519,13 +351,13 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasCustomLinksRetrieve", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasConfigTemplatesRenderCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasCustomLinksRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasConfigTemplatesRenderCreate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -533,13 +365,13 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasCustomLinksUpdate", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasConfigTemplatesRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasCustomLinksUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasConfigTemplatesRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -547,118 +379,13 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasDashboardDestroy", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		httpRes, err := apiClient.ExtrasApi.ExtrasDashboardDestroy(context.Background()).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasDashboardPartialUpdate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasDashboardPartialUpdate(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasDashboardRetrieve", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasDashboardRetrieve(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasDashboardUpdate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasDashboardUpdate(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasExportTemplatesBulkDestroy", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		httpRes, err := apiClient.ExtrasApi.ExtrasExportTemplatesBulkDestroy(context.Background()).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasExportTemplatesBulkPartialUpdate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasExportTemplatesBulkPartialUpdate(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasExportTemplatesBulkUpdate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasExportTemplatesBulkUpdate(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasExportTemplatesCreate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasExportTemplatesCreate(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasExportTemplatesDestroy", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasConfigTemplatesSyncCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.ExtrasApi.ExtrasExportTemplatesDestroy(context.Background(), id).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasExportTemplatesList", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasExportTemplatesList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasConfigTemplatesSyncCreate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -666,13 +393,13 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasExportTemplatesPartialUpdate", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasConfigTemplatesUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasExportTemplatesPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasConfigTemplatesUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -680,13 +407,25 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasExportTemplatesRetrieve", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasContentTypesList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasContentTypesList(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasContentTypesRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasExportTemplatesRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasContentTypesRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -694,13 +433,48 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasExportTemplatesSyncCreate", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasCustomFieldChoiceSetsBulkDestroy", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		httpRes, err := apiClient.ExtrasAPI.ExtrasCustomFieldChoiceSetsBulkDestroy(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasCustomFieldChoiceSetsBulkPartialUpdate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasCustomFieldChoiceSetsBulkPartialUpdate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasCustomFieldChoiceSetsBulkUpdate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasCustomFieldChoiceSetsBulkUpdate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasCustomFieldChoiceSetsChoicesRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasExportTemplatesSyncCreate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasCustomFieldChoiceSetsChoicesRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -708,13 +482,36 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasExportTemplatesUpdate", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasCustomFieldChoiceSetsCreate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasCustomFieldChoiceSetsCreate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasCustomFieldChoiceSetsDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasExportTemplatesUpdate(context.Background(), id).Execute()
+		httpRes, err := apiClient.ExtrasAPI.ExtrasCustomFieldChoiceSetsDestroy(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasCustomFieldChoiceSetsList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasCustomFieldChoiceSetsList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -722,71 +519,13 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasImageAttachmentsBulkDestroy", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		httpRes, err := apiClient.ExtrasApi.ExtrasImageAttachmentsBulkDestroy(context.Background()).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasImageAttachmentsBulkPartialUpdate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasImageAttachmentsBulkPartialUpdate(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasImageAttachmentsBulkUpdate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasImageAttachmentsBulkUpdate(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasImageAttachmentsCreate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasImageAttachmentsCreate(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasImageAttachmentsDestroy", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasCustomFieldChoiceSetsPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.ExtrasApi.ExtrasImageAttachmentsDestroy(context.Background(), id).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasImageAttachmentsList", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasImageAttachmentsList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasCustomFieldChoiceSetsPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -794,13 +533,13 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasImageAttachmentsPartialUpdate", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasCustomFieldChoiceSetsRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasImageAttachmentsPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasCustomFieldChoiceSetsRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -808,13 +547,13 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasImageAttachmentsRetrieve", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasCustomFieldChoiceSetsUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasImageAttachmentsRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasCustomFieldChoiceSetsUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -822,13 +561,71 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasImageAttachmentsUpdate", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasCustomFieldsBulkDestroy", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		httpRes, err := apiClient.ExtrasAPI.ExtrasCustomFieldsBulkDestroy(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasCustomFieldsBulkPartialUpdate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasCustomFieldsBulkPartialUpdate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasCustomFieldsBulkUpdate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasCustomFieldsBulkUpdate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasCustomFieldsCreate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasCustomFieldsCreate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasCustomFieldsDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasImageAttachmentsUpdate(context.Background(), id).Execute()
+		httpRes, err := apiClient.ExtrasAPI.ExtrasCustomFieldsDestroy(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasCustomFieldsList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasCustomFieldsList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -836,71 +633,13 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasJournalEntriesBulkDestroy", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		httpRes, err := apiClient.ExtrasApi.ExtrasJournalEntriesBulkDestroy(context.Background()).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasJournalEntriesBulkPartialUpdate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasJournalEntriesBulkPartialUpdate(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasJournalEntriesBulkUpdate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasJournalEntriesBulkUpdate(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasJournalEntriesCreate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasJournalEntriesCreate(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasJournalEntriesDestroy", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasCustomFieldsPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.ExtrasApi.ExtrasJournalEntriesDestroy(context.Background(), id).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasJournalEntriesList", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasJournalEntriesList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasCustomFieldsPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -908,13 +647,13 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasJournalEntriesPartialUpdate", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasCustomFieldsRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasJournalEntriesPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasCustomFieldsRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -922,13 +661,13 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasJournalEntriesRetrieve", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasCustomFieldsUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasJournalEntriesRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasCustomFieldsUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -936,25 +675,71 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasJournalEntriesUpdate", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasCustomLinksBulkDestroy", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		httpRes, err := apiClient.ExtrasAPI.ExtrasCustomLinksBulkDestroy(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasCustomLinksBulkPartialUpdate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasCustomLinksBulkPartialUpdate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasCustomLinksBulkUpdate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasCustomLinksBulkUpdate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasCustomLinksCreate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasCustomLinksCreate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasCustomLinksDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasJournalEntriesUpdate(context.Background(), id).Execute()
+		httpRes, err := apiClient.ExtrasAPI.ExtrasCustomLinksDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasObjectChangesList", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasCustomLinksList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasObjectChangesList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasCustomLinksList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -962,13 +747,13 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasObjectChangesRetrieve", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasCustomLinksPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasObjectChangesRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasCustomLinksPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -976,71 +761,13 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasSavedFiltersBulkDestroy", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		httpRes, err := apiClient.ExtrasApi.ExtrasSavedFiltersBulkDestroy(context.Background()).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasSavedFiltersBulkPartialUpdate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasSavedFiltersBulkPartialUpdate(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasSavedFiltersBulkUpdate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasSavedFiltersBulkUpdate(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasSavedFiltersCreate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasSavedFiltersCreate(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasSavedFiltersDestroy", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasCustomLinksRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.ExtrasApi.ExtrasSavedFiltersDestroy(context.Background(), id).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasSavedFiltersList", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasSavedFiltersList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasCustomLinksRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1048,13 +775,13 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasSavedFiltersPartialUpdate", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasCustomLinksUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasSavedFiltersPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasCustomLinksUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1062,13 +789,118 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasSavedFiltersRetrieve", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasDashboardDestroy", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		httpRes, err := apiClient.ExtrasAPI.ExtrasDashboardDestroy(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasDashboardPartialUpdate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasDashboardPartialUpdate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasDashboardRetrieve", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasDashboardRetrieve(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasDashboardUpdate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasDashboardUpdate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasExportTemplatesBulkDestroy", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		httpRes, err := apiClient.ExtrasAPI.ExtrasExportTemplatesBulkDestroy(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasExportTemplatesBulkPartialUpdate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasExportTemplatesBulkPartialUpdate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasExportTemplatesBulkUpdate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasExportTemplatesBulkUpdate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasExportTemplatesCreate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasExportTemplatesCreate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasExportTemplatesDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasSavedFiltersRetrieve(context.Background(), id).Execute()
+		httpRes, err := apiClient.ExtrasAPI.ExtrasExportTemplatesDestroy(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasExportTemplatesList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasExportTemplatesList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1076,13 +908,13 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasSavedFiltersUpdate", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasExportTemplatesPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasSavedFiltersUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasExportTemplatesPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1090,71 +922,13 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasTagsBulkDestroy", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		httpRes, err := apiClient.ExtrasApi.ExtrasTagsBulkDestroy(context.Background()).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasTagsBulkPartialUpdate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasTagsBulkPartialUpdate(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasTagsBulkUpdate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasTagsBulkUpdate(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasTagsCreate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasTagsCreate(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasTagsDestroy", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasExportTemplatesRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.ExtrasApi.ExtrasTagsDestroy(context.Background(), id).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasTagsList", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasTagsList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasExportTemplatesRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1162,13 +936,13 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasTagsPartialUpdate", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasExportTemplatesSyncCreate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasTagsPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasExportTemplatesSyncCreate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1176,13 +950,13 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasTagsRetrieve", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasExportTemplatesUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasTagsRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasExportTemplatesUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1190,13 +964,71 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasTagsUpdate", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasImageAttachmentsBulkDestroy", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		httpRes, err := apiClient.ExtrasAPI.ExtrasImageAttachmentsBulkDestroy(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasImageAttachmentsBulkPartialUpdate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasImageAttachmentsBulkPartialUpdate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasImageAttachmentsBulkUpdate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasImageAttachmentsBulkUpdate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasImageAttachmentsCreate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasImageAttachmentsCreate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasImageAttachmentsDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasTagsUpdate(context.Background(), id).Execute()
+		httpRes, err := apiClient.ExtrasAPI.ExtrasImageAttachmentsDestroy(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasImageAttachmentsList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasImageAttachmentsList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1204,71 +1036,13 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasWebhooksBulkDestroy", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		httpRes, err := apiClient.ExtrasApi.ExtrasWebhooksBulkDestroy(context.Background()).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasWebhooksBulkPartialUpdate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasWebhooksBulkPartialUpdate(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasWebhooksBulkUpdate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasWebhooksBulkUpdate(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasWebhooksCreate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasWebhooksCreate(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasWebhooksDestroy", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasImageAttachmentsPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.ExtrasApi.ExtrasWebhooksDestroy(context.Background(), id).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ExtrasApiService ExtrasWebhooksList", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasWebhooksList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasImageAttachmentsPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1276,13 +1050,13 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasWebhooksPartialUpdate", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasImageAttachmentsRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasWebhooksPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasImageAttachmentsRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1290,13 +1064,13 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasWebhooksRetrieve", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasImageAttachmentsUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasWebhooksRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasImageAttachmentsUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1304,13 +1078,481 @@ func Test_netbox_ExtrasApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ExtrasApiService ExtrasWebhooksUpdate", func(t *testing.T) {
+	t.Run("Test ExtrasAPIService ExtrasJournalEntriesBulkDestroy", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		httpRes, err := apiClient.ExtrasAPI.ExtrasJournalEntriesBulkDestroy(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasJournalEntriesBulkPartialUpdate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasJournalEntriesBulkPartialUpdate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasJournalEntriesBulkUpdate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasJournalEntriesBulkUpdate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasJournalEntriesCreate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasJournalEntriesCreate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasJournalEntriesDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.ExtrasApi.ExtrasWebhooksUpdate(context.Background(), id).Execute()
+		httpRes, err := apiClient.ExtrasAPI.ExtrasJournalEntriesDestroy(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasJournalEntriesList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasJournalEntriesList(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasJournalEntriesPartialUpdate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var id int32
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasJournalEntriesPartialUpdate(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasJournalEntriesRetrieve", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var id int32
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasJournalEntriesRetrieve(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasJournalEntriesUpdate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var id int32
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasJournalEntriesUpdate(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasObjectChangesList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasObjectChangesList(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasObjectChangesRetrieve", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var id int32
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasObjectChangesRetrieve(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasSavedFiltersBulkDestroy", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		httpRes, err := apiClient.ExtrasAPI.ExtrasSavedFiltersBulkDestroy(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasSavedFiltersBulkPartialUpdate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasSavedFiltersBulkPartialUpdate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasSavedFiltersBulkUpdate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasSavedFiltersBulkUpdate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasSavedFiltersCreate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasSavedFiltersCreate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasSavedFiltersDestroy", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var id int32
+
+		httpRes, err := apiClient.ExtrasAPI.ExtrasSavedFiltersDestroy(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasSavedFiltersList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasSavedFiltersList(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasSavedFiltersPartialUpdate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var id int32
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasSavedFiltersPartialUpdate(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasSavedFiltersRetrieve", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var id int32
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasSavedFiltersRetrieve(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasSavedFiltersUpdate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var id int32
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasSavedFiltersUpdate(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasTagsBulkDestroy", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		httpRes, err := apiClient.ExtrasAPI.ExtrasTagsBulkDestroy(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasTagsBulkPartialUpdate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasTagsBulkPartialUpdate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasTagsBulkUpdate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasTagsBulkUpdate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasTagsCreate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasTagsCreate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasTagsDestroy", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var id int32
+
+		httpRes, err := apiClient.ExtrasAPI.ExtrasTagsDestroy(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasTagsList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasTagsList(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasTagsPartialUpdate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var id int32
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasTagsPartialUpdate(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasTagsRetrieve", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var id int32
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasTagsRetrieve(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasTagsUpdate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var id int32
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasTagsUpdate(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasWebhooksBulkDestroy", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		httpRes, err := apiClient.ExtrasAPI.ExtrasWebhooksBulkDestroy(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasWebhooksBulkPartialUpdate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasWebhooksBulkPartialUpdate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasWebhooksBulkUpdate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasWebhooksBulkUpdate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasWebhooksCreate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasWebhooksCreate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasWebhooksDestroy", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var id int32
+
+		httpRes, err := apiClient.ExtrasAPI.ExtrasWebhooksDestroy(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasWebhooksList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasWebhooksList(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasWebhooksPartialUpdate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var id int32
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasWebhooksPartialUpdate(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasWebhooksRetrieve", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var id int32
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasWebhooksRetrieve(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasWebhooksUpdate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var id int32
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasWebhooksUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

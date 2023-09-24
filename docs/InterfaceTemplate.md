@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Display** | **string** |  | [readonly] 
 **DeviceType** | Pointer to [**NullableNestedDeviceType**](NestedDeviceType.md) |  | [optional] 
 **ModuleType** | Pointer to [**NullableNestedModuleType**](NestedModuleType.md) |  | [optional] 
-**Name** | **string** |          {module} is accepted as a substitution for the module bay position when attached to a module type.          | 
+**Name** | **string** | {module} is accepted as a substitution for the module bay position when attached to a module type. | 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Type** | [**InterfaceType**](InterfaceType.md) |  | 
 **Enabled** | Pointer to **bool** |  | [optional] 
@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **Bridge** | Pointer to [**NullableNestedInterfaceTemplate**](NestedInterfaceTemplate.md) |  | [optional] 
 **PoeMode** | Pointer to [**NullableInterfaceTemplatePoeMode**](InterfaceTemplatePoeMode.md) |  | [optional] 
 **PoeType** | Pointer to [**NullableInterfaceTemplatePoeType**](InterfaceTemplatePoeType.md) |  | [optional] 
+**RfRole** | Pointer to [**NullableInterfaceTemplateRfRole**](InterfaceTemplateRfRole.md) |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 
@@ -415,6 +416,41 @@ HasPoeType returns a boolean if a field has been set.
 `func (o *InterfaceTemplate) UnsetPoeType()`
 
 UnsetPoeType ensures that no value is present for PoeType, not even an explicit nil
+### GetRfRole
+
+`func (o *InterfaceTemplate) GetRfRole() InterfaceTemplateRfRole`
+
+GetRfRole returns the RfRole field if non-nil, zero value otherwise.
+
+### GetRfRoleOk
+
+`func (o *InterfaceTemplate) GetRfRoleOk() (*InterfaceTemplateRfRole, bool)`
+
+GetRfRoleOk returns a tuple with the RfRole field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRfRole
+
+`func (o *InterfaceTemplate) SetRfRole(v InterfaceTemplateRfRole)`
+
+SetRfRole sets RfRole field to given value.
+
+### HasRfRole
+
+`func (o *InterfaceTemplate) HasRfRole() bool`
+
+HasRfRole returns a boolean if a field has been set.
+
+### SetRfRoleNil
+
+`func (o *InterfaceTemplate) SetRfRoleNil(b bool)`
+
+ SetRfRoleNil sets the value for RfRole to be an explicit nil
+
+### UnsetRfRole
+`func (o *InterfaceTemplate) UnsetRfRole()`
+
+UnsetRfRole ensures that no value is present for RfRole, not even an explicit nil
 ### GetCreated
 
 `func (o *InterfaceTemplate) GetCreated() time.Time`

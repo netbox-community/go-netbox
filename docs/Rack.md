@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to [**NullableRackType**](RackType.md) |  | [optional] 
 **Width** | Pointer to [**RackWidth**](RackWidth.md) |  | [optional] 
 **UHeight** | Pointer to **int32** | Height in rack units | [optional] 
+**StartingUnit** | Pointer to **int32** | Starting unit for rack | [optional] 
 **Weight** | Pointer to **NullableFloat64** |  | [optional] 
 **MaxWeight** | Pointer to **NullableInt32** | Maximum load capacity for the rack | [optional] 
 **WeightUnit** | Pointer to [**NullableDeviceTypeWeightUnit**](DeviceTypeWeightUnit.md) |  | [optional] 
@@ -464,6 +465,31 @@ SetUHeight sets UHeight field to given value.
 `func (o *Rack) HasUHeight() bool`
 
 HasUHeight returns a boolean if a field has been set.
+
+### GetStartingUnit
+
+`func (o *Rack) GetStartingUnit() int32`
+
+GetStartingUnit returns the StartingUnit field if non-nil, zero value otherwise.
+
+### GetStartingUnitOk
+
+`func (o *Rack) GetStartingUnitOk() (*int32, bool)`
+
+GetStartingUnitOk returns a tuple with the StartingUnit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStartingUnit
+
+`func (o *Rack) SetStartingUnit(v int32)`
+
+SetStartingUnit sets StartingUnit field to given value.
+
+### HasStartingUnit
+
+`func (o *Rack) HasStartingUnit() bool`
+
+HasStartingUnit returns a boolean if a field has been set.
 
 ### GetWeight
 

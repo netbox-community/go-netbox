@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **Slug** | **string** |  | 
 **Color** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
+**ObjectTypes** | Pointer to **[]string** |  | [optional] 
 **TaggedItems** | **int32** |  | [readonly] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
@@ -183,6 +184,31 @@ SetDescription sets Description field to given value.
 `func (o *Tag) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetObjectTypes
+
+`func (o *Tag) GetObjectTypes() []string`
+
+GetObjectTypes returns the ObjectTypes field if non-nil, zero value otherwise.
+
+### GetObjectTypesOk
+
+`func (o *Tag) GetObjectTypesOk() (*[]string, bool)`
+
+GetObjectTypesOk returns a tuple with the ObjectTypes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetObjectTypes
+
+`func (o *Tag) SetObjectTypes(v []string)`
+
+SetObjectTypes sets ObjectTypes field to given value.
+
+### HasObjectTypes
+
+`func (o *Tag) HasObjectTypes() bool`
+
+HasObjectTypes returns a boolean if a field has been set.
 
 ### GetTaggedItems
 

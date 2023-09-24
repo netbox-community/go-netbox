@@ -22,6 +22,8 @@ docs/AvailableASN.md
 docs/AvailableIP.md
 docs/AvailablePrefix.md
 docs/AvailableVLAN.md
+docs/Bookmark.md
+docs/BookmarkRequest.md
 docs/Cable.md
 docs/CableLengthUnit.md
 docs/CableRequest.md
@@ -37,7 +39,7 @@ docs/CircuitTermination.md
 docs/CircuitTerminationRequest.md
 docs/CircuitType.md
 docs/CircuitTypeRequest.md
-docs/CircuitsApi.md
+docs/CircuitsAPI.md
 docs/Cluster.md
 docs/ClusterGroup.md
 docs/ClusterGroupRequest.md
@@ -71,8 +73,11 @@ docs/ContactRequest.md
 docs/ContactRole.md
 docs/ContactRoleRequest.md
 docs/ContentType.md
-docs/CoreApi.md
+docs/CoreAPI.md
 docs/CustomField.md
+docs/CustomFieldChoiceSet.md
+docs/CustomFieldChoiceSetBaseChoices.md
+docs/CustomFieldChoiceSetRequest.md
 docs/CustomFieldFilterLogic.md
 docs/CustomFieldRequest.md
 docs/CustomFieldType.md
@@ -86,13 +91,14 @@ docs/DataSource.md
 docs/DataSourceRequest.md
 docs/DataSourceStatus.md
 docs/DataSourceType.md
-docs/DcimApi.md
+docs/DcimAPI.md
 docs/Device.md
 docs/DeviceAirflow.md
 docs/DeviceBay.md
 docs/DeviceBayRequest.md
 docs/DeviceBayTemplate.md
 docs/DeviceBayTemplateRequest.md
+docs/DeviceDeviceRole.md
 docs/DeviceFace.md
 docs/DeviceRole.md
 docs/DeviceRoleRequest.md
@@ -106,7 +112,7 @@ docs/DeviceWithConfigContext.md
 docs/DeviceWithConfigContextRequest.md
 docs/ExportTemplate.md
 docs/ExportTemplateRequest.md
-docs/ExtrasApi.md
+docs/ExtrasAPI.md
 docs/FHRPGroup.md
 docs/FHRPGroupAssignment.md
 docs/FHRPGroupAssignmentRequest.md
@@ -143,6 +149,7 @@ docs/InterfaceTemplate.md
 docs/InterfaceTemplatePoeMode.md
 docs/InterfaceTemplatePoeType.md
 docs/InterfaceTemplateRequest.md
+docs/InterfaceTemplateRfRole.md
 docs/InterfaceType.md
 docs/InventoryItem.md
 docs/InventoryItemRequest.md
@@ -150,7 +157,7 @@ docs/InventoryItemRole.md
 docs/InventoryItemRoleRequest.md
 docs/InventoryItemTemplate.md
 docs/InventoryItemTemplateRequest.md
-docs/IpamApi.md
+docs/IpamAPI.md
 docs/Job.md
 docs/JobStatus.md
 docs/JournalEntry.md
@@ -199,6 +206,8 @@ docs/NestedContactGroupRequest.md
 docs/NestedContactRequest.md
 docs/NestedContactRole.md
 docs/NestedContactRoleRequest.md
+docs/NestedCustomFieldChoiceSet.md
+docs/NestedCustomFieldChoiceSetRequest.md
 docs/NestedDataFile.md
 docs/NestedDataSource.md
 docs/NestedDataSourceRequest.md
@@ -292,6 +301,7 @@ docs/ObjectPermissionRequest.md
 docs/PaginatedASNList.md
 docs/PaginatedASNRangeList.md
 docs/PaginatedAggregateList.md
+docs/PaginatedBookmarkList.md
 docs/PaginatedCableList.md
 docs/PaginatedCableTerminationList.md
 docs/PaginatedCircuitList.md
@@ -311,6 +321,7 @@ docs/PaginatedContactGroupList.md
 docs/PaginatedContactList.md
 docs/PaginatedContactRoleList.md
 docs/PaginatedContentTypeList.md
+docs/PaginatedCustomFieldChoiceSetList.md
 docs/PaginatedCustomFieldList.md
 docs/PaginatedCustomLinkList.md
 docs/PaginatedDataFileList.md
@@ -409,6 +420,7 @@ docs/PatchedWebhookRequest.md
 docs/PatchedWritableASNRangeRequest.md
 docs/PatchedWritableASNRequest.md
 docs/PatchedWritableAggregateRequest.md
+docs/PatchedWritableBookmarkRequest.md
 docs/PatchedWritableCableRequest.md
 docs/PatchedWritableCircuitRequest.md
 docs/PatchedWritableCircuitTerminationRequest.md
@@ -422,6 +434,7 @@ docs/PatchedWritableConsoleServerPortTemplateRequest.md
 docs/PatchedWritableContactAssignmentRequest.md
 docs/PatchedWritableContactGroupRequest.md
 docs/PatchedWritableContactRequest.md
+docs/PatchedWritableCustomFieldChoiceSetRequest.md
 docs/PatchedWritableCustomFieldRequest.md
 docs/PatchedWritableDataSourceRequest.md
 docs/PatchedWritableDeviceBayRequest.md
@@ -536,7 +549,7 @@ docs/RouteTarget.md
 docs/RouteTargetRequest.md
 docs/SavedFilter.md
 docs/SavedFilterRequest.md
-docs/SchemaApi.md
+docs/SchemaAPI.md
 docs/Service.md
 docs/ServiceProtocol.md
 docs/ServiceRequest.md
@@ -546,19 +559,21 @@ docs/Site.md
 docs/SiteGroup.md
 docs/SiteGroupRequest.md
 docs/SiteRequest.md
-docs/StatusApi.md
+docs/StatusAPI.md
 docs/Tag.md
 docs/TagRequest.md
-docs/TenancyApi.md
+docs/TenancyAPI.md
 docs/Tenant.md
 docs/TenantGroup.md
 docs/TenantGroupRequest.md
 docs/TenantRequest.md
 docs/Token.md
+docs/TokenProvision.md
+docs/TokenProvisionRequest.md
 docs/TokenRequest.md
 docs/User.md
 docs/UserRequest.md
-docs/UsersApi.md
+docs/UsersAPI.md
 docs/VLAN.md
 docs/VLANGroup.md
 docs/VLANGroupRequest.md
@@ -571,12 +586,13 @@ docs/VirtualChassis.md
 docs/VirtualChassisRequest.md
 docs/VirtualDeviceContext.md
 docs/VirtualDeviceContextRequest.md
+docs/VirtualDeviceContextStatus.md
 docs/VirtualMachineWithConfigContext.md
 docs/VirtualMachineWithConfigContextRequest.md
-docs/VirtualizationApi.md
+docs/VirtualizationAPI.md
 docs/Webhook.md
 docs/WebhookRequest.md
-docs/WirelessApi.md
+docs/WirelessAPI.md
 docs/WirelessLAN.md
 docs/WirelessLANAuthCipher.md
 docs/WirelessLANAuthType.md
@@ -589,6 +605,7 @@ docs/WirelessLinkRequest.md
 docs/WritableASNRangeRequest.md
 docs/WritableASNRequest.md
 docs/WritableAggregateRequest.md
+docs/WritableBookmarkRequest.md
 docs/WritableCableRequest.md
 docs/WritableCircuitRequest.md
 docs/WritableCircuitTerminationRequest.md
@@ -602,6 +619,7 @@ docs/WritableConsoleServerPortTemplateRequest.md
 docs/WritableContactAssignmentRequest.md
 docs/WritableContactGroupRequest.md
 docs/WritableContactRequest.md
+docs/WritableCustomFieldChoiceSetRequest.md
 docs/WritableCustomFieldRequest.md
 docs/WritableDataSourceRequest.md
 docs/WritableDeviceBayRequest.md
@@ -675,6 +693,8 @@ model_available_asn.go
 model_available_ip.go
 model_available_prefix.go
 model_available_vlan.go
+model_bookmark.go
+model_bookmark_request.go
 model_cable.go
 model_cable_length_unit.go
 model_cable_request.go
@@ -724,6 +744,9 @@ model_contact_role.go
 model_contact_role_request.go
 model_content_type.go
 model_custom_field.go
+model_custom_field_choice_set.go
+model_custom_field_choice_set_base_choices.go
+model_custom_field_choice_set_request.go
 model_custom_field_filter_logic.go
 model_custom_field_request.go
 model_custom_field_type.go
@@ -743,6 +766,7 @@ model_device_bay.go
 model_device_bay_request.go
 model_device_bay_template.go
 model_device_bay_template_request.go
+model_device_device_role.go
 model_device_face.go
 model_device_role.go
 model_device_role_request.go
@@ -785,6 +809,7 @@ model_interface_template.go
 model_interface_template_poe_mode.go
 model_interface_template_poe_type.go
 model_interface_template_request.go
+model_interface_template_rf_role.go
 model_interface_type.go
 model_inventory_item.go
 model_inventory_item_request.go
@@ -847,6 +872,8 @@ model_nested_contact_group_request.go
 model_nested_contact_request.go
 model_nested_contact_role.go
 model_nested_contact_role_request.go
+model_nested_custom_field_choice_set.go
+model_nested_custom_field_choice_set_request.go
 model_nested_data_file.go
 model_nested_data_source.go
 model_nested_data_source_request.go
@@ -940,6 +967,7 @@ model_object_permission_request.go
 model_paginated_aggregate_list.go
 model_paginated_asn_list.go
 model_paginated_asn_range_list.go
+model_paginated_bookmark_list.go
 model_paginated_cable_list.go
 model_paginated_cable_termination_list.go
 model_paginated_circuit_list.go
@@ -959,6 +987,7 @@ model_paginated_contact_group_list.go
 model_paginated_contact_list.go
 model_paginated_contact_role_list.go
 model_paginated_content_type_list.go
+model_paginated_custom_field_choice_set_list.go
 model_paginated_custom_field_list.go
 model_paginated_custom_link_list.go
 model_paginated_data_file_list.go
@@ -1057,6 +1086,7 @@ model_patched_webhook_request.go
 model_patched_writable_aggregate_request.go
 model_patched_writable_asn_range_request.go
 model_patched_writable_asn_request.go
+model_patched_writable_bookmark_request.go
 model_patched_writable_cable_request.go
 model_patched_writable_circuit_request.go
 model_patched_writable_circuit_termination_request.go
@@ -1070,6 +1100,7 @@ model_patched_writable_console_server_port_template_request.go
 model_patched_writable_contact_assignment_request.go
 model_patched_writable_contact_group_request.go
 model_patched_writable_contact_request.go
+model_patched_writable_custom_field_choice_set_request.go
 model_patched_writable_custom_field_request.go
 model_patched_writable_data_source_request.go
 model_patched_writable_device_bay_request.go
@@ -1200,6 +1231,8 @@ model_tenant_group.go
 model_tenant_group_request.go
 model_tenant_request.go
 model_token.go
+model_token_provision.go
+model_token_provision_request.go
 model_token_request.go
 model_user.go
 model_user_request.go
@@ -1207,6 +1240,7 @@ model_virtual_chassis.go
 model_virtual_chassis_request.go
 model_virtual_device_context.go
 model_virtual_device_context_request.go
+model_virtual_device_context_status.go
 model_virtual_machine_with_config_context.go
 model_virtual_machine_with_config_context_request.go
 model_vlan.go
@@ -1231,6 +1265,7 @@ model_wireless_link_request.go
 model_writable_aggregate_request.go
 model_writable_asn_range_request.go
 model_writable_asn_request.go
+model_writable_bookmark_request.go
 model_writable_cable_request.go
 model_writable_circuit_request.go
 model_writable_circuit_termination_request.go
@@ -1244,6 +1279,7 @@ model_writable_console_server_port_template_request.go
 model_writable_contact_assignment_request.go
 model_writable_contact_group_request.go
 model_writable_contact_request.go
+model_writable_custom_field_choice_set_request.go
 model_writable_custom_field_request.go
 model_writable_data_source_request.go
 model_writable_device_bay_request.go

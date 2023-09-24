@@ -1,7 +1,7 @@
 /*
 NetBox REST API
 
-Testing WirelessApiService
+Testing WirelessAPIService
 
 */
 
@@ -18,39 +18,27 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func Test_netbox_WirelessApiService(t *testing.T) {
+func Test_netbox_WirelessAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test WirelessApiService WirelessWirelessLanGroupsBulkDestroy", func(t *testing.T) {
+	t.Run("Test WirelessAPIService WirelessWirelessLanGroupsBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.WirelessApi.WirelessWirelessLanGroupsBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.WirelessAPI.WirelessWirelessLanGroupsBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test WirelessApiService WirelessWirelessLanGroupsBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test WirelessAPIService WirelessWirelessLanGroupsBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.WirelessApi.WirelessWirelessLanGroupsBulkPartialUpdate(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test WirelessApiService WirelessWirelessLanGroupsBulkUpdate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.WirelessApi.WirelessWirelessLanGroupsBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.WirelessWirelessLanGroupsBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -58,11 +46,11 @@ func Test_netbox_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService WirelessWirelessLanGroupsCreate", func(t *testing.T) {
+	t.Run("Test WirelessAPIService WirelessWirelessLanGroupsBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.WirelessApi.WirelessWirelessLanGroupsCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.WirelessWirelessLanGroupsBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -70,24 +58,36 @@ func Test_netbox_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService WirelessWirelessLanGroupsDestroy", func(t *testing.T) {
+	t.Run("Test WirelessAPIService WirelessWirelessLanGroupsCreate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.WirelessAPI.WirelessWirelessLanGroupsCreate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test WirelessAPIService WirelessWirelessLanGroupsDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.WirelessApi.WirelessWirelessLanGroupsDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.WirelessAPI.WirelessWirelessLanGroupsDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test WirelessApiService WirelessWirelessLanGroupsList", func(t *testing.T) {
+	t.Run("Test WirelessAPIService WirelessWirelessLanGroupsList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.WirelessApi.WirelessWirelessLanGroupsList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.WirelessWirelessLanGroupsList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -95,13 +95,13 @@ func Test_netbox_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService WirelessWirelessLanGroupsPartialUpdate", func(t *testing.T) {
+	t.Run("Test WirelessAPIService WirelessWirelessLanGroupsPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.WirelessApi.WirelessWirelessLanGroupsPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.WirelessWirelessLanGroupsPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -109,13 +109,13 @@ func Test_netbox_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService WirelessWirelessLanGroupsRetrieve", func(t *testing.T) {
+	t.Run("Test WirelessAPIService WirelessWirelessLanGroupsRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.WirelessApi.WirelessWirelessLanGroupsRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.WirelessWirelessLanGroupsRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -123,13 +123,13 @@ func Test_netbox_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService WirelessWirelessLanGroupsUpdate", func(t *testing.T) {
+	t.Run("Test WirelessAPIService WirelessWirelessLanGroupsUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.WirelessApi.WirelessWirelessLanGroupsUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.WirelessWirelessLanGroupsUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -137,34 +137,22 @@ func Test_netbox_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService WirelessWirelessLansBulkDestroy", func(t *testing.T) {
+	t.Run("Test WirelessAPIService WirelessWirelessLansBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.WirelessApi.WirelessWirelessLansBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.WirelessAPI.WirelessWirelessLansBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test WirelessApiService WirelessWirelessLansBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test WirelessAPIService WirelessWirelessLansBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.WirelessApi.WirelessWirelessLansBulkPartialUpdate(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test WirelessApiService WirelessWirelessLansBulkUpdate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.WirelessApi.WirelessWirelessLansBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.WirelessWirelessLansBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -172,11 +160,11 @@ func Test_netbox_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService WirelessWirelessLansCreate", func(t *testing.T) {
+	t.Run("Test WirelessAPIService WirelessWirelessLansBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.WirelessApi.WirelessWirelessLansCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.WirelessWirelessLansBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -184,24 +172,36 @@ func Test_netbox_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService WirelessWirelessLansDestroy", func(t *testing.T) {
+	t.Run("Test WirelessAPIService WirelessWirelessLansCreate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.WirelessAPI.WirelessWirelessLansCreate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test WirelessAPIService WirelessWirelessLansDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.WirelessApi.WirelessWirelessLansDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.WirelessAPI.WirelessWirelessLansDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test WirelessApiService WirelessWirelessLansList", func(t *testing.T) {
+	t.Run("Test WirelessAPIService WirelessWirelessLansList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.WirelessApi.WirelessWirelessLansList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.WirelessWirelessLansList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -209,13 +209,13 @@ func Test_netbox_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService WirelessWirelessLansPartialUpdate", func(t *testing.T) {
+	t.Run("Test WirelessAPIService WirelessWirelessLansPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.WirelessApi.WirelessWirelessLansPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.WirelessWirelessLansPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -223,13 +223,13 @@ func Test_netbox_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService WirelessWirelessLansRetrieve", func(t *testing.T) {
+	t.Run("Test WirelessAPIService WirelessWirelessLansRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.WirelessApi.WirelessWirelessLansRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.WirelessWirelessLansRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -237,13 +237,13 @@ func Test_netbox_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService WirelessWirelessLansUpdate", func(t *testing.T) {
+	t.Run("Test WirelessAPIService WirelessWirelessLansUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.WirelessApi.WirelessWirelessLansUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.WirelessWirelessLansUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -251,34 +251,22 @@ func Test_netbox_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService WirelessWirelessLinksBulkDestroy", func(t *testing.T) {
+	t.Run("Test WirelessAPIService WirelessWirelessLinksBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.WirelessApi.WirelessWirelessLinksBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.WirelessAPI.WirelessWirelessLinksBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test WirelessApiService WirelessWirelessLinksBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test WirelessAPIService WirelessWirelessLinksBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.WirelessApi.WirelessWirelessLinksBulkPartialUpdate(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test WirelessApiService WirelessWirelessLinksBulkUpdate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.WirelessApi.WirelessWirelessLinksBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.WirelessWirelessLinksBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -286,11 +274,11 @@ func Test_netbox_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService WirelessWirelessLinksCreate", func(t *testing.T) {
+	t.Run("Test WirelessAPIService WirelessWirelessLinksBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.WirelessApi.WirelessWirelessLinksCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.WirelessWirelessLinksBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -298,38 +286,36 @@ func Test_netbox_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService WirelessWirelessLinksDestroy", func(t *testing.T) {
+	t.Run("Test WirelessAPIService WirelessWirelessLinksCreate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.WirelessAPI.WirelessWirelessLinksCreate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test WirelessAPIService WirelessWirelessLinksDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.WirelessApi.WirelessWirelessLinksDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.WirelessAPI.WirelessWirelessLinksDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test WirelessApiService WirelessWirelessLinksList", func(t *testing.T) {
+	t.Run("Test WirelessAPIService WirelessWirelessLinksList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.WirelessApi.WirelessWirelessLinksList(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test WirelessApiService WirelessWirelessLinksPartialUpdate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		var id int32
-
-		resp, httpRes, err := apiClient.WirelessApi.WirelessWirelessLinksPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.WirelessWirelessLinksList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -337,13 +323,13 @@ func Test_netbox_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService WirelessWirelessLinksRetrieve", func(t *testing.T) {
+	t.Run("Test WirelessAPIService WirelessWirelessLinksPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.WirelessApi.WirelessWirelessLinksRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.WirelessWirelessLinksPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -351,13 +337,27 @@ func Test_netbox_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService WirelessWirelessLinksUpdate", func(t *testing.T) {
+	t.Run("Test WirelessAPIService WirelessWirelessLinksRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.WirelessApi.WirelessWirelessLinksUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.WirelessWirelessLinksRetrieve(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test WirelessAPIService WirelessWirelessLinksUpdate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var id int32
+
+		resp, httpRes, err := apiClient.WirelessAPI.WirelessWirelessLinksUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

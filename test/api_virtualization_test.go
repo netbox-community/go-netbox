@@ -1,7 +1,7 @@
 /*
 NetBox REST API
 
-Testing VirtualizationApiService
+Testing VirtualizationAPIService
 
 */
 
@@ -18,39 +18,27 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func Test_netbox_VirtualizationApiService(t *testing.T) {
+func Test_netbox_VirtualizationAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test VirtualizationApiService VirtualizationClusterGroupsBulkDestroy", func(t *testing.T) {
+	t.Run("Test VirtualizationAPIService VirtualizationClusterGroupsBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.VirtualizationApi.VirtualizationClusterGroupsBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.VirtualizationAPI.VirtualizationClusterGroupsBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test VirtualizationApiService VirtualizationClusterGroupsBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test VirtualizationAPIService VirtualizationClusterGroupsBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.VirtualizationApi.VirtualizationClusterGroupsBulkPartialUpdate(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test VirtualizationApiService VirtualizationClusterGroupsBulkUpdate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.VirtualizationApi.VirtualizationClusterGroupsBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationClusterGroupsBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -58,11 +46,11 @@ func Test_netbox_VirtualizationApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test VirtualizationApiService VirtualizationClusterGroupsCreate", func(t *testing.T) {
+	t.Run("Test VirtualizationAPIService VirtualizationClusterGroupsBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.VirtualizationApi.VirtualizationClusterGroupsCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationClusterGroupsBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -70,24 +58,36 @@ func Test_netbox_VirtualizationApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test VirtualizationApiService VirtualizationClusterGroupsDestroy", func(t *testing.T) {
+	t.Run("Test VirtualizationAPIService VirtualizationClusterGroupsCreate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationClusterGroupsCreate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VirtualizationAPIService VirtualizationClusterGroupsDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.VirtualizationApi.VirtualizationClusterGroupsDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.VirtualizationAPI.VirtualizationClusterGroupsDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test VirtualizationApiService VirtualizationClusterGroupsList", func(t *testing.T) {
+	t.Run("Test VirtualizationAPIService VirtualizationClusterGroupsList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.VirtualizationApi.VirtualizationClusterGroupsList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationClusterGroupsList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -95,13 +95,13 @@ func Test_netbox_VirtualizationApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test VirtualizationApiService VirtualizationClusterGroupsPartialUpdate", func(t *testing.T) {
+	t.Run("Test VirtualizationAPIService VirtualizationClusterGroupsPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.VirtualizationApi.VirtualizationClusterGroupsPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationClusterGroupsPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -109,13 +109,13 @@ func Test_netbox_VirtualizationApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test VirtualizationApiService VirtualizationClusterGroupsRetrieve", func(t *testing.T) {
+	t.Run("Test VirtualizationAPIService VirtualizationClusterGroupsRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.VirtualizationApi.VirtualizationClusterGroupsRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationClusterGroupsRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -123,13 +123,13 @@ func Test_netbox_VirtualizationApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test VirtualizationApiService VirtualizationClusterGroupsUpdate", func(t *testing.T) {
+	t.Run("Test VirtualizationAPIService VirtualizationClusterGroupsUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.VirtualizationApi.VirtualizationClusterGroupsUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationClusterGroupsUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -137,34 +137,22 @@ func Test_netbox_VirtualizationApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test VirtualizationApiService VirtualizationClusterTypesBulkDestroy", func(t *testing.T) {
+	t.Run("Test VirtualizationAPIService VirtualizationClusterTypesBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.VirtualizationApi.VirtualizationClusterTypesBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.VirtualizationAPI.VirtualizationClusterTypesBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test VirtualizationApiService VirtualizationClusterTypesBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test VirtualizationAPIService VirtualizationClusterTypesBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.VirtualizationApi.VirtualizationClusterTypesBulkPartialUpdate(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test VirtualizationApiService VirtualizationClusterTypesBulkUpdate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.VirtualizationApi.VirtualizationClusterTypesBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationClusterTypesBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -172,11 +160,11 @@ func Test_netbox_VirtualizationApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test VirtualizationApiService VirtualizationClusterTypesCreate", func(t *testing.T) {
+	t.Run("Test VirtualizationAPIService VirtualizationClusterTypesBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.VirtualizationApi.VirtualizationClusterTypesCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationClusterTypesBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -184,24 +172,36 @@ func Test_netbox_VirtualizationApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test VirtualizationApiService VirtualizationClusterTypesDestroy", func(t *testing.T) {
+	t.Run("Test VirtualizationAPIService VirtualizationClusterTypesCreate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationClusterTypesCreate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VirtualizationAPIService VirtualizationClusterTypesDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.VirtualizationApi.VirtualizationClusterTypesDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.VirtualizationAPI.VirtualizationClusterTypesDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test VirtualizationApiService VirtualizationClusterTypesList", func(t *testing.T) {
+	t.Run("Test VirtualizationAPIService VirtualizationClusterTypesList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.VirtualizationApi.VirtualizationClusterTypesList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationClusterTypesList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -209,13 +209,13 @@ func Test_netbox_VirtualizationApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test VirtualizationApiService VirtualizationClusterTypesPartialUpdate", func(t *testing.T) {
+	t.Run("Test VirtualizationAPIService VirtualizationClusterTypesPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.VirtualizationApi.VirtualizationClusterTypesPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationClusterTypesPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -223,13 +223,13 @@ func Test_netbox_VirtualizationApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test VirtualizationApiService VirtualizationClusterTypesRetrieve", func(t *testing.T) {
+	t.Run("Test VirtualizationAPIService VirtualizationClusterTypesRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.VirtualizationApi.VirtualizationClusterTypesRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationClusterTypesRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -237,13 +237,13 @@ func Test_netbox_VirtualizationApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test VirtualizationApiService VirtualizationClusterTypesUpdate", func(t *testing.T) {
+	t.Run("Test VirtualizationAPIService VirtualizationClusterTypesUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.VirtualizationApi.VirtualizationClusterTypesUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationClusterTypesUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -251,34 +251,22 @@ func Test_netbox_VirtualizationApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test VirtualizationApiService VirtualizationClustersBulkDestroy", func(t *testing.T) {
+	t.Run("Test VirtualizationAPIService VirtualizationClustersBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.VirtualizationApi.VirtualizationClustersBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.VirtualizationAPI.VirtualizationClustersBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test VirtualizationApiService VirtualizationClustersBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test VirtualizationAPIService VirtualizationClustersBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.VirtualizationApi.VirtualizationClustersBulkPartialUpdate(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test VirtualizationApiService VirtualizationClustersBulkUpdate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.VirtualizationApi.VirtualizationClustersBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationClustersBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -286,11 +274,11 @@ func Test_netbox_VirtualizationApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test VirtualizationApiService VirtualizationClustersCreate", func(t *testing.T) {
+	t.Run("Test VirtualizationAPIService VirtualizationClustersBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.VirtualizationApi.VirtualizationClustersCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationClustersBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -298,24 +286,36 @@ func Test_netbox_VirtualizationApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test VirtualizationApiService VirtualizationClustersDestroy", func(t *testing.T) {
+	t.Run("Test VirtualizationAPIService VirtualizationClustersCreate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationClustersCreate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VirtualizationAPIService VirtualizationClustersDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.VirtualizationApi.VirtualizationClustersDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.VirtualizationAPI.VirtualizationClustersDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test VirtualizationApiService VirtualizationClustersList", func(t *testing.T) {
+	t.Run("Test VirtualizationAPIService VirtualizationClustersList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.VirtualizationApi.VirtualizationClustersList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationClustersList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -323,13 +323,13 @@ func Test_netbox_VirtualizationApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test VirtualizationApiService VirtualizationClustersPartialUpdate", func(t *testing.T) {
+	t.Run("Test VirtualizationAPIService VirtualizationClustersPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.VirtualizationApi.VirtualizationClustersPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationClustersPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -337,13 +337,13 @@ func Test_netbox_VirtualizationApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test VirtualizationApiService VirtualizationClustersRetrieve", func(t *testing.T) {
+	t.Run("Test VirtualizationAPIService VirtualizationClustersRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.VirtualizationApi.VirtualizationClustersRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationClustersRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -351,13 +351,13 @@ func Test_netbox_VirtualizationApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test VirtualizationApiService VirtualizationClustersUpdate", func(t *testing.T) {
+	t.Run("Test VirtualizationAPIService VirtualizationClustersUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.VirtualizationApi.VirtualizationClustersUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationClustersUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -365,34 +365,22 @@ func Test_netbox_VirtualizationApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test VirtualizationApiService VirtualizationInterfacesBulkDestroy", func(t *testing.T) {
+	t.Run("Test VirtualizationAPIService VirtualizationInterfacesBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.VirtualizationApi.VirtualizationInterfacesBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.VirtualizationAPI.VirtualizationInterfacesBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test VirtualizationApiService VirtualizationInterfacesBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test VirtualizationAPIService VirtualizationInterfacesBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.VirtualizationApi.VirtualizationInterfacesBulkPartialUpdate(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test VirtualizationApiService VirtualizationInterfacesBulkUpdate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.VirtualizationApi.VirtualizationInterfacesBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationInterfacesBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -400,11 +388,11 @@ func Test_netbox_VirtualizationApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test VirtualizationApiService VirtualizationInterfacesCreate", func(t *testing.T) {
+	t.Run("Test VirtualizationAPIService VirtualizationInterfacesBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.VirtualizationApi.VirtualizationInterfacesCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationInterfacesBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -412,24 +400,36 @@ func Test_netbox_VirtualizationApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test VirtualizationApiService VirtualizationInterfacesDestroy", func(t *testing.T) {
+	t.Run("Test VirtualizationAPIService VirtualizationInterfacesCreate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationInterfacesCreate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VirtualizationAPIService VirtualizationInterfacesDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.VirtualizationApi.VirtualizationInterfacesDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.VirtualizationAPI.VirtualizationInterfacesDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test VirtualizationApiService VirtualizationInterfacesList", func(t *testing.T) {
+	t.Run("Test VirtualizationAPIService VirtualizationInterfacesList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.VirtualizationApi.VirtualizationInterfacesList(context.Background()).Execute()
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationInterfacesList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -437,13 +437,13 @@ func Test_netbox_VirtualizationApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test VirtualizationApiService VirtualizationInterfacesPartialUpdate", func(t *testing.T) {
+	t.Run("Test VirtualizationAPIService VirtualizationInterfacesPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.VirtualizationApi.VirtualizationInterfacesPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationInterfacesPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -451,13 +451,13 @@ func Test_netbox_VirtualizationApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test VirtualizationApiService VirtualizationInterfacesRetrieve", func(t *testing.T) {
+	t.Run("Test VirtualizationAPIService VirtualizationInterfacesRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.VirtualizationApi.VirtualizationInterfacesRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationInterfacesRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -465,13 +465,13 @@ func Test_netbox_VirtualizationApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test VirtualizationApiService VirtualizationInterfacesUpdate", func(t *testing.T) {
+	t.Run("Test VirtualizationAPIService VirtualizationInterfacesUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.VirtualizationApi.VirtualizationInterfacesUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationInterfacesUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -479,34 +479,22 @@ func Test_netbox_VirtualizationApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test VirtualizationApiService VirtualizationVirtualMachinesBulkDestroy", func(t *testing.T) {
+	t.Run("Test VirtualizationAPIService VirtualizationVirtualMachinesBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.VirtualizationApi.VirtualizationVirtualMachinesBulkDestroy(context.Background()).Execute()
+		httpRes, err := apiClient.VirtualizationAPI.VirtualizationVirtualMachinesBulkDestroy(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test VirtualizationApiService VirtualizationVirtualMachinesBulkPartialUpdate", func(t *testing.T) {
+	t.Run("Test VirtualizationAPIService VirtualizationVirtualMachinesBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.VirtualizationApi.VirtualizationVirtualMachinesBulkPartialUpdate(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test VirtualizationApiService VirtualizationVirtualMachinesBulkUpdate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.VirtualizationApi.VirtualizationVirtualMachinesBulkUpdate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationVirtualMachinesBulkPartialUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -514,11 +502,11 @@ func Test_netbox_VirtualizationApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test VirtualizationApiService VirtualizationVirtualMachinesCreate", func(t *testing.T) {
+	t.Run("Test VirtualizationAPIService VirtualizationVirtualMachinesBulkUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.VirtualizationApi.VirtualizationVirtualMachinesCreate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationVirtualMachinesBulkUpdate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -526,38 +514,36 @@ func Test_netbox_VirtualizationApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test VirtualizationApiService VirtualizationVirtualMachinesDestroy", func(t *testing.T) {
+	t.Run("Test VirtualizationAPIService VirtualizationVirtualMachinesCreate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationVirtualMachinesCreate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VirtualizationAPIService VirtualizationVirtualMachinesDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		httpRes, err := apiClient.VirtualizationApi.VirtualizationVirtualMachinesDestroy(context.Background(), id).Execute()
+		httpRes, err := apiClient.VirtualizationAPI.VirtualizationVirtualMachinesDestroy(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test VirtualizationApiService VirtualizationVirtualMachinesList", func(t *testing.T) {
+	t.Run("Test VirtualizationAPIService VirtualizationVirtualMachinesList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.VirtualizationApi.VirtualizationVirtualMachinesList(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test VirtualizationApiService VirtualizationVirtualMachinesPartialUpdate", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		var id int32
-
-		resp, httpRes, err := apiClient.VirtualizationApi.VirtualizationVirtualMachinesPartialUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationVirtualMachinesList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -565,13 +551,13 @@ func Test_netbox_VirtualizationApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test VirtualizationApiService VirtualizationVirtualMachinesRetrieve", func(t *testing.T) {
+	t.Run("Test VirtualizationAPIService VirtualizationVirtualMachinesPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.VirtualizationApi.VirtualizationVirtualMachinesRetrieve(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationVirtualMachinesPartialUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -579,13 +565,27 @@ func Test_netbox_VirtualizationApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test VirtualizationApiService VirtualizationVirtualMachinesUpdate", func(t *testing.T) {
+	t.Run("Test VirtualizationAPIService VirtualizationVirtualMachinesRetrieve", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
 		var id int32
 
-		resp, httpRes, err := apiClient.VirtualizationApi.VirtualizationVirtualMachinesUpdate(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationVirtualMachinesRetrieve(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VirtualizationAPIService VirtualizationVirtualMachinesUpdate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var id int32
+
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationVirtualMachinesUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

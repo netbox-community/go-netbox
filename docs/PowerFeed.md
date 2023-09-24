@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **ConnectedEndpointsType** | **string** |  | [readonly] 
 **ConnectedEndpointsReachable** | **bool** |  | [readonly] 
 **Description** | Pointer to **string** |  | [optional] 
+**Tenant** | Pointer to [**NullableNestedTenant**](NestedTenant.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -562,6 +563,41 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### GetTenant
+
+`func (o *PowerFeed) GetTenant() NestedTenant`
+
+GetTenant returns the Tenant field if non-nil, zero value otherwise.
+
+### GetTenantOk
+
+`func (o *PowerFeed) GetTenantOk() (*NestedTenant, bool)`
+
+GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTenant
+
+`func (o *PowerFeed) SetTenant(v NestedTenant)`
+
+SetTenant sets Tenant field to given value.
+
+### HasTenant
+
+`func (o *PowerFeed) HasTenant() bool`
+
+HasTenant returns a boolean if a field has been set.
+
+### SetTenantNil
+
+`func (o *PowerFeed) SetTenantNil(b bool)`
+
+ SetTenantNil sets the value for Tenant to be an explicit nil
+
+### UnsetTenant
+`func (o *PowerFeed) UnsetTenant()`
+
+UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
 ### GetComments
 
 `func (o *PowerFeed) GetComments() string`

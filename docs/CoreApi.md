@@ -1,29 +1,29 @@
-# \CoreApi
+# \CoreAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CoreDataFilesList**](CoreApi.md#CoreDataFilesList) | **Get** /api/core/data-files/ | 
-[**CoreDataFilesRetrieve**](CoreApi.md#CoreDataFilesRetrieve) | **Get** /api/core/data-files/{id}/ | 
-[**CoreDataSourcesBulkDestroy**](CoreApi.md#CoreDataSourcesBulkDestroy) | **Delete** /api/core/data-sources/ | 
-[**CoreDataSourcesBulkPartialUpdate**](CoreApi.md#CoreDataSourcesBulkPartialUpdate) | **Patch** /api/core/data-sources/ | 
-[**CoreDataSourcesBulkUpdate**](CoreApi.md#CoreDataSourcesBulkUpdate) | **Put** /api/core/data-sources/ | 
-[**CoreDataSourcesCreate**](CoreApi.md#CoreDataSourcesCreate) | **Post** /api/core/data-sources/ | 
-[**CoreDataSourcesDestroy**](CoreApi.md#CoreDataSourcesDestroy) | **Delete** /api/core/data-sources/{id}/ | 
-[**CoreDataSourcesList**](CoreApi.md#CoreDataSourcesList) | **Get** /api/core/data-sources/ | 
-[**CoreDataSourcesPartialUpdate**](CoreApi.md#CoreDataSourcesPartialUpdate) | **Patch** /api/core/data-sources/{id}/ | 
-[**CoreDataSourcesRetrieve**](CoreApi.md#CoreDataSourcesRetrieve) | **Get** /api/core/data-sources/{id}/ | 
-[**CoreDataSourcesSyncCreate**](CoreApi.md#CoreDataSourcesSyncCreate) | **Post** /api/core/data-sources/{id}/sync/ | 
-[**CoreDataSourcesUpdate**](CoreApi.md#CoreDataSourcesUpdate) | **Put** /api/core/data-sources/{id}/ | 
-[**CoreJobsList**](CoreApi.md#CoreJobsList) | **Get** /api/core/jobs/ | 
-[**CoreJobsRetrieve**](CoreApi.md#CoreJobsRetrieve) | **Get** /api/core/jobs/{id}/ | 
+[**CoreDataFilesList**](CoreAPI.md#CoreDataFilesList) | **Get** /api/core/data-files/ | 
+[**CoreDataFilesRetrieve**](CoreAPI.md#CoreDataFilesRetrieve) | **Get** /api/core/data-files/{id}/ | 
+[**CoreDataSourcesBulkDestroy**](CoreAPI.md#CoreDataSourcesBulkDestroy) | **Delete** /api/core/data-sources/ | 
+[**CoreDataSourcesBulkPartialUpdate**](CoreAPI.md#CoreDataSourcesBulkPartialUpdate) | **Patch** /api/core/data-sources/ | 
+[**CoreDataSourcesBulkUpdate**](CoreAPI.md#CoreDataSourcesBulkUpdate) | **Put** /api/core/data-sources/ | 
+[**CoreDataSourcesCreate**](CoreAPI.md#CoreDataSourcesCreate) | **Post** /api/core/data-sources/ | 
+[**CoreDataSourcesDestroy**](CoreAPI.md#CoreDataSourcesDestroy) | **Delete** /api/core/data-sources/{id}/ | 
+[**CoreDataSourcesList**](CoreAPI.md#CoreDataSourcesList) | **Get** /api/core/data-sources/ | 
+[**CoreDataSourcesPartialUpdate**](CoreAPI.md#CoreDataSourcesPartialUpdate) | **Patch** /api/core/data-sources/{id}/ | 
+[**CoreDataSourcesRetrieve**](CoreAPI.md#CoreDataSourcesRetrieve) | **Get** /api/core/data-sources/{id}/ | 
+[**CoreDataSourcesSyncCreate**](CoreAPI.md#CoreDataSourcesSyncCreate) | **Post** /api/core/data-sources/{id}/sync/ | 
+[**CoreDataSourcesUpdate**](CoreAPI.md#CoreDataSourcesUpdate) | **Put** /api/core/data-sources/{id}/ | 
+[**CoreJobsList**](CoreAPI.md#CoreJobsList) | **Get** /api/core/jobs/ | 
+[**CoreJobsRetrieve**](CoreAPI.md#CoreJobsRetrieve) | **Get** /api/core/jobs/{id}/ | 
 
 
 
 ## CoreDataFilesList
 
-> PaginatedDataFileList CoreDataFilesList(ctx).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Hash(hash).HashEmpty(hashEmpty).HashIc(hashIc).HashIe(hashIe).HashIew(hashIew).HashIsw(hashIsw).HashN(hashN).HashNic(hashNic).HashNie(hashNie).HashNiew(hashNiew).HashNisw(hashNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Offset(offset).Ordering(ordering).Path(path).PathEmpty(pathEmpty).PathIc(pathIc).PathIe(pathIe).PathIew(pathIew).PathIsw(pathIsw).PathN(pathN).PathNic(pathNic).PathNie(pathNie).PathNiew(pathNiew).PathNisw(pathNisw).Q(q).Size(size).SizeGt(sizeGt).SizeGte(sizeGte).SizeLt(sizeLt).SizeLte(sizeLte).SizeN(sizeN).Source(source).SourceN(sourceN).SourceId(sourceId).SourceIdN(sourceIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedDataFileList CoreDataFilesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Hash(hash).HashEmpty(hashEmpty).HashIc(hashIc).HashIe(hashIe).HashIew(hashIew).HashIsw(hashIsw).HashN(hashN).HashNic(hashNic).HashNie(hashNie).HashNiew(hashNiew).HashNisw(hashNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Path(path).PathEmpty(pathEmpty).PathIc(pathIc).PathIe(pathIe).PathIew(pathIew).PathIsw(pathIsw).PathN(pathN).PathNic(pathNic).PathNie(pathNie).PathNiew(pathNiew).PathNisw(pathNisw).Q(q).Size(size).SizeEmpty(sizeEmpty).SizeGt(sizeGt).SizeGte(sizeGte).SizeLt(sizeLt).SizeLte(sizeLte).SizeN(sizeN).Source(source).SourceN(sourceN).SourceId(sourceId).SourceIdN(sourceIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -44,6 +44,7 @@ import (
 
 func main() {
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -62,18 +63,21 @@ func main() {
     hashNiew := []string{"Inner_example"} // []string |  (optional)
     hashNisw := []string{"Inner_example"} // []string |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     offset := int32(56) // int32 | The initial index from which to return the results. (optional)
     ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
     path := []string{"Inner_example"} // []string |  (optional)
@@ -89,6 +93,7 @@ func main() {
     pathNisw := []string{"Inner_example"} // []string |  (optional)
     q := "q_example" // string |  (optional)
     size := []int32{int32(123)} // []int32 |  (optional)
+    sizeEmpty := true // bool |  (optional)
     sizeGt := []int32{int32(123)} // []int32 |  (optional)
     sizeGte := []int32{int32(123)} // []int32 |  (optional)
     sizeLt := []int32{int32(123)} // []int32 |  (optional)
@@ -102,13 +107,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CoreApi.CoreDataFilesList(context.Background()).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Hash(hash).HashEmpty(hashEmpty).HashIc(hashIc).HashIe(hashIe).HashIew(hashIew).HashIsw(hashIsw).HashN(hashN).HashNic(hashNic).HashNie(hashNie).HashNiew(hashNiew).HashNisw(hashNisw).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Offset(offset).Ordering(ordering).Path(path).PathEmpty(pathEmpty).PathIc(pathIc).PathIe(pathIe).PathIew(pathIew).PathIsw(pathIsw).PathN(pathN).PathNic(pathNic).PathNie(pathNie).PathNiew(pathNiew).PathNisw(pathNisw).Q(q).Size(size).SizeGt(sizeGt).SizeGte(sizeGte).SizeLt(sizeLt).SizeLte(sizeLte).SizeN(sizeN).Source(source).SourceN(sourceN).SourceId(sourceId).SourceIdN(sourceIdN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.CoreAPI.CoreDataFilesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Hash(hash).HashEmpty(hashEmpty).HashIc(hashIc).HashIe(hashIe).HashIew(hashIew).HashIsw(hashIsw).HashN(hashN).HashNic(hashNic).HashNie(hashNie).HashNiew(hashNiew).HashNisw(hashNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Path(path).PathEmpty(pathEmpty).PathIc(pathIc).PathIe(pathIe).PathIew(pathIew).PathIsw(pathIsw).PathN(pathN).PathNic(pathNic).PathNie(pathNie).PathNiew(pathNiew).PathNisw(pathNisw).Q(q).Size(size).SizeEmpty(sizeEmpty).SizeGt(sizeGt).SizeGte(sizeGte).SizeLt(sizeLt).SizeLte(sizeLte).SizeN(sizeN).Source(source).SourceN(sourceN).SourceId(sourceId).SourceIdN(sourceIdN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CoreApi.CoreDataFilesList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CoreAPI.CoreDataFilesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CoreDataFilesList`: PaginatedDataFileList
-    fmt.Fprintf(os.Stdout, "Response from `CoreApi.CoreDataFilesList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CoreAPI.CoreDataFilesList`: %v\n", resp)
 }
 ```
 
@@ -124,6 +129,7 @@ Other parameters are passed through a pointer to a apiCoreDataFilesListRequest s
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -142,18 +148,21 @@ Name | Type | Description  | Notes
  **hashNiew** | **[]string** |  | 
  **hashNisw** | **[]string** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **path** | **[]string** |  | 
@@ -169,6 +178,7 @@ Name | Type | Description  | Notes
  **pathNisw** | **[]string** |  | 
  **q** | **string** |  | 
  **size** | **[]int32** |  | 
+ **sizeEmpty** | **bool** |  | 
  **sizeGt** | **[]int32** |  | 
  **sizeGte** | **[]int32** |  | 
  **sizeLt** | **[]int32** |  | 
@@ -223,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CoreApi.CoreDataFilesRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.CoreAPI.CoreDataFilesRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CoreApi.CoreDataFilesRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CoreAPI.CoreDataFilesRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CoreDataFilesRetrieve`: DataFile
-    fmt.Fprintf(os.Stdout, "Response from `CoreApi.CoreDataFilesRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CoreAPI.CoreDataFilesRetrieve`: %v\n", resp)
 }
 ```
 
@@ -293,9 +303,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CoreApi.CoreDataSourcesBulkDestroy(context.Background()).DataSourceRequest(dataSourceRequest).Execute()
+    r, err := apiClient.CoreAPI.CoreDataSourcesBulkDestroy(context.Background()).DataSourceRequest(dataSourceRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CoreApi.CoreDataSourcesBulkDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CoreAPI.CoreDataSourcesBulkDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -357,13 +367,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CoreApi.CoreDataSourcesBulkPartialUpdate(context.Background()).DataSourceRequest(dataSourceRequest).Execute()
+    resp, r, err := apiClient.CoreAPI.CoreDataSourcesBulkPartialUpdate(context.Background()).DataSourceRequest(dataSourceRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CoreApi.CoreDataSourcesBulkPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CoreAPI.CoreDataSourcesBulkPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CoreDataSourcesBulkPartialUpdate`: []DataSource
-    fmt.Fprintf(os.Stdout, "Response from `CoreApi.CoreDataSourcesBulkPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CoreAPI.CoreDataSourcesBulkPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -423,13 +433,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CoreApi.CoreDataSourcesBulkUpdate(context.Background()).DataSourceRequest(dataSourceRequest).Execute()
+    resp, r, err := apiClient.CoreAPI.CoreDataSourcesBulkUpdate(context.Background()).DataSourceRequest(dataSourceRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CoreApi.CoreDataSourcesBulkUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CoreAPI.CoreDataSourcesBulkUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CoreDataSourcesBulkUpdate`: []DataSource
-    fmt.Fprintf(os.Stdout, "Response from `CoreApi.CoreDataSourcesBulkUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CoreAPI.CoreDataSourcesBulkUpdate`: %v\n", resp)
 }
 ```
 
@@ -489,13 +499,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CoreApi.CoreDataSourcesCreate(context.Background()).WritableDataSourceRequest(writableDataSourceRequest).Execute()
+    resp, r, err := apiClient.CoreAPI.CoreDataSourcesCreate(context.Background()).WritableDataSourceRequest(writableDataSourceRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CoreApi.CoreDataSourcesCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CoreAPI.CoreDataSourcesCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CoreDataSourcesCreate`: DataSource
-    fmt.Fprintf(os.Stdout, "Response from `CoreApi.CoreDataSourcesCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CoreAPI.CoreDataSourcesCreate`: %v\n", resp)
 }
 ```
 
@@ -555,9 +565,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CoreApi.CoreDataSourcesDestroy(context.Background(), id).Execute()
+    r, err := apiClient.CoreAPI.CoreDataSourcesDestroy(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CoreApi.CoreDataSourcesDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CoreAPI.CoreDataSourcesDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -600,7 +610,7 @@ Name | Type | Description  | Notes
 
 ## CoreDataSourcesList
 
-> PaginatedDataSourceList CoreDataSourcesList(ctx).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Enabled(enabled).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedDataSourceList CoreDataSourcesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Enabled(enabled).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -621,6 +631,7 @@ import (
 
 func main() {
     created := []time.Time{time.Now()} // []time.Time |  (optional)
+    createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
     createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
     createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -629,18 +640,21 @@ func main() {
     createdByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     enabled := true // bool |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+    lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
     lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
     limit := int32(56) // int32 | Number of results to return per page. (optional)
+    modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     name := []string{"Inner_example"} // []string |  (optional)
     nameEmpty := true // bool |  (optional)
     nameIc := []string{"Inner_example"} // []string |  (optional)
@@ -665,13 +679,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CoreApi.CoreDataSourcesList(context.Background()).Created(created).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Enabled(enabled).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
+    resp, r, err := apiClient.CoreAPI.CoreDataSourcesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Enabled(enabled).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CoreApi.CoreDataSourcesList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CoreAPI.CoreDataSourcesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CoreDataSourcesList`: PaginatedDataSourceList
-    fmt.Fprintf(os.Stdout, "Response from `CoreApi.CoreDataSourcesList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CoreAPI.CoreDataSourcesList`: %v\n", resp)
 }
 ```
 
@@ -687,6 +701,7 @@ Other parameters are passed through a pointer to a apiCoreDataSourcesListRequest
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
  **createdGte** | [**[]time.Time**](time.Time.md) |  | 
  **createdLt** | [**[]time.Time**](time.Time.md) |  | 
@@ -695,18 +710,21 @@ Name | Type | Description  | Notes
  **createdByRequest** | **string** |  | 
  **enabled** | **bool** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
  **nameIc** | **[]string** |  | 
@@ -773,13 +791,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CoreApi.CoreDataSourcesPartialUpdate(context.Background(), id).PatchedWritableDataSourceRequest(patchedWritableDataSourceRequest).Execute()
+    resp, r, err := apiClient.CoreAPI.CoreDataSourcesPartialUpdate(context.Background(), id).PatchedWritableDataSourceRequest(patchedWritableDataSourceRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CoreApi.CoreDataSourcesPartialUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CoreAPI.CoreDataSourcesPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CoreDataSourcesPartialUpdate`: DataSource
-    fmt.Fprintf(os.Stdout, "Response from `CoreApi.CoreDataSourcesPartialUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CoreAPI.CoreDataSourcesPartialUpdate`: %v\n", resp)
 }
 ```
 
@@ -844,13 +862,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CoreApi.CoreDataSourcesRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.CoreAPI.CoreDataSourcesRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CoreApi.CoreDataSourcesRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CoreAPI.CoreDataSourcesRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CoreDataSourcesRetrieve`: DataSource
-    fmt.Fprintf(os.Stdout, "Response from `CoreApi.CoreDataSourcesRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CoreAPI.CoreDataSourcesRetrieve`: %v\n", resp)
 }
 ```
 
@@ -915,13 +933,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CoreApi.CoreDataSourcesSyncCreate(context.Background(), id).WritableDataSourceRequest(writableDataSourceRequest).Execute()
+    resp, r, err := apiClient.CoreAPI.CoreDataSourcesSyncCreate(context.Background(), id).WritableDataSourceRequest(writableDataSourceRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CoreApi.CoreDataSourcesSyncCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CoreAPI.CoreDataSourcesSyncCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CoreDataSourcesSyncCreate`: DataSource
-    fmt.Fprintf(os.Stdout, "Response from `CoreApi.CoreDataSourcesSyncCreate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CoreAPI.CoreDataSourcesSyncCreate`: %v\n", resp)
 }
 ```
 
@@ -987,13 +1005,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CoreApi.CoreDataSourcesUpdate(context.Background(), id).WritableDataSourceRequest(writableDataSourceRequest).Execute()
+    resp, r, err := apiClient.CoreAPI.CoreDataSourcesUpdate(context.Background(), id).WritableDataSourceRequest(writableDataSourceRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CoreApi.CoreDataSourcesUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CoreAPI.CoreDataSourcesUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CoreDataSourcesUpdate`: DataSource
-    fmt.Fprintf(os.Stdout, "Response from `CoreApi.CoreDataSourcesUpdate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CoreAPI.CoreDataSourcesUpdate`: %v\n", resp)
 }
 ```
 
@@ -1035,7 +1053,7 @@ Name | Type | Description  | Notes
 
 ## CoreJobsList
 
-> PaginatedJobList CoreJobsList(ctx).Completed(completed).CompletedAfter(completedAfter).CompletedBefore(completedBefore).Created(created).CreatedAfter(createdAfter).CreatedBefore(createdBefore).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interval(interval).IntervalGt(intervalGt).IntervalGte(intervalGte).IntervalLt(intervalLt).IntervalLte(intervalLte).IntervalN(intervalN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).ObjectId(objectId).ObjectIdGt(objectIdGt).ObjectIdGte(objectIdGte).ObjectIdLt(objectIdLt).ObjectIdLte(objectIdLte).ObjectIdN(objectIdN).ObjectType(objectType).ObjectTypeN(objectTypeN).Offset(offset).Ordering(ordering).Q(q).Scheduled(scheduled).ScheduledAfter(scheduledAfter).ScheduledBefore(scheduledBefore).Started(started).StartedAfter(startedAfter).StartedBefore(startedBefore).Status(status).StatusN(statusN).User(user).UserN(userN).Execute()
+> PaginatedJobList CoreJobsList(ctx).Completed(completed).CompletedAfter(completedAfter).CompletedBefore(completedBefore).Created(created).CreatedAfter(createdAfter).CreatedBefore(createdBefore).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interval(interval).IntervalEmpty(intervalEmpty).IntervalGt(intervalGt).IntervalGte(intervalGte).IntervalLt(intervalLt).IntervalLte(intervalLte).IntervalN(intervalN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).ObjectId(objectId).ObjectIdEmpty(objectIdEmpty).ObjectIdGt(objectIdGt).ObjectIdGte(objectIdGte).ObjectIdLt(objectIdLt).ObjectIdLte(objectIdLte).ObjectIdN(objectIdN).ObjectType(objectType).ObjectTypeN(objectTypeN).Offset(offset).Ordering(ordering).Q(q).Scheduled(scheduled).ScheduledAfter(scheduledAfter).ScheduledBefore(scheduledBefore).Started(started).StartedAfter(startedAfter).StartedBefore(startedBefore).Status(status).StatusN(statusN).User(user).UserN(userN).Execute()
 
 
 
@@ -1062,12 +1080,14 @@ func main() {
     createdAfter := time.Now() // time.Time |  (optional)
     createdBefore := time.Now() // time.Time |  (optional)
     id := []int32{int32(123)} // []int32 |  (optional)
+    idEmpty := true // bool |  (optional)
     idGt := []int32{int32(123)} // []int32 |  (optional)
     idGte := []int32{int32(123)} // []int32 |  (optional)
     idLt := []int32{int32(123)} // []int32 |  (optional)
     idLte := []int32{int32(123)} // []int32 |  (optional)
     idN := []int32{int32(123)} // []int32 |  (optional)
     interval := []int32{int32(123)} // []int32 |  (optional)
+    intervalEmpty := true // bool |  (optional)
     intervalGt := []int32{int32(123)} // []int32 |  (optional)
     intervalGte := []int32{int32(123)} // []int32 |  (optional)
     intervalLt := []int32{int32(123)} // []int32 |  (optional)
@@ -1086,6 +1106,7 @@ func main() {
     nameNiew := []string{"Inner_example"} // []string |  (optional)
     nameNisw := []string{"Inner_example"} // []string |  (optional)
     objectId := []int32{int32(123)} // []int32 |  (optional)
+    objectIdEmpty := true // bool |  (optional)
     objectIdGt := []int32{int32(123)} // []int32 |  (optional)
     objectIdGte := []int32{int32(123)} // []int32 |  (optional)
     objectIdLt := []int32{int32(123)} // []int32 |  (optional)
@@ -1109,13 +1130,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CoreApi.CoreJobsList(context.Background()).Completed(completed).CompletedAfter(completedAfter).CompletedBefore(completedBefore).Created(created).CreatedAfter(createdAfter).CreatedBefore(createdBefore).Id(id).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interval(interval).IntervalGt(intervalGt).IntervalGte(intervalGte).IntervalLt(intervalLt).IntervalLte(intervalLte).IntervalN(intervalN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).ObjectId(objectId).ObjectIdGt(objectIdGt).ObjectIdGte(objectIdGte).ObjectIdLt(objectIdLt).ObjectIdLte(objectIdLte).ObjectIdN(objectIdN).ObjectType(objectType).ObjectTypeN(objectTypeN).Offset(offset).Ordering(ordering).Q(q).Scheduled(scheduled).ScheduledAfter(scheduledAfter).ScheduledBefore(scheduledBefore).Started(started).StartedAfter(startedAfter).StartedBefore(startedBefore).Status(status).StatusN(statusN).User(user).UserN(userN).Execute()
+    resp, r, err := apiClient.CoreAPI.CoreJobsList(context.Background()).Completed(completed).CompletedAfter(completedAfter).CompletedBefore(completedBefore).Created(created).CreatedAfter(createdAfter).CreatedBefore(createdBefore).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interval(interval).IntervalEmpty(intervalEmpty).IntervalGt(intervalGt).IntervalGte(intervalGte).IntervalLt(intervalLt).IntervalLte(intervalLte).IntervalN(intervalN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).ObjectId(objectId).ObjectIdEmpty(objectIdEmpty).ObjectIdGt(objectIdGt).ObjectIdGte(objectIdGte).ObjectIdLt(objectIdLt).ObjectIdLte(objectIdLte).ObjectIdN(objectIdN).ObjectType(objectType).ObjectTypeN(objectTypeN).Offset(offset).Ordering(ordering).Q(q).Scheduled(scheduled).ScheduledAfter(scheduledAfter).ScheduledBefore(scheduledBefore).Started(started).StartedAfter(startedAfter).StartedBefore(startedBefore).Status(status).StatusN(statusN).User(user).UserN(userN).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CoreApi.CoreJobsList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CoreAPI.CoreJobsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CoreJobsList`: PaginatedJobList
-    fmt.Fprintf(os.Stdout, "Response from `CoreApi.CoreJobsList`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CoreAPI.CoreJobsList`: %v\n", resp)
 }
 ```
 
@@ -1137,12 +1158,14 @@ Name | Type | Description  | Notes
  **createdAfter** | **time.Time** |  | 
  **createdBefore** | **time.Time** |  | 
  **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
  **idGte** | **[]int32** |  | 
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **interval** | **[]int32** |  | 
+ **intervalEmpty** | **bool** |  | 
  **intervalGt** | **[]int32** |  | 
  **intervalGte** | **[]int32** |  | 
  **intervalLt** | **[]int32** |  | 
@@ -1161,6 +1184,7 @@ Name | Type | Description  | Notes
  **nameNiew** | **[]string** |  | 
  **nameNisw** | **[]string** |  | 
  **objectId** | **[]int32** |  | 
+ **objectIdEmpty** | **bool** |  | 
  **objectIdGt** | **[]int32** |  | 
  **objectIdGte** | **[]int32** |  | 
  **objectIdLt** | **[]int32** |  | 
@@ -1225,13 +1249,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CoreApi.CoreJobsRetrieve(context.Background(), id).Execute()
+    resp, r, err := apiClient.CoreAPI.CoreJobsRetrieve(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CoreApi.CoreJobsRetrieve``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CoreAPI.CoreJobsRetrieve``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CoreJobsRetrieve`: Job
-    fmt.Fprintf(os.Stdout, "Response from `CoreApi.CoreJobsRetrieve`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CoreAPI.CoreJobsRetrieve`: %v\n", resp)
 }
 ```
 
