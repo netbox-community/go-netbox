@@ -1,7 +1,6 @@
 ARG GO_VERSION=1.21.3-alpine3.18
-ARG GOIMPORTS_VERSION=0.6.0
-ARG DELVE_VERSION=1.20.1
-ARG SWAGGER_VERSION=0.30.4
+ARG DELVE_VERSION=1.21.1
+ARG OAPICODEGEN_VERSION=1.15.0
 
 
 ## Base image
@@ -15,9 +14,8 @@ ENV CGO_ENABLED=0
 ## Development image
 FROM base AS development
 
-ARG GOIMPORTS_VERSION
 ARG DELVE_VERSION
-ARG SWAGGER_VERSION
+ARG OAPICODEGEN_VERSION
 
 RUN apk add \
         bash \
@@ -26,9 +24,8 @@ RUN apk add \
         jq \
         python3 \
         zsh \
- && go install golang.org/x/tools/cmd/goimports@v${GOIMPORTS_VERSION} \
  && go install github.com/go-delve/delve/cmd/dlv@v${DELVE_VERSION} \
- && go install github.com/go-swagger/go-swagger/cmd/swagger@v${SWAGGER_VERSION}
+ && go install github.com/deepmap/oapi-codegen/cmd/oapi-codegen@v${OAPICODEGEN_VERSION}
 
 ARG USER_ID=1000
 ENV USER_NAME=default

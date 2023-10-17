@@ -83818,7 +83818,6 @@ components:
               - ft
               - in
               - ''
-              - null
               type: string
               description: |-
                 * `km` - Kilometers
@@ -83966,7 +83965,6 @@ components:
           - ft
           - in
           - ''
-          - null
           type: string
           description: |-
             * `km` - Kilometers
@@ -85347,7 +85345,6 @@ components:
               - 38400
               - 57600
               - 115200
-              - null
               type: integer
               description: |-
                 * `1200` - 1200 bps
@@ -85502,7 +85499,6 @@ components:
           - 38400
           - 57600
           - 115200
-          - null
           type: integer
           description: |-
             * `1200` - 1200 bps
@@ -85799,7 +85795,6 @@ components:
               - 38400
               - 57600
               - 115200
-              - null
               type: integer
               description: |-
                 * `1200` - 1200 bps
@@ -85954,7 +85949,6 @@ components:
           - 38400
           - 57600
           - 115200
-          - null
           type: integer
           description: |-
             * `1200` - 1200 bps
@@ -87997,7 +87991,6 @@ components:
               - parent
               - child
               - ''
-              - null
               type: string
               description: |-
                 * `parent` - Parent
@@ -88021,7 +88014,6 @@ components:
               - passive
               - mixed
               - ''
-              - null
               type: string
               description: |-
                 * `front-to-rear` - Front to rear
@@ -88060,7 +88052,6 @@ components:
               - lb
               - oz
               - ''
-              - null
               type: string
               description: |-
                 * `kg` - Kilograms
@@ -88195,7 +88186,6 @@ components:
           - parent
           - child
           - ''
-          - null
           type: string
           description: |-
             * `parent` - Parent
@@ -88211,7 +88201,6 @@ components:
           - passive
           - mixed
           - ''
-          - null
           type: string
           description: |-
             * `front-to-rear` - Front to rear
@@ -88237,7 +88226,6 @@ components:
           - lb
           - oz
           - ''
-          - null
           type: string
           description: |-
             * `kg` - Kilograms
@@ -90848,7 +90836,6 @@ components:
               - full
               - auto
               - ''
-              - null
               type: string
               description: |-
                 * `half` - Half
@@ -91981,7 +91968,6 @@ components:
           - full
           - auto
           - ''
-          - null
           type: string
           description: |-
             * `half` - Half
@@ -92911,7 +92897,6 @@ components:
               - pd
               - pse
               - ''
-              - null
               type: string
               description: |-
                 * `pd` - PD
@@ -92936,7 +92921,6 @@ components:
               - passive-48v-2pair
               - passive-48v-4pair
               - ''
-              - null
               type: string
               description: |-
                 * `type1-ieee802.3af` - 802.3af (Type 1)
@@ -92967,7 +92951,6 @@ components:
               - ap
               - station
               - ''
-              - null
               type: string
               description: |-
                 * `ap` - Access point
@@ -93271,7 +93254,6 @@ components:
           - pd
           - pse
           - ''
-          - null
           type: string
           description: |-
             * `pd` - PD
@@ -93288,7 +93270,6 @@ components:
           - passive-48v-2pair
           - passive-48v-4pair
           - ''
-          - null
           type: string
           description: |-
             * `type1-ieee802.3af` - 802.3af (Type 1)
@@ -93305,7 +93286,6 @@ components:
           - ap
           - station
           - ''
-          - null
           type: string
           description: |-
             * `ap` - Access point
@@ -94843,7 +94823,6 @@ components:
               - lb
               - oz
               - ''
-              - null
               type: string
               description: |-
                 * `kg` - Kilograms
@@ -94917,7 +94896,6 @@ components:
           - lb
           - oz
           - ''
-          - null
           type: string
           description: |-
             * `kg` - Kilograms
@@ -100927,7 +100905,6 @@ components:
           - 38400
           - 57600
           - 115200
-          - null
           type: integer
           nullable: true
           description: |-
@@ -101080,7 +101057,6 @@ components:
           - 38400
           - 57600
           - 115200
-          - null
           type: integer
           nullable: true
           description: |-
@@ -102570,7 +102546,6 @@ components:
           - full
           - auto
           - ''
-          - null
           type: string
           description: |-
             * `half` - Half
@@ -106912,7 +106887,6 @@ components:
               - hardwired
               - other
               - ''
-              - null
               type: string
               description: |-
                 * `iec-60320-c5` - C5
@@ -107118,7 +107092,6 @@ components:
               - B
               - C
               - ''
-              - null
               type: string
               description: |-
                 * `A` - A
@@ -107314,7 +107287,6 @@ components:
           - hardwired
           - other
           - ''
-          - null
           type: string
           description: |-
             * `iec-60320-c5` - C5
@@ -107421,7 +107393,6 @@ components:
           - B
           - C
           - ''
-          - null
           type: string
           description: |-
             * `A` - A
@@ -107576,7 +107547,6 @@ components:
               - hardwired
               - other
               - ''
-              - null
               type: string
               description: |-
                 * `iec-60320-c5` - C5
@@ -107782,7 +107752,6 @@ components:
               - B
               - C
               - ''
-              - null
               type: string
               description: |-
                 * `A` - A
@@ -107935,7 +107904,6 @@ components:
           - hardwired
           - other
           - ''
-          - null
           type: string
           description: |-
             * `iec-60320-c5` - C5
@@ -108042,7 +108010,6 @@ components:
           - B
           - C
           - ''
-          - null
           type: string
           description: |-
             * `A` - A
@@ -108273,7 +108240,6 @@ components:
               - hardwired
               - other
               - ''
-              - null
               type: string
               description: |-
                 * `iec-60320-c6` - C6
@@ -108682,7 +108648,6 @@ components:
           - hardwired
           - other
           - ''
-          - null
           type: string
           description: |-
             * `iec-60320-c6` - C6
@@ -108953,7 +108918,6 @@ components:
               - hardwired
               - other
               - ''
-              - null
               type: string
               description: |-
                 * `iec-60320-c6` - C6
@@ -109319,7 +109283,6 @@ components:
           - hardwired
           - other
           - ''
-          - null
           type: string
           description: |-
             * `iec-60320-c6` - C6
@@ -110053,7 +110016,6 @@ components:
               - wall-cabinet
               - wall-cabinet-vertical
               - ''
-              - null
               type: string
               description: |-
                 * `2-post-frame` - 2-post frame
@@ -110131,7 +110093,6 @@ components:
               - lb
               - oz
               - ''
-              - null
               type: string
               description: |-
                 * `kg` - Kilograms
@@ -110170,7 +110131,6 @@ components:
               - mm
               - in
               - ''
-              - null
               type: string
               description: |-
                 * `mm` - Millimeters
@@ -110285,7 +110245,6 @@ components:
           - wall-cabinet
           - wall-cabinet-vertical
           - ''
-          - null
           type: string
           description: |-
             * `2-post-frame` - 2-post frame
@@ -110340,7 +110299,6 @@ components:
           - lb
           - oz
           - ''
-          - null
           type: string
           description: |-
             * `kg` - Kilograms
@@ -110369,7 +110327,6 @@ components:
           - mm
           - in
           - ''
-          - null
           type: string
           description: |-
             * `mm` - Millimeters
@@ -115201,7 +115158,6 @@ components:
           - 38400
           - 57600
           - 115200
-          - null
           type: integer
           nullable: true
           description: |-
@@ -115359,7 +115315,6 @@ components:
           - 38400
           - 57600
           - 115200
-          - null
           type: integer
           nullable: true
           description: |-
@@ -116912,7 +116867,6 @@ components:
           - full
           - auto
           - ''
-          - null
           type: string
           description: |-
             * `half` - Half
