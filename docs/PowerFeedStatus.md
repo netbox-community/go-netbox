@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to **string** | * &#x60;offline&#x60; - Offline * &#x60;active&#x60; - Active * &#x60;planned&#x60; - Planned * &#x60;failed&#x60; - Failed | [optional] 
-**Label** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to [**PatchedWritablePowerFeedRequestStatus**](PatchedWritablePowerFeedRequestStatus.md) |  | [optional] 
+**Label** | Pointer to [**PowerFeedStatusLabel**](PowerFeedStatusLabel.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *PowerFeedStatus) GetValue() string`
+`func (o *PowerFeedStatus) GetValue() PatchedWritablePowerFeedRequestStatus`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *PowerFeedStatus) GetValueOk() (*string, bool)`
+`func (o *PowerFeedStatus) GetValueOk() (*PatchedWritablePowerFeedRequestStatus, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *PowerFeedStatus) SetValue(v string)`
+`func (o *PowerFeedStatus) SetValue(v PatchedWritablePowerFeedRequestStatus)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *PowerFeedStatus) GetLabel() string`
+`func (o *PowerFeedStatus) GetLabel() PowerFeedStatusLabel`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *PowerFeedStatus) GetLabelOk() (*string, bool)`
+`func (o *PowerFeedStatus) GetLabelOk() (*PowerFeedStatusLabel, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *PowerFeedStatus) SetLabel(v string)`
+`func (o *PowerFeedStatus) SetLabel(v PowerFeedStatusLabel)`
 
 SetLabel sets Label field to given value.
 

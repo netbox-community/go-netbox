@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | Full name of the site | 
 **Slug** | **string** |  | 
-**Status** | Pointer to **string** | * &#x60;planned&#x60; - Planned * &#x60;staging&#x60; - Staging * &#x60;active&#x60; - Active * &#x60;decommissioning&#x60; - Decommissioning * &#x60;retired&#x60; - Retired | [optional] 
+**Status** | Pointer to [**LocationStatusValue**](LocationStatusValue.md) |  | [optional] 
 **Region** | Pointer to [**NullableNestedRegionRequest**](NestedRegionRequest.md) |  | [optional] 
 **Group** | Pointer to [**NullableNestedSiteGroupRequest**](NestedSiteGroupRequest.md) |  | [optional] 
 **Tenant** | Pointer to [**NullableNestedTenantRequest**](NestedTenantRequest.md) |  | [optional] 
@@ -83,20 +83,20 @@ SetSlug sets Slug field to given value.
 
 ### GetStatus
 
-`func (o *SiteRequest) GetStatus() string`
+`func (o *SiteRequest) GetStatus() LocationStatusValue`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *SiteRequest) GetStatusOk() (*string, bool)`
+`func (o *SiteRequest) GetStatusOk() (*LocationStatusValue, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *SiteRequest) SetStatus(v string)`
+`func (o *SiteRequest) SetStatus(v LocationStatusValue)`
 
 SetStatus sets Status field to given value.
 

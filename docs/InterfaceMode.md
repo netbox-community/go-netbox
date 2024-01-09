@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to **string** | * &#x60;access&#x60; - Access * &#x60;tagged&#x60; - Tagged * &#x60;tagged-all&#x60; - Tagged (All) | [optional] 
-**Label** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to [**InterfaceModeValue**](InterfaceModeValue.md) |  | [optional] 
+**Label** | Pointer to [**InterfaceModeLabel**](InterfaceModeLabel.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *InterfaceMode) GetValue() string`
+`func (o *InterfaceMode) GetValue() InterfaceModeValue`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *InterfaceMode) GetValueOk() (*string, bool)`
+`func (o *InterfaceMode) GetValueOk() (*InterfaceModeValue, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *InterfaceMode) SetValue(v string)`
+`func (o *InterfaceMode) SetValue(v InterfaceModeValue)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *InterfaceMode) GetLabel() string`
+`func (o *InterfaceMode) GetLabel() InterfaceModeLabel`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *InterfaceMode) GetLabelOk() (*string, bool)`
+`func (o *InterfaceMode) GetLabelOk() (*InterfaceModeLabel, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *InterfaceMode) SetLabel(v string)`
+`func (o *InterfaceMode) SetLabel(v InterfaceModeLabel)`
 
 SetLabel sets Label field to given value.
 

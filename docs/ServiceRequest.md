@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **VirtualMachine** | Pointer to [**NullableNestedVirtualMachineRequest**](NestedVirtualMachineRequest.md) |  | [optional] 
 **Name** | **string** |  | 
 **Ports** | **[]int32** |  | 
-**Protocol** | Pointer to **string** | * &#x60;tcp&#x60; - TCP * &#x60;udp&#x60; - UDP * &#x60;sctp&#x60; - SCTP | [optional] 
+**Protocol** | Pointer to [**PatchedWritableServiceRequestProtocol**](PatchedWritableServiceRequestProtocol.md) |  | [optional] 
 **Ipaddresses** | Pointer to **[]int32** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
@@ -146,20 +146,20 @@ SetPorts sets Ports field to given value.
 
 ### GetProtocol
 
-`func (o *ServiceRequest) GetProtocol() string`
+`func (o *ServiceRequest) GetProtocol() PatchedWritableServiceRequestProtocol`
 
 GetProtocol returns the Protocol field if non-nil, zero value otherwise.
 
 ### GetProtocolOk
 
-`func (o *ServiceRequest) GetProtocolOk() (*string, bool)`
+`func (o *ServiceRequest) GetProtocolOk() (*PatchedWritableServiceRequestProtocol, bool)`
 
 GetProtocolOk returns a tuple with the Protocol field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProtocol
 
-`func (o *ServiceRequest) SetProtocol(v string)`
+`func (o *ServiceRequest) SetProtocol(v PatchedWritableServiceRequestProtocol)`
 
 SetProtocol sets Protocol field to given value.
 

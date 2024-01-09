@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to **string** | * &#x60;planned&#x60; - Planned * &#x60;staging&#x60; - Staging * &#x60;active&#x60; - Active * &#x60;decommissioning&#x60; - Decommissioning * &#x60;offline&#x60; - Offline | [optional] 
-**Label** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to [**ClusterStatusValue**](ClusterStatusValue.md) |  | [optional] 
+**Label** | Pointer to [**ClusterStatusLabel**](ClusterStatusLabel.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *ClusterStatus) GetValue() string`
+`func (o *ClusterStatus) GetValue() ClusterStatusValue`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *ClusterStatus) GetValueOk() (*string, bool)`
+`func (o *ClusterStatus) GetValueOk() (*ClusterStatusValue, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *ClusterStatus) SetValue(v string)`
+`func (o *ClusterStatus) SetValue(v ClusterStatusValue)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *ClusterStatus) GetLabel() string`
+`func (o *ClusterStatus) GetLabel() ClusterStatusLabel`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *ClusterStatus) GetLabelOk() (*string, bool)`
+`func (o *ClusterStatus) GetLabelOk() (*ClusterStatusLabel, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *ClusterStatus) SetLabel(v string)`
+`func (o *ClusterStatus) SetLabel(v ClusterStatusLabel)`
 
 SetLabel sets Label field to given value.
 

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to **string** | * &#x60;connected&#x60; - Connected * &#x60;planned&#x60; - Planned * &#x60;decommissioning&#x60; - Decommissioning | [optional] 
-**Label** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to [**CableStatusValue**](CableStatusValue.md) |  | [optional] 
+**Label** | Pointer to [**CableStatusLabel**](CableStatusLabel.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *CableStatus) GetValue() string`
+`func (o *CableStatus) GetValue() CableStatusValue`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *CableStatus) GetValueOk() (*string, bool)`
+`func (o *CableStatus) GetValueOk() (*CableStatusValue, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *CableStatus) SetValue(v string)`
+`func (o *CableStatus) SetValue(v CableStatusValue)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *CableStatus) GetLabel() string`
+`func (o *CableStatus) GetLabel() CableStatusLabel`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *CableStatus) GetLabelOk() (*string, bool)`
+`func (o *CableStatus) GetLabelOk() (*CableStatusLabel, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *CableStatus) SetLabel(v string)`
+`func (o *CableStatus) SetLabel(v CableStatusLabel)`
 
 SetLabel sets Label field to given value.
 

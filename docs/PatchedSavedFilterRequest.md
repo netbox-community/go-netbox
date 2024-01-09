@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **Weight** | Pointer to **int32** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Shared** | Pointer to **bool** |  | [optional] 
-**Parameters** | Pointer to **map[string]interface{}** |  | [optional] 
+**Parameters** | Pointer to **interface{}** |  | [optional] 
 
 ## Methods
 
@@ -245,20 +245,20 @@ HasShared returns a boolean if a field has been set.
 
 ### GetParameters
 
-`func (o *PatchedSavedFilterRequest) GetParameters() map[string]interface{}`
+`func (o *PatchedSavedFilterRequest) GetParameters() interface{}`
 
 GetParameters returns the Parameters field if non-nil, zero value otherwise.
 
 ### GetParametersOk
 
-`func (o *PatchedSavedFilterRequest) GetParametersOk() (*map[string]interface{}, bool)`
+`func (o *PatchedSavedFilterRequest) GetParametersOk() (*interface{}, bool)`
 
 GetParametersOk returns a tuple with the Parameters field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetParameters
 
-`func (o *PatchedSavedFilterRequest) SetParameters(v map[string]interface{})`
+`func (o *PatchedSavedFilterRequest) SetParameters(v interface{})`
 
 SetParameters sets Parameters field to given value.
 
@@ -268,6 +268,16 @@ SetParameters sets Parameters field to given value.
 
 HasParameters returns a boolean if a field has been set.
 
+### SetParametersNil
+
+`func (o *PatchedSavedFilterRequest) SetParametersNil(b bool)`
+
+ SetParametersNil sets the value for Parameters to be an explicit nil
+
+### UnsetParameters
+`func (o *PatchedSavedFilterRequest) UnsetParameters()`
+
+UnsetParameters ensures that no value is present for Parameters, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **EndAddress** | Pointer to **string** |  | [optional] 
 **Vrf** | Pointer to **NullableInt32** |  | [optional] 
 **Tenant** | Pointer to **NullableInt32** |  | [optional] 
-**Status** | Pointer to **string** | Operational status of this range  * &#x60;active&#x60; - Active * &#x60;reserved&#x60; - Reserved * &#x60;deprecated&#x60; - Deprecated | [optional] 
+**Status** | Pointer to [**PatchedWritableIPRangeRequestStatus**](PatchedWritableIPRangeRequestStatus.md) |  | [optional] 
 **Role** | Pointer to **NullableInt32** | The primary function of this range | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
@@ -157,20 +157,20 @@ HasTenant returns a boolean if a field has been set.
 UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
 ### GetStatus
 
-`func (o *PatchedWritableIPRangeRequest) GetStatus() string`
+`func (o *PatchedWritableIPRangeRequest) GetStatus() PatchedWritableIPRangeRequestStatus`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *PatchedWritableIPRangeRequest) GetStatusOk() (*string, bool)`
+`func (o *PatchedWritableIPRangeRequest) GetStatusOk() (*PatchedWritableIPRangeRequestStatus, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *PatchedWritableIPRangeRequest) SetStatus(v string)`
+`func (o *PatchedWritableIPRangeRequest) SetStatus(v PatchedWritableIPRangeRequestStatus)`
 
 SetStatus sets Status field to given value.
 

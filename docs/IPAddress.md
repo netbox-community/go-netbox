@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **Role** | Pointer to [**IPAddressRole**](IPAddressRole.md) |  | [optional] 
 **AssignedObjectType** | Pointer to **NullableString** |  | [optional] 
 **AssignedObjectId** | Pointer to **NullableInt64** |  | [optional] 
-**AssignedObject** | **map[string]interface{}** |  | [readonly] 
+**AssignedObject** | **interface{}** |  | [readonly] 
 **NatInside** | Pointer to [**NullableNestedIPAddress**](NestedIPAddress.md) |  | [optional] 
 **NatOutside** | [**[]NestedIPAddress**](NestedIPAddress.md) |  | [readonly] 
 **DnsName** | Pointer to **string** | Hostname or FQDN (not case-sensitive) | [optional] 
@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 
 ### NewIPAddress
 
-`func NewIPAddress(id int32, url string, display string, family AggregateFamily, address string, assignedObject map[string]interface{}, natOutside []NestedIPAddress, created NullableTime, lastUpdated NullableTime, ) *IPAddress`
+`func NewIPAddress(id int32, url string, display string, family AggregateFamily, address string, assignedObject interface{}, natOutside []NestedIPAddress, created NullableTime, lastUpdated NullableTime, ) *IPAddress`
 
 NewIPAddress instantiates a new IPAddress object
 This constructor will assign default values to properties that have it defined,
@@ -337,20 +337,20 @@ HasAssignedObjectId returns a boolean if a field has been set.
 UnsetAssignedObjectId ensures that no value is present for AssignedObjectId, not even an explicit nil
 ### GetAssignedObject
 
-`func (o *IPAddress) GetAssignedObject() map[string]interface{}`
+`func (o *IPAddress) GetAssignedObject() interface{}`
 
 GetAssignedObject returns the AssignedObject field if non-nil, zero value otherwise.
 
 ### GetAssignedObjectOk
 
-`func (o *IPAddress) GetAssignedObjectOk() (*map[string]interface{}, bool)`
+`func (o *IPAddress) GetAssignedObjectOk() (*interface{}, bool)`
 
 GetAssignedObjectOk returns a tuple with the AssignedObject field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAssignedObject
 
-`func (o *IPAddress) SetAssignedObject(v map[string]interface{})`
+`func (o *IPAddress) SetAssignedObject(v interface{})`
 
 SetAssignedObject sets AssignedObject field to given value.
 

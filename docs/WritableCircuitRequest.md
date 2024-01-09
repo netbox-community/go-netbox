@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Provider** | **int32** |  | 
 **ProviderAccount** | Pointer to **NullableInt32** |  | [optional] 
 **Type** | **int32** |  | 
-**Status** | Pointer to **string** | * &#x60;planned&#x60; - Planned * &#x60;provisioning&#x60; - Provisioning * &#x60;active&#x60; - Active * &#x60;offline&#x60; - Offline * &#x60;deprovisioning&#x60; - Deprovisioning * &#x60;decommissioned&#x60; - Decommissioned | [optional] 
+**Status** | Pointer to [**CircuitStatusValue**](CircuitStatusValue.md) |  | [optional] 
 **Tenant** | Pointer to **NullableInt32** |  | [optional] 
 **InstallDate** | Pointer to **NullableString** |  | [optional] 
 **TerminationDate** | Pointer to **NullableString** |  | [optional] 
@@ -134,20 +134,20 @@ SetType sets Type field to given value.
 
 ### GetStatus
 
-`func (o *WritableCircuitRequest) GetStatus() string`
+`func (o *WritableCircuitRequest) GetStatus() CircuitStatusValue`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *WritableCircuitRequest) GetStatusOk() (*string, bool)`
+`func (o *WritableCircuitRequest) GetStatusOk() (*CircuitStatusValue, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *WritableCircuitRequest) SetStatus(v string)`
+`func (o *WritableCircuitRequest) SetStatus(v CircuitStatusValue)`
 
 SetStatus sets Status field to given value.
 

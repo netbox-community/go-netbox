@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to **string** | * &#x60;2-post-frame&#x60; - 2-post frame * &#x60;4-post-frame&#x60; - 4-post frame * &#x60;4-post-cabinet&#x60; - 4-post cabinet * &#x60;wall-frame&#x60; - Wall-mounted frame * &#x60;wall-frame-vertical&#x60; - Wall-mounted frame (vertical) * &#x60;wall-cabinet&#x60; - Wall-mounted cabinet * &#x60;wall-cabinet-vertical&#x60; - Wall-mounted cabinet (vertical) | [optional] 
-**Label** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to [**PatchedWritableRackRequestType**](PatchedWritableRackRequestType.md) |  | [optional] 
+**Label** | Pointer to [**RackTypeLabel**](RackTypeLabel.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *RackType) GetValue() string`
+`func (o *RackType) GetValue() PatchedWritableRackRequestType`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *RackType) GetValueOk() (*string, bool)`
+`func (o *RackType) GetValueOk() (*PatchedWritableRackRequestType, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *RackType) SetValue(v string)`
+`func (o *RackType) SetValue(v PatchedWritableRackRequestType)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *RackType) GetLabel() string`
+`func (o *RackType) GetLabel() RackTypeLabel`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *RackType) GetLabelOk() (*string, bool)`
+`func (o *RackType) GetLabelOk() (*RackTypeLabel, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *RackType) SetLabel(v string)`
+`func (o *RackType) SetLabel(v RackTypeLabel)`
 
 SetLabel sets Label field to given value.
 

@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 **DataPath** | **string** | Path to remote file (relative to data source root) | [readonly] 
 **DataFile** | [**NestedDataFile**](NestedDataFile.md) |  | [readonly] 
 **DataSynced** | **NullableTime** |  | [readonly] 
-**Data** | **map[string]interface{}** |  | 
+**Data** | **interface{}** |  | 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 
@@ -36,7 +36,7 @@ Name | Type | Description | Notes
 
 ### NewConfigContext
 
-`func NewConfigContext(id int32, url string, display string, name string, dataPath string, dataFile NestedDataFile, dataSynced NullableTime, data map[string]interface{}, created NullableTime, lastUpdated NullableTime, ) *ConfigContext`
+`func NewConfigContext(id int32, url string, display string, name string, dataPath string, dataFile NestedDataFile, dataSynced NullableTime, data interface{}, created NullableTime, lastUpdated NullableTime, ) *ConfigContext`
 
 NewConfigContext instantiates a new ConfigContext object
 This constructor will assign default values to properties that have it defined,
@@ -628,24 +628,34 @@ SetDataSynced sets DataSynced field to given value.
 UnsetDataSynced ensures that no value is present for DataSynced, not even an explicit nil
 ### GetData
 
-`func (o *ConfigContext) GetData() map[string]interface{}`
+`func (o *ConfigContext) GetData() interface{}`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *ConfigContext) GetDataOk() (*map[string]interface{}, bool)`
+`func (o *ConfigContext) GetDataOk() (*interface{}, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *ConfigContext) SetData(v map[string]interface{})`
+`func (o *ConfigContext) SetData(v interface{})`
 
 SetData sets Data field to given value.
 
 
+### SetDataNil
+
+`func (o *ConfigContext) SetDataNil(b bool)`
+
+ SetDataNil sets the value for Data to be an explicit nil
+
+### UnsetData
+`func (o *ConfigContext) UnsetData()`
+
+UnsetData ensures that no value is present for Data, not even an explicit nil
 ### GetCreated
 
 `func (o *ConfigContext) GetCreated() time.Time`

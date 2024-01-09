@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Display** | **string** |  | [readonly] 
 **AssignedObjectType** | **string** |  | 
 **AssignedObjectId** | **int64** |  | 
-**AssignedObject** | **map[string]interface{}** |  | [readonly] 
+**AssignedObject** | **interface{}** |  | [readonly] 
 **Created** | **NullableTime** |  | [readonly] 
 **CreatedBy** | Pointer to **NullableInt32** |  | [optional] 
 **Kind** | Pointer to [**JournalEntryKind**](JournalEntryKind.md) |  | [optional] 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 
 ### NewJournalEntry
 
-`func NewJournalEntry(id int32, url string, display string, assignedObjectType string, assignedObjectId int64, assignedObject map[string]interface{}, created NullableTime, comments string, lastUpdated NullableTime, ) *JournalEntry`
+`func NewJournalEntry(id int32, url string, display string, assignedObjectType string, assignedObjectId int64, assignedObject interface{}, created NullableTime, comments string, lastUpdated NullableTime, ) *JournalEntry`
 
 NewJournalEntry instantiates a new JournalEntry object
 This constructor will assign default values to properties that have it defined,
@@ -139,20 +139,20 @@ SetAssignedObjectId sets AssignedObjectId field to given value.
 
 ### GetAssignedObject
 
-`func (o *JournalEntry) GetAssignedObject() map[string]interface{}`
+`func (o *JournalEntry) GetAssignedObject() interface{}`
 
 GetAssignedObject returns the AssignedObject field if non-nil, zero value otherwise.
 
 ### GetAssignedObjectOk
 
-`func (o *JournalEntry) GetAssignedObjectOk() (*map[string]interface{}, bool)`
+`func (o *JournalEntry) GetAssignedObjectOk() (*interface{}, bool)`
 
 GetAssignedObjectOk returns a tuple with the AssignedObject field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAssignedObject
 
-`func (o *JournalEntry) SetAssignedObject(v map[string]interface{})`
+`func (o *JournalEntry) SetAssignedObject(v interface{})`
 
 SetAssignedObject sets AssignedObject field to given value.
 

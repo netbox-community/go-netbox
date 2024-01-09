@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to **string** | * &#x60;parent&#x60; - Parent * &#x60;child&#x60; - Child | [optional] 
-**Label** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to [**DeviceTypeSubdeviceRoleValue**](DeviceTypeSubdeviceRoleValue.md) |  | [optional] 
+**Label** | Pointer to [**DeviceTypeSubdeviceRoleLabel**](DeviceTypeSubdeviceRoleLabel.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *DeviceTypeSubdeviceRole) GetValue() string`
+`func (o *DeviceTypeSubdeviceRole) GetValue() DeviceTypeSubdeviceRoleValue`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *DeviceTypeSubdeviceRole) GetValueOk() (*string, bool)`
+`func (o *DeviceTypeSubdeviceRole) GetValueOk() (*DeviceTypeSubdeviceRoleValue, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *DeviceTypeSubdeviceRole) SetValue(v string)`
+`func (o *DeviceTypeSubdeviceRole) SetValue(v DeviceTypeSubdeviceRoleValue)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *DeviceTypeSubdeviceRole) GetLabel() string`
+`func (o *DeviceTypeSubdeviceRole) GetLabel() DeviceTypeSubdeviceRoleLabel`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *DeviceTypeSubdeviceRole) GetLabelOk() (*string, bool)`
+`func (o *DeviceTypeSubdeviceRole) GetLabelOk() (*DeviceTypeSubdeviceRoleLabel, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *DeviceTypeSubdeviceRole) SetLabel(v string)`
+`func (o *DeviceTypeSubdeviceRole) SetLabel(v DeviceTypeSubdeviceRoleLabel)`
 
 SetLabel sets Label field to given value.
 

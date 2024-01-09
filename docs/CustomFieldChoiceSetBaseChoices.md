@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to **string** | * &#x60;IATA&#x60; - IATA (Airport codes) * &#x60;ISO_3166&#x60; - ISO 3166 (Country codes) * &#x60;UN_LOCODE&#x60; - UN/LOCODE (Location codes) | [optional] 
-**Label** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to [**CustomFieldChoiceSetBaseChoicesValue**](CustomFieldChoiceSetBaseChoicesValue.md) |  | [optional] 
+**Label** | Pointer to [**CustomFieldChoiceSetBaseChoicesLabel**](CustomFieldChoiceSetBaseChoicesLabel.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *CustomFieldChoiceSetBaseChoices) GetValue() string`
+`func (o *CustomFieldChoiceSetBaseChoices) GetValue() CustomFieldChoiceSetBaseChoicesValue`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *CustomFieldChoiceSetBaseChoices) GetValueOk() (*string, bool)`
+`func (o *CustomFieldChoiceSetBaseChoices) GetValueOk() (*CustomFieldChoiceSetBaseChoicesValue, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *CustomFieldChoiceSetBaseChoices) SetValue(v string)`
+`func (o *CustomFieldChoiceSetBaseChoices) SetValue(v CustomFieldChoiceSetBaseChoicesValue)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *CustomFieldChoiceSetBaseChoices) GetLabel() string`
+`func (o *CustomFieldChoiceSetBaseChoices) GetLabel() CustomFieldChoiceSetBaseChoicesLabel`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *CustomFieldChoiceSetBaseChoices) GetLabelOk() (*string, bool)`
+`func (o *CustomFieldChoiceSetBaseChoices) GetLabelOk() (*CustomFieldChoiceSetBaseChoicesLabel, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *CustomFieldChoiceSetBaseChoices) SetLabel(v string)`
+`func (o *CustomFieldChoiceSetBaseChoices) SetLabel(v CustomFieldChoiceSetBaseChoicesLabel)`
 
 SetLabel sets Label field to given value.
 

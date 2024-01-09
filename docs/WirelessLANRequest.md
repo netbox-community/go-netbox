@@ -7,11 +7,11 @@ Name | Type | Description | Notes
 **Ssid** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
 **Group** | Pointer to [**NullableNestedWirelessLANGroupRequest**](NestedWirelessLANGroupRequest.md) |  | [optional] 
-**Status** | Pointer to **string** | * &#x60;active&#x60; - Active * &#x60;reserved&#x60; - Reserved * &#x60;disabled&#x60; - Disabled * &#x60;deprecated&#x60; - Deprecated | [optional] 
+**Status** | Pointer to [**WirelessLANStatusValue**](WirelessLANStatusValue.md) |  | [optional] 
 **Vlan** | Pointer to [**NullableNestedVLANRequest**](NestedVLANRequest.md) |  | [optional] 
 **Tenant** | Pointer to [**NullableNestedTenantRequest**](NestedTenantRequest.md) |  | [optional] 
-**AuthType** | Pointer to **string** | * &#x60;open&#x60; - Open * &#x60;wep&#x60; - WEP * &#x60;wpa-personal&#x60; - WPA Personal (PSK) * &#x60;wpa-enterprise&#x60; - WPA Enterprise | [optional] 
-**AuthCipher** | Pointer to **string** | * &#x60;auto&#x60; - Auto * &#x60;tkip&#x60; - TKIP * &#x60;aes&#x60; - AES | [optional] 
+**AuthType** | Pointer to [**WirelessLANAuthTypeValue**](WirelessLANAuthTypeValue.md) |  | [optional] 
+**AuthCipher** | Pointer to [**WirelessLANAuthCipherValue**](WirelessLANAuthCipherValue.md) |  | [optional] 
 **AuthPsk** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
@@ -118,20 +118,20 @@ HasGroup returns a boolean if a field has been set.
 UnsetGroup ensures that no value is present for Group, not even an explicit nil
 ### GetStatus
 
-`func (o *WirelessLANRequest) GetStatus() string`
+`func (o *WirelessLANRequest) GetStatus() WirelessLANStatusValue`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *WirelessLANRequest) GetStatusOk() (*string, bool)`
+`func (o *WirelessLANRequest) GetStatusOk() (*WirelessLANStatusValue, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *WirelessLANRequest) SetStatus(v string)`
+`func (o *WirelessLANRequest) SetStatus(v WirelessLANStatusValue)`
 
 SetStatus sets Status field to given value.
 
@@ -213,20 +213,20 @@ HasTenant returns a boolean if a field has been set.
 UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
 ### GetAuthType
 
-`func (o *WirelessLANRequest) GetAuthType() string`
+`func (o *WirelessLANRequest) GetAuthType() WirelessLANAuthTypeValue`
 
 GetAuthType returns the AuthType field if non-nil, zero value otherwise.
 
 ### GetAuthTypeOk
 
-`func (o *WirelessLANRequest) GetAuthTypeOk() (*string, bool)`
+`func (o *WirelessLANRequest) GetAuthTypeOk() (*WirelessLANAuthTypeValue, bool)`
 
 GetAuthTypeOk returns a tuple with the AuthType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthType
 
-`func (o *WirelessLANRequest) SetAuthType(v string)`
+`func (o *WirelessLANRequest) SetAuthType(v WirelessLANAuthTypeValue)`
 
 SetAuthType sets AuthType field to given value.
 
@@ -238,20 +238,20 @@ HasAuthType returns a boolean if a field has been set.
 
 ### GetAuthCipher
 
-`func (o *WirelessLANRequest) GetAuthCipher() string`
+`func (o *WirelessLANRequest) GetAuthCipher() WirelessLANAuthCipherValue`
 
 GetAuthCipher returns the AuthCipher field if non-nil, zero value otherwise.
 
 ### GetAuthCipherOk
 
-`func (o *WirelessLANRequest) GetAuthCipherOk() (*string, bool)`
+`func (o *WirelessLANRequest) GetAuthCipherOk() (*WirelessLANAuthCipherValue, bool)`
 
 GetAuthCipherOk returns a tuple with the AuthCipher field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthCipher
 
-`func (o *WirelessLANRequest) SetAuthCipher(v string)`
+`func (o *WirelessLANRequest) SetAuthCipher(v WirelessLANAuthCipherValue)`
 
 SetAuthCipher sets AuthCipher field to given value.
 

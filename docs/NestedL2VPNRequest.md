@@ -7,13 +7,13 @@ Name | Type | Description | Notes
 **Identifier** | Pointer to **NullableInt64** |  | [optional] 
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
-**Type** | **string** | * &#x60;vpws&#x60; - VPWS * &#x60;vpls&#x60; - VPLS * &#x60;vxlan&#x60; - VXLAN * &#x60;vxlan-evpn&#x60; - VXLAN-EVPN * &#x60;mpls-evpn&#x60; - MPLS EVPN * &#x60;pbb-evpn&#x60; - PBB EVPN * &#x60;epl&#x60; - EPL * &#x60;evpl&#x60; - EVPL * &#x60;ep-lan&#x60; - Ethernet Private LAN * &#x60;evp-lan&#x60; - Ethernet Virtual Private LAN * &#x60;ep-tree&#x60; - Ethernet Private Tree * &#x60;evp-tree&#x60; - Ethernet Virtual Private Tree | 
+**Type** | [**L2VPNTypeValue**](L2VPNTypeValue.md) |  | 
 
 ## Methods
 
 ### NewNestedL2VPNRequest
 
-`func NewNestedL2VPNRequest(name string, slug string, type_ string, ) *NestedL2VPNRequest`
+`func NewNestedL2VPNRequest(name string, slug string, type_ L2VPNTypeValue, ) *NestedL2VPNRequest`
 
 NewNestedL2VPNRequest instantiates a new NestedL2VPNRequest object
 This constructor will assign default values to properties that have it defined,
@@ -105,20 +105,20 @@ SetSlug sets Slug field to given value.
 
 ### GetType
 
-`func (o *NestedL2VPNRequest) GetType() string`
+`func (o *NestedL2VPNRequest) GetType() L2VPNTypeValue`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *NestedL2VPNRequest) GetTypeOk() (*string, bool)`
+`func (o *NestedL2VPNRequest) GetTypeOk() (*L2VPNTypeValue, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *NestedL2VPNRequest) SetType(v string)`
+`func (o *NestedL2VPNRequest) SetType(v L2VPNTypeValue)`
 
 SetType sets Type field to given value.
 

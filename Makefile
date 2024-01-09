@@ -5,7 +5,7 @@ define set_env
 	sed $(if $(IS_DARWIN),-i "",-i) -e "s/^#*\($(1)=\).*/$(if $(2),,#)\1$(2)/" .env
 endef
 
-EXEC := docker compose exec app
+EXEC := docker compose exec main
 
 # Environment recipes
 .PHONY: default
@@ -33,6 +33,7 @@ shell:
 build:
 	$(EXEC) ./scripts/set-versions.sh $(NETBOX_VERSION) $(NETBOX_DOCKER_VERSION)
 	./scripts/fetch-spec.sh $$(cat api/netbox_version) $$(cat api/netbox_docker_version)
+	$(EXEC) ./scripts/fix-spec.sh
 	./scripts/generate-code.sh
 	$(EXEC) go mod tidy
 	$(EXEC) goimports -w .

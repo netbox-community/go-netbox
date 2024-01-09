@@ -8,10 +8,10 @@ Name | Type | Description | Notes
 **Url** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
 **Cable** | **int32** |  | 
-**CableEnd** | **string** | * &#x60;A&#x60; - A * &#x60;B&#x60; - B | 
+**CableEnd** | [**End**](End.md) |  | 
 **TerminationType** | **string** |  | 
 **TerminationId** | **int64** |  | 
-**Termination** | **map[string]interface{}** |  | [readonly] 
+**Termination** | **interface{}** |  | [readonly] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewCableTermination
 
-`func NewCableTermination(id int32, url string, display string, cable int32, cableEnd string, terminationType string, terminationId int64, termination map[string]interface{}, created NullableTime, lastUpdated NullableTime, ) *CableTermination`
+`func NewCableTermination(id int32, url string, display string, cable int32, cableEnd End, terminationType string, terminationId int64, termination interface{}, created NullableTime, lastUpdated NullableTime, ) *CableTermination`
 
 NewCableTermination instantiates a new CableTermination object
 This constructor will assign default values to properties that have it defined,
@@ -116,20 +116,20 @@ SetCable sets Cable field to given value.
 
 ### GetCableEnd
 
-`func (o *CableTermination) GetCableEnd() string`
+`func (o *CableTermination) GetCableEnd() End`
 
 GetCableEnd returns the CableEnd field if non-nil, zero value otherwise.
 
 ### GetCableEndOk
 
-`func (o *CableTermination) GetCableEndOk() (*string, bool)`
+`func (o *CableTermination) GetCableEndOk() (*End, bool)`
 
 GetCableEndOk returns a tuple with the CableEnd field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCableEnd
 
-`func (o *CableTermination) SetCableEnd(v string)`
+`func (o *CableTermination) SetCableEnd(v End)`
 
 SetCableEnd sets CableEnd field to given value.
 
@@ -176,20 +176,20 @@ SetTerminationId sets TerminationId field to given value.
 
 ### GetTermination
 
-`func (o *CableTermination) GetTermination() map[string]interface{}`
+`func (o *CableTermination) GetTermination() interface{}`
 
 GetTermination returns the Termination field if non-nil, zero value otherwise.
 
 ### GetTerminationOk
 
-`func (o *CableTermination) GetTerminationOk() (*map[string]interface{}, bool)`
+`func (o *CableTermination) GetTerminationOk() (*interface{}, bool)`
 
 GetTerminationOk returns a tuple with the Termination field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTermination
 
-`func (o *CableTermination) SetTermination(v map[string]interface{})`
+`func (o *CableTermination) SetTermination(v interface{})`
 
 SetTermination sets Termination field to given value.
 

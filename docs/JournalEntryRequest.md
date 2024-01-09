@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **AssignedObjectType** | **string** |  | 
 **AssignedObjectId** | **int64** |  | 
 **CreatedBy** | Pointer to **NullableInt32** |  | [optional] 
-**Kind** | Pointer to **string** | * &#x60;info&#x60; - Info * &#x60;success&#x60; - Success * &#x60;warning&#x60; - Warning * &#x60;danger&#x60; - Danger | [optional] 
+**Kind** | Pointer to [**JournalEntryKindValue**](JournalEntryKindValue.md) |  | [optional] 
 **Comments** | **string** |  | 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -108,20 +108,20 @@ HasCreatedBy returns a boolean if a field has been set.
 UnsetCreatedBy ensures that no value is present for CreatedBy, not even an explicit nil
 ### GetKind
 
-`func (o *JournalEntryRequest) GetKind() string`
+`func (o *JournalEntryRequest) GetKind() JournalEntryKindValue`
 
 GetKind returns the Kind field if non-nil, zero value otherwise.
 
 ### GetKindOk
 
-`func (o *JournalEntryRequest) GetKindOk() (*string, bool)`
+`func (o *JournalEntryRequest) GetKindOk() (*JournalEntryKindValue, bool)`
 
 GetKindOk returns a tuple with the Kind field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKind
 
-`func (o *JournalEntryRequest) SetKind(v string)`
+`func (o *JournalEntryRequest) SetKind(v JournalEntryKindValue)`
 
 SetKind sets Kind field to given value.
 

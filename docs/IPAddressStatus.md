@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to **string** | * &#x60;active&#x60; - Active * &#x60;reserved&#x60; - Reserved * &#x60;deprecated&#x60; - Deprecated * &#x60;dhcp&#x60; - DHCP * &#x60;slaac&#x60; - SLAAC | [optional] 
-**Label** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to [**IPAddressStatusValue**](IPAddressStatusValue.md) |  | [optional] 
+**Label** | Pointer to [**IPAddressStatusLabel**](IPAddressStatusLabel.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *IPAddressStatus) GetValue() string`
+`func (o *IPAddressStatus) GetValue() IPAddressStatusValue`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *IPAddressStatus) GetValueOk() (*string, bool)`
+`func (o *IPAddressStatus) GetValueOk() (*IPAddressStatusValue, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *IPAddressStatus) SetValue(v string)`
+`func (o *IPAddressStatus) SetValue(v IPAddressStatusValue)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *IPAddressStatus) GetLabel() string`
+`func (o *IPAddressStatus) GetLabel() IPAddressStatusLabel`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *IPAddressStatus) GetLabelOk() (*string, bool)`
+`func (o *IPAddressStatus) GetLabelOk() (*IPAddressStatusLabel, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *IPAddressStatus) SetLabel(v string)`
+`func (o *IPAddressStatus) SetLabel(v IPAddressStatusLabel)`
 
 SetLabel sets Label field to given value.
 

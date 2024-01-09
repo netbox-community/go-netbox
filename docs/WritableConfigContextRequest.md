@@ -22,13 +22,13 @@ Name | Type | Description | Notes
 **Tenants** | Pointer to **[]int32** |  | [optional] 
 **Tags** | Pointer to **[]string** |  | [optional] 
 **DataSource** | Pointer to **NullableInt32** | Remote data source | [optional] 
-**Data** | **map[string]interface{}** |  | 
+**Data** | **interface{}** |  | 
 
 ## Methods
 
 ### NewWritableConfigContextRequest
 
-`func NewWritableConfigContextRequest(name string, data map[string]interface{}, ) *WritableConfigContextRequest`
+`func NewWritableConfigContextRequest(name string, data interface{}, ) *WritableConfigContextRequest`
 
 NewWritableConfigContextRequest instantiates a new WritableConfigContextRequest object
 This constructor will assign default values to properties that have it defined,
@@ -500,24 +500,34 @@ HasDataSource returns a boolean if a field has been set.
 UnsetDataSource ensures that no value is present for DataSource, not even an explicit nil
 ### GetData
 
-`func (o *WritableConfigContextRequest) GetData() map[string]interface{}`
+`func (o *WritableConfigContextRequest) GetData() interface{}`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *WritableConfigContextRequest) GetDataOk() (*map[string]interface{}, bool)`
+`func (o *WritableConfigContextRequest) GetDataOk() (*interface{}, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *WritableConfigContextRequest) SetData(v map[string]interface{})`
+`func (o *WritableConfigContextRequest) SetData(v interface{})`
 
 SetData sets Data field to given value.
 
 
+### SetDataNil
+
+`func (o *WritableConfigContextRequest) SetDataNil(b bool)`
+
+ SetDataNil sets the value for Data to be an explicit nil
+
+### UnsetData
+`func (o *WritableConfigContextRequest) UnsetData()`
+
+UnsetData ensures that no value is present for Data, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

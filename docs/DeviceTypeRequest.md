@@ -10,11 +10,12 @@ Name | Type | Description | Notes
 **Slug** | **string** |  | 
 **PartNumber** | Pointer to **string** | Discrete part number (optional) | [optional] 
 **UHeight** | Pointer to **float64** |  | [optional] [default to 1.0]
-**IsFullDepth** | Pointer to **bool** | Device consumes both front and rear rack faces | [optional] 
-**SubdeviceRole** | Pointer to **NullableString** | * &#x60;parent&#x60; - Parent * &#x60;child&#x60; - Child | [optional] 
-**Airflow** | Pointer to **NullableString** | * &#x60;front-to-rear&#x60; - Front to rear * &#x60;rear-to-front&#x60; - Rear to front * &#x60;left-to-right&#x60; - Left to right * &#x60;right-to-left&#x60; - Right to left * &#x60;side-to-rear&#x60; - Side to rear * &#x60;passive&#x60; - Passive * &#x60;mixed&#x60; - Mixed | [optional] 
+**ExcludeFromUtilization** | Pointer to **bool** | Devices of this type are excluded when calculating rack utilization. | [optional] 
+**IsFullDepth** | Pointer to **bool** | Device consumes both front and rear rack faces. | [optional] 
+**SubdeviceRole** | Pointer to [**NullableDeviceTypeRequestSubdeviceRole**](DeviceTypeRequestSubdeviceRole.md) |  | [optional] 
+**Airflow** | Pointer to [**NullableDeviceTypeRequestAirflow**](DeviceTypeRequestAirflow.md) |  | [optional] 
 **Weight** | Pointer to **NullableFloat64** |  | [optional] 
-**WeightUnit** | Pointer to **NullableString** | * &#x60;kg&#x60; - Kilograms * &#x60;g&#x60; - Grams * &#x60;lb&#x60; - Pounds * &#x60;oz&#x60; - Ounces | [optional] 
+**WeightUnit** | Pointer to [**NullableDeviceTypeRequestWeightUnit**](DeviceTypeRequestWeightUnit.md) |  | [optional] 
 **FrontImage** | Pointer to ***os.File** |  | [optional] 
 **RearImage** | Pointer to ***os.File** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -186,6 +187,31 @@ SetUHeight sets UHeight field to given value.
 
 HasUHeight returns a boolean if a field has been set.
 
+### GetExcludeFromUtilization
+
+`func (o *DeviceTypeRequest) GetExcludeFromUtilization() bool`
+
+GetExcludeFromUtilization returns the ExcludeFromUtilization field if non-nil, zero value otherwise.
+
+### GetExcludeFromUtilizationOk
+
+`func (o *DeviceTypeRequest) GetExcludeFromUtilizationOk() (*bool, bool)`
+
+GetExcludeFromUtilizationOk returns a tuple with the ExcludeFromUtilization field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExcludeFromUtilization
+
+`func (o *DeviceTypeRequest) SetExcludeFromUtilization(v bool)`
+
+SetExcludeFromUtilization sets ExcludeFromUtilization field to given value.
+
+### HasExcludeFromUtilization
+
+`func (o *DeviceTypeRequest) HasExcludeFromUtilization() bool`
+
+HasExcludeFromUtilization returns a boolean if a field has been set.
+
 ### GetIsFullDepth
 
 `func (o *DeviceTypeRequest) GetIsFullDepth() bool`
@@ -213,20 +239,20 @@ HasIsFullDepth returns a boolean if a field has been set.
 
 ### GetSubdeviceRole
 
-`func (o *DeviceTypeRequest) GetSubdeviceRole() string`
+`func (o *DeviceTypeRequest) GetSubdeviceRole() DeviceTypeRequestSubdeviceRole`
 
 GetSubdeviceRole returns the SubdeviceRole field if non-nil, zero value otherwise.
 
 ### GetSubdeviceRoleOk
 
-`func (o *DeviceTypeRequest) GetSubdeviceRoleOk() (*string, bool)`
+`func (o *DeviceTypeRequest) GetSubdeviceRoleOk() (*DeviceTypeRequestSubdeviceRole, bool)`
 
 GetSubdeviceRoleOk returns a tuple with the SubdeviceRole field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSubdeviceRole
 
-`func (o *DeviceTypeRequest) SetSubdeviceRole(v string)`
+`func (o *DeviceTypeRequest) SetSubdeviceRole(v DeviceTypeRequestSubdeviceRole)`
 
 SetSubdeviceRole sets SubdeviceRole field to given value.
 
@@ -248,20 +274,20 @@ HasSubdeviceRole returns a boolean if a field has been set.
 UnsetSubdeviceRole ensures that no value is present for SubdeviceRole, not even an explicit nil
 ### GetAirflow
 
-`func (o *DeviceTypeRequest) GetAirflow() string`
+`func (o *DeviceTypeRequest) GetAirflow() DeviceTypeRequestAirflow`
 
 GetAirflow returns the Airflow field if non-nil, zero value otherwise.
 
 ### GetAirflowOk
 
-`func (o *DeviceTypeRequest) GetAirflowOk() (*string, bool)`
+`func (o *DeviceTypeRequest) GetAirflowOk() (*DeviceTypeRequestAirflow, bool)`
 
 GetAirflowOk returns a tuple with the Airflow field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAirflow
 
-`func (o *DeviceTypeRequest) SetAirflow(v string)`
+`func (o *DeviceTypeRequest) SetAirflow(v DeviceTypeRequestAirflow)`
 
 SetAirflow sets Airflow field to given value.
 
@@ -318,20 +344,20 @@ HasWeight returns a boolean if a field has been set.
 UnsetWeight ensures that no value is present for Weight, not even an explicit nil
 ### GetWeightUnit
 
-`func (o *DeviceTypeRequest) GetWeightUnit() string`
+`func (o *DeviceTypeRequest) GetWeightUnit() DeviceTypeRequestWeightUnit`
 
 GetWeightUnit returns the WeightUnit field if non-nil, zero value otherwise.
 
 ### GetWeightUnitOk
 
-`func (o *DeviceTypeRequest) GetWeightUnitOk() (*string, bool)`
+`func (o *DeviceTypeRequest) GetWeightUnitOk() (*DeviceTypeRequestWeightUnit, bool)`
 
 GetWeightUnitOk returns a tuple with the WeightUnit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWeightUnit
 
-`func (o *DeviceTypeRequest) SetWeightUnit(v string)`
+`func (o *DeviceTypeRequest) SetWeightUnit(v DeviceTypeRequestWeightUnit)`
 
 SetWeightUnit sets WeightUnit field to given value.
 

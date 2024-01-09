@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **Address** | **string** |  | 
 **Vrf** | Pointer to [**NullableNestedVRFRequest**](NestedVRFRequest.md) |  | [optional] 
 **Tenant** | Pointer to [**NullableNestedTenantRequest**](NestedTenantRequest.md) |  | [optional] 
-**Status** | Pointer to **string** | * &#x60;active&#x60; - Active * &#x60;reserved&#x60; - Reserved * &#x60;deprecated&#x60; - Deprecated * &#x60;dhcp&#x60; - DHCP * &#x60;slaac&#x60; - SLAAC | [optional] 
-**Role** | Pointer to **string** | * &#x60;loopback&#x60; - Loopback * &#x60;secondary&#x60; - Secondary * &#x60;anycast&#x60; - Anycast * &#x60;vip&#x60; - VIP * &#x60;vrrp&#x60; - VRRP * &#x60;hsrp&#x60; - HSRP * &#x60;glbp&#x60; - GLBP * &#x60;carp&#x60; - CARP | [optional] 
+**Status** | Pointer to [**IPAddressStatusValue**](IPAddressStatusValue.md) |  | [optional] 
+**Role** | Pointer to [**IPAddressRoleValue**](IPAddressRoleValue.md) |  | [optional] 
 **AssignedObjectType** | Pointer to **NullableString** |  | [optional] 
 **AssignedObjectId** | Pointer to **NullableInt64** |  | [optional] 
 **NatInside** | Pointer to [**NullableNestedIPAddressRequest**](NestedIPAddressRequest.md) |  | [optional] 
@@ -129,20 +129,20 @@ HasTenant returns a boolean if a field has been set.
 UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
 ### GetStatus
 
-`func (o *IPAddressRequest) GetStatus() string`
+`func (o *IPAddressRequest) GetStatus() IPAddressStatusValue`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *IPAddressRequest) GetStatusOk() (*string, bool)`
+`func (o *IPAddressRequest) GetStatusOk() (*IPAddressStatusValue, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *IPAddressRequest) SetStatus(v string)`
+`func (o *IPAddressRequest) SetStatus(v IPAddressStatusValue)`
 
 SetStatus sets Status field to given value.
 
@@ -154,20 +154,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetRole
 
-`func (o *IPAddressRequest) GetRole() string`
+`func (o *IPAddressRequest) GetRole() IPAddressRoleValue`
 
 GetRole returns the Role field if non-nil, zero value otherwise.
 
 ### GetRoleOk
 
-`func (o *IPAddressRequest) GetRoleOk() (*string, bool)`
+`func (o *IPAddressRequest) GetRoleOk() (*IPAddressRoleValue, bool)`
 
 GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRole
 
-`func (o *IPAddressRequest) SetRole(v string)`
+`func (o *IPAddressRequest) SetRole(v IPAddressRoleValue)`
 
 SetRole sets Role field to given value.
 

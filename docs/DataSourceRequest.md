@@ -5,19 +5,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
-**Type** | **string** | * &#x60;local&#x60; - Local * &#x60;git&#x60; - Git * &#x60;amazon-s3&#x60; - Amazon S3 | 
+**Type** | [**DataSourceTypeValue**](DataSourceTypeValue.md) |  | 
 **SourceUrl** | **string** |  | 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
-**Parameters** | Pointer to **map[string]interface{}** |  | [optional] 
+**Parameters** | Pointer to **interface{}** |  | [optional] 
 **IgnoreRules** | Pointer to **string** | Patterns (one per line) matching files to ignore when syncing | [optional] 
 
 ## Methods
 
 ### NewDataSourceRequest
 
-`func NewDataSourceRequest(name string, type_ string, sourceUrl string, ) *DataSourceRequest`
+`func NewDataSourceRequest(name string, type_ DataSourceTypeValue, sourceUrl string, ) *DataSourceRequest`
 
 NewDataSourceRequest instantiates a new DataSourceRequest object
 This constructor will assign default values to properties that have it defined,
@@ -54,20 +54,20 @@ SetName sets Name field to given value.
 
 ### GetType
 
-`func (o *DataSourceRequest) GetType() string`
+`func (o *DataSourceRequest) GetType() DataSourceTypeValue`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *DataSourceRequest) GetTypeOk() (*string, bool)`
+`func (o *DataSourceRequest) GetTypeOk() (*DataSourceTypeValue, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *DataSourceRequest) SetType(v string)`
+`func (o *DataSourceRequest) SetType(v DataSourceTypeValue)`
 
 SetType sets Type field to given value.
 
@@ -169,20 +169,20 @@ HasComments returns a boolean if a field has been set.
 
 ### GetParameters
 
-`func (o *DataSourceRequest) GetParameters() map[string]interface{}`
+`func (o *DataSourceRequest) GetParameters() interface{}`
 
 GetParameters returns the Parameters field if non-nil, zero value otherwise.
 
 ### GetParametersOk
 
-`func (o *DataSourceRequest) GetParametersOk() (*map[string]interface{}, bool)`
+`func (o *DataSourceRequest) GetParametersOk() (*interface{}, bool)`
 
 GetParametersOk returns a tuple with the Parameters field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetParameters
 
-`func (o *DataSourceRequest) SetParameters(v map[string]interface{})`
+`func (o *DataSourceRequest) SetParameters(v interface{})`
 
 SetParameters sets Parameters field to given value.
 

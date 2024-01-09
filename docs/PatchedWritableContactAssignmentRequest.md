@@ -8,8 +8,9 @@ Name | Type | Description | Notes
 **ObjectId** | Pointer to **int64** |  | [optional] 
 **Contact** | Pointer to **int32** |  | [optional] 
 **Role** | Pointer to **int32** |  | [optional] 
-**Priority** | Pointer to **string** | * &#x60;primary&#x60; - Primary * &#x60;secondary&#x60; - Secondary * &#x60;tertiary&#x60; - Tertiary * &#x60;inactive&#x60; - Inactive | [optional] 
+**Priority** | Pointer to [**ContactAssignmentPriorityValue**](ContactAssignmentPriorityValue.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
+**CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
@@ -132,20 +133,20 @@ HasRole returns a boolean if a field has been set.
 
 ### GetPriority
 
-`func (o *PatchedWritableContactAssignmentRequest) GetPriority() string`
+`func (o *PatchedWritableContactAssignmentRequest) GetPriority() ContactAssignmentPriorityValue`
 
 GetPriority returns the Priority field if non-nil, zero value otherwise.
 
 ### GetPriorityOk
 
-`func (o *PatchedWritableContactAssignmentRequest) GetPriorityOk() (*string, bool)`
+`func (o *PatchedWritableContactAssignmentRequest) GetPriorityOk() (*ContactAssignmentPriorityValue, bool)`
 
 GetPriorityOk returns a tuple with the Priority field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPriority
 
-`func (o *PatchedWritableContactAssignmentRequest) SetPriority(v string)`
+`func (o *PatchedWritableContactAssignmentRequest) SetPriority(v ContactAssignmentPriorityValue)`
 
 SetPriority sets Priority field to given value.
 
@@ -179,6 +180,31 @@ SetTags sets Tags field to given value.
 `func (o *PatchedWritableContactAssignmentRequest) HasTags() bool`
 
 HasTags returns a boolean if a field has been set.
+
+### GetCustomFields
+
+`func (o *PatchedWritableContactAssignmentRequest) GetCustomFields() map[string]interface{}`
+
+GetCustomFields returns the CustomFields field if non-nil, zero value otherwise.
+
+### GetCustomFieldsOk
+
+`func (o *PatchedWritableContactAssignmentRequest) GetCustomFieldsOk() (*map[string]interface{}, bool)`
+
+GetCustomFieldsOk returns a tuple with the CustomFields field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomFields
+
+`func (o *PatchedWritableContactAssignmentRequest) SetCustomFields(v map[string]interface{})`
+
+SetCustomFields sets CustomFields field to given value.
+
+### HasCustomFields
+
+`func (o *PatchedWritableContactAssignmentRequest) HasCustomFields() bool`
+
+HasCustomFields returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to **string** | * &#x60;text&#x60; - Text * &#x60;longtext&#x60; - Text (long) * &#x60;integer&#x60; - Integer * &#x60;decimal&#x60; - Decimal * &#x60;boolean&#x60; - Boolean (true/false) * &#x60;date&#x60; - Date * &#x60;datetime&#x60; - Date &amp; time * &#x60;url&#x60; - URL * &#x60;json&#x60; - JSON * &#x60;select&#x60; - Selection * &#x60;multiselect&#x60; - Multiple selection * &#x60;object&#x60; - Object * &#x60;multiobject&#x60; - Multiple objects | [optional] 
-**Label** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to [**CustomFieldTypeValue**](CustomFieldTypeValue.md) |  | [optional] 
+**Label** | Pointer to [**CustomFieldTypeLabel**](CustomFieldTypeLabel.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *CustomFieldType) GetValue() string`
+`func (o *CustomFieldType) GetValue() CustomFieldTypeValue`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *CustomFieldType) GetValueOk() (*string, bool)`
+`func (o *CustomFieldType) GetValueOk() (*CustomFieldTypeValue, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *CustomFieldType) SetValue(v string)`
+`func (o *CustomFieldType) SetValue(v CustomFieldTypeValue)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *CustomFieldType) GetLabel() string`
+`func (o *CustomFieldType) GetLabel() CustomFieldTypeLabel`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *CustomFieldType) GetLabelOk() (*string, bool)`
+`func (o *CustomFieldType) GetLabelOk() (*CustomFieldTypeLabel, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *CustomFieldType) SetLabel(v string)`
+`func (o *CustomFieldType) SetLabel(v CustomFieldTypeLabel)`
 
 SetLabel sets Label field to given value.
 

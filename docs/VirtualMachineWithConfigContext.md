@@ -23,19 +23,20 @@ Name | Type | Description | Notes
 **Disk** | Pointer to **NullableInt32** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
-**LocalContextData** | Pointer to **map[string]interface{}** | Local config context data takes precedence over source contexts in the final rendered config context | [optional] 
+**LocalContextData** | Pointer to **interface{}** | Local config context data takes precedence over source contexts in the final rendered config context | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**ConfigContext** | **map[string]interface{}** |  | [readonly] 
+**ConfigContext** | **interface{}** |  | [readonly] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 **InterfaceCount** | **int32** |  | [readonly] 
+**VirtualDiskCount** | **int32** |  | [readonly] 
 
 ## Methods
 
 ### NewVirtualMachineWithConfigContext
 
-`func NewVirtualMachineWithConfigContext(id int32, url string, display string, name string, primaryIp NestedIPAddress, configContext map[string]interface{}, created NullableTime, lastUpdated NullableTime, interfaceCount int32, ) *VirtualMachineWithConfigContext`
+`func NewVirtualMachineWithConfigContext(id int32, url string, display string, name string, primaryIp NestedIPAddress, configContext interface{}, created NullableTime, lastUpdated NullableTime, interfaceCount int32, virtualDiskCount int32, ) *VirtualMachineWithConfigContext`
 
 NewVirtualMachineWithConfigContext instantiates a new VirtualMachineWithConfigContext object
 This constructor will assign default values to properties that have it defined,
@@ -612,20 +613,20 @@ HasComments returns a boolean if a field has been set.
 
 ### GetLocalContextData
 
-`func (o *VirtualMachineWithConfigContext) GetLocalContextData() map[string]interface{}`
+`func (o *VirtualMachineWithConfigContext) GetLocalContextData() interface{}`
 
 GetLocalContextData returns the LocalContextData field if non-nil, zero value otherwise.
 
 ### GetLocalContextDataOk
 
-`func (o *VirtualMachineWithConfigContext) GetLocalContextDataOk() (*map[string]interface{}, bool)`
+`func (o *VirtualMachineWithConfigContext) GetLocalContextDataOk() (*interface{}, bool)`
 
 GetLocalContextDataOk returns a tuple with the LocalContextData field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLocalContextData
 
-`func (o *VirtualMachineWithConfigContext) SetLocalContextData(v map[string]interface{})`
+`func (o *VirtualMachineWithConfigContext) SetLocalContextData(v interface{})`
 
 SetLocalContextData sets LocalContextData field to given value.
 
@@ -697,20 +698,20 @@ HasCustomFields returns a boolean if a field has been set.
 
 ### GetConfigContext
 
-`func (o *VirtualMachineWithConfigContext) GetConfigContext() map[string]interface{}`
+`func (o *VirtualMachineWithConfigContext) GetConfigContext() interface{}`
 
 GetConfigContext returns the ConfigContext field if non-nil, zero value otherwise.
 
 ### GetConfigContextOk
 
-`func (o *VirtualMachineWithConfigContext) GetConfigContextOk() (*map[string]interface{}, bool)`
+`func (o *VirtualMachineWithConfigContext) GetConfigContextOk() (*interface{}, bool)`
 
 GetConfigContextOk returns a tuple with the ConfigContext field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfigContext
 
-`func (o *VirtualMachineWithConfigContext) SetConfigContext(v map[string]interface{})`
+`func (o *VirtualMachineWithConfigContext) SetConfigContext(v interface{})`
 
 SetConfigContext sets ConfigContext field to given value.
 
@@ -803,6 +804,26 @@ and a boolean to check if the value has been set.
 `func (o *VirtualMachineWithConfigContext) SetInterfaceCount(v int32)`
 
 SetInterfaceCount sets InterfaceCount field to given value.
+
+
+### GetVirtualDiskCount
+
+`func (o *VirtualMachineWithConfigContext) GetVirtualDiskCount() int32`
+
+GetVirtualDiskCount returns the VirtualDiskCount field if non-nil, zero value otherwise.
+
+### GetVirtualDiskCountOk
+
+`func (o *VirtualMachineWithConfigContext) GetVirtualDiskCountOk() (*int32, bool)`
+
+GetVirtualDiskCountOk returns a tuple with the VirtualDiskCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVirtualDiskCount
+
+`func (o *VirtualMachineWithConfigContext) SetVirtualDiskCount(v int32)`
+
+SetVirtualDiskCount sets VirtualDiskCount field to given value.
 
 
 

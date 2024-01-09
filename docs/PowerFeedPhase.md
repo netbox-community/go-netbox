@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to **string** | * &#x60;single-phase&#x60; - Single phase * &#x60;three-phase&#x60; - Three-phase | [optional] 
-**Label** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to [**PatchedWritablePowerFeedRequestPhase**](PatchedWritablePowerFeedRequestPhase.md) |  | [optional] 
+**Label** | Pointer to [**PowerFeedPhaseLabel**](PowerFeedPhaseLabel.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *PowerFeedPhase) GetValue() string`
+`func (o *PowerFeedPhase) GetValue() PatchedWritablePowerFeedRequestPhase`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *PowerFeedPhase) GetValueOk() (*string, bool)`
+`func (o *PowerFeedPhase) GetValueOk() (*PatchedWritablePowerFeedRequestPhase, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *PowerFeedPhase) SetValue(v string)`
+`func (o *PowerFeedPhase) SetValue(v PatchedWritablePowerFeedRequestPhase)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *PowerFeedPhase) GetLabel() string`
+`func (o *PowerFeedPhase) GetLabel() PowerFeedPhaseLabel`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *PowerFeedPhase) GetLabelOk() (*string, bool)`
+`func (o *PowerFeedPhase) GetLabelOk() (*PowerFeedPhaseLabel, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *PowerFeedPhase) SetLabel(v string)`
+`func (o *PowerFeedPhase) SetLabel(v PowerFeedPhaseLabel)`
 
 SetLabel sets Label field to given value.
 

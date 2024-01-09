@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **Address** | Pointer to **string** |  | [optional] 
 **Vrf** | Pointer to **NullableInt32** |  | [optional] 
 **Tenant** | Pointer to **NullableInt32** |  | [optional] 
-**Status** | Pointer to **string** | The operational status of this IP  * &#x60;active&#x60; - Active * &#x60;reserved&#x60; - Reserved * &#x60;deprecated&#x60; - Deprecated * &#x60;dhcp&#x60; - DHCP * &#x60;slaac&#x60; - SLAAC | [optional] 
-**Role** | Pointer to **string** | The functional role of this IP  * &#x60;loopback&#x60; - Loopback * &#x60;secondary&#x60; - Secondary * &#x60;anycast&#x60; - Anycast * &#x60;vip&#x60; - VIP * &#x60;vrrp&#x60; - VRRP * &#x60;hsrp&#x60; - HSRP * &#x60;glbp&#x60; - GLBP * &#x60;carp&#x60; - CARP | [optional] 
+**Status** | Pointer to [**PatchedWritableIPAddressRequestStatus**](PatchedWritableIPAddressRequestStatus.md) |  | [optional] 
+**Role** | Pointer to [**PatchedWritableIPAddressRequestRole**](PatchedWritableIPAddressRequestRole.md) |  | [optional] 
 **AssignedObjectType** | Pointer to **NullableString** |  | [optional] 
 **AssignedObjectId** | Pointer to **NullableInt64** |  | [optional] 
 **NatInside** | Pointer to **NullableInt32** | The IP for which this address is the \&quot;outside\&quot; IP | [optional] 
@@ -134,20 +134,20 @@ HasTenant returns a boolean if a field has been set.
 UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
 ### GetStatus
 
-`func (o *PatchedWritableIPAddressRequest) GetStatus() string`
+`func (o *PatchedWritableIPAddressRequest) GetStatus() PatchedWritableIPAddressRequestStatus`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *PatchedWritableIPAddressRequest) GetStatusOk() (*string, bool)`
+`func (o *PatchedWritableIPAddressRequest) GetStatusOk() (*PatchedWritableIPAddressRequestStatus, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *PatchedWritableIPAddressRequest) SetStatus(v string)`
+`func (o *PatchedWritableIPAddressRequest) SetStatus(v PatchedWritableIPAddressRequestStatus)`
 
 SetStatus sets Status field to given value.
 
@@ -159,20 +159,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetRole
 
-`func (o *PatchedWritableIPAddressRequest) GetRole() string`
+`func (o *PatchedWritableIPAddressRequest) GetRole() PatchedWritableIPAddressRequestRole`
 
 GetRole returns the Role field if non-nil, zero value otherwise.
 
 ### GetRoleOk
 
-`func (o *PatchedWritableIPAddressRequest) GetRoleOk() (*string, bool)`
+`func (o *PatchedWritableIPAddressRequest) GetRoleOk() (*PatchedWritableIPAddressRequestRole, bool)`
 
 GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRole
 
-`func (o *PatchedWritableIPAddressRequest) SetRole(v string)`
+`func (o *PatchedWritableIPAddressRequest) SetRole(v PatchedWritableIPAddressRequestRole)`
 
 SetRole sets Role field to given value.
 

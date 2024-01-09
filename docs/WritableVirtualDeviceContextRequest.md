@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Tenant** | Pointer to **NullableInt32** |  | [optional] 
 **PrimaryIp4** | Pointer to **NullableInt32** |  | [optional] 
 **PrimaryIp6** | Pointer to **NullableInt32** |  | [optional] 
-**Status** | **string** | * &#x60;active&#x60; - Active * &#x60;planned&#x60; - Planned * &#x60;offline&#x60; - Offline | 
+**Status** | [**PatchedWritableVirtualDeviceContextRequestStatus**](PatchedWritableVirtualDeviceContextRequestStatus.md) |  | 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewWritableVirtualDeviceContextRequest
 
-`func NewWritableVirtualDeviceContextRequest(name string, status string, ) *WritableVirtualDeviceContextRequest`
+`func NewWritableVirtualDeviceContextRequest(name string, status PatchedWritableVirtualDeviceContextRequestStatus, ) *WritableVirtualDeviceContextRequest`
 
 NewWritableVirtualDeviceContextRequest instantiates a new WritableVirtualDeviceContextRequest object
 This constructor will assign default values to properties that have it defined,
@@ -232,20 +232,20 @@ HasPrimaryIp6 returns a boolean if a field has been set.
 UnsetPrimaryIp6 ensures that no value is present for PrimaryIp6, not even an explicit nil
 ### GetStatus
 
-`func (o *WritableVirtualDeviceContextRequest) GetStatus() string`
+`func (o *WritableVirtualDeviceContextRequest) GetStatus() PatchedWritableVirtualDeviceContextRequestStatus`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *WritableVirtualDeviceContextRequest) GetStatusOk() (*string, bool)`
+`func (o *WritableVirtualDeviceContextRequest) GetStatusOk() (*PatchedWritableVirtualDeviceContextRequestStatus, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *WritableVirtualDeviceContextRequest) SetStatus(v string)`
+`func (o *WritableVirtualDeviceContextRequest) SetStatus(v PatchedWritableVirtualDeviceContextRequestStatus)`
 
 SetStatus sets Status field to given value.
 

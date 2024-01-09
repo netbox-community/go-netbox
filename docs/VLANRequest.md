@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Vid** | **int32** | Numeric VLAN ID (1-4094) | 
 **Name** | **string** |  | 
 **Tenant** | Pointer to [**NullableNestedTenantRequest**](NestedTenantRequest.md) |  | [optional] 
-**Status** | Pointer to **string** | * &#x60;active&#x60; - Active * &#x60;reserved&#x60; - Reserved * &#x60;deprecated&#x60; - Deprecated | [optional] 
+**Status** | Pointer to [**IPRangeStatusValue**](IPRangeStatusValue.md) |  | [optional] 
 **Role** | Pointer to [**NullableNestedRoleRequest**](NestedRoleRequest.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
@@ -182,20 +182,20 @@ HasTenant returns a boolean if a field has been set.
 UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
 ### GetStatus
 
-`func (o *VLANRequest) GetStatus() string`
+`func (o *VLANRequest) GetStatus() IPRangeStatusValue`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *VLANRequest) GetStatusOk() (*string, bool)`
+`func (o *VLANRequest) GetStatusOk() (*IPRangeStatusValue, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *VLANRequest) SetStatus(v string)`
+`func (o *VLANRequest) SetStatus(v IPRangeStatusValue)`
 
 SetStatus sets Status field to given value.
 

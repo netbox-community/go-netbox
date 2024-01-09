@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
-**BaseChoices** | Pointer to **string** | * &#x60;IATA&#x60; - IATA (Airport codes) * &#x60;ISO_3166&#x60; - ISO 3166 (Country codes) * &#x60;UN_LOCODE&#x60; - UN/LOCODE (Location codes) | [optional] 
+**BaseChoices** | Pointer to [**CustomFieldChoiceSetBaseChoicesValue**](CustomFieldChoiceSetBaseChoicesValue.md) |  | [optional] 
 **ExtraChoices** | Pointer to **[][]string** |  | [optional] 
 **OrderAlphabetically** | Pointer to **bool** | Choices are automatically ordered alphabetically | [optional] 
 
@@ -76,20 +76,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetBaseChoices
 
-`func (o *CustomFieldChoiceSetRequest) GetBaseChoices() string`
+`func (o *CustomFieldChoiceSetRequest) GetBaseChoices() CustomFieldChoiceSetBaseChoicesValue`
 
 GetBaseChoices returns the BaseChoices field if non-nil, zero value otherwise.
 
 ### GetBaseChoicesOk
 
-`func (o *CustomFieldChoiceSetRequest) GetBaseChoicesOk() (*string, bool)`
+`func (o *CustomFieldChoiceSetRequest) GetBaseChoicesOk() (*CustomFieldChoiceSetBaseChoicesValue, bool)`
 
 GetBaseChoicesOk returns a tuple with the BaseChoices field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBaseChoices
 
-`func (o *CustomFieldChoiceSetRequest) SetBaseChoices(v string)`
+`func (o *CustomFieldChoiceSetRequest) SetBaseChoices(v CustomFieldChoiceSetBaseChoicesValue)`
 
 SetBaseChoices sets BaseChoices field to given value.
 

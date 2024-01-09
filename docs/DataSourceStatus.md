@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to **string** | * &#x60;new&#x60; - New * &#x60;queued&#x60; - Queued * &#x60;syncing&#x60; - Syncing * &#x60;completed&#x60; - Completed * &#x60;failed&#x60; - Failed | [optional] 
-**Label** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to [**DataSourceStatusValue**](DataSourceStatusValue.md) |  | [optional] 
+**Label** | Pointer to [**DataSourceStatusLabel**](DataSourceStatusLabel.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *DataSourceStatus) GetValue() string`
+`func (o *DataSourceStatus) GetValue() DataSourceStatusValue`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *DataSourceStatus) GetValueOk() (*string, bool)`
+`func (o *DataSourceStatus) GetValueOk() (*DataSourceStatusValue, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *DataSourceStatus) SetValue(v string)`
+`func (o *DataSourceStatus) SetValue(v DataSourceStatusValue)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *DataSourceStatus) GetLabel() string`
+`func (o *DataSourceStatus) GetLabel() DataSourceStatusLabel`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *DataSourceStatus) GetLabelOk() (*string, bool)`
+`func (o *DataSourceStatus) GetLabelOk() (*DataSourceStatusLabel, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *DataSourceStatus) SetLabel(v string)`
+`func (o *DataSourceStatus) SetLabel(v DataSourceStatusLabel)`
 
 SetLabel sets Label field to given value.
 

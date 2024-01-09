@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **ComponentType** | Pointer to **NullableString** |  | [optional] 
 **ComponentId** | Pointer to **NullableInt64** |  | [optional] 
-**Component** | **map[string]interface{}** |  | [readonly] 
+**Component** | **interface{}** |  | [readonly] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 **Depth** | **int32** |  | [readonly] 
@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 
 ### NewInventoryItemTemplate
 
-`func NewInventoryItemTemplate(id int32, url string, display string, deviceType NestedDeviceType, name string, component map[string]interface{}, created NullableTime, lastUpdated NullableTime, depth int32, ) *InventoryItemTemplate`
+`func NewInventoryItemTemplate(id int32, url string, display string, deviceType NestedDeviceType, name string, component interface{}, created NullableTime, lastUpdated NullableTime, depth int32, ) *InventoryItemTemplate`
 
 NewInventoryItemTemplate instantiates a new InventoryItemTemplate object
 This constructor will assign default values to properties that have it defined,
@@ -393,20 +393,20 @@ HasComponentId returns a boolean if a field has been set.
 UnsetComponentId ensures that no value is present for ComponentId, not even an explicit nil
 ### GetComponent
 
-`func (o *InventoryItemTemplate) GetComponent() map[string]interface{}`
+`func (o *InventoryItemTemplate) GetComponent() interface{}`
 
 GetComponent returns the Component field if non-nil, zero value otherwise.
 
 ### GetComponentOk
 
-`func (o *InventoryItemTemplate) GetComponentOk() (*map[string]interface{}, bool)`
+`func (o *InventoryItemTemplate) GetComponentOk() (*interface{}, bool)`
 
 GetComponentOk returns a tuple with the Component field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetComponent
 
-`func (o *InventoryItemTemplate) SetComponent(v map[string]interface{})`
+`func (o *InventoryItemTemplate) SetComponent(v interface{})`
 
 SetComponent sets Component field to given value.
 

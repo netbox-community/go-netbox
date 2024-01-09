@@ -22,13 +22,13 @@ Name | Type | Description | Notes
 **Tenants** | Pointer to **[]int32** |  | [optional] 
 **Tags** | Pointer to **[]string** |  | [optional] 
 **DataSource** | Pointer to [**NestedDataSourceRequest**](NestedDataSourceRequest.md) |  | [optional] 
-**Data** | **map[string]interface{}** |  | 
+**Data** | **interface{}** |  | 
 
 ## Methods
 
 ### NewConfigContextRequest
 
-`func NewConfigContextRequest(name string, data map[string]interface{}, ) *ConfigContextRequest`
+`func NewConfigContextRequest(name string, data interface{}, ) *ConfigContextRequest`
 
 NewConfigContextRequest instantiates a new ConfigContextRequest object
 This constructor will assign default values to properties that have it defined,
@@ -490,24 +490,34 @@ HasDataSource returns a boolean if a field has been set.
 
 ### GetData
 
-`func (o *ConfigContextRequest) GetData() map[string]interface{}`
+`func (o *ConfigContextRequest) GetData() interface{}`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *ConfigContextRequest) GetDataOk() (*map[string]interface{}, bool)`
+`func (o *ConfigContextRequest) GetDataOk() (*interface{}, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *ConfigContextRequest) SetData(v map[string]interface{})`
+`func (o *ConfigContextRequest) SetData(v interface{})`
 
 SetData sets Data field to given value.
 
 
+### SetDataNil
+
+`func (o *ConfigContextRequest) SetDataNil(b bool)`
+
+ SetDataNil sets the value for Data to be an explicit nil
+
+### UnsetData
+`func (o *ConfigContextRequest) UnsetData()`
+
+UnsetData ensures that no value is present for Data, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

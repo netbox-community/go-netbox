@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to **string** | * &#x60;primary&#x60; - Primary * &#x60;secondary&#x60; - Secondary * &#x60;tertiary&#x60; - Tertiary * &#x60;inactive&#x60; - Inactive | [optional] 
-**Label** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to [**ContactAssignmentPriorityValue**](ContactAssignmentPriorityValue.md) |  | [optional] 
+**Label** | Pointer to [**ContactAssignmentPriorityLabel**](ContactAssignmentPriorityLabel.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *ContactAssignmentPriority) GetValue() string`
+`func (o *ContactAssignmentPriority) GetValue() ContactAssignmentPriorityValue`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *ContactAssignmentPriority) GetValueOk() (*string, bool)`
+`func (o *ContactAssignmentPriority) GetValueOk() (*ContactAssignmentPriorityValue, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *ContactAssignmentPriority) SetValue(v string)`
+`func (o *ContactAssignmentPriority) SetValue(v ContactAssignmentPriorityValue)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *ContactAssignmentPriority) GetLabel() string`
+`func (o *ContactAssignmentPriority) GetLabel() ContactAssignmentPriorityLabel`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *ContactAssignmentPriority) GetLabelOk() (*string, bool)`
+`func (o *ContactAssignmentPriority) GetLabelOk() (*ContactAssignmentPriorityLabel, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *ContactAssignmentPriority) SetLabel(v string)`
+`func (o *ContactAssignmentPriority) SetLabel(v ContactAssignmentPriorityLabel)`
 
 SetLabel sets Label field to given value.
 

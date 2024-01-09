@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to **string** | * &#x60;pd&#x60; - PD * &#x60;pse&#x60; - PSE | [optional] 
-**Label** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to [**InterfacePoeModeValue**](InterfacePoeModeValue.md) |  | [optional] 
+**Label** | Pointer to [**InterfacePoeModeLabel**](InterfacePoeModeLabel.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *InterfaceTemplatePoeMode) GetValue() string`
+`func (o *InterfaceTemplatePoeMode) GetValue() InterfacePoeModeValue`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *InterfaceTemplatePoeMode) GetValueOk() (*string, bool)`
+`func (o *InterfaceTemplatePoeMode) GetValueOk() (*InterfacePoeModeValue, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *InterfaceTemplatePoeMode) SetValue(v string)`
+`func (o *InterfaceTemplatePoeMode) SetValue(v InterfacePoeModeValue)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *InterfaceTemplatePoeMode) GetLabel() string`
+`func (o *InterfaceTemplatePoeMode) GetLabel() InterfacePoeModeLabel`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *InterfaceTemplatePoeMode) GetLabelOk() (*string, bool)`
+`func (o *InterfaceTemplatePoeMode) GetLabelOk() (*InterfacePoeModeLabel, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *InterfaceTemplatePoeMode) SetLabel(v string)`
+`func (o *InterfaceTemplatePoeMode) SetLabel(v InterfacePoeModeLabel)`
 
 SetLabel sets Label field to given value.
 

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to **string** | * &#x60;pending&#x60; - Pending * &#x60;scheduled&#x60; - Scheduled * &#x60;running&#x60; - Running * &#x60;completed&#x60; - Completed * &#x60;errored&#x60; - Errored * &#x60;failed&#x60; - Failed | [optional] 
-**Label** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to [**JobStatusValue**](JobStatusValue.md) |  | [optional] 
+**Label** | Pointer to [**JobStatusLabel**](JobStatusLabel.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *JobStatus) GetValue() string`
+`func (o *JobStatus) GetValue() JobStatusValue`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *JobStatus) GetValueOk() (*string, bool)`
+`func (o *JobStatus) GetValueOk() (*JobStatusValue, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *JobStatus) SetValue(v string)`
+`func (o *JobStatus) SetValue(v JobStatusValue)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *JobStatus) GetLabel() string`
+`func (o *JobStatus) GetLabel() JobStatusLabel`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *JobStatus) GetLabelOk() (*string, bool)`
+`func (o *JobStatus) GetLabelOk() (*JobStatusLabel, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *JobStatus) SetLabel(v string)`
+`func (o *JobStatus) SetLabel(v JobStatusLabel)`
 
 SetLabel sets Label field to given value.
 

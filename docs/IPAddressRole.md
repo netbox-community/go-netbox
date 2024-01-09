@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to **string** | * &#x60;loopback&#x60; - Loopback * &#x60;secondary&#x60; - Secondary * &#x60;anycast&#x60; - Anycast * &#x60;vip&#x60; - VIP * &#x60;vrrp&#x60; - VRRP * &#x60;hsrp&#x60; - HSRP * &#x60;glbp&#x60; - GLBP * &#x60;carp&#x60; - CARP | [optional] 
-**Label** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to [**IPAddressRoleValue**](IPAddressRoleValue.md) |  | [optional] 
+**Label** | Pointer to [**IPAddressRoleLabel**](IPAddressRoleLabel.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *IPAddressRole) GetValue() string`
+`func (o *IPAddressRole) GetValue() IPAddressRoleValue`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *IPAddressRole) GetValueOk() (*string, bool)`
+`func (o *IPAddressRole) GetValueOk() (*IPAddressRoleValue, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *IPAddressRole) SetValue(v string)`
+`func (o *IPAddressRole) SetValue(v IPAddressRoleValue)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *IPAddressRole) GetLabel() string`
+`func (o *IPAddressRole) GetLabel() IPAddressRoleLabel`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *IPAddressRole) GetLabelOk() (*string, bool)`
+`func (o *IPAddressRole) GetLabelOk() (*IPAddressRoleLabel, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *IPAddressRole) SetLabel(v string)`
+`func (o *IPAddressRole) SetLabel(v IPAddressRoleLabel)`
 
 SetLabel sets Label field to given value.
 

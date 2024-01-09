@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **Mtu** | Pointer to **NullableInt32** |  | [optional] 
 **MacAddress** | Pointer to **NullableString** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**Mode** | Pointer to **string** | IEEE 802.1Q tagging strategy  * &#x60;access&#x60; - Access * &#x60;tagged&#x60; - Tagged * &#x60;tagged-all&#x60; - Tagged (All) | [optional] 
+**Mode** | Pointer to [**PatchedWritableInterfaceRequestMode**](PatchedWritableInterfaceRequestMode.md) |  | [optional] 
 **UntaggedVlan** | Pointer to **NullableInt32** |  | [optional] 
 **TaggedVlans** | Pointer to **[]int32** |  | [optional] 
 **Vrf** | Pointer to **NullableInt32** |  | [optional] 
@@ -280,20 +280,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetMode
 
-`func (o *PatchedWritableVMInterfaceRequest) GetMode() string`
+`func (o *PatchedWritableVMInterfaceRequest) GetMode() PatchedWritableInterfaceRequestMode`
 
 GetMode returns the Mode field if non-nil, zero value otherwise.
 
 ### GetModeOk
 
-`func (o *PatchedWritableVMInterfaceRequest) GetModeOk() (*string, bool)`
+`func (o *PatchedWritableVMInterfaceRequest) GetModeOk() (*PatchedWritableInterfaceRequestMode, bool)`
 
 GetModeOk returns a tuple with the Mode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMode
 
-`func (o *PatchedWritableVMInterfaceRequest) SetMode(v string)`
+`func (o *PatchedWritableVMInterfaceRequest) SetMode(v PatchedWritableInterfaceRequestMode)`
 
 SetMode sets Mode field to given value.
 

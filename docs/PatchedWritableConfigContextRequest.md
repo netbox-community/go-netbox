@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **Tenants** | Pointer to **[]int32** |  | [optional] 
 **Tags** | Pointer to **[]string** |  | [optional] 
 **DataSource** | Pointer to **NullableInt32** | Remote data source | [optional] 
-**Data** | Pointer to **map[string]interface{}** |  | [optional] 
+**Data** | Pointer to **interface{}** |  | [optional] 
 
 ## Methods
 
@@ -505,20 +505,20 @@ HasDataSource returns a boolean if a field has been set.
 UnsetDataSource ensures that no value is present for DataSource, not even an explicit nil
 ### GetData
 
-`func (o *PatchedWritableConfigContextRequest) GetData() map[string]interface{}`
+`func (o *PatchedWritableConfigContextRequest) GetData() interface{}`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *PatchedWritableConfigContextRequest) GetDataOk() (*map[string]interface{}, bool)`
+`func (o *PatchedWritableConfigContextRequest) GetDataOk() (*interface{}, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *PatchedWritableConfigContextRequest) SetData(v map[string]interface{})`
+`func (o *PatchedWritableConfigContextRequest) SetData(v interface{})`
 
 SetData sets Data field to given value.
 
@@ -528,6 +528,16 @@ SetData sets Data field to given value.
 
 HasData returns a boolean if a field has been set.
 
+### SetDataNil
+
+`func (o *PatchedWritableConfigContextRequest) SetDataNil(b bool)`
+
+ SetDataNil sets the value for Data to be an explicit nil
+
+### UnsetData
+`func (o *PatchedWritableConfigContextRequest) UnsetData()`
+
+UnsetData ensures that no value is present for Data, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

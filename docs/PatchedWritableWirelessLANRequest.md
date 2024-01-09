@@ -7,11 +7,11 @@ Name | Type | Description | Notes
 **Ssid** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Group** | Pointer to **NullableInt32** |  | [optional] 
-**Status** | Pointer to **string** | * &#x60;active&#x60; - Active * &#x60;reserved&#x60; - Reserved * &#x60;disabled&#x60; - Disabled * &#x60;deprecated&#x60; - Deprecated | [optional] 
+**Status** | Pointer to [**PatchedWritableWirelessLANRequestStatus**](PatchedWritableWirelessLANRequestStatus.md) |  | [optional] 
 **Vlan** | Pointer to **NullableInt32** |  | [optional] 
 **Tenant** | Pointer to **NullableInt32** |  | [optional] 
-**AuthType** | Pointer to **string** | * &#x60;open&#x60; - Open * &#x60;wep&#x60; - WEP * &#x60;wpa-personal&#x60; - WPA Personal (PSK) * &#x60;wpa-enterprise&#x60; - WPA Enterprise | [optional] 
-**AuthCipher** | Pointer to **string** | * &#x60;auto&#x60; - Auto * &#x60;tkip&#x60; - TKIP * &#x60;aes&#x60; - AES | [optional] 
+**AuthType** | Pointer to [**AuthenticationType1**](AuthenticationType1.md) |  | [optional] 
+**AuthCipher** | Pointer to [**AuthenticationCipher**](AuthenticationCipher.md) |  | [optional] 
 **AuthPsk** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
@@ -123,20 +123,20 @@ HasGroup returns a boolean if a field has been set.
 UnsetGroup ensures that no value is present for Group, not even an explicit nil
 ### GetStatus
 
-`func (o *PatchedWritableWirelessLANRequest) GetStatus() string`
+`func (o *PatchedWritableWirelessLANRequest) GetStatus() PatchedWritableWirelessLANRequestStatus`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *PatchedWritableWirelessLANRequest) GetStatusOk() (*string, bool)`
+`func (o *PatchedWritableWirelessLANRequest) GetStatusOk() (*PatchedWritableWirelessLANRequestStatus, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *PatchedWritableWirelessLANRequest) SetStatus(v string)`
+`func (o *PatchedWritableWirelessLANRequest) SetStatus(v PatchedWritableWirelessLANRequestStatus)`
 
 SetStatus sets Status field to given value.
 
@@ -218,20 +218,20 @@ HasTenant returns a boolean if a field has been set.
 UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
 ### GetAuthType
 
-`func (o *PatchedWritableWirelessLANRequest) GetAuthType() string`
+`func (o *PatchedWritableWirelessLANRequest) GetAuthType() AuthenticationType1`
 
 GetAuthType returns the AuthType field if non-nil, zero value otherwise.
 
 ### GetAuthTypeOk
 
-`func (o *PatchedWritableWirelessLANRequest) GetAuthTypeOk() (*string, bool)`
+`func (o *PatchedWritableWirelessLANRequest) GetAuthTypeOk() (*AuthenticationType1, bool)`
 
 GetAuthTypeOk returns a tuple with the AuthType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthType
 
-`func (o *PatchedWritableWirelessLANRequest) SetAuthType(v string)`
+`func (o *PatchedWritableWirelessLANRequest) SetAuthType(v AuthenticationType1)`
 
 SetAuthType sets AuthType field to given value.
 
@@ -243,20 +243,20 @@ HasAuthType returns a boolean if a field has been set.
 
 ### GetAuthCipher
 
-`func (o *PatchedWritableWirelessLANRequest) GetAuthCipher() string`
+`func (o *PatchedWritableWirelessLANRequest) GetAuthCipher() AuthenticationCipher`
 
 GetAuthCipher returns the AuthCipher field if non-nil, zero value otherwise.
 
 ### GetAuthCipherOk
 
-`func (o *PatchedWritableWirelessLANRequest) GetAuthCipherOk() (*string, bool)`
+`func (o *PatchedWritableWirelessLANRequest) GetAuthCipherOk() (*AuthenticationCipher, bool)`
 
 GetAuthCipherOk returns a tuple with the AuthCipher field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthCipher
 
-`func (o *PatchedWritableWirelessLANRequest) SetAuthCipher(v string)`
+`func (o *PatchedWritableWirelessLANRequest) SetAuthCipher(v AuthenticationCipher)`
 
 SetAuthCipher sets AuthCipher field to given value.
 

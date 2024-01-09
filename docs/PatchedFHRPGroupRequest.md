@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** |  | [optional] 
-**Protocol** | Pointer to **string** | * &#x60;vrrp2&#x60; - VRRPv2 * &#x60;vrrp3&#x60; - VRRPv3 * &#x60;carp&#x60; - CARP * &#x60;clusterxl&#x60; - ClusterXL * &#x60;hsrp&#x60; - HSRP * &#x60;glbp&#x60; - GLBP * &#x60;other&#x60; - Other | [optional] 
+**Protocol** | Pointer to [**FHRPGroupProtocol**](FHRPGroupProtocol.md) |  | [optional] 
 **GroupId** | Pointer to **int32** |  | [optional] 
-**AuthType** | Pointer to **string** | * &#x60;plaintext&#x60; - Plaintext * &#x60;md5&#x60; - MD5 | [optional] 
+**AuthType** | Pointer to [**AuthenticationType**](AuthenticationType.md) |  | [optional] 
 **AuthKey** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
@@ -60,20 +60,20 @@ HasName returns a boolean if a field has been set.
 
 ### GetProtocol
 
-`func (o *PatchedFHRPGroupRequest) GetProtocol() string`
+`func (o *PatchedFHRPGroupRequest) GetProtocol() FHRPGroupProtocol`
 
 GetProtocol returns the Protocol field if non-nil, zero value otherwise.
 
 ### GetProtocolOk
 
-`func (o *PatchedFHRPGroupRequest) GetProtocolOk() (*string, bool)`
+`func (o *PatchedFHRPGroupRequest) GetProtocolOk() (*FHRPGroupProtocol, bool)`
 
 GetProtocolOk returns a tuple with the Protocol field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProtocol
 
-`func (o *PatchedFHRPGroupRequest) SetProtocol(v string)`
+`func (o *PatchedFHRPGroupRequest) SetProtocol(v FHRPGroupProtocol)`
 
 SetProtocol sets Protocol field to given value.
 
@@ -110,20 +110,20 @@ HasGroupId returns a boolean if a field has been set.
 
 ### GetAuthType
 
-`func (o *PatchedFHRPGroupRequest) GetAuthType() string`
+`func (o *PatchedFHRPGroupRequest) GetAuthType() AuthenticationType`
 
 GetAuthType returns the AuthType field if non-nil, zero value otherwise.
 
 ### GetAuthTypeOk
 
-`func (o *PatchedFHRPGroupRequest) GetAuthTypeOk() (*string, bool)`
+`func (o *PatchedFHRPGroupRequest) GetAuthTypeOk() (*AuthenticationType, bool)`
 
 GetAuthTypeOk returns a tuple with the AuthType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthType
 
-`func (o *PatchedFHRPGroupRequest) SetAuthType(v string)`
+`func (o *PatchedFHRPGroupRequest) SetAuthType(v AuthenticationType)`
 
 SetAuthType sets AuthType field to given value.
 

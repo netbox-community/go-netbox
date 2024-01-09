@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
-**Status** | Pointer to **string** | * &#x60;offline&#x60; - Offline * &#x60;active&#x60; - Active * &#x60;planned&#x60; - Planned * &#x60;staged&#x60; - Staged * &#x60;failed&#x60; - Failed * &#x60;decommissioning&#x60; - Decommissioning | [optional] 
+**Status** | Pointer to [**ModuleStatusValue**](ModuleStatusValue.md) |  | [optional] 
 **Site** | Pointer to **NullableInt32** |  | [optional] 
 **Cluster** | Pointer to **NullableInt32** |  | [optional] 
 **Device** | Pointer to **NullableInt32** |  | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **Disk** | Pointer to **NullableInt32** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
-**LocalContextData** | Pointer to **map[string]interface{}** | Local config context data takes precedence over source contexts in the final rendered config context | [optional] 
+**LocalContextData** | Pointer to **interface{}** | Local config context data takes precedence over source contexts in the final rendered config context | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 
@@ -64,20 +64,20 @@ SetName sets Name field to given value.
 
 ### GetStatus
 
-`func (o *WritableVirtualMachineWithConfigContextRequest) GetStatus() string`
+`func (o *WritableVirtualMachineWithConfigContextRequest) GetStatus() ModuleStatusValue`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *WritableVirtualMachineWithConfigContextRequest) GetStatusOk() (*string, bool)`
+`func (o *WritableVirtualMachineWithConfigContextRequest) GetStatusOk() (*ModuleStatusValue, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *WritableVirtualMachineWithConfigContextRequest) SetStatus(v string)`
+`func (o *WritableVirtualMachineWithConfigContextRequest) SetStatus(v ModuleStatusValue)`
 
 SetStatus sets Status field to given value.
 
@@ -524,20 +524,20 @@ HasComments returns a boolean if a field has been set.
 
 ### GetLocalContextData
 
-`func (o *WritableVirtualMachineWithConfigContextRequest) GetLocalContextData() map[string]interface{}`
+`func (o *WritableVirtualMachineWithConfigContextRequest) GetLocalContextData() interface{}`
 
 GetLocalContextData returns the LocalContextData field if non-nil, zero value otherwise.
 
 ### GetLocalContextDataOk
 
-`func (o *WritableVirtualMachineWithConfigContextRequest) GetLocalContextDataOk() (*map[string]interface{}, bool)`
+`func (o *WritableVirtualMachineWithConfigContextRequest) GetLocalContextDataOk() (*interface{}, bool)`
 
 GetLocalContextDataOk returns a tuple with the LocalContextData field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLocalContextData
 
-`func (o *WritableVirtualMachineWithConfigContextRequest) SetLocalContextData(v map[string]interface{})`
+`func (o *WritableVirtualMachineWithConfigContextRequest) SetLocalContextData(v interface{})`
 
 SetLocalContextData sets LocalContextData field to given value.
 

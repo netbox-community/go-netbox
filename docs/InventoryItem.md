@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **ComponentType** | Pointer to **NullableString** |  | [optional] 
 **ComponentId** | Pointer to **NullableInt64** |  | [optional] 
-**Component** | **map[string]interface{}** |  | [readonly] 
+**Component** | **interface{}** |  | [readonly] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 
 ### NewInventoryItem
 
-`func NewInventoryItem(id int32, url string, display string, device NestedDevice, name string, component map[string]interface{}, created NullableTime, lastUpdated NullableTime, depth int32, ) *InventoryItem`
+`func NewInventoryItem(id int32, url string, display string, device NestedDevice, name string, component interface{}, created NullableTime, lastUpdated NullableTime, depth int32, ) *InventoryItem`
 
 NewInventoryItem instantiates a new InventoryItem object
 This constructor will assign default values to properties that have it defined,
@@ -483,20 +483,20 @@ HasComponentId returns a boolean if a field has been set.
 UnsetComponentId ensures that no value is present for ComponentId, not even an explicit nil
 ### GetComponent
 
-`func (o *InventoryItem) GetComponent() map[string]interface{}`
+`func (o *InventoryItem) GetComponent() interface{}`
 
 GetComponent returns the Component field if non-nil, zero value otherwise.
 
 ### GetComponentOk
 
-`func (o *InventoryItem) GetComponentOk() (*map[string]interface{}, bool)`
+`func (o *InventoryItem) GetComponentOk() (*interface{}, bool)`
 
 GetComponentOk returns a tuple with the Component field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetComponent
 
-`func (o *InventoryItem) SetComponent(v map[string]interface{})`
+`func (o *InventoryItem) SetComponent(v interface{})`
 
 SetComponent sets Component field to given value.
 

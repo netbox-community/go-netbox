@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** |  | [optional] 
 **Slug** | Pointer to **string** |  | [optional] 
+**Color** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -78,6 +79,31 @@ SetSlug sets Slug field to given value.
 `func (o *PatchedCircuitTypeRequest) HasSlug() bool`
 
 HasSlug returns a boolean if a field has been set.
+
+### GetColor
+
+`func (o *PatchedCircuitTypeRequest) GetColor() string`
+
+GetColor returns the Color field if non-nil, zero value otherwise.
+
+### GetColorOk
+
+`func (o *PatchedCircuitTypeRequest) GetColorOk() (*string, bool)`
+
+GetColorOk returns a tuple with the Color field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetColor
+
+`func (o *PatchedCircuitTypeRequest) SetColor(v string)`
+
+SetColor sets Color field to given value.
+
+### HasColor
+
+`func (o *PatchedCircuitTypeRequest) HasColor() bool`
+
+HasColor returns a boolean if a field has been set.
 
 ### GetDescription
 

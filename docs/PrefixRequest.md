@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Vrf** | Pointer to [**NullableNestedVRFRequest**](NestedVRFRequest.md) |  | [optional] 
 **Tenant** | Pointer to [**NullableNestedTenantRequest**](NestedTenantRequest.md) |  | [optional] 
 **Vlan** | Pointer to [**NullableNestedVLANRequest**](NestedVLANRequest.md) |  | [optional] 
-**Status** | Pointer to **string** | * &#x60;container&#x60; - Container * &#x60;active&#x60; - Active * &#x60;reserved&#x60; - Reserved * &#x60;deprecated&#x60; - Deprecated | [optional] 
+**Status** | Pointer to [**PrefixStatusValue**](PrefixStatusValue.md) |  | [optional] 
 **Role** | Pointer to [**NullableNestedRoleRequest**](NestedRoleRequest.md) |  | [optional] 
 **IsPool** | Pointer to **bool** | All IP addresses within this prefix are considered usable | [optional] 
 **MarkUtilized** | Pointer to **bool** | Treat as 100% utilized | [optional] 
@@ -199,20 +199,20 @@ HasVlan returns a boolean if a field has been set.
 UnsetVlan ensures that no value is present for Vlan, not even an explicit nil
 ### GetStatus
 
-`func (o *PrefixRequest) GetStatus() string`
+`func (o *PrefixRequest) GetStatus() PrefixStatusValue`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *PrefixRequest) GetStatusOk() (*string, bool)`
+`func (o *PrefixRequest) GetStatusOk() (*PrefixStatusValue, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *PrefixRequest) SetStatus(v string)`
+`func (o *PrefixRequest) SetStatus(v PrefixStatusValue)`
 
 SetStatus sets Status field to given value.
 

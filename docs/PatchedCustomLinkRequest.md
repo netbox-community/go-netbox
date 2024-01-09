@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **LinkUrl** | Pointer to **string** | Jinja2 template code for link URL | [optional] 
 **Weight** | Pointer to **int32** |  | [optional] 
 **GroupName** | Pointer to **string** | Links with the same group will appear as a dropdown menu | [optional] 
-**ButtonClass** | Pointer to **string** | The class of the first link in a group will be used for the dropdown button  * &#x60;outline-dark&#x60; - Default * &#x60;blue&#x60; - Blue * &#x60;indigo&#x60; - Indigo * &#x60;purple&#x60; - Purple * &#x60;pink&#x60; - Pink * &#x60;red&#x60; - Red * &#x60;orange&#x60; - Orange * &#x60;yellow&#x60; - Yellow * &#x60;green&#x60; - Green * &#x60;teal&#x60; - Teal * &#x60;cyan&#x60; - Cyan * &#x60;gray&#x60; - Gray * &#x60;black&#x60; - Black * &#x60;white&#x60; - White * &#x60;ghost-dark&#x60; - Link | [optional] 
+**ButtonClass** | Pointer to [**CustomLinkButtonClass**](CustomLinkButtonClass.md) |  | [optional] 
 **NewWindow** | Pointer to **bool** | Force link to open in a new window | [optional] 
 
 ## Methods
@@ -210,20 +210,20 @@ HasGroupName returns a boolean if a field has been set.
 
 ### GetButtonClass
 
-`func (o *PatchedCustomLinkRequest) GetButtonClass() string`
+`func (o *PatchedCustomLinkRequest) GetButtonClass() CustomLinkButtonClass`
 
 GetButtonClass returns the ButtonClass field if non-nil, zero value otherwise.
 
 ### GetButtonClassOk
 
-`func (o *PatchedCustomLinkRequest) GetButtonClassOk() (*string, bool)`
+`func (o *PatchedCustomLinkRequest) GetButtonClassOk() (*CustomLinkButtonClass, bool)`
 
 GetButtonClassOk returns a tuple with the ButtonClass field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetButtonClass
 
-`func (o *PatchedCustomLinkRequest) SetButtonClass(v string)`
+`func (o *PatchedCustomLinkRequest) SetButtonClass(v CustomLinkButtonClass)`
 
 SetButtonClass sets ButtonClass field to given value.
 

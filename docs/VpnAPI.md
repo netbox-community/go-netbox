@@ -1,0 +1,7592 @@
+# \VpnAPI
+
+All URIs are relative to *http://localhost*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**VpnIkePoliciesBulkDestroy**](VpnAPI.md#VpnIkePoliciesBulkDestroy) | **Delete** /api/vpn/ike-policies/ | 
+[**VpnIkePoliciesBulkPartialUpdate**](VpnAPI.md#VpnIkePoliciesBulkPartialUpdate) | **Patch** /api/vpn/ike-policies/ | 
+[**VpnIkePoliciesBulkUpdate**](VpnAPI.md#VpnIkePoliciesBulkUpdate) | **Put** /api/vpn/ike-policies/ | 
+[**VpnIkePoliciesCreate**](VpnAPI.md#VpnIkePoliciesCreate) | **Post** /api/vpn/ike-policies/ | 
+[**VpnIkePoliciesDestroy**](VpnAPI.md#VpnIkePoliciesDestroy) | **Delete** /api/vpn/ike-policies/{id}/ | 
+[**VpnIkePoliciesList**](VpnAPI.md#VpnIkePoliciesList) | **Get** /api/vpn/ike-policies/ | 
+[**VpnIkePoliciesPartialUpdate**](VpnAPI.md#VpnIkePoliciesPartialUpdate) | **Patch** /api/vpn/ike-policies/{id}/ | 
+[**VpnIkePoliciesRetrieve**](VpnAPI.md#VpnIkePoliciesRetrieve) | **Get** /api/vpn/ike-policies/{id}/ | 
+[**VpnIkePoliciesUpdate**](VpnAPI.md#VpnIkePoliciesUpdate) | **Put** /api/vpn/ike-policies/{id}/ | 
+[**VpnIkeProposalsBulkDestroy**](VpnAPI.md#VpnIkeProposalsBulkDestroy) | **Delete** /api/vpn/ike-proposals/ | 
+[**VpnIkeProposalsBulkPartialUpdate**](VpnAPI.md#VpnIkeProposalsBulkPartialUpdate) | **Patch** /api/vpn/ike-proposals/ | 
+[**VpnIkeProposalsBulkUpdate**](VpnAPI.md#VpnIkeProposalsBulkUpdate) | **Put** /api/vpn/ike-proposals/ | 
+[**VpnIkeProposalsCreate**](VpnAPI.md#VpnIkeProposalsCreate) | **Post** /api/vpn/ike-proposals/ | 
+[**VpnIkeProposalsDestroy**](VpnAPI.md#VpnIkeProposalsDestroy) | **Delete** /api/vpn/ike-proposals/{id}/ | 
+[**VpnIkeProposalsList**](VpnAPI.md#VpnIkeProposalsList) | **Get** /api/vpn/ike-proposals/ | 
+[**VpnIkeProposalsPartialUpdate**](VpnAPI.md#VpnIkeProposalsPartialUpdate) | **Patch** /api/vpn/ike-proposals/{id}/ | 
+[**VpnIkeProposalsRetrieve**](VpnAPI.md#VpnIkeProposalsRetrieve) | **Get** /api/vpn/ike-proposals/{id}/ | 
+[**VpnIkeProposalsUpdate**](VpnAPI.md#VpnIkeProposalsUpdate) | **Put** /api/vpn/ike-proposals/{id}/ | 
+[**VpnIpsecPoliciesBulkDestroy**](VpnAPI.md#VpnIpsecPoliciesBulkDestroy) | **Delete** /api/vpn/ipsec-policies/ | 
+[**VpnIpsecPoliciesBulkPartialUpdate**](VpnAPI.md#VpnIpsecPoliciesBulkPartialUpdate) | **Patch** /api/vpn/ipsec-policies/ | 
+[**VpnIpsecPoliciesBulkUpdate**](VpnAPI.md#VpnIpsecPoliciesBulkUpdate) | **Put** /api/vpn/ipsec-policies/ | 
+[**VpnIpsecPoliciesCreate**](VpnAPI.md#VpnIpsecPoliciesCreate) | **Post** /api/vpn/ipsec-policies/ | 
+[**VpnIpsecPoliciesDestroy**](VpnAPI.md#VpnIpsecPoliciesDestroy) | **Delete** /api/vpn/ipsec-policies/{id}/ | 
+[**VpnIpsecPoliciesList**](VpnAPI.md#VpnIpsecPoliciesList) | **Get** /api/vpn/ipsec-policies/ | 
+[**VpnIpsecPoliciesPartialUpdate**](VpnAPI.md#VpnIpsecPoliciesPartialUpdate) | **Patch** /api/vpn/ipsec-policies/{id}/ | 
+[**VpnIpsecPoliciesRetrieve**](VpnAPI.md#VpnIpsecPoliciesRetrieve) | **Get** /api/vpn/ipsec-policies/{id}/ | 
+[**VpnIpsecPoliciesUpdate**](VpnAPI.md#VpnIpsecPoliciesUpdate) | **Put** /api/vpn/ipsec-policies/{id}/ | 
+[**VpnIpsecProfilesBulkDestroy**](VpnAPI.md#VpnIpsecProfilesBulkDestroy) | **Delete** /api/vpn/ipsec-profiles/ | 
+[**VpnIpsecProfilesBulkPartialUpdate**](VpnAPI.md#VpnIpsecProfilesBulkPartialUpdate) | **Patch** /api/vpn/ipsec-profiles/ | 
+[**VpnIpsecProfilesBulkUpdate**](VpnAPI.md#VpnIpsecProfilesBulkUpdate) | **Put** /api/vpn/ipsec-profiles/ | 
+[**VpnIpsecProfilesCreate**](VpnAPI.md#VpnIpsecProfilesCreate) | **Post** /api/vpn/ipsec-profiles/ | 
+[**VpnIpsecProfilesDestroy**](VpnAPI.md#VpnIpsecProfilesDestroy) | **Delete** /api/vpn/ipsec-profiles/{id}/ | 
+[**VpnIpsecProfilesList**](VpnAPI.md#VpnIpsecProfilesList) | **Get** /api/vpn/ipsec-profiles/ | 
+[**VpnIpsecProfilesPartialUpdate**](VpnAPI.md#VpnIpsecProfilesPartialUpdate) | **Patch** /api/vpn/ipsec-profiles/{id}/ | 
+[**VpnIpsecProfilesRetrieve**](VpnAPI.md#VpnIpsecProfilesRetrieve) | **Get** /api/vpn/ipsec-profiles/{id}/ | 
+[**VpnIpsecProfilesUpdate**](VpnAPI.md#VpnIpsecProfilesUpdate) | **Put** /api/vpn/ipsec-profiles/{id}/ | 
+[**VpnIpsecProposalsBulkDestroy**](VpnAPI.md#VpnIpsecProposalsBulkDestroy) | **Delete** /api/vpn/ipsec-proposals/ | 
+[**VpnIpsecProposalsBulkPartialUpdate**](VpnAPI.md#VpnIpsecProposalsBulkPartialUpdate) | **Patch** /api/vpn/ipsec-proposals/ | 
+[**VpnIpsecProposalsBulkUpdate**](VpnAPI.md#VpnIpsecProposalsBulkUpdate) | **Put** /api/vpn/ipsec-proposals/ | 
+[**VpnIpsecProposalsCreate**](VpnAPI.md#VpnIpsecProposalsCreate) | **Post** /api/vpn/ipsec-proposals/ | 
+[**VpnIpsecProposalsDestroy**](VpnAPI.md#VpnIpsecProposalsDestroy) | **Delete** /api/vpn/ipsec-proposals/{id}/ | 
+[**VpnIpsecProposalsList**](VpnAPI.md#VpnIpsecProposalsList) | **Get** /api/vpn/ipsec-proposals/ | 
+[**VpnIpsecProposalsPartialUpdate**](VpnAPI.md#VpnIpsecProposalsPartialUpdate) | **Patch** /api/vpn/ipsec-proposals/{id}/ | 
+[**VpnIpsecProposalsRetrieve**](VpnAPI.md#VpnIpsecProposalsRetrieve) | **Get** /api/vpn/ipsec-proposals/{id}/ | 
+[**VpnIpsecProposalsUpdate**](VpnAPI.md#VpnIpsecProposalsUpdate) | **Put** /api/vpn/ipsec-proposals/{id}/ | 
+[**VpnL2vpnTerminationsBulkDestroy**](VpnAPI.md#VpnL2vpnTerminationsBulkDestroy) | **Delete** /api/vpn/l2vpn-terminations/ | 
+[**VpnL2vpnTerminationsBulkPartialUpdate**](VpnAPI.md#VpnL2vpnTerminationsBulkPartialUpdate) | **Patch** /api/vpn/l2vpn-terminations/ | 
+[**VpnL2vpnTerminationsBulkUpdate**](VpnAPI.md#VpnL2vpnTerminationsBulkUpdate) | **Put** /api/vpn/l2vpn-terminations/ | 
+[**VpnL2vpnTerminationsCreate**](VpnAPI.md#VpnL2vpnTerminationsCreate) | **Post** /api/vpn/l2vpn-terminations/ | 
+[**VpnL2vpnTerminationsDestroy**](VpnAPI.md#VpnL2vpnTerminationsDestroy) | **Delete** /api/vpn/l2vpn-terminations/{id}/ | 
+[**VpnL2vpnTerminationsList**](VpnAPI.md#VpnL2vpnTerminationsList) | **Get** /api/vpn/l2vpn-terminations/ | 
+[**VpnL2vpnTerminationsPartialUpdate**](VpnAPI.md#VpnL2vpnTerminationsPartialUpdate) | **Patch** /api/vpn/l2vpn-terminations/{id}/ | 
+[**VpnL2vpnTerminationsRetrieve**](VpnAPI.md#VpnL2vpnTerminationsRetrieve) | **Get** /api/vpn/l2vpn-terminations/{id}/ | 
+[**VpnL2vpnTerminationsUpdate**](VpnAPI.md#VpnL2vpnTerminationsUpdate) | **Put** /api/vpn/l2vpn-terminations/{id}/ | 
+[**VpnL2vpnsBulkDestroy**](VpnAPI.md#VpnL2vpnsBulkDestroy) | **Delete** /api/vpn/l2vpns/ | 
+[**VpnL2vpnsBulkPartialUpdate**](VpnAPI.md#VpnL2vpnsBulkPartialUpdate) | **Patch** /api/vpn/l2vpns/ | 
+[**VpnL2vpnsBulkUpdate**](VpnAPI.md#VpnL2vpnsBulkUpdate) | **Put** /api/vpn/l2vpns/ | 
+[**VpnL2vpnsCreate**](VpnAPI.md#VpnL2vpnsCreate) | **Post** /api/vpn/l2vpns/ | 
+[**VpnL2vpnsDestroy**](VpnAPI.md#VpnL2vpnsDestroy) | **Delete** /api/vpn/l2vpns/{id}/ | 
+[**VpnL2vpnsList**](VpnAPI.md#VpnL2vpnsList) | **Get** /api/vpn/l2vpns/ | 
+[**VpnL2vpnsPartialUpdate**](VpnAPI.md#VpnL2vpnsPartialUpdate) | **Patch** /api/vpn/l2vpns/{id}/ | 
+[**VpnL2vpnsRetrieve**](VpnAPI.md#VpnL2vpnsRetrieve) | **Get** /api/vpn/l2vpns/{id}/ | 
+[**VpnL2vpnsUpdate**](VpnAPI.md#VpnL2vpnsUpdate) | **Put** /api/vpn/l2vpns/{id}/ | 
+[**VpnTunnelGroupsBulkDestroy**](VpnAPI.md#VpnTunnelGroupsBulkDestroy) | **Delete** /api/vpn/tunnel-groups/ | 
+[**VpnTunnelGroupsBulkPartialUpdate**](VpnAPI.md#VpnTunnelGroupsBulkPartialUpdate) | **Patch** /api/vpn/tunnel-groups/ | 
+[**VpnTunnelGroupsBulkUpdate**](VpnAPI.md#VpnTunnelGroupsBulkUpdate) | **Put** /api/vpn/tunnel-groups/ | 
+[**VpnTunnelGroupsCreate**](VpnAPI.md#VpnTunnelGroupsCreate) | **Post** /api/vpn/tunnel-groups/ | 
+[**VpnTunnelGroupsDestroy**](VpnAPI.md#VpnTunnelGroupsDestroy) | **Delete** /api/vpn/tunnel-groups/{id}/ | 
+[**VpnTunnelGroupsList**](VpnAPI.md#VpnTunnelGroupsList) | **Get** /api/vpn/tunnel-groups/ | 
+[**VpnTunnelGroupsPartialUpdate**](VpnAPI.md#VpnTunnelGroupsPartialUpdate) | **Patch** /api/vpn/tunnel-groups/{id}/ | 
+[**VpnTunnelGroupsRetrieve**](VpnAPI.md#VpnTunnelGroupsRetrieve) | **Get** /api/vpn/tunnel-groups/{id}/ | 
+[**VpnTunnelGroupsUpdate**](VpnAPI.md#VpnTunnelGroupsUpdate) | **Put** /api/vpn/tunnel-groups/{id}/ | 
+[**VpnTunnelTerminationsBulkDestroy**](VpnAPI.md#VpnTunnelTerminationsBulkDestroy) | **Delete** /api/vpn/tunnel-terminations/ | 
+[**VpnTunnelTerminationsBulkPartialUpdate**](VpnAPI.md#VpnTunnelTerminationsBulkPartialUpdate) | **Patch** /api/vpn/tunnel-terminations/ | 
+[**VpnTunnelTerminationsBulkUpdate**](VpnAPI.md#VpnTunnelTerminationsBulkUpdate) | **Put** /api/vpn/tunnel-terminations/ | 
+[**VpnTunnelTerminationsCreate**](VpnAPI.md#VpnTunnelTerminationsCreate) | **Post** /api/vpn/tunnel-terminations/ | 
+[**VpnTunnelTerminationsDestroy**](VpnAPI.md#VpnTunnelTerminationsDestroy) | **Delete** /api/vpn/tunnel-terminations/{id}/ | 
+[**VpnTunnelTerminationsList**](VpnAPI.md#VpnTunnelTerminationsList) | **Get** /api/vpn/tunnel-terminations/ | 
+[**VpnTunnelTerminationsPartialUpdate**](VpnAPI.md#VpnTunnelTerminationsPartialUpdate) | **Patch** /api/vpn/tunnel-terminations/{id}/ | 
+[**VpnTunnelTerminationsRetrieve**](VpnAPI.md#VpnTunnelTerminationsRetrieve) | **Get** /api/vpn/tunnel-terminations/{id}/ | 
+[**VpnTunnelTerminationsUpdate**](VpnAPI.md#VpnTunnelTerminationsUpdate) | **Put** /api/vpn/tunnel-terminations/{id}/ | 
+[**VpnTunnelsBulkDestroy**](VpnAPI.md#VpnTunnelsBulkDestroy) | **Delete** /api/vpn/tunnels/ | 
+[**VpnTunnelsBulkPartialUpdate**](VpnAPI.md#VpnTunnelsBulkPartialUpdate) | **Patch** /api/vpn/tunnels/ | 
+[**VpnTunnelsBulkUpdate**](VpnAPI.md#VpnTunnelsBulkUpdate) | **Put** /api/vpn/tunnels/ | 
+[**VpnTunnelsCreate**](VpnAPI.md#VpnTunnelsCreate) | **Post** /api/vpn/tunnels/ | 
+[**VpnTunnelsDestroy**](VpnAPI.md#VpnTunnelsDestroy) | **Delete** /api/vpn/tunnels/{id}/ | 
+[**VpnTunnelsList**](VpnAPI.md#VpnTunnelsList) | **Get** /api/vpn/tunnels/ | 
+[**VpnTunnelsPartialUpdate**](VpnAPI.md#VpnTunnelsPartialUpdate) | **Patch** /api/vpn/tunnels/{id}/ | 
+[**VpnTunnelsRetrieve**](VpnAPI.md#VpnTunnelsRetrieve) | **Get** /api/vpn/tunnels/{id}/ | 
+[**VpnTunnelsUpdate**](VpnAPI.md#VpnTunnelsUpdate) | **Put** /api/vpn/tunnels/{id}/ | 
+
+
+
+## VpnIkePoliciesBulkDestroy
+
+> VpnIkePoliciesBulkDestroy(ctx).IKEPolicyRequest(iKEPolicyRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	iKEPolicyRequest := []openapiclient.IKEPolicyRequest{*openapiclient.NewIKEPolicyRequest("Name_example", openapiclient.IKEPolicy_version_value(1), openapiclient.IKEPolicy_mode_value("aggressive"))} // []IKEPolicyRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.VpnAPI.VpnIkePoliciesBulkDestroy(context.Background()).IKEPolicyRequest(iKEPolicyRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIkePoliciesBulkDestroy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIkePoliciesBulkDestroyRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **iKEPolicyRequest** | [**[]IKEPolicyRequest**](IKEPolicyRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIkePoliciesBulkPartialUpdate
+
+> []IKEPolicy VpnIkePoliciesBulkPartialUpdate(ctx).IKEPolicyRequest(iKEPolicyRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	iKEPolicyRequest := []openapiclient.IKEPolicyRequest{*openapiclient.NewIKEPolicyRequest("Name_example", openapiclient.IKEPolicy_version_value(1), openapiclient.IKEPolicy_mode_value("aggressive"))} // []IKEPolicyRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnIkePoliciesBulkPartialUpdate(context.Background()).IKEPolicyRequest(iKEPolicyRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIkePoliciesBulkPartialUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnIkePoliciesBulkPartialUpdate`: []IKEPolicy
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnIkePoliciesBulkPartialUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIkePoliciesBulkPartialUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **iKEPolicyRequest** | [**[]IKEPolicyRequest**](IKEPolicyRequest.md) |  | 
+
+### Return type
+
+[**[]IKEPolicy**](IKEPolicy.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIkePoliciesBulkUpdate
+
+> []IKEPolicy VpnIkePoliciesBulkUpdate(ctx).IKEPolicyRequest(iKEPolicyRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	iKEPolicyRequest := []openapiclient.IKEPolicyRequest{*openapiclient.NewIKEPolicyRequest("Name_example", openapiclient.IKEPolicy_version_value(1), openapiclient.IKEPolicy_mode_value("aggressive"))} // []IKEPolicyRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnIkePoliciesBulkUpdate(context.Background()).IKEPolicyRequest(iKEPolicyRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIkePoliciesBulkUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnIkePoliciesBulkUpdate`: []IKEPolicy
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnIkePoliciesBulkUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIkePoliciesBulkUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **iKEPolicyRequest** | [**[]IKEPolicyRequest**](IKEPolicyRequest.md) |  | 
+
+### Return type
+
+[**[]IKEPolicy**](IKEPolicy.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIkePoliciesCreate
+
+> IKEPolicy VpnIkePoliciesCreate(ctx).WritableIKEPolicyRequest(writableIKEPolicyRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	writableIKEPolicyRequest := *openapiclient.NewWritableIKEPolicyRequest("Name_example", openapiclient.IKEPolicy_mode_value("aggressive"), []int32{int32(123)}) // WritableIKEPolicyRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnIkePoliciesCreate(context.Background()).WritableIKEPolicyRequest(writableIKEPolicyRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIkePoliciesCreate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnIkePoliciesCreate`: IKEPolicy
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnIkePoliciesCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIkePoliciesCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **writableIKEPolicyRequest** | [**WritableIKEPolicyRequest**](WritableIKEPolicyRequest.md) |  | 
+
+### Return type
+
+[**IKEPolicy**](IKEPolicy.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIkePoliciesDestroy
+
+> VpnIkePoliciesDestroy(ctx, id).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this IKE policy.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.VpnAPI.VpnIkePoliciesDestroy(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIkePoliciesDestroy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this IKE policy. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIkePoliciesDestroyRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIkePoliciesList
+
+> PaginatedIKEPolicyList VpnIkePoliciesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Mode(mode).ModeN(modeN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).PresharedKey(presharedKey).PresharedKeyIc(presharedKeyIc).PresharedKeyIe(presharedKeyIe).PresharedKeyIew(presharedKeyIew).PresharedKeyIsw(presharedKeyIsw).PresharedKeyN(presharedKeyN).PresharedKeyNic(presharedKeyNic).PresharedKeyNie(presharedKeyNie).PresharedKeyNiew(presharedKeyNiew).PresharedKeyNisw(presharedKeyNisw).Proposal(proposal).ProposalEmpty(proposalEmpty).ProposalIc(proposalIc).ProposalIe(proposalIe).ProposalIew(proposalIew).ProposalIsw(proposalIsw).ProposalN(proposalN).ProposalNic(proposalNic).ProposalNie(proposalNie).ProposalNiew(proposalNiew).ProposalNisw(proposalNisw).ProposalId(proposalId).ProposalIdEmpty(proposalIdEmpty).ProposalIdGt(proposalIdGt).ProposalIdGte(proposalIdGte).ProposalIdLt(proposalIdLt).ProposalIdLte(proposalIdLte).ProposalIdN(proposalIdN).Q(q).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Version(version).VersionN(versionN).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+    "time"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	created := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdLte := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdN := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+	description := []string{"Inner_example"} // []string |  (optional)
+	descriptionEmpty := true // bool |  (optional)
+	descriptionIc := []string{"Inner_example"} // []string |  (optional)
+	descriptionIe := []string{"Inner_example"} // []string |  (optional)
+	descriptionIew := []string{"Inner_example"} // []string |  (optional)
+	descriptionIsw := []string{"Inner_example"} // []string |  (optional)
+	descriptionN := []string{"Inner_example"} // []string |  (optional)
+	descriptionNic := []string{"Inner_example"} // []string |  (optional)
+	descriptionNie := []string{"Inner_example"} // []string |  (optional)
+	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
+	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
+	id := []int32{int32(123)} // []int32 |  (optional)
+	idEmpty := true // bool |  (optional)
+	idGt := []int32{int32(123)} // []int32 |  (optional)
+	idGte := []int32{int32(123)} // []int32 |  (optional)
+	idLt := []int32{int32(123)} // []int32 |  (optional)
+	idLte := []int32{int32(123)} // []int32 |  (optional)
+	idN := []int32{int32(123)} // []int32 |  (optional)
+	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
+	limit := int32(56) // int32 | Number of results to return per page. (optional)
+	mode := []string{"Inner_example"} // []string |  (optional)
+	modeN := []string{"Inner_example"} // []string |  (optional)
+	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+	name := []string{"Inner_example"} // []string |  (optional)
+	nameEmpty := true // bool |  (optional)
+	nameIc := []string{"Inner_example"} // []string |  (optional)
+	nameIe := []string{"Inner_example"} // []string |  (optional)
+	nameIew := []string{"Inner_example"} // []string |  (optional)
+	nameIsw := []string{"Inner_example"} // []string |  (optional)
+	nameN := []string{"Inner_example"} // []string |  (optional)
+	nameNic := []string{"Inner_example"} // []string |  (optional)
+	nameNie := []string{"Inner_example"} // []string |  (optional)
+	nameNiew := []string{"Inner_example"} // []string |  (optional)
+	nameNisw := []string{"Inner_example"} // []string |  (optional)
+	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
+	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	presharedKey := "presharedKey_example" // string |  (optional)
+	presharedKeyIc := "presharedKeyIc_example" // string |  (optional)
+	presharedKeyIe := "presharedKeyIe_example" // string |  (optional)
+	presharedKeyIew := "presharedKeyIew_example" // string |  (optional)
+	presharedKeyIsw := "presharedKeyIsw_example" // string |  (optional)
+	presharedKeyN := "presharedKeyN_example" // string |  (optional)
+	presharedKeyNic := "presharedKeyNic_example" // string |  (optional)
+	presharedKeyNie := "presharedKeyNie_example" // string |  (optional)
+	presharedKeyNiew := "presharedKeyNiew_example" // string |  (optional)
+	presharedKeyNisw := "presharedKeyNisw_example" // string |  (optional)
+	proposal := []string{"Inner_example"} // []string |  (optional)
+	proposalEmpty := true // bool |  (optional)
+	proposalIc := []string{"Inner_example"} // []string |  (optional)
+	proposalIe := []string{"Inner_example"} // []string |  (optional)
+	proposalIew := []string{"Inner_example"} // []string |  (optional)
+	proposalIsw := []string{"Inner_example"} // []string |  (optional)
+	proposalN := []string{"Inner_example"} // []string |  (optional)
+	proposalNic := []string{"Inner_example"} // []string |  (optional)
+	proposalNie := []string{"Inner_example"} // []string |  (optional)
+	proposalNiew := []string{"Inner_example"} // []string |  (optional)
+	proposalNisw := []string{"Inner_example"} // []string |  (optional)
+	proposalId := []int32{int32(123)} // []int32 |  (optional)
+	proposalIdEmpty := []int32{int32(123)} // []int32 |  (optional)
+	proposalIdGt := []int32{int32(123)} // []int32 |  (optional)
+	proposalIdGte := []int32{int32(123)} // []int32 |  (optional)
+	proposalIdLt := []int32{int32(123)} // []int32 |  (optional)
+	proposalIdLte := []int32{int32(123)} // []int32 |  (optional)
+	proposalIdN := []int32{int32(123)} // []int32 |  (optional)
+	q := "q_example" // string | Search (optional)
+	tag := []string{"Inner_example"} // []string |  (optional)
+	tagN := []string{"Inner_example"} // []string |  (optional)
+	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+	version := []int32{int32(123)} // []int32 |  (optional)
+	versionN := []int32{int32(123)} // []int32 |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnIkePoliciesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Mode(mode).ModeN(modeN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).PresharedKey(presharedKey).PresharedKeyIc(presharedKeyIc).PresharedKeyIe(presharedKeyIe).PresharedKeyIew(presharedKeyIew).PresharedKeyIsw(presharedKeyIsw).PresharedKeyN(presharedKeyN).PresharedKeyNic(presharedKeyNic).PresharedKeyNie(presharedKeyNie).PresharedKeyNiew(presharedKeyNiew).PresharedKeyNisw(presharedKeyNisw).Proposal(proposal).ProposalEmpty(proposalEmpty).ProposalIc(proposalIc).ProposalIe(proposalIe).ProposalIew(proposalIew).ProposalIsw(proposalIsw).ProposalN(proposalN).ProposalNic(proposalNic).ProposalNie(proposalNie).ProposalNiew(proposalNiew).ProposalNisw(proposalNisw).ProposalId(proposalId).ProposalIdEmpty(proposalIdEmpty).ProposalIdGt(proposalIdGt).ProposalIdGte(proposalIdGte).ProposalIdLt(proposalIdLt).ProposalIdLte(proposalIdLte).ProposalIdN(proposalIdN).Q(q).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Version(version).VersionN(versionN).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIkePoliciesList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnIkePoliciesList`: PaginatedIKEPolicyList
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnIkePoliciesList`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIkePoliciesListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
+ **createdGt** | [**[]time.Time**](time.Time.md) |  | 
+ **createdGte** | [**[]time.Time**](time.Time.md) |  | 
+ **createdLt** | [**[]time.Time**](time.Time.md) |  | 
+ **createdLte** | [**[]time.Time**](time.Time.md) |  | 
+ **createdN** | [**[]time.Time**](time.Time.md) |  | 
+ **createdByRequest** | **string** |  | 
+ **description** | **[]string** |  | 
+ **descriptionEmpty** | **bool** |  | 
+ **descriptionIc** | **[]string** |  | 
+ **descriptionIe** | **[]string** |  | 
+ **descriptionIew** | **[]string** |  | 
+ **descriptionIsw** | **[]string** |  | 
+ **descriptionN** | **[]string** |  | 
+ **descriptionNic** | **[]string** |  | 
+ **descriptionNie** | **[]string** |  | 
+ **descriptionNiew** | **[]string** |  | 
+ **descriptionNisw** | **[]string** |  | 
+ **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
+ **idGt** | **[]int32** |  | 
+ **idGte** | **[]int32** |  | 
+ **idLt** | **[]int32** |  | 
+ **idLte** | **[]int32** |  | 
+ **idN** | **[]int32** |  | 
+ **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
+ **limit** | **int32** | Number of results to return per page. | 
+ **mode** | **[]string** |  | 
+ **modeN** | **[]string** |  | 
+ **modifiedByRequest** | **string** |  | 
+ **name** | **[]string** |  | 
+ **nameEmpty** | **bool** |  | 
+ **nameIc** | **[]string** |  | 
+ **nameIe** | **[]string** |  | 
+ **nameIew** | **[]string** |  | 
+ **nameIsw** | **[]string** |  | 
+ **nameN** | **[]string** |  | 
+ **nameNic** | **[]string** |  | 
+ **nameNie** | **[]string** |  | 
+ **nameNiew** | **[]string** |  | 
+ **nameNisw** | **[]string** |  | 
+ **offset** | **int32** | The initial index from which to return the results. | 
+ **ordering** | **string** | Which field to use when ordering the results. | 
+ **presharedKey** | **string** |  | 
+ **presharedKeyIc** | **string** |  | 
+ **presharedKeyIe** | **string** |  | 
+ **presharedKeyIew** | **string** |  | 
+ **presharedKeyIsw** | **string** |  | 
+ **presharedKeyN** | **string** |  | 
+ **presharedKeyNic** | **string** |  | 
+ **presharedKeyNie** | **string** |  | 
+ **presharedKeyNiew** | **string** |  | 
+ **presharedKeyNisw** | **string** |  | 
+ **proposal** | **[]string** |  | 
+ **proposalEmpty** | **bool** |  | 
+ **proposalIc** | **[]string** |  | 
+ **proposalIe** | **[]string** |  | 
+ **proposalIew** | **[]string** |  | 
+ **proposalIsw** | **[]string** |  | 
+ **proposalN** | **[]string** |  | 
+ **proposalNic** | **[]string** |  | 
+ **proposalNie** | **[]string** |  | 
+ **proposalNiew** | **[]string** |  | 
+ **proposalNisw** | **[]string** |  | 
+ **proposalId** | **[]int32** |  | 
+ **proposalIdEmpty** | **[]int32** |  | 
+ **proposalIdGt** | **[]int32** |  | 
+ **proposalIdGte** | **[]int32** |  | 
+ **proposalIdLt** | **[]int32** |  | 
+ **proposalIdLte** | **[]int32** |  | 
+ **proposalIdN** | **[]int32** |  | 
+ **q** | **string** | Search | 
+ **tag** | **[]string** |  | 
+ **tagN** | **[]string** |  | 
+ **updatedByRequest** | **string** |  | 
+ **version** | **[]int32** |  | 
+ **versionN** | **[]int32** |  | 
+
+### Return type
+
+[**PaginatedIKEPolicyList**](PaginatedIKEPolicyList.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIkePoliciesPartialUpdate
+
+> IKEPolicy VpnIkePoliciesPartialUpdate(ctx, id).PatchedWritableIKEPolicyRequest(patchedWritableIKEPolicyRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this IKE policy.
+	patchedWritableIKEPolicyRequest := *openapiclient.NewPatchedWritableIKEPolicyRequest() // PatchedWritableIKEPolicyRequest |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnIkePoliciesPartialUpdate(context.Background(), id).PatchedWritableIKEPolicyRequest(patchedWritableIKEPolicyRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIkePoliciesPartialUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnIkePoliciesPartialUpdate`: IKEPolicy
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnIkePoliciesPartialUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this IKE policy. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIkePoliciesPartialUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **patchedWritableIKEPolicyRequest** | [**PatchedWritableIKEPolicyRequest**](PatchedWritableIKEPolicyRequest.md) |  | 
+
+### Return type
+
+[**IKEPolicy**](IKEPolicy.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIkePoliciesRetrieve
+
+> IKEPolicy VpnIkePoliciesRetrieve(ctx, id).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this IKE policy.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnIkePoliciesRetrieve(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIkePoliciesRetrieve``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnIkePoliciesRetrieve`: IKEPolicy
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnIkePoliciesRetrieve`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this IKE policy. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIkePoliciesRetrieveRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**IKEPolicy**](IKEPolicy.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIkePoliciesUpdate
+
+> IKEPolicy VpnIkePoliciesUpdate(ctx, id).WritableIKEPolicyRequest(writableIKEPolicyRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this IKE policy.
+	writableIKEPolicyRequest := *openapiclient.NewWritableIKEPolicyRequest("Name_example", openapiclient.IKEPolicy_mode_value("aggressive"), []int32{int32(123)}) // WritableIKEPolicyRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnIkePoliciesUpdate(context.Background(), id).WritableIKEPolicyRequest(writableIKEPolicyRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIkePoliciesUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnIkePoliciesUpdate`: IKEPolicy
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnIkePoliciesUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this IKE policy. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIkePoliciesUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **writableIKEPolicyRequest** | [**WritableIKEPolicyRequest**](WritableIKEPolicyRequest.md) |  | 
+
+### Return type
+
+[**IKEPolicy**](IKEPolicy.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIkeProposalsBulkDestroy
+
+> VpnIkeProposalsBulkDestroy(ctx).IKEProposalRequest(iKEProposalRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	iKEProposalRequest := []openapiclient.IKEProposalRequest{*openapiclient.NewIKEProposalRequest("Name_example", openapiclient.IKEProposal_authentication_method_value("preshared-keys"), openapiclient.IKEProposal_encryption_algorithm_value("aes-128-cbc"), openapiclient.IKEProposal_authentication_algorithm_value("hmac-sha1"), openapiclient.IKEProposal_group_value(1))} // []IKEProposalRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.VpnAPI.VpnIkeProposalsBulkDestroy(context.Background()).IKEProposalRequest(iKEProposalRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIkeProposalsBulkDestroy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIkeProposalsBulkDestroyRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **iKEProposalRequest** | [**[]IKEProposalRequest**](IKEProposalRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIkeProposalsBulkPartialUpdate
+
+> []IKEProposal VpnIkeProposalsBulkPartialUpdate(ctx).IKEProposalRequest(iKEProposalRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	iKEProposalRequest := []openapiclient.IKEProposalRequest{*openapiclient.NewIKEProposalRequest("Name_example", openapiclient.IKEProposal_authentication_method_value("preshared-keys"), openapiclient.IKEProposal_encryption_algorithm_value("aes-128-cbc"), openapiclient.IKEProposal_authentication_algorithm_value("hmac-sha1"), openapiclient.IKEProposal_group_value(1))} // []IKEProposalRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnIkeProposalsBulkPartialUpdate(context.Background()).IKEProposalRequest(iKEProposalRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIkeProposalsBulkPartialUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnIkeProposalsBulkPartialUpdate`: []IKEProposal
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnIkeProposalsBulkPartialUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIkeProposalsBulkPartialUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **iKEProposalRequest** | [**[]IKEProposalRequest**](IKEProposalRequest.md) |  | 
+
+### Return type
+
+[**[]IKEProposal**](IKEProposal.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIkeProposalsBulkUpdate
+
+> []IKEProposal VpnIkeProposalsBulkUpdate(ctx).IKEProposalRequest(iKEProposalRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	iKEProposalRequest := []openapiclient.IKEProposalRequest{*openapiclient.NewIKEProposalRequest("Name_example", openapiclient.IKEProposal_authentication_method_value("preshared-keys"), openapiclient.IKEProposal_encryption_algorithm_value("aes-128-cbc"), openapiclient.IKEProposal_authentication_algorithm_value("hmac-sha1"), openapiclient.IKEProposal_group_value(1))} // []IKEProposalRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnIkeProposalsBulkUpdate(context.Background()).IKEProposalRequest(iKEProposalRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIkeProposalsBulkUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnIkeProposalsBulkUpdate`: []IKEProposal
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnIkeProposalsBulkUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIkeProposalsBulkUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **iKEProposalRequest** | [**[]IKEProposalRequest**](IKEProposalRequest.md) |  | 
+
+### Return type
+
+[**[]IKEProposal**](IKEProposal.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIkeProposalsCreate
+
+> IKEProposal VpnIkeProposalsCreate(ctx).WritableIKEProposalRequest(writableIKEProposalRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	writableIKEProposalRequest := *openapiclient.NewWritableIKEProposalRequest("Name_example", openapiclient.IKEProposal_authentication_method_value("preshared-keys"), openapiclient.IKEProposal_encryption_algorithm_value("aes-128-cbc"), openapiclient.PatchedWritableIKEProposalRequest_group(1)) // WritableIKEProposalRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnIkeProposalsCreate(context.Background()).WritableIKEProposalRequest(writableIKEProposalRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIkeProposalsCreate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnIkeProposalsCreate`: IKEProposal
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnIkeProposalsCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIkeProposalsCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **writableIKEProposalRequest** | [**WritableIKEProposalRequest**](WritableIKEProposalRequest.md) |  | 
+
+### Return type
+
+[**IKEProposal**](IKEProposal.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIkeProposalsDestroy
+
+> VpnIkeProposalsDestroy(ctx, id).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this IKE proposal.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.VpnAPI.VpnIkeProposalsDestroy(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIkeProposalsDestroy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this IKE proposal. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIkeProposalsDestroyRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIkeProposalsList
+
+> PaginatedIKEProposalList VpnIkeProposalsList(ctx).AuthenticationAlgorithm(authenticationAlgorithm).AuthenticationAlgorithmN(authenticationAlgorithmN).AuthenticationMethod(authenticationMethod).AuthenticationMethodN(authenticationMethodN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).EncryptionAlgorithm(encryptionAlgorithm).EncryptionAlgorithmN(encryptionAlgorithmN).Group(group).GroupN(groupN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).SaLifetime(saLifetime).SaLifetimeEmpty(saLifetimeEmpty).SaLifetimeGt(saLifetimeGt).SaLifetimeGte(saLifetimeGte).SaLifetimeLt(saLifetimeLt).SaLifetimeLte(saLifetimeLte).SaLifetimeN(saLifetimeN).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+    "time"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	authenticationAlgorithm := []string{"Inner_example"} // []string |  (optional)
+	authenticationAlgorithmN := []string{"Inner_example"} // []string |  (optional)
+	authenticationMethod := []string{"Inner_example"} // []string |  (optional)
+	authenticationMethodN := []string{"Inner_example"} // []string |  (optional)
+	created := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdLte := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdN := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+	description := []string{"Inner_example"} // []string |  (optional)
+	descriptionEmpty := true // bool |  (optional)
+	descriptionIc := []string{"Inner_example"} // []string |  (optional)
+	descriptionIe := []string{"Inner_example"} // []string |  (optional)
+	descriptionIew := []string{"Inner_example"} // []string |  (optional)
+	descriptionIsw := []string{"Inner_example"} // []string |  (optional)
+	descriptionN := []string{"Inner_example"} // []string |  (optional)
+	descriptionNic := []string{"Inner_example"} // []string |  (optional)
+	descriptionNie := []string{"Inner_example"} // []string |  (optional)
+	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
+	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
+	encryptionAlgorithm := []string{"Inner_example"} // []string |  (optional)
+	encryptionAlgorithmN := []string{"Inner_example"} // []string |  (optional)
+	group := []int32{int32(123)} // []int32 | Diffie-Hellman group ID (optional)
+	groupN := []int32{int32(123)} // []int32 | Diffie-Hellman group ID (optional)
+	id := []int32{int32(123)} // []int32 |  (optional)
+	idEmpty := true // bool |  (optional)
+	idGt := []int32{int32(123)} // []int32 |  (optional)
+	idGte := []int32{int32(123)} // []int32 |  (optional)
+	idLt := []int32{int32(123)} // []int32 |  (optional)
+	idLte := []int32{int32(123)} // []int32 |  (optional)
+	idN := []int32{int32(123)} // []int32 |  (optional)
+	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
+	limit := int32(56) // int32 | Number of results to return per page. (optional)
+	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+	name := []string{"Inner_example"} // []string |  (optional)
+	nameEmpty := true // bool |  (optional)
+	nameIc := []string{"Inner_example"} // []string |  (optional)
+	nameIe := []string{"Inner_example"} // []string |  (optional)
+	nameIew := []string{"Inner_example"} // []string |  (optional)
+	nameIsw := []string{"Inner_example"} // []string |  (optional)
+	nameN := []string{"Inner_example"} // []string |  (optional)
+	nameNic := []string{"Inner_example"} // []string |  (optional)
+	nameNie := []string{"Inner_example"} // []string |  (optional)
+	nameNiew := []string{"Inner_example"} // []string |  (optional)
+	nameNisw := []string{"Inner_example"} // []string |  (optional)
+	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
+	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	q := "q_example" // string | Search (optional)
+	saLifetime := []int32{int32(123)} // []int32 |  (optional)
+	saLifetimeEmpty := true // bool |  (optional)
+	saLifetimeGt := []int32{int32(123)} // []int32 |  (optional)
+	saLifetimeGte := []int32{int32(123)} // []int32 |  (optional)
+	saLifetimeLt := []int32{int32(123)} // []int32 |  (optional)
+	saLifetimeLte := []int32{int32(123)} // []int32 |  (optional)
+	saLifetimeN := []int32{int32(123)} // []int32 |  (optional)
+	tag := []string{"Inner_example"} // []string |  (optional)
+	tagN := []string{"Inner_example"} // []string |  (optional)
+	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnIkeProposalsList(context.Background()).AuthenticationAlgorithm(authenticationAlgorithm).AuthenticationAlgorithmN(authenticationAlgorithmN).AuthenticationMethod(authenticationMethod).AuthenticationMethodN(authenticationMethodN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).EncryptionAlgorithm(encryptionAlgorithm).EncryptionAlgorithmN(encryptionAlgorithmN).Group(group).GroupN(groupN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).SaLifetime(saLifetime).SaLifetimeEmpty(saLifetimeEmpty).SaLifetimeGt(saLifetimeGt).SaLifetimeGte(saLifetimeGte).SaLifetimeLt(saLifetimeLt).SaLifetimeLte(saLifetimeLte).SaLifetimeN(saLifetimeN).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIkeProposalsList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnIkeProposalsList`: PaginatedIKEProposalList
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnIkeProposalsList`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIkeProposalsListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **authenticationAlgorithm** | **[]string** |  | 
+ **authenticationAlgorithmN** | **[]string** |  | 
+ **authenticationMethod** | **[]string** |  | 
+ **authenticationMethodN** | **[]string** |  | 
+ **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
+ **createdGt** | [**[]time.Time**](time.Time.md) |  | 
+ **createdGte** | [**[]time.Time**](time.Time.md) |  | 
+ **createdLt** | [**[]time.Time**](time.Time.md) |  | 
+ **createdLte** | [**[]time.Time**](time.Time.md) |  | 
+ **createdN** | [**[]time.Time**](time.Time.md) |  | 
+ **createdByRequest** | **string** |  | 
+ **description** | **[]string** |  | 
+ **descriptionEmpty** | **bool** |  | 
+ **descriptionIc** | **[]string** |  | 
+ **descriptionIe** | **[]string** |  | 
+ **descriptionIew** | **[]string** |  | 
+ **descriptionIsw** | **[]string** |  | 
+ **descriptionN** | **[]string** |  | 
+ **descriptionNic** | **[]string** |  | 
+ **descriptionNie** | **[]string** |  | 
+ **descriptionNiew** | **[]string** |  | 
+ **descriptionNisw** | **[]string** |  | 
+ **encryptionAlgorithm** | **[]string** |  | 
+ **encryptionAlgorithmN** | **[]string** |  | 
+ **group** | **[]int32** | Diffie-Hellman group ID | 
+ **groupN** | **[]int32** | Diffie-Hellman group ID | 
+ **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
+ **idGt** | **[]int32** |  | 
+ **idGte** | **[]int32** |  | 
+ **idLt** | **[]int32** |  | 
+ **idLte** | **[]int32** |  | 
+ **idN** | **[]int32** |  | 
+ **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
+ **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
+ **name** | **[]string** |  | 
+ **nameEmpty** | **bool** |  | 
+ **nameIc** | **[]string** |  | 
+ **nameIe** | **[]string** |  | 
+ **nameIew** | **[]string** |  | 
+ **nameIsw** | **[]string** |  | 
+ **nameN** | **[]string** |  | 
+ **nameNic** | **[]string** |  | 
+ **nameNie** | **[]string** |  | 
+ **nameNiew** | **[]string** |  | 
+ **nameNisw** | **[]string** |  | 
+ **offset** | **int32** | The initial index from which to return the results. | 
+ **ordering** | **string** | Which field to use when ordering the results. | 
+ **q** | **string** | Search | 
+ **saLifetime** | **[]int32** |  | 
+ **saLifetimeEmpty** | **bool** |  | 
+ **saLifetimeGt** | **[]int32** |  | 
+ **saLifetimeGte** | **[]int32** |  | 
+ **saLifetimeLt** | **[]int32** |  | 
+ **saLifetimeLte** | **[]int32** |  | 
+ **saLifetimeN** | **[]int32** |  | 
+ **tag** | **[]string** |  | 
+ **tagN** | **[]string** |  | 
+ **updatedByRequest** | **string** |  | 
+
+### Return type
+
+[**PaginatedIKEProposalList**](PaginatedIKEProposalList.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIkeProposalsPartialUpdate
+
+> IKEProposal VpnIkeProposalsPartialUpdate(ctx, id).PatchedWritableIKEProposalRequest(patchedWritableIKEProposalRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this IKE proposal.
+	patchedWritableIKEProposalRequest := *openapiclient.NewPatchedWritableIKEProposalRequest() // PatchedWritableIKEProposalRequest |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnIkeProposalsPartialUpdate(context.Background(), id).PatchedWritableIKEProposalRequest(patchedWritableIKEProposalRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIkeProposalsPartialUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnIkeProposalsPartialUpdate`: IKEProposal
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnIkeProposalsPartialUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this IKE proposal. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIkeProposalsPartialUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **patchedWritableIKEProposalRequest** | [**PatchedWritableIKEProposalRequest**](PatchedWritableIKEProposalRequest.md) |  | 
+
+### Return type
+
+[**IKEProposal**](IKEProposal.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIkeProposalsRetrieve
+
+> IKEProposal VpnIkeProposalsRetrieve(ctx, id).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this IKE proposal.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnIkeProposalsRetrieve(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIkeProposalsRetrieve``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnIkeProposalsRetrieve`: IKEProposal
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnIkeProposalsRetrieve`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this IKE proposal. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIkeProposalsRetrieveRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**IKEProposal**](IKEProposal.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIkeProposalsUpdate
+
+> IKEProposal VpnIkeProposalsUpdate(ctx, id).WritableIKEProposalRequest(writableIKEProposalRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this IKE proposal.
+	writableIKEProposalRequest := *openapiclient.NewWritableIKEProposalRequest("Name_example", openapiclient.IKEProposal_authentication_method_value("preshared-keys"), openapiclient.IKEProposal_encryption_algorithm_value("aes-128-cbc"), openapiclient.PatchedWritableIKEProposalRequest_group(1)) // WritableIKEProposalRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnIkeProposalsUpdate(context.Background(), id).WritableIKEProposalRequest(writableIKEProposalRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIkeProposalsUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnIkeProposalsUpdate`: IKEProposal
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnIkeProposalsUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this IKE proposal. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIkeProposalsUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **writableIKEProposalRequest** | [**WritableIKEProposalRequest**](WritableIKEProposalRequest.md) |  | 
+
+### Return type
+
+[**IKEProposal**](IKEProposal.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIpsecPoliciesBulkDestroy
+
+> VpnIpsecPoliciesBulkDestroy(ctx).IPSecPolicyRequest(iPSecPolicyRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	iPSecPolicyRequest := []openapiclient.IPSecPolicyRequest{*openapiclient.NewIPSecPolicyRequest("Name_example")} // []IPSecPolicyRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.VpnAPI.VpnIpsecPoliciesBulkDestroy(context.Background()).IPSecPolicyRequest(iPSecPolicyRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIpsecPoliciesBulkDestroy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIpsecPoliciesBulkDestroyRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **iPSecPolicyRequest** | [**[]IPSecPolicyRequest**](IPSecPolicyRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIpsecPoliciesBulkPartialUpdate
+
+> []IPSecPolicy VpnIpsecPoliciesBulkPartialUpdate(ctx).IPSecPolicyRequest(iPSecPolicyRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	iPSecPolicyRequest := []openapiclient.IPSecPolicyRequest{*openapiclient.NewIPSecPolicyRequest("Name_example")} // []IPSecPolicyRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnIpsecPoliciesBulkPartialUpdate(context.Background()).IPSecPolicyRequest(iPSecPolicyRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIpsecPoliciesBulkPartialUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnIpsecPoliciesBulkPartialUpdate`: []IPSecPolicy
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnIpsecPoliciesBulkPartialUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIpsecPoliciesBulkPartialUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **iPSecPolicyRequest** | [**[]IPSecPolicyRequest**](IPSecPolicyRequest.md) |  | 
+
+### Return type
+
+[**[]IPSecPolicy**](IPSecPolicy.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIpsecPoliciesBulkUpdate
+
+> []IPSecPolicy VpnIpsecPoliciesBulkUpdate(ctx).IPSecPolicyRequest(iPSecPolicyRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	iPSecPolicyRequest := []openapiclient.IPSecPolicyRequest{*openapiclient.NewIPSecPolicyRequest("Name_example")} // []IPSecPolicyRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnIpsecPoliciesBulkUpdate(context.Background()).IPSecPolicyRequest(iPSecPolicyRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIpsecPoliciesBulkUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnIpsecPoliciesBulkUpdate`: []IPSecPolicy
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnIpsecPoliciesBulkUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIpsecPoliciesBulkUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **iPSecPolicyRequest** | [**[]IPSecPolicyRequest**](IPSecPolicyRequest.md) |  | 
+
+### Return type
+
+[**[]IPSecPolicy**](IPSecPolicy.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIpsecPoliciesCreate
+
+> IPSecPolicy VpnIpsecPoliciesCreate(ctx).WritableIPSecPolicyRequest(writableIPSecPolicyRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	writableIPSecPolicyRequest := *openapiclient.NewWritableIPSecPolicyRequest("Name_example", []int32{int32(123)}) // WritableIPSecPolicyRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnIpsecPoliciesCreate(context.Background()).WritableIPSecPolicyRequest(writableIPSecPolicyRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIpsecPoliciesCreate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnIpsecPoliciesCreate`: IPSecPolicy
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnIpsecPoliciesCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIpsecPoliciesCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **writableIPSecPolicyRequest** | [**WritableIPSecPolicyRequest**](WritableIPSecPolicyRequest.md) |  | 
+
+### Return type
+
+[**IPSecPolicy**](IPSecPolicy.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIpsecPoliciesDestroy
+
+> VpnIpsecPoliciesDestroy(ctx, id).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this IPSec policy.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.VpnAPI.VpnIpsecPoliciesDestroy(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIpsecPoliciesDestroy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this IPSec policy. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIpsecPoliciesDestroyRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIpsecPoliciesList
+
+> PaginatedIPSecPolicyList VpnIpsecPoliciesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).PfsGroup(pfsGroup).PfsGroupN(pfsGroupN).Proposal(proposal).ProposalEmpty(proposalEmpty).ProposalIc(proposalIc).ProposalIe(proposalIe).ProposalIew(proposalIew).ProposalIsw(proposalIsw).ProposalN(proposalN).ProposalNic(proposalNic).ProposalNie(proposalNie).ProposalNiew(proposalNiew).ProposalNisw(proposalNisw).ProposalId(proposalId).ProposalIdEmpty(proposalIdEmpty).ProposalIdGt(proposalIdGt).ProposalIdGte(proposalIdGte).ProposalIdLt(proposalIdLt).ProposalIdLte(proposalIdLte).ProposalIdN(proposalIdN).Q(q).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+    "time"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	created := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdLte := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdN := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+	description := []string{"Inner_example"} // []string |  (optional)
+	descriptionEmpty := true // bool |  (optional)
+	descriptionIc := []string{"Inner_example"} // []string |  (optional)
+	descriptionIe := []string{"Inner_example"} // []string |  (optional)
+	descriptionIew := []string{"Inner_example"} // []string |  (optional)
+	descriptionIsw := []string{"Inner_example"} // []string |  (optional)
+	descriptionN := []string{"Inner_example"} // []string |  (optional)
+	descriptionNic := []string{"Inner_example"} // []string |  (optional)
+	descriptionNie := []string{"Inner_example"} // []string |  (optional)
+	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
+	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
+	id := []int32{int32(123)} // []int32 |  (optional)
+	idEmpty := true // bool |  (optional)
+	idGt := []int32{int32(123)} // []int32 |  (optional)
+	idGte := []int32{int32(123)} // []int32 |  (optional)
+	idLt := []int32{int32(123)} // []int32 |  (optional)
+	idLte := []int32{int32(123)} // []int32 |  (optional)
+	idN := []int32{int32(123)} // []int32 |  (optional)
+	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
+	limit := int32(56) // int32 | Number of results to return per page. (optional)
+	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+	name := []string{"Inner_example"} // []string |  (optional)
+	nameEmpty := true // bool |  (optional)
+	nameIc := []string{"Inner_example"} // []string |  (optional)
+	nameIe := []string{"Inner_example"} // []string |  (optional)
+	nameIew := []string{"Inner_example"} // []string |  (optional)
+	nameIsw := []string{"Inner_example"} // []string |  (optional)
+	nameN := []string{"Inner_example"} // []string |  (optional)
+	nameNic := []string{"Inner_example"} // []string |  (optional)
+	nameNie := []string{"Inner_example"} // []string |  (optional)
+	nameNiew := []string{"Inner_example"} // []string |  (optional)
+	nameNisw := []string{"Inner_example"} // []string |  (optional)
+	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
+	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	pfsGroup := []*int32{int32(123)} // []*int32 | Diffie-Hellman group for Perfect Forward Secrecy (optional)
+	pfsGroupN := []*int32{int32(123)} // []*int32 | Diffie-Hellman group for Perfect Forward Secrecy (optional)
+	proposal := []string{"Inner_example"} // []string |  (optional)
+	proposalEmpty := true // bool |  (optional)
+	proposalIc := []string{"Inner_example"} // []string |  (optional)
+	proposalIe := []string{"Inner_example"} // []string |  (optional)
+	proposalIew := []string{"Inner_example"} // []string |  (optional)
+	proposalIsw := []string{"Inner_example"} // []string |  (optional)
+	proposalN := []string{"Inner_example"} // []string |  (optional)
+	proposalNic := []string{"Inner_example"} // []string |  (optional)
+	proposalNie := []string{"Inner_example"} // []string |  (optional)
+	proposalNiew := []string{"Inner_example"} // []string |  (optional)
+	proposalNisw := []string{"Inner_example"} // []string |  (optional)
+	proposalId := []int32{int32(123)} // []int32 |  (optional)
+	proposalIdEmpty := []int32{int32(123)} // []int32 |  (optional)
+	proposalIdGt := []int32{int32(123)} // []int32 |  (optional)
+	proposalIdGte := []int32{int32(123)} // []int32 |  (optional)
+	proposalIdLt := []int32{int32(123)} // []int32 |  (optional)
+	proposalIdLte := []int32{int32(123)} // []int32 |  (optional)
+	proposalIdN := []int32{int32(123)} // []int32 |  (optional)
+	q := "q_example" // string | Search (optional)
+	tag := []string{"Inner_example"} // []string |  (optional)
+	tagN := []string{"Inner_example"} // []string |  (optional)
+	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnIpsecPoliciesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).PfsGroup(pfsGroup).PfsGroupN(pfsGroupN).Proposal(proposal).ProposalEmpty(proposalEmpty).ProposalIc(proposalIc).ProposalIe(proposalIe).ProposalIew(proposalIew).ProposalIsw(proposalIsw).ProposalN(proposalN).ProposalNic(proposalNic).ProposalNie(proposalNie).ProposalNiew(proposalNiew).ProposalNisw(proposalNisw).ProposalId(proposalId).ProposalIdEmpty(proposalIdEmpty).ProposalIdGt(proposalIdGt).ProposalIdGte(proposalIdGte).ProposalIdLt(proposalIdLt).ProposalIdLte(proposalIdLte).ProposalIdN(proposalIdN).Q(q).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIpsecPoliciesList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnIpsecPoliciesList`: PaginatedIPSecPolicyList
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnIpsecPoliciesList`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIpsecPoliciesListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
+ **createdGt** | [**[]time.Time**](time.Time.md) |  | 
+ **createdGte** | [**[]time.Time**](time.Time.md) |  | 
+ **createdLt** | [**[]time.Time**](time.Time.md) |  | 
+ **createdLte** | [**[]time.Time**](time.Time.md) |  | 
+ **createdN** | [**[]time.Time**](time.Time.md) |  | 
+ **createdByRequest** | **string** |  | 
+ **description** | **[]string** |  | 
+ **descriptionEmpty** | **bool** |  | 
+ **descriptionIc** | **[]string** |  | 
+ **descriptionIe** | **[]string** |  | 
+ **descriptionIew** | **[]string** |  | 
+ **descriptionIsw** | **[]string** |  | 
+ **descriptionN** | **[]string** |  | 
+ **descriptionNic** | **[]string** |  | 
+ **descriptionNie** | **[]string** |  | 
+ **descriptionNiew** | **[]string** |  | 
+ **descriptionNisw** | **[]string** |  | 
+ **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
+ **idGt** | **[]int32** |  | 
+ **idGte** | **[]int32** |  | 
+ **idLt** | **[]int32** |  | 
+ **idLte** | **[]int32** |  | 
+ **idN** | **[]int32** |  | 
+ **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
+ **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
+ **name** | **[]string** |  | 
+ **nameEmpty** | **bool** |  | 
+ **nameIc** | **[]string** |  | 
+ **nameIe** | **[]string** |  | 
+ **nameIew** | **[]string** |  | 
+ **nameIsw** | **[]string** |  | 
+ **nameN** | **[]string** |  | 
+ **nameNic** | **[]string** |  | 
+ **nameNie** | **[]string** |  | 
+ **nameNiew** | **[]string** |  | 
+ **nameNisw** | **[]string** |  | 
+ **offset** | **int32** | The initial index from which to return the results. | 
+ **ordering** | **string** | Which field to use when ordering the results. | 
+ **pfsGroup** | **[]int32** | Diffie-Hellman group for Perfect Forward Secrecy | 
+ **pfsGroupN** | **[]int32** | Diffie-Hellman group for Perfect Forward Secrecy | 
+ **proposal** | **[]string** |  | 
+ **proposalEmpty** | **bool** |  | 
+ **proposalIc** | **[]string** |  | 
+ **proposalIe** | **[]string** |  | 
+ **proposalIew** | **[]string** |  | 
+ **proposalIsw** | **[]string** |  | 
+ **proposalN** | **[]string** |  | 
+ **proposalNic** | **[]string** |  | 
+ **proposalNie** | **[]string** |  | 
+ **proposalNiew** | **[]string** |  | 
+ **proposalNisw** | **[]string** |  | 
+ **proposalId** | **[]int32** |  | 
+ **proposalIdEmpty** | **[]int32** |  | 
+ **proposalIdGt** | **[]int32** |  | 
+ **proposalIdGte** | **[]int32** |  | 
+ **proposalIdLt** | **[]int32** |  | 
+ **proposalIdLte** | **[]int32** |  | 
+ **proposalIdN** | **[]int32** |  | 
+ **q** | **string** | Search | 
+ **tag** | **[]string** |  | 
+ **tagN** | **[]string** |  | 
+ **updatedByRequest** | **string** |  | 
+
+### Return type
+
+[**PaginatedIPSecPolicyList**](PaginatedIPSecPolicyList.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIpsecPoliciesPartialUpdate
+
+> IPSecPolicy VpnIpsecPoliciesPartialUpdate(ctx, id).PatchedWritableIPSecPolicyRequest(patchedWritableIPSecPolicyRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this IPSec policy.
+	patchedWritableIPSecPolicyRequest := *openapiclient.NewPatchedWritableIPSecPolicyRequest() // PatchedWritableIPSecPolicyRequest |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnIpsecPoliciesPartialUpdate(context.Background(), id).PatchedWritableIPSecPolicyRequest(patchedWritableIPSecPolicyRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIpsecPoliciesPartialUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnIpsecPoliciesPartialUpdate`: IPSecPolicy
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnIpsecPoliciesPartialUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this IPSec policy. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIpsecPoliciesPartialUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **patchedWritableIPSecPolicyRequest** | [**PatchedWritableIPSecPolicyRequest**](PatchedWritableIPSecPolicyRequest.md) |  | 
+
+### Return type
+
+[**IPSecPolicy**](IPSecPolicy.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIpsecPoliciesRetrieve
+
+> IPSecPolicy VpnIpsecPoliciesRetrieve(ctx, id).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this IPSec policy.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnIpsecPoliciesRetrieve(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIpsecPoliciesRetrieve``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnIpsecPoliciesRetrieve`: IPSecPolicy
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnIpsecPoliciesRetrieve`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this IPSec policy. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIpsecPoliciesRetrieveRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**IPSecPolicy**](IPSecPolicy.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIpsecPoliciesUpdate
+
+> IPSecPolicy VpnIpsecPoliciesUpdate(ctx, id).WritableIPSecPolicyRequest(writableIPSecPolicyRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this IPSec policy.
+	writableIPSecPolicyRequest := *openapiclient.NewWritableIPSecPolicyRequest("Name_example", []int32{int32(123)}) // WritableIPSecPolicyRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnIpsecPoliciesUpdate(context.Background(), id).WritableIPSecPolicyRequest(writableIPSecPolicyRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIpsecPoliciesUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnIpsecPoliciesUpdate`: IPSecPolicy
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnIpsecPoliciesUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this IPSec policy. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIpsecPoliciesUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **writableIPSecPolicyRequest** | [**WritableIPSecPolicyRequest**](WritableIPSecPolicyRequest.md) |  | 
+
+### Return type
+
+[**IPSecPolicy**](IPSecPolicy.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIpsecProfilesBulkDestroy
+
+> VpnIpsecProfilesBulkDestroy(ctx).IPSecProfileRequest(iPSecProfileRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	iPSecProfileRequest := []openapiclient.IPSecProfileRequest{*openapiclient.NewIPSecProfileRequest("Name_example", openapiclient.IPSecProfile_mode_value("esp"), *openapiclient.NewNestedIKEPolicyRequest("Name_example"), *openapiclient.NewNestedIPSecPolicyRequest("Name_example"))} // []IPSecProfileRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.VpnAPI.VpnIpsecProfilesBulkDestroy(context.Background()).IPSecProfileRequest(iPSecProfileRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIpsecProfilesBulkDestroy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIpsecProfilesBulkDestroyRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **iPSecProfileRequest** | [**[]IPSecProfileRequest**](IPSecProfileRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIpsecProfilesBulkPartialUpdate
+
+> []IPSecProfile VpnIpsecProfilesBulkPartialUpdate(ctx).IPSecProfileRequest(iPSecProfileRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	iPSecProfileRequest := []openapiclient.IPSecProfileRequest{*openapiclient.NewIPSecProfileRequest("Name_example", openapiclient.IPSecProfile_mode_value("esp"), *openapiclient.NewNestedIKEPolicyRequest("Name_example"), *openapiclient.NewNestedIPSecPolicyRequest("Name_example"))} // []IPSecProfileRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnIpsecProfilesBulkPartialUpdate(context.Background()).IPSecProfileRequest(iPSecProfileRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIpsecProfilesBulkPartialUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnIpsecProfilesBulkPartialUpdate`: []IPSecProfile
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnIpsecProfilesBulkPartialUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIpsecProfilesBulkPartialUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **iPSecProfileRequest** | [**[]IPSecProfileRequest**](IPSecProfileRequest.md) |  | 
+
+### Return type
+
+[**[]IPSecProfile**](IPSecProfile.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIpsecProfilesBulkUpdate
+
+> []IPSecProfile VpnIpsecProfilesBulkUpdate(ctx).IPSecProfileRequest(iPSecProfileRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	iPSecProfileRequest := []openapiclient.IPSecProfileRequest{*openapiclient.NewIPSecProfileRequest("Name_example", openapiclient.IPSecProfile_mode_value("esp"), *openapiclient.NewNestedIKEPolicyRequest("Name_example"), *openapiclient.NewNestedIPSecPolicyRequest("Name_example"))} // []IPSecProfileRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnIpsecProfilesBulkUpdate(context.Background()).IPSecProfileRequest(iPSecProfileRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIpsecProfilesBulkUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnIpsecProfilesBulkUpdate`: []IPSecProfile
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnIpsecProfilesBulkUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIpsecProfilesBulkUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **iPSecProfileRequest** | [**[]IPSecProfileRequest**](IPSecProfileRequest.md) |  | 
+
+### Return type
+
+[**[]IPSecProfile**](IPSecProfile.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIpsecProfilesCreate
+
+> IPSecProfile VpnIpsecProfilesCreate(ctx).WritableIPSecProfileRequest(writableIPSecProfileRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	writableIPSecProfileRequest := *openapiclient.NewWritableIPSecProfileRequest("Name_example", openapiclient.IPSecProfile_mode_value("esp"), int32(123), int32(123)) // WritableIPSecProfileRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnIpsecProfilesCreate(context.Background()).WritableIPSecProfileRequest(writableIPSecProfileRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIpsecProfilesCreate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnIpsecProfilesCreate`: IPSecProfile
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnIpsecProfilesCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIpsecProfilesCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **writableIPSecProfileRequest** | [**WritableIPSecProfileRequest**](WritableIPSecProfileRequest.md) |  | 
+
+### Return type
+
+[**IPSecProfile**](IPSecProfile.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIpsecProfilesDestroy
+
+> VpnIpsecProfilesDestroy(ctx, id).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this IPSec profile.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.VpnAPI.VpnIpsecProfilesDestroy(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIpsecProfilesDestroy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this IPSec profile. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIpsecProfilesDestroyRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIpsecProfilesList
+
+> PaginatedIPSecProfileList VpnIpsecProfilesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IkePolicy(ikePolicy).IkePolicyN(ikePolicyN).IkePolicyId(ikePolicyId).IkePolicyIdN(ikePolicyIdN).IpsecPolicy(ipsecPolicy).IpsecPolicyN(ipsecPolicyN).IpsecPolicyId(ipsecPolicyId).IpsecPolicyIdN(ipsecPolicyIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Mode(mode).ModeN(modeN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+    "time"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	created := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdLte := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdN := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+	description := []string{"Inner_example"} // []string |  (optional)
+	descriptionEmpty := true // bool |  (optional)
+	descriptionIc := []string{"Inner_example"} // []string |  (optional)
+	descriptionIe := []string{"Inner_example"} // []string |  (optional)
+	descriptionIew := []string{"Inner_example"} // []string |  (optional)
+	descriptionIsw := []string{"Inner_example"} // []string |  (optional)
+	descriptionN := []string{"Inner_example"} // []string |  (optional)
+	descriptionNic := []string{"Inner_example"} // []string |  (optional)
+	descriptionNie := []string{"Inner_example"} // []string |  (optional)
+	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
+	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
+	id := []int32{int32(123)} // []int32 |  (optional)
+	idEmpty := true // bool |  (optional)
+	idGt := []int32{int32(123)} // []int32 |  (optional)
+	idGte := []int32{int32(123)} // []int32 |  (optional)
+	idLt := []int32{int32(123)} // []int32 |  (optional)
+	idLte := []int32{int32(123)} // []int32 |  (optional)
+	idN := []int32{int32(123)} // []int32 |  (optional)
+	ikePolicy := []string{"Inner_example"} // []string | IKE policy (name) (optional)
+	ikePolicyN := []string{"Inner_example"} // []string | IKE policy (name) (optional)
+	ikePolicyId := []int32{int32(123)} // []int32 | IKE policy (ID) (optional)
+	ikePolicyIdN := []int32{int32(123)} // []int32 | IKE policy (ID) (optional)
+	ipsecPolicy := []string{"Inner_example"} // []string | IPSec policy (name) (optional)
+	ipsecPolicyN := []string{"Inner_example"} // []string | IPSec policy (name) (optional)
+	ipsecPolicyId := []int32{int32(123)} // []int32 | IPSec policy (ID) (optional)
+	ipsecPolicyIdN := []int32{int32(123)} // []int32 | IPSec policy (ID) (optional)
+	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
+	limit := int32(56) // int32 | Number of results to return per page. (optional)
+	mode := []string{"Inner_example"} // []string |  (optional)
+	modeN := []string{"Inner_example"} // []string |  (optional)
+	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+	name := []string{"Inner_example"} // []string |  (optional)
+	nameEmpty := true // bool |  (optional)
+	nameIc := []string{"Inner_example"} // []string |  (optional)
+	nameIe := []string{"Inner_example"} // []string |  (optional)
+	nameIew := []string{"Inner_example"} // []string |  (optional)
+	nameIsw := []string{"Inner_example"} // []string |  (optional)
+	nameN := []string{"Inner_example"} // []string |  (optional)
+	nameNic := []string{"Inner_example"} // []string |  (optional)
+	nameNie := []string{"Inner_example"} // []string |  (optional)
+	nameNiew := []string{"Inner_example"} // []string |  (optional)
+	nameNisw := []string{"Inner_example"} // []string |  (optional)
+	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
+	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	q := "q_example" // string | Search (optional)
+	tag := []string{"Inner_example"} // []string |  (optional)
+	tagN := []string{"Inner_example"} // []string |  (optional)
+	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnIpsecProfilesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IkePolicy(ikePolicy).IkePolicyN(ikePolicyN).IkePolicyId(ikePolicyId).IkePolicyIdN(ikePolicyIdN).IpsecPolicy(ipsecPolicy).IpsecPolicyN(ipsecPolicyN).IpsecPolicyId(ipsecPolicyId).IpsecPolicyIdN(ipsecPolicyIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Mode(mode).ModeN(modeN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIpsecProfilesList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnIpsecProfilesList`: PaginatedIPSecProfileList
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnIpsecProfilesList`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIpsecProfilesListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
+ **createdGt** | [**[]time.Time**](time.Time.md) |  | 
+ **createdGte** | [**[]time.Time**](time.Time.md) |  | 
+ **createdLt** | [**[]time.Time**](time.Time.md) |  | 
+ **createdLte** | [**[]time.Time**](time.Time.md) |  | 
+ **createdN** | [**[]time.Time**](time.Time.md) |  | 
+ **createdByRequest** | **string** |  | 
+ **description** | **[]string** |  | 
+ **descriptionEmpty** | **bool** |  | 
+ **descriptionIc** | **[]string** |  | 
+ **descriptionIe** | **[]string** |  | 
+ **descriptionIew** | **[]string** |  | 
+ **descriptionIsw** | **[]string** |  | 
+ **descriptionN** | **[]string** |  | 
+ **descriptionNic** | **[]string** |  | 
+ **descriptionNie** | **[]string** |  | 
+ **descriptionNiew** | **[]string** |  | 
+ **descriptionNisw** | **[]string** |  | 
+ **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
+ **idGt** | **[]int32** |  | 
+ **idGte** | **[]int32** |  | 
+ **idLt** | **[]int32** |  | 
+ **idLte** | **[]int32** |  | 
+ **idN** | **[]int32** |  | 
+ **ikePolicy** | **[]string** | IKE policy (name) | 
+ **ikePolicyN** | **[]string** | IKE policy (name) | 
+ **ikePolicyId** | **[]int32** | IKE policy (ID) | 
+ **ikePolicyIdN** | **[]int32** | IKE policy (ID) | 
+ **ipsecPolicy** | **[]string** | IPSec policy (name) | 
+ **ipsecPolicyN** | **[]string** | IPSec policy (name) | 
+ **ipsecPolicyId** | **[]int32** | IPSec policy (ID) | 
+ **ipsecPolicyIdN** | **[]int32** | IPSec policy (ID) | 
+ **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
+ **limit** | **int32** | Number of results to return per page. | 
+ **mode** | **[]string** |  | 
+ **modeN** | **[]string** |  | 
+ **modifiedByRequest** | **string** |  | 
+ **name** | **[]string** |  | 
+ **nameEmpty** | **bool** |  | 
+ **nameIc** | **[]string** |  | 
+ **nameIe** | **[]string** |  | 
+ **nameIew** | **[]string** |  | 
+ **nameIsw** | **[]string** |  | 
+ **nameN** | **[]string** |  | 
+ **nameNic** | **[]string** |  | 
+ **nameNie** | **[]string** |  | 
+ **nameNiew** | **[]string** |  | 
+ **nameNisw** | **[]string** |  | 
+ **offset** | **int32** | The initial index from which to return the results. | 
+ **ordering** | **string** | Which field to use when ordering the results. | 
+ **q** | **string** | Search | 
+ **tag** | **[]string** |  | 
+ **tagN** | **[]string** |  | 
+ **updatedByRequest** | **string** |  | 
+
+### Return type
+
+[**PaginatedIPSecProfileList**](PaginatedIPSecProfileList.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIpsecProfilesPartialUpdate
+
+> IPSecProfile VpnIpsecProfilesPartialUpdate(ctx, id).PatchedWritableIPSecProfileRequest(patchedWritableIPSecProfileRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this IPSec profile.
+	patchedWritableIPSecProfileRequest := *openapiclient.NewPatchedWritableIPSecProfileRequest() // PatchedWritableIPSecProfileRequest |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnIpsecProfilesPartialUpdate(context.Background(), id).PatchedWritableIPSecProfileRequest(patchedWritableIPSecProfileRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIpsecProfilesPartialUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnIpsecProfilesPartialUpdate`: IPSecProfile
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnIpsecProfilesPartialUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this IPSec profile. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIpsecProfilesPartialUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **patchedWritableIPSecProfileRequest** | [**PatchedWritableIPSecProfileRequest**](PatchedWritableIPSecProfileRequest.md) |  | 
+
+### Return type
+
+[**IPSecProfile**](IPSecProfile.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIpsecProfilesRetrieve
+
+> IPSecProfile VpnIpsecProfilesRetrieve(ctx, id).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this IPSec profile.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnIpsecProfilesRetrieve(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIpsecProfilesRetrieve``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnIpsecProfilesRetrieve`: IPSecProfile
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnIpsecProfilesRetrieve`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this IPSec profile. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIpsecProfilesRetrieveRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**IPSecProfile**](IPSecProfile.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIpsecProfilesUpdate
+
+> IPSecProfile VpnIpsecProfilesUpdate(ctx, id).WritableIPSecProfileRequest(writableIPSecProfileRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this IPSec profile.
+	writableIPSecProfileRequest := *openapiclient.NewWritableIPSecProfileRequest("Name_example", openapiclient.IPSecProfile_mode_value("esp"), int32(123), int32(123)) // WritableIPSecProfileRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnIpsecProfilesUpdate(context.Background(), id).WritableIPSecProfileRequest(writableIPSecProfileRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIpsecProfilesUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnIpsecProfilesUpdate`: IPSecProfile
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnIpsecProfilesUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this IPSec profile. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIpsecProfilesUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **writableIPSecProfileRequest** | [**WritableIPSecProfileRequest**](WritableIPSecProfileRequest.md) |  | 
+
+### Return type
+
+[**IPSecProfile**](IPSecProfile.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIpsecProposalsBulkDestroy
+
+> VpnIpsecProposalsBulkDestroy(ctx).IPSecProposalRequest(iPSecProposalRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	iPSecProposalRequest := []openapiclient.IPSecProposalRequest{*openapiclient.NewIPSecProposalRequest("Name_example", openapiclient.IKEProposal_encryption_algorithm_value("aes-128-cbc"), openapiclient.IKEProposal_authentication_algorithm_value("hmac-sha1"))} // []IPSecProposalRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.VpnAPI.VpnIpsecProposalsBulkDestroy(context.Background()).IPSecProposalRequest(iPSecProposalRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIpsecProposalsBulkDestroy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIpsecProposalsBulkDestroyRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **iPSecProposalRequest** | [**[]IPSecProposalRequest**](IPSecProposalRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIpsecProposalsBulkPartialUpdate
+
+> []IPSecProposal VpnIpsecProposalsBulkPartialUpdate(ctx).IPSecProposalRequest(iPSecProposalRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	iPSecProposalRequest := []openapiclient.IPSecProposalRequest{*openapiclient.NewIPSecProposalRequest("Name_example", openapiclient.IKEProposal_encryption_algorithm_value("aes-128-cbc"), openapiclient.IKEProposal_authentication_algorithm_value("hmac-sha1"))} // []IPSecProposalRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnIpsecProposalsBulkPartialUpdate(context.Background()).IPSecProposalRequest(iPSecProposalRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIpsecProposalsBulkPartialUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnIpsecProposalsBulkPartialUpdate`: []IPSecProposal
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnIpsecProposalsBulkPartialUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIpsecProposalsBulkPartialUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **iPSecProposalRequest** | [**[]IPSecProposalRequest**](IPSecProposalRequest.md) |  | 
+
+### Return type
+
+[**[]IPSecProposal**](IPSecProposal.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIpsecProposalsBulkUpdate
+
+> []IPSecProposal VpnIpsecProposalsBulkUpdate(ctx).IPSecProposalRequest(iPSecProposalRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	iPSecProposalRequest := []openapiclient.IPSecProposalRequest{*openapiclient.NewIPSecProposalRequest("Name_example", openapiclient.IKEProposal_encryption_algorithm_value("aes-128-cbc"), openapiclient.IKEProposal_authentication_algorithm_value("hmac-sha1"))} // []IPSecProposalRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnIpsecProposalsBulkUpdate(context.Background()).IPSecProposalRequest(iPSecProposalRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIpsecProposalsBulkUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnIpsecProposalsBulkUpdate`: []IPSecProposal
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnIpsecProposalsBulkUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIpsecProposalsBulkUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **iPSecProposalRequest** | [**[]IPSecProposalRequest**](IPSecProposalRequest.md) |  | 
+
+### Return type
+
+[**[]IPSecProposal**](IPSecProposal.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIpsecProposalsCreate
+
+> IPSecProposal VpnIpsecProposalsCreate(ctx).WritableIPSecProposalRequest(writableIPSecProposalRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	writableIPSecProposalRequest := *openapiclient.NewWritableIPSecProposalRequest("Name_example") // WritableIPSecProposalRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnIpsecProposalsCreate(context.Background()).WritableIPSecProposalRequest(writableIPSecProposalRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIpsecProposalsCreate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnIpsecProposalsCreate`: IPSecProposal
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnIpsecProposalsCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIpsecProposalsCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **writableIPSecProposalRequest** | [**WritableIPSecProposalRequest**](WritableIPSecProposalRequest.md) |  | 
+
+### Return type
+
+[**IPSecProposal**](IPSecProposal.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIpsecProposalsDestroy
+
+> VpnIpsecProposalsDestroy(ctx, id).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this IPSec proposal.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.VpnAPI.VpnIpsecProposalsDestroy(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIpsecProposalsDestroy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this IPSec proposal. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIpsecProposalsDestroyRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIpsecProposalsList
+
+> PaginatedIPSecProposalList VpnIpsecProposalsList(ctx).AuthenticationAlgorithm(authenticationAlgorithm).AuthenticationAlgorithmN(authenticationAlgorithmN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).EncryptionAlgorithm(encryptionAlgorithm).EncryptionAlgorithmN(encryptionAlgorithmN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).SaLifetimeData(saLifetimeData).SaLifetimeDataEmpty(saLifetimeDataEmpty).SaLifetimeDataGt(saLifetimeDataGt).SaLifetimeDataGte(saLifetimeDataGte).SaLifetimeDataLt(saLifetimeDataLt).SaLifetimeDataLte(saLifetimeDataLte).SaLifetimeDataN(saLifetimeDataN).SaLifetimeSeconds(saLifetimeSeconds).SaLifetimeSecondsEmpty(saLifetimeSecondsEmpty).SaLifetimeSecondsGt(saLifetimeSecondsGt).SaLifetimeSecondsGte(saLifetimeSecondsGte).SaLifetimeSecondsLt(saLifetimeSecondsLt).SaLifetimeSecondsLte(saLifetimeSecondsLte).SaLifetimeSecondsN(saLifetimeSecondsN).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+    "time"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	authenticationAlgorithm := []string{"Inner_example"} // []string |  (optional)
+	authenticationAlgorithmN := []string{"Inner_example"} // []string |  (optional)
+	created := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdLte := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdN := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+	description := []string{"Inner_example"} // []string |  (optional)
+	descriptionEmpty := true // bool |  (optional)
+	descriptionIc := []string{"Inner_example"} // []string |  (optional)
+	descriptionIe := []string{"Inner_example"} // []string |  (optional)
+	descriptionIew := []string{"Inner_example"} // []string |  (optional)
+	descriptionIsw := []string{"Inner_example"} // []string |  (optional)
+	descriptionN := []string{"Inner_example"} // []string |  (optional)
+	descriptionNic := []string{"Inner_example"} // []string |  (optional)
+	descriptionNie := []string{"Inner_example"} // []string |  (optional)
+	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
+	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
+	encryptionAlgorithm := []string{"Inner_example"} // []string |  (optional)
+	encryptionAlgorithmN := []string{"Inner_example"} // []string |  (optional)
+	id := []int32{int32(123)} // []int32 |  (optional)
+	idEmpty := true // bool |  (optional)
+	idGt := []int32{int32(123)} // []int32 |  (optional)
+	idGte := []int32{int32(123)} // []int32 |  (optional)
+	idLt := []int32{int32(123)} // []int32 |  (optional)
+	idLte := []int32{int32(123)} // []int32 |  (optional)
+	idN := []int32{int32(123)} // []int32 |  (optional)
+	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
+	limit := int32(56) // int32 | Number of results to return per page. (optional)
+	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+	name := []string{"Inner_example"} // []string |  (optional)
+	nameEmpty := true // bool |  (optional)
+	nameIc := []string{"Inner_example"} // []string |  (optional)
+	nameIe := []string{"Inner_example"} // []string |  (optional)
+	nameIew := []string{"Inner_example"} // []string |  (optional)
+	nameIsw := []string{"Inner_example"} // []string |  (optional)
+	nameN := []string{"Inner_example"} // []string |  (optional)
+	nameNic := []string{"Inner_example"} // []string |  (optional)
+	nameNie := []string{"Inner_example"} // []string |  (optional)
+	nameNiew := []string{"Inner_example"} // []string |  (optional)
+	nameNisw := []string{"Inner_example"} // []string |  (optional)
+	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
+	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	q := "q_example" // string | Search (optional)
+	saLifetimeData := []int32{int32(123)} // []int32 |  (optional)
+	saLifetimeDataEmpty := true // bool |  (optional)
+	saLifetimeDataGt := []int32{int32(123)} // []int32 |  (optional)
+	saLifetimeDataGte := []int32{int32(123)} // []int32 |  (optional)
+	saLifetimeDataLt := []int32{int32(123)} // []int32 |  (optional)
+	saLifetimeDataLte := []int32{int32(123)} // []int32 |  (optional)
+	saLifetimeDataN := []int32{int32(123)} // []int32 |  (optional)
+	saLifetimeSeconds := []int32{int32(123)} // []int32 |  (optional)
+	saLifetimeSecondsEmpty := true // bool |  (optional)
+	saLifetimeSecondsGt := []int32{int32(123)} // []int32 |  (optional)
+	saLifetimeSecondsGte := []int32{int32(123)} // []int32 |  (optional)
+	saLifetimeSecondsLt := []int32{int32(123)} // []int32 |  (optional)
+	saLifetimeSecondsLte := []int32{int32(123)} // []int32 |  (optional)
+	saLifetimeSecondsN := []int32{int32(123)} // []int32 |  (optional)
+	tag := []string{"Inner_example"} // []string |  (optional)
+	tagN := []string{"Inner_example"} // []string |  (optional)
+	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnIpsecProposalsList(context.Background()).AuthenticationAlgorithm(authenticationAlgorithm).AuthenticationAlgorithmN(authenticationAlgorithmN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).EncryptionAlgorithm(encryptionAlgorithm).EncryptionAlgorithmN(encryptionAlgorithmN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).SaLifetimeData(saLifetimeData).SaLifetimeDataEmpty(saLifetimeDataEmpty).SaLifetimeDataGt(saLifetimeDataGt).SaLifetimeDataGte(saLifetimeDataGte).SaLifetimeDataLt(saLifetimeDataLt).SaLifetimeDataLte(saLifetimeDataLte).SaLifetimeDataN(saLifetimeDataN).SaLifetimeSeconds(saLifetimeSeconds).SaLifetimeSecondsEmpty(saLifetimeSecondsEmpty).SaLifetimeSecondsGt(saLifetimeSecondsGt).SaLifetimeSecondsGte(saLifetimeSecondsGte).SaLifetimeSecondsLt(saLifetimeSecondsLt).SaLifetimeSecondsLte(saLifetimeSecondsLte).SaLifetimeSecondsN(saLifetimeSecondsN).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIpsecProposalsList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnIpsecProposalsList`: PaginatedIPSecProposalList
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnIpsecProposalsList`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIpsecProposalsListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **authenticationAlgorithm** | **[]string** |  | 
+ **authenticationAlgorithmN** | **[]string** |  | 
+ **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
+ **createdGt** | [**[]time.Time**](time.Time.md) |  | 
+ **createdGte** | [**[]time.Time**](time.Time.md) |  | 
+ **createdLt** | [**[]time.Time**](time.Time.md) |  | 
+ **createdLte** | [**[]time.Time**](time.Time.md) |  | 
+ **createdN** | [**[]time.Time**](time.Time.md) |  | 
+ **createdByRequest** | **string** |  | 
+ **description** | **[]string** |  | 
+ **descriptionEmpty** | **bool** |  | 
+ **descriptionIc** | **[]string** |  | 
+ **descriptionIe** | **[]string** |  | 
+ **descriptionIew** | **[]string** |  | 
+ **descriptionIsw** | **[]string** |  | 
+ **descriptionN** | **[]string** |  | 
+ **descriptionNic** | **[]string** |  | 
+ **descriptionNie** | **[]string** |  | 
+ **descriptionNiew** | **[]string** |  | 
+ **descriptionNisw** | **[]string** |  | 
+ **encryptionAlgorithm** | **[]string** |  | 
+ **encryptionAlgorithmN** | **[]string** |  | 
+ **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
+ **idGt** | **[]int32** |  | 
+ **idGte** | **[]int32** |  | 
+ **idLt** | **[]int32** |  | 
+ **idLte** | **[]int32** |  | 
+ **idN** | **[]int32** |  | 
+ **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
+ **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
+ **name** | **[]string** |  | 
+ **nameEmpty** | **bool** |  | 
+ **nameIc** | **[]string** |  | 
+ **nameIe** | **[]string** |  | 
+ **nameIew** | **[]string** |  | 
+ **nameIsw** | **[]string** |  | 
+ **nameN** | **[]string** |  | 
+ **nameNic** | **[]string** |  | 
+ **nameNie** | **[]string** |  | 
+ **nameNiew** | **[]string** |  | 
+ **nameNisw** | **[]string** |  | 
+ **offset** | **int32** | The initial index from which to return the results. | 
+ **ordering** | **string** | Which field to use when ordering the results. | 
+ **q** | **string** | Search | 
+ **saLifetimeData** | **[]int32** |  | 
+ **saLifetimeDataEmpty** | **bool** |  | 
+ **saLifetimeDataGt** | **[]int32** |  | 
+ **saLifetimeDataGte** | **[]int32** |  | 
+ **saLifetimeDataLt** | **[]int32** |  | 
+ **saLifetimeDataLte** | **[]int32** |  | 
+ **saLifetimeDataN** | **[]int32** |  | 
+ **saLifetimeSeconds** | **[]int32** |  | 
+ **saLifetimeSecondsEmpty** | **bool** |  | 
+ **saLifetimeSecondsGt** | **[]int32** |  | 
+ **saLifetimeSecondsGte** | **[]int32** |  | 
+ **saLifetimeSecondsLt** | **[]int32** |  | 
+ **saLifetimeSecondsLte** | **[]int32** |  | 
+ **saLifetimeSecondsN** | **[]int32** |  | 
+ **tag** | **[]string** |  | 
+ **tagN** | **[]string** |  | 
+ **updatedByRequest** | **string** |  | 
+
+### Return type
+
+[**PaginatedIPSecProposalList**](PaginatedIPSecProposalList.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIpsecProposalsPartialUpdate
+
+> IPSecProposal VpnIpsecProposalsPartialUpdate(ctx, id).PatchedWritableIPSecProposalRequest(patchedWritableIPSecProposalRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this IPSec proposal.
+	patchedWritableIPSecProposalRequest := *openapiclient.NewPatchedWritableIPSecProposalRequest() // PatchedWritableIPSecProposalRequest |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnIpsecProposalsPartialUpdate(context.Background(), id).PatchedWritableIPSecProposalRequest(patchedWritableIPSecProposalRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIpsecProposalsPartialUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnIpsecProposalsPartialUpdate`: IPSecProposal
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnIpsecProposalsPartialUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this IPSec proposal. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIpsecProposalsPartialUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **patchedWritableIPSecProposalRequest** | [**PatchedWritableIPSecProposalRequest**](PatchedWritableIPSecProposalRequest.md) |  | 
+
+### Return type
+
+[**IPSecProposal**](IPSecProposal.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIpsecProposalsRetrieve
+
+> IPSecProposal VpnIpsecProposalsRetrieve(ctx, id).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this IPSec proposal.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnIpsecProposalsRetrieve(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIpsecProposalsRetrieve``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnIpsecProposalsRetrieve`: IPSecProposal
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnIpsecProposalsRetrieve`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this IPSec proposal. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIpsecProposalsRetrieveRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**IPSecProposal**](IPSecProposal.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnIpsecProposalsUpdate
+
+> IPSecProposal VpnIpsecProposalsUpdate(ctx, id).WritableIPSecProposalRequest(writableIPSecProposalRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this IPSec proposal.
+	writableIPSecProposalRequest := *openapiclient.NewWritableIPSecProposalRequest("Name_example") // WritableIPSecProposalRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnIpsecProposalsUpdate(context.Background(), id).WritableIPSecProposalRequest(writableIPSecProposalRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnIpsecProposalsUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnIpsecProposalsUpdate`: IPSecProposal
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnIpsecProposalsUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this IPSec proposal. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnIpsecProposalsUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **writableIPSecProposalRequest** | [**WritableIPSecProposalRequest**](WritableIPSecProposalRequest.md) |  | 
+
+### Return type
+
+[**IPSecProposal**](IPSecProposal.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnL2vpnTerminationsBulkDestroy
+
+> VpnL2vpnTerminationsBulkDestroy(ctx).L2VPNTerminationRequest(l2VPNTerminationRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	l2VPNTerminationRequest := []openapiclient.L2VPNTerminationRequest{*openapiclient.NewL2VPNTerminationRequest(*openapiclient.NewNestedL2VPNRequest("Name_example", "Slug_example", openapiclient.L2VPN_type_value("vpws")), "AssignedObjectType_example", int64(123))} // []L2VPNTerminationRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.VpnAPI.VpnL2vpnTerminationsBulkDestroy(context.Background()).L2VPNTerminationRequest(l2VPNTerminationRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnL2vpnTerminationsBulkDestroy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnL2vpnTerminationsBulkDestroyRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **l2VPNTerminationRequest** | [**[]L2VPNTerminationRequest**](L2VPNTerminationRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnL2vpnTerminationsBulkPartialUpdate
+
+> []L2VPNTermination VpnL2vpnTerminationsBulkPartialUpdate(ctx).L2VPNTerminationRequest(l2VPNTerminationRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	l2VPNTerminationRequest := []openapiclient.L2VPNTerminationRequest{*openapiclient.NewL2VPNTerminationRequest(*openapiclient.NewNestedL2VPNRequest("Name_example", "Slug_example", openapiclient.L2VPN_type_value("vpws")), "AssignedObjectType_example", int64(123))} // []L2VPNTerminationRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnL2vpnTerminationsBulkPartialUpdate(context.Background()).L2VPNTerminationRequest(l2VPNTerminationRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnL2vpnTerminationsBulkPartialUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnL2vpnTerminationsBulkPartialUpdate`: []L2VPNTermination
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnL2vpnTerminationsBulkPartialUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnL2vpnTerminationsBulkPartialUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **l2VPNTerminationRequest** | [**[]L2VPNTerminationRequest**](L2VPNTerminationRequest.md) |  | 
+
+### Return type
+
+[**[]L2VPNTermination**](L2VPNTermination.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnL2vpnTerminationsBulkUpdate
+
+> []L2VPNTermination VpnL2vpnTerminationsBulkUpdate(ctx).L2VPNTerminationRequest(l2VPNTerminationRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	l2VPNTerminationRequest := []openapiclient.L2VPNTerminationRequest{*openapiclient.NewL2VPNTerminationRequest(*openapiclient.NewNestedL2VPNRequest("Name_example", "Slug_example", openapiclient.L2VPN_type_value("vpws")), "AssignedObjectType_example", int64(123))} // []L2VPNTerminationRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnL2vpnTerminationsBulkUpdate(context.Background()).L2VPNTerminationRequest(l2VPNTerminationRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnL2vpnTerminationsBulkUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnL2vpnTerminationsBulkUpdate`: []L2VPNTermination
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnL2vpnTerminationsBulkUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnL2vpnTerminationsBulkUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **l2VPNTerminationRequest** | [**[]L2VPNTerminationRequest**](L2VPNTerminationRequest.md) |  | 
+
+### Return type
+
+[**[]L2VPNTermination**](L2VPNTermination.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnL2vpnTerminationsCreate
+
+> L2VPNTermination VpnL2vpnTerminationsCreate(ctx).WritableL2VPNTerminationRequest(writableL2VPNTerminationRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	writableL2VPNTerminationRequest := *openapiclient.NewWritableL2VPNTerminationRequest(int32(123), "AssignedObjectType_example", int64(123)) // WritableL2VPNTerminationRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnL2vpnTerminationsCreate(context.Background()).WritableL2VPNTerminationRequest(writableL2VPNTerminationRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnL2vpnTerminationsCreate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnL2vpnTerminationsCreate`: L2VPNTermination
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnL2vpnTerminationsCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnL2vpnTerminationsCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **writableL2VPNTerminationRequest** | [**WritableL2VPNTerminationRequest**](WritableL2VPNTerminationRequest.md) |  | 
+
+### Return type
+
+[**L2VPNTermination**](L2VPNTermination.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnL2vpnTerminationsDestroy
+
+> VpnL2vpnTerminationsDestroy(ctx, id).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this L2VPN termination.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.VpnAPI.VpnL2vpnTerminationsDestroy(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnL2vpnTerminationsDestroy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this L2VPN termination. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnL2vpnTerminationsDestroyRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnL2vpnTerminationsList
+
+> PaginatedL2VPNTerminationList VpnL2vpnTerminationsList(ctx).AssignedObjectType(assignedObjectType).AssignedObjectTypeN(assignedObjectTypeN).AssignedObjectTypeId(assignedObjectTypeId).AssignedObjectTypeIdN(assignedObjectTypeIdN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interface_(interface_).InterfaceN(interfaceN).InterfaceId(interfaceId).InterfaceIdN(interfaceIdN).L2vpn(l2vpn).L2vpnN(l2vpnN).L2vpnId(l2vpnId).L2vpnIdN(l2vpnIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionId(regionId).Site(site).SiteId(siteId).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineN(virtualMachineN).VirtualMachineId(virtualMachineId).VirtualMachineIdN(virtualMachineIdN).Vlan(vlan).VlanN(vlanN).VlanId(vlanId).VlanIdN(vlanIdN).VlanVid(vlanVid).VlanVidEmpty(vlanVidEmpty).VlanVidGt(vlanVidGt).VlanVidGte(vlanVidGte).VlanVidLt(vlanVidLt).VlanVidLte(vlanVidLte).VlanVidN(vlanVidN).Vminterface(vminterface).VminterfaceN(vminterfaceN).VminterfaceId(vminterfaceId).VminterfaceIdN(vminterfaceIdN).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+    "time"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	assignedObjectType := "assignedObjectType_example" // string |  (optional)
+	assignedObjectTypeN := "assignedObjectTypeN_example" // string |  (optional)
+	assignedObjectTypeId := int32(56) // int32 |  (optional)
+	assignedObjectTypeIdN := int32(56) // int32 |  (optional)
+	created := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdLte := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdN := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+	device := []*string{"Inner_example"} // []*string | Device (name) (optional)
+	deviceN := []*string{"Inner_example"} // []*string | Device (name) (optional)
+	deviceId := []int32{int32(123)} // []int32 | Device (ID) (optional)
+	deviceIdN := []int32{int32(123)} // []int32 | Device (ID) (optional)
+	id := []int32{int32(123)} // []int32 |  (optional)
+	idEmpty := true // bool |  (optional)
+	idGt := []int32{int32(123)} // []int32 |  (optional)
+	idGte := []int32{int32(123)} // []int32 |  (optional)
+	idLt := []int32{int32(123)} // []int32 |  (optional)
+	idLte := []int32{int32(123)} // []int32 |  (optional)
+	idN := []int32{int32(123)} // []int32 |  (optional)
+	interface_ := []string{"Inner_example"} // []string | Interface (name) (optional)
+	interfaceN := []string{"Inner_example"} // []string | Interface (name) (optional)
+	interfaceId := []int32{int32(123)} // []int32 | Interface (ID) (optional)
+	interfaceIdN := []int32{int32(123)} // []int32 | Interface (ID) (optional)
+	l2vpn := []string{"Inner_example"} // []string | L2VPN (slug) (optional)
+	l2vpnN := []string{"Inner_example"} // []string | L2VPN (slug) (optional)
+	l2vpnId := []int32{int32(123)} // []int32 | L2VPN (ID) (optional)
+	l2vpnIdN := []int32{int32(123)} // []int32 | L2VPN (ID) (optional)
+	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
+	limit := int32(56) // int32 | Number of results to return per page. (optional)
+	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
+	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	q := "q_example" // string | Search (optional)
+	region := []string{"Inner_example"} // []string |  (optional)
+	regionId := []int32{int32(123)} // []int32 |  (optional)
+	site := []string{"Inner_example"} // []string |  (optional)
+	siteId := []int32{int32(123)} // []int32 |  (optional)
+	tag := []string{"Inner_example"} // []string |  (optional)
+	tagN := []string{"Inner_example"} // []string |  (optional)
+	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+	virtualMachine := []string{"Inner_example"} // []string | Virtual machine (name) (optional)
+	virtualMachineN := []string{"Inner_example"} // []string | Virtual machine (name) (optional)
+	virtualMachineId := []int32{int32(123)} // []int32 | Virtual machine (ID) (optional)
+	virtualMachineIdN := []int32{int32(123)} // []int32 | Virtual machine (ID) (optional)
+	vlan := []string{"Inner_example"} // []string | VLAN (name) (optional)
+	vlanN := []string{"Inner_example"} // []string | VLAN (name) (optional)
+	vlanId := []int32{int32(123)} // []int32 | VLAN (ID) (optional)
+	vlanIdN := []int32{int32(123)} // []int32 | VLAN (ID) (optional)
+	vlanVid := int32(56) // int32 | VLAN number (1-4094) (optional)
+	vlanVidEmpty := int32(56) // int32 | VLAN number (1-4094) (optional)
+	vlanVidGt := int32(56) // int32 | VLAN number (1-4094) (optional)
+	vlanVidGte := int32(56) // int32 | VLAN number (1-4094) (optional)
+	vlanVidLt := int32(56) // int32 | VLAN number (1-4094) (optional)
+	vlanVidLte := int32(56) // int32 | VLAN number (1-4094) (optional)
+	vlanVidN := int32(56) // int32 | VLAN number (1-4094) (optional)
+	vminterface := []string{"Inner_example"} // []string | VM interface (name) (optional)
+	vminterfaceN := []string{"Inner_example"} // []string | VM interface (name) (optional)
+	vminterfaceId := []int32{int32(123)} // []int32 | VM Interface (ID) (optional)
+	vminterfaceIdN := []int32{int32(123)} // []int32 | VM Interface (ID) (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnL2vpnTerminationsList(context.Background()).AssignedObjectType(assignedObjectType).AssignedObjectTypeN(assignedObjectTypeN).AssignedObjectTypeId(assignedObjectTypeId).AssignedObjectTypeIdN(assignedObjectTypeIdN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interface_(interface_).InterfaceN(interfaceN).InterfaceId(interfaceId).InterfaceIdN(interfaceIdN).L2vpn(l2vpn).L2vpnN(l2vpnN).L2vpnId(l2vpnId).L2vpnIdN(l2vpnIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionId(regionId).Site(site).SiteId(siteId).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineN(virtualMachineN).VirtualMachineId(virtualMachineId).VirtualMachineIdN(virtualMachineIdN).Vlan(vlan).VlanN(vlanN).VlanId(vlanId).VlanIdN(vlanIdN).VlanVid(vlanVid).VlanVidEmpty(vlanVidEmpty).VlanVidGt(vlanVidGt).VlanVidGte(vlanVidGte).VlanVidLt(vlanVidLt).VlanVidLte(vlanVidLte).VlanVidN(vlanVidN).Vminterface(vminterface).VminterfaceN(vminterfaceN).VminterfaceId(vminterfaceId).VminterfaceIdN(vminterfaceIdN).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnL2vpnTerminationsList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnL2vpnTerminationsList`: PaginatedL2VPNTerminationList
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnL2vpnTerminationsList`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnL2vpnTerminationsListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **assignedObjectType** | **string** |  | 
+ **assignedObjectTypeN** | **string** |  | 
+ **assignedObjectTypeId** | **int32** |  | 
+ **assignedObjectTypeIdN** | **int32** |  | 
+ **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
+ **createdGt** | [**[]time.Time**](time.Time.md) |  | 
+ **createdGte** | [**[]time.Time**](time.Time.md) |  | 
+ **createdLt** | [**[]time.Time**](time.Time.md) |  | 
+ **createdLte** | [**[]time.Time**](time.Time.md) |  | 
+ **createdN** | [**[]time.Time**](time.Time.md) |  | 
+ **createdByRequest** | **string** |  | 
+ **device** | **[]string** | Device (name) | 
+ **deviceN** | **[]string** | Device (name) | 
+ **deviceId** | **[]int32** | Device (ID) | 
+ **deviceIdN** | **[]int32** | Device (ID) | 
+ **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
+ **idGt** | **[]int32** |  | 
+ **idGte** | **[]int32** |  | 
+ **idLt** | **[]int32** |  | 
+ **idLte** | **[]int32** |  | 
+ **idN** | **[]int32** |  | 
+ **interface_** | **[]string** | Interface (name) | 
+ **interfaceN** | **[]string** | Interface (name) | 
+ **interfaceId** | **[]int32** | Interface (ID) | 
+ **interfaceIdN** | **[]int32** | Interface (ID) | 
+ **l2vpn** | **[]string** | L2VPN (slug) | 
+ **l2vpnN** | **[]string** | L2VPN (slug) | 
+ **l2vpnId** | **[]int32** | L2VPN (ID) | 
+ **l2vpnIdN** | **[]int32** | L2VPN (ID) | 
+ **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
+ **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
+ **offset** | **int32** | The initial index from which to return the results. | 
+ **ordering** | **string** | Which field to use when ordering the results. | 
+ **q** | **string** | Search | 
+ **region** | **[]string** |  | 
+ **regionId** | **[]int32** |  | 
+ **site** | **[]string** |  | 
+ **siteId** | **[]int32** |  | 
+ **tag** | **[]string** |  | 
+ **tagN** | **[]string** |  | 
+ **updatedByRequest** | **string** |  | 
+ **virtualMachine** | **[]string** | Virtual machine (name) | 
+ **virtualMachineN** | **[]string** | Virtual machine (name) | 
+ **virtualMachineId** | **[]int32** | Virtual machine (ID) | 
+ **virtualMachineIdN** | **[]int32** | Virtual machine (ID) | 
+ **vlan** | **[]string** | VLAN (name) | 
+ **vlanN** | **[]string** | VLAN (name) | 
+ **vlanId** | **[]int32** | VLAN (ID) | 
+ **vlanIdN** | **[]int32** | VLAN (ID) | 
+ **vlanVid** | **int32** | VLAN number (1-4094) | 
+ **vlanVidEmpty** | **int32** | VLAN number (1-4094) | 
+ **vlanVidGt** | **int32** | VLAN number (1-4094) | 
+ **vlanVidGte** | **int32** | VLAN number (1-4094) | 
+ **vlanVidLt** | **int32** | VLAN number (1-4094) | 
+ **vlanVidLte** | **int32** | VLAN number (1-4094) | 
+ **vlanVidN** | **int32** | VLAN number (1-4094) | 
+ **vminterface** | **[]string** | VM interface (name) | 
+ **vminterfaceN** | **[]string** | VM interface (name) | 
+ **vminterfaceId** | **[]int32** | VM Interface (ID) | 
+ **vminterfaceIdN** | **[]int32** | VM Interface (ID) | 
+
+### Return type
+
+[**PaginatedL2VPNTerminationList**](PaginatedL2VPNTerminationList.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnL2vpnTerminationsPartialUpdate
+
+> L2VPNTermination VpnL2vpnTerminationsPartialUpdate(ctx, id).PatchedWritableL2VPNTerminationRequest(patchedWritableL2VPNTerminationRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this L2VPN termination.
+	patchedWritableL2VPNTerminationRequest := *openapiclient.NewPatchedWritableL2VPNTerminationRequest() // PatchedWritableL2VPNTerminationRequest |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnL2vpnTerminationsPartialUpdate(context.Background(), id).PatchedWritableL2VPNTerminationRequest(patchedWritableL2VPNTerminationRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnL2vpnTerminationsPartialUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnL2vpnTerminationsPartialUpdate`: L2VPNTermination
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnL2vpnTerminationsPartialUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this L2VPN termination. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnL2vpnTerminationsPartialUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **patchedWritableL2VPNTerminationRequest** | [**PatchedWritableL2VPNTerminationRequest**](PatchedWritableL2VPNTerminationRequest.md) |  | 
+
+### Return type
+
+[**L2VPNTermination**](L2VPNTermination.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnL2vpnTerminationsRetrieve
+
+> L2VPNTermination VpnL2vpnTerminationsRetrieve(ctx, id).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this L2VPN termination.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnL2vpnTerminationsRetrieve(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnL2vpnTerminationsRetrieve``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnL2vpnTerminationsRetrieve`: L2VPNTermination
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnL2vpnTerminationsRetrieve`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this L2VPN termination. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnL2vpnTerminationsRetrieveRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**L2VPNTermination**](L2VPNTermination.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnL2vpnTerminationsUpdate
+
+> L2VPNTermination VpnL2vpnTerminationsUpdate(ctx, id).WritableL2VPNTerminationRequest(writableL2VPNTerminationRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this L2VPN termination.
+	writableL2VPNTerminationRequest := *openapiclient.NewWritableL2VPNTerminationRequest(int32(123), "AssignedObjectType_example", int64(123)) // WritableL2VPNTerminationRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnL2vpnTerminationsUpdate(context.Background(), id).WritableL2VPNTerminationRequest(writableL2VPNTerminationRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnL2vpnTerminationsUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnL2vpnTerminationsUpdate`: L2VPNTermination
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnL2vpnTerminationsUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this L2VPN termination. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnL2vpnTerminationsUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **writableL2VPNTerminationRequest** | [**WritableL2VPNTerminationRequest**](WritableL2VPNTerminationRequest.md) |  | 
+
+### Return type
+
+[**L2VPNTermination**](L2VPNTermination.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnL2vpnsBulkDestroy
+
+> VpnL2vpnsBulkDestroy(ctx).L2VPNRequest(l2VPNRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	l2VPNRequest := []openapiclient.L2VPNRequest{*openapiclient.NewL2VPNRequest("Name_example", "Slug_example")} // []L2VPNRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.VpnAPI.VpnL2vpnsBulkDestroy(context.Background()).L2VPNRequest(l2VPNRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnL2vpnsBulkDestroy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnL2vpnsBulkDestroyRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **l2VPNRequest** | [**[]L2VPNRequest**](L2VPNRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnL2vpnsBulkPartialUpdate
+
+> []L2VPN VpnL2vpnsBulkPartialUpdate(ctx).L2VPNRequest(l2VPNRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	l2VPNRequest := []openapiclient.L2VPNRequest{*openapiclient.NewL2VPNRequest("Name_example", "Slug_example")} // []L2VPNRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnL2vpnsBulkPartialUpdate(context.Background()).L2VPNRequest(l2VPNRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnL2vpnsBulkPartialUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnL2vpnsBulkPartialUpdate`: []L2VPN
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnL2vpnsBulkPartialUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnL2vpnsBulkPartialUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **l2VPNRequest** | [**[]L2VPNRequest**](L2VPNRequest.md) |  | 
+
+### Return type
+
+[**[]L2VPN**](L2VPN.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnL2vpnsBulkUpdate
+
+> []L2VPN VpnL2vpnsBulkUpdate(ctx).L2VPNRequest(l2VPNRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	l2VPNRequest := []openapiclient.L2VPNRequest{*openapiclient.NewL2VPNRequest("Name_example", "Slug_example")} // []L2VPNRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnL2vpnsBulkUpdate(context.Background()).L2VPNRequest(l2VPNRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnL2vpnsBulkUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnL2vpnsBulkUpdate`: []L2VPN
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnL2vpnsBulkUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnL2vpnsBulkUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **l2VPNRequest** | [**[]L2VPNRequest**](L2VPNRequest.md) |  | 
+
+### Return type
+
+[**[]L2VPN**](L2VPN.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnL2vpnsCreate
+
+> L2VPN VpnL2vpnsCreate(ctx).WritableL2VPNRequest(writableL2VPNRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	writableL2VPNRequest := *openapiclient.NewWritableL2VPNRequest("Name_example", "Slug_example", openapiclient.L2VPN_type_value("vpws")) // WritableL2VPNRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnL2vpnsCreate(context.Background()).WritableL2VPNRequest(writableL2VPNRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnL2vpnsCreate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnL2vpnsCreate`: L2VPN
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnL2vpnsCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnL2vpnsCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **writableL2VPNRequest** | [**WritableL2VPNRequest**](WritableL2VPNRequest.md) |  | 
+
+### Return type
+
+[**L2VPN**](L2VPN.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnL2vpnsDestroy
+
+> VpnL2vpnsDestroy(ctx, id).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this L2VPN.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.VpnAPI.VpnL2vpnsDestroy(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnL2vpnsDestroy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this L2VPN. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnL2vpnsDestroyRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnL2vpnsList
+
+> PaginatedL2VPNList VpnL2vpnsList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).ExportTarget(exportTarget).ExportTargetN(exportTargetN).ExportTargetId(exportTargetId).ExportTargetIdN(exportTargetIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Identifier(identifier).IdentifierEmpty(identifierEmpty).IdentifierGt(identifierGt).IdentifierGte(identifierGte).IdentifierLt(identifierLt).IdentifierLte(identifierLte).IdentifierN(identifierN).ImportTarget(importTarget).ImportTargetN(importTargetN).ImportTargetId(importTargetId).ImportTargetIdN(importTargetIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+    "time"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	created := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdLte := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdN := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+	description := []string{"Inner_example"} // []string |  (optional)
+	descriptionEmpty := true // bool |  (optional)
+	descriptionIc := []string{"Inner_example"} // []string |  (optional)
+	descriptionIe := []string{"Inner_example"} // []string |  (optional)
+	descriptionIew := []string{"Inner_example"} // []string |  (optional)
+	descriptionIsw := []string{"Inner_example"} // []string |  (optional)
+	descriptionN := []string{"Inner_example"} // []string |  (optional)
+	descriptionNic := []string{"Inner_example"} // []string |  (optional)
+	descriptionNie := []string{"Inner_example"} // []string |  (optional)
+	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
+	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
+	exportTarget := []string{"Inner_example"} // []string | Export target (name) (optional)
+	exportTargetN := []string{"Inner_example"} // []string | Export target (name) (optional)
+	exportTargetId := []int32{int32(123)} // []int32 | Export target (optional)
+	exportTargetIdN := []int32{int32(123)} // []int32 | Export target (optional)
+	id := []int32{int32(123)} // []int32 |  (optional)
+	idEmpty := true // bool |  (optional)
+	idGt := []int32{int32(123)} // []int32 |  (optional)
+	idGte := []int32{int32(123)} // []int32 |  (optional)
+	idLt := []int32{int32(123)} // []int32 |  (optional)
+	idLte := []int32{int32(123)} // []int32 |  (optional)
+	idN := []int32{int32(123)} // []int32 |  (optional)
+	identifier := []int32{int32(123)} // []int32 |  (optional)
+	identifierEmpty := true // bool |  (optional)
+	identifierGt := []int32{int32(123)} // []int32 |  (optional)
+	identifierGte := []int32{int32(123)} // []int32 |  (optional)
+	identifierLt := []int32{int32(123)} // []int32 |  (optional)
+	identifierLte := []int32{int32(123)} // []int32 |  (optional)
+	identifierN := []int32{int32(123)} // []int32 |  (optional)
+	importTarget := []string{"Inner_example"} // []string | Import target (name) (optional)
+	importTargetN := []string{"Inner_example"} // []string | Import target (name) (optional)
+	importTargetId := []int32{int32(123)} // []int32 | Import target (optional)
+	importTargetIdN := []int32{int32(123)} // []int32 | Import target (optional)
+	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
+	limit := int32(56) // int32 | Number of results to return per page. (optional)
+	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+	name := []string{"Inner_example"} // []string |  (optional)
+	nameEmpty := true // bool |  (optional)
+	nameIc := []string{"Inner_example"} // []string |  (optional)
+	nameIe := []string{"Inner_example"} // []string |  (optional)
+	nameIew := []string{"Inner_example"} // []string |  (optional)
+	nameIsw := []string{"Inner_example"} // []string |  (optional)
+	nameN := []string{"Inner_example"} // []string |  (optional)
+	nameNic := []string{"Inner_example"} // []string |  (optional)
+	nameNie := []string{"Inner_example"} // []string |  (optional)
+	nameNiew := []string{"Inner_example"} // []string |  (optional)
+	nameNisw := []string{"Inner_example"} // []string |  (optional)
+	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
+	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	q := "q_example" // string | Search (optional)
+	slug := []string{"Inner_example"} // []string |  (optional)
+	slugEmpty := true // bool |  (optional)
+	slugIc := []string{"Inner_example"} // []string |  (optional)
+	slugIe := []string{"Inner_example"} // []string |  (optional)
+	slugIew := []string{"Inner_example"} // []string |  (optional)
+	slugIsw := []string{"Inner_example"} // []string |  (optional)
+	slugN := []string{"Inner_example"} // []string |  (optional)
+	slugNic := []string{"Inner_example"} // []string |  (optional)
+	slugNie := []string{"Inner_example"} // []string |  (optional)
+	slugNiew := []string{"Inner_example"} // []string |  (optional)
+	slugNisw := []string{"Inner_example"} // []string |  (optional)
+	tag := []string{"Inner_example"} // []string |  (optional)
+	tagN := []string{"Inner_example"} // []string |  (optional)
+	tenant := []string{"Inner_example"} // []string | Tenant (slug) (optional)
+	tenantN := []string{"Inner_example"} // []string | Tenant (slug) (optional)
+	tenantGroup := []int32{int32(123)} // []int32 | Tenant Group (slug) (optional)
+	tenantGroupN := []int32{int32(123)} // []int32 | Tenant Group (slug) (optional)
+	tenantGroupId := []int32{int32(123)} // []int32 | Tenant Group (ID) (optional)
+	tenantGroupIdN := []int32{int32(123)} // []int32 | Tenant Group (ID) (optional)
+	tenantId := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
+	tenantIdN := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
+	type_ := []string{"Inner_example"} // []string |  (optional)
+	typeN := []string{"Inner_example"} // []string |  (optional)
+	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnL2vpnsList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).ExportTarget(exportTarget).ExportTargetN(exportTargetN).ExportTargetId(exportTargetId).ExportTargetIdN(exportTargetIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Identifier(identifier).IdentifierEmpty(identifierEmpty).IdentifierGt(identifierGt).IdentifierGte(identifierGte).IdentifierLt(identifierLt).IdentifierLte(identifierLte).IdentifierN(identifierN).ImportTarget(importTarget).ImportTargetN(importTargetN).ImportTargetId(importTargetId).ImportTargetIdN(importTargetIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnL2vpnsList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnL2vpnsList`: PaginatedL2VPNList
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnL2vpnsList`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnL2vpnsListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
+ **createdGt** | [**[]time.Time**](time.Time.md) |  | 
+ **createdGte** | [**[]time.Time**](time.Time.md) |  | 
+ **createdLt** | [**[]time.Time**](time.Time.md) |  | 
+ **createdLte** | [**[]time.Time**](time.Time.md) |  | 
+ **createdN** | [**[]time.Time**](time.Time.md) |  | 
+ **createdByRequest** | **string** |  | 
+ **description** | **[]string** |  | 
+ **descriptionEmpty** | **bool** |  | 
+ **descriptionIc** | **[]string** |  | 
+ **descriptionIe** | **[]string** |  | 
+ **descriptionIew** | **[]string** |  | 
+ **descriptionIsw** | **[]string** |  | 
+ **descriptionN** | **[]string** |  | 
+ **descriptionNic** | **[]string** |  | 
+ **descriptionNie** | **[]string** |  | 
+ **descriptionNiew** | **[]string** |  | 
+ **descriptionNisw** | **[]string** |  | 
+ **exportTarget** | **[]string** | Export target (name) | 
+ **exportTargetN** | **[]string** | Export target (name) | 
+ **exportTargetId** | **[]int32** | Export target | 
+ **exportTargetIdN** | **[]int32** | Export target | 
+ **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
+ **idGt** | **[]int32** |  | 
+ **idGte** | **[]int32** |  | 
+ **idLt** | **[]int32** |  | 
+ **idLte** | **[]int32** |  | 
+ **idN** | **[]int32** |  | 
+ **identifier** | **[]int32** |  | 
+ **identifierEmpty** | **bool** |  | 
+ **identifierGt** | **[]int32** |  | 
+ **identifierGte** | **[]int32** |  | 
+ **identifierLt** | **[]int32** |  | 
+ **identifierLte** | **[]int32** |  | 
+ **identifierN** | **[]int32** |  | 
+ **importTarget** | **[]string** | Import target (name) | 
+ **importTargetN** | **[]string** | Import target (name) | 
+ **importTargetId** | **[]int32** | Import target | 
+ **importTargetIdN** | **[]int32** | Import target | 
+ **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
+ **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
+ **name** | **[]string** |  | 
+ **nameEmpty** | **bool** |  | 
+ **nameIc** | **[]string** |  | 
+ **nameIe** | **[]string** |  | 
+ **nameIew** | **[]string** |  | 
+ **nameIsw** | **[]string** |  | 
+ **nameN** | **[]string** |  | 
+ **nameNic** | **[]string** |  | 
+ **nameNie** | **[]string** |  | 
+ **nameNiew** | **[]string** |  | 
+ **nameNisw** | **[]string** |  | 
+ **offset** | **int32** | The initial index from which to return the results. | 
+ **ordering** | **string** | Which field to use when ordering the results. | 
+ **q** | **string** | Search | 
+ **slug** | **[]string** |  | 
+ **slugEmpty** | **bool** |  | 
+ **slugIc** | **[]string** |  | 
+ **slugIe** | **[]string** |  | 
+ **slugIew** | **[]string** |  | 
+ **slugIsw** | **[]string** |  | 
+ **slugN** | **[]string** |  | 
+ **slugNic** | **[]string** |  | 
+ **slugNie** | **[]string** |  | 
+ **slugNiew** | **[]string** |  | 
+ **slugNisw** | **[]string** |  | 
+ **tag** | **[]string** |  | 
+ **tagN** | **[]string** |  | 
+ **tenant** | **[]string** | Tenant (slug) | 
+ **tenantN** | **[]string** | Tenant (slug) | 
+ **tenantGroup** | **[]int32** | Tenant Group (slug) | 
+ **tenantGroupN** | **[]int32** | Tenant Group (slug) | 
+ **tenantGroupId** | **[]int32** | Tenant Group (ID) | 
+ **tenantGroupIdN** | **[]int32** | Tenant Group (ID) | 
+ **tenantId** | **[]int32** | Tenant (ID) | 
+ **tenantIdN** | **[]int32** | Tenant (ID) | 
+ **type_** | **[]string** |  | 
+ **typeN** | **[]string** |  | 
+ **updatedByRequest** | **string** |  | 
+
+### Return type
+
+[**PaginatedL2VPNList**](PaginatedL2VPNList.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnL2vpnsPartialUpdate
+
+> L2VPN VpnL2vpnsPartialUpdate(ctx, id).PatchedWritableL2VPNRequest(patchedWritableL2VPNRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this L2VPN.
+	patchedWritableL2VPNRequest := *openapiclient.NewPatchedWritableL2VPNRequest() // PatchedWritableL2VPNRequest |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnL2vpnsPartialUpdate(context.Background(), id).PatchedWritableL2VPNRequest(patchedWritableL2VPNRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnL2vpnsPartialUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnL2vpnsPartialUpdate`: L2VPN
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnL2vpnsPartialUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this L2VPN. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnL2vpnsPartialUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **patchedWritableL2VPNRequest** | [**PatchedWritableL2VPNRequest**](PatchedWritableL2VPNRequest.md) |  | 
+
+### Return type
+
+[**L2VPN**](L2VPN.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnL2vpnsRetrieve
+
+> L2VPN VpnL2vpnsRetrieve(ctx, id).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this L2VPN.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnL2vpnsRetrieve(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnL2vpnsRetrieve``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnL2vpnsRetrieve`: L2VPN
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnL2vpnsRetrieve`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this L2VPN. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnL2vpnsRetrieveRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**L2VPN**](L2VPN.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnL2vpnsUpdate
+
+> L2VPN VpnL2vpnsUpdate(ctx, id).WritableL2VPNRequest(writableL2VPNRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this L2VPN.
+	writableL2VPNRequest := *openapiclient.NewWritableL2VPNRequest("Name_example", "Slug_example", openapiclient.L2VPN_type_value("vpws")) // WritableL2VPNRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnL2vpnsUpdate(context.Background(), id).WritableL2VPNRequest(writableL2VPNRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnL2vpnsUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnL2vpnsUpdate`: L2VPN
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnL2vpnsUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this L2VPN. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnL2vpnsUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **writableL2VPNRequest** | [**WritableL2VPNRequest**](WritableL2VPNRequest.md) |  | 
+
+### Return type
+
+[**L2VPN**](L2VPN.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnTunnelGroupsBulkDestroy
+
+> VpnTunnelGroupsBulkDestroy(ctx).TunnelGroupRequest(tunnelGroupRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	tunnelGroupRequest := []openapiclient.TunnelGroupRequest{*openapiclient.NewTunnelGroupRequest("Name_example", "Slug_example")} // []TunnelGroupRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.VpnAPI.VpnTunnelGroupsBulkDestroy(context.Background()).TunnelGroupRequest(tunnelGroupRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnTunnelGroupsBulkDestroy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnTunnelGroupsBulkDestroyRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tunnelGroupRequest** | [**[]TunnelGroupRequest**](TunnelGroupRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnTunnelGroupsBulkPartialUpdate
+
+> []TunnelGroup VpnTunnelGroupsBulkPartialUpdate(ctx).TunnelGroupRequest(tunnelGroupRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	tunnelGroupRequest := []openapiclient.TunnelGroupRequest{*openapiclient.NewTunnelGroupRequest("Name_example", "Slug_example")} // []TunnelGroupRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnTunnelGroupsBulkPartialUpdate(context.Background()).TunnelGroupRequest(tunnelGroupRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnTunnelGroupsBulkPartialUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnTunnelGroupsBulkPartialUpdate`: []TunnelGroup
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnTunnelGroupsBulkPartialUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnTunnelGroupsBulkPartialUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tunnelGroupRequest** | [**[]TunnelGroupRequest**](TunnelGroupRequest.md) |  | 
+
+### Return type
+
+[**[]TunnelGroup**](TunnelGroup.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnTunnelGroupsBulkUpdate
+
+> []TunnelGroup VpnTunnelGroupsBulkUpdate(ctx).TunnelGroupRequest(tunnelGroupRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	tunnelGroupRequest := []openapiclient.TunnelGroupRequest{*openapiclient.NewTunnelGroupRequest("Name_example", "Slug_example")} // []TunnelGroupRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnTunnelGroupsBulkUpdate(context.Background()).TunnelGroupRequest(tunnelGroupRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnTunnelGroupsBulkUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnTunnelGroupsBulkUpdate`: []TunnelGroup
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnTunnelGroupsBulkUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnTunnelGroupsBulkUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tunnelGroupRequest** | [**[]TunnelGroupRequest**](TunnelGroupRequest.md) |  | 
+
+### Return type
+
+[**[]TunnelGroup**](TunnelGroup.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnTunnelGroupsCreate
+
+> TunnelGroup VpnTunnelGroupsCreate(ctx).TunnelGroupRequest(tunnelGroupRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	tunnelGroupRequest := *openapiclient.NewTunnelGroupRequest("Name_example", "Slug_example") // TunnelGroupRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnTunnelGroupsCreate(context.Background()).TunnelGroupRequest(tunnelGroupRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnTunnelGroupsCreate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnTunnelGroupsCreate`: TunnelGroup
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnTunnelGroupsCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnTunnelGroupsCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tunnelGroupRequest** | [**TunnelGroupRequest**](TunnelGroupRequest.md) |  | 
+
+### Return type
+
+[**TunnelGroup**](TunnelGroup.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnTunnelGroupsDestroy
+
+> VpnTunnelGroupsDestroy(ctx, id).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this tunnel group.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.VpnAPI.VpnTunnelGroupsDestroy(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnTunnelGroupsDestroy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this tunnel group. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnTunnelGroupsDestroyRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnTunnelGroupsList
+
+> PaginatedTunnelGroupList VpnTunnelGroupsList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+    "time"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	created := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdLte := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdN := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+	description := []string{"Inner_example"} // []string |  (optional)
+	descriptionEmpty := true // bool |  (optional)
+	descriptionIc := []string{"Inner_example"} // []string |  (optional)
+	descriptionIe := []string{"Inner_example"} // []string |  (optional)
+	descriptionIew := []string{"Inner_example"} // []string |  (optional)
+	descriptionIsw := []string{"Inner_example"} // []string |  (optional)
+	descriptionN := []string{"Inner_example"} // []string |  (optional)
+	descriptionNic := []string{"Inner_example"} // []string |  (optional)
+	descriptionNie := []string{"Inner_example"} // []string |  (optional)
+	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
+	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
+	id := []int32{int32(123)} // []int32 |  (optional)
+	idEmpty := true // bool |  (optional)
+	idGt := []int32{int32(123)} // []int32 |  (optional)
+	idGte := []int32{int32(123)} // []int32 |  (optional)
+	idLt := []int32{int32(123)} // []int32 |  (optional)
+	idLte := []int32{int32(123)} // []int32 |  (optional)
+	idN := []int32{int32(123)} // []int32 |  (optional)
+	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
+	limit := int32(56) // int32 | Number of results to return per page. (optional)
+	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+	name := []string{"Inner_example"} // []string |  (optional)
+	nameEmpty := true // bool |  (optional)
+	nameIc := []string{"Inner_example"} // []string |  (optional)
+	nameIe := []string{"Inner_example"} // []string |  (optional)
+	nameIew := []string{"Inner_example"} // []string |  (optional)
+	nameIsw := []string{"Inner_example"} // []string |  (optional)
+	nameN := []string{"Inner_example"} // []string |  (optional)
+	nameNic := []string{"Inner_example"} // []string |  (optional)
+	nameNie := []string{"Inner_example"} // []string |  (optional)
+	nameNiew := []string{"Inner_example"} // []string |  (optional)
+	nameNisw := []string{"Inner_example"} // []string |  (optional)
+	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
+	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	q := "q_example" // string | Search (optional)
+	slug := []string{"Inner_example"} // []string |  (optional)
+	slugEmpty := true // bool |  (optional)
+	slugIc := []string{"Inner_example"} // []string |  (optional)
+	slugIe := []string{"Inner_example"} // []string |  (optional)
+	slugIew := []string{"Inner_example"} // []string |  (optional)
+	slugIsw := []string{"Inner_example"} // []string |  (optional)
+	slugN := []string{"Inner_example"} // []string |  (optional)
+	slugNic := []string{"Inner_example"} // []string |  (optional)
+	slugNie := []string{"Inner_example"} // []string |  (optional)
+	slugNiew := []string{"Inner_example"} // []string |  (optional)
+	slugNisw := []string{"Inner_example"} // []string |  (optional)
+	tag := []string{"Inner_example"} // []string |  (optional)
+	tagN := []string{"Inner_example"} // []string |  (optional)
+	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnTunnelGroupsList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnTunnelGroupsList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnTunnelGroupsList`: PaginatedTunnelGroupList
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnTunnelGroupsList`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnTunnelGroupsListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
+ **createdGt** | [**[]time.Time**](time.Time.md) |  | 
+ **createdGte** | [**[]time.Time**](time.Time.md) |  | 
+ **createdLt** | [**[]time.Time**](time.Time.md) |  | 
+ **createdLte** | [**[]time.Time**](time.Time.md) |  | 
+ **createdN** | [**[]time.Time**](time.Time.md) |  | 
+ **createdByRequest** | **string** |  | 
+ **description** | **[]string** |  | 
+ **descriptionEmpty** | **bool** |  | 
+ **descriptionIc** | **[]string** |  | 
+ **descriptionIe** | **[]string** |  | 
+ **descriptionIew** | **[]string** |  | 
+ **descriptionIsw** | **[]string** |  | 
+ **descriptionN** | **[]string** |  | 
+ **descriptionNic** | **[]string** |  | 
+ **descriptionNie** | **[]string** |  | 
+ **descriptionNiew** | **[]string** |  | 
+ **descriptionNisw** | **[]string** |  | 
+ **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
+ **idGt** | **[]int32** |  | 
+ **idGte** | **[]int32** |  | 
+ **idLt** | **[]int32** |  | 
+ **idLte** | **[]int32** |  | 
+ **idN** | **[]int32** |  | 
+ **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
+ **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
+ **name** | **[]string** |  | 
+ **nameEmpty** | **bool** |  | 
+ **nameIc** | **[]string** |  | 
+ **nameIe** | **[]string** |  | 
+ **nameIew** | **[]string** |  | 
+ **nameIsw** | **[]string** |  | 
+ **nameN** | **[]string** |  | 
+ **nameNic** | **[]string** |  | 
+ **nameNie** | **[]string** |  | 
+ **nameNiew** | **[]string** |  | 
+ **nameNisw** | **[]string** |  | 
+ **offset** | **int32** | The initial index from which to return the results. | 
+ **ordering** | **string** | Which field to use when ordering the results. | 
+ **q** | **string** | Search | 
+ **slug** | **[]string** |  | 
+ **slugEmpty** | **bool** |  | 
+ **slugIc** | **[]string** |  | 
+ **slugIe** | **[]string** |  | 
+ **slugIew** | **[]string** |  | 
+ **slugIsw** | **[]string** |  | 
+ **slugN** | **[]string** |  | 
+ **slugNic** | **[]string** |  | 
+ **slugNie** | **[]string** |  | 
+ **slugNiew** | **[]string** |  | 
+ **slugNisw** | **[]string** |  | 
+ **tag** | **[]string** |  | 
+ **tagN** | **[]string** |  | 
+ **updatedByRequest** | **string** |  | 
+
+### Return type
+
+[**PaginatedTunnelGroupList**](PaginatedTunnelGroupList.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnTunnelGroupsPartialUpdate
+
+> TunnelGroup VpnTunnelGroupsPartialUpdate(ctx, id).PatchedTunnelGroupRequest(patchedTunnelGroupRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this tunnel group.
+	patchedTunnelGroupRequest := *openapiclient.NewPatchedTunnelGroupRequest() // PatchedTunnelGroupRequest |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnTunnelGroupsPartialUpdate(context.Background(), id).PatchedTunnelGroupRequest(patchedTunnelGroupRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnTunnelGroupsPartialUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnTunnelGroupsPartialUpdate`: TunnelGroup
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnTunnelGroupsPartialUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this tunnel group. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnTunnelGroupsPartialUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **patchedTunnelGroupRequest** | [**PatchedTunnelGroupRequest**](PatchedTunnelGroupRequest.md) |  | 
+
+### Return type
+
+[**TunnelGroup**](TunnelGroup.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnTunnelGroupsRetrieve
+
+> TunnelGroup VpnTunnelGroupsRetrieve(ctx, id).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this tunnel group.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnTunnelGroupsRetrieve(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnTunnelGroupsRetrieve``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnTunnelGroupsRetrieve`: TunnelGroup
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnTunnelGroupsRetrieve`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this tunnel group. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnTunnelGroupsRetrieveRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**TunnelGroup**](TunnelGroup.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnTunnelGroupsUpdate
+
+> TunnelGroup VpnTunnelGroupsUpdate(ctx, id).TunnelGroupRequest(tunnelGroupRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this tunnel group.
+	tunnelGroupRequest := *openapiclient.NewTunnelGroupRequest("Name_example", "Slug_example") // TunnelGroupRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnTunnelGroupsUpdate(context.Background(), id).TunnelGroupRequest(tunnelGroupRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnTunnelGroupsUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnTunnelGroupsUpdate`: TunnelGroup
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnTunnelGroupsUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this tunnel group. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnTunnelGroupsUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **tunnelGroupRequest** | [**TunnelGroupRequest**](TunnelGroupRequest.md) |  | 
+
+### Return type
+
+[**TunnelGroup**](TunnelGroup.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnTunnelTerminationsBulkDestroy
+
+> VpnTunnelTerminationsBulkDestroy(ctx).TunnelTerminationRequest(tunnelTerminationRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	tunnelTerminationRequest := []openapiclient.TunnelTerminationRequest{*openapiclient.NewTunnelTerminationRequest(*openapiclient.NewNestedTunnelRequest("Name_example"), openapiclient.PatchedWritableTunnelTerminationRequest_role("peer"), "TerminationType_example")} // []TunnelTerminationRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.VpnAPI.VpnTunnelTerminationsBulkDestroy(context.Background()).TunnelTerminationRequest(tunnelTerminationRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnTunnelTerminationsBulkDestroy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnTunnelTerminationsBulkDestroyRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tunnelTerminationRequest** | [**[]TunnelTerminationRequest**](TunnelTerminationRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnTunnelTerminationsBulkPartialUpdate
+
+> []TunnelTermination VpnTunnelTerminationsBulkPartialUpdate(ctx).TunnelTerminationRequest(tunnelTerminationRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	tunnelTerminationRequest := []openapiclient.TunnelTerminationRequest{*openapiclient.NewTunnelTerminationRequest(*openapiclient.NewNestedTunnelRequest("Name_example"), openapiclient.PatchedWritableTunnelTerminationRequest_role("peer"), "TerminationType_example")} // []TunnelTerminationRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnTunnelTerminationsBulkPartialUpdate(context.Background()).TunnelTerminationRequest(tunnelTerminationRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnTunnelTerminationsBulkPartialUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnTunnelTerminationsBulkPartialUpdate`: []TunnelTermination
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnTunnelTerminationsBulkPartialUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnTunnelTerminationsBulkPartialUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tunnelTerminationRequest** | [**[]TunnelTerminationRequest**](TunnelTerminationRequest.md) |  | 
+
+### Return type
+
+[**[]TunnelTermination**](TunnelTermination.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnTunnelTerminationsBulkUpdate
+
+> []TunnelTermination VpnTunnelTerminationsBulkUpdate(ctx).TunnelTerminationRequest(tunnelTerminationRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	tunnelTerminationRequest := []openapiclient.TunnelTerminationRequest{*openapiclient.NewTunnelTerminationRequest(*openapiclient.NewNestedTunnelRequest("Name_example"), openapiclient.PatchedWritableTunnelTerminationRequest_role("peer"), "TerminationType_example")} // []TunnelTerminationRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnTunnelTerminationsBulkUpdate(context.Background()).TunnelTerminationRequest(tunnelTerminationRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnTunnelTerminationsBulkUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnTunnelTerminationsBulkUpdate`: []TunnelTermination
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnTunnelTerminationsBulkUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnTunnelTerminationsBulkUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tunnelTerminationRequest** | [**[]TunnelTerminationRequest**](TunnelTerminationRequest.md) |  | 
+
+### Return type
+
+[**[]TunnelTermination**](TunnelTermination.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnTunnelTerminationsCreate
+
+> TunnelTermination VpnTunnelTerminationsCreate(ctx).WritableTunnelTerminationRequest(writableTunnelTerminationRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	writableTunnelTerminationRequest := *openapiclient.NewWritableTunnelTerminationRequest(int32(123), "TerminationType_example") // WritableTunnelTerminationRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnTunnelTerminationsCreate(context.Background()).WritableTunnelTerminationRequest(writableTunnelTerminationRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnTunnelTerminationsCreate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnTunnelTerminationsCreate`: TunnelTermination
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnTunnelTerminationsCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnTunnelTerminationsCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **writableTunnelTerminationRequest** | [**WritableTunnelTerminationRequest**](WritableTunnelTerminationRequest.md) |  | 
+
+### Return type
+
+[**TunnelTermination**](TunnelTermination.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnTunnelTerminationsDestroy
+
+> VpnTunnelTerminationsDestroy(ctx, id).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this tunnel termination.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.VpnAPI.VpnTunnelTerminationsDestroy(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnTunnelTerminationsDestroy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this tunnel termination. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnTunnelTerminationsDestroyRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnTunnelTerminationsList
+
+> PaginatedTunnelTerminationList VpnTunnelTerminationsList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interface_(interface_).InterfaceN(interfaceN).InterfaceId(interfaceId).InterfaceIdN(interfaceIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).OutsideIpId(outsideIpId).OutsideIpIdN(outsideIpIdN).Q(q).Role(role).RoleN(roleN).Tag(tag).TagN(tagN).TerminationType(terminationType).TerminationTypeN(terminationTypeN).Tunnel(tunnel).TunnelN(tunnelN).TunnelId(tunnelId).TunnelIdN(tunnelIdN).UpdatedByRequest(updatedByRequest).Vminterface(vminterface).VminterfaceN(vminterfaceN).VminterfaceId(vminterfaceId).VminterfaceIdN(vminterfaceIdN).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+    "time"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	created := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdLte := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdN := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+	id := []int32{int32(123)} // []int32 |  (optional)
+	idEmpty := true // bool |  (optional)
+	idGt := []int32{int32(123)} // []int32 |  (optional)
+	idGte := []int32{int32(123)} // []int32 |  (optional)
+	idLt := []int32{int32(123)} // []int32 |  (optional)
+	idLte := []int32{int32(123)} // []int32 |  (optional)
+	idN := []int32{int32(123)} // []int32 |  (optional)
+	interface_ := []string{"Inner_example"} // []string | Interface (name) (optional)
+	interfaceN := []string{"Inner_example"} // []string | Interface (name) (optional)
+	interfaceId := []int32{int32(123)} // []int32 | Interface (ID) (optional)
+	interfaceIdN := []int32{int32(123)} // []int32 | Interface (ID) (optional)
+	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
+	limit := int32(56) // int32 | Number of results to return per page. (optional)
+	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
+	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	outsideIpId := []int32{int32(123)} // []int32 | Outside IP (ID) (optional)
+	outsideIpIdN := []int32{int32(123)} // []int32 | Outside IP (ID) (optional)
+	q := "q_example" // string | Search (optional)
+	role := []string{"Inner_example"} // []string |  (optional)
+	roleN := []string{"Inner_example"} // []string |  (optional)
+	tag := []string{"Inner_example"} // []string |  (optional)
+	tagN := []string{"Inner_example"} // []string |  (optional)
+	terminationType := "terminationType_example" // string |  (optional)
+	terminationTypeN := "terminationTypeN_example" // string |  (optional)
+	tunnel := []string{"Inner_example"} // []string | Tunnel (name) (optional)
+	tunnelN := []string{"Inner_example"} // []string | Tunnel (name) (optional)
+	tunnelId := []int32{int32(123)} // []int32 | Tunnel (ID) (optional)
+	tunnelIdN := []int32{int32(123)} // []int32 | Tunnel (ID) (optional)
+	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+	vminterface := []string{"Inner_example"} // []string | VM interface (name) (optional)
+	vminterfaceN := []string{"Inner_example"} // []string | VM interface (name) (optional)
+	vminterfaceId := []int32{int32(123)} // []int32 | VM interface (ID) (optional)
+	vminterfaceIdN := []int32{int32(123)} // []int32 | VM interface (ID) (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnTunnelTerminationsList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interface_(interface_).InterfaceN(interfaceN).InterfaceId(interfaceId).InterfaceIdN(interfaceIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).OutsideIpId(outsideIpId).OutsideIpIdN(outsideIpIdN).Q(q).Role(role).RoleN(roleN).Tag(tag).TagN(tagN).TerminationType(terminationType).TerminationTypeN(terminationTypeN).Tunnel(tunnel).TunnelN(tunnelN).TunnelId(tunnelId).TunnelIdN(tunnelIdN).UpdatedByRequest(updatedByRequest).Vminterface(vminterface).VminterfaceN(vminterfaceN).VminterfaceId(vminterfaceId).VminterfaceIdN(vminterfaceIdN).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnTunnelTerminationsList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnTunnelTerminationsList`: PaginatedTunnelTerminationList
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnTunnelTerminationsList`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnTunnelTerminationsListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
+ **createdGt** | [**[]time.Time**](time.Time.md) |  | 
+ **createdGte** | [**[]time.Time**](time.Time.md) |  | 
+ **createdLt** | [**[]time.Time**](time.Time.md) |  | 
+ **createdLte** | [**[]time.Time**](time.Time.md) |  | 
+ **createdN** | [**[]time.Time**](time.Time.md) |  | 
+ **createdByRequest** | **string** |  | 
+ **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
+ **idGt** | **[]int32** |  | 
+ **idGte** | **[]int32** |  | 
+ **idLt** | **[]int32** |  | 
+ **idLte** | **[]int32** |  | 
+ **idN** | **[]int32** |  | 
+ **interface_** | **[]string** | Interface (name) | 
+ **interfaceN** | **[]string** | Interface (name) | 
+ **interfaceId** | **[]int32** | Interface (ID) | 
+ **interfaceIdN** | **[]int32** | Interface (ID) | 
+ **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
+ **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
+ **offset** | **int32** | The initial index from which to return the results. | 
+ **ordering** | **string** | Which field to use when ordering the results. | 
+ **outsideIpId** | **[]int32** | Outside IP (ID) | 
+ **outsideIpIdN** | **[]int32** | Outside IP (ID) | 
+ **q** | **string** | Search | 
+ **role** | **[]string** |  | 
+ **roleN** | **[]string** |  | 
+ **tag** | **[]string** |  | 
+ **tagN** | **[]string** |  | 
+ **terminationType** | **string** |  | 
+ **terminationTypeN** | **string** |  | 
+ **tunnel** | **[]string** | Tunnel (name) | 
+ **tunnelN** | **[]string** | Tunnel (name) | 
+ **tunnelId** | **[]int32** | Tunnel (ID) | 
+ **tunnelIdN** | **[]int32** | Tunnel (ID) | 
+ **updatedByRequest** | **string** |  | 
+ **vminterface** | **[]string** | VM interface (name) | 
+ **vminterfaceN** | **[]string** | VM interface (name) | 
+ **vminterfaceId** | **[]int32** | VM interface (ID) | 
+ **vminterfaceIdN** | **[]int32** | VM interface (ID) | 
+
+### Return type
+
+[**PaginatedTunnelTerminationList**](PaginatedTunnelTerminationList.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnTunnelTerminationsPartialUpdate
+
+> TunnelTermination VpnTunnelTerminationsPartialUpdate(ctx, id).PatchedWritableTunnelTerminationRequest(patchedWritableTunnelTerminationRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this tunnel termination.
+	patchedWritableTunnelTerminationRequest := *openapiclient.NewPatchedWritableTunnelTerminationRequest() // PatchedWritableTunnelTerminationRequest |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnTunnelTerminationsPartialUpdate(context.Background(), id).PatchedWritableTunnelTerminationRequest(patchedWritableTunnelTerminationRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnTunnelTerminationsPartialUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnTunnelTerminationsPartialUpdate`: TunnelTermination
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnTunnelTerminationsPartialUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this tunnel termination. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnTunnelTerminationsPartialUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **patchedWritableTunnelTerminationRequest** | [**PatchedWritableTunnelTerminationRequest**](PatchedWritableTunnelTerminationRequest.md) |  | 
+
+### Return type
+
+[**TunnelTermination**](TunnelTermination.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnTunnelTerminationsRetrieve
+
+> TunnelTermination VpnTunnelTerminationsRetrieve(ctx, id).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this tunnel termination.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnTunnelTerminationsRetrieve(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnTunnelTerminationsRetrieve``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnTunnelTerminationsRetrieve`: TunnelTermination
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnTunnelTerminationsRetrieve`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this tunnel termination. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnTunnelTerminationsRetrieveRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**TunnelTermination**](TunnelTermination.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnTunnelTerminationsUpdate
+
+> TunnelTermination VpnTunnelTerminationsUpdate(ctx, id).WritableTunnelTerminationRequest(writableTunnelTerminationRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this tunnel termination.
+	writableTunnelTerminationRequest := *openapiclient.NewWritableTunnelTerminationRequest(int32(123), "TerminationType_example") // WritableTunnelTerminationRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnTunnelTerminationsUpdate(context.Background(), id).WritableTunnelTerminationRequest(writableTunnelTerminationRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnTunnelTerminationsUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnTunnelTerminationsUpdate`: TunnelTermination
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnTunnelTerminationsUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this tunnel termination. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnTunnelTerminationsUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **writableTunnelTerminationRequest** | [**WritableTunnelTerminationRequest**](WritableTunnelTerminationRequest.md) |  | 
+
+### Return type
+
+[**TunnelTermination**](TunnelTermination.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnTunnelsBulkDestroy
+
+> VpnTunnelsBulkDestroy(ctx).TunnelRequest(tunnelRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	tunnelRequest := []openapiclient.TunnelRequest{*openapiclient.NewTunnelRequest("Name_example", openapiclient.PatchedWritableTunnelRequest_status("planned"), *openapiclient.NewNestedTunnelGroupRequest("Name_example", "Slug_example"), openapiclient.PatchedWritableTunnelRequest_encapsulation("ipsec-transport"))} // []TunnelRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.VpnAPI.VpnTunnelsBulkDestroy(context.Background()).TunnelRequest(tunnelRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnTunnelsBulkDestroy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnTunnelsBulkDestroyRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tunnelRequest** | [**[]TunnelRequest**](TunnelRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnTunnelsBulkPartialUpdate
+
+> []Tunnel VpnTunnelsBulkPartialUpdate(ctx).TunnelRequest(tunnelRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	tunnelRequest := []openapiclient.TunnelRequest{*openapiclient.NewTunnelRequest("Name_example", openapiclient.PatchedWritableTunnelRequest_status("planned"), *openapiclient.NewNestedTunnelGroupRequest("Name_example", "Slug_example"), openapiclient.PatchedWritableTunnelRequest_encapsulation("ipsec-transport"))} // []TunnelRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnTunnelsBulkPartialUpdate(context.Background()).TunnelRequest(tunnelRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnTunnelsBulkPartialUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnTunnelsBulkPartialUpdate`: []Tunnel
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnTunnelsBulkPartialUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnTunnelsBulkPartialUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tunnelRequest** | [**[]TunnelRequest**](TunnelRequest.md) |  | 
+
+### Return type
+
+[**[]Tunnel**](Tunnel.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnTunnelsBulkUpdate
+
+> []Tunnel VpnTunnelsBulkUpdate(ctx).TunnelRequest(tunnelRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	tunnelRequest := []openapiclient.TunnelRequest{*openapiclient.NewTunnelRequest("Name_example", openapiclient.PatchedWritableTunnelRequest_status("planned"), *openapiclient.NewNestedTunnelGroupRequest("Name_example", "Slug_example"), openapiclient.PatchedWritableTunnelRequest_encapsulation("ipsec-transport"))} // []TunnelRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnTunnelsBulkUpdate(context.Background()).TunnelRequest(tunnelRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnTunnelsBulkUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnTunnelsBulkUpdate`: []Tunnel
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnTunnelsBulkUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnTunnelsBulkUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tunnelRequest** | [**[]TunnelRequest**](TunnelRequest.md) |  | 
+
+### Return type
+
+[**[]Tunnel**](Tunnel.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnTunnelsCreate
+
+> Tunnel VpnTunnelsCreate(ctx).WritableTunnelRequest(writableTunnelRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	writableTunnelRequest := *openapiclient.NewWritableTunnelRequest("Name_example", openapiclient.PatchedWritableTunnelRequest_encapsulation("ipsec-transport")) // WritableTunnelRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnTunnelsCreate(context.Background()).WritableTunnelRequest(writableTunnelRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnTunnelsCreate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnTunnelsCreate`: Tunnel
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnTunnelsCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnTunnelsCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **writableTunnelRequest** | [**WritableTunnelRequest**](WritableTunnelRequest.md) |  | 
+
+### Return type
+
+[**Tunnel**](Tunnel.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnTunnelsDestroy
+
+> VpnTunnelsDestroy(ctx, id).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this tunnel.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.VpnAPI.VpnTunnelsDestroy(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnTunnelsDestroy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this tunnel. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnTunnelsDestroyRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnTunnelsList
+
+> PaginatedTunnelList VpnTunnelsList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Encapsulation(encapsulation).EncapsulationN(encapsulationN).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IpsecProfile(ipsecProfile).IpsecProfileN(ipsecProfileN).IpsecProfileId(ipsecProfileId).IpsecProfileIdN(ipsecProfileIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).TunnelId(tunnelId).TunnelIdEmpty(tunnelIdEmpty).TunnelIdGt(tunnelIdGt).TunnelIdGte(tunnelIdGte).TunnelIdLt(tunnelIdLt).TunnelIdLte(tunnelIdLte).TunnelIdN(tunnelIdN).UpdatedByRequest(updatedByRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+    "time"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	created := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdLte := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdN := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+	description := []string{"Inner_example"} // []string |  (optional)
+	descriptionEmpty := true // bool |  (optional)
+	descriptionIc := []string{"Inner_example"} // []string |  (optional)
+	descriptionIe := []string{"Inner_example"} // []string |  (optional)
+	descriptionIew := []string{"Inner_example"} // []string |  (optional)
+	descriptionIsw := []string{"Inner_example"} // []string |  (optional)
+	descriptionN := []string{"Inner_example"} // []string |  (optional)
+	descriptionNic := []string{"Inner_example"} // []string |  (optional)
+	descriptionNie := []string{"Inner_example"} // []string |  (optional)
+	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
+	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
+	encapsulation := []string{"Inner_example"} // []string |  (optional)
+	encapsulationN := []string{"Inner_example"} // []string |  (optional)
+	group := []string{"Inner_example"} // []string | Tunnel group (slug) (optional)
+	groupN := []string{"Inner_example"} // []string | Tunnel group (slug) (optional)
+	groupId := []*int32{int32(123)} // []*int32 | Tunnel group (ID) (optional)
+	groupIdN := []*int32{int32(123)} // []*int32 | Tunnel group (ID) (optional)
+	id := []int32{int32(123)} // []int32 |  (optional)
+	idEmpty := true // bool |  (optional)
+	idGt := []int32{int32(123)} // []int32 |  (optional)
+	idGte := []int32{int32(123)} // []int32 |  (optional)
+	idLt := []int32{int32(123)} // []int32 |  (optional)
+	idLte := []int32{int32(123)} // []int32 |  (optional)
+	idN := []int32{int32(123)} // []int32 |  (optional)
+	ipsecProfile := []string{"Inner_example"} // []string | IPSec profile (name) (optional)
+	ipsecProfileN := []string{"Inner_example"} // []string | IPSec profile (name) (optional)
+	ipsecProfileId := []*int32{int32(123)} // []*int32 | IPSec profile (ID) (optional)
+	ipsecProfileIdN := []*int32{int32(123)} // []*int32 | IPSec profile (ID) (optional)
+	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
+	limit := int32(56) // int32 | Number of results to return per page. (optional)
+	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+	name := []string{"Inner_example"} // []string |  (optional)
+	nameEmpty := true // bool |  (optional)
+	nameIc := []string{"Inner_example"} // []string |  (optional)
+	nameIe := []string{"Inner_example"} // []string |  (optional)
+	nameIew := []string{"Inner_example"} // []string |  (optional)
+	nameIsw := []string{"Inner_example"} // []string |  (optional)
+	nameN := []string{"Inner_example"} // []string |  (optional)
+	nameNic := []string{"Inner_example"} // []string |  (optional)
+	nameNie := []string{"Inner_example"} // []string |  (optional)
+	nameNiew := []string{"Inner_example"} // []string |  (optional)
+	nameNisw := []string{"Inner_example"} // []string |  (optional)
+	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
+	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	q := "q_example" // string | Search (optional)
+	status := []string{"Inner_example"} // []string |  (optional)
+	statusN := []string{"Inner_example"} // []string |  (optional)
+	tag := []string{"Inner_example"} // []string |  (optional)
+	tagN := []string{"Inner_example"} // []string |  (optional)
+	tenant := []string{"Inner_example"} // []string | Tenant (slug) (optional)
+	tenantN := []string{"Inner_example"} // []string | Tenant (slug) (optional)
+	tenantGroup := []int32{int32(123)} // []int32 | Tenant Group (slug) (optional)
+	tenantGroupN := []int32{int32(123)} // []int32 | Tenant Group (slug) (optional)
+	tenantGroupId := []int32{int32(123)} // []int32 | Tenant Group (ID) (optional)
+	tenantGroupIdN := []int32{int32(123)} // []int32 | Tenant Group (ID) (optional)
+	tenantId := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
+	tenantIdN := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
+	tunnelId := []int32{int32(123)} // []int32 |  (optional)
+	tunnelIdEmpty := true // bool |  (optional)
+	tunnelIdGt := []int32{int32(123)} // []int32 |  (optional)
+	tunnelIdGte := []int32{int32(123)} // []int32 |  (optional)
+	tunnelIdLt := []int32{int32(123)} // []int32 |  (optional)
+	tunnelIdLte := []int32{int32(123)} // []int32 |  (optional)
+	tunnelIdN := []int32{int32(123)} // []int32 |  (optional)
+	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnTunnelsList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Encapsulation(encapsulation).EncapsulationN(encapsulationN).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IpsecProfile(ipsecProfile).IpsecProfileN(ipsecProfileN).IpsecProfileId(ipsecProfileId).IpsecProfileIdN(ipsecProfileIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).TunnelId(tunnelId).TunnelIdEmpty(tunnelIdEmpty).TunnelIdGt(tunnelIdGt).TunnelIdGte(tunnelIdGte).TunnelIdLt(tunnelIdLt).TunnelIdLte(tunnelIdLte).TunnelIdN(tunnelIdN).UpdatedByRequest(updatedByRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnTunnelsList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnTunnelsList`: PaginatedTunnelList
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnTunnelsList`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnTunnelsListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
+ **createdGt** | [**[]time.Time**](time.Time.md) |  | 
+ **createdGte** | [**[]time.Time**](time.Time.md) |  | 
+ **createdLt** | [**[]time.Time**](time.Time.md) |  | 
+ **createdLte** | [**[]time.Time**](time.Time.md) |  | 
+ **createdN** | [**[]time.Time**](time.Time.md) |  | 
+ **createdByRequest** | **string** |  | 
+ **description** | **[]string** |  | 
+ **descriptionEmpty** | **bool** |  | 
+ **descriptionIc** | **[]string** |  | 
+ **descriptionIe** | **[]string** |  | 
+ **descriptionIew** | **[]string** |  | 
+ **descriptionIsw** | **[]string** |  | 
+ **descriptionN** | **[]string** |  | 
+ **descriptionNic** | **[]string** |  | 
+ **descriptionNie** | **[]string** |  | 
+ **descriptionNiew** | **[]string** |  | 
+ **descriptionNisw** | **[]string** |  | 
+ **encapsulation** | **[]string** |  | 
+ **encapsulationN** | **[]string** |  | 
+ **group** | **[]string** | Tunnel group (slug) | 
+ **groupN** | **[]string** | Tunnel group (slug) | 
+ **groupId** | **[]int32** | Tunnel group (ID) | 
+ **groupIdN** | **[]int32** | Tunnel group (ID) | 
+ **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
+ **idGt** | **[]int32** |  | 
+ **idGte** | **[]int32** |  | 
+ **idLt** | **[]int32** |  | 
+ **idLte** | **[]int32** |  | 
+ **idN** | **[]int32** |  | 
+ **ipsecProfile** | **[]string** | IPSec profile (name) | 
+ **ipsecProfileN** | **[]string** | IPSec profile (name) | 
+ **ipsecProfileId** | **[]int32** | IPSec profile (ID) | 
+ **ipsecProfileIdN** | **[]int32** | IPSec profile (ID) | 
+ **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
+ **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
+ **name** | **[]string** |  | 
+ **nameEmpty** | **bool** |  | 
+ **nameIc** | **[]string** |  | 
+ **nameIe** | **[]string** |  | 
+ **nameIew** | **[]string** |  | 
+ **nameIsw** | **[]string** |  | 
+ **nameN** | **[]string** |  | 
+ **nameNic** | **[]string** |  | 
+ **nameNie** | **[]string** |  | 
+ **nameNiew** | **[]string** |  | 
+ **nameNisw** | **[]string** |  | 
+ **offset** | **int32** | The initial index from which to return the results. | 
+ **ordering** | **string** | Which field to use when ordering the results. | 
+ **q** | **string** | Search | 
+ **status** | **[]string** |  | 
+ **statusN** | **[]string** |  | 
+ **tag** | **[]string** |  | 
+ **tagN** | **[]string** |  | 
+ **tenant** | **[]string** | Tenant (slug) | 
+ **tenantN** | **[]string** | Tenant (slug) | 
+ **tenantGroup** | **[]int32** | Tenant Group (slug) | 
+ **tenantGroupN** | **[]int32** | Tenant Group (slug) | 
+ **tenantGroupId** | **[]int32** | Tenant Group (ID) | 
+ **tenantGroupIdN** | **[]int32** | Tenant Group (ID) | 
+ **tenantId** | **[]int32** | Tenant (ID) | 
+ **tenantIdN** | **[]int32** | Tenant (ID) | 
+ **tunnelId** | **[]int32** |  | 
+ **tunnelIdEmpty** | **bool** |  | 
+ **tunnelIdGt** | **[]int32** |  | 
+ **tunnelIdGte** | **[]int32** |  | 
+ **tunnelIdLt** | **[]int32** |  | 
+ **tunnelIdLte** | **[]int32** |  | 
+ **tunnelIdN** | **[]int32** |  | 
+ **updatedByRequest** | **string** |  | 
+
+### Return type
+
+[**PaginatedTunnelList**](PaginatedTunnelList.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnTunnelsPartialUpdate
+
+> Tunnel VpnTunnelsPartialUpdate(ctx, id).PatchedWritableTunnelRequest(patchedWritableTunnelRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this tunnel.
+	patchedWritableTunnelRequest := *openapiclient.NewPatchedWritableTunnelRequest() // PatchedWritableTunnelRequest |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnTunnelsPartialUpdate(context.Background(), id).PatchedWritableTunnelRequest(patchedWritableTunnelRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnTunnelsPartialUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnTunnelsPartialUpdate`: Tunnel
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnTunnelsPartialUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this tunnel. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnTunnelsPartialUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **patchedWritableTunnelRequest** | [**PatchedWritableTunnelRequest**](PatchedWritableTunnelRequest.md) |  | 
+
+### Return type
+
+[**Tunnel**](Tunnel.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnTunnelsRetrieve
+
+> Tunnel VpnTunnelsRetrieve(ctx, id).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this tunnel.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnTunnelsRetrieve(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnTunnelsRetrieve``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnTunnelsRetrieve`: Tunnel
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnTunnelsRetrieve`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this tunnel. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnTunnelsRetrieveRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**Tunnel**](Tunnel.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VpnTunnelsUpdate
+
+> Tunnel VpnTunnelsUpdate(ctx, id).WritableTunnelRequest(writableTunnelRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v3"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this tunnel.
+	writableTunnelRequest := *openapiclient.NewWritableTunnelRequest("Name_example", openapiclient.PatchedWritableTunnelRequest_encapsulation("ipsec-transport")) // WritableTunnelRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VpnAPI.VpnTunnelsUpdate(context.Background(), id).WritableTunnelRequest(writableTunnelRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VpnAPI.VpnTunnelsUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VpnTunnelsUpdate`: Tunnel
+	fmt.Fprintf(os.Stdout, "Response from `VpnAPI.VpnTunnelsUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this tunnel. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVpnTunnelsUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **writableTunnelRequest** | [**WritableTunnelRequest**](WritableTunnelRequest.md) |  | 
+
+### Return type
+
+[**Tunnel**](Tunnel.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+

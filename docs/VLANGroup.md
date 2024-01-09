@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **Slug** | **string** |  | 
 **ScopeType** | Pointer to **NullableString** |  | [optional] 
 **ScopeId** | Pointer to **NullableInt32** |  | [optional] 
-**Scope** | **map[string]interface{}** |  | [readonly] 
+**Scope** | **interface{}** |  | [readonly] 
 **MinVid** | Pointer to **int32** | Lowest permissible ID of a child VLAN | [optional] 
 **MaxVid** | Pointer to **int32** | Highest permissible ID of a child VLAN | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 
 ### NewVLANGroup
 
-`func NewVLANGroup(id int32, url string, display string, name string, slug string, scope map[string]interface{}, created NullableTime, lastUpdated NullableTime, vlanCount int32, utilization string, ) *VLANGroup`
+`func NewVLANGroup(id int32, url string, display string, name string, slug string, scope interface{}, created NullableTime, lastUpdated NullableTime, vlanCount int32, utilization string, ) *VLANGroup`
 
 NewVLANGroup instantiates a new VLANGroup object
 This constructor will assign default values to properties that have it defined,
@@ -213,20 +213,20 @@ HasScopeId returns a boolean if a field has been set.
 UnsetScopeId ensures that no value is present for ScopeId, not even an explicit nil
 ### GetScope
 
-`func (o *VLANGroup) GetScope() map[string]interface{}`
+`func (o *VLANGroup) GetScope() interface{}`
 
 GetScope returns the Scope field if non-nil, zero value otherwise.
 
 ### GetScopeOk
 
-`func (o *VLANGroup) GetScopeOk() (*map[string]interface{}, bool)`
+`func (o *VLANGroup) GetScopeOk() (*interface{}, bool)`
 
 GetScopeOk returns a tuple with the Scope field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetScope
 
-`func (o *VLANGroup) SetScope(v map[string]interface{})`
+`func (o *VLANGroup) SetScope(v interface{})`
 
 SetScope sets Scope field to given value.
 

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Tenant** | Pointer to **NullableInt32** |  | [optional] 
 **PrimaryIp4** | Pointer to **NullableInt32** |  | [optional] 
 **PrimaryIp6** | Pointer to **NullableInt32** |  | [optional] 
-**Status** | Pointer to **string** | * &#x60;active&#x60; - Active * &#x60;planned&#x60; - Planned * &#x60;offline&#x60; - Offline | [optional] 
+**Status** | Pointer to [**PatchedWritableVirtualDeviceContextRequestStatus**](PatchedWritableVirtualDeviceContextRequestStatus.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
@@ -237,20 +237,20 @@ HasPrimaryIp6 returns a boolean if a field has been set.
 UnsetPrimaryIp6 ensures that no value is present for PrimaryIp6, not even an explicit nil
 ### GetStatus
 
-`func (o *PatchedWritableVirtualDeviceContextRequest) GetStatus() string`
+`func (o *PatchedWritableVirtualDeviceContextRequest) GetStatus() PatchedWritableVirtualDeviceContextRequestStatus`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *PatchedWritableVirtualDeviceContextRequest) GetStatusOk() (*string, bool)`
+`func (o *PatchedWritableVirtualDeviceContextRequest) GetStatusOk() (*PatchedWritableVirtualDeviceContextRequestStatus, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *PatchedWritableVirtualDeviceContextRequest) SetStatus(v string)`
+`func (o *PatchedWritableVirtualDeviceContextRequest) SetStatus(v PatchedWritableVirtualDeviceContextRequestStatus)`
 
 SetStatus sets Status field to given value.
 

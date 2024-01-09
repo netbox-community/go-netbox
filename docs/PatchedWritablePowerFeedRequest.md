@@ -7,10 +7,10 @@ Name | Type | Description | Notes
 **PowerPanel** | Pointer to **int32** |  | [optional] 
 **Rack** | Pointer to **NullableInt32** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Status** | Pointer to **string** | * &#x60;offline&#x60; - Offline * &#x60;active&#x60; - Active * &#x60;planned&#x60; - Planned * &#x60;failed&#x60; - Failed | [optional] 
-**Type** | Pointer to **string** | * &#x60;primary&#x60; - Primary * &#x60;redundant&#x60; - Redundant | [optional] 
-**Supply** | Pointer to **string** | * &#x60;ac&#x60; - AC * &#x60;dc&#x60; - DC | [optional] 
-**Phase** | Pointer to **string** | * &#x60;single-phase&#x60; - Single phase * &#x60;three-phase&#x60; - Three-phase | [optional] 
+**Status** | Pointer to [**PatchedWritablePowerFeedRequestStatus**](PatchedWritablePowerFeedRequestStatus.md) |  | [optional] 
+**Type** | Pointer to [**PatchedWritablePowerFeedRequestType**](PatchedWritablePowerFeedRequestType.md) |  | [optional] 
+**Supply** | Pointer to [**PatchedWritablePowerFeedRequestSupply**](PatchedWritablePowerFeedRequestSupply.md) |  | [optional] 
+**Phase** | Pointer to [**PatchedWritablePowerFeedRequestPhase**](PatchedWritablePowerFeedRequestPhase.md) |  | [optional] 
 **Voltage** | Pointer to **int32** |  | [optional] 
 **Amperage** | Pointer to **int32** |  | [optional] 
 **MaxUtilization** | Pointer to **int32** | Maximum permissible draw (percentage) | [optional] 
@@ -127,20 +127,20 @@ HasName returns a boolean if a field has been set.
 
 ### GetStatus
 
-`func (o *PatchedWritablePowerFeedRequest) GetStatus() string`
+`func (o *PatchedWritablePowerFeedRequest) GetStatus() PatchedWritablePowerFeedRequestStatus`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *PatchedWritablePowerFeedRequest) GetStatusOk() (*string, bool)`
+`func (o *PatchedWritablePowerFeedRequest) GetStatusOk() (*PatchedWritablePowerFeedRequestStatus, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *PatchedWritablePowerFeedRequest) SetStatus(v string)`
+`func (o *PatchedWritablePowerFeedRequest) SetStatus(v PatchedWritablePowerFeedRequestStatus)`
 
 SetStatus sets Status field to given value.
 
@@ -152,20 +152,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *PatchedWritablePowerFeedRequest) GetType() string`
+`func (o *PatchedWritablePowerFeedRequest) GetType() PatchedWritablePowerFeedRequestType`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *PatchedWritablePowerFeedRequest) GetTypeOk() (*string, bool)`
+`func (o *PatchedWritablePowerFeedRequest) GetTypeOk() (*PatchedWritablePowerFeedRequestType, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *PatchedWritablePowerFeedRequest) SetType(v string)`
+`func (o *PatchedWritablePowerFeedRequest) SetType(v PatchedWritablePowerFeedRequestType)`
 
 SetType sets Type field to given value.
 
@@ -177,20 +177,20 @@ HasType returns a boolean if a field has been set.
 
 ### GetSupply
 
-`func (o *PatchedWritablePowerFeedRequest) GetSupply() string`
+`func (o *PatchedWritablePowerFeedRequest) GetSupply() PatchedWritablePowerFeedRequestSupply`
 
 GetSupply returns the Supply field if non-nil, zero value otherwise.
 
 ### GetSupplyOk
 
-`func (o *PatchedWritablePowerFeedRequest) GetSupplyOk() (*string, bool)`
+`func (o *PatchedWritablePowerFeedRequest) GetSupplyOk() (*PatchedWritablePowerFeedRequestSupply, bool)`
 
 GetSupplyOk returns a tuple with the Supply field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSupply
 
-`func (o *PatchedWritablePowerFeedRequest) SetSupply(v string)`
+`func (o *PatchedWritablePowerFeedRequest) SetSupply(v PatchedWritablePowerFeedRequestSupply)`
 
 SetSupply sets Supply field to given value.
 
@@ -202,20 +202,20 @@ HasSupply returns a boolean if a field has been set.
 
 ### GetPhase
 
-`func (o *PatchedWritablePowerFeedRequest) GetPhase() string`
+`func (o *PatchedWritablePowerFeedRequest) GetPhase() PatchedWritablePowerFeedRequestPhase`
 
 GetPhase returns the Phase field if non-nil, zero value otherwise.
 
 ### GetPhaseOk
 
-`func (o *PatchedWritablePowerFeedRequest) GetPhaseOk() (*string, bool)`
+`func (o *PatchedWritablePowerFeedRequest) GetPhaseOk() (*PatchedWritablePowerFeedRequestPhase, bool)`
 
 GetPhaseOk returns a tuple with the Phase field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPhase
 
-`func (o *PatchedWritablePowerFeedRequest) SetPhase(v string)`
+`func (o *PatchedWritablePowerFeedRequest) SetPhase(v PatchedWritablePowerFeedRequestPhase)`
 
 SetPhase sets Phase field to given value.
 

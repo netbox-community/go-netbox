@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Device** | [**NestedDeviceRequest**](NestedDeviceRequest.md) |  | 
 **ModuleBay** | [**NestedModuleBayRequest**](NestedModuleBayRequest.md) |  | 
 **ModuleType** | [**NestedModuleTypeRequest**](NestedModuleTypeRequest.md) |  | 
-**Status** | Pointer to **string** | * &#x60;offline&#x60; - Offline * &#x60;active&#x60; - Active * &#x60;planned&#x60; - Planned * &#x60;staged&#x60; - Staged * &#x60;failed&#x60; - Failed * &#x60;decommissioning&#x60; - Decommissioning | [optional] 
+**Status** | Pointer to [**ModuleStatusValue**](ModuleStatusValue.md) |  | [optional] 
 **Serial** | Pointer to **string** |  | [optional] 
 **AssetTag** | Pointer to **NullableString** | A unique tag used to identify this device | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -96,20 +96,20 @@ SetModuleType sets ModuleType field to given value.
 
 ### GetStatus
 
-`func (o *ModuleRequest) GetStatus() string`
+`func (o *ModuleRequest) GetStatus() ModuleStatusValue`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *ModuleRequest) GetStatusOk() (*string, bool)`
+`func (o *ModuleRequest) GetStatusOk() (*ModuleStatusValue, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *ModuleRequest) SetStatus(v string)`
+`func (o *ModuleRequest) SetStatus(v ModuleStatusValue)`
 
 SetStatus sets Status field to given value.
 

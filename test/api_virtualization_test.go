@@ -479,6 +479,120 @@ func Test_netbox_VirtualizationAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test VirtualizationAPIService VirtualizationVirtualDisksBulkDestroy", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		httpRes, err := apiClient.VirtualizationAPI.VirtualizationVirtualDisksBulkDestroy(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VirtualizationAPIService VirtualizationVirtualDisksBulkPartialUpdate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationVirtualDisksBulkPartialUpdate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VirtualizationAPIService VirtualizationVirtualDisksBulkUpdate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationVirtualDisksBulkUpdate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VirtualizationAPIService VirtualizationVirtualDisksCreate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationVirtualDisksCreate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VirtualizationAPIService VirtualizationVirtualDisksDestroy", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var id int32
+
+		httpRes, err := apiClient.VirtualizationAPI.VirtualizationVirtualDisksDestroy(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VirtualizationAPIService VirtualizationVirtualDisksList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationVirtualDisksList(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VirtualizationAPIService VirtualizationVirtualDisksPartialUpdate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var id int32
+
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationVirtualDisksPartialUpdate(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VirtualizationAPIService VirtualizationVirtualDisksRetrieve", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var id int32
+
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationVirtualDisksRetrieve(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VirtualizationAPIService VirtualizationVirtualDisksUpdate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var id int32
+
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationVirtualDisksUpdate(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test VirtualizationAPIService VirtualizationVirtualMachinesBulkDestroy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -558,6 +672,20 @@ func Test_netbox_VirtualizationAPIService(t *testing.T) {
 		var id int32
 
 		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationVirtualMachinesPartialUpdate(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VirtualizationAPIService VirtualizationVirtualMachinesRenderConfigCreate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var id int32
+
+		resp, httpRes, err := apiClient.VirtualizationAPI.VirtualizationVirtualMachinesRenderConfigCreate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

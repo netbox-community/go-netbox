@@ -6,9 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
-**EnvironmentParams** | Pointer to **map[string]interface{}** | Any &lt;a href&#x3D;\&quot;https://jinja.palletsprojects.com/en/3.1.x/api/#jinja2.Environment\&quot;&gt;additional parameters&lt;/a&gt; to pass when constructing the Jinja2 environment. | [optional] 
+**EnvironmentParams** | Pointer to **interface{}** | Any &lt;a href&#x3D;\&quot;https://jinja.palletsprojects.com/en/3.1.x/api/#jinja2.Environment\&quot;&gt;additional parameters&lt;/a&gt; to pass when constructing the Jinja2 environment. | [optional] 
 **TemplateCode** | **string** | Jinja2 template code. | 
 **DataSource** | Pointer to **NullableInt32** | Remote data source | [optional] 
+**DataFile** | Pointer to **NullableInt32** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 
 ## Methods
@@ -77,20 +78,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetEnvironmentParams
 
-`func (o *WritableConfigTemplateRequest) GetEnvironmentParams() map[string]interface{}`
+`func (o *WritableConfigTemplateRequest) GetEnvironmentParams() interface{}`
 
 GetEnvironmentParams returns the EnvironmentParams field if non-nil, zero value otherwise.
 
 ### GetEnvironmentParamsOk
 
-`func (o *WritableConfigTemplateRequest) GetEnvironmentParamsOk() (*map[string]interface{}, bool)`
+`func (o *WritableConfigTemplateRequest) GetEnvironmentParamsOk() (*interface{}, bool)`
 
 GetEnvironmentParamsOk returns a tuple with the EnvironmentParams field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEnvironmentParams
 
-`func (o *WritableConfigTemplateRequest) SetEnvironmentParams(v map[string]interface{})`
+`func (o *WritableConfigTemplateRequest) SetEnvironmentParams(v interface{})`
 
 SetEnvironmentParams sets EnvironmentParams field to given value.
 
@@ -165,6 +166,41 @@ HasDataSource returns a boolean if a field has been set.
 `func (o *WritableConfigTemplateRequest) UnsetDataSource()`
 
 UnsetDataSource ensures that no value is present for DataSource, not even an explicit nil
+### GetDataFile
+
+`func (o *WritableConfigTemplateRequest) GetDataFile() int32`
+
+GetDataFile returns the DataFile field if non-nil, zero value otherwise.
+
+### GetDataFileOk
+
+`func (o *WritableConfigTemplateRequest) GetDataFileOk() (*int32, bool)`
+
+GetDataFileOk returns a tuple with the DataFile field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDataFile
+
+`func (o *WritableConfigTemplateRequest) SetDataFile(v int32)`
+
+SetDataFile sets DataFile field to given value.
+
+### HasDataFile
+
+`func (o *WritableConfigTemplateRequest) HasDataFile() bool`
+
+HasDataFile returns a boolean if a field has been set.
+
+### SetDataFileNil
+
+`func (o *WritableConfigTemplateRequest) SetDataFileNil(b bool)`
+
+ SetDataFileNil sets the value for DataFile to be an explicit nil
+
+### UnsetDataFile
+`func (o *WritableConfigTemplateRequest) UnsetDataFile()`
+
+UnsetDataFile ensures that no value is present for DataFile, not even an explicit nil
 ### GetTags
 
 `func (o *WritableConfigTemplateRequest) GetTags() []NestedTagRequest`

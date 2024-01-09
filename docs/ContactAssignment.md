@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **Role** | Pointer to [**NullableNestedContactRole**](NestedContactRole.md) |  | [optional] 
 **Priority** | Pointer to [**ContactAssignmentPriority**](ContactAssignmentPriority.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
+**CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 
@@ -260,6 +261,31 @@ SetTags sets Tags field to given value.
 `func (o *ContactAssignment) HasTags() bool`
 
 HasTags returns a boolean if a field has been set.
+
+### GetCustomFields
+
+`func (o *ContactAssignment) GetCustomFields() map[string]interface{}`
+
+GetCustomFields returns the CustomFields field if non-nil, zero value otherwise.
+
+### GetCustomFieldsOk
+
+`func (o *ContactAssignment) GetCustomFieldsOk() (*map[string]interface{}, bool)`
+
+GetCustomFieldsOk returns a tuple with the CustomFields field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomFields
+
+`func (o *ContactAssignment) SetCustomFields(v map[string]interface{})`
+
+SetCustomFields sets CustomFields field to given value.
+
+### HasCustomFields
+
+`func (o *ContactAssignment) HasCustomFields() bool`
+
+HasCustomFields returns a boolean if a field has been set.
 
 ### GetCreated
 

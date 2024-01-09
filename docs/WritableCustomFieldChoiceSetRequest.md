@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
-**BaseChoices** | Pointer to **string** | Base set of predefined choices (optional)  * &#x60;IATA&#x60; - IATA (Airport codes) * &#x60;ISO_3166&#x60; - ISO 3166 (Country codes) * &#x60;UN_LOCODE&#x60; - UN/LOCODE (Location codes) | [optional] 
+**BaseChoices** | Pointer to [**PatchedWritableCustomFieldChoiceSetRequestBaseChoices**](PatchedWritableCustomFieldChoiceSetRequestBaseChoices.md) |  | [optional] 
 **ExtraChoices** | Pointer to **[][]string** |  | [optional] 
 **OrderAlphabetically** | Pointer to **bool** | Choices are automatically ordered alphabetically | [optional] 
 
@@ -76,20 +76,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetBaseChoices
 
-`func (o *WritableCustomFieldChoiceSetRequest) GetBaseChoices() string`
+`func (o *WritableCustomFieldChoiceSetRequest) GetBaseChoices() PatchedWritableCustomFieldChoiceSetRequestBaseChoices`
 
 GetBaseChoices returns the BaseChoices field if non-nil, zero value otherwise.
 
 ### GetBaseChoicesOk
 
-`func (o *WritableCustomFieldChoiceSetRequest) GetBaseChoicesOk() (*string, bool)`
+`func (o *WritableCustomFieldChoiceSetRequest) GetBaseChoicesOk() (*PatchedWritableCustomFieldChoiceSetRequestBaseChoices, bool)`
 
 GetBaseChoicesOk returns a tuple with the BaseChoices field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBaseChoices
 
-`func (o *WritableCustomFieldChoiceSetRequest) SetBaseChoices(v string)`
+`func (o *WritableCustomFieldChoiceSetRequest) SetBaseChoices(v PatchedWritableCustomFieldChoiceSetRequestBaseChoices)`
 
 SetBaseChoices sets BaseChoices field to given value.
 

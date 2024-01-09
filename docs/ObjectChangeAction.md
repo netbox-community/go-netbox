@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to **string** | * &#x60;create&#x60; - Created * &#x60;update&#x60; - Updated * &#x60;delete&#x60; - Deleted | [optional] 
-**Label** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to [**ObjectChangeActionValue**](ObjectChangeActionValue.md) |  | [optional] 
+**Label** | Pointer to [**ObjectChangeActionLabel**](ObjectChangeActionLabel.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *ObjectChangeAction) GetValue() string`
+`func (o *ObjectChangeAction) GetValue() ObjectChangeActionValue`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *ObjectChangeAction) GetValueOk() (*string, bool)`
+`func (o *ObjectChangeAction) GetValueOk() (*ObjectChangeActionValue, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *ObjectChangeAction) SetValue(v string)`
+`func (o *ObjectChangeAction) SetValue(v ObjectChangeActionValue)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *ObjectChangeAction) GetLabel() string`
+`func (o *ObjectChangeAction) GetLabel() ObjectChangeActionLabel`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *ObjectChangeAction) GetLabelOk() (*string, bool)`
+`func (o *ObjectChangeAction) GetLabelOk() (*ObjectChangeActionLabel, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *ObjectChangeAction) SetLabel(v string)`
+`func (o *ObjectChangeAction) SetLabel(v ObjectChangeActionLabel)`
 
 SetLabel sets Label field to given value.
 

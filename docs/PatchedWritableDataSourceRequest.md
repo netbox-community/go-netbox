@@ -5,12 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** |  | [optional] 
-**Type** | Pointer to **string** | * &#x60;local&#x60; - Local * &#x60;git&#x60; - Git * &#x60;amazon-s3&#x60; - Amazon S3 | [optional] 
+**Type** | Pointer to **string** |  | [optional] 
 **SourceUrl** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
-**Parameters** | Pointer to **map[string]interface{}** |  | [optional] 
+**Parameters** | Pointer to **interface{}** |  | [optional] 
 **IgnoreRules** | Pointer to **string** | Patterns (one per line) matching files to ignore when syncing | [optional] 
 
 ## Methods
@@ -184,20 +184,20 @@ HasComments returns a boolean if a field has been set.
 
 ### GetParameters
 
-`func (o *PatchedWritableDataSourceRequest) GetParameters() map[string]interface{}`
+`func (o *PatchedWritableDataSourceRequest) GetParameters() interface{}`
 
 GetParameters returns the Parameters field if non-nil, zero value otherwise.
 
 ### GetParametersOk
 
-`func (o *PatchedWritableDataSourceRequest) GetParametersOk() (*map[string]interface{}, bool)`
+`func (o *PatchedWritableDataSourceRequest) GetParametersOk() (*interface{}, bool)`
 
 GetParametersOk returns a tuple with the Parameters field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetParameters
 
-`func (o *PatchedWritableDataSourceRequest) SetParameters(v map[string]interface{})`
+`func (o *PatchedWritableDataSourceRequest) SetParameters(v interface{})`
 
 SetParameters sets Parameters field to given value.
 

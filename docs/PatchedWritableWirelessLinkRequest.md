@@ -7,10 +7,10 @@ Name | Type | Description | Notes
 **InterfaceA** | Pointer to **int32** |  | [optional] 
 **InterfaceB** | Pointer to **int32** |  | [optional] 
 **Ssid** | Pointer to **string** |  | [optional] 
-**Status** | Pointer to **string** | * &#x60;connected&#x60; - Connected * &#x60;planned&#x60; - Planned * &#x60;decommissioning&#x60; - Decommissioning | [optional] 
+**Status** | Pointer to [**CableStatusValue**](CableStatusValue.md) |  | [optional] 
 **Tenant** | Pointer to **NullableInt32** |  | [optional] 
-**AuthType** | Pointer to **string** | * &#x60;open&#x60; - Open * &#x60;wep&#x60; - WEP * &#x60;wpa-personal&#x60; - WPA Personal (PSK) * &#x60;wpa-enterprise&#x60; - WPA Enterprise | [optional] 
-**AuthCipher** | Pointer to **string** | * &#x60;auto&#x60; - Auto * &#x60;tkip&#x60; - TKIP * &#x60;aes&#x60; - AES | [optional] 
+**AuthType** | Pointer to [**AuthenticationType1**](AuthenticationType1.md) |  | [optional] 
+**AuthCipher** | Pointer to [**AuthenticationCipher**](AuthenticationCipher.md) |  | [optional] 
 **AuthPsk** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
@@ -113,20 +113,20 @@ HasSsid returns a boolean if a field has been set.
 
 ### GetStatus
 
-`func (o *PatchedWritableWirelessLinkRequest) GetStatus() string`
+`func (o *PatchedWritableWirelessLinkRequest) GetStatus() CableStatusValue`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *PatchedWritableWirelessLinkRequest) GetStatusOk() (*string, bool)`
+`func (o *PatchedWritableWirelessLinkRequest) GetStatusOk() (*CableStatusValue, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *PatchedWritableWirelessLinkRequest) SetStatus(v string)`
+`func (o *PatchedWritableWirelessLinkRequest) SetStatus(v CableStatusValue)`
 
 SetStatus sets Status field to given value.
 
@@ -173,20 +173,20 @@ HasTenant returns a boolean if a field has been set.
 UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
 ### GetAuthType
 
-`func (o *PatchedWritableWirelessLinkRequest) GetAuthType() string`
+`func (o *PatchedWritableWirelessLinkRequest) GetAuthType() AuthenticationType1`
 
 GetAuthType returns the AuthType field if non-nil, zero value otherwise.
 
 ### GetAuthTypeOk
 
-`func (o *PatchedWritableWirelessLinkRequest) GetAuthTypeOk() (*string, bool)`
+`func (o *PatchedWritableWirelessLinkRequest) GetAuthTypeOk() (*AuthenticationType1, bool)`
 
 GetAuthTypeOk returns a tuple with the AuthType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthType
 
-`func (o *PatchedWritableWirelessLinkRequest) SetAuthType(v string)`
+`func (o *PatchedWritableWirelessLinkRequest) SetAuthType(v AuthenticationType1)`
 
 SetAuthType sets AuthType field to given value.
 
@@ -198,20 +198,20 @@ HasAuthType returns a boolean if a field has been set.
 
 ### GetAuthCipher
 
-`func (o *PatchedWritableWirelessLinkRequest) GetAuthCipher() string`
+`func (o *PatchedWritableWirelessLinkRequest) GetAuthCipher() AuthenticationCipher`
 
 GetAuthCipher returns the AuthCipher field if non-nil, zero value otherwise.
 
 ### GetAuthCipherOk
 
-`func (o *PatchedWritableWirelessLinkRequest) GetAuthCipherOk() (*string, bool)`
+`func (o *PatchedWritableWirelessLinkRequest) GetAuthCipherOk() (*AuthenticationCipher, bool)`
 
 GetAuthCipherOk returns a tuple with the AuthCipher field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthCipher
 
-`func (o *PatchedWritableWirelessLinkRequest) SetAuthCipher(v string)`
+`func (o *PatchedWritableWirelessLinkRequest) SetAuthCipher(v AuthenticationCipher)`
 
 SetAuthCipher sets AuthCipher field to given value.
 

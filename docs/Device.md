@@ -36,7 +36,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **ConfigTemplate** | Pointer to [**NullableNestedConfigTemplate**](NestedConfigTemplate.md) |  | [optional] 
-**LocalContextData** | Pointer to **map[string]interface{}** | Local config context data takes precedence over source contexts in the final rendered config context | [optional] 
+**LocalContextData** | Pointer to **interface{}** | Local config context data takes precedence over source contexts in the final rendered config context | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
@@ -998,20 +998,20 @@ HasConfigTemplate returns a boolean if a field has been set.
 UnsetConfigTemplate ensures that no value is present for ConfigTemplate, not even an explicit nil
 ### GetLocalContextData
 
-`func (o *Device) GetLocalContextData() map[string]interface{}`
+`func (o *Device) GetLocalContextData() interface{}`
 
 GetLocalContextData returns the LocalContextData field if non-nil, zero value otherwise.
 
 ### GetLocalContextDataOk
 
-`func (o *Device) GetLocalContextDataOk() (*map[string]interface{}, bool)`
+`func (o *Device) GetLocalContextDataOk() (*interface{}, bool)`
 
 GetLocalContextDataOk returns a tuple with the LocalContextData field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLocalContextData
 
-`func (o *Device) SetLocalContextData(v map[string]interface{})`
+`func (o *Device) SetLocalContextData(v interface{})`
 
 SetLocalContextData sets LocalContextData field to given value.
 

@@ -6,13 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ObjectType** | **string** |  | 
 **ObjectId** | **int32** |  | 
-**Object** | **map[string]interface{}** |  | [readonly] 
+**Object** | **interface{}** |  | [readonly] 
 
 ## Methods
 
 ### NewGenericObject
 
-`func NewGenericObject(objectType string, objectId int32, object map[string]interface{}, ) *GenericObject`
+`func NewGenericObject(objectType string, objectId int32, object interface{}, ) *GenericObject`
 
 NewGenericObject instantiates a new GenericObject object
 This constructor will assign default values to properties that have it defined,
@@ -69,20 +69,20 @@ SetObjectId sets ObjectId field to given value.
 
 ### GetObject
 
-`func (o *GenericObject) GetObject() map[string]interface{}`
+`func (o *GenericObject) GetObject() interface{}`
 
 GetObject returns the Object field if non-nil, zero value otherwise.
 
 ### GetObjectOk
 
-`func (o *GenericObject) GetObjectOk() (*map[string]interface{}, bool)`
+`func (o *GenericObject) GetObjectOk() (*interface{}, bool)`
 
 GetObjectOk returns a tuple with the Object field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetObject
 
-`func (o *GenericObject) SetObject(v map[string]interface{})`
+`func (o *GenericObject) SetObject(v interface{})`
 
 SetObject sets Object field to given value.
 

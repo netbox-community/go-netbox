@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | Pointer to **string** | * &#x60;cat3&#x60; - CAT3 * &#x60;cat5&#x60; - CAT5 * &#x60;cat5e&#x60; - CAT5e * &#x60;cat6&#x60; - CAT6 * &#x60;cat6a&#x60; - CAT6a * &#x60;cat7&#x60; - CAT7 * &#x60;cat7a&#x60; - CAT7a * &#x60;cat8&#x60; - CAT8 * &#x60;dac-active&#x60; - Direct Attach Copper (Active) * &#x60;dac-passive&#x60; - Direct Attach Copper (Passive) * &#x60;mrj21-trunk&#x60; - MRJ21 Trunk * &#x60;coaxial&#x60; - Coaxial * &#x60;mmf&#x60; - Multimode Fiber * &#x60;mmf-om1&#x60; - Multimode Fiber (OM1) * &#x60;mmf-om2&#x60; - Multimode Fiber (OM2) * &#x60;mmf-om3&#x60; - Multimode Fiber (OM3) * &#x60;mmf-om4&#x60; - Multimode Fiber (OM4) * &#x60;mmf-om5&#x60; - Multimode Fiber (OM5) * &#x60;smf&#x60; - Singlemode Fiber * &#x60;smf-os1&#x60; - Singlemode Fiber (OS1) * &#x60;smf-os2&#x60; - Singlemode Fiber (OS2) * &#x60;aoc&#x60; - Active Optical Cabling (AOC) * &#x60;power&#x60; - Power | [optional] 
+**Type** | Pointer to [**CableType**](CableType.md) |  | [optional] 
 **ATerminations** | Pointer to [**[]GenericObjectRequest**](GenericObjectRequest.md) |  | [optional] 
 **BTerminations** | Pointer to [**[]GenericObjectRequest**](GenericObjectRequest.md) |  | [optional] 
-**Status** | Pointer to **string** | * &#x60;connected&#x60; - Connected * &#x60;planned&#x60; - Planned * &#x60;decommissioning&#x60; - Decommissioning | [optional] 
+**Status** | Pointer to [**CableStatusValue**](CableStatusValue.md) |  | [optional] 
 **Tenant** | Pointer to **NullableInt32** |  | [optional] 
 **Label** | Pointer to **string** |  | [optional] 
 **Color** | Pointer to **string** |  | [optional] 
 **Length** | Pointer to **NullableFloat64** |  | [optional] 
-**LengthUnit** | Pointer to **string** | * &#x60;km&#x60; - Kilometers * &#x60;m&#x60; - Meters * &#x60;cm&#x60; - Centimeters * &#x60;mi&#x60; - Miles * &#x60;ft&#x60; - Feet * &#x60;in&#x60; - Inches | [optional] 
+**LengthUnit** | Pointer to [**CableLengthUnitValue**](CableLengthUnitValue.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
@@ -39,20 +39,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *PatchedWritableCableRequest) GetType() string`
+`func (o *PatchedWritableCableRequest) GetType() CableType`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *PatchedWritableCableRequest) GetTypeOk() (*string, bool)`
+`func (o *PatchedWritableCableRequest) GetTypeOk() (*CableType, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *PatchedWritableCableRequest) SetType(v string)`
+`func (o *PatchedWritableCableRequest) SetType(v CableType)`
 
 SetType sets Type field to given value.
 
@@ -114,20 +114,20 @@ HasBTerminations returns a boolean if a field has been set.
 
 ### GetStatus
 
-`func (o *PatchedWritableCableRequest) GetStatus() string`
+`func (o *PatchedWritableCableRequest) GetStatus() CableStatusValue`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *PatchedWritableCableRequest) GetStatusOk() (*string, bool)`
+`func (o *PatchedWritableCableRequest) GetStatusOk() (*CableStatusValue, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *PatchedWritableCableRequest) SetStatus(v string)`
+`func (o *PatchedWritableCableRequest) SetStatus(v CableStatusValue)`
 
 SetStatus sets Status field to given value.
 
@@ -259,20 +259,20 @@ HasLength returns a boolean if a field has been set.
 UnsetLength ensures that no value is present for Length, not even an explicit nil
 ### GetLengthUnit
 
-`func (o *PatchedWritableCableRequest) GetLengthUnit() string`
+`func (o *PatchedWritableCableRequest) GetLengthUnit() CableLengthUnitValue`
 
 GetLengthUnit returns the LengthUnit field if non-nil, zero value otherwise.
 
 ### GetLengthUnitOk
 
-`func (o *PatchedWritableCableRequest) GetLengthUnitOk() (*string, bool)`
+`func (o *PatchedWritableCableRequest) GetLengthUnitOk() (*CableLengthUnitValue, bool)`
 
 GetLengthUnitOk returns a tuple with the LengthUnit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLengthUnit
 
-`func (o *PatchedWritableCableRequest) SetLengthUnit(v string)`
+`func (o *PatchedWritableCableRequest) SetLengthUnit(v CableLengthUnitValue)`
 
 SetLengthUnit sets LengthUnit field to given value.
 

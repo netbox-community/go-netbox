@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to **string** | * &#x60;offline&#x60; - Offline * &#x60;active&#x60; - Active * &#x60;planned&#x60; - Planned * &#x60;staged&#x60; - Staged * &#x60;failed&#x60; - Failed * &#x60;decommissioning&#x60; - Decommissioning | [optional] 
-**Label** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to [**ModuleStatusValue**](ModuleStatusValue.md) |  | [optional] 
+**Label** | Pointer to [**ModuleStatusLabel**](ModuleStatusLabel.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *ModuleStatus) GetValue() string`
+`func (o *ModuleStatus) GetValue() ModuleStatusValue`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *ModuleStatus) GetValueOk() (*string, bool)`
+`func (o *ModuleStatus) GetValueOk() (*ModuleStatusValue, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *ModuleStatus) SetValue(v string)`
+`func (o *ModuleStatus) SetValue(v ModuleStatusValue)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *ModuleStatus) GetLabel() string`
+`func (o *ModuleStatus) GetLabel() ModuleStatusLabel`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *ModuleStatus) GetLabelOk() (*string, bool)`
+`func (o *ModuleStatus) GetLabelOk() (*ModuleStatusLabel, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *ModuleStatus) SetLabel(v string)`
+`func (o *ModuleStatus) SetLabel(v ModuleStatusLabel)`
 
 SetLabel sets Label field to given value.
 

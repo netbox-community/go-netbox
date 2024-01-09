@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to **string** | * &#x60;half&#x60; - Half * &#x60;full&#x60; - Full * &#x60;auto&#x60; - Auto | [optional] 
-**Label** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to [**InterfaceDuplexValue**](InterfaceDuplexValue.md) |  | [optional] 
+**Label** | Pointer to [**InterfaceDuplexLabel**](InterfaceDuplexLabel.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *InterfaceDuplex) GetValue() string`
+`func (o *InterfaceDuplex) GetValue() InterfaceDuplexValue`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *InterfaceDuplex) GetValueOk() (*string, bool)`
+`func (o *InterfaceDuplex) GetValueOk() (*InterfaceDuplexValue, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *InterfaceDuplex) SetValue(v string)`
+`func (o *InterfaceDuplex) SetValue(v InterfaceDuplexValue)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *InterfaceDuplex) GetLabel() string`
+`func (o *InterfaceDuplex) GetLabel() InterfaceDuplexLabel`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *InterfaceDuplex) GetLabelOk() (*string, bool)`
+`func (o *InterfaceDuplex) GetLabelOk() (*InterfaceDuplexLabel, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *InterfaceDuplex) SetLabel(v string)`
+`func (o *InterfaceDuplex) SetLabel(v InterfaceDuplexLabel)`
 
 SetLabel sets Label field to given value.
 

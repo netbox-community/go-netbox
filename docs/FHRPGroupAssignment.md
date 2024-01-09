@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Group** | [**NestedFHRPGroup**](NestedFHRPGroup.md) |  | 
 **InterfaceType** | **string** |  | 
 **InterfaceId** | **int64** |  | 
-**Interface** | **map[string]interface{}** |  | [readonly] 
+**Interface** | **interface{}** |  | [readonly] 
 **Priority** | **int32** |  | 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewFHRPGroupAssignment
 
-`func NewFHRPGroupAssignment(id int32, url string, display string, group NestedFHRPGroup, interfaceType string, interfaceId int64, interface_ map[string]interface{}, priority int32, created NullableTime, lastUpdated NullableTime, ) *FHRPGroupAssignment`
+`func NewFHRPGroupAssignment(id int32, url string, display string, group NestedFHRPGroup, interfaceType string, interfaceId int64, interface_ interface{}, priority int32, created NullableTime, lastUpdated NullableTime, ) *FHRPGroupAssignment`
 
 NewFHRPGroupAssignment instantiates a new FHRPGroupAssignment object
 This constructor will assign default values to properties that have it defined,
@@ -156,20 +156,20 @@ SetInterfaceId sets InterfaceId field to given value.
 
 ### GetInterface
 
-`func (o *FHRPGroupAssignment) GetInterface() map[string]interface{}`
+`func (o *FHRPGroupAssignment) GetInterface() interface{}`
 
 GetInterface returns the Interface field if non-nil, zero value otherwise.
 
 ### GetInterfaceOk
 
-`func (o *FHRPGroupAssignment) GetInterfaceOk() (*map[string]interface{}, bool)`
+`func (o *FHRPGroupAssignment) GetInterfaceOk() (*interface{}, bool)`
 
 GetInterfaceOk returns a tuple with the Interface field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInterface
 
-`func (o *FHRPGroupAssignment) SetInterface(v map[string]interface{})`
+`func (o *FHRPGroupAssignment) SetInterface(v interface{})`
 
 SetInterface sets Interface field to given value.
 

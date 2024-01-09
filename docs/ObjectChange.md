@@ -14,15 +14,15 @@ Name | Type | Description | Notes
 **Action** | [**ObjectChangeAction**](ObjectChangeAction.md) |  | 
 **ChangedObjectType** | **string** |  | [readonly] 
 **ChangedObjectId** | **int64** |  | 
-**ChangedObject** | **map[string]interface{}** |  | [readonly] 
-**PrechangeData** | **map[string]interface{}** |  | [readonly] 
-**PostchangeData** | **map[string]interface{}** |  | [readonly] 
+**ChangedObject** | **interface{}** |  | [readonly] 
+**PrechangeData** | **interface{}** |  | [readonly] 
+**PostchangeData** | **interface{}** |  | [readonly] 
 
 ## Methods
 
 ### NewObjectChange
 
-`func NewObjectChange(id int32, url string, display string, time time.Time, user NestedUser, userName string, requestId string, action ObjectChangeAction, changedObjectType string, changedObjectId int64, changedObject map[string]interface{}, prechangeData map[string]interface{}, postchangeData map[string]interface{}, ) *ObjectChange`
+`func NewObjectChange(id int32, url string, display string, time time.Time, user NestedUser, userName string, requestId string, action ObjectChangeAction, changedObjectType string, changedObjectId int64, changedObject interface{}, prechangeData interface{}, postchangeData interface{}, ) *ObjectChange`
 
 NewObjectChange instantiates a new ObjectChange object
 This constructor will assign default values to properties that have it defined,
@@ -239,20 +239,20 @@ SetChangedObjectId sets ChangedObjectId field to given value.
 
 ### GetChangedObject
 
-`func (o *ObjectChange) GetChangedObject() map[string]interface{}`
+`func (o *ObjectChange) GetChangedObject() interface{}`
 
 GetChangedObject returns the ChangedObject field if non-nil, zero value otherwise.
 
 ### GetChangedObjectOk
 
-`func (o *ObjectChange) GetChangedObjectOk() (*map[string]interface{}, bool)`
+`func (o *ObjectChange) GetChangedObjectOk() (*interface{}, bool)`
 
 GetChangedObjectOk returns a tuple with the ChangedObject field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetChangedObject
 
-`func (o *ObjectChange) SetChangedObject(v map[string]interface{})`
+`func (o *ObjectChange) SetChangedObject(v interface{})`
 
 SetChangedObject sets ChangedObject field to given value.
 
@@ -269,20 +269,20 @@ SetChangedObject sets ChangedObject field to given value.
 UnsetChangedObject ensures that no value is present for ChangedObject, not even an explicit nil
 ### GetPrechangeData
 
-`func (o *ObjectChange) GetPrechangeData() map[string]interface{}`
+`func (o *ObjectChange) GetPrechangeData() interface{}`
 
 GetPrechangeData returns the PrechangeData field if non-nil, zero value otherwise.
 
 ### GetPrechangeDataOk
 
-`func (o *ObjectChange) GetPrechangeDataOk() (*map[string]interface{}, bool)`
+`func (o *ObjectChange) GetPrechangeDataOk() (*interface{}, bool)`
 
 GetPrechangeDataOk returns a tuple with the PrechangeData field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrechangeData
 
-`func (o *ObjectChange) SetPrechangeData(v map[string]interface{})`
+`func (o *ObjectChange) SetPrechangeData(v interface{})`
 
 SetPrechangeData sets PrechangeData field to given value.
 
@@ -299,20 +299,20 @@ SetPrechangeData sets PrechangeData field to given value.
 UnsetPrechangeData ensures that no value is present for PrechangeData, not even an explicit nil
 ### GetPostchangeData
 
-`func (o *ObjectChange) GetPostchangeData() map[string]interface{}`
+`func (o *ObjectChange) GetPostchangeData() interface{}`
 
 GetPostchangeData returns the PostchangeData field if non-nil, zero value otherwise.
 
 ### GetPostchangeDataOk
 
-`func (o *ObjectChange) GetPostchangeDataOk() (*map[string]interface{}, bool)`
+`func (o *ObjectChange) GetPostchangeDataOk() (*interface{}, bool)`
 
 GetPostchangeDataOk returns a tuple with the PostchangeData field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPostchangeData
 
-`func (o *ObjectChange) SetPostchangeData(v map[string]interface{})`
+`func (o *ObjectChange) SetPostchangeData(v interface{})`
 
 SetPostchangeData sets PostchangeData field to given value.
 

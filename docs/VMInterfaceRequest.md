@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **Mtu** | Pointer to **NullableInt32** |  | [optional] 
 **MacAddress** | Pointer to **NullableString** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**Mode** | Pointer to **string** | * &#x60;access&#x60; - Access * &#x60;tagged&#x60; - Tagged * &#x60;tagged-all&#x60; - Tagged (All) | [optional] 
+**Mode** | Pointer to [**InterfaceModeValue**](InterfaceModeValue.md) |  | [optional] 
 **UntaggedVlan** | Pointer to [**NullableNestedVLANRequest**](NestedVLANRequest.md) |  | [optional] 
 **TaggedVlans** | Pointer to **[]int32** |  | [optional] 
 **Vrf** | Pointer to [**NullableNestedVRFRequest**](NestedVRFRequest.md) |  | [optional] 
@@ -270,20 +270,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetMode
 
-`func (o *VMInterfaceRequest) GetMode() string`
+`func (o *VMInterfaceRequest) GetMode() InterfaceModeValue`
 
 GetMode returns the Mode field if non-nil, zero value otherwise.
 
 ### GetModeOk
 
-`func (o *VMInterfaceRequest) GetModeOk() (*string, bool)`
+`func (o *VMInterfaceRequest) GetModeOk() (*InterfaceModeValue, bool)`
 
 GetModeOk returns a tuple with the Mode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMode
 
-`func (o *VMInterfaceRequest) SetMode(v string)`
+`func (o *VMInterfaceRequest) SetMode(v InterfaceModeValue)`
 
 SetMode sets Mode field to given value.
 

@@ -5,19 +5,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
-**Type** | Pointer to **string** | * &#x60;local&#x60; - Local * &#x60;git&#x60; - Git * &#x60;amazon-s3&#x60; - Amazon S3 | [optional] 
+**Type** | **string** |  | 
 **SourceUrl** | **string** |  | 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
-**Parameters** | Pointer to **map[string]interface{}** |  | [optional] 
+**Parameters** | Pointer to **interface{}** |  | [optional] 
 **IgnoreRules** | Pointer to **string** | Patterns (one per line) matching files to ignore when syncing | [optional] 
 
 ## Methods
 
 ### NewWritableDataSourceRequest
 
-`func NewWritableDataSourceRequest(name string, sourceUrl string, ) *WritableDataSourceRequest`
+`func NewWritableDataSourceRequest(name string, type_ string, sourceUrl string, ) *WritableDataSourceRequest`
 
 NewWritableDataSourceRequest instantiates a new WritableDataSourceRequest object
 This constructor will assign default values to properties that have it defined,
@@ -71,11 +71,6 @@ and a boolean to check if the value has been set.
 
 SetType sets Type field to given value.
 
-### HasType
-
-`func (o *WritableDataSourceRequest) HasType() bool`
-
-HasType returns a boolean if a field has been set.
 
 ### GetSourceUrl
 
@@ -174,20 +169,20 @@ HasComments returns a boolean if a field has been set.
 
 ### GetParameters
 
-`func (o *WritableDataSourceRequest) GetParameters() map[string]interface{}`
+`func (o *WritableDataSourceRequest) GetParameters() interface{}`
 
 GetParameters returns the Parameters field if non-nil, zero value otherwise.
 
 ### GetParametersOk
 
-`func (o *WritableDataSourceRequest) GetParametersOk() (*map[string]interface{}, bool)`
+`func (o *WritableDataSourceRequest) GetParametersOk() (*interface{}, bool)`
 
 GetParametersOk returns a tuple with the Parameters field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetParameters
 
-`func (o *WritableDataSourceRequest) SetParameters(v map[string]interface{})`
+`func (o *WritableDataSourceRequest) SetParameters(v interface{})`
 
 SetParameters sets Parameters field to given value.
 

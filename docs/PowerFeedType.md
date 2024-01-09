@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to **string** | * &#x60;primary&#x60; - Primary * &#x60;redundant&#x60; - Redundant | [optional] 
-**Label** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to [**PatchedWritablePowerFeedRequestType**](PatchedWritablePowerFeedRequestType.md) |  | [optional] 
+**Label** | Pointer to [**PowerFeedTypeLabel**](PowerFeedTypeLabel.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *PowerFeedType) GetValue() string`
+`func (o *PowerFeedType) GetValue() PatchedWritablePowerFeedRequestType`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *PowerFeedType) GetValueOk() (*string, bool)`
+`func (o *PowerFeedType) GetValueOk() (*PatchedWritablePowerFeedRequestType, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *PowerFeedType) SetValue(v string)`
+`func (o *PowerFeedType) SetValue(v PatchedWritablePowerFeedRequestType)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *PowerFeedType) GetLabel() string`
+`func (o *PowerFeedType) GetLabel() PowerFeedTypeLabel`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *PowerFeedType) GetLabelOk() (*string, bool)`
+`func (o *PowerFeedType) GetLabelOk() (*PowerFeedTypeLabel, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *PowerFeedType) SetLabel(v string)`
+`func (o *PowerFeedType) SetLabel(v PowerFeedTypeLabel)`
 
 SetLabel sets Label field to given value.
 

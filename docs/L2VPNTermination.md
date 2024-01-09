@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **L2vpn** | [**NestedL2VPN**](NestedL2VPN.md) |  | 
 **AssignedObjectType** | **string** |  | 
 **AssignedObjectId** | **int64** |  | 
-**AssignedObject** | **map[string]interface{}** |  | [readonly] 
+**AssignedObject** | **interface{}** |  | [readonly] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewL2VPNTermination
 
-`func NewL2VPNTermination(id int32, url string, display string, l2vpn NestedL2VPN, assignedObjectType string, assignedObjectId int64, assignedObject map[string]interface{}, created NullableTime, lastUpdated NullableTime, ) *L2VPNTermination`
+`func NewL2VPNTermination(id int32, url string, display string, l2vpn NestedL2VPN, assignedObjectType string, assignedObjectId int64, assignedObject interface{}, created NullableTime, lastUpdated NullableTime, ) *L2VPNTermination`
 
 NewL2VPNTermination instantiates a new L2VPNTermination object
 This constructor will assign default values to properties that have it defined,
@@ -157,20 +157,20 @@ SetAssignedObjectId sets AssignedObjectId field to given value.
 
 ### GetAssignedObject
 
-`func (o *L2VPNTermination) GetAssignedObject() map[string]interface{}`
+`func (o *L2VPNTermination) GetAssignedObject() interface{}`
 
 GetAssignedObject returns the AssignedObject field if non-nil, zero value otherwise.
 
 ### GetAssignedObjectOk
 
-`func (o *L2VPNTermination) GetAssignedObjectOk() (*map[string]interface{}, bool)`
+`func (o *L2VPNTermination) GetAssignedObjectOk() (*interface{}, bool)`
 
 GetAssignedObjectOk returns a tuple with the AssignedObject field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAssignedObject
 
-`func (o *L2VPNTermination) SetAssignedObject(v map[string]interface{})`
+`func (o *L2VPNTermination) SetAssignedObject(v interface{})`
 
 SetAssignedObject sets AssignedObject field to given value.
 

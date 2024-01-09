@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to **int32** | * &#x60;10&#x60; - 10 inches * &#x60;19&#x60; - 19 inches * &#x60;21&#x60; - 21 inches * &#x60;23&#x60; - 23 inches | [optional] 
-**Label** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to [**RackWidthValue**](RackWidthValue.md) |  | [optional] 
+**Label** | Pointer to [**RackWidthLabel**](RackWidthLabel.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *RackWidth) GetValue() int32`
+`func (o *RackWidth) GetValue() RackWidthValue`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *RackWidth) GetValueOk() (*int32, bool)`
+`func (o *RackWidth) GetValueOk() (*RackWidthValue, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *RackWidth) SetValue(v int32)`
+`func (o *RackWidth) SetValue(v RackWidthValue)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *RackWidth) GetLabel() string`
+`func (o *RackWidth) GetLabel() RackWidthLabel`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *RackWidth) GetLabelOk() (*string, bool)`
+`func (o *RackWidth) GetLabelOk() (*RackWidthLabel, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *RackWidth) SetLabel(v string)`
+`func (o *RackWidth) SetLabel(v RackWidthLabel)`
 
 SetLabel sets Label field to given value.
 

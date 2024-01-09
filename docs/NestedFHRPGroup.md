@@ -7,14 +7,14 @@ Name | Type | Description | Notes
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
-**Protocol** | **string** | * &#x60;vrrp2&#x60; - VRRPv2 * &#x60;vrrp3&#x60; - VRRPv3 * &#x60;carp&#x60; - CARP * &#x60;clusterxl&#x60; - ClusterXL * &#x60;hsrp&#x60; - HSRP * &#x60;glbp&#x60; - GLBP * &#x60;other&#x60; - Other | 
+**Protocol** | [**FHRPGroupProtocol**](FHRPGroupProtocol.md) |  | 
 **GroupId** | **int32** |  | 
 
 ## Methods
 
 ### NewNestedFHRPGroup
 
-`func NewNestedFHRPGroup(id int32, url string, display string, protocol string, groupId int32, ) *NestedFHRPGroup`
+`func NewNestedFHRPGroup(id int32, url string, display string, protocol FHRPGroupProtocol, groupId int32, ) *NestedFHRPGroup`
 
 NewNestedFHRPGroup instantiates a new NestedFHRPGroup object
 This constructor will assign default values to properties that have it defined,
@@ -91,20 +91,20 @@ SetDisplay sets Display field to given value.
 
 ### GetProtocol
 
-`func (o *NestedFHRPGroup) GetProtocol() string`
+`func (o *NestedFHRPGroup) GetProtocol() FHRPGroupProtocol`
 
 GetProtocol returns the Protocol field if non-nil, zero value otherwise.
 
 ### GetProtocolOk
 
-`func (o *NestedFHRPGroup) GetProtocolOk() (*string, bool)`
+`func (o *NestedFHRPGroup) GetProtocolOk() (*FHRPGroupProtocol, bool)`
 
 GetProtocolOk returns a tuple with the Protocol field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProtocol
 
-`func (o *NestedFHRPGroup) SetProtocol(v string)`
+`func (o *NestedFHRPGroup) SetProtocol(v FHRPGroupProtocol)`
 
 SetProtocol sets Protocol field to given value.
 

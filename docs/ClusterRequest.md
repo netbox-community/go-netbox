@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Name** | **string** |  | 
 **Type** | [**NestedClusterTypeRequest**](NestedClusterTypeRequest.md) |  | 
 **Group** | Pointer to [**NullableNestedClusterGroupRequest**](NestedClusterGroupRequest.md) |  | [optional] 
-**Status** | Pointer to **string** | * &#x60;planned&#x60; - Planned * &#x60;staging&#x60; - Staging * &#x60;active&#x60; - Active * &#x60;decommissioning&#x60; - Decommissioning * &#x60;offline&#x60; - Offline | [optional] 
+**Status** | Pointer to [**ClusterStatusValue**](ClusterStatusValue.md) |  | [optional] 
 **Tenant** | Pointer to [**NullableNestedTenantRequest**](NestedTenantRequest.md) |  | [optional] 
 **Site** | Pointer to [**NullableNestedSiteRequest**](NestedSiteRequest.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -111,20 +111,20 @@ HasGroup returns a boolean if a field has been set.
 UnsetGroup ensures that no value is present for Group, not even an explicit nil
 ### GetStatus
 
-`func (o *ClusterRequest) GetStatus() string`
+`func (o *ClusterRequest) GetStatus() ClusterStatusValue`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *ClusterRequest) GetStatusOk() (*string, bool)`
+`func (o *ClusterRequest) GetStatusOk() (*ClusterStatusValue, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *ClusterRequest) SetStatus(v string)`
+`func (o *ClusterRequest) SetStatus(v ClusterStatusValue)`
 
 SetStatus sets Status field to given value.
 

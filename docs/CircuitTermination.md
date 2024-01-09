@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Url** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
 **Circuit** | [**NestedCircuit**](NestedCircuit.md) |  | 
-**TermSide** | **string** | * &#x60;A&#x60; - A * &#x60;Z&#x60; - Z | 
+**TermSide** | [**Termination**](Termination.md) |  | 
 **Site** | Pointer to [**NullableNestedSite**](NestedSite.md) |  | [optional] 
 **ProviderNetwork** | Pointer to [**NullableNestedProviderNetwork**](NestedProviderNetwork.md) |  | [optional] 
 **PortSpeed** | Pointer to **NullableInt32** | Physical circuit speed | [optional] 
@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 
 ### NewCircuitTermination
 
-`func NewCircuitTermination(id int32, url string, display string, circuit NestedCircuit, termSide string, cable NullableNestedCable, cableEnd string, linkPeers []interface{}, linkPeersType string, created NullableTime, lastUpdated NullableTime, occupied bool, ) *CircuitTermination`
+`func NewCircuitTermination(id int32, url string, display string, circuit NestedCircuit, termSide Termination, cable NullableNestedCable, cableEnd string, linkPeers []interface{}, linkPeersType string, created NullableTime, lastUpdated NullableTime, occupied bool, ) *CircuitTermination`
 
 NewCircuitTermination instantiates a new CircuitTermination object
 This constructor will assign default values to properties that have it defined,
@@ -128,20 +128,20 @@ SetCircuit sets Circuit field to given value.
 
 ### GetTermSide
 
-`func (o *CircuitTermination) GetTermSide() string`
+`func (o *CircuitTermination) GetTermSide() Termination`
 
 GetTermSide returns the TermSide field if non-nil, zero value otherwise.
 
 ### GetTermSideOk
 
-`func (o *CircuitTermination) GetTermSideOk() (*string, bool)`
+`func (o *CircuitTermination) GetTermSideOk() (*Termination, bool)`
 
 GetTermSideOk returns a tuple with the TermSide field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTermSide
 
-`func (o *CircuitTermination) SetTermSide(v string)`
+`func (o *CircuitTermination) SetTermSide(v Termination)`
 
 SetTermSide sets TermSide field to given value.
 

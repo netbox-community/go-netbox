@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **Status** | [**DataSourceStatus**](DataSourceStatus.md) |  | 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
-**Parameters** | Pointer to **map[string]interface{}** |  | [optional] 
+**Parameters** | Pointer to **interface{}** |  | [optional] 
 **IgnoreRules** | Pointer to **string** | Patterns (one per line) matching files to ignore when syncing | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
@@ -256,20 +256,20 @@ HasComments returns a boolean if a field has been set.
 
 ### GetParameters
 
-`func (o *DataSource) GetParameters() map[string]interface{}`
+`func (o *DataSource) GetParameters() interface{}`
 
 GetParameters returns the Parameters field if non-nil, zero value otherwise.
 
 ### GetParametersOk
 
-`func (o *DataSource) GetParametersOk() (*map[string]interface{}, bool)`
+`func (o *DataSource) GetParametersOk() (*interface{}, bool)`
 
 GetParametersOk returns a tuple with the Parameters field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetParameters
 
-`func (o *DataSource) SetParameters(v map[string]interface{})`
+`func (o *DataSource) SetParameters(v interface{})`
 
 SetParameters sets Parameters field to given value.
 

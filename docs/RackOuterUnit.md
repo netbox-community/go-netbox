@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to **string** | * &#x60;mm&#x60; - Millimeters * &#x60;in&#x60; - Inches | [optional] 
-**Label** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to [**PatchedWritableRackRequestOuterUnit**](PatchedWritableRackRequestOuterUnit.md) |  | [optional] 
+**Label** | Pointer to [**RackOuterUnitLabel**](RackOuterUnitLabel.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *RackOuterUnit) GetValue() string`
+`func (o *RackOuterUnit) GetValue() PatchedWritableRackRequestOuterUnit`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *RackOuterUnit) GetValueOk() (*string, bool)`
+`func (o *RackOuterUnit) GetValueOk() (*PatchedWritableRackRequestOuterUnit, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *RackOuterUnit) SetValue(v string)`
+`func (o *RackOuterUnit) SetValue(v PatchedWritableRackRequestOuterUnit)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *RackOuterUnit) GetLabel() string`
+`func (o *RackOuterUnit) GetLabel() RackOuterUnitLabel`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *RackOuterUnit) GetLabelOk() (*string, bool)`
+`func (o *RackOuterUnit) GetLabelOk() (*RackOuterUnitLabel, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *RackOuterUnit) SetLabel(v string)`
+`func (o *RackOuterUnit) SetLabel(v RackOuterUnitLabel)`
 
 SetLabel sets Label field to given value.
 

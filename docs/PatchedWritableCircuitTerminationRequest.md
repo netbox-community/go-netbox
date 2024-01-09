@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Circuit** | Pointer to **int32** |  | [optional] 
-**TermSide** | Pointer to **string** | * &#x60;A&#x60; - A * &#x60;Z&#x60; - Z | [optional] 
+**TermSide** | Pointer to [**Termination**](Termination.md) |  | [optional] 
 **Site** | Pointer to **NullableInt32** |  | [optional] 
 **ProviderNetwork** | Pointer to **NullableInt32** |  | [optional] 
 **PortSpeed** | Pointer to **NullableInt32** | Physical circuit speed | [optional] 
@@ -63,20 +63,20 @@ HasCircuit returns a boolean if a field has been set.
 
 ### GetTermSide
 
-`func (o *PatchedWritableCircuitTerminationRequest) GetTermSide() string`
+`func (o *PatchedWritableCircuitTerminationRequest) GetTermSide() Termination`
 
 GetTermSide returns the TermSide field if non-nil, zero value otherwise.
 
 ### GetTermSideOk
 
-`func (o *PatchedWritableCircuitTerminationRequest) GetTermSideOk() (*string, bool)`
+`func (o *PatchedWritableCircuitTerminationRequest) GetTermSideOk() (*Termination, bool)`
 
 GetTermSideOk returns a tuple with the TermSide field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTermSide
 
-`func (o *PatchedWritableCircuitTerminationRequest) SetTermSide(v string)`
+`func (o *PatchedWritableCircuitTerminationRequest) SetTermSide(v Termination)`
 
 SetTermSide sets TermSide field to given value.
 

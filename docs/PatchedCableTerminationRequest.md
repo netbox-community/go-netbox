@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Cable** | Pointer to **int32** |  | [optional] 
-**CableEnd** | Pointer to **string** | * &#x60;A&#x60; - A * &#x60;B&#x60; - B | [optional] 
+**CableEnd** | Pointer to [**End**](End.md) |  | [optional] 
 **TerminationType** | Pointer to **string** |  | [optional] 
 **TerminationId** | Pointer to **int64** |  | [optional] 
 
@@ -55,20 +55,20 @@ HasCable returns a boolean if a field has been set.
 
 ### GetCableEnd
 
-`func (o *PatchedCableTerminationRequest) GetCableEnd() string`
+`func (o *PatchedCableTerminationRequest) GetCableEnd() End`
 
 GetCableEnd returns the CableEnd field if non-nil, zero value otherwise.
 
 ### GetCableEndOk
 
-`func (o *PatchedCableTerminationRequest) GetCableEndOk() (*string, bool)`
+`func (o *PatchedCableTerminationRequest) GetCableEndOk() (*End, bool)`
 
 GetCableEndOk returns a tuple with the CableEnd field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCableEnd
 
-`func (o *PatchedCableTerminationRequest) SetCableEnd(v string)`
+`func (o *PatchedCableTerminationRequest) SetCableEnd(v End)`
 
 SetCableEnd sets CableEnd field to given value.
 

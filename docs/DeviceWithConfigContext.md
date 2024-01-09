@@ -36,8 +36,8 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **ConfigTemplate** | Pointer to [**NullableNestedConfigTemplate**](NestedConfigTemplate.md) |  | [optional] 
-**ConfigContext** | **map[string]interface{}** |  | [readonly] 
-**LocalContextData** | Pointer to **map[string]interface{}** | Local config context data takes precedence over source contexts in the final rendered config context | [optional] 
+**ConfigContext** | **interface{}** |  | [readonly] 
+**LocalContextData** | Pointer to **interface{}** | Local config context data takes precedence over source contexts in the final rendered config context | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
@@ -57,7 +57,7 @@ Name | Type | Description | Notes
 
 ### NewDeviceWithConfigContext
 
-`func NewDeviceWithConfigContext(id int32, url string, display string, deviceType NestedDeviceType, role NestedDeviceRole, deviceRole DeviceDeviceRole, site NestedSite, parentDevice NestedDevice, primaryIp NestedIPAddress, configContext map[string]interface{}, created NullableTime, lastUpdated NullableTime, consolePortCount int32, consoleServerPortCount int32, powerPortCount int32, powerOutletCount int32, interfaceCount int32, frontPortCount int32, rearPortCount int32, deviceBayCount int32, moduleBayCount int32, inventoryItemCount int32, ) *DeviceWithConfigContext`
+`func NewDeviceWithConfigContext(id int32, url string, display string, deviceType NestedDeviceType, role NestedDeviceRole, deviceRole DeviceDeviceRole, site NestedSite, parentDevice NestedDevice, primaryIp NestedIPAddress, configContext interface{}, created NullableTime, lastUpdated NullableTime, consolePortCount int32, consoleServerPortCount int32, powerPortCount int32, powerOutletCount int32, interfaceCount int32, frontPortCount int32, rearPortCount int32, deviceBayCount int32, moduleBayCount int32, inventoryItemCount int32, ) *DeviceWithConfigContext`
 
 NewDeviceWithConfigContext instantiates a new DeviceWithConfigContext object
 This constructor will assign default values to properties that have it defined,
@@ -999,20 +999,20 @@ HasConfigTemplate returns a boolean if a field has been set.
 UnsetConfigTemplate ensures that no value is present for ConfigTemplate, not even an explicit nil
 ### GetConfigContext
 
-`func (o *DeviceWithConfigContext) GetConfigContext() map[string]interface{}`
+`func (o *DeviceWithConfigContext) GetConfigContext() interface{}`
 
 GetConfigContext returns the ConfigContext field if non-nil, zero value otherwise.
 
 ### GetConfigContextOk
 
-`func (o *DeviceWithConfigContext) GetConfigContextOk() (*map[string]interface{}, bool)`
+`func (o *DeviceWithConfigContext) GetConfigContextOk() (*interface{}, bool)`
 
 GetConfigContextOk returns a tuple with the ConfigContext field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfigContext
 
-`func (o *DeviceWithConfigContext) SetConfigContext(v map[string]interface{})`
+`func (o *DeviceWithConfigContext) SetConfigContext(v interface{})`
 
 SetConfigContext sets ConfigContext field to given value.
 
@@ -1029,20 +1029,20 @@ SetConfigContext sets ConfigContext field to given value.
 UnsetConfigContext ensures that no value is present for ConfigContext, not even an explicit nil
 ### GetLocalContextData
 
-`func (o *DeviceWithConfigContext) GetLocalContextData() map[string]interface{}`
+`func (o *DeviceWithConfigContext) GetLocalContextData() interface{}`
 
 GetLocalContextData returns the LocalContextData field if non-nil, zero value otherwise.
 
 ### GetLocalContextDataOk
 
-`func (o *DeviceWithConfigContext) GetLocalContextDataOk() (*map[string]interface{}, bool)`
+`func (o *DeviceWithConfigContext) GetLocalContextDataOk() (*interface{}, bool)`
 
 GetLocalContextDataOk returns a tuple with the LocalContextData field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLocalContextData
 
-`func (o *DeviceWithConfigContext) SetLocalContextData(v map[string]interface{})`
+`func (o *DeviceWithConfigContext) SetLocalContextData(v interface{})`
 
 SetLocalContextData sets LocalContextData field to given value.
 

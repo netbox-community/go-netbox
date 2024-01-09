@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to **string** | * &#x60;front-to-rear&#x60; - Front to rear * &#x60;rear-to-front&#x60; - Rear to front * &#x60;left-to-right&#x60; - Left to right * &#x60;right-to-left&#x60; - Right to left * &#x60;side-to-rear&#x60; - Side to rear * &#x60;passive&#x60; - Passive * &#x60;mixed&#x60; - Mixed | [optional] 
-**Label** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to [**DeviceAirflowValue**](DeviceAirflowValue.md) |  | [optional] 
+**Label** | Pointer to [**DeviceAirflowLabel**](DeviceAirflowLabel.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *DeviceAirflow) GetValue() string`
+`func (o *DeviceAirflow) GetValue() DeviceAirflowValue`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *DeviceAirflow) GetValueOk() (*string, bool)`
+`func (o *DeviceAirflow) GetValueOk() (*DeviceAirflowValue, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *DeviceAirflow) SetValue(v string)`
+`func (o *DeviceAirflow) SetValue(v DeviceAirflowValue)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *DeviceAirflow) GetLabel() string`
+`func (o *DeviceAirflow) GetLabel() DeviceAirflowLabel`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *DeviceAirflow) GetLabelOk() (*string, bool)`
+`func (o *DeviceAirflow) GetLabelOk() (*DeviceAirflowLabel, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *DeviceAirflow) SetLabel(v string)`
+`func (o *DeviceAirflow) SetLabel(v DeviceAirflowLabel)`
 
 SetLabel sets Label field to given value.
 

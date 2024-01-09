@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **Groups** | Pointer to **[]int32** |  | [optional] 
 **Users** | Pointer to **[]int32** |  | [optional] 
 **Actions** | **[]string** | The list of actions granted by this permission | 
-**Constraints** | Pointer to **map[string]interface{}** | Queryset filter matching the applicable objects of the selected type(s) | [optional] 
+**Constraints** | Pointer to **interface{}** | Queryset filter matching the applicable objects of the selected type(s) | [optional] 
 
 ## Methods
 
@@ -194,20 +194,20 @@ SetActions sets Actions field to given value.
 
 ### GetConstraints
 
-`func (o *WritableObjectPermissionRequest) GetConstraints() map[string]interface{}`
+`func (o *WritableObjectPermissionRequest) GetConstraints() interface{}`
 
 GetConstraints returns the Constraints field if non-nil, zero value otherwise.
 
 ### GetConstraintsOk
 
-`func (o *WritableObjectPermissionRequest) GetConstraintsOk() (*map[string]interface{}, bool)`
+`func (o *WritableObjectPermissionRequest) GetConstraintsOk() (*interface{}, bool)`
 
 GetConstraintsOk returns a tuple with the Constraints field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConstraints
 
-`func (o *WritableObjectPermissionRequest) SetConstraints(v map[string]interface{})`
+`func (o *WritableObjectPermissionRequest) SetConstraints(v interface{})`
 
 SetConstraints sets Constraints field to given value.
 

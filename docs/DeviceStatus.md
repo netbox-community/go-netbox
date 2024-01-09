@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to **string** | * &#x60;offline&#x60; - Offline * &#x60;active&#x60; - Active * &#x60;planned&#x60; - Planned * &#x60;staged&#x60; - Staged * &#x60;failed&#x60; - Failed * &#x60;inventory&#x60; - Inventory * &#x60;decommissioning&#x60; - Decommissioning | [optional] 
-**Label** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to [**DeviceStatusValue**](DeviceStatusValue.md) |  | [optional] 
+**Label** | Pointer to [**DeviceStatusLabel**](DeviceStatusLabel.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *DeviceStatus) GetValue() string`
+`func (o *DeviceStatus) GetValue() DeviceStatusValue`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *DeviceStatus) GetValueOk() (*string, bool)`
+`func (o *DeviceStatus) GetValueOk() (*DeviceStatusValue, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *DeviceStatus) SetValue(v string)`
+`func (o *DeviceStatus) SetValue(v DeviceStatusValue)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *DeviceStatus) GetLabel() string`
+`func (o *DeviceStatus) GetLabel() DeviceStatusLabel`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *DeviceStatus) GetLabelOk() (*string, bool)`
+`func (o *DeviceStatus) GetLabelOk() (*DeviceStatusLabel, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *DeviceStatus) SetLabel(v string)`
+`func (o *DeviceStatus) SetLabel(v DeviceStatusLabel)`
 
 SetLabel sets Label field to given value.
 

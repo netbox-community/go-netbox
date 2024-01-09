@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **Weight** | Pointer to **int32** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Shared** | Pointer to **bool** |  | [optional] 
-**Parameters** | **map[string]interface{}** |  | 
+**Parameters** | **interface{}** |  | 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 
 ### NewSavedFilter
 
-`func NewSavedFilter(id int32, url string, display string, contentTypes []string, name string, slug string, parameters map[string]interface{}, created NullableTime, lastUpdated NullableTime, ) *SavedFilter`
+`func NewSavedFilter(id int32, url string, display string, contentTypes []string, name string, slug string, parameters interface{}, created NullableTime, lastUpdated NullableTime, ) *SavedFilter`
 
 NewSavedFilter instantiates a new SavedFilter object
 This constructor will assign default values to properties that have it defined,
@@ -295,24 +295,34 @@ HasShared returns a boolean if a field has been set.
 
 ### GetParameters
 
-`func (o *SavedFilter) GetParameters() map[string]interface{}`
+`func (o *SavedFilter) GetParameters() interface{}`
 
 GetParameters returns the Parameters field if non-nil, zero value otherwise.
 
 ### GetParametersOk
 
-`func (o *SavedFilter) GetParametersOk() (*map[string]interface{}, bool)`
+`func (o *SavedFilter) GetParametersOk() (*interface{}, bool)`
 
 GetParametersOk returns a tuple with the Parameters field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetParameters
 
-`func (o *SavedFilter) SetParameters(v map[string]interface{})`
+`func (o *SavedFilter) SetParameters(v interface{})`
 
 SetParameters sets Parameters field to given value.
 
 
+### SetParametersNil
+
+`func (o *SavedFilter) SetParametersNil(b bool)`
+
+ SetParametersNil sets the value for Parameters to be an explicit nil
+
+### UnsetParameters
+`func (o *SavedFilter) UnsetParameters()`
+
+UnsetParameters ensures that no value is present for Parameters, not even an explicit nil
 ### GetCreated
 
 `func (o *SavedFilter) GetCreated() time.Time`

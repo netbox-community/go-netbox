@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to **string** | * &#x60;info&#x60; - Info * &#x60;success&#x60; - Success * &#x60;warning&#x60; - Warning * &#x60;danger&#x60; - Danger | [optional] 
-**Label** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to [**JournalEntryKindValue**](JournalEntryKindValue.md) |  | [optional] 
+**Label** | Pointer to [**JournalEntryKindLabel**](JournalEntryKindLabel.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *JournalEntryKind) GetValue() string`
+`func (o *JournalEntryKind) GetValue() JournalEntryKindValue`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *JournalEntryKind) GetValueOk() (*string, bool)`
+`func (o *JournalEntryKind) GetValueOk() (*JournalEntryKindValue, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *JournalEntryKind) SetValue(v string)`
+`func (o *JournalEntryKind) SetValue(v JournalEntryKindValue)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *JournalEntryKind) GetLabel() string`
+`func (o *JournalEntryKind) GetLabel() JournalEntryKindLabel`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *JournalEntryKind) GetLabelOk() (*string, bool)`
+`func (o *JournalEntryKind) GetLabelOk() (*JournalEntryKindLabel, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *JournalEntryKind) SetLabel(v string)`
+`func (o *JournalEntryKind) SetLabel(v JournalEntryKindLabel)`
 
 SetLabel sets Label field to given value.
 

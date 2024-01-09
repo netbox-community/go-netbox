@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to **string** | * &#x60;vpws&#x60; - VPWS * &#x60;vpls&#x60; - VPLS * &#x60;vxlan&#x60; - VXLAN * &#x60;vxlan-evpn&#x60; - VXLAN-EVPN * &#x60;mpls-evpn&#x60; - MPLS EVPN * &#x60;pbb-evpn&#x60; - PBB EVPN * &#x60;epl&#x60; - EPL * &#x60;evpl&#x60; - EVPL * &#x60;ep-lan&#x60; - Ethernet Private LAN * &#x60;evp-lan&#x60; - Ethernet Virtual Private LAN * &#x60;ep-tree&#x60; - Ethernet Private Tree * &#x60;evp-tree&#x60; - Ethernet Virtual Private Tree | [optional] 
-**Label** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to [**L2VPNTypeValue**](L2VPNTypeValue.md) |  | [optional] 
+**Label** | Pointer to [**L2VPNTypeLabel**](L2VPNTypeLabel.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *L2VPNType) GetValue() string`
+`func (o *L2VPNType) GetValue() L2VPNTypeValue`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *L2VPNType) GetValueOk() (*string, bool)`
+`func (o *L2VPNType) GetValueOk() (*L2VPNTypeValue, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *L2VPNType) SetValue(v string)`
+`func (o *L2VPNType) SetValue(v L2VPNTypeValue)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *L2VPNType) GetLabel() string`
+`func (o *L2VPNType) GetLabel() L2VPNTypeLabel`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *L2VPNType) GetLabelOk() (*string, bool)`
+`func (o *L2VPNType) GetLabelOk() (*L2VPNTypeLabel, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *L2VPNType) SetLabel(v string)`
+`func (o *L2VPNType) SetLabel(v L2VPNTypeLabel)`
 
 SetLabel sets Label field to given value.
 

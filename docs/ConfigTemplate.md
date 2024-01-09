@@ -9,11 +9,11 @@ Name | Type | Description | Notes
 **Display** | **string** |  | [readonly] 
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
-**EnvironmentParams** | Pointer to **map[string]interface{}** | Any &lt;a href&#x3D;\&quot;https://jinja.palletsprojects.com/en/3.1.x/api/#jinja2.Environment\&quot;&gt;additional parameters&lt;/a&gt; to pass when constructing the Jinja2 environment. | [optional] 
+**EnvironmentParams** | Pointer to **interface{}** | Any &lt;a href&#x3D;\&quot;https://jinja.palletsprojects.com/en/3.1.x/api/#jinja2.Environment\&quot;&gt;additional parameters&lt;/a&gt; to pass when constructing the Jinja2 environment. | [optional] 
 **TemplateCode** | **string** | Jinja2 template code. | 
 **DataSource** | Pointer to [**NestedDataSource**](NestedDataSource.md) |  | [optional] 
 **DataPath** | **string** | Path to remote file (relative to data source root) | [readonly] 
-**DataFile** | [**NestedDataFile**](NestedDataFile.md) |  | [readonly] 
+**DataFile** | Pointer to [**NestedDataFile**](NestedDataFile.md) |  | [optional] 
 **DataSynced** | **NullableTime** |  | [readonly] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 
 ### NewConfigTemplate
 
-`func NewConfigTemplate(id int32, url string, display string, name string, templateCode string, dataPath string, dataFile NestedDataFile, dataSynced NullableTime, created NullableTime, lastUpdated NullableTime, ) *ConfigTemplate`
+`func NewConfigTemplate(id int32, url string, display string, name string, templateCode string, dataPath string, dataSynced NullableTime, created NullableTime, lastUpdated NullableTime, ) *ConfigTemplate`
 
 NewConfigTemplate instantiates a new ConfigTemplate object
 This constructor will assign default values to properties that have it defined,
@@ -145,20 +145,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetEnvironmentParams
 
-`func (o *ConfigTemplate) GetEnvironmentParams() map[string]interface{}`
+`func (o *ConfigTemplate) GetEnvironmentParams() interface{}`
 
 GetEnvironmentParams returns the EnvironmentParams field if non-nil, zero value otherwise.
 
 ### GetEnvironmentParamsOk
 
-`func (o *ConfigTemplate) GetEnvironmentParamsOk() (*map[string]interface{}, bool)`
+`func (o *ConfigTemplate) GetEnvironmentParamsOk() (*interface{}, bool)`
 
 GetEnvironmentParamsOk returns a tuple with the EnvironmentParams field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEnvironmentParams
 
-`func (o *ConfigTemplate) SetEnvironmentParams(v map[string]interface{})`
+`func (o *ConfigTemplate) SetEnvironmentParams(v interface{})`
 
 SetEnvironmentParams sets EnvironmentParams field to given value.
 
@@ -262,6 +262,11 @@ and a boolean to check if the value has been set.
 
 SetDataFile sets DataFile field to given value.
 
+### HasDataFile
+
+`func (o *ConfigTemplate) HasDataFile() bool`
+
+HasDataFile returns a boolean if a field has been set.
 
 ### GetDataSynced
 

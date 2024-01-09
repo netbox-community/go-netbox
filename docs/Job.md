@@ -17,14 +17,15 @@ Name | Type | Description | Notes
 **Started** | Pointer to **NullableTime** |  | [optional] 
 **Completed** | Pointer to **NullableTime** |  | [optional] 
 **User** | [**NestedUser**](NestedUser.md) |  | [readonly] 
-**Data** | Pointer to **map[string]interface{}** |  | [optional] 
+**Data** | Pointer to **interface{}** |  | [optional] 
+**Error** | **string** |  | [readonly] 
 **JobId** | **string** |  | 
 
 ## Methods
 
 ### NewJob
 
-`func NewJob(id int32, url string, display string, objectType string, name string, status JobStatus, created time.Time, user NestedUser, jobId string, ) *Job`
+`func NewJob(id int32, url string, display string, objectType string, name string, status JobStatus, created time.Time, user NestedUser, error_ string, jobId string, ) *Job`
 
 NewJob instantiates a new Job object
 This constructor will assign default values to properties that have it defined,
@@ -376,20 +377,20 @@ SetUser sets User field to given value.
 
 ### GetData
 
-`func (o *Job) GetData() map[string]interface{}`
+`func (o *Job) GetData() interface{}`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *Job) GetDataOk() (*map[string]interface{}, bool)`
+`func (o *Job) GetDataOk() (*interface{}, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *Job) SetData(v map[string]interface{})`
+`func (o *Job) SetData(v interface{})`
 
 SetData sets Data field to given value.
 
@@ -409,6 +410,26 @@ HasData returns a boolean if a field has been set.
 `func (o *Job) UnsetData()`
 
 UnsetData ensures that no value is present for Data, not even an explicit nil
+### GetError
+
+`func (o *Job) GetError() string`
+
+GetError returns the Error field if non-nil, zero value otherwise.
+
+### GetErrorOk
+
+`func (o *Job) GetErrorOk() (*string, bool)`
+
+GetErrorOk returns a tuple with the Error field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetError
+
+`func (o *Job) SetError(v string)`
+
+SetError sets Error field to given value.
+
+
 ### GetJobId
 
 `func (o *Job) GetJobId() string`

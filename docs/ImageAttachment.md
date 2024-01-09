@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Display** | **string** |  | [readonly] 
 **ContentType** | **string** |  | 
 **ObjectId** | **int64** |  | 
-**Parent** | **map[string]interface{}** |  | [readonly] 
+**Parent** | **interface{}** |  | [readonly] 
 **Name** | Pointer to **string** |  | [optional] 
 **Image** | **string** |  | 
 **ImageHeight** | **int32** |  | 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewImageAttachment
 
-`func NewImageAttachment(id int32, url string, display string, contentType string, objectId int64, parent map[string]interface{}, image string, imageHeight int32, imageWidth int32, created NullableTime, lastUpdated NullableTime, ) *ImageAttachment`
+`func NewImageAttachment(id int32, url string, display string, contentType string, objectId int64, parent interface{}, image string, imageHeight int32, imageWidth int32, created NullableTime, lastUpdated NullableTime, ) *ImageAttachment`
 
 NewImageAttachment instantiates a new ImageAttachment object
 This constructor will assign default values to properties that have it defined,
@@ -138,20 +138,20 @@ SetObjectId sets ObjectId field to given value.
 
 ### GetParent
 
-`func (o *ImageAttachment) GetParent() map[string]interface{}`
+`func (o *ImageAttachment) GetParent() interface{}`
 
 GetParent returns the Parent field if non-nil, zero value otherwise.
 
 ### GetParentOk
 
-`func (o *ImageAttachment) GetParentOk() (*map[string]interface{}, bool)`
+`func (o *ImageAttachment) GetParentOk() (*interface{}, bool)`
 
 GetParentOk returns a tuple with the Parent field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetParent
 
-`func (o *ImageAttachment) SetParent(v map[string]interface{})`
+`func (o *ImageAttachment) SetParent(v interface{})`
 
 SetParent sets Parent field to given value.
 

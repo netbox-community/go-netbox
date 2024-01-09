@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Vid** | Pointer to **int32** | Numeric VLAN ID (1-4094) | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Tenant** | Pointer to **NullableInt32** |  | [optional] 
-**Status** | Pointer to **string** | Operational status of this VLAN  * &#x60;active&#x60; - Active * &#x60;reserved&#x60; - Reserved * &#x60;deprecated&#x60; - Deprecated | [optional] 
+**Status** | Pointer to [**PatchedWritableVLANRequestStatus**](PatchedWritableVLANRequestStatus.md) |  | [optional] 
 **Role** | Pointer to **NullableInt32** | The primary function of this VLAN | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
@@ -192,20 +192,20 @@ HasTenant returns a boolean if a field has been set.
 UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
 ### GetStatus
 
-`func (o *PatchedWritableVLANRequest) GetStatus() string`
+`func (o *PatchedWritableVLANRequest) GetStatus() PatchedWritableVLANRequestStatus`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *PatchedWritableVLANRequest) GetStatusOk() (*string, bool)`
+`func (o *PatchedWritableVLANRequest) GetStatusOk() (*PatchedWritableVLANRequestStatus, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *PatchedWritableVLANRequest) SetStatus(v string)`
+`func (o *PatchedWritableVLANRequest) SetStatus(v PatchedWritableVLANRequestStatus)`
 
 SetStatus sets Status field to given value.
 

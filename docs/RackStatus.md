@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to **string** | * &#x60;reserved&#x60; - Reserved * &#x60;available&#x60; - Available * &#x60;planned&#x60; - Planned * &#x60;active&#x60; - Active * &#x60;deprecated&#x60; - Deprecated | [optional] 
-**Label** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to [**PatchedWritableRackRequestStatus**](PatchedWritableRackRequestStatus.md) |  | [optional] 
+**Label** | Pointer to [**RackStatusLabel**](RackStatusLabel.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *RackStatus) GetValue() string`
+`func (o *RackStatus) GetValue() PatchedWritableRackRequestStatus`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *RackStatus) GetValueOk() (*string, bool)`
+`func (o *RackStatus) GetValueOk() (*PatchedWritableRackRequestStatus, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *RackStatus) SetValue(v string)`
+`func (o *RackStatus) SetValue(v PatchedWritableRackRequestStatus)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *RackStatus) GetLabel() string`
+`func (o *RackStatus) GetLabel() RackStatusLabel`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *RackStatus) GetLabelOk() (*string, bool)`
+`func (o *RackStatus) GetLabelOk() (*RackStatusLabel, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *RackStatus) SetLabel(v string)`
+`func (o *RackStatus) SetLabel(v RackStatusLabel)`
 
 SetLabel sets Label field to given value.
 

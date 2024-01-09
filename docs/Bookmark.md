@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Display** | **string** |  | [readonly] 
 **ObjectType** | **string** |  | 
 **ObjectId** | **int64** |  | 
-**Object** | **map[string]interface{}** |  | [readonly] 
+**Object** | **interface{}** |  | [readonly] 
 **User** | [**NestedUser**](NestedUser.md) |  | 
 **Created** | **time.Time** |  | [readonly] 
 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewBookmark
 
-`func NewBookmark(id int32, url string, display string, objectType string, objectId int64, object map[string]interface{}, user NestedUser, created time.Time, ) *Bookmark`
+`func NewBookmark(id int32, url string, display string, objectType string, objectId int64, object interface{}, user NestedUser, created time.Time, ) *Bookmark`
 
 NewBookmark instantiates a new Bookmark object
 This constructor will assign default values to properties that have it defined,
@@ -134,20 +134,20 @@ SetObjectId sets ObjectId field to given value.
 
 ### GetObject
 
-`func (o *Bookmark) GetObject() map[string]interface{}`
+`func (o *Bookmark) GetObject() interface{}`
 
 GetObject returns the Object field if non-nil, zero value otherwise.
 
 ### GetObjectOk
 
-`func (o *Bookmark) GetObjectOk() (*map[string]interface{}, bool)`
+`func (o *Bookmark) GetObjectOk() (*interface{}, bool)`
 
 GetObjectOk returns a tuple with the Object field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetObject
 
-`func (o *Bookmark) SetObject(v map[string]interface{})`
+`func (o *Bookmark) SetObject(v interface{})`
 
 SetObject sets Object field to given value.
 
