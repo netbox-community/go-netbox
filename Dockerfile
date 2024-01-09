@@ -1,6 +1,6 @@
-ARG GO_VERSION=1.21.3-alpine3.18
-ARG DELVE_VERSION=1.21.1
-ARG OAPICODEGEN_VERSION=1.15.0
+ARG GO_VERSION=1.21.5-alpine3.18
+ARG DELVE_VERSION=1.22.0
+ARG OAPICODEGEN_VERSION=2.0.0
 
 
 ## Base image
@@ -25,7 +25,7 @@ RUN apk add \
         python3 \
         zsh \
  && go install github.com/go-delve/delve/cmd/dlv@v${DELVE_VERSION} \
- && go install github.com/deepmap/oapi-codegen/cmd/oapi-codegen@v${OAPICODEGEN_VERSION}
+ && go install github.com/deepmap/oapi-codegen/v2/cmd/oapi-codegen@v${OAPICODEGEN_VERSION}
 
 ARG USER_ID=1000
 ENV USER_NAME=default
