@@ -1,4 +1,4 @@
-ARG GO_VERSION=1.21.5-alpine3.18
+ARG GO_VERSION=1.21.6-bookworm
 ARG GOIMPORTS_VERSION=0.16.1
 ARG DELVE_VERSION=1.22.0
 
@@ -17,22 +17,28 @@ FROM base AS development
 ARG GOIMPORTS_VERSION
 ARG DELVE_VERSION
 
-RUN apk add \
-        bash \
+RUN apt update \
+ && apt install -y \
         curl \
         git \
         jq \
         python3 \
+        python3-pip \
         zsh \
+ && apt clean \
+ && pip install --break-system-packages \
+        pyyaml \
  && go install golang.org/x/tools/cmd/goimports@v${GOIMPORTS_VERSION} \
  && go install github.com/go-delve/delve/cmd/dlv@v${DELVE_VERSION}
 
 ARG USER_ID=1000
 ENV USER_NAME=default
 
-ENV PROMPT="%B%F{cyan}%n%f@%m:%F{yellow}%~%f %F{%(?.green.red[%?] )}>%f %b"
-
-RUN adduser -D -u $USER_ID ${USER_NAME} \
- && chown -R ${USER_NAME}: /go/pkg
+RUN useradd --user-group --create-home --uid ${USER_ID} ${USER_NAME} \
+ && chown -R ${USER_NAME}: /go
 
 USER ${USER_NAME}
+
+ENV PROMPT="%B%F{cyan}%n%f@%m:%F{yellow}%~%f %F{%(?.green.red[%?] )}>%f %b"
+
+RUN touch /home/${USER_NAME}/.zshrc

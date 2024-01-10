@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **Face** | Pointer to [**DeviceFace**](DeviceFace.md) |  | [optional] 
 **Latitude** | Pointer to **NullableFloat64** | GPS coordinate in decimal format (xx.yyyyyy) | [optional] 
 **Longitude** | Pointer to **NullableFloat64** | GPS coordinate in decimal format (xx.yyyyyy) | [optional] 
-**ParentDevice** | [**NestedDevice**](NestedDevice.md) |  | [readonly] 
+**ParentDevice** | [**NullableNestedDevice**](NestedDevice.md) |  | [readonly] 
 **Status** | Pointer to [**DeviceStatus**](DeviceStatus.md) |  | [optional] 
 **Airflow** | Pointer to [**DeviceAirflow**](DeviceAirflow.md) |  | [optional] 
 **PrimaryIp** | [**NestedIPAddress**](NestedIPAddress.md) |  | [readonly] 
@@ -57,7 +57,7 @@ Name | Type | Description | Notes
 
 ### NewDeviceWithConfigContext
 
-`func NewDeviceWithConfigContext(id int32, url string, display string, deviceType NestedDeviceType, role NestedDeviceRole, deviceRole DeviceDeviceRole, site NestedSite, parentDevice NestedDevice, primaryIp NestedIPAddress, configContext interface{}, created NullableTime, lastUpdated NullableTime, consolePortCount int32, consoleServerPortCount int32, powerPortCount int32, powerOutletCount int32, interfaceCount int32, frontPortCount int32, rearPortCount int32, deviceBayCount int32, moduleBayCount int32, inventoryItemCount int32, ) *DeviceWithConfigContext`
+`func NewDeviceWithConfigContext(id int32, url string, display string, deviceType NestedDeviceType, role NestedDeviceRole, deviceRole DeviceDeviceRole, site NestedSite, parentDevice NullableNestedDevice, primaryIp NestedIPAddress, configContext interface{}, created NullableTime, lastUpdated NullableTime, consolePortCount int32, consoleServerPortCount int32, powerPortCount int32, powerOutletCount int32, interfaceCount int32, frontPortCount int32, rearPortCount int32, deviceBayCount int32, moduleBayCount int32, inventoryItemCount int32, ) *DeviceWithConfigContext`
 
 NewDeviceWithConfigContext instantiates a new DeviceWithConfigContext object
 This constructor will assign default values to properties that have it defined,
@@ -597,6 +597,16 @@ and a boolean to check if the value has been set.
 SetParentDevice sets ParentDevice field to given value.
 
 
+### SetParentDeviceNil
+
+`func (o *DeviceWithConfigContext) SetParentDeviceNil(b bool)`
+
+ SetParentDeviceNil sets the value for ParentDevice to be an explicit nil
+
+### UnsetParentDevice
+`func (o *DeviceWithConfigContext) UnsetParentDevice()`
+
+UnsetParentDevice ensures that no value is present for ParentDevice, not even an explicit nil
 ### GetStatus
 
 `func (o *DeviceWithConfigContext) GetStatus() DeviceStatus`

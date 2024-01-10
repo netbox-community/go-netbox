@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-# Clean generated files
+# Remove generated files
 for F in $(cat .openapi-generator/files) ; do
     rm -f "${F}"
 done

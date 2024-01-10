@@ -33,7 +33,7 @@ shell:
 build:
 	$(EXEC) ./scripts/set-versions.sh $(NETBOX_VERSION) $(NETBOX_DOCKER_VERSION)
 	./scripts/fetch-spec.sh $$(cat api/netbox_version) $$(cat api/netbox_docker_version)
-	$(EXEC) ./scripts/fix-spec.sh
+	$(EXEC) ./scripts/fix-spec.py
 	./scripts/generate-code.sh
 	$(EXEC) go mod tidy
 	$(EXEC) goimports -w .
