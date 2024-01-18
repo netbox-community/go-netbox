@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Display** | **string** |  | [readonly] 
 **ContentTypes** | **[]string** |  | 
 **Type** | [**CustomFieldType**](CustomFieldType.md) |  | 
-**ObjectType** | Pointer to **string** |  | [optional] 
+**ObjectType** | Pointer to **NullableString** |  | [optional] 
 **DataType** | **string** |  | [readonly] 
 **Name** | **string** | Internal field name | 
 **Label** | Pointer to **string** | Name of the field as displayed to users (if not provided, &#39;the field&#39;s name will be used) | [optional] 
@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **ValidationMinimum** | Pointer to **NullableInt64** | Minimum allowed value (for numeric fields) | [optional] 
 **ValidationMaximum** | Pointer to **NullableInt64** | Maximum allowed value (for numeric fields) | [optional] 
 **ValidationRegex** | Pointer to **string** | Regular expression to enforce on text field values. Use ^ and $ to force matching of entire string. For example, &lt;code&gt;^[A-Z]{3}$&lt;/code&gt; will limit values to exactly three uppercase letters. | [optional] 
-**ChoiceSet** | Pointer to [**NestedCustomFieldChoiceSet**](NestedCustomFieldChoiceSet.md) |  | [optional] 
+**ChoiceSet** | Pointer to [**NullableNestedCustomFieldChoiceSet**](NestedCustomFieldChoiceSet.md) |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 
@@ -174,6 +174,16 @@ SetObjectType sets ObjectType field to given value.
 
 HasObjectType returns a boolean if a field has been set.
 
+### SetObjectTypeNil
+
+`func (o *CustomField) SetObjectTypeNil(b bool)`
+
+ SetObjectTypeNil sets the value for ObjectType to be an explicit nil
+
+### UnsetObjectType
+`func (o *CustomField) UnsetObjectType()`
+
+UnsetObjectType ensures that no value is present for ObjectType, not even an explicit nil
 ### GetDataType
 
 `func (o *CustomField) GetDataType() string`
@@ -619,6 +629,16 @@ SetChoiceSet sets ChoiceSet field to given value.
 
 HasChoiceSet returns a boolean if a field has been set.
 
+### SetChoiceSetNil
+
+`func (o *CustomField) SetChoiceSetNil(b bool)`
+
+ SetChoiceSetNil sets the value for ChoiceSet to be an explicit nil
+
+### UnsetChoiceSet
+`func (o *CustomField) UnsetChoiceSet()`
+
+UnsetChoiceSet ensures that no value is present for ChoiceSet, not even an explicit nil
 ### GetCreated
 
 `func (o *CustomField) GetCreated() time.Time`

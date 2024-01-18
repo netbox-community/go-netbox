@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: NetBox REST API
-  version: 3.7.0 (3.7)
+  version: 3.7.1 (3.7)
   license:
     name: Apache v2 License
 paths:
@@ -84419,7 +84419,7 @@ paths:
           type: array
           items:
             type: integer
-            x-spec-enum-id: 6bbe85c15f3d99fe
+            x-spec-enum-id: dbef43be795462a8
         description: Diffie-Hellman group ID
         explode: true
         style: form
@@ -84429,7 +84429,7 @@ paths:
           type: array
           items:
             type: integer
-            x-spec-enum-id: 6bbe85c15f3d99fe
+            x-spec-enum-id: dbef43be795462a8
         description: Diffie-Hellman group ID
         explode: true
         style: form
@@ -85358,7 +85358,7 @@ paths:
           type: array
           items:
             type: integer
-            x-spec-enum-id: 6bbe85c15f3d99fe
+            x-spec-enum-id: dbef43be795462a8
             nullable: true
         description: Diffie-Hellman group for Perfect Forward Secrecy
         explode: true
@@ -85369,7 +85369,7 @@ paths:
           type: array
           items:
             type: integer
-            x-spec-enum-id: 6bbe85c15f3d99fe
+            x-spec-enum-id: dbef43be795462a8
             nullable: true
         description: Diffie-Hellman group for Perfect Forward Secrecy
         explode: true
@@ -97473,6 +97473,7 @@ components:
               - Multiple objects
         object_type:
           type: string
+          nullable: true
         data_type:
           type: string
           readOnly: true
@@ -97602,7 +97603,9 @@ components:
             will limit values to exactly three uppercase letters.
           maxLength: 500
         choice_set:
-          $ref: '#/components/schemas/NestedCustomFieldChoiceSet'
+          allOf:
+          - $ref: '#/components/schemas/NestedCustomFieldChoiceSet'
+          nullable: true
         created:
           type: string
           format: date-time
@@ -97798,6 +97801,7 @@ components:
           x-spec-enum-id: 22e3a64138d10046
         object_type:
           type: string
+          nullable: true
         name:
           type: string
           minLength: 1
@@ -97898,7 +97902,9 @@ components:
             will limit values to exactly three uppercase letters.
           maxLength: 500
         choice_set:
-          $ref: '#/components/schemas/NestedCustomFieldChoiceSetRequest'
+          allOf:
+          - $ref: '#/components/schemas/NestedCustomFieldChoiceSetRequest'
+          nullable: true
       required:
       - content_types
       - name
@@ -101537,6 +101543,7 @@ components:
               - 2
               - 5
               - 14
+              - 15
               - 16
               - 17
               - 18
@@ -101564,6 +101571,8 @@ components:
                 * `5` - Group 5
 
                 * `14` - Group 14
+
+                * `15` - Group 15
 
                 * `16` - Group 16
 
@@ -101602,7 +101611,7 @@ components:
                 * `33` - Group 33
 
                 * `34` - Group 34'
-              x-spec-enum-id: 6bbe85c15f3d99fe
+              x-spec-enum-id: dbef43be795462a8
             label:
               type: string
               enum:
@@ -101610,6 +101619,7 @@ components:
               - Group 2
               - Group 5
               - Group 14
+              - Group 15
               - Group 16
               - Group 17
               - Group 18
@@ -101739,6 +101749,7 @@ components:
           - 2
           - 5
           - 14
+          - 15
           - 16
           - 17
           - 18
@@ -101766,6 +101777,8 @@ components:
             * `5` - Group 5
 
             * `14` - Group 14
+
+            * `15` - Group 15
 
             * `16` - Group 16
 
@@ -101804,7 +101817,7 @@ components:
             * `33` - Group 33
 
             * `34` - Group 34'
-          x-spec-enum-id: 6bbe85c15f3d99fe
+          x-spec-enum-id: dbef43be795462a8
         sa_lifetime:
           type: integer
           maximum: 2147483647
@@ -102282,6 +102295,7 @@ components:
               - 2
               - 5
               - 14
+              - 15
               - 16
               - 17
               - 18
@@ -102309,6 +102323,8 @@ components:
                 * `5` - Group 5
 
                 * `14` - Group 14
+
+                * `15` - Group 15
 
                 * `16` - Group 16
 
@@ -102347,7 +102363,7 @@ components:
                 * `33` - Group 33
 
                 * `34` - Group 34'
-              x-spec-enum-id: 6bbe85c15f3d99fe
+              x-spec-enum-id: dbef43be795462a8
             label:
               type: string
               enum:
@@ -102355,6 +102371,7 @@ components:
               - Group 2
               - Group 5
               - Group 14
+              - Group 15
               - Group 16
               - Group 17
               - Group 18
@@ -102421,6 +102438,7 @@ components:
           - 2
           - 5
           - 14
+          - 15
           - 16
           - 17
           - 18
@@ -102448,6 +102466,8 @@ components:
             * `5` - Group 5
 
             * `14` - Group 14
+
+            * `15` - Group 15
 
             * `16` - Group 16
 
@@ -102486,7 +102506,7 @@ components:
             * `33` - Group 33
 
             * `34` - Group 34'
-          x-spec-enum-id: 6bbe85c15f3d99fe
+          x-spec-enum-id: dbef43be795462a8
         comments:
           type: string
         tags:
@@ -115732,6 +115752,7 @@ components:
             * `multiobject` - Multiple objects'
         object_type:
           type: string
+          nullable: true
         name:
           type: string
           minLength: 1
@@ -116853,6 +116874,7 @@ components:
           - 2
           - 5
           - 14
+          - 15
           - 16
           - 17
           - 18
@@ -116873,7 +116895,7 @@ components:
           - 33
           - 34
           type: integer
-          x-spec-enum-id: 6bbe85c15f3d99fe
+          x-spec-enum-id: dbef43be795462a8
           description: 'Diffie-Hellman group ID
 
 
@@ -116884,6 +116906,8 @@ components:
             * `5` - Group 5
 
             * `14` - Group 14
+
+            * `15` - Group 15
 
             * `16` - Group 16
 
@@ -117106,6 +117130,7 @@ components:
           - 2
           - 5
           - 14
+          - 15
           - 16
           - 17
           - 18
@@ -117126,7 +117151,7 @@ components:
           - 33
           - 34
           type: integer
-          x-spec-enum-id: 6bbe85c15f3d99fe
+          x-spec-enum-id: dbef43be795462a8
           nullable: true
           description: 'Diffie-Hellman group for Perfect Forward Secrecy
 
@@ -117138,6 +117163,8 @@ components:
             * `5` - Group 5
 
             * `14` - Group 14
+
+            * `15` - Group 15
 
             * `16` - Group 16
 
@@ -133419,6 +133446,7 @@ components:
             * `multiobject` - Multiple objects'
         object_type:
           type: string
+          nullable: true
         name:
           type: string
           minLength: 1
@@ -134590,6 +134618,7 @@ components:
           - 2
           - 5
           - 14
+          - 15
           - 16
           - 17
           - 18
@@ -134610,7 +134639,7 @@ components:
           - 33
           - 34
           type: integer
-          x-spec-enum-id: 6bbe85c15f3d99fe
+          x-spec-enum-id: dbef43be795462a8
           description: 'Diffie-Hellman group ID
 
 
@@ -134621,6 +134650,8 @@ components:
             * `5` - Group 5
 
             * `14` - Group 14
+
+            * `15` - Group 15
 
             * `16` - Group 16
 
@@ -134853,6 +134884,7 @@ components:
           - 2
           - 5
           - 14
+          - 15
           - 16
           - 17
           - 18
@@ -134873,7 +134905,7 @@ components:
           - 33
           - 34
           type: integer
-          x-spec-enum-id: 6bbe85c15f3d99fe
+          x-spec-enum-id: dbef43be795462a8
           nullable: true
           description: 'Diffie-Hellman group for Perfect Forward Secrecy
 
@@ -134885,6 +134917,8 @@ components:
             * `5` - Group 5
 
             * `14` - Group 14
+
+            * `15` - Group 15
 
             * `16` - Group 16
 

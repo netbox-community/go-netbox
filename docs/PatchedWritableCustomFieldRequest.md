@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ContentTypes** | Pointer to **[]string** |  | [optional] 
 **Type** | Pointer to [**PatchedWritableCustomFieldRequestType**](PatchedWritableCustomFieldRequestType.md) |  | [optional] 
-**ObjectType** | Pointer to **string** |  | [optional] 
+**ObjectType** | Pointer to **NullableString** |  | [optional] 
 **Name** | Pointer to **string** | Internal field name | [optional] 
 **Label** | Pointer to **string** | Name of the field as displayed to users (if not provided, &#39;the field&#39;s name will be used) | [optional] 
 **GroupName** | Pointer to **string** | Custom fields within the same group will be displayed together | [optional] 
@@ -118,6 +118,16 @@ SetObjectType sets ObjectType field to given value.
 
 HasObjectType returns a boolean if a field has been set.
 
+### SetObjectTypeNil
+
+`func (o *PatchedWritableCustomFieldRequest) SetObjectTypeNil(b bool)`
+
+ SetObjectTypeNil sets the value for ObjectType to be an explicit nil
+
+### UnsetObjectType
+`func (o *PatchedWritableCustomFieldRequest) UnsetObjectType()`
+
+UnsetObjectType ensures that no value is present for ObjectType, not even an explicit nil
 ### GetName
 
 `func (o *PatchedWritableCustomFieldRequest) GetName() string`
