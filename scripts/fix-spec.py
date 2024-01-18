@@ -19,9 +19,15 @@ if 'components' in data and 'schemas' in data['components']:
                 if 'properties' in prop and 'value' in prop['properties'] and 'enum' in prop['properties']['value'] and None in prop['properties']['value']['enum']:
                     prop['properties']['value']['enum'].remove(None)
 
-            # Fix "parent_device" nullable type
-            if 'parent_device' in schema['properties']:
-                schema['properties']['parent_device']['nullable'] = True
+            # Fix nullable types
+            nullable_types = [
+                'parent_device',
+                'primary_ip',
+            ]
+
+            for ntype in nullable_types:
+                if ntype in schema['properties']:
+                    schema['properties'][ntype]['nullable'] = True
 
 # Save the spec file
 with open(SPEC_PATH, 'w') as file:

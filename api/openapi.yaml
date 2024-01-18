@@ -98504,6 +98504,7 @@ components:
           allOf:
           - $ref: '#/components/schemas/NestedIPAddress'
           readOnly: true
+          nullable: true
         primary_ip4:
           allOf:
           - $ref: '#/components/schemas/NestedIPAddress'
@@ -99406,6 +99407,7 @@ components:
           allOf:
           - $ref: '#/components/schemas/NestedIPAddress'
           readOnly: true
+          nullable: true
         primary_ip4:
           allOf:
           - $ref: '#/components/schemas/NestedIPAddress'
@@ -131389,6 +131391,7 @@ components:
           allOf:
           - $ref: '#/components/schemas/NestedIPAddress'
           readOnly: true
+          nullable: true
         primary_ip4:
           allOf:
           - $ref: '#/components/schemas/NestedIPAddress'

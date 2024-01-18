@@ -32,7 +32,7 @@ type VirtualMachineWithConfigContext struct {
 	Role        NullableNestedDeviceRole `json:"role,omitempty"`
 	Tenant      NullableNestedTenant     `json:"tenant,omitempty"`
 	Platform    NullableNestedPlatform   `json:"platform,omitempty"`
-	PrimaryIp   NestedIPAddress          `json:"primary_ip"`
+	PrimaryIp   NullableNestedIPAddress  `json:"primary_ip"`
 	PrimaryIp4  NullableNestedIPAddress  `json:"primary_ip4,omitempty"`
 	PrimaryIp6  NullableNestedIPAddress  `json:"primary_ip6,omitempty"`
 	Vcpus       NullableFloat64          `json:"vcpus,omitempty"`
@@ -58,7 +58,7 @@ type _VirtualMachineWithConfigContext VirtualMachineWithConfigContext
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVirtualMachineWithConfigContext(id int32, url string, display string, name string, primaryIp NestedIPAddress, configContext interface{}, created NullableTime, lastUpdated NullableTime, interfaceCount int32, virtualDiskCount int32) *VirtualMachineWithConfigContext {
+func NewVirtualMachineWithConfigContext(id int32, url string, display string, name string, primaryIp NullableNestedIPAddress, configContext interface{}, created NullableTime, lastUpdated NullableTime, interfaceCount int32, virtualDiskCount int32) *VirtualMachineWithConfigContext {
 	this := VirtualMachineWithConfigContext{}
 	this.Id = id
 	this.Url = url
@@ -468,27 +468,29 @@ func (o *VirtualMachineWithConfigContext) UnsetPlatform() {
 }
 
 // GetPrimaryIp returns the PrimaryIp field value
+// If the value is explicit nil, the zero value for NestedIPAddress will be returned
 func (o *VirtualMachineWithConfigContext) GetPrimaryIp() NestedIPAddress {
-	if o == nil {
+	if o == nil || o.PrimaryIp.Get() == nil {
 		var ret NestedIPAddress
 		return ret
 	}
 
-	return o.PrimaryIp
+	return *o.PrimaryIp.Get()
 }
 
 // GetPrimaryIpOk returns a tuple with the PrimaryIp field value
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualMachineWithConfigContext) GetPrimaryIpOk() (*NestedIPAddress, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.PrimaryIp, true
+	return o.PrimaryIp.Get(), o.PrimaryIp.IsSet()
 }
 
 // SetPrimaryIp sets field value
 func (o *VirtualMachineWithConfigContext) SetPrimaryIp(v NestedIPAddress) {
-	o.PrimaryIp = v
+	o.PrimaryIp.Set(&v)
 }
 
 // GetPrimaryIp4 returns the PrimaryIp4 field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1028,7 +1030,7 @@ func (o VirtualMachineWithConfigContext) ToMap() (map[string]interface{}, error)
 	if o.Platform.IsSet() {
 		toSerialize["platform"] = o.Platform.Get()
 	}
-	toSerialize["primary_ip"] = o.PrimaryIp
+	toSerialize["primary_ip"] = o.PrimaryIp.Get()
 	if o.PrimaryIp4.IsSet() {
 		toSerialize["primary_ip4"] = o.PrimaryIp4.Get()
 	}

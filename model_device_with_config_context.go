@@ -46,7 +46,7 @@ type DeviceWithConfigContext struct {
 	ParentDevice   NullableNestedDevice         `json:"parent_device"`
 	Status         *DeviceStatus                `json:"status,omitempty"`
 	Airflow        *DeviceAirflow               `json:"airflow,omitempty"`
-	PrimaryIp      NestedIPAddress              `json:"primary_ip"`
+	PrimaryIp      NullableNestedIPAddress      `json:"primary_ip"`
 	PrimaryIp4     NullableNestedIPAddress      `json:"primary_ip4,omitempty"`
 	PrimaryIp6     NullableNestedIPAddress      `json:"primary_ip6,omitempty"`
 	OobIp          NullableNestedIPAddress      `json:"oob_ip,omitempty"`
@@ -84,7 +84,7 @@ type _DeviceWithConfigContext DeviceWithConfigContext
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDeviceWithConfigContext(id int32, url string, display string, deviceType NestedDeviceType, role NestedDeviceRole, deviceRole DeviceDeviceRole, site NestedSite, parentDevice NullableNestedDevice, primaryIp NestedIPAddress, configContext interface{}, created NullableTime, lastUpdated NullableTime, consolePortCount int32, consoleServerPortCount int32, powerPortCount int32, powerOutletCount int32, interfaceCount int32, frontPortCount int32, rearPortCount int32, deviceBayCount int32, moduleBayCount int32, inventoryItemCount int32) *DeviceWithConfigContext {
+func NewDeviceWithConfigContext(id int32, url string, display string, deviceType NestedDeviceType, role NestedDeviceRole, deviceRole DeviceDeviceRole, site NestedSite, parentDevice NullableNestedDevice, primaryIp NullableNestedIPAddress, configContext interface{}, created NullableTime, lastUpdated NullableTime, consolePortCount int32, consoleServerPortCount int32, powerPortCount int32, powerOutletCount int32, interfaceCount int32, frontPortCount int32, rearPortCount int32, deviceBayCount int32, moduleBayCount int32, inventoryItemCount int32) *DeviceWithConfigContext {
 	this := DeviceWithConfigContext{}
 	this.Id = id
 	this.Url = url
@@ -829,27 +829,29 @@ func (o *DeviceWithConfigContext) SetAirflow(v DeviceAirflow) {
 }
 
 // GetPrimaryIp returns the PrimaryIp field value
+// If the value is explicit nil, the zero value for NestedIPAddress will be returned
 func (o *DeviceWithConfigContext) GetPrimaryIp() NestedIPAddress {
-	if o == nil {
+	if o == nil || o.PrimaryIp.Get() == nil {
 		var ret NestedIPAddress
 		return ret
 	}
 
-	return o.PrimaryIp
+	return *o.PrimaryIp.Get()
 }
 
 // GetPrimaryIpOk returns a tuple with the PrimaryIp field value
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DeviceWithConfigContext) GetPrimaryIpOk() (*NestedIPAddress, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.PrimaryIp, true
+	return o.PrimaryIp.Get(), o.PrimaryIp.IsSet()
 }
 
 // SetPrimaryIp sets field value
 func (o *DeviceWithConfigContext) SetPrimaryIp(v NestedIPAddress) {
-	o.PrimaryIp = v
+	o.PrimaryIp.Set(&v)
 }
 
 // GetPrimaryIp4 returns the PrimaryIp4 field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1732,7 +1734,7 @@ func (o DeviceWithConfigContext) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Airflow) {
 		toSerialize["airflow"] = o.Airflow
 	}
-	toSerialize["primary_ip"] = o.PrimaryIp
+	toSerialize["primary_ip"] = o.PrimaryIp.Get()
 	if o.PrimaryIp4.IsSet() {
 		toSerialize["primary_ip4"] = o.PrimaryIp4.Get()
 	}

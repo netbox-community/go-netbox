@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **ParentDevice** | [**NullableNestedDevice**](NestedDevice.md) |  | [readonly] 
 **Status** | Pointer to [**DeviceStatus**](DeviceStatus.md) |  | [optional] 
 **Airflow** | Pointer to [**DeviceAirflow**](DeviceAirflow.md) |  | [optional] 
-**PrimaryIp** | [**NestedIPAddress**](NestedIPAddress.md) |  | [readonly] 
+**PrimaryIp** | [**NullableNestedIPAddress**](NestedIPAddress.md) |  | [readonly] 
 **PrimaryIp4** | Pointer to [**NullableNestedIPAddress**](NestedIPAddress.md) |  | [optional] 
 **PrimaryIp6** | Pointer to [**NullableNestedIPAddress**](NestedIPAddress.md) |  | [optional] 
 **OobIp** | Pointer to [**NullableNestedIPAddress**](NestedIPAddress.md) |  | [optional] 
@@ -56,7 +56,7 @@ Name | Type | Description | Notes
 
 ### NewDevice
 
-`func NewDevice(id int32, url string, display string, deviceType NestedDeviceType, role NestedDeviceRole, deviceRole DeviceDeviceRole, site NestedSite, parentDevice NullableNestedDevice, primaryIp NestedIPAddress, created NullableTime, lastUpdated NullableTime, consolePortCount int32, consoleServerPortCount int32, powerPortCount int32, powerOutletCount int32, interfaceCount int32, frontPortCount int32, rearPortCount int32, deviceBayCount int32, moduleBayCount int32, inventoryItemCount int32, ) *Device`
+`func NewDevice(id int32, url string, display string, deviceType NestedDeviceType, role NestedDeviceRole, deviceRole DeviceDeviceRole, site NestedSite, parentDevice NullableNestedDevice, primaryIp NullableNestedIPAddress, created NullableTime, lastUpdated NullableTime, consolePortCount int32, consoleServerPortCount int32, powerPortCount int32, powerOutletCount int32, interfaceCount int32, frontPortCount int32, rearPortCount int32, deviceBayCount int32, moduleBayCount int32, inventoryItemCount int32, ) *Device`
 
 NewDevice instantiates a new Device object
 This constructor will assign default values to properties that have it defined,
@@ -676,6 +676,16 @@ and a boolean to check if the value has been set.
 SetPrimaryIp sets PrimaryIp field to given value.
 
 
+### SetPrimaryIpNil
+
+`func (o *Device) SetPrimaryIpNil(b bool)`
+
+ SetPrimaryIpNil sets the value for PrimaryIp to be an explicit nil
+
+### UnsetPrimaryIp
+`func (o *Device) UnsetPrimaryIp()`
+
+UnsetPrimaryIp ensures that no value is present for PrimaryIp, not even an explicit nil
 ### GetPrimaryIp4
 
 `func (o *Device) GetPrimaryIp4() NestedIPAddress`

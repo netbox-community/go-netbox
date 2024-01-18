@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **Role** | Pointer to [**NullableNestedDeviceRole**](NestedDeviceRole.md) |  | [optional] 
 **Tenant** | Pointer to [**NullableNestedTenant**](NestedTenant.md) |  | [optional] 
 **Platform** | Pointer to [**NullableNestedPlatform**](NestedPlatform.md) |  | [optional] 
-**PrimaryIp** | [**NestedIPAddress**](NestedIPAddress.md) |  | [readonly] 
+**PrimaryIp** | [**NullableNestedIPAddress**](NestedIPAddress.md) |  | [readonly] 
 **PrimaryIp4** | Pointer to [**NullableNestedIPAddress**](NestedIPAddress.md) |  | [optional] 
 **PrimaryIp6** | Pointer to [**NullableNestedIPAddress**](NestedIPAddress.md) |  | [optional] 
 **Vcpus** | Pointer to **NullableFloat64** |  | [optional] 
@@ -36,7 +36,7 @@ Name | Type | Description | Notes
 
 ### NewVirtualMachineWithConfigContext
 
-`func NewVirtualMachineWithConfigContext(id int32, url string, display string, name string, primaryIp NestedIPAddress, configContext interface{}, created NullableTime, lastUpdated NullableTime, interfaceCount int32, virtualDiskCount int32, ) *VirtualMachineWithConfigContext`
+`func NewVirtualMachineWithConfigContext(id int32, url string, display string, name string, primaryIp NullableNestedIPAddress, configContext interface{}, created NullableTime, lastUpdated NullableTime, interfaceCount int32, virtualDiskCount int32, ) *VirtualMachineWithConfigContext`
 
 NewVirtualMachineWithConfigContext instantiates a new VirtualMachineWithConfigContext object
 This constructor will assign default values to properties that have it defined,
@@ -386,6 +386,16 @@ and a boolean to check if the value has been set.
 SetPrimaryIp sets PrimaryIp field to given value.
 
 
+### SetPrimaryIpNil
+
+`func (o *VirtualMachineWithConfigContext) SetPrimaryIpNil(b bool)`
+
+ SetPrimaryIpNil sets the value for PrimaryIp to be an explicit nil
+
+### UnsetPrimaryIp
+`func (o *VirtualMachineWithConfigContext) UnsetPrimaryIp()`
+
+UnsetPrimaryIp ensures that no value is present for PrimaryIp, not even an explicit nil
 ### GetPrimaryIp4
 
 `func (o *VirtualMachineWithConfigContext) GetPrimaryIp4() NestedIPAddress`
