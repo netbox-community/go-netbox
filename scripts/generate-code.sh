@@ -2,25 +2,16 @@
 
 set -euo pipefail
 
-export SRC_DIR='./netbox'
-
-# Prepare environment
-rm -rf netbox/client netbox/models
-go mod download
-
-# Run pre-generation hooks
-for SCRIPT in scripts/pre-generation/*; do
-  "${SCRIPT}"
+# Remove generated files
+for F in $(cat .openapi-generator/files) ; do
+    rm -f "${F}"
 done
 
-# Generate code
-swagger generate client -f api/openapi.json --target="${SRC_DIR}" --copyright-file=assets/copyright_header.txt
-go mod tidy
-
-# Run post-generation hooks
-for SCRIPT in scripts/post-generation/*; do
-  "${SCRIPT}"
-done
-
-# Format generated code and fix imports
-goimports -w "${SRC_DIR}"
+# Generate library
+docker run --rm --env JAVA_OPTS=-DmaxYamlCodePoints=9999999 -v "${PWD}:/local" openapitools/openapi-generator-cli:v7.2.0 \
+    generate \
+    --config /local/.openapi-generator/config.yaml \
+    --input-spec /local/api/openapi.yaml \
+    --output /local \
+    --inline-schema-options RESOLVE_INLINE_ENUMS=true \
+    --http-user-agent go-netbox/$(cat api/netbox_version)

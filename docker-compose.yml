@@ -1,5 +1,5 @@
 services:
-  app:
+  main:
     build:
       context: .
       target: development
@@ -8,8 +8,6 @@ services:
     volumes:
       - .:/go/src/app
       - cache:/go/pkg
-    env_file: .env
-    hostname: app
     tty: true
 
 volumes:

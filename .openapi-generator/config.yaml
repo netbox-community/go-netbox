@@ -1,0 +1,18 @@
+generatorName: go
+
+gitHost: github.com
+gitUserId: netbox-community
+gitRepoId: go-netbox/v3
+
+packageName: netbox
+
+globalProperty:
+  apiDocs: false
+  modelDocs: false
+  apiTests: false
+  modelTests: false
+
+additionalProperties:
+  disallowAdditionalPropertiesIfNotPresent: "false"
+  packageVersion: "3"
+  enumClassPrefix: true

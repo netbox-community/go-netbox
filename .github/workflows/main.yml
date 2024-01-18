@@ -13,33 +13,24 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        go: ["1.20", "1.19"]
+        go: ["1.21", "1.20"]
     steps:
       - name: Checkout
-        uses: actions/checkout@v3.3.0
-
-      - name: License check
-        run: ./scripts/license-check.sh
+        uses: actions/checkout@v4.1.1
 
       - name: Go installation
-        uses: actions/setup-go@v3.5.0
+        uses: actions/setup-go@v5.0.0
         with:
           go-version: ${{ matrix.go }}
 
       - name: Go dependencies installation
         run: go get -d ./...
 
-      - name: Golint installation
-        run: go get -u golang.org/x/lint/golint
-
       - name: Build
         run: go build ./...
 
-      - name: Lint
-        run: ./scripts/golint.sh
+      - name: Test
+        run: go test ./...
 
       - name: Vet
         run: go vet ./...
-
-      - name: Test
-        run: go test -v ./...
