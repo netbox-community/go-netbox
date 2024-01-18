@@ -2,7 +2,7 @@
 
 [![GoDoc](https://pkg.go.dev/badge/github.com/netbox-community/go-netbox/v3)](https://pkg.go.dev/github.com/netbox-community/go-netbox/v3) [![Build Status](https://github.com/netbox-community/go-netbox/workflows/main/badge.svg?branch=master)](https://github.com/netbox-community/go-netbox/actions) [![Report Card](https://goreportcard.com/badge/github.com/netbox-community/go-netbox)](https://goreportcard.com/report/github.com/netbox-community/go-netbox)
 
-_go-netbox_ is —to nobody's surprise— the official [Go](https://go.dev) API client for [Netbox](https://github.com/netbox-community/netbox) IPAM and DCIM service.
+_go-netbox_ is —to nobody's surprise— the official [Go](https://go.dev) API client for the [Netbox](https://github.com/netbox-community/netbox) IPAM and DCIM service.
 
 This project follows [Semantic Versioning](https://semver.org). The version of the library built for a Netbox version has the same tag, followed by a hyphen and the build number (an incremental integer), as several versions of the library may exist for the same version of Netbox.
 
@@ -23,7 +23,7 @@ go get github.com/netbox-community/go-netbox/v3@v3.7.1-0
 
 ### Instantiate the client
 
-The package has a constructor for creating a client providing a URL and an authentication token.
+The package has a constructor for creating a client by providing a URL and an authentication token.
 
 ```golang
 package main
@@ -84,7 +84,7 @@ See [docs](docs) or [reference](https://pkg.go.dev/github.com/netbox-community/g
 
 ## Development
 
-The project comes with a containerized development environment that may be used from any platform. It is only required to have [Git](https://git-scm.com) and [Docker Desktop](https://www.docker.com/products/docker-desktop/) (or, separately, [Docker](https://docs.docker.com/engine/install) and [Docker Compose](https://docs.docker.com/compose/install/)) installed on the machine.
+The project comes with a containerized development environment that may be used on any platform. It is only required to have [Git](https://git-scm.com) and [Docker Desktop](https://www.docker.com/products/docker-desktop/) (or, separately, [Docker](https://docs.docker.com/engine/install) and [Docker Compose](https://docs.docker.com/compose/install/)) installed on the machine.
 
 To start the development environment, run the following command.
 
