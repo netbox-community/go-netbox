@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **Latitude** | Pointer to **NullableFloat64** | GPS coordinate in decimal format (xx.yyyyyy) | [optional] 
 **Longitude** | Pointer to **NullableFloat64** | GPS coordinate in decimal format (xx.yyyyyy) | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
-**Asns** | Pointer to **[]int32** |  | [optional] 
+**Asns** | Pointer to [**[]NestedASN**](NestedASN.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
@@ -514,20 +514,20 @@ HasComments returns a boolean if a field has been set.
 
 ### GetAsns
 
-`func (o *Site) GetAsns() []int32`
+`func (o *Site) GetAsns() []NestedASN`
 
 GetAsns returns the Asns field if non-nil, zero value otherwise.
 
 ### GetAsnsOk
 
-`func (o *Site) GetAsnsOk() (*[]int32, bool)`
+`func (o *Site) GetAsnsOk() (*[]NestedASN, bool)`
 
 GetAsnsOk returns a tuple with the Asns field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAsns
 
-`func (o *Site) SetAsns(v []int32)`
+`func (o *Site) SetAsns(v []NestedASN)`
 
 SetAsns sets Asns field to given value.
 

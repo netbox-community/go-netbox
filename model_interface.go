@@ -54,7 +54,7 @@ type Interface struct {
 	RfChannelWidth NullableFloat64    `json:"rf_channel_width,omitempty"`
 	TxPower        NullableInt32      `json:"tx_power,omitempty"`
 	UntaggedVlan   NullableNestedVLAN `json:"untagged_vlan,omitempty"`
-	TaggedVlans    []NestedVLAN            `json:"tagged_vlans,omitempty"`
+	TaggedVlans    []NestedVLAN       `json:"tagged_vlans,omitempty"`
 	// Treat as if a cable is connected
 	MarkConnected *bool                      `json:"mark_connected,omitempty"`
 	Cable         NullableNestedCable        `json:"cable"`
@@ -1168,7 +1168,7 @@ func (o *Interface) HasTaggedVlans() bool {
 	return false
 }
 
-// SetTaggedVlans gets a reference to the given []int32 and assigns it to the TaggedVlans field.
+// SetTaggedVlans gets a reference to the given []NestedVLAN and assigns it to the TaggedVlans field.
 func (o *Interface) SetTaggedVlans(v []NestedVLAN) {
 	o.TaggedVlans = v
 }
