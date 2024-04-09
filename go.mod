@@ -1,4 +1,4 @@
-module github.com/olekgo/go-netbox/v3
+module github.com/netbox-community/go-netbox/v3
 
 go 1.18
 
