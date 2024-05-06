@@ -29,6 +29,19 @@ if 'components' in data and 'schemas' in data['components']:
                 if ntype in schema['properties']:
                     schema['properties'][ntype]['nullable'] = True
 
+            # Fix non-nullable types
+            # See: https://github.com/OpenAPITools/openapi-generator/issues/18006
+            non_nullable_types = [
+                'front_image',
+                'rear_image',
+            ]
+
+            for ntype in non_nullable_types:
+                if ntype in schema['properties']:
+                    if schema['properties'][ntype]['format'] == 'binary':
+                        schema['properties'][ntype].pop('nullable')
+
+# Fix "site.asns" and "interface.tagged_vlans"
 data["components"]["schemas"]["Site"]["properties"]["asns"]["items"].pop("type")
 data["components"]["schemas"]["Interface"]["properties"]["tagged_vlans"]["items"].pop("type")
 data["components"]["schemas"]["Site"]["properties"]["asns"]["items"]["$ref"] = "#/components/schemas/NestedASN"

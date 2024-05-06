@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **Status** | Pointer to [**PrefixStatus**](PrefixStatus.md) |  | [optional] 
 **Role** | Pointer to [**NullableNestedRole**](NestedRole.md) |  | [optional] 
 **IsPool** | Pointer to **bool** | All IP addresses within this prefix are considered usable | [optional] 
-**MarkUtilized** | Pointer to **bool** | Treat as 100% utilized | [optional] 
+**MarkUtilized** | Pointer to **bool** | Treat as fully utilized | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 

@@ -2725,7 +2725,7 @@ import (
 )
 
 func main() {
-	customFieldChoiceSetRequest := []openapiclient.CustomFieldChoiceSetRequest{*openapiclient.NewCustomFieldChoiceSetRequest("Name_example")} // []CustomFieldChoiceSetRequest | 
+	customFieldChoiceSetRequest := []openapiclient.CustomFieldChoiceSetRequest{*openapiclient.NewCustomFieldChoiceSetRequest("Name_example", [][]interface{}{[]interface{}{nil}})} // []CustomFieldChoiceSetRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2789,7 +2789,7 @@ import (
 )
 
 func main() {
-	customFieldChoiceSetRequest := []openapiclient.CustomFieldChoiceSetRequest{*openapiclient.NewCustomFieldChoiceSetRequest("Name_example")} // []CustomFieldChoiceSetRequest | 
+	customFieldChoiceSetRequest := []openapiclient.CustomFieldChoiceSetRequest{*openapiclient.NewCustomFieldChoiceSetRequest("Name_example", [][]interface{}{[]interface{}{nil}})} // []CustomFieldChoiceSetRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2855,7 +2855,7 @@ import (
 )
 
 func main() {
-	customFieldChoiceSetRequest := []openapiclient.CustomFieldChoiceSetRequest{*openapiclient.NewCustomFieldChoiceSetRequest("Name_example")} // []CustomFieldChoiceSetRequest | 
+	customFieldChoiceSetRequest := []openapiclient.CustomFieldChoiceSetRequest{*openapiclient.NewCustomFieldChoiceSetRequest("Name_example", [][]interface{}{[]interface{}{nil}})} // []CustomFieldChoiceSetRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2991,7 +2991,7 @@ import (
 )
 
 func main() {
-	writableCustomFieldChoiceSetRequest := *openapiclient.NewWritableCustomFieldChoiceSetRequest("Name_example") // WritableCustomFieldChoiceSetRequest | 
+	writableCustomFieldChoiceSetRequest := *openapiclient.NewWritableCustomFieldChoiceSetRequest("Name_example", [][]interface{}{[]interface{}{nil}}) // WritableCustomFieldChoiceSetRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3406,7 +3406,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this custom field choice set.
-	writableCustomFieldChoiceSetRequest := *openapiclient.NewWritableCustomFieldChoiceSetRequest("Name_example") // WritableCustomFieldChoiceSetRequest | 
+	writableCustomFieldChoiceSetRequest := *openapiclient.NewWritableCustomFieldChoiceSetRequest("Name_example", [][]interface{}{[]interface{}{nil}}) // WritableCustomFieldChoiceSetRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

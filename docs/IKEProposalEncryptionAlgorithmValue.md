@@ -17,6 +17,8 @@
 
 * `_3DES_CBC` (value: `"3des-cbc"`)
 
+* `DES_CBC` (value: `"des-cbc"`)
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Display** | **string** |  | [readonly] 
 **Name** | **string** |  | 
 **Status** | [**TunnelStatus**](TunnelStatus.md) |  | 
-**Group** | [**NestedTunnelGroup**](NestedTunnelGroup.md) |  | 
+**Group** | Pointer to [**NullableNestedTunnelGroup**](NestedTunnelGroup.md) |  | [optional] 
 **Encapsulation** | [**TunnelEncapsulation**](TunnelEncapsulation.md) |  | 
 **IpsecProfile** | Pointer to [**NullableNestedIPSecProfile**](NestedIPSecProfile.md) |  | [optional] 
 **Tenant** | Pointer to [**NullableNestedTenant**](NestedTenant.md) |  | [optional] 
@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 
 ### NewTunnel
 
-`func NewTunnel(id int32, url string, display string, name string, status TunnelStatus, group NestedTunnelGroup, encapsulation TunnelEncapsulation, created NullableTime, lastUpdated NullableTime, ) *Tunnel`
+`func NewTunnel(id int32, url string, display string, name string, status TunnelStatus, encapsulation TunnelEncapsulation, created NullableTime, lastUpdated NullableTime, ) *Tunnel`
 
 NewTunnel instantiates a new Tunnel object
 This constructor will assign default values to properties that have it defined,
@@ -159,7 +159,22 @@ and a boolean to check if the value has been set.
 
 SetGroup sets Group field to given value.
 
+### HasGroup
 
+`func (o *Tunnel) HasGroup() bool`
+
+HasGroup returns a boolean if a field has been set.
+
+### SetGroupNil
+
+`func (o *Tunnel) SetGroupNil(b bool)`
+
+ SetGroupNil sets the value for Group to be an explicit nil
+
+### UnsetGroup
+`func (o *Tunnel) UnsetGroup()`
+
+UnsetGroup ensures that no value is present for Group, not even an explicit nil
 ### GetEncapsulation
 
 `func (o *Tunnel) GetEncapsulation() TunnelEncapsulation`

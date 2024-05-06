@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **Disk** | Pointer to **NullableInt32** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
+**ConfigTemplate** | Pointer to **NullableInt32** |  | [optional] 
 **LocalContextData** | Pointer to **interface{}** | Local config context data takes precedence over source contexts in the final rendered config context | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -527,6 +528,41 @@ SetComments sets Comments field to given value.
 
 HasComments returns a boolean if a field has been set.
 
+### GetConfigTemplate
+
+`func (o *PatchedWritableVirtualMachineWithConfigContextRequest) GetConfigTemplate() int32`
+
+GetConfigTemplate returns the ConfigTemplate field if non-nil, zero value otherwise.
+
+### GetConfigTemplateOk
+
+`func (o *PatchedWritableVirtualMachineWithConfigContextRequest) GetConfigTemplateOk() (*int32, bool)`
+
+GetConfigTemplateOk returns a tuple with the ConfigTemplate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConfigTemplate
+
+`func (o *PatchedWritableVirtualMachineWithConfigContextRequest) SetConfigTemplate(v int32)`
+
+SetConfigTemplate sets ConfigTemplate field to given value.
+
+### HasConfigTemplate
+
+`func (o *PatchedWritableVirtualMachineWithConfigContextRequest) HasConfigTemplate() bool`
+
+HasConfigTemplate returns a boolean if a field has been set.
+
+### SetConfigTemplateNil
+
+`func (o *PatchedWritableVirtualMachineWithConfigContextRequest) SetConfigTemplateNil(b bool)`
+
+ SetConfigTemplateNil sets the value for ConfigTemplate to be an explicit nil
+
+### UnsetConfigTemplate
+`func (o *PatchedWritableVirtualMachineWithConfigContextRequest) UnsetConfigTemplate()`
+
+UnsetConfigTemplate ensures that no value is present for ConfigTemplate, not even an explicit nil
 ### GetLocalContextData
 
 `func (o *PatchedWritableVirtualMachineWithConfigContextRequest) GetLocalContextData() interface{}`

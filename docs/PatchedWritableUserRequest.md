@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **IsStaff** | Pointer to **bool** | Designates whether the user can log into this admin site. | [optional] 
 **IsActive** | Pointer to **bool** | Designates whether this user should be treated as active. Unselect this instead of deleting accounts. | [optional] 
 **DateJoined** | Pointer to **time.Time** |  | [optional] 
+**LastLogin** | Pointer to **NullableTime** |  | [optional] 
 **Groups** | Pointer to **[]int32** | The groups this user belongs to. A user will get all permissions granted to each of their groups. | [optional] 
 
 ## Methods
@@ -233,6 +234,41 @@ SetDateJoined sets DateJoined field to given value.
 
 HasDateJoined returns a boolean if a field has been set.
 
+### GetLastLogin
+
+`func (o *PatchedWritableUserRequest) GetLastLogin() time.Time`
+
+GetLastLogin returns the LastLogin field if non-nil, zero value otherwise.
+
+### GetLastLoginOk
+
+`func (o *PatchedWritableUserRequest) GetLastLoginOk() (*time.Time, bool)`
+
+GetLastLoginOk returns a tuple with the LastLogin field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastLogin
+
+`func (o *PatchedWritableUserRequest) SetLastLogin(v time.Time)`
+
+SetLastLogin sets LastLogin field to given value.
+
+### HasLastLogin
+
+`func (o *PatchedWritableUserRequest) HasLastLogin() bool`
+
+HasLastLogin returns a boolean if a field has been set.
+
+### SetLastLoginNil
+
+`func (o *PatchedWritableUserRequest) SetLastLoginNil(b bool)`
+
+ SetLastLoginNil sets the value for LastLogin to be an explicit nil
+
+### UnsetLastLogin
+`func (o *PatchedWritableUserRequest) UnsetLastLogin()`
+
+UnsetLastLogin ensures that no value is present for LastLogin, not even an explicit nil
 ### GetGroups
 
 `func (o *PatchedWritableUserRequest) GetGroups() []int32`

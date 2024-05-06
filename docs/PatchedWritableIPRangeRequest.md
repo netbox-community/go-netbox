@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**MarkUtilized** | Pointer to **bool** | Treat as 100% utilized | [optional] 
+**MarkUtilized** | Pointer to **bool** | Treat as fully utilized | [optional] 
 
 ## Methods
 

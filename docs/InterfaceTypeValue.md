@@ -157,7 +157,13 @@
 
 * `_32GFC_SFP28` (value: `"32gfc-sfp28"`)
 
+* `_32GFC_SFPP` (value: `"32gfc-sfpp"`)
+
 * `_64GFC_QSFPP` (value: `"64gfc-qsfpp"`)
+
+* `_64GFC_SFPDD` (value: `"64gfc-sfpdd"`)
+
+* `_64GFC_SFPP` (value: `"64gfc-sfpp"`)
 
 * `_128GFC_QSFP28` (value: `"128gfc-qsfp28"`)
 

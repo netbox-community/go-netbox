@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **BaseChoices** | Pointer to [**PatchedWritableCustomFieldChoiceSetRequestBaseChoices**](PatchedWritableCustomFieldChoiceSetRequestBaseChoices.md) |  | [optional] 
-**ExtraChoices** | Pointer to **[][]string** |  | [optional] 
+**ExtraChoices** | Pointer to **[][]interface{}** |  | [optional] 
 **OrderAlphabetically** | Pointer to **bool** | Choices are automatically ordered alphabetically | [optional] 
 
 ## Methods
@@ -106,20 +106,20 @@ HasBaseChoices returns a boolean if a field has been set.
 
 ### GetExtraChoices
 
-`func (o *PatchedWritableCustomFieldChoiceSetRequest) GetExtraChoices() [][]string`
+`func (o *PatchedWritableCustomFieldChoiceSetRequest) GetExtraChoices() [][]interface{}`
 
 GetExtraChoices returns the ExtraChoices field if non-nil, zero value otherwise.
 
 ### GetExtraChoicesOk
 
-`func (o *PatchedWritableCustomFieldChoiceSetRequest) GetExtraChoicesOk() (*[][]string, bool)`
+`func (o *PatchedWritableCustomFieldChoiceSetRequest) GetExtraChoicesOk() (*[][]interface{}, bool)`
 
 GetExtraChoicesOk returns a tuple with the ExtraChoices field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExtraChoices
 
-`func (o *PatchedWritableCustomFieldChoiceSetRequest) SetExtraChoices(v [][]string)`
+`func (o *PatchedWritableCustomFieldChoiceSetRequest) SetExtraChoices(v [][]interface{})`
 
 SetExtraChoices sets ExtraChoices field to given value.
 
@@ -129,16 +129,6 @@ SetExtraChoices sets ExtraChoices field to given value.
 
 HasExtraChoices returns a boolean if a field has been set.
 
-### SetExtraChoicesNil
-
-`func (o *PatchedWritableCustomFieldChoiceSetRequest) SetExtraChoicesNil(b bool)`
-
- SetExtraChoicesNil sets the value for ExtraChoices to be an explicit nil
-
-### UnsetExtraChoices
-`func (o *PatchedWritableCustomFieldChoiceSetRequest) UnsetExtraChoices()`
-
-UnsetExtraChoices ensures that no value is present for ExtraChoices, not even an explicit nil
 ### GetOrderAlphabetically
 
 `func (o *PatchedWritableCustomFieldChoiceSetRequest) GetOrderAlphabetically() bool`

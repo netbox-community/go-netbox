@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
 **BaseChoices** | Pointer to [**CustomFieldChoiceSetBaseChoices**](CustomFieldChoiceSetBaseChoices.md) |  | [optional] 
-**ExtraChoices** | Pointer to **[][]string** |  | [optional] 
+**ExtraChoices** | **[][]interface{}** |  | 
 **OrderAlphabetically** | Pointer to **bool** | Choices are automatically ordered alphabetically | [optional] 
 **ChoicesCount** | **string** |  | [readonly] 
 **Created** | **NullableTime** |  | [readonly] 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewCustomFieldChoiceSet
 
-`func NewCustomFieldChoiceSet(id int32, url string, display string, name string, choicesCount string, created NullableTime, lastUpdated NullableTime, ) *CustomFieldChoiceSet`
+`func NewCustomFieldChoiceSet(id int32, url string, display string, name string, extraChoices [][]interface{}, choicesCount string, created NullableTime, lastUpdated NullableTime, ) *CustomFieldChoiceSet`
 
 NewCustomFieldChoiceSet instantiates a new CustomFieldChoiceSet object
 This constructor will assign default values to properties that have it defined,
@@ -167,39 +167,24 @@ HasBaseChoices returns a boolean if a field has been set.
 
 ### GetExtraChoices
 
-`func (o *CustomFieldChoiceSet) GetExtraChoices() [][]string`
+`func (o *CustomFieldChoiceSet) GetExtraChoices() [][]interface{}`
 
 GetExtraChoices returns the ExtraChoices field if non-nil, zero value otherwise.
 
 ### GetExtraChoicesOk
 
-`func (o *CustomFieldChoiceSet) GetExtraChoicesOk() (*[][]string, bool)`
+`func (o *CustomFieldChoiceSet) GetExtraChoicesOk() (*[][]interface{}, bool)`
 
 GetExtraChoicesOk returns a tuple with the ExtraChoices field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExtraChoices
 
-`func (o *CustomFieldChoiceSet) SetExtraChoices(v [][]string)`
+`func (o *CustomFieldChoiceSet) SetExtraChoices(v [][]interface{})`
 
 SetExtraChoices sets ExtraChoices field to given value.
 
-### HasExtraChoices
 
-`func (o *CustomFieldChoiceSet) HasExtraChoices() bool`
-
-HasExtraChoices returns a boolean if a field has been set.
-
-### SetExtraChoicesNil
-
-`func (o *CustomFieldChoiceSet) SetExtraChoicesNil(b bool)`
-
- SetExtraChoicesNil sets the value for ExtraChoices to be an explicit nil
-
-### UnsetExtraChoices
-`func (o *CustomFieldChoiceSet) UnsetExtraChoices()`
-
-UnsetExtraChoices ensures that no value is present for ExtraChoices, not even an explicit nil
 ### GetOrderAlphabetically
 
 `func (o *CustomFieldChoiceSet) GetOrderAlphabetically() bool`

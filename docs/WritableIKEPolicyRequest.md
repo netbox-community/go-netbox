@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
 **Version** | Pointer to [**PatchedWritableIKEPolicyRequestVersion**](PatchedWritableIKEPolicyRequestVersion.md) |  | [optional] 
-**Mode** | [**IKEPolicyModeValue**](IKEPolicyModeValue.md) |  | 
+**Mode** | Pointer to [**PatchedWritableIKEPolicyRequestMode**](PatchedWritableIKEPolicyRequestMode.md) |  | [optional] 
 **Proposals** | **[]int32** |  | 
 **PresharedKey** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewWritableIKEPolicyRequest
 
-`func NewWritableIKEPolicyRequest(name string, mode IKEPolicyModeValue, proposals []int32, ) *WritableIKEPolicyRequest`
+`func NewWritableIKEPolicyRequest(name string, proposals []int32, ) *WritableIKEPolicyRequest`
 
 NewWritableIKEPolicyRequest instantiates a new WritableIKEPolicyRequest object
 This constructor will assign default values to properties that have it defined,
@@ -105,23 +105,28 @@ HasVersion returns a boolean if a field has been set.
 
 ### GetMode
 
-`func (o *WritableIKEPolicyRequest) GetMode() IKEPolicyModeValue`
+`func (o *WritableIKEPolicyRequest) GetMode() PatchedWritableIKEPolicyRequestMode`
 
 GetMode returns the Mode field if non-nil, zero value otherwise.
 
 ### GetModeOk
 
-`func (o *WritableIKEPolicyRequest) GetModeOk() (*IKEPolicyModeValue, bool)`
+`func (o *WritableIKEPolicyRequest) GetModeOk() (*PatchedWritableIKEPolicyRequestMode, bool)`
 
 GetModeOk returns a tuple with the Mode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMode
 
-`func (o *WritableIKEPolicyRequest) SetMode(v IKEPolicyModeValue)`
+`func (o *WritableIKEPolicyRequest) SetMode(v PatchedWritableIKEPolicyRequestMode)`
 
 SetMode sets Mode field to given value.
 
+### HasMode
+
+`func (o *WritableIKEPolicyRequest) HasMode() bool`
+
+HasMode returns a boolean if a field has been set.
 
 ### GetProposals
 

@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
+**Display** | **string** |  | [readonly] 
 **VirtualMachine** | [**NestedVirtualMachine**](NestedVirtualMachine.md) |  | 
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
@@ -19,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewVirtualDisk
 
-`func NewVirtualDisk(id int32, url string, virtualMachine NestedVirtualMachine, name string, size int32, created NullableTime, lastUpdated NullableTime, ) *VirtualDisk`
+`func NewVirtualDisk(id int32, url string, display string, virtualMachine NestedVirtualMachine, name string, size int32, created NullableTime, lastUpdated NullableTime, ) *VirtualDisk`
 
 NewVirtualDisk instantiates a new VirtualDisk object
 This constructor will assign default values to properties that have it defined,
@@ -72,6 +73,26 @@ and a boolean to check if the value has been set.
 `func (o *VirtualDisk) SetUrl(v string)`
 
 SetUrl sets Url field to given value.
+
+
+### GetDisplay
+
+`func (o *VirtualDisk) GetDisplay() string`
+
+GetDisplay returns the Display field if non-nil, zero value otherwise.
+
+### GetDisplayOk
+
+`func (o *VirtualDisk) GetDisplayOk() (*string, bool)`
+
+GetDisplayOk returns a tuple with the Display field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplay
+
+`func (o *VirtualDisk) SetDisplay(v string)`
+
+SetDisplay sets Display field to given value.
 
 
 ### GetVirtualMachine

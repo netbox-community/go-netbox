@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Version** | Pointer to [**PatchedWritableIKEPolicyRequestVersion**](PatchedWritableIKEPolicyRequestVersion.md) |  | [optional] 
-**Mode** | Pointer to [**IKEPolicyModeValue**](IKEPolicyModeValue.md) |  | [optional] 
+**Mode** | Pointer to [**PatchedWritableIKEPolicyRequestMode**](PatchedWritableIKEPolicyRequestMode.md) |  | [optional] 
 **Proposals** | Pointer to **[]int32** |  | [optional] 
 **PresharedKey** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
@@ -110,20 +110,20 @@ HasVersion returns a boolean if a field has been set.
 
 ### GetMode
 
-`func (o *PatchedWritableIKEPolicyRequest) GetMode() IKEPolicyModeValue`
+`func (o *PatchedWritableIKEPolicyRequest) GetMode() PatchedWritableIKEPolicyRequestMode`
 
 GetMode returns the Mode field if non-nil, zero value otherwise.
 
 ### GetModeOk
 
-`func (o *PatchedWritableIKEPolicyRequest) GetModeOk() (*IKEPolicyModeValue, bool)`
+`func (o *PatchedWritableIKEPolicyRequest) GetModeOk() (*PatchedWritableIKEPolicyRequestMode, bool)`
 
 GetModeOk returns a tuple with the Mode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMode
 
-`func (o *PatchedWritableIKEPolicyRequest) SetMode(v IKEPolicyModeValue)`
+`func (o *PatchedWritableIKEPolicyRequest) SetMode(v PatchedWritableIKEPolicyRequestMode)`
 
 SetMode sets Mode field to given value.
 

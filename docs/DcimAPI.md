@@ -20260,7 +20260,7 @@ Name | Type | Description  | Notes
 
 ## DcimPlatformsList
 
-> PaginatedPlatformList DcimPlatformsList(ctx).ConfigTemplateId(configTemplateId).ConfigTemplateIdN(configTemplateIdN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedPlatformList DcimPlatformsList(ctx).AvailableForDeviceType(availableForDeviceType).ConfigTemplateId(configTemplateId).ConfigTemplateIdN(configTemplateIdN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -20280,6 +20280,7 @@ import (
 )
 
 func main() {
+	availableForDeviceType := "availableForDeviceType_example" // string |  (optional)
 	configTemplateId := []*int32{int32(123)} // []*int32 | Config template (ID) (optional)
 	configTemplateIdN := []*int32{int32(123)} // []*int32 | Config template (ID) (optional)
 	created := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -20352,7 +20353,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimPlatformsList(context.Background()).ConfigTemplateId(configTemplateId).ConfigTemplateIdN(configTemplateIdN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimPlatformsList(context.Background()).AvailableForDeviceType(availableForDeviceType).ConfigTemplateId(configTemplateId).ConfigTemplateIdN(configTemplateIdN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPlatformsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -20373,6 +20374,7 @@ Other parameters are passed through a pointer to a apiDcimPlatformsListRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **availableForDeviceType** | **string** |  | 
  **configTemplateId** | **[]int32** | Config template (ID) | 
  **configTemplateIdN** | **[]int32** | Config template (ID) | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
@@ -27479,7 +27481,7 @@ Name | Type | Description  | Notes
 
 ## DcimRacksElevationRetrieve
 
-> Rack DcimRacksElevationRetrieve(ctx, id).Execute()
+> PaginatedRackUnitList DcimRacksElevationRetrieve(ctx, id).Exclude(exclude).ExpandDevices(expandDevices).Face(face).IncludeImages(includeImages).LegendWidth(legendWidth).Limit(limit).MarginWidth(marginWidth).Offset(offset).Q(q).Render(render).UnitHeight(unitHeight).UnitWidth(unitWidth).Execute()
 
 
 
@@ -27499,15 +27501,27 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this rack.
+	exclude := int32(56) // int32 |  (optional)
+	expandDevices := true // bool |  (optional) (default to true)
+	face := openapiclient.dcim_racks_elevation_retrieve_face_parameter("front") // DcimRacksElevationRetrieveFaceParameter | * `front` - Front * `rear` - Rear (optional) (default to "front")
+	includeImages := true // bool |  (optional) (default to true)
+	legendWidth := int32(56) // int32 |  (optional) (default to 30)
+	limit := int32(56) // int32 | Number of results to return per page. (optional)
+	marginWidth := int32(56) // int32 |  (optional) (default to 15)
+	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
+	q := "q_example" // string |  (optional)
+	render := openapiclient.dcim_racks_elevation_retrieve_render_parameter("json") // DcimRacksElevationRetrieveRenderParameter | * `json` - json * `svg` - svg (optional) (default to "json")
+	unitHeight := int32(56) // int32 |  (optional)
+	unitWidth := int32(56) // int32 |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimRacksElevationRetrieve(context.Background(), id).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimRacksElevationRetrieve(context.Background(), id).Exclude(exclude).ExpandDevices(expandDevices).Face(face).IncludeImages(includeImages).LegendWidth(legendWidth).Limit(limit).MarginWidth(marginWidth).Offset(offset).Q(q).Render(render).UnitHeight(unitHeight).UnitWidth(unitWidth).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRacksElevationRetrieve``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DcimRacksElevationRetrieve`: Rack
+	// response from `DcimRacksElevationRetrieve`: PaginatedRackUnitList
 	fmt.Fprintf(os.Stdout, "Response from `DcimAPI.DcimRacksElevationRetrieve`: %v\n", resp)
 }
 ```
@@ -27528,10 +27542,22 @@ Other parameters are passed through a pointer to a apiDcimRacksElevationRetrieve
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **exclude** | **int32** |  | 
+ **expandDevices** | **bool** |  | [default to true]
+ **face** | [**DcimRacksElevationRetrieveFaceParameter**](DcimRacksElevationRetrieveFaceParameter.md) | * &#x60;front&#x60; - Front * &#x60;rear&#x60; - Rear | [default to &quot;front&quot;]
+ **includeImages** | **bool** |  | [default to true]
+ **legendWidth** | **int32** |  | [default to 30]
+ **limit** | **int32** | Number of results to return per page. | 
+ **marginWidth** | **int32** |  | [default to 15]
+ **offset** | **int32** | The initial index from which to return the results. | 
+ **q** | **string** |  | 
+ **render** | [**DcimRacksElevationRetrieveRenderParameter**](DcimRacksElevationRetrieveRenderParameter.md) | * &#x60;json&#x60; - json * &#x60;svg&#x60; - svg | [default to &quot;json&quot;]
+ **unitHeight** | **int32** |  | 
+ **unitWidth** | **int32** |  | 
 
 ### Return type
 
-[**Rack**](Rack.md)
+[**PaginatedRackUnitList**](PaginatedRackUnitList.md)
 
 ### Authorization
 

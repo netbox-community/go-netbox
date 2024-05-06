@@ -19,8 +19,8 @@ Name | Type | Description | Notes
 **Airflow** | Pointer to [**NullableDeviceTypeAirflow**](DeviceTypeAirflow.md) |  | [optional] 
 **Weight** | Pointer to **NullableFloat64** |  | [optional] 
 **WeightUnit** | Pointer to [**NullableDeviceTypeWeightUnit**](DeviceTypeWeightUnit.md) |  | [optional] 
-**FrontImage** | Pointer to **string** |  | [optional] 
-**RearImage** | Pointer to **string** |  | [optional] 
+**FrontImage** | Pointer to **NullableString** |  | [optional] 
+**RearImage** | Pointer to **NullableString** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
@@ -478,6 +478,16 @@ SetFrontImage sets FrontImage field to given value.
 
 HasFrontImage returns a boolean if a field has been set.
 
+### SetFrontImageNil
+
+`func (o *DeviceType) SetFrontImageNil(b bool)`
+
+ SetFrontImageNil sets the value for FrontImage to be an explicit nil
+
+### UnsetFrontImage
+`func (o *DeviceType) UnsetFrontImage()`
+
+UnsetFrontImage ensures that no value is present for FrontImage, not even an explicit nil
 ### GetRearImage
 
 `func (o *DeviceType) GetRearImage() string`
@@ -503,6 +513,16 @@ SetRearImage sets RearImage field to given value.
 
 HasRearImage returns a boolean if a field has been set.
 
+### SetRearImageNil
+
+`func (o *DeviceType) SetRearImageNil(b bool)`
+
+ SetRearImageNil sets the value for RearImage to be an explicit nil
+
+### UnsetRearImage
+`func (o *DeviceType) UnsetRearImage()`
+
+UnsetRearImage ensures that no value is present for RearImage, not even an explicit nil
 ### GetDescription
 
 `func (o *DeviceType) GetDescription() string`

@@ -7,14 +7,14 @@ Name | Type | Description | Notes
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
 **BaseChoices** | Pointer to [**CustomFieldChoiceSetBaseChoicesValue**](CustomFieldChoiceSetBaseChoicesValue.md) |  | [optional] 
-**ExtraChoices** | Pointer to **[][]string** |  | [optional] 
+**ExtraChoices** | **[][]interface{}** |  | 
 **OrderAlphabetically** | Pointer to **bool** | Choices are automatically ordered alphabetically | [optional] 
 
 ## Methods
 
 ### NewCustomFieldChoiceSetRequest
 
-`func NewCustomFieldChoiceSetRequest(name string, ) *CustomFieldChoiceSetRequest`
+`func NewCustomFieldChoiceSetRequest(name string, extraChoices [][]interface{}, ) *CustomFieldChoiceSetRequest`
 
 NewCustomFieldChoiceSetRequest instantiates a new CustomFieldChoiceSetRequest object
 This constructor will assign default values to properties that have it defined,
@@ -101,39 +101,24 @@ HasBaseChoices returns a boolean if a field has been set.
 
 ### GetExtraChoices
 
-`func (o *CustomFieldChoiceSetRequest) GetExtraChoices() [][]string`
+`func (o *CustomFieldChoiceSetRequest) GetExtraChoices() [][]interface{}`
 
 GetExtraChoices returns the ExtraChoices field if non-nil, zero value otherwise.
 
 ### GetExtraChoicesOk
 
-`func (o *CustomFieldChoiceSetRequest) GetExtraChoicesOk() (*[][]string, bool)`
+`func (o *CustomFieldChoiceSetRequest) GetExtraChoicesOk() (*[][]interface{}, bool)`
 
 GetExtraChoicesOk returns a tuple with the ExtraChoices field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExtraChoices
 
-`func (o *CustomFieldChoiceSetRequest) SetExtraChoices(v [][]string)`
+`func (o *CustomFieldChoiceSetRequest) SetExtraChoices(v [][]interface{})`
 
 SetExtraChoices sets ExtraChoices field to given value.
 
-### HasExtraChoices
 
-`func (o *CustomFieldChoiceSetRequest) HasExtraChoices() bool`
-
-HasExtraChoices returns a boolean if a field has been set.
-
-### SetExtraChoicesNil
-
-`func (o *CustomFieldChoiceSetRequest) SetExtraChoicesNil(b bool)`
-
- SetExtraChoicesNil sets the value for ExtraChoices to be an explicit nil
-
-### UnsetExtraChoices
-`func (o *CustomFieldChoiceSetRequest) UnsetExtraChoices()`
-
-UnsetExtraChoices ensures that no value is present for ExtraChoices, not even an explicit nil
 ### GetOrderAlphabetically
 
 `func (o *CustomFieldChoiceSetRequest) GetOrderAlphabetically() bool`

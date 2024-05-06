@@ -15,6 +15,8 @@
 
 * `_256_BIT_AES__GCM` (value: `"256-bit AES (GCM)"`)
 
+* `_3_DES` (value: `"3DES"`)
+
 * `DES` (value: `"DES"`)
 
 

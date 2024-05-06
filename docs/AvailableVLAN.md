@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Vid** | **int32** |  | [readonly] 
-**Group** | [**NestedVLANGroup**](NestedVLANGroup.md) |  | [readonly] 
+**Group** | [**NullableNestedVLANGroup**](NestedVLANGroup.md) |  | [readonly] 
 
 ## Methods
 
 ### NewAvailableVLAN
 
-`func NewAvailableVLAN(vid int32, group NestedVLANGroup, ) *AvailableVLAN`
+`func NewAvailableVLAN(vid int32, group NullableNestedVLANGroup, ) *AvailableVLAN`
 
 NewAvailableVLAN instantiates a new AvailableVLAN object
 This constructor will assign default values to properties that have it defined,
@@ -66,6 +66,16 @@ and a boolean to check if the value has been set.
 SetGroup sets Group field to given value.
 
 
+### SetGroupNil
+
+`func (o *AvailableVLAN) SetGroupNil(b bool)`
+
+ SetGroupNil sets the value for Group to be an explicit nil
+
+### UnsetGroup
+`func (o *AvailableVLAN) UnsetGroup()`
+
+UnsetGroup ensures that no value is present for Group, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

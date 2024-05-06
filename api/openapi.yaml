@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: NetBox REST API
-  version: 3.7.1 (3.7)
+  version: 3.7.7 (3.7)
   license:
     name: Apache v2 License
 paths:
@@ -4364,6 +4364,30 @@ paths:
       operationId: circuits_providers_list
       description: Get a list of provider objects.
       parameters:
+      - in: query
+        name: asn
+        schema:
+          type: array
+          items:
+            type: integer
+            maximum: 4294967295
+            minimum: 1
+            format: int64
+        description: ASN
+        explode: true
+        style: form
+      - in: query
+        name: asn__n
+        schema:
+          type: array
+          items:
+            type: integer
+            maximum: 4294967295
+            minimum: 1
+            format: int64
+        description: ASN
+        explode: true
+        style: form
       - in: query
         name: asn_id
         schema:
@@ -20034,7 +20058,7 @@ paths:
           type: array
           items:
             type: string
-            x-spec-enum-id: 2787c414ccfa93fd
+            x-spec-enum-id: 939e9432238e40f7
         explode: true
         style: form
       - in: query
@@ -20043,7 +20067,7 @@ paths:
           type: array
           items:
             type: string
-            x-spec-enum-id: 2787c414ccfa93fd
+            x-spec-enum-id: 939e9432238e40f7
         explode: true
         style: form
       - in: query
@@ -21731,7 +21755,7 @@ paths:
           type: array
           items:
             type: string
-            x-spec-enum-id: 2787c414ccfa93fd
+            x-spec-enum-id: 939e9432238e40f7
         explode: true
         style: form
       - in: query
@@ -21740,7 +21764,7 @@ paths:
           type: array
           items:
             type: string
-            x-spec-enum-id: 2787c414ccfa93fd
+            x-spec-enum-id: 939e9432238e40f7
         explode: true
         style: form
       - in: query
@@ -30581,6 +30605,10 @@ paths:
       operationId: dcim_platforms_list
       description: Get a list of platform objects.
       parameters:
+      - in: query
+        name: available_for_device_type
+        schema:
+          type: string
       - in: query
         name: config_template_id
         schema:
@@ -40526,12 +40554,87 @@ paths:
       description: Rack elevation representing the list of rack units. Also supports
         rendering the elevation as an SVG.
       parameters:
+      - in: query
+        name: exclude
+        schema:
+          type: integer
+      - in: query
+        name: expand_devices
+        schema:
+          type: boolean
+          default: true
+      - in: query
+        name: face
+        schema:
+          enum:
+          - front
+          - rear
+          type: string
+          x-spec-enum-id: d2fb9b3f75158b83
+          default: front
+          minLength: 1
+        description: '* `front` - Front
+
+          * `rear` - Rear'
       - in: path
         name: id
         schema:
           type: integer
         description: A unique integer value identifying this rack.
         required: true
+      - in: query
+        name: include_images
+        schema:
+          type: boolean
+          default: true
+      - in: query
+        name: legend_width
+        schema:
+          type: integer
+          default: 30
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - in: query
+        name: margin_width
+        schema:
+          type: integer
+          default: 15
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      - in: query
+        name: q
+        schema:
+          type: string
+          minLength: 1
+      - in: query
+        name: render
+        schema:
+          enum:
+          - json
+          - svg
+          type: string
+          x-spec-enum-id: 09901a5ff13ba07a
+          default: json
+          minLength: 1
+        description: '* `json` - json
+
+          * `svg` - svg'
+      - in: query
+        name: unit_height
+        schema:
+          type: integer
+      - in: query
+        name: unit_width
+        schema:
+          type: integer
       tags:
       - dcim
       security:
@@ -40542,7 +40645,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Rack'
+                $ref: '#/components/schemas/PaginatedRackUnitList'
           description: ''
   /api/dcim/rear-port-templates/:
     get:
@@ -84401,7 +84504,7 @@ paths:
           type: array
           items:
             type: string
-            x-spec-enum-id: 40730b5af1561c52
+            x-spec-enum-id: b022535cfdee79fe
         explode: true
         style: form
       - in: query
@@ -84410,7 +84513,7 @@ paths:
           type: array
           items:
             type: string
-            x-spec-enum-id: 40730b5af1561c52
+            x-spec-enum-id: b022535cfdee79fe
         explode: true
         style: form
       - in: query
@@ -84489,6 +84592,42 @@ paths:
           items:
             type: integer
             format: int32
+        explode: true
+        style: form
+      - in: query
+        name: ike_policy
+        schema:
+          type: array
+          items:
+            type: string
+        description: IKE policy (name)
+        explode: true
+        style: form
+      - in: query
+        name: ike_policy__n
+        schema:
+          type: array
+          items:
+            type: string
+        description: IKE policy (name)
+        explode: true
+        style: form
+      - in: query
+        name: ike_policy_id
+        schema:
+          type: array
+          items:
+            type: integer
+        description: IKE policy (ID)
+        explode: true
+        style: form
+      - in: query
+        name: ike_policy_id__n
+        schema:
+          type: array
+          items:
+            type: integer
+        description: IKE policy (ID)
         explode: true
         style: form
       - in: query
@@ -86675,7 +86814,7 @@ paths:
           type: array
           items:
             type: string
-            x-spec-enum-id: 40730b5af1561c52
+            x-spec-enum-id: b022535cfdee79fe
             title: Encryption
         explode: true
         style: form
@@ -86685,7 +86824,7 @@ paths:
           type: array
           items:
             type: string
-            x-spec-enum-id: 40730b5af1561c52
+            x-spec-enum-id: b022535cfdee79fe
             title: Encryption
         explode: true
         style: form
@@ -94165,6 +94304,7 @@ components:
         family:
           type: integer
           readOnly: true
+          nullable: true
         address:
           type: string
           readOnly: true
@@ -94172,6 +94312,7 @@ components:
           allOf:
           - $ref: '#/components/schemas/NestedVRF'
           readOnly: true
+          nullable: true
         description:
           type: string
       required:
@@ -94185,6 +94326,7 @@ components:
         family:
           type: integer
           readOnly: true
+          nullable: true
         prefix:
           type: string
           readOnly: true
@@ -94192,6 +94334,7 @@ components:
           allOf:
           - $ref: '#/components/schemas/NestedVRF'
           readOnly: true
+          nullable: true
       required:
       - family
       - prefix
@@ -94207,6 +94350,7 @@ components:
           allOf:
           - $ref: '#/components/schemas/NestedVLANGroup'
           readOnly: true
+          nullable: true
       required:
       - group
       - vid
@@ -97674,12 +97818,9 @@ components:
           type: array
           items:
             type: array
-            items:
-              type: string
-              title: Extra choices
-              maxLength: 100
+            items: {}
             maxItems: 2
-          nullable: true
+            minItems: 2
         order_alphabetically:
           type: boolean
           description: Choices are automatically ordered alphabetically
@@ -97700,6 +97841,7 @@ components:
       - choices_count
       - created
       - display
+      - extra_choices
       - id
       - last_updated
       - name
@@ -97734,17 +97876,14 @@ components:
           type: array
           items:
             type: array
-            items:
-              type: string
-              minLength: 1
-              title: Extra choices
-              maxLength: 100
+            items: {}
             maxItems: 2
-          nullable: true
+            minItems: 2
         order_alphabetically:
           type: boolean
           description: Choices are automatically ordered alphabetically
       required:
+      - extra_choices
       - name
     CustomFieldRequest:
       type: object
@@ -98255,6 +98394,9 @@ components:
         ignore_rules:
           type: string
           description: Patterns (one per line) matching files to ignore when syncing
+        custom_fields:
+          type: object
+          additionalProperties: {}
         created:
           type: string
           format: date-time
@@ -98317,6 +98459,9 @@ components:
         ignore_rules:
           type: string
           description: Patterns (one per line) matching files to ignore when syncing
+        custom_fields:
+          type: object
+          additionalProperties: {}
       required:
       - name
       - source_url
@@ -99025,9 +99170,11 @@ components:
         front_image:
           type: string
           format: uri
+          nullable: true
         rear_image:
           type: string
           format: uri
+          nullable: true
         description:
           type: string
           maxLength: 200
@@ -101482,6 +101629,7 @@ components:
               - aes-256-cbc
               - aes-256-gcm
               - 3des-cbc
+              - des-cbc
               type: string
               description: '* `aes-128-cbc` - 128-bit AES (CBC)
 
@@ -101495,8 +101643,10 @@ components:
 
                 * `aes-256-gcm` - 256-bit AES (GCM)
 
-                * `3des-cbc` - DES'
-              x-spec-enum-id: 40730b5af1561c52
+                * `3des-cbc` - 3DES
+
+                * `des-cbc` - DES'
+              x-spec-enum-id: b022535cfdee79fe
             label:
               type: string
               enum:
@@ -101506,6 +101656,7 @@ components:
               - 192-bit AES (GCM)
               - 256-bit AES (CBC)
               - 256-bit AES (GCM)
+              - 3DES
               - DES
         authentication_algorithm:
           type: object
@@ -101712,6 +101863,7 @@ components:
           - aes-256-cbc
           - aes-256-gcm
           - 3des-cbc
+          - des-cbc
           type: string
           description: '* `aes-128-cbc` - 128-bit AES (CBC)
 
@@ -101725,8 +101877,10 @@ components:
 
             * `aes-256-gcm` - 256-bit AES (GCM)
 
-            * `3des-cbc` - DES'
-          x-spec-enum-id: 40730b5af1561c52
+            * `3des-cbc` - 3DES
+
+            * `des-cbc` - DES'
+          x-spec-enum-id: b022535cfdee79fe
         authentication_algorithm:
           enum:
           - hmac-sha1
@@ -102201,7 +102355,7 @@ components:
           nullable: true
         mark_utilized:
           type: boolean
-          description: Treat as 100% utilized
+          description: Treat as fully utilized
       required:
       - created
       - display
@@ -102260,7 +102414,7 @@ components:
           additionalProperties: {}
         mark_utilized:
           type: boolean
-          description: Treat as 100% utilized
+          description: Treat as fully utilized
       required:
       - end_address
       - start_address
@@ -102660,6 +102814,7 @@ components:
               - aes-256-cbc
               - aes-256-gcm
               - 3des-cbc
+              - des-cbc
               type: string
               description: '* `aes-128-cbc` - 128-bit AES (CBC)
 
@@ -102673,8 +102828,10 @@ components:
 
                 * `aes-256-gcm` - 256-bit AES (GCM)
 
-                * `3des-cbc` - DES'
-              x-spec-enum-id: 40730b5af1561c52
+                * `3des-cbc` - 3DES
+
+                * `des-cbc` - DES'
+              x-spec-enum-id: b022535cfdee79fe
             label:
               type: string
               enum:
@@ -102684,6 +102841,7 @@ components:
               - 192-bit AES (GCM)
               - 256-bit AES (CBC)
               - 256-bit AES (GCM)
+              - 3DES
               - DES
         authentication_algorithm:
           type: object
@@ -102776,6 +102934,7 @@ components:
           - aes-256-cbc
           - aes-256-gcm
           - 3des-cbc
+          - des-cbc
           type: string
           description: '* `aes-128-cbc` - 128-bit AES (CBC)
 
@@ -102789,8 +102948,10 @@ components:
 
             * `aes-256-gcm` - 256-bit AES (GCM)
 
-            * `3des-cbc` - DES'
-          x-spec-enum-id: 40730b5af1561c52
+            * `3des-cbc` - 3DES
+
+            * `des-cbc` - DES'
+          x-spec-enum-id: b022535cfdee79fe
         authentication_algorithm:
           enum:
           - hmac-sha1
@@ -103046,7 +103207,10 @@ components:
               - 8gfc-sfpp
               - 16gfc-sfpp
               - 32gfc-sfp28
+              - 32gfc-sfpp
               - 64gfc-qsfpp
+              - 64gfc-sfpdd
+              - 64gfc-sfpp
               - 128gfc-qsfp28
               - infiniband-sdr
               - infiniband-ddr
@@ -103239,7 +103403,13 @@ components:
 
                 * `32gfc-sfp28` - SFP28 (32GFC)
 
+                * `32gfc-sfpp` - SFP+ (32GFC)
+
                 * `64gfc-qsfpp` - QSFP+ (64GFC)
+
+                * `64gfc-sfpdd` - SFP-DD (64GFC)
+
+                * `64gfc-sfpp` - SFP+ (64GFC)
 
                 * `128gfc-qsfp28` - QSFP28 (128GFC)
 
@@ -103314,7 +103484,7 @@ components:
                 * `extreme-summitstack-512` - Extreme SummitStack-512
 
                 * `other` - Other'
-              x-spec-enum-id: 2787c414ccfa93fd
+              x-spec-enum-id: 939e9432238e40f7
             label:
               type: string
               enum:
@@ -103395,7 +103565,10 @@ components:
               - SFP+ (8GFC)
               - SFP+ (16GFC)
               - SFP28 (32GFC)
+              - SFP+ (32GFC)
               - QSFP+ (64GFC)
+              - SFP-DD (64GFC)
+              - SFP+ (64GFC)
               - QSFP28 (128GFC)
               - SDR (2 Gbps)
               - DDR (4 Gbps)
@@ -104622,7 +104795,10 @@ components:
           - 8gfc-sfpp
           - 16gfc-sfpp
           - 32gfc-sfp28
+          - 32gfc-sfpp
           - 64gfc-qsfpp
+          - 64gfc-sfpdd
+          - 64gfc-sfpp
           - 128gfc-qsfp28
           - infiniband-sdr
           - infiniband-ddr
@@ -104815,7 +104991,13 @@ components:
 
             * `32gfc-sfp28` - SFP28 (32GFC)
 
+            * `32gfc-sfpp` - SFP+ (32GFC)
+
             * `64gfc-qsfpp` - QSFP+ (64GFC)
+
+            * `64gfc-sfpdd` - SFP-DD (64GFC)
+
+            * `64gfc-sfpp` - SFP+ (64GFC)
 
             * `128gfc-qsfp28` - QSFP28 (128GFC)
 
@@ -104890,7 +105072,7 @@ components:
             * `extreme-summitstack-512` - Extreme SummitStack-512
 
             * `other` - Other'
-          x-spec-enum-id: 2787c414ccfa93fd
+          x-spec-enum-id: 939e9432238e40f7
         enabled:
           type: boolean
         parent:
@@ -105771,7 +105953,10 @@ components:
               - 8gfc-sfpp
               - 16gfc-sfpp
               - 32gfc-sfp28
+              - 32gfc-sfpp
               - 64gfc-qsfpp
+              - 64gfc-sfpdd
+              - 64gfc-sfpp
               - 128gfc-qsfp28
               - infiniband-sdr
               - infiniband-ddr
@@ -105964,7 +106149,13 @@ components:
 
                 * `32gfc-sfp28` - SFP28 (32GFC)
 
+                * `32gfc-sfpp` - SFP+ (32GFC)
+
                 * `64gfc-qsfpp` - QSFP+ (64GFC)
+
+                * `64gfc-sfpdd` - SFP-DD (64GFC)
+
+                * `64gfc-sfpp` - SFP+ (64GFC)
 
                 * `128gfc-qsfp28` - QSFP28 (128GFC)
 
@@ -106039,7 +106230,7 @@ components:
                 * `extreme-summitstack-512` - Extreme SummitStack-512
 
                 * `other` - Other'
-              x-spec-enum-id: 2787c414ccfa93fd
+              x-spec-enum-id: 939e9432238e40f7
             label:
               type: string
               enum:
@@ -106120,7 +106311,10 @@ components:
               - SFP+ (8GFC)
               - SFP+ (16GFC)
               - SFP28 (32GFC)
+              - SFP+ (32GFC)
               - QSFP+ (64GFC)
+              - SFP-DD (64GFC)
+              - SFP+ (64GFC)
               - QSFP28 (128GFC)
               - SDR (2 Gbps)
               - DDR (4 Gbps)
@@ -106373,7 +106567,10 @@ components:
           - 8gfc-sfpp
           - 16gfc-sfpp
           - 32gfc-sfp28
+          - 32gfc-sfpp
           - 64gfc-qsfpp
+          - 64gfc-sfpdd
+          - 64gfc-sfpp
           - 128gfc-qsfp28
           - infiniband-sdr
           - infiniband-ddr
@@ -106566,7 +106763,13 @@ components:
 
             * `32gfc-sfp28` - SFP28 (32GFC)
 
+            * `32gfc-sfpp` - SFP+ (32GFC)
+
             * `64gfc-qsfpp` - QSFP+ (64GFC)
+
+            * `64gfc-sfpdd` - SFP-DD (64GFC)
+
+            * `64gfc-sfpp` - SFP+ (64GFC)
 
             * `128gfc-qsfp28` - QSFP28 (128GFC)
 
@@ -106641,7 +106844,7 @@ components:
             * `extreme-summitstack-512` - Extreme SummitStack-512
 
             * `other` - Other'
-          x-spec-enum-id: 2787c414ccfa93fd
+          x-spec-enum-id: 939e9432238e40f7
         enabled:
           type: boolean
         mgmt_only:
@@ -108426,34 +108629,6 @@ components:
       - display
       - id
       - url
-    NestedASN:
-      type: object
-      description: |-
-        Represents an object related through a ForeignKey field. On write, it accepts a primary key (PK) value or a
-        dictionary of attributes which can be used to uniquely identify the related object. This class should be
-        subclassed to return a full representation of the related object on read.
-      properties:
-        id:
-          type: integer
-          readOnly: true
-        url:
-          type: string
-          format: uri
-          readOnly: true
-        display:
-          type: string
-          readOnly: true
-        asn:
-          type: integer
-          maximum: 4294967295
-          minimum: 1
-          format: int64
-          description: 16- or 32-bit autonomous system number
-      required:
-      - asn
-      - display
-      - id
-      - url
     NestedCableRequest:
       type: object
       description: 'Represents an object related through a ForeignKey field. On write,
@@ -109944,45 +110119,6 @@ components:
       required:
       - name
       - slug
-    NestedModule:
-      type: object
-      description: 'Represents an object related through a ForeignKey field. On write,
-        it accepts a primary key (PK) value or a
-
-        dictionary of attributes which can be used to uniquely identify the related
-        object. This class should be
-
-        subclassed to return a full representation of the related object on read.'
-      properties:
-        id:
-          type: integer
-          readOnly: true
-        url:
-          type: string
-          format: uri
-          readOnly: true
-        display:
-          type: string
-          readOnly: true
-        device:
-          allOf:
-          - $ref: '#/components/schemas/NestedDevice'
-          readOnly: true
-        module_bay:
-          allOf:
-          - $ref: '#/components/schemas/ModuleNestedModuleBay'
-          readOnly: true
-        module_type:
-          allOf:
-          - $ref: '#/components/schemas/NestedModuleType'
-          readOnly: true
-      required:
-      - device
-      - display
-      - id
-      - module_bay
-      - module_type
-      - url
     NestedModuleBay:
       type: object
       description: 'Represents an object related through a ForeignKey field. On write,
@@ -110003,10 +110139,9 @@ components:
         display:
           type: string
           readOnly: true
-        module:
+        installed_module:
           allOf:
-          - $ref: '#/components/schemas/NestedModule'
-          readOnly: true
+          - $ref: '#/components/schemas/ModuleBayNestedModule'
           nullable: true
         name:
           type: string
@@ -110014,7 +110149,6 @@ components:
       required:
       - display
       - id
-      - module
       - name
       - url
     NestedModuleBayRequest:
@@ -110027,6 +110161,10 @@ components:
 
         subclassed to return a full representation of the related object on read.'
       properties:
+        installed_module:
+          allOf:
+          - $ref: '#/components/schemas/ModuleBayNestedModuleRequest'
+          nullable: true
         name:
           type: string
           minLength: 1
@@ -113396,6 +113534,26 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/RackRole'
+    PaginatedRackUnitList:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/RackUnit'
     PaginatedRearPortList:
       type: object
       properties:
@@ -115714,13 +115872,9 @@ components:
           type: array
           items:
             type: array
-            items:
-              type: string
-              minLength: 1
-              title: Extra choices
-              maxLength: 100
+            items: {}
             maxItems: 2
-          nullable: true
+            minItems: 2
         order_alphabetically:
           type: boolean
           description: Choices are automatically ordered alphabetically
@@ -115925,6 +116079,9 @@ components:
         ignore_rules:
           type: string
           description: Patterns (one per line) matching files to ignore when syncing
+        custom_fields:
+          type: object
+          additionalProperties: {}
     PatchedWritableDeviceBayRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -116808,6 +116965,7 @@ components:
           enum:
           - aggressive
           - main
+          - ''
           type: string
           description: '* `aggressive` - Aggressive
 
@@ -116864,6 +117022,7 @@ components:
           - aes-256-cbc
           - aes-256-gcm
           - 3des-cbc
+          - des-cbc
           type: string
           description: '* `aes-128-cbc` - 128-bit AES (CBC)
 
@@ -116877,8 +117036,10 @@ components:
 
             * `aes-256-gcm` - 256-bit AES (GCM)
 
-            * `3des-cbc` - DES'
-          x-spec-enum-id: 40730b5af1561c52
+            * `3des-cbc` - 3DES
+
+            * `des-cbc` - DES'
+          x-spec-enum-id: b022535cfdee79fe
         authentication_algorithm:
           enum:
           - hmac-sha1
@@ -117138,7 +117299,7 @@ components:
           additionalProperties: {}
         mark_utilized:
           type: boolean
-          description: Treat as 100% utilized
+          description: Treat as fully utilized
     PatchedWritableIPSecPolicyRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -117297,6 +117458,7 @@ components:
           - aes-256-cbc
           - aes-256-gcm
           - 3des-cbc
+          - des-cbc
           - ''
           type: string
           description: '* `aes-128-cbc` - 128-bit AES (CBC)
@@ -117311,8 +117473,10 @@ components:
 
             * `aes-256-gcm` - 256-bit AES (GCM)
 
-            * `3des-cbc` - DES'
-          x-spec-enum-id: 40730b5af1561c52
+            * `3des-cbc` - 3DES
+
+            * `des-cbc` - DES'
+          x-spec-enum-id: b022535cfdee79fe
           title: Encryption
         authentication_algorithm:
           enum:
@@ -117457,7 +117621,10 @@ components:
           - 8gfc-sfpp
           - 16gfc-sfpp
           - 32gfc-sfp28
+          - 32gfc-sfpp
           - 64gfc-qsfpp
+          - 64gfc-sfpdd
+          - 64gfc-sfpp
           - 128gfc-qsfp28
           - infiniband-sdr
           - infiniband-ddr
@@ -117650,7 +117817,13 @@ components:
 
             * `32gfc-sfp28` - SFP28 (32GFC)
 
+            * `32gfc-sfpp` - SFP+ (32GFC)
+
             * `64gfc-qsfpp` - QSFP+ (64GFC)
+
+            * `64gfc-sfpdd` - SFP-DD (64GFC)
+
+            * `64gfc-sfpp` - SFP+ (64GFC)
 
             * `128gfc-qsfp28` - QSFP28 (128GFC)
 
@@ -117725,7 +117898,7 @@ components:
             * `extreme-summitstack-512` - Extreme SummitStack-512
 
             * `other` - Other'
-          x-spec-enum-id: 2787c414ccfa93fd
+          x-spec-enum-id: 939e9432238e40f7
         enabled:
           type: boolean
         parent:
@@ -118593,7 +118766,10 @@ components:
           - 8gfc-sfpp
           - 16gfc-sfpp
           - 32gfc-sfp28
+          - 32gfc-sfpp
           - 64gfc-qsfpp
+          - 64gfc-sfpdd
+          - 64gfc-sfpp
           - 128gfc-qsfp28
           - infiniband-sdr
           - infiniband-ddr
@@ -118786,7 +118962,13 @@ components:
 
             * `32gfc-sfp28` - SFP28 (32GFC)
 
+            * `32gfc-sfpp` - SFP+ (32GFC)
+
             * `64gfc-qsfpp` - QSFP+ (64GFC)
+
+            * `64gfc-sfpdd` - SFP-DD (64GFC)
+
+            * `64gfc-sfpp` - SFP+ (64GFC)
 
             * `128gfc-qsfp28` - QSFP28 (128GFC)
 
@@ -118861,7 +119043,7 @@ components:
             * `extreme-summitstack-512` - Extreme SummitStack-512
 
             * `other` - Other'
-          x-spec-enum-id: 2787c414ccfa93fd
+          x-spec-enum-id: 939e9432238e40f7
         enabled:
           type: boolean
         mgmt_only:
@@ -120953,7 +121135,7 @@ components:
           description: All IP addresses within this prefix are considered usable
         mark_utilized:
           type: boolean
-          description: Treat as 100% utilized
+          description: Treat as fully utilized
         description:
           type: string
           maxLength: 200
@@ -122103,6 +122285,10 @@ components:
         date_joined:
           type: string
           format: date-time
+        last_login:
+          type: string
+          format: date-time
+          nullable: true
         groups:
           type: array
           items:
@@ -122454,6 +122640,9 @@ components:
           maxLength: 200
         comments:
           type: string
+        config_template:
+          type: integer
+          nullable: true
         local_context_data:
           nullable: true
           description: Local config context data takes precedence over source contexts
@@ -126523,7 +126712,7 @@ components:
           description: All IP addresses within this prefix are considered usable
         mark_utilized:
           type: boolean
-          description: Treat as 100% utilized
+          description: Treat as fully utilized
         description:
           type: string
           maxLength: 200
@@ -126611,7 +126800,7 @@ components:
           description: All IP addresses within this prefix are considered usable
         mark_utilized:
           type: boolean
-          description: Treat as 100% utilized
+          description: Treat as fully utilized
         description:
           type: string
           maxLength: 200
@@ -127614,6 +127803,57 @@ components:
       required:
       - name
       - slug
+    RackUnit:
+      type: object
+      description: A rack unit is an abstraction formed by the set (rack, position,
+        face); it does not exist as a row in the database.
+      properties:
+        id:
+          type: number
+          format: double
+          maximum: 1000
+          minimum: -1000
+          exclusiveMaximum: true
+          exclusiveMinimum: true
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+        face:
+          type: object
+          properties:
+            value:
+              enum:
+              - front
+              - rear
+              type: string
+              description: '* `front` - Front
+
+                * `rear` - Rear'
+              x-spec-enum-id: d2fb9b3f75158b83
+            label:
+              type: string
+              enum:
+              - Front
+              - Rear
+          readOnly: true
+        device:
+          allOf:
+          - $ref: '#/components/schemas/NestedDevice'
+          readOnly: true
+        occupied:
+          type: boolean
+          readOnly: true
+        display:
+          type: string
+          readOnly: true
+      required:
+      - device
+      - display
+      - face
+      - id
+      - name
+      - occupied
     RearPort:
       type: object
       description: Adds support for custom fields and tags.
@@ -129999,7 +130239,9 @@ components:
               - Active
               - Disabled
         group:
-          $ref: '#/components/schemas/NestedTunnelGroup'
+          allOf:
+          - $ref: '#/components/schemas/NestedTunnelGroup'
+          nullable: true
         encapsulation:
           type: object
           properties:
@@ -130065,7 +130307,6 @@ components:
       - created
       - display
       - encapsulation
-      - group
       - id
       - last_updated
       - name
@@ -130171,7 +130412,9 @@ components:
             * `disabled` - Disabled'
           x-spec-enum-id: 0d65f7912cba74aa
         group:
-          $ref: '#/components/schemas/NestedTunnelGroupRequest'
+          allOf:
+          - $ref: '#/components/schemas/NestedTunnelGroupRequest'
+          nullable: true
         encapsulation:
           enum:
           - ipsec-transport
@@ -130215,7 +130458,6 @@ components:
           additionalProperties: {}
       required:
       - encapsulation
-      - group
       - name
       - status
     TunnelTermination:
@@ -130384,6 +130626,10 @@ components:
         date_joined:
           type: string
           format: date-time
+        last_login:
+          type: string
+          format: date-time
+          nullable: true
         groups:
           type: array
           items:
@@ -130435,6 +130681,10 @@ components:
         date_joined:
           type: string
           format: date-time
+        last_login:
+          type: string
+          format: date-time
+          nullable: true
         groups:
           type: array
           items:
@@ -131274,6 +131524,9 @@ components:
           type: string
           format: uri
           readOnly: true
+        display:
+          type: string
+          readOnly: true
         virtual_machine:
           $ref: '#/components/schemas/NestedVirtualMachine'
         name:
@@ -131306,6 +131559,7 @@ components:
           nullable: true
       required:
       - created
+      - display
       - id
       - last_updated
       - name
@@ -131452,6 +131706,10 @@ components:
           maxLength: 200
         comments:
           type: string
+        config_template:
+          allOf:
+          - $ref: '#/components/schemas/NestedConfigTemplate'
+          nullable: true
         local_context_data:
           nullable: true
           description: Local config context data takes precedence over source contexts
@@ -131578,6 +131836,10 @@ components:
           maxLength: 200
         comments:
           type: string
+        config_template:
+          allOf:
+          - $ref: '#/components/schemas/NestedConfigTemplateRequest'
+          nullable: true
         local_context_data:
           nullable: true
           description: Local config context data takes precedence over source contexts
@@ -133407,17 +133669,14 @@ components:
           type: array
           items:
             type: array
-            items:
-              type: string
-              minLength: 1
-              title: Extra choices
-              maxLength: 100
+            items: {}
             maxItems: 2
-          nullable: true
+            minItems: 2
         order_alphabetically:
           type: boolean
           description: Choices are automatically ordered alphabetically
       required:
+      - extra_choices
       - name
     WritableCustomFieldRequest:
       type: object
@@ -133623,6 +133882,9 @@ components:
         ignore_rules:
           type: string
           description: Patterns (one per line) matching files to ignore when syncing
+        custom_fields:
+          type: object
+          additionalProperties: {}
       required:
       - name
       - source_url
@@ -134549,6 +134811,7 @@ components:
           enum:
           - aggressive
           - main
+          - ''
           type: string
           description: '* `aggressive` - Aggressive
 
@@ -134571,7 +134834,6 @@ components:
           type: object
           additionalProperties: {}
       required:
-      - mode
       - name
       - proposals
     WritableIKEProposalRequest:
@@ -134609,6 +134871,7 @@ components:
           - aes-256-cbc
           - aes-256-gcm
           - 3des-cbc
+          - des-cbc
           type: string
           description: '* `aes-128-cbc` - 128-bit AES (CBC)
 
@@ -134622,8 +134885,10 @@ components:
 
             * `aes-256-gcm` - 256-bit AES (GCM)
 
-            * `3des-cbc` - DES'
-          x-spec-enum-id: 40730b5af1561c52
+            * `3des-cbc` - 3DES
+
+            * `des-cbc` - DES'
+          x-spec-enum-id: b022535cfdee79fe
         authentication_algorithm:
           enum:
           - hmac-sha1
@@ -134890,7 +135155,7 @@ components:
           additionalProperties: {}
         mark_utilized:
           type: boolean
-          description: Treat as 100% utilized
+          description: Treat as fully utilized
       required:
       - end_address
       - start_address
@@ -135060,6 +135325,7 @@ components:
           - aes-256-cbc
           - aes-256-gcm
           - 3des-cbc
+          - des-cbc
           - ''
           type: string
           description: '* `aes-128-cbc` - 128-bit AES (CBC)
@@ -135074,8 +135340,10 @@ components:
 
             * `aes-256-gcm` - 256-bit AES (GCM)
 
-            * `3des-cbc` - DES'
-          x-spec-enum-id: 40730b5af1561c52
+            * `3des-cbc` - 3DES
+
+            * `des-cbc` - DES'
+          x-spec-enum-id: b022535cfdee79fe
           title: Encryption
         authentication_algorithm:
           enum:
@@ -135222,7 +135490,10 @@ components:
           - 8gfc-sfpp
           - 16gfc-sfpp
           - 32gfc-sfp28
+          - 32gfc-sfpp
           - 64gfc-qsfpp
+          - 64gfc-sfpdd
+          - 64gfc-sfpp
           - 128gfc-qsfp28
           - infiniband-sdr
           - infiniband-ddr
@@ -135415,7 +135686,13 @@ components:
 
             * `32gfc-sfp28` - SFP28 (32GFC)
 
+            * `32gfc-sfpp` - SFP+ (32GFC)
+
             * `64gfc-qsfpp` - QSFP+ (64GFC)
+
+            * `64gfc-sfpdd` - SFP-DD (64GFC)
+
+            * `64gfc-sfpp` - SFP+ (64GFC)
 
             * `128gfc-qsfp28` - QSFP28 (128GFC)
 
@@ -135490,7 +135767,7 @@ components:
             * `extreme-summitstack-512` - Extreme SummitStack-512
 
             * `other` - Other'
-          x-spec-enum-id: 2787c414ccfa93fd
+          x-spec-enum-id: 939e9432238e40f7
         enabled:
           type: boolean
         parent:
@@ -136363,7 +136640,10 @@ components:
           - 8gfc-sfpp
           - 16gfc-sfpp
           - 32gfc-sfp28
+          - 32gfc-sfpp
           - 64gfc-qsfpp
+          - 64gfc-sfpdd
+          - 64gfc-sfpp
           - 128gfc-qsfp28
           - infiniband-sdr
           - infiniband-ddr
@@ -136556,7 +136836,13 @@ components:
 
             * `32gfc-sfp28` - SFP28 (32GFC)
 
+            * `32gfc-sfpp` - SFP+ (32GFC)
+
             * `64gfc-qsfpp` - QSFP+ (64GFC)
+
+            * `64gfc-sfpdd` - SFP-DD (64GFC)
+
+            * `64gfc-sfpp` - SFP+ (64GFC)
 
             * `128gfc-qsfp28` - QSFP28 (128GFC)
 
@@ -136631,7 +136917,7 @@ components:
             * `extreme-summitstack-512` - Extreme SummitStack-512
 
             * `other` - Other'
-          x-spec-enum-id: 2787c414ccfa93fd
+          x-spec-enum-id: 939e9432238e40f7
         enabled:
           type: boolean
         mgmt_only:
@@ -138785,7 +139071,7 @@ components:
           description: All IP addresses within this prefix are considered usable
         mark_utilized:
           type: boolean
-          description: Treat as 100% utilized
+          description: Treat as fully utilized
         description:
           type: string
           maxLength: 200
@@ -139995,6 +140281,10 @@ components:
         date_joined:
           type: string
           format: date-time
+        last_login:
+          type: string
+          format: date-time
+          nullable: true
         groups:
           type: array
           items:
@@ -140366,6 +140656,9 @@ components:
           maxLength: 200
         comments:
           type: string
+        config_template:
+          type: integer
+          nullable: true
         local_context_data:
           nullable: true
           description: Local config context data takes precedence over source contexts
@@ -140565,6 +140858,35 @@ components:
       required:
       - interface_a
       - interface_b
+    NestedASN:
+      type: object
+      description: "Represents an object related through a ForeignKey field. On write,
+        it accepts a primary key (PK) value or a\n        dictionary of attributes
+        which can be used to uniquely identify the related object. This class should
+        be\n        subclassed to return a full representation of the related object
+        on read."
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        url:
+          type: string
+          format: uri
+          readOnly: true
+        display:
+          type: string
+          readOnly: true
+        asn:
+          type: integer
+          maximum: 4294967295
+          minimum: 1
+          format: int64
+          description: 16- or 32-bit autonomous system number
+      required:
+      - asn
+      - display
+      - id
+      - url
   securitySchemes:
     cookieAuth:
       type: apiKey

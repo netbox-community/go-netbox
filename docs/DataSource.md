@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **Comments** | Pointer to **string** |  | [optional] 
 **Parameters** | Pointer to **interface{}** |  | [optional] 
 **IgnoreRules** | Pointer to **string** | Patterns (one per line) matching files to ignore when syncing | [optional] 
+**CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 **FileCount** | **int32** |  | [readonly] 
@@ -313,6 +314,31 @@ SetIgnoreRules sets IgnoreRules field to given value.
 `func (o *DataSource) HasIgnoreRules() bool`
 
 HasIgnoreRules returns a boolean if a field has been set.
+
+### GetCustomFields
+
+`func (o *DataSource) GetCustomFields() map[string]interface{}`
+
+GetCustomFields returns the CustomFields field if non-nil, zero value otherwise.
+
+### GetCustomFieldsOk
+
+`func (o *DataSource) GetCustomFieldsOk() (*map[string]interface{}, bool)`
+
+GetCustomFieldsOk returns a tuple with the CustomFields field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomFields
+
+`func (o *DataSource) SetCustomFields(v map[string]interface{})`
+
+SetCustomFields sets CustomFields field to given value.
+
+### HasCustomFields
+
+`func (o *DataSource) HasCustomFields() bool`
+
+HasCustomFields returns a boolean if a field has been set.
 
 ### GetCreated
 

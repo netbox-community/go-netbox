@@ -17,6 +17,8 @@
 
 * `_3DES_CBC` (value: `"3des-cbc"`)
 
+* `DES_CBC` (value: `"des-cbc"`)
+
 * `EMPTY` (value: `""`)
 
 

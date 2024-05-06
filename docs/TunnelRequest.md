@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
 **Status** | [**PatchedWritableTunnelRequestStatus**](PatchedWritableTunnelRequestStatus.md) |  | 
-**Group** | [**NestedTunnelGroupRequest**](NestedTunnelGroupRequest.md) |  | 
+**Group** | Pointer to [**NullableNestedTunnelGroupRequest**](NestedTunnelGroupRequest.md) |  | [optional] 
 **Encapsulation** | [**PatchedWritableTunnelRequestEncapsulation**](PatchedWritableTunnelRequestEncapsulation.md) |  | 
 **IpsecProfile** | Pointer to [**NullableNestedIPSecProfileRequest**](NestedIPSecProfileRequest.md) |  | [optional] 
 **Tenant** | Pointer to [**NullableNestedTenantRequest**](NestedTenantRequest.md) |  | [optional] 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewTunnelRequest
 
-`func NewTunnelRequest(name string, status PatchedWritableTunnelRequestStatus, group NestedTunnelGroupRequest, encapsulation PatchedWritableTunnelRequestEncapsulation, ) *TunnelRequest`
+`func NewTunnelRequest(name string, status PatchedWritableTunnelRequestStatus, encapsulation PatchedWritableTunnelRequestEncapsulation, ) *TunnelRequest`
 
 NewTunnelRequest instantiates a new TunnelRequest object
 This constructor will assign default values to properties that have it defined,
@@ -94,7 +94,22 @@ and a boolean to check if the value has been set.
 
 SetGroup sets Group field to given value.
 
+### HasGroup
 
+`func (o *TunnelRequest) HasGroup() bool`
+
+HasGroup returns a boolean if a field has been set.
+
+### SetGroupNil
+
+`func (o *TunnelRequest) SetGroupNil(b bool)`
+
+ SetGroupNil sets the value for Group to be an explicit nil
+
+### UnsetGroup
+`func (o *TunnelRequest) UnsetGroup()`
+
+UnsetGroup ensures that no value is present for Group, not even an explicit nil
 ### GetEncapsulation
 
 `func (o *TunnelRequest) GetEncapsulation() PatchedWritableTunnelRequestEncapsulation`

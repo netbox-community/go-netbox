@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**MarkUtilized** | Pointer to **bool** | Treat as 100% utilized | [optional] 
+**MarkUtilized** | Pointer to **bool** | Treat as fully utilized | [optional] 
 
 ## Methods
 

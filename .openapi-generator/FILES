@@ -133,6 +133,8 @@ docs/DataSourceTypeLabel.md
 docs/DataSourceTypeValue.md
 docs/DcimAPI.md
 docs/DcimDevicesRenderConfigCreateFormatParameter.md
+docs/DcimRacksElevationRetrieveFaceParameter.md
+docs/DcimRacksElevationRetrieveRenderParameter.md
 docs/Device.md
 docs/DeviceAirflow.md
 docs/DeviceAirflowLabel.md
@@ -371,7 +373,6 @@ docs/NestedLocation.md
 docs/NestedLocationRequest.md
 docs/NestedManufacturer.md
 docs/NestedManufacturerRequest.md
-docs/NestedModule.md
 docs/NestedModuleBay.md
 docs/NestedModuleBayRequest.md
 docs/NestedModuleType.md
@@ -520,6 +521,7 @@ docs/PaginatedRIRList.md
 docs/PaginatedRackList.md
 docs/PaginatedRackReservationList.md
 docs/PaginatedRackRoleList.md
+docs/PaginatedRackUnitList.md
 docs/PaginatedRearPortList.md
 docs/PaginatedRearPortTemplateList.md
 docs/PaginatedRegionList.md
@@ -610,6 +612,7 @@ docs/PatchedWritableFHRPGroupAssignmentRequest.md
 docs/PatchedWritableFrontPortRequest.md
 docs/PatchedWritableFrontPortTemplateRequest.md
 docs/PatchedWritableIKEPolicyRequest.md
+docs/PatchedWritableIKEPolicyRequestMode.md
 docs/PatchedWritableIKEPolicyRequestVersion.md
 docs/PatchedWritableIKEProposalRequest.md
 docs/PatchedWritableIKEProposalRequestAuthenticationAlgorithm.md
@@ -755,6 +758,9 @@ docs/RackStatus.md
 docs/RackStatusLabel.md
 docs/RackType.md
 docs/RackTypeLabel.md
+docs/RackUnit.md
+docs/RackUnitFace.md
+docs/RackUnitFaceValue.md
 docs/RackWidth.md
 docs/RackWidthLabel.md
 docs/RackWidthValue.md
@@ -1057,6 +1063,8 @@ model_data_source_type.go
 model_data_source_type_label.go
 model_data_source_type_value.go
 model_dcim_devices_render_config_create_format_parameter.go
+model_dcim_racks_elevation_retrieve_face_parameter.go
+model_dcim_racks_elevation_retrieve_render_parameter.go
 model_device.go
 model_device_airflow.go
 model_device_airflow_label.go
@@ -1293,7 +1301,6 @@ model_nested_location.go
 model_nested_location_request.go
 model_nested_manufacturer.go
 model_nested_manufacturer_request.go
-model_nested_module.go
 model_nested_module_bay.go
 model_nested_module_bay_request.go
 model_nested_module_type.go
@@ -1441,6 +1448,7 @@ model_paginated_provider_network_list.go
 model_paginated_rack_list.go
 model_paginated_rack_reservation_list.go
 model_paginated_rack_role_list.go
+model_paginated_rack_unit_list.go
 model_paginated_rear_port_list.go
 model_paginated_rear_port_template_list.go
 model_paginated_region_list.go
@@ -1532,6 +1540,7 @@ model_patched_writable_fhrp_group_assignment_request.go
 model_patched_writable_front_port_request.go
 model_patched_writable_front_port_template_request.go
 model_patched_writable_ike_policy_request.go
+model_patched_writable_ike_policy_request_mode.go
 model_patched_writable_ike_policy_request_version.go
 model_patched_writable_ike_proposal_request.go
 model_patched_writable_ike_proposal_request_authentication_algorithm.go
@@ -1675,6 +1684,9 @@ model_rack_status.go
 model_rack_status_label.go
 model_rack_type.go
 model_rack_type_label.go
+model_rack_unit.go
+model_rack_unit_face.go
+model_rack_unit_face_value.go
 model_rack_width.go
 model_rack_width_label.go
 model_rack_width_value.go

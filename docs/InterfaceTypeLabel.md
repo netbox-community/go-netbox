@@ -157,7 +157,13 @@
 
 * `SFP28__32_GFC` (value: `"SFP28 (32GFC)"`)
 
+* `SFP__32_GFC` (value: `"SFP+ (32GFC)"`)
+
 * `QSFP__64_GFC` (value: `"QSFP+ (64GFC)"`)
+
+* `SFP_DD__64_GFC` (value: `"SFP-DD (64GFC)"`)
+
+* `SFP__64_GFC` (value: `"SFP+ (64GFC)"`)
 
 * `QSFP28__128_GFC` (value: `"QSFP28 (128GFC)"`)
 
