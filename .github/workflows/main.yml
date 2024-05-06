@@ -13,13 +13,13 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        go: ["1.21", "1.20"]
+        go: ["1.22", "1.21"]
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.1.1
+        uses: actions/checkout@v4.1.4
 
       - name: Go installation
-        uses: actions/setup-go@v5.0.0
+        uses: actions/setup-go@v5.0.1
         with:
           go-version: ${{ matrix.go }}
 
