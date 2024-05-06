@@ -33,7 +33,7 @@ Name | Type | Description | Notes
 **RfChannelWidth** | Pointer to **NullableFloat64** | Populated by selected channel (if set) | [optional] 
 **TxPower** | Pointer to **NullableInt32** |  | [optional] 
 **UntaggedVlan** | Pointer to [**NullableNestedVLAN**](NestedVLAN.md) |  | [optional] 
-**TaggedVlans** | Pointer to **[]int32** |  | [optional] 
+**TaggedVlans** | Pointer to [**[]NestedVLAN**](NestedVLAN.md) |  | [optional] 
 **MarkConnected** | Pointer to **bool** | Treat as if a cable is connected | [optional] 
 **Cable** | [**NullableNestedCable**](NestedCable.md) |  | [readonly] 
 **CableEnd** | **string** |  | [readonly] 
@@ -900,20 +900,20 @@ HasUntaggedVlan returns a boolean if a field has been set.
 UnsetUntaggedVlan ensures that no value is present for UntaggedVlan, not even an explicit nil
 ### GetTaggedVlans
 
-`func (o *Interface) GetTaggedVlans() []int32`
+`func (o *Interface) GetTaggedVlans() []NestedVLAN`
 
 GetTaggedVlans returns the TaggedVlans field if non-nil, zero value otherwise.
 
 ### GetTaggedVlansOk
 
-`func (o *Interface) GetTaggedVlansOk() (*[]int32, bool)`
+`func (o *Interface) GetTaggedVlansOk() (*[]NestedVLAN, bool)`
 
 GetTaggedVlansOk returns a tuple with the TaggedVlans field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTaggedVlans
 
-`func (o *Interface) SetTaggedVlans(v []int32)`
+`func (o *Interface) SetTaggedVlans(v []NestedVLAN)`
 
 SetTaggedVlans sets TaggedVlans field to given value.
 

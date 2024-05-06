@@ -104425,7 +104425,7 @@ components:
         tagged_vlans:
           type: array
           items:
-            type: integer
+            $ref: '#/components/schemas/NestedVLAN'
         mark_connected:
           type: boolean
           description: Treat as if a cable is connected
@@ -108423,6 +108423,34 @@ components:
           type: string
           maxLength: 100
       required:
+      - display
+      - id
+      - url
+    NestedASN:
+      type: object
+      description: |-
+        Represents an object related through a ForeignKey field. On write, it accepts a primary key (PK) value or a
+        dictionary of attributes which can be used to uniquely identify the related object. This class should be
+        subclassed to return a full representation of the related object on read.
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        url:
+          type: string
+          format: uri
+          readOnly: true
+        display:
+          type: string
+          readOnly: true
+        asn:
+          type: integer
+          maximum: 4294967295
+          minimum: 1
+          format: int64
+          description: 16- or 32-bit autonomous system number
+      required:
+      - asn
       - display
       - id
       - url
@@ -129233,7 +129261,7 @@ components:
         asns:
           type: array
           items:
-            type: integer
+            $ref: '#/components/schemas/NestedASN'
         tags:
           type: array
           items:

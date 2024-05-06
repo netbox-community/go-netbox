@@ -315,6 +315,7 @@ docs/ModuleStatusLabel.md
 docs/ModuleStatusValue.md
 docs/ModuleType.md
 docs/ModuleTypeRequest.md
+docs/NestedASN.md
 docs/NestedCable.md
 docs/NestedCableRequest.md
 docs/NestedCircuit.md
@@ -1236,6 +1237,7 @@ model_module_status_label.go
 model_module_status_value.go
 model_module_type.go
 model_module_type_request.go
+model_nested_asn.go
 model_nested_cable.go
 model_nested_cable_request.go
 model_nested_circuit.go

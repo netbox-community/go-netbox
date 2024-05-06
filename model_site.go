@@ -44,7 +44,7 @@ type Site struct {
 	// GPS coordinate in decimal format (xx.yyyyyy)
 	Longitude            NullableFloat64        `json:"longitude,omitempty"`
 	Comments             *string                `json:"comments,omitempty"`
-	Asns                 []int32                `json:"asns,omitempty"`
+	Asns                 []NestedASN            `json:"asns,omitempty"`
 	Tags                 []NestedTag            `json:"tags,omitempty"`
 	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
 	Created              NullableTime           `json:"created"`
@@ -661,9 +661,9 @@ func (o *Site) SetComments(v string) {
 }
 
 // GetAsns returns the Asns field value if set, zero value otherwise.
-func (o *Site) GetAsns() []int32 {
+func (o *Site) GetAsns() []NestedASN {
 	if o == nil || IsNil(o.Asns) {
-		var ret []int32
+		var ret []NestedASN
 		return ret
 	}
 	return o.Asns
@@ -671,7 +671,7 @@ func (o *Site) GetAsns() []int32 {
 
 // GetAsnsOk returns a tuple with the Asns field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Site) GetAsnsOk() ([]int32, bool) {
+func (o *Site) GetAsnsOk() ([]NestedASN, bool) {
 	if o == nil || IsNil(o.Asns) {
 		return nil, false
 	}
@@ -687,8 +687,8 @@ func (o *Site) HasAsns() bool {
 	return false
 }
 
-// SetAsns gets a reference to the given []int32 and assigns it to the Asns field.
-func (o *Site) SetAsns(v []int32) {
+// SetAsns gets a reference to the given []NestedASN and assigns it to the Asns field.
+func (o *Site) SetAsns(v []NestedASN) {
 	o.Asns = v
 }
 
