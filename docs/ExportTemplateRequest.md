@@ -4,20 +4,20 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ContentTypes** | **[]string** |  | 
+**ObjectTypes** | **[]string** |  | 
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
 **TemplateCode** | **string** | Jinja2 template code. The list of objects being exported is passed as a context variable named &lt;code&gt;queryset&lt;/code&gt;. | 
 **MimeType** | Pointer to **string** | Defaults to &lt;code&gt;text/plain; charset&#x3D;utf-8&lt;/code&gt; | [optional] 
 **FileExtension** | Pointer to **string** | Extension to append to the rendered filename | [optional] 
 **AsAttachment** | Pointer to **bool** | Download file as attachment | [optional] 
-**DataSource** | Pointer to [**NestedDataSourceRequest**](NestedDataSourceRequest.md) |  | [optional] 
+**DataSource** | Pointer to [**DataSourceRequest**](DataSourceRequest.md) |  | [optional] 
 
 ## Methods
 
 ### NewExportTemplateRequest
 
-`func NewExportTemplateRequest(contentTypes []string, name string, templateCode string, ) *ExportTemplateRequest`
+`func NewExportTemplateRequest(objectTypes []string, name string, templateCode string, ) *ExportTemplateRequest`
 
 NewExportTemplateRequest instantiates a new ExportTemplateRequest object
 This constructor will assign default values to properties that have it defined,
@@ -32,24 +32,24 @@ NewExportTemplateRequestWithDefaults instantiates a new ExportTemplateRequest ob
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetContentTypes
+### GetObjectTypes
 
-`func (o *ExportTemplateRequest) GetContentTypes() []string`
+`func (o *ExportTemplateRequest) GetObjectTypes() []string`
 
-GetContentTypes returns the ContentTypes field if non-nil, zero value otherwise.
+GetObjectTypes returns the ObjectTypes field if non-nil, zero value otherwise.
 
-### GetContentTypesOk
+### GetObjectTypesOk
 
-`func (o *ExportTemplateRequest) GetContentTypesOk() (*[]string, bool)`
+`func (o *ExportTemplateRequest) GetObjectTypesOk() (*[]string, bool)`
 
-GetContentTypesOk returns a tuple with the ContentTypes field if it's non-nil, zero value otherwise
+GetObjectTypesOk returns a tuple with the ObjectTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetContentTypes
+### SetObjectTypes
 
-`func (o *ExportTemplateRequest) SetContentTypes(v []string)`
+`func (o *ExportTemplateRequest) SetObjectTypes(v []string)`
 
-SetContentTypes sets ContentTypes field to given value.
+SetObjectTypes sets ObjectTypes field to given value.
 
 
 ### GetName
@@ -194,20 +194,20 @@ HasAsAttachment returns a boolean if a field has been set.
 
 ### GetDataSource
 
-`func (o *ExportTemplateRequest) GetDataSource() NestedDataSourceRequest`
+`func (o *ExportTemplateRequest) GetDataSource() DataSourceRequest`
 
 GetDataSource returns the DataSource field if non-nil, zero value otherwise.
 
 ### GetDataSourceOk
 
-`func (o *ExportTemplateRequest) GetDataSourceOk() (*NestedDataSourceRequest, bool)`
+`func (o *ExportTemplateRequest) GetDataSourceOk() (*DataSourceRequest, bool)`
 
 GetDataSourceOk returns a tuple with the DataSource field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDataSource
 
-`func (o *ExportTemplateRequest) SetDataSource(v NestedDataSourceRequest)`
+`func (o *ExportTemplateRequest) SetDataSource(v DataSourceRequest)`
 
 SetDataSource sets DataSource field to given value.
 

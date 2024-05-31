@@ -178,11 +178,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	aggregateRequest := []openapiclient.AggregateRequest{*openapiclient.NewAggregateRequest("Prefix_example", *openapiclient.NewNestedRIRRequest("Name_example", "Slug_example"))} // []AggregateRequest | 
+	aggregateRequest := []openapiclient.AggregateRequest{*openapiclient.NewAggregateRequest("Prefix_example", *openapiclient.NewRIRRequest("Name_example", "Slug_example"))} // []AggregateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -242,11 +242,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	aggregateRequest := []openapiclient.AggregateRequest{*openapiclient.NewAggregateRequest("Prefix_example", *openapiclient.NewNestedRIRRequest("Name_example", "Slug_example"))} // []AggregateRequest | 
+	aggregateRequest := []openapiclient.AggregateRequest{*openapiclient.NewAggregateRequest("Prefix_example", *openapiclient.NewRIRRequest("Name_example", "Slug_example"))} // []AggregateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -308,11 +308,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	aggregateRequest := []openapiclient.AggregateRequest{*openapiclient.NewAggregateRequest("Prefix_example", *openapiclient.NewNestedRIRRequest("Name_example", "Slug_example"))} // []AggregateRequest | 
+	aggregateRequest := []openapiclient.AggregateRequest{*openapiclient.NewAggregateRequest("Prefix_example", *openapiclient.NewRIRRequest("Name_example", "Slug_example"))} // []AggregateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -374,11 +374,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writableAggregateRequest := *openapiclient.NewWritableAggregateRequest("Prefix_example", int32(123)) // WritableAggregateRequest | 
+	writableAggregateRequest := *openapiclient.NewWritableAggregateRequest("Prefix_example", *openapiclient.NewRIRRequest("Name_example", "Slug_example")) // WritableAggregateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -440,7 +440,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -509,7 +509,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -697,7 +697,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -769,7 +769,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -839,12 +839,12 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this aggregate.
-	writableAggregateRequest := *openapiclient.NewWritableAggregateRequest("Prefix_example", int32(123)) // WritableAggregateRequest | 
+	writableAggregateRequest := *openapiclient.NewWritableAggregateRequest("Prefix_example", *openapiclient.NewRIRRequest("Name_example", "Slug_example")) // WritableAggregateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -911,7 +911,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -983,7 +983,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -1053,11 +1053,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	aSNRangeRequest := []openapiclient.ASNRangeRequest{*openapiclient.NewASNRangeRequest("Name_example", "Slug_example", *openapiclient.NewNestedRIRRequest("Name_example", "Slug_example"), int64(123), int64(123))} // []ASNRangeRequest | 
+	aSNRangeRequest := []openapiclient.ASNRangeRequest{*openapiclient.NewASNRangeRequest("Name_example", "Slug_example", *openapiclient.NewRIRRequest("Name_example", "Slug_example"), int64(123), int64(123))} // []ASNRangeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1117,11 +1117,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	aSNRangeRequest := []openapiclient.ASNRangeRequest{*openapiclient.NewASNRangeRequest("Name_example", "Slug_example", *openapiclient.NewNestedRIRRequest("Name_example", "Slug_example"), int64(123), int64(123))} // []ASNRangeRequest | 
+	aSNRangeRequest := []openapiclient.ASNRangeRequest{*openapiclient.NewASNRangeRequest("Name_example", "Slug_example", *openapiclient.NewRIRRequest("Name_example", "Slug_example"), int64(123), int64(123))} // []ASNRangeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1183,11 +1183,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	aSNRangeRequest := []openapiclient.ASNRangeRequest{*openapiclient.NewASNRangeRequest("Name_example", "Slug_example", *openapiclient.NewNestedRIRRequest("Name_example", "Slug_example"), int64(123), int64(123))} // []ASNRangeRequest | 
+	aSNRangeRequest := []openapiclient.ASNRangeRequest{*openapiclient.NewASNRangeRequest("Name_example", "Slug_example", *openapiclient.NewRIRRequest("Name_example", "Slug_example"), int64(123), int64(123))} // []ASNRangeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1234,7 +1234,7 @@ Name | Type | Description  | Notes
 
 ## IpamAsnRangesCreate
 
-> ASNRange IpamAsnRangesCreate(ctx).WritableASNRangeRequest(writableASNRangeRequest).Execute()
+> ASNRange IpamAsnRangesCreate(ctx).ASNRangeRequest(aSNRangeRequest).Execute()
 
 
 
@@ -1249,15 +1249,15 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writableASNRangeRequest := *openapiclient.NewWritableASNRangeRequest("Name_example", "Slug_example", int32(123), int64(123), int64(123)) // WritableASNRangeRequest | 
+	aSNRangeRequest := *openapiclient.NewASNRangeRequest("Name_example", "Slug_example", *openapiclient.NewRIRRequest("Name_example", "Slug_example"), int64(123), int64(123)) // ASNRangeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamAsnRangesCreate(context.Background()).WritableASNRangeRequest(writableASNRangeRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamAsnRangesCreate(context.Background()).ASNRangeRequest(aSNRangeRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAsnRangesCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1278,7 +1278,7 @@ Other parameters are passed through a pointer to a apiIpamAsnRangesCreateRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writableASNRangeRequest** | [**WritableASNRangeRequest**](WritableASNRangeRequest.md) |  | 
+ **aSNRangeRequest** | [**ASNRangeRequest**](ASNRangeRequest.md) |  | 
 
 ### Return type
 
@@ -1315,7 +1315,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -1368,7 +1368,7 @@ Name | Type | Description  | Notes
 
 ## IpamAsnRangesList
 
-> PaginatedASNRangeList IpamAsnRangesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).End(end).EndEmpty(endEmpty).EndGt(endGt).EndGte(endGte).EndLt(endLt).EndLte(endLte).EndN(endN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Rir(rir).RirN(rirN).RirId(rirId).RirIdN(rirIdN).Start(start).StartEmpty(startEmpty).StartGt(startGt).StartGte(startGte).StartLt(startLt).StartLte(startLte).StartN(startN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedASNRangeList IpamAsnRangesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).End(end).EndEmpty(endEmpty).EndGt(endGt).EndGte(endGte).EndLt(endLt).EndLte(endLte).EndN(endN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Rir(rir).RirN(rirN).RirId(rirId).RirIdN(rirIdN).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Start(start).StartEmpty(startEmpty).StartGt(startGt).StartGte(startGte).StartLt(startLt).StartLte(startLte).StartN(startN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -1384,7 +1384,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -1448,6 +1448,17 @@ func main() {
 	rirN := []string{"Inner_example"} // []string | RIR (slug) (optional)
 	rirId := []int32{int32(123)} // []int32 | RIR (ID) (optional)
 	rirIdN := []int32{int32(123)} // []int32 | RIR (ID) (optional)
+	slug := []string{"Inner_example"} // []string |  (optional)
+	slugEmpty := true // bool |  (optional)
+	slugIc := []string{"Inner_example"} // []string |  (optional)
+	slugIe := []string{"Inner_example"} // []string |  (optional)
+	slugIew := []string{"Inner_example"} // []string |  (optional)
+	slugIsw := []string{"Inner_example"} // []string |  (optional)
+	slugN := []string{"Inner_example"} // []string |  (optional)
+	slugNic := []string{"Inner_example"} // []string |  (optional)
+	slugNie := []string{"Inner_example"} // []string |  (optional)
+	slugNiew := []string{"Inner_example"} // []string |  (optional)
+	slugNisw := []string{"Inner_example"} // []string |  (optional)
 	start := []int32{int32(123)} // []int32 |  (optional)
 	startEmpty := true // bool |  (optional)
 	startGt := []int32{int32(123)} // []int32 |  (optional)
@@ -1469,7 +1480,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamAsnRangesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).End(end).EndEmpty(endEmpty).EndGt(endGt).EndGte(endGte).EndLt(endLt).EndLte(endLte).EndN(endN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Rir(rir).RirN(rirN).RirId(rirId).RirIdN(rirIdN).Start(start).StartEmpty(startEmpty).StartGt(startGt).StartGte(startGte).StartLt(startLt).StartLte(startLte).StartN(startN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamAsnRangesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).End(end).EndEmpty(endEmpty).EndGt(endGt).EndGte(endGte).EndLt(endLt).EndLte(endLte).EndN(endN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Rir(rir).RirN(rirN).RirId(rirId).RirIdN(rirIdN).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Start(start).StartEmpty(startEmpty).StartGt(startGt).StartGte(startGte).StartLt(startLt).StartLte(startLte).StartN(startN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAsnRangesList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1550,6 +1561,17 @@ Name | Type | Description  | Notes
  **rirN** | **[]string** | RIR (slug) | 
  **rirId** | **[]int32** | RIR (ID) | 
  **rirIdN** | **[]int32** | RIR (ID) | 
+ **slug** | **[]string** |  | 
+ **slugEmpty** | **bool** |  | 
+ **slugIc** | **[]string** |  | 
+ **slugIe** | **[]string** |  | 
+ **slugIew** | **[]string** |  | 
+ **slugIsw** | **[]string** |  | 
+ **slugN** | **[]string** |  | 
+ **slugNic** | **[]string** |  | 
+ **slugNie** | **[]string** |  | 
+ **slugNiew** | **[]string** |  | 
+ **slugNisw** | **[]string** |  | 
  **start** | **[]int32** |  | 
  **startEmpty** | **bool** |  | 
  **startGt** | **[]int32** |  | 
@@ -1589,7 +1611,7 @@ Name | Type | Description  | Notes
 
 ## IpamAsnRangesPartialUpdate
 
-> ASNRange IpamAsnRangesPartialUpdate(ctx, id).PatchedWritableASNRangeRequest(patchedWritableASNRangeRequest).Execute()
+> ASNRange IpamAsnRangesPartialUpdate(ctx, id).PatchedASNRangeRequest(patchedASNRangeRequest).Execute()
 
 
 
@@ -1604,16 +1626,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this ASN range.
-	patchedWritableASNRangeRequest := *openapiclient.NewPatchedWritableASNRangeRequest() // PatchedWritableASNRangeRequest |  (optional)
+	patchedASNRangeRequest := *openapiclient.NewPatchedASNRangeRequest() // PatchedASNRangeRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamAsnRangesPartialUpdate(context.Background(), id).PatchedWritableASNRangeRequest(patchedWritableASNRangeRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamAsnRangesPartialUpdate(context.Background(), id).PatchedASNRangeRequest(patchedASNRangeRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAsnRangesPartialUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1639,7 +1661,7 @@ Other parameters are passed through a pointer to a apiIpamAsnRangesPartialUpdate
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **patchedWritableASNRangeRequest** | [**PatchedWritableASNRangeRequest**](PatchedWritableASNRangeRequest.md) |  | 
+ **patchedASNRangeRequest** | [**PatchedASNRangeRequest**](PatchedASNRangeRequest.md) |  | 
 
 ### Return type
 
@@ -1676,7 +1698,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -1731,7 +1753,7 @@ Name | Type | Description  | Notes
 
 ## IpamAsnRangesUpdate
 
-> ASNRange IpamAsnRangesUpdate(ctx, id).WritableASNRangeRequest(writableASNRangeRequest).Execute()
+> ASNRange IpamAsnRangesUpdate(ctx, id).ASNRangeRequest(aSNRangeRequest).Execute()
 
 
 
@@ -1746,16 +1768,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this ASN range.
-	writableASNRangeRequest := *openapiclient.NewWritableASNRangeRequest("Name_example", "Slug_example", int32(123), int64(123), int64(123)) // WritableASNRangeRequest | 
+	aSNRangeRequest := *openapiclient.NewASNRangeRequest("Name_example", "Slug_example", *openapiclient.NewRIRRequest("Name_example", "Slug_example"), int64(123), int64(123)) // ASNRangeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamAsnRangesUpdate(context.Background(), id).WritableASNRangeRequest(writableASNRangeRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamAsnRangesUpdate(context.Background(), id).ASNRangeRequest(aSNRangeRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAsnRangesUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1781,7 +1803,7 @@ Other parameters are passed through a pointer to a apiIpamAsnRangesUpdateRequest
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **writableASNRangeRequest** | [**WritableASNRangeRequest**](WritableASNRangeRequest.md) |  | 
+ **aSNRangeRequest** | [**ASNRangeRequest**](ASNRangeRequest.md) |  | 
 
 ### Return type
 
@@ -1818,7 +1840,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -1882,7 +1904,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -1948,7 +1970,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -1999,7 +2021,7 @@ Name | Type | Description  | Notes
 
 ## IpamAsnsCreate
 
-> ASN IpamAsnsCreate(ctx).WritableASNRequest(writableASNRequest).Execute()
+> ASN IpamAsnsCreate(ctx).ASNRequest(aSNRequest).Execute()
 
 
 
@@ -2014,15 +2036,15 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writableASNRequest := *openapiclient.NewWritableASNRequest(int64(123), int32(123)) // WritableASNRequest | 
+	aSNRequest := *openapiclient.NewASNRequest(int64(123)) // ASNRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamAsnsCreate(context.Background()).WritableASNRequest(writableASNRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamAsnsCreate(context.Background()).ASNRequest(aSNRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAsnsCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2043,7 +2065,7 @@ Other parameters are passed through a pointer to a apiIpamAsnsCreateRequest stru
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writableASNRequest** | [**WritableASNRequest**](WritableASNRequest.md) |  | 
+ **aSNRequest** | [**ASNRequest**](ASNRequest.md) |  | 
 
 ### Return type
 
@@ -2080,7 +2102,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -2133,7 +2155,7 @@ Name | Type | Description  | Notes
 
 ## IpamAsnsList
 
-> PaginatedASNList IpamAsnsList(ctx).Asn(asn).AsnEmpty(asnEmpty).AsnGt(asnGt).AsnGte(asnGte).AsnLt(asnLt).AsnLte(asnLte).AsnN(asnN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Q(q).Rir(rir).RirN(rirN).RirId(rirId).RirIdN(rirIdN).Site(site).SiteN(siteN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedASNList IpamAsnsList(ctx).Asn(asn).AsnEmpty(asnEmpty).AsnGt(asnGt).AsnGte(asnGte).AsnLt(asnLt).AsnLte(asnLte).AsnN(asnN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Provider(provider).ProviderN(providerN).ProviderId(providerId).ProviderIdN(providerIdN).Q(q).Rir(rir).RirN(rirN).RirId(rirId).RirIdN(rirIdN).Site(site).SiteN(siteN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -2149,7 +2171,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -2197,6 +2219,10 @@ func main() {
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	provider := []string{"Inner_example"} // []string | Provider (slug) (optional)
+	providerN := []string{"Inner_example"} // []string | Provider (slug) (optional)
+	providerId := []int32{int32(123)} // []int32 | Provider (ID) (optional)
+	providerIdN := []int32{int32(123)} // []int32 | Provider (ID) (optional)
 	q := "q_example" // string | Search (optional)
 	rir := []string{"Inner_example"} // []string | RIR (slug) (optional)
 	rirN := []string{"Inner_example"} // []string | RIR (slug) (optional)
@@ -2220,7 +2246,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamAsnsList(context.Background()).Asn(asn).AsnEmpty(asnEmpty).AsnGt(asnGt).AsnGte(asnGte).AsnLt(asnLt).AsnLte(asnLte).AsnN(asnN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Q(q).Rir(rir).RirN(rirN).RirId(rirId).RirIdN(rirIdN).Site(site).SiteN(siteN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamAsnsList(context.Background()).Asn(asn).AsnEmpty(asnEmpty).AsnGt(asnGt).AsnGte(asnGte).AsnLt(asnLt).AsnLte(asnLte).AsnN(asnN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Provider(provider).ProviderN(providerN).ProviderId(providerId).ProviderIdN(providerIdN).Q(q).Rir(rir).RirN(rirN).RirId(rirId).RirIdN(rirIdN).Site(site).SiteN(siteN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAsnsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2285,6 +2311,10 @@ Name | Type | Description  | Notes
  **modifiedByRequest** | **string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **provider** | **[]string** | Provider (slug) | 
+ **providerN** | **[]string** | Provider (slug) | 
+ **providerId** | **[]int32** | Provider (ID) | 
+ **providerIdN** | **[]int32** | Provider (ID) | 
  **q** | **string** | Search | 
  **rir** | **[]string** | RIR (slug) | 
  **rirN** | **[]string** | RIR (slug) | 
@@ -2326,7 +2356,7 @@ Name | Type | Description  | Notes
 
 ## IpamAsnsPartialUpdate
 
-> ASN IpamAsnsPartialUpdate(ctx, id).PatchedWritableASNRequest(patchedWritableASNRequest).Execute()
+> ASN IpamAsnsPartialUpdate(ctx, id).PatchedASNRequest(patchedASNRequest).Execute()
 
 
 
@@ -2341,16 +2371,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this ASN.
-	patchedWritableASNRequest := *openapiclient.NewPatchedWritableASNRequest() // PatchedWritableASNRequest |  (optional)
+	patchedASNRequest := *openapiclient.NewPatchedASNRequest() // PatchedASNRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamAsnsPartialUpdate(context.Background(), id).PatchedWritableASNRequest(patchedWritableASNRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamAsnsPartialUpdate(context.Background(), id).PatchedASNRequest(patchedASNRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAsnsPartialUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2376,7 +2406,7 @@ Other parameters are passed through a pointer to a apiIpamAsnsPartialUpdateReque
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **patchedWritableASNRequest** | [**PatchedWritableASNRequest**](PatchedWritableASNRequest.md) |  | 
+ **patchedASNRequest** | [**PatchedASNRequest**](PatchedASNRequest.md) |  | 
 
 ### Return type
 
@@ -2413,7 +2443,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -2468,7 +2498,7 @@ Name | Type | Description  | Notes
 
 ## IpamAsnsUpdate
 
-> ASN IpamAsnsUpdate(ctx, id).WritableASNRequest(writableASNRequest).Execute()
+> ASN IpamAsnsUpdate(ctx, id).ASNRequest(aSNRequest).Execute()
 
 
 
@@ -2483,16 +2513,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this ASN.
-	writableASNRequest := *openapiclient.NewWritableASNRequest(int64(123), int32(123)) // WritableASNRequest | 
+	aSNRequest := *openapiclient.NewASNRequest(int64(123)) // ASNRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamAsnsUpdate(context.Background(), id).WritableASNRequest(writableASNRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamAsnsUpdate(context.Background(), id).ASNRequest(aSNRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamAsnsUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2518,7 +2548,7 @@ Other parameters are passed through a pointer to a apiIpamAsnsUpdateRequest stru
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **writableASNRequest** | [**WritableASNRequest**](WritableASNRequest.md) |  | 
+ **aSNRequest** | [**ASNRequest**](ASNRequest.md) |  | 
 
 ### Return type
 
@@ -2555,11 +2585,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	fHRPGroupAssignmentRequest := []openapiclient.FHRPGroupAssignmentRequest{*openapiclient.NewFHRPGroupAssignmentRequest(*openapiclient.NewNestedFHRPGroupRequest(openapiclient.FHRPGroup_protocol("vrrp2"), int32(123)), "InterfaceType_example", int64(123), int32(123))} // []FHRPGroupAssignmentRequest | 
+	fHRPGroupAssignmentRequest := []openapiclient.FHRPGroupAssignmentRequest{*openapiclient.NewFHRPGroupAssignmentRequest(*openapiclient.NewFHRPGroupRequest(openapiclient.FHRPGroup_protocol("vrrp2"), int32(123)), "InterfaceType_example", int64(123), int32(123))} // []FHRPGroupAssignmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2619,11 +2649,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	fHRPGroupAssignmentRequest := []openapiclient.FHRPGroupAssignmentRequest{*openapiclient.NewFHRPGroupAssignmentRequest(*openapiclient.NewNestedFHRPGroupRequest(openapiclient.FHRPGroup_protocol("vrrp2"), int32(123)), "InterfaceType_example", int64(123), int32(123))} // []FHRPGroupAssignmentRequest | 
+	fHRPGroupAssignmentRequest := []openapiclient.FHRPGroupAssignmentRequest{*openapiclient.NewFHRPGroupAssignmentRequest(*openapiclient.NewFHRPGroupRequest(openapiclient.FHRPGroup_protocol("vrrp2"), int32(123)), "InterfaceType_example", int64(123), int32(123))} // []FHRPGroupAssignmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2685,11 +2715,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	fHRPGroupAssignmentRequest := []openapiclient.FHRPGroupAssignmentRequest{*openapiclient.NewFHRPGroupAssignmentRequest(*openapiclient.NewNestedFHRPGroupRequest(openapiclient.FHRPGroup_protocol("vrrp2"), int32(123)), "InterfaceType_example", int64(123), int32(123))} // []FHRPGroupAssignmentRequest | 
+	fHRPGroupAssignmentRequest := []openapiclient.FHRPGroupAssignmentRequest{*openapiclient.NewFHRPGroupAssignmentRequest(*openapiclient.NewFHRPGroupRequest(openapiclient.FHRPGroup_protocol("vrrp2"), int32(123)), "InterfaceType_example", int64(123), int32(123))} // []FHRPGroupAssignmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2736,7 +2766,7 @@ Name | Type | Description  | Notes
 
 ## IpamFhrpGroupAssignmentsCreate
 
-> FHRPGroupAssignment IpamFhrpGroupAssignmentsCreate(ctx).WritableFHRPGroupAssignmentRequest(writableFHRPGroupAssignmentRequest).Execute()
+> FHRPGroupAssignment IpamFhrpGroupAssignmentsCreate(ctx).FHRPGroupAssignmentRequest(fHRPGroupAssignmentRequest).Execute()
 
 
 
@@ -2751,15 +2781,15 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writableFHRPGroupAssignmentRequest := *openapiclient.NewWritableFHRPGroupAssignmentRequest(int32(123), "InterfaceType_example", int64(123), int32(123)) // WritableFHRPGroupAssignmentRequest | 
+	fHRPGroupAssignmentRequest := *openapiclient.NewFHRPGroupAssignmentRequest(*openapiclient.NewFHRPGroupRequest(openapiclient.FHRPGroup_protocol("vrrp2"), int32(123)), "InterfaceType_example", int64(123), int32(123)) // FHRPGroupAssignmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamFhrpGroupAssignmentsCreate(context.Background()).WritableFHRPGroupAssignmentRequest(writableFHRPGroupAssignmentRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamFhrpGroupAssignmentsCreate(context.Background()).FHRPGroupAssignmentRequest(fHRPGroupAssignmentRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamFhrpGroupAssignmentsCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2780,7 +2810,7 @@ Other parameters are passed through a pointer to a apiIpamFhrpGroupAssignmentsCr
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writableFHRPGroupAssignmentRequest** | [**WritableFHRPGroupAssignmentRequest**](WritableFHRPGroupAssignmentRequest.md) |  | 
+ **fHRPGroupAssignmentRequest** | [**FHRPGroupAssignmentRequest**](FHRPGroupAssignmentRequest.md) |  | 
 
 ### Return type
 
@@ -2817,7 +2847,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -2886,7 +2916,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -3033,7 +3063,7 @@ Name | Type | Description  | Notes
 
 ## IpamFhrpGroupAssignmentsPartialUpdate
 
-> FHRPGroupAssignment IpamFhrpGroupAssignmentsPartialUpdate(ctx, id).PatchedWritableFHRPGroupAssignmentRequest(patchedWritableFHRPGroupAssignmentRequest).Execute()
+> FHRPGroupAssignment IpamFhrpGroupAssignmentsPartialUpdate(ctx, id).PatchedFHRPGroupAssignmentRequest(patchedFHRPGroupAssignmentRequest).Execute()
 
 
 
@@ -3048,16 +3078,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this FHRP group assignment.
-	patchedWritableFHRPGroupAssignmentRequest := *openapiclient.NewPatchedWritableFHRPGroupAssignmentRequest() // PatchedWritableFHRPGroupAssignmentRequest |  (optional)
+	patchedFHRPGroupAssignmentRequest := *openapiclient.NewPatchedFHRPGroupAssignmentRequest() // PatchedFHRPGroupAssignmentRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamFhrpGroupAssignmentsPartialUpdate(context.Background(), id).PatchedWritableFHRPGroupAssignmentRequest(patchedWritableFHRPGroupAssignmentRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamFhrpGroupAssignmentsPartialUpdate(context.Background(), id).PatchedFHRPGroupAssignmentRequest(patchedFHRPGroupAssignmentRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamFhrpGroupAssignmentsPartialUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3083,7 +3113,7 @@ Other parameters are passed through a pointer to a apiIpamFhrpGroupAssignmentsPa
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **patchedWritableFHRPGroupAssignmentRequest** | [**PatchedWritableFHRPGroupAssignmentRequest**](PatchedWritableFHRPGroupAssignmentRequest.md) |  | 
+ **patchedFHRPGroupAssignmentRequest** | [**PatchedFHRPGroupAssignmentRequest**](PatchedFHRPGroupAssignmentRequest.md) |  | 
 
 ### Return type
 
@@ -3120,7 +3150,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -3175,7 +3205,7 @@ Name | Type | Description  | Notes
 
 ## IpamFhrpGroupAssignmentsUpdate
 
-> FHRPGroupAssignment IpamFhrpGroupAssignmentsUpdate(ctx, id).WritableFHRPGroupAssignmentRequest(writableFHRPGroupAssignmentRequest).Execute()
+> FHRPGroupAssignment IpamFhrpGroupAssignmentsUpdate(ctx, id).FHRPGroupAssignmentRequest(fHRPGroupAssignmentRequest).Execute()
 
 
 
@@ -3190,16 +3220,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this FHRP group assignment.
-	writableFHRPGroupAssignmentRequest := *openapiclient.NewWritableFHRPGroupAssignmentRequest(int32(123), "InterfaceType_example", int64(123), int32(123)) // WritableFHRPGroupAssignmentRequest | 
+	fHRPGroupAssignmentRequest := *openapiclient.NewFHRPGroupAssignmentRequest(*openapiclient.NewFHRPGroupRequest(openapiclient.FHRPGroup_protocol("vrrp2"), int32(123)), "InterfaceType_example", int64(123), int32(123)) // FHRPGroupAssignmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamFhrpGroupAssignmentsUpdate(context.Background(), id).WritableFHRPGroupAssignmentRequest(writableFHRPGroupAssignmentRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamFhrpGroupAssignmentsUpdate(context.Background(), id).FHRPGroupAssignmentRequest(fHRPGroupAssignmentRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamFhrpGroupAssignmentsUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3225,7 +3255,7 @@ Other parameters are passed through a pointer to a apiIpamFhrpGroupAssignmentsUp
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **writableFHRPGroupAssignmentRequest** | [**WritableFHRPGroupAssignmentRequest**](WritableFHRPGroupAssignmentRequest.md) |  | 
+ **fHRPGroupAssignmentRequest** | [**FHRPGroupAssignmentRequest**](FHRPGroupAssignmentRequest.md) |  | 
 
 ### Return type
 
@@ -3262,7 +3292,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -3326,7 +3356,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -3392,7 +3422,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -3458,7 +3488,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -3524,7 +3554,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -3593,7 +3623,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -3807,7 +3837,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -3879,7 +3909,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -3949,7 +3979,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -4021,7 +4051,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -4085,7 +4115,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -4151,7 +4181,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -4217,7 +4247,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -4283,7 +4313,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -4336,7 +4366,7 @@ Name | Type | Description  | Notes
 
 ## IpamIpAddressesList
 
-> PaginatedIPAddressList IpamIpAddressesList(ctx).Address(address).Assigned(assigned).AssignedToInterface(assignedToInterface).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceId(deviceId).DnsName(dnsName).DnsNameEmpty(dnsNameEmpty).DnsNameIc(dnsNameIc).DnsNameIe(dnsNameIe).DnsNameIew(dnsNameIew).DnsNameIsw(dnsNameIsw).DnsNameN(dnsNameN).DnsNameNic(dnsNameNic).DnsNameNie(dnsNameNie).DnsNameNiew(dnsNameNiew).DnsNameNisw(dnsNameNisw).Family(family).FhrpgroupId(fhrpgroupId).FhrpgroupIdN(fhrpgroupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interface_(interface_).InterfaceN(interfaceN).InterfaceId(interfaceId).InterfaceIdN(interfaceIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MaskLength(maskLength).MaskLengthGte(maskLengthGte).MaskLengthLte(maskLengthLte).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Parent(parent).PresentInVrf(presentInVrf).PresentInVrfId(presentInVrfId).Q(q).Role(role).RoleN(roleN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineId(virtualMachineId).Vminterface(vminterface).VminterfaceN(vminterfaceN).VminterfaceId(vminterfaceId).VminterfaceIdN(vminterfaceIdN).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Execute()
+> PaginatedIPAddressList IpamIpAddressesList(ctx).Address(address).Assigned(assigned).AssignedObjectId(assignedObjectId).AssignedObjectIdEmpty(assignedObjectIdEmpty).AssignedObjectIdGt(assignedObjectIdGt).AssignedObjectIdGte(assignedObjectIdGte).AssignedObjectIdLt(assignedObjectIdLt).AssignedObjectIdLte(assignedObjectIdLte).AssignedObjectIdN(assignedObjectIdN).AssignedObjectType(assignedObjectType).AssignedObjectTypeN(assignedObjectTypeN).AssignedToInterface(assignedToInterface).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceId(deviceId).DnsName(dnsName).DnsNameEmpty(dnsNameEmpty).DnsNameIc(dnsNameIc).DnsNameIe(dnsNameIe).DnsNameIew(dnsNameIew).DnsNameIsw(dnsNameIsw).DnsNameN(dnsNameN).DnsNameNic(dnsNameNic).DnsNameNie(dnsNameNie).DnsNameNiew(dnsNameNiew).DnsNameNisw(dnsNameNisw).Family(family).FhrpgroupId(fhrpgroupId).FhrpgroupIdN(fhrpgroupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interface_(interface_).InterfaceN(interfaceN).InterfaceId(interfaceId).InterfaceIdN(interfaceIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MaskLength(maskLength).MaskLengthGte(maskLengthGte).MaskLengthLte(maskLengthLte).ModifiedByRequest(modifiedByRequest).NatInsideId(natInsideId).NatInsideIdN(natInsideIdN).Offset(offset).Ordering(ordering).Parent(parent).PresentInVrf(presentInVrf).PresentInVrfId(presentInVrfId).Q(q).Role(role).RoleN(roleN).ServiceId(serviceId).ServiceIdN(serviceIdN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineId(virtualMachineId).Vminterface(vminterface).VminterfaceN(vminterfaceN).VminterfaceId(vminterfaceId).VminterfaceIdN(vminterfaceIdN).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Execute()
 
 
 
@@ -4352,12 +4382,21 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	address := []string{"Inner_example"} // []string |  (optional)
 	assigned := true // bool | Is assigned (optional)
+	assignedObjectId := []int32{int32(123)} // []int32 |  (optional)
+	assignedObjectIdEmpty := true // bool |  (optional)
+	assignedObjectIdGt := []int32{int32(123)} // []int32 |  (optional)
+	assignedObjectIdGte := []int32{int32(123)} // []int32 |  (optional)
+	assignedObjectIdLt := []int32{int32(123)} // []int32 |  (optional)
+	assignedObjectIdLte := []int32{int32(123)} // []int32 |  (optional)
+	assignedObjectIdN := []int32{int32(123)} // []int32 |  (optional)
+	assignedObjectType := int32(56) // int32 |  (optional)
+	assignedObjectTypeN := int32(56) // int32 |  (optional)
 	assignedToInterface := true // bool | Is assigned to an interface (optional)
 	created := []time.Time{time.Now()} // []time.Time |  (optional)
 	createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -4417,6 +4456,8 @@ func main() {
 	maskLengthGte := float32(8.14) // float32 |  (optional)
 	maskLengthLte := float32(8.14) // float32 |  (optional)
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+	natInsideId := []int32{int32(123)} // []int32 | NAT inside IP address (ID) (optional)
+	natInsideIdN := []int32{int32(123)} // []int32 | NAT inside IP address (ID) (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
 	parent := []string{"Inner_example"} // []string |  (optional)
@@ -4425,6 +4466,8 @@ func main() {
 	q := "q_example" // string | Search (optional)
 	role := []string{"Inner_example"} // []string | The functional role of this IP (optional)
 	roleN := []string{"Inner_example"} // []string | The functional role of this IP (optional)
+	serviceId := []int32{int32(123)} // []int32 | Service (ID) (optional)
+	serviceIdN := []int32{int32(123)} // []int32 | Service (ID) (optional)
 	status := []string{"Inner_example"} // []string | The operational status of this IP (optional)
 	statusN := []string{"Inner_example"} // []string | The operational status of this IP (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
@@ -4451,7 +4494,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamIpAddressesList(context.Background()).Address(address).Assigned(assigned).AssignedToInterface(assignedToInterface).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceId(deviceId).DnsName(dnsName).DnsNameEmpty(dnsNameEmpty).DnsNameIc(dnsNameIc).DnsNameIe(dnsNameIe).DnsNameIew(dnsNameIew).DnsNameIsw(dnsNameIsw).DnsNameN(dnsNameN).DnsNameNic(dnsNameNic).DnsNameNie(dnsNameNie).DnsNameNiew(dnsNameNiew).DnsNameNisw(dnsNameNisw).Family(family).FhrpgroupId(fhrpgroupId).FhrpgroupIdN(fhrpgroupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interface_(interface_).InterfaceN(interfaceN).InterfaceId(interfaceId).InterfaceIdN(interfaceIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MaskLength(maskLength).MaskLengthGte(maskLengthGte).MaskLengthLte(maskLengthLte).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Parent(parent).PresentInVrf(presentInVrf).PresentInVrfId(presentInVrfId).Q(q).Role(role).RoleN(roleN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineId(virtualMachineId).Vminterface(vminterface).VminterfaceN(vminterfaceN).VminterfaceId(vminterfaceId).VminterfaceIdN(vminterfaceIdN).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamIpAddressesList(context.Background()).Address(address).Assigned(assigned).AssignedObjectId(assignedObjectId).AssignedObjectIdEmpty(assignedObjectIdEmpty).AssignedObjectIdGt(assignedObjectIdGt).AssignedObjectIdGte(assignedObjectIdGte).AssignedObjectIdLt(assignedObjectIdLt).AssignedObjectIdLte(assignedObjectIdLte).AssignedObjectIdN(assignedObjectIdN).AssignedObjectType(assignedObjectType).AssignedObjectTypeN(assignedObjectTypeN).AssignedToInterface(assignedToInterface).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceId(deviceId).DnsName(dnsName).DnsNameEmpty(dnsNameEmpty).DnsNameIc(dnsNameIc).DnsNameIe(dnsNameIe).DnsNameIew(dnsNameIew).DnsNameIsw(dnsNameIsw).DnsNameN(dnsNameN).DnsNameNic(dnsNameNic).DnsNameNie(dnsNameNie).DnsNameNiew(dnsNameNiew).DnsNameNisw(dnsNameNisw).Family(family).FhrpgroupId(fhrpgroupId).FhrpgroupIdN(fhrpgroupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interface_(interface_).InterfaceN(interfaceN).InterfaceId(interfaceId).InterfaceIdN(interfaceIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MaskLength(maskLength).MaskLengthGte(maskLengthGte).MaskLengthLte(maskLengthLte).ModifiedByRequest(modifiedByRequest).NatInsideId(natInsideId).NatInsideIdN(natInsideIdN).Offset(offset).Ordering(ordering).Parent(parent).PresentInVrf(presentInVrf).PresentInVrfId(presentInVrfId).Q(q).Role(role).RoleN(roleN).ServiceId(serviceId).ServiceIdN(serviceIdN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineId(virtualMachineId).Vminterface(vminterface).VminterfaceN(vminterfaceN).VminterfaceId(vminterfaceId).VminterfaceIdN(vminterfaceIdN).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamIpAddressesList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4474,6 +4517,15 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **address** | **[]string** |  | 
  **assigned** | **bool** | Is assigned | 
+ **assignedObjectId** | **[]int32** |  | 
+ **assignedObjectIdEmpty** | **bool** |  | 
+ **assignedObjectIdGt** | **[]int32** |  | 
+ **assignedObjectIdGte** | **[]int32** |  | 
+ **assignedObjectIdLt** | **[]int32** |  | 
+ **assignedObjectIdLte** | **[]int32** |  | 
+ **assignedObjectIdN** | **[]int32** |  | 
+ **assignedObjectType** | **int32** |  | 
+ **assignedObjectTypeN** | **int32** |  | 
  **assignedToInterface** | **bool** | Is assigned to an interface | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
  **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
@@ -4533,6 +4585,8 @@ Name | Type | Description  | Notes
  **maskLengthGte** | **float32** |  | 
  **maskLengthLte** | **float32** |  | 
  **modifiedByRequest** | **string** |  | 
+ **natInsideId** | **[]int32** | NAT inside IP address (ID) | 
+ **natInsideIdN** | **[]int32** | NAT inside IP address (ID) | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **parent** | **[]string** |  | 
@@ -4541,6 +4595,8 @@ Name | Type | Description  | Notes
  **q** | **string** | Search | 
  **role** | **[]string** | The functional role of this IP | 
  **roleN** | **[]string** | The functional role of this IP | 
+ **serviceId** | **[]int32** | Service (ID) | 
+ **serviceIdN** | **[]int32** | Service (ID) | 
  **status** | **[]string** | The operational status of this IP | 
  **statusN** | **[]string** | The operational status of this IP | 
  **tag** | **[]string** |  | 
@@ -4600,7 +4656,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -4672,7 +4728,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -4742,7 +4798,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -4814,7 +4870,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -4886,7 +4942,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -4956,7 +5012,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -5020,7 +5076,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -5086,7 +5142,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -5152,7 +5208,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -5218,7 +5274,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -5271,7 +5327,7 @@ Name | Type | Description  | Notes
 
 ## IpamIpRangesList
 
-> PaginatedIPRangeList IpamIpRangesList(ctx).Contains(contains).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).EndAddress(endAddress).Family(family).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MarkUtilized(markUtilized).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Parent(parent).Q(q).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).StartAddress(startAddress).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Execute()
+> PaginatedIPRangeList IpamIpRangesList(ctx).Contains(contains).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).EndAddress(endAddress).Family(family).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MarkUtilized(markUtilized).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Parent(parent).Q(q).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Size(size).SizeEmpty(sizeEmpty).SizeGt(sizeGt).SizeGte(sizeGte).SizeLt(sizeLt).SizeLte(sizeLte).SizeN(sizeN).StartAddress(startAddress).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Execute()
 
 
 
@@ -5287,7 +5343,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -5338,6 +5394,13 @@ func main() {
 	roleN := []string{"Inner_example"} // []string | Role (slug) (optional)
 	roleId := []*int32{int32(123)} // []*int32 | Role (ID) (optional)
 	roleIdN := []*int32{int32(123)} // []*int32 | Role (ID) (optional)
+	size := []int32{int32(123)} // []int32 |  (optional)
+	sizeEmpty := true // bool |  (optional)
+	sizeGt := []int32{int32(123)} // []int32 |  (optional)
+	sizeGte := []int32{int32(123)} // []int32 |  (optional)
+	sizeLt := []int32{int32(123)} // []int32 |  (optional)
+	sizeLte := []int32{int32(123)} // []int32 |  (optional)
+	sizeN := []int32{int32(123)} // []int32 |  (optional)
 	startAddress := []string{"Inner_example"} // []string |  (optional)
 	status := []string{"Inner_example"} // []string | Operational status of this range (optional)
 	statusN := []string{"Inner_example"} // []string | Operational status of this range (optional)
@@ -5359,7 +5422,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamIpRangesList(context.Background()).Contains(contains).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).EndAddress(endAddress).Family(family).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MarkUtilized(markUtilized).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Parent(parent).Q(q).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).StartAddress(startAddress).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamIpRangesList(context.Background()).Contains(contains).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).EndAddress(endAddress).Family(family).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MarkUtilized(markUtilized).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Parent(parent).Q(q).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Size(size).SizeEmpty(sizeEmpty).SizeGt(sizeGt).SizeGte(sizeGte).SizeLt(sizeLt).SizeLte(sizeLte).SizeN(sizeN).StartAddress(startAddress).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamIpRangesList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5427,6 +5490,13 @@ Name | Type | Description  | Notes
  **roleN** | **[]string** | Role (slug) | 
  **roleId** | **[]int32** | Role (ID) | 
  **roleIdN** | **[]int32** | Role (ID) | 
+ **size** | **[]int32** |  | 
+ **sizeEmpty** | **bool** |  | 
+ **sizeGt** | **[]int32** |  | 
+ **sizeGte** | **[]int32** |  | 
+ **sizeLt** | **[]int32** |  | 
+ **sizeLte** | **[]int32** |  | 
+ **sizeN** | **[]int32** |  | 
  **startAddress** | **[]string** |  | 
  **status** | **[]string** | Operational status of this range | 
  **statusN** | **[]string** | Operational status of this range | 
@@ -5481,7 +5551,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -5553,7 +5623,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -5623,7 +5693,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -5695,7 +5765,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -5767,7 +5837,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -5837,7 +5907,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -5909,7 +5979,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -5979,7 +6049,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -6043,7 +6113,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -6109,7 +6179,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -6175,7 +6245,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -6241,7 +6311,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -6310,7 +6380,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -6586,7 +6656,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -6658,7 +6728,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -6728,7 +6798,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -6800,7 +6870,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -6864,7 +6934,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -6930,7 +7000,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -6996,7 +7066,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -7062,7 +7132,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -7131,7 +7201,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -7323,7 +7393,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -7395,7 +7465,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -7465,7 +7535,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -7537,7 +7607,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -7601,7 +7671,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -7667,7 +7737,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -7733,7 +7803,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -7799,7 +7869,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -7852,7 +7922,7 @@ Name | Type | Description  | Notes
 
 ## IpamRolesList
 
-> PaginatedRoleList IpamRolesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedRoleList IpamRolesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Weight(weight).WeightEmpty(weightEmpty).WeightGt(weightGt).WeightGte(weightGte).WeightLt(weightLt).WeightLte(weightLte).WeightN(weightN).Execute()
 
 
 
@@ -7868,7 +7938,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -7935,10 +8005,17 @@ func main() {
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+	weight := []int32{int32(123)} // []int32 |  (optional)
+	weightEmpty := true // bool |  (optional)
+	weightGt := []int32{int32(123)} // []int32 |  (optional)
+	weightGte := []int32{int32(123)} // []int32 |  (optional)
+	weightLt := []int32{int32(123)} // []int32 |  (optional)
+	weightLte := []int32{int32(123)} // []int32 |  (optional)
+	weightN := []int32{int32(123)} // []int32 |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamRolesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamRolesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Weight(weight).WeightEmpty(weightEmpty).WeightGt(weightGt).WeightGte(weightGte).WeightLt(weightLt).WeightLte(weightLte).WeightN(weightN).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamRolesList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8022,6 +8099,13 @@ Name | Type | Description  | Notes
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
  **updatedByRequest** | **string** |  | 
+ **weight** | **[]int32** |  | 
+ **weightEmpty** | **bool** |  | 
+ **weightGt** | **[]int32** |  | 
+ **weightGte** | **[]int32** |  | 
+ **weightLt** | **[]int32** |  | 
+ **weightLte** | **[]int32** |  | 
+ **weightN** | **[]int32** |  | 
 
 ### Return type
 
@@ -8058,7 +8142,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -8130,7 +8214,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -8200,7 +8284,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -8272,7 +8356,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -8336,7 +8420,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -8402,7 +8486,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -8453,7 +8537,7 @@ Name | Type | Description  | Notes
 
 ## IpamRouteTargetsCreate
 
-> RouteTarget IpamRouteTargetsCreate(ctx).WritableRouteTargetRequest(writableRouteTargetRequest).Execute()
+> RouteTarget IpamRouteTargetsCreate(ctx).RouteTargetRequest(routeTargetRequest).Execute()
 
 
 
@@ -8468,15 +8552,15 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writableRouteTargetRequest := *openapiclient.NewWritableRouteTargetRequest("Name_example") // WritableRouteTargetRequest | 
+	routeTargetRequest := *openapiclient.NewRouteTargetRequest("Name_example") // RouteTargetRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamRouteTargetsCreate(context.Background()).WritableRouteTargetRequest(writableRouteTargetRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamRouteTargetsCreate(context.Background()).RouteTargetRequest(routeTargetRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamRouteTargetsCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8497,7 +8581,7 @@ Other parameters are passed through a pointer to a apiIpamRouteTargetsCreateRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writableRouteTargetRequest** | [**WritableRouteTargetRequest**](WritableRouteTargetRequest.md) |  | 
+ **routeTargetRequest** | [**RouteTargetRequest**](RouteTargetRequest.md) |  | 
 
 ### Return type
 
@@ -8534,7 +8618,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -8587,7 +8671,7 @@ Name | Type | Description  | Notes
 
 ## IpamRouteTargetsList
 
-> PaginatedRouteTargetList IpamRouteTargetsList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).ExportingVrf(exportingVrf).ExportingVrfN(exportingVrfN).ExportingVrfId(exportingVrfId).ExportingVrfIdN(exportingVrfIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).ImportingVrf(importingVrf).ImportingVrfN(importingVrfN).ImportingVrfId(importingVrfId).ImportingVrfIdN(importingVrfIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedRouteTargetList IpamRouteTargetsList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).ExportingL2vpn(exportingL2vpn).ExportingL2vpnN(exportingL2vpnN).ExportingL2vpnId(exportingL2vpnId).ExportingL2vpnIdN(exportingL2vpnIdN).ExportingVrf(exportingVrf).ExportingVrfN(exportingVrfN).ExportingVrfId(exportingVrfId).ExportingVrfIdN(exportingVrfIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).ImportingL2vpn(importingL2vpn).ImportingL2vpnN(importingL2vpnN).ImportingL2vpnId(importingL2vpnId).ImportingL2vpnIdN(importingL2vpnIdN).ImportingVrf(importingVrf).ImportingVrfN(importingVrfN).ImportingVrfId(importingVrfId).ImportingVrfIdN(importingVrfIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -8603,7 +8687,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -8626,6 +8710,10 @@ func main() {
 	descriptionNie := []string{"Inner_example"} // []string |  (optional)
 	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
 	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
+	exportingL2vpn := []*int64{int64(123)} // []*int64 | Exporting L2VPN (identifier) (optional)
+	exportingL2vpnN := []*int64{int64(123)} // []*int64 | Exporting L2VPN (identifier) (optional)
+	exportingL2vpnId := []int32{int32(123)} // []int32 | Exporting L2VPN (optional)
+	exportingL2vpnIdN := []int32{int32(123)} // []int32 | Exporting L2VPN (optional)
 	exportingVrf := []*string{"Inner_example"} // []*string | Export VRF (RD) (optional)
 	exportingVrfN := []*string{"Inner_example"} // []*string | Export VRF (RD) (optional)
 	exportingVrfId := []int32{int32(123)} // []int32 | Exporting VRF (optional)
@@ -8637,6 +8725,10 @@ func main() {
 	idLt := []int32{int32(123)} // []int32 |  (optional)
 	idLte := []int32{int32(123)} // []int32 |  (optional)
 	idN := []int32{int32(123)} // []int32 |  (optional)
+	importingL2vpn := []*int64{int64(123)} // []*int64 | Importing L2VPN (identifier) (optional)
+	importingL2vpnN := []*int64{int64(123)} // []*int64 | Importing L2VPN (identifier) (optional)
+	importingL2vpnId := []int32{int32(123)} // []int32 | Importing L2VPN (optional)
+	importingL2vpnIdN := []int32{int32(123)} // []int32 | Importing L2VPN (optional)
 	importingVrf := []*string{"Inner_example"} // []*string | Import VRF (RD) (optional)
 	importingVrfN := []*string{"Inner_example"} // []*string | Import VRF (RD) (optional)
 	importingVrfId := []int32{int32(123)} // []int32 | Importing VRF (optional)
@@ -8678,7 +8770,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamRouteTargetsList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).ExportingVrf(exportingVrf).ExportingVrfN(exportingVrfN).ExportingVrfId(exportingVrfId).ExportingVrfIdN(exportingVrfIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).ImportingVrf(importingVrf).ImportingVrfN(importingVrfN).ImportingVrfId(importingVrfId).ImportingVrfIdN(importingVrfIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamRouteTargetsList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).ExportingL2vpn(exportingL2vpn).ExportingL2vpnN(exportingL2vpnN).ExportingL2vpnId(exportingL2vpnId).ExportingL2vpnIdN(exportingL2vpnIdN).ExportingVrf(exportingVrf).ExportingVrfN(exportingVrfN).ExportingVrfId(exportingVrfId).ExportingVrfIdN(exportingVrfIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).ImportingL2vpn(importingL2vpn).ImportingL2vpnN(importingL2vpnN).ImportingL2vpnId(importingL2vpnId).ImportingL2vpnIdN(importingL2vpnIdN).ImportingVrf(importingVrf).ImportingVrfN(importingVrfN).ImportingVrfId(importingVrfId).ImportingVrfIdN(importingVrfIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamRouteTargetsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8718,6 +8810,10 @@ Name | Type | Description  | Notes
  **descriptionNie** | **[]string** |  | 
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
+ **exportingL2vpn** | **[]int64** | Exporting L2VPN (identifier) | 
+ **exportingL2vpnN** | **[]int64** | Exporting L2VPN (identifier) | 
+ **exportingL2vpnId** | **[]int32** | Exporting L2VPN | 
+ **exportingL2vpnIdN** | **[]int32** | Exporting L2VPN | 
  **exportingVrf** | **[]string** | Export VRF (RD) | 
  **exportingVrfN** | **[]string** | Export VRF (RD) | 
  **exportingVrfId** | **[]int32** | Exporting VRF | 
@@ -8729,6 +8825,10 @@ Name | Type | Description  | Notes
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
+ **importingL2vpn** | **[]int64** | Importing L2VPN (identifier) | 
+ **importingL2vpnN** | **[]int64** | Importing L2VPN (identifier) | 
+ **importingL2vpnId** | **[]int32** | Importing L2VPN | 
+ **importingL2vpnIdN** | **[]int32** | Importing L2VPN | 
  **importingVrf** | **[]string** | Import VRF (RD) | 
  **importingVrfN** | **[]string** | Import VRF (RD) | 
  **importingVrfId** | **[]int32** | Importing VRF | 
@@ -8788,7 +8888,7 @@ Name | Type | Description  | Notes
 
 ## IpamRouteTargetsPartialUpdate
 
-> RouteTarget IpamRouteTargetsPartialUpdate(ctx, id).PatchedWritableRouteTargetRequest(patchedWritableRouteTargetRequest).Execute()
+> RouteTarget IpamRouteTargetsPartialUpdate(ctx, id).PatchedRouteTargetRequest(patchedRouteTargetRequest).Execute()
 
 
 
@@ -8803,16 +8903,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this route target.
-	patchedWritableRouteTargetRequest := *openapiclient.NewPatchedWritableRouteTargetRequest() // PatchedWritableRouteTargetRequest |  (optional)
+	patchedRouteTargetRequest := *openapiclient.NewPatchedRouteTargetRequest() // PatchedRouteTargetRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamRouteTargetsPartialUpdate(context.Background(), id).PatchedWritableRouteTargetRequest(patchedWritableRouteTargetRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamRouteTargetsPartialUpdate(context.Background(), id).PatchedRouteTargetRequest(patchedRouteTargetRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamRouteTargetsPartialUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8838,7 +8938,7 @@ Other parameters are passed through a pointer to a apiIpamRouteTargetsPartialUpd
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **patchedWritableRouteTargetRequest** | [**PatchedWritableRouteTargetRequest**](PatchedWritableRouteTargetRequest.md) |  | 
+ **patchedRouteTargetRequest** | [**PatchedRouteTargetRequest**](PatchedRouteTargetRequest.md) |  | 
 
 ### Return type
 
@@ -8875,7 +8975,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -8930,7 +9030,7 @@ Name | Type | Description  | Notes
 
 ## IpamRouteTargetsUpdate
 
-> RouteTarget IpamRouteTargetsUpdate(ctx, id).WritableRouteTargetRequest(writableRouteTargetRequest).Execute()
+> RouteTarget IpamRouteTargetsUpdate(ctx, id).RouteTargetRequest(routeTargetRequest).Execute()
 
 
 
@@ -8945,16 +9045,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this route target.
-	writableRouteTargetRequest := *openapiclient.NewWritableRouteTargetRequest("Name_example") // WritableRouteTargetRequest | 
+	routeTargetRequest := *openapiclient.NewRouteTargetRequest("Name_example") // RouteTargetRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamRouteTargetsUpdate(context.Background(), id).WritableRouteTargetRequest(writableRouteTargetRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamRouteTargetsUpdate(context.Background(), id).RouteTargetRequest(routeTargetRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamRouteTargetsUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8980,7 +9080,7 @@ Other parameters are passed through a pointer to a apiIpamRouteTargetsUpdateRequ
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **writableRouteTargetRequest** | [**WritableRouteTargetRequest**](WritableRouteTargetRequest.md) |  | 
+ **routeTargetRequest** | [**RouteTargetRequest**](RouteTargetRequest.md) |  | 
 
 ### Return type
 
@@ -9017,7 +9117,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -9081,7 +9181,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -9147,7 +9247,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -9213,11 +9313,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writableServiceTemplateRequest := *openapiclient.NewWritableServiceTemplateRequest("Name_example", []int32{int32(123)}, openapiclient.PatchedWritableServiceRequest_protocol("tcp")) // WritableServiceTemplateRequest | 
+	writableServiceTemplateRequest := *openapiclient.NewWritableServiceTemplateRequest("Name_example", openapiclient.PatchedWritableServiceRequest_protocol("tcp"), []int32{int32(123)}) // WritableServiceTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -9279,7 +9379,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -9348,7 +9448,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -9401,8 +9501,8 @@ func main() {
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
 	port := float32(8.14) // float32 |  (optional)
-	protocol := "protocol_example" // string |  (optional)
-	protocolN := "protocolN_example" // string |  (optional)
+	protocol := openapiclient.ipam_service_templates_list_protocol_parameter("sctp") // IpamServiceTemplatesListProtocolParameter | * `tcp` - TCP * `udp` - UDP * `sctp` - SCTP (optional)
+	protocolN := openapiclient.ipam_service_templates_list_protocol_parameter("sctp") // IpamServiceTemplatesListProtocolParameter | * `tcp` - TCP * `udp` - UDP * `sctp` - SCTP (optional)
 	q := "q_example" // string | Search (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
@@ -9480,8 +9580,8 @@ Name | Type | Description  | Notes
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **port** | **float32** |  | 
- **protocol** | **string** |  | 
- **protocolN** | **string** |  | 
+ **protocol** | [**IpamServiceTemplatesListProtocolParameter**](IpamServiceTemplatesListProtocolParameter.md) | * &#x60;tcp&#x60; - TCP * &#x60;udp&#x60; - UDP * &#x60;sctp&#x60; - SCTP | 
+ **protocolN** | [**IpamServiceTemplatesListProtocolParameter**](IpamServiceTemplatesListProtocolParameter.md) | * &#x60;tcp&#x60; - TCP * &#x60;udp&#x60; - UDP * &#x60;sctp&#x60; - SCTP | 
  **q** | **string** | Search | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
@@ -9522,7 +9622,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -9594,7 +9694,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -9664,12 +9764,12 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this service template.
-	writableServiceTemplateRequest := *openapiclient.NewWritableServiceTemplateRequest("Name_example", []int32{int32(123)}, openapiclient.PatchedWritableServiceRequest_protocol("tcp")) // WritableServiceTemplateRequest | 
+	writableServiceTemplateRequest := *openapiclient.NewWritableServiceTemplateRequest("Name_example", openapiclient.PatchedWritableServiceRequest_protocol("tcp"), []int32{int32(123)}) // WritableServiceTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -9736,7 +9836,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -9800,7 +9900,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -9866,7 +9966,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -9932,11 +10032,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writableServiceRequest := *openapiclient.NewWritableServiceRequest("Name_example", []int32{int32(123)}, openapiclient.PatchedWritableServiceRequest_protocol("tcp")) // WritableServiceRequest | 
+	writableServiceRequest := *openapiclient.NewWritableServiceRequest("Name_example", openapiclient.PatchedWritableServiceRequest_protocol("tcp"), []int32{int32(123)}) // WritableServiceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -9998,7 +10098,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -10051,7 +10151,7 @@ Name | Type | Description  | Notes
 
 ## IpamServicesList
 
-> PaginatedServiceList IpamServicesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Ipaddress(ipaddress).IpaddressN(ipaddressN).IpaddressId(ipaddressId).IpaddressIdN(ipaddressIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Port(port).Protocol(protocol).ProtocolN(protocolN).Q(q).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineN(virtualMachineN).VirtualMachineId(virtualMachineId).VirtualMachineIdN(virtualMachineIdN).Execute()
+> PaginatedServiceList IpamServicesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IpAddress(ipAddress).IpAddressN(ipAddressN).IpAddressId(ipAddressId).IpAddressIdN(ipAddressIdN).Ipaddress(ipaddress).IpaddressN(ipaddressN).IpaddressId(ipaddressId).IpaddressIdN(ipaddressIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Port(port).Protocol(protocol).ProtocolN(protocolN).Q(q).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineN(virtualMachineN).VirtualMachineId(virtualMachineId).VirtualMachineIdN(virtualMachineIdN).Execute()
 
 
 
@@ -10067,7 +10167,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -10101,6 +10201,10 @@ func main() {
 	idLt := []int32{int32(123)} // []int32 |  (optional)
 	idLte := []int32{int32(123)} // []int32 |  (optional)
 	idN := []int32{int32(123)} // []int32 |  (optional)
+	ipAddress := []string{"Inner_example"} // []string | IP address (optional)
+	ipAddressN := []string{"Inner_example"} // []string | IP address (optional)
+	ipAddressId := []int32{int32(123)} // []int32 | IP address (ID) (optional)
+	ipAddressIdN := []int32{int32(123)} // []int32 | IP address (ID) (optional)
 	ipaddress := []string{"Inner_example"} // []string | IP address (optional)
 	ipaddressN := []string{"Inner_example"} // []string | IP address (optional)
 	ipaddressId := []int32{int32(123)} // []int32 | IP address (ID) (optional)
@@ -10128,8 +10232,8 @@ func main() {
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
 	port := float32(8.14) // float32 |  (optional)
-	protocol := "protocol_example" // string |  (optional)
-	protocolN := "protocolN_example" // string |  (optional)
+	protocol := openapiclient.ipam_service_templates_list_protocol_parameter("sctp") // IpamServiceTemplatesListProtocolParameter | * `tcp` - TCP * `udp` - UDP * `sctp` - SCTP (optional)
+	protocolN := openapiclient.ipam_service_templates_list_protocol_parameter("sctp") // IpamServiceTemplatesListProtocolParameter | * `tcp` - TCP * `udp` - UDP * `sctp` - SCTP (optional)
 	q := "q_example" // string | Search (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
@@ -10141,7 +10245,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamServicesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Ipaddress(ipaddress).IpaddressN(ipaddressN).IpaddressId(ipaddressId).IpaddressIdN(ipaddressIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Port(port).Protocol(protocol).ProtocolN(protocolN).Q(q).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineN(virtualMachineN).VirtualMachineId(virtualMachineId).VirtualMachineIdN(virtualMachineIdN).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamServicesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IpAddress(ipAddress).IpAddressN(ipAddressN).IpAddressId(ipAddressId).IpAddressIdN(ipAddressIdN).Ipaddress(ipaddress).IpaddressN(ipaddressN).IpaddressId(ipaddressId).IpaddressIdN(ipaddressIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Port(port).Protocol(protocol).ProtocolN(protocolN).Q(q).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineN(virtualMachineN).VirtualMachineId(virtualMachineId).VirtualMachineIdN(virtualMachineIdN).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamServicesList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10192,6 +10296,10 @@ Name | Type | Description  | Notes
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
+ **ipAddress** | **[]string** | IP address | 
+ **ipAddressN** | **[]string** | IP address | 
+ **ipAddressId** | **[]int32** | IP address (ID) | 
+ **ipAddressIdN** | **[]int32** | IP address (ID) | 
  **ipaddress** | **[]string** | IP address | 
  **ipaddressN** | **[]string** | IP address | 
  **ipaddressId** | **[]int32** | IP address (ID) | 
@@ -10219,8 +10327,8 @@ Name | Type | Description  | Notes
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **port** | **float32** |  | 
- **protocol** | **string** |  | 
- **protocolN** | **string** |  | 
+ **protocol** | [**IpamServiceTemplatesListProtocolParameter**](IpamServiceTemplatesListProtocolParameter.md) | * &#x60;tcp&#x60; - TCP * &#x60;udp&#x60; - UDP * &#x60;sctp&#x60; - SCTP | 
+ **protocolN** | [**IpamServiceTemplatesListProtocolParameter**](IpamServiceTemplatesListProtocolParameter.md) | * &#x60;tcp&#x60; - TCP * &#x60;udp&#x60; - UDP * &#x60;sctp&#x60; - SCTP | 
  **q** | **string** | Search | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
@@ -10265,7 +10373,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -10337,7 +10445,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -10407,12 +10515,12 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this service.
-	writableServiceRequest := *openapiclient.NewWritableServiceRequest("Name_example", []int32{int32(123)}, openapiclient.PatchedWritableServiceRequest_protocol("tcp")) // WritableServiceRequest | 
+	writableServiceRequest := *openapiclient.NewWritableServiceRequest("Name_example", openapiclient.PatchedWritableServiceRequest_protocol("tcp"), []int32{int32(123)}) // WritableServiceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10479,7 +10587,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -10551,7 +10659,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -10621,7 +10729,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -10685,7 +10793,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -10751,7 +10859,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -10817,7 +10925,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -10883,7 +10991,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -10936,7 +11044,7 @@ Name | Type | Description  | Notes
 
 ## IpamVlanGroupsList
 
-> PaginatedVLANGroupList IpamVlanGroupsList(ctx).Cluster(cluster).Clustergroup(clustergroup).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).MaxVid(maxVid).MaxVidEmpty(maxVidEmpty).MaxVidGt(maxVidGt).MaxVidGte(maxVidGte).MaxVidLt(maxVidLt).MaxVidLte(maxVidLte).MaxVidN(maxVidN).MinVid(minVid).MinVidEmpty(minVidEmpty).MinVidGt(minVidGt).MinVidGte(minVidGte).MinVidLt(minVidLt).MinVidLte(minVidLte).MinVidN(minVidN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Rack(rack).Region(region).ScopeId(scopeId).ScopeIdEmpty(scopeIdEmpty).ScopeIdGt(scopeIdGt).ScopeIdGte(scopeIdGte).ScopeIdLt(scopeIdLt).ScopeIdLte(scopeIdLte).ScopeIdN(scopeIdN).ScopeType(scopeType).ScopeTypeN(scopeTypeN).Site(site).Sitegroup(sitegroup).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedVLANGroupList IpamVlanGroupsList(ctx).Cluster(cluster).ClusterGroup(clusterGroup).Clustergroup(clustergroup).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).MaxVid(maxVid).MaxVidEmpty(maxVidEmpty).MaxVidGt(maxVidGt).MaxVidGte(maxVidGte).MaxVidLt(maxVidLt).MaxVidLte(maxVidLte).MaxVidN(maxVidN).MinVid(minVid).MinVidEmpty(minVidEmpty).MinVidGt(minVidGt).MinVidGte(minVidGte).MinVidLt(minVidLt).MinVidLte(minVidLte).MinVidN(minVidN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Rack(rack).Region(region).ScopeId(scopeId).ScopeIdEmpty(scopeIdEmpty).ScopeIdGt(scopeIdGt).ScopeIdGte(scopeIdGte).ScopeIdLt(scopeIdLt).ScopeIdLte(scopeIdLte).ScopeIdN(scopeIdN).ScopeType(scopeType).ScopeTypeN(scopeTypeN).Site(site).SiteGroup(siteGroup).Sitegroup(sitegroup).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -10952,12 +11060,13 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	cluster := int32(56) // int32 |  (optional)
-	clustergroup := float32(8.14) // float32 |  (optional)
+	clusterGroup := int32(56) // int32 |  (optional)
+	clustergroup := int32(56) // int32 |  (optional)
 	created := []time.Time{time.Now()} // []time.Time |  (optional)
 	createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
 	createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -11034,7 +11143,8 @@ func main() {
 	scopeType := "scopeType_example" // string |  (optional)
 	scopeTypeN := "scopeTypeN_example" // string |  (optional)
 	site := int32(56) // int32 |  (optional)
-	sitegroup := float32(8.14) // float32 |  (optional)
+	siteGroup := int32(56) // int32 |  (optional)
+	sitegroup := int32(56) // int32 |  (optional)
 	slug := []string{"Inner_example"} // []string |  (optional)
 	slugEmpty := true // bool |  (optional)
 	slugIc := []string{"Inner_example"} // []string |  (optional)
@@ -11052,7 +11162,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamVlanGroupsList(context.Background()).Cluster(cluster).Clustergroup(clustergroup).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).MaxVid(maxVid).MaxVidEmpty(maxVidEmpty).MaxVidGt(maxVidGt).MaxVidGte(maxVidGte).MaxVidLt(maxVidLt).MaxVidLte(maxVidLte).MaxVidN(maxVidN).MinVid(minVid).MinVidEmpty(minVidEmpty).MinVidGt(minVidGt).MinVidGte(minVidGte).MinVidLt(minVidLt).MinVidLte(minVidLte).MinVidN(minVidN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Rack(rack).Region(region).ScopeId(scopeId).ScopeIdEmpty(scopeIdEmpty).ScopeIdGt(scopeIdGt).ScopeIdGte(scopeIdGte).ScopeIdLt(scopeIdLt).ScopeIdLte(scopeIdLte).ScopeIdN(scopeIdN).ScopeType(scopeType).ScopeTypeN(scopeTypeN).Site(site).Sitegroup(sitegroup).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamVlanGroupsList(context.Background()).Cluster(cluster).ClusterGroup(clusterGroup).Clustergroup(clustergroup).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).MaxVid(maxVid).MaxVidEmpty(maxVidEmpty).MaxVidGt(maxVidGt).MaxVidGte(maxVidGte).MaxVidLt(maxVidLt).MaxVidLte(maxVidLte).MaxVidN(maxVidN).MinVid(minVid).MinVidEmpty(minVidEmpty).MinVidGt(minVidGt).MinVidGte(minVidGte).MinVidLt(minVidLt).MinVidLte(minVidLte).MinVidN(minVidN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Rack(rack).Region(region).ScopeId(scopeId).ScopeIdEmpty(scopeIdEmpty).ScopeIdGt(scopeIdGt).ScopeIdGte(scopeIdGte).ScopeIdLt(scopeIdLt).ScopeIdLte(scopeIdLte).ScopeIdN(scopeIdN).ScopeType(scopeType).ScopeTypeN(scopeTypeN).Site(site).SiteGroup(siteGroup).Sitegroup(sitegroup).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVlanGroupsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11074,7 +11184,8 @@ Other parameters are passed through a pointer to a apiIpamVlanGroupsListRequest 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cluster** | **int32** |  | 
- **clustergroup** | **float32** |  | 
+ **clusterGroup** | **int32** |  | 
+ **clustergroup** | **int32** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
  **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
@@ -11151,7 +11262,8 @@ Name | Type | Description  | Notes
  **scopeType** | **string** |  | 
  **scopeTypeN** | **string** |  | 
  **site** | **int32** |  | 
- **sitegroup** | **float32** |  | 
+ **siteGroup** | **int32** |  | 
+ **sitegroup** | **int32** |  | 
  **slug** | **[]string** |  | 
  **slugEmpty** | **bool** |  | 
  **slugIc** | **[]string** |  | 
@@ -11202,7 +11314,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -11274,7 +11386,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -11344,7 +11456,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -11416,7 +11528,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -11480,7 +11592,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -11546,7 +11658,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -11612,7 +11724,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -11678,7 +11790,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -11747,7 +11859,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -12003,7 +12115,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -12075,7 +12187,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -12145,7 +12257,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -12217,7 +12329,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -12281,7 +12393,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -12347,7 +12459,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -12398,7 +12510,7 @@ Name | Type | Description  | Notes
 
 ## IpamVrfsCreate
 
-> VRF IpamVrfsCreate(ctx).WritableVRFRequest(writableVRFRequest).Execute()
+> VRF IpamVrfsCreate(ctx).VRFRequest(vRFRequest).Execute()
 
 
 
@@ -12413,15 +12525,15 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writableVRFRequest := *openapiclient.NewWritableVRFRequest("Name_example") // WritableVRFRequest | 
+	vRFRequest := *openapiclient.NewVRFRequest("Name_example") // VRFRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamVrfsCreate(context.Background()).WritableVRFRequest(writableVRFRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamVrfsCreate(context.Background()).VRFRequest(vRFRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVrfsCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12442,7 +12554,7 @@ Other parameters are passed through a pointer to a apiIpamVrfsCreateRequest stru
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writableVRFRequest** | [**WritableVRFRequest**](WritableVRFRequest.md) |  | 
+ **vRFRequest** | [**VRFRequest**](VRFRequest.md) |  | 
 
 ### Return type
 
@@ -12479,7 +12591,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -12548,7 +12660,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -12757,7 +12869,7 @@ Name | Type | Description  | Notes
 
 ## IpamVrfsPartialUpdate
 
-> VRF IpamVrfsPartialUpdate(ctx, id).PatchedWritableVRFRequest(patchedWritableVRFRequest).Execute()
+> VRF IpamVrfsPartialUpdate(ctx, id).PatchedVRFRequest(patchedVRFRequest).Execute()
 
 
 
@@ -12772,16 +12884,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this VRF.
-	patchedWritableVRFRequest := *openapiclient.NewPatchedWritableVRFRequest() // PatchedWritableVRFRequest |  (optional)
+	patchedVRFRequest := *openapiclient.NewPatchedVRFRequest() // PatchedVRFRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamVrfsPartialUpdate(context.Background(), id).PatchedWritableVRFRequest(patchedWritableVRFRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamVrfsPartialUpdate(context.Background(), id).PatchedVRFRequest(patchedVRFRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVrfsPartialUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12807,7 +12919,7 @@ Other parameters are passed through a pointer to a apiIpamVrfsPartialUpdateReque
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **patchedWritableVRFRequest** | [**PatchedWritableVRFRequest**](PatchedWritableVRFRequest.md) |  | 
+ **patchedVRFRequest** | [**PatchedVRFRequest**](PatchedVRFRequest.md) |  | 
 
 ### Return type
 
@@ -12844,7 +12956,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -12899,7 +13011,7 @@ Name | Type | Description  | Notes
 
 ## IpamVrfsUpdate
 
-> VRF IpamVrfsUpdate(ctx, id).WritableVRFRequest(writableVRFRequest).Execute()
+> VRF IpamVrfsUpdate(ctx, id).VRFRequest(vRFRequest).Execute()
 
 
 
@@ -12914,16 +13026,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this VRF.
-	writableVRFRequest := *openapiclient.NewWritableVRFRequest("Name_example") // WritableVRFRequest | 
+	vRFRequest := *openapiclient.NewVRFRequest("Name_example") // VRFRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamVrfsUpdate(context.Background(), id).WritableVRFRequest(writableVRFRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamVrfsUpdate(context.Background(), id).VRFRequest(vRFRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVrfsUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12949,7 +13061,7 @@ Other parameters are passed through a pointer to a apiIpamVrfsUpdateRequest stru
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **writableVRFRequest** | [**WritableVRFRequest**](WritableVRFRequest.md) |  | 
+ **vRFRequest** | [**VRFRequest**](VRFRequest.md) |  | 
 
 ### Return type
 

@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Device** | [**NestedDeviceRequest**](NestedDeviceRequest.md) |  | 
-**Module** | Pointer to [**NullableComponentNestedModuleRequest**](ComponentNestedModuleRequest.md) |  | [optional] 
+**Device** | [**DeviceRequest**](DeviceRequest.md) |  | 
+**Module** | Pointer to [**NullableModuleRequest**](ModuleRequest.md) |  | [optional] 
 **Name** | **string** |  | 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Type** | Pointer to [**NullablePowerOutletRequestType**](PowerOutletRequestType.md) |  | [optional] 
-**PowerPort** | Pointer to [**NullableNestedPowerPortRequest**](NestedPowerPortRequest.md) |  | [optional] 
+**PowerPort** | Pointer to [**NullablePowerPortRequest**](PowerPortRequest.md) |  | [optional] 
 **FeedLeg** | Pointer to [**NullablePowerOutletRequestFeedLeg**](PowerOutletRequestFeedLeg.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **MarkConnected** | Pointer to **bool** | Treat as if a cable is connected | [optional] 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewPowerOutletRequest
 
-`func NewPowerOutletRequest(device NestedDeviceRequest, name string, ) *PowerOutletRequest`
+`func NewPowerOutletRequest(device DeviceRequest, name string, ) *PowerOutletRequest`
 
 NewPowerOutletRequest instantiates a new PowerOutletRequest object
 This constructor will assign default values to properties that have it defined,
@@ -37,40 +37,40 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDevice
 
-`func (o *PowerOutletRequest) GetDevice() NestedDeviceRequest`
+`func (o *PowerOutletRequest) GetDevice() DeviceRequest`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *PowerOutletRequest) GetDeviceOk() (*NestedDeviceRequest, bool)`
+`func (o *PowerOutletRequest) GetDeviceOk() (*DeviceRequest, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *PowerOutletRequest) SetDevice(v NestedDeviceRequest)`
+`func (o *PowerOutletRequest) SetDevice(v DeviceRequest)`
 
 SetDevice sets Device field to given value.
 
 
 ### GetModule
 
-`func (o *PowerOutletRequest) GetModule() ComponentNestedModuleRequest`
+`func (o *PowerOutletRequest) GetModule() ModuleRequest`
 
 GetModule returns the Module field if non-nil, zero value otherwise.
 
 ### GetModuleOk
 
-`func (o *PowerOutletRequest) GetModuleOk() (*ComponentNestedModuleRequest, bool)`
+`func (o *PowerOutletRequest) GetModuleOk() (*ModuleRequest, bool)`
 
 GetModuleOk returns a tuple with the Module field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetModule
 
-`func (o *PowerOutletRequest) SetModule(v ComponentNestedModuleRequest)`
+`func (o *PowerOutletRequest) SetModule(v ModuleRequest)`
 
 SetModule sets Module field to given value.
 
@@ -172,20 +172,20 @@ HasType returns a boolean if a field has been set.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetPowerPort
 
-`func (o *PowerOutletRequest) GetPowerPort() NestedPowerPortRequest`
+`func (o *PowerOutletRequest) GetPowerPort() PowerPortRequest`
 
 GetPowerPort returns the PowerPort field if non-nil, zero value otherwise.
 
 ### GetPowerPortOk
 
-`func (o *PowerOutletRequest) GetPowerPortOk() (*NestedPowerPortRequest, bool)`
+`func (o *PowerOutletRequest) GetPowerPortOk() (*PowerPortRequest, bool)`
 
 GetPowerPortOk returns a tuple with the PowerPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPowerPort
 
-`func (o *PowerOutletRequest) SetPowerPort(v NestedPowerPortRequest)`
+`func (o *PowerOutletRequest) SetPowerPort(v PowerPortRequest)`
 
 SetPowerPort sets PowerPort field to given value.
 

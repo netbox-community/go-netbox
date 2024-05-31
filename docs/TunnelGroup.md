@@ -14,13 +14,13 @@ Name | Type | Description | Notes
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**TunnelCount** | **int32** |  | [readonly] 
+**TunnelCount** | **int64** |  | [readonly] 
 
 ## Methods
 
 ### NewTunnelGroup
 
-`func NewTunnelGroup(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, tunnelCount int32, ) *TunnelGroup`
+`func NewTunnelGroup(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, tunnelCount int64, ) *TunnelGroup`
 
 NewTunnelGroup instantiates a new TunnelGroup object
 This constructor will assign default values to properties that have it defined,
@@ -272,20 +272,20 @@ SetLastUpdated sets LastUpdated field to given value.
 UnsetLastUpdated ensures that no value is present for LastUpdated, not even an explicit nil
 ### GetTunnelCount
 
-`func (o *TunnelGroup) GetTunnelCount() int32`
+`func (o *TunnelGroup) GetTunnelCount() int64`
 
 GetTunnelCount returns the TunnelCount field if non-nil, zero value otherwise.
 
 ### GetTunnelCountOk
 
-`func (o *TunnelGroup) GetTunnelCountOk() (*int32, bool)`
+`func (o *TunnelGroup) GetTunnelCountOk() (*int64, bool)`
 
 GetTunnelCountOk returns a tuple with the TunnelCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTunnelCount
 
-`func (o *TunnelGroup) SetTunnelCount(v int32)`
+`func (o *TunnelGroup) SetTunnelCount(v int64)`
 
 SetTunnelCount sets TunnelCount field to given value.
 

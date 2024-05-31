@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
-**ContentTypes** | **[]string** |  | 
+**ObjectTypes** | **[]string** |  | 
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 
 ### NewSavedFilter
 
-`func NewSavedFilter(id int32, url string, display string, contentTypes []string, name string, slug string, parameters interface{}, created NullableTime, lastUpdated NullableTime, ) *SavedFilter`
+`func NewSavedFilter(id int32, url string, display string, objectTypes []string, name string, slug string, parameters interface{}, created NullableTime, lastUpdated NullableTime, ) *SavedFilter`
 
 NewSavedFilter instantiates a new SavedFilter object
 This constructor will assign default values to properties that have it defined,
@@ -98,24 +98,24 @@ and a boolean to check if the value has been set.
 SetDisplay sets Display field to given value.
 
 
-### GetContentTypes
+### GetObjectTypes
 
-`func (o *SavedFilter) GetContentTypes() []string`
+`func (o *SavedFilter) GetObjectTypes() []string`
 
-GetContentTypes returns the ContentTypes field if non-nil, zero value otherwise.
+GetObjectTypes returns the ObjectTypes field if non-nil, zero value otherwise.
 
-### GetContentTypesOk
+### GetObjectTypesOk
 
-`func (o *SavedFilter) GetContentTypesOk() (*[]string, bool)`
+`func (o *SavedFilter) GetObjectTypesOk() (*[]string, bool)`
 
-GetContentTypesOk returns a tuple with the ContentTypes field if it's non-nil, zero value otherwise
+GetObjectTypesOk returns a tuple with the ObjectTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetContentTypes
+### SetObjectTypes
 
-`func (o *SavedFilter) SetContentTypes(v []string)`
+`func (o *SavedFilter) SetObjectTypes(v []string)`
 
-SetContentTypes sets ContentTypes field to given value.
+SetObjectTypes sets ObjectTypes field to given value.
 
 
 ### GetName

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ContentTypes** | **[]string** |  | 
+**ObjectTypes** | **[]string** |  | 
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewSavedFilterRequest
 
-`func NewSavedFilterRequest(contentTypes []string, name string, slug string, parameters interface{}, ) *SavedFilterRequest`
+`func NewSavedFilterRequest(objectTypes []string, name string, slug string, parameters interface{}, ) *SavedFilterRequest`
 
 NewSavedFilterRequest instantiates a new SavedFilterRequest object
 This constructor will assign default values to properties that have it defined,
@@ -33,24 +33,24 @@ NewSavedFilterRequestWithDefaults instantiates a new SavedFilterRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetContentTypes
+### GetObjectTypes
 
-`func (o *SavedFilterRequest) GetContentTypes() []string`
+`func (o *SavedFilterRequest) GetObjectTypes() []string`
 
-GetContentTypes returns the ContentTypes field if non-nil, zero value otherwise.
+GetObjectTypes returns the ObjectTypes field if non-nil, zero value otherwise.
 
-### GetContentTypesOk
+### GetObjectTypesOk
 
-`func (o *SavedFilterRequest) GetContentTypesOk() (*[]string, bool)`
+`func (o *SavedFilterRequest) GetObjectTypesOk() (*[]string, bool)`
 
-GetContentTypesOk returns a tuple with the ContentTypes field if it's non-nil, zero value otherwise
+GetObjectTypesOk returns a tuple with the ObjectTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetContentTypes
+### SetObjectTypes
 
-`func (o *SavedFilterRequest) SetContentTypes(v []string)`
+`func (o *SavedFilterRequest) SetObjectTypes(v []string)`
 
-SetContentTypes sets ContentTypes field to given value.
+SetObjectTypes sets ObjectTypes field to given value.
 
 
 ### GetName

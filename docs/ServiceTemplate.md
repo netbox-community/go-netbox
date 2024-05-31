@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **Url** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
 **Name** | **string** |  | 
-**Ports** | **[]int32** |  | 
 **Protocol** | Pointer to [**ServiceProtocol**](ServiceProtocol.md) |  | [optional] 
+**Ports** | **[]int32** |  | 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
@@ -116,26 +116,6 @@ and a boolean to check if the value has been set.
 SetName sets Name field to given value.
 
 
-### GetPorts
-
-`func (o *ServiceTemplate) GetPorts() []int32`
-
-GetPorts returns the Ports field if non-nil, zero value otherwise.
-
-### GetPortsOk
-
-`func (o *ServiceTemplate) GetPortsOk() (*[]int32, bool)`
-
-GetPortsOk returns a tuple with the Ports field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPorts
-
-`func (o *ServiceTemplate) SetPorts(v []int32)`
-
-SetPorts sets Ports field to given value.
-
-
 ### GetProtocol
 
 `func (o *ServiceTemplate) GetProtocol() ServiceProtocol`
@@ -160,6 +140,26 @@ SetProtocol sets Protocol field to given value.
 `func (o *ServiceTemplate) HasProtocol() bool`
 
 HasProtocol returns a boolean if a field has been set.
+
+### GetPorts
+
+`func (o *ServiceTemplate) GetPorts() []int32`
+
+GetPorts returns the Ports field if non-nil, zero value otherwise.
+
+### GetPortsOk
+
+`func (o *ServiceTemplate) GetPortsOk() (*[]int32, bool)`
+
+GetPortsOk returns a tuple with the Ports field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPorts
+
+`func (o *ServiceTemplate) SetPorts(v []int32)`
+
+SetPorts sets Ports field to given value.
+
 
 ### GetDescription
 

@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Family** | **NullableInt32** |  | [readonly] 
+**Family** | **int32** |  | [readonly] 
 **Prefix** | **string** |  | [readonly] 
-**Vrf** | [**NullableNestedVRF**](NestedVRF.md) |  | [readonly] 
+**Vrf** | [**NullableVRF**](VRF.md) |  | [readonly] 
 
 ## Methods
 
 ### NewAvailablePrefix
 
-`func NewAvailablePrefix(family NullableInt32, prefix string, vrf NullableNestedVRF, ) *AvailablePrefix`
+`func NewAvailablePrefix(family int32, prefix string, vrf NullableVRF, ) *AvailablePrefix`
 
 NewAvailablePrefix instantiates a new AvailablePrefix object
 This constructor will assign default values to properties that have it defined,
@@ -47,16 +47,6 @@ and a boolean to check if the value has been set.
 SetFamily sets Family field to given value.
 
 
-### SetFamilyNil
-
-`func (o *AvailablePrefix) SetFamilyNil(b bool)`
-
- SetFamilyNil sets the value for Family to be an explicit nil
-
-### UnsetFamily
-`func (o *AvailablePrefix) UnsetFamily()`
-
-UnsetFamily ensures that no value is present for Family, not even an explicit nil
 ### GetPrefix
 
 `func (o *AvailablePrefix) GetPrefix() string`
@@ -79,20 +69,20 @@ SetPrefix sets Prefix field to given value.
 
 ### GetVrf
 
-`func (o *AvailablePrefix) GetVrf() NestedVRF`
+`func (o *AvailablePrefix) GetVrf() VRF`
 
 GetVrf returns the Vrf field if non-nil, zero value otherwise.
 
 ### GetVrfOk
 
-`func (o *AvailablePrefix) GetVrfOk() (*NestedVRF, bool)`
+`func (o *AvailablePrefix) GetVrfOk() (*VRF, bool)`
 
 GetVrfOk returns a tuple with the Vrf field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVrf
 
-`func (o *AvailablePrefix) SetVrf(v NestedVRF)`
+`func (o *AvailablePrefix) SetVrf(v VRF)`
 
 SetVrf sets Vrf field to given value.
 

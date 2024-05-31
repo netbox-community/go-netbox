@@ -7,15 +7,15 @@ Name | Type | Description | Notes
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
-**Device** | [**NestedDevice**](NestedDevice.md) |  | 
-**Module** | Pointer to [**NullableComponentNestedModule**](ComponentNestedModule.md) |  | [optional] 
+**Device** | [**Device**](Device.md) |  | 
+**Module** | Pointer to [**NullableModule**](Module.md) |  | [optional] 
 **Name** | **string** |  | 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Type** | Pointer to [**ConsolePortType**](ConsolePortType.md) |  | [optional] 
 **Speed** | Pointer to [**NullableConsolePortSpeed**](ConsolePortSpeed.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **MarkConnected** | Pointer to **bool** | Treat as if a cable is connected | [optional] 
-**Cable** | [**NullableNestedCable**](NestedCable.md) |  | [readonly] 
+**Cable** | [**NullableCable**](Cable.md) |  | [readonly] 
 **CableEnd** | **string** |  | [readonly] 
 **LinkPeers** | **[]interface{}** |  | [readonly] 
 **LinkPeersType** | **string** | Return the type of the peer link terminations, or None. | [readonly] 
@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 
 ### NewConsoleServerPort
 
-`func NewConsoleServerPort(id int32, url string, display string, device NestedDevice, name string, cable NullableNestedCable, cableEnd string, linkPeers []interface{}, linkPeersType string, connectedEndpoints []interface{}, connectedEndpointsType string, connectedEndpointsReachable bool, created NullableTime, lastUpdated NullableTime, occupied bool, ) *ConsoleServerPort`
+`func NewConsoleServerPort(id int32, url string, display string, device Device, name string, cable NullableCable, cableEnd string, linkPeers []interface{}, linkPeersType string, connectedEndpoints []interface{}, connectedEndpointsType string, connectedEndpointsReachable bool, created NullableTime, lastUpdated NullableTime, occupied bool, ) *ConsoleServerPort`
 
 NewConsoleServerPort instantiates a new ConsoleServerPort object
 This constructor will assign default values to properties that have it defined,
@@ -109,40 +109,40 @@ SetDisplay sets Display field to given value.
 
 ### GetDevice
 
-`func (o *ConsoleServerPort) GetDevice() NestedDevice`
+`func (o *ConsoleServerPort) GetDevice() Device`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *ConsoleServerPort) GetDeviceOk() (*NestedDevice, bool)`
+`func (o *ConsoleServerPort) GetDeviceOk() (*Device, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *ConsoleServerPort) SetDevice(v NestedDevice)`
+`func (o *ConsoleServerPort) SetDevice(v Device)`
 
 SetDevice sets Device field to given value.
 
 
 ### GetModule
 
-`func (o *ConsoleServerPort) GetModule() ComponentNestedModule`
+`func (o *ConsoleServerPort) GetModule() Module`
 
 GetModule returns the Module field if non-nil, zero value otherwise.
 
 ### GetModuleOk
 
-`func (o *ConsoleServerPort) GetModuleOk() (*ComponentNestedModule, bool)`
+`func (o *ConsoleServerPort) GetModuleOk() (*Module, bool)`
 
 GetModuleOk returns a tuple with the Module field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetModule
 
-`func (o *ConsoleServerPort) SetModule(v ComponentNestedModule)`
+`func (o *ConsoleServerPort) SetModule(v Module)`
 
 SetModule sets Module field to given value.
 
@@ -319,20 +319,20 @@ HasMarkConnected returns a boolean if a field has been set.
 
 ### GetCable
 
-`func (o *ConsoleServerPort) GetCable() NestedCable`
+`func (o *ConsoleServerPort) GetCable() Cable`
 
 GetCable returns the Cable field if non-nil, zero value otherwise.
 
 ### GetCableOk
 
-`func (o *ConsoleServerPort) GetCableOk() (*NestedCable, bool)`
+`func (o *ConsoleServerPort) GetCableOk() (*Cable, bool)`
 
 GetCableOk returns a tuple with the Cable field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCable
 
-`func (o *ConsoleServerPort) SetCable(v NestedCable)`
+`func (o *ConsoleServerPort) SetCable(v Cable)`
 
 SetCable sets Cable field to given value.
 

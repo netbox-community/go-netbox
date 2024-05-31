@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
-**Proposals** | **[]int32** |  | 
+**Proposals** | Pointer to **[]int32** |  | [optional] 
 **PfsGroup** | Pointer to [**NullablePatchedWritableIPSecPolicyRequestPfsGroup**](PatchedWritableIPSecPolicyRequestPfsGroup.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewWritableIPSecPolicyRequest
 
-`func NewWritableIPSecPolicyRequest(name string, proposals []int32, ) *WritableIPSecPolicyRequest`
+`func NewWritableIPSecPolicyRequest(name string, ) *WritableIPSecPolicyRequest`
 
 NewWritableIPSecPolicyRequest instantiates a new WritableIPSecPolicyRequest object
 This constructor will assign default values to properties that have it defined,
@@ -95,6 +95,11 @@ and a boolean to check if the value has been set.
 
 SetProposals sets Proposals field to given value.
 
+### HasProposals
+
+`func (o *WritableIPSecPolicyRequest) HasProposals() bool`
+
+HasProposals returns a boolean if a field has been set.
 
 ### GetPfsGroup
 

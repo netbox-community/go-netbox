@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**SiteCount** | **int32** |  | [readonly] 
+**SiteCount** | **int32** |  | [readonly] [default to 0]
 **Depth** | **int32** |  | [readonly] 
 
 ## Methods

@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Prefix** | **string** |  | 
-**Rir** | [**NestedRIRRequest**](NestedRIRRequest.md) |  | 
-**Tenant** | Pointer to [**NullableNestedTenantRequest**](NestedTenantRequest.md) |  | [optional] 
+**Rir** | [**RIRRequest**](RIRRequest.md) |  | 
+**Tenant** | Pointer to [**NullableTenantRequest**](TenantRequest.md) |  | [optional] 
 **DateAdded** | Pointer to **NullableString** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewAggregateRequest
 
-`func NewAggregateRequest(prefix string, rir NestedRIRRequest, ) *AggregateRequest`
+`func NewAggregateRequest(prefix string, rir RIRRequest, ) *AggregateRequest`
 
 NewAggregateRequest instantiates a new AggregateRequest object
 This constructor will assign default values to properties that have it defined,
@@ -54,40 +54,40 @@ SetPrefix sets Prefix field to given value.
 
 ### GetRir
 
-`func (o *AggregateRequest) GetRir() NestedRIRRequest`
+`func (o *AggregateRequest) GetRir() RIRRequest`
 
 GetRir returns the Rir field if non-nil, zero value otherwise.
 
 ### GetRirOk
 
-`func (o *AggregateRequest) GetRirOk() (*NestedRIRRequest, bool)`
+`func (o *AggregateRequest) GetRirOk() (*RIRRequest, bool)`
 
 GetRirOk returns a tuple with the Rir field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRir
 
-`func (o *AggregateRequest) SetRir(v NestedRIRRequest)`
+`func (o *AggregateRequest) SetRir(v RIRRequest)`
 
 SetRir sets Rir field to given value.
 
 
 ### GetTenant
 
-`func (o *AggregateRequest) GetTenant() NestedTenantRequest`
+`func (o *AggregateRequest) GetTenant() TenantRequest`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *AggregateRequest) GetTenantOk() (*NestedTenantRequest, bool)`
+`func (o *AggregateRequest) GetTenantOk() (*TenantRequest, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *AggregateRequest) SetTenant(v NestedTenantRequest)`
+`func (o *AggregateRequest) SetTenant(v TenantRequest)`
 
 SetTenant sets Tenant field to given value.
 

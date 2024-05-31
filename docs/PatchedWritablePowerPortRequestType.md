@@ -185,6 +185,12 @@
 
 * `USB_3_MICRO_B` (value: `"usb-3-micro-b"`)
 
+* `MOLEX_MICRO_FIT_1X2` (value: `"molex-micro-fit-1x2"`)
+
+* `MOLEX_MICRO_FIT_2X2` (value: `"molex-micro-fit-2x2"`)
+
+* `MOLEX_MICRO_FIT_2X4` (value: `"molex-micro-fit-2x4"`)
+
 * `DC_TERMINAL` (value: `"dc-terminal"`)
 
 * `SAF_D_GRID` (value: `"saf-d-grid"`)

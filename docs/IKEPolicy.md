@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **Version** | [**IKEPolicyVersion**](IKEPolicyVersion.md) |  | 
 **Mode** | [**IKEPolicyMode**](IKEPolicyMode.md) |  | 
-**Proposals** | Pointer to **[]int32** |  | [optional] 
+**Proposals** | Pointer to [**[]IKEProposal**](IKEProposal.md) |  | [optional] 
 **PresharedKey** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
@@ -185,20 +185,20 @@ SetMode sets Mode field to given value.
 
 ### GetProposals
 
-`func (o *IKEPolicy) GetProposals() []int32`
+`func (o *IKEPolicy) GetProposals() []IKEProposal`
 
 GetProposals returns the Proposals field if non-nil, zero value otherwise.
 
 ### GetProposalsOk
 
-`func (o *IKEPolicy) GetProposalsOk() (*[]int32, bool)`
+`func (o *IKEPolicy) GetProposalsOk() (*[]IKEProposal, bool)`
 
 GetProposalsOk returns a tuple with the Proposals field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProposals
 
-`func (o *IKEPolicy) SetProposals(v []int32)`
+`func (o *IKEPolicy) SetProposals(v []IKEProposal)`
 
 SetProposals sets Proposals field to given value.
 

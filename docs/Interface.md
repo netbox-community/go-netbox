@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
-**Device** | [**NestedDevice**](NestedDevice.md) |  | 
-**Vdcs** | Pointer to **[]int32** |  | [optional] 
-**Module** | Pointer to [**NullableComponentNestedModule**](ComponentNestedModule.md) |  | [optional] 
+**Device** | [**Device**](Device.md) |  | 
+**Vdcs** | Pointer to [**[]VirtualDeviceContext**](VirtualDeviceContext.md) |  | [optional] 
+**Module** | Pointer to [**NullableModule**](Module.md) |  | [optional] 
 **Name** | **string** |  | 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Type** | [**InterfaceType**](InterfaceType.md) |  | 
@@ -32,17 +32,17 @@ Name | Type | Description | Notes
 **RfChannelFrequency** | Pointer to **NullableFloat64** | Populated by selected channel (if set) | [optional] 
 **RfChannelWidth** | Pointer to **NullableFloat64** | Populated by selected channel (if set) | [optional] 
 **TxPower** | Pointer to **NullableInt32** |  | [optional] 
-**UntaggedVlan** | Pointer to [**NullableNestedVLAN**](NestedVLAN.md) |  | [optional] 
-**TaggedVlans** | Pointer to [**[]NestedVLAN**](NestedVLAN.md) |  | [optional] 
+**UntaggedVlan** | Pointer to [**NullableVLAN**](VLAN.md) |  | [optional] 
+**TaggedVlans** | Pointer to [**[]VLAN**](VLAN.md) |  | [optional] 
 **MarkConnected** | Pointer to **bool** | Treat as if a cable is connected | [optional] 
-**Cable** | [**NullableNestedCable**](NestedCable.md) |  | [readonly] 
+**Cable** | [**NullableCable**](Cable.md) |  | [readonly] 
 **CableEnd** | **string** |  | [readonly] 
 **WirelessLink** | [**NullableNestedWirelessLink**](NestedWirelessLink.md) |  | [readonly] 
 **LinkPeers** | **[]interface{}** |  | [readonly] 
 **LinkPeersType** | **string** | Return the type of the peer link terminations, or None. | [readonly] 
-**WirelessLans** | Pointer to **[]int32** |  | [optional] 
-**Vrf** | Pointer to [**NullableNestedVRF**](NestedVRF.md) |  | [optional] 
-**L2vpnTermination** | [**NullableNestedL2VPNTermination**](NestedL2VPNTermination.md) |  | [readonly] 
+**WirelessLans** | Pointer to [**[]WirelessLAN**](WirelessLAN.md) |  | [optional] 
+**Vrf** | Pointer to [**NullableVRF**](VRF.md) |  | [optional] 
+**L2vpnTermination** | [**NullableL2VPNTermination**](L2VPNTermination.md) |  | [readonly] 
 **ConnectedEndpoints** | **[]interface{}** |  | [readonly] 
 **ConnectedEndpointsType** | **string** |  | [readonly] 
 **ConnectedEndpointsReachable** | **bool** |  | [readonly] 
@@ -58,7 +58,7 @@ Name | Type | Description | Notes
 
 ### NewInterface
 
-`func NewInterface(id int32, url string, display string, device NestedDevice, name string, type_ InterfaceType, cable NullableNestedCable, cableEnd string, wirelessLink NullableNestedWirelessLink, linkPeers []interface{}, linkPeersType string, l2vpnTermination NullableNestedL2VPNTermination, connectedEndpoints []interface{}, connectedEndpointsType string, connectedEndpointsReachable bool, created NullableTime, lastUpdated NullableTime, countIpaddresses int32, countFhrpGroups int32, occupied bool, ) *Interface`
+`func NewInterface(id int32, url string, display string, device Device, name string, type_ InterfaceType, cable NullableCable, cableEnd string, wirelessLink NullableNestedWirelessLink, linkPeers []interface{}, linkPeersType string, l2vpnTermination NullableL2VPNTermination, connectedEndpoints []interface{}, connectedEndpointsType string, connectedEndpointsReachable bool, created NullableTime, lastUpdated NullableTime, countIpaddresses int32, countFhrpGroups int32, occupied bool, ) *Interface`
 
 NewInterface instantiates a new Interface object
 This constructor will assign default values to properties that have it defined,
@@ -135,40 +135,40 @@ SetDisplay sets Display field to given value.
 
 ### GetDevice
 
-`func (o *Interface) GetDevice() NestedDevice`
+`func (o *Interface) GetDevice() Device`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *Interface) GetDeviceOk() (*NestedDevice, bool)`
+`func (o *Interface) GetDeviceOk() (*Device, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *Interface) SetDevice(v NestedDevice)`
+`func (o *Interface) SetDevice(v Device)`
 
 SetDevice sets Device field to given value.
 
 
 ### GetVdcs
 
-`func (o *Interface) GetVdcs() []int32`
+`func (o *Interface) GetVdcs() []VirtualDeviceContext`
 
 GetVdcs returns the Vdcs field if non-nil, zero value otherwise.
 
 ### GetVdcsOk
 
-`func (o *Interface) GetVdcsOk() (*[]int32, bool)`
+`func (o *Interface) GetVdcsOk() (*[]VirtualDeviceContext, bool)`
 
 GetVdcsOk returns a tuple with the Vdcs field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVdcs
 
-`func (o *Interface) SetVdcs(v []int32)`
+`func (o *Interface) SetVdcs(v []VirtualDeviceContext)`
 
 SetVdcs sets Vdcs field to given value.
 
@@ -180,20 +180,20 @@ HasVdcs returns a boolean if a field has been set.
 
 ### GetModule
 
-`func (o *Interface) GetModule() ComponentNestedModule`
+`func (o *Interface) GetModule() Module`
 
 GetModule returns the Module field if non-nil, zero value otherwise.
 
 ### GetModuleOk
 
-`func (o *Interface) GetModuleOk() (*ComponentNestedModule, bool)`
+`func (o *Interface) GetModuleOk() (*Module, bool)`
 
 GetModuleOk returns a tuple with the Module field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetModule
 
-`func (o *Interface) SetModule(v ComponentNestedModule)`
+`func (o *Interface) SetModule(v Module)`
 
 SetModule sets Module field to given value.
 
@@ -865,20 +865,20 @@ HasTxPower returns a boolean if a field has been set.
 UnsetTxPower ensures that no value is present for TxPower, not even an explicit nil
 ### GetUntaggedVlan
 
-`func (o *Interface) GetUntaggedVlan() NestedVLAN`
+`func (o *Interface) GetUntaggedVlan() VLAN`
 
 GetUntaggedVlan returns the UntaggedVlan field if non-nil, zero value otherwise.
 
 ### GetUntaggedVlanOk
 
-`func (o *Interface) GetUntaggedVlanOk() (*NestedVLAN, bool)`
+`func (o *Interface) GetUntaggedVlanOk() (*VLAN, bool)`
 
 GetUntaggedVlanOk returns a tuple with the UntaggedVlan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUntaggedVlan
 
-`func (o *Interface) SetUntaggedVlan(v NestedVLAN)`
+`func (o *Interface) SetUntaggedVlan(v VLAN)`
 
 SetUntaggedVlan sets UntaggedVlan field to given value.
 
@@ -900,20 +900,20 @@ HasUntaggedVlan returns a boolean if a field has been set.
 UnsetUntaggedVlan ensures that no value is present for UntaggedVlan, not even an explicit nil
 ### GetTaggedVlans
 
-`func (o *Interface) GetTaggedVlans() []NestedVLAN`
+`func (o *Interface) GetTaggedVlans() []VLAN`
 
 GetTaggedVlans returns the TaggedVlans field if non-nil, zero value otherwise.
 
 ### GetTaggedVlansOk
 
-`func (o *Interface) GetTaggedVlansOk() (*[]NestedVLAN, bool)`
+`func (o *Interface) GetTaggedVlansOk() (*[]VLAN, bool)`
 
 GetTaggedVlansOk returns a tuple with the TaggedVlans field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTaggedVlans
 
-`func (o *Interface) SetTaggedVlans(v []NestedVLAN)`
+`func (o *Interface) SetTaggedVlans(v []VLAN)`
 
 SetTaggedVlans sets TaggedVlans field to given value.
 
@@ -950,20 +950,20 @@ HasMarkConnected returns a boolean if a field has been set.
 
 ### GetCable
 
-`func (o *Interface) GetCable() NestedCable`
+`func (o *Interface) GetCable() Cable`
 
 GetCable returns the Cable field if non-nil, zero value otherwise.
 
 ### GetCableOk
 
-`func (o *Interface) GetCableOk() (*NestedCable, bool)`
+`func (o *Interface) GetCableOk() (*Cable, bool)`
 
 GetCableOk returns a tuple with the Cable field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCable
 
-`func (o *Interface) SetCable(v NestedCable)`
+`func (o *Interface) SetCable(v Cable)`
 
 SetCable sets Cable field to given value.
 
@@ -1070,20 +1070,20 @@ SetLinkPeersType sets LinkPeersType field to given value.
 
 ### GetWirelessLans
 
-`func (o *Interface) GetWirelessLans() []int32`
+`func (o *Interface) GetWirelessLans() []WirelessLAN`
 
 GetWirelessLans returns the WirelessLans field if non-nil, zero value otherwise.
 
 ### GetWirelessLansOk
 
-`func (o *Interface) GetWirelessLansOk() (*[]int32, bool)`
+`func (o *Interface) GetWirelessLansOk() (*[]WirelessLAN, bool)`
 
 GetWirelessLansOk returns a tuple with the WirelessLans field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWirelessLans
 
-`func (o *Interface) SetWirelessLans(v []int32)`
+`func (o *Interface) SetWirelessLans(v []WirelessLAN)`
 
 SetWirelessLans sets WirelessLans field to given value.
 
@@ -1095,20 +1095,20 @@ HasWirelessLans returns a boolean if a field has been set.
 
 ### GetVrf
 
-`func (o *Interface) GetVrf() NestedVRF`
+`func (o *Interface) GetVrf() VRF`
 
 GetVrf returns the Vrf field if non-nil, zero value otherwise.
 
 ### GetVrfOk
 
-`func (o *Interface) GetVrfOk() (*NestedVRF, bool)`
+`func (o *Interface) GetVrfOk() (*VRF, bool)`
 
 GetVrfOk returns a tuple with the Vrf field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVrf
 
-`func (o *Interface) SetVrf(v NestedVRF)`
+`func (o *Interface) SetVrf(v VRF)`
 
 SetVrf sets Vrf field to given value.
 
@@ -1130,20 +1130,20 @@ HasVrf returns a boolean if a field has been set.
 UnsetVrf ensures that no value is present for Vrf, not even an explicit nil
 ### GetL2vpnTermination
 
-`func (o *Interface) GetL2vpnTermination() NestedL2VPNTermination`
+`func (o *Interface) GetL2vpnTermination() L2VPNTermination`
 
 GetL2vpnTermination returns the L2vpnTermination field if non-nil, zero value otherwise.
 
 ### GetL2vpnTerminationOk
 
-`func (o *Interface) GetL2vpnTerminationOk() (*NestedL2VPNTermination, bool)`
+`func (o *Interface) GetL2vpnTerminationOk() (*L2VPNTermination, bool)`
 
 GetL2vpnTerminationOk returns a tuple with the L2vpnTermination field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetL2vpnTermination
 
-`func (o *Interface) SetL2vpnTermination(v NestedL2VPNTermination)`
+`func (o *Interface) SetL2vpnTermination(v L2VPNTermination)`
 
 SetL2vpnTermination sets L2vpnTermination field to given value.
 

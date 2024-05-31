@@ -7,12 +7,12 @@ Name | Type | Description | Notes
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
-**Rack** | [**NestedRack**](NestedRack.md) |  | 
+**Rack** | [**Rack**](Rack.md) |  | 
 **Units** | **[]int32** |  | 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**User** | [**NestedUser**](NestedUser.md) |  | 
-**Tenant** | Pointer to [**NullableNestedTenant**](NestedTenant.md) |  | [optional] 
+**User** | [**User**](User.md) |  | 
+**Tenant** | Pointer to [**NullableTenant**](Tenant.md) |  | [optional] 
 **Description** | **string** |  | 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 
 ### NewRackReservation
 
-`func NewRackReservation(id int32, url string, display string, rack NestedRack, units []int32, created NullableTime, lastUpdated NullableTime, user NestedUser, description string, ) *RackReservation`
+`func NewRackReservation(id int32, url string, display string, rack Rack, units []int32, created NullableTime, lastUpdated NullableTime, user User, description string, ) *RackReservation`
 
 NewRackReservation instantiates a new RackReservation object
 This constructor will assign default values to properties that have it defined,
@@ -99,20 +99,20 @@ SetDisplay sets Display field to given value.
 
 ### GetRack
 
-`func (o *RackReservation) GetRack() NestedRack`
+`func (o *RackReservation) GetRack() Rack`
 
 GetRack returns the Rack field if non-nil, zero value otherwise.
 
 ### GetRackOk
 
-`func (o *RackReservation) GetRackOk() (*NestedRack, bool)`
+`func (o *RackReservation) GetRackOk() (*Rack, bool)`
 
 GetRackOk returns a tuple with the Rack field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRack
 
-`func (o *RackReservation) SetRack(v NestedRack)`
+`func (o *RackReservation) SetRack(v Rack)`
 
 SetRack sets Rack field to given value.
 
@@ -199,40 +199,40 @@ SetLastUpdated sets LastUpdated field to given value.
 UnsetLastUpdated ensures that no value is present for LastUpdated, not even an explicit nil
 ### GetUser
 
-`func (o *RackReservation) GetUser() NestedUser`
+`func (o *RackReservation) GetUser() User`
 
 GetUser returns the User field if non-nil, zero value otherwise.
 
 ### GetUserOk
 
-`func (o *RackReservation) GetUserOk() (*NestedUser, bool)`
+`func (o *RackReservation) GetUserOk() (*User, bool)`
 
 GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUser
 
-`func (o *RackReservation) SetUser(v NestedUser)`
+`func (o *RackReservation) SetUser(v User)`
 
 SetUser sets User field to given value.
 
 
 ### GetTenant
 
-`func (o *RackReservation) GetTenant() NestedTenant`
+`func (o *RackReservation) GetTenant() Tenant`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *RackReservation) GetTenantOk() (*NestedTenant, bool)`
+`func (o *RackReservation) GetTenantOk() (*Tenant, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *RackReservation) SetTenant(v NestedTenant)`
+`func (o *RackReservation) SetTenant(v Tenant)`
 
 SetTenant sets Tenant field to given value.
 

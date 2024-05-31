@@ -9,12 +9,12 @@ Name | Type | Description | Notes
 **Display** | **string** |  | [readonly] 
 **Family** | [**AggregateFamily**](AggregateFamily.md) |  | 
 **Prefix** | **string** |  | 
-**Site** | Pointer to [**NullableNestedSite**](NestedSite.md) |  | [optional] 
-**Vrf** | Pointer to [**NullableNestedVRF**](NestedVRF.md) |  | [optional] 
-**Tenant** | Pointer to [**NullableNestedTenant**](NestedTenant.md) |  | [optional] 
-**Vlan** | Pointer to [**NullableNestedVLAN**](NestedVLAN.md) |  | [optional] 
+**Site** | Pointer to [**NullableSite**](Site.md) |  | [optional] 
+**Vrf** | Pointer to [**NullableVRF**](VRF.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableTenant**](Tenant.md) |  | [optional] 
+**Vlan** | Pointer to [**NullableVLAN**](VLAN.md) |  | [optional] 
 **Status** | Pointer to [**PrefixStatus**](PrefixStatus.md) |  | [optional] 
-**Role** | Pointer to [**NullableNestedRole**](NestedRole.md) |  | [optional] 
+**Role** | Pointer to [**NullableRole**](Role.md) |  | [optional] 
 **IsPool** | Pointer to **bool** | All IP addresses within this prefix are considered usable | [optional] 
 **MarkUtilized** | Pointer to **bool** | Treat as fully utilized | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -147,20 +147,20 @@ SetPrefix sets Prefix field to given value.
 
 ### GetSite
 
-`func (o *Prefix) GetSite() NestedSite`
+`func (o *Prefix) GetSite() Site`
 
 GetSite returns the Site field if non-nil, zero value otherwise.
 
 ### GetSiteOk
 
-`func (o *Prefix) GetSiteOk() (*NestedSite, bool)`
+`func (o *Prefix) GetSiteOk() (*Site, bool)`
 
 GetSiteOk returns a tuple with the Site field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSite
 
-`func (o *Prefix) SetSite(v NestedSite)`
+`func (o *Prefix) SetSite(v Site)`
 
 SetSite sets Site field to given value.
 
@@ -182,20 +182,20 @@ HasSite returns a boolean if a field has been set.
 UnsetSite ensures that no value is present for Site, not even an explicit nil
 ### GetVrf
 
-`func (o *Prefix) GetVrf() NestedVRF`
+`func (o *Prefix) GetVrf() VRF`
 
 GetVrf returns the Vrf field if non-nil, zero value otherwise.
 
 ### GetVrfOk
 
-`func (o *Prefix) GetVrfOk() (*NestedVRF, bool)`
+`func (o *Prefix) GetVrfOk() (*VRF, bool)`
 
 GetVrfOk returns a tuple with the Vrf field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVrf
 
-`func (o *Prefix) SetVrf(v NestedVRF)`
+`func (o *Prefix) SetVrf(v VRF)`
 
 SetVrf sets Vrf field to given value.
 
@@ -217,20 +217,20 @@ HasVrf returns a boolean if a field has been set.
 UnsetVrf ensures that no value is present for Vrf, not even an explicit nil
 ### GetTenant
 
-`func (o *Prefix) GetTenant() NestedTenant`
+`func (o *Prefix) GetTenant() Tenant`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *Prefix) GetTenantOk() (*NestedTenant, bool)`
+`func (o *Prefix) GetTenantOk() (*Tenant, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *Prefix) SetTenant(v NestedTenant)`
+`func (o *Prefix) SetTenant(v Tenant)`
 
 SetTenant sets Tenant field to given value.
 
@@ -252,20 +252,20 @@ HasTenant returns a boolean if a field has been set.
 UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
 ### GetVlan
 
-`func (o *Prefix) GetVlan() NestedVLAN`
+`func (o *Prefix) GetVlan() VLAN`
 
 GetVlan returns the Vlan field if non-nil, zero value otherwise.
 
 ### GetVlanOk
 
-`func (o *Prefix) GetVlanOk() (*NestedVLAN, bool)`
+`func (o *Prefix) GetVlanOk() (*VLAN, bool)`
 
 GetVlanOk returns a tuple with the Vlan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVlan
 
-`func (o *Prefix) SetVlan(v NestedVLAN)`
+`func (o *Prefix) SetVlan(v VLAN)`
 
 SetVlan sets Vlan field to given value.
 
@@ -312,20 +312,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetRole
 
-`func (o *Prefix) GetRole() NestedRole`
+`func (o *Prefix) GetRole() Role`
 
 GetRole returns the Role field if non-nil, zero value otherwise.
 
 ### GetRoleOk
 
-`func (o *Prefix) GetRoleOk() (*NestedRole, bool)`
+`func (o *Prefix) GetRoleOk() (*Role, bool)`
 
 GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRole
 
-`func (o *Prefix) SetRole(v NestedRole)`
+`func (o *Prefix) SetRole(v Role)`
 
 SetRole sets Role field to given value.
 

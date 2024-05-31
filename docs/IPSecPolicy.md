@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Display** | **string** |  | [readonly] 
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
-**Proposals** | Pointer to **[]int32** |  | [optional] 
+**Proposals** | Pointer to [**[]IPSecProposal**](IPSecProposal.md) |  | [optional] 
 **PfsGroup** | Pointer to [**IKEProposalGroup**](IKEProposalGroup.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
@@ -143,20 +143,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetProposals
 
-`func (o *IPSecPolicy) GetProposals() []int32`
+`func (o *IPSecPolicy) GetProposals() []IPSecProposal`
 
 GetProposals returns the Proposals field if non-nil, zero value otherwise.
 
 ### GetProposalsOk
 
-`func (o *IPSecPolicy) GetProposalsOk() (*[]int32, bool)`
+`func (o *IPSecPolicy) GetProposalsOk() (*[]IPSecProposal, bool)`
 
 GetProposalsOk returns a tuple with the Proposals field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProposals
 
-`func (o *IPSecPolicy) SetProposals(v []int32)`
+`func (o *IPSecPolicy) SetProposals(v []IPSecProposal)`
 
 SetProposals sets Proposals field to given value.
 

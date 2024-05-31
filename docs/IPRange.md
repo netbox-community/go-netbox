@@ -11,10 +11,10 @@ Name | Type | Description | Notes
 **StartAddress** | **string** |  | 
 **EndAddress** | **string** |  | 
 **Size** | **int32** |  | [readonly] 
-**Vrf** | Pointer to [**NullableNestedVRF**](NestedVRF.md) |  | [optional] 
-**Tenant** | Pointer to [**NullableNestedTenant**](NestedTenant.md) |  | [optional] 
+**Vrf** | Pointer to [**NullableVRF**](VRF.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableTenant**](Tenant.md) |  | [optional] 
 **Status** | Pointer to [**IPRangeStatus**](IPRangeStatus.md) |  | [optional] 
-**Role** | Pointer to [**NullableNestedRole**](NestedRole.md) |  | [optional] 
+**Role** | Pointer to [**NullableRole**](Role.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
@@ -184,20 +184,20 @@ SetSize sets Size field to given value.
 
 ### GetVrf
 
-`func (o *IPRange) GetVrf() NestedVRF`
+`func (o *IPRange) GetVrf() VRF`
 
 GetVrf returns the Vrf field if non-nil, zero value otherwise.
 
 ### GetVrfOk
 
-`func (o *IPRange) GetVrfOk() (*NestedVRF, bool)`
+`func (o *IPRange) GetVrfOk() (*VRF, bool)`
 
 GetVrfOk returns a tuple with the Vrf field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVrf
 
-`func (o *IPRange) SetVrf(v NestedVRF)`
+`func (o *IPRange) SetVrf(v VRF)`
 
 SetVrf sets Vrf field to given value.
 
@@ -219,20 +219,20 @@ HasVrf returns a boolean if a field has been set.
 UnsetVrf ensures that no value is present for Vrf, not even an explicit nil
 ### GetTenant
 
-`func (o *IPRange) GetTenant() NestedTenant`
+`func (o *IPRange) GetTenant() Tenant`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *IPRange) GetTenantOk() (*NestedTenant, bool)`
+`func (o *IPRange) GetTenantOk() (*Tenant, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *IPRange) SetTenant(v NestedTenant)`
+`func (o *IPRange) SetTenant(v Tenant)`
 
 SetTenant sets Tenant field to given value.
 
@@ -279,20 +279,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetRole
 
-`func (o *IPRange) GetRole() NestedRole`
+`func (o *IPRange) GetRole() Role`
 
 GetRole returns the Role field if non-nil, zero value otherwise.
 
 ### GetRoleOk
 
-`func (o *IPRange) GetRoleOk() (*NestedRole, bool)`
+`func (o *IPRange) GetRoleOk() (*Role, bool)`
 
 GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRole
 
-`func (o *IPRange) SetRole(v NestedRole)`
+`func (o *IPRange) SetRole(v Role)`
 
 SetRole sets Role field to given value.
 

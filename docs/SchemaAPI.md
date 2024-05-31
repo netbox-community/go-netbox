@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## SchemaRetrieve
 
-> map[string]interface{} SchemaRetrieve(ctx).Format(format).Execute()
+> map[string]interface{} SchemaRetrieve(ctx).Format(format).Lang(lang).Execute()
 
 
 
@@ -25,15 +25,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	format := openapiclient.schema_retrieve_format_parameter("json") // SchemaRetrieveFormatParameter |  (optional)
+	lang := openapiclient.schema_retrieve_lang_parameter("de") // SchemaRetrieveLangParameter |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SchemaAPI.SchemaRetrieve(context.Background()).Format(format).Execute()
+	resp, r, err := apiClient.SchemaAPI.SchemaRetrieve(context.Background()).Format(format).Lang(lang).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SchemaAPI.SchemaRetrieve``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -55,6 +56,7 @@ Other parameters are passed through a pointer to a apiSchemaRetrieveRequest stru
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **format** | [**SchemaRetrieveFormatParameter**](SchemaRetrieveFormatParameter.md) |  | 
+ **lang** | [**SchemaRetrieveLangParameter**](SchemaRetrieveLangParameter.md) |  | 
 
 ### Return type
 

@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**InterfaceA** | [**NestedInterfaceRequest**](NestedInterfaceRequest.md) |  | 
-**InterfaceB** | [**NestedInterfaceRequest**](NestedInterfaceRequest.md) |  | 
+**InterfaceA** | [**InterfaceRequest**](InterfaceRequest.md) |  | 
+**InterfaceB** | [**InterfaceRequest**](InterfaceRequest.md) |  | 
 **Ssid** | Pointer to **string** |  | [optional] 
-**Status** | Pointer to [**CableStatusValue**](CableStatusValue.md) |  | [optional] 
-**Tenant** | Pointer to [**NullableNestedTenantRequest**](NestedTenantRequest.md) |  | [optional] 
+**Status** | Pointer to [**PatchedWritableCableRequestStatus**](PatchedWritableCableRequestStatus.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableTenantRequest**](TenantRequest.md) |  | [optional] 
 **AuthType** | Pointer to [**WirelessLANAuthTypeValue**](WirelessLANAuthTypeValue.md) |  | [optional] 
 **AuthCipher** | Pointer to [**WirelessLANAuthCipherValue**](WirelessLANAuthCipherValue.md) |  | [optional] 
 **AuthPsk** | Pointer to **string** |  | [optional] 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewWirelessLinkRequest
 
-`func NewWirelessLinkRequest(interfaceA NestedInterfaceRequest, interfaceB NestedInterfaceRequest, ) *WirelessLinkRequest`
+`func NewWirelessLinkRequest(interfaceA InterfaceRequest, interfaceB InterfaceRequest, ) *WirelessLinkRequest`
 
 NewWirelessLinkRequest instantiates a new WirelessLinkRequest object
 This constructor will assign default values to properties that have it defined,
@@ -38,40 +38,40 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetInterfaceA
 
-`func (o *WirelessLinkRequest) GetInterfaceA() NestedInterfaceRequest`
+`func (o *WirelessLinkRequest) GetInterfaceA() InterfaceRequest`
 
 GetInterfaceA returns the InterfaceA field if non-nil, zero value otherwise.
 
 ### GetInterfaceAOk
 
-`func (o *WirelessLinkRequest) GetInterfaceAOk() (*NestedInterfaceRequest, bool)`
+`func (o *WirelessLinkRequest) GetInterfaceAOk() (*InterfaceRequest, bool)`
 
 GetInterfaceAOk returns a tuple with the InterfaceA field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInterfaceA
 
-`func (o *WirelessLinkRequest) SetInterfaceA(v NestedInterfaceRequest)`
+`func (o *WirelessLinkRequest) SetInterfaceA(v InterfaceRequest)`
 
 SetInterfaceA sets InterfaceA field to given value.
 
 
 ### GetInterfaceB
 
-`func (o *WirelessLinkRequest) GetInterfaceB() NestedInterfaceRequest`
+`func (o *WirelessLinkRequest) GetInterfaceB() InterfaceRequest`
 
 GetInterfaceB returns the InterfaceB field if non-nil, zero value otherwise.
 
 ### GetInterfaceBOk
 
-`func (o *WirelessLinkRequest) GetInterfaceBOk() (*NestedInterfaceRequest, bool)`
+`func (o *WirelessLinkRequest) GetInterfaceBOk() (*InterfaceRequest, bool)`
 
 GetInterfaceBOk returns a tuple with the InterfaceB field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInterfaceB
 
-`func (o *WirelessLinkRequest) SetInterfaceB(v NestedInterfaceRequest)`
+`func (o *WirelessLinkRequest) SetInterfaceB(v InterfaceRequest)`
 
 SetInterfaceB sets InterfaceB field to given value.
 
@@ -103,20 +103,20 @@ HasSsid returns a boolean if a field has been set.
 
 ### GetStatus
 
-`func (o *WirelessLinkRequest) GetStatus() CableStatusValue`
+`func (o *WirelessLinkRequest) GetStatus() PatchedWritableCableRequestStatus`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *WirelessLinkRequest) GetStatusOk() (*CableStatusValue, bool)`
+`func (o *WirelessLinkRequest) GetStatusOk() (*PatchedWritableCableRequestStatus, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *WirelessLinkRequest) SetStatus(v CableStatusValue)`
+`func (o *WirelessLinkRequest) SetStatus(v PatchedWritableCableRequestStatus)`
 
 SetStatus sets Status field to given value.
 
@@ -128,20 +128,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetTenant
 
-`func (o *WirelessLinkRequest) GetTenant() NestedTenantRequest`
+`func (o *WirelessLinkRequest) GetTenant() TenantRequest`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *WirelessLinkRequest) GetTenantOk() (*NestedTenantRequest, bool)`
+`func (o *WirelessLinkRequest) GetTenantOk() (*TenantRequest, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *WirelessLinkRequest) SetTenant(v NestedTenantRequest)`
+`func (o *WirelessLinkRequest) SetTenant(v TenantRequest)`
 
 SetTenant sets Tenant field to given value.
 

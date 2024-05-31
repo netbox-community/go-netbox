@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Manufacturer** | **int32** |  | 
-**DefaultPlatform** | Pointer to **NullableInt32** |  | [optional] 
+**Manufacturer** | [**ManufacturerRequest**](ManufacturerRequest.md) |  | 
+**DefaultPlatform** | Pointer to [**NullablePlatformRequest**](PlatformRequest.md) |  | [optional] 
 **Model** | **string** |  | 
 **Slug** | **string** |  | 
 **PartNumber** | Pointer to **string** | Discrete part number (optional) | [optional] 
 **UHeight** | Pointer to **float64** |  | [optional] [default to 1.0]
 **ExcludeFromUtilization** | Pointer to **bool** | Devices of this type are excluded when calculating rack utilization. | [optional] 
 **IsFullDepth** | Pointer to **bool** | Device consumes both front and rear rack faces. | [optional] 
-**SubdeviceRole** | Pointer to [**ParentChildStatus**](ParentChildStatus.md) |  | [optional] 
+**SubdeviceRole** | Pointer to [**ParentChildStatus1**](ParentChildStatus1.md) |  | [optional] 
 **Airflow** | Pointer to [**DeviceAirflowValue**](DeviceAirflowValue.md) |  | [optional] 
 **Weight** | Pointer to **NullableFloat64** |  | [optional] 
-**WeightUnit** | Pointer to [**DeviceTypeWeightUnitValue**](DeviceTypeWeightUnitValue.md) |  | [optional] 
+**WeightUnit** | Pointer to [**PatchedWritableDeviceTypeRequestWeightUnit**](PatchedWritableDeviceTypeRequestWeightUnit.md) |  | [optional] 
 **FrontImage** | Pointer to ***os.File** |  | [optional] 
 **RearImage** | Pointer to ***os.File** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 
 ### NewWritableDeviceTypeRequest
 
-`func NewWritableDeviceTypeRequest(manufacturer int32, model string, slug string, ) *WritableDeviceTypeRequest`
+`func NewWritableDeviceTypeRequest(manufacturer ManufacturerRequest, model string, slug string, ) *WritableDeviceTypeRequest`
 
 NewWritableDeviceTypeRequest instantiates a new WritableDeviceTypeRequest object
 This constructor will assign default values to properties that have it defined,
@@ -44,40 +44,40 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetManufacturer
 
-`func (o *WritableDeviceTypeRequest) GetManufacturer() int32`
+`func (o *WritableDeviceTypeRequest) GetManufacturer() ManufacturerRequest`
 
 GetManufacturer returns the Manufacturer field if non-nil, zero value otherwise.
 
 ### GetManufacturerOk
 
-`func (o *WritableDeviceTypeRequest) GetManufacturerOk() (*int32, bool)`
+`func (o *WritableDeviceTypeRequest) GetManufacturerOk() (*ManufacturerRequest, bool)`
 
 GetManufacturerOk returns a tuple with the Manufacturer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetManufacturer
 
-`func (o *WritableDeviceTypeRequest) SetManufacturer(v int32)`
+`func (o *WritableDeviceTypeRequest) SetManufacturer(v ManufacturerRequest)`
 
 SetManufacturer sets Manufacturer field to given value.
 
 
 ### GetDefaultPlatform
 
-`func (o *WritableDeviceTypeRequest) GetDefaultPlatform() int32`
+`func (o *WritableDeviceTypeRequest) GetDefaultPlatform() PlatformRequest`
 
 GetDefaultPlatform returns the DefaultPlatform field if non-nil, zero value otherwise.
 
 ### GetDefaultPlatformOk
 
-`func (o *WritableDeviceTypeRequest) GetDefaultPlatformOk() (*int32, bool)`
+`func (o *WritableDeviceTypeRequest) GetDefaultPlatformOk() (*PlatformRequest, bool)`
 
 GetDefaultPlatformOk returns a tuple with the DefaultPlatform field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDefaultPlatform
 
-`func (o *WritableDeviceTypeRequest) SetDefaultPlatform(v int32)`
+`func (o *WritableDeviceTypeRequest) SetDefaultPlatform(v PlatformRequest)`
 
 SetDefaultPlatform sets DefaultPlatform field to given value.
 
@@ -239,20 +239,20 @@ HasIsFullDepth returns a boolean if a field has been set.
 
 ### GetSubdeviceRole
 
-`func (o *WritableDeviceTypeRequest) GetSubdeviceRole() ParentChildStatus`
+`func (o *WritableDeviceTypeRequest) GetSubdeviceRole() ParentChildStatus1`
 
 GetSubdeviceRole returns the SubdeviceRole field if non-nil, zero value otherwise.
 
 ### GetSubdeviceRoleOk
 
-`func (o *WritableDeviceTypeRequest) GetSubdeviceRoleOk() (*ParentChildStatus, bool)`
+`func (o *WritableDeviceTypeRequest) GetSubdeviceRoleOk() (*ParentChildStatus1, bool)`
 
 GetSubdeviceRoleOk returns a tuple with the SubdeviceRole field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSubdeviceRole
 
-`func (o *WritableDeviceTypeRequest) SetSubdeviceRole(v ParentChildStatus)`
+`func (o *WritableDeviceTypeRequest) SetSubdeviceRole(v ParentChildStatus1)`
 
 SetSubdeviceRole sets SubdeviceRole field to given value.
 
@@ -324,20 +324,20 @@ HasWeight returns a boolean if a field has been set.
 UnsetWeight ensures that no value is present for Weight, not even an explicit nil
 ### GetWeightUnit
 
-`func (o *WritableDeviceTypeRequest) GetWeightUnit() DeviceTypeWeightUnitValue`
+`func (o *WritableDeviceTypeRequest) GetWeightUnit() PatchedWritableDeviceTypeRequestWeightUnit`
 
 GetWeightUnit returns the WeightUnit field if non-nil, zero value otherwise.
 
 ### GetWeightUnitOk
 
-`func (o *WritableDeviceTypeRequest) GetWeightUnitOk() (*DeviceTypeWeightUnitValue, bool)`
+`func (o *WritableDeviceTypeRequest) GetWeightUnitOk() (*PatchedWritableDeviceTypeRequestWeightUnit, bool)`
 
 GetWeightUnitOk returns a tuple with the WeightUnit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWeightUnit
 
-`func (o *WritableDeviceTypeRequest) SetWeightUnit(v DeviceTypeWeightUnitValue)`
+`func (o *WritableDeviceTypeRequest) SetWeightUnit(v PatchedWritableDeviceTypeRequestWeightUnit)`
 
 SetWeightUnit sets WeightUnit field to given value.
 

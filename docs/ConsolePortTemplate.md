@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
-**DeviceType** | Pointer to [**NullableNestedDeviceType**](NestedDeviceType.md) |  | [optional] 
-**ModuleType** | Pointer to [**NullableNestedModuleType**](NestedModuleType.md) |  | [optional] 
+**DeviceType** | Pointer to [**NullableDeviceType**](DeviceType.md) |  | [optional] 
+**ModuleType** | Pointer to [**NullableModuleType**](ModuleType.md) |  | [optional] 
 **Name** | **string** | {module} is accepted as a substitution for the module bay position when attached to a module type. | 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Type** | Pointer to [**ConsolePortType**](ConsolePortType.md) |  | [optional] 
@@ -97,20 +97,20 @@ SetDisplay sets Display field to given value.
 
 ### GetDeviceType
 
-`func (o *ConsolePortTemplate) GetDeviceType() NestedDeviceType`
+`func (o *ConsolePortTemplate) GetDeviceType() DeviceType`
 
 GetDeviceType returns the DeviceType field if non-nil, zero value otherwise.
 
 ### GetDeviceTypeOk
 
-`func (o *ConsolePortTemplate) GetDeviceTypeOk() (*NestedDeviceType, bool)`
+`func (o *ConsolePortTemplate) GetDeviceTypeOk() (*DeviceType, bool)`
 
 GetDeviceTypeOk returns a tuple with the DeviceType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeviceType
 
-`func (o *ConsolePortTemplate) SetDeviceType(v NestedDeviceType)`
+`func (o *ConsolePortTemplate) SetDeviceType(v DeviceType)`
 
 SetDeviceType sets DeviceType field to given value.
 
@@ -132,20 +132,20 @@ HasDeviceType returns a boolean if a field has been set.
 UnsetDeviceType ensures that no value is present for DeviceType, not even an explicit nil
 ### GetModuleType
 
-`func (o *ConsolePortTemplate) GetModuleType() NestedModuleType`
+`func (o *ConsolePortTemplate) GetModuleType() ModuleType`
 
 GetModuleType returns the ModuleType field if non-nil, zero value otherwise.
 
 ### GetModuleTypeOk
 
-`func (o *ConsolePortTemplate) GetModuleTypeOk() (*NestedModuleType, bool)`
+`func (o *ConsolePortTemplate) GetModuleTypeOk() (*ModuleType, bool)`
 
 GetModuleTypeOk returns a tuple with the ModuleType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetModuleType
 
-`func (o *ConsolePortTemplate) SetModuleType(v NestedModuleType)`
+`func (o *ConsolePortTemplate) SetModuleType(v ModuleType)`
 
 SetModuleType sets ModuleType field to given value.
 

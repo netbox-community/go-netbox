@@ -5,11 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
-**Type** | **int32** |  | 
-**Group** | Pointer to **NullableInt32** |  | [optional] 
-**Status** | Pointer to [**ClusterStatusValue**](ClusterStatusValue.md) |  | [optional] 
-**Tenant** | Pointer to **NullableInt32** |  | [optional] 
-**Site** | Pointer to **NullableInt32** |  | [optional] 
+**Type** | [**ClusterTypeRequest**](ClusterTypeRequest.md) |  | 
+**Group** | Pointer to [**NullableClusterGroupRequest**](ClusterGroupRequest.md) |  | [optional] 
+**Status** | Pointer to [**PatchedWritableClusterRequestStatus**](PatchedWritableClusterRequestStatus.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableTenantRequest**](TenantRequest.md) |  | [optional] 
+**Site** | Pointer to [**NullableSiteRequest**](SiteRequest.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewWritableClusterRequest
 
-`func NewWritableClusterRequest(name string, type_ int32, ) *WritableClusterRequest`
+`func NewWritableClusterRequest(name string, type_ ClusterTypeRequest, ) *WritableClusterRequest`
 
 NewWritableClusterRequest instantiates a new WritableClusterRequest object
 This constructor will assign default values to properties that have it defined,
@@ -56,40 +56,40 @@ SetName sets Name field to given value.
 
 ### GetType
 
-`func (o *WritableClusterRequest) GetType() int32`
+`func (o *WritableClusterRequest) GetType() ClusterTypeRequest`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *WritableClusterRequest) GetTypeOk() (*int32, bool)`
+`func (o *WritableClusterRequest) GetTypeOk() (*ClusterTypeRequest, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *WritableClusterRequest) SetType(v int32)`
+`func (o *WritableClusterRequest) SetType(v ClusterTypeRequest)`
 
 SetType sets Type field to given value.
 
 
 ### GetGroup
 
-`func (o *WritableClusterRequest) GetGroup() int32`
+`func (o *WritableClusterRequest) GetGroup() ClusterGroupRequest`
 
 GetGroup returns the Group field if non-nil, zero value otherwise.
 
 ### GetGroupOk
 
-`func (o *WritableClusterRequest) GetGroupOk() (*int32, bool)`
+`func (o *WritableClusterRequest) GetGroupOk() (*ClusterGroupRequest, bool)`
 
 GetGroupOk returns a tuple with the Group field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGroup
 
-`func (o *WritableClusterRequest) SetGroup(v int32)`
+`func (o *WritableClusterRequest) SetGroup(v ClusterGroupRequest)`
 
 SetGroup sets Group field to given value.
 
@@ -111,20 +111,20 @@ HasGroup returns a boolean if a field has been set.
 UnsetGroup ensures that no value is present for Group, not even an explicit nil
 ### GetStatus
 
-`func (o *WritableClusterRequest) GetStatus() ClusterStatusValue`
+`func (o *WritableClusterRequest) GetStatus() PatchedWritableClusterRequestStatus`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *WritableClusterRequest) GetStatusOk() (*ClusterStatusValue, bool)`
+`func (o *WritableClusterRequest) GetStatusOk() (*PatchedWritableClusterRequestStatus, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *WritableClusterRequest) SetStatus(v ClusterStatusValue)`
+`func (o *WritableClusterRequest) SetStatus(v PatchedWritableClusterRequestStatus)`
 
 SetStatus sets Status field to given value.
 
@@ -136,20 +136,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetTenant
 
-`func (o *WritableClusterRequest) GetTenant() int32`
+`func (o *WritableClusterRequest) GetTenant() TenantRequest`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *WritableClusterRequest) GetTenantOk() (*int32, bool)`
+`func (o *WritableClusterRequest) GetTenantOk() (*TenantRequest, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *WritableClusterRequest) SetTenant(v int32)`
+`func (o *WritableClusterRequest) SetTenant(v TenantRequest)`
 
 SetTenant sets Tenant field to given value.
 
@@ -171,20 +171,20 @@ HasTenant returns a boolean if a field has been set.
 UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
 ### GetSite
 
-`func (o *WritableClusterRequest) GetSite() int32`
+`func (o *WritableClusterRequest) GetSite() SiteRequest`
 
 GetSite returns the Site field if non-nil, zero value otherwise.
 
 ### GetSiteOk
 
-`func (o *WritableClusterRequest) GetSiteOk() (*int32, bool)`
+`func (o *WritableClusterRequest) GetSiteOk() (*SiteRequest, bool)`
 
 GetSiteOk returns a tuple with the Site field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSite
 
-`func (o *WritableClusterRequest) SetSite(v int32)`
+`func (o *WritableClusterRequest) SetSite(v SiteRequest)`
 
 SetSite sets Site field to given value.
 

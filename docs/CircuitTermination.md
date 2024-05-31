@@ -7,17 +7,17 @@ Name | Type | Description | Notes
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
-**Circuit** | [**NestedCircuit**](NestedCircuit.md) |  | 
-**TermSide** | [**Termination**](Termination.md) |  | 
-**Site** | Pointer to [**NullableNestedSite**](NestedSite.md) |  | [optional] 
-**ProviderNetwork** | Pointer to [**NullableNestedProviderNetwork**](NestedProviderNetwork.md) |  | [optional] 
+**Circuit** | [**Circuit**](Circuit.md) |  | 
+**TermSide** | [**Termination1**](Termination1.md) |  | 
+**Site** | Pointer to [**NullableSite**](Site.md) |  | [optional] 
+**ProviderNetwork** | Pointer to [**NullableProviderNetwork**](ProviderNetwork.md) |  | [optional] 
 **PortSpeed** | Pointer to **NullableInt32** | Physical circuit speed | [optional] 
 **UpstreamSpeed** | Pointer to **NullableInt32** | Upstream speed, if different from port speed | [optional] 
 **XconnectId** | Pointer to **string** | ID of the local cross-connect | [optional] 
 **PpInfo** | Pointer to **string** | Patch panel ID and port number(s) | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **MarkConnected** | Pointer to **bool** | Treat as if a cable is connected | [optional] 
-**Cable** | [**NullableNestedCable**](NestedCable.md) |  | [readonly] 
+**Cable** | [**NullableCable**](Cable.md) |  | [readonly] 
 **CableEnd** | **string** |  | [readonly] 
 **LinkPeers** | **[]interface{}** |  | [readonly] 
 **LinkPeersType** | **string** | Return the type of the peer link terminations, or None. | [readonly] 
@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 
 ### NewCircuitTermination
 
-`func NewCircuitTermination(id int32, url string, display string, circuit NestedCircuit, termSide Termination, cable NullableNestedCable, cableEnd string, linkPeers []interface{}, linkPeersType string, created NullableTime, lastUpdated NullableTime, occupied bool, ) *CircuitTermination`
+`func NewCircuitTermination(id int32, url string, display string, circuit Circuit, termSide Termination1, cable NullableCable, cableEnd string, linkPeers []interface{}, linkPeersType string, created NullableTime, lastUpdated NullableTime, occupied bool, ) *CircuitTermination`
 
 NewCircuitTermination instantiates a new CircuitTermination object
 This constructor will assign default values to properties that have it defined,
@@ -108,60 +108,60 @@ SetDisplay sets Display field to given value.
 
 ### GetCircuit
 
-`func (o *CircuitTermination) GetCircuit() NestedCircuit`
+`func (o *CircuitTermination) GetCircuit() Circuit`
 
 GetCircuit returns the Circuit field if non-nil, zero value otherwise.
 
 ### GetCircuitOk
 
-`func (o *CircuitTermination) GetCircuitOk() (*NestedCircuit, bool)`
+`func (o *CircuitTermination) GetCircuitOk() (*Circuit, bool)`
 
 GetCircuitOk returns a tuple with the Circuit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCircuit
 
-`func (o *CircuitTermination) SetCircuit(v NestedCircuit)`
+`func (o *CircuitTermination) SetCircuit(v Circuit)`
 
 SetCircuit sets Circuit field to given value.
 
 
 ### GetTermSide
 
-`func (o *CircuitTermination) GetTermSide() Termination`
+`func (o *CircuitTermination) GetTermSide() Termination1`
 
 GetTermSide returns the TermSide field if non-nil, zero value otherwise.
 
 ### GetTermSideOk
 
-`func (o *CircuitTermination) GetTermSideOk() (*Termination, bool)`
+`func (o *CircuitTermination) GetTermSideOk() (*Termination1, bool)`
 
 GetTermSideOk returns a tuple with the TermSide field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTermSide
 
-`func (o *CircuitTermination) SetTermSide(v Termination)`
+`func (o *CircuitTermination) SetTermSide(v Termination1)`
 
 SetTermSide sets TermSide field to given value.
 
 
 ### GetSite
 
-`func (o *CircuitTermination) GetSite() NestedSite`
+`func (o *CircuitTermination) GetSite() Site`
 
 GetSite returns the Site field if non-nil, zero value otherwise.
 
 ### GetSiteOk
 
-`func (o *CircuitTermination) GetSiteOk() (*NestedSite, bool)`
+`func (o *CircuitTermination) GetSiteOk() (*Site, bool)`
 
 GetSiteOk returns a tuple with the Site field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSite
 
-`func (o *CircuitTermination) SetSite(v NestedSite)`
+`func (o *CircuitTermination) SetSite(v Site)`
 
 SetSite sets Site field to given value.
 
@@ -183,20 +183,20 @@ HasSite returns a boolean if a field has been set.
 UnsetSite ensures that no value is present for Site, not even an explicit nil
 ### GetProviderNetwork
 
-`func (o *CircuitTermination) GetProviderNetwork() NestedProviderNetwork`
+`func (o *CircuitTermination) GetProviderNetwork() ProviderNetwork`
 
 GetProviderNetwork returns the ProviderNetwork field if non-nil, zero value otherwise.
 
 ### GetProviderNetworkOk
 
-`func (o *CircuitTermination) GetProviderNetworkOk() (*NestedProviderNetwork, bool)`
+`func (o *CircuitTermination) GetProviderNetworkOk() (*ProviderNetwork, bool)`
 
 GetProviderNetworkOk returns a tuple with the ProviderNetwork field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProviderNetwork
 
-`func (o *CircuitTermination) SetProviderNetwork(v NestedProviderNetwork)`
+`func (o *CircuitTermination) SetProviderNetwork(v ProviderNetwork)`
 
 SetProviderNetwork sets ProviderNetwork field to given value.
 
@@ -388,20 +388,20 @@ HasMarkConnected returns a boolean if a field has been set.
 
 ### GetCable
 
-`func (o *CircuitTermination) GetCable() NestedCable`
+`func (o *CircuitTermination) GetCable() Cable`
 
 GetCable returns the Cable field if non-nil, zero value otherwise.
 
 ### GetCableOk
 
-`func (o *CircuitTermination) GetCableOk() (*NestedCable, bool)`
+`func (o *CircuitTermination) GetCableOk() (*Cable, bool)`
 
 GetCableOk returns a tuple with the Cable field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCable
 
-`func (o *CircuitTermination) SetCable(v NestedCable)`
+`func (o *CircuitTermination) SetCable(v Cable)`
 
 SetCable sets Cable field to given value.
 

@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Device** | **int32** |  | 
+**Device** | [**DeviceRequest**](DeviceRequest.md) |  | 
 **ModuleBay** | **int32** |  | 
-**ModuleType** | **int32** |  | 
-**Status** | Pointer to [**ModuleStatusValue**](ModuleStatusValue.md) |  | [optional] 
+**ModuleType** | [**ModuleTypeRequest**](ModuleTypeRequest.md) |  | 
+**Status** | Pointer to [**PatchedWritableModuleRequestStatus**](PatchedWritableModuleRequestStatus.md) |  | [optional] 
 **Serial** | Pointer to **string** |  | [optional] 
 **AssetTag** | Pointer to **NullableString** | A unique tag used to identify this device | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewWritableModuleRequest
 
-`func NewWritableModuleRequest(device int32, moduleBay int32, moduleType int32, ) *WritableModuleRequest`
+`func NewWritableModuleRequest(device DeviceRequest, moduleBay int32, moduleType ModuleTypeRequest, ) *WritableModuleRequest`
 
 NewWritableModuleRequest instantiates a new WritableModuleRequest object
 This constructor will assign default values to properties that have it defined,
@@ -36,20 +36,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDevice
 
-`func (o *WritableModuleRequest) GetDevice() int32`
+`func (o *WritableModuleRequest) GetDevice() DeviceRequest`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *WritableModuleRequest) GetDeviceOk() (*int32, bool)`
+`func (o *WritableModuleRequest) GetDeviceOk() (*DeviceRequest, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *WritableModuleRequest) SetDevice(v int32)`
+`func (o *WritableModuleRequest) SetDevice(v DeviceRequest)`
 
 SetDevice sets Device field to given value.
 
@@ -76,40 +76,40 @@ SetModuleBay sets ModuleBay field to given value.
 
 ### GetModuleType
 
-`func (o *WritableModuleRequest) GetModuleType() int32`
+`func (o *WritableModuleRequest) GetModuleType() ModuleTypeRequest`
 
 GetModuleType returns the ModuleType field if non-nil, zero value otherwise.
 
 ### GetModuleTypeOk
 
-`func (o *WritableModuleRequest) GetModuleTypeOk() (*int32, bool)`
+`func (o *WritableModuleRequest) GetModuleTypeOk() (*ModuleTypeRequest, bool)`
 
 GetModuleTypeOk returns a tuple with the ModuleType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetModuleType
 
-`func (o *WritableModuleRequest) SetModuleType(v int32)`
+`func (o *WritableModuleRequest) SetModuleType(v ModuleTypeRequest)`
 
 SetModuleType sets ModuleType field to given value.
 
 
 ### GetStatus
 
-`func (o *WritableModuleRequest) GetStatus() ModuleStatusValue`
+`func (o *WritableModuleRequest) GetStatus() PatchedWritableModuleRequestStatus`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *WritableModuleRequest) GetStatusOk() (*ModuleStatusValue, bool)`
+`func (o *WritableModuleRequest) GetStatusOk() (*PatchedWritableModuleRequestStatus, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *WritableModuleRequest) SetStatus(v ModuleStatusValue)`
+`func (o *WritableModuleRequest) SetStatus(v PatchedWritableModuleRequestStatus)`
 
 SetStatus sets Status field to given value.
 

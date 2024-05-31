@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ContentType** | **string** |  | 
+**ObjectType** | **string** |  | 
 **ObjectId** | **int64** |  | 
-**Contact** | [**NestedContactRequest**](NestedContactRequest.md) |  | 
-**Role** | Pointer to [**NullableNestedContactRoleRequest**](NestedContactRoleRequest.md) |  | [optional] 
+**Contact** | [**ContactRequest**](ContactRequest.md) |  | 
+**Role** | Pointer to [**NullableContactRoleRequest**](ContactRoleRequest.md) |  | [optional] 
 **Priority** | Pointer to [**ContactAssignmentPriorityValue**](ContactAssignmentPriorityValue.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewContactAssignmentRequest
 
-`func NewContactAssignmentRequest(contentType string, objectId int64, contact NestedContactRequest, ) *ContactAssignmentRequest`
+`func NewContactAssignmentRequest(objectType string, objectId int64, contact ContactRequest, ) *ContactAssignmentRequest`
 
 NewContactAssignmentRequest instantiates a new ContactAssignmentRequest object
 This constructor will assign default values to properties that have it defined,
@@ -31,24 +31,24 @@ NewContactAssignmentRequestWithDefaults instantiates a new ContactAssignmentRequ
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetContentType
+### GetObjectType
 
-`func (o *ContactAssignmentRequest) GetContentType() string`
+`func (o *ContactAssignmentRequest) GetObjectType() string`
 
-GetContentType returns the ContentType field if non-nil, zero value otherwise.
+GetObjectType returns the ObjectType field if non-nil, zero value otherwise.
 
-### GetContentTypeOk
+### GetObjectTypeOk
 
-`func (o *ContactAssignmentRequest) GetContentTypeOk() (*string, bool)`
+`func (o *ContactAssignmentRequest) GetObjectTypeOk() (*string, bool)`
 
-GetContentTypeOk returns a tuple with the ContentType field if it's non-nil, zero value otherwise
+GetObjectTypeOk returns a tuple with the ObjectType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetContentType
+### SetObjectType
 
-`func (o *ContactAssignmentRequest) SetContentType(v string)`
+`func (o *ContactAssignmentRequest) SetObjectType(v string)`
 
-SetContentType sets ContentType field to given value.
+SetObjectType sets ObjectType field to given value.
 
 
 ### GetObjectId
@@ -73,40 +73,40 @@ SetObjectId sets ObjectId field to given value.
 
 ### GetContact
 
-`func (o *ContactAssignmentRequest) GetContact() NestedContactRequest`
+`func (o *ContactAssignmentRequest) GetContact() ContactRequest`
 
 GetContact returns the Contact field if non-nil, zero value otherwise.
 
 ### GetContactOk
 
-`func (o *ContactAssignmentRequest) GetContactOk() (*NestedContactRequest, bool)`
+`func (o *ContactAssignmentRequest) GetContactOk() (*ContactRequest, bool)`
 
 GetContactOk returns a tuple with the Contact field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetContact
 
-`func (o *ContactAssignmentRequest) SetContact(v NestedContactRequest)`
+`func (o *ContactAssignmentRequest) SetContact(v ContactRequest)`
 
 SetContact sets Contact field to given value.
 
 
 ### GetRole
 
-`func (o *ContactAssignmentRequest) GetRole() NestedContactRoleRequest`
+`func (o *ContactAssignmentRequest) GetRole() ContactRoleRequest`
 
 GetRole returns the Role field if non-nil, zero value otherwise.
 
 ### GetRoleOk
 
-`func (o *ContactAssignmentRequest) GetRoleOk() (*NestedContactRoleRequest, bool)`
+`func (o *ContactAssignmentRequest) GetRoleOk() (*ContactRoleRequest, bool)`
 
 GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRole
 
-`func (o *ContactAssignmentRequest) SetRole(v NestedContactRoleRequest)`
+`func (o *ContactAssignmentRequest) SetRole(v ContactRoleRequest)`
 
 SetRole sets Role field to given value.
 

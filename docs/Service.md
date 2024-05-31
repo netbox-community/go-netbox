@@ -7,12 +7,12 @@ Name | Type | Description | Notes
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
-**Device** | Pointer to [**NullableNestedDevice**](NestedDevice.md) |  | [optional] 
-**VirtualMachine** | Pointer to [**NullableNestedVirtualMachine**](NestedVirtualMachine.md) |  | [optional] 
+**Device** | Pointer to [**NullableDevice**](Device.md) |  | [optional] 
+**VirtualMachine** | Pointer to [**NullableVirtualMachine**](VirtualMachine.md) |  | [optional] 
 **Name** | **string** |  | 
-**Ports** | **[]int32** |  | 
 **Protocol** | Pointer to [**ServiceProtocol**](ServiceProtocol.md) |  | [optional] 
-**Ipaddresses** | Pointer to **[]int32** |  | [optional] 
+**Ports** | **[]int32** |  | 
+**Ipaddresses** | Pointer to [**[]IPAddress**](IPAddress.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
@@ -101,20 +101,20 @@ SetDisplay sets Display field to given value.
 
 ### GetDevice
 
-`func (o *Service) GetDevice() NestedDevice`
+`func (o *Service) GetDevice() Device`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *Service) GetDeviceOk() (*NestedDevice, bool)`
+`func (o *Service) GetDeviceOk() (*Device, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *Service) SetDevice(v NestedDevice)`
+`func (o *Service) SetDevice(v Device)`
 
 SetDevice sets Device field to given value.
 
@@ -136,20 +136,20 @@ HasDevice returns a boolean if a field has been set.
 UnsetDevice ensures that no value is present for Device, not even an explicit nil
 ### GetVirtualMachine
 
-`func (o *Service) GetVirtualMachine() NestedVirtualMachine`
+`func (o *Service) GetVirtualMachine() VirtualMachine`
 
 GetVirtualMachine returns the VirtualMachine field if non-nil, zero value otherwise.
 
 ### GetVirtualMachineOk
 
-`func (o *Service) GetVirtualMachineOk() (*NestedVirtualMachine, bool)`
+`func (o *Service) GetVirtualMachineOk() (*VirtualMachine, bool)`
 
 GetVirtualMachineOk returns a tuple with the VirtualMachine field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVirtualMachine
 
-`func (o *Service) SetVirtualMachine(v NestedVirtualMachine)`
+`func (o *Service) SetVirtualMachine(v VirtualMachine)`
 
 SetVirtualMachine sets VirtualMachine field to given value.
 
@@ -189,26 +189,6 @@ and a boolean to check if the value has been set.
 SetName sets Name field to given value.
 
 
-### GetPorts
-
-`func (o *Service) GetPorts() []int32`
-
-GetPorts returns the Ports field if non-nil, zero value otherwise.
-
-### GetPortsOk
-
-`func (o *Service) GetPortsOk() (*[]int32, bool)`
-
-GetPortsOk returns a tuple with the Ports field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPorts
-
-`func (o *Service) SetPorts(v []int32)`
-
-SetPorts sets Ports field to given value.
-
-
 ### GetProtocol
 
 `func (o *Service) GetProtocol() ServiceProtocol`
@@ -234,22 +214,42 @@ SetProtocol sets Protocol field to given value.
 
 HasProtocol returns a boolean if a field has been set.
 
+### GetPorts
+
+`func (o *Service) GetPorts() []int32`
+
+GetPorts returns the Ports field if non-nil, zero value otherwise.
+
+### GetPortsOk
+
+`func (o *Service) GetPortsOk() (*[]int32, bool)`
+
+GetPortsOk returns a tuple with the Ports field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPorts
+
+`func (o *Service) SetPorts(v []int32)`
+
+SetPorts sets Ports field to given value.
+
+
 ### GetIpaddresses
 
-`func (o *Service) GetIpaddresses() []int32`
+`func (o *Service) GetIpaddresses() []IPAddress`
 
 GetIpaddresses returns the Ipaddresses field if non-nil, zero value otherwise.
 
 ### GetIpaddressesOk
 
-`func (o *Service) GetIpaddressesOk() (*[]int32, bool)`
+`func (o *Service) GetIpaddressesOk() (*[]IPAddress, bool)`
 
 GetIpaddressesOk returns a tuple with the Ipaddresses field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIpaddresses
 
-`func (o *Service) SetIpaddresses(v []int32)`
+`func (o *Service) SetIpaddresses(v []IPAddress)`
 
 SetIpaddresses sets Ipaddresses field to given value.
 

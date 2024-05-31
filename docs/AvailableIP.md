@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Family** | **NullableInt32** |  | [readonly] 
+**Family** | **int32** |  | [readonly] 
 **Address** | **string** |  | [readonly] 
-**Vrf** | [**NullableNestedVRF**](NestedVRF.md) |  | [readonly] 
+**Vrf** | [**NullableVRF**](VRF.md) |  | [readonly] 
 **Description** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewAvailableIP
 
-`func NewAvailableIP(family NullableInt32, address string, vrf NullableNestedVRF, ) *AvailableIP`
+`func NewAvailableIP(family int32, address string, vrf NullableVRF, ) *AvailableIP`
 
 NewAvailableIP instantiates a new AvailableIP object
 This constructor will assign default values to properties that have it defined,
@@ -48,16 +48,6 @@ and a boolean to check if the value has been set.
 SetFamily sets Family field to given value.
 
 
-### SetFamilyNil
-
-`func (o *AvailableIP) SetFamilyNil(b bool)`
-
- SetFamilyNil sets the value for Family to be an explicit nil
-
-### UnsetFamily
-`func (o *AvailableIP) UnsetFamily()`
-
-UnsetFamily ensures that no value is present for Family, not even an explicit nil
 ### GetAddress
 
 `func (o *AvailableIP) GetAddress() string`
@@ -80,20 +70,20 @@ SetAddress sets Address field to given value.
 
 ### GetVrf
 
-`func (o *AvailableIP) GetVrf() NestedVRF`
+`func (o *AvailableIP) GetVrf() VRF`
 
 GetVrf returns the Vrf field if non-nil, zero value otherwise.
 
 ### GetVrfOk
 
-`func (o *AvailableIP) GetVrfOk() (*NestedVRF, bool)`
+`func (o *AvailableIP) GetVrfOk() (*VRF, bool)`
 
 GetVrfOk returns a tuple with the Vrf field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVrf
 
-`func (o *AvailableIP) SetVrf(v NestedVRF)`
+`func (o *AvailableIP) SetVrf(v VRF)`
 
 SetVrf sets Vrf field to given value.
 

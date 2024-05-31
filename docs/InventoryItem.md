@@ -7,12 +7,12 @@ Name | Type | Description | Notes
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
-**Device** | [**NestedDevice**](NestedDevice.md) |  | 
+**Device** | [**Device**](Device.md) |  | 
 **Parent** | Pointer to **NullableInt32** |  | [optional] 
 **Name** | **string** |  | 
 **Label** | Pointer to **string** | Physical label | [optional] 
-**Role** | Pointer to [**NullableNestedInventoryItemRole**](NestedInventoryItemRole.md) |  | [optional] 
-**Manufacturer** | Pointer to [**NullableNestedManufacturer**](NestedManufacturer.md) |  | [optional] 
+**Role** | Pointer to [**NullableInventoryItemRole**](InventoryItemRole.md) |  | [optional] 
+**Manufacturer** | Pointer to [**NullableManufacturer**](Manufacturer.md) |  | [optional] 
 **PartId** | Pointer to **string** | Manufacturer-assigned part identifier | [optional] 
 **Serial** | Pointer to **string** |  | [optional] 
 **AssetTag** | Pointer to **NullableString** | A unique tag used to identify this item | [optional] 
@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 
 ### NewInventoryItem
 
-`func NewInventoryItem(id int32, url string, display string, device NestedDevice, name string, component interface{}, created NullableTime, lastUpdated NullableTime, depth int32, ) *InventoryItem`
+`func NewInventoryItem(id int32, url string, display string, device Device, name string, component interface{}, created NullableTime, lastUpdated NullableTime, depth int32, ) *InventoryItem`
 
 NewInventoryItem instantiates a new InventoryItem object
 This constructor will assign default values to properties that have it defined,
@@ -108,20 +108,20 @@ SetDisplay sets Display field to given value.
 
 ### GetDevice
 
-`func (o *InventoryItem) GetDevice() NestedDevice`
+`func (o *InventoryItem) GetDevice() Device`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *InventoryItem) GetDeviceOk() (*NestedDevice, bool)`
+`func (o *InventoryItem) GetDeviceOk() (*Device, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *InventoryItem) SetDevice(v NestedDevice)`
+`func (o *InventoryItem) SetDevice(v Device)`
 
 SetDevice sets Device field to given value.
 
@@ -208,20 +208,20 @@ HasLabel returns a boolean if a field has been set.
 
 ### GetRole
 
-`func (o *InventoryItem) GetRole() NestedInventoryItemRole`
+`func (o *InventoryItem) GetRole() InventoryItemRole`
 
 GetRole returns the Role field if non-nil, zero value otherwise.
 
 ### GetRoleOk
 
-`func (o *InventoryItem) GetRoleOk() (*NestedInventoryItemRole, bool)`
+`func (o *InventoryItem) GetRoleOk() (*InventoryItemRole, bool)`
 
 GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRole
 
-`func (o *InventoryItem) SetRole(v NestedInventoryItemRole)`
+`func (o *InventoryItem) SetRole(v InventoryItemRole)`
 
 SetRole sets Role field to given value.
 
@@ -243,20 +243,20 @@ HasRole returns a boolean if a field has been set.
 UnsetRole ensures that no value is present for Role, not even an explicit nil
 ### GetManufacturer
 
-`func (o *InventoryItem) GetManufacturer() NestedManufacturer`
+`func (o *InventoryItem) GetManufacturer() Manufacturer`
 
 GetManufacturer returns the Manufacturer field if non-nil, zero value otherwise.
 
 ### GetManufacturerOk
 
-`func (o *InventoryItem) GetManufacturerOk() (*NestedManufacturer, bool)`
+`func (o *InventoryItem) GetManufacturerOk() (*Manufacturer, bool)`
 
 GetManufacturerOk returns a tuple with the Manufacturer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetManufacturer
 
-`func (o *InventoryItem) SetManufacturer(v NestedManufacturer)`
+`func (o *InventoryItem) SetManufacturer(v Manufacturer)`
 
 SetManufacturer sets Manufacturer field to given value.
 

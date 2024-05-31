@@ -169,6 +169,12 @@
 
 * `USB_TYPE_C` (value: `"USB Type C"`)
 
+* `MOLEX_MICRO_FIT_1X2` (value: `"Molex Micro-Fit 1x2"`)
+
+* `MOLEX_MICRO_FIT_2X2` (value: `"Molex Micro-Fit 2x2"`)
+
+* `MOLEX_MICRO_FIT_2X4` (value: `"Molex Micro-Fit 2x4"`)
+
 * `DC_TERMINAL` (value: `"DC Terminal"`)
 
 * `HDOT_CX` (value: `"HDOT Cx"`)

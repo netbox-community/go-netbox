@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
-**Ports** | **[]int32** |  | 
 **Protocol** | [**PatchedWritableServiceRequestProtocol**](PatchedWritableServiceRequestProtocol.md) |  | 
+**Ports** | **[]int32** |  | 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewWritableServiceTemplateRequest
 
-`func NewWritableServiceTemplateRequest(name string, ports []int32, protocol PatchedWritableServiceRequestProtocol, ) *WritableServiceTemplateRequest`
+`func NewWritableServiceTemplateRequest(name string, protocol PatchedWritableServiceRequestProtocol, ports []int32, ) *WritableServiceTemplateRequest`
 
 NewWritableServiceTemplateRequest instantiates a new WritableServiceTemplateRequest object
 This constructor will assign default values to properties that have it defined,
@@ -51,26 +51,6 @@ and a boolean to check if the value has been set.
 SetName sets Name field to given value.
 
 
-### GetPorts
-
-`func (o *WritableServiceTemplateRequest) GetPorts() []int32`
-
-GetPorts returns the Ports field if non-nil, zero value otherwise.
-
-### GetPortsOk
-
-`func (o *WritableServiceTemplateRequest) GetPortsOk() (*[]int32, bool)`
-
-GetPortsOk returns a tuple with the Ports field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPorts
-
-`func (o *WritableServiceTemplateRequest) SetPorts(v []int32)`
-
-SetPorts sets Ports field to given value.
-
-
 ### GetProtocol
 
 `func (o *WritableServiceTemplateRequest) GetProtocol() PatchedWritableServiceRequestProtocol`
@@ -89,6 +69,26 @@ and a boolean to check if the value has been set.
 `func (o *WritableServiceTemplateRequest) SetProtocol(v PatchedWritableServiceRequestProtocol)`
 
 SetProtocol sets Protocol field to given value.
+
+
+### GetPorts
+
+`func (o *WritableServiceTemplateRequest) GetPorts() []int32`
+
+GetPorts returns the Ports field if non-nil, zero value otherwise.
+
+### GetPortsOk
+
+`func (o *WritableServiceTemplateRequest) GetPortsOk() (*[]int32, bool)`
+
+GetPortsOk returns a tuple with the Ports field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPorts
+
+`func (o *WritableServiceTemplateRequest) SetPorts(v []int32)`
+
+SetPorts sets Ports field to given value.
 
 
 ### GetDescription

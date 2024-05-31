@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
-**Device** | [**NestedDevice**](NestedDevice.md) |  | 
-**Module** | Pointer to [**NullableComponentNestedModule**](ComponentNestedModule.md) |  | [optional] 
+**Device** | [**Device**](Device.md) |  | 
+**Module** | Pointer to [**NullableModule**](Module.md) |  | [optional] 
 **Name** | **string** |  | 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Type** | [**FrontPortType**](FrontPortType.md) |  | 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **Positions** | Pointer to **int32** | Number of front ports which may be mapped | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **MarkConnected** | Pointer to **bool** | Treat as if a cable is connected | [optional] 
-**Cable** | [**NullableNestedCable**](NestedCable.md) |  | [readonly] 
+**Cable** | [**NullableCable**](Cable.md) |  | [readonly] 
 **CableEnd** | **string** |  | [readonly] 
 **LinkPeers** | **[]interface{}** |  | [readonly] 
 **LinkPeersType** | **string** | Return the type of the peer link terminations, or None. | [readonly] 
@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 
 ### NewRearPort
 
-`func NewRearPort(id int32, url string, display string, device NestedDevice, name string, type_ FrontPortType, cable NullableNestedCable, cableEnd string, linkPeers []interface{}, linkPeersType string, created NullableTime, lastUpdated NullableTime, occupied bool, ) *RearPort`
+`func NewRearPort(id int32, url string, display string, device Device, name string, type_ FrontPortType, cable NullableCable, cableEnd string, linkPeers []interface{}, linkPeersType string, created NullableTime, lastUpdated NullableTime, occupied bool, ) *RearPort`
 
 NewRearPort instantiates a new RearPort object
 This constructor will assign default values to properties that have it defined,
@@ -107,40 +107,40 @@ SetDisplay sets Display field to given value.
 
 ### GetDevice
 
-`func (o *RearPort) GetDevice() NestedDevice`
+`func (o *RearPort) GetDevice() Device`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *RearPort) GetDeviceOk() (*NestedDevice, bool)`
+`func (o *RearPort) GetDeviceOk() (*Device, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *RearPort) SetDevice(v NestedDevice)`
+`func (o *RearPort) SetDevice(v Device)`
 
 SetDevice sets Device field to given value.
 
 
 ### GetModule
 
-`func (o *RearPort) GetModule() ComponentNestedModule`
+`func (o *RearPort) GetModule() Module`
 
 GetModule returns the Module field if non-nil, zero value otherwise.
 
 ### GetModuleOk
 
-`func (o *RearPort) GetModuleOk() (*ComponentNestedModule, bool)`
+`func (o *RearPort) GetModuleOk() (*Module, bool)`
 
 GetModuleOk returns a tuple with the Module field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetModule
 
-`func (o *RearPort) SetModule(v ComponentNestedModule)`
+`func (o *RearPort) SetModule(v Module)`
 
 SetModule sets Module field to given value.
 
@@ -327,20 +327,20 @@ HasMarkConnected returns a boolean if a field has been set.
 
 ### GetCable
 
-`func (o *RearPort) GetCable() NestedCable`
+`func (o *RearPort) GetCable() Cable`
 
 GetCable returns the Cable field if non-nil, zero value otherwise.
 
 ### GetCableOk
 
-`func (o *RearPort) GetCableOk() (*NestedCable, bool)`
+`func (o *RearPort) GetCableOk() (*Cable, bool)`
 
 GetCableOk returns a tuple with the Cable field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCable
 
-`func (o *RearPort) SetCable(v NestedCable)`
+`func (o *RearPort) SetCable(v Cable)`
 
 SetCable sets Cable field to given value.
 

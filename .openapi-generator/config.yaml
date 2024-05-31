@@ -2,7 +2,7 @@ generatorName: go
 
 gitHost: github.com
 gitUserId: netbox-community
-gitRepoId: go-netbox/v3
+gitRepoId: go-netbox/v4
 
 packageName: netbox
 

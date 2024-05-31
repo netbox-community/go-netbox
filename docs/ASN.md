@@ -8,22 +8,22 @@ Name | Type | Description | Notes
 **Url** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
 **Asn** | **int64** | 16- or 32-bit autonomous system number | 
-**Rir** | Pointer to [**NullableNestedRIR**](NestedRIR.md) |  | [optional] 
-**Tenant** | Pointer to [**NullableNestedTenant**](NestedTenant.md) |  | [optional] 
+**Rir** | Pointer to [**NullableRIR**](RIR.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableTenant**](Tenant.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**SiteCount** | **int32** |  | [readonly] 
-**ProviderCount** | **int32** |  | [readonly] 
+**SiteCount** | **int64** |  | [readonly] 
+**ProviderCount** | **int64** |  | [readonly] 
 
 ## Methods
 
 ### NewASN
 
-`func NewASN(id int32, url string, display string, asn int64, created NullableTime, lastUpdated NullableTime, siteCount int32, providerCount int32, ) *ASN`
+`func NewASN(id int32, url string, display string, asn int64, created NullableTime, lastUpdated NullableTime, siteCount int64, providerCount int64, ) *ASN`
 
 NewASN instantiates a new ASN object
 This constructor will assign default values to properties that have it defined,
@@ -120,20 +120,20 @@ SetAsn sets Asn field to given value.
 
 ### GetRir
 
-`func (o *ASN) GetRir() NestedRIR`
+`func (o *ASN) GetRir() RIR`
 
 GetRir returns the Rir field if non-nil, zero value otherwise.
 
 ### GetRirOk
 
-`func (o *ASN) GetRirOk() (*NestedRIR, bool)`
+`func (o *ASN) GetRirOk() (*RIR, bool)`
 
 GetRirOk returns a tuple with the Rir field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRir
 
-`func (o *ASN) SetRir(v NestedRIR)`
+`func (o *ASN) SetRir(v RIR)`
 
 SetRir sets Rir field to given value.
 
@@ -155,20 +155,20 @@ HasRir returns a boolean if a field has been set.
 UnsetRir ensures that no value is present for Rir, not even an explicit nil
 ### GetTenant
 
-`func (o *ASN) GetTenant() NestedTenant`
+`func (o *ASN) GetTenant() Tenant`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *ASN) GetTenantOk() (*NestedTenant, bool)`
+`func (o *ASN) GetTenantOk() (*Tenant, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *ASN) SetTenant(v NestedTenant)`
+`func (o *ASN) SetTenant(v Tenant)`
 
 SetTenant sets Tenant field to given value.
 
@@ -350,40 +350,40 @@ SetLastUpdated sets LastUpdated field to given value.
 UnsetLastUpdated ensures that no value is present for LastUpdated, not even an explicit nil
 ### GetSiteCount
 
-`func (o *ASN) GetSiteCount() int32`
+`func (o *ASN) GetSiteCount() int64`
 
 GetSiteCount returns the SiteCount field if non-nil, zero value otherwise.
 
 ### GetSiteCountOk
 
-`func (o *ASN) GetSiteCountOk() (*int32, bool)`
+`func (o *ASN) GetSiteCountOk() (*int64, bool)`
 
 GetSiteCountOk returns a tuple with the SiteCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSiteCount
 
-`func (o *ASN) SetSiteCount(v int32)`
+`func (o *ASN) SetSiteCount(v int64)`
 
 SetSiteCount sets SiteCount field to given value.
 
 
 ### GetProviderCount
 
-`func (o *ASN) GetProviderCount() int32`
+`func (o *ASN) GetProviderCount() int64`
 
 GetProviderCount returns the ProviderCount field if non-nil, zero value otherwise.
 
 ### GetProviderCountOk
 
-`func (o *ASN) GetProviderCountOk() (*int32, bool)`
+`func (o *ASN) GetProviderCountOk() (*int64, bool)`
 
 GetProviderCountOk returns a tuple with the ProviderCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProviderCount
 
-`func (o *ASN) SetProviderCount(v int32)`
+`func (o *ASN) SetProviderCount(v int64)`
 
 SetProviderCount sets ProviderCount field to given value.
 

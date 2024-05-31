@@ -6,11 +6,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** |  | [optional] 
 **FacilityId** | Pointer to **NullableString** |  | [optional] 
-**Site** | Pointer to **int32** |  | [optional] 
-**Location** | Pointer to **NullableInt32** |  | [optional] 
-**Tenant** | Pointer to **NullableInt32** |  | [optional] 
+**Site** | Pointer to [**SiteRequest**](SiteRequest.md) |  | [optional] 
+**Location** | Pointer to [**NullableLocationRequest**](LocationRequest.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableTenantRequest**](TenantRequest.md) |  | [optional] 
 **Status** | Pointer to [**PatchedWritableRackRequestStatus**](PatchedWritableRackRequestStatus.md) |  | [optional] 
-**Role** | Pointer to **NullableInt32** | Functional role | [optional] 
+**Role** | Pointer to [**NullableRackRoleRequest**](RackRoleRequest.md) |  | [optional] 
 **Serial** | Pointer to **string** |  | [optional] 
 **AssetTag** | Pointer to **NullableString** | A unique tag used to identify this rack | [optional] 
 **Type** | Pointer to [**PatchedWritableRackRequestType**](PatchedWritableRackRequestType.md) |  | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **StartingUnit** | Pointer to **int32** | Starting unit for rack | [optional] 
 **Weight** | Pointer to **NullableFloat64** |  | [optional] 
 **MaxWeight** | Pointer to **NullableInt32** | Maximum load capacity for the rack | [optional] 
-**WeightUnit** | Pointer to [**DeviceTypeWeightUnitValue**](DeviceTypeWeightUnitValue.md) |  | [optional] 
+**WeightUnit** | Pointer to [**PatchedWritableDeviceTypeRequestWeightUnit**](PatchedWritableDeviceTypeRequestWeightUnit.md) |  | [optional] 
 **DescUnits** | Pointer to **bool** | Units are numbered top-to-bottom | [optional] 
 **OuterWidth** | Pointer to **NullableInt32** | Outer dimension of rack (width) | [optional] 
 **OuterDepth** | Pointer to **NullableInt32** | Outer dimension of rack (depth) | [optional] 
@@ -111,20 +111,20 @@ HasFacilityId returns a boolean if a field has been set.
 UnsetFacilityId ensures that no value is present for FacilityId, not even an explicit nil
 ### GetSite
 
-`func (o *PatchedWritableRackRequest) GetSite() int32`
+`func (o *PatchedWritableRackRequest) GetSite() SiteRequest`
 
 GetSite returns the Site field if non-nil, zero value otherwise.
 
 ### GetSiteOk
 
-`func (o *PatchedWritableRackRequest) GetSiteOk() (*int32, bool)`
+`func (o *PatchedWritableRackRequest) GetSiteOk() (*SiteRequest, bool)`
 
 GetSiteOk returns a tuple with the Site field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSite
 
-`func (o *PatchedWritableRackRequest) SetSite(v int32)`
+`func (o *PatchedWritableRackRequest) SetSite(v SiteRequest)`
 
 SetSite sets Site field to given value.
 
@@ -136,20 +136,20 @@ HasSite returns a boolean if a field has been set.
 
 ### GetLocation
 
-`func (o *PatchedWritableRackRequest) GetLocation() int32`
+`func (o *PatchedWritableRackRequest) GetLocation() LocationRequest`
 
 GetLocation returns the Location field if non-nil, zero value otherwise.
 
 ### GetLocationOk
 
-`func (o *PatchedWritableRackRequest) GetLocationOk() (*int32, bool)`
+`func (o *PatchedWritableRackRequest) GetLocationOk() (*LocationRequest, bool)`
 
 GetLocationOk returns a tuple with the Location field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLocation
 
-`func (o *PatchedWritableRackRequest) SetLocation(v int32)`
+`func (o *PatchedWritableRackRequest) SetLocation(v LocationRequest)`
 
 SetLocation sets Location field to given value.
 
@@ -171,20 +171,20 @@ HasLocation returns a boolean if a field has been set.
 UnsetLocation ensures that no value is present for Location, not even an explicit nil
 ### GetTenant
 
-`func (o *PatchedWritableRackRequest) GetTenant() int32`
+`func (o *PatchedWritableRackRequest) GetTenant() TenantRequest`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *PatchedWritableRackRequest) GetTenantOk() (*int32, bool)`
+`func (o *PatchedWritableRackRequest) GetTenantOk() (*TenantRequest, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *PatchedWritableRackRequest) SetTenant(v int32)`
+`func (o *PatchedWritableRackRequest) SetTenant(v TenantRequest)`
 
 SetTenant sets Tenant field to given value.
 
@@ -231,20 +231,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetRole
 
-`func (o *PatchedWritableRackRequest) GetRole() int32`
+`func (o *PatchedWritableRackRequest) GetRole() RackRoleRequest`
 
 GetRole returns the Role field if non-nil, zero value otherwise.
 
 ### GetRoleOk
 
-`func (o *PatchedWritableRackRequest) GetRoleOk() (*int32, bool)`
+`func (o *PatchedWritableRackRequest) GetRoleOk() (*RackRoleRequest, bool)`
 
 GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRole
 
-`func (o *PatchedWritableRackRequest) SetRole(v int32)`
+`func (o *PatchedWritableRackRequest) SetRole(v RackRoleRequest)`
 
 SetRole sets Role field to given value.
 
@@ -496,20 +496,20 @@ HasMaxWeight returns a boolean if a field has been set.
 UnsetMaxWeight ensures that no value is present for MaxWeight, not even an explicit nil
 ### GetWeightUnit
 
-`func (o *PatchedWritableRackRequest) GetWeightUnit() DeviceTypeWeightUnitValue`
+`func (o *PatchedWritableRackRequest) GetWeightUnit() PatchedWritableDeviceTypeRequestWeightUnit`
 
 GetWeightUnit returns the WeightUnit field if non-nil, zero value otherwise.
 
 ### GetWeightUnitOk
 
-`func (o *PatchedWritableRackRequest) GetWeightUnitOk() (*DeviceTypeWeightUnitValue, bool)`
+`func (o *PatchedWritableRackRequest) GetWeightUnitOk() (*PatchedWritableDeviceTypeRequestWeightUnit, bool)`
 
 GetWeightUnitOk returns a tuple with the WeightUnit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWeightUnit
 
-`func (o *PatchedWritableRackRequest) SetWeightUnit(v DeviceTypeWeightUnitValue)`
+`func (o *PatchedWritableRackRequest) SetWeightUnit(v PatchedWritableDeviceTypeRequestWeightUnit)`
 
 SetWeightUnit sets WeightUnit field to given value.
 

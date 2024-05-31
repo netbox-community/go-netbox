@@ -7,11 +7,11 @@ Name | Type | Description | Notes
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
-**Device** | [**NestedDevice**](NestedDevice.md) |  | 
+**Device** | [**Device**](Device.md) |  | 
 **Name** | **string** |  | 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**InstalledDevice** | Pointer to [**NullableNestedDevice**](NestedDevice.md) |  | [optional] 
+**InstalledDevice** | Pointer to [**NullableDevice**](Device.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewDeviceBay
 
-`func NewDeviceBay(id int32, url string, display string, device NestedDevice, name string, created NullableTime, lastUpdated NullableTime, ) *DeviceBay`
+`func NewDeviceBay(id int32, url string, display string, device Device, name string, created NullableTime, lastUpdated NullableTime, ) *DeviceBay`
 
 NewDeviceBay instantiates a new DeviceBay object
 This constructor will assign default values to properties that have it defined,
@@ -98,20 +98,20 @@ SetDisplay sets Display field to given value.
 
 ### GetDevice
 
-`func (o *DeviceBay) GetDevice() NestedDevice`
+`func (o *DeviceBay) GetDevice() Device`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *DeviceBay) GetDeviceOk() (*NestedDevice, bool)`
+`func (o *DeviceBay) GetDeviceOk() (*Device, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *DeviceBay) SetDevice(v NestedDevice)`
+`func (o *DeviceBay) SetDevice(v Device)`
 
 SetDevice sets Device field to given value.
 
@@ -188,20 +188,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetInstalledDevice
 
-`func (o *DeviceBay) GetInstalledDevice() NestedDevice`
+`func (o *DeviceBay) GetInstalledDevice() Device`
 
 GetInstalledDevice returns the InstalledDevice field if non-nil, zero value otherwise.
 
 ### GetInstalledDeviceOk
 
-`func (o *DeviceBay) GetInstalledDeviceOk() (*NestedDevice, bool)`
+`func (o *DeviceBay) GetInstalledDeviceOk() (*Device, bool)`
 
 GetInstalledDeviceOk returns a tuple with the InstalledDevice field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInstalledDevice
 
-`func (o *DeviceBay) SetInstalledDevice(v NestedDevice)`
+`func (o *DeviceBay) SetInstalledDevice(v Device)`
 
 SetInstalledDevice sets InstalledDevice field to given value.
 

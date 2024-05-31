@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | Route target value (formatted in accordance with RFC 4360) | 
-**Tenant** | Pointer to [**NullableNestedTenantRequest**](NestedTenantRequest.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableTenantRequest**](TenantRequest.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
@@ -52,20 +52,20 @@ SetName sets Name field to given value.
 
 ### GetTenant
 
-`func (o *RouteTargetRequest) GetTenant() NestedTenantRequest`
+`func (o *RouteTargetRequest) GetTenant() TenantRequest`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *RouteTargetRequest) GetTenantOk() (*NestedTenantRequest, bool)`
+`func (o *RouteTargetRequest) GetTenantOk() (*TenantRequest, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *RouteTargetRequest) SetTenant(v NestedTenantRequest)`
+`func (o *RouteTargetRequest) SetTenant(v TenantRequest)`
 
 SetTenant sets Tenant field to given value.
 

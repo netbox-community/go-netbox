@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Device** | Pointer to **NullableInt32** |  | [optional] 
-**VirtualMachine** | Pointer to **NullableInt32** |  | [optional] 
+**Device** | Pointer to [**NullableDeviceRequest**](DeviceRequest.md) |  | [optional] 
+**VirtualMachine** | Pointer to [**NullableVirtualMachineRequest**](VirtualMachineRequest.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Ports** | Pointer to **[]int32** |  | [optional] 
 **Protocol** | Pointer to [**PatchedWritableServiceRequestProtocol**](PatchedWritableServiceRequestProtocol.md) |  | [optional] 
-**Ipaddresses** | Pointer to **[]int32** | The specific IP addresses (if any) to which this service is bound | [optional] 
+**Ports** | Pointer to **[]int32** |  | [optional] 
+**Ipaddresses** | Pointer to **[]int32** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
@@ -36,20 +36,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDevice
 
-`func (o *PatchedWritableServiceRequest) GetDevice() int32`
+`func (o *PatchedWritableServiceRequest) GetDevice() DeviceRequest`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *PatchedWritableServiceRequest) GetDeviceOk() (*int32, bool)`
+`func (o *PatchedWritableServiceRequest) GetDeviceOk() (*DeviceRequest, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *PatchedWritableServiceRequest) SetDevice(v int32)`
+`func (o *PatchedWritableServiceRequest) SetDevice(v DeviceRequest)`
 
 SetDevice sets Device field to given value.
 
@@ -71,20 +71,20 @@ HasDevice returns a boolean if a field has been set.
 UnsetDevice ensures that no value is present for Device, not even an explicit nil
 ### GetVirtualMachine
 
-`func (o *PatchedWritableServiceRequest) GetVirtualMachine() int32`
+`func (o *PatchedWritableServiceRequest) GetVirtualMachine() VirtualMachineRequest`
 
 GetVirtualMachine returns the VirtualMachine field if non-nil, zero value otherwise.
 
 ### GetVirtualMachineOk
 
-`func (o *PatchedWritableServiceRequest) GetVirtualMachineOk() (*int32, bool)`
+`func (o *PatchedWritableServiceRequest) GetVirtualMachineOk() (*VirtualMachineRequest, bool)`
 
 GetVirtualMachineOk returns a tuple with the VirtualMachine field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVirtualMachine
 
-`func (o *PatchedWritableServiceRequest) SetVirtualMachine(v int32)`
+`func (o *PatchedWritableServiceRequest) SetVirtualMachine(v VirtualMachineRequest)`
 
 SetVirtualMachine sets VirtualMachine field to given value.
 
@@ -129,31 +129,6 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
-### GetPorts
-
-`func (o *PatchedWritableServiceRequest) GetPorts() []int32`
-
-GetPorts returns the Ports field if non-nil, zero value otherwise.
-
-### GetPortsOk
-
-`func (o *PatchedWritableServiceRequest) GetPortsOk() (*[]int32, bool)`
-
-GetPortsOk returns a tuple with the Ports field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPorts
-
-`func (o *PatchedWritableServiceRequest) SetPorts(v []int32)`
-
-SetPorts sets Ports field to given value.
-
-### HasPorts
-
-`func (o *PatchedWritableServiceRequest) HasPorts() bool`
-
-HasPorts returns a boolean if a field has been set.
-
 ### GetProtocol
 
 `func (o *PatchedWritableServiceRequest) GetProtocol() PatchedWritableServiceRequestProtocol`
@@ -178,6 +153,31 @@ SetProtocol sets Protocol field to given value.
 `func (o *PatchedWritableServiceRequest) HasProtocol() bool`
 
 HasProtocol returns a boolean if a field has been set.
+
+### GetPorts
+
+`func (o *PatchedWritableServiceRequest) GetPorts() []int32`
+
+GetPorts returns the Ports field if non-nil, zero value otherwise.
+
+### GetPortsOk
+
+`func (o *PatchedWritableServiceRequest) GetPortsOk() (*[]int32, bool)`
+
+GetPortsOk returns a tuple with the Ports field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPorts
+
+`func (o *PatchedWritableServiceRequest) SetPorts(v []int32)`
+
+SetPorts sets Ports field to given value.
+
+### HasPorts
+
+`func (o *PatchedWritableServiceRequest) HasPorts() bool`
+
+HasPorts returns a boolean if a field has been set.
 
 ### GetIpaddresses
 

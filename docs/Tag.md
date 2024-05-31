@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **Color** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **ObjectTypes** | Pointer to **[]string** |  | [optional] 
-**TaggedItems** | **int32** |  | [readonly] 
+**TaggedItems** | **int64** |  | [readonly] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewTag
 
-`func NewTag(id int32, url string, display string, name string, slug string, taggedItems int32, created NullableTime, lastUpdated NullableTime, ) *Tag`
+`func NewTag(id int32, url string, display string, name string, slug string, taggedItems int64, created NullableTime, lastUpdated NullableTime, ) *Tag`
 
 NewTag instantiates a new Tag object
 This constructor will assign default values to properties that have it defined,
@@ -212,20 +212,20 @@ HasObjectTypes returns a boolean if a field has been set.
 
 ### GetTaggedItems
 
-`func (o *Tag) GetTaggedItems() int32`
+`func (o *Tag) GetTaggedItems() int64`
 
 GetTaggedItems returns the TaggedItems field if non-nil, zero value otherwise.
 
 ### GetTaggedItemsOk
 
-`func (o *Tag) GetTaggedItemsOk() (*int32, bool)`
+`func (o *Tag) GetTaggedItemsOk() (*int64, bool)`
 
 GetTaggedItemsOk returns a tuple with the TaggedItems field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTaggedItems
 
-`func (o *Tag) SetTaggedItems(v int32)`
+`func (o *Tag) SetTaggedItems(v int64)`
 
 SetTaggedItems sets TaggedItems field to given value.
 

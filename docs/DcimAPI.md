@@ -404,11 +404,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	cableTerminationRequest := []openapiclient.CableTerminationRequest{*openapiclient.NewCableTerminationRequest(int32(123), openapiclient.End("A"), "TerminationType_example", int64(123))} // []CableTerminationRequest | 
+	cableTerminationRequest := []openapiclient.CableTerminationRequest{*openapiclient.NewCableTerminationRequest(int32(123), openapiclient.End_1("A"), "TerminationType_example", int64(123))} // []CableTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -468,11 +468,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	cableTerminationRequest := []openapiclient.CableTerminationRequest{*openapiclient.NewCableTerminationRequest(int32(123), openapiclient.End("A"), "TerminationType_example", int64(123))} // []CableTerminationRequest | 
+	cableTerminationRequest := []openapiclient.CableTerminationRequest{*openapiclient.NewCableTerminationRequest(int32(123), openapiclient.End_1("A"), "TerminationType_example", int64(123))} // []CableTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -534,11 +534,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	cableTerminationRequest := []openapiclient.CableTerminationRequest{*openapiclient.NewCableTerminationRequest(int32(123), openapiclient.End("A"), "TerminationType_example", int64(123))} // []CableTerminationRequest | 
+	cableTerminationRequest := []openapiclient.CableTerminationRequest{*openapiclient.NewCableTerminationRequest(int32(123), openapiclient.End_1("A"), "TerminationType_example", int64(123))} // []CableTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -600,11 +600,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	cableTerminationRequest := *openapiclient.NewCableTerminationRequest(int32(123), openapiclient.End("A"), "TerminationType_example", int64(123)) // CableTerminationRequest | 
+	cableTerminationRequest := *openapiclient.NewCableTerminationRequest(int32(123), openapiclient.End_1("A"), "TerminationType_example", int64(123)) // CableTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -666,7 +666,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -719,7 +719,7 @@ Name | Type | Description  | Notes
 
 ## DcimCableTerminationsList
 
-> PaginatedCableTerminationList DcimCableTerminationsList(ctx).Cable(cable).CableN(cableN).CableEnd(cableEnd).CableEndN(cableEndN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).Offset(offset).Ordering(ordering).TerminationId(terminationId).TerminationIdEmpty(terminationIdEmpty).TerminationIdGt(terminationIdGt).TerminationIdGte(terminationIdGte).TerminationIdLt(terminationIdLt).TerminationIdLte(terminationIdLte).TerminationIdN(terminationIdN).TerminationType(terminationType).TerminationTypeN(terminationTypeN).Execute()
+> PaginatedCableTerminationList DcimCableTerminationsList(ctx).Cable(cable).CableN(cableN).CableEnd(cableEnd).CableEndN(cableEndN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).TerminationId(terminationId).TerminationIdEmpty(terminationIdEmpty).TerminationIdGt(terminationIdGt).TerminationIdGte(terminationIdGte).TerminationIdLt(terminationIdLt).TerminationIdLte(terminationIdLte).TerminationIdN(terminationIdN).TerminationType(terminationType).TerminationTypeN(terminationTypeN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -734,14 +734,23 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+    "time"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	cable := int32(56) // int32 |  (optional)
 	cableN := int32(56) // int32 |  (optional)
-	cableEnd := "cableEnd_example" // string |  (optional)
-	cableEndN := "cableEndN_example" // string |  (optional)
+	cableEnd := openapiclient.End("A") // End | * `A` - A * `B` - B (optional)
+	cableEndN := openapiclient.End("A") // End | * `A` - A * `B` - B (optional)
+	created := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdGte := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdLt := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdLte := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdN := []time.Time{time.Now()} // []time.Time |  (optional)
+	createdByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	id := []int32{int32(123)} // []int32 |  (optional)
 	idEmpty := true // bool |  (optional)
 	idGt := []int32{int32(123)} // []int32 |  (optional)
@@ -749,7 +758,15 @@ func main() {
 	idLt := []int32{int32(123)} // []int32 |  (optional)
 	idLte := []int32{int32(123)} // []int32 |  (optional)
 	idN := []int32{int32(123)} // []int32 |  (optional)
+	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedGte := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
 	limit := int32(56) // int32 | Number of results to return per page. (optional)
+	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
 	terminationId := []int32{int32(123)} // []int32 |  (optional)
@@ -761,10 +778,11 @@ func main() {
 	terminationIdN := []int32{int32(123)} // []int32 |  (optional)
 	terminationType := "terminationType_example" // string |  (optional)
 	terminationTypeN := "terminationTypeN_example" // string |  (optional)
+	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimCableTerminationsList(context.Background()).Cable(cable).CableN(cableN).CableEnd(cableEnd).CableEndN(cableEndN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).Offset(offset).Ordering(ordering).TerminationId(terminationId).TerminationIdEmpty(terminationIdEmpty).TerminationIdGt(terminationIdGt).TerminationIdGte(terminationIdGte).TerminationIdLt(terminationIdLt).TerminationIdLte(terminationIdLte).TerminationIdN(terminationIdN).TerminationType(terminationType).TerminationTypeN(terminationTypeN).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimCableTerminationsList(context.Background()).Cable(cable).CableN(cableN).CableEnd(cableEnd).CableEndN(cableEndN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).TerminationId(terminationId).TerminationIdEmpty(terminationIdEmpty).TerminationIdGt(terminationIdGt).TerminationIdGte(terminationIdGte).TerminationIdLt(terminationIdLt).TerminationIdLte(terminationIdLte).TerminationIdN(terminationIdN).TerminationType(terminationType).TerminationTypeN(terminationTypeN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimCableTerminationsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -787,8 +805,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cable** | **int32** |  | 
  **cableN** | **int32** |  | 
- **cableEnd** | **string** |  | 
- **cableEndN** | **string** |  | 
+ **cableEnd** | [**End**](End.md) | * &#x60;A&#x60; - A * &#x60;B&#x60; - B | 
+ **cableEndN** | [**End**](End.md) | * &#x60;A&#x60; - A * &#x60;B&#x60; - B | 
+ **created** | [**[]time.Time**](time.Time.md) |  | 
+ **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
+ **createdGt** | [**[]time.Time**](time.Time.md) |  | 
+ **createdGte** | [**[]time.Time**](time.Time.md) |  | 
+ **createdLt** | [**[]time.Time**](time.Time.md) |  | 
+ **createdLte** | [**[]time.Time**](time.Time.md) |  | 
+ **createdN** | [**[]time.Time**](time.Time.md) |  | 
+ **createdByRequest** | **string** |  | 
  **id** | **[]int32** |  | 
  **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
@@ -796,7 +822,15 @@ Name | Type | Description  | Notes
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
+ **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedGte** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **modifiedByRequest** | **string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **terminationId** | **[]int32** |  | 
@@ -808,6 +842,7 @@ Name | Type | Description  | Notes
  **terminationIdN** | **[]int32** |  | 
  **terminationType** | **string** |  | 
  **terminationTypeN** | **string** |  | 
+ **updatedByRequest** | **string** |  | 
 
 ### Return type
 
@@ -844,7 +879,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -916,7 +951,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -986,12 +1021,12 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this cable termination.
-	cableTerminationRequest := *openapiclient.NewCableTerminationRequest(int32(123), openapiclient.End("A"), "TerminationType_example", int64(123)) // CableTerminationRequest | 
+	cableTerminationRequest := *openapiclient.NewCableTerminationRequest(int32(123), openapiclient.End_1("A"), "TerminationType_example", int64(123)) // CableTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1058,7 +1093,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -1122,7 +1157,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -1188,7 +1223,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -1254,7 +1289,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -1320,7 +1355,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -1389,7 +1424,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -1453,8 +1488,8 @@ func main() {
 	lengthLt := []float64{float64(123)} // []float64 |  (optional)
 	lengthLte := []float64{float64(123)} // []float64 |  (optional)
 	lengthN := []float64{float64(123)} // []float64 |  (optional)
-	lengthUnit := "lengthUnit_example" // string |  (optional)
-	lengthUnitN := "lengthUnitN_example" // string |  (optional)
+	lengthUnit := openapiclient.dcim_cables_list_length_unit_parameter("cm") // DcimCablesListLengthUnitParameter | * `km` - Kilometers * `m` - Meters * `cm` - Centimeters * `mi` - Miles * `ft` - Feet * `in` - Inches (optional)
+	lengthUnitN := openapiclient.dcim_cables_list_length_unit_parameter("cm") // DcimCablesListLengthUnitParameter | * `km` - Kilometers * `m` - Meters * `cm` - Centimeters * `mi` - Miles * `ft` - Feet * `in` - Inches (optional)
 	limit := int32(56) // int32 | Number of results to return per page. (optional)
 	location := []string{"Inner_example"} // []string |  (optional)
 	locationId := []int32{int32(123)} // []int32 |  (optional)
@@ -1576,8 +1611,8 @@ Name | Type | Description  | Notes
  **lengthLt** | **[]float64** |  | 
  **lengthLte** | **[]float64** |  | 
  **lengthN** | **[]float64** |  | 
- **lengthUnit** | **string** |  | 
- **lengthUnitN** | **string** |  | 
+ **lengthUnit** | [**DcimCablesListLengthUnitParameter**](DcimCablesListLengthUnitParameter.md) | * &#x60;km&#x60; - Kilometers * &#x60;m&#x60; - Meters * &#x60;cm&#x60; - Centimeters * &#x60;mi&#x60; - Miles * &#x60;ft&#x60; - Feet * &#x60;in&#x60; - Inches | 
+ **lengthUnitN** | [**DcimCablesListLengthUnitParameter**](DcimCablesListLengthUnitParameter.md) | * &#x60;km&#x60; - Kilometers * &#x60;m&#x60; - Meters * &#x60;cm&#x60; - Centimeters * &#x60;mi&#x60; - Miles * &#x60;ft&#x60; - Feet * &#x60;in&#x60; - Inches | 
  **limit** | **int32** | Number of results to return per page. | 
  **location** | **[]string** |  | 
  **locationId** | **[]int32** |  | 
@@ -1651,7 +1686,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -1723,7 +1758,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -1793,7 +1828,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -1865,7 +1900,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -1933,7 +1968,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -1997,7 +2032,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -2063,7 +2098,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -2129,7 +2164,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -2195,7 +2230,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -2248,7 +2283,7 @@ Name | Type | Description  | Notes
 
 ## DcimConsolePortTemplatesList
 
-> PaginatedConsolePortTemplateList DcimConsolePortTemplatesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedConsolePortTemplateList DcimConsolePortTemplatesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).ModuleTypeId(moduleTypeId).ModuleTypeIdN(moduleTypeIdN).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -2264,7 +2299,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -2287,6 +2322,8 @@ func main() {
 	descriptionNie := []string{"Inner_example"} // []string |  (optional)
 	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
 	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
+	deviceTypeId := []*int32{int32(123)} // []*int32 | Device type (ID) (optional)
+	deviceTypeIdN := []*int32{int32(123)} // []*int32 | Device type (ID) (optional)
 	devicetypeId := []*int32{int32(123)} // []*int32 | Device type (ID) (optional)
 	devicetypeIdN := []*int32{int32(123)} // []*int32 | Device type (ID) (optional)
 	id := []int32{int32(123)} // []int32 |  (optional)
@@ -2296,6 +2333,17 @@ func main() {
 	idLt := []int32{int32(123)} // []int32 |  (optional)
 	idLte := []int32{int32(123)} // []int32 |  (optional)
 	idN := []int32{int32(123)} // []int32 |  (optional)
+	label := []string{"Inner_example"} // []string |  (optional)
+	labelEmpty := true // bool |  (optional)
+	labelIc := []string{"Inner_example"} // []string |  (optional)
+	labelIe := []string{"Inner_example"} // []string |  (optional)
+	labelIew := []string{"Inner_example"} // []string |  (optional)
+	labelIsw := []string{"Inner_example"} // []string |  (optional)
+	labelN := []string{"Inner_example"} // []string |  (optional)
+	labelNic := []string{"Inner_example"} // []string |  (optional)
+	labelNie := []string{"Inner_example"} // []string |  (optional)
+	labelNiew := []string{"Inner_example"} // []string |  (optional)
+	labelNisw := []string{"Inner_example"} // []string |  (optional)
 	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -2305,6 +2353,8 @@ func main() {
 	lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
 	limit := int32(56) // int32 | Number of results to return per page. (optional)
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+	moduleTypeId := []*int32{int32(123)} // []*int32 | Module type (ID) (optional)
+	moduleTypeIdN := []*int32{int32(123)} // []*int32 | Module type (ID) (optional)
 	moduletypeId := []*int32{int32(123)} // []*int32 | Module type (ID) (optional)
 	moduletypeIdN := []*int32{int32(123)} // []*int32 | Module type (ID) (optional)
 	name := []string{"Inner_example"} // []string |  (optional)
@@ -2321,13 +2371,13 @@ func main() {
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
 	q := "q_example" // string | Search (optional)
-	type_ := "type__example" // string |  (optional)
-	typeN := "typeN_example" // string |  (optional)
+	type_ := openapiclient.dcim_console_port_templates_list_type_parameter("Other") // DcimConsolePortTemplatesListTypeParameter | * `Serial` - [('de-9', 'DE-9'), ('db-25', 'DB-25'), ('rj-11', 'RJ-11'), ('rj-12', 'RJ-12'), ('rj-45', 'RJ-45'), ('mini-din-8', 'Mini-DIN 8')] * `USB` - [('usb-a', 'USB Type A'), ('usb-b', 'USB Type B'), ('usb-c', 'USB Type C'), ('usb-mini-a', 'USB Mini A'), ('usb-mini-b', 'USB Mini B'), ('usb-micro-a', 'USB Micro A'), ('usb-micro-b', 'USB Micro B'), ('usb-micro-ab', 'USB Micro AB')] * `Other` - [('other', 'Other')] (optional)
+	typeN := openapiclient.dcim_console_port_templates_list_type_parameter("Other") // DcimConsolePortTemplatesListTypeParameter | * `Serial` - [('de-9', 'DE-9'), ('db-25', 'DB-25'), ('rj-11', 'RJ-11'), ('rj-12', 'RJ-12'), ('rj-45', 'RJ-45'), ('mini-din-8', 'Mini-DIN 8')] * `USB` - [('usb-a', 'USB Type A'), ('usb-b', 'USB Type B'), ('usb-c', 'USB Type C'), ('usb-mini-a', 'USB Mini A'), ('usb-mini-b', 'USB Mini B'), ('usb-micro-a', 'USB Micro A'), ('usb-micro-b', 'USB Micro B'), ('usb-micro-ab', 'USB Micro AB')] * `Other` - [('other', 'Other')] (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimConsolePortTemplatesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimConsolePortTemplatesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).ModuleTypeId(moduleTypeId).ModuleTypeIdN(moduleTypeIdN).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConsolePortTemplatesList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2367,6 +2417,8 @@ Name | Type | Description  | Notes
  **descriptionNie** | **[]string** |  | 
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
+ **deviceTypeId** | **[]int32** | Device type (ID) | 
+ **deviceTypeIdN** | **[]int32** | Device type (ID) | 
  **devicetypeId** | **[]int32** | Device type (ID) | 
  **devicetypeIdN** | **[]int32** | Device type (ID) | 
  **id** | **[]int32** |  | 
@@ -2376,6 +2428,17 @@ Name | Type | Description  | Notes
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
+ **label** | **[]string** |  | 
+ **labelEmpty** | **bool** |  | 
+ **labelIc** | **[]string** |  | 
+ **labelIe** | **[]string** |  | 
+ **labelIew** | **[]string** |  | 
+ **labelIsw** | **[]string** |  | 
+ **labelN** | **[]string** |  | 
+ **labelNic** | **[]string** |  | 
+ **labelNie** | **[]string** |  | 
+ **labelNiew** | **[]string** |  | 
+ **labelNisw** | **[]string** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
@@ -2385,6 +2448,8 @@ Name | Type | Description  | Notes
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
  **modifiedByRequest** | **string** |  | 
+ **moduleTypeId** | **[]int32** | Module type (ID) | 
+ **moduleTypeIdN** | **[]int32** | Module type (ID) | 
  **moduletypeId** | **[]int32** | Module type (ID) | 
  **moduletypeIdN** | **[]int32** | Module type (ID) | 
  **name** | **[]string** |  | 
@@ -2401,8 +2466,8 @@ Name | Type | Description  | Notes
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **q** | **string** | Search | 
- **type_** | **string** |  | 
- **typeN** | **string** |  | 
+ **type_** | [**DcimConsolePortTemplatesListTypeParameter**](DcimConsolePortTemplatesListTypeParameter.md) | * &#x60;Serial&#x60; - [(&#39;de-9&#39;, &#39;DE-9&#39;), (&#39;db-25&#39;, &#39;DB-25&#39;), (&#39;rj-11&#39;, &#39;RJ-11&#39;), (&#39;rj-12&#39;, &#39;RJ-12&#39;), (&#39;rj-45&#39;, &#39;RJ-45&#39;), (&#39;mini-din-8&#39;, &#39;Mini-DIN 8&#39;)] * &#x60;USB&#x60; - [(&#39;usb-a&#39;, &#39;USB Type A&#39;), (&#39;usb-b&#39;, &#39;USB Type B&#39;), (&#39;usb-c&#39;, &#39;USB Type C&#39;), (&#39;usb-mini-a&#39;, &#39;USB Mini A&#39;), (&#39;usb-mini-b&#39;, &#39;USB Mini B&#39;), (&#39;usb-micro-a&#39;, &#39;USB Micro A&#39;), (&#39;usb-micro-b&#39;, &#39;USB Micro B&#39;), (&#39;usb-micro-ab&#39;, &#39;USB Micro AB&#39;)] * &#x60;Other&#x60; - [(&#39;other&#39;, &#39;Other&#39;)] | 
+ **typeN** | [**DcimConsolePortTemplatesListTypeParameter**](DcimConsolePortTemplatesListTypeParameter.md) | * &#x60;Serial&#x60; - [(&#39;de-9&#39;, &#39;DE-9&#39;), (&#39;db-25&#39;, &#39;DB-25&#39;), (&#39;rj-11&#39;, &#39;RJ-11&#39;), (&#39;rj-12&#39;, &#39;RJ-12&#39;), (&#39;rj-45&#39;, &#39;RJ-45&#39;), (&#39;mini-din-8&#39;, &#39;Mini-DIN 8&#39;)] * &#x60;USB&#x60; - [(&#39;usb-a&#39;, &#39;USB Type A&#39;), (&#39;usb-b&#39;, &#39;USB Type B&#39;), (&#39;usb-c&#39;, &#39;USB Type C&#39;), (&#39;usb-mini-a&#39;, &#39;USB Mini A&#39;), (&#39;usb-mini-b&#39;, &#39;USB Mini B&#39;), (&#39;usb-micro-a&#39;, &#39;USB Micro A&#39;), (&#39;usb-micro-b&#39;, &#39;USB Micro B&#39;), (&#39;usb-micro-ab&#39;, &#39;USB Micro AB&#39;)] * &#x60;Other&#x60; - [(&#39;other&#39;, &#39;Other&#39;)] | 
  **updatedByRequest** | **string** |  | 
 
 ### Return type
@@ -2440,7 +2505,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -2512,7 +2577,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -2582,7 +2647,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -2654,11 +2719,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	consolePortRequest := []openapiclient.ConsolePortRequest{*openapiclient.NewConsolePortRequest(*openapiclient.NewNestedDeviceRequest(), "Name_example")} // []ConsolePortRequest | 
+	consolePortRequest := []openapiclient.ConsolePortRequest{*openapiclient.NewConsolePortRequest(*openapiclient.NewDeviceRequest(), "Name_example")} // []ConsolePortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2718,11 +2783,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	consolePortRequest := []openapiclient.ConsolePortRequest{*openapiclient.NewConsolePortRequest(*openapiclient.NewNestedDeviceRequest(), "Name_example")} // []ConsolePortRequest | 
+	consolePortRequest := []openapiclient.ConsolePortRequest{*openapiclient.NewConsolePortRequest(*openapiclient.NewDeviceRequest(), "Name_example")} // []ConsolePortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2784,11 +2849,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	consolePortRequest := []openapiclient.ConsolePortRequest{*openapiclient.NewConsolePortRequest(*openapiclient.NewNestedDeviceRequest(), "Name_example")} // []ConsolePortRequest | 
+	consolePortRequest := []openapiclient.ConsolePortRequest{*openapiclient.NewConsolePortRequest(*openapiclient.NewDeviceRequest(), "Name_example")} // []ConsolePortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2850,11 +2915,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writableConsolePortRequest := *openapiclient.NewWritableConsolePortRequest(int32(123), "Name_example") // WritableConsolePortRequest | 
+	writableConsolePortRequest := *openapiclient.NewWritableConsolePortRequest(*openapiclient.NewDeviceRequest(), "Name_example") // WritableConsolePortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2916,7 +2981,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -2969,7 +3034,7 @@ Name | Type | Description  | Notes
 
 ## DcimConsolePortsList
 
-> PaginatedConsolePortList DcimConsolePortsList(ctx).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Connected(connected).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
+> PaginatedConsolePortList DcimConsolePortsList(ctx).CableEnd(cableEnd).CableEndN(cableEndN).CableId(cableId).CableIdN(cableIdN).Cabled(cabled).Connected(connected).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).MarkConnected(markConnected).ModifiedByRequest(modifiedByRequest).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Speed(speed).SpeedN(speedN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
 
 
 
@@ -2985,12 +3050,14 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	cableEnd := "cableEnd_example" // string |  (optional)
-	cableEndN := "cableEndN_example" // string |  (optional)
+	cableEnd := openapiclient.circuits_circuit_terminations_list_cable_end_parameter("A") // CircuitsCircuitTerminationsListCableEndParameter | * `A` - A * `B` - B (optional)
+	cableEndN := openapiclient.circuits_circuit_terminations_list_cable_end_parameter("A") // CircuitsCircuitTerminationsListCableEndParameter | * `A` - A * `B` - B (optional)
+	cableId := []*int32{int32(123)} // []*int32 | Cable (ID) (optional)
+	cableIdN := []*int32{int32(123)} // []*int32 | Cable (ID) (optional)
 	cabled := true // bool |  (optional)
 	connected := true // bool |  (optional)
 	created := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -3016,10 +3083,6 @@ func main() {
 	deviceN := []*string{"Inner_example"} // []*string | Device (name) (optional)
 	deviceId := []int32{int32(123)} // []int32 | Device (ID) (optional)
 	deviceIdN := []int32{int32(123)} // []int32 | Device (ID) (optional)
-	deviceRole := []string{"Inner_example"} // []string | Device role (slug) (optional)
-	deviceRoleN := []string{"Inner_example"} // []string | Device role (slug) (optional)
-	deviceRoleId := []int32{int32(123)} // []int32 | Device role (ID) (optional)
-	deviceRoleIdN := []int32{int32(123)} // []int32 | Device role (ID) (optional)
 	deviceType := []string{"Inner_example"} // []string | Device type (model) (optional)
 	deviceTypeN := []string{"Inner_example"} // []string | Device type (model) (optional)
 	deviceTypeId := []int32{int32(123)} // []int32 | Device type (ID) (optional)
@@ -3054,6 +3117,7 @@ func main() {
 	locationN := []string{"Inner_example"} // []string | Location (slug) (optional)
 	locationId := []int32{int32(123)} // []int32 | Location (ID) (optional)
 	locationIdN := []int32{int32(123)} // []int32 | Location (ID) (optional)
+	markConnected := true // bool |  (optional)
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	moduleId := []*int32{int32(123)} // []*int32 | Module (ID) (optional)
 	moduleIdN := []*int32{int32(123)} // []*int32 | Module (ID) (optional)
@@ -3092,6 +3156,8 @@ func main() {
 	siteGroupIdN := []int32{int32(123)} // []int32 | Site group (ID) (optional)
 	siteId := []int32{int32(123)} // []int32 | Site (ID) (optional)
 	siteIdN := []int32{int32(123)} // []int32 | Site (ID) (optional)
+	speed := openapiclient.dcim_console_ports_list_speed_parameter(115200) // DcimConsolePortsListSpeedParameter | Port speed in bits per second  * `1200` - 1200 bps * `2400` - 2400 bps * `4800` - 4800 bps * `9600` - 9600 bps * `19200` - 19.2 kbps * `38400` - 38.4 kbps * `57600` - 57.6 kbps * `115200` - 115.2 kbps (optional)
+	speedN := openapiclient.dcim_console_ports_list_speed_parameter(115200) // DcimConsolePortsListSpeedParameter | Port speed in bits per second  * `1200` - 1200 bps * `2400` - 2400 bps * `4800` - 4800 bps * `9600` - 9600 bps * `19200` - 19.2 kbps * `38400` - 38.4 kbps * `57600` - 57.6 kbps * `115200` - 115.2 kbps (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
 	type_ := []string{"Inner_example"} // []string | Physical port type (optional)
@@ -3104,7 +3170,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimConsolePortsList(context.Background()).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Connected(connected).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimConsolePortsList(context.Background()).CableEnd(cableEnd).CableEndN(cableEndN).CableId(cableId).CableIdN(cableIdN).Cabled(cabled).Connected(connected).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).MarkConnected(markConnected).ModifiedByRequest(modifiedByRequest).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Speed(speed).SpeedN(speedN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConsolePortsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3125,8 +3191,10 @@ Other parameters are passed through a pointer to a apiDcimConsolePortsListReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cableEnd** | **string** |  | 
- **cableEndN** | **string** |  | 
+ **cableEnd** | [**CircuitsCircuitTerminationsListCableEndParameter**](CircuitsCircuitTerminationsListCableEndParameter.md) | * &#x60;A&#x60; - A * &#x60;B&#x60; - B | 
+ **cableEndN** | [**CircuitsCircuitTerminationsListCableEndParameter**](CircuitsCircuitTerminationsListCableEndParameter.md) | * &#x60;A&#x60; - A * &#x60;B&#x60; - B | 
+ **cableId** | **[]int32** | Cable (ID) | 
+ **cableIdN** | **[]int32** | Cable (ID) | 
  **cabled** | **bool** |  | 
  **connected** | **bool** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
@@ -3152,10 +3220,6 @@ Name | Type | Description  | Notes
  **deviceN** | **[]string** | Device (name) | 
  **deviceId** | **[]int32** | Device (ID) | 
  **deviceIdN** | **[]int32** | Device (ID) | 
- **deviceRole** | **[]string** | Device role (slug) | 
- **deviceRoleN** | **[]string** | Device role (slug) | 
- **deviceRoleId** | **[]int32** | Device role (ID) | 
- **deviceRoleIdN** | **[]int32** | Device role (ID) | 
  **deviceType** | **[]string** | Device type (model) | 
  **deviceTypeN** | **[]string** | Device type (model) | 
  **deviceTypeId** | **[]int32** | Device type (ID) | 
@@ -3190,6 +3254,7 @@ Name | Type | Description  | Notes
  **locationN** | **[]string** | Location (slug) | 
  **locationId** | **[]int32** | Location (ID) | 
  **locationIdN** | **[]int32** | Location (ID) | 
+ **markConnected** | **bool** |  | 
  **modifiedByRequest** | **string** |  | 
  **moduleId** | **[]int32** | Module (ID) | 
  **moduleIdN** | **[]int32** | Module (ID) | 
@@ -3228,6 +3293,8 @@ Name | Type | Description  | Notes
  **siteGroupIdN** | **[]int32** | Site group (ID) | 
  **siteId** | **[]int32** | Site (ID) | 
  **siteIdN** | **[]int32** | Site (ID) | 
+ **speed** | [**DcimConsolePortsListSpeedParameter**](DcimConsolePortsListSpeedParameter.md) | Port speed in bits per second  * &#x60;1200&#x60; - 1200 bps * &#x60;2400&#x60; - 2400 bps * &#x60;4800&#x60; - 4800 bps * &#x60;9600&#x60; - 9600 bps * &#x60;19200&#x60; - 19.2 kbps * &#x60;38400&#x60; - 38.4 kbps * &#x60;57600&#x60; - 57.6 kbps * &#x60;115200&#x60; - 115.2 kbps | 
+ **speedN** | [**DcimConsolePortsListSpeedParameter**](DcimConsolePortsListSpeedParameter.md) | Port speed in bits per second  * &#x60;1200&#x60; - 1200 bps * &#x60;2400&#x60; - 2400 bps * &#x60;4800&#x60; - 4800 bps * &#x60;9600&#x60; - 9600 bps * &#x60;19200&#x60; - 19.2 kbps * &#x60;38400&#x60; - 38.4 kbps * &#x60;57600&#x60; - 57.6 kbps * &#x60;115200&#x60; - 115.2 kbps | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
  **type_** | **[]string** | Physical port type | 
@@ -3273,7 +3340,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -3345,7 +3412,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -3415,7 +3482,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -3485,12 +3552,12 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this console port.
-	writableConsolePortRequest := *openapiclient.NewWritableConsolePortRequest(int32(123), "Name_example") // WritableConsolePortRequest | 
+	writableConsolePortRequest := *openapiclient.NewWritableConsolePortRequest(*openapiclient.NewDeviceRequest(), "Name_example") // WritableConsolePortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3557,7 +3624,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -3621,7 +3688,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -3687,7 +3754,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -3753,7 +3820,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -3819,7 +3886,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -3872,7 +3939,7 @@ Name | Type | Description  | Notes
 
 ## DcimConsoleServerPortTemplatesList
 
-> PaginatedConsoleServerPortTemplateList DcimConsoleServerPortTemplatesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedConsoleServerPortTemplateList DcimConsoleServerPortTemplatesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).ModuleTypeId(moduleTypeId).ModuleTypeIdN(moduleTypeIdN).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -3888,7 +3955,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -3911,6 +3978,8 @@ func main() {
 	descriptionNie := []string{"Inner_example"} // []string |  (optional)
 	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
 	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
+	deviceTypeId := []*int32{int32(123)} // []*int32 | Device type (ID) (optional)
+	deviceTypeIdN := []*int32{int32(123)} // []*int32 | Device type (ID) (optional)
 	devicetypeId := []*int32{int32(123)} // []*int32 | Device type (ID) (optional)
 	devicetypeIdN := []*int32{int32(123)} // []*int32 | Device type (ID) (optional)
 	id := []int32{int32(123)} // []int32 |  (optional)
@@ -3920,6 +3989,17 @@ func main() {
 	idLt := []int32{int32(123)} // []int32 |  (optional)
 	idLte := []int32{int32(123)} // []int32 |  (optional)
 	idN := []int32{int32(123)} // []int32 |  (optional)
+	label := []string{"Inner_example"} // []string |  (optional)
+	labelEmpty := true // bool |  (optional)
+	labelIc := []string{"Inner_example"} // []string |  (optional)
+	labelIe := []string{"Inner_example"} // []string |  (optional)
+	labelIew := []string{"Inner_example"} // []string |  (optional)
+	labelIsw := []string{"Inner_example"} // []string |  (optional)
+	labelN := []string{"Inner_example"} // []string |  (optional)
+	labelNic := []string{"Inner_example"} // []string |  (optional)
+	labelNie := []string{"Inner_example"} // []string |  (optional)
+	labelNiew := []string{"Inner_example"} // []string |  (optional)
+	labelNisw := []string{"Inner_example"} // []string |  (optional)
 	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -3929,6 +4009,8 @@ func main() {
 	lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
 	limit := int32(56) // int32 | Number of results to return per page. (optional)
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+	moduleTypeId := []*int32{int32(123)} // []*int32 | Module type (ID) (optional)
+	moduleTypeIdN := []*int32{int32(123)} // []*int32 | Module type (ID) (optional)
 	moduletypeId := []*int32{int32(123)} // []*int32 | Module type (ID) (optional)
 	moduletypeIdN := []*int32{int32(123)} // []*int32 | Module type (ID) (optional)
 	name := []string{"Inner_example"} // []string |  (optional)
@@ -3945,13 +4027,13 @@ func main() {
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
 	q := "q_example" // string | Search (optional)
-	type_ := "type__example" // string |  (optional)
-	typeN := "typeN_example" // string |  (optional)
+	type_ := openapiclient.dcim_console_port_templates_list_type_parameter("Other") // DcimConsolePortTemplatesListTypeParameter | * `Serial` - [('de-9', 'DE-9'), ('db-25', 'DB-25'), ('rj-11', 'RJ-11'), ('rj-12', 'RJ-12'), ('rj-45', 'RJ-45'), ('mini-din-8', 'Mini-DIN 8')] * `USB` - [('usb-a', 'USB Type A'), ('usb-b', 'USB Type B'), ('usb-c', 'USB Type C'), ('usb-mini-a', 'USB Mini A'), ('usb-mini-b', 'USB Mini B'), ('usb-micro-a', 'USB Micro A'), ('usb-micro-b', 'USB Micro B'), ('usb-micro-ab', 'USB Micro AB')] * `Other` - [('other', 'Other')] (optional)
+	typeN := openapiclient.dcim_console_port_templates_list_type_parameter("Other") // DcimConsolePortTemplatesListTypeParameter | * `Serial` - [('de-9', 'DE-9'), ('db-25', 'DB-25'), ('rj-11', 'RJ-11'), ('rj-12', 'RJ-12'), ('rj-45', 'RJ-45'), ('mini-din-8', 'Mini-DIN 8')] * `USB` - [('usb-a', 'USB Type A'), ('usb-b', 'USB Type B'), ('usb-c', 'USB Type C'), ('usb-mini-a', 'USB Mini A'), ('usb-mini-b', 'USB Mini B'), ('usb-micro-a', 'USB Micro A'), ('usb-micro-b', 'USB Micro B'), ('usb-micro-ab', 'USB Micro AB')] * `Other` - [('other', 'Other')] (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimConsoleServerPortTemplatesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimConsoleServerPortTemplatesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).ModuleTypeId(moduleTypeId).ModuleTypeIdN(moduleTypeIdN).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConsoleServerPortTemplatesList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3991,6 +4073,8 @@ Name | Type | Description  | Notes
  **descriptionNie** | **[]string** |  | 
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
+ **deviceTypeId** | **[]int32** | Device type (ID) | 
+ **deviceTypeIdN** | **[]int32** | Device type (ID) | 
  **devicetypeId** | **[]int32** | Device type (ID) | 
  **devicetypeIdN** | **[]int32** | Device type (ID) | 
  **id** | **[]int32** |  | 
@@ -4000,6 +4084,17 @@ Name | Type | Description  | Notes
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
+ **label** | **[]string** |  | 
+ **labelEmpty** | **bool** |  | 
+ **labelIc** | **[]string** |  | 
+ **labelIe** | **[]string** |  | 
+ **labelIew** | **[]string** |  | 
+ **labelIsw** | **[]string** |  | 
+ **labelN** | **[]string** |  | 
+ **labelNic** | **[]string** |  | 
+ **labelNie** | **[]string** |  | 
+ **labelNiew** | **[]string** |  | 
+ **labelNisw** | **[]string** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
@@ -4009,6 +4104,8 @@ Name | Type | Description  | Notes
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
  **modifiedByRequest** | **string** |  | 
+ **moduleTypeId** | **[]int32** | Module type (ID) | 
+ **moduleTypeIdN** | **[]int32** | Module type (ID) | 
  **moduletypeId** | **[]int32** | Module type (ID) | 
  **moduletypeIdN** | **[]int32** | Module type (ID) | 
  **name** | **[]string** |  | 
@@ -4025,8 +4122,8 @@ Name | Type | Description  | Notes
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **q** | **string** | Search | 
- **type_** | **string** |  | 
- **typeN** | **string** |  | 
+ **type_** | [**DcimConsolePortTemplatesListTypeParameter**](DcimConsolePortTemplatesListTypeParameter.md) | * &#x60;Serial&#x60; - [(&#39;de-9&#39;, &#39;DE-9&#39;), (&#39;db-25&#39;, &#39;DB-25&#39;), (&#39;rj-11&#39;, &#39;RJ-11&#39;), (&#39;rj-12&#39;, &#39;RJ-12&#39;), (&#39;rj-45&#39;, &#39;RJ-45&#39;), (&#39;mini-din-8&#39;, &#39;Mini-DIN 8&#39;)] * &#x60;USB&#x60; - [(&#39;usb-a&#39;, &#39;USB Type A&#39;), (&#39;usb-b&#39;, &#39;USB Type B&#39;), (&#39;usb-c&#39;, &#39;USB Type C&#39;), (&#39;usb-mini-a&#39;, &#39;USB Mini A&#39;), (&#39;usb-mini-b&#39;, &#39;USB Mini B&#39;), (&#39;usb-micro-a&#39;, &#39;USB Micro A&#39;), (&#39;usb-micro-b&#39;, &#39;USB Micro B&#39;), (&#39;usb-micro-ab&#39;, &#39;USB Micro AB&#39;)] * &#x60;Other&#x60; - [(&#39;other&#39;, &#39;Other&#39;)] | 
+ **typeN** | [**DcimConsolePortTemplatesListTypeParameter**](DcimConsolePortTemplatesListTypeParameter.md) | * &#x60;Serial&#x60; - [(&#39;de-9&#39;, &#39;DE-9&#39;), (&#39;db-25&#39;, &#39;DB-25&#39;), (&#39;rj-11&#39;, &#39;RJ-11&#39;), (&#39;rj-12&#39;, &#39;RJ-12&#39;), (&#39;rj-45&#39;, &#39;RJ-45&#39;), (&#39;mini-din-8&#39;, &#39;Mini-DIN 8&#39;)] * &#x60;USB&#x60; - [(&#39;usb-a&#39;, &#39;USB Type A&#39;), (&#39;usb-b&#39;, &#39;USB Type B&#39;), (&#39;usb-c&#39;, &#39;USB Type C&#39;), (&#39;usb-mini-a&#39;, &#39;USB Mini A&#39;), (&#39;usb-mini-b&#39;, &#39;USB Mini B&#39;), (&#39;usb-micro-a&#39;, &#39;USB Micro A&#39;), (&#39;usb-micro-b&#39;, &#39;USB Micro B&#39;), (&#39;usb-micro-ab&#39;, &#39;USB Micro AB&#39;)] * &#x60;Other&#x60; - [(&#39;other&#39;, &#39;Other&#39;)] | 
  **updatedByRequest** | **string** |  | 
 
 ### Return type
@@ -4064,7 +4161,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -4136,7 +4233,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -4206,7 +4303,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -4278,11 +4375,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	consoleServerPortRequest := []openapiclient.ConsoleServerPortRequest{*openapiclient.NewConsoleServerPortRequest(*openapiclient.NewNestedDeviceRequest(), "Name_example")} // []ConsoleServerPortRequest | 
+	consoleServerPortRequest := []openapiclient.ConsoleServerPortRequest{*openapiclient.NewConsoleServerPortRequest(*openapiclient.NewDeviceRequest(), "Name_example")} // []ConsoleServerPortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4342,11 +4439,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	consoleServerPortRequest := []openapiclient.ConsoleServerPortRequest{*openapiclient.NewConsoleServerPortRequest(*openapiclient.NewNestedDeviceRequest(), "Name_example")} // []ConsoleServerPortRequest | 
+	consoleServerPortRequest := []openapiclient.ConsoleServerPortRequest{*openapiclient.NewConsoleServerPortRequest(*openapiclient.NewDeviceRequest(), "Name_example")} // []ConsoleServerPortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4408,11 +4505,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	consoleServerPortRequest := []openapiclient.ConsoleServerPortRequest{*openapiclient.NewConsoleServerPortRequest(*openapiclient.NewNestedDeviceRequest(), "Name_example")} // []ConsoleServerPortRequest | 
+	consoleServerPortRequest := []openapiclient.ConsoleServerPortRequest{*openapiclient.NewConsoleServerPortRequest(*openapiclient.NewDeviceRequest(), "Name_example")} // []ConsoleServerPortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4474,11 +4571,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writableConsoleServerPortRequest := *openapiclient.NewWritableConsoleServerPortRequest(int32(123), "Name_example") // WritableConsoleServerPortRequest | 
+	writableConsoleServerPortRequest := *openapiclient.NewWritableConsoleServerPortRequest(*openapiclient.NewDeviceRequest(), "Name_example") // WritableConsoleServerPortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4540,7 +4637,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -4593,7 +4690,7 @@ Name | Type | Description  | Notes
 
 ## DcimConsoleServerPortsList
 
-> PaginatedConsoleServerPortList DcimConsoleServerPortsList(ctx).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Connected(connected).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
+> PaginatedConsoleServerPortList DcimConsoleServerPortsList(ctx).CableEnd(cableEnd).CableEndN(cableEndN).CableId(cableId).CableIdN(cableIdN).Cabled(cabled).Connected(connected).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).MarkConnected(markConnected).ModifiedByRequest(modifiedByRequest).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Speed(speed).SpeedN(speedN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
 
 
 
@@ -4609,12 +4706,14 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	cableEnd := "cableEnd_example" // string |  (optional)
-	cableEndN := "cableEndN_example" // string |  (optional)
+	cableEnd := openapiclient.circuits_circuit_terminations_list_cable_end_parameter("A") // CircuitsCircuitTerminationsListCableEndParameter | * `A` - A * `B` - B (optional)
+	cableEndN := openapiclient.circuits_circuit_terminations_list_cable_end_parameter("A") // CircuitsCircuitTerminationsListCableEndParameter | * `A` - A * `B` - B (optional)
+	cableId := []*int32{int32(123)} // []*int32 | Cable (ID) (optional)
+	cableIdN := []*int32{int32(123)} // []*int32 | Cable (ID) (optional)
 	cabled := true // bool |  (optional)
 	connected := true // bool |  (optional)
 	created := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -4640,10 +4739,6 @@ func main() {
 	deviceN := []*string{"Inner_example"} // []*string | Device (name) (optional)
 	deviceId := []int32{int32(123)} // []int32 | Device (ID) (optional)
 	deviceIdN := []int32{int32(123)} // []int32 | Device (ID) (optional)
-	deviceRole := []string{"Inner_example"} // []string | Device role (slug) (optional)
-	deviceRoleN := []string{"Inner_example"} // []string | Device role (slug) (optional)
-	deviceRoleId := []int32{int32(123)} // []int32 | Device role (ID) (optional)
-	deviceRoleIdN := []int32{int32(123)} // []int32 | Device role (ID) (optional)
 	deviceType := []string{"Inner_example"} // []string | Device type (model) (optional)
 	deviceTypeN := []string{"Inner_example"} // []string | Device type (model) (optional)
 	deviceTypeId := []int32{int32(123)} // []int32 | Device type (ID) (optional)
@@ -4678,6 +4773,7 @@ func main() {
 	locationN := []string{"Inner_example"} // []string | Location (slug) (optional)
 	locationId := []int32{int32(123)} // []int32 | Location (ID) (optional)
 	locationIdN := []int32{int32(123)} // []int32 | Location (ID) (optional)
+	markConnected := true // bool |  (optional)
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	moduleId := []*int32{int32(123)} // []*int32 | Module (ID) (optional)
 	moduleIdN := []*int32{int32(123)} // []*int32 | Module (ID) (optional)
@@ -4716,6 +4812,8 @@ func main() {
 	siteGroupIdN := []int32{int32(123)} // []int32 | Site group (ID) (optional)
 	siteId := []int32{int32(123)} // []int32 | Site (ID) (optional)
 	siteIdN := []int32{int32(123)} // []int32 | Site (ID) (optional)
+	speed := openapiclient.dcim_console_ports_list_speed_parameter(115200) // DcimConsolePortsListSpeedParameter | Port speed in bits per second  * `1200` - 1200 bps * `2400` - 2400 bps * `4800` - 4800 bps * `9600` - 9600 bps * `19200` - 19.2 kbps * `38400` - 38.4 kbps * `57600` - 57.6 kbps * `115200` - 115.2 kbps (optional)
+	speedN := openapiclient.dcim_console_ports_list_speed_parameter(115200) // DcimConsolePortsListSpeedParameter | Port speed in bits per second  * `1200` - 1200 bps * `2400` - 2400 bps * `4800` - 4800 bps * `9600` - 9600 bps * `19200` - 19.2 kbps * `38400` - 38.4 kbps * `57600` - 57.6 kbps * `115200` - 115.2 kbps (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
 	type_ := []string{"Inner_example"} // []string | Physical port type (optional)
@@ -4728,7 +4826,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimConsoleServerPortsList(context.Background()).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Connected(connected).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimConsoleServerPortsList(context.Background()).CableEnd(cableEnd).CableEndN(cableEndN).CableId(cableId).CableIdN(cableIdN).Cabled(cabled).Connected(connected).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).MarkConnected(markConnected).ModifiedByRequest(modifiedByRequest).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Speed(speed).SpeedN(speedN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimConsoleServerPortsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4749,8 +4847,10 @@ Other parameters are passed through a pointer to a apiDcimConsoleServerPortsList
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cableEnd** | **string** |  | 
- **cableEndN** | **string** |  | 
+ **cableEnd** | [**CircuitsCircuitTerminationsListCableEndParameter**](CircuitsCircuitTerminationsListCableEndParameter.md) | * &#x60;A&#x60; - A * &#x60;B&#x60; - B | 
+ **cableEndN** | [**CircuitsCircuitTerminationsListCableEndParameter**](CircuitsCircuitTerminationsListCableEndParameter.md) | * &#x60;A&#x60; - A * &#x60;B&#x60; - B | 
+ **cableId** | **[]int32** | Cable (ID) | 
+ **cableIdN** | **[]int32** | Cable (ID) | 
  **cabled** | **bool** |  | 
  **connected** | **bool** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
@@ -4776,10 +4876,6 @@ Name | Type | Description  | Notes
  **deviceN** | **[]string** | Device (name) | 
  **deviceId** | **[]int32** | Device (ID) | 
  **deviceIdN** | **[]int32** | Device (ID) | 
- **deviceRole** | **[]string** | Device role (slug) | 
- **deviceRoleN** | **[]string** | Device role (slug) | 
- **deviceRoleId** | **[]int32** | Device role (ID) | 
- **deviceRoleIdN** | **[]int32** | Device role (ID) | 
  **deviceType** | **[]string** | Device type (model) | 
  **deviceTypeN** | **[]string** | Device type (model) | 
  **deviceTypeId** | **[]int32** | Device type (ID) | 
@@ -4814,6 +4910,7 @@ Name | Type | Description  | Notes
  **locationN** | **[]string** | Location (slug) | 
  **locationId** | **[]int32** | Location (ID) | 
  **locationIdN** | **[]int32** | Location (ID) | 
+ **markConnected** | **bool** |  | 
  **modifiedByRequest** | **string** |  | 
  **moduleId** | **[]int32** | Module (ID) | 
  **moduleIdN** | **[]int32** | Module (ID) | 
@@ -4852,6 +4949,8 @@ Name | Type | Description  | Notes
  **siteGroupIdN** | **[]int32** | Site group (ID) | 
  **siteId** | **[]int32** | Site (ID) | 
  **siteIdN** | **[]int32** | Site (ID) | 
+ **speed** | [**DcimConsolePortsListSpeedParameter**](DcimConsolePortsListSpeedParameter.md) | Port speed in bits per second  * &#x60;1200&#x60; - 1200 bps * &#x60;2400&#x60; - 2400 bps * &#x60;4800&#x60; - 4800 bps * &#x60;9600&#x60; - 9600 bps * &#x60;19200&#x60; - 19.2 kbps * &#x60;38400&#x60; - 38.4 kbps * &#x60;57600&#x60; - 57.6 kbps * &#x60;115200&#x60; - 115.2 kbps | 
+ **speedN** | [**DcimConsolePortsListSpeedParameter**](DcimConsolePortsListSpeedParameter.md) | Port speed in bits per second  * &#x60;1200&#x60; - 1200 bps * &#x60;2400&#x60; - 2400 bps * &#x60;4800&#x60; - 4800 bps * &#x60;9600&#x60; - 9600 bps * &#x60;19200&#x60; - 19.2 kbps * &#x60;38400&#x60; - 38.4 kbps * &#x60;57600&#x60; - 57.6 kbps * &#x60;115200&#x60; - 115.2 kbps | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
  **type_** | **[]string** | Physical port type | 
@@ -4897,7 +4996,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -4969,7 +5068,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -5039,7 +5138,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -5109,12 +5208,12 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this console server port.
-	writableConsoleServerPortRequest := *openapiclient.NewWritableConsoleServerPortRequest(int32(123), "Name_example") // WritableConsoleServerPortRequest | 
+	writableConsoleServerPortRequest := *openapiclient.NewWritableConsoleServerPortRequest(*openapiclient.NewDeviceRequest(), "Name_example") // WritableConsoleServerPortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5181,11 +5280,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	deviceBayTemplateRequest := []openapiclient.DeviceBayTemplateRequest{*openapiclient.NewDeviceBayTemplateRequest(*openapiclient.NewNestedDeviceTypeRequest("Model_example", "Slug_example"), "Name_example")} // []DeviceBayTemplateRequest | 
+	deviceBayTemplateRequest := []openapiclient.DeviceBayTemplateRequest{*openapiclient.NewDeviceBayTemplateRequest(*openapiclient.NewDeviceTypeRequest(*openapiclient.NewManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example"), "Name_example")} // []DeviceBayTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5245,11 +5344,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	deviceBayTemplateRequest := []openapiclient.DeviceBayTemplateRequest{*openapiclient.NewDeviceBayTemplateRequest(*openapiclient.NewNestedDeviceTypeRequest("Model_example", "Slug_example"), "Name_example")} // []DeviceBayTemplateRequest | 
+	deviceBayTemplateRequest := []openapiclient.DeviceBayTemplateRequest{*openapiclient.NewDeviceBayTemplateRequest(*openapiclient.NewDeviceTypeRequest(*openapiclient.NewManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example"), "Name_example")} // []DeviceBayTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5311,11 +5410,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	deviceBayTemplateRequest := []openapiclient.DeviceBayTemplateRequest{*openapiclient.NewDeviceBayTemplateRequest(*openapiclient.NewNestedDeviceTypeRequest("Model_example", "Slug_example"), "Name_example")} // []DeviceBayTemplateRequest | 
+	deviceBayTemplateRequest := []openapiclient.DeviceBayTemplateRequest{*openapiclient.NewDeviceBayTemplateRequest(*openapiclient.NewDeviceTypeRequest(*openapiclient.NewManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example"), "Name_example")} // []DeviceBayTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5362,7 +5461,7 @@ Name | Type | Description  | Notes
 
 ## DcimDeviceBayTemplatesCreate
 
-> DeviceBayTemplate DcimDeviceBayTemplatesCreate(ctx).WritableDeviceBayTemplateRequest(writableDeviceBayTemplateRequest).Execute()
+> DeviceBayTemplate DcimDeviceBayTemplatesCreate(ctx).DeviceBayTemplateRequest(deviceBayTemplateRequest).Execute()
 
 
 
@@ -5377,15 +5476,15 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writableDeviceBayTemplateRequest := *openapiclient.NewWritableDeviceBayTemplateRequest(int32(123), "Name_example") // WritableDeviceBayTemplateRequest | 
+	deviceBayTemplateRequest := *openapiclient.NewDeviceBayTemplateRequest(*openapiclient.NewDeviceTypeRequest(*openapiclient.NewManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example"), "Name_example") // DeviceBayTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimDeviceBayTemplatesCreate(context.Background()).WritableDeviceBayTemplateRequest(writableDeviceBayTemplateRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimDeviceBayTemplatesCreate(context.Background()).DeviceBayTemplateRequest(deviceBayTemplateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceBayTemplatesCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5406,7 +5505,7 @@ Other parameters are passed through a pointer to a apiDcimDeviceBayTemplatesCrea
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writableDeviceBayTemplateRequest** | [**WritableDeviceBayTemplateRequest**](WritableDeviceBayTemplateRequest.md) |  | 
+ **deviceBayTemplateRequest** | [**DeviceBayTemplateRequest**](DeviceBayTemplateRequest.md) |  | 
 
 ### Return type
 
@@ -5443,7 +5542,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -5496,7 +5595,7 @@ Name | Type | Description  | Notes
 
 ## DcimDeviceBayTemplatesList
 
-> PaginatedDeviceBayTemplateList DcimDeviceBayTemplatesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedDeviceBayTemplateList DcimDeviceBayTemplatesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -5512,7 +5611,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -5535,6 +5634,8 @@ func main() {
 	descriptionNie := []string{"Inner_example"} // []string |  (optional)
 	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
 	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
+	deviceTypeId := []int32{int32(123)} // []int32 | Device type (ID) (optional)
+	deviceTypeIdN := []int32{int32(123)} // []int32 | Device type (ID) (optional)
 	devicetypeId := []int32{int32(123)} // []int32 | Device type (ID) (optional)
 	devicetypeIdN := []int32{int32(123)} // []int32 | Device type (ID) (optional)
 	id := []int32{int32(123)} // []int32 |  (optional)
@@ -5544,6 +5645,17 @@ func main() {
 	idLt := []int32{int32(123)} // []int32 |  (optional)
 	idLte := []int32{int32(123)} // []int32 |  (optional)
 	idN := []int32{int32(123)} // []int32 |  (optional)
+	label := []string{"Inner_example"} // []string |  (optional)
+	labelEmpty := true // bool |  (optional)
+	labelIc := []string{"Inner_example"} // []string |  (optional)
+	labelIe := []string{"Inner_example"} // []string |  (optional)
+	labelIew := []string{"Inner_example"} // []string |  (optional)
+	labelIsw := []string{"Inner_example"} // []string |  (optional)
+	labelN := []string{"Inner_example"} // []string |  (optional)
+	labelNic := []string{"Inner_example"} // []string |  (optional)
+	labelNie := []string{"Inner_example"} // []string |  (optional)
+	labelNiew := []string{"Inner_example"} // []string |  (optional)
+	labelNisw := []string{"Inner_example"} // []string |  (optional)
 	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -5571,7 +5683,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimDeviceBayTemplatesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimDeviceBayTemplatesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceBayTemplatesList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5611,6 +5723,8 @@ Name | Type | Description  | Notes
  **descriptionNie** | **[]string** |  | 
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
+ **deviceTypeId** | **[]int32** | Device type (ID) | 
+ **deviceTypeIdN** | **[]int32** | Device type (ID) | 
  **devicetypeId** | **[]int32** | Device type (ID) | 
  **devicetypeIdN** | **[]int32** | Device type (ID) | 
  **id** | **[]int32** |  | 
@@ -5620,6 +5734,17 @@ Name | Type | Description  | Notes
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
+ **label** | **[]string** |  | 
+ **labelEmpty** | **bool** |  | 
+ **labelIc** | **[]string** |  | 
+ **labelIe** | **[]string** |  | 
+ **labelIew** | **[]string** |  | 
+ **labelIsw** | **[]string** |  | 
+ **labelN** | **[]string** |  | 
+ **labelNic** | **[]string** |  | 
+ **labelNie** | **[]string** |  | 
+ **labelNiew** | **[]string** |  | 
+ **labelNisw** | **[]string** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
@@ -5665,7 +5790,7 @@ Name | Type | Description  | Notes
 
 ## DcimDeviceBayTemplatesPartialUpdate
 
-> DeviceBayTemplate DcimDeviceBayTemplatesPartialUpdate(ctx, id).PatchedWritableDeviceBayTemplateRequest(patchedWritableDeviceBayTemplateRequest).Execute()
+> DeviceBayTemplate DcimDeviceBayTemplatesPartialUpdate(ctx, id).PatchedDeviceBayTemplateRequest(patchedDeviceBayTemplateRequest).Execute()
 
 
 
@@ -5680,16 +5805,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this device bay template.
-	patchedWritableDeviceBayTemplateRequest := *openapiclient.NewPatchedWritableDeviceBayTemplateRequest() // PatchedWritableDeviceBayTemplateRequest |  (optional)
+	patchedDeviceBayTemplateRequest := *openapiclient.NewPatchedDeviceBayTemplateRequest() // PatchedDeviceBayTemplateRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimDeviceBayTemplatesPartialUpdate(context.Background(), id).PatchedWritableDeviceBayTemplateRequest(patchedWritableDeviceBayTemplateRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimDeviceBayTemplatesPartialUpdate(context.Background(), id).PatchedDeviceBayTemplateRequest(patchedDeviceBayTemplateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceBayTemplatesPartialUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5715,7 +5840,7 @@ Other parameters are passed through a pointer to a apiDcimDeviceBayTemplatesPart
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **patchedWritableDeviceBayTemplateRequest** | [**PatchedWritableDeviceBayTemplateRequest**](PatchedWritableDeviceBayTemplateRequest.md) |  | 
+ **patchedDeviceBayTemplateRequest** | [**PatchedDeviceBayTemplateRequest**](PatchedDeviceBayTemplateRequest.md) |  | 
 
 ### Return type
 
@@ -5752,7 +5877,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -5807,7 +5932,7 @@ Name | Type | Description  | Notes
 
 ## DcimDeviceBayTemplatesUpdate
 
-> DeviceBayTemplate DcimDeviceBayTemplatesUpdate(ctx, id).WritableDeviceBayTemplateRequest(writableDeviceBayTemplateRequest).Execute()
+> DeviceBayTemplate DcimDeviceBayTemplatesUpdate(ctx, id).DeviceBayTemplateRequest(deviceBayTemplateRequest).Execute()
 
 
 
@@ -5822,16 +5947,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this device bay template.
-	writableDeviceBayTemplateRequest := *openapiclient.NewWritableDeviceBayTemplateRequest(int32(123), "Name_example") // WritableDeviceBayTemplateRequest | 
+	deviceBayTemplateRequest := *openapiclient.NewDeviceBayTemplateRequest(*openapiclient.NewDeviceTypeRequest(*openapiclient.NewManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example"), "Name_example") // DeviceBayTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimDeviceBayTemplatesUpdate(context.Background(), id).WritableDeviceBayTemplateRequest(writableDeviceBayTemplateRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimDeviceBayTemplatesUpdate(context.Background(), id).DeviceBayTemplateRequest(deviceBayTemplateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceBayTemplatesUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5857,7 +5982,7 @@ Other parameters are passed through a pointer to a apiDcimDeviceBayTemplatesUpda
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **writableDeviceBayTemplateRequest** | [**WritableDeviceBayTemplateRequest**](WritableDeviceBayTemplateRequest.md) |  | 
+ **deviceBayTemplateRequest** | [**DeviceBayTemplateRequest**](DeviceBayTemplateRequest.md) |  | 
 
 ### Return type
 
@@ -5894,11 +6019,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	deviceBayRequest := []openapiclient.DeviceBayRequest{*openapiclient.NewDeviceBayRequest(*openapiclient.NewNestedDeviceRequest(), "Name_example")} // []DeviceBayRequest | 
+	deviceBayRequest := []openapiclient.DeviceBayRequest{*openapiclient.NewDeviceBayRequest(*openapiclient.NewDeviceRequest(), "Name_example")} // []DeviceBayRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5958,11 +6083,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	deviceBayRequest := []openapiclient.DeviceBayRequest{*openapiclient.NewDeviceBayRequest(*openapiclient.NewNestedDeviceRequest(), "Name_example")} // []DeviceBayRequest | 
+	deviceBayRequest := []openapiclient.DeviceBayRequest{*openapiclient.NewDeviceBayRequest(*openapiclient.NewDeviceRequest(), "Name_example")} // []DeviceBayRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6024,11 +6149,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	deviceBayRequest := []openapiclient.DeviceBayRequest{*openapiclient.NewDeviceBayRequest(*openapiclient.NewNestedDeviceRequest(), "Name_example")} // []DeviceBayRequest | 
+	deviceBayRequest := []openapiclient.DeviceBayRequest{*openapiclient.NewDeviceBayRequest(*openapiclient.NewDeviceRequest(), "Name_example")} // []DeviceBayRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6075,7 +6200,7 @@ Name | Type | Description  | Notes
 
 ## DcimDeviceBaysCreate
 
-> DeviceBay DcimDeviceBaysCreate(ctx).WritableDeviceBayRequest(writableDeviceBayRequest).Execute()
+> DeviceBay DcimDeviceBaysCreate(ctx).DeviceBayRequest(deviceBayRequest).Execute()
 
 
 
@@ -6090,15 +6215,15 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writableDeviceBayRequest := *openapiclient.NewWritableDeviceBayRequest(int32(123), "Name_example") // WritableDeviceBayRequest | 
+	deviceBayRequest := *openapiclient.NewDeviceBayRequest(*openapiclient.NewDeviceRequest(), "Name_example") // DeviceBayRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimDeviceBaysCreate(context.Background()).WritableDeviceBayRequest(writableDeviceBayRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimDeviceBaysCreate(context.Background()).DeviceBayRequest(deviceBayRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceBaysCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6119,7 +6244,7 @@ Other parameters are passed through a pointer to a apiDcimDeviceBaysCreateReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writableDeviceBayRequest** | [**WritableDeviceBayRequest**](WritableDeviceBayRequest.md) |  | 
+ **deviceBayRequest** | [**DeviceBayRequest**](DeviceBayRequest.md) |  | 
 
 ### Return type
 
@@ -6156,7 +6281,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -6209,7 +6334,7 @@ Name | Type | Description  | Notes
 
 ## DcimDeviceBaysList
 
-> PaginatedDeviceBayList DcimDeviceBaysList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
+> PaginatedDeviceBayList DcimDeviceBaysList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InstalledDevice(installedDevice).InstalledDeviceN(installedDeviceN).InstalledDeviceId(installedDeviceId).InstalledDeviceIdN(installedDeviceIdN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
 
 
 
@@ -6225,7 +6350,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -6252,10 +6377,6 @@ func main() {
 	deviceN := []*string{"Inner_example"} // []*string | Device (name) (optional)
 	deviceId := []int32{int32(123)} // []int32 | Device (ID) (optional)
 	deviceIdN := []int32{int32(123)} // []int32 | Device (ID) (optional)
-	deviceRole := []string{"Inner_example"} // []string | Device role (slug) (optional)
-	deviceRoleN := []string{"Inner_example"} // []string | Device role (slug) (optional)
-	deviceRoleId := []int32{int32(123)} // []int32 | Device role (ID) (optional)
-	deviceRoleIdN := []int32{int32(123)} // []int32 | Device role (ID) (optional)
 	deviceType := []string{"Inner_example"} // []string | Device type (model) (optional)
 	deviceTypeN := []string{"Inner_example"} // []string | Device type (model) (optional)
 	deviceTypeId := []int32{int32(123)} // []int32 | Device type (ID) (optional)
@@ -6267,6 +6388,10 @@ func main() {
 	idLt := []int32{int32(123)} // []int32 |  (optional)
 	idLte := []int32{int32(123)} // []int32 |  (optional)
 	idN := []int32{int32(123)} // []int32 |  (optional)
+	installedDevice := []*string{"Inner_example"} // []*string | Installed device (name) (optional)
+	installedDeviceN := []*string{"Inner_example"} // []*string | Installed device (name) (optional)
+	installedDeviceId := []*int32{int32(123)} // []*int32 | Installed device (ID) (optional)
+	installedDeviceIdN := []*int32{int32(123)} // []*int32 | Installed device (ID) (optional)
 	label := []string{"Inner_example"} // []string |  (optional)
 	labelEmpty := true // bool |  (optional)
 	labelIc := []string{"Inner_example"} // []string |  (optional)
@@ -6335,7 +6460,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimDeviceBaysList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimDeviceBaysList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InstalledDevice(installedDevice).InstalledDeviceN(installedDeviceN).InstalledDeviceId(installedDeviceId).InstalledDeviceIdN(installedDeviceIdN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceBaysList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6379,10 +6504,6 @@ Name | Type | Description  | Notes
  **deviceN** | **[]string** | Device (name) | 
  **deviceId** | **[]int32** | Device (ID) | 
  **deviceIdN** | **[]int32** | Device (ID) | 
- **deviceRole** | **[]string** | Device role (slug) | 
- **deviceRoleN** | **[]string** | Device role (slug) | 
- **deviceRoleId** | **[]int32** | Device role (ID) | 
- **deviceRoleIdN** | **[]int32** | Device role (ID) | 
  **deviceType** | **[]string** | Device type (model) | 
  **deviceTypeN** | **[]string** | Device type (model) | 
  **deviceTypeId** | **[]int32** | Device type (ID) | 
@@ -6394,6 +6515,10 @@ Name | Type | Description  | Notes
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
+ **installedDevice** | **[]string** | Installed device (name) | 
+ **installedDeviceN** | **[]string** | Installed device (name) | 
+ **installedDeviceId** | **[]int32** | Installed device (ID) | 
+ **installedDeviceIdN** | **[]int32** | Installed device (ID) | 
  **label** | **[]string** |  | 
  **labelEmpty** | **bool** |  | 
  **labelIc** | **[]string** |  | 
@@ -6480,7 +6605,7 @@ Name | Type | Description  | Notes
 
 ## DcimDeviceBaysPartialUpdate
 
-> DeviceBay DcimDeviceBaysPartialUpdate(ctx, id).PatchedWritableDeviceBayRequest(patchedWritableDeviceBayRequest).Execute()
+> DeviceBay DcimDeviceBaysPartialUpdate(ctx, id).PatchedDeviceBayRequest(patchedDeviceBayRequest).Execute()
 
 
 
@@ -6495,16 +6620,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this device bay.
-	patchedWritableDeviceBayRequest := *openapiclient.NewPatchedWritableDeviceBayRequest() // PatchedWritableDeviceBayRequest |  (optional)
+	patchedDeviceBayRequest := *openapiclient.NewPatchedDeviceBayRequest() // PatchedDeviceBayRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimDeviceBaysPartialUpdate(context.Background(), id).PatchedWritableDeviceBayRequest(patchedWritableDeviceBayRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimDeviceBaysPartialUpdate(context.Background(), id).PatchedDeviceBayRequest(patchedDeviceBayRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceBaysPartialUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6530,7 +6655,7 @@ Other parameters are passed through a pointer to a apiDcimDeviceBaysPartialUpdat
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **patchedWritableDeviceBayRequest** | [**PatchedWritableDeviceBayRequest**](PatchedWritableDeviceBayRequest.md) |  | 
+ **patchedDeviceBayRequest** | [**PatchedDeviceBayRequest**](PatchedDeviceBayRequest.md) |  | 
 
 ### Return type
 
@@ -6567,7 +6692,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -6622,7 +6747,7 @@ Name | Type | Description  | Notes
 
 ## DcimDeviceBaysUpdate
 
-> DeviceBay DcimDeviceBaysUpdate(ctx, id).WritableDeviceBayRequest(writableDeviceBayRequest).Execute()
+> DeviceBay DcimDeviceBaysUpdate(ctx, id).DeviceBayRequest(deviceBayRequest).Execute()
 
 
 
@@ -6637,16 +6762,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this device bay.
-	writableDeviceBayRequest := *openapiclient.NewWritableDeviceBayRequest(int32(123), "Name_example") // WritableDeviceBayRequest | 
+	deviceBayRequest := *openapiclient.NewDeviceBayRequest(*openapiclient.NewDeviceRequest(), "Name_example") // DeviceBayRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimDeviceBaysUpdate(context.Background(), id).WritableDeviceBayRequest(writableDeviceBayRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimDeviceBaysUpdate(context.Background(), id).DeviceBayRequest(deviceBayRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceBaysUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6672,7 +6797,7 @@ Other parameters are passed through a pointer to a apiDcimDeviceBaysUpdateReques
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **writableDeviceBayRequest** | [**WritableDeviceBayRequest**](WritableDeviceBayRequest.md) |  | 
+ **deviceBayRequest** | [**DeviceBayRequest**](DeviceBayRequest.md) |  | 
 
 ### Return type
 
@@ -6709,7 +6834,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -6773,7 +6898,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -6839,7 +6964,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -6890,7 +7015,7 @@ Name | Type | Description  | Notes
 
 ## DcimDeviceRolesCreate
 
-> DeviceRole DcimDeviceRolesCreate(ctx).WritableDeviceRoleRequest(writableDeviceRoleRequest).Execute()
+> DeviceRole DcimDeviceRolesCreate(ctx).DeviceRoleRequest(deviceRoleRequest).Execute()
 
 
 
@@ -6905,15 +7030,15 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writableDeviceRoleRequest := *openapiclient.NewWritableDeviceRoleRequest("Name_example", "Slug_example") // WritableDeviceRoleRequest | 
+	deviceRoleRequest := *openapiclient.NewDeviceRoleRequest("Name_example", "Slug_example") // DeviceRoleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimDeviceRolesCreate(context.Background()).WritableDeviceRoleRequest(writableDeviceRoleRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimDeviceRolesCreate(context.Background()).DeviceRoleRequest(deviceRoleRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceRolesCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6934,7 +7059,7 @@ Other parameters are passed through a pointer to a apiDcimDeviceRolesCreateReque
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writableDeviceRoleRequest** | [**WritableDeviceRoleRequest**](WritableDeviceRoleRequest.md) |  | 
+ **deviceRoleRequest** | [**DeviceRoleRequest**](DeviceRoleRequest.md) |  | 
 
 ### Return type
 
@@ -6971,7 +7096,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -7040,7 +7165,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -7243,7 +7368,7 @@ Name | Type | Description  | Notes
 
 ## DcimDeviceRolesPartialUpdate
 
-> DeviceRole DcimDeviceRolesPartialUpdate(ctx, id).PatchedWritableDeviceRoleRequest(patchedWritableDeviceRoleRequest).Execute()
+> DeviceRole DcimDeviceRolesPartialUpdate(ctx, id).PatchedDeviceRoleRequest(patchedDeviceRoleRequest).Execute()
 
 
 
@@ -7258,16 +7383,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this device role.
-	patchedWritableDeviceRoleRequest := *openapiclient.NewPatchedWritableDeviceRoleRequest() // PatchedWritableDeviceRoleRequest |  (optional)
+	patchedDeviceRoleRequest := *openapiclient.NewPatchedDeviceRoleRequest() // PatchedDeviceRoleRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimDeviceRolesPartialUpdate(context.Background(), id).PatchedWritableDeviceRoleRequest(patchedWritableDeviceRoleRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimDeviceRolesPartialUpdate(context.Background(), id).PatchedDeviceRoleRequest(patchedDeviceRoleRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceRolesPartialUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7293,7 +7418,7 @@ Other parameters are passed through a pointer to a apiDcimDeviceRolesPartialUpda
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **patchedWritableDeviceRoleRequest** | [**PatchedWritableDeviceRoleRequest**](PatchedWritableDeviceRoleRequest.md) |  | 
+ **patchedDeviceRoleRequest** | [**PatchedDeviceRoleRequest**](PatchedDeviceRoleRequest.md) |  | 
 
 ### Return type
 
@@ -7330,7 +7455,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -7385,7 +7510,7 @@ Name | Type | Description  | Notes
 
 ## DcimDeviceRolesUpdate
 
-> DeviceRole DcimDeviceRolesUpdate(ctx, id).WritableDeviceRoleRequest(writableDeviceRoleRequest).Execute()
+> DeviceRole DcimDeviceRolesUpdate(ctx, id).DeviceRoleRequest(deviceRoleRequest).Execute()
 
 
 
@@ -7400,16 +7525,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this device role.
-	writableDeviceRoleRequest := *openapiclient.NewWritableDeviceRoleRequest("Name_example", "Slug_example") // WritableDeviceRoleRequest | 
+	deviceRoleRequest := *openapiclient.NewDeviceRoleRequest("Name_example", "Slug_example") // DeviceRoleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimDeviceRolesUpdate(context.Background(), id).WritableDeviceRoleRequest(writableDeviceRoleRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimDeviceRolesUpdate(context.Background(), id).DeviceRoleRequest(deviceRoleRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceRolesUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7435,7 +7560,7 @@ Other parameters are passed through a pointer to a apiDcimDeviceRolesUpdateReque
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **writableDeviceRoleRequest** | [**WritableDeviceRoleRequest**](WritableDeviceRoleRequest.md) |  | 
+ **deviceRoleRequest** | [**DeviceRoleRequest**](DeviceRoleRequest.md) |  | 
 
 ### Return type
 
@@ -7472,11 +7597,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	deviceTypeRequest := []openapiclient.DeviceTypeRequest{*openapiclient.NewDeviceTypeRequest(*openapiclient.NewNestedManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example")} // []DeviceTypeRequest | 
+	deviceTypeRequest := []openapiclient.DeviceTypeRequest{*openapiclient.NewDeviceTypeRequest(*openapiclient.NewManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example")} // []DeviceTypeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7536,11 +7661,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	deviceTypeRequest := []openapiclient.DeviceTypeRequest{*openapiclient.NewDeviceTypeRequest(*openapiclient.NewNestedManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example")} // []DeviceTypeRequest | 
+	deviceTypeRequest := []openapiclient.DeviceTypeRequest{*openapiclient.NewDeviceTypeRequest(*openapiclient.NewManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example")} // []DeviceTypeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7602,11 +7727,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	deviceTypeRequest := []openapiclient.DeviceTypeRequest{*openapiclient.NewDeviceTypeRequest(*openapiclient.NewNestedManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example")} // []DeviceTypeRequest | 
+	deviceTypeRequest := []openapiclient.DeviceTypeRequest{*openapiclient.NewDeviceTypeRequest(*openapiclient.NewManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example")} // []DeviceTypeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7668,11 +7793,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writableDeviceTypeRequest := *openapiclient.NewWritableDeviceTypeRequest(int32(123), "Model_example", "Slug_example") // WritableDeviceTypeRequest | 
+	writableDeviceTypeRequest := *openapiclient.NewWritableDeviceTypeRequest(*openapiclient.NewManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example") // WritableDeviceTypeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7734,7 +7859,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -7787,7 +7912,7 @@ Name | Type | Description  | Notes
 
 ## DcimDeviceTypesList
 
-> PaginatedDeviceTypeList DcimDeviceTypesList(ctx).Airflow(airflow).AirflowN(airflowN).ConsolePorts(consolePorts).ConsoleServerPorts(consoleServerPorts).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DefaultPlatform(defaultPlatform).DefaultPlatformN(defaultPlatformN).DefaultPlatformId(defaultPlatformId).DefaultPlatformIdN(defaultPlatformIdN).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DeviceBays(deviceBays).ExcludeFromUtilization(excludeFromUtilization).HasFrontImage(hasFrontImage).HasRearImage(hasRearImage).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interfaces(interfaces).InventoryItems(inventoryItems).IsFullDepth(isFullDepth).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).Model(model).ModelEmpty(modelEmpty).ModelIc(modelIc).ModelIe(modelIe).ModelIew(modelIew).ModelIsw(modelIsw).ModelN(modelN).ModelNic(modelNic).ModelNie(modelNie).ModelNiew(modelNiew).ModelNisw(modelNisw).ModifiedByRequest(modifiedByRequest).ModuleBays(moduleBays).Offset(offset).Ordering(ordering).PartNumber(partNumber).PartNumberEmpty(partNumberEmpty).PartNumberIc(partNumberIc).PartNumberIe(partNumberIe).PartNumberIew(partNumberIew).PartNumberIsw(partNumberIsw).PartNumberN(partNumberN).PartNumberNic(partNumberNic).PartNumberNie(partNumberNie).PartNumberNiew(partNumberNiew).PartNumberNisw(partNumberNisw).PassThroughPorts(passThroughPorts).PowerOutlets(powerOutlets).PowerPorts(powerPorts).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SubdeviceRole(subdeviceRole).SubdeviceRoleN(subdeviceRoleN).Tag(tag).TagN(tagN).UHeight(uHeight).UHeightEmpty(uHeightEmpty).UHeightGt(uHeightGt).UHeightGte(uHeightGte).UHeightLt(uHeightLt).UHeightLte(uHeightLte).UHeightN(uHeightN).UpdatedByRequest(updatedByRequest).Weight(weight).WeightEmpty(weightEmpty).WeightGt(weightGt).WeightGte(weightGte).WeightLt(weightLt).WeightLte(weightLte).WeightN(weightN).WeightUnit(weightUnit).WeightUnitN(weightUnitN).Execute()
+> PaginatedDeviceTypeList DcimDeviceTypesList(ctx).Airflow(airflow).AirflowN(airflowN).ConsolePortTemplateCount(consolePortTemplateCount).ConsolePortTemplateCountEmpty(consolePortTemplateCountEmpty).ConsolePortTemplateCountGt(consolePortTemplateCountGt).ConsolePortTemplateCountGte(consolePortTemplateCountGte).ConsolePortTemplateCountLt(consolePortTemplateCountLt).ConsolePortTemplateCountLte(consolePortTemplateCountLte).ConsolePortTemplateCountN(consolePortTemplateCountN).ConsolePorts(consolePorts).ConsoleServerPortTemplateCount(consoleServerPortTemplateCount).ConsoleServerPortTemplateCountEmpty(consoleServerPortTemplateCountEmpty).ConsoleServerPortTemplateCountGt(consoleServerPortTemplateCountGt).ConsoleServerPortTemplateCountGte(consoleServerPortTemplateCountGte).ConsoleServerPortTemplateCountLt(consoleServerPortTemplateCountLt).ConsoleServerPortTemplateCountLte(consoleServerPortTemplateCountLte).ConsoleServerPortTemplateCountN(consoleServerPortTemplateCountN).ConsoleServerPorts(consoleServerPorts).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DefaultPlatform(defaultPlatform).DefaultPlatformN(defaultPlatformN).DefaultPlatformId(defaultPlatformId).DefaultPlatformIdN(defaultPlatformIdN).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DeviceBayTemplateCount(deviceBayTemplateCount).DeviceBayTemplateCountEmpty(deviceBayTemplateCountEmpty).DeviceBayTemplateCountGt(deviceBayTemplateCountGt).DeviceBayTemplateCountGte(deviceBayTemplateCountGte).DeviceBayTemplateCountLt(deviceBayTemplateCountLt).DeviceBayTemplateCountLte(deviceBayTemplateCountLte).DeviceBayTemplateCountN(deviceBayTemplateCountN).DeviceBays(deviceBays).ExcludeFromUtilization(excludeFromUtilization).FrontPortTemplateCount(frontPortTemplateCount).FrontPortTemplateCountEmpty(frontPortTemplateCountEmpty).FrontPortTemplateCountGt(frontPortTemplateCountGt).FrontPortTemplateCountGte(frontPortTemplateCountGte).FrontPortTemplateCountLt(frontPortTemplateCountLt).FrontPortTemplateCountLte(frontPortTemplateCountLte).FrontPortTemplateCountN(frontPortTemplateCountN).HasFrontImage(hasFrontImage).HasRearImage(hasRearImage).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InterfaceTemplateCount(interfaceTemplateCount).InterfaceTemplateCountEmpty(interfaceTemplateCountEmpty).InterfaceTemplateCountGt(interfaceTemplateCountGt).InterfaceTemplateCountGte(interfaceTemplateCountGte).InterfaceTemplateCountLt(interfaceTemplateCountLt).InterfaceTemplateCountLte(interfaceTemplateCountLte).InterfaceTemplateCountN(interfaceTemplateCountN).Interfaces(interfaces).InventoryItemTemplateCount(inventoryItemTemplateCount).InventoryItemTemplateCountEmpty(inventoryItemTemplateCountEmpty).InventoryItemTemplateCountGt(inventoryItemTemplateCountGt).InventoryItemTemplateCountGte(inventoryItemTemplateCountGte).InventoryItemTemplateCountLt(inventoryItemTemplateCountLt).InventoryItemTemplateCountLte(inventoryItemTemplateCountLte).InventoryItemTemplateCountN(inventoryItemTemplateCountN).InventoryItems(inventoryItems).IsFullDepth(isFullDepth).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).Model(model).ModelEmpty(modelEmpty).ModelIc(modelIc).ModelIe(modelIe).ModelIew(modelIew).ModelIsw(modelIsw).ModelN(modelN).ModelNic(modelNic).ModelNie(modelNie).ModelNiew(modelNiew).ModelNisw(modelNisw).ModifiedByRequest(modifiedByRequest).ModuleBayTemplateCount(moduleBayTemplateCount).ModuleBayTemplateCountEmpty(moduleBayTemplateCountEmpty).ModuleBayTemplateCountGt(moduleBayTemplateCountGt).ModuleBayTemplateCountGte(moduleBayTemplateCountGte).ModuleBayTemplateCountLt(moduleBayTemplateCountLt).ModuleBayTemplateCountLte(moduleBayTemplateCountLte).ModuleBayTemplateCountN(moduleBayTemplateCountN).ModuleBays(moduleBays).Offset(offset).Ordering(ordering).PartNumber(partNumber).PartNumberEmpty(partNumberEmpty).PartNumberIc(partNumberIc).PartNumberIe(partNumberIe).PartNumberIew(partNumberIew).PartNumberIsw(partNumberIsw).PartNumberN(partNumberN).PartNumberNic(partNumberNic).PartNumberNie(partNumberNie).PartNumberNiew(partNumberNiew).PartNumberNisw(partNumberNisw).PassThroughPorts(passThroughPorts).PowerOutletTemplateCount(powerOutletTemplateCount).PowerOutletTemplateCountEmpty(powerOutletTemplateCountEmpty).PowerOutletTemplateCountGt(powerOutletTemplateCountGt).PowerOutletTemplateCountGte(powerOutletTemplateCountGte).PowerOutletTemplateCountLt(powerOutletTemplateCountLt).PowerOutletTemplateCountLte(powerOutletTemplateCountLte).PowerOutletTemplateCountN(powerOutletTemplateCountN).PowerOutlets(powerOutlets).PowerPortTemplateCount(powerPortTemplateCount).PowerPortTemplateCountEmpty(powerPortTemplateCountEmpty).PowerPortTemplateCountGt(powerPortTemplateCountGt).PowerPortTemplateCountGte(powerPortTemplateCountGte).PowerPortTemplateCountLt(powerPortTemplateCountLt).PowerPortTemplateCountLte(powerPortTemplateCountLte).PowerPortTemplateCountN(powerPortTemplateCountN).PowerPorts(powerPorts).Q(q).RearPortTemplateCount(rearPortTemplateCount).RearPortTemplateCountEmpty(rearPortTemplateCountEmpty).RearPortTemplateCountGt(rearPortTemplateCountGt).RearPortTemplateCountGte(rearPortTemplateCountGte).RearPortTemplateCountLt(rearPortTemplateCountLt).RearPortTemplateCountLte(rearPortTemplateCountLte).RearPortTemplateCountN(rearPortTemplateCountN).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SubdeviceRole(subdeviceRole).SubdeviceRoleN(subdeviceRoleN).Tag(tag).TagN(tagN).UHeight(uHeight).UHeightEmpty(uHeightEmpty).UHeightGt(uHeightGt).UHeightGte(uHeightGte).UHeightLt(uHeightLt).UHeightLte(uHeightLte).UHeightN(uHeightN).UpdatedByRequest(updatedByRequest).Weight(weight).WeightEmpty(weightEmpty).WeightGt(weightGt).WeightGte(weightGte).WeightLt(weightLt).WeightLte(weightLte).WeightN(weightN).WeightUnit(weightUnit).WeightUnitN(weightUnitN).Execute()
 
 
 
@@ -7803,13 +7928,27 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	airflow := "airflow_example" // string |  (optional)
-	airflowN := "airflowN_example" // string |  (optional)
+	airflow := openapiclient.dcim_device_types_list_airflow_parameter("front-to-rear") // DcimDeviceTypesListAirflowParameter | * `front-to-rear` - Front to rear * `rear-to-front` - Rear to front * `left-to-right` - Left to right * `right-to-left` - Right to left * `side-to-rear` - Side to rear * `passive` - Passive * `mixed` - Mixed (optional)
+	airflowN := openapiclient.dcim_device_types_list_airflow_parameter("front-to-rear") // DcimDeviceTypesListAirflowParameter | * `front-to-rear` - Front to rear * `rear-to-front` - Rear to front * `left-to-right` - Left to right * `right-to-left` - Right to left * `side-to-rear` - Side to rear * `passive` - Passive * `mixed` - Mixed (optional)
+	consolePortTemplateCount := []int32{int32(123)} // []int32 |  (optional)
+	consolePortTemplateCountEmpty := true // bool |  (optional)
+	consolePortTemplateCountGt := []int32{int32(123)} // []int32 |  (optional)
+	consolePortTemplateCountGte := []int32{int32(123)} // []int32 |  (optional)
+	consolePortTemplateCountLt := []int32{int32(123)} // []int32 |  (optional)
+	consolePortTemplateCountLte := []int32{int32(123)} // []int32 |  (optional)
+	consolePortTemplateCountN := []int32{int32(123)} // []int32 |  (optional)
 	consolePorts := true // bool | Has console ports (optional)
+	consoleServerPortTemplateCount := []int32{int32(123)} // []int32 |  (optional)
+	consoleServerPortTemplateCountEmpty := true // bool |  (optional)
+	consoleServerPortTemplateCountGt := []int32{int32(123)} // []int32 |  (optional)
+	consoleServerPortTemplateCountGte := []int32{int32(123)} // []int32 |  (optional)
+	consoleServerPortTemplateCountLt := []int32{int32(123)} // []int32 |  (optional)
+	consoleServerPortTemplateCountLte := []int32{int32(123)} // []int32 |  (optional)
+	consoleServerPortTemplateCountN := []int32{int32(123)} // []int32 |  (optional)
 	consoleServerPorts := true // bool | Has console server ports (optional)
 	created := []time.Time{time.Now()} // []time.Time |  (optional)
 	createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -7834,8 +7973,22 @@ func main() {
 	descriptionNie := []string{"Inner_example"} // []string |  (optional)
 	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
 	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
+	deviceBayTemplateCount := []int32{int32(123)} // []int32 |  (optional)
+	deviceBayTemplateCountEmpty := true // bool |  (optional)
+	deviceBayTemplateCountGt := []int32{int32(123)} // []int32 |  (optional)
+	deviceBayTemplateCountGte := []int32{int32(123)} // []int32 |  (optional)
+	deviceBayTemplateCountLt := []int32{int32(123)} // []int32 |  (optional)
+	deviceBayTemplateCountLte := []int32{int32(123)} // []int32 |  (optional)
+	deviceBayTemplateCountN := []int32{int32(123)} // []int32 |  (optional)
 	deviceBays := true // bool | Has device bays (optional)
 	excludeFromUtilization := true // bool |  (optional)
+	frontPortTemplateCount := []int32{int32(123)} // []int32 |  (optional)
+	frontPortTemplateCountEmpty := true // bool |  (optional)
+	frontPortTemplateCountGt := []int32{int32(123)} // []int32 |  (optional)
+	frontPortTemplateCountGte := []int32{int32(123)} // []int32 |  (optional)
+	frontPortTemplateCountLt := []int32{int32(123)} // []int32 |  (optional)
+	frontPortTemplateCountLte := []int32{int32(123)} // []int32 |  (optional)
+	frontPortTemplateCountN := []int32{int32(123)} // []int32 |  (optional)
 	hasFrontImage := true // bool | Has a front image (optional)
 	hasRearImage := true // bool | Has a rear image (optional)
 	id := []int32{int32(123)} // []int32 |  (optional)
@@ -7845,7 +7998,21 @@ func main() {
 	idLt := []int32{int32(123)} // []int32 |  (optional)
 	idLte := []int32{int32(123)} // []int32 |  (optional)
 	idN := []int32{int32(123)} // []int32 |  (optional)
+	interfaceTemplateCount := []int32{int32(123)} // []int32 |  (optional)
+	interfaceTemplateCountEmpty := true // bool |  (optional)
+	interfaceTemplateCountGt := []int32{int32(123)} // []int32 |  (optional)
+	interfaceTemplateCountGte := []int32{int32(123)} // []int32 |  (optional)
+	interfaceTemplateCountLt := []int32{int32(123)} // []int32 |  (optional)
+	interfaceTemplateCountLte := []int32{int32(123)} // []int32 |  (optional)
+	interfaceTemplateCountN := []int32{int32(123)} // []int32 |  (optional)
 	interfaces := true // bool | Has interfaces (optional)
+	inventoryItemTemplateCount := []int32{int32(123)} // []int32 |  (optional)
+	inventoryItemTemplateCountEmpty := true // bool |  (optional)
+	inventoryItemTemplateCountGt := []int32{int32(123)} // []int32 |  (optional)
+	inventoryItemTemplateCountGte := []int32{int32(123)} // []int32 |  (optional)
+	inventoryItemTemplateCountLt := []int32{int32(123)} // []int32 |  (optional)
+	inventoryItemTemplateCountLte := []int32{int32(123)} // []int32 |  (optional)
+	inventoryItemTemplateCountN := []int32{int32(123)} // []int32 |  (optional)
 	inventoryItems := true // bool | Has inventory items (optional)
 	isFullDepth := true // bool |  (optional)
 	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -7872,6 +8039,13 @@ func main() {
 	modelNiew := []string{"Inner_example"} // []string |  (optional)
 	modelNisw := []string{"Inner_example"} // []string |  (optional)
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+	moduleBayTemplateCount := []int32{int32(123)} // []int32 |  (optional)
+	moduleBayTemplateCountEmpty := true // bool |  (optional)
+	moduleBayTemplateCountGt := []int32{int32(123)} // []int32 |  (optional)
+	moduleBayTemplateCountGte := []int32{int32(123)} // []int32 |  (optional)
+	moduleBayTemplateCountLt := []int32{int32(123)} // []int32 |  (optional)
+	moduleBayTemplateCountLte := []int32{int32(123)} // []int32 |  (optional)
+	moduleBayTemplateCountN := []int32{int32(123)} // []int32 |  (optional)
 	moduleBays := true // bool | Has module bays (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
@@ -7887,9 +8061,30 @@ func main() {
 	partNumberNiew := []string{"Inner_example"} // []string |  (optional)
 	partNumberNisw := []string{"Inner_example"} // []string |  (optional)
 	passThroughPorts := true // bool | Has pass-through ports (optional)
+	powerOutletTemplateCount := []int32{int32(123)} // []int32 |  (optional)
+	powerOutletTemplateCountEmpty := true // bool |  (optional)
+	powerOutletTemplateCountGt := []int32{int32(123)} // []int32 |  (optional)
+	powerOutletTemplateCountGte := []int32{int32(123)} // []int32 |  (optional)
+	powerOutletTemplateCountLt := []int32{int32(123)} // []int32 |  (optional)
+	powerOutletTemplateCountLte := []int32{int32(123)} // []int32 |  (optional)
+	powerOutletTemplateCountN := []int32{int32(123)} // []int32 |  (optional)
 	powerOutlets := true // bool | Has power outlets (optional)
+	powerPortTemplateCount := []int32{int32(123)} // []int32 |  (optional)
+	powerPortTemplateCountEmpty := true // bool |  (optional)
+	powerPortTemplateCountGt := []int32{int32(123)} // []int32 |  (optional)
+	powerPortTemplateCountGte := []int32{int32(123)} // []int32 |  (optional)
+	powerPortTemplateCountLt := []int32{int32(123)} // []int32 |  (optional)
+	powerPortTemplateCountLte := []int32{int32(123)} // []int32 |  (optional)
+	powerPortTemplateCountN := []int32{int32(123)} // []int32 |  (optional)
 	powerPorts := true // bool | Has power ports (optional)
 	q := "q_example" // string | Search (optional)
+	rearPortTemplateCount := []int32{int32(123)} // []int32 |  (optional)
+	rearPortTemplateCountEmpty := true // bool |  (optional)
+	rearPortTemplateCountGt := []int32{int32(123)} // []int32 |  (optional)
+	rearPortTemplateCountGte := []int32{int32(123)} // []int32 |  (optional)
+	rearPortTemplateCountLt := []int32{int32(123)} // []int32 |  (optional)
+	rearPortTemplateCountLte := []int32{int32(123)} // []int32 |  (optional)
+	rearPortTemplateCountN := []int32{int32(123)} // []int32 |  (optional)
 	slug := []string{"Inner_example"} // []string |  (optional)
 	slugEmpty := true // bool |  (optional)
 	slugIc := []string{"Inner_example"} // []string |  (optional)
@@ -7901,8 +8096,8 @@ func main() {
 	slugNie := []string{"Inner_example"} // []string |  (optional)
 	slugNiew := []string{"Inner_example"} // []string |  (optional)
 	slugNisw := []string{"Inner_example"} // []string |  (optional)
-	subdeviceRole := "subdeviceRole_example" // string | Parent devices house child devices in device bays. Leave blank if this device type is neither a parent nor a child. (optional)
-	subdeviceRoleN := "subdeviceRoleN_example" // string | Parent devices house child devices in device bays. Leave blank if this device type is neither a parent nor a child. (optional)
+	subdeviceRole := openapiclient.Parent_child_status("child") // ParentChildStatus | Parent devices house child devices in device bays. Leave blank if this device type is neither a parent nor a child.  * `parent` - Parent * `child` - Child (optional)
+	subdeviceRoleN := openapiclient.Parent_child_status("child") // ParentChildStatus | Parent devices house child devices in device bays. Leave blank if this device type is neither a parent nor a child.  * `parent` - Parent * `child` - Child (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
 	uHeight := []float64{float64(123)} // []float64 |  (optional)
@@ -7920,12 +8115,12 @@ func main() {
 	weightLt := []float64{float64(123)} // []float64 |  (optional)
 	weightLte := []float64{float64(123)} // []float64 |  (optional)
 	weightN := []float64{float64(123)} // []float64 |  (optional)
-	weightUnit := "weightUnit_example" // string |  (optional)
-	weightUnitN := "weightUnitN_example" // string |  (optional)
+	weightUnit := openapiclient.dcim_device_types_list_weight_unit_parameter("g") // DcimDeviceTypesListWeightUnitParameter | * `kg` - Kilograms * `g` - Grams * `lb` - Pounds * `oz` - Ounces (optional)
+	weightUnitN := openapiclient.dcim_device_types_list_weight_unit_parameter("g") // DcimDeviceTypesListWeightUnitParameter | * `kg` - Kilograms * `g` - Grams * `lb` - Pounds * `oz` - Ounces (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimDeviceTypesList(context.Background()).Airflow(airflow).AirflowN(airflowN).ConsolePorts(consolePorts).ConsoleServerPorts(consoleServerPorts).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DefaultPlatform(defaultPlatform).DefaultPlatformN(defaultPlatformN).DefaultPlatformId(defaultPlatformId).DefaultPlatformIdN(defaultPlatformIdN).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DeviceBays(deviceBays).ExcludeFromUtilization(excludeFromUtilization).HasFrontImage(hasFrontImage).HasRearImage(hasRearImage).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interfaces(interfaces).InventoryItems(inventoryItems).IsFullDepth(isFullDepth).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).Model(model).ModelEmpty(modelEmpty).ModelIc(modelIc).ModelIe(modelIe).ModelIew(modelIew).ModelIsw(modelIsw).ModelN(modelN).ModelNic(modelNic).ModelNie(modelNie).ModelNiew(modelNiew).ModelNisw(modelNisw).ModifiedByRequest(modifiedByRequest).ModuleBays(moduleBays).Offset(offset).Ordering(ordering).PartNumber(partNumber).PartNumberEmpty(partNumberEmpty).PartNumberIc(partNumberIc).PartNumberIe(partNumberIe).PartNumberIew(partNumberIew).PartNumberIsw(partNumberIsw).PartNumberN(partNumberN).PartNumberNic(partNumberNic).PartNumberNie(partNumberNie).PartNumberNiew(partNumberNiew).PartNumberNisw(partNumberNisw).PassThroughPorts(passThroughPorts).PowerOutlets(powerOutlets).PowerPorts(powerPorts).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SubdeviceRole(subdeviceRole).SubdeviceRoleN(subdeviceRoleN).Tag(tag).TagN(tagN).UHeight(uHeight).UHeightEmpty(uHeightEmpty).UHeightGt(uHeightGt).UHeightGte(uHeightGte).UHeightLt(uHeightLt).UHeightLte(uHeightLte).UHeightN(uHeightN).UpdatedByRequest(updatedByRequest).Weight(weight).WeightEmpty(weightEmpty).WeightGt(weightGt).WeightGte(weightGte).WeightLt(weightLt).WeightLte(weightLte).WeightN(weightN).WeightUnit(weightUnit).WeightUnitN(weightUnitN).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimDeviceTypesList(context.Background()).Airflow(airflow).AirflowN(airflowN).ConsolePortTemplateCount(consolePortTemplateCount).ConsolePortTemplateCountEmpty(consolePortTemplateCountEmpty).ConsolePortTemplateCountGt(consolePortTemplateCountGt).ConsolePortTemplateCountGte(consolePortTemplateCountGte).ConsolePortTemplateCountLt(consolePortTemplateCountLt).ConsolePortTemplateCountLte(consolePortTemplateCountLte).ConsolePortTemplateCountN(consolePortTemplateCountN).ConsolePorts(consolePorts).ConsoleServerPortTemplateCount(consoleServerPortTemplateCount).ConsoleServerPortTemplateCountEmpty(consoleServerPortTemplateCountEmpty).ConsoleServerPortTemplateCountGt(consoleServerPortTemplateCountGt).ConsoleServerPortTemplateCountGte(consoleServerPortTemplateCountGte).ConsoleServerPortTemplateCountLt(consoleServerPortTemplateCountLt).ConsoleServerPortTemplateCountLte(consoleServerPortTemplateCountLte).ConsoleServerPortTemplateCountN(consoleServerPortTemplateCountN).ConsoleServerPorts(consoleServerPorts).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).DefaultPlatform(defaultPlatform).DefaultPlatformN(defaultPlatformN).DefaultPlatformId(defaultPlatformId).DefaultPlatformIdN(defaultPlatformIdN).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DeviceBayTemplateCount(deviceBayTemplateCount).DeviceBayTemplateCountEmpty(deviceBayTemplateCountEmpty).DeviceBayTemplateCountGt(deviceBayTemplateCountGt).DeviceBayTemplateCountGte(deviceBayTemplateCountGte).DeviceBayTemplateCountLt(deviceBayTemplateCountLt).DeviceBayTemplateCountLte(deviceBayTemplateCountLte).DeviceBayTemplateCountN(deviceBayTemplateCountN).DeviceBays(deviceBays).ExcludeFromUtilization(excludeFromUtilization).FrontPortTemplateCount(frontPortTemplateCount).FrontPortTemplateCountEmpty(frontPortTemplateCountEmpty).FrontPortTemplateCountGt(frontPortTemplateCountGt).FrontPortTemplateCountGte(frontPortTemplateCountGte).FrontPortTemplateCountLt(frontPortTemplateCountLt).FrontPortTemplateCountLte(frontPortTemplateCountLte).FrontPortTemplateCountN(frontPortTemplateCountN).HasFrontImage(hasFrontImage).HasRearImage(hasRearImage).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InterfaceTemplateCount(interfaceTemplateCount).InterfaceTemplateCountEmpty(interfaceTemplateCountEmpty).InterfaceTemplateCountGt(interfaceTemplateCountGt).InterfaceTemplateCountGte(interfaceTemplateCountGte).InterfaceTemplateCountLt(interfaceTemplateCountLt).InterfaceTemplateCountLte(interfaceTemplateCountLte).InterfaceTemplateCountN(interfaceTemplateCountN).Interfaces(interfaces).InventoryItemTemplateCount(inventoryItemTemplateCount).InventoryItemTemplateCountEmpty(inventoryItemTemplateCountEmpty).InventoryItemTemplateCountGt(inventoryItemTemplateCountGt).InventoryItemTemplateCountGte(inventoryItemTemplateCountGte).InventoryItemTemplateCountLt(inventoryItemTemplateCountLt).InventoryItemTemplateCountLte(inventoryItemTemplateCountLte).InventoryItemTemplateCountN(inventoryItemTemplateCountN).InventoryItems(inventoryItems).IsFullDepth(isFullDepth).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).Model(model).ModelEmpty(modelEmpty).ModelIc(modelIc).ModelIe(modelIe).ModelIew(modelIew).ModelIsw(modelIsw).ModelN(modelN).ModelNic(modelNic).ModelNie(modelNie).ModelNiew(modelNiew).ModelNisw(modelNisw).ModifiedByRequest(modifiedByRequest).ModuleBayTemplateCount(moduleBayTemplateCount).ModuleBayTemplateCountEmpty(moduleBayTemplateCountEmpty).ModuleBayTemplateCountGt(moduleBayTemplateCountGt).ModuleBayTemplateCountGte(moduleBayTemplateCountGte).ModuleBayTemplateCountLt(moduleBayTemplateCountLt).ModuleBayTemplateCountLte(moduleBayTemplateCountLte).ModuleBayTemplateCountN(moduleBayTemplateCountN).ModuleBays(moduleBays).Offset(offset).Ordering(ordering).PartNumber(partNumber).PartNumberEmpty(partNumberEmpty).PartNumberIc(partNumberIc).PartNumberIe(partNumberIe).PartNumberIew(partNumberIew).PartNumberIsw(partNumberIsw).PartNumberN(partNumberN).PartNumberNic(partNumberNic).PartNumberNie(partNumberNie).PartNumberNiew(partNumberNiew).PartNumberNisw(partNumberNisw).PassThroughPorts(passThroughPorts).PowerOutletTemplateCount(powerOutletTemplateCount).PowerOutletTemplateCountEmpty(powerOutletTemplateCountEmpty).PowerOutletTemplateCountGt(powerOutletTemplateCountGt).PowerOutletTemplateCountGte(powerOutletTemplateCountGte).PowerOutletTemplateCountLt(powerOutletTemplateCountLt).PowerOutletTemplateCountLte(powerOutletTemplateCountLte).PowerOutletTemplateCountN(powerOutletTemplateCountN).PowerOutlets(powerOutlets).PowerPortTemplateCount(powerPortTemplateCount).PowerPortTemplateCountEmpty(powerPortTemplateCountEmpty).PowerPortTemplateCountGt(powerPortTemplateCountGt).PowerPortTemplateCountGte(powerPortTemplateCountGte).PowerPortTemplateCountLt(powerPortTemplateCountLt).PowerPortTemplateCountLte(powerPortTemplateCountLte).PowerPortTemplateCountN(powerPortTemplateCountN).PowerPorts(powerPorts).Q(q).RearPortTemplateCount(rearPortTemplateCount).RearPortTemplateCountEmpty(rearPortTemplateCountEmpty).RearPortTemplateCountGt(rearPortTemplateCountGt).RearPortTemplateCountGte(rearPortTemplateCountGte).RearPortTemplateCountLt(rearPortTemplateCountLt).RearPortTemplateCountLte(rearPortTemplateCountLte).RearPortTemplateCountN(rearPortTemplateCountN).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SubdeviceRole(subdeviceRole).SubdeviceRoleN(subdeviceRoleN).Tag(tag).TagN(tagN).UHeight(uHeight).UHeightEmpty(uHeightEmpty).UHeightGt(uHeightGt).UHeightGte(uHeightGte).UHeightLt(uHeightLt).UHeightLte(uHeightLte).UHeightN(uHeightN).UpdatedByRequest(updatedByRequest).Weight(weight).WeightEmpty(weightEmpty).WeightGt(weightGt).WeightGte(weightGte).WeightLt(weightLt).WeightLte(weightLte).WeightN(weightN).WeightUnit(weightUnit).WeightUnitN(weightUnitN).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDeviceTypesList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7946,9 +8141,23 @@ Other parameters are passed through a pointer to a apiDcimDeviceTypesListRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **airflow** | **string** |  | 
- **airflowN** | **string** |  | 
+ **airflow** | [**DcimDeviceTypesListAirflowParameter**](DcimDeviceTypesListAirflowParameter.md) | * &#x60;front-to-rear&#x60; - Front to rear * &#x60;rear-to-front&#x60; - Rear to front * &#x60;left-to-right&#x60; - Left to right * &#x60;right-to-left&#x60; - Right to left * &#x60;side-to-rear&#x60; - Side to rear * &#x60;passive&#x60; - Passive * &#x60;mixed&#x60; - Mixed | 
+ **airflowN** | [**DcimDeviceTypesListAirflowParameter**](DcimDeviceTypesListAirflowParameter.md) | * &#x60;front-to-rear&#x60; - Front to rear * &#x60;rear-to-front&#x60; - Rear to front * &#x60;left-to-right&#x60; - Left to right * &#x60;right-to-left&#x60; - Right to left * &#x60;side-to-rear&#x60; - Side to rear * &#x60;passive&#x60; - Passive * &#x60;mixed&#x60; - Mixed | 
+ **consolePortTemplateCount** | **[]int32** |  | 
+ **consolePortTemplateCountEmpty** | **bool** |  | 
+ **consolePortTemplateCountGt** | **[]int32** |  | 
+ **consolePortTemplateCountGte** | **[]int32** |  | 
+ **consolePortTemplateCountLt** | **[]int32** |  | 
+ **consolePortTemplateCountLte** | **[]int32** |  | 
+ **consolePortTemplateCountN** | **[]int32** |  | 
  **consolePorts** | **bool** | Has console ports | 
+ **consoleServerPortTemplateCount** | **[]int32** |  | 
+ **consoleServerPortTemplateCountEmpty** | **bool** |  | 
+ **consoleServerPortTemplateCountGt** | **[]int32** |  | 
+ **consoleServerPortTemplateCountGte** | **[]int32** |  | 
+ **consoleServerPortTemplateCountLt** | **[]int32** |  | 
+ **consoleServerPortTemplateCountLte** | **[]int32** |  | 
+ **consoleServerPortTemplateCountN** | **[]int32** |  | 
  **consoleServerPorts** | **bool** | Has console server ports | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
  **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
@@ -7973,8 +8182,22 @@ Name | Type | Description  | Notes
  **descriptionNie** | **[]string** |  | 
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
+ **deviceBayTemplateCount** | **[]int32** |  | 
+ **deviceBayTemplateCountEmpty** | **bool** |  | 
+ **deviceBayTemplateCountGt** | **[]int32** |  | 
+ **deviceBayTemplateCountGte** | **[]int32** |  | 
+ **deviceBayTemplateCountLt** | **[]int32** |  | 
+ **deviceBayTemplateCountLte** | **[]int32** |  | 
+ **deviceBayTemplateCountN** | **[]int32** |  | 
  **deviceBays** | **bool** | Has device bays | 
  **excludeFromUtilization** | **bool** |  | 
+ **frontPortTemplateCount** | **[]int32** |  | 
+ **frontPortTemplateCountEmpty** | **bool** |  | 
+ **frontPortTemplateCountGt** | **[]int32** |  | 
+ **frontPortTemplateCountGte** | **[]int32** |  | 
+ **frontPortTemplateCountLt** | **[]int32** |  | 
+ **frontPortTemplateCountLte** | **[]int32** |  | 
+ **frontPortTemplateCountN** | **[]int32** |  | 
  **hasFrontImage** | **bool** | Has a front image | 
  **hasRearImage** | **bool** | Has a rear image | 
  **id** | **[]int32** |  | 
@@ -7984,7 +8207,21 @@ Name | Type | Description  | Notes
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
+ **interfaceTemplateCount** | **[]int32** |  | 
+ **interfaceTemplateCountEmpty** | **bool** |  | 
+ **interfaceTemplateCountGt** | **[]int32** |  | 
+ **interfaceTemplateCountGte** | **[]int32** |  | 
+ **interfaceTemplateCountLt** | **[]int32** |  | 
+ **interfaceTemplateCountLte** | **[]int32** |  | 
+ **interfaceTemplateCountN** | **[]int32** |  | 
  **interfaces** | **bool** | Has interfaces | 
+ **inventoryItemTemplateCount** | **[]int32** |  | 
+ **inventoryItemTemplateCountEmpty** | **bool** |  | 
+ **inventoryItemTemplateCountGt** | **[]int32** |  | 
+ **inventoryItemTemplateCountGte** | **[]int32** |  | 
+ **inventoryItemTemplateCountLt** | **[]int32** |  | 
+ **inventoryItemTemplateCountLte** | **[]int32** |  | 
+ **inventoryItemTemplateCountN** | **[]int32** |  | 
  **inventoryItems** | **bool** | Has inventory items | 
  **isFullDepth** | **bool** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
@@ -8011,6 +8248,13 @@ Name | Type | Description  | Notes
  **modelNiew** | **[]string** |  | 
  **modelNisw** | **[]string** |  | 
  **modifiedByRequest** | **string** |  | 
+ **moduleBayTemplateCount** | **[]int32** |  | 
+ **moduleBayTemplateCountEmpty** | **bool** |  | 
+ **moduleBayTemplateCountGt** | **[]int32** |  | 
+ **moduleBayTemplateCountGte** | **[]int32** |  | 
+ **moduleBayTemplateCountLt** | **[]int32** |  | 
+ **moduleBayTemplateCountLte** | **[]int32** |  | 
+ **moduleBayTemplateCountN** | **[]int32** |  | 
  **moduleBays** | **bool** | Has module bays | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
@@ -8026,9 +8270,30 @@ Name | Type | Description  | Notes
  **partNumberNiew** | **[]string** |  | 
  **partNumberNisw** | **[]string** |  | 
  **passThroughPorts** | **bool** | Has pass-through ports | 
+ **powerOutletTemplateCount** | **[]int32** |  | 
+ **powerOutletTemplateCountEmpty** | **bool** |  | 
+ **powerOutletTemplateCountGt** | **[]int32** |  | 
+ **powerOutletTemplateCountGte** | **[]int32** |  | 
+ **powerOutletTemplateCountLt** | **[]int32** |  | 
+ **powerOutletTemplateCountLte** | **[]int32** |  | 
+ **powerOutletTemplateCountN** | **[]int32** |  | 
  **powerOutlets** | **bool** | Has power outlets | 
+ **powerPortTemplateCount** | **[]int32** |  | 
+ **powerPortTemplateCountEmpty** | **bool** |  | 
+ **powerPortTemplateCountGt** | **[]int32** |  | 
+ **powerPortTemplateCountGte** | **[]int32** |  | 
+ **powerPortTemplateCountLt** | **[]int32** |  | 
+ **powerPortTemplateCountLte** | **[]int32** |  | 
+ **powerPortTemplateCountN** | **[]int32** |  | 
  **powerPorts** | **bool** | Has power ports | 
  **q** | **string** | Search | 
+ **rearPortTemplateCount** | **[]int32** |  | 
+ **rearPortTemplateCountEmpty** | **bool** |  | 
+ **rearPortTemplateCountGt** | **[]int32** |  | 
+ **rearPortTemplateCountGte** | **[]int32** |  | 
+ **rearPortTemplateCountLt** | **[]int32** |  | 
+ **rearPortTemplateCountLte** | **[]int32** |  | 
+ **rearPortTemplateCountN** | **[]int32** |  | 
  **slug** | **[]string** |  | 
  **slugEmpty** | **bool** |  | 
  **slugIc** | **[]string** |  | 
@@ -8040,8 +8305,8 @@ Name | Type | Description  | Notes
  **slugNie** | **[]string** |  | 
  **slugNiew** | **[]string** |  | 
  **slugNisw** | **[]string** |  | 
- **subdeviceRole** | **string** | Parent devices house child devices in device bays. Leave blank if this device type is neither a parent nor a child. | 
- **subdeviceRoleN** | **string** | Parent devices house child devices in device bays. Leave blank if this device type is neither a parent nor a child. | 
+ **subdeviceRole** | [**ParentChildStatus**](ParentChildStatus.md) | Parent devices house child devices in device bays. Leave blank if this device type is neither a parent nor a child.  * &#x60;parent&#x60; - Parent * &#x60;child&#x60; - Child | 
+ **subdeviceRoleN** | [**ParentChildStatus**](ParentChildStatus.md) | Parent devices house child devices in device bays. Leave blank if this device type is neither a parent nor a child.  * &#x60;parent&#x60; - Parent * &#x60;child&#x60; - Child | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
  **uHeight** | **[]float64** |  | 
@@ -8059,8 +8324,8 @@ Name | Type | Description  | Notes
  **weightLt** | **[]float64** |  | 
  **weightLte** | **[]float64** |  | 
  **weightN** | **[]float64** |  | 
- **weightUnit** | **string** |  | 
- **weightUnitN** | **string** |  | 
+ **weightUnit** | [**DcimDeviceTypesListWeightUnitParameter**](DcimDeviceTypesListWeightUnitParameter.md) | * &#x60;kg&#x60; - Kilograms * &#x60;g&#x60; - Grams * &#x60;lb&#x60; - Pounds * &#x60;oz&#x60; - Ounces | 
+ **weightUnitN** | [**DcimDeviceTypesListWeightUnitParameter**](DcimDeviceTypesListWeightUnitParameter.md) | * &#x60;kg&#x60; - Kilograms * &#x60;g&#x60; - Grams * &#x60;lb&#x60; - Pounds * &#x60;oz&#x60; - Ounces | 
 
 ### Return type
 
@@ -8097,7 +8362,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -8169,7 +8434,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -8239,12 +8504,12 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this device type.
-	writableDeviceTypeRequest := *openapiclient.NewWritableDeviceTypeRequest(int32(123), "Model_example", "Slug_example") // WritableDeviceTypeRequest | 
+	writableDeviceTypeRequest := *openapiclient.NewWritableDeviceTypeRequest(*openapiclient.NewManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example") // WritableDeviceTypeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -8311,11 +8576,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	deviceWithConfigContextRequest := []openapiclient.DeviceWithConfigContextRequest{*openapiclient.NewDeviceWithConfigContextRequest(*openapiclient.NewNestedDeviceTypeRequest("Model_example", "Slug_example"), *openapiclient.NewNestedDeviceRoleRequest("Name_example", "Slug_example"), *openapiclient.NewNestedSiteRequest("Name_example", "Slug_example"))} // []DeviceWithConfigContextRequest | 
+	deviceWithConfigContextRequest := []openapiclient.DeviceWithConfigContextRequest{*openapiclient.NewDeviceWithConfigContextRequest(*openapiclient.NewDeviceTypeRequest(*openapiclient.NewManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example"), *openapiclient.NewDeviceRoleRequest("Name_example", "Slug_example"), *openapiclient.NewSiteRequest("Name_example", "Slug_example"))} // []DeviceWithConfigContextRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -8375,11 +8640,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	deviceWithConfigContextRequest := []openapiclient.DeviceWithConfigContextRequest{*openapiclient.NewDeviceWithConfigContextRequest(*openapiclient.NewNestedDeviceTypeRequest("Model_example", "Slug_example"), *openapiclient.NewNestedDeviceRoleRequest("Name_example", "Slug_example"), *openapiclient.NewNestedSiteRequest("Name_example", "Slug_example"))} // []DeviceWithConfigContextRequest | 
+	deviceWithConfigContextRequest := []openapiclient.DeviceWithConfigContextRequest{*openapiclient.NewDeviceWithConfigContextRequest(*openapiclient.NewDeviceTypeRequest(*openapiclient.NewManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example"), *openapiclient.NewDeviceRoleRequest("Name_example", "Slug_example"), *openapiclient.NewSiteRequest("Name_example", "Slug_example"))} // []DeviceWithConfigContextRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -8441,11 +8706,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	deviceWithConfigContextRequest := []openapiclient.DeviceWithConfigContextRequest{*openapiclient.NewDeviceWithConfigContextRequest(*openapiclient.NewNestedDeviceTypeRequest("Model_example", "Slug_example"), *openapiclient.NewNestedDeviceRoleRequest("Name_example", "Slug_example"), *openapiclient.NewNestedSiteRequest("Name_example", "Slug_example"))} // []DeviceWithConfigContextRequest | 
+	deviceWithConfigContextRequest := []openapiclient.DeviceWithConfigContextRequest{*openapiclient.NewDeviceWithConfigContextRequest(*openapiclient.NewDeviceTypeRequest(*openapiclient.NewManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example"), *openapiclient.NewDeviceRoleRequest("Name_example", "Slug_example"), *openapiclient.NewSiteRequest("Name_example", "Slug_example"))} // []DeviceWithConfigContextRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -8507,11 +8772,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writableDeviceWithConfigContextRequest := *openapiclient.NewWritableDeviceWithConfigContextRequest(int32(123), int32(123), int32(123)) // WritableDeviceWithConfigContextRequest | 
+	writableDeviceWithConfigContextRequest := *openapiclient.NewWritableDeviceWithConfigContextRequest(*openapiclient.NewDeviceTypeRequest(*openapiclient.NewManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example"), *openapiclient.NewDeviceRoleRequest("Name_example", "Slug_example"), *openapiclient.NewSiteRequest("Name_example", "Slug_example"), openapiclient.Rack_face_1("front")) // WritableDeviceWithConfigContextRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -8573,7 +8838,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -8626,7 +8891,7 @@ Name | Type | Description  | Notes
 
 ## DcimDevicesList
 
-> PaginatedDeviceWithConfigContextList DcimDevicesList(ctx).Airflow(airflow).AirflowN(airflowN).AssetTag(assetTag).AssetTagEmpty(assetTagEmpty).AssetTagIc(assetTagIc).AssetTagIe(assetTagIe).AssetTagIew(assetTagIew).AssetTagIsw(assetTagIsw).AssetTagN(assetTagN).AssetTagNic(assetTagNic).AssetTagNie(assetTagNie).AssetTagNiew(assetTagNiew).AssetTagNisw(assetTagNisw).ClusterId(clusterId).ClusterIdN(clusterIdN).ConfigTemplateId(configTemplateId).ConfigTemplateIdN(configTemplateIdN).ConsolePorts(consolePorts).ConsoleServerPorts(consoleServerPorts).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DeviceBays(deviceBays).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Face(face).FaceN(faceN).HasOobIp(hasOobIp).HasPrimaryIp(hasPrimaryIp).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interfaces(interfaces).IsFullDepth(isFullDepth).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Latitude(latitude).LatitudeEmpty(latitudeEmpty).LatitudeGt(latitudeGt).LatitudeGte(latitudeGte).LatitudeLt(latitudeLt).LatitudeLte(latitudeLte).LatitudeN(latitudeN).Limit(limit).LocalContextData(localContextData).LocationId(locationId).LocationIdN(locationIdN).Longitude(longitude).LongitudeEmpty(longitudeEmpty).LongitudeGt(longitudeGt).LongitudeGte(longitudeGte).LongitudeLt(longitudeLt).LongitudeLte(longitudeLte).LongitudeN(longitudeN).MacAddress(macAddress).MacAddressIc(macAddressIc).MacAddressIe(macAddressIe).MacAddressIew(macAddressIew).MacAddressIsw(macAddressIsw).MacAddressN(macAddressN).MacAddressNic(macAddressNic).MacAddressNie(macAddressNie).MacAddressNiew(macAddressNiew).MacAddressNisw(macAddressNisw).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).Model(model).ModelN(modelN).ModifiedByRequest(modifiedByRequest).ModuleBays(moduleBays).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).OobIpId(oobIpId).OobIpIdN(oobIpIdN).Ordering(ordering).ParentDeviceId(parentDeviceId).ParentDeviceIdN(parentDeviceIdN).PassThroughPorts(passThroughPorts).Platform(platform).PlatformN(platformN).PlatformId(platformId).PlatformIdN(platformIdN).Position(position).PositionEmpty(positionEmpty).PositionGt(positionGt).PositionGte(positionGte).PositionLt(positionLt).PositionLte(positionLte).PositionN(positionN).PowerOutlets(powerOutlets).PowerPorts(powerPorts).PrimaryIp4Id(primaryIp4Id).PrimaryIp4IdN(primaryIp4IdN).PrimaryIp6Id(primaryIp6Id).PrimaryIp6IdN(primaryIp6IdN).Q(q).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Serial(serial).SerialEmpty(serialEmpty).SerialIc(serialIc).SerialIe(serialIe).SerialIew(serialIew).SerialIsw(serialIsw).SerialN(serialN).SerialNic(serialNic).SerialNie(serialNie).SerialNiew(serialNiew).SerialNisw(serialNisw).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).VcPosition(vcPosition).VcPositionEmpty(vcPositionEmpty).VcPositionGt(vcPositionGt).VcPositionGte(vcPositionGte).VcPositionLt(vcPositionLt).VcPositionLte(vcPositionLte).VcPositionN(vcPositionN).VcPriority(vcPriority).VcPriorityEmpty(vcPriorityEmpty).VcPriorityGt(vcPriorityGt).VcPriorityGte(vcPriorityGte).VcPriorityLt(vcPriorityLt).VcPriorityLte(vcPriorityLte).VcPriorityN(vcPriorityN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).VirtualChassisMember(virtualChassisMember).Execute()
+> PaginatedDeviceWithConfigContextList DcimDevicesList(ctx).Airflow(airflow).AirflowN(airflowN).AssetTag(assetTag).AssetTagEmpty(assetTagEmpty).AssetTagIc(assetTagIc).AssetTagIe(assetTagIe).AssetTagIew(assetTagIew).AssetTagIsw(assetTagIsw).AssetTagN(assetTagN).AssetTagNic(assetTagNic).AssetTagNie(assetTagNie).AssetTagNiew(assetTagNiew).AssetTagNisw(assetTagNisw).ClusterId(clusterId).ClusterIdN(clusterIdN).ConfigTemplateId(configTemplateId).ConfigTemplateIdN(configTemplateIdN).ConsolePortCount(consolePortCount).ConsolePortCountEmpty(consolePortCountEmpty).ConsolePortCountGt(consolePortCountGt).ConsolePortCountGte(consolePortCountGte).ConsolePortCountLt(consolePortCountLt).ConsolePortCountLte(consolePortCountLte).ConsolePortCountN(consolePortCountN).ConsolePorts(consolePorts).ConsoleServerPortCount(consoleServerPortCount).ConsoleServerPortCountEmpty(consoleServerPortCountEmpty).ConsoleServerPortCountGt(consoleServerPortCountGt).ConsoleServerPortCountGte(consoleServerPortCountGte).ConsoleServerPortCountLt(consoleServerPortCountLt).ConsoleServerPortCountLte(consoleServerPortCountLte).ConsoleServerPortCountN(consoleServerPortCountN).ConsoleServerPorts(consoleServerPorts).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DeviceBayCount(deviceBayCount).DeviceBayCountEmpty(deviceBayCountEmpty).DeviceBayCountGt(deviceBayCountGt).DeviceBayCountGte(deviceBayCountGte).DeviceBayCountLt(deviceBayCountLt).DeviceBayCountLte(deviceBayCountLte).DeviceBayCountN(deviceBayCountN).DeviceBays(deviceBays).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Face(face).FaceN(faceN).FrontPortCount(frontPortCount).FrontPortCountEmpty(frontPortCountEmpty).FrontPortCountGt(frontPortCountGt).FrontPortCountGte(frontPortCountGte).FrontPortCountLt(frontPortCountLt).FrontPortCountLte(frontPortCountLte).FrontPortCountN(frontPortCountN).HasOobIp(hasOobIp).HasPrimaryIp(hasPrimaryIp).HasVirtualDeviceContext(hasVirtualDeviceContext).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InterfaceCount(interfaceCount).InterfaceCountEmpty(interfaceCountEmpty).InterfaceCountGt(interfaceCountGt).InterfaceCountGte(interfaceCountGte).InterfaceCountLt(interfaceCountLt).InterfaceCountLte(interfaceCountLte).InterfaceCountN(interfaceCountN).Interfaces(interfaces).InventoryItemCount(inventoryItemCount).InventoryItemCountEmpty(inventoryItemCountEmpty).InventoryItemCountGt(inventoryItemCountGt).InventoryItemCountGte(inventoryItemCountGte).InventoryItemCountLt(inventoryItemCountLt).InventoryItemCountLte(inventoryItemCountLte).InventoryItemCountN(inventoryItemCountN).IsFullDepth(isFullDepth).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Latitude(latitude).LatitudeEmpty(latitudeEmpty).LatitudeGt(latitudeGt).LatitudeGte(latitudeGte).LatitudeLt(latitudeLt).LatitudeLte(latitudeLte).LatitudeN(latitudeN).Limit(limit).LocalContextData(localContextData).LocationId(locationId).LocationIdN(locationIdN).Longitude(longitude).LongitudeEmpty(longitudeEmpty).LongitudeGt(longitudeGt).LongitudeGte(longitudeGte).LongitudeLt(longitudeLt).LongitudeLte(longitudeLte).LongitudeN(longitudeN).MacAddress(macAddress).MacAddressIc(macAddressIc).MacAddressIe(macAddressIe).MacAddressIew(macAddressIew).MacAddressIsw(macAddressIsw).MacAddressN(macAddressN).MacAddressNic(macAddressNic).MacAddressNie(macAddressNie).MacAddressNiew(macAddressNiew).MacAddressNisw(macAddressNisw).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).Model(model).ModelN(modelN).ModifiedByRequest(modifiedByRequest).ModuleBayCount(moduleBayCount).ModuleBayCountEmpty(moduleBayCountEmpty).ModuleBayCountGt(moduleBayCountGt).ModuleBayCountGte(moduleBayCountGte).ModuleBayCountLt(moduleBayCountLt).ModuleBayCountLte(moduleBayCountLte).ModuleBayCountN(moduleBayCountN).ModuleBays(moduleBays).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).OobIpId(oobIpId).OobIpIdN(oobIpIdN).Ordering(ordering).ParentBayId(parentBayId).ParentBayIdN(parentBayIdN).ParentDeviceId(parentDeviceId).ParentDeviceIdN(parentDeviceIdN).PassThroughPorts(passThroughPorts).Platform(platform).PlatformN(platformN).PlatformId(platformId).PlatformIdN(platformIdN).Position(position).PositionEmpty(positionEmpty).PositionGt(positionGt).PositionGte(positionGte).PositionLt(positionLt).PositionLte(positionLte).PositionN(positionN).PowerOutletCount(powerOutletCount).PowerOutletCountEmpty(powerOutletCountEmpty).PowerOutletCountGt(powerOutletCountGt).PowerOutletCountGte(powerOutletCountGte).PowerOutletCountLt(powerOutletCountLt).PowerOutletCountLte(powerOutletCountLte).PowerOutletCountN(powerOutletCountN).PowerOutlets(powerOutlets).PowerPortCount(powerPortCount).PowerPortCountEmpty(powerPortCountEmpty).PowerPortCountGt(powerPortCountGt).PowerPortCountGte(powerPortCountGte).PowerPortCountLt(powerPortCountLt).PowerPortCountLte(powerPortCountLte).PowerPortCountN(powerPortCountN).PowerPorts(powerPorts).PrimaryIp4Id(primaryIp4Id).PrimaryIp4IdN(primaryIp4IdN).PrimaryIp6Id(primaryIp6Id).PrimaryIp6IdN(primaryIp6IdN).Q(q).RackId(rackId).RackIdN(rackIdN).RearPortCount(rearPortCount).RearPortCountEmpty(rearPortCountEmpty).RearPortCountGt(rearPortCountGt).RearPortCountGte(rearPortCountGte).RearPortCountLt(rearPortCountLt).RearPortCountLte(rearPortCountLte).RearPortCountN(rearPortCountN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Serial(serial).SerialEmpty(serialEmpty).SerialIc(serialIc).SerialIe(serialIe).SerialIew(serialIew).SerialIsw(serialIsw).SerialN(serialN).SerialNic(serialNic).SerialNie(serialNie).SerialNiew(serialNiew).SerialNisw(serialNisw).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).VcPosition(vcPosition).VcPositionEmpty(vcPositionEmpty).VcPositionGt(vcPositionGt).VcPositionGte(vcPositionGte).VcPositionLt(vcPositionLt).VcPositionLte(vcPositionLte).VcPositionN(vcPositionN).VcPriority(vcPriority).VcPriorityEmpty(vcPriorityEmpty).VcPriorityGt(vcPriorityGt).VcPriorityGte(vcPriorityGte).VcPriorityLt(vcPriorityLt).VcPriorityLte(vcPriorityLte).VcPriorityN(vcPriorityN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).VirtualChassisMember(virtualChassisMember).Execute()
 
 
 
@@ -8642,12 +8907,12 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	airflow := "airflow_example" // string |  (optional)
-	airflowN := "airflowN_example" // string |  (optional)
+	airflow := openapiclient.dcim_device_types_list_airflow_parameter("front-to-rear") // DcimDeviceTypesListAirflowParameter | * `front-to-rear` - Front to rear * `rear-to-front` - Rear to front * `left-to-right` - Left to right * `right-to-left` - Right to left * `side-to-rear` - Side to rear * `passive` - Passive * `mixed` - Mixed (optional)
+	airflowN := openapiclient.dcim_device_types_list_airflow_parameter("front-to-rear") // DcimDeviceTypesListAirflowParameter | * `front-to-rear` - Front to rear * `rear-to-front` - Rear to front * `left-to-right` - Left to right * `right-to-left` - Right to left * `side-to-rear` - Side to rear * `passive` - Passive * `mixed` - Mixed (optional)
 	assetTag := []string{"Inner_example"} // []string |  (optional)
 	assetTagEmpty := true // bool |  (optional)
 	assetTagIc := []string{"Inner_example"} // []string |  (optional)
@@ -8663,7 +8928,21 @@ func main() {
 	clusterIdN := []*int32{int32(123)} // []*int32 | VM cluster (ID) (optional)
 	configTemplateId := []*int32{int32(123)} // []*int32 | Config template (ID) (optional)
 	configTemplateIdN := []*int32{int32(123)} // []*int32 | Config template (ID) (optional)
+	consolePortCount := []int32{int32(123)} // []int32 |  (optional)
+	consolePortCountEmpty := true // bool |  (optional)
+	consolePortCountGt := []int32{int32(123)} // []int32 |  (optional)
+	consolePortCountGte := []int32{int32(123)} // []int32 |  (optional)
+	consolePortCountLt := []int32{int32(123)} // []int32 |  (optional)
+	consolePortCountLte := []int32{int32(123)} // []int32 |  (optional)
+	consolePortCountN := []int32{int32(123)} // []int32 |  (optional)
 	consolePorts := true // bool | Has console ports (optional)
+	consoleServerPortCount := []int32{int32(123)} // []int32 |  (optional)
+	consoleServerPortCountEmpty := true // bool |  (optional)
+	consoleServerPortCountGt := []int32{int32(123)} // []int32 |  (optional)
+	consoleServerPortCountGte := []int32{int32(123)} // []int32 |  (optional)
+	consoleServerPortCountLt := []int32{int32(123)} // []int32 |  (optional)
+	consoleServerPortCountLte := []int32{int32(123)} // []int32 |  (optional)
+	consoleServerPortCountN := []int32{int32(123)} // []int32 |  (optional)
 	consoleServerPorts := true // bool | Has console server ports (optional)
 	contact := []int32{int32(123)} // []int32 | Contact (optional)
 	contactN := []int32{int32(123)} // []int32 | Contact (optional)
@@ -8690,15 +8969,30 @@ func main() {
 	descriptionNie := []string{"Inner_example"} // []string |  (optional)
 	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
 	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
+	deviceBayCount := []int32{int32(123)} // []int32 |  (optional)
+	deviceBayCountEmpty := true // bool |  (optional)
+	deviceBayCountGt := []int32{int32(123)} // []int32 |  (optional)
+	deviceBayCountGte := []int32{int32(123)} // []int32 |  (optional)
+	deviceBayCountLt := []int32{int32(123)} // []int32 |  (optional)
+	deviceBayCountLte := []int32{int32(123)} // []int32 |  (optional)
+	deviceBayCountN := []int32{int32(123)} // []int32 |  (optional)
 	deviceBays := true // bool | Has device bays (optional)
 	deviceType := []string{"Inner_example"} // []string | Device type (slug) (optional)
 	deviceTypeN := []string{"Inner_example"} // []string | Device type (slug) (optional)
 	deviceTypeId := []int32{int32(123)} // []int32 | Device type (ID) (optional)
 	deviceTypeIdN := []int32{int32(123)} // []int32 | Device type (ID) (optional)
-	face := "face_example" // string |  (optional)
-	faceN := "faceN_example" // string |  (optional)
+	face := openapiclient.Rack_face("front") // RackFace | * `front` - Front * `rear` - Rear (optional)
+	faceN := openapiclient.Rack_face("front") // RackFace | * `front` - Front * `rear` - Rear (optional)
+	frontPortCount := []int32{int32(123)} // []int32 |  (optional)
+	frontPortCountEmpty := true // bool |  (optional)
+	frontPortCountGt := []int32{int32(123)} // []int32 |  (optional)
+	frontPortCountGte := []int32{int32(123)} // []int32 |  (optional)
+	frontPortCountLt := []int32{int32(123)} // []int32 |  (optional)
+	frontPortCountLte := []int32{int32(123)} // []int32 |  (optional)
+	frontPortCountN := []int32{int32(123)} // []int32 |  (optional)
 	hasOobIp := true // bool | Has an out-of-band IP (optional)
 	hasPrimaryIp := true // bool | Has a primary IP (optional)
+	hasVirtualDeviceContext := true // bool | Has virtual device context (optional)
 	id := []int32{int32(123)} // []int32 |  (optional)
 	idEmpty := true // bool |  (optional)
 	idGt := []int32{int32(123)} // []int32 |  (optional)
@@ -8706,7 +9000,21 @@ func main() {
 	idLt := []int32{int32(123)} // []int32 |  (optional)
 	idLte := []int32{int32(123)} // []int32 |  (optional)
 	idN := []int32{int32(123)} // []int32 |  (optional)
+	interfaceCount := []int32{int32(123)} // []int32 |  (optional)
+	interfaceCountEmpty := true // bool |  (optional)
+	interfaceCountGt := []int32{int32(123)} // []int32 |  (optional)
+	interfaceCountGte := []int32{int32(123)} // []int32 |  (optional)
+	interfaceCountLt := []int32{int32(123)} // []int32 |  (optional)
+	interfaceCountLte := []int32{int32(123)} // []int32 |  (optional)
+	interfaceCountN := []int32{int32(123)} // []int32 |  (optional)
 	interfaces := true // bool | Has interfaces (optional)
+	inventoryItemCount := []int32{int32(123)} // []int32 |  (optional)
+	inventoryItemCountEmpty := true // bool |  (optional)
+	inventoryItemCountGt := []int32{int32(123)} // []int32 |  (optional)
+	inventoryItemCountGte := []int32{int32(123)} // []int32 |  (optional)
+	inventoryItemCountLt := []int32{int32(123)} // []int32 |  (optional)
+	inventoryItemCountLte := []int32{int32(123)} // []int32 |  (optional)
+	inventoryItemCountN := []int32{int32(123)} // []int32 |  (optional)
 	isFullDepth := true // bool | Is full depth (optional)
 	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -8750,6 +9058,13 @@ func main() {
 	model := []string{"Inner_example"} // []string | Device model (slug) (optional)
 	modelN := []string{"Inner_example"} // []string | Device model (slug) (optional)
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+	moduleBayCount := []int32{int32(123)} // []int32 |  (optional)
+	moduleBayCountEmpty := true // bool |  (optional)
+	moduleBayCountGt := []int32{int32(123)} // []int32 |  (optional)
+	moduleBayCountGte := []int32{int32(123)} // []int32 |  (optional)
+	moduleBayCountLt := []int32{int32(123)} // []int32 |  (optional)
+	moduleBayCountLte := []int32{int32(123)} // []int32 |  (optional)
+	moduleBayCountN := []int32{int32(123)} // []int32 |  (optional)
 	moduleBays := true // bool | Has module bays (optional)
 	name := []string{"Inner_example"} // []string |  (optional)
 	nameEmpty := true // bool |  (optional)
@@ -8766,6 +9081,8 @@ func main() {
 	oobIpId := []int32{int32(123)} // []int32 | OOB IP (ID) (optional)
 	oobIpIdN := []int32{int32(123)} // []int32 | OOB IP (ID) (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	parentBayId := []int32{int32(123)} // []int32 | Parent bay (ID) (optional)
+	parentBayIdN := []int32{int32(123)} // []int32 | Parent bay (ID) (optional)
 	parentDeviceId := []int32{int32(123)} // []int32 | Parent Device (ID) (optional)
 	parentDeviceIdN := []int32{int32(123)} // []int32 | Parent Device (ID) (optional)
 	passThroughPorts := true // bool | Has pass-through ports (optional)
@@ -8780,7 +9097,21 @@ func main() {
 	positionLt := []float64{float64(123)} // []float64 |  (optional)
 	positionLte := []float64{float64(123)} // []float64 |  (optional)
 	positionN := []float64{float64(123)} // []float64 |  (optional)
+	powerOutletCount := []int32{int32(123)} // []int32 |  (optional)
+	powerOutletCountEmpty := true // bool |  (optional)
+	powerOutletCountGt := []int32{int32(123)} // []int32 |  (optional)
+	powerOutletCountGte := []int32{int32(123)} // []int32 |  (optional)
+	powerOutletCountLt := []int32{int32(123)} // []int32 |  (optional)
+	powerOutletCountLte := []int32{int32(123)} // []int32 |  (optional)
+	powerOutletCountN := []int32{int32(123)} // []int32 |  (optional)
 	powerOutlets := true // bool | Has power outlets (optional)
+	powerPortCount := []int32{int32(123)} // []int32 |  (optional)
+	powerPortCountEmpty := true // bool |  (optional)
+	powerPortCountGt := []int32{int32(123)} // []int32 |  (optional)
+	powerPortCountGte := []int32{int32(123)} // []int32 |  (optional)
+	powerPortCountLt := []int32{int32(123)} // []int32 |  (optional)
+	powerPortCountLte := []int32{int32(123)} // []int32 |  (optional)
+	powerPortCountN := []int32{int32(123)} // []int32 |  (optional)
 	powerPorts := true // bool | Has power ports (optional)
 	primaryIp4Id := []int32{int32(123)} // []int32 | Primary IPv4 (ID) (optional)
 	primaryIp4IdN := []int32{int32(123)} // []int32 | Primary IPv4 (ID) (optional)
@@ -8789,6 +9120,13 @@ func main() {
 	q := "q_example" // string | Search (optional)
 	rackId := []int32{int32(123)} // []int32 | Rack (ID) (optional)
 	rackIdN := []int32{int32(123)} // []int32 | Rack (ID) (optional)
+	rearPortCount := []int32{int32(123)} // []int32 |  (optional)
+	rearPortCountEmpty := true // bool |  (optional)
+	rearPortCountGt := []int32{int32(123)} // []int32 |  (optional)
+	rearPortCountGte := []int32{int32(123)} // []int32 |  (optional)
+	rearPortCountLt := []int32{int32(123)} // []int32 |  (optional)
+	rearPortCountLte := []int32{int32(123)} // []int32 |  (optional)
+	rearPortCountN := []int32{int32(123)} // []int32 |  (optional)
 	region := []int32{int32(123)} // []int32 | Region (slug) (optional)
 	regionN := []int32{int32(123)} // []int32 | Region (slug) (optional)
 	regionId := []int32{int32(123)} // []int32 | Region (ID) (optional)
@@ -8849,7 +9187,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimDevicesList(context.Background()).Airflow(airflow).AirflowN(airflowN).AssetTag(assetTag).AssetTagEmpty(assetTagEmpty).AssetTagIc(assetTagIc).AssetTagIe(assetTagIe).AssetTagIew(assetTagIew).AssetTagIsw(assetTagIsw).AssetTagN(assetTagN).AssetTagNic(assetTagNic).AssetTagNie(assetTagNie).AssetTagNiew(assetTagNiew).AssetTagNisw(assetTagNisw).ClusterId(clusterId).ClusterIdN(clusterIdN).ConfigTemplateId(configTemplateId).ConfigTemplateIdN(configTemplateIdN).ConsolePorts(consolePorts).ConsoleServerPorts(consoleServerPorts).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DeviceBays(deviceBays).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Face(face).FaceN(faceN).HasOobIp(hasOobIp).HasPrimaryIp(hasPrimaryIp).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interfaces(interfaces).IsFullDepth(isFullDepth).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Latitude(latitude).LatitudeEmpty(latitudeEmpty).LatitudeGt(latitudeGt).LatitudeGte(latitudeGte).LatitudeLt(latitudeLt).LatitudeLte(latitudeLte).LatitudeN(latitudeN).Limit(limit).LocalContextData(localContextData).LocationId(locationId).LocationIdN(locationIdN).Longitude(longitude).LongitudeEmpty(longitudeEmpty).LongitudeGt(longitudeGt).LongitudeGte(longitudeGte).LongitudeLt(longitudeLt).LongitudeLte(longitudeLte).LongitudeN(longitudeN).MacAddress(macAddress).MacAddressIc(macAddressIc).MacAddressIe(macAddressIe).MacAddressIew(macAddressIew).MacAddressIsw(macAddressIsw).MacAddressN(macAddressN).MacAddressNic(macAddressNic).MacAddressNie(macAddressNie).MacAddressNiew(macAddressNiew).MacAddressNisw(macAddressNisw).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).Model(model).ModelN(modelN).ModifiedByRequest(modifiedByRequest).ModuleBays(moduleBays).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).OobIpId(oobIpId).OobIpIdN(oobIpIdN).Ordering(ordering).ParentDeviceId(parentDeviceId).ParentDeviceIdN(parentDeviceIdN).PassThroughPorts(passThroughPorts).Platform(platform).PlatformN(platformN).PlatformId(platformId).PlatformIdN(platformIdN).Position(position).PositionEmpty(positionEmpty).PositionGt(positionGt).PositionGte(positionGte).PositionLt(positionLt).PositionLte(positionLte).PositionN(positionN).PowerOutlets(powerOutlets).PowerPorts(powerPorts).PrimaryIp4Id(primaryIp4Id).PrimaryIp4IdN(primaryIp4IdN).PrimaryIp6Id(primaryIp6Id).PrimaryIp6IdN(primaryIp6IdN).Q(q).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Serial(serial).SerialEmpty(serialEmpty).SerialIc(serialIc).SerialIe(serialIe).SerialIew(serialIew).SerialIsw(serialIsw).SerialN(serialN).SerialNic(serialNic).SerialNie(serialNie).SerialNiew(serialNiew).SerialNisw(serialNisw).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).VcPosition(vcPosition).VcPositionEmpty(vcPositionEmpty).VcPositionGt(vcPositionGt).VcPositionGte(vcPositionGte).VcPositionLt(vcPositionLt).VcPositionLte(vcPositionLte).VcPositionN(vcPositionN).VcPriority(vcPriority).VcPriorityEmpty(vcPriorityEmpty).VcPriorityGt(vcPriorityGt).VcPriorityGte(vcPriorityGte).VcPriorityLt(vcPriorityLt).VcPriorityLte(vcPriorityLte).VcPriorityN(vcPriorityN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).VirtualChassisMember(virtualChassisMember).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimDevicesList(context.Background()).Airflow(airflow).AirflowN(airflowN).AssetTag(assetTag).AssetTagEmpty(assetTagEmpty).AssetTagIc(assetTagIc).AssetTagIe(assetTagIe).AssetTagIew(assetTagIew).AssetTagIsw(assetTagIsw).AssetTagN(assetTagN).AssetTagNic(assetTagNic).AssetTagNie(assetTagNie).AssetTagNiew(assetTagNiew).AssetTagNisw(assetTagNisw).ClusterId(clusterId).ClusterIdN(clusterIdN).ConfigTemplateId(configTemplateId).ConfigTemplateIdN(configTemplateIdN).ConsolePortCount(consolePortCount).ConsolePortCountEmpty(consolePortCountEmpty).ConsolePortCountGt(consolePortCountGt).ConsolePortCountGte(consolePortCountGte).ConsolePortCountLt(consolePortCountLt).ConsolePortCountLte(consolePortCountLte).ConsolePortCountN(consolePortCountN).ConsolePorts(consolePorts).ConsoleServerPortCount(consoleServerPortCount).ConsoleServerPortCountEmpty(consoleServerPortCountEmpty).ConsoleServerPortCountGt(consoleServerPortCountGt).ConsoleServerPortCountGte(consoleServerPortCountGte).ConsoleServerPortCountLt(consoleServerPortCountLt).ConsoleServerPortCountLte(consoleServerPortCountLte).ConsoleServerPortCountN(consoleServerPortCountN).ConsoleServerPorts(consoleServerPorts).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DeviceBayCount(deviceBayCount).DeviceBayCountEmpty(deviceBayCountEmpty).DeviceBayCountGt(deviceBayCountGt).DeviceBayCountGte(deviceBayCountGte).DeviceBayCountLt(deviceBayCountLt).DeviceBayCountLte(deviceBayCountLte).DeviceBayCountN(deviceBayCountN).DeviceBays(deviceBays).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Face(face).FaceN(faceN).FrontPortCount(frontPortCount).FrontPortCountEmpty(frontPortCountEmpty).FrontPortCountGt(frontPortCountGt).FrontPortCountGte(frontPortCountGte).FrontPortCountLt(frontPortCountLt).FrontPortCountLte(frontPortCountLte).FrontPortCountN(frontPortCountN).HasOobIp(hasOobIp).HasPrimaryIp(hasPrimaryIp).HasVirtualDeviceContext(hasVirtualDeviceContext).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InterfaceCount(interfaceCount).InterfaceCountEmpty(interfaceCountEmpty).InterfaceCountGt(interfaceCountGt).InterfaceCountGte(interfaceCountGte).InterfaceCountLt(interfaceCountLt).InterfaceCountLte(interfaceCountLte).InterfaceCountN(interfaceCountN).Interfaces(interfaces).InventoryItemCount(inventoryItemCount).InventoryItemCountEmpty(inventoryItemCountEmpty).InventoryItemCountGt(inventoryItemCountGt).InventoryItemCountGte(inventoryItemCountGte).InventoryItemCountLt(inventoryItemCountLt).InventoryItemCountLte(inventoryItemCountLte).InventoryItemCountN(inventoryItemCountN).IsFullDepth(isFullDepth).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Latitude(latitude).LatitudeEmpty(latitudeEmpty).LatitudeGt(latitudeGt).LatitudeGte(latitudeGte).LatitudeLt(latitudeLt).LatitudeLte(latitudeLte).LatitudeN(latitudeN).Limit(limit).LocalContextData(localContextData).LocationId(locationId).LocationIdN(locationIdN).Longitude(longitude).LongitudeEmpty(longitudeEmpty).LongitudeGt(longitudeGt).LongitudeGte(longitudeGte).LongitudeLt(longitudeLt).LongitudeLte(longitudeLte).LongitudeN(longitudeN).MacAddress(macAddress).MacAddressIc(macAddressIc).MacAddressIe(macAddressIe).MacAddressIew(macAddressIew).MacAddressIsw(macAddressIsw).MacAddressN(macAddressN).MacAddressNic(macAddressNic).MacAddressNie(macAddressNie).MacAddressNiew(macAddressNiew).MacAddressNisw(macAddressNisw).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).Model(model).ModelN(modelN).ModifiedByRequest(modifiedByRequest).ModuleBayCount(moduleBayCount).ModuleBayCountEmpty(moduleBayCountEmpty).ModuleBayCountGt(moduleBayCountGt).ModuleBayCountGte(moduleBayCountGte).ModuleBayCountLt(moduleBayCountLt).ModuleBayCountLte(moduleBayCountLte).ModuleBayCountN(moduleBayCountN).ModuleBays(moduleBays).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).OobIpId(oobIpId).OobIpIdN(oobIpIdN).Ordering(ordering).ParentBayId(parentBayId).ParentBayIdN(parentBayIdN).ParentDeviceId(parentDeviceId).ParentDeviceIdN(parentDeviceIdN).PassThroughPorts(passThroughPorts).Platform(platform).PlatformN(platformN).PlatformId(platformId).PlatformIdN(platformIdN).Position(position).PositionEmpty(positionEmpty).PositionGt(positionGt).PositionGte(positionGte).PositionLt(positionLt).PositionLte(positionLte).PositionN(positionN).PowerOutletCount(powerOutletCount).PowerOutletCountEmpty(powerOutletCountEmpty).PowerOutletCountGt(powerOutletCountGt).PowerOutletCountGte(powerOutletCountGte).PowerOutletCountLt(powerOutletCountLt).PowerOutletCountLte(powerOutletCountLte).PowerOutletCountN(powerOutletCountN).PowerOutlets(powerOutlets).PowerPortCount(powerPortCount).PowerPortCountEmpty(powerPortCountEmpty).PowerPortCountGt(powerPortCountGt).PowerPortCountGte(powerPortCountGte).PowerPortCountLt(powerPortCountLt).PowerPortCountLte(powerPortCountLte).PowerPortCountN(powerPortCountN).PowerPorts(powerPorts).PrimaryIp4Id(primaryIp4Id).PrimaryIp4IdN(primaryIp4IdN).PrimaryIp6Id(primaryIp6Id).PrimaryIp6IdN(primaryIp6IdN).Q(q).RackId(rackId).RackIdN(rackIdN).RearPortCount(rearPortCount).RearPortCountEmpty(rearPortCountEmpty).RearPortCountGt(rearPortCountGt).RearPortCountGte(rearPortCountGte).RearPortCountLt(rearPortCountLt).RearPortCountLte(rearPortCountLte).RearPortCountN(rearPortCountN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Serial(serial).SerialEmpty(serialEmpty).SerialIc(serialIc).SerialIe(serialIe).SerialIew(serialIew).SerialIsw(serialIsw).SerialN(serialN).SerialNic(serialNic).SerialNie(serialNie).SerialNiew(serialNiew).SerialNisw(serialNisw).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).VcPosition(vcPosition).VcPositionEmpty(vcPositionEmpty).VcPositionGt(vcPositionGt).VcPositionGte(vcPositionGte).VcPositionLt(vcPositionLt).VcPositionLte(vcPositionLte).VcPositionN(vcPositionN).VcPriority(vcPriority).VcPriorityEmpty(vcPriorityEmpty).VcPriorityGt(vcPriorityGt).VcPriorityGte(vcPriorityGte).VcPriorityLt(vcPriorityLt).VcPriorityLte(vcPriorityLte).VcPriorityN(vcPriorityN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).VirtualChassisMember(virtualChassisMember).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimDevicesList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8870,8 +9208,8 @@ Other parameters are passed through a pointer to a apiDcimDevicesListRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **airflow** | **string** |  | 
- **airflowN** | **string** |  | 
+ **airflow** | [**DcimDeviceTypesListAirflowParameter**](DcimDeviceTypesListAirflowParameter.md) | * &#x60;front-to-rear&#x60; - Front to rear * &#x60;rear-to-front&#x60; - Rear to front * &#x60;left-to-right&#x60; - Left to right * &#x60;right-to-left&#x60; - Right to left * &#x60;side-to-rear&#x60; - Side to rear * &#x60;passive&#x60; - Passive * &#x60;mixed&#x60; - Mixed | 
+ **airflowN** | [**DcimDeviceTypesListAirflowParameter**](DcimDeviceTypesListAirflowParameter.md) | * &#x60;front-to-rear&#x60; - Front to rear * &#x60;rear-to-front&#x60; - Rear to front * &#x60;left-to-right&#x60; - Left to right * &#x60;right-to-left&#x60; - Right to left * &#x60;side-to-rear&#x60; - Side to rear * &#x60;passive&#x60; - Passive * &#x60;mixed&#x60; - Mixed | 
  **assetTag** | **[]string** |  | 
  **assetTagEmpty** | **bool** |  | 
  **assetTagIc** | **[]string** |  | 
@@ -8887,7 +9225,21 @@ Name | Type | Description  | Notes
  **clusterIdN** | **[]int32** | VM cluster (ID) | 
  **configTemplateId** | **[]int32** | Config template (ID) | 
  **configTemplateIdN** | **[]int32** | Config template (ID) | 
+ **consolePortCount** | **[]int32** |  | 
+ **consolePortCountEmpty** | **bool** |  | 
+ **consolePortCountGt** | **[]int32** |  | 
+ **consolePortCountGte** | **[]int32** |  | 
+ **consolePortCountLt** | **[]int32** |  | 
+ **consolePortCountLte** | **[]int32** |  | 
+ **consolePortCountN** | **[]int32** |  | 
  **consolePorts** | **bool** | Has console ports | 
+ **consoleServerPortCount** | **[]int32** |  | 
+ **consoleServerPortCountEmpty** | **bool** |  | 
+ **consoleServerPortCountGt** | **[]int32** |  | 
+ **consoleServerPortCountGte** | **[]int32** |  | 
+ **consoleServerPortCountLt** | **[]int32** |  | 
+ **consoleServerPortCountLte** | **[]int32** |  | 
+ **consoleServerPortCountN** | **[]int32** |  | 
  **consoleServerPorts** | **bool** | Has console server ports | 
  **contact** | **[]int32** | Contact | 
  **contactN** | **[]int32** | Contact | 
@@ -8914,15 +9266,30 @@ Name | Type | Description  | Notes
  **descriptionNie** | **[]string** |  | 
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
+ **deviceBayCount** | **[]int32** |  | 
+ **deviceBayCountEmpty** | **bool** |  | 
+ **deviceBayCountGt** | **[]int32** |  | 
+ **deviceBayCountGte** | **[]int32** |  | 
+ **deviceBayCountLt** | **[]int32** |  | 
+ **deviceBayCountLte** | **[]int32** |  | 
+ **deviceBayCountN** | **[]int32** |  | 
  **deviceBays** | **bool** | Has device bays | 
  **deviceType** | **[]string** | Device type (slug) | 
  **deviceTypeN** | **[]string** | Device type (slug) | 
  **deviceTypeId** | **[]int32** | Device type (ID) | 
  **deviceTypeIdN** | **[]int32** | Device type (ID) | 
- **face** | **string** |  | 
- **faceN** | **string** |  | 
+ **face** | [**RackFace**](RackFace.md) | * &#x60;front&#x60; - Front * &#x60;rear&#x60; - Rear | 
+ **faceN** | [**RackFace**](RackFace.md) | * &#x60;front&#x60; - Front * &#x60;rear&#x60; - Rear | 
+ **frontPortCount** | **[]int32** |  | 
+ **frontPortCountEmpty** | **bool** |  | 
+ **frontPortCountGt** | **[]int32** |  | 
+ **frontPortCountGte** | **[]int32** |  | 
+ **frontPortCountLt** | **[]int32** |  | 
+ **frontPortCountLte** | **[]int32** |  | 
+ **frontPortCountN** | **[]int32** |  | 
  **hasOobIp** | **bool** | Has an out-of-band IP | 
  **hasPrimaryIp** | **bool** | Has a primary IP | 
+ **hasVirtualDeviceContext** | **bool** | Has virtual device context | 
  **id** | **[]int32** |  | 
  **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
@@ -8930,7 +9297,21 @@ Name | Type | Description  | Notes
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
+ **interfaceCount** | **[]int32** |  | 
+ **interfaceCountEmpty** | **bool** |  | 
+ **interfaceCountGt** | **[]int32** |  | 
+ **interfaceCountGte** | **[]int32** |  | 
+ **interfaceCountLt** | **[]int32** |  | 
+ **interfaceCountLte** | **[]int32** |  | 
+ **interfaceCountN** | **[]int32** |  | 
  **interfaces** | **bool** | Has interfaces | 
+ **inventoryItemCount** | **[]int32** |  | 
+ **inventoryItemCountEmpty** | **bool** |  | 
+ **inventoryItemCountGt** | **[]int32** |  | 
+ **inventoryItemCountGte** | **[]int32** |  | 
+ **inventoryItemCountLt** | **[]int32** |  | 
+ **inventoryItemCountLte** | **[]int32** |  | 
+ **inventoryItemCountN** | **[]int32** |  | 
  **isFullDepth** | **bool** | Is full depth | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
@@ -8974,6 +9355,13 @@ Name | Type | Description  | Notes
  **model** | **[]string** | Device model (slug) | 
  **modelN** | **[]string** | Device model (slug) | 
  **modifiedByRequest** | **string** |  | 
+ **moduleBayCount** | **[]int32** |  | 
+ **moduleBayCountEmpty** | **bool** |  | 
+ **moduleBayCountGt** | **[]int32** |  | 
+ **moduleBayCountGte** | **[]int32** |  | 
+ **moduleBayCountLt** | **[]int32** |  | 
+ **moduleBayCountLte** | **[]int32** |  | 
+ **moduleBayCountN** | **[]int32** |  | 
  **moduleBays** | **bool** | Has module bays | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
@@ -8990,6 +9378,8 @@ Name | Type | Description  | Notes
  **oobIpId** | **[]int32** | OOB IP (ID) | 
  **oobIpIdN** | **[]int32** | OOB IP (ID) | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **parentBayId** | **[]int32** | Parent bay (ID) | 
+ **parentBayIdN** | **[]int32** | Parent bay (ID) | 
  **parentDeviceId** | **[]int32** | Parent Device (ID) | 
  **parentDeviceIdN** | **[]int32** | Parent Device (ID) | 
  **passThroughPorts** | **bool** | Has pass-through ports | 
@@ -9004,7 +9394,21 @@ Name | Type | Description  | Notes
  **positionLt** | **[]float64** |  | 
  **positionLte** | **[]float64** |  | 
  **positionN** | **[]float64** |  | 
+ **powerOutletCount** | **[]int32** |  | 
+ **powerOutletCountEmpty** | **bool** |  | 
+ **powerOutletCountGt** | **[]int32** |  | 
+ **powerOutletCountGte** | **[]int32** |  | 
+ **powerOutletCountLt** | **[]int32** |  | 
+ **powerOutletCountLte** | **[]int32** |  | 
+ **powerOutletCountN** | **[]int32** |  | 
  **powerOutlets** | **bool** | Has power outlets | 
+ **powerPortCount** | **[]int32** |  | 
+ **powerPortCountEmpty** | **bool** |  | 
+ **powerPortCountGt** | **[]int32** |  | 
+ **powerPortCountGte** | **[]int32** |  | 
+ **powerPortCountLt** | **[]int32** |  | 
+ **powerPortCountLte** | **[]int32** |  | 
+ **powerPortCountN** | **[]int32** |  | 
  **powerPorts** | **bool** | Has power ports | 
  **primaryIp4Id** | **[]int32** | Primary IPv4 (ID) | 
  **primaryIp4IdN** | **[]int32** | Primary IPv4 (ID) | 
@@ -9013,6 +9417,13 @@ Name | Type | Description  | Notes
  **q** | **string** | Search | 
  **rackId** | **[]int32** | Rack (ID) | 
  **rackIdN** | **[]int32** | Rack (ID) | 
+ **rearPortCount** | **[]int32** |  | 
+ **rearPortCountEmpty** | **bool** |  | 
+ **rearPortCountGt** | **[]int32** |  | 
+ **rearPortCountGte** | **[]int32** |  | 
+ **rearPortCountLt** | **[]int32** |  | 
+ **rearPortCountLte** | **[]int32** |  | 
+ **rearPortCountN** | **[]int32** |  | 
  **region** | **[]int32** | Region (slug) | 
  **regionN** | **[]int32** | Region (slug) | 
  **regionId** | **[]int32** | Region (ID) | 
@@ -9106,7 +9517,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -9178,12 +9589,12 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this device.
-	writableDeviceWithConfigContextRequest := *openapiclient.NewWritableDeviceWithConfigContextRequest(int32(123), int32(123), int32(123)) // WritableDeviceWithConfigContextRequest | 
+	writableDeviceWithConfigContextRequest := *openapiclient.NewWritableDeviceWithConfigContextRequest(*openapiclient.NewDeviceTypeRequest(*openapiclient.NewManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example"), *openapiclient.NewDeviceRoleRequest("Name_example", "Slug_example"), *openapiclient.NewSiteRequest("Name_example", "Slug_example"), openapiclient.Rack_face_1("front")) // WritableDeviceWithConfigContextRequest | 
 	format := openapiclient.dcim_devices_render_config_create_format_parameter("json") // DcimDevicesRenderConfigCreateFormatParameter |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -9252,7 +9663,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -9322,12 +9733,12 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this device.
-	writableDeviceWithConfigContextRequest := *openapiclient.NewWritableDeviceWithConfigContextRequest(int32(123), int32(123), int32(123)) // WritableDeviceWithConfigContextRequest | 
+	writableDeviceWithConfigContextRequest := *openapiclient.NewWritableDeviceWithConfigContextRequest(*openapiclient.NewDeviceTypeRequest(*openapiclient.NewManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example"), *openapiclient.NewDeviceRoleRequest("Name_example", "Slug_example"), *openapiclient.NewSiteRequest("Name_example", "Slug_example"), openapiclient.Rack_face_1("front")) // WritableDeviceWithConfigContextRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -9394,11 +9805,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	frontPortTemplateRequest := []openapiclient.FrontPortTemplateRequest{*openapiclient.NewFrontPortTemplateRequest("Name_example", openapiclient.FrontPort_type_value("8p8c"), *openapiclient.NewNestedRearPortTemplateRequest("Name_example"))} // []FrontPortTemplateRequest | 
+	frontPortTemplateRequest := []openapiclient.FrontPortTemplateRequest{*openapiclient.NewFrontPortTemplateRequest("Name_example", openapiclient.FrontPort_type_value("8p8c"), *openapiclient.NewRearPortTemplateRequest("Name_example"))} // []FrontPortTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -9458,11 +9869,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	frontPortTemplateRequest := []openapiclient.FrontPortTemplateRequest{*openapiclient.NewFrontPortTemplateRequest("Name_example", openapiclient.FrontPort_type_value("8p8c"), *openapiclient.NewNestedRearPortTemplateRequest("Name_example"))} // []FrontPortTemplateRequest | 
+	frontPortTemplateRequest := []openapiclient.FrontPortTemplateRequest{*openapiclient.NewFrontPortTemplateRequest("Name_example", openapiclient.FrontPort_type_value("8p8c"), *openapiclient.NewRearPortTemplateRequest("Name_example"))} // []FrontPortTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -9524,11 +9935,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	frontPortTemplateRequest := []openapiclient.FrontPortTemplateRequest{*openapiclient.NewFrontPortTemplateRequest("Name_example", openapiclient.FrontPort_type_value("8p8c"), *openapiclient.NewNestedRearPortTemplateRequest("Name_example"))} // []FrontPortTemplateRequest | 
+	frontPortTemplateRequest := []openapiclient.FrontPortTemplateRequest{*openapiclient.NewFrontPortTemplateRequest("Name_example", openapiclient.FrontPort_type_value("8p8c"), *openapiclient.NewRearPortTemplateRequest("Name_example"))} // []FrontPortTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -9590,11 +10001,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writableFrontPortTemplateRequest := *openapiclient.NewWritableFrontPortTemplateRequest("Name_example", openapiclient.FrontPort_type_value("8p8c"), int32(123)) // WritableFrontPortTemplateRequest | 
+	writableFrontPortTemplateRequest := *openapiclient.NewWritableFrontPortTemplateRequest("Name_example", openapiclient.FrontPort_type_value("8p8c"), *openapiclient.NewRearPortTemplateRequest("Name_example")) // WritableFrontPortTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -9656,7 +10067,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -9709,7 +10120,7 @@ Name | Type | Description  | Notes
 
 ## DcimFrontPortTemplatesList
 
-> PaginatedFrontPortTemplateList DcimFrontPortTemplatesList(ctx).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedFrontPortTemplateList DcimFrontPortTemplatesList(ctx).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).ModuleTypeId(moduleTypeId).ModuleTypeIdN(moduleTypeIdN).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).RearPortId(rearPortId).RearPortIdN(rearPortIdN).RearPortPosition(rearPortPosition).RearPortPositionEmpty(rearPortPositionEmpty).RearPortPositionGt(rearPortPositionGt).RearPortPositionGte(rearPortPositionGte).RearPortPositionLt(rearPortPositionLt).RearPortPositionLte(rearPortPositionLte).RearPortPositionN(rearPortPositionN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -9725,7 +10136,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -9759,6 +10170,8 @@ func main() {
 	descriptionNie := []string{"Inner_example"} // []string |  (optional)
 	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
 	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
+	deviceTypeId := []*int32{int32(123)} // []*int32 | Device type (ID) (optional)
+	deviceTypeIdN := []*int32{int32(123)} // []*int32 | Device type (ID) (optional)
 	devicetypeId := []*int32{int32(123)} // []*int32 | Device type (ID) (optional)
 	devicetypeIdN := []*int32{int32(123)} // []*int32 | Device type (ID) (optional)
 	id := []int32{int32(123)} // []int32 |  (optional)
@@ -9768,6 +10181,17 @@ func main() {
 	idLt := []int32{int32(123)} // []int32 |  (optional)
 	idLte := []int32{int32(123)} // []int32 |  (optional)
 	idN := []int32{int32(123)} // []int32 |  (optional)
+	label := []string{"Inner_example"} // []string |  (optional)
+	labelEmpty := true // bool |  (optional)
+	labelIc := []string{"Inner_example"} // []string |  (optional)
+	labelIe := []string{"Inner_example"} // []string |  (optional)
+	labelIew := []string{"Inner_example"} // []string |  (optional)
+	labelIsw := []string{"Inner_example"} // []string |  (optional)
+	labelN := []string{"Inner_example"} // []string |  (optional)
+	labelNic := []string{"Inner_example"} // []string |  (optional)
+	labelNie := []string{"Inner_example"} // []string |  (optional)
+	labelNiew := []string{"Inner_example"} // []string |  (optional)
+	labelNisw := []string{"Inner_example"} // []string |  (optional)
 	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -9777,6 +10201,8 @@ func main() {
 	lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
 	limit := int32(56) // int32 | Number of results to return per page. (optional)
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+	moduleTypeId := []*int32{int32(123)} // []*int32 | Module type (ID) (optional)
+	moduleTypeIdN := []*int32{int32(123)} // []*int32 | Module type (ID) (optional)
 	moduletypeId := []*int32{int32(123)} // []*int32 | Module type (ID) (optional)
 	moduletypeIdN := []*int32{int32(123)} // []*int32 | Module type (ID) (optional)
 	name := []string{"Inner_example"} // []string |  (optional)
@@ -9793,13 +10219,22 @@ func main() {
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
 	q := "q_example" // string | Search (optional)
+	rearPortId := []int32{int32(123)} // []int32 |  (optional)
+	rearPortIdN := []int32{int32(123)} // []int32 |  (optional)
+	rearPortPosition := []int32{int32(123)} // []int32 |  (optional)
+	rearPortPositionEmpty := true // bool |  (optional)
+	rearPortPositionGt := []int32{int32(123)} // []int32 |  (optional)
+	rearPortPositionGte := []int32{int32(123)} // []int32 |  (optional)
+	rearPortPositionLt := []int32{int32(123)} // []int32 |  (optional)
+	rearPortPositionLte := []int32{int32(123)} // []int32 |  (optional)
+	rearPortPositionN := []int32{int32(123)} // []int32 |  (optional)
 	type_ := []string{"Inner_example"} // []string |  (optional)
 	typeN := []string{"Inner_example"} // []string |  (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimFrontPortTemplatesList(context.Background()).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimFrontPortTemplatesList(context.Background()).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).ModuleTypeId(moduleTypeId).ModuleTypeIdN(moduleTypeIdN).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).RearPortId(rearPortId).RearPortIdN(rearPortIdN).RearPortPosition(rearPortPosition).RearPortPositionEmpty(rearPortPositionEmpty).RearPortPositionGt(rearPortPositionGt).RearPortPositionGte(rearPortPositionGte).RearPortPositionLt(rearPortPositionLt).RearPortPositionLte(rearPortPositionLte).RearPortPositionN(rearPortPositionN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimFrontPortTemplatesList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9850,6 +10285,8 @@ Name | Type | Description  | Notes
  **descriptionNie** | **[]string** |  | 
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
+ **deviceTypeId** | **[]int32** | Device type (ID) | 
+ **deviceTypeIdN** | **[]int32** | Device type (ID) | 
  **devicetypeId** | **[]int32** | Device type (ID) | 
  **devicetypeIdN** | **[]int32** | Device type (ID) | 
  **id** | **[]int32** |  | 
@@ -9859,6 +10296,17 @@ Name | Type | Description  | Notes
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
+ **label** | **[]string** |  | 
+ **labelEmpty** | **bool** |  | 
+ **labelIc** | **[]string** |  | 
+ **labelIe** | **[]string** |  | 
+ **labelIew** | **[]string** |  | 
+ **labelIsw** | **[]string** |  | 
+ **labelN** | **[]string** |  | 
+ **labelNic** | **[]string** |  | 
+ **labelNie** | **[]string** |  | 
+ **labelNiew** | **[]string** |  | 
+ **labelNisw** | **[]string** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
@@ -9868,6 +10316,8 @@ Name | Type | Description  | Notes
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
  **modifiedByRequest** | **string** |  | 
+ **moduleTypeId** | **[]int32** | Module type (ID) | 
+ **moduleTypeIdN** | **[]int32** | Module type (ID) | 
  **moduletypeId** | **[]int32** | Module type (ID) | 
  **moduletypeIdN** | **[]int32** | Module type (ID) | 
  **name** | **[]string** |  | 
@@ -9884,6 +10334,15 @@ Name | Type | Description  | Notes
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **q** | **string** | Search | 
+ **rearPortId** | **[]int32** |  | 
+ **rearPortIdN** | **[]int32** |  | 
+ **rearPortPosition** | **[]int32** |  | 
+ **rearPortPositionEmpty** | **bool** |  | 
+ **rearPortPositionGt** | **[]int32** |  | 
+ **rearPortPositionGte** | **[]int32** |  | 
+ **rearPortPositionLt** | **[]int32** |  | 
+ **rearPortPositionLte** | **[]int32** |  | 
+ **rearPortPositionN** | **[]int32** |  | 
  **type_** | **[]string** |  | 
  **typeN** | **[]string** |  | 
  **updatedByRequest** | **string** |  | 
@@ -9923,7 +10382,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -9995,7 +10454,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -10065,12 +10524,12 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this front port template.
-	writableFrontPortTemplateRequest := *openapiclient.NewWritableFrontPortTemplateRequest("Name_example", openapiclient.FrontPort_type_value("8p8c"), int32(123)) // WritableFrontPortTemplateRequest | 
+	writableFrontPortTemplateRequest := *openapiclient.NewWritableFrontPortTemplateRequest("Name_example", openapiclient.FrontPort_type_value("8p8c"), *openapiclient.NewRearPortTemplateRequest("Name_example")) // WritableFrontPortTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10137,11 +10596,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	frontPortRequest := []openapiclient.FrontPortRequest{*openapiclient.NewFrontPortRequest(*openapiclient.NewNestedDeviceRequest(), "Name_example", openapiclient.FrontPort_type_value("8p8c"), *openapiclient.NewFrontPortRearPortRequest("Name_example"))} // []FrontPortRequest | 
+	frontPortRequest := []openapiclient.FrontPortRequest{*openapiclient.NewFrontPortRequest(*openapiclient.NewDeviceRequest(), "Name_example", openapiclient.FrontPort_type_value("8p8c"), *openapiclient.NewFrontPortRearPortRequest("Name_example"))} // []FrontPortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10201,11 +10660,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	frontPortRequest := []openapiclient.FrontPortRequest{*openapiclient.NewFrontPortRequest(*openapiclient.NewNestedDeviceRequest(), "Name_example", openapiclient.FrontPort_type_value("8p8c"), *openapiclient.NewFrontPortRearPortRequest("Name_example"))} // []FrontPortRequest | 
+	frontPortRequest := []openapiclient.FrontPortRequest{*openapiclient.NewFrontPortRequest(*openapiclient.NewDeviceRequest(), "Name_example", openapiclient.FrontPort_type_value("8p8c"), *openapiclient.NewFrontPortRearPortRequest("Name_example"))} // []FrontPortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10267,11 +10726,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	frontPortRequest := []openapiclient.FrontPortRequest{*openapiclient.NewFrontPortRequest(*openapiclient.NewNestedDeviceRequest(), "Name_example", openapiclient.FrontPort_type_value("8p8c"), *openapiclient.NewFrontPortRearPortRequest("Name_example"))} // []FrontPortRequest | 
+	frontPortRequest := []openapiclient.FrontPortRequest{*openapiclient.NewFrontPortRequest(*openapiclient.NewDeviceRequest(), "Name_example", openapiclient.FrontPort_type_value("8p8c"), *openapiclient.NewFrontPortRearPortRequest("Name_example"))} // []FrontPortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10333,11 +10792,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writableFrontPortRequest := *openapiclient.NewWritableFrontPortRequest(int32(123), "Name_example", openapiclient.FrontPort_type_value("8p8c"), int32(123)) // WritableFrontPortRequest | 
+	writableFrontPortRequest := *openapiclient.NewWritableFrontPortRequest(*openapiclient.NewDeviceRequest(), "Name_example", openapiclient.FrontPort_type_value("8p8c"), int32(123)) // WritableFrontPortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10399,7 +10858,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -10452,7 +10911,7 @@ Name | Type | Description  | Notes
 
 ## DcimFrontPortsList
 
-> PaginatedFrontPortList DcimFrontPortsList(ctx).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
+> PaginatedFrontPortList DcimFrontPortsList(ctx).CableEnd(cableEnd).CableEndN(cableEndN).CableId(cableId).CableIdN(cableIdN).Cabled(cabled).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).MarkConnected(markConnected).ModifiedByRequest(modifiedByRequest).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).RearPortId(rearPortId).RearPortIdN(rearPortIdN).RearPortPosition(rearPortPosition).RearPortPositionEmpty(rearPortPositionEmpty).RearPortPositionGt(rearPortPositionGt).RearPortPositionGte(rearPortPositionGte).RearPortPositionLt(rearPortPositionLt).RearPortPositionLte(rearPortPositionLte).RearPortPositionN(rearPortPositionN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
 
 
 
@@ -10468,12 +10927,14 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	cableEnd := "cableEnd_example" // string |  (optional)
-	cableEndN := "cableEndN_example" // string |  (optional)
+	cableEnd := openapiclient.circuits_circuit_terminations_list_cable_end_parameter("A") // CircuitsCircuitTerminationsListCableEndParameter | * `A` - A * `B` - B (optional)
+	cableEndN := openapiclient.circuits_circuit_terminations_list_cable_end_parameter("A") // CircuitsCircuitTerminationsListCableEndParameter | * `A` - A * `B` - B (optional)
+	cableId := []*int32{int32(123)} // []*int32 | Cable (ID) (optional)
+	cableIdN := []*int32{int32(123)} // []*int32 | Cable (ID) (optional)
 	cabled := true // bool |  (optional)
 	color := []string{"Inner_example"} // []string |  (optional)
 	colorEmpty := true // bool |  (optional)
@@ -10509,10 +10970,6 @@ func main() {
 	deviceN := []*string{"Inner_example"} // []*string | Device (name) (optional)
 	deviceId := []int32{int32(123)} // []int32 | Device (ID) (optional)
 	deviceIdN := []int32{int32(123)} // []int32 | Device (ID) (optional)
-	deviceRole := []string{"Inner_example"} // []string | Device role (slug) (optional)
-	deviceRoleN := []string{"Inner_example"} // []string | Device role (slug) (optional)
-	deviceRoleId := []int32{int32(123)} // []int32 | Device role (ID) (optional)
-	deviceRoleIdN := []int32{int32(123)} // []int32 | Device role (ID) (optional)
 	deviceType := []string{"Inner_example"} // []string | Device type (model) (optional)
 	deviceTypeN := []string{"Inner_example"} // []string | Device type (model) (optional)
 	deviceTypeId := []int32{int32(123)} // []int32 | Device type (ID) (optional)
@@ -10547,6 +11004,7 @@ func main() {
 	locationN := []string{"Inner_example"} // []string | Location (slug) (optional)
 	locationId := []int32{int32(123)} // []int32 | Location (ID) (optional)
 	locationIdN := []int32{int32(123)} // []int32 | Location (ID) (optional)
+	markConnected := true // bool |  (optional)
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	moduleId := []*int32{int32(123)} // []*int32 | Module (ID) (optional)
 	moduleIdN := []*int32{int32(123)} // []*int32 | Module (ID) (optional)
@@ -10569,6 +11027,15 @@ func main() {
 	rackN := []string{"Inner_example"} // []string | Rack (name) (optional)
 	rackId := []int32{int32(123)} // []int32 | Rack (ID) (optional)
 	rackIdN := []int32{int32(123)} // []int32 | Rack (ID) (optional)
+	rearPortId := []int32{int32(123)} // []int32 |  (optional)
+	rearPortIdN := []int32{int32(123)} // []int32 |  (optional)
+	rearPortPosition := []int32{int32(123)} // []int32 |  (optional)
+	rearPortPositionEmpty := true // bool |  (optional)
+	rearPortPositionGt := []int32{int32(123)} // []int32 |  (optional)
+	rearPortPositionGte := []int32{int32(123)} // []int32 |  (optional)
+	rearPortPositionLt := []int32{int32(123)} // []int32 |  (optional)
+	rearPortPositionLte := []int32{int32(123)} // []int32 |  (optional)
+	rearPortPositionN := []int32{int32(123)} // []int32 |  (optional)
 	region := []int32{int32(123)} // []int32 | Region (slug) (optional)
 	regionN := []int32{int32(123)} // []int32 | Region (slug) (optional)
 	regionId := []int32{int32(123)} // []int32 | Region (ID) (optional)
@@ -10597,7 +11064,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimFrontPortsList(context.Background()).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimFrontPortsList(context.Background()).CableEnd(cableEnd).CableEndN(cableEndN).CableId(cableId).CableIdN(cableIdN).Cabled(cabled).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).MarkConnected(markConnected).ModifiedByRequest(modifiedByRequest).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).RearPortId(rearPortId).RearPortIdN(rearPortIdN).RearPortPosition(rearPortPosition).RearPortPositionEmpty(rearPortPositionEmpty).RearPortPositionGt(rearPortPositionGt).RearPortPositionGte(rearPortPositionGte).RearPortPositionLt(rearPortPositionLt).RearPortPositionLte(rearPortPositionLte).RearPortPositionN(rearPortPositionN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimFrontPortsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10618,8 +11085,10 @@ Other parameters are passed through a pointer to a apiDcimFrontPortsListRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cableEnd** | **string** |  | 
- **cableEndN** | **string** |  | 
+ **cableEnd** | [**CircuitsCircuitTerminationsListCableEndParameter**](CircuitsCircuitTerminationsListCableEndParameter.md) | * &#x60;A&#x60; - A * &#x60;B&#x60; - B | 
+ **cableEndN** | [**CircuitsCircuitTerminationsListCableEndParameter**](CircuitsCircuitTerminationsListCableEndParameter.md) | * &#x60;A&#x60; - A * &#x60;B&#x60; - B | 
+ **cableId** | **[]int32** | Cable (ID) | 
+ **cableIdN** | **[]int32** | Cable (ID) | 
  **cabled** | **bool** |  | 
  **color** | **[]string** |  | 
  **colorEmpty** | **bool** |  | 
@@ -10655,10 +11124,6 @@ Name | Type | Description  | Notes
  **deviceN** | **[]string** | Device (name) | 
  **deviceId** | **[]int32** | Device (ID) | 
  **deviceIdN** | **[]int32** | Device (ID) | 
- **deviceRole** | **[]string** | Device role (slug) | 
- **deviceRoleN** | **[]string** | Device role (slug) | 
- **deviceRoleId** | **[]int32** | Device role (ID) | 
- **deviceRoleIdN** | **[]int32** | Device role (ID) | 
  **deviceType** | **[]string** | Device type (model) | 
  **deviceTypeN** | **[]string** | Device type (model) | 
  **deviceTypeId** | **[]int32** | Device type (ID) | 
@@ -10693,6 +11158,7 @@ Name | Type | Description  | Notes
  **locationN** | **[]string** | Location (slug) | 
  **locationId** | **[]int32** | Location (ID) | 
  **locationIdN** | **[]int32** | Location (ID) | 
+ **markConnected** | **bool** |  | 
  **modifiedByRequest** | **string** |  | 
  **moduleId** | **[]int32** | Module (ID) | 
  **moduleIdN** | **[]int32** | Module (ID) | 
@@ -10715,6 +11181,15 @@ Name | Type | Description  | Notes
  **rackN** | **[]string** | Rack (name) | 
  **rackId** | **[]int32** | Rack (ID) | 
  **rackIdN** | **[]int32** | Rack (ID) | 
+ **rearPortId** | **[]int32** |  | 
+ **rearPortIdN** | **[]int32** |  | 
+ **rearPortPosition** | **[]int32** |  | 
+ **rearPortPositionEmpty** | **bool** |  | 
+ **rearPortPositionGt** | **[]int32** |  | 
+ **rearPortPositionGte** | **[]int32** |  | 
+ **rearPortPositionLt** | **[]int32** |  | 
+ **rearPortPositionLte** | **[]int32** |  | 
+ **rearPortPositionN** | **[]int32** |  | 
  **region** | **[]int32** | Region (slug) | 
  **regionN** | **[]int32** | Region (slug) | 
  **regionId** | **[]int32** | Region (ID) | 
@@ -10776,7 +11251,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -10848,7 +11323,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -10918,7 +11393,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -10988,12 +11463,12 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this front port.
-	writableFrontPortRequest := *openapiclient.NewWritableFrontPortRequest(int32(123), "Name_example", openapiclient.FrontPort_type_value("8p8c"), int32(123)) // WritableFrontPortRequest | 
+	writableFrontPortRequest := *openapiclient.NewWritableFrontPortRequest(*openapiclient.NewDeviceRequest(), "Name_example", openapiclient.FrontPort_type_value("8p8c"), int32(123)) // WritableFrontPortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -11060,7 +11535,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -11124,7 +11599,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -11190,7 +11665,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -11256,7 +11731,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -11322,7 +11797,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -11375,7 +11850,7 @@ Name | Type | Description  | Notes
 
 ## DcimInterfaceTemplatesList
 
-> PaginatedInterfaceTemplateList DcimInterfaceTemplatesList(ctx).BridgeId(bridgeId).BridgeIdN(bridgeIdN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Enabled(enabled).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MgmtOnly(mgmtOnly).ModifiedByRequest(modifiedByRequest).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).PoeMode(poeMode).PoeModeN(poeModeN).PoeType(poeType).PoeTypeN(poeTypeN).Q(q).RfRole(rfRole).RfRoleN(rfRoleN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedInterfaceTemplateList DcimInterfaceTemplatesList(ctx).BridgeId(bridgeId).BridgeIdN(bridgeIdN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Enabled(enabled).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MgmtOnly(mgmtOnly).ModifiedByRequest(modifiedByRequest).ModuleTypeId(moduleTypeId).ModuleTypeIdN(moduleTypeIdN).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).PoeMode(poeMode).PoeModeN(poeModeN).PoeType(poeType).PoeTypeN(poeTypeN).Q(q).RfRole(rfRole).RfRoleN(rfRoleN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -11391,7 +11866,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -11416,6 +11891,8 @@ func main() {
 	descriptionNie := []string{"Inner_example"} // []string |  (optional)
 	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
 	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
+	deviceTypeId := []*int32{int32(123)} // []*int32 | Device type (ID) (optional)
+	deviceTypeIdN := []*int32{int32(123)} // []*int32 | Device type (ID) (optional)
 	devicetypeId := []*int32{int32(123)} // []*int32 | Device type (ID) (optional)
 	devicetypeIdN := []*int32{int32(123)} // []*int32 | Device type (ID) (optional)
 	enabled := true // bool |  (optional)
@@ -11426,6 +11903,17 @@ func main() {
 	idLt := []int32{int32(123)} // []int32 |  (optional)
 	idLte := []int32{int32(123)} // []int32 |  (optional)
 	idN := []int32{int32(123)} // []int32 |  (optional)
+	label := []string{"Inner_example"} // []string |  (optional)
+	labelEmpty := true // bool |  (optional)
+	labelIc := []string{"Inner_example"} // []string |  (optional)
+	labelIe := []string{"Inner_example"} // []string |  (optional)
+	labelIew := []string{"Inner_example"} // []string |  (optional)
+	labelIsw := []string{"Inner_example"} // []string |  (optional)
+	labelN := []string{"Inner_example"} // []string |  (optional)
+	labelNic := []string{"Inner_example"} // []string |  (optional)
+	labelNie := []string{"Inner_example"} // []string |  (optional)
+	labelNiew := []string{"Inner_example"} // []string |  (optional)
+	labelNisw := []string{"Inner_example"} // []string |  (optional)
 	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -11436,6 +11924,8 @@ func main() {
 	limit := int32(56) // int32 | Number of results to return per page. (optional)
 	mgmtOnly := true // bool |  (optional)
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+	moduleTypeId := []*int32{int32(123)} // []*int32 | Module type (ID) (optional)
+	moduleTypeIdN := []*int32{int32(123)} // []*int32 | Module type (ID) (optional)
 	moduletypeId := []*int32{int32(123)} // []*int32 | Module type (ID) (optional)
 	moduletypeIdN := []*int32{int32(123)} // []*int32 | Module type (ID) (optional)
 	name := []string{"Inner_example"} // []string |  (optional)
@@ -11464,7 +11954,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimInterfaceTemplatesList(context.Background()).BridgeId(bridgeId).BridgeIdN(bridgeIdN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Enabled(enabled).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MgmtOnly(mgmtOnly).ModifiedByRequest(modifiedByRequest).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).PoeMode(poeMode).PoeModeN(poeModeN).PoeType(poeType).PoeTypeN(poeTypeN).Q(q).RfRole(rfRole).RfRoleN(rfRoleN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimInterfaceTemplatesList(context.Background()).BridgeId(bridgeId).BridgeIdN(bridgeIdN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Enabled(enabled).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MgmtOnly(mgmtOnly).ModifiedByRequest(modifiedByRequest).ModuleTypeId(moduleTypeId).ModuleTypeIdN(moduleTypeIdN).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).PoeMode(poeMode).PoeModeN(poeModeN).PoeType(poeType).PoeTypeN(poeTypeN).Q(q).RfRole(rfRole).RfRoleN(rfRoleN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInterfaceTemplatesList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11506,6 +11996,8 @@ Name | Type | Description  | Notes
  **descriptionNie** | **[]string** |  | 
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
+ **deviceTypeId** | **[]int32** | Device type (ID) | 
+ **deviceTypeIdN** | **[]int32** | Device type (ID) | 
  **devicetypeId** | **[]int32** | Device type (ID) | 
  **devicetypeIdN** | **[]int32** | Device type (ID) | 
  **enabled** | **bool** |  | 
@@ -11516,6 +12008,17 @@ Name | Type | Description  | Notes
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
+ **label** | **[]string** |  | 
+ **labelEmpty** | **bool** |  | 
+ **labelIc** | **[]string** |  | 
+ **labelIe** | **[]string** |  | 
+ **labelIew** | **[]string** |  | 
+ **labelIsw** | **[]string** |  | 
+ **labelN** | **[]string** |  | 
+ **labelNic** | **[]string** |  | 
+ **labelNie** | **[]string** |  | 
+ **labelNiew** | **[]string** |  | 
+ **labelNisw** | **[]string** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
@@ -11526,6 +12029,8 @@ Name | Type | Description  | Notes
  **limit** | **int32** | Number of results to return per page. | 
  **mgmtOnly** | **bool** |  | 
  **modifiedByRequest** | **string** |  | 
+ **moduleTypeId** | **[]int32** | Module type (ID) | 
+ **moduleTypeIdN** | **[]int32** | Module type (ID) | 
  **moduletypeId** | **[]int32** | Module type (ID) | 
  **moduletypeIdN** | **[]int32** | Module type (ID) | 
  **name** | **[]string** |  | 
@@ -11587,7 +12092,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -11659,7 +12164,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -11729,7 +12234,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -11801,11 +12306,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	interfaceRequest := []openapiclient.InterfaceRequest{*openapiclient.NewInterfaceRequest(*openapiclient.NewNestedDeviceRequest(), "Name_example", openapiclient.Interface_type_value("virtual"))} // []InterfaceRequest | 
+	interfaceRequest := []openapiclient.InterfaceRequest{*openapiclient.NewInterfaceRequest(*openapiclient.NewDeviceRequest(), "Name_example", openapiclient.Interface_type_value("virtual"))} // []InterfaceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -11865,11 +12370,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	interfaceRequest := []openapiclient.InterfaceRequest{*openapiclient.NewInterfaceRequest(*openapiclient.NewNestedDeviceRequest(), "Name_example", openapiclient.Interface_type_value("virtual"))} // []InterfaceRequest | 
+	interfaceRequest := []openapiclient.InterfaceRequest{*openapiclient.NewInterfaceRequest(*openapiclient.NewDeviceRequest(), "Name_example", openapiclient.Interface_type_value("virtual"))} // []InterfaceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -11931,11 +12436,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	interfaceRequest := []openapiclient.InterfaceRequest{*openapiclient.NewInterfaceRequest(*openapiclient.NewNestedDeviceRequest(), "Name_example", openapiclient.Interface_type_value("virtual"))} // []InterfaceRequest | 
+	interfaceRequest := []openapiclient.InterfaceRequest{*openapiclient.NewInterfaceRequest(*openapiclient.NewDeviceRequest(), "Name_example", openapiclient.Interface_type_value("virtual"))} // []InterfaceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -11997,11 +12502,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writableInterfaceRequest := *openapiclient.NewWritableInterfaceRequest(int32(123), []int32{int32(123)}, "Name_example", openapiclient.Interface_type_value("virtual")) // WritableInterfaceRequest | 
+	writableInterfaceRequest := *openapiclient.NewWritableInterfaceRequest(*openapiclient.NewDeviceRequest(), "Name_example", openapiclient.Interface_type_value("virtual")) // WritableInterfaceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -12063,7 +12568,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -12116,7 +12621,7 @@ Name | Type | Description  | Notes
 
 ## DcimInterfacesList
 
-> PaginatedInterfaceList DcimInterfacesList(ctx).BridgeId(bridgeId).BridgeIdN(bridgeIdN).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Connected(connected).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Duplex(duplex).DuplexN(duplexN).Enabled(enabled).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Kind(kind).L2vpn(l2vpn).L2vpnN(l2vpnN).L2vpnId(l2vpnId).L2vpnIdN(l2vpnIdN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LagId(lagId).LagIdN(lagIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).MacAddress(macAddress).MacAddressIc(macAddressIc).MacAddressIe(macAddressIe).MacAddressIew(macAddressIew).MacAddressIsw(macAddressIsw).MacAddressN(macAddressN).MacAddressNic(macAddressNic).MacAddressNie(macAddressNie).MacAddressNiew(macAddressNiew).MacAddressNisw(macAddressNisw).MgmtOnly(mgmtOnly).Mode(mode).ModeN(modeN).ModifiedByRequest(modifiedByRequest).ModuleId(moduleId).ModuleIdN(moduleIdN).Mtu(mtu).MtuEmpty(mtuEmpty).MtuGt(mtuGt).MtuGte(mtuGte).MtuLt(mtuLt).MtuLte(mtuLte).MtuN(mtuN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).ParentId(parentId).ParentIdN(parentIdN).PoeMode(poeMode).PoeModeN(poeModeN).PoeType(poeType).PoeTypeN(poeTypeN).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).RfChannel(rfChannel).RfChannelN(rfChannelN).RfChannelFrequency(rfChannelFrequency).RfChannelFrequencyEmpty(rfChannelFrequencyEmpty).RfChannelFrequencyGt(rfChannelFrequencyGt).RfChannelFrequencyGte(rfChannelFrequencyGte).RfChannelFrequencyLt(rfChannelFrequencyLt).RfChannelFrequencyLte(rfChannelFrequencyLte).RfChannelFrequencyN(rfChannelFrequencyN).RfChannelWidth(rfChannelWidth).RfChannelWidthEmpty(rfChannelWidthEmpty).RfChannelWidthGt(rfChannelWidthGt).RfChannelWidthGte(rfChannelWidthGte).RfChannelWidthLt(rfChannelWidthLt).RfChannelWidthLte(rfChannelWidthLte).RfChannelWidthN(rfChannelWidthN).RfRole(rfRole).RfRoleN(rfRoleN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Speed(speed).SpeedEmpty(speedEmpty).SpeedGt(speedGt).SpeedGte(speedGte).SpeedLt(speedLt).SpeedLte(speedLte).SpeedN(speedN).Tag(tag).TagN(tagN).TxPower(txPower).TxPowerEmpty(txPowerEmpty).TxPowerGt(txPowerGt).TxPowerGte(txPowerGte).TxPowerLt(txPowerLt).TxPowerLte(txPowerLte).TxPowerN(txPowerN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Vdc(vdc).VdcN(vdcN).VdcId(vdcId).VdcIdN(vdcIdN).VdcIdentifier(vdcIdentifier).VdcIdentifierN(vdcIdentifierN).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).VirtualChassisMember(virtualChassisMember).VirtualChassisMemberId(virtualChassisMemberId).Vlan(vlan).VlanId(vlanId).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Wwn(wwn).WwnIc(wwnIc).WwnIe(wwnIe).WwnIew(wwnIew).WwnIsw(wwnIsw).WwnN(wwnN).WwnNic(wwnNic).WwnNie(wwnNie).WwnNiew(wwnNiew).WwnNisw(wwnNisw).Execute()
+> PaginatedInterfaceList DcimInterfacesList(ctx).BridgeId(bridgeId).BridgeIdN(bridgeIdN).CableEnd(cableEnd).CableEndN(cableEndN).CableId(cableId).CableIdN(cableIdN).Cabled(cabled).Connected(connected).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Duplex(duplex).DuplexN(duplexN).Enabled(enabled).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Kind(kind).L2vpn(l2vpn).L2vpnN(l2vpnN).L2vpnId(l2vpnId).L2vpnIdN(l2vpnIdN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LagId(lagId).LagIdN(lagIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).MacAddress(macAddress).MacAddressIc(macAddressIc).MacAddressIe(macAddressIe).MacAddressIew(macAddressIew).MacAddressIsw(macAddressIsw).MacAddressN(macAddressN).MacAddressNic(macAddressNic).MacAddressNie(macAddressNie).MacAddressNiew(macAddressNiew).MacAddressNisw(macAddressNisw).MarkConnected(markConnected).MgmtOnly(mgmtOnly).Mode(mode).ModeN(modeN).ModifiedByRequest(modifiedByRequest).ModuleId(moduleId).ModuleIdN(moduleIdN).Mtu(mtu).MtuEmpty(mtuEmpty).MtuGt(mtuGt).MtuGte(mtuGte).MtuLt(mtuLt).MtuLte(mtuLte).MtuN(mtuN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).ParentId(parentId).ParentIdN(parentIdN).PoeMode(poeMode).PoeModeN(poeModeN).PoeType(poeType).PoeTypeN(poeTypeN).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).RfChannel(rfChannel).RfChannelN(rfChannelN).RfChannelFrequency(rfChannelFrequency).RfChannelFrequencyEmpty(rfChannelFrequencyEmpty).RfChannelFrequencyGt(rfChannelFrequencyGt).RfChannelFrequencyGte(rfChannelFrequencyGte).RfChannelFrequencyLt(rfChannelFrequencyLt).RfChannelFrequencyLte(rfChannelFrequencyLte).RfChannelFrequencyN(rfChannelFrequencyN).RfChannelWidth(rfChannelWidth).RfChannelWidthEmpty(rfChannelWidthEmpty).RfChannelWidthGt(rfChannelWidthGt).RfChannelWidthGte(rfChannelWidthGte).RfChannelWidthLt(rfChannelWidthLt).RfChannelWidthLte(rfChannelWidthLte).RfChannelWidthN(rfChannelWidthN).RfRole(rfRole).RfRoleN(rfRoleN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Speed(speed).SpeedEmpty(speedEmpty).SpeedGt(speedGt).SpeedGte(speedGte).SpeedLt(speedLt).SpeedLte(speedLte).SpeedN(speedN).Tag(tag).TagN(tagN).TxPower(txPower).TxPowerEmpty(txPowerEmpty).TxPowerGt(txPowerGt).TxPowerGte(txPowerGte).TxPowerLt(txPowerLt).TxPowerLte(txPowerLte).TxPowerN(txPowerN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Vdc(vdc).VdcN(vdcN).VdcId(vdcId).VdcIdN(vdcIdN).VdcIdentifier(vdcIdentifier).VdcIdentifierN(vdcIdentifierN).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).VirtualChassisMember(virtualChassisMember).VirtualChassisMemberId(virtualChassisMemberId).Vlan(vlan).VlanId(vlanId).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).WirelessLanId(wirelessLanId).WirelessLanIdN(wirelessLanIdN).WirelessLinkId(wirelessLinkId).WirelessLinkIdN(wirelessLinkIdN).Wwn(wwn).WwnIc(wwnIc).WwnIe(wwnIe).WwnIew(wwnIew).WwnIsw(wwnIsw).WwnN(wwnN).WwnNic(wwnNic).WwnNie(wwnNie).WwnNiew(wwnNiew).WwnNisw(wwnNisw).Execute()
 
 
 
@@ -12132,14 +12637,16 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	bridgeId := []int32{int32(123)} // []int32 | Bridged interface (ID) (optional)
 	bridgeIdN := []int32{int32(123)} // []int32 | Bridged interface (ID) (optional)
-	cableEnd := "cableEnd_example" // string |  (optional)
-	cableEndN := "cableEndN_example" // string |  (optional)
+	cableEnd := openapiclient.circuits_circuit_terminations_list_cable_end_parameter("A") // CircuitsCircuitTerminationsListCableEndParameter | * `A` - A * `B` - B (optional)
+	cableEndN := openapiclient.circuits_circuit_terminations_list_cable_end_parameter("A") // CircuitsCircuitTerminationsListCableEndParameter | * `A` - A * `B` - B (optional)
+	cableId := []*int32{int32(123)} // []*int32 | Cable (ID) (optional)
+	cableIdN := []*int32{int32(123)} // []*int32 | Cable (ID) (optional)
 	cabled := true // bool |  (optional)
 	connected := true // bool |  (optional)
 	created := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -12165,10 +12672,6 @@ func main() {
 	deviceN := []*string{"Inner_example"} // []*string | Device (name) (optional)
 	deviceId := []int32{int32(123)} // []int32 | Device (ID) (optional)
 	deviceIdN := []int32{int32(123)} // []int32 | Device (ID) (optional)
-	deviceRole := []string{"Inner_example"} // []string | Device role (slug) (optional)
-	deviceRoleN := []string{"Inner_example"} // []string | Device role (slug) (optional)
-	deviceRoleId := []int32{int32(123)} // []int32 | Device role (ID) (optional)
-	deviceRoleIdN := []int32{int32(123)} // []int32 | Device role (ID) (optional)
 	deviceType := []string{"Inner_example"} // []string | Device type (model) (optional)
 	deviceTypeN := []string{"Inner_example"} // []string | Device type (model) (optional)
 	deviceTypeId := []int32{int32(123)} // []int32 | Device type (ID) (optional)
@@ -12223,9 +12726,10 @@ func main() {
 	macAddressNie := []string{"Inner_example"} // []string |  (optional)
 	macAddressNiew := []string{"Inner_example"} // []string |  (optional)
 	macAddressNisw := []string{"Inner_example"} // []string |  (optional)
+	markConnected := true // bool |  (optional)
 	mgmtOnly := true // bool |  (optional)
-	mode := "mode_example" // string | IEEE 802.1Q tagging strategy (optional)
-	modeN := "modeN_example" // string | IEEE 802.1Q tagging strategy (optional)
+	mode := openapiclient.dcim_interfaces_list_mode_parameter("access") // DcimInterfacesListModeParameter | IEEE 802.1Q tagging strategy  * `access` - Access * `tagged` - Tagged * `tagged-all` - Tagged (All) (optional)
+	modeN := openapiclient.dcim_interfaces_list_mode_parameter("access") // DcimInterfacesListModeParameter | IEEE 802.1Q tagging strategy  * `access` - Access * `tagged` - Tagged * `tagged-all` - Tagged (All) (optional)
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	moduleId := []*int32{int32(123)} // []*int32 | Module (ID) (optional)
 	moduleIdN := []*int32{int32(123)} // []*int32 | Module (ID) (optional)
@@ -12332,6 +12836,10 @@ func main() {
 	vrfN := []*string{"Inner_example"} // []*string | VRF (RD) (optional)
 	vrfId := []int32{int32(123)} // []int32 | VRF (optional)
 	vrfIdN := []int32{int32(123)} // []int32 | VRF (optional)
+	wirelessLanId := []int32{int32(123)} // []int32 | Wireless LAN (optional)
+	wirelessLanIdN := []int32{int32(123)} // []int32 | Wireless LAN (optional)
+	wirelessLinkId := []*int32{int32(123)} // []*int32 | Wireless link (optional)
+	wirelessLinkIdN := []*int32{int32(123)} // []*int32 | Wireless link (optional)
 	wwn := []string{"Inner_example"} // []string |  (optional)
 	wwnIc := []string{"Inner_example"} // []string |  (optional)
 	wwnIe := []string{"Inner_example"} // []string |  (optional)
@@ -12345,7 +12853,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimInterfacesList(context.Background()).BridgeId(bridgeId).BridgeIdN(bridgeIdN).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Connected(connected).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Duplex(duplex).DuplexN(duplexN).Enabled(enabled).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Kind(kind).L2vpn(l2vpn).L2vpnN(l2vpnN).L2vpnId(l2vpnId).L2vpnIdN(l2vpnIdN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LagId(lagId).LagIdN(lagIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).MacAddress(macAddress).MacAddressIc(macAddressIc).MacAddressIe(macAddressIe).MacAddressIew(macAddressIew).MacAddressIsw(macAddressIsw).MacAddressN(macAddressN).MacAddressNic(macAddressNic).MacAddressNie(macAddressNie).MacAddressNiew(macAddressNiew).MacAddressNisw(macAddressNisw).MgmtOnly(mgmtOnly).Mode(mode).ModeN(modeN).ModifiedByRequest(modifiedByRequest).ModuleId(moduleId).ModuleIdN(moduleIdN).Mtu(mtu).MtuEmpty(mtuEmpty).MtuGt(mtuGt).MtuGte(mtuGte).MtuLt(mtuLt).MtuLte(mtuLte).MtuN(mtuN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).ParentId(parentId).ParentIdN(parentIdN).PoeMode(poeMode).PoeModeN(poeModeN).PoeType(poeType).PoeTypeN(poeTypeN).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).RfChannel(rfChannel).RfChannelN(rfChannelN).RfChannelFrequency(rfChannelFrequency).RfChannelFrequencyEmpty(rfChannelFrequencyEmpty).RfChannelFrequencyGt(rfChannelFrequencyGt).RfChannelFrequencyGte(rfChannelFrequencyGte).RfChannelFrequencyLt(rfChannelFrequencyLt).RfChannelFrequencyLte(rfChannelFrequencyLte).RfChannelFrequencyN(rfChannelFrequencyN).RfChannelWidth(rfChannelWidth).RfChannelWidthEmpty(rfChannelWidthEmpty).RfChannelWidthGt(rfChannelWidthGt).RfChannelWidthGte(rfChannelWidthGte).RfChannelWidthLt(rfChannelWidthLt).RfChannelWidthLte(rfChannelWidthLte).RfChannelWidthN(rfChannelWidthN).RfRole(rfRole).RfRoleN(rfRoleN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Speed(speed).SpeedEmpty(speedEmpty).SpeedGt(speedGt).SpeedGte(speedGte).SpeedLt(speedLt).SpeedLte(speedLte).SpeedN(speedN).Tag(tag).TagN(tagN).TxPower(txPower).TxPowerEmpty(txPowerEmpty).TxPowerGt(txPowerGt).TxPowerGte(txPowerGte).TxPowerLt(txPowerLt).TxPowerLte(txPowerLte).TxPowerN(txPowerN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Vdc(vdc).VdcN(vdcN).VdcId(vdcId).VdcIdN(vdcIdN).VdcIdentifier(vdcIdentifier).VdcIdentifierN(vdcIdentifierN).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).VirtualChassisMember(virtualChassisMember).VirtualChassisMemberId(virtualChassisMemberId).Vlan(vlan).VlanId(vlanId).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).Wwn(wwn).WwnIc(wwnIc).WwnIe(wwnIe).WwnIew(wwnIew).WwnIsw(wwnIsw).WwnN(wwnN).WwnNic(wwnNic).WwnNie(wwnNie).WwnNiew(wwnNiew).WwnNisw(wwnNisw).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimInterfacesList(context.Background()).BridgeId(bridgeId).BridgeIdN(bridgeIdN).CableEnd(cableEnd).CableEndN(cableEndN).CableId(cableId).CableIdN(cableIdN).Cabled(cabled).Connected(connected).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Duplex(duplex).DuplexN(duplexN).Enabled(enabled).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Kind(kind).L2vpn(l2vpn).L2vpnN(l2vpnN).L2vpnId(l2vpnId).L2vpnIdN(l2vpnIdN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LagId(lagId).LagIdN(lagIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).MacAddress(macAddress).MacAddressIc(macAddressIc).MacAddressIe(macAddressIe).MacAddressIew(macAddressIew).MacAddressIsw(macAddressIsw).MacAddressN(macAddressN).MacAddressNic(macAddressNic).MacAddressNie(macAddressNie).MacAddressNiew(macAddressNiew).MacAddressNisw(macAddressNisw).MarkConnected(markConnected).MgmtOnly(mgmtOnly).Mode(mode).ModeN(modeN).ModifiedByRequest(modifiedByRequest).ModuleId(moduleId).ModuleIdN(moduleIdN).Mtu(mtu).MtuEmpty(mtuEmpty).MtuGt(mtuGt).MtuGte(mtuGte).MtuLt(mtuLt).MtuLte(mtuLte).MtuN(mtuN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).ParentId(parentId).ParentIdN(parentIdN).PoeMode(poeMode).PoeModeN(poeModeN).PoeType(poeType).PoeTypeN(poeTypeN).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).RfChannel(rfChannel).RfChannelN(rfChannelN).RfChannelFrequency(rfChannelFrequency).RfChannelFrequencyEmpty(rfChannelFrequencyEmpty).RfChannelFrequencyGt(rfChannelFrequencyGt).RfChannelFrequencyGte(rfChannelFrequencyGte).RfChannelFrequencyLt(rfChannelFrequencyLt).RfChannelFrequencyLte(rfChannelFrequencyLte).RfChannelFrequencyN(rfChannelFrequencyN).RfChannelWidth(rfChannelWidth).RfChannelWidthEmpty(rfChannelWidthEmpty).RfChannelWidthGt(rfChannelWidthGt).RfChannelWidthGte(rfChannelWidthGte).RfChannelWidthLt(rfChannelWidthLt).RfChannelWidthLte(rfChannelWidthLte).RfChannelWidthN(rfChannelWidthN).RfRole(rfRole).RfRoleN(rfRoleN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Speed(speed).SpeedEmpty(speedEmpty).SpeedGt(speedGt).SpeedGte(speedGte).SpeedLt(speedLt).SpeedLte(speedLte).SpeedN(speedN).Tag(tag).TagN(tagN).TxPower(txPower).TxPowerEmpty(txPowerEmpty).TxPowerGt(txPowerGt).TxPowerGte(txPowerGte).TxPowerLt(txPowerLt).TxPowerLte(txPowerLte).TxPowerN(txPowerN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Vdc(vdc).VdcN(vdcN).VdcId(vdcId).VdcIdN(vdcIdN).VdcIdentifier(vdcIdentifier).VdcIdentifierN(vdcIdentifierN).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).VirtualChassisMember(virtualChassisMember).VirtualChassisMemberId(virtualChassisMemberId).Vlan(vlan).VlanId(vlanId).Vrf(vrf).VrfN(vrfN).VrfId(vrfId).VrfIdN(vrfIdN).WirelessLanId(wirelessLanId).WirelessLanIdN(wirelessLanIdN).WirelessLinkId(wirelessLinkId).WirelessLinkIdN(wirelessLinkIdN).Wwn(wwn).WwnIc(wwnIc).WwnIe(wwnIe).WwnIew(wwnIew).WwnIsw(wwnIsw).WwnN(wwnN).WwnNic(wwnNic).WwnNie(wwnNie).WwnNiew(wwnNiew).WwnNisw(wwnNisw).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInterfacesList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12368,8 +12876,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bridgeId** | **[]int32** | Bridged interface (ID) | 
  **bridgeIdN** | **[]int32** | Bridged interface (ID) | 
- **cableEnd** | **string** |  | 
- **cableEndN** | **string** |  | 
+ **cableEnd** | [**CircuitsCircuitTerminationsListCableEndParameter**](CircuitsCircuitTerminationsListCableEndParameter.md) | * &#x60;A&#x60; - A * &#x60;B&#x60; - B | 
+ **cableEndN** | [**CircuitsCircuitTerminationsListCableEndParameter**](CircuitsCircuitTerminationsListCableEndParameter.md) | * &#x60;A&#x60; - A * &#x60;B&#x60; - B | 
+ **cableId** | **[]int32** | Cable (ID) | 
+ **cableIdN** | **[]int32** | Cable (ID) | 
  **cabled** | **bool** |  | 
  **connected** | **bool** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
@@ -12395,10 +12905,6 @@ Name | Type | Description  | Notes
  **deviceN** | **[]string** | Device (name) | 
  **deviceId** | **[]int32** | Device (ID) | 
  **deviceIdN** | **[]int32** | Device (ID) | 
- **deviceRole** | **[]string** | Device role (slug) | 
- **deviceRoleN** | **[]string** | Device role (slug) | 
- **deviceRoleId** | **[]int32** | Device role (ID) | 
- **deviceRoleIdN** | **[]int32** | Device role (ID) | 
  **deviceType** | **[]string** | Device type (model) | 
  **deviceTypeN** | **[]string** | Device type (model) | 
  **deviceTypeId** | **[]int32** | Device type (ID) | 
@@ -12453,9 +12959,10 @@ Name | Type | Description  | Notes
  **macAddressNie** | **[]string** |  | 
  **macAddressNiew** | **[]string** |  | 
  **macAddressNisw** | **[]string** |  | 
+ **markConnected** | **bool** |  | 
  **mgmtOnly** | **bool** |  | 
- **mode** | **string** | IEEE 802.1Q tagging strategy | 
- **modeN** | **string** | IEEE 802.1Q tagging strategy | 
+ **mode** | [**DcimInterfacesListModeParameter**](DcimInterfacesListModeParameter.md) | IEEE 802.1Q tagging strategy  * &#x60;access&#x60; - Access * &#x60;tagged&#x60; - Tagged * &#x60;tagged-all&#x60; - Tagged (All) | 
+ **modeN** | [**DcimInterfacesListModeParameter**](DcimInterfacesListModeParameter.md) | IEEE 802.1Q tagging strategy  * &#x60;access&#x60; - Access * &#x60;tagged&#x60; - Tagged * &#x60;tagged-all&#x60; - Tagged (All) | 
  **modifiedByRequest** | **string** |  | 
  **moduleId** | **[]int32** | Module (ID) | 
  **moduleIdN** | **[]int32** | Module (ID) | 
@@ -12562,6 +13069,10 @@ Name | Type | Description  | Notes
  **vrfN** | **[]string** | VRF (RD) | 
  **vrfId** | **[]int32** | VRF | 
  **vrfIdN** | **[]int32** | VRF | 
+ **wirelessLanId** | **[]int32** | Wireless LAN | 
+ **wirelessLanIdN** | **[]int32** | Wireless LAN | 
+ **wirelessLinkId** | **[]int32** | Wireless link | 
+ **wirelessLinkIdN** | **[]int32** | Wireless link | 
  **wwn** | **[]string** |  | 
  **wwnIc** | **[]string** |  | 
  **wwnIe** | **[]string** |  | 
@@ -12608,7 +13119,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -12680,7 +13191,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -12750,7 +13261,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -12820,12 +13331,12 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this interface.
-	writableInterfaceRequest := *openapiclient.NewWritableInterfaceRequest(int32(123), []int32{int32(123)}, "Name_example", openapiclient.Interface_type_value("virtual")) // WritableInterfaceRequest | 
+	writableInterfaceRequest := *openapiclient.NewWritableInterfaceRequest(*openapiclient.NewDeviceRequest(), "Name_example", openapiclient.Interface_type_value("virtual")) // WritableInterfaceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -12892,7 +13403,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -12956,7 +13467,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -13022,7 +13533,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -13088,7 +13599,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -13154,7 +13665,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -13223,7 +13734,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -13435,7 +13946,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -13507,7 +14018,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -13577,7 +14088,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -13649,11 +14160,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	inventoryItemTemplateRequest := []openapiclient.InventoryItemTemplateRequest{*openapiclient.NewInventoryItemTemplateRequest(*openapiclient.NewNestedDeviceTypeRequest("Model_example", "Slug_example"), "Name_example")} // []InventoryItemTemplateRequest | 
+	inventoryItemTemplateRequest := []openapiclient.InventoryItemTemplateRequest{*openapiclient.NewInventoryItemTemplateRequest(*openapiclient.NewDeviceTypeRequest(*openapiclient.NewManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example"), "Name_example")} // []InventoryItemTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -13713,11 +14224,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	inventoryItemTemplateRequest := []openapiclient.InventoryItemTemplateRequest{*openapiclient.NewInventoryItemTemplateRequest(*openapiclient.NewNestedDeviceTypeRequest("Model_example", "Slug_example"), "Name_example")} // []InventoryItemTemplateRequest | 
+	inventoryItemTemplateRequest := []openapiclient.InventoryItemTemplateRequest{*openapiclient.NewInventoryItemTemplateRequest(*openapiclient.NewDeviceTypeRequest(*openapiclient.NewManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example"), "Name_example")} // []InventoryItemTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -13779,11 +14290,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	inventoryItemTemplateRequest := []openapiclient.InventoryItemTemplateRequest{*openapiclient.NewInventoryItemTemplateRequest(*openapiclient.NewNestedDeviceTypeRequest("Model_example", "Slug_example"), "Name_example")} // []InventoryItemTemplateRequest | 
+	inventoryItemTemplateRequest := []openapiclient.InventoryItemTemplateRequest{*openapiclient.NewInventoryItemTemplateRequest(*openapiclient.NewDeviceTypeRequest(*openapiclient.NewManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example"), "Name_example")} // []InventoryItemTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -13830,7 +14341,7 @@ Name | Type | Description  | Notes
 
 ## DcimInventoryItemTemplatesCreate
 
-> InventoryItemTemplate DcimInventoryItemTemplatesCreate(ctx).WritableInventoryItemTemplateRequest(writableInventoryItemTemplateRequest).Execute()
+> InventoryItemTemplate DcimInventoryItemTemplatesCreate(ctx).InventoryItemTemplateRequest(inventoryItemTemplateRequest).Execute()
 
 
 
@@ -13845,15 +14356,15 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writableInventoryItemTemplateRequest := *openapiclient.NewWritableInventoryItemTemplateRequest(int32(123), "Name_example") // WritableInventoryItemTemplateRequest | 
+	inventoryItemTemplateRequest := *openapiclient.NewInventoryItemTemplateRequest(*openapiclient.NewDeviceTypeRequest(*openapiclient.NewManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example"), "Name_example") // InventoryItemTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimInventoryItemTemplatesCreate(context.Background()).WritableInventoryItemTemplateRequest(writableInventoryItemTemplateRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimInventoryItemTemplatesCreate(context.Background()).InventoryItemTemplateRequest(inventoryItemTemplateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInventoryItemTemplatesCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -13874,7 +14385,7 @@ Other parameters are passed through a pointer to a apiDcimInventoryItemTemplates
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writableInventoryItemTemplateRequest** | [**WritableInventoryItemTemplateRequest**](WritableInventoryItemTemplateRequest.md) |  | 
+ **inventoryItemTemplateRequest** | [**InventoryItemTemplateRequest**](InventoryItemTemplateRequest.md) |  | 
 
 ### Return type
 
@@ -13911,7 +14422,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -13964,7 +14475,7 @@ Name | Type | Description  | Notes
 
 ## DcimInventoryItemTemplatesList
 
-> PaginatedInventoryItemTemplateList DcimInventoryItemTemplatesList(ctx).ComponentId(componentId).ComponentIdEmpty(componentIdEmpty).ComponentIdGt(componentIdGt).ComponentIdGte(componentIdGte).ComponentIdLt(componentIdLt).ComponentIdLte(componentIdLte).ComponentIdN(componentIdN).ComponentType(componentType).ComponentTypeN(componentTypeN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).ParentId(parentId).ParentIdN(parentIdN).PartId(partId).PartIdEmpty(partIdEmpty).PartIdIc(partIdIc).PartIdIe(partIdIe).PartIdIew(partIdIew).PartIdIsw(partIdIsw).PartIdN(partIdN).PartIdNic(partIdNic).PartIdNie(partIdNie).PartIdNiew(partIdNiew).PartIdNisw(partIdNisw).Q(q).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedInventoryItemTemplateList DcimInventoryItemTemplatesList(ctx).ComponentId(componentId).ComponentIdEmpty(componentIdEmpty).ComponentIdGt(componentIdGt).ComponentIdGte(componentIdGte).ComponentIdLt(componentIdLt).ComponentIdLte(componentIdLte).ComponentIdN(componentIdN).ComponentType(componentType).ComponentTypeN(componentTypeN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).ParentId(parentId).ParentIdN(parentIdN).PartId(partId).PartIdEmpty(partIdEmpty).PartIdIc(partIdIc).PartIdIe(partIdIe).PartIdIew(partIdIew).PartIdIsw(partIdIsw).PartIdN(partIdN).PartIdNic(partIdNic).PartIdNie(partIdNie).PartIdNiew(partIdNiew).PartIdNisw(partIdNisw).Q(q).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -13980,7 +14491,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -14012,6 +14523,8 @@ func main() {
 	descriptionNie := []string{"Inner_example"} // []string |  (optional)
 	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
 	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
+	deviceTypeId := []int32{int32(123)} // []int32 | Device type (ID) (optional)
+	deviceTypeIdN := []int32{int32(123)} // []int32 | Device type (ID) (optional)
 	devicetypeId := []int32{int32(123)} // []int32 | Device type (ID) (optional)
 	devicetypeIdN := []int32{int32(123)} // []int32 | Device type (ID) (optional)
 	id := []int32{int32(123)} // []int32 |  (optional)
@@ -14080,7 +14593,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimInventoryItemTemplatesList(context.Background()).ComponentId(componentId).ComponentIdEmpty(componentIdEmpty).ComponentIdGt(componentIdGt).ComponentIdGte(componentIdGte).ComponentIdLt(componentIdLt).ComponentIdLte(componentIdLte).ComponentIdN(componentIdN).ComponentType(componentType).ComponentTypeN(componentTypeN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).ParentId(parentId).ParentIdN(parentIdN).PartId(partId).PartIdEmpty(partIdEmpty).PartIdIc(partIdIc).PartIdIe(partIdIe).PartIdIew(partIdIew).PartIdIsw(partIdIsw).PartIdN(partIdN).PartIdNic(partIdNic).PartIdNie(partIdNie).PartIdNiew(partIdNiew).PartIdNisw(partIdNisw).Q(q).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimInventoryItemTemplatesList(context.Background()).ComponentId(componentId).ComponentIdEmpty(componentIdEmpty).ComponentIdGt(componentIdGt).ComponentIdGte(componentIdGte).ComponentIdLt(componentIdLt).ComponentIdLte(componentIdLte).ComponentIdN(componentIdN).ComponentType(componentType).ComponentTypeN(componentTypeN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).ParentId(parentId).ParentIdN(parentIdN).PartId(partId).PartIdEmpty(partIdEmpty).PartIdIc(partIdIc).PartIdIe(partIdIe).PartIdIew(partIdIew).PartIdIsw(partIdIsw).PartIdN(partIdN).PartIdNic(partIdNic).PartIdNie(partIdNie).PartIdNiew(partIdNiew).PartIdNisw(partIdNisw).Q(q).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInventoryItemTemplatesList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -14129,6 +14642,8 @@ Name | Type | Description  | Notes
  **descriptionNie** | **[]string** |  | 
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
+ **deviceTypeId** | **[]int32** | Device type (ID) | 
+ **deviceTypeIdN** | **[]int32** | Device type (ID) | 
  **devicetypeId** | **[]int32** | Device type (ID) | 
  **devicetypeIdN** | **[]int32** | Device type (ID) | 
  **id** | **[]int32** |  | 
@@ -14215,7 +14730,7 @@ Name | Type | Description  | Notes
 
 ## DcimInventoryItemTemplatesPartialUpdate
 
-> InventoryItemTemplate DcimInventoryItemTemplatesPartialUpdate(ctx, id).PatchedWritableInventoryItemTemplateRequest(patchedWritableInventoryItemTemplateRequest).Execute()
+> InventoryItemTemplate DcimInventoryItemTemplatesPartialUpdate(ctx, id).PatchedInventoryItemTemplateRequest(patchedInventoryItemTemplateRequest).Execute()
 
 
 
@@ -14230,16 +14745,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this inventory item template.
-	patchedWritableInventoryItemTemplateRequest := *openapiclient.NewPatchedWritableInventoryItemTemplateRequest() // PatchedWritableInventoryItemTemplateRequest |  (optional)
+	patchedInventoryItemTemplateRequest := *openapiclient.NewPatchedInventoryItemTemplateRequest() // PatchedInventoryItemTemplateRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimInventoryItemTemplatesPartialUpdate(context.Background(), id).PatchedWritableInventoryItemTemplateRequest(patchedWritableInventoryItemTemplateRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimInventoryItemTemplatesPartialUpdate(context.Background(), id).PatchedInventoryItemTemplateRequest(patchedInventoryItemTemplateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInventoryItemTemplatesPartialUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -14265,7 +14780,7 @@ Other parameters are passed through a pointer to a apiDcimInventoryItemTemplates
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **patchedWritableInventoryItemTemplateRequest** | [**PatchedWritableInventoryItemTemplateRequest**](PatchedWritableInventoryItemTemplateRequest.md) |  | 
+ **patchedInventoryItemTemplateRequest** | [**PatchedInventoryItemTemplateRequest**](PatchedInventoryItemTemplateRequest.md) |  | 
 
 ### Return type
 
@@ -14302,7 +14817,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -14357,7 +14872,7 @@ Name | Type | Description  | Notes
 
 ## DcimInventoryItemTemplatesUpdate
 
-> InventoryItemTemplate DcimInventoryItemTemplatesUpdate(ctx, id).WritableInventoryItemTemplateRequest(writableInventoryItemTemplateRequest).Execute()
+> InventoryItemTemplate DcimInventoryItemTemplatesUpdate(ctx, id).InventoryItemTemplateRequest(inventoryItemTemplateRequest).Execute()
 
 
 
@@ -14372,16 +14887,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this inventory item template.
-	writableInventoryItemTemplateRequest := *openapiclient.NewWritableInventoryItemTemplateRequest(int32(123), "Name_example") // WritableInventoryItemTemplateRequest | 
+	inventoryItemTemplateRequest := *openapiclient.NewInventoryItemTemplateRequest(*openapiclient.NewDeviceTypeRequest(*openapiclient.NewManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example"), "Name_example") // InventoryItemTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimInventoryItemTemplatesUpdate(context.Background(), id).WritableInventoryItemTemplateRequest(writableInventoryItemTemplateRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimInventoryItemTemplatesUpdate(context.Background(), id).InventoryItemTemplateRequest(inventoryItemTemplateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInventoryItemTemplatesUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -14407,7 +14922,7 @@ Other parameters are passed through a pointer to a apiDcimInventoryItemTemplates
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **writableInventoryItemTemplateRequest** | [**WritableInventoryItemTemplateRequest**](WritableInventoryItemTemplateRequest.md) |  | 
+ **inventoryItemTemplateRequest** | [**InventoryItemTemplateRequest**](InventoryItemTemplateRequest.md) |  | 
 
 ### Return type
 
@@ -14444,11 +14959,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	inventoryItemRequest := []openapiclient.InventoryItemRequest{*openapiclient.NewInventoryItemRequest(*openapiclient.NewNestedDeviceRequest(), "Name_example")} // []InventoryItemRequest | 
+	inventoryItemRequest := []openapiclient.InventoryItemRequest{*openapiclient.NewInventoryItemRequest(*openapiclient.NewDeviceRequest(), "Name_example")} // []InventoryItemRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -14508,11 +15023,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	inventoryItemRequest := []openapiclient.InventoryItemRequest{*openapiclient.NewInventoryItemRequest(*openapiclient.NewNestedDeviceRequest(), "Name_example")} // []InventoryItemRequest | 
+	inventoryItemRequest := []openapiclient.InventoryItemRequest{*openapiclient.NewInventoryItemRequest(*openapiclient.NewDeviceRequest(), "Name_example")} // []InventoryItemRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -14574,11 +15089,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	inventoryItemRequest := []openapiclient.InventoryItemRequest{*openapiclient.NewInventoryItemRequest(*openapiclient.NewNestedDeviceRequest(), "Name_example")} // []InventoryItemRequest | 
+	inventoryItemRequest := []openapiclient.InventoryItemRequest{*openapiclient.NewInventoryItemRequest(*openapiclient.NewDeviceRequest(), "Name_example")} // []InventoryItemRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -14625,7 +15140,7 @@ Name | Type | Description  | Notes
 
 ## DcimInventoryItemsCreate
 
-> InventoryItem DcimInventoryItemsCreate(ctx).WritableInventoryItemRequest(writableInventoryItemRequest).Execute()
+> InventoryItem DcimInventoryItemsCreate(ctx).InventoryItemRequest(inventoryItemRequest).Execute()
 
 
 
@@ -14640,15 +15155,15 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writableInventoryItemRequest := *openapiclient.NewWritableInventoryItemRequest(int32(123), "Name_example") // WritableInventoryItemRequest | 
+	inventoryItemRequest := *openapiclient.NewInventoryItemRequest(*openapiclient.NewDeviceRequest(), "Name_example") // InventoryItemRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimInventoryItemsCreate(context.Background()).WritableInventoryItemRequest(writableInventoryItemRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimInventoryItemsCreate(context.Background()).InventoryItemRequest(inventoryItemRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInventoryItemsCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -14669,7 +15184,7 @@ Other parameters are passed through a pointer to a apiDcimInventoryItemsCreateRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writableInventoryItemRequest** | [**WritableInventoryItemRequest**](WritableInventoryItemRequest.md) |  | 
+ **inventoryItemRequest** | [**InventoryItemRequest**](InventoryItemRequest.md) |  | 
 
 ### Return type
 
@@ -14706,7 +15221,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -14759,7 +15274,7 @@ Name | Type | Description  | Notes
 
 ## DcimInventoryItemsList
 
-> PaginatedInventoryItemList DcimInventoryItemsList(ctx).AssetTag(assetTag).AssetTagEmpty(assetTagEmpty).AssetTagIc(assetTagIc).AssetTagIe(assetTagIe).AssetTagIew(assetTagIew).AssetTagIsw(assetTagIsw).AssetTagN(assetTagN).AssetTagNic(assetTagNic).AssetTagNie(assetTagNie).AssetTagNiew(assetTagNiew).AssetTagNisw(assetTagNisw).ComponentId(componentId).ComponentIdEmpty(componentIdEmpty).ComponentIdGt(componentIdGt).ComponentIdGte(componentIdGte).ComponentIdLt(componentIdLt).ComponentIdLte(componentIdLte).ComponentIdN(componentIdN).ComponentType(componentType).ComponentTypeN(componentTypeN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Discovered(discovered).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).ParentId(parentId).ParentIdN(parentIdN).PartId(partId).PartIdEmpty(partIdEmpty).PartIdIc(partIdIc).PartIdIe(partIdIe).PartIdIew(partIdIew).PartIdIsw(partIdIsw).PartIdN(partIdN).PartIdNic(partIdNic).PartIdNie(partIdNie).PartIdNiew(partIdNiew).PartIdNisw(partIdNisw).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Serial(serial).SerialEmpty(serialEmpty).SerialIc(serialIc).SerialIe(serialIe).SerialIew(serialIew).SerialIsw(serialIsw).SerialN(serialN).SerialNic(serialNic).SerialNie(serialNie).SerialNiew(serialNiew).SerialNisw(serialNisw).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
+> PaginatedInventoryItemList DcimInventoryItemsList(ctx).AssetTag(assetTag).AssetTagEmpty(assetTagEmpty).AssetTagIc(assetTagIc).AssetTagIe(assetTagIe).AssetTagIew(assetTagIew).AssetTagIsw(assetTagIsw).AssetTagN(assetTagN).AssetTagNic(assetTagNic).AssetTagNie(assetTagNie).AssetTagNiew(assetTagNiew).AssetTagNisw(assetTagNisw).ComponentId(componentId).ComponentIdEmpty(componentIdEmpty).ComponentIdGt(componentIdGt).ComponentIdGte(componentIdGte).ComponentIdLt(componentIdLt).ComponentIdLte(componentIdLte).ComponentIdN(componentIdN).ComponentType(componentType).ComponentTypeN(componentTypeN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Discovered(discovered).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).ParentId(parentId).ParentIdN(parentIdN).PartId(partId).PartIdEmpty(partIdEmpty).PartIdIc(partIdIc).PartIdIe(partIdIe).PartIdIew(partIdIew).PartIdIsw(partIdIsw).PartIdN(partIdN).PartIdNic(partIdNic).PartIdNie(partIdNie).PartIdNiew(partIdNiew).PartIdNisw(partIdNisw).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Serial(serial).SerialEmpty(serialEmpty).SerialIc(serialIc).SerialIe(serialIe).SerialIew(serialIew).SerialIsw(serialIsw).SerialN(serialN).SerialNic(serialNic).SerialNie(serialNie).SerialNiew(serialNiew).SerialNisw(serialNisw).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
 
 
 
@@ -14775,7 +15290,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -14807,14 +15322,21 @@ func main() {
 	createdLte := []time.Time{time.Now()} // []time.Time |  (optional)
 	createdN := []time.Time{time.Now()} // []time.Time |  (optional)
 	createdByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+	description := []string{"Inner_example"} // []string |  (optional)
+	descriptionEmpty := true // bool |  (optional)
+	descriptionIc := []string{"Inner_example"} // []string |  (optional)
+	descriptionIe := []string{"Inner_example"} // []string |  (optional)
+	descriptionIew := []string{"Inner_example"} // []string |  (optional)
+	descriptionIsw := []string{"Inner_example"} // []string |  (optional)
+	descriptionN := []string{"Inner_example"} // []string |  (optional)
+	descriptionNic := []string{"Inner_example"} // []string |  (optional)
+	descriptionNie := []string{"Inner_example"} // []string |  (optional)
+	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
+	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
 	device := []*string{"Inner_example"} // []*string | Device (name) (optional)
 	deviceN := []*string{"Inner_example"} // []*string | Device (name) (optional)
 	deviceId := []int32{int32(123)} // []int32 | Device (ID) (optional)
 	deviceIdN := []int32{int32(123)} // []int32 | Device (ID) (optional)
-	deviceRole := []string{"Inner_example"} // []string | Device role (slug) (optional)
-	deviceRoleN := []string{"Inner_example"} // []string | Device role (slug) (optional)
-	deviceRoleId := []int32{int32(123)} // []int32 | Device role (ID) (optional)
-	deviceRoleIdN := []int32{int32(123)} // []int32 | Device role (ID) (optional)
 	deviceType := []string{"Inner_example"} // []string | Device type (model) (optional)
 	deviceTypeN := []string{"Inner_example"} // []string | Device type (model) (optional)
 	deviceTypeId := []int32{int32(123)} // []int32 | Device type (ID) (optional)
@@ -14923,7 +15445,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimInventoryItemsList(context.Background()).AssetTag(assetTag).AssetTagEmpty(assetTagEmpty).AssetTagIc(assetTagIc).AssetTagIe(assetTagIe).AssetTagIew(assetTagIew).AssetTagIsw(assetTagIsw).AssetTagN(assetTagN).AssetTagNic(assetTagNic).AssetTagNie(assetTagNie).AssetTagNiew(assetTagNiew).AssetTagNisw(assetTagNisw).ComponentId(componentId).ComponentIdEmpty(componentIdEmpty).ComponentIdGt(componentIdGt).ComponentIdGte(componentIdGte).ComponentIdLt(componentIdLt).ComponentIdLte(componentIdLte).ComponentIdN(componentIdN).ComponentType(componentType).ComponentTypeN(componentTypeN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Discovered(discovered).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).ParentId(parentId).ParentIdN(parentIdN).PartId(partId).PartIdEmpty(partIdEmpty).PartIdIc(partIdIc).PartIdIe(partIdIe).PartIdIew(partIdIew).PartIdIsw(partIdIsw).PartIdN(partIdN).PartIdNic(partIdNic).PartIdNie(partIdNie).PartIdNiew(partIdNiew).PartIdNisw(partIdNisw).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Serial(serial).SerialEmpty(serialEmpty).SerialIc(serialIc).SerialIe(serialIe).SerialIew(serialIew).SerialIsw(serialIsw).SerialN(serialN).SerialNic(serialNic).SerialNie(serialNie).SerialNiew(serialNiew).SerialNisw(serialNisw).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimInventoryItemsList(context.Background()).AssetTag(assetTag).AssetTagEmpty(assetTagEmpty).AssetTagIc(assetTagIc).AssetTagIe(assetTagIe).AssetTagIew(assetTagIew).AssetTagIsw(assetTagIsw).AssetTagN(assetTagN).AssetTagNic(assetTagNic).AssetTagNie(assetTagNie).AssetTagNiew(assetTagNiew).AssetTagNisw(assetTagNisw).ComponentId(componentId).ComponentIdEmpty(componentIdEmpty).ComponentIdGt(componentIdGt).ComponentIdGte(componentIdGte).ComponentIdLt(componentIdLt).ComponentIdLte(componentIdLte).ComponentIdN(componentIdN).ComponentType(componentType).ComponentTypeN(componentTypeN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Discovered(discovered).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).Manufacturer(manufacturer).ManufacturerN(manufacturerN).ManufacturerId(manufacturerId).ManufacturerIdN(manufacturerIdN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).ParentId(parentId).ParentIdN(parentIdN).PartId(partId).PartIdEmpty(partIdEmpty).PartIdIc(partIdIc).PartIdIe(partIdIe).PartIdIew(partIdIew).PartIdIsw(partIdIsw).PartIdN(partIdN).PartIdNic(partIdNic).PartIdNie(partIdNie).PartIdNiew(partIdNiew).PartIdNisw(partIdNisw).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Serial(serial).SerialEmpty(serialEmpty).SerialIc(serialIc).SerialIe(serialIe).SerialIew(serialIew).SerialIsw(serialIsw).SerialN(serialN).SerialNic(serialNic).SerialNie(serialNie).SerialNiew(serialNiew).SerialNisw(serialNisw).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInventoryItemsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -14972,14 +15494,21 @@ Name | Type | Description  | Notes
  **createdLte** | [**[]time.Time**](time.Time.md) |  | 
  **createdN** | [**[]time.Time**](time.Time.md) |  | 
  **createdByRequest** | **string** |  | 
+ **description** | **[]string** |  | 
+ **descriptionEmpty** | **bool** |  | 
+ **descriptionIc** | **[]string** |  | 
+ **descriptionIe** | **[]string** |  | 
+ **descriptionIew** | **[]string** |  | 
+ **descriptionIsw** | **[]string** |  | 
+ **descriptionN** | **[]string** |  | 
+ **descriptionNic** | **[]string** |  | 
+ **descriptionNie** | **[]string** |  | 
+ **descriptionNiew** | **[]string** |  | 
+ **descriptionNisw** | **[]string** |  | 
  **device** | **[]string** | Device (name) | 
  **deviceN** | **[]string** | Device (name) | 
  **deviceId** | **[]int32** | Device (ID) | 
  **deviceIdN** | **[]int32** | Device (ID) | 
- **deviceRole** | **[]string** | Device role (slug) | 
- **deviceRoleN** | **[]string** | Device role (slug) | 
- **deviceRoleId** | **[]int32** | Device role (ID) | 
- **deviceRoleIdN** | **[]int32** | Device role (ID) | 
  **deviceType** | **[]string** | Device type (model) | 
  **deviceTypeN** | **[]string** | Device type (model) | 
  **deviceTypeId** | **[]int32** | Device type (ID) | 
@@ -15106,7 +15635,7 @@ Name | Type | Description  | Notes
 
 ## DcimInventoryItemsPartialUpdate
 
-> InventoryItem DcimInventoryItemsPartialUpdate(ctx, id).PatchedWritableInventoryItemRequest(patchedWritableInventoryItemRequest).Execute()
+> InventoryItem DcimInventoryItemsPartialUpdate(ctx, id).PatchedInventoryItemRequest(patchedInventoryItemRequest).Execute()
 
 
 
@@ -15121,16 +15650,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this inventory item.
-	patchedWritableInventoryItemRequest := *openapiclient.NewPatchedWritableInventoryItemRequest() // PatchedWritableInventoryItemRequest |  (optional)
+	patchedInventoryItemRequest := *openapiclient.NewPatchedInventoryItemRequest() // PatchedInventoryItemRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimInventoryItemsPartialUpdate(context.Background(), id).PatchedWritableInventoryItemRequest(patchedWritableInventoryItemRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimInventoryItemsPartialUpdate(context.Background(), id).PatchedInventoryItemRequest(patchedInventoryItemRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInventoryItemsPartialUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -15156,7 +15685,7 @@ Other parameters are passed through a pointer to a apiDcimInventoryItemsPartialU
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **patchedWritableInventoryItemRequest** | [**PatchedWritableInventoryItemRequest**](PatchedWritableInventoryItemRequest.md) |  | 
+ **patchedInventoryItemRequest** | [**PatchedInventoryItemRequest**](PatchedInventoryItemRequest.md) |  | 
 
 ### Return type
 
@@ -15193,7 +15722,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -15248,7 +15777,7 @@ Name | Type | Description  | Notes
 
 ## DcimInventoryItemsUpdate
 
-> InventoryItem DcimInventoryItemsUpdate(ctx, id).WritableInventoryItemRequest(writableInventoryItemRequest).Execute()
+> InventoryItem DcimInventoryItemsUpdate(ctx, id).InventoryItemRequest(inventoryItemRequest).Execute()
 
 
 
@@ -15263,16 +15792,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this inventory item.
-	writableInventoryItemRequest := *openapiclient.NewWritableInventoryItemRequest(int32(123), "Name_example") // WritableInventoryItemRequest | 
+	inventoryItemRequest := *openapiclient.NewInventoryItemRequest(*openapiclient.NewDeviceRequest(), "Name_example") // InventoryItemRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimInventoryItemsUpdate(context.Background(), id).WritableInventoryItemRequest(writableInventoryItemRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimInventoryItemsUpdate(context.Background(), id).InventoryItemRequest(inventoryItemRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimInventoryItemsUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -15298,7 +15827,7 @@ Other parameters are passed through a pointer to a apiDcimInventoryItemsUpdateRe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **writableInventoryItemRequest** | [**WritableInventoryItemRequest**](WritableInventoryItemRequest.md) |  | 
+ **inventoryItemRequest** | [**InventoryItemRequest**](InventoryItemRequest.md) |  | 
 
 ### Return type
 
@@ -15335,11 +15864,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	locationRequest := []openapiclient.LocationRequest{*openapiclient.NewLocationRequest("Name_example", "Slug_example", *openapiclient.NewNestedSiteRequest("Name_example", "Slug_example"))} // []LocationRequest | 
+	locationRequest := []openapiclient.LocationRequest{*openapiclient.NewLocationRequest("Name_example", "Slug_example")} // []LocationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -15399,11 +15928,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	locationRequest := []openapiclient.LocationRequest{*openapiclient.NewLocationRequest("Name_example", "Slug_example", *openapiclient.NewNestedSiteRequest("Name_example", "Slug_example"))} // []LocationRequest | 
+	locationRequest := []openapiclient.LocationRequest{*openapiclient.NewLocationRequest("Name_example", "Slug_example")} // []LocationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -15465,11 +15994,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	locationRequest := []openapiclient.LocationRequest{*openapiclient.NewLocationRequest("Name_example", "Slug_example", *openapiclient.NewNestedSiteRequest("Name_example", "Slug_example"))} // []LocationRequest | 
+	locationRequest := []openapiclient.LocationRequest{*openapiclient.NewLocationRequest("Name_example", "Slug_example")} // []LocationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -15531,11 +16060,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writableLocationRequest := *openapiclient.NewWritableLocationRequest("Name_example", "Slug_example", int32(123)) // WritableLocationRequest | 
+	writableLocationRequest := *openapiclient.NewWritableLocationRequest("Name_example", "Slug_example", *openapiclient.NewSiteRequest("Name_example", "Slug_example"), NullableInt32(123)) // WritableLocationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -15597,7 +16126,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -15650,7 +16179,7 @@ Name | Type | Description  | Notes
 
 ## DcimLocationsList
 
-> PaginatedLocationList DcimLocationsList(ctx).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Parent(parent).ParentN(parentN).ParentId(parentId).ParentIdN(parentIdN).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedLocationList DcimLocationsList(ctx).Ancestor(ancestor).AncestorN(ancestorN).AncestorId(ancestorId).AncestorIdN(ancestorIdN).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Facility(facility).FacilityEmpty(facilityEmpty).FacilityIc(facilityIc).FacilityIe(facilityIe).FacilityIew(facilityIew).FacilityIsw(facilityIsw).FacilityN(facilityN).FacilityNic(facilityNic).FacilityNie(facilityNie).FacilityNiew(facilityNiew).FacilityNisw(facilityNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Parent(parent).ParentN(parentN).ParentId(parentId).ParentIdN(parentIdN).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -15666,10 +16195,14 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
+	ancestor := []int32{int32(123)} // []int32 | Location (slug) (optional)
+	ancestorN := []int32{int32(123)} // []int32 | Location (slug) (optional)
+	ancestorId := []int32{int32(123)} // []int32 | Location (ID) (optional)
+	ancestorIdN := []int32{int32(123)} // []int32 | Location (ID) (optional)
 	contact := []int32{int32(123)} // []int32 | Contact (optional)
 	contactN := []int32{int32(123)} // []int32 | Contact (optional)
 	contactGroup := []int32{int32(123)} // []int32 | Contact group (optional)
@@ -15695,6 +16228,17 @@ func main() {
 	descriptionNie := []string{"Inner_example"} // []string |  (optional)
 	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
 	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
+	facility := []string{"Inner_example"} // []string |  (optional)
+	facilityEmpty := true // bool |  (optional)
+	facilityIc := []string{"Inner_example"} // []string |  (optional)
+	facilityIe := []string{"Inner_example"} // []string |  (optional)
+	facilityIew := []string{"Inner_example"} // []string |  (optional)
+	facilityIsw := []string{"Inner_example"} // []string |  (optional)
+	facilityN := []string{"Inner_example"} // []string |  (optional)
+	facilityNic := []string{"Inner_example"} // []string |  (optional)
+	facilityNie := []string{"Inner_example"} // []string |  (optional)
+	facilityNiew := []string{"Inner_example"} // []string |  (optional)
+	facilityNisw := []string{"Inner_example"} // []string |  (optional)
 	id := []int32{int32(123)} // []int32 |  (optional)
 	idEmpty := true // bool |  (optional)
 	idGt := []int32{int32(123)} // []int32 |  (optional)
@@ -15724,10 +16268,10 @@ func main() {
 	nameNisw := []string{"Inner_example"} // []string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
-	parent := []int32{int32(123)} // []int32 | Location (slug) (optional)
-	parentN := []int32{int32(123)} // []int32 | Location (slug) (optional)
-	parentId := []int32{int32(123)} // []int32 | Location (ID) (optional)
-	parentIdN := []int32{int32(123)} // []int32 | Location (ID) (optional)
+	parent := []string{"Inner_example"} // []string | Parent location (slug) (optional)
+	parentN := []string{"Inner_example"} // []string | Parent location (slug) (optional)
+	parentId := []*int32{int32(123)} // []*int32 | Parent location (ID) (optional)
+	parentIdN := []*int32{int32(123)} // []*int32 | Parent location (ID) (optional)
 	q := "q_example" // string | Search (optional)
 	region := []int32{int32(123)} // []int32 | Region (slug) (optional)
 	regionN := []int32{int32(123)} // []int32 | Region (slug) (optional)
@@ -15768,7 +16312,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimLocationsList(context.Background()).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Parent(parent).ParentN(parentN).ParentId(parentId).ParentIdN(parentIdN).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimLocationsList(context.Background()).Ancestor(ancestor).AncestorN(ancestorN).AncestorId(ancestorId).AncestorIdN(ancestorIdN).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Facility(facility).FacilityEmpty(facilityEmpty).FacilityIc(facilityIc).FacilityIe(facilityIe).FacilityIew(facilityIew).FacilityIsw(facilityIsw).FacilityN(facilityN).FacilityNic(facilityNic).FacilityNie(facilityNie).FacilityNiew(facilityNiew).FacilityNisw(facilityNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Parent(parent).ParentN(parentN).ParentId(parentId).ParentIdN(parentIdN).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimLocationsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -15789,6 +16333,10 @@ Other parameters are passed through a pointer to a apiDcimLocationsListRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ancestor** | **[]int32** | Location (slug) | 
+ **ancestorN** | **[]int32** | Location (slug) | 
+ **ancestorId** | **[]int32** | Location (ID) | 
+ **ancestorIdN** | **[]int32** | Location (ID) | 
  **contact** | **[]int32** | Contact | 
  **contactN** | **[]int32** | Contact | 
  **contactGroup** | **[]int32** | Contact group | 
@@ -15814,6 +16362,17 @@ Name | Type | Description  | Notes
  **descriptionNie** | **[]string** |  | 
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
+ **facility** | **[]string** |  | 
+ **facilityEmpty** | **bool** |  | 
+ **facilityIc** | **[]string** |  | 
+ **facilityIe** | **[]string** |  | 
+ **facilityIew** | **[]string** |  | 
+ **facilityIsw** | **[]string** |  | 
+ **facilityN** | **[]string** |  | 
+ **facilityNic** | **[]string** |  | 
+ **facilityNie** | **[]string** |  | 
+ **facilityNiew** | **[]string** |  | 
+ **facilityNisw** | **[]string** |  | 
  **id** | **[]int32** |  | 
  **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
@@ -15843,10 +16402,10 @@ Name | Type | Description  | Notes
  **nameNisw** | **[]string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
- **parent** | **[]int32** | Location (slug) | 
- **parentN** | **[]int32** | Location (slug) | 
- **parentId** | **[]int32** | Location (ID) | 
- **parentIdN** | **[]int32** | Location (ID) | 
+ **parent** | **[]string** | Parent location (slug) | 
+ **parentN** | **[]string** | Parent location (slug) | 
+ **parentId** | **[]int32** | Parent location (ID) | 
+ **parentIdN** | **[]int32** | Parent location (ID) | 
  **q** | **string** | Search | 
  **region** | **[]int32** | Region (slug) | 
  **regionN** | **[]int32** | Region (slug) | 
@@ -15920,7 +16479,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -15992,7 +16551,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -16062,12 +16621,12 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this location.
-	writableLocationRequest := *openapiclient.NewWritableLocationRequest("Name_example", "Slug_example", int32(123)) // WritableLocationRequest | 
+	writableLocationRequest := *openapiclient.NewWritableLocationRequest("Name_example", "Slug_example", *openapiclient.NewSiteRequest("Name_example", "Slug_example"), NullableInt32(123)) // WritableLocationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -16134,7 +16693,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -16198,7 +16757,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -16264,7 +16823,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -16330,7 +16889,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -16396,7 +16955,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -16465,7 +17024,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -16667,7 +17226,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -16739,7 +17298,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -16809,7 +17368,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -16881,11 +17440,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	moduleBayTemplateRequest := []openapiclient.ModuleBayTemplateRequest{*openapiclient.NewModuleBayTemplateRequest(*openapiclient.NewNestedDeviceTypeRequest("Model_example", "Slug_example"), "Name_example")} // []ModuleBayTemplateRequest | 
+	moduleBayTemplateRequest := []openapiclient.ModuleBayTemplateRequest{*openapiclient.NewModuleBayTemplateRequest(*openapiclient.NewDeviceTypeRequest(*openapiclient.NewManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example"), "Name_example")} // []ModuleBayTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -16945,11 +17504,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	moduleBayTemplateRequest := []openapiclient.ModuleBayTemplateRequest{*openapiclient.NewModuleBayTemplateRequest(*openapiclient.NewNestedDeviceTypeRequest("Model_example", "Slug_example"), "Name_example")} // []ModuleBayTemplateRequest | 
+	moduleBayTemplateRequest := []openapiclient.ModuleBayTemplateRequest{*openapiclient.NewModuleBayTemplateRequest(*openapiclient.NewDeviceTypeRequest(*openapiclient.NewManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example"), "Name_example")} // []ModuleBayTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -17011,11 +17570,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	moduleBayTemplateRequest := []openapiclient.ModuleBayTemplateRequest{*openapiclient.NewModuleBayTemplateRequest(*openapiclient.NewNestedDeviceTypeRequest("Model_example", "Slug_example"), "Name_example")} // []ModuleBayTemplateRequest | 
+	moduleBayTemplateRequest := []openapiclient.ModuleBayTemplateRequest{*openapiclient.NewModuleBayTemplateRequest(*openapiclient.NewDeviceTypeRequest(*openapiclient.NewManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example"), "Name_example")} // []ModuleBayTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -17062,7 +17621,7 @@ Name | Type | Description  | Notes
 
 ## DcimModuleBayTemplatesCreate
 
-> ModuleBayTemplate DcimModuleBayTemplatesCreate(ctx).WritableModuleBayTemplateRequest(writableModuleBayTemplateRequest).Execute()
+> ModuleBayTemplate DcimModuleBayTemplatesCreate(ctx).ModuleBayTemplateRequest(moduleBayTemplateRequest).Execute()
 
 
 
@@ -17077,15 +17636,15 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writableModuleBayTemplateRequest := *openapiclient.NewWritableModuleBayTemplateRequest(int32(123), "Name_example") // WritableModuleBayTemplateRequest | 
+	moduleBayTemplateRequest := *openapiclient.NewModuleBayTemplateRequest(*openapiclient.NewDeviceTypeRequest(*openapiclient.NewManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example"), "Name_example") // ModuleBayTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimModuleBayTemplatesCreate(context.Background()).WritableModuleBayTemplateRequest(writableModuleBayTemplateRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimModuleBayTemplatesCreate(context.Background()).ModuleBayTemplateRequest(moduleBayTemplateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModuleBayTemplatesCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -17106,7 +17665,7 @@ Other parameters are passed through a pointer to a apiDcimModuleBayTemplatesCrea
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writableModuleBayTemplateRequest** | [**WritableModuleBayTemplateRequest**](WritableModuleBayTemplateRequest.md) |  | 
+ **moduleBayTemplateRequest** | [**ModuleBayTemplateRequest**](ModuleBayTemplateRequest.md) |  | 
 
 ### Return type
 
@@ -17143,7 +17702,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -17196,7 +17755,7 @@ Name | Type | Description  | Notes
 
 ## DcimModuleBayTemplatesList
 
-> PaginatedModuleBayTemplateList DcimModuleBayTemplatesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedModuleBayTemplateList DcimModuleBayTemplatesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Position(position).PositionEmpty(positionEmpty).PositionIc(positionIc).PositionIe(positionIe).PositionIew(positionIew).PositionIsw(positionIsw).PositionN(positionN).PositionNic(positionNic).PositionNie(positionNie).PositionNiew(positionNiew).PositionNisw(positionNisw).Q(q).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -17212,7 +17771,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -17235,6 +17794,8 @@ func main() {
 	descriptionNie := []string{"Inner_example"} // []string |  (optional)
 	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
 	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
+	deviceTypeId := []int32{int32(123)} // []int32 | Device type (ID) (optional)
+	deviceTypeIdN := []int32{int32(123)} // []int32 | Device type (ID) (optional)
 	devicetypeId := []int32{int32(123)} // []int32 | Device type (ID) (optional)
 	devicetypeIdN := []int32{int32(123)} // []int32 | Device type (ID) (optional)
 	id := []int32{int32(123)} // []int32 |  (optional)
@@ -17244,6 +17805,17 @@ func main() {
 	idLt := []int32{int32(123)} // []int32 |  (optional)
 	idLte := []int32{int32(123)} // []int32 |  (optional)
 	idN := []int32{int32(123)} // []int32 |  (optional)
+	label := []string{"Inner_example"} // []string |  (optional)
+	labelEmpty := true // bool |  (optional)
+	labelIc := []string{"Inner_example"} // []string |  (optional)
+	labelIe := []string{"Inner_example"} // []string |  (optional)
+	labelIew := []string{"Inner_example"} // []string |  (optional)
+	labelIsw := []string{"Inner_example"} // []string |  (optional)
+	labelN := []string{"Inner_example"} // []string |  (optional)
+	labelNic := []string{"Inner_example"} // []string |  (optional)
+	labelNie := []string{"Inner_example"} // []string |  (optional)
+	labelNiew := []string{"Inner_example"} // []string |  (optional)
+	labelNisw := []string{"Inner_example"} // []string |  (optional)
 	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -17266,12 +17838,23 @@ func main() {
 	nameNisw := []string{"Inner_example"} // []string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	position := []string{"Inner_example"} // []string |  (optional)
+	positionEmpty := true // bool |  (optional)
+	positionIc := []string{"Inner_example"} // []string |  (optional)
+	positionIe := []string{"Inner_example"} // []string |  (optional)
+	positionIew := []string{"Inner_example"} // []string |  (optional)
+	positionIsw := []string{"Inner_example"} // []string |  (optional)
+	positionN := []string{"Inner_example"} // []string |  (optional)
+	positionNic := []string{"Inner_example"} // []string |  (optional)
+	positionNie := []string{"Inner_example"} // []string |  (optional)
+	positionNiew := []string{"Inner_example"} // []string |  (optional)
+	positionNisw := []string{"Inner_example"} // []string |  (optional)
 	q := "q_example" // string | Search (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimModuleBayTemplatesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimModuleBayTemplatesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Position(position).PositionEmpty(positionEmpty).PositionIc(positionIc).PositionIe(positionIe).PositionIew(positionIew).PositionIsw(positionIsw).PositionN(positionN).PositionNic(positionNic).PositionNie(positionNie).PositionNiew(positionNiew).PositionNisw(positionNisw).Q(q).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModuleBayTemplatesList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -17311,6 +17894,8 @@ Name | Type | Description  | Notes
  **descriptionNie** | **[]string** |  | 
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
+ **deviceTypeId** | **[]int32** | Device type (ID) | 
+ **deviceTypeIdN** | **[]int32** | Device type (ID) | 
  **devicetypeId** | **[]int32** | Device type (ID) | 
  **devicetypeIdN** | **[]int32** | Device type (ID) | 
  **id** | **[]int32** |  | 
@@ -17320,6 +17905,17 @@ Name | Type | Description  | Notes
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
+ **label** | **[]string** |  | 
+ **labelEmpty** | **bool** |  | 
+ **labelIc** | **[]string** |  | 
+ **labelIe** | **[]string** |  | 
+ **labelIew** | **[]string** |  | 
+ **labelIsw** | **[]string** |  | 
+ **labelN** | **[]string** |  | 
+ **labelNic** | **[]string** |  | 
+ **labelNie** | **[]string** |  | 
+ **labelNiew** | **[]string** |  | 
+ **labelNisw** | **[]string** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
@@ -17342,6 +17938,17 @@ Name | Type | Description  | Notes
  **nameNisw** | **[]string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **position** | **[]string** |  | 
+ **positionEmpty** | **bool** |  | 
+ **positionIc** | **[]string** |  | 
+ **positionIe** | **[]string** |  | 
+ **positionIew** | **[]string** |  | 
+ **positionIsw** | **[]string** |  | 
+ **positionN** | **[]string** |  | 
+ **positionNic** | **[]string** |  | 
+ **positionNie** | **[]string** |  | 
+ **positionNiew** | **[]string** |  | 
+ **positionNisw** | **[]string** |  | 
  **q** | **string** | Search | 
  **updatedByRequest** | **string** |  | 
 
@@ -17365,7 +17972,7 @@ Name | Type | Description  | Notes
 
 ## DcimModuleBayTemplatesPartialUpdate
 
-> ModuleBayTemplate DcimModuleBayTemplatesPartialUpdate(ctx, id).PatchedWritableModuleBayTemplateRequest(patchedWritableModuleBayTemplateRequest).Execute()
+> ModuleBayTemplate DcimModuleBayTemplatesPartialUpdate(ctx, id).PatchedModuleBayTemplateRequest(patchedModuleBayTemplateRequest).Execute()
 
 
 
@@ -17380,16 +17987,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this module bay template.
-	patchedWritableModuleBayTemplateRequest := *openapiclient.NewPatchedWritableModuleBayTemplateRequest() // PatchedWritableModuleBayTemplateRequest |  (optional)
+	patchedModuleBayTemplateRequest := *openapiclient.NewPatchedModuleBayTemplateRequest() // PatchedModuleBayTemplateRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimModuleBayTemplatesPartialUpdate(context.Background(), id).PatchedWritableModuleBayTemplateRequest(patchedWritableModuleBayTemplateRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimModuleBayTemplatesPartialUpdate(context.Background(), id).PatchedModuleBayTemplateRequest(patchedModuleBayTemplateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModuleBayTemplatesPartialUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -17415,7 +18022,7 @@ Other parameters are passed through a pointer to a apiDcimModuleBayTemplatesPart
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **patchedWritableModuleBayTemplateRequest** | [**PatchedWritableModuleBayTemplateRequest**](PatchedWritableModuleBayTemplateRequest.md) |  | 
+ **patchedModuleBayTemplateRequest** | [**PatchedModuleBayTemplateRequest**](PatchedModuleBayTemplateRequest.md) |  | 
 
 ### Return type
 
@@ -17452,7 +18059,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -17507,7 +18114,7 @@ Name | Type | Description  | Notes
 
 ## DcimModuleBayTemplatesUpdate
 
-> ModuleBayTemplate DcimModuleBayTemplatesUpdate(ctx, id).WritableModuleBayTemplateRequest(writableModuleBayTemplateRequest).Execute()
+> ModuleBayTemplate DcimModuleBayTemplatesUpdate(ctx, id).ModuleBayTemplateRequest(moduleBayTemplateRequest).Execute()
 
 
 
@@ -17522,16 +18129,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this module bay template.
-	writableModuleBayTemplateRequest := *openapiclient.NewWritableModuleBayTemplateRequest(int32(123), "Name_example") // WritableModuleBayTemplateRequest | 
+	moduleBayTemplateRequest := *openapiclient.NewModuleBayTemplateRequest(*openapiclient.NewDeviceTypeRequest(*openapiclient.NewManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example"), "Name_example") // ModuleBayTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimModuleBayTemplatesUpdate(context.Background(), id).WritableModuleBayTemplateRequest(writableModuleBayTemplateRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimModuleBayTemplatesUpdate(context.Background(), id).ModuleBayTemplateRequest(moduleBayTemplateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModuleBayTemplatesUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -17557,7 +18164,7 @@ Other parameters are passed through a pointer to a apiDcimModuleBayTemplatesUpda
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **writableModuleBayTemplateRequest** | [**WritableModuleBayTemplateRequest**](WritableModuleBayTemplateRequest.md) |  | 
+ **moduleBayTemplateRequest** | [**ModuleBayTemplateRequest**](ModuleBayTemplateRequest.md) |  | 
 
 ### Return type
 
@@ -17594,11 +18201,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	moduleBayRequest := []openapiclient.ModuleBayRequest{*openapiclient.NewModuleBayRequest(*openapiclient.NewNestedDeviceRequest(), "Name_example")} // []ModuleBayRequest | 
+	moduleBayRequest := []openapiclient.ModuleBayRequest{*openapiclient.NewModuleBayRequest(*openapiclient.NewDeviceRequest(), "Name_example")} // []ModuleBayRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -17658,11 +18265,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	moduleBayRequest := []openapiclient.ModuleBayRequest{*openapiclient.NewModuleBayRequest(*openapiclient.NewNestedDeviceRequest(), "Name_example")} // []ModuleBayRequest | 
+	moduleBayRequest := []openapiclient.ModuleBayRequest{*openapiclient.NewModuleBayRequest(*openapiclient.NewDeviceRequest(), "Name_example")} // []ModuleBayRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -17724,11 +18331,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	moduleBayRequest := []openapiclient.ModuleBayRequest{*openapiclient.NewModuleBayRequest(*openapiclient.NewNestedDeviceRequest(), "Name_example")} // []ModuleBayRequest | 
+	moduleBayRequest := []openapiclient.ModuleBayRequest{*openapiclient.NewModuleBayRequest(*openapiclient.NewDeviceRequest(), "Name_example")} // []ModuleBayRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -17775,7 +18382,7 @@ Name | Type | Description  | Notes
 
 ## DcimModuleBaysCreate
 
-> ModuleBay DcimModuleBaysCreate(ctx).WritableModuleBayRequest(writableModuleBayRequest).Execute()
+> ModuleBay DcimModuleBaysCreate(ctx).ModuleBayRequest(moduleBayRequest).Execute()
 
 
 
@@ -17790,15 +18397,15 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writableModuleBayRequest := *openapiclient.NewWritableModuleBayRequest(int32(123), "Name_example", int32(123)) // WritableModuleBayRequest | 
+	moduleBayRequest := *openapiclient.NewModuleBayRequest(*openapiclient.NewDeviceRequest(), "Name_example") // ModuleBayRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimModuleBaysCreate(context.Background()).WritableModuleBayRequest(writableModuleBayRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimModuleBaysCreate(context.Background()).ModuleBayRequest(moduleBayRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModuleBaysCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -17819,7 +18426,7 @@ Other parameters are passed through a pointer to a apiDcimModuleBaysCreateReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writableModuleBayRequest** | [**WritableModuleBayRequest**](WritableModuleBayRequest.md) |  | 
+ **moduleBayRequest** | [**ModuleBayRequest**](ModuleBayRequest.md) |  | 
 
 ### Return type
 
@@ -17856,7 +18463,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -17909,7 +18516,7 @@ Name | Type | Description  | Notes
 
 ## DcimModuleBaysList
 
-> PaginatedModuleBayList DcimModuleBaysList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
+> PaginatedModuleBayList DcimModuleBaysList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InstalledModuleId(installedModuleId).InstalledModuleIdN(installedModuleIdN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Position(position).PositionEmpty(positionEmpty).PositionIc(positionIc).PositionIe(positionIe).PositionIew(positionIew).PositionIsw(positionIsw).PositionN(positionN).PositionNic(positionNic).PositionNie(positionNie).PositionNiew(positionNiew).PositionNisw(positionNisw).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
 
 
 
@@ -17925,7 +18532,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -17952,10 +18559,6 @@ func main() {
 	deviceN := []*string{"Inner_example"} // []*string | Device (name) (optional)
 	deviceId := []int32{int32(123)} // []int32 | Device (ID) (optional)
 	deviceIdN := []int32{int32(123)} // []int32 | Device (ID) (optional)
-	deviceRole := []string{"Inner_example"} // []string | Device role (slug) (optional)
-	deviceRoleN := []string{"Inner_example"} // []string | Device role (slug) (optional)
-	deviceRoleId := []int32{int32(123)} // []int32 | Device role (ID) (optional)
-	deviceRoleIdN := []int32{int32(123)} // []int32 | Device role (ID) (optional)
 	deviceType := []string{"Inner_example"} // []string | Device type (model) (optional)
 	deviceTypeN := []string{"Inner_example"} // []string | Device type (model) (optional)
 	deviceTypeId := []int32{int32(123)} // []int32 | Device type (ID) (optional)
@@ -17967,6 +18570,8 @@ func main() {
 	idLt := []int32{int32(123)} // []int32 |  (optional)
 	idLte := []int32{int32(123)} // []int32 |  (optional)
 	idN := []int32{int32(123)} // []int32 |  (optional)
+	installedModuleId := []int32{int32(123)} // []int32 | Installed module (ID) (optional)
+	installedModuleIdN := []int32{int32(123)} // []int32 | Installed module (ID) (optional)
 	label := []string{"Inner_example"} // []string |  (optional)
 	labelEmpty := true // bool |  (optional)
 	labelIc := []string{"Inner_example"} // []string |  (optional)
@@ -18004,6 +18609,17 @@ func main() {
 	nameNisw := []string{"Inner_example"} // []string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	position := []string{"Inner_example"} // []string |  (optional)
+	positionEmpty := true // bool |  (optional)
+	positionIc := []string{"Inner_example"} // []string |  (optional)
+	positionIe := []string{"Inner_example"} // []string |  (optional)
+	positionIew := []string{"Inner_example"} // []string |  (optional)
+	positionIsw := []string{"Inner_example"} // []string |  (optional)
+	positionN := []string{"Inner_example"} // []string |  (optional)
+	positionNic := []string{"Inner_example"} // []string |  (optional)
+	positionNie := []string{"Inner_example"} // []string |  (optional)
+	positionNiew := []string{"Inner_example"} // []string |  (optional)
+	positionNisw := []string{"Inner_example"} // []string |  (optional)
 	q := "q_example" // string | Search (optional)
 	rack := []string{"Inner_example"} // []string | Rack (name) (optional)
 	rackN := []string{"Inner_example"} // []string | Rack (name) (optional)
@@ -18035,7 +18651,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimModuleBaysList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimModuleBaysList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InstalledModuleId(installedModuleId).InstalledModuleIdN(installedModuleIdN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Position(position).PositionEmpty(positionEmpty).PositionIc(positionIc).PositionIe(positionIe).PositionIew(positionIew).PositionIsw(positionIsw).PositionN(positionN).PositionNic(positionNic).PositionNie(positionNie).PositionNiew(positionNiew).PositionNisw(positionNisw).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModuleBaysList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -18079,10 +18695,6 @@ Name | Type | Description  | Notes
  **deviceN** | **[]string** | Device (name) | 
  **deviceId** | **[]int32** | Device (ID) | 
  **deviceIdN** | **[]int32** | Device (ID) | 
- **deviceRole** | **[]string** | Device role (slug) | 
- **deviceRoleN** | **[]string** | Device role (slug) | 
- **deviceRoleId** | **[]int32** | Device role (ID) | 
- **deviceRoleIdN** | **[]int32** | Device role (ID) | 
  **deviceType** | **[]string** | Device type (model) | 
  **deviceTypeN** | **[]string** | Device type (model) | 
  **deviceTypeId** | **[]int32** | Device type (ID) | 
@@ -18094,6 +18706,8 @@ Name | Type | Description  | Notes
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
+ **installedModuleId** | **[]int32** | Installed module (ID) | 
+ **installedModuleIdN** | **[]int32** | Installed module (ID) | 
  **label** | **[]string** |  | 
  **labelEmpty** | **bool** |  | 
  **labelIc** | **[]string** |  | 
@@ -18131,6 +18745,17 @@ Name | Type | Description  | Notes
  **nameNisw** | **[]string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **position** | **[]string** |  | 
+ **positionEmpty** | **bool** |  | 
+ **positionIc** | **[]string** |  | 
+ **positionIe** | **[]string** |  | 
+ **positionIew** | **[]string** |  | 
+ **positionIsw** | **[]string** |  | 
+ **positionN** | **[]string** |  | 
+ **positionNic** | **[]string** |  | 
+ **positionNie** | **[]string** |  | 
+ **positionNiew** | **[]string** |  | 
+ **positionNisw** | **[]string** |  | 
  **q** | **string** | Search | 
  **rack** | **[]string** | Rack (name) | 
  **rackN** | **[]string** | Rack (name) | 
@@ -18180,7 +18805,7 @@ Name | Type | Description  | Notes
 
 ## DcimModuleBaysPartialUpdate
 
-> ModuleBay DcimModuleBaysPartialUpdate(ctx, id).PatchedWritableModuleBayRequest(patchedWritableModuleBayRequest).Execute()
+> ModuleBay DcimModuleBaysPartialUpdate(ctx, id).PatchedModuleBayRequest(patchedModuleBayRequest).Execute()
 
 
 
@@ -18195,16 +18820,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this module bay.
-	patchedWritableModuleBayRequest := *openapiclient.NewPatchedWritableModuleBayRequest() // PatchedWritableModuleBayRequest |  (optional)
+	patchedModuleBayRequest := *openapiclient.NewPatchedModuleBayRequest() // PatchedModuleBayRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimModuleBaysPartialUpdate(context.Background(), id).PatchedWritableModuleBayRequest(patchedWritableModuleBayRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimModuleBaysPartialUpdate(context.Background(), id).PatchedModuleBayRequest(patchedModuleBayRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModuleBaysPartialUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -18230,7 +18855,7 @@ Other parameters are passed through a pointer to a apiDcimModuleBaysPartialUpdat
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **patchedWritableModuleBayRequest** | [**PatchedWritableModuleBayRequest**](PatchedWritableModuleBayRequest.md) |  | 
+ **patchedModuleBayRequest** | [**PatchedModuleBayRequest**](PatchedModuleBayRequest.md) |  | 
 
 ### Return type
 
@@ -18267,7 +18892,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -18322,7 +18947,7 @@ Name | Type | Description  | Notes
 
 ## DcimModuleBaysUpdate
 
-> ModuleBay DcimModuleBaysUpdate(ctx, id).WritableModuleBayRequest(writableModuleBayRequest).Execute()
+> ModuleBay DcimModuleBaysUpdate(ctx, id).ModuleBayRequest(moduleBayRequest).Execute()
 
 
 
@@ -18337,16 +18962,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this module bay.
-	writableModuleBayRequest := *openapiclient.NewWritableModuleBayRequest(int32(123), "Name_example", int32(123)) // WritableModuleBayRequest | 
+	moduleBayRequest := *openapiclient.NewModuleBayRequest(*openapiclient.NewDeviceRequest(), "Name_example") // ModuleBayRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimModuleBaysUpdate(context.Background(), id).WritableModuleBayRequest(writableModuleBayRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimModuleBaysUpdate(context.Background(), id).ModuleBayRequest(moduleBayRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimModuleBaysUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -18372,7 +18997,7 @@ Other parameters are passed through a pointer to a apiDcimModuleBaysUpdateReques
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **writableModuleBayRequest** | [**WritableModuleBayRequest**](WritableModuleBayRequest.md) |  | 
+ **moduleBayRequest** | [**ModuleBayRequest**](ModuleBayRequest.md) |  | 
 
 ### Return type
 
@@ -18409,11 +19034,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	moduleTypeRequest := []openapiclient.ModuleTypeRequest{*openapiclient.NewModuleTypeRequest(*openapiclient.NewNestedManufacturerRequest("Name_example", "Slug_example"), "Model_example")} // []ModuleTypeRequest | 
+	moduleTypeRequest := []openapiclient.ModuleTypeRequest{*openapiclient.NewModuleTypeRequest(*openapiclient.NewManufacturerRequest("Name_example", "Slug_example"), "Model_example")} // []ModuleTypeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -18473,11 +19098,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	moduleTypeRequest := []openapiclient.ModuleTypeRequest{*openapiclient.NewModuleTypeRequest(*openapiclient.NewNestedManufacturerRequest("Name_example", "Slug_example"), "Model_example")} // []ModuleTypeRequest | 
+	moduleTypeRequest := []openapiclient.ModuleTypeRequest{*openapiclient.NewModuleTypeRequest(*openapiclient.NewManufacturerRequest("Name_example", "Slug_example"), "Model_example")} // []ModuleTypeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -18539,11 +19164,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	moduleTypeRequest := []openapiclient.ModuleTypeRequest{*openapiclient.NewModuleTypeRequest(*openapiclient.NewNestedManufacturerRequest("Name_example", "Slug_example"), "Model_example")} // []ModuleTypeRequest | 
+	moduleTypeRequest := []openapiclient.ModuleTypeRequest{*openapiclient.NewModuleTypeRequest(*openapiclient.NewManufacturerRequest("Name_example", "Slug_example"), "Model_example")} // []ModuleTypeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -18605,11 +19230,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writableModuleTypeRequest := *openapiclient.NewWritableModuleTypeRequest(int32(123), "Model_example") // WritableModuleTypeRequest | 
+	writableModuleTypeRequest := *openapiclient.NewWritableModuleTypeRequest(*openapiclient.NewManufacturerRequest("Name_example", "Slug_example"), "Model_example") // WritableModuleTypeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -18671,7 +19296,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -18740,7 +19365,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -18824,8 +19449,8 @@ func main() {
 	weightLt := []float64{float64(123)} // []float64 |  (optional)
 	weightLte := []float64{float64(123)} // []float64 |  (optional)
 	weightN := []float64{float64(123)} // []float64 |  (optional)
-	weightUnit := "weightUnit_example" // string |  (optional)
-	weightUnitN := "weightUnitN_example" // string |  (optional)
+	weightUnit := openapiclient.dcim_device_types_list_weight_unit_parameter("g") // DcimDeviceTypesListWeightUnitParameter | * `kg` - Kilograms * `g` - Grams * `lb` - Pounds * `oz` - Ounces (optional)
+	weightUnitN := openapiclient.dcim_device_types_list_weight_unit_parameter("g") // DcimDeviceTypesListWeightUnitParameter | * `kg` - Kilograms * `g` - Grams * `lb` - Pounds * `oz` - Ounces (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -18930,8 +19555,8 @@ Name | Type | Description  | Notes
  **weightLt** | **[]float64** |  | 
  **weightLte** | **[]float64** |  | 
  **weightN** | **[]float64** |  | 
- **weightUnit** | **string** |  | 
- **weightUnitN** | **string** |  | 
+ **weightUnit** | [**DcimDeviceTypesListWeightUnitParameter**](DcimDeviceTypesListWeightUnitParameter.md) | * &#x60;kg&#x60; - Kilograms * &#x60;g&#x60; - Grams * &#x60;lb&#x60; - Pounds * &#x60;oz&#x60; - Ounces | 
+ **weightUnitN** | [**DcimDeviceTypesListWeightUnitParameter**](DcimDeviceTypesListWeightUnitParameter.md) | * &#x60;kg&#x60; - Kilograms * &#x60;g&#x60; - Grams * &#x60;lb&#x60; - Pounds * &#x60;oz&#x60; - Ounces | 
 
 ### Return type
 
@@ -18968,7 +19593,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -19040,7 +19665,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -19110,12 +19735,12 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this module type.
-	writableModuleTypeRequest := *openapiclient.NewWritableModuleTypeRequest(int32(123), "Model_example") // WritableModuleTypeRequest | 
+	writableModuleTypeRequest := *openapiclient.NewWritableModuleTypeRequest(*openapiclient.NewManufacturerRequest("Name_example", "Slug_example"), "Model_example") // WritableModuleTypeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -19182,11 +19807,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	moduleRequest := []openapiclient.ModuleRequest{*openapiclient.NewModuleRequest(*openapiclient.NewNestedDeviceRequest(), *openapiclient.NewNestedModuleBayRequest("Name_example"), *openapiclient.NewNestedModuleTypeRequest("Model_example"))} // []ModuleRequest | 
+	moduleRequest := []openapiclient.ModuleRequest{*openapiclient.NewModuleRequest(*openapiclient.NewDeviceRequest(), *openapiclient.NewNestedModuleBayRequest("Name_example"))} // []ModuleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -19246,11 +19871,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	moduleRequest := []openapiclient.ModuleRequest{*openapiclient.NewModuleRequest(*openapiclient.NewNestedDeviceRequest(), *openapiclient.NewNestedModuleBayRequest("Name_example"), *openapiclient.NewNestedModuleTypeRequest("Model_example"))} // []ModuleRequest | 
+	moduleRequest := []openapiclient.ModuleRequest{*openapiclient.NewModuleRequest(*openapiclient.NewDeviceRequest(), *openapiclient.NewNestedModuleBayRequest("Name_example"))} // []ModuleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -19312,11 +19937,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	moduleRequest := []openapiclient.ModuleRequest{*openapiclient.NewModuleRequest(*openapiclient.NewNestedDeviceRequest(), *openapiclient.NewNestedModuleBayRequest("Name_example"), *openapiclient.NewNestedModuleTypeRequest("Model_example"))} // []ModuleRequest | 
+	moduleRequest := []openapiclient.ModuleRequest{*openapiclient.NewModuleRequest(*openapiclient.NewDeviceRequest(), *openapiclient.NewNestedModuleBayRequest("Name_example"))} // []ModuleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -19378,11 +20003,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writableModuleRequest := *openapiclient.NewWritableModuleRequest(int32(123), int32(123), int32(123)) // WritableModuleRequest | 
+	writableModuleRequest := *openapiclient.NewWritableModuleRequest(*openapiclient.NewDeviceRequest(), int32(123), *openapiclient.NewModuleTypeRequest(*openapiclient.NewManufacturerRequest("Name_example", "Slug_example"), "Model_example")) // WritableModuleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -19444,7 +20069,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -19513,7 +20138,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -19731,7 +20356,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -19803,7 +20428,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -19873,12 +20498,12 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this module.
-	writableModuleRequest := *openapiclient.NewWritableModuleRequest(int32(123), int32(123), int32(123)) // WritableModuleRequest | 
+	writableModuleRequest := *openapiclient.NewWritableModuleRequest(*openapiclient.NewDeviceRequest(), int32(123), *openapiclient.NewModuleTypeRequest(*openapiclient.NewManufacturerRequest("Name_example", "Slug_example"), "Model_example")) // WritableModuleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -19945,7 +20570,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -20009,7 +20634,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -20075,7 +20700,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -20126,7 +20751,7 @@ Name | Type | Description  | Notes
 
 ## DcimPlatformsCreate
 
-> Platform DcimPlatformsCreate(ctx).WritablePlatformRequest(writablePlatformRequest).Execute()
+> Platform DcimPlatformsCreate(ctx).PlatformRequest(platformRequest).Execute()
 
 
 
@@ -20141,15 +20766,15 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writablePlatformRequest := *openapiclient.NewWritablePlatformRequest("Name_example", "Slug_example") // WritablePlatformRequest | 
+	platformRequest := *openapiclient.NewPlatformRequest("Name_example", "Slug_example") // PlatformRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimPlatformsCreate(context.Background()).WritablePlatformRequest(writablePlatformRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimPlatformsCreate(context.Background()).PlatformRequest(platformRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPlatformsCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -20170,7 +20795,7 @@ Other parameters are passed through a pointer to a apiDcimPlatformsCreateRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writablePlatformRequest** | [**WritablePlatformRequest**](WritablePlatformRequest.md) |  | 
+ **platformRequest** | [**PlatformRequest**](PlatformRequest.md) |  | 
 
 ### Return type
 
@@ -20207,7 +20832,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -20276,7 +20901,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -20465,7 +21090,7 @@ Name | Type | Description  | Notes
 
 ## DcimPlatformsPartialUpdate
 
-> Platform DcimPlatformsPartialUpdate(ctx, id).PatchedWritablePlatformRequest(patchedWritablePlatformRequest).Execute()
+> Platform DcimPlatformsPartialUpdate(ctx, id).PatchedPlatformRequest(patchedPlatformRequest).Execute()
 
 
 
@@ -20480,16 +21105,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this platform.
-	patchedWritablePlatformRequest := *openapiclient.NewPatchedWritablePlatformRequest() // PatchedWritablePlatformRequest |  (optional)
+	patchedPlatformRequest := *openapiclient.NewPatchedPlatformRequest() // PatchedPlatformRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimPlatformsPartialUpdate(context.Background(), id).PatchedWritablePlatformRequest(patchedWritablePlatformRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimPlatformsPartialUpdate(context.Background(), id).PatchedPlatformRequest(patchedPlatformRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPlatformsPartialUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -20515,7 +21140,7 @@ Other parameters are passed through a pointer to a apiDcimPlatformsPartialUpdate
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **patchedWritablePlatformRequest** | [**PatchedWritablePlatformRequest**](PatchedWritablePlatformRequest.md) |  | 
+ **patchedPlatformRequest** | [**PatchedPlatformRequest**](PatchedPlatformRequest.md) |  | 
 
 ### Return type
 
@@ -20552,7 +21177,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -20607,7 +21232,7 @@ Name | Type | Description  | Notes
 
 ## DcimPlatformsUpdate
 
-> Platform DcimPlatformsUpdate(ctx, id).WritablePlatformRequest(writablePlatformRequest).Execute()
+> Platform DcimPlatformsUpdate(ctx, id).PlatformRequest(platformRequest).Execute()
 
 
 
@@ -20622,16 +21247,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this platform.
-	writablePlatformRequest := *openapiclient.NewWritablePlatformRequest("Name_example", "Slug_example") // WritablePlatformRequest | 
+	platformRequest := *openapiclient.NewPlatformRequest("Name_example", "Slug_example") // PlatformRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimPlatformsUpdate(context.Background(), id).WritablePlatformRequest(writablePlatformRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimPlatformsUpdate(context.Background(), id).PlatformRequest(platformRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPlatformsUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -20657,7 +21282,7 @@ Other parameters are passed through a pointer to a apiDcimPlatformsUpdateRequest
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **writablePlatformRequest** | [**WritablePlatformRequest**](WritablePlatformRequest.md) |  | 
+ **platformRequest** | [**PlatformRequest**](PlatformRequest.md) |  | 
 
 ### Return type
 
@@ -20694,11 +21319,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	powerFeedRequest := []openapiclient.PowerFeedRequest{*openapiclient.NewPowerFeedRequest(*openapiclient.NewNestedPowerPanelRequest("Name_example"), "Name_example")} // []PowerFeedRequest | 
+	powerFeedRequest := []openapiclient.PowerFeedRequest{*openapiclient.NewPowerFeedRequest(*openapiclient.NewPowerPanelRequest("Name_example"), "Name_example")} // []PowerFeedRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -20758,11 +21383,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	powerFeedRequest := []openapiclient.PowerFeedRequest{*openapiclient.NewPowerFeedRequest(*openapiclient.NewNestedPowerPanelRequest("Name_example"), "Name_example")} // []PowerFeedRequest | 
+	powerFeedRequest := []openapiclient.PowerFeedRequest{*openapiclient.NewPowerFeedRequest(*openapiclient.NewPowerPanelRequest("Name_example"), "Name_example")} // []PowerFeedRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -20824,11 +21449,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	powerFeedRequest := []openapiclient.PowerFeedRequest{*openapiclient.NewPowerFeedRequest(*openapiclient.NewNestedPowerPanelRequest("Name_example"), "Name_example")} // []PowerFeedRequest | 
+	powerFeedRequest := []openapiclient.PowerFeedRequest{*openapiclient.NewPowerFeedRequest(*openapiclient.NewPowerPanelRequest("Name_example"), "Name_example")} // []PowerFeedRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -20890,11 +21515,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writablePowerFeedRequest := *openapiclient.NewWritablePowerFeedRequest(int32(123), "Name_example") // WritablePowerFeedRequest | 
+	writablePowerFeedRequest := *openapiclient.NewWritablePowerFeedRequest(*openapiclient.NewPowerPanelRequest("Name_example"), "Name_example") // WritablePowerFeedRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -20956,7 +21581,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -21009,7 +21634,7 @@ Name | Type | Description  | Notes
 
 ## DcimPowerFeedsList
 
-> PaginatedPowerFeedList DcimPowerFeedsList(ctx).Amperage(amperage).AmperageEmpty(amperageEmpty).AmperageGt(amperageGt).AmperageGte(amperageGte).AmperageLt(amperageLt).AmperageLte(amperageLte).AmperageN(amperageN).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Connected(connected).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MaxUtilization(maxUtilization).MaxUtilizationEmpty(maxUtilizationEmpty).MaxUtilizationGt(maxUtilizationGt).MaxUtilizationGte(maxUtilizationGte).MaxUtilizationLt(maxUtilizationLt).MaxUtilizationLte(maxUtilizationLte).MaxUtilizationN(maxUtilizationN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Phase(phase).PhaseN(phaseN).PowerPanelId(powerPanelId).PowerPanelIdN(powerPanelIdN).Q(q).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusN(statusN).Supply(supply).SupplyN(supplyN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Voltage(voltage).VoltageEmpty(voltageEmpty).VoltageGt(voltageGt).VoltageGte(voltageGte).VoltageLt(voltageLt).VoltageLte(voltageLte).VoltageN(voltageN).Execute()
+> PaginatedPowerFeedList DcimPowerFeedsList(ctx).Amperage(amperage).AmperageEmpty(amperageEmpty).AmperageGt(amperageGt).AmperageGte(amperageGte).AmperageLt(amperageLt).AmperageLte(amperageLte).AmperageN(amperageN).AvailablePower(availablePower).AvailablePowerEmpty(availablePowerEmpty).AvailablePowerGt(availablePowerGt).AvailablePowerGte(availablePowerGte).AvailablePowerLt(availablePowerLt).AvailablePowerLte(availablePowerLte).AvailablePowerN(availablePowerN).CableEnd(cableEnd).CableEndN(cableEndN).CableId(cableId).CableIdN(cableIdN).Cabled(cabled).Connected(connected).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MarkConnected(markConnected).MaxUtilization(maxUtilization).MaxUtilizationEmpty(maxUtilizationEmpty).MaxUtilizationGt(maxUtilizationGt).MaxUtilizationGte(maxUtilizationGte).MaxUtilizationLt(maxUtilizationLt).MaxUtilizationLte(maxUtilizationLte).MaxUtilizationN(maxUtilizationN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Phase(phase).PhaseN(phaseN).PowerPanelId(powerPanelId).PowerPanelIdN(powerPanelIdN).Q(q).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusN(statusN).Supply(supply).SupplyN(supplyN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Voltage(voltage).VoltageEmpty(voltageEmpty).VoltageGt(voltageGt).VoltageGte(voltageGte).VoltageLt(voltageLt).VoltageLte(voltageLte).VoltageN(voltageN).Execute()
 
 
 
@@ -21025,7 +21650,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -21036,8 +21661,17 @@ func main() {
 	amperageLt := []int32{int32(123)} // []int32 |  (optional)
 	amperageLte := []int32{int32(123)} // []int32 |  (optional)
 	amperageN := []int32{int32(123)} // []int32 |  (optional)
-	cableEnd := "cableEnd_example" // string |  (optional)
-	cableEndN := "cableEndN_example" // string |  (optional)
+	availablePower := []int32{int32(123)} // []int32 |  (optional)
+	availablePowerEmpty := true // bool |  (optional)
+	availablePowerGt := []int32{int32(123)} // []int32 |  (optional)
+	availablePowerGte := []int32{int32(123)} // []int32 |  (optional)
+	availablePowerLt := []int32{int32(123)} // []int32 |  (optional)
+	availablePowerLte := []int32{int32(123)} // []int32 |  (optional)
+	availablePowerN := []int32{int32(123)} // []int32 |  (optional)
+	cableEnd := openapiclient.circuits_circuit_terminations_list_cable_end_parameter("A") // CircuitsCircuitTerminationsListCableEndParameter | * `A` - A * `B` - B (optional)
+	cableEndN := openapiclient.circuits_circuit_terminations_list_cable_end_parameter("A") // CircuitsCircuitTerminationsListCableEndParameter | * `A` - A * `B` - B (optional)
+	cableId := []*int32{int32(123)} // []*int32 | Cable (ID) (optional)
+	cableIdN := []*int32{int32(123)} // []*int32 | Cable (ID) (optional)
 	cabled := true // bool |  (optional)
 	connected := true // bool |  (optional)
 	created := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -21074,6 +21708,7 @@ func main() {
 	lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
 	limit := int32(56) // int32 | Number of results to return per page. (optional)
+	markConnected := true // bool |  (optional)
 	maxUtilization := []int32{int32(123)} // []int32 |  (optional)
 	maxUtilizationEmpty := true // bool |  (optional)
 	maxUtilizationGt := []int32{int32(123)} // []int32 |  (optional)
@@ -21096,8 +21731,8 @@ func main() {
 	occupied := true // bool |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
-	phase := "phase_example" // string |  (optional)
-	phaseN := "phaseN_example" // string |  (optional)
+	phase := openapiclient.dcim_power_feeds_list_phase_parameter("single-phase") // DcimPowerFeedsListPhaseParameter | * `single-phase` - Single phase * `three-phase` - Three-phase (optional)
+	phaseN := openapiclient.dcim_power_feeds_list_phase_parameter("single-phase") // DcimPowerFeedsListPhaseParameter | * `single-phase` - Single phase * `three-phase` - Three-phase (optional)
 	powerPanelId := []int32{int32(123)} // []int32 | Power panel (ID) (optional)
 	powerPanelIdN := []int32{int32(123)} // []int32 | Power panel (ID) (optional)
 	q := "q_example" // string | Search (optional)
@@ -21117,8 +21752,8 @@ func main() {
 	siteIdN := []int32{int32(123)} // []int32 | Site (ID) (optional)
 	status := []string{"Inner_example"} // []string |  (optional)
 	statusN := []string{"Inner_example"} // []string |  (optional)
-	supply := "supply_example" // string |  (optional)
-	supplyN := "supplyN_example" // string |  (optional)
+	supply := openapiclient.dcim_power_feeds_list_supply_parameter("ac") // DcimPowerFeedsListSupplyParameter | * `ac` - AC * `dc` - DC (optional)
+	supplyN := openapiclient.dcim_power_feeds_list_supply_parameter("ac") // DcimPowerFeedsListSupplyParameter | * `ac` - AC * `dc` - DC (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
 	tenant := []string{"Inner_example"} // []string | Tenant (slug) (optional)
@@ -21129,8 +21764,8 @@ func main() {
 	tenantGroupIdN := []int32{int32(123)} // []int32 | Tenant Group (ID) (optional)
 	tenantId := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
 	tenantIdN := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
-	type_ := "type__example" // string |  (optional)
-	typeN := "typeN_example" // string |  (optional)
+	type_ := openapiclient.dcim_power_feeds_list_type_parameter("primary") // DcimPowerFeedsListTypeParameter | * `primary` - Primary * `redundant` - Redundant (optional)
+	typeN := openapiclient.dcim_power_feeds_list_type_parameter("primary") // DcimPowerFeedsListTypeParameter | * `primary` - Primary * `redundant` - Redundant (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	voltage := []int32{int32(123)} // []int32 |  (optional)
 	voltageEmpty := true // bool |  (optional)
@@ -21142,7 +21777,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimPowerFeedsList(context.Background()).Amperage(amperage).AmperageEmpty(amperageEmpty).AmperageGt(amperageGt).AmperageGte(amperageGte).AmperageLt(amperageLt).AmperageLte(amperageLte).AmperageN(amperageN).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Connected(connected).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MaxUtilization(maxUtilization).MaxUtilizationEmpty(maxUtilizationEmpty).MaxUtilizationGt(maxUtilizationGt).MaxUtilizationGte(maxUtilizationGte).MaxUtilizationLt(maxUtilizationLt).MaxUtilizationLte(maxUtilizationLte).MaxUtilizationN(maxUtilizationN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Phase(phase).PhaseN(phaseN).PowerPanelId(powerPanelId).PowerPanelIdN(powerPanelIdN).Q(q).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusN(statusN).Supply(supply).SupplyN(supplyN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Voltage(voltage).VoltageEmpty(voltageEmpty).VoltageGt(voltageGt).VoltageGte(voltageGte).VoltageLt(voltageLt).VoltageLte(voltageLte).VoltageN(voltageN).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimPowerFeedsList(context.Background()).Amperage(amperage).AmperageEmpty(amperageEmpty).AmperageGt(amperageGt).AmperageGte(amperageGte).AmperageLt(amperageLt).AmperageLte(amperageLte).AmperageN(amperageN).AvailablePower(availablePower).AvailablePowerEmpty(availablePowerEmpty).AvailablePowerGt(availablePowerGt).AvailablePowerGte(availablePowerGte).AvailablePowerLt(availablePowerLt).AvailablePowerLte(availablePowerLte).AvailablePowerN(availablePowerN).CableEnd(cableEnd).CableEndN(cableEndN).CableId(cableId).CableIdN(cableIdN).Cabled(cabled).Connected(connected).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MarkConnected(markConnected).MaxUtilization(maxUtilization).MaxUtilizationEmpty(maxUtilizationEmpty).MaxUtilizationGt(maxUtilizationGt).MaxUtilizationGte(maxUtilizationGte).MaxUtilizationLt(maxUtilizationLt).MaxUtilizationLte(maxUtilizationLte).MaxUtilizationN(maxUtilizationN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Phase(phase).PhaseN(phaseN).PowerPanelId(powerPanelId).PowerPanelIdN(powerPanelIdN).Q(q).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusN(statusN).Supply(supply).SupplyN(supplyN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Voltage(voltage).VoltageEmpty(voltageEmpty).VoltageGt(voltageGt).VoltageGte(voltageGte).VoltageLt(voltageLt).VoltageLte(voltageLte).VoltageN(voltageN).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerFeedsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -21170,8 +21805,17 @@ Name | Type | Description  | Notes
  **amperageLt** | **[]int32** |  | 
  **amperageLte** | **[]int32** |  | 
  **amperageN** | **[]int32** |  | 
- **cableEnd** | **string** |  | 
- **cableEndN** | **string** |  | 
+ **availablePower** | **[]int32** |  | 
+ **availablePowerEmpty** | **bool** |  | 
+ **availablePowerGt** | **[]int32** |  | 
+ **availablePowerGte** | **[]int32** |  | 
+ **availablePowerLt** | **[]int32** |  | 
+ **availablePowerLte** | **[]int32** |  | 
+ **availablePowerN** | **[]int32** |  | 
+ **cableEnd** | [**CircuitsCircuitTerminationsListCableEndParameter**](CircuitsCircuitTerminationsListCableEndParameter.md) | * &#x60;A&#x60; - A * &#x60;B&#x60; - B | 
+ **cableEndN** | [**CircuitsCircuitTerminationsListCableEndParameter**](CircuitsCircuitTerminationsListCableEndParameter.md) | * &#x60;A&#x60; - A * &#x60;B&#x60; - B | 
+ **cableId** | **[]int32** | Cable (ID) | 
+ **cableIdN** | **[]int32** | Cable (ID) | 
  **cabled** | **bool** |  | 
  **connected** | **bool** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
@@ -21208,6 +21852,7 @@ Name | Type | Description  | Notes
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **markConnected** | **bool** |  | 
  **maxUtilization** | **[]int32** |  | 
  **maxUtilizationEmpty** | **bool** |  | 
  **maxUtilizationGt** | **[]int32** |  | 
@@ -21230,8 +21875,8 @@ Name | Type | Description  | Notes
  **occupied** | **bool** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
- **phase** | **string** |  | 
- **phaseN** | **string** |  | 
+ **phase** | [**DcimPowerFeedsListPhaseParameter**](DcimPowerFeedsListPhaseParameter.md) | * &#x60;single-phase&#x60; - Single phase * &#x60;three-phase&#x60; - Three-phase | 
+ **phaseN** | [**DcimPowerFeedsListPhaseParameter**](DcimPowerFeedsListPhaseParameter.md) | * &#x60;single-phase&#x60; - Single phase * &#x60;three-phase&#x60; - Three-phase | 
  **powerPanelId** | **[]int32** | Power panel (ID) | 
  **powerPanelIdN** | **[]int32** | Power panel (ID) | 
  **q** | **string** | Search | 
@@ -21251,8 +21896,8 @@ Name | Type | Description  | Notes
  **siteIdN** | **[]int32** | Site (ID) | 
  **status** | **[]string** |  | 
  **statusN** | **[]string** |  | 
- **supply** | **string** |  | 
- **supplyN** | **string** |  | 
+ **supply** | [**DcimPowerFeedsListSupplyParameter**](DcimPowerFeedsListSupplyParameter.md) | * &#x60;ac&#x60; - AC * &#x60;dc&#x60; - DC | 
+ **supplyN** | [**DcimPowerFeedsListSupplyParameter**](DcimPowerFeedsListSupplyParameter.md) | * &#x60;ac&#x60; - AC * &#x60;dc&#x60; - DC | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
  **tenant** | **[]string** | Tenant (slug) | 
@@ -21263,8 +21908,8 @@ Name | Type | Description  | Notes
  **tenantGroupIdN** | **[]int32** | Tenant Group (ID) | 
  **tenantId** | **[]int32** | Tenant (ID) | 
  **tenantIdN** | **[]int32** | Tenant (ID) | 
- **type_** | **string** |  | 
- **typeN** | **string** |  | 
+ **type_** | [**DcimPowerFeedsListTypeParameter**](DcimPowerFeedsListTypeParameter.md) | * &#x60;primary&#x60; - Primary * &#x60;redundant&#x60; - Redundant | 
+ **typeN** | [**DcimPowerFeedsListTypeParameter**](DcimPowerFeedsListTypeParameter.md) | * &#x60;primary&#x60; - Primary * &#x60;redundant&#x60; - Redundant | 
  **updatedByRequest** | **string** |  | 
  **voltage** | **[]int32** |  | 
  **voltageEmpty** | **bool** |  | 
@@ -21309,7 +21954,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -21381,7 +22026,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -21451,7 +22096,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -21521,12 +22166,12 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this power feed.
-	writablePowerFeedRequest := *openapiclient.NewWritablePowerFeedRequest(int32(123), "Name_example") // WritablePowerFeedRequest | 
+	writablePowerFeedRequest := *openapiclient.NewWritablePowerFeedRequest(*openapiclient.NewPowerPanelRequest("Name_example"), "Name_example") // WritablePowerFeedRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -21593,7 +22238,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -21657,7 +22302,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -21723,7 +22368,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -21789,7 +22434,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -21855,7 +22500,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -21908,7 +22553,7 @@ Name | Type | Description  | Notes
 
 ## DcimPowerOutletTemplatesList
 
-> PaginatedPowerOutletTemplateList DcimPowerOutletTemplatesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).FeedLeg(feedLeg).FeedLegN(feedLegN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedPowerOutletTemplateList DcimPowerOutletTemplatesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).FeedLeg(feedLeg).FeedLegN(feedLegN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).ModuleTypeId(moduleTypeId).ModuleTypeIdN(moduleTypeIdN).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).PowerPortId(powerPortId).PowerPortIdN(powerPortIdN).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -21924,7 +22569,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -21947,6 +22592,8 @@ func main() {
 	descriptionNie := []string{"Inner_example"} // []string |  (optional)
 	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
 	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
+	deviceTypeId := []*int32{int32(123)} // []*int32 | Device type (ID) (optional)
+	deviceTypeIdN := []*int32{int32(123)} // []*int32 | Device type (ID) (optional)
 	devicetypeId := []*int32{int32(123)} // []*int32 | Device type (ID) (optional)
 	devicetypeIdN := []*int32{int32(123)} // []*int32 | Device type (ID) (optional)
 	feedLeg := []string{"Inner_example"} // []string | Phase (for three-phase feeds) (optional)
@@ -21958,6 +22605,17 @@ func main() {
 	idLt := []int32{int32(123)} // []int32 |  (optional)
 	idLte := []int32{int32(123)} // []int32 |  (optional)
 	idN := []int32{int32(123)} // []int32 |  (optional)
+	label := []string{"Inner_example"} // []string |  (optional)
+	labelEmpty := true // bool |  (optional)
+	labelIc := []string{"Inner_example"} // []string |  (optional)
+	labelIe := []string{"Inner_example"} // []string |  (optional)
+	labelIew := []string{"Inner_example"} // []string |  (optional)
+	labelIsw := []string{"Inner_example"} // []string |  (optional)
+	labelN := []string{"Inner_example"} // []string |  (optional)
+	labelNic := []string{"Inner_example"} // []string |  (optional)
+	labelNie := []string{"Inner_example"} // []string |  (optional)
+	labelNiew := []string{"Inner_example"} // []string |  (optional)
+	labelNisw := []string{"Inner_example"} // []string |  (optional)
 	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -21967,6 +22625,8 @@ func main() {
 	lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
 	limit := int32(56) // int32 | Number of results to return per page. (optional)
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+	moduleTypeId := []*int32{int32(123)} // []*int32 | Module type (ID) (optional)
+	moduleTypeIdN := []*int32{int32(123)} // []*int32 | Module type (ID) (optional)
 	moduletypeId := []*int32{int32(123)} // []*int32 | Module type (ID) (optional)
 	moduletypeIdN := []*int32{int32(123)} // []*int32 | Module type (ID) (optional)
 	name := []string{"Inner_example"} // []string |  (optional)
@@ -21982,14 +22642,16 @@ func main() {
 	nameNisw := []string{"Inner_example"} // []string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	powerPortId := []*int32{int32(123)} // []*int32 | Power port (ID) (optional)
+	powerPortIdN := []*int32{int32(123)} // []*int32 | Power port (ID) (optional)
 	q := "q_example" // string | Search (optional)
-	type_ := "type__example" // string |  (optional)
-	typeN := "typeN_example" // string |  (optional)
+	type_ := openapiclient.dcim_power_outlet_templates_list_type_parameter("California Style") // DcimPowerOutletTemplatesListTypeParameter | * `IEC 60320` - [('iec-60320-c5', 'C5'), ('iec-60320-c7', 'C7'), ('iec-60320-c13', 'C13'), ('iec-60320-c15', 'C15'), ('iec-60320-c19', 'C19'), ('iec-60320-c21', 'C21')] * `IEC 60309` - [('iec-60309-p-n-e-4h', 'P+N+E 4H'), ('iec-60309-p-n-e-6h', 'P+N+E 6H'), ('iec-60309-p-n-e-9h', 'P+N+E 9H'), ('iec-60309-2p-e-4h', '2P+E 4H'), ('iec-60309-2p-e-6h', '2P+E 6H'), ('iec-60309-2p-e-9h', '2P+E 9H'), ('iec-60309-3p-e-4h', '3P+E 4H'), ('iec-60309-3p-e-6h', '3P+E 6H'), ('iec-60309-3p-e-9h', '3P+E 9H'), ('iec-60309-3p-n-e-4h', '3P+N+E 4H'), ('iec-60309-3p-n-e-6h', '3P+N+E 6H'), ('iec-60309-3p-n-e-9h', '3P+N+E 9H')] * `IEC 60906-1` - [('iec-60906-1', 'IEC 60906-1'), ('nbr-14136-10a', '2P+T 10A (NBR 14136)'), ('nbr-14136-20a', '2P+T 20A (NBR 14136)')] * `NEMA (Non-locking)` - [('nema-1-15r', 'NEMA 1-15R'), ('nema-5-15r', 'NEMA 5-15R'), ('nema-5-20r', 'NEMA 5-20R'), ('nema-5-30r', 'NEMA 5-30R'), ('nema-5-50r', 'NEMA 5-50R'), ('nema-6-15r', 'NEMA 6-15R'), ('nema-6-20r', 'NEMA 6-20R'), ('nema-6-30r', 'NEMA 6-30R'), ('nema-6-50r', 'NEMA 6-50R'), ('nema-10-30r', 'NEMA 10-30R'), ('nema-10-50r', 'NEMA 10-50R'), ('nema-14-20r', 'NEMA 14-20R'), ('nema-14-30r', 'NEMA 14-30R'), ('nema-14-50r', 'NEMA 14-50R'), ('nema-14-60r', 'NEMA 14-60R'), ('nema-15-15r', 'NEMA 15-15R'), ('nema-15-20r', 'NEMA 15-20R'), ('nema-15-30r', 'NEMA 15-30R'), ('nema-15-50r', 'NEMA 15-50R'), ('nema-15-60r', 'NEMA 15-60R')] * `NEMA (Locking)` - [('nema-l1-15r', 'NEMA L1-15R'), ('nema-l5-15r', 'NEMA L5-15R'), ('nema-l5-20r', 'NEMA L5-20R'), ('nema-l5-30r', 'NEMA L5-30R'), ('nema-l5-50r', 'NEMA L5-50R'), ('nema-l6-15r', 'NEMA L6-15R'), ('nema-l6-20r', 'NEMA L6-20R'), ('nema-l6-30r', 'NEMA L6-30R'), ('nema-l6-50r', 'NEMA L6-50R'), ('nema-l10-30r', 'NEMA L10-30R'), ('nema-l14-20r', 'NEMA L14-20R'), ('nema-l14-30r', 'NEMA L14-30R'), ('nema-l14-50r', 'NEMA L14-50R'), ('nema-l14-60r', 'NEMA L14-60R'), ('nema-l15-20r', 'NEMA L15-20R'), ('nema-l15-30r', 'NEMA L15-30R'), ('nema-l15-50r', 'NEMA L15-50R'), ('nema-l15-60r', 'NEMA L15-60R'), ('nema-l21-20r', 'NEMA L21-20R'), ('nema-l21-30r', 'NEMA L21-30R'), ('nema-l22-30r', 'NEMA L22-30R')] * `California Style` - [('CS6360C', 'CS6360C'), ('CS6364C', 'CS6364C'), ('CS8164C', 'CS8164C'), ('CS8264C', 'CS8264C'), ('CS8364C', 'CS8364C'), ('CS8464C', 'CS8464C')] * `ITA/International` - [('ita-e', 'ITA Type E (CEE 7/5)'), ('ita-f', 'ITA Type F (CEE 7/3)'), ('ita-g', 'ITA Type G (BS 1363)'), ('ita-h', 'ITA Type H'), ('ita-i', 'ITA Type I'), ('ita-j', 'ITA Type J'), ('ita-k', 'ITA Type K'), ('ita-l', 'ITA Type L (CEI 23-50)'), ('ita-m', 'ITA Type M (BS 546)'), ('ita-n', 'ITA Type N'), ('ita-o', 'ITA Type O'), ('ita-multistandard', 'ITA Multistandard')] * `USB` - [('usb-a', 'USB Type A'), ('usb-micro-b', 'USB Micro B'), ('usb-c', 'USB Type C')] * `Molex` - [('molex-micro-fit-1x2', 'Molex Micro-Fit 1x2'), ('molex-micro-fit-2x2', 'Molex Micro-Fit 2x2'), ('molex-micro-fit-2x4', 'Molex Micro-Fit 2x4')] * `DC` - [('dc-terminal', 'DC Terminal')] * `Proprietary` - [('hdot-cx', 'HDOT Cx'), ('saf-d-grid', 'Saf-D-Grid'), ('neutrik-powercon-20a', 'Neutrik powerCON (20A)'), ('neutrik-powercon-32a', 'Neutrik powerCON (32A)'), ('neutrik-powercon-true1', 'Neutrik powerCON TRUE1'), ('neutrik-powercon-true1-top', 'Neutrik powerCON TRUE1 TOP'), ('ubiquiti-smartpower', 'Ubiquiti SmartPower')] * `Other` - [('hardwired', 'Hardwired'), ('other', 'Other')] (optional)
+	typeN := openapiclient.dcim_power_outlet_templates_list_type_parameter("California Style") // DcimPowerOutletTemplatesListTypeParameter | * `IEC 60320` - [('iec-60320-c5', 'C5'), ('iec-60320-c7', 'C7'), ('iec-60320-c13', 'C13'), ('iec-60320-c15', 'C15'), ('iec-60320-c19', 'C19'), ('iec-60320-c21', 'C21')] * `IEC 60309` - [('iec-60309-p-n-e-4h', 'P+N+E 4H'), ('iec-60309-p-n-e-6h', 'P+N+E 6H'), ('iec-60309-p-n-e-9h', 'P+N+E 9H'), ('iec-60309-2p-e-4h', '2P+E 4H'), ('iec-60309-2p-e-6h', '2P+E 6H'), ('iec-60309-2p-e-9h', '2P+E 9H'), ('iec-60309-3p-e-4h', '3P+E 4H'), ('iec-60309-3p-e-6h', '3P+E 6H'), ('iec-60309-3p-e-9h', '3P+E 9H'), ('iec-60309-3p-n-e-4h', '3P+N+E 4H'), ('iec-60309-3p-n-e-6h', '3P+N+E 6H'), ('iec-60309-3p-n-e-9h', '3P+N+E 9H')] * `IEC 60906-1` - [('iec-60906-1', 'IEC 60906-1'), ('nbr-14136-10a', '2P+T 10A (NBR 14136)'), ('nbr-14136-20a', '2P+T 20A (NBR 14136)')] * `NEMA (Non-locking)` - [('nema-1-15r', 'NEMA 1-15R'), ('nema-5-15r', 'NEMA 5-15R'), ('nema-5-20r', 'NEMA 5-20R'), ('nema-5-30r', 'NEMA 5-30R'), ('nema-5-50r', 'NEMA 5-50R'), ('nema-6-15r', 'NEMA 6-15R'), ('nema-6-20r', 'NEMA 6-20R'), ('nema-6-30r', 'NEMA 6-30R'), ('nema-6-50r', 'NEMA 6-50R'), ('nema-10-30r', 'NEMA 10-30R'), ('nema-10-50r', 'NEMA 10-50R'), ('nema-14-20r', 'NEMA 14-20R'), ('nema-14-30r', 'NEMA 14-30R'), ('nema-14-50r', 'NEMA 14-50R'), ('nema-14-60r', 'NEMA 14-60R'), ('nema-15-15r', 'NEMA 15-15R'), ('nema-15-20r', 'NEMA 15-20R'), ('nema-15-30r', 'NEMA 15-30R'), ('nema-15-50r', 'NEMA 15-50R'), ('nema-15-60r', 'NEMA 15-60R')] * `NEMA (Locking)` - [('nema-l1-15r', 'NEMA L1-15R'), ('nema-l5-15r', 'NEMA L5-15R'), ('nema-l5-20r', 'NEMA L5-20R'), ('nema-l5-30r', 'NEMA L5-30R'), ('nema-l5-50r', 'NEMA L5-50R'), ('nema-l6-15r', 'NEMA L6-15R'), ('nema-l6-20r', 'NEMA L6-20R'), ('nema-l6-30r', 'NEMA L6-30R'), ('nema-l6-50r', 'NEMA L6-50R'), ('nema-l10-30r', 'NEMA L10-30R'), ('nema-l14-20r', 'NEMA L14-20R'), ('nema-l14-30r', 'NEMA L14-30R'), ('nema-l14-50r', 'NEMA L14-50R'), ('nema-l14-60r', 'NEMA L14-60R'), ('nema-l15-20r', 'NEMA L15-20R'), ('nema-l15-30r', 'NEMA L15-30R'), ('nema-l15-50r', 'NEMA L15-50R'), ('nema-l15-60r', 'NEMA L15-60R'), ('nema-l21-20r', 'NEMA L21-20R'), ('nema-l21-30r', 'NEMA L21-30R'), ('nema-l22-30r', 'NEMA L22-30R')] * `California Style` - [('CS6360C', 'CS6360C'), ('CS6364C', 'CS6364C'), ('CS8164C', 'CS8164C'), ('CS8264C', 'CS8264C'), ('CS8364C', 'CS8364C'), ('CS8464C', 'CS8464C')] * `ITA/International` - [('ita-e', 'ITA Type E (CEE 7/5)'), ('ita-f', 'ITA Type F (CEE 7/3)'), ('ita-g', 'ITA Type G (BS 1363)'), ('ita-h', 'ITA Type H'), ('ita-i', 'ITA Type I'), ('ita-j', 'ITA Type J'), ('ita-k', 'ITA Type K'), ('ita-l', 'ITA Type L (CEI 23-50)'), ('ita-m', 'ITA Type M (BS 546)'), ('ita-n', 'ITA Type N'), ('ita-o', 'ITA Type O'), ('ita-multistandard', 'ITA Multistandard')] * `USB` - [('usb-a', 'USB Type A'), ('usb-micro-b', 'USB Micro B'), ('usb-c', 'USB Type C')] * `Molex` - [('molex-micro-fit-1x2', 'Molex Micro-Fit 1x2'), ('molex-micro-fit-2x2', 'Molex Micro-Fit 2x2'), ('molex-micro-fit-2x4', 'Molex Micro-Fit 2x4')] * `DC` - [('dc-terminal', 'DC Terminal')] * `Proprietary` - [('hdot-cx', 'HDOT Cx'), ('saf-d-grid', 'Saf-D-Grid'), ('neutrik-powercon-20a', 'Neutrik powerCON (20A)'), ('neutrik-powercon-32a', 'Neutrik powerCON (32A)'), ('neutrik-powercon-true1', 'Neutrik powerCON TRUE1'), ('neutrik-powercon-true1-top', 'Neutrik powerCON TRUE1 TOP'), ('ubiquiti-smartpower', 'Ubiquiti SmartPower')] * `Other` - [('hardwired', 'Hardwired'), ('other', 'Other')] (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimPowerOutletTemplatesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).FeedLeg(feedLeg).FeedLegN(feedLegN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimPowerOutletTemplatesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).FeedLeg(feedLeg).FeedLegN(feedLegN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).ModuleTypeId(moduleTypeId).ModuleTypeIdN(moduleTypeIdN).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).PowerPortId(powerPortId).PowerPortIdN(powerPortIdN).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerOutletTemplatesList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -22029,6 +22691,8 @@ Name | Type | Description  | Notes
  **descriptionNie** | **[]string** |  | 
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
+ **deviceTypeId** | **[]int32** | Device type (ID) | 
+ **deviceTypeIdN** | **[]int32** | Device type (ID) | 
  **devicetypeId** | **[]int32** | Device type (ID) | 
  **devicetypeIdN** | **[]int32** | Device type (ID) | 
  **feedLeg** | **[]string** | Phase (for three-phase feeds) | 
@@ -22040,6 +22704,17 @@ Name | Type | Description  | Notes
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
+ **label** | **[]string** |  | 
+ **labelEmpty** | **bool** |  | 
+ **labelIc** | **[]string** |  | 
+ **labelIe** | **[]string** |  | 
+ **labelIew** | **[]string** |  | 
+ **labelIsw** | **[]string** |  | 
+ **labelN** | **[]string** |  | 
+ **labelNic** | **[]string** |  | 
+ **labelNie** | **[]string** |  | 
+ **labelNiew** | **[]string** |  | 
+ **labelNisw** | **[]string** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
@@ -22049,6 +22724,8 @@ Name | Type | Description  | Notes
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
  **modifiedByRequest** | **string** |  | 
+ **moduleTypeId** | **[]int32** | Module type (ID) | 
+ **moduleTypeIdN** | **[]int32** | Module type (ID) | 
  **moduletypeId** | **[]int32** | Module type (ID) | 
  **moduletypeIdN** | **[]int32** | Module type (ID) | 
  **name** | **[]string** |  | 
@@ -22064,9 +22741,11 @@ Name | Type | Description  | Notes
  **nameNisw** | **[]string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **powerPortId** | **[]int32** | Power port (ID) | 
+ **powerPortIdN** | **[]int32** | Power port (ID) | 
  **q** | **string** | Search | 
- **type_** | **string** |  | 
- **typeN** | **string** |  | 
+ **type_** | [**DcimPowerOutletTemplatesListTypeParameter**](DcimPowerOutletTemplatesListTypeParameter.md) | * &#x60;IEC 60320&#x60; - [(&#39;iec-60320-c5&#39;, &#39;C5&#39;), (&#39;iec-60320-c7&#39;, &#39;C7&#39;), (&#39;iec-60320-c13&#39;, &#39;C13&#39;), (&#39;iec-60320-c15&#39;, &#39;C15&#39;), (&#39;iec-60320-c19&#39;, &#39;C19&#39;), (&#39;iec-60320-c21&#39;, &#39;C21&#39;)] * &#x60;IEC 60309&#x60; - [(&#39;iec-60309-p-n-e-4h&#39;, &#39;P+N+E 4H&#39;), (&#39;iec-60309-p-n-e-6h&#39;, &#39;P+N+E 6H&#39;), (&#39;iec-60309-p-n-e-9h&#39;, &#39;P+N+E 9H&#39;), (&#39;iec-60309-2p-e-4h&#39;, &#39;2P+E 4H&#39;), (&#39;iec-60309-2p-e-6h&#39;, &#39;2P+E 6H&#39;), (&#39;iec-60309-2p-e-9h&#39;, &#39;2P+E 9H&#39;), (&#39;iec-60309-3p-e-4h&#39;, &#39;3P+E 4H&#39;), (&#39;iec-60309-3p-e-6h&#39;, &#39;3P+E 6H&#39;), (&#39;iec-60309-3p-e-9h&#39;, &#39;3P+E 9H&#39;), (&#39;iec-60309-3p-n-e-4h&#39;, &#39;3P+N+E 4H&#39;), (&#39;iec-60309-3p-n-e-6h&#39;, &#39;3P+N+E 6H&#39;), (&#39;iec-60309-3p-n-e-9h&#39;, &#39;3P+N+E 9H&#39;)] * &#x60;IEC 60906-1&#x60; - [(&#39;iec-60906-1&#39;, &#39;IEC 60906-1&#39;), (&#39;nbr-14136-10a&#39;, &#39;2P+T 10A (NBR 14136)&#39;), (&#39;nbr-14136-20a&#39;, &#39;2P+T 20A (NBR 14136)&#39;)] * &#x60;NEMA (Non-locking)&#x60; - [(&#39;nema-1-15r&#39;, &#39;NEMA 1-15R&#39;), (&#39;nema-5-15r&#39;, &#39;NEMA 5-15R&#39;), (&#39;nema-5-20r&#39;, &#39;NEMA 5-20R&#39;), (&#39;nema-5-30r&#39;, &#39;NEMA 5-30R&#39;), (&#39;nema-5-50r&#39;, &#39;NEMA 5-50R&#39;), (&#39;nema-6-15r&#39;, &#39;NEMA 6-15R&#39;), (&#39;nema-6-20r&#39;, &#39;NEMA 6-20R&#39;), (&#39;nema-6-30r&#39;, &#39;NEMA 6-30R&#39;), (&#39;nema-6-50r&#39;, &#39;NEMA 6-50R&#39;), (&#39;nema-10-30r&#39;, &#39;NEMA 10-30R&#39;), (&#39;nema-10-50r&#39;, &#39;NEMA 10-50R&#39;), (&#39;nema-14-20r&#39;, &#39;NEMA 14-20R&#39;), (&#39;nema-14-30r&#39;, &#39;NEMA 14-30R&#39;), (&#39;nema-14-50r&#39;, &#39;NEMA 14-50R&#39;), (&#39;nema-14-60r&#39;, &#39;NEMA 14-60R&#39;), (&#39;nema-15-15r&#39;, &#39;NEMA 15-15R&#39;), (&#39;nema-15-20r&#39;, &#39;NEMA 15-20R&#39;), (&#39;nema-15-30r&#39;, &#39;NEMA 15-30R&#39;), (&#39;nema-15-50r&#39;, &#39;NEMA 15-50R&#39;), (&#39;nema-15-60r&#39;, &#39;NEMA 15-60R&#39;)] * &#x60;NEMA (Locking)&#x60; - [(&#39;nema-l1-15r&#39;, &#39;NEMA L1-15R&#39;), (&#39;nema-l5-15r&#39;, &#39;NEMA L5-15R&#39;), (&#39;nema-l5-20r&#39;, &#39;NEMA L5-20R&#39;), (&#39;nema-l5-30r&#39;, &#39;NEMA L5-30R&#39;), (&#39;nema-l5-50r&#39;, &#39;NEMA L5-50R&#39;), (&#39;nema-l6-15r&#39;, &#39;NEMA L6-15R&#39;), (&#39;nema-l6-20r&#39;, &#39;NEMA L6-20R&#39;), (&#39;nema-l6-30r&#39;, &#39;NEMA L6-30R&#39;), (&#39;nema-l6-50r&#39;, &#39;NEMA L6-50R&#39;), (&#39;nema-l10-30r&#39;, &#39;NEMA L10-30R&#39;), (&#39;nema-l14-20r&#39;, &#39;NEMA L14-20R&#39;), (&#39;nema-l14-30r&#39;, &#39;NEMA L14-30R&#39;), (&#39;nema-l14-50r&#39;, &#39;NEMA L14-50R&#39;), (&#39;nema-l14-60r&#39;, &#39;NEMA L14-60R&#39;), (&#39;nema-l15-20r&#39;, &#39;NEMA L15-20R&#39;), (&#39;nema-l15-30r&#39;, &#39;NEMA L15-30R&#39;), (&#39;nema-l15-50r&#39;, &#39;NEMA L15-50R&#39;), (&#39;nema-l15-60r&#39;, &#39;NEMA L15-60R&#39;), (&#39;nema-l21-20r&#39;, &#39;NEMA L21-20R&#39;), (&#39;nema-l21-30r&#39;, &#39;NEMA L21-30R&#39;), (&#39;nema-l22-30r&#39;, &#39;NEMA L22-30R&#39;)] * &#x60;California Style&#x60; - [(&#39;CS6360C&#39;, &#39;CS6360C&#39;), (&#39;CS6364C&#39;, &#39;CS6364C&#39;), (&#39;CS8164C&#39;, &#39;CS8164C&#39;), (&#39;CS8264C&#39;, &#39;CS8264C&#39;), (&#39;CS8364C&#39;, &#39;CS8364C&#39;), (&#39;CS8464C&#39;, &#39;CS8464C&#39;)] * &#x60;ITA/International&#x60; - [(&#39;ita-e&#39;, &#39;ITA Type E (CEE 7/5)&#39;), (&#39;ita-f&#39;, &#39;ITA Type F (CEE 7/3)&#39;), (&#39;ita-g&#39;, &#39;ITA Type G (BS 1363)&#39;), (&#39;ita-h&#39;, &#39;ITA Type H&#39;), (&#39;ita-i&#39;, &#39;ITA Type I&#39;), (&#39;ita-j&#39;, &#39;ITA Type J&#39;), (&#39;ita-k&#39;, &#39;ITA Type K&#39;), (&#39;ita-l&#39;, &#39;ITA Type L (CEI 23-50)&#39;), (&#39;ita-m&#39;, &#39;ITA Type M (BS 546)&#39;), (&#39;ita-n&#39;, &#39;ITA Type N&#39;), (&#39;ita-o&#39;, &#39;ITA Type O&#39;), (&#39;ita-multistandard&#39;, &#39;ITA Multistandard&#39;)] * &#x60;USB&#x60; - [(&#39;usb-a&#39;, &#39;USB Type A&#39;), (&#39;usb-micro-b&#39;, &#39;USB Micro B&#39;), (&#39;usb-c&#39;, &#39;USB Type C&#39;)] * &#x60;Molex&#x60; - [(&#39;molex-micro-fit-1x2&#39;, &#39;Molex Micro-Fit 1x2&#39;), (&#39;molex-micro-fit-2x2&#39;, &#39;Molex Micro-Fit 2x2&#39;), (&#39;molex-micro-fit-2x4&#39;, &#39;Molex Micro-Fit 2x4&#39;)] * &#x60;DC&#x60; - [(&#39;dc-terminal&#39;, &#39;DC Terminal&#39;)] * &#x60;Proprietary&#x60; - [(&#39;hdot-cx&#39;, &#39;HDOT Cx&#39;), (&#39;saf-d-grid&#39;, &#39;Saf-D-Grid&#39;), (&#39;neutrik-powercon-20a&#39;, &#39;Neutrik powerCON (20A)&#39;), (&#39;neutrik-powercon-32a&#39;, &#39;Neutrik powerCON (32A)&#39;), (&#39;neutrik-powercon-true1&#39;, &#39;Neutrik powerCON TRUE1&#39;), (&#39;neutrik-powercon-true1-top&#39;, &#39;Neutrik powerCON TRUE1 TOP&#39;), (&#39;ubiquiti-smartpower&#39;, &#39;Ubiquiti SmartPower&#39;)] * &#x60;Other&#x60; - [(&#39;hardwired&#39;, &#39;Hardwired&#39;), (&#39;other&#39;, &#39;Other&#39;)] | 
+ **typeN** | [**DcimPowerOutletTemplatesListTypeParameter**](DcimPowerOutletTemplatesListTypeParameter.md) | * &#x60;IEC 60320&#x60; - [(&#39;iec-60320-c5&#39;, &#39;C5&#39;), (&#39;iec-60320-c7&#39;, &#39;C7&#39;), (&#39;iec-60320-c13&#39;, &#39;C13&#39;), (&#39;iec-60320-c15&#39;, &#39;C15&#39;), (&#39;iec-60320-c19&#39;, &#39;C19&#39;), (&#39;iec-60320-c21&#39;, &#39;C21&#39;)] * &#x60;IEC 60309&#x60; - [(&#39;iec-60309-p-n-e-4h&#39;, &#39;P+N+E 4H&#39;), (&#39;iec-60309-p-n-e-6h&#39;, &#39;P+N+E 6H&#39;), (&#39;iec-60309-p-n-e-9h&#39;, &#39;P+N+E 9H&#39;), (&#39;iec-60309-2p-e-4h&#39;, &#39;2P+E 4H&#39;), (&#39;iec-60309-2p-e-6h&#39;, &#39;2P+E 6H&#39;), (&#39;iec-60309-2p-e-9h&#39;, &#39;2P+E 9H&#39;), (&#39;iec-60309-3p-e-4h&#39;, &#39;3P+E 4H&#39;), (&#39;iec-60309-3p-e-6h&#39;, &#39;3P+E 6H&#39;), (&#39;iec-60309-3p-e-9h&#39;, &#39;3P+E 9H&#39;), (&#39;iec-60309-3p-n-e-4h&#39;, &#39;3P+N+E 4H&#39;), (&#39;iec-60309-3p-n-e-6h&#39;, &#39;3P+N+E 6H&#39;), (&#39;iec-60309-3p-n-e-9h&#39;, &#39;3P+N+E 9H&#39;)] * &#x60;IEC 60906-1&#x60; - [(&#39;iec-60906-1&#39;, &#39;IEC 60906-1&#39;), (&#39;nbr-14136-10a&#39;, &#39;2P+T 10A (NBR 14136)&#39;), (&#39;nbr-14136-20a&#39;, &#39;2P+T 20A (NBR 14136)&#39;)] * &#x60;NEMA (Non-locking)&#x60; - [(&#39;nema-1-15r&#39;, &#39;NEMA 1-15R&#39;), (&#39;nema-5-15r&#39;, &#39;NEMA 5-15R&#39;), (&#39;nema-5-20r&#39;, &#39;NEMA 5-20R&#39;), (&#39;nema-5-30r&#39;, &#39;NEMA 5-30R&#39;), (&#39;nema-5-50r&#39;, &#39;NEMA 5-50R&#39;), (&#39;nema-6-15r&#39;, &#39;NEMA 6-15R&#39;), (&#39;nema-6-20r&#39;, &#39;NEMA 6-20R&#39;), (&#39;nema-6-30r&#39;, &#39;NEMA 6-30R&#39;), (&#39;nema-6-50r&#39;, &#39;NEMA 6-50R&#39;), (&#39;nema-10-30r&#39;, &#39;NEMA 10-30R&#39;), (&#39;nema-10-50r&#39;, &#39;NEMA 10-50R&#39;), (&#39;nema-14-20r&#39;, &#39;NEMA 14-20R&#39;), (&#39;nema-14-30r&#39;, &#39;NEMA 14-30R&#39;), (&#39;nema-14-50r&#39;, &#39;NEMA 14-50R&#39;), (&#39;nema-14-60r&#39;, &#39;NEMA 14-60R&#39;), (&#39;nema-15-15r&#39;, &#39;NEMA 15-15R&#39;), (&#39;nema-15-20r&#39;, &#39;NEMA 15-20R&#39;), (&#39;nema-15-30r&#39;, &#39;NEMA 15-30R&#39;), (&#39;nema-15-50r&#39;, &#39;NEMA 15-50R&#39;), (&#39;nema-15-60r&#39;, &#39;NEMA 15-60R&#39;)] * &#x60;NEMA (Locking)&#x60; - [(&#39;nema-l1-15r&#39;, &#39;NEMA L1-15R&#39;), (&#39;nema-l5-15r&#39;, &#39;NEMA L5-15R&#39;), (&#39;nema-l5-20r&#39;, &#39;NEMA L5-20R&#39;), (&#39;nema-l5-30r&#39;, &#39;NEMA L5-30R&#39;), (&#39;nema-l5-50r&#39;, &#39;NEMA L5-50R&#39;), (&#39;nema-l6-15r&#39;, &#39;NEMA L6-15R&#39;), (&#39;nema-l6-20r&#39;, &#39;NEMA L6-20R&#39;), (&#39;nema-l6-30r&#39;, &#39;NEMA L6-30R&#39;), (&#39;nema-l6-50r&#39;, &#39;NEMA L6-50R&#39;), (&#39;nema-l10-30r&#39;, &#39;NEMA L10-30R&#39;), (&#39;nema-l14-20r&#39;, &#39;NEMA L14-20R&#39;), (&#39;nema-l14-30r&#39;, &#39;NEMA L14-30R&#39;), (&#39;nema-l14-50r&#39;, &#39;NEMA L14-50R&#39;), (&#39;nema-l14-60r&#39;, &#39;NEMA L14-60R&#39;), (&#39;nema-l15-20r&#39;, &#39;NEMA L15-20R&#39;), (&#39;nema-l15-30r&#39;, &#39;NEMA L15-30R&#39;), (&#39;nema-l15-50r&#39;, &#39;NEMA L15-50R&#39;), (&#39;nema-l15-60r&#39;, &#39;NEMA L15-60R&#39;), (&#39;nema-l21-20r&#39;, &#39;NEMA L21-20R&#39;), (&#39;nema-l21-30r&#39;, &#39;NEMA L21-30R&#39;), (&#39;nema-l22-30r&#39;, &#39;NEMA L22-30R&#39;)] * &#x60;California Style&#x60; - [(&#39;CS6360C&#39;, &#39;CS6360C&#39;), (&#39;CS6364C&#39;, &#39;CS6364C&#39;), (&#39;CS8164C&#39;, &#39;CS8164C&#39;), (&#39;CS8264C&#39;, &#39;CS8264C&#39;), (&#39;CS8364C&#39;, &#39;CS8364C&#39;), (&#39;CS8464C&#39;, &#39;CS8464C&#39;)] * &#x60;ITA/International&#x60; - [(&#39;ita-e&#39;, &#39;ITA Type E (CEE 7/5)&#39;), (&#39;ita-f&#39;, &#39;ITA Type F (CEE 7/3)&#39;), (&#39;ita-g&#39;, &#39;ITA Type G (BS 1363)&#39;), (&#39;ita-h&#39;, &#39;ITA Type H&#39;), (&#39;ita-i&#39;, &#39;ITA Type I&#39;), (&#39;ita-j&#39;, &#39;ITA Type J&#39;), (&#39;ita-k&#39;, &#39;ITA Type K&#39;), (&#39;ita-l&#39;, &#39;ITA Type L (CEI 23-50)&#39;), (&#39;ita-m&#39;, &#39;ITA Type M (BS 546)&#39;), (&#39;ita-n&#39;, &#39;ITA Type N&#39;), (&#39;ita-o&#39;, &#39;ITA Type O&#39;), (&#39;ita-multistandard&#39;, &#39;ITA Multistandard&#39;)] * &#x60;USB&#x60; - [(&#39;usb-a&#39;, &#39;USB Type A&#39;), (&#39;usb-micro-b&#39;, &#39;USB Micro B&#39;), (&#39;usb-c&#39;, &#39;USB Type C&#39;)] * &#x60;Molex&#x60; - [(&#39;molex-micro-fit-1x2&#39;, &#39;Molex Micro-Fit 1x2&#39;), (&#39;molex-micro-fit-2x2&#39;, &#39;Molex Micro-Fit 2x2&#39;), (&#39;molex-micro-fit-2x4&#39;, &#39;Molex Micro-Fit 2x4&#39;)] * &#x60;DC&#x60; - [(&#39;dc-terminal&#39;, &#39;DC Terminal&#39;)] * &#x60;Proprietary&#x60; - [(&#39;hdot-cx&#39;, &#39;HDOT Cx&#39;), (&#39;saf-d-grid&#39;, &#39;Saf-D-Grid&#39;), (&#39;neutrik-powercon-20a&#39;, &#39;Neutrik powerCON (20A)&#39;), (&#39;neutrik-powercon-32a&#39;, &#39;Neutrik powerCON (32A)&#39;), (&#39;neutrik-powercon-true1&#39;, &#39;Neutrik powerCON TRUE1&#39;), (&#39;neutrik-powercon-true1-top&#39;, &#39;Neutrik powerCON TRUE1 TOP&#39;), (&#39;ubiquiti-smartpower&#39;, &#39;Ubiquiti SmartPower&#39;)] * &#x60;Other&#x60; - [(&#39;hardwired&#39;, &#39;Hardwired&#39;), (&#39;other&#39;, &#39;Other&#39;)] | 
  **updatedByRequest** | **string** |  | 
 
 ### Return type
@@ -22104,7 +22783,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -22176,7 +22855,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -22246,7 +22925,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -22318,11 +22997,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	powerOutletRequest := []openapiclient.PowerOutletRequest{*openapiclient.NewPowerOutletRequest(*openapiclient.NewNestedDeviceRequest(), "Name_example")} // []PowerOutletRequest | 
+	powerOutletRequest := []openapiclient.PowerOutletRequest{*openapiclient.NewPowerOutletRequest(*openapiclient.NewDeviceRequest(), "Name_example")} // []PowerOutletRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -22382,11 +23061,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	powerOutletRequest := []openapiclient.PowerOutletRequest{*openapiclient.NewPowerOutletRequest(*openapiclient.NewNestedDeviceRequest(), "Name_example")} // []PowerOutletRequest | 
+	powerOutletRequest := []openapiclient.PowerOutletRequest{*openapiclient.NewPowerOutletRequest(*openapiclient.NewDeviceRequest(), "Name_example")} // []PowerOutletRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -22448,11 +23127,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	powerOutletRequest := []openapiclient.PowerOutletRequest{*openapiclient.NewPowerOutletRequest(*openapiclient.NewNestedDeviceRequest(), "Name_example")} // []PowerOutletRequest | 
+	powerOutletRequest := []openapiclient.PowerOutletRequest{*openapiclient.NewPowerOutletRequest(*openapiclient.NewDeviceRequest(), "Name_example")} // []PowerOutletRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -22514,11 +23193,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writablePowerOutletRequest := *openapiclient.NewWritablePowerOutletRequest(int32(123), "Name_example") // WritablePowerOutletRequest | 
+	writablePowerOutletRequest := *openapiclient.NewWritablePowerOutletRequest(*openapiclient.NewDeviceRequest(), "Name_example") // WritablePowerOutletRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -22580,7 +23259,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -22633,7 +23312,7 @@ Name | Type | Description  | Notes
 
 ## DcimPowerOutletsList
 
-> PaginatedPowerOutletList DcimPowerOutletsList(ctx).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Connected(connected).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).FeedLeg(feedLeg).FeedLegN(feedLegN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
+> PaginatedPowerOutletList DcimPowerOutletsList(ctx).CableEnd(cableEnd).CableEndN(cableEndN).CableId(cableId).CableIdN(cableIdN).Cabled(cabled).Connected(connected).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).FeedLeg(feedLeg).FeedLegN(feedLegN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).MarkConnected(markConnected).ModifiedByRequest(modifiedByRequest).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).PowerPortId(powerPortId).PowerPortIdN(powerPortIdN).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
 
 
 
@@ -22649,12 +23328,14 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	cableEnd := "cableEnd_example" // string |  (optional)
-	cableEndN := "cableEndN_example" // string |  (optional)
+	cableEnd := openapiclient.circuits_circuit_terminations_list_cable_end_parameter("A") // CircuitsCircuitTerminationsListCableEndParameter | * `A` - A * `B` - B (optional)
+	cableEndN := openapiclient.circuits_circuit_terminations_list_cable_end_parameter("A") // CircuitsCircuitTerminationsListCableEndParameter | * `A` - A * `B` - B (optional)
+	cableId := []*int32{int32(123)} // []*int32 | Cable (ID) (optional)
+	cableIdN := []*int32{int32(123)} // []*int32 | Cable (ID) (optional)
 	cabled := true // bool |  (optional)
 	connected := true // bool |  (optional)
 	created := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -22680,10 +23361,6 @@ func main() {
 	deviceN := []*string{"Inner_example"} // []*string | Device (name) (optional)
 	deviceId := []int32{int32(123)} // []int32 | Device (ID) (optional)
 	deviceIdN := []int32{int32(123)} // []int32 | Device (ID) (optional)
-	deviceRole := []string{"Inner_example"} // []string | Device role (slug) (optional)
-	deviceRoleN := []string{"Inner_example"} // []string | Device role (slug) (optional)
-	deviceRoleId := []int32{int32(123)} // []int32 | Device role (ID) (optional)
-	deviceRoleIdN := []int32{int32(123)} // []int32 | Device role (ID) (optional)
 	deviceType := []string{"Inner_example"} // []string | Device type (model) (optional)
 	deviceTypeN := []string{"Inner_example"} // []string | Device type (model) (optional)
 	deviceTypeId := []int32{int32(123)} // []int32 | Device type (ID) (optional)
@@ -22720,6 +23397,7 @@ func main() {
 	locationN := []string{"Inner_example"} // []string | Location (slug) (optional)
 	locationId := []int32{int32(123)} // []int32 | Location (ID) (optional)
 	locationIdN := []int32{int32(123)} // []int32 | Location (ID) (optional)
+	markConnected := true // bool |  (optional)
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	moduleId := []*int32{int32(123)} // []*int32 | Module (ID) (optional)
 	moduleIdN := []*int32{int32(123)} // []*int32 | Module (ID) (optional)
@@ -22737,6 +23415,8 @@ func main() {
 	occupied := true // bool |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	powerPortId := []*int32{int32(123)} // []*int32 | Power port (ID) (optional)
+	powerPortIdN := []*int32{int32(123)} // []*int32 | Power port (ID) (optional)
 	q := "q_example" // string | Search (optional)
 	rack := []string{"Inner_example"} // []string | Rack (name) (optional)
 	rackN := []string{"Inner_example"} // []string | Rack (name) (optional)
@@ -22770,7 +23450,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimPowerOutletsList(context.Background()).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Connected(connected).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).FeedLeg(feedLeg).FeedLegN(feedLegN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimPowerOutletsList(context.Background()).CableEnd(cableEnd).CableEndN(cableEndN).CableId(cableId).CableIdN(cableIdN).Cabled(cabled).Connected(connected).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).FeedLeg(feedLeg).FeedLegN(feedLegN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).MarkConnected(markConnected).ModifiedByRequest(modifiedByRequest).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).PowerPortId(powerPortId).PowerPortIdN(powerPortIdN).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerOutletsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -22791,8 +23471,10 @@ Other parameters are passed through a pointer to a apiDcimPowerOutletsListReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cableEnd** | **string** |  | 
- **cableEndN** | **string** |  | 
+ **cableEnd** | [**CircuitsCircuitTerminationsListCableEndParameter**](CircuitsCircuitTerminationsListCableEndParameter.md) | * &#x60;A&#x60; - A * &#x60;B&#x60; - B | 
+ **cableEndN** | [**CircuitsCircuitTerminationsListCableEndParameter**](CircuitsCircuitTerminationsListCableEndParameter.md) | * &#x60;A&#x60; - A * &#x60;B&#x60; - B | 
+ **cableId** | **[]int32** | Cable (ID) | 
+ **cableIdN** | **[]int32** | Cable (ID) | 
  **cabled** | **bool** |  | 
  **connected** | **bool** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
@@ -22818,10 +23500,6 @@ Name | Type | Description  | Notes
  **deviceN** | **[]string** | Device (name) | 
  **deviceId** | **[]int32** | Device (ID) | 
  **deviceIdN** | **[]int32** | Device (ID) | 
- **deviceRole** | **[]string** | Device role (slug) | 
- **deviceRoleN** | **[]string** | Device role (slug) | 
- **deviceRoleId** | **[]int32** | Device role (ID) | 
- **deviceRoleIdN** | **[]int32** | Device role (ID) | 
  **deviceType** | **[]string** | Device type (model) | 
  **deviceTypeN** | **[]string** | Device type (model) | 
  **deviceTypeId** | **[]int32** | Device type (ID) | 
@@ -22858,6 +23536,7 @@ Name | Type | Description  | Notes
  **locationN** | **[]string** | Location (slug) | 
  **locationId** | **[]int32** | Location (ID) | 
  **locationIdN** | **[]int32** | Location (ID) | 
+ **markConnected** | **bool** |  | 
  **modifiedByRequest** | **string** |  | 
  **moduleId** | **[]int32** | Module (ID) | 
  **moduleIdN** | **[]int32** | Module (ID) | 
@@ -22875,6 +23554,8 @@ Name | Type | Description  | Notes
  **occupied** | **bool** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **powerPortId** | **[]int32** | Power port (ID) | 
+ **powerPortIdN** | **[]int32** | Power port (ID) | 
  **q** | **string** | Search | 
  **rack** | **[]string** | Rack (name) | 
  **rackN** | **[]string** | Rack (name) | 
@@ -22941,7 +23622,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -23013,7 +23694,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -23083,7 +23764,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -23153,12 +23834,12 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this power outlet.
-	writablePowerOutletRequest := *openapiclient.NewWritablePowerOutletRequest(int32(123), "Name_example") // WritablePowerOutletRequest | 
+	writablePowerOutletRequest := *openapiclient.NewWritablePowerOutletRequest(*openapiclient.NewDeviceRequest(), "Name_example") // WritablePowerOutletRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -23225,11 +23906,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	powerPanelRequest := []openapiclient.PowerPanelRequest{*openapiclient.NewPowerPanelRequest(*openapiclient.NewNestedSiteRequest("Name_example", "Slug_example"), "Name_example")} // []PowerPanelRequest | 
+	powerPanelRequest := []openapiclient.PowerPanelRequest{*openapiclient.NewPowerPanelRequest("Name_example")} // []PowerPanelRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -23289,11 +23970,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	powerPanelRequest := []openapiclient.PowerPanelRequest{*openapiclient.NewPowerPanelRequest(*openapiclient.NewNestedSiteRequest("Name_example", "Slug_example"), "Name_example")} // []PowerPanelRequest | 
+	powerPanelRequest := []openapiclient.PowerPanelRequest{*openapiclient.NewPowerPanelRequest("Name_example")} // []PowerPanelRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -23355,11 +24036,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	powerPanelRequest := []openapiclient.PowerPanelRequest{*openapiclient.NewPowerPanelRequest(*openapiclient.NewNestedSiteRequest("Name_example", "Slug_example"), "Name_example")} // []PowerPanelRequest | 
+	powerPanelRequest := []openapiclient.PowerPanelRequest{*openapiclient.NewPowerPanelRequest("Name_example")} // []PowerPanelRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -23406,7 +24087,7 @@ Name | Type | Description  | Notes
 
 ## DcimPowerPanelsCreate
 
-> PowerPanel DcimPowerPanelsCreate(ctx).WritablePowerPanelRequest(writablePowerPanelRequest).Execute()
+> PowerPanel DcimPowerPanelsCreate(ctx).PowerPanelRequest(powerPanelRequest).Execute()
 
 
 
@@ -23421,15 +24102,15 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writablePowerPanelRequest := *openapiclient.NewWritablePowerPanelRequest(int32(123), "Name_example") // WritablePowerPanelRequest | 
+	powerPanelRequest := *openapiclient.NewPowerPanelRequest("Name_example") // PowerPanelRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimPowerPanelsCreate(context.Background()).WritablePowerPanelRequest(writablePowerPanelRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimPowerPanelsCreate(context.Background()).PowerPanelRequest(powerPanelRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerPanelsCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -23450,7 +24131,7 @@ Other parameters are passed through a pointer to a apiDcimPowerPanelsCreateReque
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writablePowerPanelRequest** | [**WritablePowerPanelRequest**](WritablePowerPanelRequest.md) |  | 
+ **powerPanelRequest** | [**PowerPanelRequest**](PowerPanelRequest.md) |  | 
 
 ### Return type
 
@@ -23487,7 +24168,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -23556,7 +24237,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -23749,7 +24430,7 @@ Name | Type | Description  | Notes
 
 ## DcimPowerPanelsPartialUpdate
 
-> PowerPanel DcimPowerPanelsPartialUpdate(ctx, id).PatchedWritablePowerPanelRequest(patchedWritablePowerPanelRequest).Execute()
+> PowerPanel DcimPowerPanelsPartialUpdate(ctx, id).PatchedPowerPanelRequest(patchedPowerPanelRequest).Execute()
 
 
 
@@ -23764,16 +24445,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this power panel.
-	patchedWritablePowerPanelRequest := *openapiclient.NewPatchedWritablePowerPanelRequest() // PatchedWritablePowerPanelRequest |  (optional)
+	patchedPowerPanelRequest := *openapiclient.NewPatchedPowerPanelRequest() // PatchedPowerPanelRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimPowerPanelsPartialUpdate(context.Background(), id).PatchedWritablePowerPanelRequest(patchedWritablePowerPanelRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimPowerPanelsPartialUpdate(context.Background(), id).PatchedPowerPanelRequest(patchedPowerPanelRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerPanelsPartialUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -23799,7 +24480,7 @@ Other parameters are passed through a pointer to a apiDcimPowerPanelsPartialUpda
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **patchedWritablePowerPanelRequest** | [**PatchedWritablePowerPanelRequest**](PatchedWritablePowerPanelRequest.md) |  | 
+ **patchedPowerPanelRequest** | [**PatchedPowerPanelRequest**](PatchedPowerPanelRequest.md) |  | 
 
 ### Return type
 
@@ -23836,7 +24517,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -23891,7 +24572,7 @@ Name | Type | Description  | Notes
 
 ## DcimPowerPanelsUpdate
 
-> PowerPanel DcimPowerPanelsUpdate(ctx, id).WritablePowerPanelRequest(writablePowerPanelRequest).Execute()
+> PowerPanel DcimPowerPanelsUpdate(ctx, id).PowerPanelRequest(powerPanelRequest).Execute()
 
 
 
@@ -23906,16 +24587,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this power panel.
-	writablePowerPanelRequest := *openapiclient.NewWritablePowerPanelRequest(int32(123), "Name_example") // WritablePowerPanelRequest | 
+	powerPanelRequest := *openapiclient.NewPowerPanelRequest("Name_example") // PowerPanelRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimPowerPanelsUpdate(context.Background(), id).WritablePowerPanelRequest(writablePowerPanelRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimPowerPanelsUpdate(context.Background(), id).PowerPanelRequest(powerPanelRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerPanelsUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -23941,7 +24622,7 @@ Other parameters are passed through a pointer to a apiDcimPowerPanelsUpdateReque
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **writablePowerPanelRequest** | [**WritablePowerPanelRequest**](WritablePowerPanelRequest.md) |  | 
+ **powerPanelRequest** | [**PowerPanelRequest**](PowerPanelRequest.md) |  | 
 
 ### Return type
 
@@ -23978,7 +24659,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -24042,7 +24723,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -24108,7 +24789,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -24174,7 +24855,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -24240,7 +24921,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -24293,7 +24974,7 @@ Name | Type | Description  | Notes
 
 ## DcimPowerPortTemplatesList
 
-> PaginatedPowerPortTemplateList DcimPowerPortTemplatesList(ctx).AllocatedDraw(allocatedDraw).AllocatedDrawEmpty(allocatedDrawEmpty).AllocatedDrawGt(allocatedDrawGt).AllocatedDrawGte(allocatedDrawGte).AllocatedDrawLt(allocatedDrawLt).AllocatedDrawLte(allocatedDrawLte).AllocatedDrawN(allocatedDrawN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MaximumDraw(maximumDraw).MaximumDrawEmpty(maximumDrawEmpty).MaximumDrawGt(maximumDrawGt).MaximumDrawGte(maximumDrawGte).MaximumDrawLt(maximumDrawLt).MaximumDrawLte(maximumDrawLte).MaximumDrawN(maximumDrawN).ModifiedByRequest(modifiedByRequest).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedPowerPortTemplateList DcimPowerPortTemplatesList(ctx).AllocatedDraw(allocatedDraw).AllocatedDrawEmpty(allocatedDrawEmpty).AllocatedDrawGt(allocatedDrawGt).AllocatedDrawGte(allocatedDrawGte).AllocatedDrawLt(allocatedDrawLt).AllocatedDrawLte(allocatedDrawLte).AllocatedDrawN(allocatedDrawN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MaximumDraw(maximumDraw).MaximumDrawEmpty(maximumDrawEmpty).MaximumDrawGt(maximumDrawGt).MaximumDrawGte(maximumDrawGte).MaximumDrawLt(maximumDrawLt).MaximumDrawLte(maximumDrawLte).MaximumDrawN(maximumDrawN).ModifiedByRequest(modifiedByRequest).ModuleTypeId(moduleTypeId).ModuleTypeIdN(moduleTypeIdN).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -24309,7 +24990,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -24339,6 +25020,8 @@ func main() {
 	descriptionNie := []string{"Inner_example"} // []string |  (optional)
 	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
 	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
+	deviceTypeId := []*int32{int32(123)} // []*int32 | Device type (ID) (optional)
+	deviceTypeIdN := []*int32{int32(123)} // []*int32 | Device type (ID) (optional)
 	devicetypeId := []*int32{int32(123)} // []*int32 | Device type (ID) (optional)
 	devicetypeIdN := []*int32{int32(123)} // []*int32 | Device type (ID) (optional)
 	id := []int32{int32(123)} // []int32 |  (optional)
@@ -24348,6 +25031,17 @@ func main() {
 	idLt := []int32{int32(123)} // []int32 |  (optional)
 	idLte := []int32{int32(123)} // []int32 |  (optional)
 	idN := []int32{int32(123)} // []int32 |  (optional)
+	label := []string{"Inner_example"} // []string |  (optional)
+	labelEmpty := true // bool |  (optional)
+	labelIc := []string{"Inner_example"} // []string |  (optional)
+	labelIe := []string{"Inner_example"} // []string |  (optional)
+	labelIew := []string{"Inner_example"} // []string |  (optional)
+	labelIsw := []string{"Inner_example"} // []string |  (optional)
+	labelN := []string{"Inner_example"} // []string |  (optional)
+	labelNic := []string{"Inner_example"} // []string |  (optional)
+	labelNie := []string{"Inner_example"} // []string |  (optional)
+	labelNiew := []string{"Inner_example"} // []string |  (optional)
+	labelNisw := []string{"Inner_example"} // []string |  (optional)
 	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -24364,6 +25058,8 @@ func main() {
 	maximumDrawLte := []int32{int32(123)} // []int32 |  (optional)
 	maximumDrawN := []int32{int32(123)} // []int32 |  (optional)
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+	moduleTypeId := []*int32{int32(123)} // []*int32 | Module type (ID) (optional)
+	moduleTypeIdN := []*int32{int32(123)} // []*int32 | Module type (ID) (optional)
 	moduletypeId := []*int32{int32(123)} // []*int32 | Module type (ID) (optional)
 	moduletypeIdN := []*int32{int32(123)} // []*int32 | Module type (ID) (optional)
 	name := []string{"Inner_example"} // []string |  (optional)
@@ -24380,13 +25076,13 @@ func main() {
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
 	q := "q_example" // string | Search (optional)
-	type_ := "type__example" // string |  (optional)
-	typeN := "typeN_example" // string |  (optional)
+	type_ := openapiclient.dcim_power_port_templates_list_type_parameter("California Style") // DcimPowerPortTemplatesListTypeParameter | * `IEC 60320` - [('iec-60320-c6', 'C6'), ('iec-60320-c8', 'C8'), ('iec-60320-c14', 'C14'), ('iec-60320-c16', 'C16'), ('iec-60320-c20', 'C20'), ('iec-60320-c22', 'C22')] * `IEC 60309` - [('iec-60309-p-n-e-4h', 'P+N+E 4H'), ('iec-60309-p-n-e-6h', 'P+N+E 6H'), ('iec-60309-p-n-e-9h', 'P+N+E 9H'), ('iec-60309-2p-e-4h', '2P+E 4H'), ('iec-60309-2p-e-6h', '2P+E 6H'), ('iec-60309-2p-e-9h', '2P+E 9H'), ('iec-60309-3p-e-4h', '3P+E 4H'), ('iec-60309-3p-e-6h', '3P+E 6H'), ('iec-60309-3p-e-9h', '3P+E 9H'), ('iec-60309-3p-n-e-4h', '3P+N+E 4H'), ('iec-60309-3p-n-e-6h', '3P+N+E 6H'), ('iec-60309-3p-n-e-9h', '3P+N+E 9H')] * `IEC 60906-1` - [('iec-60906-1', 'IEC 60906-1'), ('nbr-14136-10a', '2P+T 10A (NBR 14136)'), ('nbr-14136-20a', '2P+T 20A (NBR 14136)')] * `NEMA (Non-locking)` - [('nema-1-15p', 'NEMA 1-15P'), ('nema-5-15p', 'NEMA 5-15P'), ('nema-5-20p', 'NEMA 5-20P'), ('nema-5-30p', 'NEMA 5-30P'), ('nema-5-50p', 'NEMA 5-50P'), ('nema-6-15p', 'NEMA 6-15P'), ('nema-6-20p', 'NEMA 6-20P'), ('nema-6-30p', 'NEMA 6-30P'), ('nema-6-50p', 'NEMA 6-50P'), ('nema-10-30p', 'NEMA 10-30P'), ('nema-10-50p', 'NEMA 10-50P'), ('nema-14-20p', 'NEMA 14-20P'), ('nema-14-30p', 'NEMA 14-30P'), ('nema-14-50p', 'NEMA 14-50P'), ('nema-14-60p', 'NEMA 14-60P'), ('nema-15-15p', 'NEMA 15-15P'), ('nema-15-20p', 'NEMA 15-20P'), ('nema-15-30p', 'NEMA 15-30P'), ('nema-15-50p', 'NEMA 15-50P'), ('nema-15-60p', 'NEMA 15-60P')] * `NEMA (Locking)` - [('nema-l1-15p', 'NEMA L1-15P'), ('nema-l5-15p', 'NEMA L5-15P'), ('nema-l5-20p', 'NEMA L5-20P'), ('nema-l5-30p', 'NEMA L5-30P'), ('nema-l5-50p', 'NEMA L5-50P'), ('nema-l6-15p', 'NEMA L6-15P'), ('nema-l6-20p', 'NEMA L6-20P'), ('nema-l6-30p', 'NEMA L6-30P'), ('nema-l6-50p', 'NEMA L6-50P'), ('nema-l10-30p', 'NEMA L10-30P'), ('nema-l14-20p', 'NEMA L14-20P'), ('nema-l14-30p', 'NEMA L14-30P'), ('nema-l14-50p', 'NEMA L14-50P'), ('nema-l14-60p', 'NEMA L14-60P'), ('nema-l15-20p', 'NEMA L15-20P'), ('nema-l15-30p', 'NEMA L15-30P'), ('nema-l15-50p', 'NEMA L15-50P'), ('nema-l15-60p', 'NEMA L15-60P'), ('nema-l21-20p', 'NEMA L21-20P'), ('nema-l21-30p', 'NEMA L21-30P'), ('nema-l22-30p', 'NEMA L22-30P')] * `California Style` - [('cs6361c', 'CS6361C'), ('cs6365c', 'CS6365C'), ('cs8165c', 'CS8165C'), ('cs8265c', 'CS8265C'), ('cs8365c', 'CS8365C'), ('cs8465c', 'CS8465C')] * `International/ITA` - [('ita-c', 'ITA Type C (CEE 7/16)'), ('ita-e', 'ITA Type E (CEE 7/6)'), ('ita-f', 'ITA Type F (CEE 7/4)'), ('ita-ef', 'ITA Type E/F (CEE 7/7)'), ('ita-g', 'ITA Type G (BS 1363)'), ('ita-h', 'ITA Type H'), ('ita-i', 'ITA Type I'), ('ita-j', 'ITA Type J'), ('ita-k', 'ITA Type K'), ('ita-l', 'ITA Type L (CEI 23-50)'), ('ita-m', 'ITA Type M (BS 546)'), ('ita-n', 'ITA Type N'), ('ita-o', 'ITA Type O')] * `USB` - [('usb-a', 'USB Type A'), ('usb-b', 'USB Type B'), ('usb-c', 'USB Type C'), ('usb-mini-a', 'USB Mini A'), ('usb-mini-b', 'USB Mini B'), ('usb-micro-a', 'USB Micro A'), ('usb-micro-b', 'USB Micro B'), ('usb-micro-ab', 'USB Micro AB'), ('usb-3-b', 'USB 3.0 Type B'), ('usb-3-micro-b', 'USB 3.0 Micro B')] * `Molex` - [('molex-micro-fit-1x2', 'Molex Micro-Fit 1x2'), ('molex-micro-fit-2x2', 'Molex Micro-Fit 2x2'), ('molex-micro-fit-2x4', 'Molex Micro-Fit 2x4')] * `DC` - [('dc-terminal', 'DC Terminal')] * `Proprietary` - [('saf-d-grid', 'Saf-D-Grid'), ('neutrik-powercon-20', 'Neutrik powerCON (20A)'), ('neutrik-powercon-32', 'Neutrik powerCON (32A)'), ('neutrik-powercon-true1', 'Neutrik powerCON TRUE1'), ('neutrik-powercon-true1-top', 'Neutrik powerCON TRUE1 TOP'), ('ubiquiti-smartpower', 'Ubiquiti SmartPower')] * `Other` - [('hardwired', 'Hardwired'), ('other', 'Other')] (optional)
+	typeN := openapiclient.dcim_power_port_templates_list_type_parameter("California Style") // DcimPowerPortTemplatesListTypeParameter | * `IEC 60320` - [('iec-60320-c6', 'C6'), ('iec-60320-c8', 'C8'), ('iec-60320-c14', 'C14'), ('iec-60320-c16', 'C16'), ('iec-60320-c20', 'C20'), ('iec-60320-c22', 'C22')] * `IEC 60309` - [('iec-60309-p-n-e-4h', 'P+N+E 4H'), ('iec-60309-p-n-e-6h', 'P+N+E 6H'), ('iec-60309-p-n-e-9h', 'P+N+E 9H'), ('iec-60309-2p-e-4h', '2P+E 4H'), ('iec-60309-2p-e-6h', '2P+E 6H'), ('iec-60309-2p-e-9h', '2P+E 9H'), ('iec-60309-3p-e-4h', '3P+E 4H'), ('iec-60309-3p-e-6h', '3P+E 6H'), ('iec-60309-3p-e-9h', '3P+E 9H'), ('iec-60309-3p-n-e-4h', '3P+N+E 4H'), ('iec-60309-3p-n-e-6h', '3P+N+E 6H'), ('iec-60309-3p-n-e-9h', '3P+N+E 9H')] * `IEC 60906-1` - [('iec-60906-1', 'IEC 60906-1'), ('nbr-14136-10a', '2P+T 10A (NBR 14136)'), ('nbr-14136-20a', '2P+T 20A (NBR 14136)')] * `NEMA (Non-locking)` - [('nema-1-15p', 'NEMA 1-15P'), ('nema-5-15p', 'NEMA 5-15P'), ('nema-5-20p', 'NEMA 5-20P'), ('nema-5-30p', 'NEMA 5-30P'), ('nema-5-50p', 'NEMA 5-50P'), ('nema-6-15p', 'NEMA 6-15P'), ('nema-6-20p', 'NEMA 6-20P'), ('nema-6-30p', 'NEMA 6-30P'), ('nema-6-50p', 'NEMA 6-50P'), ('nema-10-30p', 'NEMA 10-30P'), ('nema-10-50p', 'NEMA 10-50P'), ('nema-14-20p', 'NEMA 14-20P'), ('nema-14-30p', 'NEMA 14-30P'), ('nema-14-50p', 'NEMA 14-50P'), ('nema-14-60p', 'NEMA 14-60P'), ('nema-15-15p', 'NEMA 15-15P'), ('nema-15-20p', 'NEMA 15-20P'), ('nema-15-30p', 'NEMA 15-30P'), ('nema-15-50p', 'NEMA 15-50P'), ('nema-15-60p', 'NEMA 15-60P')] * `NEMA (Locking)` - [('nema-l1-15p', 'NEMA L1-15P'), ('nema-l5-15p', 'NEMA L5-15P'), ('nema-l5-20p', 'NEMA L5-20P'), ('nema-l5-30p', 'NEMA L5-30P'), ('nema-l5-50p', 'NEMA L5-50P'), ('nema-l6-15p', 'NEMA L6-15P'), ('nema-l6-20p', 'NEMA L6-20P'), ('nema-l6-30p', 'NEMA L6-30P'), ('nema-l6-50p', 'NEMA L6-50P'), ('nema-l10-30p', 'NEMA L10-30P'), ('nema-l14-20p', 'NEMA L14-20P'), ('nema-l14-30p', 'NEMA L14-30P'), ('nema-l14-50p', 'NEMA L14-50P'), ('nema-l14-60p', 'NEMA L14-60P'), ('nema-l15-20p', 'NEMA L15-20P'), ('nema-l15-30p', 'NEMA L15-30P'), ('nema-l15-50p', 'NEMA L15-50P'), ('nema-l15-60p', 'NEMA L15-60P'), ('nema-l21-20p', 'NEMA L21-20P'), ('nema-l21-30p', 'NEMA L21-30P'), ('nema-l22-30p', 'NEMA L22-30P')] * `California Style` - [('cs6361c', 'CS6361C'), ('cs6365c', 'CS6365C'), ('cs8165c', 'CS8165C'), ('cs8265c', 'CS8265C'), ('cs8365c', 'CS8365C'), ('cs8465c', 'CS8465C')] * `International/ITA` - [('ita-c', 'ITA Type C (CEE 7/16)'), ('ita-e', 'ITA Type E (CEE 7/6)'), ('ita-f', 'ITA Type F (CEE 7/4)'), ('ita-ef', 'ITA Type E/F (CEE 7/7)'), ('ita-g', 'ITA Type G (BS 1363)'), ('ita-h', 'ITA Type H'), ('ita-i', 'ITA Type I'), ('ita-j', 'ITA Type J'), ('ita-k', 'ITA Type K'), ('ita-l', 'ITA Type L (CEI 23-50)'), ('ita-m', 'ITA Type M (BS 546)'), ('ita-n', 'ITA Type N'), ('ita-o', 'ITA Type O')] * `USB` - [('usb-a', 'USB Type A'), ('usb-b', 'USB Type B'), ('usb-c', 'USB Type C'), ('usb-mini-a', 'USB Mini A'), ('usb-mini-b', 'USB Mini B'), ('usb-micro-a', 'USB Micro A'), ('usb-micro-b', 'USB Micro B'), ('usb-micro-ab', 'USB Micro AB'), ('usb-3-b', 'USB 3.0 Type B'), ('usb-3-micro-b', 'USB 3.0 Micro B')] * `Molex` - [('molex-micro-fit-1x2', 'Molex Micro-Fit 1x2'), ('molex-micro-fit-2x2', 'Molex Micro-Fit 2x2'), ('molex-micro-fit-2x4', 'Molex Micro-Fit 2x4')] * `DC` - [('dc-terminal', 'DC Terminal')] * `Proprietary` - [('saf-d-grid', 'Saf-D-Grid'), ('neutrik-powercon-20', 'Neutrik powerCON (20A)'), ('neutrik-powercon-32', 'Neutrik powerCON (32A)'), ('neutrik-powercon-true1', 'Neutrik powerCON TRUE1'), ('neutrik-powercon-true1-top', 'Neutrik powerCON TRUE1 TOP'), ('ubiquiti-smartpower', 'Ubiquiti SmartPower')] * `Other` - [('hardwired', 'Hardwired'), ('other', 'Other')] (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimPowerPortTemplatesList(context.Background()).AllocatedDraw(allocatedDraw).AllocatedDrawEmpty(allocatedDrawEmpty).AllocatedDrawGt(allocatedDrawGt).AllocatedDrawGte(allocatedDrawGte).AllocatedDrawLt(allocatedDrawLt).AllocatedDrawLte(allocatedDrawLte).AllocatedDrawN(allocatedDrawN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MaximumDraw(maximumDraw).MaximumDrawEmpty(maximumDrawEmpty).MaximumDrawGt(maximumDrawGt).MaximumDrawGte(maximumDrawGte).MaximumDrawLt(maximumDrawLt).MaximumDrawLte(maximumDrawLte).MaximumDrawN(maximumDrawN).ModifiedByRequest(modifiedByRequest).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimPowerPortTemplatesList(context.Background()).AllocatedDraw(allocatedDraw).AllocatedDrawEmpty(allocatedDrawEmpty).AllocatedDrawGt(allocatedDrawGt).AllocatedDrawGte(allocatedDrawGte).AllocatedDrawLt(allocatedDrawLt).AllocatedDrawLte(allocatedDrawLte).AllocatedDrawN(allocatedDrawN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MaximumDraw(maximumDraw).MaximumDrawEmpty(maximumDrawEmpty).MaximumDrawGt(maximumDrawGt).MaximumDrawGte(maximumDrawGte).MaximumDrawLt(maximumDrawLt).MaximumDrawLte(maximumDrawLte).MaximumDrawN(maximumDrawN).ModifiedByRequest(modifiedByRequest).ModuleTypeId(moduleTypeId).ModuleTypeIdN(moduleTypeIdN).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerPortTemplatesList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -24433,6 +25129,8 @@ Name | Type | Description  | Notes
  **descriptionNie** | **[]string** |  | 
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
+ **deviceTypeId** | **[]int32** | Device type (ID) | 
+ **deviceTypeIdN** | **[]int32** | Device type (ID) | 
  **devicetypeId** | **[]int32** | Device type (ID) | 
  **devicetypeIdN** | **[]int32** | Device type (ID) | 
  **id** | **[]int32** |  | 
@@ -24442,6 +25140,17 @@ Name | Type | Description  | Notes
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
+ **label** | **[]string** |  | 
+ **labelEmpty** | **bool** |  | 
+ **labelIc** | **[]string** |  | 
+ **labelIe** | **[]string** |  | 
+ **labelIew** | **[]string** |  | 
+ **labelIsw** | **[]string** |  | 
+ **labelN** | **[]string** |  | 
+ **labelNic** | **[]string** |  | 
+ **labelNie** | **[]string** |  | 
+ **labelNiew** | **[]string** |  | 
+ **labelNisw** | **[]string** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
@@ -24458,6 +25167,8 @@ Name | Type | Description  | Notes
  **maximumDrawLte** | **[]int32** |  | 
  **maximumDrawN** | **[]int32** |  | 
  **modifiedByRequest** | **string** |  | 
+ **moduleTypeId** | **[]int32** | Module type (ID) | 
+ **moduleTypeIdN** | **[]int32** | Module type (ID) | 
  **moduletypeId** | **[]int32** | Module type (ID) | 
  **moduletypeIdN** | **[]int32** | Module type (ID) | 
  **name** | **[]string** |  | 
@@ -24474,8 +25185,8 @@ Name | Type | Description  | Notes
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **q** | **string** | Search | 
- **type_** | **string** |  | 
- **typeN** | **string** |  | 
+ **type_** | [**DcimPowerPortTemplatesListTypeParameter**](DcimPowerPortTemplatesListTypeParameter.md) | * &#x60;IEC 60320&#x60; - [(&#39;iec-60320-c6&#39;, &#39;C6&#39;), (&#39;iec-60320-c8&#39;, &#39;C8&#39;), (&#39;iec-60320-c14&#39;, &#39;C14&#39;), (&#39;iec-60320-c16&#39;, &#39;C16&#39;), (&#39;iec-60320-c20&#39;, &#39;C20&#39;), (&#39;iec-60320-c22&#39;, &#39;C22&#39;)] * &#x60;IEC 60309&#x60; - [(&#39;iec-60309-p-n-e-4h&#39;, &#39;P+N+E 4H&#39;), (&#39;iec-60309-p-n-e-6h&#39;, &#39;P+N+E 6H&#39;), (&#39;iec-60309-p-n-e-9h&#39;, &#39;P+N+E 9H&#39;), (&#39;iec-60309-2p-e-4h&#39;, &#39;2P+E 4H&#39;), (&#39;iec-60309-2p-e-6h&#39;, &#39;2P+E 6H&#39;), (&#39;iec-60309-2p-e-9h&#39;, &#39;2P+E 9H&#39;), (&#39;iec-60309-3p-e-4h&#39;, &#39;3P+E 4H&#39;), (&#39;iec-60309-3p-e-6h&#39;, &#39;3P+E 6H&#39;), (&#39;iec-60309-3p-e-9h&#39;, &#39;3P+E 9H&#39;), (&#39;iec-60309-3p-n-e-4h&#39;, &#39;3P+N+E 4H&#39;), (&#39;iec-60309-3p-n-e-6h&#39;, &#39;3P+N+E 6H&#39;), (&#39;iec-60309-3p-n-e-9h&#39;, &#39;3P+N+E 9H&#39;)] * &#x60;IEC 60906-1&#x60; - [(&#39;iec-60906-1&#39;, &#39;IEC 60906-1&#39;), (&#39;nbr-14136-10a&#39;, &#39;2P+T 10A (NBR 14136)&#39;), (&#39;nbr-14136-20a&#39;, &#39;2P+T 20A (NBR 14136)&#39;)] * &#x60;NEMA (Non-locking)&#x60; - [(&#39;nema-1-15p&#39;, &#39;NEMA 1-15P&#39;), (&#39;nema-5-15p&#39;, &#39;NEMA 5-15P&#39;), (&#39;nema-5-20p&#39;, &#39;NEMA 5-20P&#39;), (&#39;nema-5-30p&#39;, &#39;NEMA 5-30P&#39;), (&#39;nema-5-50p&#39;, &#39;NEMA 5-50P&#39;), (&#39;nema-6-15p&#39;, &#39;NEMA 6-15P&#39;), (&#39;nema-6-20p&#39;, &#39;NEMA 6-20P&#39;), (&#39;nema-6-30p&#39;, &#39;NEMA 6-30P&#39;), (&#39;nema-6-50p&#39;, &#39;NEMA 6-50P&#39;), (&#39;nema-10-30p&#39;, &#39;NEMA 10-30P&#39;), (&#39;nema-10-50p&#39;, &#39;NEMA 10-50P&#39;), (&#39;nema-14-20p&#39;, &#39;NEMA 14-20P&#39;), (&#39;nema-14-30p&#39;, &#39;NEMA 14-30P&#39;), (&#39;nema-14-50p&#39;, &#39;NEMA 14-50P&#39;), (&#39;nema-14-60p&#39;, &#39;NEMA 14-60P&#39;), (&#39;nema-15-15p&#39;, &#39;NEMA 15-15P&#39;), (&#39;nema-15-20p&#39;, &#39;NEMA 15-20P&#39;), (&#39;nema-15-30p&#39;, &#39;NEMA 15-30P&#39;), (&#39;nema-15-50p&#39;, &#39;NEMA 15-50P&#39;), (&#39;nema-15-60p&#39;, &#39;NEMA 15-60P&#39;)] * &#x60;NEMA (Locking)&#x60; - [(&#39;nema-l1-15p&#39;, &#39;NEMA L1-15P&#39;), (&#39;nema-l5-15p&#39;, &#39;NEMA L5-15P&#39;), (&#39;nema-l5-20p&#39;, &#39;NEMA L5-20P&#39;), (&#39;nema-l5-30p&#39;, &#39;NEMA L5-30P&#39;), (&#39;nema-l5-50p&#39;, &#39;NEMA L5-50P&#39;), (&#39;nema-l6-15p&#39;, &#39;NEMA L6-15P&#39;), (&#39;nema-l6-20p&#39;, &#39;NEMA L6-20P&#39;), (&#39;nema-l6-30p&#39;, &#39;NEMA L6-30P&#39;), (&#39;nema-l6-50p&#39;, &#39;NEMA L6-50P&#39;), (&#39;nema-l10-30p&#39;, &#39;NEMA L10-30P&#39;), (&#39;nema-l14-20p&#39;, &#39;NEMA L14-20P&#39;), (&#39;nema-l14-30p&#39;, &#39;NEMA L14-30P&#39;), (&#39;nema-l14-50p&#39;, &#39;NEMA L14-50P&#39;), (&#39;nema-l14-60p&#39;, &#39;NEMA L14-60P&#39;), (&#39;nema-l15-20p&#39;, &#39;NEMA L15-20P&#39;), (&#39;nema-l15-30p&#39;, &#39;NEMA L15-30P&#39;), (&#39;nema-l15-50p&#39;, &#39;NEMA L15-50P&#39;), (&#39;nema-l15-60p&#39;, &#39;NEMA L15-60P&#39;), (&#39;nema-l21-20p&#39;, &#39;NEMA L21-20P&#39;), (&#39;nema-l21-30p&#39;, &#39;NEMA L21-30P&#39;), (&#39;nema-l22-30p&#39;, &#39;NEMA L22-30P&#39;)] * &#x60;California Style&#x60; - [(&#39;cs6361c&#39;, &#39;CS6361C&#39;), (&#39;cs6365c&#39;, &#39;CS6365C&#39;), (&#39;cs8165c&#39;, &#39;CS8165C&#39;), (&#39;cs8265c&#39;, &#39;CS8265C&#39;), (&#39;cs8365c&#39;, &#39;CS8365C&#39;), (&#39;cs8465c&#39;, &#39;CS8465C&#39;)] * &#x60;International/ITA&#x60; - [(&#39;ita-c&#39;, &#39;ITA Type C (CEE 7/16)&#39;), (&#39;ita-e&#39;, &#39;ITA Type E (CEE 7/6)&#39;), (&#39;ita-f&#39;, &#39;ITA Type F (CEE 7/4)&#39;), (&#39;ita-ef&#39;, &#39;ITA Type E/F (CEE 7/7)&#39;), (&#39;ita-g&#39;, &#39;ITA Type G (BS 1363)&#39;), (&#39;ita-h&#39;, &#39;ITA Type H&#39;), (&#39;ita-i&#39;, &#39;ITA Type I&#39;), (&#39;ita-j&#39;, &#39;ITA Type J&#39;), (&#39;ita-k&#39;, &#39;ITA Type K&#39;), (&#39;ita-l&#39;, &#39;ITA Type L (CEI 23-50)&#39;), (&#39;ita-m&#39;, &#39;ITA Type M (BS 546)&#39;), (&#39;ita-n&#39;, &#39;ITA Type N&#39;), (&#39;ita-o&#39;, &#39;ITA Type O&#39;)] * &#x60;USB&#x60; - [(&#39;usb-a&#39;, &#39;USB Type A&#39;), (&#39;usb-b&#39;, &#39;USB Type B&#39;), (&#39;usb-c&#39;, &#39;USB Type C&#39;), (&#39;usb-mini-a&#39;, &#39;USB Mini A&#39;), (&#39;usb-mini-b&#39;, &#39;USB Mini B&#39;), (&#39;usb-micro-a&#39;, &#39;USB Micro A&#39;), (&#39;usb-micro-b&#39;, &#39;USB Micro B&#39;), (&#39;usb-micro-ab&#39;, &#39;USB Micro AB&#39;), (&#39;usb-3-b&#39;, &#39;USB 3.0 Type B&#39;), (&#39;usb-3-micro-b&#39;, &#39;USB 3.0 Micro B&#39;)] * &#x60;Molex&#x60; - [(&#39;molex-micro-fit-1x2&#39;, &#39;Molex Micro-Fit 1x2&#39;), (&#39;molex-micro-fit-2x2&#39;, &#39;Molex Micro-Fit 2x2&#39;), (&#39;molex-micro-fit-2x4&#39;, &#39;Molex Micro-Fit 2x4&#39;)] * &#x60;DC&#x60; - [(&#39;dc-terminal&#39;, &#39;DC Terminal&#39;)] * &#x60;Proprietary&#x60; - [(&#39;saf-d-grid&#39;, &#39;Saf-D-Grid&#39;), (&#39;neutrik-powercon-20&#39;, &#39;Neutrik powerCON (20A)&#39;), (&#39;neutrik-powercon-32&#39;, &#39;Neutrik powerCON (32A)&#39;), (&#39;neutrik-powercon-true1&#39;, &#39;Neutrik powerCON TRUE1&#39;), (&#39;neutrik-powercon-true1-top&#39;, &#39;Neutrik powerCON TRUE1 TOP&#39;), (&#39;ubiquiti-smartpower&#39;, &#39;Ubiquiti SmartPower&#39;)] * &#x60;Other&#x60; - [(&#39;hardwired&#39;, &#39;Hardwired&#39;), (&#39;other&#39;, &#39;Other&#39;)] | 
+ **typeN** | [**DcimPowerPortTemplatesListTypeParameter**](DcimPowerPortTemplatesListTypeParameter.md) | * &#x60;IEC 60320&#x60; - [(&#39;iec-60320-c6&#39;, &#39;C6&#39;), (&#39;iec-60320-c8&#39;, &#39;C8&#39;), (&#39;iec-60320-c14&#39;, &#39;C14&#39;), (&#39;iec-60320-c16&#39;, &#39;C16&#39;), (&#39;iec-60320-c20&#39;, &#39;C20&#39;), (&#39;iec-60320-c22&#39;, &#39;C22&#39;)] * &#x60;IEC 60309&#x60; - [(&#39;iec-60309-p-n-e-4h&#39;, &#39;P+N+E 4H&#39;), (&#39;iec-60309-p-n-e-6h&#39;, &#39;P+N+E 6H&#39;), (&#39;iec-60309-p-n-e-9h&#39;, &#39;P+N+E 9H&#39;), (&#39;iec-60309-2p-e-4h&#39;, &#39;2P+E 4H&#39;), (&#39;iec-60309-2p-e-6h&#39;, &#39;2P+E 6H&#39;), (&#39;iec-60309-2p-e-9h&#39;, &#39;2P+E 9H&#39;), (&#39;iec-60309-3p-e-4h&#39;, &#39;3P+E 4H&#39;), (&#39;iec-60309-3p-e-6h&#39;, &#39;3P+E 6H&#39;), (&#39;iec-60309-3p-e-9h&#39;, &#39;3P+E 9H&#39;), (&#39;iec-60309-3p-n-e-4h&#39;, &#39;3P+N+E 4H&#39;), (&#39;iec-60309-3p-n-e-6h&#39;, &#39;3P+N+E 6H&#39;), (&#39;iec-60309-3p-n-e-9h&#39;, &#39;3P+N+E 9H&#39;)] * &#x60;IEC 60906-1&#x60; - [(&#39;iec-60906-1&#39;, &#39;IEC 60906-1&#39;), (&#39;nbr-14136-10a&#39;, &#39;2P+T 10A (NBR 14136)&#39;), (&#39;nbr-14136-20a&#39;, &#39;2P+T 20A (NBR 14136)&#39;)] * &#x60;NEMA (Non-locking)&#x60; - [(&#39;nema-1-15p&#39;, &#39;NEMA 1-15P&#39;), (&#39;nema-5-15p&#39;, &#39;NEMA 5-15P&#39;), (&#39;nema-5-20p&#39;, &#39;NEMA 5-20P&#39;), (&#39;nema-5-30p&#39;, &#39;NEMA 5-30P&#39;), (&#39;nema-5-50p&#39;, &#39;NEMA 5-50P&#39;), (&#39;nema-6-15p&#39;, &#39;NEMA 6-15P&#39;), (&#39;nema-6-20p&#39;, &#39;NEMA 6-20P&#39;), (&#39;nema-6-30p&#39;, &#39;NEMA 6-30P&#39;), (&#39;nema-6-50p&#39;, &#39;NEMA 6-50P&#39;), (&#39;nema-10-30p&#39;, &#39;NEMA 10-30P&#39;), (&#39;nema-10-50p&#39;, &#39;NEMA 10-50P&#39;), (&#39;nema-14-20p&#39;, &#39;NEMA 14-20P&#39;), (&#39;nema-14-30p&#39;, &#39;NEMA 14-30P&#39;), (&#39;nema-14-50p&#39;, &#39;NEMA 14-50P&#39;), (&#39;nema-14-60p&#39;, &#39;NEMA 14-60P&#39;), (&#39;nema-15-15p&#39;, &#39;NEMA 15-15P&#39;), (&#39;nema-15-20p&#39;, &#39;NEMA 15-20P&#39;), (&#39;nema-15-30p&#39;, &#39;NEMA 15-30P&#39;), (&#39;nema-15-50p&#39;, &#39;NEMA 15-50P&#39;), (&#39;nema-15-60p&#39;, &#39;NEMA 15-60P&#39;)] * &#x60;NEMA (Locking)&#x60; - [(&#39;nema-l1-15p&#39;, &#39;NEMA L1-15P&#39;), (&#39;nema-l5-15p&#39;, &#39;NEMA L5-15P&#39;), (&#39;nema-l5-20p&#39;, &#39;NEMA L5-20P&#39;), (&#39;nema-l5-30p&#39;, &#39;NEMA L5-30P&#39;), (&#39;nema-l5-50p&#39;, &#39;NEMA L5-50P&#39;), (&#39;nema-l6-15p&#39;, &#39;NEMA L6-15P&#39;), (&#39;nema-l6-20p&#39;, &#39;NEMA L6-20P&#39;), (&#39;nema-l6-30p&#39;, &#39;NEMA L6-30P&#39;), (&#39;nema-l6-50p&#39;, &#39;NEMA L6-50P&#39;), (&#39;nema-l10-30p&#39;, &#39;NEMA L10-30P&#39;), (&#39;nema-l14-20p&#39;, &#39;NEMA L14-20P&#39;), (&#39;nema-l14-30p&#39;, &#39;NEMA L14-30P&#39;), (&#39;nema-l14-50p&#39;, &#39;NEMA L14-50P&#39;), (&#39;nema-l14-60p&#39;, &#39;NEMA L14-60P&#39;), (&#39;nema-l15-20p&#39;, &#39;NEMA L15-20P&#39;), (&#39;nema-l15-30p&#39;, &#39;NEMA L15-30P&#39;), (&#39;nema-l15-50p&#39;, &#39;NEMA L15-50P&#39;), (&#39;nema-l15-60p&#39;, &#39;NEMA L15-60P&#39;), (&#39;nema-l21-20p&#39;, &#39;NEMA L21-20P&#39;), (&#39;nema-l21-30p&#39;, &#39;NEMA L21-30P&#39;), (&#39;nema-l22-30p&#39;, &#39;NEMA L22-30P&#39;)] * &#x60;California Style&#x60; - [(&#39;cs6361c&#39;, &#39;CS6361C&#39;), (&#39;cs6365c&#39;, &#39;CS6365C&#39;), (&#39;cs8165c&#39;, &#39;CS8165C&#39;), (&#39;cs8265c&#39;, &#39;CS8265C&#39;), (&#39;cs8365c&#39;, &#39;CS8365C&#39;), (&#39;cs8465c&#39;, &#39;CS8465C&#39;)] * &#x60;International/ITA&#x60; - [(&#39;ita-c&#39;, &#39;ITA Type C (CEE 7/16)&#39;), (&#39;ita-e&#39;, &#39;ITA Type E (CEE 7/6)&#39;), (&#39;ita-f&#39;, &#39;ITA Type F (CEE 7/4)&#39;), (&#39;ita-ef&#39;, &#39;ITA Type E/F (CEE 7/7)&#39;), (&#39;ita-g&#39;, &#39;ITA Type G (BS 1363)&#39;), (&#39;ita-h&#39;, &#39;ITA Type H&#39;), (&#39;ita-i&#39;, &#39;ITA Type I&#39;), (&#39;ita-j&#39;, &#39;ITA Type J&#39;), (&#39;ita-k&#39;, &#39;ITA Type K&#39;), (&#39;ita-l&#39;, &#39;ITA Type L (CEI 23-50)&#39;), (&#39;ita-m&#39;, &#39;ITA Type M (BS 546)&#39;), (&#39;ita-n&#39;, &#39;ITA Type N&#39;), (&#39;ita-o&#39;, &#39;ITA Type O&#39;)] * &#x60;USB&#x60; - [(&#39;usb-a&#39;, &#39;USB Type A&#39;), (&#39;usb-b&#39;, &#39;USB Type B&#39;), (&#39;usb-c&#39;, &#39;USB Type C&#39;), (&#39;usb-mini-a&#39;, &#39;USB Mini A&#39;), (&#39;usb-mini-b&#39;, &#39;USB Mini B&#39;), (&#39;usb-micro-a&#39;, &#39;USB Micro A&#39;), (&#39;usb-micro-b&#39;, &#39;USB Micro B&#39;), (&#39;usb-micro-ab&#39;, &#39;USB Micro AB&#39;), (&#39;usb-3-b&#39;, &#39;USB 3.0 Type B&#39;), (&#39;usb-3-micro-b&#39;, &#39;USB 3.0 Micro B&#39;)] * &#x60;Molex&#x60; - [(&#39;molex-micro-fit-1x2&#39;, &#39;Molex Micro-Fit 1x2&#39;), (&#39;molex-micro-fit-2x2&#39;, &#39;Molex Micro-Fit 2x2&#39;), (&#39;molex-micro-fit-2x4&#39;, &#39;Molex Micro-Fit 2x4&#39;)] * &#x60;DC&#x60; - [(&#39;dc-terminal&#39;, &#39;DC Terminal&#39;)] * &#x60;Proprietary&#x60; - [(&#39;saf-d-grid&#39;, &#39;Saf-D-Grid&#39;), (&#39;neutrik-powercon-20&#39;, &#39;Neutrik powerCON (20A)&#39;), (&#39;neutrik-powercon-32&#39;, &#39;Neutrik powerCON (32A)&#39;), (&#39;neutrik-powercon-true1&#39;, &#39;Neutrik powerCON TRUE1&#39;), (&#39;neutrik-powercon-true1-top&#39;, &#39;Neutrik powerCON TRUE1 TOP&#39;), (&#39;ubiquiti-smartpower&#39;, &#39;Ubiquiti SmartPower&#39;)] * &#x60;Other&#x60; - [(&#39;hardwired&#39;, &#39;Hardwired&#39;), (&#39;other&#39;, &#39;Other&#39;)] | 
  **updatedByRequest** | **string** |  | 
 
 ### Return type
@@ -24513,7 +25224,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -24585,7 +25296,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -24655,7 +25366,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -24727,11 +25438,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	powerPortRequest := []openapiclient.PowerPortRequest{*openapiclient.NewPowerPortRequest(*openapiclient.NewNestedDeviceRequest(), "Name_example")} // []PowerPortRequest | 
+	powerPortRequest := []openapiclient.PowerPortRequest{*openapiclient.NewPowerPortRequest(*openapiclient.NewDeviceRequest(), "Name_example")} // []PowerPortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -24791,11 +25502,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	powerPortRequest := []openapiclient.PowerPortRequest{*openapiclient.NewPowerPortRequest(*openapiclient.NewNestedDeviceRequest(), "Name_example")} // []PowerPortRequest | 
+	powerPortRequest := []openapiclient.PowerPortRequest{*openapiclient.NewPowerPortRequest(*openapiclient.NewDeviceRequest(), "Name_example")} // []PowerPortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -24857,11 +25568,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	powerPortRequest := []openapiclient.PowerPortRequest{*openapiclient.NewPowerPortRequest(*openapiclient.NewNestedDeviceRequest(), "Name_example")} // []PowerPortRequest | 
+	powerPortRequest := []openapiclient.PowerPortRequest{*openapiclient.NewPowerPortRequest(*openapiclient.NewDeviceRequest(), "Name_example")} // []PowerPortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -24923,11 +25634,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writablePowerPortRequest := *openapiclient.NewWritablePowerPortRequest(int32(123), "Name_example") // WritablePowerPortRequest | 
+	writablePowerPortRequest := *openapiclient.NewWritablePowerPortRequest(*openapiclient.NewDeviceRequest(), "Name_example") // WritablePowerPortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -24989,7 +25700,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -25042,7 +25753,7 @@ Name | Type | Description  | Notes
 
 ## DcimPowerPortsList
 
-> PaginatedPowerPortList DcimPowerPortsList(ctx).AllocatedDraw(allocatedDraw).AllocatedDrawEmpty(allocatedDrawEmpty).AllocatedDrawGt(allocatedDrawGt).AllocatedDrawGte(allocatedDrawGte).AllocatedDrawLt(allocatedDrawLt).AllocatedDrawLte(allocatedDrawLte).AllocatedDrawN(allocatedDrawN).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Connected(connected).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).MaximumDraw(maximumDraw).MaximumDrawEmpty(maximumDrawEmpty).MaximumDrawGt(maximumDrawGt).MaximumDrawGte(maximumDrawGte).MaximumDrawLt(maximumDrawLt).MaximumDrawLte(maximumDrawLte).MaximumDrawN(maximumDrawN).ModifiedByRequest(modifiedByRequest).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
+> PaginatedPowerPortList DcimPowerPortsList(ctx).AllocatedDraw(allocatedDraw).AllocatedDrawEmpty(allocatedDrawEmpty).AllocatedDrawGt(allocatedDrawGt).AllocatedDrawGte(allocatedDrawGte).AllocatedDrawLt(allocatedDrawLt).AllocatedDrawLte(allocatedDrawLte).AllocatedDrawN(allocatedDrawN).CableEnd(cableEnd).CableEndN(cableEndN).CableId(cableId).CableIdN(cableIdN).Cabled(cabled).Connected(connected).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).MarkConnected(markConnected).MaximumDraw(maximumDraw).MaximumDrawEmpty(maximumDrawEmpty).MaximumDrawGt(maximumDrawGt).MaximumDrawGte(maximumDrawGte).MaximumDrawLt(maximumDrawLt).MaximumDrawLte(maximumDrawLte).MaximumDrawN(maximumDrawN).ModifiedByRequest(modifiedByRequest).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
 
 
 
@@ -25058,7 +25769,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -25069,8 +25780,10 @@ func main() {
 	allocatedDrawLt := []int32{int32(123)} // []int32 |  (optional)
 	allocatedDrawLte := []int32{int32(123)} // []int32 |  (optional)
 	allocatedDrawN := []int32{int32(123)} // []int32 |  (optional)
-	cableEnd := "cableEnd_example" // string |  (optional)
-	cableEndN := "cableEndN_example" // string |  (optional)
+	cableEnd := openapiclient.circuits_circuit_terminations_list_cable_end_parameter("A") // CircuitsCircuitTerminationsListCableEndParameter | * `A` - A * `B` - B (optional)
+	cableEndN := openapiclient.circuits_circuit_terminations_list_cable_end_parameter("A") // CircuitsCircuitTerminationsListCableEndParameter | * `A` - A * `B` - B (optional)
+	cableId := []*int32{int32(123)} // []*int32 | Cable (ID) (optional)
+	cableIdN := []*int32{int32(123)} // []*int32 | Cable (ID) (optional)
 	cabled := true // bool |  (optional)
 	connected := true // bool |  (optional)
 	created := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -25096,10 +25809,6 @@ func main() {
 	deviceN := []*string{"Inner_example"} // []*string | Device (name) (optional)
 	deviceId := []int32{int32(123)} // []int32 | Device (ID) (optional)
 	deviceIdN := []int32{int32(123)} // []int32 | Device (ID) (optional)
-	deviceRole := []string{"Inner_example"} // []string | Device role (slug) (optional)
-	deviceRoleN := []string{"Inner_example"} // []string | Device role (slug) (optional)
-	deviceRoleId := []int32{int32(123)} // []int32 | Device role (ID) (optional)
-	deviceRoleIdN := []int32{int32(123)} // []int32 | Device role (ID) (optional)
 	deviceType := []string{"Inner_example"} // []string | Device type (model) (optional)
 	deviceTypeN := []string{"Inner_example"} // []string | Device type (model) (optional)
 	deviceTypeId := []int32{int32(123)} // []int32 | Device type (ID) (optional)
@@ -25134,6 +25843,7 @@ func main() {
 	locationN := []string{"Inner_example"} // []string | Location (slug) (optional)
 	locationId := []int32{int32(123)} // []int32 | Location (ID) (optional)
 	locationIdN := []int32{int32(123)} // []int32 | Location (ID) (optional)
+	markConnected := true // bool |  (optional)
 	maximumDraw := []int32{int32(123)} // []int32 |  (optional)
 	maximumDrawEmpty := true // bool |  (optional)
 	maximumDrawGt := []int32{int32(123)} // []int32 |  (optional)
@@ -25191,7 +25901,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimPowerPortsList(context.Background()).AllocatedDraw(allocatedDraw).AllocatedDrawEmpty(allocatedDrawEmpty).AllocatedDrawGt(allocatedDrawGt).AllocatedDrawGte(allocatedDrawGte).AllocatedDrawLt(allocatedDrawLt).AllocatedDrawLte(allocatedDrawLte).AllocatedDrawN(allocatedDrawN).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Connected(connected).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).MaximumDraw(maximumDraw).MaximumDrawEmpty(maximumDrawEmpty).MaximumDrawGt(maximumDrawGt).MaximumDrawGte(maximumDrawGte).MaximumDrawLt(maximumDrawLt).MaximumDrawLte(maximumDrawLte).MaximumDrawN(maximumDrawN).ModifiedByRequest(modifiedByRequest).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimPowerPortsList(context.Background()).AllocatedDraw(allocatedDraw).AllocatedDrawEmpty(allocatedDrawEmpty).AllocatedDrawGt(allocatedDrawGt).AllocatedDrawGte(allocatedDrawGte).AllocatedDrawLt(allocatedDrawLt).AllocatedDrawLte(allocatedDrawLte).AllocatedDrawN(allocatedDrawN).CableEnd(cableEnd).CableEndN(cableEndN).CableId(cableId).CableIdN(cableIdN).Cabled(cabled).Connected(connected).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).MarkConnected(markConnected).MaximumDraw(maximumDraw).MaximumDrawEmpty(maximumDrawEmpty).MaximumDrawGt(maximumDrawGt).MaximumDrawGte(maximumDrawGte).MaximumDrawLt(maximumDrawLt).MaximumDrawLte(maximumDrawLte).MaximumDrawN(maximumDrawN).ModifiedByRequest(modifiedByRequest).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimPowerPortsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -25219,8 +25929,10 @@ Name | Type | Description  | Notes
  **allocatedDrawLt** | **[]int32** |  | 
  **allocatedDrawLte** | **[]int32** |  | 
  **allocatedDrawN** | **[]int32** |  | 
- **cableEnd** | **string** |  | 
- **cableEndN** | **string** |  | 
+ **cableEnd** | [**CircuitsCircuitTerminationsListCableEndParameter**](CircuitsCircuitTerminationsListCableEndParameter.md) | * &#x60;A&#x60; - A * &#x60;B&#x60; - B | 
+ **cableEndN** | [**CircuitsCircuitTerminationsListCableEndParameter**](CircuitsCircuitTerminationsListCableEndParameter.md) | * &#x60;A&#x60; - A * &#x60;B&#x60; - B | 
+ **cableId** | **[]int32** | Cable (ID) | 
+ **cableIdN** | **[]int32** | Cable (ID) | 
  **cabled** | **bool** |  | 
  **connected** | **bool** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
@@ -25246,10 +25958,6 @@ Name | Type | Description  | Notes
  **deviceN** | **[]string** | Device (name) | 
  **deviceId** | **[]int32** | Device (ID) | 
  **deviceIdN** | **[]int32** | Device (ID) | 
- **deviceRole** | **[]string** | Device role (slug) | 
- **deviceRoleN** | **[]string** | Device role (slug) | 
- **deviceRoleId** | **[]int32** | Device role (ID) | 
- **deviceRoleIdN** | **[]int32** | Device role (ID) | 
  **deviceType** | **[]string** | Device type (model) | 
  **deviceTypeN** | **[]string** | Device type (model) | 
  **deviceTypeId** | **[]int32** | Device type (ID) | 
@@ -25284,6 +25992,7 @@ Name | Type | Description  | Notes
  **locationN** | **[]string** | Location (slug) | 
  **locationId** | **[]int32** | Location (ID) | 
  **locationIdN** | **[]int32** | Location (ID) | 
+ **markConnected** | **bool** |  | 
  **maximumDraw** | **[]int32** |  | 
  **maximumDrawEmpty** | **bool** |  | 
  **maximumDrawGt** | **[]int32** |  | 
@@ -25374,7 +26083,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -25446,7 +26155,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -25516,7 +26225,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -25586,12 +26295,12 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this power port.
-	writablePowerPortRequest := *openapiclient.NewWritablePowerPortRequest(int32(123), "Name_example") // WritablePowerPortRequest | 
+	writablePowerPortRequest := *openapiclient.NewWritablePowerPortRequest(*openapiclient.NewDeviceRequest(), "Name_example") // WritablePowerPortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -25658,11 +26367,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	rackReservationRequest := []openapiclient.RackReservationRequest{*openapiclient.NewRackReservationRequest(*openapiclient.NewNestedRackRequest("Name_example"), []int32{int32(123)}, *openapiclient.NewNestedUserRequest("Username_example"), "Description_example")} // []RackReservationRequest | 
+	rackReservationRequest := []openapiclient.RackReservationRequest{*openapiclient.NewRackReservationRequest(*openapiclient.NewRackRequest("Name_example"), []int32{int32(123)}, *openapiclient.NewUserRequest("Username_example"), "Description_example")} // []RackReservationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -25722,11 +26431,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	rackReservationRequest := []openapiclient.RackReservationRequest{*openapiclient.NewRackReservationRequest(*openapiclient.NewNestedRackRequest("Name_example"), []int32{int32(123)}, *openapiclient.NewNestedUserRequest("Username_example"), "Description_example")} // []RackReservationRequest | 
+	rackReservationRequest := []openapiclient.RackReservationRequest{*openapiclient.NewRackReservationRequest(*openapiclient.NewRackRequest("Name_example"), []int32{int32(123)}, *openapiclient.NewUserRequest("Username_example"), "Description_example")} // []RackReservationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -25788,11 +26497,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	rackReservationRequest := []openapiclient.RackReservationRequest{*openapiclient.NewRackReservationRequest(*openapiclient.NewNestedRackRequest("Name_example"), []int32{int32(123)}, *openapiclient.NewNestedUserRequest("Username_example"), "Description_example")} // []RackReservationRequest | 
+	rackReservationRequest := []openapiclient.RackReservationRequest{*openapiclient.NewRackReservationRequest(*openapiclient.NewRackRequest("Name_example"), []int32{int32(123)}, *openapiclient.NewUserRequest("Username_example"), "Description_example")} // []RackReservationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -25839,7 +26548,7 @@ Name | Type | Description  | Notes
 
 ## DcimRackReservationsCreate
 
-> RackReservation DcimRackReservationsCreate(ctx).WritableRackReservationRequest(writableRackReservationRequest).Execute()
+> RackReservation DcimRackReservationsCreate(ctx).RackReservationRequest(rackReservationRequest).Execute()
 
 
 
@@ -25854,15 +26563,15 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writableRackReservationRequest := *openapiclient.NewWritableRackReservationRequest(int32(123), []int32{int32(123)}, int32(123), "Description_example") // WritableRackReservationRequest | 
+	rackReservationRequest := *openapiclient.NewRackReservationRequest(*openapiclient.NewRackRequest("Name_example"), []int32{int32(123)}, *openapiclient.NewUserRequest("Username_example"), "Description_example") // RackReservationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimRackReservationsCreate(context.Background()).WritableRackReservationRequest(writableRackReservationRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimRackReservationsCreate(context.Background()).RackReservationRequest(rackReservationRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRackReservationsCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -25883,7 +26592,7 @@ Other parameters are passed through a pointer to a apiDcimRackReservationsCreate
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writableRackReservationRequest** | [**WritableRackReservationRequest**](WritableRackReservationRequest.md) |  | 
+ **rackReservationRequest** | [**RackReservationRequest**](RackReservationRequest.md) |  | 
 
 ### Return type
 
@@ -25920,7 +26629,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -25973,7 +26682,7 @@ Name | Type | Description  | Notes
 
 ## DcimRackReservationsList
 
-> PaginatedRackReservationList DcimRackReservationsList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Q(q).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).User(user).UserN(userN).UserId(userId).UserIdN(userIdN).Execute()
+> PaginatedRackReservationList DcimRackReservationsList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Q(q).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).Unit(unit).UpdatedByRequest(updatedByRequest).User(user).UserN(userN).UserId(userId).UserIdN(userIdN).Execute()
 
 
 
@@ -25989,7 +26698,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -26059,6 +26768,7 @@ func main() {
 	tenantGroupIdN := []int32{int32(123)} // []int32 | Tenant Group (ID) (optional)
 	tenantId := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
 	tenantIdN := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
+	unit := float32(8.14) // float32 |  (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	user := []string{"Inner_example"} // []string | User (name) (optional)
 	userN := []string{"Inner_example"} // []string | User (name) (optional)
@@ -26067,7 +26777,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimRackReservationsList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Q(q).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).User(user).UserN(userN).UserId(userId).UserIdN(userIdN).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimRackReservationsList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Q(q).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).Unit(unit).UpdatedByRequest(updatedByRequest).User(user).UserN(userN).UserId(userId).UserIdN(userIdN).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRackReservationsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -26154,6 +26864,7 @@ Name | Type | Description  | Notes
  **tenantGroupIdN** | **[]int32** | Tenant Group (ID) | 
  **tenantId** | **[]int32** | Tenant (ID) | 
  **tenantIdN** | **[]int32** | Tenant (ID) | 
+ **unit** | **float32** |  | 
  **updatedByRequest** | **string** |  | 
  **user** | **[]string** | User (name) | 
  **userN** | **[]string** | User (name) | 
@@ -26180,7 +26891,7 @@ Name | Type | Description  | Notes
 
 ## DcimRackReservationsPartialUpdate
 
-> RackReservation DcimRackReservationsPartialUpdate(ctx, id).PatchedWritableRackReservationRequest(patchedWritableRackReservationRequest).Execute()
+> RackReservation DcimRackReservationsPartialUpdate(ctx, id).PatchedRackReservationRequest(patchedRackReservationRequest).Execute()
 
 
 
@@ -26195,16 +26906,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this rack reservation.
-	patchedWritableRackReservationRequest := *openapiclient.NewPatchedWritableRackReservationRequest() // PatchedWritableRackReservationRequest |  (optional)
+	patchedRackReservationRequest := *openapiclient.NewPatchedRackReservationRequest() // PatchedRackReservationRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimRackReservationsPartialUpdate(context.Background(), id).PatchedWritableRackReservationRequest(patchedWritableRackReservationRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimRackReservationsPartialUpdate(context.Background(), id).PatchedRackReservationRequest(patchedRackReservationRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRackReservationsPartialUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -26230,7 +26941,7 @@ Other parameters are passed through a pointer to a apiDcimRackReservationsPartia
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **patchedWritableRackReservationRequest** | [**PatchedWritableRackReservationRequest**](PatchedWritableRackReservationRequest.md) |  | 
+ **patchedRackReservationRequest** | [**PatchedRackReservationRequest**](PatchedRackReservationRequest.md) |  | 
 
 ### Return type
 
@@ -26267,7 +26978,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -26322,7 +27033,7 @@ Name | Type | Description  | Notes
 
 ## DcimRackReservationsUpdate
 
-> RackReservation DcimRackReservationsUpdate(ctx, id).WritableRackReservationRequest(writableRackReservationRequest).Execute()
+> RackReservation DcimRackReservationsUpdate(ctx, id).RackReservationRequest(rackReservationRequest).Execute()
 
 
 
@@ -26337,16 +27048,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this rack reservation.
-	writableRackReservationRequest := *openapiclient.NewWritableRackReservationRequest(int32(123), []int32{int32(123)}, int32(123), "Description_example") // WritableRackReservationRequest | 
+	rackReservationRequest := *openapiclient.NewRackReservationRequest(*openapiclient.NewRackRequest("Name_example"), []int32{int32(123)}, *openapiclient.NewUserRequest("Username_example"), "Description_example") // RackReservationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimRackReservationsUpdate(context.Background(), id).WritableRackReservationRequest(writableRackReservationRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimRackReservationsUpdate(context.Background(), id).RackReservationRequest(rackReservationRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRackReservationsUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -26372,7 +27083,7 @@ Other parameters are passed through a pointer to a apiDcimRackReservationsUpdate
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **writableRackReservationRequest** | [**WritableRackReservationRequest**](WritableRackReservationRequest.md) |  | 
+ **rackReservationRequest** | [**RackReservationRequest**](RackReservationRequest.md) |  | 
 
 ### Return type
 
@@ -26409,7 +27120,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -26473,7 +27184,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -26539,7 +27250,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -26605,7 +27316,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -26671,7 +27382,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -26740,7 +27451,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -26952,7 +27663,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -27024,7 +27735,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -27094,7 +27805,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -27166,11 +27877,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	rackRequest := []openapiclient.RackRequest{*openapiclient.NewRackRequest("Name_example", *openapiclient.NewNestedSiteRequest("Name_example", "Slug_example"))} // []RackRequest | 
+	rackRequest := []openapiclient.RackRequest{*openapiclient.NewRackRequest("Name_example")} // []RackRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -27230,11 +27941,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	rackRequest := []openapiclient.RackRequest{*openapiclient.NewRackRequest("Name_example", *openapiclient.NewNestedSiteRequest("Name_example", "Slug_example"))} // []RackRequest | 
+	rackRequest := []openapiclient.RackRequest{*openapiclient.NewRackRequest("Name_example")} // []RackRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -27296,11 +28007,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	rackRequest := []openapiclient.RackRequest{*openapiclient.NewRackRequest("Name_example", *openapiclient.NewNestedSiteRequest("Name_example", "Slug_example"))} // []RackRequest | 
+	rackRequest := []openapiclient.RackRequest{*openapiclient.NewRackRequest("Name_example")} // []RackRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -27362,11 +28073,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writableRackRequest := *openapiclient.NewWritableRackRequest("Name_example", int32(123)) // WritableRackRequest | 
+	writableRackRequest := *openapiclient.NewWritableRackRequest("Name_example", *openapiclient.NewSiteRequest("Name_example", "Slug_example")) // WritableRackRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -27428,7 +28139,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -27496,7 +28207,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -27591,7 +28302,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -27697,8 +28408,8 @@ func main() {
 	outerDepthLt := []int32{int32(123)} // []int32 |  (optional)
 	outerDepthLte := []int32{int32(123)} // []int32 |  (optional)
 	outerDepthN := []int32{int32(123)} // []int32 |  (optional)
-	outerUnit := "outerUnit_example" // string |  (optional)
-	outerUnitN := "outerUnitN_example" // string |  (optional)
+	outerUnit := openapiclient.dcim_racks_list_outer_unit_parameter("in") // DcimRacksListOuterUnitParameter | * `mm` - Millimeters * `in` - Inches (optional)
+	outerUnitN := openapiclient.dcim_racks_list_outer_unit_parameter("in") // DcimRacksListOuterUnitParameter | * `mm` - Millimeters * `in` - Inches (optional)
 	outerWidth := []int32{int32(123)} // []int32 |  (optional)
 	outerWidthEmpty := true // bool |  (optional)
 	outerWidthGt := []int32{int32(123)} // []int32 |  (optional)
@@ -27770,8 +28481,8 @@ func main() {
 	weightLt := []float64{float64(123)} // []float64 |  (optional)
 	weightLte := []float64{float64(123)} // []float64 |  (optional)
 	weightN := []float64{float64(123)} // []float64 |  (optional)
-	weightUnit := "weightUnit_example" // string |  (optional)
-	weightUnitN := "weightUnitN_example" // string |  (optional)
+	weightUnit := openapiclient.dcim_device_types_list_weight_unit_parameter("g") // DcimDeviceTypesListWeightUnitParameter | * `kg` - Kilograms * `g` - Grams * `lb` - Pounds * `oz` - Ounces (optional)
+	weightUnitN := openapiclient.dcim_device_types_list_weight_unit_parameter("g") // DcimDeviceTypesListWeightUnitParameter | * `kg` - Kilograms * `g` - Grams * `lb` - Pounds * `oz` - Ounces (optional)
 	width := []int32{int32(123)} // []int32 | Rail-to-rail width (optional)
 	widthN := []int32{int32(123)} // []int32 | Rail-to-rail width (optional)
 
@@ -27900,8 +28611,8 @@ Name | Type | Description  | Notes
  **outerDepthLt** | **[]int32** |  | 
  **outerDepthLte** | **[]int32** |  | 
  **outerDepthN** | **[]int32** |  | 
- **outerUnit** | **string** |  | 
- **outerUnitN** | **string** |  | 
+ **outerUnit** | [**DcimRacksListOuterUnitParameter**](DcimRacksListOuterUnitParameter.md) | * &#x60;mm&#x60; - Millimeters * &#x60;in&#x60; - Inches | 
+ **outerUnitN** | [**DcimRacksListOuterUnitParameter**](DcimRacksListOuterUnitParameter.md) | * &#x60;mm&#x60; - Millimeters * &#x60;in&#x60; - Inches | 
  **outerWidth** | **[]int32** |  | 
  **outerWidthEmpty** | **bool** |  | 
  **outerWidthGt** | **[]int32** |  | 
@@ -27973,8 +28684,8 @@ Name | Type | Description  | Notes
  **weightLt** | **[]float64** |  | 
  **weightLte** | **[]float64** |  | 
  **weightN** | **[]float64** |  | 
- **weightUnit** | **string** |  | 
- **weightUnitN** | **string** |  | 
+ **weightUnit** | [**DcimDeviceTypesListWeightUnitParameter**](DcimDeviceTypesListWeightUnitParameter.md) | * &#x60;kg&#x60; - Kilograms * &#x60;g&#x60; - Grams * &#x60;lb&#x60; - Pounds * &#x60;oz&#x60; - Ounces | 
+ **weightUnitN** | [**DcimDeviceTypesListWeightUnitParameter**](DcimDeviceTypesListWeightUnitParameter.md) | * &#x60;kg&#x60; - Kilograms * &#x60;g&#x60; - Grams * &#x60;lb&#x60; - Pounds * &#x60;oz&#x60; - Ounces | 
  **width** | **[]int32** | Rail-to-rail width | 
  **widthN** | **[]int32** | Rail-to-rail width | 
 
@@ -28013,7 +28724,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -28085,7 +28796,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -28155,12 +28866,12 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this rack.
-	writableRackRequest := *openapiclient.NewWritableRackRequest("Name_example", int32(123)) // WritableRackRequest | 
+	writableRackRequest := *openapiclient.NewWritableRackRequest("Name_example", *openapiclient.NewSiteRequest("Name_example", "Slug_example")) // WritableRackRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -28227,11 +28938,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	rearPortTemplateRequest := []openapiclient.RearPortTemplateRequest{*openapiclient.NewRearPortTemplateRequest("Name_example", openapiclient.FrontPort_type_value("8p8c"))} // []RearPortTemplateRequest | 
+	rearPortTemplateRequest := []openapiclient.RearPortTemplateRequest{*openapiclient.NewRearPortTemplateRequest("Name_example")} // []RearPortTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -28291,11 +29002,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	rearPortTemplateRequest := []openapiclient.RearPortTemplateRequest{*openapiclient.NewRearPortTemplateRequest("Name_example", openapiclient.FrontPort_type_value("8p8c"))} // []RearPortTemplateRequest | 
+	rearPortTemplateRequest := []openapiclient.RearPortTemplateRequest{*openapiclient.NewRearPortTemplateRequest("Name_example")} // []RearPortTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -28357,11 +29068,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	rearPortTemplateRequest := []openapiclient.RearPortTemplateRequest{*openapiclient.NewRearPortTemplateRequest("Name_example", openapiclient.FrontPort_type_value("8p8c"))} // []RearPortTemplateRequest | 
+	rearPortTemplateRequest := []openapiclient.RearPortTemplateRequest{*openapiclient.NewRearPortTemplateRequest("Name_example")} // []RearPortTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -28423,7 +29134,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -28489,7 +29200,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -28542,7 +29253,7 @@ Name | Type | Description  | Notes
 
 ## DcimRearPortTemplatesList
 
-> PaginatedRearPortTemplateList DcimRearPortTemplatesList(ctx).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Positions(positions).PositionsEmpty(positionsEmpty).PositionsGt(positionsGt).PositionsGte(positionsGte).PositionsLt(positionsLt).PositionsLte(positionsLte).PositionsN(positionsN).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedRearPortTemplateList DcimRearPortTemplatesList(ctx).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).ModuleTypeId(moduleTypeId).ModuleTypeIdN(moduleTypeIdN).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Positions(positions).PositionsEmpty(positionsEmpty).PositionsGt(positionsGt).PositionsGte(positionsGte).PositionsLt(positionsLt).PositionsLte(positionsLte).PositionsN(positionsN).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -28558,7 +29269,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -28592,6 +29303,8 @@ func main() {
 	descriptionNie := []string{"Inner_example"} // []string |  (optional)
 	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
 	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
+	deviceTypeId := []*int32{int32(123)} // []*int32 | Device type (ID) (optional)
+	deviceTypeIdN := []*int32{int32(123)} // []*int32 | Device type (ID) (optional)
 	devicetypeId := []*int32{int32(123)} // []*int32 | Device type (ID) (optional)
 	devicetypeIdN := []*int32{int32(123)} // []*int32 | Device type (ID) (optional)
 	id := []int32{int32(123)} // []int32 |  (optional)
@@ -28601,6 +29314,17 @@ func main() {
 	idLt := []int32{int32(123)} // []int32 |  (optional)
 	idLte := []int32{int32(123)} // []int32 |  (optional)
 	idN := []int32{int32(123)} // []int32 |  (optional)
+	label := []string{"Inner_example"} // []string |  (optional)
+	labelEmpty := true // bool |  (optional)
+	labelIc := []string{"Inner_example"} // []string |  (optional)
+	labelIe := []string{"Inner_example"} // []string |  (optional)
+	labelIew := []string{"Inner_example"} // []string |  (optional)
+	labelIsw := []string{"Inner_example"} // []string |  (optional)
+	labelN := []string{"Inner_example"} // []string |  (optional)
+	labelNic := []string{"Inner_example"} // []string |  (optional)
+	labelNie := []string{"Inner_example"} // []string |  (optional)
+	labelNiew := []string{"Inner_example"} // []string |  (optional)
+	labelNisw := []string{"Inner_example"} // []string |  (optional)
 	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -28610,6 +29334,8 @@ func main() {
 	lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
 	limit := int32(56) // int32 | Number of results to return per page. (optional)
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+	moduleTypeId := []*int32{int32(123)} // []*int32 | Module type (ID) (optional)
+	moduleTypeIdN := []*int32{int32(123)} // []*int32 | Module type (ID) (optional)
 	moduletypeId := []*int32{int32(123)} // []*int32 | Module type (ID) (optional)
 	moduletypeIdN := []*int32{int32(123)} // []*int32 | Module type (ID) (optional)
 	name := []string{"Inner_example"} // []string |  (optional)
@@ -28639,7 +29365,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimRearPortTemplatesList(context.Background()).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Positions(positions).PositionsEmpty(positionsEmpty).PositionsGt(positionsGt).PositionsGte(positionsGte).PositionsLt(positionsLt).PositionsLte(positionsLte).PositionsN(positionsN).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimRearPortTemplatesList(context.Background()).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).DevicetypeId(devicetypeId).DevicetypeIdN(devicetypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).ModuleTypeId(moduleTypeId).ModuleTypeIdN(moduleTypeIdN).ModuletypeId(moduletypeId).ModuletypeIdN(moduletypeIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Positions(positions).PositionsEmpty(positionsEmpty).PositionsGt(positionsGt).PositionsGte(positionsGte).PositionsLt(positionsLt).PositionsLte(positionsLte).PositionsN(positionsN).Q(q).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRearPortTemplatesList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -28690,6 +29416,8 @@ Name | Type | Description  | Notes
  **descriptionNie** | **[]string** |  | 
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
+ **deviceTypeId** | **[]int32** | Device type (ID) | 
+ **deviceTypeIdN** | **[]int32** | Device type (ID) | 
  **devicetypeId** | **[]int32** | Device type (ID) | 
  **devicetypeIdN** | **[]int32** | Device type (ID) | 
  **id** | **[]int32** |  | 
@@ -28699,6 +29427,17 @@ Name | Type | Description  | Notes
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
+ **label** | **[]string** |  | 
+ **labelEmpty** | **bool** |  | 
+ **labelIc** | **[]string** |  | 
+ **labelIe** | **[]string** |  | 
+ **labelIew** | **[]string** |  | 
+ **labelIsw** | **[]string** |  | 
+ **labelN** | **[]string** |  | 
+ **labelNic** | **[]string** |  | 
+ **labelNie** | **[]string** |  | 
+ **labelNiew** | **[]string** |  | 
+ **labelNisw** | **[]string** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
@@ -28708,6 +29447,8 @@ Name | Type | Description  | Notes
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
  **modifiedByRequest** | **string** |  | 
+ **moduleTypeId** | **[]int32** | Module type (ID) | 
+ **moduleTypeIdN** | **[]int32** | Module type (ID) | 
  **moduletypeId** | **[]int32** | Module type (ID) | 
  **moduletypeIdN** | **[]int32** | Module type (ID) | 
  **name** | **[]string** |  | 
@@ -28770,7 +29511,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -28842,7 +29583,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -28912,7 +29653,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -28984,11 +29725,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	rearPortRequest := []openapiclient.RearPortRequest{*openapiclient.NewRearPortRequest(*openapiclient.NewNestedDeviceRequest(), "Name_example", openapiclient.FrontPort_type_value("8p8c"))} // []RearPortRequest | 
+	rearPortRequest := []openapiclient.RearPortRequest{*openapiclient.NewRearPortRequest(*openapiclient.NewDeviceRequest(), "Name_example", openapiclient.FrontPort_type_value("8p8c"))} // []RearPortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -29048,11 +29789,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	rearPortRequest := []openapiclient.RearPortRequest{*openapiclient.NewRearPortRequest(*openapiclient.NewNestedDeviceRequest(), "Name_example", openapiclient.FrontPort_type_value("8p8c"))} // []RearPortRequest | 
+	rearPortRequest := []openapiclient.RearPortRequest{*openapiclient.NewRearPortRequest(*openapiclient.NewDeviceRequest(), "Name_example", openapiclient.FrontPort_type_value("8p8c"))} // []RearPortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -29114,11 +29855,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	rearPortRequest := []openapiclient.RearPortRequest{*openapiclient.NewRearPortRequest(*openapiclient.NewNestedDeviceRequest(), "Name_example", openapiclient.FrontPort_type_value("8p8c"))} // []RearPortRequest | 
+	rearPortRequest := []openapiclient.RearPortRequest{*openapiclient.NewRearPortRequest(*openapiclient.NewDeviceRequest(), "Name_example", openapiclient.FrontPort_type_value("8p8c"))} // []RearPortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -29180,11 +29921,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writableRearPortRequest := *openapiclient.NewWritableRearPortRequest(int32(123), "Name_example", openapiclient.FrontPort_type_value("8p8c")) // WritableRearPortRequest | 
+	writableRearPortRequest := *openapiclient.NewWritableRearPortRequest(*openapiclient.NewDeviceRequest(), "Name_example", openapiclient.FrontPort_type_value("8p8c")) // WritableRearPortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -29246,7 +29987,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -29299,7 +30040,7 @@ Name | Type | Description  | Notes
 
 ## DcimRearPortsList
 
-> PaginatedRearPortList DcimRearPortsList(ctx).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Positions(positions).PositionsEmpty(positionsEmpty).PositionsGt(positionsGt).PositionsGte(positionsGte).PositionsLt(positionsLt).PositionsLte(positionsLte).PositionsN(positionsN).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
+> PaginatedRearPortList DcimRearPortsList(ctx).CableEnd(cableEnd).CableEndN(cableEndN).CableId(cableId).CableIdN(cableIdN).Cabled(cabled).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).MarkConnected(markConnected).ModifiedByRequest(modifiedByRequest).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Positions(positions).PositionsEmpty(positionsEmpty).PositionsGt(positionsGt).PositionsGte(positionsGte).PositionsLt(positionsLt).PositionsLte(positionsLte).PositionsN(positionsN).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
 
 
 
@@ -29315,12 +30056,14 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	cableEnd := "cableEnd_example" // string |  (optional)
-	cableEndN := "cableEndN_example" // string |  (optional)
+	cableEnd := openapiclient.circuits_circuit_terminations_list_cable_end_parameter("A") // CircuitsCircuitTerminationsListCableEndParameter | * `A` - A * `B` - B (optional)
+	cableEndN := openapiclient.circuits_circuit_terminations_list_cable_end_parameter("A") // CircuitsCircuitTerminationsListCableEndParameter | * `A` - A * `B` - B (optional)
+	cableId := []*int32{int32(123)} // []*int32 | Cable (ID) (optional)
+	cableIdN := []*int32{int32(123)} // []*int32 | Cable (ID) (optional)
 	cabled := true // bool |  (optional)
 	color := []string{"Inner_example"} // []string |  (optional)
 	colorEmpty := true // bool |  (optional)
@@ -29356,10 +30099,6 @@ func main() {
 	deviceN := []*string{"Inner_example"} // []*string | Device (name) (optional)
 	deviceId := []int32{int32(123)} // []int32 | Device (ID) (optional)
 	deviceIdN := []int32{int32(123)} // []int32 | Device (ID) (optional)
-	deviceRole := []string{"Inner_example"} // []string | Device role (slug) (optional)
-	deviceRoleN := []string{"Inner_example"} // []string | Device role (slug) (optional)
-	deviceRoleId := []int32{int32(123)} // []int32 | Device role (ID) (optional)
-	deviceRoleIdN := []int32{int32(123)} // []int32 | Device role (ID) (optional)
 	deviceType := []string{"Inner_example"} // []string | Device type (model) (optional)
 	deviceTypeN := []string{"Inner_example"} // []string | Device type (model) (optional)
 	deviceTypeId := []int32{int32(123)} // []int32 | Device type (ID) (optional)
@@ -29394,6 +30133,7 @@ func main() {
 	locationN := []string{"Inner_example"} // []string | Location (slug) (optional)
 	locationId := []int32{int32(123)} // []int32 | Location (ID) (optional)
 	locationIdN := []int32{int32(123)} // []int32 | Location (ID) (optional)
+	markConnected := true // bool |  (optional)
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	moduleId := []*int32{int32(123)} // []*int32 | Module (ID) (optional)
 	moduleIdN := []*int32{int32(123)} // []*int32 | Module (ID) (optional)
@@ -29451,7 +30191,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimRearPortsList(context.Background()).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceRole(deviceRole).DeviceRoleN(deviceRoleN).DeviceRoleId(deviceRoleId).DeviceRoleIdN(deviceRoleIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Positions(positions).PositionsEmpty(positionsEmpty).PositionsGt(positionsGt).PositionsGte(positionsGte).PositionsLt(positionsLt).PositionsLte(positionsLte).PositionsN(positionsN).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimRearPortsList(context.Background()).CableEnd(cableEnd).CableEndN(cableEndN).CableId(cableId).CableIdN(cableIdN).Cabled(cabled).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).DeviceType(deviceType).DeviceTypeN(deviceTypeN).DeviceTypeId(deviceTypeId).DeviceTypeIdN(deviceTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).MarkConnected(markConnected).ModifiedByRequest(modifiedByRequest).ModuleId(moduleId).ModuleIdN(moduleIdN).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Occupied(occupied).Offset(offset).Ordering(ordering).Positions(positions).PositionsEmpty(positionsEmpty).PositionsGt(positionsGt).PositionsGte(positionsGte).PositionsLt(positionsLt).PositionsLte(positionsLte).PositionsN(positionsN).Q(q).Rack(rack).RackN(rackN).RackId(rackId).RackIdN(rackIdN).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Role(role).RoleN(roleN).RoleId(roleId).RoleIdN(roleIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).VirtualChassis(virtualChassis).VirtualChassisN(virtualChassisN).VirtualChassisId(virtualChassisId).VirtualChassisIdN(virtualChassisIdN).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRearPortsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -29472,8 +30212,10 @@ Other parameters are passed through a pointer to a apiDcimRearPortsListRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cableEnd** | **string** |  | 
- **cableEndN** | **string** |  | 
+ **cableEnd** | [**CircuitsCircuitTerminationsListCableEndParameter**](CircuitsCircuitTerminationsListCableEndParameter.md) | * &#x60;A&#x60; - A * &#x60;B&#x60; - B | 
+ **cableEndN** | [**CircuitsCircuitTerminationsListCableEndParameter**](CircuitsCircuitTerminationsListCableEndParameter.md) | * &#x60;A&#x60; - A * &#x60;B&#x60; - B | 
+ **cableId** | **[]int32** | Cable (ID) | 
+ **cableIdN** | **[]int32** | Cable (ID) | 
  **cabled** | **bool** |  | 
  **color** | **[]string** |  | 
  **colorEmpty** | **bool** |  | 
@@ -29509,10 +30251,6 @@ Name | Type | Description  | Notes
  **deviceN** | **[]string** | Device (name) | 
  **deviceId** | **[]int32** | Device (ID) | 
  **deviceIdN** | **[]int32** | Device (ID) | 
- **deviceRole** | **[]string** | Device role (slug) | 
- **deviceRoleN** | **[]string** | Device role (slug) | 
- **deviceRoleId** | **[]int32** | Device role (ID) | 
- **deviceRoleIdN** | **[]int32** | Device role (ID) | 
  **deviceType** | **[]string** | Device type (model) | 
  **deviceTypeN** | **[]string** | Device type (model) | 
  **deviceTypeId** | **[]int32** | Device type (ID) | 
@@ -29547,6 +30285,7 @@ Name | Type | Description  | Notes
  **locationN** | **[]string** | Location (slug) | 
  **locationId** | **[]int32** | Location (ID) | 
  **locationIdN** | **[]int32** | Location (ID) | 
+ **markConnected** | **bool** |  | 
  **modifiedByRequest** | **string** |  | 
  **moduleId** | **[]int32** | Module (ID) | 
  **moduleIdN** | **[]int32** | Module (ID) | 
@@ -29637,7 +30376,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -29709,7 +30448,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -29779,7 +30518,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -29849,12 +30588,12 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this rear port.
-	writableRearPortRequest := *openapiclient.NewWritableRearPortRequest(int32(123), "Name_example", openapiclient.FrontPort_type_value("8p8c")) // WritableRearPortRequest | 
+	writableRearPortRequest := *openapiclient.NewWritableRearPortRequest(*openapiclient.NewDeviceRequest(), "Name_example", openapiclient.FrontPort_type_value("8p8c")) // WritableRearPortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -29921,7 +30660,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -29985,7 +30724,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -30051,7 +30790,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -30117,11 +30856,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writableRegionRequest := *openapiclient.NewWritableRegionRequest("Name_example", "Slug_example") // WritableRegionRequest | 
+	writableRegionRequest := *openapiclient.NewWritableRegionRequest("Name_example", "Slug_example", NullableInt32(123)) // WritableRegionRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -30183,7 +30922,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -30236,7 +30975,7 @@ Name | Type | Description  | Notes
 
 ## DcimRegionsList
 
-> PaginatedRegionList DcimRegionsList(ctx).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Parent(parent).ParentN(parentN).ParentId(parentId).ParentIdN(parentIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedRegionList DcimRegionsList(ctx).Ancestor(ancestor).AncestorN(ancestorN).AncestorId(ancestorId).AncestorIdN(ancestorIdN).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Parent(parent).ParentN(parentN).ParentId(parentId).ParentIdN(parentIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -30252,10 +30991,14 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
+	ancestor := []int32{int32(123)} // []int32 | Region (slug) (optional)
+	ancestorN := []int32{int32(123)} // []int32 | Region (slug) (optional)
+	ancestorId := []int32{int32(123)} // []int32 | Region (ID) (optional)
+	ancestorIdN := []int32{int32(123)} // []int32 | Region (ID) (optional)
 	contact := []int32{int32(123)} // []int32 | Contact (optional)
 	contactN := []int32{int32(123)} // []int32 | Contact (optional)
 	contactGroup := []int32{int32(123)} // []int32 | Contact group (optional)
@@ -30332,7 +31075,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimRegionsList(context.Background()).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Parent(parent).ParentN(parentN).ParentId(parentId).ParentIdN(parentIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimRegionsList(context.Background()).Ancestor(ancestor).AncestorN(ancestorN).AncestorId(ancestorId).AncestorIdN(ancestorIdN).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Parent(parent).ParentN(parentN).ParentId(parentId).ParentIdN(parentIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimRegionsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -30353,6 +31096,10 @@ Other parameters are passed through a pointer to a apiDcimRegionsListRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ancestor** | **[]int32** | Region (slug) | 
+ **ancestorN** | **[]int32** | Region (slug) | 
+ **ancestorId** | **[]int32** | Region (ID) | 
+ **ancestorIdN** | **[]int32** | Region (ID) | 
  **contact** | **[]int32** | Contact | 
  **contactN** | **[]int32** | Contact | 
  **contactGroup** | **[]int32** | Contact group | 
@@ -30462,7 +31209,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -30534,7 +31281,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -30604,12 +31351,12 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this region.
-	writableRegionRequest := *openapiclient.NewWritableRegionRequest("Name_example", "Slug_example") // WritableRegionRequest | 
+	writableRegionRequest := *openapiclient.NewWritableRegionRequest("Name_example", "Slug_example", NullableInt32(123)) // WritableRegionRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -30676,7 +31423,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -30740,7 +31487,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -30806,7 +31553,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -30872,11 +31619,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writableSiteGroupRequest := *openapiclient.NewWritableSiteGroupRequest("Name_example", "Slug_example") // WritableSiteGroupRequest | 
+	writableSiteGroupRequest := *openapiclient.NewWritableSiteGroupRequest("Name_example", "Slug_example", NullableInt32(123)) // WritableSiteGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -30938,7 +31685,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -30991,7 +31738,7 @@ Name | Type | Description  | Notes
 
 ## DcimSiteGroupsList
 
-> PaginatedSiteGroupList DcimSiteGroupsList(ctx).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Parent(parent).ParentN(parentN).ParentId(parentId).ParentIdN(parentIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedSiteGroupList DcimSiteGroupsList(ctx).Ancestor(ancestor).AncestorN(ancestorN).AncestorId(ancestorId).AncestorIdN(ancestorIdN).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Parent(parent).ParentN(parentN).ParentId(parentId).ParentIdN(parentIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -31007,10 +31754,14 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
+	ancestor := []int32{int32(123)} // []int32 | Site group (slug) (optional)
+	ancestorN := []int32{int32(123)} // []int32 | Site group (slug) (optional)
+	ancestorId := []int32{int32(123)} // []int32 | Site group (ID) (optional)
+	ancestorIdN := []int32{int32(123)} // []int32 | Site group (ID) (optional)
 	contact := []int32{int32(123)} // []int32 | Contact (optional)
 	contactN := []int32{int32(123)} // []int32 | Contact (optional)
 	contactGroup := []int32{int32(123)} // []int32 | Contact group (optional)
@@ -31087,7 +31838,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimSiteGroupsList(context.Background()).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Parent(parent).ParentN(parentN).ParentId(parentId).ParentIdN(parentIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimSiteGroupsList(context.Background()).Ancestor(ancestor).AncestorN(ancestorN).AncestorId(ancestorId).AncestorIdN(ancestorIdN).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Parent(parent).ParentN(parentN).ParentId(parentId).ParentIdN(parentIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimSiteGroupsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -31108,6 +31859,10 @@ Other parameters are passed through a pointer to a apiDcimSiteGroupsListRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ancestor** | **[]int32** | Site group (slug) | 
+ **ancestorN** | **[]int32** | Site group (slug) | 
+ **ancestorId** | **[]int32** | Site group (ID) | 
+ **ancestorIdN** | **[]int32** | Site group (ID) | 
  **contact** | **[]int32** | Contact | 
  **contactN** | **[]int32** | Contact | 
  **contactGroup** | **[]int32** | Contact group | 
@@ -31217,7 +31972,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -31289,7 +32044,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -31359,12 +32114,12 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this site group.
-	writableSiteGroupRequest := *openapiclient.NewWritableSiteGroupRequest("Name_example", "Slug_example") // WritableSiteGroupRequest | 
+	writableSiteGroupRequest := *openapiclient.NewWritableSiteGroupRequest("Name_example", "Slug_example", NullableInt32(123)) // WritableSiteGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -31431,7 +32186,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -31495,7 +32250,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -31561,7 +32316,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -31627,7 +32382,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -31693,7 +32448,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -31746,7 +32501,7 @@ Name | Type | Description  | Notes
 
 ## DcimSitesList
 
-> PaginatedSiteList DcimSitesList(ctx).Asn(asn).AsnN(asnN).AsnId(asnId).AsnIdN(asnIdN).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Facility(facility).FacilityEmpty(facilityEmpty).FacilityIc(facilityIc).FacilityIe(facilityIe).FacilityIew(facilityIew).FacilityIsw(facilityIsw).FacilityN(facilityN).FacilityNic(facilityNic).FacilityNie(facilityNie).FacilityNiew(facilityNiew).FacilityNisw(facilityNisw).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Latitude(latitude).LatitudeEmpty(latitudeEmpty).LatitudeGt(latitudeGt).LatitudeGte(latitudeGte).LatitudeLt(latitudeLt).LatitudeLte(latitudeLte).LatitudeN(latitudeN).Limit(limit).Longitude(longitude).LongitudeEmpty(longitudeEmpty).LongitudeGt(longitudeGt).LongitudeGte(longitudeGte).LongitudeLt(longitudeLt).LongitudeLte(longitudeLte).LongitudeN(longitudeN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedSiteList DcimSitesList(ctx).Asn(asn).AsnN(asnN).AsnId(asnId).AsnIdN(asnIdN).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Facility(facility).FacilityEmpty(facilityEmpty).FacilityIc(facilityIc).FacilityIe(facilityIe).FacilityIew(facilityIew).FacilityIsw(facilityIsw).FacilityN(facilityN).FacilityNic(facilityNic).FacilityNie(facilityNie).FacilityNiew(facilityNiew).FacilityNisw(facilityNisw).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Latitude(latitude).LatitudeEmpty(latitudeEmpty).LatitudeGt(latitudeGt).LatitudeGte(latitudeGte).LatitudeLt(latitudeLt).LatitudeLte(latitudeLte).LatitudeN(latitudeN).Limit(limit).Longitude(longitude).LongitudeEmpty(longitudeEmpty).LongitudeGt(longitudeGt).LongitudeGte(longitudeGte).LongitudeLt(longitudeLt).LongitudeLte(longitudeLte).LongitudeN(longitudeN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).TimeZone(timeZone).TimeZoneIc(timeZoneIc).TimeZoneIe(timeZoneIe).TimeZoneIew(timeZoneIew).TimeZoneIsw(timeZoneIsw).TimeZoneN(timeZoneN).TimeZoneNic(timeZoneNic).TimeZoneNie(timeZoneNie).TimeZoneNiew(timeZoneNiew).TimeZoneNisw(timeZoneNisw).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -31762,7 +32517,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -31881,11 +32636,21 @@ func main() {
 	tenantGroupIdN := []int32{int32(123)} // []int32 | Tenant Group (ID) (optional)
 	tenantId := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
 	tenantIdN := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
+	timeZone := []string{"Inner_example"} // []string |  (optional)
+	timeZoneIc := []string{"Inner_example"} // []string |  (optional)
+	timeZoneIe := []string{"Inner_example"} // []string |  (optional)
+	timeZoneIew := []string{"Inner_example"} // []string |  (optional)
+	timeZoneIsw := []string{"Inner_example"} // []string |  (optional)
+	timeZoneN := []string{"Inner_example"} // []string |  (optional)
+	timeZoneNic := []string{"Inner_example"} // []string |  (optional)
+	timeZoneNie := []string{"Inner_example"} // []string |  (optional)
+	timeZoneNiew := []string{"Inner_example"} // []string |  (optional)
+	timeZoneNisw := []string{"Inner_example"} // []string |  (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimSitesList(context.Background()).Asn(asn).AsnN(asnN).AsnId(asnId).AsnIdN(asnIdN).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Facility(facility).FacilityEmpty(facilityEmpty).FacilityIc(facilityIc).FacilityIe(facilityIe).FacilityIew(facilityIew).FacilityIsw(facilityIsw).FacilityN(facilityN).FacilityNic(facilityNic).FacilityNie(facilityNie).FacilityNiew(facilityNiew).FacilityNisw(facilityNisw).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Latitude(latitude).LatitudeEmpty(latitudeEmpty).LatitudeGt(latitudeGt).LatitudeGte(latitudeGte).LatitudeLt(latitudeLt).LatitudeLte(latitudeLte).LatitudeN(latitudeN).Limit(limit).Longitude(longitude).LongitudeEmpty(longitudeEmpty).LongitudeGt(longitudeGt).LongitudeGte(longitudeGte).LongitudeLt(longitudeLt).LongitudeLte(longitudeLte).LongitudeN(longitudeN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimSitesList(context.Background()).Asn(asn).AsnN(asnN).AsnId(asnId).AsnIdN(asnIdN).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Facility(facility).FacilityEmpty(facilityEmpty).FacilityIc(facilityIc).FacilityIe(facilityIe).FacilityIew(facilityIew).FacilityIsw(facilityIsw).FacilityN(facilityN).FacilityNic(facilityNic).FacilityNie(facilityNie).FacilityNiew(facilityNiew).FacilityNisw(facilityNisw).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Latitude(latitude).LatitudeEmpty(latitudeEmpty).LatitudeGt(latitudeGt).LatitudeGte(latitudeGte).LatitudeLt(latitudeLt).LatitudeLte(latitudeLte).LatitudeN(latitudeN).Limit(limit).Longitude(longitude).LongitudeEmpty(longitudeEmpty).LongitudeGt(longitudeGt).LongitudeGte(longitudeGte).LongitudeLt(longitudeLt).LongitudeLte(longitudeLte).LongitudeN(longitudeN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).TimeZone(timeZone).TimeZoneIc(timeZoneIc).TimeZoneIe(timeZoneIe).TimeZoneIew(timeZoneIew).TimeZoneIsw(timeZoneIsw).TimeZoneN(timeZoneN).TimeZoneNic(timeZoneNic).TimeZoneNie(timeZoneNie).TimeZoneNiew(timeZoneNiew).TimeZoneNisw(timeZoneNisw).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimSitesList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -32021,6 +32786,16 @@ Name | Type | Description  | Notes
  **tenantGroupIdN** | **[]int32** | Tenant Group (ID) | 
  **tenantId** | **[]int32** | Tenant (ID) | 
  **tenantIdN** | **[]int32** | Tenant (ID) | 
+ **timeZone** | **[]string** |  | 
+ **timeZoneIc** | **[]string** |  | 
+ **timeZoneIe** | **[]string** |  | 
+ **timeZoneIew** | **[]string** |  | 
+ **timeZoneIsw** | **[]string** |  | 
+ **timeZoneN** | **[]string** |  | 
+ **timeZoneNic** | **[]string** |  | 
+ **timeZoneNie** | **[]string** |  | 
+ **timeZoneNiew** | **[]string** |  | 
+ **timeZoneNisw** | **[]string** |  | 
  **updatedByRequest** | **string** |  | 
 
 ### Return type
@@ -32058,7 +32833,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -32130,7 +32905,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -32200,7 +32975,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -32272,7 +33047,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -32336,7 +33111,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -32402,7 +33177,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -32468,7 +33243,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -32534,7 +33309,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -32587,7 +33362,7 @@ Name | Type | Description  | Notes
 
 ## DcimVirtualChassisList
 
-> PaginatedVirtualChassisList DcimVirtualChassisList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Domain(domain).DomainEmpty(domainEmpty).DomainIc(domainIc).DomainIe(domainIe).DomainIew(domainIew).DomainIsw(domainIsw).DomainN(domainN).DomainNic(domainNic).DomainNie(domainNie).DomainNiew(domainNiew).DomainNisw(domainNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Master(master).MasterN(masterN).MasterId(masterId).MasterIdN(masterIdN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedVirtualChassisList DcimVirtualChassisList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Domain(domain).DomainEmpty(domainEmpty).DomainIc(domainIc).DomainIe(domainIe).DomainIew(domainIew).DomainIsw(domainIsw).DomainN(domainN).DomainNic(domainNic).DomainNie(domainNie).DomainNiew(domainNiew).DomainNisw(domainNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Master(master).MasterN(masterN).MasterId(masterId).MasterIdN(masterIdN).MemberCount(memberCount).MemberCountEmpty(memberCountEmpty).MemberCountGt(memberCountGt).MemberCountGte(memberCountGte).MemberCountLt(memberCountLt).MemberCountLte(memberCountLte).MemberCountN(memberCountN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -32603,7 +33378,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -32656,6 +33431,13 @@ func main() {
 	masterN := []*string{"Inner_example"} // []*string | Master (name) (optional)
 	masterId := []*int32{int32(123)} // []*int32 | Master (ID) (optional)
 	masterIdN := []*int32{int32(123)} // []*int32 | Master (ID) (optional)
+	memberCount := []int32{int32(123)} // []int32 |  (optional)
+	memberCountEmpty := true // bool |  (optional)
+	memberCountGt := []int32{int32(123)} // []int32 |  (optional)
+	memberCountGte := []int32{int32(123)} // []int32 |  (optional)
+	memberCountLt := []int32{int32(123)} // []int32 |  (optional)
+	memberCountLte := []int32{int32(123)} // []int32 |  (optional)
+	memberCountN := []int32{int32(123)} // []int32 |  (optional)
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	name := []string{"Inner_example"} // []string |  (optional)
 	nameEmpty := true // bool |  (optional)
@@ -32693,7 +33475,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimVirtualChassisList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Domain(domain).DomainEmpty(domainEmpty).DomainIc(domainIc).DomainIe(domainIe).DomainIew(domainIew).DomainIsw(domainIsw).DomainN(domainN).DomainNic(domainNic).DomainNie(domainNie).DomainNiew(domainNiew).DomainNisw(domainNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Master(master).MasterN(masterN).MasterId(masterId).MasterIdN(masterIdN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimVirtualChassisList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Domain(domain).DomainEmpty(domainEmpty).DomainIc(domainIc).DomainIe(domainIe).DomainIew(domainIew).DomainIsw(domainIsw).DomainN(domainN).DomainNic(domainNic).DomainNie(domainNie).DomainNiew(domainNiew).DomainNisw(domainNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Master(master).MasterN(masterN).MasterId(masterId).MasterIdN(masterIdN).MemberCount(memberCount).MemberCountEmpty(memberCountEmpty).MemberCountGt(memberCountGt).MemberCountGte(memberCountGte).MemberCountLt(memberCountLt).MemberCountLte(memberCountLte).MemberCountN(memberCountN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimVirtualChassisList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -32763,6 +33545,13 @@ Name | Type | Description  | Notes
  **masterN** | **[]string** | Master (name) | 
  **masterId** | **[]int32** | Master (ID) | 
  **masterIdN** | **[]int32** | Master (ID) | 
+ **memberCount** | **[]int32** |  | 
+ **memberCountEmpty** | **bool** |  | 
+ **memberCountGt** | **[]int32** |  | 
+ **memberCountGte** | **[]int32** |  | 
+ **memberCountLt** | **[]int32** |  | 
+ **memberCountLte** | **[]int32** |  | 
+ **memberCountN** | **[]int32** |  | 
  **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
@@ -32833,7 +33622,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -32905,7 +33694,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -32975,7 +33764,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -33047,11 +33836,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	virtualDeviceContextRequest := []openapiclient.VirtualDeviceContextRequest{*openapiclient.NewVirtualDeviceContextRequest("Name_example", *openapiclient.NewNestedDeviceRequest(), openapiclient.PatchedWritableVirtualDeviceContextRequest_status("active"))} // []VirtualDeviceContextRequest | 
+	virtualDeviceContextRequest := []openapiclient.VirtualDeviceContextRequest{*openapiclient.NewVirtualDeviceContextRequest("Name_example", *openapiclient.NewDeviceRequest(), openapiclient.PatchedWritableVirtualDeviceContextRequest_status("active"))} // []VirtualDeviceContextRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -33111,11 +33900,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	virtualDeviceContextRequest := []openapiclient.VirtualDeviceContextRequest{*openapiclient.NewVirtualDeviceContextRequest("Name_example", *openapiclient.NewNestedDeviceRequest(), openapiclient.PatchedWritableVirtualDeviceContextRequest_status("active"))} // []VirtualDeviceContextRequest | 
+	virtualDeviceContextRequest := []openapiclient.VirtualDeviceContextRequest{*openapiclient.NewVirtualDeviceContextRequest("Name_example", *openapiclient.NewDeviceRequest(), openapiclient.PatchedWritableVirtualDeviceContextRequest_status("active"))} // []VirtualDeviceContextRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -33177,11 +33966,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	virtualDeviceContextRequest := []openapiclient.VirtualDeviceContextRequest{*openapiclient.NewVirtualDeviceContextRequest("Name_example", *openapiclient.NewNestedDeviceRequest(), openapiclient.PatchedWritableVirtualDeviceContextRequest_status("active"))} // []VirtualDeviceContextRequest | 
+	virtualDeviceContextRequest := []openapiclient.VirtualDeviceContextRequest{*openapiclient.NewVirtualDeviceContextRequest("Name_example", *openapiclient.NewDeviceRequest(), openapiclient.PatchedWritableVirtualDeviceContextRequest_status("active"))} // []VirtualDeviceContextRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -33243,11 +34032,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writableVirtualDeviceContextRequest := *openapiclient.NewWritableVirtualDeviceContextRequest("Name_example", openapiclient.PatchedWritableVirtualDeviceContextRequest_status("active")) // WritableVirtualDeviceContextRequest | 
+	writableVirtualDeviceContextRequest := *openapiclient.NewWritableVirtualDeviceContextRequest("Name_example", *openapiclient.NewDeviceRequest(), openapiclient.PatchedWritableVirtualDeviceContextRequest_status("active")) // WritableVirtualDeviceContextRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -33309,7 +34098,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -33362,7 +34151,7 @@ Name | Type | Description  | Notes
 
 ## DcimVirtualDeviceContextsList
 
-> PaginatedVirtualDeviceContextList DcimVirtualDeviceContextsList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).HasPrimaryIp(hasPrimaryIp).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).PrimaryIp4Id(primaryIp4Id).PrimaryIp4IdN(primaryIp4IdN).PrimaryIp6Id(primaryIp6Id).PrimaryIp6IdN(primaryIp6IdN).Q(q).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedVirtualDeviceContextList DcimVirtualDeviceContextsList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).HasPrimaryIp(hasPrimaryIp).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Identifier(identifier).IdentifierEmpty(identifierEmpty).IdentifierGt(identifierGt).IdentifierGte(identifierGte).IdentifierLt(identifierLt).IdentifierLte(identifierLte).IdentifierN(identifierN).InterfaceId(interfaceId).InterfaceIdN(interfaceIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).PrimaryIp4Id(primaryIp4Id).PrimaryIp4IdN(primaryIp4IdN).PrimaryIp6Id(primaryIp6Id).PrimaryIp6IdN(primaryIp6IdN).Q(q).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -33378,7 +34167,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -33413,6 +34202,15 @@ func main() {
 	idLt := []int32{int32(123)} // []int32 |  (optional)
 	idLte := []int32{int32(123)} // []int32 |  (optional)
 	idN := []int32{int32(123)} // []int32 |  (optional)
+	identifier := []int32{int32(123)} // []int32 |  (optional)
+	identifierEmpty := true // bool |  (optional)
+	identifierGt := []int32{int32(123)} // []int32 |  (optional)
+	identifierGte := []int32{int32(123)} // []int32 |  (optional)
+	identifierLt := []int32{int32(123)} // []int32 |  (optional)
+	identifierLte := []int32{int32(123)} // []int32 |  (optional)
+	identifierN := []int32{int32(123)} // []int32 |  (optional)
+	interfaceId := []int32{int32(123)} // []int32 | Interface (ID) (optional)
+	interfaceIdN := []int32{int32(123)} // []int32 | Interface (ID) (optional)
 	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -33456,7 +34254,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DcimAPI.DcimVirtualDeviceContextsList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).HasPrimaryIp(hasPrimaryIp).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).PrimaryIp4Id(primaryIp4Id).PrimaryIp4IdN(primaryIp4IdN).PrimaryIp6Id(primaryIp6Id).PrimaryIp6IdN(primaryIp6IdN).Q(q).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.DcimAPI.DcimVirtualDeviceContextsList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).HasPrimaryIp(hasPrimaryIp).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Identifier(identifier).IdentifierEmpty(identifierEmpty).IdentifierGt(identifierGt).IdentifierGte(identifierGte).IdentifierLt(identifierLt).IdentifierLte(identifierLte).IdentifierN(identifierN).InterfaceId(interfaceId).InterfaceIdN(interfaceIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).PrimaryIp4Id(primaryIp4Id).PrimaryIp4IdN(primaryIp4IdN).PrimaryIp6Id(primaryIp6Id).PrimaryIp6IdN(primaryIp6IdN).Q(q).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DcimAPI.DcimVirtualDeviceContextsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -33508,6 +34306,15 @@ Name | Type | Description  | Notes
  **idLt** | **[]int32** |  | 
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
+ **identifier** | **[]int32** |  | 
+ **identifierEmpty** | **bool** |  | 
+ **identifierGt** | **[]int32** |  | 
+ **identifierGte** | **[]int32** |  | 
+ **identifierLt** | **[]int32** |  | 
+ **identifierLte** | **[]int32** |  | 
+ **identifierN** | **[]int32** |  | 
+ **interfaceId** | **[]int32** | Interface (ID) | 
+ **interfaceIdN** | **[]int32** | Interface (ID) | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
@@ -33584,7 +34391,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -33656,7 +34463,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -33726,12 +34533,12 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this virtual device context.
-	writableVirtualDeviceContextRequest := *openapiclient.NewWritableVirtualDeviceContextRequest("Name_example", openapiclient.PatchedWritableVirtualDeviceContextRequest_status("active")) // WritableVirtualDeviceContextRequest | 
+	writableVirtualDeviceContextRequest := *openapiclient.NewWritableVirtualDeviceContextRequest("Name_example", *openapiclient.NewDeviceRequest(), openapiclient.PatchedWritableVirtualDeviceContextRequest_status("active")) // WritableVirtualDeviceContextRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ContentTypes** | Pointer to **[]string** |  | [optional] 
+**ObjectTypes** | Pointer to **[]string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **LinkText** | Pointer to **string** | Jinja2 template code for link text | [optional] 
@@ -33,30 +33,30 @@ NewPatchedCustomLinkRequestWithDefaults instantiates a new PatchedCustomLinkRequ
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetContentTypes
+### GetObjectTypes
 
-`func (o *PatchedCustomLinkRequest) GetContentTypes() []string`
+`func (o *PatchedCustomLinkRequest) GetObjectTypes() []string`
 
-GetContentTypes returns the ContentTypes field if non-nil, zero value otherwise.
+GetObjectTypes returns the ObjectTypes field if non-nil, zero value otherwise.
 
-### GetContentTypesOk
+### GetObjectTypesOk
 
-`func (o *PatchedCustomLinkRequest) GetContentTypesOk() (*[]string, bool)`
+`func (o *PatchedCustomLinkRequest) GetObjectTypesOk() (*[]string, bool)`
 
-GetContentTypesOk returns a tuple with the ContentTypes field if it's non-nil, zero value otherwise
+GetObjectTypesOk returns a tuple with the ObjectTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetContentTypes
+### SetObjectTypes
 
-`func (o *PatchedCustomLinkRequest) SetContentTypes(v []string)`
+`func (o *PatchedCustomLinkRequest) SetObjectTypes(v []string)`
 
-SetContentTypes sets ContentTypes field to given value.
+SetObjectTypes sets ObjectTypes field to given value.
 
-### HasContentTypes
+### HasObjectTypes
 
-`func (o *PatchedCustomLinkRequest) HasContentTypes() bool`
+`func (o *PatchedCustomLinkRequest) HasObjectTypes() bool`
 
-HasContentTypes returns a boolean if a field has been set.
+HasObjectTypes returns a boolean if a field has been set.
 
 ### GetName
 

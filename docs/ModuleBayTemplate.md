@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
-**DeviceType** | [**NestedDeviceType**](NestedDeviceType.md) |  | 
+**DeviceType** | [**DeviceType**](DeviceType.md) |  | 
 **Name** | **string** | {module} is accepted as a substitution for the module bay position when attached to a module type. | 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Position** | Pointer to **string** | Identifier to reference when renaming installed components | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewModuleBayTemplate
 
-`func NewModuleBayTemplate(id int32, url string, display string, deviceType NestedDeviceType, name string, created NullableTime, lastUpdated NullableTime, ) *ModuleBayTemplate`
+`func NewModuleBayTemplate(id int32, url string, display string, deviceType DeviceType, name string, created NullableTime, lastUpdated NullableTime, ) *ModuleBayTemplate`
 
 NewModuleBayTemplate instantiates a new ModuleBayTemplate object
 This constructor will assign default values to properties that have it defined,
@@ -96,20 +96,20 @@ SetDisplay sets Display field to given value.
 
 ### GetDeviceType
 
-`func (o *ModuleBayTemplate) GetDeviceType() NestedDeviceType`
+`func (o *ModuleBayTemplate) GetDeviceType() DeviceType`
 
 GetDeviceType returns the DeviceType field if non-nil, zero value otherwise.
 
 ### GetDeviceTypeOk
 
-`func (o *ModuleBayTemplate) GetDeviceTypeOk() (*NestedDeviceType, bool)`
+`func (o *ModuleBayTemplate) GetDeviceTypeOk() (*DeviceType, bool)`
 
 GetDeviceTypeOk returns a tuple with the DeviceType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeviceType
 
-`func (o *ModuleBayTemplate) SetDeviceType(v NestedDeviceType)`
+`func (o *ModuleBayTemplate) SetDeviceType(v DeviceType)`
 
 SetDeviceType sets DeviceType field to given value.
 

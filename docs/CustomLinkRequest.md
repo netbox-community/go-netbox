@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ContentTypes** | **[]string** |  | 
+**ObjectTypes** | **[]string** |  | 
 **Name** | **string** |  | 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **LinkText** | **string** | Jinja2 template code for link text | 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewCustomLinkRequest
 
-`func NewCustomLinkRequest(contentTypes []string, name string, linkText string, linkUrl string, ) *CustomLinkRequest`
+`func NewCustomLinkRequest(objectTypes []string, name string, linkText string, linkUrl string, ) *CustomLinkRequest`
 
 NewCustomLinkRequest instantiates a new CustomLinkRequest object
 This constructor will assign default values to properties that have it defined,
@@ -33,24 +33,24 @@ NewCustomLinkRequestWithDefaults instantiates a new CustomLinkRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetContentTypes
+### GetObjectTypes
 
-`func (o *CustomLinkRequest) GetContentTypes() []string`
+`func (o *CustomLinkRequest) GetObjectTypes() []string`
 
-GetContentTypes returns the ContentTypes field if non-nil, zero value otherwise.
+GetObjectTypes returns the ObjectTypes field if non-nil, zero value otherwise.
 
-### GetContentTypesOk
+### GetObjectTypesOk
 
-`func (o *CustomLinkRequest) GetContentTypesOk() (*[]string, bool)`
+`func (o *CustomLinkRequest) GetObjectTypesOk() (*[]string, bool)`
 
-GetContentTypesOk returns a tuple with the ContentTypes field if it's non-nil, zero value otherwise
+GetObjectTypesOk returns a tuple with the ObjectTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetContentTypes
+### SetObjectTypes
 
-`func (o *CustomLinkRequest) SetContentTypes(v []string)`
+`func (o *CustomLinkRequest) SetObjectTypes(v []string)`
 
-SetContentTypes sets ContentTypes field to given value.
+SetObjectTypes sets ObjectTypes field to given value.
 
 
 ### GetName

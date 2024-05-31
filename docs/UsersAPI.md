@@ -62,7 +62,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -123,7 +123,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -187,7 +187,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -253,7 +253,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -319,7 +319,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -385,7 +385,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -438,7 +438,7 @@ Name | Type | Description  | Notes
 
 ## UsersGroupsList
 
-> PaginatedGroupList UsersGroupsList(ctx).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Execute()
+> PaginatedGroupList UsersGroupsList(ctx).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).PermissionId(permissionId).PermissionIdN(permissionIdN).Q(q).UserId(userId).UserIdN(userIdN).Execute()
 
 
 
@@ -453,10 +453,21 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
+	description := []string{"Inner_example"} // []string |  (optional)
+	descriptionEmpty := true // bool |  (optional)
+	descriptionIc := []string{"Inner_example"} // []string |  (optional)
+	descriptionIe := []string{"Inner_example"} // []string |  (optional)
+	descriptionIew := []string{"Inner_example"} // []string |  (optional)
+	descriptionIsw := []string{"Inner_example"} // []string |  (optional)
+	descriptionN := []string{"Inner_example"} // []string |  (optional)
+	descriptionNic := []string{"Inner_example"} // []string |  (optional)
+	descriptionNie := []string{"Inner_example"} // []string |  (optional)
+	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
+	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
 	id := []int32{int32(123)} // []int32 |  (optional)
 	idEmpty := true // bool |  (optional)
 	idGt := []int32{int32(123)} // []int32 |  (optional)
@@ -478,11 +489,15 @@ func main() {
 	nameNisw := []string{"Inner_example"} // []string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	permissionId := []int32{int32(123)} // []int32 | Permission (ID) (optional)
+	permissionIdN := []int32{int32(123)} // []int32 | Permission (ID) (optional)
 	q := "q_example" // string | Search (optional)
+	userId := []int32{int32(123)} // []int32 | User (ID) (optional)
+	userIdN := []int32{int32(123)} // []int32 | User (ID) (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UsersAPI.UsersGroupsList(context.Background()).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Execute()
+	resp, r, err := apiClient.UsersAPI.UsersGroupsList(context.Background()).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).PermissionId(permissionId).PermissionIdN(permissionIdN).Q(q).UserId(userId).UserIdN(userIdN).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersGroupsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -503,6 +518,17 @@ Other parameters are passed through a pointer to a apiUsersGroupsListRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **description** | **[]string** |  | 
+ **descriptionEmpty** | **bool** |  | 
+ **descriptionIc** | **[]string** |  | 
+ **descriptionIe** | **[]string** |  | 
+ **descriptionIew** | **[]string** |  | 
+ **descriptionIsw** | **[]string** |  | 
+ **descriptionN** | **[]string** |  | 
+ **descriptionNic** | **[]string** |  | 
+ **descriptionNie** | **[]string** |  | 
+ **descriptionNiew** | **[]string** |  | 
+ **descriptionNisw** | **[]string** |  | 
  **id** | **[]int32** |  | 
  **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
@@ -524,7 +550,11 @@ Name | Type | Description  | Notes
  **nameNisw** | **[]string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **permissionId** | **[]int32** | Permission (ID) | 
+ **permissionIdN** | **[]int32** | Permission (ID) | 
  **q** | **string** | Search | 
+ **userId** | **[]int32** | User (ID) | 
+ **userIdN** | **[]int32** | User (ID) | 
 
 ### Return type
 
@@ -561,7 +591,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -633,7 +663,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -703,7 +733,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -775,7 +805,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -839,7 +869,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -905,7 +935,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -956,7 +986,7 @@ Name | Type | Description  | Notes
 
 ## UsersPermissionsCreate
 
-> ObjectPermission UsersPermissionsCreate(ctx).WritableObjectPermissionRequest(writableObjectPermissionRequest).Execute()
+> ObjectPermission UsersPermissionsCreate(ctx).ObjectPermissionRequest(objectPermissionRequest).Execute()
 
 
 
@@ -971,15 +1001,15 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writableObjectPermissionRequest := *openapiclient.NewWritableObjectPermissionRequest("Name_example", []string{"ObjectTypes_example"}, []string{"Actions_example"}) // WritableObjectPermissionRequest | 
+	objectPermissionRequest := *openapiclient.NewObjectPermissionRequest("Name_example", []string{"ObjectTypes_example"}, []string{"Actions_example"}) // ObjectPermissionRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UsersAPI.UsersPermissionsCreate(context.Background()).WritableObjectPermissionRequest(writableObjectPermissionRequest).Execute()
+	resp, r, err := apiClient.UsersAPI.UsersPermissionsCreate(context.Background()).ObjectPermissionRequest(objectPermissionRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersPermissionsCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1000,7 +1030,7 @@ Other parameters are passed through a pointer to a apiUsersPermissionsCreateRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writableObjectPermissionRequest** | [**WritableObjectPermissionRequest**](WritableObjectPermissionRequest.md) |  | 
+ **objectPermissionRequest** | [**ObjectPermissionRequest**](ObjectPermissionRequest.md) |  | 
 
 ### Return type
 
@@ -1037,7 +1067,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -1090,7 +1120,7 @@ Name | Type | Description  | Notes
 
 ## UsersPermissionsList
 
-> PaginatedObjectPermissionList UsersPermissionsList(ctx).CanAdd(canAdd).CanChange(canChange).CanDelete(canDelete).CanView(canView).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Enabled(enabled).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).ObjectTypes(objectTypes).ObjectTypesN(objectTypesN).Offset(offset).Ordering(ordering).Q(q).User(user).UserN(userN).UserId(userId).UserIdN(userIdN).Execute()
+> PaginatedObjectPermissionList UsersPermissionsList(ctx).CanAdd(canAdd).CanChange(canChange).CanDelete(canDelete).CanView(canView).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Enabled(enabled).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).ObjectType(objectType).ObjectTypeIc(objectTypeIc).ObjectTypeIe(objectTypeIe).ObjectTypeIew(objectTypeIew).ObjectTypeIsw(objectTypeIsw).ObjectTypeN(objectTypeN).ObjectTypeNic(objectTypeNic).ObjectTypeNie(objectTypeNie).ObjectTypeNiew(objectTypeNiew).ObjectTypeNisw(objectTypeNisw).ObjectTypeId(objectTypeId).ObjectTypeIdN(objectTypeIdN).ObjectTypes(objectTypes).ObjectTypesN(objectTypesN).Offset(offset).Ordering(ordering).Q(q).User(user).UserN(userN).UserId(userId).UserIdN(userIdN).Execute()
 
 
 
@@ -1105,7 +1135,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -1148,6 +1178,18 @@ func main() {
 	nameNie := []string{"Inner_example"} // []string |  (optional)
 	nameNiew := []string{"Inner_example"} // []string |  (optional)
 	nameNisw := []string{"Inner_example"} // []string |  (optional)
+	objectType := "objectType_example" // string |  (optional)
+	objectTypeIc := "objectTypeIc_example" // string |  (optional)
+	objectTypeIe := "objectTypeIe_example" // string |  (optional)
+	objectTypeIew := "objectTypeIew_example" // string |  (optional)
+	objectTypeIsw := "objectTypeIsw_example" // string |  (optional)
+	objectTypeN := "objectTypeN_example" // string |  (optional)
+	objectTypeNic := "objectTypeNic_example" // string |  (optional)
+	objectTypeNie := "objectTypeNie_example" // string |  (optional)
+	objectTypeNiew := "objectTypeNiew_example" // string |  (optional)
+	objectTypeNisw := "objectTypeNisw_example" // string |  (optional)
+	objectTypeId := []int32{int32(123)} // []int32 |  (optional)
+	objectTypeIdN := []int32{int32(123)} // []int32 |  (optional)
 	objectTypes := []int32{int32(123)} // []int32 |  (optional)
 	objectTypesN := []int32{int32(123)} // []int32 |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
@@ -1160,7 +1202,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UsersAPI.UsersPermissionsList(context.Background()).CanAdd(canAdd).CanChange(canChange).CanDelete(canDelete).CanView(canView).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Enabled(enabled).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).ObjectTypes(objectTypes).ObjectTypesN(objectTypesN).Offset(offset).Ordering(ordering).Q(q).User(user).UserN(userN).UserId(userId).UserIdN(userIdN).Execute()
+	resp, r, err := apiClient.UsersAPI.UsersPermissionsList(context.Background()).CanAdd(canAdd).CanChange(canChange).CanDelete(canDelete).CanView(canView).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Enabled(enabled).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).ObjectType(objectType).ObjectTypeIc(objectTypeIc).ObjectTypeIe(objectTypeIe).ObjectTypeIew(objectTypeIew).ObjectTypeIsw(objectTypeIsw).ObjectTypeN(objectTypeN).ObjectTypeNic(objectTypeNic).ObjectTypeNie(objectTypeNie).ObjectTypeNiew(objectTypeNiew).ObjectTypeNisw(objectTypeNisw).ObjectTypeId(objectTypeId).ObjectTypeIdN(objectTypeIdN).ObjectTypes(objectTypes).ObjectTypesN(objectTypesN).Offset(offset).Ordering(ordering).Q(q).User(user).UserN(userN).UserId(userId).UserIdN(userIdN).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersPermissionsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1220,6 +1262,18 @@ Name | Type | Description  | Notes
  **nameNie** | **[]string** |  | 
  **nameNiew** | **[]string** |  | 
  **nameNisw** | **[]string** |  | 
+ **objectType** | **string** |  | 
+ **objectTypeIc** | **string** |  | 
+ **objectTypeIe** | **string** |  | 
+ **objectTypeIew** | **string** |  | 
+ **objectTypeIsw** | **string** |  | 
+ **objectTypeN** | **string** |  | 
+ **objectTypeNic** | **string** |  | 
+ **objectTypeNie** | **string** |  | 
+ **objectTypeNiew** | **string** |  | 
+ **objectTypeNisw** | **string** |  | 
+ **objectTypeId** | **[]int32** |  | 
+ **objectTypeIdN** | **[]int32** |  | 
  **objectTypes** | **[]int32** |  | 
  **objectTypesN** | **[]int32** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
@@ -1250,7 +1304,7 @@ Name | Type | Description  | Notes
 
 ## UsersPermissionsPartialUpdate
 
-> ObjectPermission UsersPermissionsPartialUpdate(ctx, id).PatchedWritableObjectPermissionRequest(patchedWritableObjectPermissionRequest).Execute()
+> ObjectPermission UsersPermissionsPartialUpdate(ctx, id).PatchedObjectPermissionRequest(patchedObjectPermissionRequest).Execute()
 
 
 
@@ -1265,16 +1319,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this permission.
-	patchedWritableObjectPermissionRequest := *openapiclient.NewPatchedWritableObjectPermissionRequest() // PatchedWritableObjectPermissionRequest |  (optional)
+	patchedObjectPermissionRequest := *openapiclient.NewPatchedObjectPermissionRequest() // PatchedObjectPermissionRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UsersAPI.UsersPermissionsPartialUpdate(context.Background(), id).PatchedWritableObjectPermissionRequest(patchedWritableObjectPermissionRequest).Execute()
+	resp, r, err := apiClient.UsersAPI.UsersPermissionsPartialUpdate(context.Background(), id).PatchedObjectPermissionRequest(patchedObjectPermissionRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersPermissionsPartialUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1300,7 +1354,7 @@ Other parameters are passed through a pointer to a apiUsersPermissionsPartialUpd
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **patchedWritableObjectPermissionRequest** | [**PatchedWritableObjectPermissionRequest**](PatchedWritableObjectPermissionRequest.md) |  | 
+ **patchedObjectPermissionRequest** | [**PatchedObjectPermissionRequest**](PatchedObjectPermissionRequest.md) |  | 
 
 ### Return type
 
@@ -1337,7 +1391,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -1392,7 +1446,7 @@ Name | Type | Description  | Notes
 
 ## UsersPermissionsUpdate
 
-> ObjectPermission UsersPermissionsUpdate(ctx, id).WritableObjectPermissionRequest(writableObjectPermissionRequest).Execute()
+> ObjectPermission UsersPermissionsUpdate(ctx, id).ObjectPermissionRequest(objectPermissionRequest).Execute()
 
 
 
@@ -1407,16 +1461,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this permission.
-	writableObjectPermissionRequest := *openapiclient.NewWritableObjectPermissionRequest("Name_example", []string{"ObjectTypes_example"}, []string{"Actions_example"}) // WritableObjectPermissionRequest | 
+	objectPermissionRequest := *openapiclient.NewObjectPermissionRequest("Name_example", []string{"ObjectTypes_example"}, []string{"Actions_example"}) // ObjectPermissionRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UsersAPI.UsersPermissionsUpdate(context.Background(), id).WritableObjectPermissionRequest(writableObjectPermissionRequest).Execute()
+	resp, r, err := apiClient.UsersAPI.UsersPermissionsUpdate(context.Background(), id).ObjectPermissionRequest(objectPermissionRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersPermissionsUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1442,7 +1496,7 @@ Other parameters are passed through a pointer to a apiUsersPermissionsUpdateRequ
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **writableObjectPermissionRequest** | [**WritableObjectPermissionRequest**](WritableObjectPermissionRequest.md) |  | 
+ **objectPermissionRequest** | [**ObjectPermissionRequest**](ObjectPermissionRequest.md) |  | 
 
 ### Return type
 
@@ -1479,11 +1533,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	tokenRequest := []openapiclient.TokenRequest{*openapiclient.NewTokenRequest(*openapiclient.NewNestedUserRequest("Username_example"))} // []TokenRequest | 
+	tokenRequest := []openapiclient.TokenRequest{*openapiclient.NewTokenRequest(*openapiclient.NewUserRequest("Username_example"))} // []TokenRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1543,11 +1597,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	tokenRequest := []openapiclient.TokenRequest{*openapiclient.NewTokenRequest(*openapiclient.NewNestedUserRequest("Username_example"))} // []TokenRequest | 
+	tokenRequest := []openapiclient.TokenRequest{*openapiclient.NewTokenRequest(*openapiclient.NewUserRequest("Username_example"))} // []TokenRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1609,11 +1663,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	tokenRequest := []openapiclient.TokenRequest{*openapiclient.NewTokenRequest(*openapiclient.NewNestedUserRequest("Username_example"))} // []TokenRequest | 
+	tokenRequest := []openapiclient.TokenRequest{*openapiclient.NewTokenRequest(*openapiclient.NewUserRequest("Username_example"))} // []TokenRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1660,7 +1714,7 @@ Name | Type | Description  | Notes
 
 ## UsersTokensCreate
 
-> Token UsersTokensCreate(ctx).WritableTokenRequest(writableTokenRequest).Execute()
+> Token UsersTokensCreate(ctx).TokenRequest(tokenRequest).Execute()
 
 
 
@@ -1675,15 +1729,15 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writableTokenRequest := *openapiclient.NewWritableTokenRequest(int32(123)) // WritableTokenRequest | 
+	tokenRequest := *openapiclient.NewTokenRequest(*openapiclient.NewUserRequest("Username_example")) // TokenRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UsersAPI.UsersTokensCreate(context.Background()).WritableTokenRequest(writableTokenRequest).Execute()
+	resp, r, err := apiClient.UsersAPI.UsersTokensCreate(context.Background()).TokenRequest(tokenRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersTokensCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1704,7 +1758,7 @@ Other parameters are passed through a pointer to a apiUsersTokensCreateRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writableTokenRequest** | [**WritableTokenRequest**](WritableTokenRequest.md) |  | 
+ **tokenRequest** | [**TokenRequest**](TokenRequest.md) |  | 
 
 ### Return type
 
@@ -1741,7 +1795,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -1794,7 +1848,7 @@ Name | Type | Description  | Notes
 
 ## UsersTokensList
 
-> PaginatedTokenList UsersTokensList(ctx).Created(created).CreatedGte(createdGte).CreatedLte(createdLte).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Expires(expires).ExpiresGte(expiresGte).ExpiresLte(expiresLte).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Key(key).KeyEmpty(keyEmpty).KeyIc(keyIc).KeyIe(keyIe).KeyIew(keyIew).KeyIsw(keyIsw).KeyN(keyN).KeyNic(keyNic).KeyNie(keyNie).KeyNiew(keyNiew).KeyNisw(keyNisw).Limit(limit).Offset(offset).Ordering(ordering).Q(q).User(user).UserN(userN).UserId(userId).UserIdN(userIdN).WriteEnabled(writeEnabled).Execute()
+> PaginatedTokenList UsersTokensList(ctx).Created(created).CreatedGte(createdGte).CreatedLte(createdLte).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Expires(expires).ExpiresGte(expiresGte).ExpiresLte(expiresLte).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Key(key).KeyEmpty(keyEmpty).KeyIc(keyIc).KeyIe(keyIe).KeyIew(keyIew).KeyIsw(keyIsw).KeyN(keyN).KeyNic(keyNic).KeyNie(keyNie).KeyNiew(keyNiew).KeyNisw(keyNisw).LastUsed(lastUsed).LastUsedEmpty(lastUsedEmpty).LastUsedGt(lastUsedGt).LastUsedGte(lastUsedGte).LastUsedLt(lastUsedLt).LastUsedLte(lastUsedLte).LastUsedN(lastUsedN).Limit(limit).Offset(offset).Ordering(ordering).Q(q).User(user).UserN(userN).UserId(userId).UserIdN(userIdN).WriteEnabled(writeEnabled).Execute()
 
 
 
@@ -1810,7 +1864,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -1849,6 +1903,13 @@ func main() {
 	keyNie := []string{"Inner_example"} // []string |  (optional)
 	keyNiew := []string{"Inner_example"} // []string |  (optional)
 	keyNisw := []string{"Inner_example"} // []string |  (optional)
+	lastUsed := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUsedEmpty := true // bool |  (optional)
+	lastUsedGt := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUsedGte := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUsedLt := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUsedLte := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastUsedN := []time.Time{time.Now()} // []time.Time |  (optional)
 	limit := int32(56) // int32 | Number of results to return per page. (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
@@ -1861,7 +1922,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UsersAPI.UsersTokensList(context.Background()).Created(created).CreatedGte(createdGte).CreatedLte(createdLte).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Expires(expires).ExpiresGte(expiresGte).ExpiresLte(expiresLte).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Key(key).KeyEmpty(keyEmpty).KeyIc(keyIc).KeyIe(keyIe).KeyIew(keyIew).KeyIsw(keyIsw).KeyN(keyN).KeyNic(keyNic).KeyNie(keyNie).KeyNiew(keyNiew).KeyNisw(keyNisw).Limit(limit).Offset(offset).Ordering(ordering).Q(q).User(user).UserN(userN).UserId(userId).UserIdN(userIdN).WriteEnabled(writeEnabled).Execute()
+	resp, r, err := apiClient.UsersAPI.UsersTokensList(context.Background()).Created(created).CreatedGte(createdGte).CreatedLte(createdLte).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Expires(expires).ExpiresGte(expiresGte).ExpiresLte(expiresLte).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Key(key).KeyEmpty(keyEmpty).KeyIc(keyIc).KeyIe(keyIe).KeyIew(keyIew).KeyIsw(keyIsw).KeyN(keyN).KeyNic(keyNic).KeyNie(keyNie).KeyNiew(keyNiew).KeyNisw(keyNisw).LastUsed(lastUsed).LastUsedEmpty(lastUsedEmpty).LastUsedGt(lastUsedGt).LastUsedGte(lastUsedGte).LastUsedLt(lastUsedLt).LastUsedLte(lastUsedLte).LastUsedN(lastUsedN).Limit(limit).Offset(offset).Ordering(ordering).Q(q).User(user).UserN(userN).UserId(userId).UserIdN(userIdN).WriteEnabled(writeEnabled).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersTokensList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1917,6 +1978,13 @@ Name | Type | Description  | Notes
  **keyNie** | **[]string** |  | 
  **keyNiew** | **[]string** |  | 
  **keyNisw** | **[]string** |  | 
+ **lastUsed** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUsedEmpty** | **bool** |  | 
+ **lastUsedGt** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUsedGte** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUsedLt** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUsedLte** | [**[]time.Time**](time.Time.md) |  | 
+ **lastUsedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
@@ -1947,7 +2015,7 @@ Name | Type | Description  | Notes
 
 ## UsersTokensPartialUpdate
 
-> Token UsersTokensPartialUpdate(ctx, id).PatchedWritableTokenRequest(patchedWritableTokenRequest).Execute()
+> Token UsersTokensPartialUpdate(ctx, id).PatchedTokenRequest(patchedTokenRequest).Execute()
 
 
 
@@ -1962,16 +2030,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this token.
-	patchedWritableTokenRequest := *openapiclient.NewPatchedWritableTokenRequest() // PatchedWritableTokenRequest |  (optional)
+	patchedTokenRequest := *openapiclient.NewPatchedTokenRequest() // PatchedTokenRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UsersAPI.UsersTokensPartialUpdate(context.Background(), id).PatchedWritableTokenRequest(patchedWritableTokenRequest).Execute()
+	resp, r, err := apiClient.UsersAPI.UsersTokensPartialUpdate(context.Background(), id).PatchedTokenRequest(patchedTokenRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersTokensPartialUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1997,7 +2065,7 @@ Other parameters are passed through a pointer to a apiUsersTokensPartialUpdateRe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **patchedWritableTokenRequest** | [**PatchedWritableTokenRequest**](PatchedWritableTokenRequest.md) |  | 
+ **patchedTokenRequest** | [**PatchedTokenRequest**](PatchedTokenRequest.md) |  | 
 
 ### Return type
 
@@ -2034,7 +2102,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -2100,7 +2168,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -2155,7 +2223,7 @@ Name | Type | Description  | Notes
 
 ## UsersTokensUpdate
 
-> Token UsersTokensUpdate(ctx, id).WritableTokenRequest(writableTokenRequest).Execute()
+> Token UsersTokensUpdate(ctx, id).TokenRequest(tokenRequest).Execute()
 
 
 
@@ -2170,16 +2238,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this token.
-	writableTokenRequest := *openapiclient.NewWritableTokenRequest(int32(123)) // WritableTokenRequest | 
+	tokenRequest := *openapiclient.NewTokenRequest(*openapiclient.NewUserRequest("Username_example")) // TokenRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UsersAPI.UsersTokensUpdate(context.Background(), id).WritableTokenRequest(writableTokenRequest).Execute()
+	resp, r, err := apiClient.UsersAPI.UsersTokensUpdate(context.Background(), id).TokenRequest(tokenRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersTokensUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2205,7 +2273,7 @@ Other parameters are passed through a pointer to a apiUsersTokensUpdateRequest s
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **writableTokenRequest** | [**WritableTokenRequest**](WritableTokenRequest.md) |  | 
+ **tokenRequest** | [**TokenRequest**](TokenRequest.md) |  | 
 
 ### Return type
 
@@ -2242,11 +2310,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	userRequest := []openapiclient.UserRequest{*openapiclient.NewUserRequest("Username_example", "Password_example")} // []UserRequest | 
+	userRequest := []openapiclient.UserRequest{*openapiclient.NewUserRequest("Username_example")} // []UserRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2306,11 +2374,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	userRequest := []openapiclient.UserRequest{*openapiclient.NewUserRequest("Username_example", "Password_example")} // []UserRequest | 
+	userRequest := []openapiclient.UserRequest{*openapiclient.NewUserRequest("Username_example")} // []UserRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2372,11 +2440,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	userRequest := []openapiclient.UserRequest{*openapiclient.NewUserRequest("Username_example", "Password_example")} // []UserRequest | 
+	userRequest := []openapiclient.UserRequest{*openapiclient.NewUserRequest("Username_example")} // []UserRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2423,7 +2491,7 @@ Name | Type | Description  | Notes
 
 ## UsersUsersCreate
 
-> User UsersUsersCreate(ctx).WritableUserRequest(writableUserRequest).Execute()
+> User UsersUsersCreate(ctx).UserRequest(userRequest).Execute()
 
 
 
@@ -2438,15 +2506,15 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writableUserRequest := *openapiclient.NewWritableUserRequest("Username_example", "Password_example") // WritableUserRequest | 
+	userRequest := *openapiclient.NewUserRequest("Username_example") // UserRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UsersAPI.UsersUsersCreate(context.Background()).WritableUserRequest(writableUserRequest).Execute()
+	resp, r, err := apiClient.UsersAPI.UsersUsersCreate(context.Background()).UserRequest(userRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersUsersCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2467,7 +2535,7 @@ Other parameters are passed through a pointer to a apiUsersUsersCreateRequest st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writableUserRequest** | [**WritableUserRequest**](WritableUserRequest.md) |  | 
+ **userRequest** | [**UserRequest**](UserRequest.md) |  | 
 
 ### Return type
 
@@ -2504,7 +2572,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -2557,7 +2625,7 @@ Name | Type | Description  | Notes
 
 ## UsersUsersList
 
-> PaginatedUserList UsersUsersList(ctx).Email(email).EmailEmpty(emailEmpty).EmailIc(emailIc).EmailIe(emailIe).EmailIew(emailIew).EmailIsw(emailIsw).EmailN(emailN).EmailNic(emailNic).EmailNie(emailNie).EmailNiew(emailNiew).EmailNisw(emailNisw).FirstName(firstName).FirstNameEmpty(firstNameEmpty).FirstNameIc(firstNameIc).FirstNameIe(firstNameIe).FirstNameIew(firstNameIew).FirstNameIsw(firstNameIsw).FirstNameN(firstNameN).FirstNameNic(firstNameNic).FirstNameNie(firstNameNie).FirstNameNiew(firstNameNiew).FirstNameNisw(firstNameNisw).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsActive(isActive).IsStaff(isStaff).IsSuperuser(isSuperuser).LastName(lastName).LastNameEmpty(lastNameEmpty).LastNameIc(lastNameIc).LastNameIe(lastNameIe).LastNameIew(lastNameIew).LastNameIsw(lastNameIsw).LastNameN(lastNameN).LastNameNic(lastNameNic).LastNameNie(lastNameNie).LastNameNiew(lastNameNiew).LastNameNisw(lastNameNisw).Limit(limit).Offset(offset).Ordering(ordering).Q(q).Username(username).UsernameEmpty(usernameEmpty).UsernameIc(usernameIc).UsernameIe(usernameIe).UsernameIew(usernameIew).UsernameIsw(usernameIsw).UsernameN(usernameN).UsernameNic(usernameNic).UsernameNie(usernameNie).UsernameNiew(usernameNiew).UsernameNisw(usernameNisw).Execute()
+> PaginatedUserList UsersUsersList(ctx).DateJoined(dateJoined).DateJoinedEmpty(dateJoinedEmpty).DateJoinedGt(dateJoinedGt).DateJoinedGte(dateJoinedGte).DateJoinedLt(dateJoinedLt).DateJoinedLte(dateJoinedLte).DateJoinedN(dateJoinedN).Email(email).EmailEmpty(emailEmpty).EmailIc(emailIc).EmailIe(emailIe).EmailIew(emailIew).EmailIsw(emailIsw).EmailN(emailN).EmailNic(emailNic).EmailNie(emailNie).EmailNiew(emailNiew).EmailNisw(emailNisw).FirstName(firstName).FirstNameEmpty(firstNameEmpty).FirstNameIc(firstNameIc).FirstNameIe(firstNameIe).FirstNameIew(firstNameIew).FirstNameIsw(firstNameIsw).FirstNameN(firstNameN).FirstNameNic(firstNameNic).FirstNameNie(firstNameNie).FirstNameNiew(firstNameNiew).FirstNameNisw(firstNameNisw).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsActive(isActive).IsStaff(isStaff).IsSuperuser(isSuperuser).LastLogin(lastLogin).LastLoginEmpty(lastLoginEmpty).LastLoginGt(lastLoginGt).LastLoginGte(lastLoginGte).LastLoginLt(lastLoginLt).LastLoginLte(lastLoginLte).LastLoginN(lastLoginN).LastName(lastName).LastNameEmpty(lastNameEmpty).LastNameIc(lastNameIc).LastNameIe(lastNameIe).LastNameIew(lastNameIew).LastNameIsw(lastNameIsw).LastNameN(lastNameN).LastNameNic(lastNameNic).LastNameNie(lastNameNie).LastNameNiew(lastNameNiew).LastNameNisw(lastNameNisw).Limit(limit).Offset(offset).Ordering(ordering).PermissionId(permissionId).PermissionIdN(permissionIdN).Q(q).Username(username).UsernameEmpty(usernameEmpty).UsernameIc(usernameIc).UsernameIe(usernameIe).UsernameIew(usernameIew).UsernameIsw(usernameIsw).UsernameN(usernameN).UsernameNic(usernameNic).UsernameNie(usernameNie).UsernameNiew(usernameNiew).UsernameNisw(usernameNisw).Execute()
 
 
 
@@ -2572,10 +2640,18 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+    "time"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
+	dateJoined := []time.Time{time.Now()} // []time.Time |  (optional)
+	dateJoinedEmpty := true // bool |  (optional)
+	dateJoinedGt := []time.Time{time.Now()} // []time.Time |  (optional)
+	dateJoinedGte := []time.Time{time.Now()} // []time.Time |  (optional)
+	dateJoinedLt := []time.Time{time.Now()} // []time.Time |  (optional)
+	dateJoinedLte := []time.Time{time.Now()} // []time.Time |  (optional)
+	dateJoinedN := []time.Time{time.Now()} // []time.Time |  (optional)
 	email := []string{"Inner_example"} // []string |  (optional)
 	emailEmpty := true // bool |  (optional)
 	emailIc := []string{"Inner_example"} // []string |  (optional)
@@ -2612,6 +2688,13 @@ func main() {
 	isActive := true // bool |  (optional)
 	isStaff := true // bool |  (optional)
 	isSuperuser := true // bool |  (optional)
+	lastLogin := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastLoginEmpty := true // bool |  (optional)
+	lastLoginGt := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastLoginGte := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastLoginLt := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastLoginLte := []time.Time{time.Now()} // []time.Time |  (optional)
+	lastLoginN := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastName := []string{"Inner_example"} // []string |  (optional)
 	lastNameEmpty := true // bool |  (optional)
 	lastNameIc := []string{"Inner_example"} // []string |  (optional)
@@ -2626,6 +2709,8 @@ func main() {
 	limit := int32(56) // int32 | Number of results to return per page. (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	permissionId := []int32{int32(123)} // []int32 | Permission (ID) (optional)
+	permissionIdN := []int32{int32(123)} // []int32 | Permission (ID) (optional)
 	q := "q_example" // string | Search (optional)
 	username := []string{"Inner_example"} // []string |  (optional)
 	usernameEmpty := true // bool |  (optional)
@@ -2641,7 +2726,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UsersAPI.UsersUsersList(context.Background()).Email(email).EmailEmpty(emailEmpty).EmailIc(emailIc).EmailIe(emailIe).EmailIew(emailIew).EmailIsw(emailIsw).EmailN(emailN).EmailNic(emailNic).EmailNie(emailNie).EmailNiew(emailNiew).EmailNisw(emailNisw).FirstName(firstName).FirstNameEmpty(firstNameEmpty).FirstNameIc(firstNameIc).FirstNameIe(firstNameIe).FirstNameIew(firstNameIew).FirstNameIsw(firstNameIsw).FirstNameN(firstNameN).FirstNameNic(firstNameNic).FirstNameNie(firstNameNie).FirstNameNiew(firstNameNiew).FirstNameNisw(firstNameNisw).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsActive(isActive).IsStaff(isStaff).IsSuperuser(isSuperuser).LastName(lastName).LastNameEmpty(lastNameEmpty).LastNameIc(lastNameIc).LastNameIe(lastNameIe).LastNameIew(lastNameIew).LastNameIsw(lastNameIsw).LastNameN(lastNameN).LastNameNic(lastNameNic).LastNameNie(lastNameNie).LastNameNiew(lastNameNiew).LastNameNisw(lastNameNisw).Limit(limit).Offset(offset).Ordering(ordering).Q(q).Username(username).UsernameEmpty(usernameEmpty).UsernameIc(usernameIc).UsernameIe(usernameIe).UsernameIew(usernameIew).UsernameIsw(usernameIsw).UsernameN(usernameN).UsernameNic(usernameNic).UsernameNie(usernameNie).UsernameNiew(usernameNiew).UsernameNisw(usernameNisw).Execute()
+	resp, r, err := apiClient.UsersAPI.UsersUsersList(context.Background()).DateJoined(dateJoined).DateJoinedEmpty(dateJoinedEmpty).DateJoinedGt(dateJoinedGt).DateJoinedGte(dateJoinedGte).DateJoinedLt(dateJoinedLt).DateJoinedLte(dateJoinedLte).DateJoinedN(dateJoinedN).Email(email).EmailEmpty(emailEmpty).EmailIc(emailIc).EmailIe(emailIe).EmailIew(emailIew).EmailIsw(emailIsw).EmailN(emailN).EmailNic(emailNic).EmailNie(emailNie).EmailNiew(emailNiew).EmailNisw(emailNisw).FirstName(firstName).FirstNameEmpty(firstNameEmpty).FirstNameIc(firstNameIc).FirstNameIe(firstNameIe).FirstNameIew(firstNameIew).FirstNameIsw(firstNameIsw).FirstNameN(firstNameN).FirstNameNic(firstNameNic).FirstNameNie(firstNameNie).FirstNameNiew(firstNameNiew).FirstNameNisw(firstNameNisw).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsActive(isActive).IsStaff(isStaff).IsSuperuser(isSuperuser).LastLogin(lastLogin).LastLoginEmpty(lastLoginEmpty).LastLoginGt(lastLoginGt).LastLoginGte(lastLoginGte).LastLoginLt(lastLoginLt).LastLoginLte(lastLoginLte).LastLoginN(lastLoginN).LastName(lastName).LastNameEmpty(lastNameEmpty).LastNameIc(lastNameIc).LastNameIe(lastNameIe).LastNameIew(lastNameIew).LastNameIsw(lastNameIsw).LastNameN(lastNameN).LastNameNic(lastNameNic).LastNameNie(lastNameNie).LastNameNiew(lastNameNiew).LastNameNisw(lastNameNisw).Limit(limit).Offset(offset).Ordering(ordering).PermissionId(permissionId).PermissionIdN(permissionIdN).Q(q).Username(username).UsernameEmpty(usernameEmpty).UsernameIc(usernameIc).UsernameIe(usernameIe).UsernameIew(usernameIew).UsernameIsw(usernameIsw).UsernameN(usernameN).UsernameNic(usernameNic).UsernameNie(usernameNie).UsernameNiew(usernameNiew).UsernameNisw(usernameNisw).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersUsersList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2662,6 +2747,13 @@ Other parameters are passed through a pointer to a apiUsersUsersListRequest stru
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **dateJoined** | [**[]time.Time**](time.Time.md) |  | 
+ **dateJoinedEmpty** | **bool** |  | 
+ **dateJoinedGt** | [**[]time.Time**](time.Time.md) |  | 
+ **dateJoinedGte** | [**[]time.Time**](time.Time.md) |  | 
+ **dateJoinedLt** | [**[]time.Time**](time.Time.md) |  | 
+ **dateJoinedLte** | [**[]time.Time**](time.Time.md) |  | 
+ **dateJoinedN** | [**[]time.Time**](time.Time.md) |  | 
  **email** | **[]string** |  | 
  **emailEmpty** | **bool** |  | 
  **emailIc** | **[]string** |  | 
@@ -2698,6 +2790,13 @@ Name | Type | Description  | Notes
  **isActive** | **bool** |  | 
  **isStaff** | **bool** |  | 
  **isSuperuser** | **bool** |  | 
+ **lastLogin** | [**[]time.Time**](time.Time.md) |  | 
+ **lastLoginEmpty** | **bool** |  | 
+ **lastLoginGt** | [**[]time.Time**](time.Time.md) |  | 
+ **lastLoginGte** | [**[]time.Time**](time.Time.md) |  | 
+ **lastLoginLt** | [**[]time.Time**](time.Time.md) |  | 
+ **lastLoginLte** | [**[]time.Time**](time.Time.md) |  | 
+ **lastLoginN** | [**[]time.Time**](time.Time.md) |  | 
  **lastName** | **[]string** |  | 
  **lastNameEmpty** | **bool** |  | 
  **lastNameIc** | **[]string** |  | 
@@ -2712,6 +2811,8 @@ Name | Type | Description  | Notes
  **limit** | **int32** | Number of results to return per page. | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
+ **permissionId** | **[]int32** | Permission (ID) | 
+ **permissionIdN** | **[]int32** | Permission (ID) | 
  **q** | **string** | Search | 
  **username** | **[]string** |  | 
  **usernameEmpty** | **bool** |  | 
@@ -2745,7 +2846,7 @@ Name | Type | Description  | Notes
 
 ## UsersUsersPartialUpdate
 
-> User UsersUsersPartialUpdate(ctx, id).PatchedWritableUserRequest(patchedWritableUserRequest).Execute()
+> User UsersUsersPartialUpdate(ctx, id).PatchedUserRequest(patchedUserRequest).Execute()
 
 
 
@@ -2760,16 +2861,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this user.
-	patchedWritableUserRequest := *openapiclient.NewPatchedWritableUserRequest() // PatchedWritableUserRequest |  (optional)
+	patchedUserRequest := *openapiclient.NewPatchedUserRequest() // PatchedUserRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UsersAPI.UsersUsersPartialUpdate(context.Background(), id).PatchedWritableUserRequest(patchedWritableUserRequest).Execute()
+	resp, r, err := apiClient.UsersAPI.UsersUsersPartialUpdate(context.Background(), id).PatchedUserRequest(patchedUserRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersUsersPartialUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2795,7 +2896,7 @@ Other parameters are passed through a pointer to a apiUsersUsersPartialUpdateReq
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **patchedWritableUserRequest** | [**PatchedWritableUserRequest**](PatchedWritableUserRequest.md) |  | 
+ **patchedUserRequest** | [**PatchedUserRequest**](PatchedUserRequest.md) |  | 
 
 ### Return type
 
@@ -2832,7 +2933,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -2887,7 +2988,7 @@ Name | Type | Description  | Notes
 
 ## UsersUsersUpdate
 
-> User UsersUsersUpdate(ctx, id).WritableUserRequest(writableUserRequest).Execute()
+> User UsersUsersUpdate(ctx, id).UserRequest(userRequest).Execute()
 
 
 
@@ -2902,16 +3003,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this user.
-	writableUserRequest := *openapiclient.NewWritableUserRequest("Username_example", "Password_example") // WritableUserRequest | 
+	userRequest := *openapiclient.NewUserRequest("Username_example") // UserRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UsersAPI.UsersUsersUpdate(context.Background(), id).WritableUserRequest(writableUserRequest).Execute()
+	resp, r, err := apiClient.UsersAPI.UsersUsersUpdate(context.Background(), id).UserRequest(userRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersUsersUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2937,7 +3038,7 @@ Other parameters are passed through a pointer to a apiUsersUsersUpdateRequest st
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **writableUserRequest** | [**WritableUserRequest**](WritableUserRequest.md) |  | 
+ **userRequest** | [**UserRequest**](UserRequest.md) |  | 
 
 ### Return type
 

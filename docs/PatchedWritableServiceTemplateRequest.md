@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** |  | [optional] 
-**Ports** | Pointer to **[]int32** |  | [optional] 
 **Protocol** | Pointer to [**PatchedWritableServiceRequestProtocol**](PatchedWritableServiceRequestProtocol.md) |  | [optional] 
+**Ports** | Pointer to **[]int32** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
@@ -56,31 +56,6 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
-### GetPorts
-
-`func (o *PatchedWritableServiceTemplateRequest) GetPorts() []int32`
-
-GetPorts returns the Ports field if non-nil, zero value otherwise.
-
-### GetPortsOk
-
-`func (o *PatchedWritableServiceTemplateRequest) GetPortsOk() (*[]int32, bool)`
-
-GetPortsOk returns a tuple with the Ports field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPorts
-
-`func (o *PatchedWritableServiceTemplateRequest) SetPorts(v []int32)`
-
-SetPorts sets Ports field to given value.
-
-### HasPorts
-
-`func (o *PatchedWritableServiceTemplateRequest) HasPorts() bool`
-
-HasPorts returns a boolean if a field has been set.
-
 ### GetProtocol
 
 `func (o *PatchedWritableServiceTemplateRequest) GetProtocol() PatchedWritableServiceRequestProtocol`
@@ -105,6 +80,31 @@ SetProtocol sets Protocol field to given value.
 `func (o *PatchedWritableServiceTemplateRequest) HasProtocol() bool`
 
 HasProtocol returns a boolean if a field has been set.
+
+### GetPorts
+
+`func (o *PatchedWritableServiceTemplateRequest) GetPorts() []int32`
+
+GetPorts returns the Ports field if non-nil, zero value otherwise.
+
+### GetPortsOk
+
+`func (o *PatchedWritableServiceTemplateRequest) GetPortsOk() (*[]int32, bool)`
+
+GetPortsOk returns a tuple with the Ports field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPorts
+
+`func (o *PatchedWritableServiceTemplateRequest) SetPorts(v []int32)`
+
+SetPorts sets Ports field to given value.
+
+### HasPorts
+
+`func (o *PatchedWritableServiceTemplateRequest) HasPorts() bool`
+
+HasPorts returns a boolean if a field has been set.
 
 ### GetDescription
 

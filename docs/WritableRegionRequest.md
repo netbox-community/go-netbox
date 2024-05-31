@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
-**Parent** | Pointer to **NullableInt32** |  | [optional] 
+**Parent** | **NullableInt32** |  | 
 **Description** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewWritableRegionRequest
 
-`func NewWritableRegionRequest(name string, slug string, ) *WritableRegionRequest`
+`func NewWritableRegionRequest(name string, slug string, parent NullableInt32, ) *WritableRegionRequest`
 
 NewWritableRegionRequest instantiates a new WritableRegionRequest object
 This constructor will assign default values to properties that have it defined,
@@ -89,11 +89,6 @@ and a boolean to check if the value has been set.
 
 SetParent sets Parent field to given value.
 
-### HasParent
-
-`func (o *WritableRegionRequest) HasParent() bool`
-
-HasParent returns a boolean if a field has been set.
 
 ### SetParentNil
 

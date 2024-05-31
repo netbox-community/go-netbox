@@ -8,22 +8,22 @@ Name | Type | Description | Notes
 **Url** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
 **Name** | **string** |  | 
-**Status** | Pointer to [**ModuleStatus**](ModuleStatus.md) |  | [optional] 
-**Site** | Pointer to [**NullableNestedSite**](NestedSite.md) |  | [optional] 
-**Cluster** | Pointer to [**NullableNestedCluster**](NestedCluster.md) |  | [optional] 
-**Device** | Pointer to [**NullableNestedDevice**](NestedDevice.md) |  | [optional] 
-**Role** | Pointer to [**NullableNestedDeviceRole**](NestedDeviceRole.md) |  | [optional] 
-**Tenant** | Pointer to [**NullableNestedTenant**](NestedTenant.md) |  | [optional] 
-**Platform** | Pointer to [**NullableNestedPlatform**](NestedPlatform.md) |  | [optional] 
-**PrimaryIp** | [**NullableNestedIPAddress**](NestedIPAddress.md) |  | [readonly] 
-**PrimaryIp4** | Pointer to [**NullableNestedIPAddress**](NestedIPAddress.md) |  | [optional] 
-**PrimaryIp6** | Pointer to [**NullableNestedIPAddress**](NestedIPAddress.md) |  | [optional] 
+**Status** | Pointer to [**VirtualMachineWithConfigContextStatus**](VirtualMachineWithConfigContextStatus.md) |  | [optional] 
+**Site** | Pointer to [**NullableSite**](Site.md) |  | [optional] 
+**Cluster** | Pointer to [**NullableCluster**](Cluster.md) |  | [optional] 
+**Device** | Pointer to [**NullableDevice**](Device.md) |  | [optional] 
+**Role** | Pointer to [**NullableDeviceRole**](DeviceRole.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableTenant**](Tenant.md) |  | [optional] 
+**Platform** | Pointer to [**NullablePlatform**](Platform.md) |  | [optional] 
+**PrimaryIp** | [**NullableIPAddress**](IPAddress.md) |  | [readonly] 
+**PrimaryIp4** | Pointer to [**NullableIPAddress**](IPAddress.md) |  | [optional] 
+**PrimaryIp6** | Pointer to [**NullableIPAddress**](IPAddress.md) |  | [optional] 
 **Vcpus** | Pointer to **NullableFloat64** |  | [optional] 
 **Memory** | Pointer to **NullableInt32** |  | [optional] 
 **Disk** | Pointer to **NullableInt32** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
-**ConfigTemplate** | Pointer to [**NullableNestedConfigTemplate**](NestedConfigTemplate.md) |  | [optional] 
+**ConfigTemplate** | Pointer to [**NullableConfigTemplate**](ConfigTemplate.md) |  | [optional] 
 **LocalContextData** | Pointer to **interface{}** | Local config context data takes precedence over source contexts in the final rendered config context | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -37,7 +37,7 @@ Name | Type | Description | Notes
 
 ### NewVirtualMachineWithConfigContext
 
-`func NewVirtualMachineWithConfigContext(id int32, url string, display string, name string, primaryIp NullableNestedIPAddress, configContext interface{}, created NullableTime, lastUpdated NullableTime, interfaceCount int32, virtualDiskCount int32, ) *VirtualMachineWithConfigContext`
+`func NewVirtualMachineWithConfigContext(id int32, url string, display string, name string, primaryIp NullableIPAddress, configContext interface{}, created NullableTime, lastUpdated NullableTime, interfaceCount int32, virtualDiskCount int32, ) *VirtualMachineWithConfigContext`
 
 NewVirtualMachineWithConfigContext instantiates a new VirtualMachineWithConfigContext object
 This constructor will assign default values to properties that have it defined,
@@ -134,20 +134,20 @@ SetName sets Name field to given value.
 
 ### GetStatus
 
-`func (o *VirtualMachineWithConfigContext) GetStatus() ModuleStatus`
+`func (o *VirtualMachineWithConfigContext) GetStatus() VirtualMachineWithConfigContextStatus`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *VirtualMachineWithConfigContext) GetStatusOk() (*ModuleStatus, bool)`
+`func (o *VirtualMachineWithConfigContext) GetStatusOk() (*VirtualMachineWithConfigContextStatus, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *VirtualMachineWithConfigContext) SetStatus(v ModuleStatus)`
+`func (o *VirtualMachineWithConfigContext) SetStatus(v VirtualMachineWithConfigContextStatus)`
 
 SetStatus sets Status field to given value.
 
@@ -159,20 +159,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetSite
 
-`func (o *VirtualMachineWithConfigContext) GetSite() NestedSite`
+`func (o *VirtualMachineWithConfigContext) GetSite() Site`
 
 GetSite returns the Site field if non-nil, zero value otherwise.
 
 ### GetSiteOk
 
-`func (o *VirtualMachineWithConfigContext) GetSiteOk() (*NestedSite, bool)`
+`func (o *VirtualMachineWithConfigContext) GetSiteOk() (*Site, bool)`
 
 GetSiteOk returns a tuple with the Site field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSite
 
-`func (o *VirtualMachineWithConfigContext) SetSite(v NestedSite)`
+`func (o *VirtualMachineWithConfigContext) SetSite(v Site)`
 
 SetSite sets Site field to given value.
 
@@ -194,20 +194,20 @@ HasSite returns a boolean if a field has been set.
 UnsetSite ensures that no value is present for Site, not even an explicit nil
 ### GetCluster
 
-`func (o *VirtualMachineWithConfigContext) GetCluster() NestedCluster`
+`func (o *VirtualMachineWithConfigContext) GetCluster() Cluster`
 
 GetCluster returns the Cluster field if non-nil, zero value otherwise.
 
 ### GetClusterOk
 
-`func (o *VirtualMachineWithConfigContext) GetClusterOk() (*NestedCluster, bool)`
+`func (o *VirtualMachineWithConfigContext) GetClusterOk() (*Cluster, bool)`
 
 GetClusterOk returns a tuple with the Cluster field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCluster
 
-`func (o *VirtualMachineWithConfigContext) SetCluster(v NestedCluster)`
+`func (o *VirtualMachineWithConfigContext) SetCluster(v Cluster)`
 
 SetCluster sets Cluster field to given value.
 
@@ -229,20 +229,20 @@ HasCluster returns a boolean if a field has been set.
 UnsetCluster ensures that no value is present for Cluster, not even an explicit nil
 ### GetDevice
 
-`func (o *VirtualMachineWithConfigContext) GetDevice() NestedDevice`
+`func (o *VirtualMachineWithConfigContext) GetDevice() Device`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *VirtualMachineWithConfigContext) GetDeviceOk() (*NestedDevice, bool)`
+`func (o *VirtualMachineWithConfigContext) GetDeviceOk() (*Device, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *VirtualMachineWithConfigContext) SetDevice(v NestedDevice)`
+`func (o *VirtualMachineWithConfigContext) SetDevice(v Device)`
 
 SetDevice sets Device field to given value.
 
@@ -264,20 +264,20 @@ HasDevice returns a boolean if a field has been set.
 UnsetDevice ensures that no value is present for Device, not even an explicit nil
 ### GetRole
 
-`func (o *VirtualMachineWithConfigContext) GetRole() NestedDeviceRole`
+`func (o *VirtualMachineWithConfigContext) GetRole() DeviceRole`
 
 GetRole returns the Role field if non-nil, zero value otherwise.
 
 ### GetRoleOk
 
-`func (o *VirtualMachineWithConfigContext) GetRoleOk() (*NestedDeviceRole, bool)`
+`func (o *VirtualMachineWithConfigContext) GetRoleOk() (*DeviceRole, bool)`
 
 GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRole
 
-`func (o *VirtualMachineWithConfigContext) SetRole(v NestedDeviceRole)`
+`func (o *VirtualMachineWithConfigContext) SetRole(v DeviceRole)`
 
 SetRole sets Role field to given value.
 
@@ -299,20 +299,20 @@ HasRole returns a boolean if a field has been set.
 UnsetRole ensures that no value is present for Role, not even an explicit nil
 ### GetTenant
 
-`func (o *VirtualMachineWithConfigContext) GetTenant() NestedTenant`
+`func (o *VirtualMachineWithConfigContext) GetTenant() Tenant`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *VirtualMachineWithConfigContext) GetTenantOk() (*NestedTenant, bool)`
+`func (o *VirtualMachineWithConfigContext) GetTenantOk() (*Tenant, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *VirtualMachineWithConfigContext) SetTenant(v NestedTenant)`
+`func (o *VirtualMachineWithConfigContext) SetTenant(v Tenant)`
 
 SetTenant sets Tenant field to given value.
 
@@ -334,20 +334,20 @@ HasTenant returns a boolean if a field has been set.
 UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
 ### GetPlatform
 
-`func (o *VirtualMachineWithConfigContext) GetPlatform() NestedPlatform`
+`func (o *VirtualMachineWithConfigContext) GetPlatform() Platform`
 
 GetPlatform returns the Platform field if non-nil, zero value otherwise.
 
 ### GetPlatformOk
 
-`func (o *VirtualMachineWithConfigContext) GetPlatformOk() (*NestedPlatform, bool)`
+`func (o *VirtualMachineWithConfigContext) GetPlatformOk() (*Platform, bool)`
 
 GetPlatformOk returns a tuple with the Platform field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlatform
 
-`func (o *VirtualMachineWithConfigContext) SetPlatform(v NestedPlatform)`
+`func (o *VirtualMachineWithConfigContext) SetPlatform(v Platform)`
 
 SetPlatform sets Platform field to given value.
 
@@ -369,20 +369,20 @@ HasPlatform returns a boolean if a field has been set.
 UnsetPlatform ensures that no value is present for Platform, not even an explicit nil
 ### GetPrimaryIp
 
-`func (o *VirtualMachineWithConfigContext) GetPrimaryIp() NestedIPAddress`
+`func (o *VirtualMachineWithConfigContext) GetPrimaryIp() IPAddress`
 
 GetPrimaryIp returns the PrimaryIp field if non-nil, zero value otherwise.
 
 ### GetPrimaryIpOk
 
-`func (o *VirtualMachineWithConfigContext) GetPrimaryIpOk() (*NestedIPAddress, bool)`
+`func (o *VirtualMachineWithConfigContext) GetPrimaryIpOk() (*IPAddress, bool)`
 
 GetPrimaryIpOk returns a tuple with the PrimaryIp field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrimaryIp
 
-`func (o *VirtualMachineWithConfigContext) SetPrimaryIp(v NestedIPAddress)`
+`func (o *VirtualMachineWithConfigContext) SetPrimaryIp(v IPAddress)`
 
 SetPrimaryIp sets PrimaryIp field to given value.
 
@@ -399,20 +399,20 @@ SetPrimaryIp sets PrimaryIp field to given value.
 UnsetPrimaryIp ensures that no value is present for PrimaryIp, not even an explicit nil
 ### GetPrimaryIp4
 
-`func (o *VirtualMachineWithConfigContext) GetPrimaryIp4() NestedIPAddress`
+`func (o *VirtualMachineWithConfigContext) GetPrimaryIp4() IPAddress`
 
 GetPrimaryIp4 returns the PrimaryIp4 field if non-nil, zero value otherwise.
 
 ### GetPrimaryIp4Ok
 
-`func (o *VirtualMachineWithConfigContext) GetPrimaryIp4Ok() (*NestedIPAddress, bool)`
+`func (o *VirtualMachineWithConfigContext) GetPrimaryIp4Ok() (*IPAddress, bool)`
 
 GetPrimaryIp4Ok returns a tuple with the PrimaryIp4 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrimaryIp4
 
-`func (o *VirtualMachineWithConfigContext) SetPrimaryIp4(v NestedIPAddress)`
+`func (o *VirtualMachineWithConfigContext) SetPrimaryIp4(v IPAddress)`
 
 SetPrimaryIp4 sets PrimaryIp4 field to given value.
 
@@ -434,20 +434,20 @@ HasPrimaryIp4 returns a boolean if a field has been set.
 UnsetPrimaryIp4 ensures that no value is present for PrimaryIp4, not even an explicit nil
 ### GetPrimaryIp6
 
-`func (o *VirtualMachineWithConfigContext) GetPrimaryIp6() NestedIPAddress`
+`func (o *VirtualMachineWithConfigContext) GetPrimaryIp6() IPAddress`
 
 GetPrimaryIp6 returns the PrimaryIp6 field if non-nil, zero value otherwise.
 
 ### GetPrimaryIp6Ok
 
-`func (o *VirtualMachineWithConfigContext) GetPrimaryIp6Ok() (*NestedIPAddress, bool)`
+`func (o *VirtualMachineWithConfigContext) GetPrimaryIp6Ok() (*IPAddress, bool)`
 
 GetPrimaryIp6Ok returns a tuple with the PrimaryIp6 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrimaryIp6
 
-`func (o *VirtualMachineWithConfigContext) SetPrimaryIp6(v NestedIPAddress)`
+`func (o *VirtualMachineWithConfigContext) SetPrimaryIp6(v IPAddress)`
 
 SetPrimaryIp6 sets PrimaryIp6 field to given value.
 
@@ -624,20 +624,20 @@ HasComments returns a boolean if a field has been set.
 
 ### GetConfigTemplate
 
-`func (o *VirtualMachineWithConfigContext) GetConfigTemplate() NestedConfigTemplate`
+`func (o *VirtualMachineWithConfigContext) GetConfigTemplate() ConfigTemplate`
 
 GetConfigTemplate returns the ConfigTemplate field if non-nil, zero value otherwise.
 
 ### GetConfigTemplateOk
 
-`func (o *VirtualMachineWithConfigContext) GetConfigTemplateOk() (*NestedConfigTemplate, bool)`
+`func (o *VirtualMachineWithConfigContext) GetConfigTemplateOk() (*ConfigTemplate, bool)`
 
 GetConfigTemplateOk returns a tuple with the ConfigTemplate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfigTemplate
 
-`func (o *VirtualMachineWithConfigContext) SetConfigTemplate(v NestedConfigTemplate)`
+`func (o *VirtualMachineWithConfigContext) SetConfigTemplate(v ConfigTemplate)`
 
 SetConfigTemplate sets ConfigTemplate field to given value.
 

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
-**ContentTypes** | **[]string** |  | 
+**ObjectTypes** | **[]string** |  | 
 **Name** | **string** |  | 
 **TypeCreate** | Pointer to **bool** | Triggers when a matching object is created. | [optional] 
 **TypeUpdate** | Pointer to **bool** | Triggers when a matching object is updated. | [optional] 
@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 
 ### NewEventRule
 
-`func NewEventRule(id int32, url string, display string, contentTypes []string, name string, actionType EventRuleActionType, actionObjectType string, actionObject map[string]interface{}, created NullableTime, lastUpdated NullableTime, ) *EventRule`
+`func NewEventRule(id int32, url string, display string, objectTypes []string, name string, actionType EventRuleActionType, actionObjectType string, actionObject map[string]interface{}, created NullableTime, lastUpdated NullableTime, ) *EventRule`
 
 NewEventRule instantiates a new EventRule object
 This constructor will assign default values to properties that have it defined,
@@ -105,24 +105,24 @@ and a boolean to check if the value has been set.
 SetDisplay sets Display field to given value.
 
 
-### GetContentTypes
+### GetObjectTypes
 
-`func (o *EventRule) GetContentTypes() []string`
+`func (o *EventRule) GetObjectTypes() []string`
 
-GetContentTypes returns the ContentTypes field if non-nil, zero value otherwise.
+GetObjectTypes returns the ObjectTypes field if non-nil, zero value otherwise.
 
-### GetContentTypesOk
+### GetObjectTypesOk
 
-`func (o *EventRule) GetContentTypesOk() (*[]string, bool)`
+`func (o *EventRule) GetObjectTypesOk() (*[]string, bool)`
 
-GetContentTypesOk returns a tuple with the ContentTypes field if it's non-nil, zero value otherwise
+GetObjectTypesOk returns a tuple with the ObjectTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetContentTypes
+### SetObjectTypes
 
-`func (o *EventRule) SetContentTypes(v []string)`
+`func (o *EventRule) SetObjectTypes(v []string)`
 
-SetContentTypes sets ContentTypes field to given value.
+SetObjectTypes sets ObjectTypes field to given value.
 
 
 ### GetName

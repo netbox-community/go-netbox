@@ -15,13 +15,13 @@ Name | Type | Description | Notes
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**RackCount** | **int32** |  | [readonly] 
+**RackCount** | **int64** |  | [readonly] 
 
 ## Methods
 
 ### NewRackRole
 
-`func NewRackRole(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, rackCount int32, ) *RackRole`
+`func NewRackRole(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, rackCount int64, ) *RackRole`
 
 NewRackRole instantiates a new RackRole object
 This constructor will assign default values to properties that have it defined,
@@ -298,20 +298,20 @@ SetLastUpdated sets LastUpdated field to given value.
 UnsetLastUpdated ensures that no value is present for LastUpdated, not even an explicit nil
 ### GetRackCount
 
-`func (o *RackRole) GetRackCount() int32`
+`func (o *RackRole) GetRackCount() int64`
 
 GetRackCount returns the RackCount field if non-nil, zero value otherwise.
 
 ### GetRackCountOk
 
-`func (o *RackRole) GetRackCountOk() (*int32, bool)`
+`func (o *RackRole) GetRackCountOk() (*int64, bool)`
 
 GetRackCountOk returns a tuple with the RackCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRackCount
 
-`func (o *RackRole) SetRackCount(v int32)`
+`func (o *RackRole) SetRackCount(v int64)`
 
 SetRackCount sets RackCount field to given value.
 

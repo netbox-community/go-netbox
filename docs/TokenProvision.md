@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
-**User** | [**NestedUser**](NestedUser.md) |  | [readonly] 
+**User** | [**User**](User.md) |  | [readonly] 
 **Created** | **time.Time** |  | [readonly] 
 **Expires** | Pointer to **NullableTime** |  | [optional] 
 **LastUsed** | **time.Time** |  | [readonly] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewTokenProvision
 
-`func NewTokenProvision(id int32, url string, display string, user NestedUser, created time.Time, lastUsed time.Time, key string, ) *TokenProvision`
+`func NewTokenProvision(id int32, url string, display string, user User, created time.Time, lastUsed time.Time, key string, ) *TokenProvision`
 
 NewTokenProvision instantiates a new TokenProvision object
 This constructor will assign default values to properties that have it defined,
@@ -96,20 +96,20 @@ SetDisplay sets Display field to given value.
 
 ### GetUser
 
-`func (o *TokenProvision) GetUser() NestedUser`
+`func (o *TokenProvision) GetUser() User`
 
 GetUser returns the User field if non-nil, zero value otherwise.
 
 ### GetUserOk
 
-`func (o *TokenProvision) GetUserOk() (*NestedUser, bool)`
+`func (o *TokenProvision) GetUserOk() (*User, bool)`
 
 GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUser
 
-`func (o *TokenProvision) SetUser(v NestedUser)`
+`func (o *TokenProvision) SetUser(v User)`
 
 SetUser sets User field to given value.
 

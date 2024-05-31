@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ContentType** | Pointer to **string** |  | [optional] 
+**ObjectType** | Pointer to **string** |  | [optional] 
 **ObjectId** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Image** | Pointer to ***os.File** |  | [optional] 
@@ -30,30 +30,30 @@ NewPatchedImageAttachmentRequestWithDefaults instantiates a new PatchedImageAtta
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetContentType
+### GetObjectType
 
-`func (o *PatchedImageAttachmentRequest) GetContentType() string`
+`func (o *PatchedImageAttachmentRequest) GetObjectType() string`
 
-GetContentType returns the ContentType field if non-nil, zero value otherwise.
+GetObjectType returns the ObjectType field if non-nil, zero value otherwise.
 
-### GetContentTypeOk
+### GetObjectTypeOk
 
-`func (o *PatchedImageAttachmentRequest) GetContentTypeOk() (*string, bool)`
+`func (o *PatchedImageAttachmentRequest) GetObjectTypeOk() (*string, bool)`
 
-GetContentTypeOk returns a tuple with the ContentType field if it's non-nil, zero value otherwise
+GetObjectTypeOk returns a tuple with the ObjectType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetContentType
+### SetObjectType
 
-`func (o *PatchedImageAttachmentRequest) SetContentType(v string)`
+`func (o *PatchedImageAttachmentRequest) SetObjectType(v string)`
 
-SetContentType sets ContentType field to given value.
+SetObjectType sets ObjectType field to given value.
 
-### HasContentType
+### HasObjectType
 
-`func (o *PatchedImageAttachmentRequest) HasContentType() bool`
+`func (o *PatchedImageAttachmentRequest) HasObjectType() bool`
 
-HasContentType returns a boolean if a field has been set.
+HasObjectType returns a boolean if a field has been set.
 
 ### GetObjectId
 

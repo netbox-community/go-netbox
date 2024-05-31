@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **Interval** | Pointer to **NullableInt32** | Recurrence interval (in minutes) | [optional] 
 **Started** | Pointer to **NullableTime** |  | [optional] 
 **Completed** | Pointer to **NullableTime** |  | [optional] 
-**User** | [**NestedUser**](NestedUser.md) |  | [readonly] 
+**User** | [**User**](User.md) |  | [readonly] 
 **Data** | Pointer to **interface{}** |  | [optional] 
 **Error** | **string** |  | [readonly] 
 **JobId** | **string** |  | 
@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 
 ### NewJob
 
-`func NewJob(id int32, url string, display string, objectType string, name string, status JobStatus, created time.Time, user NestedUser, error_ string, jobId string, ) *Job`
+`func NewJob(id int32, url string, display string, objectType string, name string, status JobStatus, created time.Time, user User, error_ string, jobId string, ) *Job`
 
 NewJob instantiates a new Job object
 This constructor will assign default values to properties that have it defined,
@@ -357,20 +357,20 @@ HasCompleted returns a boolean if a field has been set.
 UnsetCompleted ensures that no value is present for Completed, not even an explicit nil
 ### GetUser
 
-`func (o *Job) GetUser() NestedUser`
+`func (o *Job) GetUser() User`
 
 GetUser returns the User field if non-nil, zero value otherwise.
 
 ### GetUserOk
 
-`func (o *Job) GetUserOk() (*NestedUser, bool)`
+`func (o *Job) GetUserOk() (*User, bool)`
 
 GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUser
 
-`func (o *Job) SetUser(v NestedUser)`
+`func (o *Job) SetUser(v User)`
 
 SetUser sets User field to given value.
 

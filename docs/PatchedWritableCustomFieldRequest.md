@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ContentTypes** | Pointer to **[]string** |  | [optional] 
+**ObjectTypes** | Pointer to **[]string** |  | [optional] 
 **Type** | Pointer to [**PatchedWritableCustomFieldRequestType**](PatchedWritableCustomFieldRequestType.md) |  | [optional] 
-**ObjectType** | Pointer to **NullableString** |  | [optional] 
+**RelatedObjectType** | Pointer to **NullableString** |  | [optional] 
 **Name** | Pointer to **string** | Internal field name | [optional] 
 **Label** | Pointer to **string** | Name of the field as displayed to users (if not provided, &#39;the field&#39;s name will be used) | [optional] 
 **GroupName** | Pointer to **string** | Custom fields within the same group will be displayed together | [optional] 
@@ -22,7 +22,8 @@ Name | Type | Description | Notes
 **ValidationMinimum** | Pointer to **NullableInt64** | Minimum allowed value (for numeric fields) | [optional] 
 **ValidationMaximum** | Pointer to **NullableInt64** | Maximum allowed value (for numeric fields) | [optional] 
 **ValidationRegex** | Pointer to **string** | Regular expression to enforce on text field values. Use ^ and $ to force matching of entire string. For example, &lt;code&gt;^[A-Z]{3}$&lt;/code&gt; will limit values to exactly three uppercase letters. | [optional] 
-**ChoiceSet** | Pointer to **NullableInt32** |  | [optional] 
+**ChoiceSet** | Pointer to [**NullableCustomFieldChoiceSetRequest**](CustomFieldChoiceSetRequest.md) |  | [optional] 
+**Comments** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -43,30 +44,30 @@ NewPatchedWritableCustomFieldRequestWithDefaults instantiates a new PatchedWrita
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetContentTypes
+### GetObjectTypes
 
-`func (o *PatchedWritableCustomFieldRequest) GetContentTypes() []string`
+`func (o *PatchedWritableCustomFieldRequest) GetObjectTypes() []string`
 
-GetContentTypes returns the ContentTypes field if non-nil, zero value otherwise.
+GetObjectTypes returns the ObjectTypes field if non-nil, zero value otherwise.
 
-### GetContentTypesOk
+### GetObjectTypesOk
 
-`func (o *PatchedWritableCustomFieldRequest) GetContentTypesOk() (*[]string, bool)`
+`func (o *PatchedWritableCustomFieldRequest) GetObjectTypesOk() (*[]string, bool)`
 
-GetContentTypesOk returns a tuple with the ContentTypes field if it's non-nil, zero value otherwise
+GetObjectTypesOk returns a tuple with the ObjectTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetContentTypes
+### SetObjectTypes
 
-`func (o *PatchedWritableCustomFieldRequest) SetContentTypes(v []string)`
+`func (o *PatchedWritableCustomFieldRequest) SetObjectTypes(v []string)`
 
-SetContentTypes sets ContentTypes field to given value.
+SetObjectTypes sets ObjectTypes field to given value.
 
-### HasContentTypes
+### HasObjectTypes
 
-`func (o *PatchedWritableCustomFieldRequest) HasContentTypes() bool`
+`func (o *PatchedWritableCustomFieldRequest) HasObjectTypes() bool`
 
-HasContentTypes returns a boolean if a field has been set.
+HasObjectTypes returns a boolean if a field has been set.
 
 ### GetType
 
@@ -93,41 +94,41 @@ SetType sets Type field to given value.
 
 HasType returns a boolean if a field has been set.
 
-### GetObjectType
+### GetRelatedObjectType
 
-`func (o *PatchedWritableCustomFieldRequest) GetObjectType() string`
+`func (o *PatchedWritableCustomFieldRequest) GetRelatedObjectType() string`
 
-GetObjectType returns the ObjectType field if non-nil, zero value otherwise.
+GetRelatedObjectType returns the RelatedObjectType field if non-nil, zero value otherwise.
 
-### GetObjectTypeOk
+### GetRelatedObjectTypeOk
 
-`func (o *PatchedWritableCustomFieldRequest) GetObjectTypeOk() (*string, bool)`
+`func (o *PatchedWritableCustomFieldRequest) GetRelatedObjectTypeOk() (*string, bool)`
 
-GetObjectTypeOk returns a tuple with the ObjectType field if it's non-nil, zero value otherwise
+GetRelatedObjectTypeOk returns a tuple with the RelatedObjectType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetObjectType
+### SetRelatedObjectType
 
-`func (o *PatchedWritableCustomFieldRequest) SetObjectType(v string)`
+`func (o *PatchedWritableCustomFieldRequest) SetRelatedObjectType(v string)`
 
-SetObjectType sets ObjectType field to given value.
+SetRelatedObjectType sets RelatedObjectType field to given value.
 
-### HasObjectType
+### HasRelatedObjectType
 
-`func (o *PatchedWritableCustomFieldRequest) HasObjectType() bool`
+`func (o *PatchedWritableCustomFieldRequest) HasRelatedObjectType() bool`
 
-HasObjectType returns a boolean if a field has been set.
+HasRelatedObjectType returns a boolean if a field has been set.
 
-### SetObjectTypeNil
+### SetRelatedObjectTypeNil
 
-`func (o *PatchedWritableCustomFieldRequest) SetObjectTypeNil(b bool)`
+`func (o *PatchedWritableCustomFieldRequest) SetRelatedObjectTypeNil(b bool)`
 
- SetObjectTypeNil sets the value for ObjectType to be an explicit nil
+ SetRelatedObjectTypeNil sets the value for RelatedObjectType to be an explicit nil
 
-### UnsetObjectType
-`func (o *PatchedWritableCustomFieldRequest) UnsetObjectType()`
+### UnsetRelatedObjectType
+`func (o *PatchedWritableCustomFieldRequest) UnsetRelatedObjectType()`
 
-UnsetObjectType ensures that no value is present for ObjectType, not even an explicit nil
+UnsetRelatedObjectType ensures that no value is present for RelatedObjectType, not even an explicit nil
 ### GetName
 
 `func (o *PatchedWritableCustomFieldRequest) GetName() string`
@@ -535,20 +536,20 @@ HasValidationRegex returns a boolean if a field has been set.
 
 ### GetChoiceSet
 
-`func (o *PatchedWritableCustomFieldRequest) GetChoiceSet() int32`
+`func (o *PatchedWritableCustomFieldRequest) GetChoiceSet() CustomFieldChoiceSetRequest`
 
 GetChoiceSet returns the ChoiceSet field if non-nil, zero value otherwise.
 
 ### GetChoiceSetOk
 
-`func (o *PatchedWritableCustomFieldRequest) GetChoiceSetOk() (*int32, bool)`
+`func (o *PatchedWritableCustomFieldRequest) GetChoiceSetOk() (*CustomFieldChoiceSetRequest, bool)`
 
 GetChoiceSetOk returns a tuple with the ChoiceSet field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetChoiceSet
 
-`func (o *PatchedWritableCustomFieldRequest) SetChoiceSet(v int32)`
+`func (o *PatchedWritableCustomFieldRequest) SetChoiceSet(v CustomFieldChoiceSetRequest)`
 
 SetChoiceSet sets ChoiceSet field to given value.
 
@@ -568,6 +569,31 @@ HasChoiceSet returns a boolean if a field has been set.
 `func (o *PatchedWritableCustomFieldRequest) UnsetChoiceSet()`
 
 UnsetChoiceSet ensures that no value is present for ChoiceSet, not even an explicit nil
+### GetComments
+
+`func (o *PatchedWritableCustomFieldRequest) GetComments() string`
+
+GetComments returns the Comments field if non-nil, zero value otherwise.
+
+### GetCommentsOk
+
+`func (o *PatchedWritableCustomFieldRequest) GetCommentsOk() (*string, bool)`
+
+GetCommentsOk returns a tuple with the Comments field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComments
+
+`func (o *PatchedWritableCustomFieldRequest) SetComments(v string)`
+
+SetComments sets Comments field to given value.
+
+### HasComments
+
+`func (o *PatchedWritableCustomFieldRequest) HasComments() bool`
+
+HasComments returns a boolean if a field has been set.
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

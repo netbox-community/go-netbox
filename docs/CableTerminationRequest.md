@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Cable** | **int32** |  | 
-**CableEnd** | [**End**](End.md) |  | 
+**CableEnd** | [**End1**](End1.md) |  | 
 **TerminationType** | **string** |  | 
 **TerminationId** | **int64** |  | 
 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 
 ### NewCableTerminationRequest
 
-`func NewCableTerminationRequest(cable int32, cableEnd End, terminationType string, terminationId int64, ) *CableTerminationRequest`
+`func NewCableTerminationRequest(cable int32, cableEnd End1, terminationType string, terminationId int64, ) *CableTerminationRequest`
 
 NewCableTerminationRequest instantiates a new CableTerminationRequest object
 This constructor will assign default values to properties that have it defined,
@@ -50,20 +50,20 @@ SetCable sets Cable field to given value.
 
 ### GetCableEnd
 
-`func (o *CableTerminationRequest) GetCableEnd() End`
+`func (o *CableTerminationRequest) GetCableEnd() End1`
 
 GetCableEnd returns the CableEnd field if non-nil, zero value otherwise.
 
 ### GetCableEndOk
 
-`func (o *CableTerminationRequest) GetCableEndOk() (*End, bool)`
+`func (o *CableTerminationRequest) GetCableEndOk() (*End1, bool)`
 
 GetCableEndOk returns a tuple with the CableEnd field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCableEnd
 
-`func (o *CableTerminationRequest) SetCableEnd(v End)`
+`func (o *CableTerminationRequest) SetCableEnd(v End1)`
 
 SetCableEnd sets CableEnd field to given value.
 

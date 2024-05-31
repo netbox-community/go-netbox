@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
 **Mode** | [**IPSecProfileModeValue**](IPSecProfileModeValue.md) |  | 
-**IkePolicy** | [**NestedIKEPolicyRequest**](NestedIKEPolicyRequest.md) |  | 
-**IpsecPolicy** | [**NestedIPSecPolicyRequest**](NestedIPSecPolicyRequest.md) |  | 
+**IkePolicy** | [**IKEPolicyRequest**](IKEPolicyRequest.md) |  | 
+**IpsecPolicy** | [**IPSecPolicyRequest**](IPSecPolicyRequest.md) |  | 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewIPSecProfileRequest
 
-`func NewIPSecProfileRequest(name string, mode IPSecProfileModeValue, ikePolicy NestedIKEPolicyRequest, ipsecPolicy NestedIPSecPolicyRequest, ) *IPSecProfileRequest`
+`func NewIPSecProfileRequest(name string, mode IPSecProfileModeValue, ikePolicy IKEPolicyRequest, ipsecPolicy IPSecPolicyRequest, ) *IPSecProfileRequest`
 
 NewIPSecProfileRequest instantiates a new IPSecProfileRequest object
 This constructor will assign default values to properties that have it defined,
@@ -99,40 +99,40 @@ SetMode sets Mode field to given value.
 
 ### GetIkePolicy
 
-`func (o *IPSecProfileRequest) GetIkePolicy() NestedIKEPolicyRequest`
+`func (o *IPSecProfileRequest) GetIkePolicy() IKEPolicyRequest`
 
 GetIkePolicy returns the IkePolicy field if non-nil, zero value otherwise.
 
 ### GetIkePolicyOk
 
-`func (o *IPSecProfileRequest) GetIkePolicyOk() (*NestedIKEPolicyRequest, bool)`
+`func (o *IPSecProfileRequest) GetIkePolicyOk() (*IKEPolicyRequest, bool)`
 
 GetIkePolicyOk returns a tuple with the IkePolicy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIkePolicy
 
-`func (o *IPSecProfileRequest) SetIkePolicy(v NestedIKEPolicyRequest)`
+`func (o *IPSecProfileRequest) SetIkePolicy(v IKEPolicyRequest)`
 
 SetIkePolicy sets IkePolicy field to given value.
 
 
 ### GetIpsecPolicy
 
-`func (o *IPSecProfileRequest) GetIpsecPolicy() NestedIPSecPolicyRequest`
+`func (o *IPSecProfileRequest) GetIpsecPolicy() IPSecPolicyRequest`
 
 GetIpsecPolicy returns the IpsecPolicy field if non-nil, zero value otherwise.
 
 ### GetIpsecPolicyOk
 
-`func (o *IPSecProfileRequest) GetIpsecPolicyOk() (*NestedIPSecPolicyRequest, bool)`
+`func (o *IPSecProfileRequest) GetIpsecPolicyOk() (*IPSecPolicyRequest, bool)`
 
 GetIpsecPolicyOk returns a tuple with the IpsecPolicy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIpsecPolicy
 
-`func (o *IPSecProfileRequest) SetIpsecPolicy(v NestedIPSecPolicyRequest)`
+`func (o *IPSecProfileRequest) SetIpsecPolicy(v IPSecPolicyRequest)`
 
 SetIpsecPolicy sets IpsecPolicy field to given value.
 

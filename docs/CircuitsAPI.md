@@ -79,11 +79,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	circuitTerminationRequest := []openapiclient.CircuitTerminationRequest{*openapiclient.NewCircuitTerminationRequest(*openapiclient.NewNestedCircuitRequest("Cid_example"), openapiclient.Termination("A"))} // []CircuitTerminationRequest | 
+	circuitTerminationRequest := []openapiclient.CircuitTerminationRequest{*openapiclient.NewCircuitTerminationRequest(*openapiclient.NewCircuitRequest("Cid_example"), openapiclient.Termination_1("A"))} // []CircuitTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -143,11 +143,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	circuitTerminationRequest := []openapiclient.CircuitTerminationRequest{*openapiclient.NewCircuitTerminationRequest(*openapiclient.NewNestedCircuitRequest("Cid_example"), openapiclient.Termination("A"))} // []CircuitTerminationRequest | 
+	circuitTerminationRequest := []openapiclient.CircuitTerminationRequest{*openapiclient.NewCircuitTerminationRequest(*openapiclient.NewCircuitRequest("Cid_example"), openapiclient.Termination_1("A"))} // []CircuitTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -209,11 +209,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	circuitTerminationRequest := []openapiclient.CircuitTerminationRequest{*openapiclient.NewCircuitTerminationRequest(*openapiclient.NewNestedCircuitRequest("Cid_example"), openapiclient.Termination("A"))} // []CircuitTerminationRequest | 
+	circuitTerminationRequest := []openapiclient.CircuitTerminationRequest{*openapiclient.NewCircuitTerminationRequest(*openapiclient.NewCircuitRequest("Cid_example"), openapiclient.Termination_1("A"))} // []CircuitTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -260,7 +260,7 @@ Name | Type | Description  | Notes
 
 ## CircuitsCircuitTerminationsCreate
 
-> CircuitTermination CircuitsCircuitTerminationsCreate(ctx).WritableCircuitTerminationRequest(writableCircuitTerminationRequest).Execute()
+> CircuitTermination CircuitsCircuitTerminationsCreate(ctx).CircuitTerminationRequest(circuitTerminationRequest).Execute()
 
 
 
@@ -275,15 +275,15 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writableCircuitTerminationRequest := *openapiclient.NewWritableCircuitTerminationRequest(int32(123), openapiclient.Termination("A")) // WritableCircuitTerminationRequest | 
+	circuitTerminationRequest := *openapiclient.NewCircuitTerminationRequest(*openapiclient.NewCircuitRequest("Cid_example"), openapiclient.Termination_1("A")) // CircuitTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CircuitsAPI.CircuitsCircuitTerminationsCreate(context.Background()).WritableCircuitTerminationRequest(writableCircuitTerminationRequest).Execute()
+	resp, r, err := apiClient.CircuitsAPI.CircuitsCircuitTerminationsCreate(context.Background()).CircuitTerminationRequest(circuitTerminationRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsCircuitTerminationsCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -304,7 +304,7 @@ Other parameters are passed through a pointer to a apiCircuitsCircuitTermination
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writableCircuitTerminationRequest** | [**WritableCircuitTerminationRequest**](WritableCircuitTerminationRequest.md) |  | 
+ **circuitTerminationRequest** | [**CircuitTerminationRequest**](CircuitTerminationRequest.md) |  | 
 
 ### Return type
 
@@ -341,7 +341,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -394,7 +394,7 @@ Name | Type | Description  | Notes
 
 ## CircuitsCircuitTerminationsList
 
-> PaginatedCircuitTerminationList CircuitsCircuitTerminationsList(ctx).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).CircuitId(circuitId).CircuitIdN(circuitIdN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Occupied(occupied).Offset(offset).Ordering(ordering).PortSpeed(portSpeed).PortSpeedEmpty(portSpeedEmpty).PortSpeedGt(portSpeedGt).PortSpeedGte(portSpeedGte).PortSpeedLt(portSpeedLt).PortSpeedLte(portSpeedLte).PortSpeedN(portSpeedN).ProviderNetworkId(providerNetworkId).ProviderNetworkIdN(providerNetworkIdN).Q(q).Site(site).SiteN(siteN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).TermSide(termSide).TermSideN(termSideN).UpdatedByRequest(updatedByRequest).UpstreamSpeed(upstreamSpeed).UpstreamSpeedEmpty(upstreamSpeedEmpty).UpstreamSpeedGt(upstreamSpeedGt).UpstreamSpeedGte(upstreamSpeedGte).UpstreamSpeedLt(upstreamSpeedLt).UpstreamSpeedLte(upstreamSpeedLte).UpstreamSpeedN(upstreamSpeedN).XconnectId(xconnectId).XconnectIdEmpty(xconnectIdEmpty).XconnectIdIc(xconnectIdIc).XconnectIdIe(xconnectIdIe).XconnectIdIew(xconnectIdIew).XconnectIdIsw(xconnectIdIsw).XconnectIdN(xconnectIdN).XconnectIdNic(xconnectIdNic).XconnectIdNie(xconnectIdNie).XconnectIdNiew(xconnectIdNiew).XconnectIdNisw(xconnectIdNisw).Execute()
+> PaginatedCircuitTerminationList CircuitsCircuitTerminationsList(ctx).CableEnd(cableEnd).CableEndN(cableEndN).CableId(cableId).CableIdN(cableIdN).Cabled(cabled).CircuitId(circuitId).CircuitIdN(circuitIdN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MarkConnected(markConnected).ModifiedByRequest(modifiedByRequest).Occupied(occupied).Offset(offset).Ordering(ordering).PortSpeed(portSpeed).PortSpeedEmpty(portSpeedEmpty).PortSpeedGt(portSpeedGt).PortSpeedGte(portSpeedGte).PortSpeedLt(portSpeedLt).PortSpeedLte(portSpeedLte).PortSpeedN(portSpeedN).PpInfo(ppInfo).PpInfoEmpty(ppInfoEmpty).PpInfoIc(ppInfoIc).PpInfoIe(ppInfoIe).PpInfoIew(ppInfoIew).PpInfoIsw(ppInfoIsw).PpInfoN(ppInfoN).PpInfoNic(ppInfoNic).PpInfoNie(ppInfoNie).PpInfoNiew(ppInfoNiew).PpInfoNisw(ppInfoNisw).Provider(provider).ProviderN(providerN).ProviderId(providerId).ProviderIdN(providerIdN).ProviderNetworkId(providerNetworkId).ProviderNetworkIdN(providerNetworkIdN).Q(q).Site(site).SiteN(siteN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).TermSide(termSide).TermSideN(termSideN).UpdatedByRequest(updatedByRequest).UpstreamSpeed(upstreamSpeed).UpstreamSpeedEmpty(upstreamSpeedEmpty).UpstreamSpeedGt(upstreamSpeedGt).UpstreamSpeedGte(upstreamSpeedGte).UpstreamSpeedLt(upstreamSpeedLt).UpstreamSpeedLte(upstreamSpeedLte).UpstreamSpeedN(upstreamSpeedN).XconnectId(xconnectId).XconnectIdEmpty(xconnectIdEmpty).XconnectIdIc(xconnectIdIc).XconnectIdIe(xconnectIdIe).XconnectIdIew(xconnectIdIew).XconnectIdIsw(xconnectIdIsw).XconnectIdN(xconnectIdN).XconnectIdNic(xconnectIdNic).XconnectIdNie(xconnectIdNie).XconnectIdNiew(xconnectIdNiew).XconnectIdNisw(xconnectIdNisw).Execute()
 
 
 
@@ -410,12 +410,14 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	cableEnd := "cableEnd_example" // string |  (optional)
-	cableEndN := "cableEndN_example" // string |  (optional)
+	cableEnd := openapiclient.circuits_circuit_terminations_list_cable_end_parameter("A") // CircuitsCircuitTerminationsListCableEndParameter | * `A` - A * `B` - B (optional)
+	cableEndN := openapiclient.circuits_circuit_terminations_list_cable_end_parameter("A") // CircuitsCircuitTerminationsListCableEndParameter | * `A` - A * `B` - B (optional)
+	cableId := []*int32{int32(123)} // []*int32 | Cable (ID) (optional)
+	cableIdN := []*int32{int32(123)} // []*int32 | Cable (ID) (optional)
 	cabled := true // bool |  (optional)
 	circuitId := []int32{int32(123)} // []int32 | Circuit (optional)
 	circuitIdN := []int32{int32(123)} // []int32 | Circuit (optional)
@@ -453,6 +455,7 @@ func main() {
 	lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
 	limit := int32(56) // int32 | Number of results to return per page. (optional)
+	markConnected := true // bool |  (optional)
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	occupied := true // bool |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
@@ -464,6 +467,21 @@ func main() {
 	portSpeedLt := []int32{int32(123)} // []int32 |  (optional)
 	portSpeedLte := []int32{int32(123)} // []int32 |  (optional)
 	portSpeedN := []int32{int32(123)} // []int32 |  (optional)
+	ppInfo := []string{"Inner_example"} // []string |  (optional)
+	ppInfoEmpty := true // bool |  (optional)
+	ppInfoIc := []string{"Inner_example"} // []string |  (optional)
+	ppInfoIe := []string{"Inner_example"} // []string |  (optional)
+	ppInfoIew := []string{"Inner_example"} // []string |  (optional)
+	ppInfoIsw := []string{"Inner_example"} // []string |  (optional)
+	ppInfoN := []string{"Inner_example"} // []string |  (optional)
+	ppInfoNic := []string{"Inner_example"} // []string |  (optional)
+	ppInfoNie := []string{"Inner_example"} // []string |  (optional)
+	ppInfoNiew := []string{"Inner_example"} // []string |  (optional)
+	ppInfoNisw := []string{"Inner_example"} // []string |  (optional)
+	provider := []string{"Inner_example"} // []string | Provider (slug) (optional)
+	providerN := []string{"Inner_example"} // []string | Provider (slug) (optional)
+	providerId := []int32{int32(123)} // []int32 | Provider (ID) (optional)
+	providerIdN := []int32{int32(123)} // []int32 | Provider (ID) (optional)
 	providerNetworkId := []*int32{int32(123)} // []*int32 | ProviderNetwork (ID) (optional)
 	providerNetworkIdN := []*int32{int32(123)} // []*int32 | ProviderNetwork (ID) (optional)
 	q := "q_example" // string | Search (optional)
@@ -473,8 +491,8 @@ func main() {
 	siteIdN := []*int32{int32(123)} // []*int32 | Site (ID) (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	termSide := "termSide_example" // string |  (optional)
-	termSideN := "termSideN_example" // string |  (optional)
+	termSide := openapiclient.Termination("A") // Termination | * `A` - A * `Z` - Z (optional)
+	termSideN := openapiclient.Termination("A") // Termination | * `A` - A * `Z` - Z (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	upstreamSpeed := []int32{int32(123)} // []int32 |  (optional)
 	upstreamSpeedEmpty := true // bool |  (optional)
@@ -497,7 +515,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CircuitsAPI.CircuitsCircuitTerminationsList(context.Background()).CableEnd(cableEnd).CableEndN(cableEndN).Cabled(cabled).CircuitId(circuitId).CircuitIdN(circuitIdN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Occupied(occupied).Offset(offset).Ordering(ordering).PortSpeed(portSpeed).PortSpeedEmpty(portSpeedEmpty).PortSpeedGt(portSpeedGt).PortSpeedGte(portSpeedGte).PortSpeedLt(portSpeedLt).PortSpeedLte(portSpeedLte).PortSpeedN(portSpeedN).ProviderNetworkId(providerNetworkId).ProviderNetworkIdN(providerNetworkIdN).Q(q).Site(site).SiteN(siteN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).TermSide(termSide).TermSideN(termSideN).UpdatedByRequest(updatedByRequest).UpstreamSpeed(upstreamSpeed).UpstreamSpeedEmpty(upstreamSpeedEmpty).UpstreamSpeedGt(upstreamSpeedGt).UpstreamSpeedGte(upstreamSpeedGte).UpstreamSpeedLt(upstreamSpeedLt).UpstreamSpeedLte(upstreamSpeedLte).UpstreamSpeedN(upstreamSpeedN).XconnectId(xconnectId).XconnectIdEmpty(xconnectIdEmpty).XconnectIdIc(xconnectIdIc).XconnectIdIe(xconnectIdIe).XconnectIdIew(xconnectIdIew).XconnectIdIsw(xconnectIdIsw).XconnectIdN(xconnectIdN).XconnectIdNic(xconnectIdNic).XconnectIdNie(xconnectIdNie).XconnectIdNiew(xconnectIdNiew).XconnectIdNisw(xconnectIdNisw).Execute()
+	resp, r, err := apiClient.CircuitsAPI.CircuitsCircuitTerminationsList(context.Background()).CableEnd(cableEnd).CableEndN(cableEndN).CableId(cableId).CableIdN(cableIdN).Cabled(cabled).CircuitId(circuitId).CircuitIdN(circuitIdN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MarkConnected(markConnected).ModifiedByRequest(modifiedByRequest).Occupied(occupied).Offset(offset).Ordering(ordering).PortSpeed(portSpeed).PortSpeedEmpty(portSpeedEmpty).PortSpeedGt(portSpeedGt).PortSpeedGte(portSpeedGte).PortSpeedLt(portSpeedLt).PortSpeedLte(portSpeedLte).PortSpeedN(portSpeedN).PpInfo(ppInfo).PpInfoEmpty(ppInfoEmpty).PpInfoIc(ppInfoIc).PpInfoIe(ppInfoIe).PpInfoIew(ppInfoIew).PpInfoIsw(ppInfoIsw).PpInfoN(ppInfoN).PpInfoNic(ppInfoNic).PpInfoNie(ppInfoNie).PpInfoNiew(ppInfoNiew).PpInfoNisw(ppInfoNisw).Provider(provider).ProviderN(providerN).ProviderId(providerId).ProviderIdN(providerIdN).ProviderNetworkId(providerNetworkId).ProviderNetworkIdN(providerNetworkIdN).Q(q).Site(site).SiteN(siteN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).TermSide(termSide).TermSideN(termSideN).UpdatedByRequest(updatedByRequest).UpstreamSpeed(upstreamSpeed).UpstreamSpeedEmpty(upstreamSpeedEmpty).UpstreamSpeedGt(upstreamSpeedGt).UpstreamSpeedGte(upstreamSpeedGte).UpstreamSpeedLt(upstreamSpeedLt).UpstreamSpeedLte(upstreamSpeedLte).UpstreamSpeedN(upstreamSpeedN).XconnectId(xconnectId).XconnectIdEmpty(xconnectIdEmpty).XconnectIdIc(xconnectIdIc).XconnectIdIe(xconnectIdIe).XconnectIdIew(xconnectIdIew).XconnectIdIsw(xconnectIdIsw).XconnectIdN(xconnectIdN).XconnectIdNic(xconnectIdNic).XconnectIdNie(xconnectIdNie).XconnectIdNiew(xconnectIdNiew).XconnectIdNisw(xconnectIdNisw).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsCircuitTerminationsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -518,8 +536,10 @@ Other parameters are passed through a pointer to a apiCircuitsCircuitTermination
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cableEnd** | **string** |  | 
- **cableEndN** | **string** |  | 
+ **cableEnd** | [**CircuitsCircuitTerminationsListCableEndParameter**](CircuitsCircuitTerminationsListCableEndParameter.md) | * &#x60;A&#x60; - A * &#x60;B&#x60; - B | 
+ **cableEndN** | [**CircuitsCircuitTerminationsListCableEndParameter**](CircuitsCircuitTerminationsListCableEndParameter.md) | * &#x60;A&#x60; - A * &#x60;B&#x60; - B | 
+ **cableId** | **[]int32** | Cable (ID) | 
+ **cableIdN** | **[]int32** | Cable (ID) | 
  **cabled** | **bool** |  | 
  **circuitId** | **[]int32** | Circuit | 
  **circuitIdN** | **[]int32** | Circuit | 
@@ -557,6 +577,7 @@ Name | Type | Description  | Notes
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **markConnected** | **bool** |  | 
  **modifiedByRequest** | **string** |  | 
  **occupied** | **bool** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
@@ -568,6 +589,21 @@ Name | Type | Description  | Notes
  **portSpeedLt** | **[]int32** |  | 
  **portSpeedLte** | **[]int32** |  | 
  **portSpeedN** | **[]int32** |  | 
+ **ppInfo** | **[]string** |  | 
+ **ppInfoEmpty** | **bool** |  | 
+ **ppInfoIc** | **[]string** |  | 
+ **ppInfoIe** | **[]string** |  | 
+ **ppInfoIew** | **[]string** |  | 
+ **ppInfoIsw** | **[]string** |  | 
+ **ppInfoN** | **[]string** |  | 
+ **ppInfoNic** | **[]string** |  | 
+ **ppInfoNie** | **[]string** |  | 
+ **ppInfoNiew** | **[]string** |  | 
+ **ppInfoNisw** | **[]string** |  | 
+ **provider** | **[]string** | Provider (slug) | 
+ **providerN** | **[]string** | Provider (slug) | 
+ **providerId** | **[]int32** | Provider (ID) | 
+ **providerIdN** | **[]int32** | Provider (ID) | 
  **providerNetworkId** | **[]int32** | ProviderNetwork (ID) | 
  **providerNetworkIdN** | **[]int32** | ProviderNetwork (ID) | 
  **q** | **string** | Search | 
@@ -577,8 +613,8 @@ Name | Type | Description  | Notes
  **siteIdN** | **[]int32** | Site (ID) | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **termSide** | **string** |  | 
- **termSideN** | **string** |  | 
+ **termSide** | [**Termination**](Termination.md) | * &#x60;A&#x60; - A * &#x60;Z&#x60; - Z | 
+ **termSideN** | [**Termination**](Termination.md) | * &#x60;A&#x60; - A * &#x60;Z&#x60; - Z | 
  **updatedByRequest** | **string** |  | 
  **upstreamSpeed** | **[]int32** |  | 
  **upstreamSpeedEmpty** | **bool** |  | 
@@ -619,7 +655,7 @@ Name | Type | Description  | Notes
 
 ## CircuitsCircuitTerminationsPartialUpdate
 
-> CircuitTermination CircuitsCircuitTerminationsPartialUpdate(ctx, id).PatchedWritableCircuitTerminationRequest(patchedWritableCircuitTerminationRequest).Execute()
+> CircuitTermination CircuitsCircuitTerminationsPartialUpdate(ctx, id).PatchedCircuitTerminationRequest(patchedCircuitTerminationRequest).Execute()
 
 
 
@@ -634,16 +670,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this circuit termination.
-	patchedWritableCircuitTerminationRequest := *openapiclient.NewPatchedWritableCircuitTerminationRequest() // PatchedWritableCircuitTerminationRequest |  (optional)
+	patchedCircuitTerminationRequest := *openapiclient.NewPatchedCircuitTerminationRequest() // PatchedCircuitTerminationRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CircuitsAPI.CircuitsCircuitTerminationsPartialUpdate(context.Background(), id).PatchedWritableCircuitTerminationRequest(patchedWritableCircuitTerminationRequest).Execute()
+	resp, r, err := apiClient.CircuitsAPI.CircuitsCircuitTerminationsPartialUpdate(context.Background(), id).PatchedCircuitTerminationRequest(patchedCircuitTerminationRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsCircuitTerminationsPartialUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -669,7 +705,7 @@ Other parameters are passed through a pointer to a apiCircuitsCircuitTermination
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **patchedWritableCircuitTerminationRequest** | [**PatchedWritableCircuitTerminationRequest**](PatchedWritableCircuitTerminationRequest.md) |  | 
+ **patchedCircuitTerminationRequest** | [**PatchedCircuitTerminationRequest**](PatchedCircuitTerminationRequest.md) |  | 
 
 ### Return type
 
@@ -706,7 +742,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -776,7 +812,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -831,7 +867,7 @@ Name | Type | Description  | Notes
 
 ## CircuitsCircuitTerminationsUpdate
 
-> CircuitTermination CircuitsCircuitTerminationsUpdate(ctx, id).WritableCircuitTerminationRequest(writableCircuitTerminationRequest).Execute()
+> CircuitTermination CircuitsCircuitTerminationsUpdate(ctx, id).CircuitTerminationRequest(circuitTerminationRequest).Execute()
 
 
 
@@ -846,16 +882,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this circuit termination.
-	writableCircuitTerminationRequest := *openapiclient.NewWritableCircuitTerminationRequest(int32(123), openapiclient.Termination("A")) // WritableCircuitTerminationRequest | 
+	circuitTerminationRequest := *openapiclient.NewCircuitTerminationRequest(*openapiclient.NewCircuitRequest("Cid_example"), openapiclient.Termination_1("A")) // CircuitTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CircuitsAPI.CircuitsCircuitTerminationsUpdate(context.Background(), id).WritableCircuitTerminationRequest(writableCircuitTerminationRequest).Execute()
+	resp, r, err := apiClient.CircuitsAPI.CircuitsCircuitTerminationsUpdate(context.Background(), id).CircuitTerminationRequest(circuitTerminationRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsCircuitTerminationsUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -881,7 +917,7 @@ Other parameters are passed through a pointer to a apiCircuitsCircuitTermination
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **writableCircuitTerminationRequest** | [**WritableCircuitTerminationRequest**](WritableCircuitTerminationRequest.md) |  | 
+ **circuitTerminationRequest** | [**CircuitTerminationRequest**](CircuitTerminationRequest.md) |  | 
 
 ### Return type
 
@@ -918,7 +954,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -982,7 +1018,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -1048,7 +1084,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -1114,7 +1150,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -1180,7 +1216,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -1249,7 +1285,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -1461,7 +1497,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -1533,7 +1569,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -1603,7 +1639,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -1675,11 +1711,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	circuitRequest := []openapiclient.CircuitRequest{*openapiclient.NewCircuitRequest("Cid_example", *openapiclient.NewNestedProviderRequest("Name_example", "Slug_example"), *openapiclient.NewNestedCircuitTypeRequest("Name_example", "Slug_example"))} // []CircuitRequest | 
+	circuitRequest := []openapiclient.CircuitRequest{*openapiclient.NewCircuitRequest("Cid_example")} // []CircuitRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1739,11 +1775,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	circuitRequest := []openapiclient.CircuitRequest{*openapiclient.NewCircuitRequest("Cid_example", *openapiclient.NewNestedProviderRequest("Name_example", "Slug_example"), *openapiclient.NewNestedCircuitTypeRequest("Name_example", "Slug_example"))} // []CircuitRequest | 
+	circuitRequest := []openapiclient.CircuitRequest{*openapiclient.NewCircuitRequest("Cid_example")} // []CircuitRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1805,11 +1841,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	circuitRequest := []openapiclient.CircuitRequest{*openapiclient.NewCircuitRequest("Cid_example", *openapiclient.NewNestedProviderRequest("Name_example", "Slug_example"), *openapiclient.NewNestedCircuitTypeRequest("Name_example", "Slug_example"))} // []CircuitRequest | 
+	circuitRequest := []openapiclient.CircuitRequest{*openapiclient.NewCircuitRequest("Cid_example")} // []CircuitRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1871,11 +1907,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writableCircuitRequest := *openapiclient.NewWritableCircuitRequest("Cid_example", int32(123), int32(123)) // WritableCircuitRequest | 
+	writableCircuitRequest := *openapiclient.NewWritableCircuitRequest("Cid_example", *openapiclient.NewProviderRequest("Name_example", "Slug_example"), *openapiclient.NewCircuitTypeRequest("Name_example", "Slug_example")) // WritableCircuitRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1937,7 +1973,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -1990,7 +2026,7 @@ Name | Type | Description  | Notes
 
 ## CircuitsCircuitsList
 
-> PaginatedCircuitList CircuitsCircuitsList(ctx).Cid(cid).CidEmpty(cidEmpty).CidIc(cidIc).CidIe(cidIe).CidIew(cidIew).CidIsw(cidIsw).CidN(cidN).CidNic(cidNic).CidNie(cidNie).CidNiew(cidNiew).CidNisw(cidNisw).CommitRate(commitRate).CommitRateEmpty(commitRateEmpty).CommitRateGt(commitRateGt).CommitRateGte(commitRateGte).CommitRateLt(commitRateLt).CommitRateLte(commitRateLte).CommitRateN(commitRateN).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InstallDate(installDate).InstallDateEmpty(installDateEmpty).InstallDateGt(installDateGt).InstallDateGte(installDateGte).InstallDateLt(installDateLt).InstallDateLte(installDateLte).InstallDateN(installDateN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Provider(provider).ProviderN(providerN).ProviderAccountId(providerAccountId).ProviderAccountIdN(providerAccountIdN).ProviderId(providerId).ProviderIdN(providerIdN).ProviderNetworkId(providerNetworkId).ProviderNetworkIdN(providerNetworkIdN).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).TerminationDate(terminationDate).TerminationDateEmpty(terminationDateEmpty).TerminationDateGt(terminationDateGt).TerminationDateGte(terminationDateGte).TerminationDateLt(terminationDateLt).TerminationDateLte(terminationDateLte).TerminationDateN(terminationDateN).Type_(type_).TypeN(typeN).TypeId(typeId).TypeIdN(typeIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedCircuitList CircuitsCircuitsList(ctx).Cid(cid).CidEmpty(cidEmpty).CidIc(cidIc).CidIe(cidIe).CidIew(cidIew).CidIsw(cidIsw).CidN(cidN).CidNic(cidNic).CidNie(cidNie).CidNiew(cidNiew).CidNisw(cidNisw).CommitRate(commitRate).CommitRateEmpty(commitRateEmpty).CommitRateGt(commitRateGt).CommitRateGte(commitRateGte).CommitRateLt(commitRateLt).CommitRateLte(commitRateLte).CommitRateN(commitRateN).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InstallDate(installDate).InstallDateEmpty(installDateEmpty).InstallDateGt(installDateGt).InstallDateGte(installDateGte).InstallDateLt(installDateLt).InstallDateLte(installDateLte).InstallDateN(installDateN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Provider(provider).ProviderN(providerN).ProviderAccount(providerAccount).ProviderAccountN(providerAccountN).ProviderAccountId(providerAccountId).ProviderAccountIdN(providerAccountIdN).ProviderId(providerId).ProviderIdN(providerIdN).ProviderNetworkId(providerNetworkId).ProviderNetworkIdN(providerNetworkIdN).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).TerminationAId(terminationAId).TerminationAIdN(terminationAIdN).TerminationDate(terminationDate).TerminationDateEmpty(terminationDateEmpty).TerminationDateGt(terminationDateGt).TerminationDateGte(terminationDateGte).TerminationDateLt(terminationDateLt).TerminationDateLte(terminationDateLte).TerminationDateN(terminationDateN).TerminationZId(terminationZId).TerminationZIdN(terminationZIdN).Type_(type_).TypeN(typeN).TypeId(typeId).TypeIdN(typeIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -2006,7 +2042,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -2080,6 +2116,8 @@ func main() {
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
 	provider := []string{"Inner_example"} // []string | Provider (slug) (optional)
 	providerN := []string{"Inner_example"} // []string | Provider (slug) (optional)
+	providerAccount := []string{"Inner_example"} // []string | Provider account (account) (optional)
+	providerAccountN := []string{"Inner_example"} // []string | Provider account (account) (optional)
 	providerAccountId := []int32{int32(123)} // []int32 | Provider account (ID) (optional)
 	providerAccountIdN := []int32{int32(123)} // []int32 | Provider account (ID) (optional)
 	providerId := []int32{int32(123)} // []int32 | Provider (ID) (optional)
@@ -2111,6 +2149,8 @@ func main() {
 	tenantGroupIdN := []int32{int32(123)} // []int32 | Tenant Group (ID) (optional)
 	tenantId := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
 	tenantIdN := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
+	terminationAId := []*int32{int32(123)} // []*int32 | Termination A (ID) (optional)
+	terminationAIdN := []*int32{int32(123)} // []*int32 | Termination A (ID) (optional)
 	terminationDate := []string{time.Now()} // []string |  (optional)
 	terminationDateEmpty := true // bool |  (optional)
 	terminationDateGt := []string{time.Now()} // []string |  (optional)
@@ -2118,6 +2158,8 @@ func main() {
 	terminationDateLt := []string{time.Now()} // []string |  (optional)
 	terminationDateLte := []string{time.Now()} // []string |  (optional)
 	terminationDateN := []string{time.Now()} // []string |  (optional)
+	terminationZId := []*int32{int32(123)} // []*int32 | Termination A (ID) (optional)
+	terminationZIdN := []*int32{int32(123)} // []*int32 | Termination A (ID) (optional)
 	type_ := []string{"Inner_example"} // []string | Circuit type (slug) (optional)
 	typeN := []string{"Inner_example"} // []string | Circuit type (slug) (optional)
 	typeId := []int32{int32(123)} // []int32 | Circuit type (ID) (optional)
@@ -2126,7 +2168,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CircuitsAPI.CircuitsCircuitsList(context.Background()).Cid(cid).CidEmpty(cidEmpty).CidIc(cidIc).CidIe(cidIe).CidIew(cidIew).CidIsw(cidIsw).CidN(cidN).CidNic(cidNic).CidNie(cidNie).CidNiew(cidNiew).CidNisw(cidNisw).CommitRate(commitRate).CommitRateEmpty(commitRateEmpty).CommitRateGt(commitRateGt).CommitRateGte(commitRateGte).CommitRateLt(commitRateLt).CommitRateLte(commitRateLte).CommitRateN(commitRateN).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InstallDate(installDate).InstallDateEmpty(installDateEmpty).InstallDateGt(installDateGt).InstallDateGte(installDateGte).InstallDateLt(installDateLt).InstallDateLte(installDateLte).InstallDateN(installDateN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Provider(provider).ProviderN(providerN).ProviderAccountId(providerAccountId).ProviderAccountIdN(providerAccountIdN).ProviderId(providerId).ProviderIdN(providerIdN).ProviderNetworkId(providerNetworkId).ProviderNetworkIdN(providerNetworkIdN).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).TerminationDate(terminationDate).TerminationDateEmpty(terminationDateEmpty).TerminationDateGt(terminationDateGt).TerminationDateGte(terminationDateGte).TerminationDateLt(terminationDateLt).TerminationDateLte(terminationDateLte).TerminationDateN(terminationDateN).Type_(type_).TypeN(typeN).TypeId(typeId).TypeIdN(typeIdN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.CircuitsAPI.CircuitsCircuitsList(context.Background()).Cid(cid).CidEmpty(cidEmpty).CidIc(cidIc).CidIe(cidIe).CidIew(cidIew).CidIsw(cidIsw).CidN(cidN).CidNic(cidNic).CidNie(cidNie).CidNiew(cidNiew).CidNisw(cidNisw).CommitRate(commitRate).CommitRateEmpty(commitRateEmpty).CommitRateGt(commitRateGt).CommitRateGte(commitRateGte).CommitRateLt(commitRateLt).CommitRateLte(commitRateLte).CommitRateN(commitRateN).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InstallDate(installDate).InstallDateEmpty(installDateEmpty).InstallDateGt(installDateGt).InstallDateGte(installDateGte).InstallDateLt(installDateLt).InstallDateLte(installDateLte).InstallDateN(installDateN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Provider(provider).ProviderN(providerN).ProviderAccount(providerAccount).ProviderAccountN(providerAccountN).ProviderAccountId(providerAccountId).ProviderAccountIdN(providerAccountIdN).ProviderId(providerId).ProviderIdN(providerIdN).ProviderNetworkId(providerNetworkId).ProviderNetworkIdN(providerNetworkIdN).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).TerminationAId(terminationAId).TerminationAIdN(terminationAIdN).TerminationDate(terminationDate).TerminationDateEmpty(terminationDateEmpty).TerminationDateGt(terminationDateGt).TerminationDateGte(terminationDateGte).TerminationDateLt(terminationDateLt).TerminationDateLte(terminationDateLte).TerminationDateN(terminationDateN).TerminationZId(terminationZId).TerminationZIdN(terminationZIdN).Type_(type_).TypeN(typeN).TypeId(typeId).TypeIdN(typeIdN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsCircuitsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2217,6 +2259,8 @@ Name | Type | Description  | Notes
  **ordering** | **string** | Which field to use when ordering the results. | 
  **provider** | **[]string** | Provider (slug) | 
  **providerN** | **[]string** | Provider (slug) | 
+ **providerAccount** | **[]string** | Provider account (account) | 
+ **providerAccountN** | **[]string** | Provider account (account) | 
  **providerAccountId** | **[]int32** | Provider account (ID) | 
  **providerAccountIdN** | **[]int32** | Provider account (ID) | 
  **providerId** | **[]int32** | Provider (ID) | 
@@ -2248,6 +2292,8 @@ Name | Type | Description  | Notes
  **tenantGroupIdN** | **[]int32** | Tenant Group (ID) | 
  **tenantId** | **[]int32** | Tenant (ID) | 
  **tenantIdN** | **[]int32** | Tenant (ID) | 
+ **terminationAId** | **[]int32** | Termination A (ID) | 
+ **terminationAIdN** | **[]int32** | Termination A (ID) | 
  **terminationDate** | **[]string** |  | 
  **terminationDateEmpty** | **bool** |  | 
  **terminationDateGt** | **[]string** |  | 
@@ -2255,6 +2301,8 @@ Name | Type | Description  | Notes
  **terminationDateLt** | **[]string** |  | 
  **terminationDateLte** | **[]string** |  | 
  **terminationDateN** | **[]string** |  | 
+ **terminationZId** | **[]int32** | Termination A (ID) | 
+ **terminationZIdN** | **[]int32** | Termination A (ID) | 
  **type_** | **[]string** | Circuit type (slug) | 
  **typeN** | **[]string** | Circuit type (slug) | 
  **typeId** | **[]int32** | Circuit type (ID) | 
@@ -2296,7 +2344,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -2368,7 +2416,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -2438,12 +2486,12 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this circuit.
-	writableCircuitRequest := *openapiclient.NewWritableCircuitRequest("Cid_example", int32(123), int32(123)) // WritableCircuitRequest | 
+	writableCircuitRequest := *openapiclient.NewWritableCircuitRequest("Cid_example", *openapiclient.NewProviderRequest("Name_example", "Slug_example"), *openapiclient.NewCircuitTypeRequest("Name_example", "Slug_example")) // WritableCircuitRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2510,11 +2558,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	providerAccountRequest := []openapiclient.ProviderAccountRequest{*openapiclient.NewProviderAccountRequest(*openapiclient.NewNestedProviderRequest("Name_example", "Slug_example"), "Account_example")} // []ProviderAccountRequest | 
+	providerAccountRequest := []openapiclient.ProviderAccountRequest{*openapiclient.NewProviderAccountRequest("Account_example")} // []ProviderAccountRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2574,11 +2622,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	providerAccountRequest := []openapiclient.ProviderAccountRequest{*openapiclient.NewProviderAccountRequest(*openapiclient.NewNestedProviderRequest("Name_example", "Slug_example"), "Account_example")} // []ProviderAccountRequest | 
+	providerAccountRequest := []openapiclient.ProviderAccountRequest{*openapiclient.NewProviderAccountRequest("Account_example")} // []ProviderAccountRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2640,11 +2688,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	providerAccountRequest := []openapiclient.ProviderAccountRequest{*openapiclient.NewProviderAccountRequest(*openapiclient.NewNestedProviderRequest("Name_example", "Slug_example"), "Account_example")} // []ProviderAccountRequest | 
+	providerAccountRequest := []openapiclient.ProviderAccountRequest{*openapiclient.NewProviderAccountRequest("Account_example")} // []ProviderAccountRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2691,7 +2739,7 @@ Name | Type | Description  | Notes
 
 ## CircuitsProviderAccountsCreate
 
-> ProviderAccount CircuitsProviderAccountsCreate(ctx).WritableProviderAccountRequest(writableProviderAccountRequest).Execute()
+> ProviderAccount CircuitsProviderAccountsCreate(ctx).ProviderAccountRequest(providerAccountRequest).Execute()
 
 
 
@@ -2706,15 +2754,15 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writableProviderAccountRequest := *openapiclient.NewWritableProviderAccountRequest(int32(123), "Account_example") // WritableProviderAccountRequest | 
+	providerAccountRequest := *openapiclient.NewProviderAccountRequest("Account_example") // ProviderAccountRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CircuitsAPI.CircuitsProviderAccountsCreate(context.Background()).WritableProviderAccountRequest(writableProviderAccountRequest).Execute()
+	resp, r, err := apiClient.CircuitsAPI.CircuitsProviderAccountsCreate(context.Background()).ProviderAccountRequest(providerAccountRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsProviderAccountsCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2735,7 +2783,7 @@ Other parameters are passed through a pointer to a apiCircuitsProviderAccountsCr
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writableProviderAccountRequest** | [**WritableProviderAccountRequest**](WritableProviderAccountRequest.md) |  | 
+ **providerAccountRequest** | [**ProviderAccountRequest**](ProviderAccountRequest.md) |  | 
 
 ### Return type
 
@@ -2772,7 +2820,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -2841,7 +2889,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -3024,7 +3072,7 @@ Name | Type | Description  | Notes
 
 ## CircuitsProviderAccountsPartialUpdate
 
-> ProviderAccount CircuitsProviderAccountsPartialUpdate(ctx, id).PatchedWritableProviderAccountRequest(patchedWritableProviderAccountRequest).Execute()
+> ProviderAccount CircuitsProviderAccountsPartialUpdate(ctx, id).PatchedProviderAccountRequest(patchedProviderAccountRequest).Execute()
 
 
 
@@ -3039,16 +3087,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this provider account.
-	patchedWritableProviderAccountRequest := *openapiclient.NewPatchedWritableProviderAccountRequest() // PatchedWritableProviderAccountRequest |  (optional)
+	patchedProviderAccountRequest := *openapiclient.NewPatchedProviderAccountRequest() // PatchedProviderAccountRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CircuitsAPI.CircuitsProviderAccountsPartialUpdate(context.Background(), id).PatchedWritableProviderAccountRequest(patchedWritableProviderAccountRequest).Execute()
+	resp, r, err := apiClient.CircuitsAPI.CircuitsProviderAccountsPartialUpdate(context.Background(), id).PatchedProviderAccountRequest(patchedProviderAccountRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsProviderAccountsPartialUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3074,7 +3122,7 @@ Other parameters are passed through a pointer to a apiCircuitsProviderAccountsPa
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **patchedWritableProviderAccountRequest** | [**PatchedWritableProviderAccountRequest**](PatchedWritableProviderAccountRequest.md) |  | 
+ **patchedProviderAccountRequest** | [**PatchedProviderAccountRequest**](PatchedProviderAccountRequest.md) |  | 
 
 ### Return type
 
@@ -3111,7 +3159,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -3166,7 +3214,7 @@ Name | Type | Description  | Notes
 
 ## CircuitsProviderAccountsUpdate
 
-> ProviderAccount CircuitsProviderAccountsUpdate(ctx, id).WritableProviderAccountRequest(writableProviderAccountRequest).Execute()
+> ProviderAccount CircuitsProviderAccountsUpdate(ctx, id).ProviderAccountRequest(providerAccountRequest).Execute()
 
 
 
@@ -3181,16 +3229,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this provider account.
-	writableProviderAccountRequest := *openapiclient.NewWritableProviderAccountRequest(int32(123), "Account_example") // WritableProviderAccountRequest | 
+	providerAccountRequest := *openapiclient.NewProviderAccountRequest("Account_example") // ProviderAccountRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CircuitsAPI.CircuitsProviderAccountsUpdate(context.Background(), id).WritableProviderAccountRequest(writableProviderAccountRequest).Execute()
+	resp, r, err := apiClient.CircuitsAPI.CircuitsProviderAccountsUpdate(context.Background(), id).ProviderAccountRequest(providerAccountRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsProviderAccountsUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3216,7 +3264,7 @@ Other parameters are passed through a pointer to a apiCircuitsProviderAccountsUp
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **writableProviderAccountRequest** | [**WritableProviderAccountRequest**](WritableProviderAccountRequest.md) |  | 
+ **providerAccountRequest** | [**ProviderAccountRequest**](ProviderAccountRequest.md) |  | 
 
 ### Return type
 
@@ -3253,11 +3301,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	providerNetworkRequest := []openapiclient.ProviderNetworkRequest{*openapiclient.NewProviderNetworkRequest(*openapiclient.NewNestedProviderRequest("Name_example", "Slug_example"), "Name_example")} // []ProviderNetworkRequest | 
+	providerNetworkRequest := []openapiclient.ProviderNetworkRequest{*openapiclient.NewProviderNetworkRequest("Name_example")} // []ProviderNetworkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3317,11 +3365,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	providerNetworkRequest := []openapiclient.ProviderNetworkRequest{*openapiclient.NewProviderNetworkRequest(*openapiclient.NewNestedProviderRequest("Name_example", "Slug_example"), "Name_example")} // []ProviderNetworkRequest | 
+	providerNetworkRequest := []openapiclient.ProviderNetworkRequest{*openapiclient.NewProviderNetworkRequest("Name_example")} // []ProviderNetworkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3383,11 +3431,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	providerNetworkRequest := []openapiclient.ProviderNetworkRequest{*openapiclient.NewProviderNetworkRequest(*openapiclient.NewNestedProviderRequest("Name_example", "Slug_example"), "Name_example")} // []ProviderNetworkRequest | 
+	providerNetworkRequest := []openapiclient.ProviderNetworkRequest{*openapiclient.NewProviderNetworkRequest("Name_example")} // []ProviderNetworkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3434,7 +3482,7 @@ Name | Type | Description  | Notes
 
 ## CircuitsProviderNetworksCreate
 
-> ProviderNetwork CircuitsProviderNetworksCreate(ctx).WritableProviderNetworkRequest(writableProviderNetworkRequest).Execute()
+> ProviderNetwork CircuitsProviderNetworksCreate(ctx).ProviderNetworkRequest(providerNetworkRequest).Execute()
 
 
 
@@ -3449,15 +3497,15 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writableProviderNetworkRequest := *openapiclient.NewWritableProviderNetworkRequest(int32(123), "Name_example") // WritableProviderNetworkRequest | 
+	providerNetworkRequest := *openapiclient.NewProviderNetworkRequest("Name_example") // ProviderNetworkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CircuitsAPI.CircuitsProviderNetworksCreate(context.Background()).WritableProviderNetworkRequest(writableProviderNetworkRequest).Execute()
+	resp, r, err := apiClient.CircuitsAPI.CircuitsProviderNetworksCreate(context.Background()).ProviderNetworkRequest(providerNetworkRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsProviderNetworksCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3478,7 +3526,7 @@ Other parameters are passed through a pointer to a apiCircuitsProviderNetworksCr
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writableProviderNetworkRequest** | [**WritableProviderNetworkRequest**](WritableProviderNetworkRequest.md) |  | 
+ **providerNetworkRequest** | [**ProviderNetworkRequest**](ProviderNetworkRequest.md) |  | 
 
 ### Return type
 
@@ -3515,7 +3563,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -3584,7 +3632,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -3767,7 +3815,7 @@ Name | Type | Description  | Notes
 
 ## CircuitsProviderNetworksPartialUpdate
 
-> ProviderNetwork CircuitsProviderNetworksPartialUpdate(ctx, id).PatchedWritableProviderNetworkRequest(patchedWritableProviderNetworkRequest).Execute()
+> ProviderNetwork CircuitsProviderNetworksPartialUpdate(ctx, id).PatchedProviderNetworkRequest(patchedProviderNetworkRequest).Execute()
 
 
 
@@ -3782,16 +3830,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this provider network.
-	patchedWritableProviderNetworkRequest := *openapiclient.NewPatchedWritableProviderNetworkRequest() // PatchedWritableProviderNetworkRequest |  (optional)
+	patchedProviderNetworkRequest := *openapiclient.NewPatchedProviderNetworkRequest() // PatchedProviderNetworkRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CircuitsAPI.CircuitsProviderNetworksPartialUpdate(context.Background(), id).PatchedWritableProviderNetworkRequest(patchedWritableProviderNetworkRequest).Execute()
+	resp, r, err := apiClient.CircuitsAPI.CircuitsProviderNetworksPartialUpdate(context.Background(), id).PatchedProviderNetworkRequest(patchedProviderNetworkRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsProviderNetworksPartialUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3817,7 +3865,7 @@ Other parameters are passed through a pointer to a apiCircuitsProviderNetworksPa
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **patchedWritableProviderNetworkRequest** | [**PatchedWritableProviderNetworkRequest**](PatchedWritableProviderNetworkRequest.md) |  | 
+ **patchedProviderNetworkRequest** | [**PatchedProviderNetworkRequest**](PatchedProviderNetworkRequest.md) |  | 
 
 ### Return type
 
@@ -3854,7 +3902,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -3909,7 +3957,7 @@ Name | Type | Description  | Notes
 
 ## CircuitsProviderNetworksUpdate
 
-> ProviderNetwork CircuitsProviderNetworksUpdate(ctx, id).WritableProviderNetworkRequest(writableProviderNetworkRequest).Execute()
+> ProviderNetwork CircuitsProviderNetworksUpdate(ctx, id).ProviderNetworkRequest(providerNetworkRequest).Execute()
 
 
 
@@ -3924,16 +3972,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this provider network.
-	writableProviderNetworkRequest := *openapiclient.NewWritableProviderNetworkRequest(int32(123), "Name_example") // WritableProviderNetworkRequest | 
+	providerNetworkRequest := *openapiclient.NewProviderNetworkRequest("Name_example") // ProviderNetworkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CircuitsAPI.CircuitsProviderNetworksUpdate(context.Background(), id).WritableProviderNetworkRequest(writableProviderNetworkRequest).Execute()
+	resp, r, err := apiClient.CircuitsAPI.CircuitsProviderNetworksUpdate(context.Background(), id).ProviderNetworkRequest(providerNetworkRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsProviderNetworksUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3959,7 +4007,7 @@ Other parameters are passed through a pointer to a apiCircuitsProviderNetworksUp
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **writableProviderNetworkRequest** | [**WritableProviderNetworkRequest**](WritableProviderNetworkRequest.md) |  | 
+ **providerNetworkRequest** | [**ProviderNetworkRequest**](ProviderNetworkRequest.md) |  | 
 
 ### Return type
 
@@ -3996,7 +4044,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -4060,7 +4108,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -4126,7 +4174,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -4177,7 +4225,7 @@ Name | Type | Description  | Notes
 
 ## CircuitsProvidersCreate
 
-> Provider CircuitsProvidersCreate(ctx).WritableProviderRequest(writableProviderRequest).Execute()
+> Provider CircuitsProvidersCreate(ctx).ProviderRequest(providerRequest).Execute()
 
 
 
@@ -4192,15 +4240,15 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
-	writableProviderRequest := *openapiclient.NewWritableProviderRequest("Name_example", "Slug_example", []int32{int32(123)}) // WritableProviderRequest | 
+	providerRequest := *openapiclient.NewProviderRequest("Name_example", "Slug_example") // ProviderRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CircuitsAPI.CircuitsProvidersCreate(context.Background()).WritableProviderRequest(writableProviderRequest).Execute()
+	resp, r, err := apiClient.CircuitsAPI.CircuitsProvidersCreate(context.Background()).ProviderRequest(providerRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsProvidersCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4221,7 +4269,7 @@ Other parameters are passed through a pointer to a apiCircuitsProvidersCreateReq
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **writableProviderRequest** | [**WritableProviderRequest**](WritableProviderRequest.md) |  | 
+ **providerRequest** | [**ProviderRequest**](ProviderRequest.md) |  | 
 
 ### Return type
 
@@ -4258,7 +4306,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -4327,7 +4375,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -4546,7 +4594,7 @@ Name | Type | Description  | Notes
 
 ## CircuitsProvidersPartialUpdate
 
-> Provider CircuitsProvidersPartialUpdate(ctx, id).PatchedWritableProviderRequest(patchedWritableProviderRequest).Execute()
+> Provider CircuitsProvidersPartialUpdate(ctx, id).PatchedProviderRequest(patchedProviderRequest).Execute()
 
 
 
@@ -4561,16 +4609,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this provider.
-	patchedWritableProviderRequest := *openapiclient.NewPatchedWritableProviderRequest() // PatchedWritableProviderRequest |  (optional)
+	patchedProviderRequest := *openapiclient.NewPatchedProviderRequest() // PatchedProviderRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CircuitsAPI.CircuitsProvidersPartialUpdate(context.Background(), id).PatchedWritableProviderRequest(patchedWritableProviderRequest).Execute()
+	resp, r, err := apiClient.CircuitsAPI.CircuitsProvidersPartialUpdate(context.Background(), id).PatchedProviderRequest(patchedProviderRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsProvidersPartialUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4596,7 +4644,7 @@ Other parameters are passed through a pointer to a apiCircuitsProvidersPartialUp
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **patchedWritableProviderRequest** | [**PatchedWritableProviderRequest**](PatchedWritableProviderRequest.md) |  | 
+ **patchedProviderRequest** | [**PatchedProviderRequest**](PatchedProviderRequest.md) |  | 
 
 ### Return type
 
@@ -4633,7 +4681,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
@@ -4688,7 +4736,7 @@ Name | Type | Description  | Notes
 
 ## CircuitsProvidersUpdate
 
-> Provider CircuitsProvidersUpdate(ctx, id).WritableProviderRequest(writableProviderRequest).Execute()
+> Provider CircuitsProvidersUpdate(ctx, id).ProviderRequest(providerRequest).Execute()
 
 
 
@@ -4703,16 +4751,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v3"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this provider.
-	writableProviderRequest := *openapiclient.NewWritableProviderRequest("Name_example", "Slug_example", []int32{int32(123)}) // WritableProviderRequest | 
+	providerRequest := *openapiclient.NewProviderRequest("Name_example", "Slug_example") // ProviderRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CircuitsAPI.CircuitsProvidersUpdate(context.Background(), id).WritableProviderRequest(writableProviderRequest).Execute()
+	resp, r, err := apiClient.CircuitsAPI.CircuitsProvidersUpdate(context.Background(), id).ProviderRequest(providerRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsProvidersUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4738,7 +4786,7 @@ Other parameters are passed through a pointer to a apiCircuitsProvidersUpdateReq
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **writableProviderRequest** | [**WritableProviderRequest**](WritableProviderRequest.md) |  | 
+ **providerRequest** | [**ProviderRequest**](ProviderRequest.md) |  | 
 
 ### Return type
 

@@ -10,19 +10,13 @@ Name | Type | Description | Notes
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
-**Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
-**CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
-**LastUpdated** | **NullableTime** |  | [readonly] 
-**DevicetypeCount** | **int32** |  | [readonly] 
-**InventoryitemCount** | **int32** |  | [readonly] 
-**PlatformCount** | **int32** |  | [readonly] 
+**DevicetypeCount** | **int64** |  | [readonly] 
 
 ## Methods
 
 ### NewManufacturer
 
-`func NewManufacturer(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, devicetypeCount int32, inventoryitemCount int32, platformCount int32, ) *Manufacturer`
+`func NewManufacturer(id int32, url string, display string, name string, slug string, devicetypeCount int64, ) *Manufacturer`
 
 NewManufacturer instantiates a new Manufacturer object
 This constructor will assign default values to properties that have it defined,
@@ -162,174 +156,24 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
-### GetTags
-
-`func (o *Manufacturer) GetTags() []NestedTag`
-
-GetTags returns the Tags field if non-nil, zero value otherwise.
-
-### GetTagsOk
-
-`func (o *Manufacturer) GetTagsOk() (*[]NestedTag, bool)`
-
-GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTags
-
-`func (o *Manufacturer) SetTags(v []NestedTag)`
-
-SetTags sets Tags field to given value.
-
-### HasTags
-
-`func (o *Manufacturer) HasTags() bool`
-
-HasTags returns a boolean if a field has been set.
-
-### GetCustomFields
-
-`func (o *Manufacturer) GetCustomFields() map[string]interface{}`
-
-GetCustomFields returns the CustomFields field if non-nil, zero value otherwise.
-
-### GetCustomFieldsOk
-
-`func (o *Manufacturer) GetCustomFieldsOk() (*map[string]interface{}, bool)`
-
-GetCustomFieldsOk returns a tuple with the CustomFields field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCustomFields
-
-`func (o *Manufacturer) SetCustomFields(v map[string]interface{})`
-
-SetCustomFields sets CustomFields field to given value.
-
-### HasCustomFields
-
-`func (o *Manufacturer) HasCustomFields() bool`
-
-HasCustomFields returns a boolean if a field has been set.
-
-### GetCreated
-
-`func (o *Manufacturer) GetCreated() time.Time`
-
-GetCreated returns the Created field if non-nil, zero value otherwise.
-
-### GetCreatedOk
-
-`func (o *Manufacturer) GetCreatedOk() (*time.Time, bool)`
-
-GetCreatedOk returns a tuple with the Created field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreated
-
-`func (o *Manufacturer) SetCreated(v time.Time)`
-
-SetCreated sets Created field to given value.
-
-
-### SetCreatedNil
-
-`func (o *Manufacturer) SetCreatedNil(b bool)`
-
- SetCreatedNil sets the value for Created to be an explicit nil
-
-### UnsetCreated
-`func (o *Manufacturer) UnsetCreated()`
-
-UnsetCreated ensures that no value is present for Created, not even an explicit nil
-### GetLastUpdated
-
-`func (o *Manufacturer) GetLastUpdated() time.Time`
-
-GetLastUpdated returns the LastUpdated field if non-nil, zero value otherwise.
-
-### GetLastUpdatedOk
-
-`func (o *Manufacturer) GetLastUpdatedOk() (*time.Time, bool)`
-
-GetLastUpdatedOk returns a tuple with the LastUpdated field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLastUpdated
-
-`func (o *Manufacturer) SetLastUpdated(v time.Time)`
-
-SetLastUpdated sets LastUpdated field to given value.
-
-
-### SetLastUpdatedNil
-
-`func (o *Manufacturer) SetLastUpdatedNil(b bool)`
-
- SetLastUpdatedNil sets the value for LastUpdated to be an explicit nil
-
-### UnsetLastUpdated
-`func (o *Manufacturer) UnsetLastUpdated()`
-
-UnsetLastUpdated ensures that no value is present for LastUpdated, not even an explicit nil
 ### GetDevicetypeCount
 
-`func (o *Manufacturer) GetDevicetypeCount() int32`
+`func (o *Manufacturer) GetDevicetypeCount() int64`
 
 GetDevicetypeCount returns the DevicetypeCount field if non-nil, zero value otherwise.
 
 ### GetDevicetypeCountOk
 
-`func (o *Manufacturer) GetDevicetypeCountOk() (*int32, bool)`
+`func (o *Manufacturer) GetDevicetypeCountOk() (*int64, bool)`
 
 GetDevicetypeCountOk returns a tuple with the DevicetypeCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevicetypeCount
 
-`func (o *Manufacturer) SetDevicetypeCount(v int32)`
+`func (o *Manufacturer) SetDevicetypeCount(v int64)`
 
 SetDevicetypeCount sets DevicetypeCount field to given value.
-
-
-### GetInventoryitemCount
-
-`func (o *Manufacturer) GetInventoryitemCount() int32`
-
-GetInventoryitemCount returns the InventoryitemCount field if non-nil, zero value otherwise.
-
-### GetInventoryitemCountOk
-
-`func (o *Manufacturer) GetInventoryitemCountOk() (*int32, bool)`
-
-GetInventoryitemCountOk returns a tuple with the InventoryitemCount field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetInventoryitemCount
-
-`func (o *Manufacturer) SetInventoryitemCount(v int32)`
-
-SetInventoryitemCount sets InventoryitemCount field to given value.
-
-
-### GetPlatformCount
-
-`func (o *Manufacturer) GetPlatformCount() int32`
-
-GetPlatformCount returns the PlatformCount field if non-nil, zero value otherwise.
-
-### GetPlatformCountOk
-
-`func (o *Manufacturer) GetPlatformCountOk() (*int32, bool)`
-
-GetPlatformCountOk returns a tuple with the PlatformCount field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPlatformCount
-
-`func (o *Manufacturer) SetPlatformCount(v int32)`
-
-SetPlatformCount sets PlatformCount field to given value.
 
 
 

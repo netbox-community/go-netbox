@@ -19,14 +19,14 @@ Name | Type | Description | Notes
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**VlanCount** | **int32** |  | [readonly] 
+**VlanCount** | **int64** |  | [readonly] 
 **Utilization** | **string** |  | [readonly] 
 
 ## Methods
 
 ### NewVLANGroup
 
-`func NewVLANGroup(id int32, url string, display string, name string, slug string, scope interface{}, created NullableTime, lastUpdated NullableTime, vlanCount int32, utilization string, ) *VLANGroup`
+`func NewVLANGroup(id int32, url string, display string, name string, slug string, scope interface{}, created NullableTime, lastUpdated NullableTime, vlanCount int64, utilization string, ) *VLANGroup`
 
 NewVLANGroup instantiates a new VLANGroup object
 This constructor will assign default values to properties that have it defined,
@@ -428,20 +428,20 @@ SetLastUpdated sets LastUpdated field to given value.
 UnsetLastUpdated ensures that no value is present for LastUpdated, not even an explicit nil
 ### GetVlanCount
 
-`func (o *VLANGroup) GetVlanCount() int32`
+`func (o *VLANGroup) GetVlanCount() int64`
 
 GetVlanCount returns the VlanCount field if non-nil, zero value otherwise.
 
 ### GetVlanCountOk
 
-`func (o *VLANGroup) GetVlanCountOk() (*int32, bool)`
+`func (o *VLANGroup) GetVlanCountOk() (*int64, bool)`
 
 GetVlanCountOk returns a tuple with the VlanCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVlanCount
 
-`func (o *VLANGroup) SetVlanCount(v int32)`
+`func (o *VLANGroup) SetVlanCount(v int64)`
 
 SetVlanCount sets VlanCount field to given value.
 

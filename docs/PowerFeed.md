@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
-**PowerPanel** | [**NestedPowerPanel**](NestedPowerPanel.md) |  | 
-**Rack** | Pointer to [**NullableNestedRack**](NestedRack.md) |  | [optional] 
+**PowerPanel** | [**PowerPanel**](PowerPanel.md) |  | 
+**Rack** | Pointer to [**NullableRack**](Rack.md) |  | [optional] 
 **Name** | **string** |  | 
 **Status** | Pointer to [**PowerFeedStatus**](PowerFeedStatus.md) |  | [optional] 
 **Type** | Pointer to [**PowerFeedType**](PowerFeedType.md) |  | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **Amperage** | Pointer to **int32** |  | [optional] 
 **MaxUtilization** | Pointer to **int32** | Maximum permissible draw (percentage) | [optional] 
 **MarkConnected** | Pointer to **bool** | Treat as if a cable is connected | [optional] 
-**Cable** | [**NullableNestedCable**](NestedCable.md) |  | [readonly] 
+**Cable** | [**NullableCable**](Cable.md) |  | [readonly] 
 **CableEnd** | **string** |  | [readonly] 
 **LinkPeers** | **[]interface{}** |  | [readonly] 
 **LinkPeersType** | **string** | Return the type of the peer link terminations, or None. | [readonly] 
@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **ConnectedEndpointsType** | **string** |  | [readonly] 
 **ConnectedEndpointsReachable** | **bool** |  | [readonly] 
 **Description** | Pointer to **string** |  | [optional] 
-**Tenant** | Pointer to [**NullableNestedTenant**](NestedTenant.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableTenant**](Tenant.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -38,7 +38,7 @@ Name | Type | Description | Notes
 
 ### NewPowerFeed
 
-`func NewPowerFeed(id int32, url string, display string, powerPanel NestedPowerPanel, name string, cable NullableNestedCable, cableEnd string, linkPeers []interface{}, linkPeersType string, connectedEndpoints []interface{}, connectedEndpointsType string, connectedEndpointsReachable bool, created NullableTime, lastUpdated NullableTime, occupied bool, ) *PowerFeed`
+`func NewPowerFeed(id int32, url string, display string, powerPanel PowerPanel, name string, cable NullableCable, cableEnd string, linkPeers []interface{}, linkPeersType string, connectedEndpoints []interface{}, connectedEndpointsType string, connectedEndpointsReachable bool, created NullableTime, lastUpdated NullableTime, occupied bool, ) *PowerFeed`
 
 NewPowerFeed instantiates a new PowerFeed object
 This constructor will assign default values to properties that have it defined,
@@ -115,40 +115,40 @@ SetDisplay sets Display field to given value.
 
 ### GetPowerPanel
 
-`func (o *PowerFeed) GetPowerPanel() NestedPowerPanel`
+`func (o *PowerFeed) GetPowerPanel() PowerPanel`
 
 GetPowerPanel returns the PowerPanel field if non-nil, zero value otherwise.
 
 ### GetPowerPanelOk
 
-`func (o *PowerFeed) GetPowerPanelOk() (*NestedPowerPanel, bool)`
+`func (o *PowerFeed) GetPowerPanelOk() (*PowerPanel, bool)`
 
 GetPowerPanelOk returns a tuple with the PowerPanel field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPowerPanel
 
-`func (o *PowerFeed) SetPowerPanel(v NestedPowerPanel)`
+`func (o *PowerFeed) SetPowerPanel(v PowerPanel)`
 
 SetPowerPanel sets PowerPanel field to given value.
 
 
 ### GetRack
 
-`func (o *PowerFeed) GetRack() NestedRack`
+`func (o *PowerFeed) GetRack() Rack`
 
 GetRack returns the Rack field if non-nil, zero value otherwise.
 
 ### GetRackOk
 
-`func (o *PowerFeed) GetRackOk() (*NestedRack, bool)`
+`func (o *PowerFeed) GetRackOk() (*Rack, bool)`
 
 GetRackOk returns a tuple with the Rack field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRack
 
-`func (o *PowerFeed) SetRack(v NestedRack)`
+`func (o *PowerFeed) SetRack(v Rack)`
 
 SetRack sets Rack field to given value.
 
@@ -390,20 +390,20 @@ HasMarkConnected returns a boolean if a field has been set.
 
 ### GetCable
 
-`func (o *PowerFeed) GetCable() NestedCable`
+`func (o *PowerFeed) GetCable() Cable`
 
 GetCable returns the Cable field if non-nil, zero value otherwise.
 
 ### GetCableOk
 
-`func (o *PowerFeed) GetCableOk() (*NestedCable, bool)`
+`func (o *PowerFeed) GetCableOk() (*Cable, bool)`
 
 GetCableOk returns a tuple with the Cable field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCable
 
-`func (o *PowerFeed) SetCable(v NestedCable)`
+`func (o *PowerFeed) SetCable(v Cable)`
 
 SetCable sets Cable field to given value.
 
@@ -565,20 +565,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetTenant
 
-`func (o *PowerFeed) GetTenant() NestedTenant`
+`func (o *PowerFeed) GetTenant() Tenant`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *PowerFeed) GetTenantOk() (*NestedTenant, bool)`
+`func (o *PowerFeed) GetTenantOk() (*Tenant, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *PowerFeed) SetTenant(v NestedTenant)`
+`func (o *PowerFeed) SetTenant(v Tenant)`
 
 SetTenant sets Tenant field to given value.
 

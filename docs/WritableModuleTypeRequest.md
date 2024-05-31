@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Manufacturer** | **int32** |  | 
+**Manufacturer** | [**ManufacturerRequest**](ManufacturerRequest.md) |  | 
 **Model** | **string** |  | 
 **PartNumber** | Pointer to **string** | Discrete part number (optional) | [optional] 
 **Weight** | Pointer to **NullableFloat64** |  | [optional] 
-**WeightUnit** | Pointer to [**DeviceTypeWeightUnitValue**](DeviceTypeWeightUnitValue.md) |  | [optional] 
+**WeightUnit** | Pointer to [**PatchedWritableDeviceTypeRequestWeightUnit**](PatchedWritableDeviceTypeRequestWeightUnit.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewWritableModuleTypeRequest
 
-`func NewWritableModuleTypeRequest(manufacturer int32, model string, ) *WritableModuleTypeRequest`
+`func NewWritableModuleTypeRequest(manufacturer ManufacturerRequest, model string, ) *WritableModuleTypeRequest`
 
 NewWritableModuleTypeRequest instantiates a new WritableModuleTypeRequest object
 This constructor will assign default values to properties that have it defined,
@@ -35,20 +35,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetManufacturer
 
-`func (o *WritableModuleTypeRequest) GetManufacturer() int32`
+`func (o *WritableModuleTypeRequest) GetManufacturer() ManufacturerRequest`
 
 GetManufacturer returns the Manufacturer field if non-nil, zero value otherwise.
 
 ### GetManufacturerOk
 
-`func (o *WritableModuleTypeRequest) GetManufacturerOk() (*int32, bool)`
+`func (o *WritableModuleTypeRequest) GetManufacturerOk() (*ManufacturerRequest, bool)`
 
 GetManufacturerOk returns a tuple with the Manufacturer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetManufacturer
 
-`func (o *WritableModuleTypeRequest) SetManufacturer(v int32)`
+`func (o *WritableModuleTypeRequest) SetManufacturer(v ManufacturerRequest)`
 
 SetManufacturer sets Manufacturer field to given value.
 
@@ -135,20 +135,20 @@ HasWeight returns a boolean if a field has been set.
 UnsetWeight ensures that no value is present for Weight, not even an explicit nil
 ### GetWeightUnit
 
-`func (o *WritableModuleTypeRequest) GetWeightUnit() DeviceTypeWeightUnitValue`
+`func (o *WritableModuleTypeRequest) GetWeightUnit() PatchedWritableDeviceTypeRequestWeightUnit`
 
 GetWeightUnit returns the WeightUnit field if non-nil, zero value otherwise.
 
 ### GetWeightUnitOk
 
-`func (o *WritableModuleTypeRequest) GetWeightUnitOk() (*DeviceTypeWeightUnitValue, bool)`
+`func (o *WritableModuleTypeRequest) GetWeightUnitOk() (*PatchedWritableDeviceTypeRequestWeightUnit, bool)`
 
 GetWeightUnitOk returns a tuple with the WeightUnit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWeightUnit
 
-`func (o *WritableModuleTypeRequest) SetWeightUnit(v DeviceTypeWeightUnitValue)`
+`func (o *WritableModuleTypeRequest) SetWeightUnit(v PatchedWritableDeviceTypeRequestWeightUnit)`
 
 SetWeightUnit sets WeightUnit field to given value.
 

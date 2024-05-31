@@ -11,22 +11,22 @@ Name | Type | Description | Notes
 **Weight** | Pointer to **int32** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **IsActive** | Pointer to **bool** |  | [optional] 
-**Regions** | Pointer to **[]int32** |  | [optional] 
-**SiteGroups** | Pointer to **[]int32** |  | [optional] 
-**Sites** | Pointer to **[]int32** |  | [optional] 
-**Locations** | Pointer to **[]int32** |  | [optional] 
-**DeviceTypes** | Pointer to **[]int32** |  | [optional] 
-**Roles** | Pointer to **[]int32** |  | [optional] 
-**Platforms** | Pointer to **[]int32** |  | [optional] 
-**ClusterTypes** | Pointer to **[]int32** |  | [optional] 
-**ClusterGroups** | Pointer to **[]int32** |  | [optional] 
-**Clusters** | Pointer to **[]int32** |  | [optional] 
-**TenantGroups** | Pointer to **[]int32** |  | [optional] 
-**Tenants** | Pointer to **[]int32** |  | [optional] 
+**Regions** | Pointer to [**[]Region**](Region.md) |  | [optional] 
+**SiteGroups** | Pointer to [**[]SiteGroup**](SiteGroup.md) |  | [optional] 
+**Sites** | Pointer to [**[]Site**](Site.md) |  | [optional] 
+**Locations** | Pointer to [**[]Location**](Location.md) |  | [optional] 
+**DeviceTypes** | Pointer to [**[]DeviceType**](DeviceType.md) |  | [optional] 
+**Roles** | Pointer to [**[]DeviceRole**](DeviceRole.md) |  | [optional] 
+**Platforms** | Pointer to [**[]Platform**](Platform.md) |  | [optional] 
+**ClusterTypes** | Pointer to [**[]ClusterType**](ClusterType.md) |  | [optional] 
+**ClusterGroups** | Pointer to [**[]ClusterGroup**](ClusterGroup.md) |  | [optional] 
+**Clusters** | Pointer to [**[]Cluster**](Cluster.md) |  | [optional] 
+**TenantGroups** | Pointer to [**[]TenantGroup**](TenantGroup.md) |  | [optional] 
+**Tenants** | Pointer to [**[]Tenant**](Tenant.md) |  | [optional] 
 **Tags** | Pointer to **[]string** |  | [optional] 
-**DataSource** | Pointer to [**NestedDataSource**](NestedDataSource.md) |  | [optional] 
+**DataSource** | Pointer to [**DataSource**](DataSource.md) |  | [optional] 
 **DataPath** | **string** | Path to remote file (relative to data source root) | [readonly] 
-**DataFile** | [**NestedDataFile**](NestedDataFile.md) |  | [readonly] 
+**DataFile** | [**DataFile**](DataFile.md) |  | [readonly] 
 **DataSynced** | **NullableTime** |  | [readonly] 
 **Data** | **interface{}** |  | 
 **Created** | **NullableTime** |  | [readonly] 
@@ -36,7 +36,7 @@ Name | Type | Description | Notes
 
 ### NewConfigContext
 
-`func NewConfigContext(id int32, url string, display string, name string, dataPath string, dataFile NestedDataFile, dataSynced NullableTime, data interface{}, created NullableTime, lastUpdated NullableTime, ) *ConfigContext`
+`func NewConfigContext(id int32, url string, display string, name string, dataPath string, dataFile DataFile, dataSynced NullableTime, data interface{}, created NullableTime, lastUpdated NullableTime, ) *ConfigContext`
 
 NewConfigContext instantiates a new ConfigContext object
 This constructor will assign default values to properties that have it defined,
@@ -208,20 +208,20 @@ HasIsActive returns a boolean if a field has been set.
 
 ### GetRegions
 
-`func (o *ConfigContext) GetRegions() []int32`
+`func (o *ConfigContext) GetRegions() []Region`
 
 GetRegions returns the Regions field if non-nil, zero value otherwise.
 
 ### GetRegionsOk
 
-`func (o *ConfigContext) GetRegionsOk() (*[]int32, bool)`
+`func (o *ConfigContext) GetRegionsOk() (*[]Region, bool)`
 
 GetRegionsOk returns a tuple with the Regions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRegions
 
-`func (o *ConfigContext) SetRegions(v []int32)`
+`func (o *ConfigContext) SetRegions(v []Region)`
 
 SetRegions sets Regions field to given value.
 
@@ -233,20 +233,20 @@ HasRegions returns a boolean if a field has been set.
 
 ### GetSiteGroups
 
-`func (o *ConfigContext) GetSiteGroups() []int32`
+`func (o *ConfigContext) GetSiteGroups() []SiteGroup`
 
 GetSiteGroups returns the SiteGroups field if non-nil, zero value otherwise.
 
 ### GetSiteGroupsOk
 
-`func (o *ConfigContext) GetSiteGroupsOk() (*[]int32, bool)`
+`func (o *ConfigContext) GetSiteGroupsOk() (*[]SiteGroup, bool)`
 
 GetSiteGroupsOk returns a tuple with the SiteGroups field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSiteGroups
 
-`func (o *ConfigContext) SetSiteGroups(v []int32)`
+`func (o *ConfigContext) SetSiteGroups(v []SiteGroup)`
 
 SetSiteGroups sets SiteGroups field to given value.
 
@@ -258,20 +258,20 @@ HasSiteGroups returns a boolean if a field has been set.
 
 ### GetSites
 
-`func (o *ConfigContext) GetSites() []int32`
+`func (o *ConfigContext) GetSites() []Site`
 
 GetSites returns the Sites field if non-nil, zero value otherwise.
 
 ### GetSitesOk
 
-`func (o *ConfigContext) GetSitesOk() (*[]int32, bool)`
+`func (o *ConfigContext) GetSitesOk() (*[]Site, bool)`
 
 GetSitesOk returns a tuple with the Sites field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSites
 
-`func (o *ConfigContext) SetSites(v []int32)`
+`func (o *ConfigContext) SetSites(v []Site)`
 
 SetSites sets Sites field to given value.
 
@@ -283,20 +283,20 @@ HasSites returns a boolean if a field has been set.
 
 ### GetLocations
 
-`func (o *ConfigContext) GetLocations() []int32`
+`func (o *ConfigContext) GetLocations() []Location`
 
 GetLocations returns the Locations field if non-nil, zero value otherwise.
 
 ### GetLocationsOk
 
-`func (o *ConfigContext) GetLocationsOk() (*[]int32, bool)`
+`func (o *ConfigContext) GetLocationsOk() (*[]Location, bool)`
 
 GetLocationsOk returns a tuple with the Locations field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLocations
 
-`func (o *ConfigContext) SetLocations(v []int32)`
+`func (o *ConfigContext) SetLocations(v []Location)`
 
 SetLocations sets Locations field to given value.
 
@@ -308,20 +308,20 @@ HasLocations returns a boolean if a field has been set.
 
 ### GetDeviceTypes
 
-`func (o *ConfigContext) GetDeviceTypes() []int32`
+`func (o *ConfigContext) GetDeviceTypes() []DeviceType`
 
 GetDeviceTypes returns the DeviceTypes field if non-nil, zero value otherwise.
 
 ### GetDeviceTypesOk
 
-`func (o *ConfigContext) GetDeviceTypesOk() (*[]int32, bool)`
+`func (o *ConfigContext) GetDeviceTypesOk() (*[]DeviceType, bool)`
 
 GetDeviceTypesOk returns a tuple with the DeviceTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeviceTypes
 
-`func (o *ConfigContext) SetDeviceTypes(v []int32)`
+`func (o *ConfigContext) SetDeviceTypes(v []DeviceType)`
 
 SetDeviceTypes sets DeviceTypes field to given value.
 
@@ -333,20 +333,20 @@ HasDeviceTypes returns a boolean if a field has been set.
 
 ### GetRoles
 
-`func (o *ConfigContext) GetRoles() []int32`
+`func (o *ConfigContext) GetRoles() []DeviceRole`
 
 GetRoles returns the Roles field if non-nil, zero value otherwise.
 
 ### GetRolesOk
 
-`func (o *ConfigContext) GetRolesOk() (*[]int32, bool)`
+`func (o *ConfigContext) GetRolesOk() (*[]DeviceRole, bool)`
 
 GetRolesOk returns a tuple with the Roles field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRoles
 
-`func (o *ConfigContext) SetRoles(v []int32)`
+`func (o *ConfigContext) SetRoles(v []DeviceRole)`
 
 SetRoles sets Roles field to given value.
 
@@ -358,20 +358,20 @@ HasRoles returns a boolean if a field has been set.
 
 ### GetPlatforms
 
-`func (o *ConfigContext) GetPlatforms() []int32`
+`func (o *ConfigContext) GetPlatforms() []Platform`
 
 GetPlatforms returns the Platforms field if non-nil, zero value otherwise.
 
 ### GetPlatformsOk
 
-`func (o *ConfigContext) GetPlatformsOk() (*[]int32, bool)`
+`func (o *ConfigContext) GetPlatformsOk() (*[]Platform, bool)`
 
 GetPlatformsOk returns a tuple with the Platforms field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlatforms
 
-`func (o *ConfigContext) SetPlatforms(v []int32)`
+`func (o *ConfigContext) SetPlatforms(v []Platform)`
 
 SetPlatforms sets Platforms field to given value.
 
@@ -383,20 +383,20 @@ HasPlatforms returns a boolean if a field has been set.
 
 ### GetClusterTypes
 
-`func (o *ConfigContext) GetClusterTypes() []int32`
+`func (o *ConfigContext) GetClusterTypes() []ClusterType`
 
 GetClusterTypes returns the ClusterTypes field if non-nil, zero value otherwise.
 
 ### GetClusterTypesOk
 
-`func (o *ConfigContext) GetClusterTypesOk() (*[]int32, bool)`
+`func (o *ConfigContext) GetClusterTypesOk() (*[]ClusterType, bool)`
 
 GetClusterTypesOk returns a tuple with the ClusterTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetClusterTypes
 
-`func (o *ConfigContext) SetClusterTypes(v []int32)`
+`func (o *ConfigContext) SetClusterTypes(v []ClusterType)`
 
 SetClusterTypes sets ClusterTypes field to given value.
 
@@ -408,20 +408,20 @@ HasClusterTypes returns a boolean if a field has been set.
 
 ### GetClusterGroups
 
-`func (o *ConfigContext) GetClusterGroups() []int32`
+`func (o *ConfigContext) GetClusterGroups() []ClusterGroup`
 
 GetClusterGroups returns the ClusterGroups field if non-nil, zero value otherwise.
 
 ### GetClusterGroupsOk
 
-`func (o *ConfigContext) GetClusterGroupsOk() (*[]int32, bool)`
+`func (o *ConfigContext) GetClusterGroupsOk() (*[]ClusterGroup, bool)`
 
 GetClusterGroupsOk returns a tuple with the ClusterGroups field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetClusterGroups
 
-`func (o *ConfigContext) SetClusterGroups(v []int32)`
+`func (o *ConfigContext) SetClusterGroups(v []ClusterGroup)`
 
 SetClusterGroups sets ClusterGroups field to given value.
 
@@ -433,20 +433,20 @@ HasClusterGroups returns a boolean if a field has been set.
 
 ### GetClusters
 
-`func (o *ConfigContext) GetClusters() []int32`
+`func (o *ConfigContext) GetClusters() []Cluster`
 
 GetClusters returns the Clusters field if non-nil, zero value otherwise.
 
 ### GetClustersOk
 
-`func (o *ConfigContext) GetClustersOk() (*[]int32, bool)`
+`func (o *ConfigContext) GetClustersOk() (*[]Cluster, bool)`
 
 GetClustersOk returns a tuple with the Clusters field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetClusters
 
-`func (o *ConfigContext) SetClusters(v []int32)`
+`func (o *ConfigContext) SetClusters(v []Cluster)`
 
 SetClusters sets Clusters field to given value.
 
@@ -458,20 +458,20 @@ HasClusters returns a boolean if a field has been set.
 
 ### GetTenantGroups
 
-`func (o *ConfigContext) GetTenantGroups() []int32`
+`func (o *ConfigContext) GetTenantGroups() []TenantGroup`
 
 GetTenantGroups returns the TenantGroups field if non-nil, zero value otherwise.
 
 ### GetTenantGroupsOk
 
-`func (o *ConfigContext) GetTenantGroupsOk() (*[]int32, bool)`
+`func (o *ConfigContext) GetTenantGroupsOk() (*[]TenantGroup, bool)`
 
 GetTenantGroupsOk returns a tuple with the TenantGroups field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenantGroups
 
-`func (o *ConfigContext) SetTenantGroups(v []int32)`
+`func (o *ConfigContext) SetTenantGroups(v []TenantGroup)`
 
 SetTenantGroups sets TenantGroups field to given value.
 
@@ -483,20 +483,20 @@ HasTenantGroups returns a boolean if a field has been set.
 
 ### GetTenants
 
-`func (o *ConfigContext) GetTenants() []int32`
+`func (o *ConfigContext) GetTenants() []Tenant`
 
 GetTenants returns the Tenants field if non-nil, zero value otherwise.
 
 ### GetTenantsOk
 
-`func (o *ConfigContext) GetTenantsOk() (*[]int32, bool)`
+`func (o *ConfigContext) GetTenantsOk() (*[]Tenant, bool)`
 
 GetTenantsOk returns a tuple with the Tenants field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenants
 
-`func (o *ConfigContext) SetTenants(v []int32)`
+`func (o *ConfigContext) SetTenants(v []Tenant)`
 
 SetTenants sets Tenants field to given value.
 
@@ -533,20 +533,20 @@ HasTags returns a boolean if a field has been set.
 
 ### GetDataSource
 
-`func (o *ConfigContext) GetDataSource() NestedDataSource`
+`func (o *ConfigContext) GetDataSource() DataSource`
 
 GetDataSource returns the DataSource field if non-nil, zero value otherwise.
 
 ### GetDataSourceOk
 
-`func (o *ConfigContext) GetDataSourceOk() (*NestedDataSource, bool)`
+`func (o *ConfigContext) GetDataSourceOk() (*DataSource, bool)`
 
 GetDataSourceOk returns a tuple with the DataSource field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDataSource
 
-`func (o *ConfigContext) SetDataSource(v NestedDataSource)`
+`func (o *ConfigContext) SetDataSource(v DataSource)`
 
 SetDataSource sets DataSource field to given value.
 
@@ -578,20 +578,20 @@ SetDataPath sets DataPath field to given value.
 
 ### GetDataFile
 
-`func (o *ConfigContext) GetDataFile() NestedDataFile`
+`func (o *ConfigContext) GetDataFile() DataFile`
 
 GetDataFile returns the DataFile field if non-nil, zero value otherwise.
 
 ### GetDataFileOk
 
-`func (o *ConfigContext) GetDataFileOk() (*NestedDataFile, bool)`
+`func (o *ConfigContext) GetDataFileOk() (*DataFile, bool)`
 
 GetDataFileOk returns a tuple with the DataFile field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDataFile
 
-`func (o *ConfigContext) SetDataFile(v NestedDataFile)`
+`func (o *ConfigContext) SetDataFile(v DataFile)`
 
 SetDataFile sets DataFile field to given value.
 

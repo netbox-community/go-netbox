@@ -10,14 +10,14 @@ Name | Type | Description | Notes
 **ObjectType** | **string** |  | 
 **ObjectId** | **int64** |  | 
 **Object** | **interface{}** |  | [readonly] 
-**User** | [**NestedUser**](NestedUser.md) |  | 
+**User** | [**User**](User.md) |  | 
 **Created** | **time.Time** |  | [readonly] 
 
 ## Methods
 
 ### NewBookmark
 
-`func NewBookmark(id int32, url string, display string, objectType string, objectId int64, object interface{}, user NestedUser, created time.Time, ) *Bookmark`
+`func NewBookmark(id int32, url string, display string, objectType string, objectId int64, object interface{}, user User, created time.Time, ) *Bookmark`
 
 NewBookmark instantiates a new Bookmark object
 This constructor will assign default values to properties that have it defined,
@@ -164,20 +164,20 @@ SetObject sets Object field to given value.
 UnsetObject ensures that no value is present for Object, not even an explicit nil
 ### GetUser
 
-`func (o *Bookmark) GetUser() NestedUser`
+`func (o *Bookmark) GetUser() User`
 
 GetUser returns the User field if non-nil, zero value otherwise.
 
 ### GetUserOk
 
-`func (o *Bookmark) GetUserOk() (*NestedUser, bool)`
+`func (o *Bookmark) GetUserOk() (*User, bool)`
 
 GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUser
 
-`func (o *Bookmark) SetUser(v NestedUser)`
+`func (o *Bookmark) SetUser(v User)`
 
 SetUser sets User field to given value.
 

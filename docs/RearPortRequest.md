@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Device** | [**NestedDeviceRequest**](NestedDeviceRequest.md) |  | 
-**Module** | Pointer to [**NullableComponentNestedModuleRequest**](ComponentNestedModuleRequest.md) |  | [optional] 
+**Device** | [**DeviceRequest**](DeviceRequest.md) |  | 
+**Module** | Pointer to [**NullableModuleRequest**](ModuleRequest.md) |  | [optional] 
 **Name** | **string** |  | 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Type** | [**FrontPortTypeValue**](FrontPortTypeValue.md) |  | 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewRearPortRequest
 
-`func NewRearPortRequest(device NestedDeviceRequest, name string, type_ FrontPortTypeValue, ) *RearPortRequest`
+`func NewRearPortRequest(device DeviceRequest, name string, type_ FrontPortTypeValue, ) *RearPortRequest`
 
 NewRearPortRequest instantiates a new RearPortRequest object
 This constructor will assign default values to properties that have it defined,
@@ -37,40 +37,40 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDevice
 
-`func (o *RearPortRequest) GetDevice() NestedDeviceRequest`
+`func (o *RearPortRequest) GetDevice() DeviceRequest`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *RearPortRequest) GetDeviceOk() (*NestedDeviceRequest, bool)`
+`func (o *RearPortRequest) GetDeviceOk() (*DeviceRequest, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *RearPortRequest) SetDevice(v NestedDeviceRequest)`
+`func (o *RearPortRequest) SetDevice(v DeviceRequest)`
 
 SetDevice sets Device field to given value.
 
 
 ### GetModule
 
-`func (o *RearPortRequest) GetModule() ComponentNestedModuleRequest`
+`func (o *RearPortRequest) GetModule() ModuleRequest`
 
 GetModule returns the Module field if non-nil, zero value otherwise.
 
 ### GetModuleOk
 
-`func (o *RearPortRequest) GetModuleOk() (*ComponentNestedModuleRequest, bool)`
+`func (o *RearPortRequest) GetModuleOk() (*ModuleRequest, bool)`
 
 GetModuleOk returns a tuple with the Module field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetModule
 
-`func (o *RearPortRequest) SetModule(v ComponentNestedModuleRequest)`
+`func (o *RearPortRequest) SetModule(v ModuleRequest)`
 
 SetModule sets Module field to given value.
 

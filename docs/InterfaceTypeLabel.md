@@ -91,6 +91,10 @@
 
 * `_1000_BASE_KX__1_GE` (value: `"1000BASE-KX (1GE)"`)
 
+* `_2_5_GBASE_KX__2_5_GE` (value: `"2.5GBASE-KX (2.5GE)"`)
+
+* `_5_GBASE_KR__5_GE` (value: `"5GBASE-KR (5GE)"`)
+
 * `_10_GBASE_KR__10_GE` (value: `"10GBASE-KR (10GE)"`)
 
 * `_10_GBASE_KX4__10_GE` (value: `"10GBASE-KX4 (10GE)"`)
@@ -130,6 +134,10 @@
 * `CDMA` (value: `"CDMA"`)
 
 * `LTE` (value: `"LTE"`)
+
+* `_4_G` (value: `"4G"`)
+
+* `_5_G` (value: `"5G"`)
 
 * `OC_3_STM_1` (value: `"OC-3/STM-1"`)
 
@@ -197,7 +205,13 @@
 
 * `DOCSIS` (value: `"DOCSIS"`)
 
-* `GPON__2_5_GBPS___1_25_GPS` (value: `"GPON (2.5 Gbps / 1.25 Gps)"`)
+* `BPON__622_MBPS___155_MBPS` (value: `"BPON (622 Mbps / 155 Mbps)"`)
+
+* `EPON__1_GBPS` (value: `"EPON (1 Gbps)"`)
+
+* `_10_G_EPON__10_GBPS` (value: `"10G-EPON (10 Gbps)"`)
+
+* `GPON__2_5_GBPS___1_25_GBPS` (value: `"GPON (2.5 Gbps / 1.25 Gbps)"`)
 
 * `XG_PON__10_GBPS___2_5_GBPS` (value: `"XG-PON (10 Gbps / 2.5 Gbps)"`)
 
@@ -205,9 +219,9 @@
 
 * `NG_PON2__TWDM_PON__4X10_GBPS` (value: `"NG-PON2 (TWDM-PON) (4x10 Gbps)"`)
 
-* `EPON__1_GBPS` (value: `"EPON (1 Gbps)"`)
+* `_25_G_PON__25_GBPS` (value: `"25G-PON (25 Gbps)"`)
 
-* `_10_G_EPON__10_GBPS` (value: `"10G-EPON (10 Gbps)"`)
+* `_50_G_PON__50_GBPS` (value: `"50G-PON (50 Gbps)"`)
 
 * `CISCO_STACK_WISE` (value: `"Cisco StackWise"`)
 

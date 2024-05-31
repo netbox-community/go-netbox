@@ -8,12 +8,12 @@ Name | Type | Description | Notes
 **Url** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
 **Name** | **string** |  | 
-**Device** | [**NestedDevice**](NestedDevice.md) |  | 
-**Identifier** | Pointer to **NullableInt32** | Numeric identifier unique to the parent device | [optional] 
-**Tenant** | Pointer to [**NullableNestedTenant**](NestedTenant.md) |  | [optional] 
-**PrimaryIp** | [**NullableNestedIPAddress**](NestedIPAddress.md) |  | [readonly] 
-**PrimaryIp4** | Pointer to [**NullableNestedIPAddress**](NestedIPAddress.md) |  | [optional] 
-**PrimaryIp6** | Pointer to [**NullableNestedIPAddress**](NestedIPAddress.md) |  | [optional] 
+**Device** | [**Device**](Device.md) |  | 
+**Identifier** | Pointer to **NullableInt32** |  | [optional] 
+**Tenant** | Pointer to [**NullableTenant**](Tenant.md) |  | [optional] 
+**PrimaryIp** | [**NullableIPAddress**](IPAddress.md) |  | [readonly] 
+**PrimaryIp4** | Pointer to [**NullableIPAddress**](IPAddress.md) |  | [optional] 
+**PrimaryIp6** | Pointer to [**NullableIPAddress**](IPAddress.md) |  | [optional] 
 **Status** | [**VirtualDeviceContextStatus**](VirtualDeviceContextStatus.md) |  | 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
@@ -21,13 +21,13 @@ Name | Type | Description | Notes
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**InterfaceCount** | **int32** |  | [readonly] 
+**InterfaceCount** | **int64** |  | [readonly] 
 
 ## Methods
 
 ### NewVirtualDeviceContext
 
-`func NewVirtualDeviceContext(id int32, url string, display string, name string, device NestedDevice, primaryIp NullableNestedIPAddress, status VirtualDeviceContextStatus, created NullableTime, lastUpdated NullableTime, interfaceCount int32, ) *VirtualDeviceContext`
+`func NewVirtualDeviceContext(id int32, url string, display string, name string, device Device, primaryIp NullableIPAddress, status VirtualDeviceContextStatus, created NullableTime, lastUpdated NullableTime, interfaceCount int64, ) *VirtualDeviceContext`
 
 NewVirtualDeviceContext instantiates a new VirtualDeviceContext object
 This constructor will assign default values to properties that have it defined,
@@ -124,20 +124,20 @@ SetName sets Name field to given value.
 
 ### GetDevice
 
-`func (o *VirtualDeviceContext) GetDevice() NestedDevice`
+`func (o *VirtualDeviceContext) GetDevice() Device`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *VirtualDeviceContext) GetDeviceOk() (*NestedDevice, bool)`
+`func (o *VirtualDeviceContext) GetDeviceOk() (*Device, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *VirtualDeviceContext) SetDevice(v NestedDevice)`
+`func (o *VirtualDeviceContext) SetDevice(v Device)`
 
 SetDevice sets Device field to given value.
 
@@ -179,20 +179,20 @@ HasIdentifier returns a boolean if a field has been set.
 UnsetIdentifier ensures that no value is present for Identifier, not even an explicit nil
 ### GetTenant
 
-`func (o *VirtualDeviceContext) GetTenant() NestedTenant`
+`func (o *VirtualDeviceContext) GetTenant() Tenant`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *VirtualDeviceContext) GetTenantOk() (*NestedTenant, bool)`
+`func (o *VirtualDeviceContext) GetTenantOk() (*Tenant, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *VirtualDeviceContext) SetTenant(v NestedTenant)`
+`func (o *VirtualDeviceContext) SetTenant(v Tenant)`
 
 SetTenant sets Tenant field to given value.
 
@@ -214,20 +214,20 @@ HasTenant returns a boolean if a field has been set.
 UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
 ### GetPrimaryIp
 
-`func (o *VirtualDeviceContext) GetPrimaryIp() NestedIPAddress`
+`func (o *VirtualDeviceContext) GetPrimaryIp() IPAddress`
 
 GetPrimaryIp returns the PrimaryIp field if non-nil, zero value otherwise.
 
 ### GetPrimaryIpOk
 
-`func (o *VirtualDeviceContext) GetPrimaryIpOk() (*NestedIPAddress, bool)`
+`func (o *VirtualDeviceContext) GetPrimaryIpOk() (*IPAddress, bool)`
 
 GetPrimaryIpOk returns a tuple with the PrimaryIp field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrimaryIp
 
-`func (o *VirtualDeviceContext) SetPrimaryIp(v NestedIPAddress)`
+`func (o *VirtualDeviceContext) SetPrimaryIp(v IPAddress)`
 
 SetPrimaryIp sets PrimaryIp field to given value.
 
@@ -244,20 +244,20 @@ SetPrimaryIp sets PrimaryIp field to given value.
 UnsetPrimaryIp ensures that no value is present for PrimaryIp, not even an explicit nil
 ### GetPrimaryIp4
 
-`func (o *VirtualDeviceContext) GetPrimaryIp4() NestedIPAddress`
+`func (o *VirtualDeviceContext) GetPrimaryIp4() IPAddress`
 
 GetPrimaryIp4 returns the PrimaryIp4 field if non-nil, zero value otherwise.
 
 ### GetPrimaryIp4Ok
 
-`func (o *VirtualDeviceContext) GetPrimaryIp4Ok() (*NestedIPAddress, bool)`
+`func (o *VirtualDeviceContext) GetPrimaryIp4Ok() (*IPAddress, bool)`
 
 GetPrimaryIp4Ok returns a tuple with the PrimaryIp4 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrimaryIp4
 
-`func (o *VirtualDeviceContext) SetPrimaryIp4(v NestedIPAddress)`
+`func (o *VirtualDeviceContext) SetPrimaryIp4(v IPAddress)`
 
 SetPrimaryIp4 sets PrimaryIp4 field to given value.
 
@@ -279,20 +279,20 @@ HasPrimaryIp4 returns a boolean if a field has been set.
 UnsetPrimaryIp4 ensures that no value is present for PrimaryIp4, not even an explicit nil
 ### GetPrimaryIp6
 
-`func (o *VirtualDeviceContext) GetPrimaryIp6() NestedIPAddress`
+`func (o *VirtualDeviceContext) GetPrimaryIp6() IPAddress`
 
 GetPrimaryIp6 returns the PrimaryIp6 field if non-nil, zero value otherwise.
 
 ### GetPrimaryIp6Ok
 
-`func (o *VirtualDeviceContext) GetPrimaryIp6Ok() (*NestedIPAddress, bool)`
+`func (o *VirtualDeviceContext) GetPrimaryIp6Ok() (*IPAddress, bool)`
 
 GetPrimaryIp6Ok returns a tuple with the PrimaryIp6 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrimaryIp6
 
-`func (o *VirtualDeviceContext) SetPrimaryIp6(v NestedIPAddress)`
+`func (o *VirtualDeviceContext) SetPrimaryIp6(v IPAddress)`
 
 SetPrimaryIp6 sets PrimaryIp6 field to given value.
 
@@ -494,20 +494,20 @@ SetLastUpdated sets LastUpdated field to given value.
 UnsetLastUpdated ensures that no value is present for LastUpdated, not even an explicit nil
 ### GetInterfaceCount
 
-`func (o *VirtualDeviceContext) GetInterfaceCount() int32`
+`func (o *VirtualDeviceContext) GetInterfaceCount() int64`
 
 GetInterfaceCount returns the InterfaceCount field if non-nil, zero value otherwise.
 
 ### GetInterfaceCountOk
 
-`func (o *VirtualDeviceContext) GetInterfaceCountOk() (*int32, bool)`
+`func (o *VirtualDeviceContext) GetInterfaceCountOk() (*int64, bool)`
 
 GetInterfaceCountOk returns a tuple with the InterfaceCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInterfaceCount
 
-`func (o *VirtualDeviceContext) SetInterfaceCount(v int32)`
+`func (o *VirtualDeviceContext) SetInterfaceCount(v int64)`
 
 SetInterfaceCount sets InterfaceCount field to given value.
 

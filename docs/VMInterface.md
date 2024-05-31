@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
-**VirtualMachine** | [**NestedVirtualMachine**](NestedVirtualMachine.md) |  | 
+**VirtualMachine** | [**VirtualMachine**](VirtualMachine.md) |  | 
 **Name** | **string** |  | 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Parent** | Pointer to [**NullableNestedVMInterface**](NestedVMInterface.md) |  | [optional] 
@@ -16,10 +16,10 @@ Name | Type | Description | Notes
 **MacAddress** | Pointer to **NullableString** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Mode** | Pointer to [**InterfaceMode**](InterfaceMode.md) |  | [optional] 
-**UntaggedVlan** | Pointer to [**NullableNestedVLAN**](NestedVLAN.md) |  | [optional] 
-**TaggedVlans** | Pointer to **[]int32** |  | [optional] 
-**Vrf** | Pointer to [**NullableNestedVRF**](NestedVRF.md) |  | [optional] 
-**L2vpnTermination** | [**NullableNestedL2VPNTermination**](NestedL2VPNTermination.md) |  | [readonly] 
+**UntaggedVlan** | Pointer to [**NullableVLAN**](VLAN.md) |  | [optional] 
+**TaggedVlans** | Pointer to [**[]VLAN**](VLAN.md) |  | [optional] 
+**Vrf** | Pointer to [**NullableVRF**](VRF.md) |  | [optional] 
+**L2vpnTermination** | [**NullableL2VPNTermination**](L2VPNTermination.md) |  | [readonly] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 
 ### NewVMInterface
 
-`func NewVMInterface(id int32, url string, display string, virtualMachine NestedVirtualMachine, name string, l2vpnTermination NullableNestedL2VPNTermination, created NullableTime, lastUpdated NullableTime, countIpaddresses int32, countFhrpGroups int32, ) *VMInterface`
+`func NewVMInterface(id int32, url string, display string, virtualMachine VirtualMachine, name string, l2vpnTermination NullableL2VPNTermination, created NullableTime, lastUpdated NullableTime, countIpaddresses int32, countFhrpGroups int32, ) *VMInterface`
 
 NewVMInterface instantiates a new VMInterface object
 This constructor will assign default values to properties that have it defined,
@@ -108,20 +108,20 @@ SetDisplay sets Display field to given value.
 
 ### GetVirtualMachine
 
-`func (o *VMInterface) GetVirtualMachine() NestedVirtualMachine`
+`func (o *VMInterface) GetVirtualMachine() VirtualMachine`
 
 GetVirtualMachine returns the VirtualMachine field if non-nil, zero value otherwise.
 
 ### GetVirtualMachineOk
 
-`func (o *VMInterface) GetVirtualMachineOk() (*NestedVirtualMachine, bool)`
+`func (o *VMInterface) GetVirtualMachineOk() (*VirtualMachine, bool)`
 
 GetVirtualMachineOk returns a tuple with the VirtualMachine field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVirtualMachine
 
-`func (o *VMInterface) SetVirtualMachine(v NestedVirtualMachine)`
+`func (o *VMInterface) SetVirtualMachine(v VirtualMachine)`
 
 SetVirtualMachine sets VirtualMachine field to given value.
 
@@ -363,20 +363,20 @@ HasMode returns a boolean if a field has been set.
 
 ### GetUntaggedVlan
 
-`func (o *VMInterface) GetUntaggedVlan() NestedVLAN`
+`func (o *VMInterface) GetUntaggedVlan() VLAN`
 
 GetUntaggedVlan returns the UntaggedVlan field if non-nil, zero value otherwise.
 
 ### GetUntaggedVlanOk
 
-`func (o *VMInterface) GetUntaggedVlanOk() (*NestedVLAN, bool)`
+`func (o *VMInterface) GetUntaggedVlanOk() (*VLAN, bool)`
 
 GetUntaggedVlanOk returns a tuple with the UntaggedVlan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUntaggedVlan
 
-`func (o *VMInterface) SetUntaggedVlan(v NestedVLAN)`
+`func (o *VMInterface) SetUntaggedVlan(v VLAN)`
 
 SetUntaggedVlan sets UntaggedVlan field to given value.
 
@@ -398,20 +398,20 @@ HasUntaggedVlan returns a boolean if a field has been set.
 UnsetUntaggedVlan ensures that no value is present for UntaggedVlan, not even an explicit nil
 ### GetTaggedVlans
 
-`func (o *VMInterface) GetTaggedVlans() []int32`
+`func (o *VMInterface) GetTaggedVlans() []VLAN`
 
 GetTaggedVlans returns the TaggedVlans field if non-nil, zero value otherwise.
 
 ### GetTaggedVlansOk
 
-`func (o *VMInterface) GetTaggedVlansOk() (*[]int32, bool)`
+`func (o *VMInterface) GetTaggedVlansOk() (*[]VLAN, bool)`
 
 GetTaggedVlansOk returns a tuple with the TaggedVlans field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTaggedVlans
 
-`func (o *VMInterface) SetTaggedVlans(v []int32)`
+`func (o *VMInterface) SetTaggedVlans(v []VLAN)`
 
 SetTaggedVlans sets TaggedVlans field to given value.
 
@@ -423,20 +423,20 @@ HasTaggedVlans returns a boolean if a field has been set.
 
 ### GetVrf
 
-`func (o *VMInterface) GetVrf() NestedVRF`
+`func (o *VMInterface) GetVrf() VRF`
 
 GetVrf returns the Vrf field if non-nil, zero value otherwise.
 
 ### GetVrfOk
 
-`func (o *VMInterface) GetVrfOk() (*NestedVRF, bool)`
+`func (o *VMInterface) GetVrfOk() (*VRF, bool)`
 
 GetVrfOk returns a tuple with the Vrf field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVrf
 
-`func (o *VMInterface) SetVrf(v NestedVRF)`
+`func (o *VMInterface) SetVrf(v VRF)`
 
 SetVrf sets Vrf field to given value.
 
@@ -458,20 +458,20 @@ HasVrf returns a boolean if a field has been set.
 UnsetVrf ensures that no value is present for Vrf, not even an explicit nil
 ### GetL2vpnTermination
 
-`func (o *VMInterface) GetL2vpnTermination() NestedL2VPNTermination`
+`func (o *VMInterface) GetL2vpnTermination() L2VPNTermination`
 
 GetL2vpnTermination returns the L2vpnTermination field if non-nil, zero value otherwise.
 
 ### GetL2vpnTerminationOk
 
-`func (o *VMInterface) GetL2vpnTerminationOk() (*NestedL2VPNTermination, bool)`
+`func (o *VMInterface) GetL2vpnTerminationOk() (*L2VPNTermination, bool)`
 
 GetL2vpnTerminationOk returns a tuple with the L2vpnTermination field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetL2vpnTermination
 
-`func (o *VMInterface) SetL2vpnTermination(v NestedL2VPNTermination)`
+`func (o *VMInterface) SetL2vpnTermination(v L2VPNTermination)`
 
 SetL2vpnTermination sets L2vpnTermination field to given value.
 

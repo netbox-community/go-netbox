@@ -7,16 +7,16 @@ Name | Type | Description | Notes
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
-**Device** | [**NestedDevice**](NestedDevice.md) |  | 
-**Module** | Pointer to [**NullableComponentNestedModule**](ComponentNestedModule.md) |  | [optional] 
+**Device** | [**Device**](Device.md) |  | 
+**Module** | Pointer to [**NullableModule**](Module.md) |  | [optional] 
 **Name** | **string** |  | 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Type** | Pointer to [**NullablePowerOutletType**](PowerOutletType.md) |  | [optional] 
-**PowerPort** | Pointer to [**NullableNestedPowerPort**](NestedPowerPort.md) |  | [optional] 
+**PowerPort** | Pointer to [**NullablePowerPort**](PowerPort.md) |  | [optional] 
 **FeedLeg** | Pointer to [**NullablePowerOutletFeedLeg**](PowerOutletFeedLeg.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **MarkConnected** | Pointer to **bool** | Treat as if a cable is connected | [optional] 
-**Cable** | [**NullableNestedCable**](NestedCable.md) |  | [readonly] 
+**Cable** | [**NullableCable**](Cable.md) |  | [readonly] 
 **CableEnd** | **string** |  | [readonly] 
 **LinkPeers** | **[]interface{}** |  | [readonly] 
 **LinkPeersType** | **string** | Return the type of the peer link terminations, or None. | [readonly] 
@@ -33,7 +33,7 @@ Name | Type | Description | Notes
 
 ### NewPowerOutlet
 
-`func NewPowerOutlet(id int32, url string, display string, device NestedDevice, name string, cable NullableNestedCable, cableEnd string, linkPeers []interface{}, linkPeersType string, connectedEndpoints []interface{}, connectedEndpointsType string, connectedEndpointsReachable bool, created NullableTime, lastUpdated NullableTime, occupied bool, ) *PowerOutlet`
+`func NewPowerOutlet(id int32, url string, display string, device Device, name string, cable NullableCable, cableEnd string, linkPeers []interface{}, linkPeersType string, connectedEndpoints []interface{}, connectedEndpointsType string, connectedEndpointsReachable bool, created NullableTime, lastUpdated NullableTime, occupied bool, ) *PowerOutlet`
 
 NewPowerOutlet instantiates a new PowerOutlet object
 This constructor will assign default values to properties that have it defined,
@@ -110,40 +110,40 @@ SetDisplay sets Display field to given value.
 
 ### GetDevice
 
-`func (o *PowerOutlet) GetDevice() NestedDevice`
+`func (o *PowerOutlet) GetDevice() Device`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *PowerOutlet) GetDeviceOk() (*NestedDevice, bool)`
+`func (o *PowerOutlet) GetDeviceOk() (*Device, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *PowerOutlet) SetDevice(v NestedDevice)`
+`func (o *PowerOutlet) SetDevice(v Device)`
 
 SetDevice sets Device field to given value.
 
 
 ### GetModule
 
-`func (o *PowerOutlet) GetModule() ComponentNestedModule`
+`func (o *PowerOutlet) GetModule() Module`
 
 GetModule returns the Module field if non-nil, zero value otherwise.
 
 ### GetModuleOk
 
-`func (o *PowerOutlet) GetModuleOk() (*ComponentNestedModule, bool)`
+`func (o *PowerOutlet) GetModuleOk() (*Module, bool)`
 
 GetModuleOk returns a tuple with the Module field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetModule
 
-`func (o *PowerOutlet) SetModule(v ComponentNestedModule)`
+`func (o *PowerOutlet) SetModule(v Module)`
 
 SetModule sets Module field to given value.
 
@@ -245,20 +245,20 @@ HasType returns a boolean if a field has been set.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetPowerPort
 
-`func (o *PowerOutlet) GetPowerPort() NestedPowerPort`
+`func (o *PowerOutlet) GetPowerPort() PowerPort`
 
 GetPowerPort returns the PowerPort field if non-nil, zero value otherwise.
 
 ### GetPowerPortOk
 
-`func (o *PowerOutlet) GetPowerPortOk() (*NestedPowerPort, bool)`
+`func (o *PowerOutlet) GetPowerPortOk() (*PowerPort, bool)`
 
 GetPowerPortOk returns a tuple with the PowerPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPowerPort
 
-`func (o *PowerOutlet) SetPowerPort(v NestedPowerPort)`
+`func (o *PowerOutlet) SetPowerPort(v PowerPort)`
 
 SetPowerPort sets PowerPort field to given value.
 
@@ -365,20 +365,20 @@ HasMarkConnected returns a boolean if a field has been set.
 
 ### GetCable
 
-`func (o *PowerOutlet) GetCable() NestedCable`
+`func (o *PowerOutlet) GetCable() Cable`
 
 GetCable returns the Cable field if non-nil, zero value otherwise.
 
 ### GetCableOk
 
-`func (o *PowerOutlet) GetCableOk() (*NestedCable, bool)`
+`func (o *PowerOutlet) GetCableOk() (*Cable, bool)`
 
 GetCableOk returns a tuple with the Cable field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCable
 
-`func (o *PowerOutlet) SetCable(v NestedCable)`
+`func (o *PowerOutlet) SetCable(v Cable)`
 
 SetCable sets Cable field to given value.
 

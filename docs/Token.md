@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
-**User** | [**NestedUser**](NestedUser.md) |  | 
+**User** | [**User**](User.md) |  | 
 **Created** | **time.Time** |  | [readonly] 
 **Expires** | Pointer to **NullableTime** |  | [optional] 
 **LastUsed** | Pointer to **NullableTime** |  | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewToken
 
-`func NewToken(id int32, url string, display string, user NestedUser, created time.Time, ) *Token`
+`func NewToken(id int32, url string, display string, user User, created time.Time, ) *Token`
 
 NewToken instantiates a new Token object
 This constructor will assign default values to properties that have it defined,
@@ -96,20 +96,20 @@ SetDisplay sets Display field to given value.
 
 ### GetUser
 
-`func (o *Token) GetUser() NestedUser`
+`func (o *Token) GetUser() User`
 
 GetUser returns the User field if non-nil, zero value otherwise.
 
 ### GetUserOk
 
-`func (o *Token) GetUserOk() (*NestedUser, bool)`
+`func (o *Token) GetUserOk() (*User, bool)`
 
 GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUser
 
-`func (o *Token) SetUser(v NestedUser)`
+`func (o *Token) SetUser(v User)`
 
 SetUser sets User field to given value.
 

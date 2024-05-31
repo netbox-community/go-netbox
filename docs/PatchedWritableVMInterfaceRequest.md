@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**VirtualMachine** | Pointer to **int32** |  | [optional] 
+**VirtualMachine** | Pointer to [**VirtualMachineRequest**](VirtualMachineRequest.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Parent** | Pointer to **NullableInt32** |  | [optional] 
@@ -13,9 +13,9 @@ Name | Type | Description | Notes
 **MacAddress** | Pointer to **NullableString** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Mode** | Pointer to [**PatchedWritableInterfaceRequestMode**](PatchedWritableInterfaceRequestMode.md) |  | [optional] 
-**UntaggedVlan** | Pointer to **NullableInt32** |  | [optional] 
+**UntaggedVlan** | Pointer to [**NullableVLANRequest**](VLANRequest.md) |  | [optional] 
 **TaggedVlans** | Pointer to **[]int32** |  | [optional] 
-**Vrf** | Pointer to **NullableInt32** |  | [optional] 
+**Vrf** | Pointer to [**NullableVRFRequest**](VRFRequest.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 
@@ -40,20 +40,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetVirtualMachine
 
-`func (o *PatchedWritableVMInterfaceRequest) GetVirtualMachine() int32`
+`func (o *PatchedWritableVMInterfaceRequest) GetVirtualMachine() VirtualMachineRequest`
 
 GetVirtualMachine returns the VirtualMachine field if non-nil, zero value otherwise.
 
 ### GetVirtualMachineOk
 
-`func (o *PatchedWritableVMInterfaceRequest) GetVirtualMachineOk() (*int32, bool)`
+`func (o *PatchedWritableVMInterfaceRequest) GetVirtualMachineOk() (*VirtualMachineRequest, bool)`
 
 GetVirtualMachineOk returns a tuple with the VirtualMachine field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVirtualMachine
 
-`func (o *PatchedWritableVMInterfaceRequest) SetVirtualMachine(v int32)`
+`func (o *PatchedWritableVMInterfaceRequest) SetVirtualMachine(v VirtualMachineRequest)`
 
 SetVirtualMachine sets VirtualMachine field to given value.
 
@@ -305,20 +305,20 @@ HasMode returns a boolean if a field has been set.
 
 ### GetUntaggedVlan
 
-`func (o *PatchedWritableVMInterfaceRequest) GetUntaggedVlan() int32`
+`func (o *PatchedWritableVMInterfaceRequest) GetUntaggedVlan() VLANRequest`
 
 GetUntaggedVlan returns the UntaggedVlan field if non-nil, zero value otherwise.
 
 ### GetUntaggedVlanOk
 
-`func (o *PatchedWritableVMInterfaceRequest) GetUntaggedVlanOk() (*int32, bool)`
+`func (o *PatchedWritableVMInterfaceRequest) GetUntaggedVlanOk() (*VLANRequest, bool)`
 
 GetUntaggedVlanOk returns a tuple with the UntaggedVlan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUntaggedVlan
 
-`func (o *PatchedWritableVMInterfaceRequest) SetUntaggedVlan(v int32)`
+`func (o *PatchedWritableVMInterfaceRequest) SetUntaggedVlan(v VLANRequest)`
 
 SetUntaggedVlan sets UntaggedVlan field to given value.
 
@@ -365,20 +365,20 @@ HasTaggedVlans returns a boolean if a field has been set.
 
 ### GetVrf
 
-`func (o *PatchedWritableVMInterfaceRequest) GetVrf() int32`
+`func (o *PatchedWritableVMInterfaceRequest) GetVrf() VRFRequest`
 
 GetVrf returns the Vrf field if non-nil, zero value otherwise.
 
 ### GetVrfOk
 
-`func (o *PatchedWritableVMInterfaceRequest) GetVrfOk() (*int32, bool)`
+`func (o *PatchedWritableVMInterfaceRequest) GetVrfOk() (*VRFRequest, bool)`
 
 GetVrfOk returns a tuple with the Vrf field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVrf
 
-`func (o *PatchedWritableVMInterfaceRequest) SetVrf(v int32)`
+`func (o *PatchedWritableVMInterfaceRequest) SetVrf(v VRFRequest)`
 
 SetVrf sets Vrf field to given value.
 

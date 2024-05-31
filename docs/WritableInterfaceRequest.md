@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Device** | **int32** |  | 
-**Vdcs** | **[]int32** |  | 
-**Module** | Pointer to **NullableInt32** |  | [optional] 
+**Device** | [**DeviceRequest**](DeviceRequest.md) |  | 
+**Vdcs** | Pointer to **[]int32** |  | [optional] 
+**Module** | Pointer to [**NullableModuleRequest**](ModuleRequest.md) |  | [optional] 
 **Name** | **string** |  | 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Type** | [**InterfaceTypeValue**](InterfaceTypeValue.md) |  | 
@@ -29,11 +29,11 @@ Name | Type | Description | Notes
 **RfChannelFrequency** | Pointer to **NullableFloat64** | Populated by selected channel (if set) | [optional] 
 **RfChannelWidth** | Pointer to **NullableFloat64** | Populated by selected channel (if set) | [optional] 
 **TxPower** | Pointer to **NullableInt32** |  | [optional] 
-**UntaggedVlan** | Pointer to **NullableInt32** |  | [optional] 
+**UntaggedVlan** | Pointer to [**NullableVLANRequest**](VLANRequest.md) |  | [optional] 
 **TaggedVlans** | Pointer to **[]int32** |  | [optional] 
 **MarkConnected** | Pointer to **bool** | Treat as if a cable is connected | [optional] 
 **WirelessLans** | Pointer to **[]int32** |  | [optional] 
-**Vrf** | Pointer to **NullableInt32** |  | [optional] 
+**Vrf** | Pointer to [**NullableVRFRequest**](VRFRequest.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 
@@ -41,7 +41,7 @@ Name | Type | Description | Notes
 
 ### NewWritableInterfaceRequest
 
-`func NewWritableInterfaceRequest(device int32, vdcs []int32, name string, type_ InterfaceTypeValue, ) *WritableInterfaceRequest`
+`func NewWritableInterfaceRequest(device DeviceRequest, name string, type_ InterfaceTypeValue, ) *WritableInterfaceRequest`
 
 NewWritableInterfaceRequest instantiates a new WritableInterfaceRequest object
 This constructor will assign default values to properties that have it defined,
@@ -58,20 +58,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDevice
 
-`func (o *WritableInterfaceRequest) GetDevice() int32`
+`func (o *WritableInterfaceRequest) GetDevice() DeviceRequest`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *WritableInterfaceRequest) GetDeviceOk() (*int32, bool)`
+`func (o *WritableInterfaceRequest) GetDeviceOk() (*DeviceRequest, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *WritableInterfaceRequest) SetDevice(v int32)`
+`func (o *WritableInterfaceRequest) SetDevice(v DeviceRequest)`
 
 SetDevice sets Device field to given value.
 
@@ -95,23 +95,28 @@ and a boolean to check if the value has been set.
 
 SetVdcs sets Vdcs field to given value.
 
+### HasVdcs
+
+`func (o *WritableInterfaceRequest) HasVdcs() bool`
+
+HasVdcs returns a boolean if a field has been set.
 
 ### GetModule
 
-`func (o *WritableInterfaceRequest) GetModule() int32`
+`func (o *WritableInterfaceRequest) GetModule() ModuleRequest`
 
 GetModule returns the Module field if non-nil, zero value otherwise.
 
 ### GetModuleOk
 
-`func (o *WritableInterfaceRequest) GetModuleOk() (*int32, bool)`
+`func (o *WritableInterfaceRequest) GetModuleOk() (*ModuleRequest, bool)`
 
 GetModuleOk returns a tuple with the Module field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetModule
 
-`func (o *WritableInterfaceRequest) SetModule(v int32)`
+`func (o *WritableInterfaceRequest) SetModule(v ModuleRequest)`
 
 SetModule sets Module field to given value.
 
@@ -783,20 +788,20 @@ HasTxPower returns a boolean if a field has been set.
 UnsetTxPower ensures that no value is present for TxPower, not even an explicit nil
 ### GetUntaggedVlan
 
-`func (o *WritableInterfaceRequest) GetUntaggedVlan() int32`
+`func (o *WritableInterfaceRequest) GetUntaggedVlan() VLANRequest`
 
 GetUntaggedVlan returns the UntaggedVlan field if non-nil, zero value otherwise.
 
 ### GetUntaggedVlanOk
 
-`func (o *WritableInterfaceRequest) GetUntaggedVlanOk() (*int32, bool)`
+`func (o *WritableInterfaceRequest) GetUntaggedVlanOk() (*VLANRequest, bool)`
 
 GetUntaggedVlanOk returns a tuple with the UntaggedVlan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUntaggedVlan
 
-`func (o *WritableInterfaceRequest) SetUntaggedVlan(v int32)`
+`func (o *WritableInterfaceRequest) SetUntaggedVlan(v VLANRequest)`
 
 SetUntaggedVlan sets UntaggedVlan field to given value.
 
@@ -893,20 +898,20 @@ HasWirelessLans returns a boolean if a field has been set.
 
 ### GetVrf
 
-`func (o *WritableInterfaceRequest) GetVrf() int32`
+`func (o *WritableInterfaceRequest) GetVrf() VRFRequest`
 
 GetVrf returns the Vrf field if non-nil, zero value otherwise.
 
 ### GetVrfOk
 
-`func (o *WritableInterfaceRequest) GetVrfOk() (*int32, bool)`
+`func (o *WritableInterfaceRequest) GetVrfOk() (*VRFRequest, bool)`
 
 GetVrfOk returns a tuple with the Vrf field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVrf
 
-`func (o *WritableInterfaceRequest) SetVrf(v int32)`
+`func (o *WritableInterfaceRequest) SetVrf(v VRFRequest)`
 
 SetVrf sets Vrf field to given value.
 

@@ -14,13 +14,13 @@ Name | Type | Description | Notes
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**ClusterCount** | **int32** |  | [readonly] 
+**ClusterCount** | **int64** |  | [readonly] 
 
 ## Methods
 
 ### NewClusterGroup
 
-`func NewClusterGroup(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, clusterCount int32, ) *ClusterGroup`
+`func NewClusterGroup(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, clusterCount int64, ) *ClusterGroup`
 
 NewClusterGroup instantiates a new ClusterGroup object
 This constructor will assign default values to properties that have it defined,
@@ -272,20 +272,20 @@ SetLastUpdated sets LastUpdated field to given value.
 UnsetLastUpdated ensures that no value is present for LastUpdated, not even an explicit nil
 ### GetClusterCount
 
-`func (o *ClusterGroup) GetClusterCount() int32`
+`func (o *ClusterGroup) GetClusterCount() int64`
 
 GetClusterCount returns the ClusterCount field if non-nil, zero value otherwise.
 
 ### GetClusterCountOk
 
-`func (o *ClusterGroup) GetClusterCountOk() (*int32, bool)`
+`func (o *ClusterGroup) GetClusterCountOk() (*int64, bool)`
 
 GetClusterCountOk returns a tuple with the ClusterCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetClusterCount
 
-`func (o *ClusterGroup) SetClusterCount(v int32)`
+`func (o *ClusterGroup) SetClusterCount(v int64)`
 
 SetClusterCount sets ClusterCount field to given value.
 

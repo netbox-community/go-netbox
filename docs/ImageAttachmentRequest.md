@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ContentType** | **string** |  | 
+**ObjectType** | **string** |  | 
 **ObjectId** | **int64** |  | 
 **Name** | Pointer to **string** |  | [optional] 
 **Image** | ***os.File** |  | 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewImageAttachmentRequest
 
-`func NewImageAttachmentRequest(contentType string, objectId int64, image *os.File, imageHeight int32, imageWidth int32, ) *ImageAttachmentRequest`
+`func NewImageAttachmentRequest(objectType string, objectId int64, image *os.File, imageHeight int32, imageWidth int32, ) *ImageAttachmentRequest`
 
 NewImageAttachmentRequest instantiates a new ImageAttachmentRequest object
 This constructor will assign default values to properties that have it defined,
@@ -30,24 +30,24 @@ NewImageAttachmentRequestWithDefaults instantiates a new ImageAttachmentRequest 
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetContentType
+### GetObjectType
 
-`func (o *ImageAttachmentRequest) GetContentType() string`
+`func (o *ImageAttachmentRequest) GetObjectType() string`
 
-GetContentType returns the ContentType field if non-nil, zero value otherwise.
+GetObjectType returns the ObjectType field if non-nil, zero value otherwise.
 
-### GetContentTypeOk
+### GetObjectTypeOk
 
-`func (o *ImageAttachmentRequest) GetContentTypeOk() (*string, bool)`
+`func (o *ImageAttachmentRequest) GetObjectTypeOk() (*string, bool)`
 
-GetContentTypeOk returns a tuple with the ContentType field if it's non-nil, zero value otherwise
+GetObjectTypeOk returns a tuple with the ObjectType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetContentType
+### SetObjectType
 
-`func (o *ImageAttachmentRequest) SetContentType(v string)`
+`func (o *ImageAttachmentRequest) SetObjectType(v string)`
 
-SetContentType sets ContentType field to given value.
+SetObjectType sets ObjectType field to given value.
 
 
 ### GetObjectId

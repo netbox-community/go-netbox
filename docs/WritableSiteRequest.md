@@ -6,10 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | Full name of the site | 
 **Slug** | **string** |  | 
-**Status** | Pointer to [**LocationStatusValue**](LocationStatusValue.md) |  | [optional] 
-**Region** | Pointer to **NullableInt32** |  | [optional] 
-**Group** | Pointer to **NullableInt32** |  | [optional] 
-**Tenant** | Pointer to **NullableInt32** |  | [optional] 
+**Status** | Pointer to [**PatchedWritableLocationRequestStatus**](PatchedWritableLocationRequestStatus.md) |  | [optional] 
+**Region** | Pointer to [**NullableRegionRequest**](RegionRequest.md) |  | [optional] 
+**Group** | Pointer to [**NullableSiteGroupRequest**](SiteGroupRequest.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableTenantRequest**](TenantRequest.md) |  | [optional] 
 **Facility** | Pointer to **string** | Local facility ID or description | [optional] 
 **TimeZone** | Pointer to **NullableString** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -83,20 +83,20 @@ SetSlug sets Slug field to given value.
 
 ### GetStatus
 
-`func (o *WritableSiteRequest) GetStatus() LocationStatusValue`
+`func (o *WritableSiteRequest) GetStatus() PatchedWritableLocationRequestStatus`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *WritableSiteRequest) GetStatusOk() (*LocationStatusValue, bool)`
+`func (o *WritableSiteRequest) GetStatusOk() (*PatchedWritableLocationRequestStatus, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *WritableSiteRequest) SetStatus(v LocationStatusValue)`
+`func (o *WritableSiteRequest) SetStatus(v PatchedWritableLocationRequestStatus)`
 
 SetStatus sets Status field to given value.
 
@@ -108,20 +108,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetRegion
 
-`func (o *WritableSiteRequest) GetRegion() int32`
+`func (o *WritableSiteRequest) GetRegion() RegionRequest`
 
 GetRegion returns the Region field if non-nil, zero value otherwise.
 
 ### GetRegionOk
 
-`func (o *WritableSiteRequest) GetRegionOk() (*int32, bool)`
+`func (o *WritableSiteRequest) GetRegionOk() (*RegionRequest, bool)`
 
 GetRegionOk returns a tuple with the Region field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRegion
 
-`func (o *WritableSiteRequest) SetRegion(v int32)`
+`func (o *WritableSiteRequest) SetRegion(v RegionRequest)`
 
 SetRegion sets Region field to given value.
 
@@ -143,20 +143,20 @@ HasRegion returns a boolean if a field has been set.
 UnsetRegion ensures that no value is present for Region, not even an explicit nil
 ### GetGroup
 
-`func (o *WritableSiteRequest) GetGroup() int32`
+`func (o *WritableSiteRequest) GetGroup() SiteGroupRequest`
 
 GetGroup returns the Group field if non-nil, zero value otherwise.
 
 ### GetGroupOk
 
-`func (o *WritableSiteRequest) GetGroupOk() (*int32, bool)`
+`func (o *WritableSiteRequest) GetGroupOk() (*SiteGroupRequest, bool)`
 
 GetGroupOk returns a tuple with the Group field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGroup
 
-`func (o *WritableSiteRequest) SetGroup(v int32)`
+`func (o *WritableSiteRequest) SetGroup(v SiteGroupRequest)`
 
 SetGroup sets Group field to given value.
 
@@ -178,20 +178,20 @@ HasGroup returns a boolean if a field has been set.
 UnsetGroup ensures that no value is present for Group, not even an explicit nil
 ### GetTenant
 
-`func (o *WritableSiteRequest) GetTenant() int32`
+`func (o *WritableSiteRequest) GetTenant() TenantRequest`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *WritableSiteRequest) GetTenantOk() (*int32, bool)`
+`func (o *WritableSiteRequest) GetTenantOk() (*TenantRequest, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *WritableSiteRequest) SetTenant(v int32)`
+`func (o *WritableSiteRequest) SetTenant(v TenantRequest)`
 
 SetTenant sets Tenant field to given value.
 

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **Version** | Pointer to [**PatchedWritableIKEPolicyRequestVersion**](PatchedWritableIKEPolicyRequestVersion.md) |  | [optional] 
 **Mode** | Pointer to [**PatchedWritableIKEPolicyRequestMode**](PatchedWritableIKEPolicyRequestMode.md) |  | [optional] 
-**Proposals** | **[]int32** |  | 
+**Proposals** | Pointer to **[]int32** |  | [optional] 
 **PresharedKey** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewWritableIKEPolicyRequest
 
-`func NewWritableIKEPolicyRequest(name string, proposals []int32, ) *WritableIKEPolicyRequest`
+`func NewWritableIKEPolicyRequest(name string, ) *WritableIKEPolicyRequest`
 
 NewWritableIKEPolicyRequest instantiates a new WritableIKEPolicyRequest object
 This constructor will assign default values to properties that have it defined,
@@ -147,6 +147,11 @@ and a boolean to check if the value has been set.
 
 SetProposals sets Proposals field to given value.
 
+### HasProposals
+
+`func (o *WritableIKEPolicyRequest) HasProposals() bool`
+
+HasProposals returns a boolean if a field has been set.
 
 ### GetPresharedKey
 

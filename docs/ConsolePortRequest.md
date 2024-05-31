@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Device** | [**NestedDeviceRequest**](NestedDeviceRequest.md) |  | 
-**Module** | Pointer to [**NullableComponentNestedModuleRequest**](ComponentNestedModuleRequest.md) |  | [optional] 
+**Device** | [**DeviceRequest**](DeviceRequest.md) |  | 
+**Module** | Pointer to [**NullableModuleRequest**](ModuleRequest.md) |  | [optional] 
 **Name** | **string** |  | 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Type** | Pointer to [**ConsolePortTypeValue**](ConsolePortTypeValue.md) |  | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewConsolePortRequest
 
-`func NewConsolePortRequest(device NestedDeviceRequest, name string, ) *ConsolePortRequest`
+`func NewConsolePortRequest(device DeviceRequest, name string, ) *ConsolePortRequest`
 
 NewConsolePortRequest instantiates a new ConsolePortRequest object
 This constructor will assign default values to properties that have it defined,
@@ -36,40 +36,40 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDevice
 
-`func (o *ConsolePortRequest) GetDevice() NestedDeviceRequest`
+`func (o *ConsolePortRequest) GetDevice() DeviceRequest`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *ConsolePortRequest) GetDeviceOk() (*NestedDeviceRequest, bool)`
+`func (o *ConsolePortRequest) GetDeviceOk() (*DeviceRequest, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *ConsolePortRequest) SetDevice(v NestedDeviceRequest)`
+`func (o *ConsolePortRequest) SetDevice(v DeviceRequest)`
 
 SetDevice sets Device field to given value.
 
 
 ### GetModule
 
-`func (o *ConsolePortRequest) GetModule() ComponentNestedModuleRequest`
+`func (o *ConsolePortRequest) GetModule() ModuleRequest`
 
 GetModule returns the Module field if non-nil, zero value otherwise.
 
 ### GetModuleOk
 
-`func (o *ConsolePortRequest) GetModuleOk() (*ComponentNestedModuleRequest, bool)`
+`func (o *ConsolePortRequest) GetModuleOk() (*ModuleRequest, bool)`
 
 GetModuleOk returns a tuple with the Module field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetModule
 
-`func (o *ConsolePortRequest) SetModule(v ComponentNestedModuleRequest)`
+`func (o *ConsolePortRequest) SetModule(v ModuleRequest)`
 
 SetModule sets Module field to given value.
 

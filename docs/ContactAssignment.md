@@ -7,11 +7,11 @@ Name | Type | Description | Notes
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
-**ContentType** | **string** |  | 
+**ObjectType** | **string** |  | 
 **ObjectId** | **int64** |  | 
 **Object** | **map[string]interface{}** |  | [readonly] 
-**Contact** | [**NestedContact**](NestedContact.md) |  | 
-**Role** | Pointer to [**NullableNestedContactRole**](NestedContactRole.md) |  | [optional] 
+**Contact** | [**Contact**](Contact.md) |  | 
+**Role** | Pointer to [**NullableContactRole**](ContactRole.md) |  | [optional] 
 **Priority** | Pointer to [**ContactAssignmentPriority**](ContactAssignmentPriority.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 
 ### NewContactAssignment
 
-`func NewContactAssignment(id int32, url string, display string, contentType string, objectId int64, object map[string]interface{}, contact NestedContact, created NullableTime, lastUpdated NullableTime, ) *ContactAssignment`
+`func NewContactAssignment(id int32, url string, display string, objectType string, objectId int64, object map[string]interface{}, contact Contact, created NullableTime, lastUpdated NullableTime, ) *ContactAssignment`
 
 NewContactAssignment instantiates a new ContactAssignment object
 This constructor will assign default values to properties that have it defined,
@@ -97,24 +97,24 @@ and a boolean to check if the value has been set.
 SetDisplay sets Display field to given value.
 
 
-### GetContentType
+### GetObjectType
 
-`func (o *ContactAssignment) GetContentType() string`
+`func (o *ContactAssignment) GetObjectType() string`
 
-GetContentType returns the ContentType field if non-nil, zero value otherwise.
+GetObjectType returns the ObjectType field if non-nil, zero value otherwise.
 
-### GetContentTypeOk
+### GetObjectTypeOk
 
-`func (o *ContactAssignment) GetContentTypeOk() (*string, bool)`
+`func (o *ContactAssignment) GetObjectTypeOk() (*string, bool)`
 
-GetContentTypeOk returns a tuple with the ContentType field if it's non-nil, zero value otherwise
+GetObjectTypeOk returns a tuple with the ObjectType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetContentType
+### SetObjectType
 
-`func (o *ContactAssignment) SetContentType(v string)`
+`func (o *ContactAssignment) SetObjectType(v string)`
 
-SetContentType sets ContentType field to given value.
+SetObjectType sets ObjectType field to given value.
 
 
 ### GetObjectId
@@ -159,40 +159,40 @@ SetObject sets Object field to given value.
 
 ### GetContact
 
-`func (o *ContactAssignment) GetContact() NestedContact`
+`func (o *ContactAssignment) GetContact() Contact`
 
 GetContact returns the Contact field if non-nil, zero value otherwise.
 
 ### GetContactOk
 
-`func (o *ContactAssignment) GetContactOk() (*NestedContact, bool)`
+`func (o *ContactAssignment) GetContactOk() (*Contact, bool)`
 
 GetContactOk returns a tuple with the Contact field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetContact
 
-`func (o *ContactAssignment) SetContact(v NestedContact)`
+`func (o *ContactAssignment) SetContact(v Contact)`
 
 SetContact sets Contact field to given value.
 
 
 ### GetRole
 
-`func (o *ContactAssignment) GetRole() NestedContactRole`
+`func (o *ContactAssignment) GetRole() ContactRole`
 
 GetRole returns the Role field if non-nil, zero value otherwise.
 
 ### GetRoleOk
 
-`func (o *ContactAssignment) GetRoleOk() (*NestedContactRole, bool)`
+`func (o *ContactAssignment) GetRoleOk() (*ContactRole, bool)`
 
 GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRole
 
-`func (o *ContactAssignment) SetRole(v NestedContactRole)`
+`func (o *ContactAssignment) SetRole(v ContactRole)`
 
 SetRole sets Role field to given value.
 

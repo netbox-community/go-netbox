@@ -91,6 +91,10 @@
 
 * `_1000BASE_KX` (value: `"1000base-kx"`)
 
+* `_2_5GBASE_KX` (value: `"2.5gbase-kx"`)
+
+* `_5GBASE_KR` (value: `"5gbase-kr"`)
+
 * `_10GBASE_KR` (value: `"10gbase-kr"`)
 
 * `_10GBASE_KX4` (value: `"10gbase-kx4"`)
@@ -130,6 +134,10 @@
 * `CDMA` (value: `"cdma"`)
 
 * `LTE` (value: `"lte"`)
+
+* `_4G` (value: `"4g"`)
+
+* `_5G` (value: `"5g"`)
 
 * `SONET_OC3` (value: `"sonet-oc3"`)
 
@@ -197,6 +205,12 @@
 
 * `DOCSIS` (value: `"docsis"`)
 
+* `BPON` (value: `"bpon"`)
+
+* `EPON` (value: `"epon"`)
+
+* `_10G_EPON` (value: `"10g-epon"`)
+
 * `GPON` (value: `"gpon"`)
 
 * `XG_PON` (value: `"xg-pon"`)
@@ -205,9 +219,9 @@
 
 * `NG_PON2` (value: `"ng-pon2"`)
 
-* `EPON` (value: `"epon"`)
+* `_25G_PON` (value: `"25g-pon"`)
 
-* `_10G_EPON` (value: `"10g-epon"`)
+* `_50G_PON` (value: `"50g-pon"`)
 
 * `CISCO_STACKWISE` (value: `"cisco-stackwise"`)
 

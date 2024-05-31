@@ -15,13 +15,13 @@ Name | Type | Description | Notes
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**InventoryitemCount** | **int32** |  | [readonly] 
+**InventoryitemCount** | **int64** |  | [readonly] 
 
 ## Methods
 
 ### NewInventoryItemRole
 
-`func NewInventoryItemRole(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, inventoryitemCount int32, ) *InventoryItemRole`
+`func NewInventoryItemRole(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, inventoryitemCount int64, ) *InventoryItemRole`
 
 NewInventoryItemRole instantiates a new InventoryItemRole object
 This constructor will assign default values to properties that have it defined,
@@ -298,20 +298,20 @@ SetLastUpdated sets LastUpdated field to given value.
 UnsetLastUpdated ensures that no value is present for LastUpdated, not even an explicit nil
 ### GetInventoryitemCount
 
-`func (o *InventoryItemRole) GetInventoryitemCount() int32`
+`func (o *InventoryItemRole) GetInventoryitemCount() int64`
 
 GetInventoryitemCount returns the InventoryitemCount field if non-nil, zero value otherwise.
 
 ### GetInventoryitemCountOk
 
-`func (o *InventoryItemRole) GetInventoryitemCountOk() (*int32, bool)`
+`func (o *InventoryItemRole) GetInventoryitemCountOk() (*int64, bool)`
 
 GetInventoryitemCountOk returns a tuple with the InventoryitemCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInventoryitemCount
 
-`func (o *InventoryItemRole) SetInventoryitemCount(v int32)`
+`func (o *InventoryItemRole) SetInventoryitemCount(v int64)`
 
 SetInventoryitemCount sets InventoryitemCount field to given value.
 

@@ -41,31 +41,6 @@ if 'components' in data and 'schemas' in data['components']:
                     if schema['properties'][ntype]['format'] == 'binary':
                         schema['properties'][ntype].pop('nullable')
 
-# Fix "site.asns" and "interface.tagged_vlans"
-data["components"]["schemas"]["Site"]["properties"]["asns"]["items"].pop("type")
-data["components"]["schemas"]["Interface"]["properties"]["tagged_vlans"]["items"].pop("type")
-data["components"]["schemas"]["Site"]["properties"]["asns"]["items"]["$ref"] = "#/components/schemas/NestedASN"
-data["components"]["schemas"]["Interface"]["properties"]["tagged_vlans"]["items"]["$ref"] = "#/components/schemas/NestedVLAN"
-data["components"]["schemas"]["NestedASN"] = {
-    "type": "object",
-    "description": """Represents an object related through a ForeignKey field. On write, it accepts a primary key (PK) value or a
-        dictionary of attributes which can be used to uniquely identify the related object. This class should be
-        subclassed to return a full representation of the related object on read.""",
-    "properties": {
-        "id": {"type": "integer", "readOnly": True},
-        "url": {"type": "string", "format": "uri", "readOnly": True},
-        "display": {"type": "string", "readOnly": True},
-        "asn": {
-            "type": "integer",
-            "maximum": 4294967295,
-            "minimum": 1,
-            "format": "int64",
-            "description": "16- or 32-bit autonomous system number",
-        },
-    },
-    "required": ["asn", "display", "id", "url"],
-}
-
 # Save the spec file
 with open(SPEC_PATH, 'w') as file:
     yaml.dump(data, file, Dumper=yaml.CDumper, sort_keys=False)

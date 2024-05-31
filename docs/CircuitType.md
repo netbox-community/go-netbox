@@ -15,13 +15,13 @@ Name | Type | Description | Notes
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**CircuitCount** | **int32** |  | [readonly] 
+**CircuitCount** | **int64** |  | [readonly] 
 
 ## Methods
 
 ### NewCircuitType
 
-`func NewCircuitType(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, circuitCount int32, ) *CircuitType`
+`func NewCircuitType(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, circuitCount int64, ) *CircuitType`
 
 NewCircuitType instantiates a new CircuitType object
 This constructor will assign default values to properties that have it defined,
@@ -298,20 +298,20 @@ SetLastUpdated sets LastUpdated field to given value.
 UnsetLastUpdated ensures that no value is present for LastUpdated, not even an explicit nil
 ### GetCircuitCount
 
-`func (o *CircuitType) GetCircuitCount() int32`
+`func (o *CircuitType) GetCircuitCount() int64`
 
 GetCircuitCount returns the CircuitCount field if non-nil, zero value otherwise.
 
 ### GetCircuitCountOk
 
-`func (o *CircuitType) GetCircuitCountOk() (*int32, bool)`
+`func (o *CircuitType) GetCircuitCountOk() (*int64, bool)`
 
 GetCircuitCountOk returns a tuple with the CircuitCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCircuitCount
 
-`func (o *CircuitType) SetCircuitCount(v int32)`
+`func (o *CircuitType) SetCircuitCount(v int64)`
 
 SetCircuitCount sets CircuitCount field to given value.
 

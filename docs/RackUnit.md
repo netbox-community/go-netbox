@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | **float64** |  | [readonly] 
 **Name** | **string** |  | [readonly] 
 **Face** | [**RackUnitFace**](RackUnitFace.md) |  | 
-**Device** | [**NestedDevice**](NestedDevice.md) |  | [readonly] 
+**Device** | [**Device**](Device.md) |  | [readonly] 
 **Occupied** | **bool** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewRackUnit
 
-`func NewRackUnit(id float64, name string, face RackUnitFace, device NestedDevice, occupied bool, display string, ) *RackUnit`
+`func NewRackUnit(id float64, name string, face RackUnitFace, device Device, occupied bool, display string, ) *RackUnit`
 
 NewRackUnit instantiates a new RackUnit object
 This constructor will assign default values to properties that have it defined,
@@ -92,20 +92,20 @@ SetFace sets Face field to given value.
 
 ### GetDevice
 
-`func (o *RackUnit) GetDevice() NestedDevice`
+`func (o *RackUnit) GetDevice() Device`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *RackUnit) GetDeviceOk() (*NestedDevice, bool)`
+`func (o *RackUnit) GetDeviceOk() (*Device, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *RackUnit) SetDevice(v NestedDevice)`
+`func (o *RackUnit) SetDevice(v Device)`
 
 SetDevice sets Device field to given value.
 

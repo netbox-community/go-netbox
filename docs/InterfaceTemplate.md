@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
-**DeviceType** | Pointer to [**NullableNestedDeviceType**](NestedDeviceType.md) |  | [optional] 
-**ModuleType** | Pointer to [**NullableNestedModuleType**](NestedModuleType.md) |  | [optional] 
+**DeviceType** | Pointer to [**NullableDeviceType**](DeviceType.md) |  | [optional] 
+**ModuleType** | Pointer to [**NullableModuleType**](ModuleType.md) |  | [optional] 
 **Name** | **string** | {module} is accepted as a substitution for the module bay position when attached to a module type. | 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Type** | [**InterfaceType**](InterfaceType.md) |  | 
@@ -103,20 +103,20 @@ SetDisplay sets Display field to given value.
 
 ### GetDeviceType
 
-`func (o *InterfaceTemplate) GetDeviceType() NestedDeviceType`
+`func (o *InterfaceTemplate) GetDeviceType() DeviceType`
 
 GetDeviceType returns the DeviceType field if non-nil, zero value otherwise.
 
 ### GetDeviceTypeOk
 
-`func (o *InterfaceTemplate) GetDeviceTypeOk() (*NestedDeviceType, bool)`
+`func (o *InterfaceTemplate) GetDeviceTypeOk() (*DeviceType, bool)`
 
 GetDeviceTypeOk returns a tuple with the DeviceType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeviceType
 
-`func (o *InterfaceTemplate) SetDeviceType(v NestedDeviceType)`
+`func (o *InterfaceTemplate) SetDeviceType(v DeviceType)`
 
 SetDeviceType sets DeviceType field to given value.
 
@@ -138,20 +138,20 @@ HasDeviceType returns a boolean if a field has been set.
 UnsetDeviceType ensures that no value is present for DeviceType, not even an explicit nil
 ### GetModuleType
 
-`func (o *InterfaceTemplate) GetModuleType() NestedModuleType`
+`func (o *InterfaceTemplate) GetModuleType() ModuleType`
 
 GetModuleType returns the ModuleType field if non-nil, zero value otherwise.
 
 ### GetModuleTypeOk
 
-`func (o *InterfaceTemplate) GetModuleTypeOk() (*NestedModuleType, bool)`
+`func (o *InterfaceTemplate) GetModuleTypeOk() (*ModuleType, bool)`
 
 GetModuleTypeOk returns a tuple with the ModuleType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetModuleType
 
-`func (o *InterfaceTemplate) SetModuleType(v NestedModuleType)`
+`func (o *InterfaceTemplate) SetModuleType(v ModuleType)`
 
 SetModuleType sets ModuleType field to given value.
 

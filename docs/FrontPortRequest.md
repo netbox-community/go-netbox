@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Device** | [**NestedDeviceRequest**](NestedDeviceRequest.md) |  | 
-**Module** | Pointer to [**NullableComponentNestedModuleRequest**](ComponentNestedModuleRequest.md) |  | [optional] 
+**Device** | [**DeviceRequest**](DeviceRequest.md) |  | 
+**Module** | Pointer to [**NullableModuleRequest**](ModuleRequest.md) |  | [optional] 
 **Name** | **string** |  | 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Type** | [**FrontPortTypeValue**](FrontPortTypeValue.md) |  | 
 **Color** | Pointer to **string** |  | [optional] 
 **RearPort** | [**FrontPortRearPortRequest**](FrontPortRearPortRequest.md) |  | 
-**RearPortPosition** | Pointer to **int32** | Mapped position on corresponding rear port | [optional] 
+**RearPortPosition** | Pointer to **int32** | Mapped position on corresponding rear port | [optional] [default to 1]
 **Description** | Pointer to **string** |  | [optional] 
 **MarkConnected** | Pointer to **bool** | Treat as if a cable is connected | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewFrontPortRequest
 
-`func NewFrontPortRequest(device NestedDeviceRequest, name string, type_ FrontPortTypeValue, rearPort FrontPortRearPortRequest, ) *FrontPortRequest`
+`func NewFrontPortRequest(device DeviceRequest, name string, type_ FrontPortTypeValue, rearPort FrontPortRearPortRequest, ) *FrontPortRequest`
 
 NewFrontPortRequest instantiates a new FrontPortRequest object
 This constructor will assign default values to properties that have it defined,
@@ -38,40 +38,40 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDevice
 
-`func (o *FrontPortRequest) GetDevice() NestedDeviceRequest`
+`func (o *FrontPortRequest) GetDevice() DeviceRequest`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *FrontPortRequest) GetDeviceOk() (*NestedDeviceRequest, bool)`
+`func (o *FrontPortRequest) GetDeviceOk() (*DeviceRequest, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *FrontPortRequest) SetDevice(v NestedDeviceRequest)`
+`func (o *FrontPortRequest) SetDevice(v DeviceRequest)`
 
 SetDevice sets Device field to given value.
 
 
 ### GetModule
 
-`func (o *FrontPortRequest) GetModule() ComponentNestedModuleRequest`
+`func (o *FrontPortRequest) GetModule() ModuleRequest`
 
 GetModule returns the Module field if non-nil, zero value otherwise.
 
 ### GetModuleOk
 
-`func (o *FrontPortRequest) GetModuleOk() (*ComponentNestedModuleRequest, bool)`
+`func (o *FrontPortRequest) GetModuleOk() (*ModuleRequest, bool)`
 
 GetModuleOk returns a tuple with the Module field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetModule
 
-`func (o *FrontPortRequest) SetModule(v ComponentNestedModuleRequest)`
+`func (o *FrontPortRequest) SetModule(v ModuleRequest)`
 
 SetModule sets Module field to given value.
 

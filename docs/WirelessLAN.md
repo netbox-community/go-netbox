@@ -9,10 +9,10 @@ Name | Type | Description | Notes
 **Display** | **string** |  | [readonly] 
 **Ssid** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
-**Group** | Pointer to [**NullableNestedWirelessLANGroup**](NestedWirelessLANGroup.md) |  | [optional] 
+**Group** | Pointer to [**NullableWirelessLANGroup**](WirelessLANGroup.md) |  | [optional] 
 **Status** | Pointer to [**WirelessLANStatus**](WirelessLANStatus.md) |  | [optional] 
-**Vlan** | Pointer to [**NullableNestedVLAN**](NestedVLAN.md) |  | [optional] 
-**Tenant** | Pointer to [**NullableNestedTenant**](NestedTenant.md) |  | [optional] 
+**Vlan** | Pointer to [**NullableVLAN**](VLAN.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableTenant**](Tenant.md) |  | [optional] 
 **AuthType** | Pointer to [**WirelessLANAuthType**](WirelessLANAuthType.md) |  | [optional] 
 **AuthCipher** | Pointer to [**WirelessLANAuthCipher**](WirelessLANAuthCipher.md) |  | [optional] 
 **AuthPsk** | Pointer to **string** |  | [optional] 
@@ -148,20 +148,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetGroup
 
-`func (o *WirelessLAN) GetGroup() NestedWirelessLANGroup`
+`func (o *WirelessLAN) GetGroup() WirelessLANGroup`
 
 GetGroup returns the Group field if non-nil, zero value otherwise.
 
 ### GetGroupOk
 
-`func (o *WirelessLAN) GetGroupOk() (*NestedWirelessLANGroup, bool)`
+`func (o *WirelessLAN) GetGroupOk() (*WirelessLANGroup, bool)`
 
 GetGroupOk returns a tuple with the Group field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGroup
 
-`func (o *WirelessLAN) SetGroup(v NestedWirelessLANGroup)`
+`func (o *WirelessLAN) SetGroup(v WirelessLANGroup)`
 
 SetGroup sets Group field to given value.
 
@@ -208,20 +208,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetVlan
 
-`func (o *WirelessLAN) GetVlan() NestedVLAN`
+`func (o *WirelessLAN) GetVlan() VLAN`
 
 GetVlan returns the Vlan field if non-nil, zero value otherwise.
 
 ### GetVlanOk
 
-`func (o *WirelessLAN) GetVlanOk() (*NestedVLAN, bool)`
+`func (o *WirelessLAN) GetVlanOk() (*VLAN, bool)`
 
 GetVlanOk returns a tuple with the Vlan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVlan
 
-`func (o *WirelessLAN) SetVlan(v NestedVLAN)`
+`func (o *WirelessLAN) SetVlan(v VLAN)`
 
 SetVlan sets Vlan field to given value.
 
@@ -243,20 +243,20 @@ HasVlan returns a boolean if a field has been set.
 UnsetVlan ensures that no value is present for Vlan, not even an explicit nil
 ### GetTenant
 
-`func (o *WirelessLAN) GetTenant() NestedTenant`
+`func (o *WirelessLAN) GetTenant() Tenant`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *WirelessLAN) GetTenantOk() (*NestedTenant, bool)`
+`func (o *WirelessLAN) GetTenantOk() (*Tenant, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *WirelessLAN) SetTenant(v NestedTenant)`
+`func (o *WirelessLAN) SetTenant(v Tenant)`
 
 SetTenant sets Tenant field to given value.
 

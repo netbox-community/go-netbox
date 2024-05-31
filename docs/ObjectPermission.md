@@ -11,10 +11,10 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **ObjectTypes** | **[]string** |  | 
-**Groups** | Pointer to **[]int32** |  | [optional] 
-**Users** | Pointer to **[]int32** |  | [optional] 
 **Actions** | **[]string** | The list of actions granted by this permission | 
 **Constraints** | Pointer to **interface{}** | Queryset filter matching the applicable objects of the selected type(s) | [optional] 
+**Groups** | Pointer to [**[]NestedGroup**](NestedGroup.md) |  | [optional] 
+**Users** | Pointer to [**[]NestedUser**](NestedUser.md) |  | [optional] 
 
 ## Methods
 
@@ -185,56 +185,6 @@ and a boolean to check if the value has been set.
 SetObjectTypes sets ObjectTypes field to given value.
 
 
-### GetGroups
-
-`func (o *ObjectPermission) GetGroups() []int32`
-
-GetGroups returns the Groups field if non-nil, zero value otherwise.
-
-### GetGroupsOk
-
-`func (o *ObjectPermission) GetGroupsOk() (*[]int32, bool)`
-
-GetGroupsOk returns a tuple with the Groups field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetGroups
-
-`func (o *ObjectPermission) SetGroups(v []int32)`
-
-SetGroups sets Groups field to given value.
-
-### HasGroups
-
-`func (o *ObjectPermission) HasGroups() bool`
-
-HasGroups returns a boolean if a field has been set.
-
-### GetUsers
-
-`func (o *ObjectPermission) GetUsers() []int32`
-
-GetUsers returns the Users field if non-nil, zero value otherwise.
-
-### GetUsersOk
-
-`func (o *ObjectPermission) GetUsersOk() (*[]int32, bool)`
-
-GetUsersOk returns a tuple with the Users field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUsers
-
-`func (o *ObjectPermission) SetUsers(v []int32)`
-
-SetUsers sets Users field to given value.
-
-### HasUsers
-
-`func (o *ObjectPermission) HasUsers() bool`
-
-HasUsers returns a boolean if a field has been set.
-
 ### GetActions
 
 `func (o *ObjectPermission) GetActions() []string`
@@ -290,6 +240,56 @@ HasConstraints returns a boolean if a field has been set.
 `func (o *ObjectPermission) UnsetConstraints()`
 
 UnsetConstraints ensures that no value is present for Constraints, not even an explicit nil
+### GetGroups
+
+`func (o *ObjectPermission) GetGroups() []NestedGroup`
+
+GetGroups returns the Groups field if non-nil, zero value otherwise.
+
+### GetGroupsOk
+
+`func (o *ObjectPermission) GetGroupsOk() (*[]NestedGroup, bool)`
+
+GetGroupsOk returns a tuple with the Groups field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGroups
+
+`func (o *ObjectPermission) SetGroups(v []NestedGroup)`
+
+SetGroups sets Groups field to given value.
+
+### HasGroups
+
+`func (o *ObjectPermission) HasGroups() bool`
+
+HasGroups returns a boolean if a field has been set.
+
+### GetUsers
+
+`func (o *ObjectPermission) GetUsers() []NestedUser`
+
+GetUsers returns the Users field if non-nil, zero value otherwise.
+
+### GetUsersOk
+
+`func (o *ObjectPermission) GetUsersOk() (*[]NestedUser, bool)`
+
+GetUsersOk returns a tuple with the Users field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUsers
+
+`func (o *ObjectPermission) SetUsers(v []NestedUser)`
+
+SetUsers sets Users field to given value.
+
+### HasUsers
+
+`func (o *ObjectPermission) HasUsers() bool`
+
+HasUsers returns a boolean if a field has been set.
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

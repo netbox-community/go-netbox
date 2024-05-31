@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Device** | **int32** |  | 
-**Module** | Pointer to **NullableInt32** |  | [optional] 
+**Device** | [**DeviceRequest**](DeviceRequest.md) |  | 
+**Module** | Pointer to [**NullableModuleRequest**](ModuleRequest.md) |  | [optional] 
 **Name** | **string** |  | 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Type** | Pointer to [**PatchedWritablePowerPortRequestType**](PatchedWritablePowerPortRequestType.md) |  | [optional] 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewWritablePowerPortRequest
 
-`func NewWritablePowerPortRequest(device int32, name string, ) *WritablePowerPortRequest`
+`func NewWritablePowerPortRequest(device DeviceRequest, name string, ) *WritablePowerPortRequest`
 
 NewWritablePowerPortRequest instantiates a new WritablePowerPortRequest object
 This constructor will assign default values to properties that have it defined,
@@ -37,40 +37,40 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDevice
 
-`func (o *WritablePowerPortRequest) GetDevice() int32`
+`func (o *WritablePowerPortRequest) GetDevice() DeviceRequest`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *WritablePowerPortRequest) GetDeviceOk() (*int32, bool)`
+`func (o *WritablePowerPortRequest) GetDeviceOk() (*DeviceRequest, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *WritablePowerPortRequest) SetDevice(v int32)`
+`func (o *WritablePowerPortRequest) SetDevice(v DeviceRequest)`
 
 SetDevice sets Device field to given value.
 
 
 ### GetModule
 
-`func (o *WritablePowerPortRequest) GetModule() int32`
+`func (o *WritablePowerPortRequest) GetModule() ModuleRequest`
 
 GetModule returns the Module field if non-nil, zero value otherwise.
 
 ### GetModuleOk
 
-`func (o *WritablePowerPortRequest) GetModuleOk() (*int32, bool)`
+`func (o *WritablePowerPortRequest) GetModuleOk() (*ModuleRequest, bool)`
 
 GetModuleOk returns a tuple with the Module field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetModule
 
-`func (o *WritablePowerPortRequest) SetModule(v int32)`
+`func (o *WritablePowerPortRequest) SetModule(v ModuleRequest)`
 
 SetModule sets Module field to given value.
 

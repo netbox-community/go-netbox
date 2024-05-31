@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
-**ContentTypes** | **[]string** |  | 
+**ObjectTypes** | **[]string** |  | 
 **Type** | [**CustomFieldType**](CustomFieldType.md) |  | 
-**ObjectType** | Pointer to **NullableString** |  | [optional] 
+**RelatedObjectType** | Pointer to **NullableString** |  | [optional] 
 **DataType** | **string** |  | [readonly] 
 **Name** | **string** | Internal field name | 
 **Label** | Pointer to **string** | Name of the field as displayed to users (if not provided, &#39;the field&#39;s name will be used) | [optional] 
@@ -26,7 +26,8 @@ Name | Type | Description | Notes
 **ValidationMinimum** | Pointer to **NullableInt64** | Minimum allowed value (for numeric fields) | [optional] 
 **ValidationMaximum** | Pointer to **NullableInt64** | Maximum allowed value (for numeric fields) | [optional] 
 **ValidationRegex** | Pointer to **string** | Regular expression to enforce on text field values. Use ^ and $ to force matching of entire string. For example, &lt;code&gt;^[A-Z]{3}$&lt;/code&gt; will limit values to exactly three uppercase letters. | [optional] 
-**ChoiceSet** | Pointer to [**NullableNestedCustomFieldChoiceSet**](NestedCustomFieldChoiceSet.md) |  | [optional] 
+**ChoiceSet** | Pointer to [**NullableCustomFieldChoiceSet**](CustomFieldChoiceSet.md) |  | [optional] 
+**Comments** | Pointer to **string** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 
@@ -34,7 +35,7 @@ Name | Type | Description | Notes
 
 ### NewCustomField
 
-`func NewCustomField(id int32, url string, display string, contentTypes []string, type_ CustomFieldType, dataType string, name string, created NullableTime, lastUpdated NullableTime, ) *CustomField`
+`func NewCustomField(id int32, url string, display string, objectTypes []string, type_ CustomFieldType, dataType string, name string, created NullableTime, lastUpdated NullableTime, ) *CustomField`
 
 NewCustomField instantiates a new CustomField object
 This constructor will assign default values to properties that have it defined,
@@ -109,24 +110,24 @@ and a boolean to check if the value has been set.
 SetDisplay sets Display field to given value.
 
 
-### GetContentTypes
+### GetObjectTypes
 
-`func (o *CustomField) GetContentTypes() []string`
+`func (o *CustomField) GetObjectTypes() []string`
 
-GetContentTypes returns the ContentTypes field if non-nil, zero value otherwise.
+GetObjectTypes returns the ObjectTypes field if non-nil, zero value otherwise.
 
-### GetContentTypesOk
+### GetObjectTypesOk
 
-`func (o *CustomField) GetContentTypesOk() (*[]string, bool)`
+`func (o *CustomField) GetObjectTypesOk() (*[]string, bool)`
 
-GetContentTypesOk returns a tuple with the ContentTypes field if it's non-nil, zero value otherwise
+GetObjectTypesOk returns a tuple with the ObjectTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetContentTypes
+### SetObjectTypes
 
-`func (o *CustomField) SetContentTypes(v []string)`
+`func (o *CustomField) SetObjectTypes(v []string)`
 
-SetContentTypes sets ContentTypes field to given value.
+SetObjectTypes sets ObjectTypes field to given value.
 
 
 ### GetType
@@ -149,41 +150,41 @@ and a boolean to check if the value has been set.
 SetType sets Type field to given value.
 
 
-### GetObjectType
+### GetRelatedObjectType
 
-`func (o *CustomField) GetObjectType() string`
+`func (o *CustomField) GetRelatedObjectType() string`
 
-GetObjectType returns the ObjectType field if non-nil, zero value otherwise.
+GetRelatedObjectType returns the RelatedObjectType field if non-nil, zero value otherwise.
 
-### GetObjectTypeOk
+### GetRelatedObjectTypeOk
 
-`func (o *CustomField) GetObjectTypeOk() (*string, bool)`
+`func (o *CustomField) GetRelatedObjectTypeOk() (*string, bool)`
 
-GetObjectTypeOk returns a tuple with the ObjectType field if it's non-nil, zero value otherwise
+GetRelatedObjectTypeOk returns a tuple with the RelatedObjectType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetObjectType
+### SetRelatedObjectType
 
-`func (o *CustomField) SetObjectType(v string)`
+`func (o *CustomField) SetRelatedObjectType(v string)`
 
-SetObjectType sets ObjectType field to given value.
+SetRelatedObjectType sets RelatedObjectType field to given value.
 
-### HasObjectType
+### HasRelatedObjectType
 
-`func (o *CustomField) HasObjectType() bool`
+`func (o *CustomField) HasRelatedObjectType() bool`
 
-HasObjectType returns a boolean if a field has been set.
+HasRelatedObjectType returns a boolean if a field has been set.
 
-### SetObjectTypeNil
+### SetRelatedObjectTypeNil
 
-`func (o *CustomField) SetObjectTypeNil(b bool)`
+`func (o *CustomField) SetRelatedObjectTypeNil(b bool)`
 
- SetObjectTypeNil sets the value for ObjectType to be an explicit nil
+ SetRelatedObjectTypeNil sets the value for RelatedObjectType to be an explicit nil
 
-### UnsetObjectType
-`func (o *CustomField) UnsetObjectType()`
+### UnsetRelatedObjectType
+`func (o *CustomField) UnsetRelatedObjectType()`
 
-UnsetObjectType ensures that no value is present for ObjectType, not even an explicit nil
+UnsetRelatedObjectType ensures that no value is present for RelatedObjectType, not even an explicit nil
 ### GetDataType
 
 `func (o *CustomField) GetDataType() string`
@@ -606,20 +607,20 @@ HasValidationRegex returns a boolean if a field has been set.
 
 ### GetChoiceSet
 
-`func (o *CustomField) GetChoiceSet() NestedCustomFieldChoiceSet`
+`func (o *CustomField) GetChoiceSet() CustomFieldChoiceSet`
 
 GetChoiceSet returns the ChoiceSet field if non-nil, zero value otherwise.
 
 ### GetChoiceSetOk
 
-`func (o *CustomField) GetChoiceSetOk() (*NestedCustomFieldChoiceSet, bool)`
+`func (o *CustomField) GetChoiceSetOk() (*CustomFieldChoiceSet, bool)`
 
 GetChoiceSetOk returns a tuple with the ChoiceSet field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetChoiceSet
 
-`func (o *CustomField) SetChoiceSet(v NestedCustomFieldChoiceSet)`
+`func (o *CustomField) SetChoiceSet(v CustomFieldChoiceSet)`
 
 SetChoiceSet sets ChoiceSet field to given value.
 
@@ -639,6 +640,31 @@ HasChoiceSet returns a boolean if a field has been set.
 `func (o *CustomField) UnsetChoiceSet()`
 
 UnsetChoiceSet ensures that no value is present for ChoiceSet, not even an explicit nil
+### GetComments
+
+`func (o *CustomField) GetComments() string`
+
+GetComments returns the Comments field if non-nil, zero value otherwise.
+
+### GetCommentsOk
+
+`func (o *CustomField) GetCommentsOk() (*string, bool)`
+
+GetCommentsOk returns a tuple with the Comments field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComments
+
+`func (o *CustomField) SetComments(v string)`
+
+SetComments sets Comments field to given value.
+
+### HasComments
+
+`func (o *CustomField) HasComments() bool`
+
+HasComments returns a boolean if a field has been set.
+
 ### GetCreated
 
 `func (o *CustomField) GetCreated() time.Time`
