@@ -6,6 +6,8 @@ import (
 
 const authHeaderName = "Authorization"
 const authHeaderFormat = "Token %v"
+const languageHeaderName = "Accept-Language"
+const languageHeaderValue = "en-US"
 
 func NewAPIClientFor(host string, token string) *APIClient {
 	cfg := NewConfiguration()
@@ -15,6 +17,11 @@ func NewAPIClientFor(host string, token string) *APIClient {
 	cfg.AddDefaultHeader(
 		authHeaderName,
 		fmt.Sprintf(authHeaderFormat, token),
+	)
+
+	cfg.AddDefaultHeader(
+		languageHeaderName,
+		languageHeaderValue,
 	)
 
 	return NewAPIClient(cfg)
