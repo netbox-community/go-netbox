@@ -102497,7 +102497,6 @@ components:
       - id
       - name
       - url
-      - virtualmachine_count
     ClusterGroup:
       type: object
       description: Adds support for custom fields and tags.
@@ -105609,13 +105608,11 @@ components:
           format: int64
           readOnly: true
       required:
-      - device_count
       - display
       - id
       - name
       - slug
       - url
-      - virtualmachine_count
     DeviceRoleRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -105685,7 +105682,6 @@ components:
           format: int64
           readOnly: true
       required:
-      - device_count
       - display
       - id
       - manufacturer
@@ -113955,7 +113951,6 @@ components:
           format: int64
           readOnly: true
       required:
-      - devicetype_count
       - display
       - id
       - name
@@ -126667,13 +126662,11 @@ components:
           format: int64
           readOnly: true
       required:
-      - device_count
       - display
       - id
       - name
       - slug
       - url
-      - virtualmachine_count
     PlatformRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -129230,7 +129223,6 @@ components:
           format: int64
           readOnly: true
       required:
-      - device_count
       - display
       - id
       - name

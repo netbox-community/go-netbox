@@ -39,7 +39,16 @@ if 'components' in data and 'schemas' in data['components']:
             for ntype in non_nullable_types:
                 if ntype in schema['properties']:
                     if schema['properties'][ntype]['format'] == 'binary':
-                        schema['properties'][ntype].pop('nullable')
+                        schema['properties'][ntype].pop('nullable', None)
+
+        if 'required' in schema:
+            non_required_props = [
+                'devicetype_count',
+                'device_count',
+                'virtualmachine_count',
+            ]
+
+            schema['required'] = [prop for prop in schema['required'] if prop not in non_required_props]
 
 # Save the spec file
 with open(SPEC_PATH, 'w') as file:

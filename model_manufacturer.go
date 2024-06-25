@@ -26,7 +26,7 @@ type Manufacturer struct {
 	Name                 string  `json:"name"`
 	Slug                 string  `json:"slug"`
 	Description          *string `json:"description,omitempty"`
-	DevicetypeCount      int64   `json:"devicetype_count"`
+	DevicetypeCount      *int64  `json:"devicetype_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -36,14 +36,13 @@ type _Manufacturer Manufacturer
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewManufacturer(id int32, url string, display string, name string, slug string, devicetypeCount int64) *Manufacturer {
+func NewManufacturer(id int32, url string, display string, name string, slug string) *Manufacturer {
 	this := Manufacturer{}
 	this.Id = id
 	this.Url = url
 	this.Display = display
 	this.Name = name
 	this.Slug = slug
-	this.DevicetypeCount = devicetypeCount
 	return &this
 }
 
@@ -207,28 +206,36 @@ func (o *Manufacturer) SetDescription(v string) {
 	o.Description = &v
 }
 
-// GetDevicetypeCount returns the DevicetypeCount field value
+// GetDevicetypeCount returns the DevicetypeCount field value if set, zero value otherwise.
 func (o *Manufacturer) GetDevicetypeCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.DevicetypeCount) {
 		var ret int64
 		return ret
 	}
-
-	return o.DevicetypeCount
+	return *o.DevicetypeCount
 }
 
-// GetDevicetypeCountOk returns a tuple with the DevicetypeCount field value
+// GetDevicetypeCountOk returns a tuple with the DevicetypeCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Manufacturer) GetDevicetypeCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.DevicetypeCount) {
 		return nil, false
 	}
-	return &o.DevicetypeCount, true
+	return o.DevicetypeCount, true
 }
 
-// SetDevicetypeCount sets field value
+// HasDevicetypeCount returns a boolean if a field has been set.
+func (o *Manufacturer) HasDevicetypeCount() bool {
+	if o != nil && !IsNil(o.DevicetypeCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetDevicetypeCount gets a reference to the given int64 and assigns it to the DevicetypeCount field.
 func (o *Manufacturer) SetDevicetypeCount(v int64) {
-	o.DevicetypeCount = v
+	o.DevicetypeCount = &v
 }
 
 func (o Manufacturer) MarshalJSON() ([]byte, error) {
@@ -249,7 +256,9 @@ func (o Manufacturer) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	toSerialize["devicetype_count"] = o.DevicetypeCount
+	if !IsNil(o.DevicetypeCount) {
+		toSerialize["devicetype_count"] = o.DevicetypeCount
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -268,7 +277,6 @@ func (o *Manufacturer) UnmarshalJSON(data []byte) (err error) {
 		"display",
 		"name",
 		"slug",
-		"devicetype_count",
 	}
 
 	allProperties := make(map[string]interface{})
