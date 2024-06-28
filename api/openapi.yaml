@@ -105384,26 +105384,11 @@ components:
           type: integer
           readOnly: true
       required:
-      - console_port_count
-      - console_server_port_count
-      - created
-      - device_bay_count
-      - device_type
-      - display
-      - front_port_count
       - id
-      - interface_count
-      - inventory_item_count
-      - last_updated
-      - module_bay_count
-      - parent_device
-      - power_outlet_count
-      - power_port_count
-      - primary_ip
-      - rear_port_count
-      - role
-      - site
       - url
+      - display
+      - name
+      - description
     DeviceBay:
       type: object
       description: Adds support for custom fields and tags.
