@@ -24,16 +24,16 @@ type Device struct {
 	Id         int32            `json:"id"`
 	Url        string           `json:"url"`
 	Display    string           `json:"display"`
-	Name       NullableString   `json:"name,omitempty"`
-	DeviceType DeviceType       `json:"device_type"`
-	Role       DeviceRole       `json:"role"`
+	Name       NullableString   `json:"name"`
+	DeviceType *DeviceType      `json:"device_type,omitempty"`
+	Role       *DeviceRole      `json:"role,omitempty"`
 	Tenant     NullableTenant   `json:"tenant,omitempty"`
 	Platform   NullablePlatform `json:"platform,omitempty"`
 	// Chassis serial number, assigned by the manufacturer
 	Serial *string `json:"serial,omitempty"`
 	// A unique tag used to identify this device
 	AssetTag NullableString   `json:"asset_tag,omitempty"`
-	Site     Site             `json:"site"`
+	Site     *Site            `json:"site,omitempty"`
 	Location NullableLocation `json:"location,omitempty"`
 	Rack     NullableRack     `json:"rack,omitempty"`
 	Position NullableFloat64  `json:"position,omitempty"`
@@ -42,10 +42,10 @@ type Device struct {
 	Latitude NullableFloat64 `json:"latitude,omitempty"`
 	// GPS coordinate in decimal format (xx.yyyyyy)
 	Longitude      NullableFloat64        `json:"longitude,omitempty"`
-	ParentDevice   NullableNestedDevice   `json:"parent_device"`
+	ParentDevice   NullableNestedDevice   `json:"parent_device,omitempty"`
 	Status         *DeviceStatus          `json:"status,omitempty"`
 	Airflow        *DeviceAirflow         `json:"airflow,omitempty"`
-	PrimaryIp      NullableIPAddress      `json:"primary_ip"`
+	PrimaryIp      NullableIPAddress      `json:"primary_ip,omitempty"`
 	PrimaryIp4     NullableIPAddress      `json:"primary_ip4,omitempty"`
 	PrimaryIp6     NullableIPAddress      `json:"primary_ip6,omitempty"`
 	OobIp          NullableIPAddress      `json:"oob_ip,omitempty"`
@@ -54,25 +54,25 @@ type Device struct {
 	VcPosition     NullableInt32          `json:"vc_position,omitempty"`
 	// Virtual chassis master election priority
 	VcPriority     NullableInt32          `json:"vc_priority,omitempty"`
-	Description    *string                `json:"description,omitempty"`
+	Description    string                 `json:"description"`
 	Comments       *string                `json:"comments,omitempty"`
 	ConfigTemplate NullableConfigTemplate `json:"config_template,omitempty"`
 	// Local config context data takes precedence over source contexts in the final rendered config context
 	LocalContextData       interface{}            `json:"local_context_data,omitempty"`
 	Tags                   []NestedTag            `json:"tags,omitempty"`
 	CustomFields           map[string]interface{} `json:"custom_fields,omitempty"`
-	Created                NullableTime           `json:"created"`
-	LastUpdated            NullableTime           `json:"last_updated"`
-	ConsolePortCount       int32                  `json:"console_port_count"`
-	ConsoleServerPortCount int32                  `json:"console_server_port_count"`
-	PowerPortCount         int32                  `json:"power_port_count"`
-	PowerOutletCount       int32                  `json:"power_outlet_count"`
-	InterfaceCount         int32                  `json:"interface_count"`
-	FrontPortCount         int32                  `json:"front_port_count"`
-	RearPortCount          int32                  `json:"rear_port_count"`
-	DeviceBayCount         int32                  `json:"device_bay_count"`
-	ModuleBayCount         int32                  `json:"module_bay_count"`
-	InventoryItemCount     int32                  `json:"inventory_item_count"`
+	Created                NullableTime           `json:"created,omitempty"`
+	LastUpdated            NullableTime           `json:"last_updated,omitempty"`
+	ConsolePortCount       *int32                 `json:"console_port_count,omitempty"`
+	ConsoleServerPortCount *int32                 `json:"console_server_port_count,omitempty"`
+	PowerPortCount         *int32                 `json:"power_port_count,omitempty"`
+	PowerOutletCount       *int32                 `json:"power_outlet_count,omitempty"`
+	InterfaceCount         *int32                 `json:"interface_count,omitempty"`
+	FrontPortCount         *int32                 `json:"front_port_count,omitempty"`
+	RearPortCount          *int32                 `json:"rear_port_count,omitempty"`
+	DeviceBayCount         *int32                 `json:"device_bay_count,omitempty"`
+	ModuleBayCount         *int32                 `json:"module_bay_count,omitempty"`
+	InventoryItemCount     *int32                 `json:"inventory_item_count,omitempty"`
 	AdditionalProperties   map[string]interface{}
 }
 
@@ -82,28 +82,13 @@ type _Device Device
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDevice(id int32, url string, display string, deviceType DeviceType, role DeviceRole, site Site, parentDevice NullableNestedDevice, primaryIp NullableIPAddress, created NullableTime, lastUpdated NullableTime, consolePortCount int32, consoleServerPortCount int32, powerPortCount int32, powerOutletCount int32, interfaceCount int32, frontPortCount int32, rearPortCount int32, deviceBayCount int32, moduleBayCount int32, inventoryItemCount int32) *Device {
+func NewDevice(id int32, url string, display string, name NullableString, description string) *Device {
 	this := Device{}
 	this.Id = id
 	this.Url = url
 	this.Display = display
-	this.DeviceType = deviceType
-	this.Role = role
-	this.Site = site
-	this.ParentDevice = parentDevice
-	this.PrimaryIp = primaryIp
-	this.Created = created
-	this.LastUpdated = lastUpdated
-	this.ConsolePortCount = consolePortCount
-	this.ConsoleServerPortCount = consoleServerPortCount
-	this.PowerPortCount = powerPortCount
-	this.PowerOutletCount = powerOutletCount
-	this.InterfaceCount = interfaceCount
-	this.FrontPortCount = frontPortCount
-	this.RearPortCount = rearPortCount
-	this.DeviceBayCount = deviceBayCount
-	this.ModuleBayCount = moduleBayCount
-	this.InventoryItemCount = inventoryItemCount
+	this.Name = name
+	this.Description = description
 	return &this
 }
 
@@ -187,16 +172,18 @@ func (o *Device) SetDisplay(v string) {
 	o.Display = v
 }
 
-// GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetName returns the Name field value
+// If the value is explicit nil, the zero value for string will be returned
 func (o *Device) GetName() string {
-	if o == nil || IsNil(o.Name.Get()) {
+	if o == nil || o.Name.Get() == nil {
 		var ret string
 		return ret
 	}
+
 	return *o.Name.Get()
 }
 
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Device) GetNameOk() (*string, bool) {
@@ -206,76 +193,73 @@ func (o *Device) GetNameOk() (*string, bool) {
 	return o.Name.Get(), o.Name.IsSet()
 }
 
-// HasName returns a boolean if a field has been set.
-func (o *Device) HasName() bool {
-	if o != nil && o.Name.IsSet() {
+// SetName sets field value
+func (o *Device) SetName(v string) {
+	o.Name.Set(&v)
+}
+
+// GetDeviceType returns the DeviceType field value if set, zero value otherwise.
+func (o *Device) GetDeviceType() DeviceType {
+	if o == nil || IsNil(o.DeviceType) {
+		var ret DeviceType
+		return ret
+	}
+	return *o.DeviceType
+}
+
+// GetDeviceTypeOk returns a tuple with the DeviceType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Device) GetDeviceTypeOk() (*DeviceType, bool) {
+	if o == nil || IsNil(o.DeviceType) {
+		return nil, false
+	}
+	return o.DeviceType, true
+}
+
+// HasDeviceType returns a boolean if a field has been set.
+func (o *Device) HasDeviceType() bool {
+	if o != nil && !IsNil(o.DeviceType) {
 		return true
 	}
 
 	return false
 }
 
-// SetName gets a reference to the given NullableString and assigns it to the Name field.
-func (o *Device) SetName(v string) {
-	o.Name.Set(&v)
-}
-
-// SetNameNil sets the value for Name to be an explicit nil
-func (o *Device) SetNameNil() {
-	o.Name.Set(nil)
-}
-
-// UnsetName ensures that no value is present for Name, not even an explicit nil
-func (o *Device) UnsetName() {
-	o.Name.Unset()
-}
-
-// GetDeviceType returns the DeviceType field value
-func (o *Device) GetDeviceType() DeviceType {
-	if o == nil {
-		var ret DeviceType
-		return ret
-	}
-
-	return o.DeviceType
-}
-
-// GetDeviceTypeOk returns a tuple with the DeviceType field value
-// and a boolean to check if the value has been set.
-func (o *Device) GetDeviceTypeOk() (*DeviceType, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.DeviceType, true
-}
-
-// SetDeviceType sets field value
+// SetDeviceType gets a reference to the given DeviceType and assigns it to the DeviceType field.
 func (o *Device) SetDeviceType(v DeviceType) {
-	o.DeviceType = v
+	o.DeviceType = &v
 }
 
-// GetRole returns the Role field value
+// GetRole returns the Role field value if set, zero value otherwise.
 func (o *Device) GetRole() DeviceRole {
-	if o == nil {
+	if o == nil || IsNil(o.Role) {
 		var ret DeviceRole
 		return ret
 	}
-
-	return o.Role
+	return *o.Role
 }
 
-// GetRoleOk returns a tuple with the Role field value
+// GetRoleOk returns a tuple with the Role field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Device) GetRoleOk() (*DeviceRole, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Role) {
 		return nil, false
 	}
-	return &o.Role, true
+	return o.Role, true
 }
 
-// SetRole sets field value
+// HasRole returns a boolean if a field has been set.
+func (o *Device) HasRole() bool {
+	if o != nil && !IsNil(o.Role) {
+		return true
+	}
+
+	return false
+}
+
+// SetRole gets a reference to the given DeviceRole and assigns it to the Role field.
 func (o *Device) SetRole(v DeviceRole) {
-	o.Role = v
+	o.Role = &v
 }
 
 // GetTenant returns the Tenant field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -439,28 +423,36 @@ func (o *Device) UnsetAssetTag() {
 	o.AssetTag.Unset()
 }
 
-// GetSite returns the Site field value
+// GetSite returns the Site field value if set, zero value otherwise.
 func (o *Device) GetSite() Site {
-	if o == nil {
+	if o == nil || IsNil(o.Site) {
 		var ret Site
 		return ret
 	}
-
-	return o.Site
+	return *o.Site
 }
 
-// GetSiteOk returns a tuple with the Site field value
+// GetSiteOk returns a tuple with the Site field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Device) GetSiteOk() (*Site, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Site) {
 		return nil, false
 	}
-	return &o.Site, true
+	return o.Site, true
 }
 
-// SetSite sets field value
+// HasSite returns a boolean if a field has been set.
+func (o *Device) HasSite() bool {
+	if o != nil && !IsNil(o.Site) {
+		return true
+	}
+
+	return false
+}
+
+// SetSite gets a reference to the given Site and assigns it to the Site field.
 func (o *Device) SetSite(v Site) {
-	o.Site = v
+	o.Site = &v
 }
 
 // GetLocation returns the Location field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -710,18 +702,16 @@ func (o *Device) UnsetLongitude() {
 	o.Longitude.Unset()
 }
 
-// GetParentDevice returns the ParentDevice field value
-// If the value is explicit nil, the zero value for NestedDevice will be returned
+// GetParentDevice returns the ParentDevice field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Device) GetParentDevice() NestedDevice {
-	if o == nil || o.ParentDevice.Get() == nil {
+	if o == nil || IsNil(o.ParentDevice.Get()) {
 		var ret NestedDevice
 		return ret
 	}
-
 	return *o.ParentDevice.Get()
 }
 
-// GetParentDeviceOk returns a tuple with the ParentDevice field value
+// GetParentDeviceOk returns a tuple with the ParentDevice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Device) GetParentDeviceOk() (*NestedDevice, bool) {
@@ -731,9 +721,28 @@ func (o *Device) GetParentDeviceOk() (*NestedDevice, bool) {
 	return o.ParentDevice.Get(), o.ParentDevice.IsSet()
 }
 
-// SetParentDevice sets field value
+// HasParentDevice returns a boolean if a field has been set.
+func (o *Device) HasParentDevice() bool {
+	if o != nil && o.ParentDevice.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetParentDevice gets a reference to the given NullableNestedDevice and assigns it to the ParentDevice field.
 func (o *Device) SetParentDevice(v NestedDevice) {
 	o.ParentDevice.Set(&v)
+}
+
+// SetParentDeviceNil sets the value for ParentDevice to be an explicit nil
+func (o *Device) SetParentDeviceNil() {
+	o.ParentDevice.Set(nil)
+}
+
+// UnsetParentDevice ensures that no value is present for ParentDevice, not even an explicit nil
+func (o *Device) UnsetParentDevice() {
+	o.ParentDevice.Unset()
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -800,18 +809,16 @@ func (o *Device) SetAirflow(v DeviceAirflow) {
 	o.Airflow = &v
 }
 
-// GetPrimaryIp returns the PrimaryIp field value
-// If the value is explicit nil, the zero value for IPAddress will be returned
+// GetPrimaryIp returns the PrimaryIp field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Device) GetPrimaryIp() IPAddress {
-	if o == nil || o.PrimaryIp.Get() == nil {
+	if o == nil || IsNil(o.PrimaryIp.Get()) {
 		var ret IPAddress
 		return ret
 	}
-
 	return *o.PrimaryIp.Get()
 }
 
-// GetPrimaryIpOk returns a tuple with the PrimaryIp field value
+// GetPrimaryIpOk returns a tuple with the PrimaryIp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Device) GetPrimaryIpOk() (*IPAddress, bool) {
@@ -821,9 +828,28 @@ func (o *Device) GetPrimaryIpOk() (*IPAddress, bool) {
 	return o.PrimaryIp.Get(), o.PrimaryIp.IsSet()
 }
 
-// SetPrimaryIp sets field value
+// HasPrimaryIp returns a boolean if a field has been set.
+func (o *Device) HasPrimaryIp() bool {
+	if o != nil && o.PrimaryIp.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetPrimaryIp gets a reference to the given NullableIPAddress and assigns it to the PrimaryIp field.
 func (o *Device) SetPrimaryIp(v IPAddress) {
 	o.PrimaryIp.Set(&v)
+}
+
+// SetPrimaryIpNil sets the value for PrimaryIp to be an explicit nil
+func (o *Device) SetPrimaryIpNil() {
+	o.PrimaryIp.Set(nil)
+}
+
+// UnsetPrimaryIp ensures that no value is present for PrimaryIp, not even an explicit nil
+func (o *Device) UnsetPrimaryIp() {
+	o.PrimaryIp.Unset()
 }
 
 // GetPrimaryIp4 returns the PrimaryIp4 field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1127,36 +1153,28 @@ func (o *Device) UnsetVcPriority() {
 	o.VcPriority.Unset()
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value
 func (o *Device) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Description
+
+	return o.Description
 }
 
-// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
+// GetDescriptionOk returns a tuple with the Description field value
 // and a boolean to check if the value has been set.
 func (o *Device) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return &o.Description, true
 }
 
-// HasDescription returns a boolean if a field has been set.
-func (o *Device) HasDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription sets field value
 func (o *Device) SetDescription(v string) {
-	o.Description = &v
+	o.Description = v
 }
 
 // GetComments returns the Comments field value if set, zero value otherwise.
@@ -1331,18 +1349,16 @@ func (o *Device) SetCustomFields(v map[string]interface{}) {
 	o.CustomFields = v
 }
 
-// GetCreated returns the Created field value
-// If the value is explicit nil, the zero value for time.Time will be returned
+// GetCreated returns the Created field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Device) GetCreated() time.Time {
-	if o == nil || o.Created.Get() == nil {
+	if o == nil || IsNil(o.Created.Get()) {
 		var ret time.Time
 		return ret
 	}
-
 	return *o.Created.Get()
 }
 
-// GetCreatedOk returns a tuple with the Created field value
+// GetCreatedOk returns a tuple with the Created field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Device) GetCreatedOk() (*time.Time, bool) {
@@ -1352,23 +1368,40 @@ func (o *Device) GetCreatedOk() (*time.Time, bool) {
 	return o.Created.Get(), o.Created.IsSet()
 }
 
-// SetCreated sets field value
+// HasCreated returns a boolean if a field has been set.
+func (o *Device) HasCreated() bool {
+	if o != nil && o.Created.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetCreated gets a reference to the given NullableTime and assigns it to the Created field.
 func (o *Device) SetCreated(v time.Time) {
 	o.Created.Set(&v)
 }
 
-// GetLastUpdated returns the LastUpdated field value
-// If the value is explicit nil, the zero value for time.Time will be returned
+// SetCreatedNil sets the value for Created to be an explicit nil
+func (o *Device) SetCreatedNil() {
+	o.Created.Set(nil)
+}
+
+// UnsetCreated ensures that no value is present for Created, not even an explicit nil
+func (o *Device) UnsetCreated() {
+	o.Created.Unset()
+}
+
+// GetLastUpdated returns the LastUpdated field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Device) GetLastUpdated() time.Time {
-	if o == nil || o.LastUpdated.Get() == nil {
+	if o == nil || IsNil(o.LastUpdated.Get()) {
 		var ret time.Time
 		return ret
 	}
-
 	return *o.LastUpdated.Get()
 }
 
-// GetLastUpdatedOk returns a tuple with the LastUpdated field value
+// GetLastUpdatedOk returns a tuple with the LastUpdated field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Device) GetLastUpdatedOk() (*time.Time, bool) {
@@ -1378,249 +1411,348 @@ func (o *Device) GetLastUpdatedOk() (*time.Time, bool) {
 	return o.LastUpdated.Get(), o.LastUpdated.IsSet()
 }
 
-// SetLastUpdated sets field value
+// HasLastUpdated returns a boolean if a field has been set.
+func (o *Device) HasLastUpdated() bool {
+	if o != nil && o.LastUpdated.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetLastUpdated gets a reference to the given NullableTime and assigns it to the LastUpdated field.
 func (o *Device) SetLastUpdated(v time.Time) {
 	o.LastUpdated.Set(&v)
 }
 
-// GetConsolePortCount returns the ConsolePortCount field value
+// SetLastUpdatedNil sets the value for LastUpdated to be an explicit nil
+func (o *Device) SetLastUpdatedNil() {
+	o.LastUpdated.Set(nil)
+}
+
+// UnsetLastUpdated ensures that no value is present for LastUpdated, not even an explicit nil
+func (o *Device) UnsetLastUpdated() {
+	o.LastUpdated.Unset()
+}
+
+// GetConsolePortCount returns the ConsolePortCount field value if set, zero value otherwise.
 func (o *Device) GetConsolePortCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.ConsolePortCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.ConsolePortCount
+	return *o.ConsolePortCount
 }
 
-// GetConsolePortCountOk returns a tuple with the ConsolePortCount field value
+// GetConsolePortCountOk returns a tuple with the ConsolePortCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Device) GetConsolePortCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ConsolePortCount) {
 		return nil, false
 	}
-	return &o.ConsolePortCount, true
+	return o.ConsolePortCount, true
 }
 
-// SetConsolePortCount sets field value
+// HasConsolePortCount returns a boolean if a field has been set.
+func (o *Device) HasConsolePortCount() bool {
+	if o != nil && !IsNil(o.ConsolePortCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetConsolePortCount gets a reference to the given int32 and assigns it to the ConsolePortCount field.
 func (o *Device) SetConsolePortCount(v int32) {
-	o.ConsolePortCount = v
+	o.ConsolePortCount = &v
 }
 
-// GetConsoleServerPortCount returns the ConsoleServerPortCount field value
+// GetConsoleServerPortCount returns the ConsoleServerPortCount field value if set, zero value otherwise.
 func (o *Device) GetConsoleServerPortCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.ConsoleServerPortCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.ConsoleServerPortCount
+	return *o.ConsoleServerPortCount
 }
 
-// GetConsoleServerPortCountOk returns a tuple with the ConsoleServerPortCount field value
+// GetConsoleServerPortCountOk returns a tuple with the ConsoleServerPortCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Device) GetConsoleServerPortCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ConsoleServerPortCount) {
 		return nil, false
 	}
-	return &o.ConsoleServerPortCount, true
+	return o.ConsoleServerPortCount, true
 }
 
-// SetConsoleServerPortCount sets field value
+// HasConsoleServerPortCount returns a boolean if a field has been set.
+func (o *Device) HasConsoleServerPortCount() bool {
+	if o != nil && !IsNil(o.ConsoleServerPortCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetConsoleServerPortCount gets a reference to the given int32 and assigns it to the ConsoleServerPortCount field.
 func (o *Device) SetConsoleServerPortCount(v int32) {
-	o.ConsoleServerPortCount = v
+	o.ConsoleServerPortCount = &v
 }
 
-// GetPowerPortCount returns the PowerPortCount field value
+// GetPowerPortCount returns the PowerPortCount field value if set, zero value otherwise.
 func (o *Device) GetPowerPortCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.PowerPortCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.PowerPortCount
+	return *o.PowerPortCount
 }
 
-// GetPowerPortCountOk returns a tuple with the PowerPortCount field value
+// GetPowerPortCountOk returns a tuple with the PowerPortCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Device) GetPowerPortCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.PowerPortCount) {
 		return nil, false
 	}
-	return &o.PowerPortCount, true
+	return o.PowerPortCount, true
 }
 
-// SetPowerPortCount sets field value
+// HasPowerPortCount returns a boolean if a field has been set.
+func (o *Device) HasPowerPortCount() bool {
+	if o != nil && !IsNil(o.PowerPortCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetPowerPortCount gets a reference to the given int32 and assigns it to the PowerPortCount field.
 func (o *Device) SetPowerPortCount(v int32) {
-	o.PowerPortCount = v
+	o.PowerPortCount = &v
 }
 
-// GetPowerOutletCount returns the PowerOutletCount field value
+// GetPowerOutletCount returns the PowerOutletCount field value if set, zero value otherwise.
 func (o *Device) GetPowerOutletCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.PowerOutletCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.PowerOutletCount
+	return *o.PowerOutletCount
 }
 
-// GetPowerOutletCountOk returns a tuple with the PowerOutletCount field value
+// GetPowerOutletCountOk returns a tuple with the PowerOutletCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Device) GetPowerOutletCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.PowerOutletCount) {
 		return nil, false
 	}
-	return &o.PowerOutletCount, true
+	return o.PowerOutletCount, true
 }
 
-// SetPowerOutletCount sets field value
+// HasPowerOutletCount returns a boolean if a field has been set.
+func (o *Device) HasPowerOutletCount() bool {
+	if o != nil && !IsNil(o.PowerOutletCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetPowerOutletCount gets a reference to the given int32 and assigns it to the PowerOutletCount field.
 func (o *Device) SetPowerOutletCount(v int32) {
-	o.PowerOutletCount = v
+	o.PowerOutletCount = &v
 }
 
-// GetInterfaceCount returns the InterfaceCount field value
+// GetInterfaceCount returns the InterfaceCount field value if set, zero value otherwise.
 func (o *Device) GetInterfaceCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.InterfaceCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.InterfaceCount
+	return *o.InterfaceCount
 }
 
-// GetInterfaceCountOk returns a tuple with the InterfaceCount field value
+// GetInterfaceCountOk returns a tuple with the InterfaceCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Device) GetInterfaceCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.InterfaceCount) {
 		return nil, false
 	}
-	return &o.InterfaceCount, true
+	return o.InterfaceCount, true
 }
 
-// SetInterfaceCount sets field value
+// HasInterfaceCount returns a boolean if a field has been set.
+func (o *Device) HasInterfaceCount() bool {
+	if o != nil && !IsNil(o.InterfaceCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetInterfaceCount gets a reference to the given int32 and assigns it to the InterfaceCount field.
 func (o *Device) SetInterfaceCount(v int32) {
-	o.InterfaceCount = v
+	o.InterfaceCount = &v
 }
 
-// GetFrontPortCount returns the FrontPortCount field value
+// GetFrontPortCount returns the FrontPortCount field value if set, zero value otherwise.
 func (o *Device) GetFrontPortCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.FrontPortCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.FrontPortCount
+	return *o.FrontPortCount
 }
 
-// GetFrontPortCountOk returns a tuple with the FrontPortCount field value
+// GetFrontPortCountOk returns a tuple with the FrontPortCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Device) GetFrontPortCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.FrontPortCount) {
 		return nil, false
 	}
-	return &o.FrontPortCount, true
+	return o.FrontPortCount, true
 }
 
-// SetFrontPortCount sets field value
+// HasFrontPortCount returns a boolean if a field has been set.
+func (o *Device) HasFrontPortCount() bool {
+	if o != nil && !IsNil(o.FrontPortCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetFrontPortCount gets a reference to the given int32 and assigns it to the FrontPortCount field.
 func (o *Device) SetFrontPortCount(v int32) {
-	o.FrontPortCount = v
+	o.FrontPortCount = &v
 }
 
-// GetRearPortCount returns the RearPortCount field value
+// GetRearPortCount returns the RearPortCount field value if set, zero value otherwise.
 func (o *Device) GetRearPortCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.RearPortCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.RearPortCount
+	return *o.RearPortCount
 }
 
-// GetRearPortCountOk returns a tuple with the RearPortCount field value
+// GetRearPortCountOk returns a tuple with the RearPortCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Device) GetRearPortCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.RearPortCount) {
 		return nil, false
 	}
-	return &o.RearPortCount, true
+	return o.RearPortCount, true
 }
 
-// SetRearPortCount sets field value
+// HasRearPortCount returns a boolean if a field has been set.
+func (o *Device) HasRearPortCount() bool {
+	if o != nil && !IsNil(o.RearPortCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetRearPortCount gets a reference to the given int32 and assigns it to the RearPortCount field.
 func (o *Device) SetRearPortCount(v int32) {
-	o.RearPortCount = v
+	o.RearPortCount = &v
 }
 
-// GetDeviceBayCount returns the DeviceBayCount field value
+// GetDeviceBayCount returns the DeviceBayCount field value if set, zero value otherwise.
 func (o *Device) GetDeviceBayCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.DeviceBayCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.DeviceBayCount
+	return *o.DeviceBayCount
 }
 
-// GetDeviceBayCountOk returns a tuple with the DeviceBayCount field value
+// GetDeviceBayCountOk returns a tuple with the DeviceBayCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Device) GetDeviceBayCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.DeviceBayCount) {
 		return nil, false
 	}
-	return &o.DeviceBayCount, true
+	return o.DeviceBayCount, true
 }
 
-// SetDeviceBayCount sets field value
+// HasDeviceBayCount returns a boolean if a field has been set.
+func (o *Device) HasDeviceBayCount() bool {
+	if o != nil && !IsNil(o.DeviceBayCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetDeviceBayCount gets a reference to the given int32 and assigns it to the DeviceBayCount field.
 func (o *Device) SetDeviceBayCount(v int32) {
-	o.DeviceBayCount = v
+	o.DeviceBayCount = &v
 }
 
-// GetModuleBayCount returns the ModuleBayCount field value
+// GetModuleBayCount returns the ModuleBayCount field value if set, zero value otherwise.
 func (o *Device) GetModuleBayCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.ModuleBayCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.ModuleBayCount
+	return *o.ModuleBayCount
 }
 
-// GetModuleBayCountOk returns a tuple with the ModuleBayCount field value
+// GetModuleBayCountOk returns a tuple with the ModuleBayCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Device) GetModuleBayCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ModuleBayCount) {
 		return nil, false
 	}
-	return &o.ModuleBayCount, true
+	return o.ModuleBayCount, true
 }
 
-// SetModuleBayCount sets field value
+// HasModuleBayCount returns a boolean if a field has been set.
+func (o *Device) HasModuleBayCount() bool {
+	if o != nil && !IsNil(o.ModuleBayCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetModuleBayCount gets a reference to the given int32 and assigns it to the ModuleBayCount field.
 func (o *Device) SetModuleBayCount(v int32) {
-	o.ModuleBayCount = v
+	o.ModuleBayCount = &v
 }
 
-// GetInventoryItemCount returns the InventoryItemCount field value
+// GetInventoryItemCount returns the InventoryItemCount field value if set, zero value otherwise.
 func (o *Device) GetInventoryItemCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.InventoryItemCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.InventoryItemCount
+	return *o.InventoryItemCount
 }
 
-// GetInventoryItemCountOk returns a tuple with the InventoryItemCount field value
+// GetInventoryItemCountOk returns a tuple with the InventoryItemCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Device) GetInventoryItemCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.InventoryItemCount) {
 		return nil, false
 	}
-	return &o.InventoryItemCount, true
+	return o.InventoryItemCount, true
 }
 
-// SetInventoryItemCount sets field value
+// HasInventoryItemCount returns a boolean if a field has been set.
+func (o *Device) HasInventoryItemCount() bool {
+	if o != nil && !IsNil(o.InventoryItemCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetInventoryItemCount gets a reference to the given int32 and assigns it to the InventoryItemCount field.
 func (o *Device) SetInventoryItemCount(v int32) {
-	o.InventoryItemCount = v
+	o.InventoryItemCount = &v
 }
 
 func (o Device) MarshalJSON() ([]byte, error) {
@@ -1636,11 +1768,13 @@ func (o Device) ToMap() (map[string]interface{}, error) {
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
 	toSerialize["display"] = o.Display
-	if o.Name.IsSet() {
-		toSerialize["name"] = o.Name.Get()
+	toSerialize["name"] = o.Name.Get()
+	if !IsNil(o.DeviceType) {
+		toSerialize["device_type"] = o.DeviceType
 	}
-	toSerialize["device_type"] = o.DeviceType
-	toSerialize["role"] = o.Role
+	if !IsNil(o.Role) {
+		toSerialize["role"] = o.Role
+	}
 	if o.Tenant.IsSet() {
 		toSerialize["tenant"] = o.Tenant.Get()
 	}
@@ -1653,7 +1787,9 @@ func (o Device) ToMap() (map[string]interface{}, error) {
 	if o.AssetTag.IsSet() {
 		toSerialize["asset_tag"] = o.AssetTag.Get()
 	}
-	toSerialize["site"] = o.Site
+	if !IsNil(o.Site) {
+		toSerialize["site"] = o.Site
+	}
 	if o.Location.IsSet() {
 		toSerialize["location"] = o.Location.Get()
 	}
@@ -1672,14 +1808,18 @@ func (o Device) ToMap() (map[string]interface{}, error) {
 	if o.Longitude.IsSet() {
 		toSerialize["longitude"] = o.Longitude.Get()
 	}
-	toSerialize["parent_device"] = o.ParentDevice.Get()
+	if o.ParentDevice.IsSet() {
+		toSerialize["parent_device"] = o.ParentDevice.Get()
+	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
 	if !IsNil(o.Airflow) {
 		toSerialize["airflow"] = o.Airflow
 	}
-	toSerialize["primary_ip"] = o.PrimaryIp.Get()
+	if o.PrimaryIp.IsSet() {
+		toSerialize["primary_ip"] = o.PrimaryIp.Get()
+	}
 	if o.PrimaryIp4.IsSet() {
 		toSerialize["primary_ip4"] = o.PrimaryIp4.Get()
 	}
@@ -1701,9 +1841,7 @@ func (o Device) ToMap() (map[string]interface{}, error) {
 	if o.VcPriority.IsSet() {
 		toSerialize["vc_priority"] = o.VcPriority.Get()
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
+	toSerialize["description"] = o.Description
 	if !IsNil(o.Comments) {
 		toSerialize["comments"] = o.Comments
 	}
@@ -1719,18 +1857,42 @@ func (o Device) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-	toSerialize["created"] = o.Created.Get()
-	toSerialize["last_updated"] = o.LastUpdated.Get()
-	toSerialize["console_port_count"] = o.ConsolePortCount
-	toSerialize["console_server_port_count"] = o.ConsoleServerPortCount
-	toSerialize["power_port_count"] = o.PowerPortCount
-	toSerialize["power_outlet_count"] = o.PowerOutletCount
-	toSerialize["interface_count"] = o.InterfaceCount
-	toSerialize["front_port_count"] = o.FrontPortCount
-	toSerialize["rear_port_count"] = o.RearPortCount
-	toSerialize["device_bay_count"] = o.DeviceBayCount
-	toSerialize["module_bay_count"] = o.ModuleBayCount
-	toSerialize["inventory_item_count"] = o.InventoryItemCount
+	if o.Created.IsSet() {
+		toSerialize["created"] = o.Created.Get()
+	}
+	if o.LastUpdated.IsSet() {
+		toSerialize["last_updated"] = o.LastUpdated.Get()
+	}
+	if !IsNil(o.ConsolePortCount) {
+		toSerialize["console_port_count"] = o.ConsolePortCount
+	}
+	if !IsNil(o.ConsoleServerPortCount) {
+		toSerialize["console_server_port_count"] = o.ConsoleServerPortCount
+	}
+	if !IsNil(o.PowerPortCount) {
+		toSerialize["power_port_count"] = o.PowerPortCount
+	}
+	if !IsNil(o.PowerOutletCount) {
+		toSerialize["power_outlet_count"] = o.PowerOutletCount
+	}
+	if !IsNil(o.InterfaceCount) {
+		toSerialize["interface_count"] = o.InterfaceCount
+	}
+	if !IsNil(o.FrontPortCount) {
+		toSerialize["front_port_count"] = o.FrontPortCount
+	}
+	if !IsNil(o.RearPortCount) {
+		toSerialize["rear_port_count"] = o.RearPortCount
+	}
+	if !IsNil(o.DeviceBayCount) {
+		toSerialize["device_bay_count"] = o.DeviceBayCount
+	}
+	if !IsNil(o.ModuleBayCount) {
+		toSerialize["module_bay_count"] = o.ModuleBayCount
+	}
+	if !IsNil(o.InventoryItemCount) {
+		toSerialize["inventory_item_count"] = o.InventoryItemCount
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -1747,23 +1909,8 @@ func (o *Device) UnmarshalJSON(data []byte) (err error) {
 		"id",
 		"url",
 		"display",
-		"device_type",
-		"role",
-		"site",
-		"parent_device",
-		"primary_ip",
-		"created",
-		"last_updated",
-		"console_port_count",
-		"console_server_port_count",
-		"power_port_count",
-		"power_outlet_count",
-		"interface_count",
-		"front_port_count",
-		"rear_port_count",
-		"device_bay_count",
-		"module_bay_count",
-		"inventory_item_count",
+		"name",
+		"description",
 	}
 
 	allProperties := make(map[string]interface{})
