@@ -130116,7 +130116,6 @@ components:
       - display
       - id
       - name
-      - prefix_count
       - slug
       - url
       - vlan_count
@@ -131827,7 +131826,6 @@ components:
       - display
       - id
       - name
-      - prefix_count
       - url
     VRFRequest:
       type: object
