@@ -4,8 +4,10 @@ import (
 	"fmt"
 )
 
-const authHeaderName = "Authorization"
-const authHeaderFormat = "Token %v"
+const (
+	authHeaderName   = "Authorization"
+	authHeaderFormat = "Token %v"
+)
 
 func NewAPIClientFor(host string, token string) *APIClient {
 	cfg := NewConfiguration()

@@ -11,13 +11,13 @@ Name | Type | Description | Notes
 **Model** | **string** |  | 
 **Slug** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
-**DeviceCount** | **int64** |  | [readonly] 
+**DeviceCount** | Pointer to **int64** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewDeviceType
 
-`func NewDeviceType(id int32, url string, display string, manufacturer Manufacturer, model string, slug string, deviceCount int64, ) *DeviceType`
+`func NewDeviceType(id int32, url string, display string, manufacturer Manufacturer, model string, slug string, ) *DeviceType`
 
 NewDeviceType instantiates a new DeviceType object
 This constructor will assign default values to properties that have it defined,
@@ -196,6 +196,11 @@ and a boolean to check if the value has been set.
 
 SetDeviceCount sets DeviceCount field to given value.
 
+### HasDeviceCount
+
+`func (o *DeviceType) HasDeviceCount() bool`
+
+HasDeviceCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

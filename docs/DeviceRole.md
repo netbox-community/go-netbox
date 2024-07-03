@@ -10,14 +10,14 @@ Name | Type | Description | Notes
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
-**DeviceCount** | **int64** |  | [readonly] 
-**VirtualmachineCount** | **int64** |  | [readonly] 
+**DeviceCount** | Pointer to **int64** |  | [optional] [readonly] 
+**VirtualmachineCount** | Pointer to **int64** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewDeviceRole
 
-`func NewDeviceRole(id int32, url string, display string, name string, slug string, deviceCount int64, virtualmachineCount int64, ) *DeviceRole`
+`func NewDeviceRole(id int32, url string, display string, name string, slug string, ) *DeviceRole`
 
 NewDeviceRole instantiates a new DeviceRole object
 This constructor will assign default values to properties that have it defined,
@@ -176,6 +176,11 @@ and a boolean to check if the value has been set.
 
 SetDeviceCount sets DeviceCount field to given value.
 
+### HasDeviceCount
+
+`func (o *DeviceRole) HasDeviceCount() bool`
+
+HasDeviceCount returns a boolean if a field has been set.
 
 ### GetVirtualmachineCount
 
@@ -196,6 +201,11 @@ and a boolean to check if the value has been set.
 
 SetVirtualmachineCount sets VirtualmachineCount field to given value.
 
+### HasVirtualmachineCount
+
+`func (o *DeviceRole) HasVirtualmachineCount() bool`
+
+HasVirtualmachineCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

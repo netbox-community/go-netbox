@@ -102497,7 +102497,6 @@ components:
       - id
       - name
       - url
-      - virtualmachine_count
     ClusterGroup:
       type: object
       description: Adds support for custom fields and tags.
@@ -105385,26 +105384,11 @@ components:
           type: integer
           readOnly: true
       required:
-      - console_port_count
-      - console_server_port_count
-      - created
-      - device_bay_count
-      - device_type
-      - display
-      - front_port_count
       - id
-      - interface_count
-      - inventory_item_count
-      - last_updated
-      - module_bay_count
-      - parent_device
-      - power_outlet_count
-      - power_port_count
-      - primary_ip
-      - rear_port_count
-      - role
-      - site
       - url
+      - display
+      - name
+      - description
     DeviceBay:
       type: object
       description: Adds support for custom fields and tags.
@@ -105609,13 +105593,11 @@ components:
           format: int64
           readOnly: true
       required:
-      - device_count
       - display
       - id
       - name
       - slug
       - url
-      - virtualmachine_count
     DeviceRoleRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -105685,7 +105667,6 @@ components:
           format: int64
           readOnly: true
       required:
-      - device_count
       - display
       - id
       - manufacturer
@@ -113955,7 +113936,6 @@ components:
           format: int64
           readOnly: true
       required:
-      - devicetype_count
       - display
       - id
       - name
@@ -126667,13 +126647,11 @@ components:
           format: int64
           readOnly: true
       required:
-      - device_count
       - display
       - id
       - name
       - slug
       - url
-      - virtualmachine_count
     PlatformRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -129230,7 +129208,6 @@ components:
           format: int64
           readOnly: true
       required:
-      - device_count
       - display
       - id
       - name
@@ -130139,7 +130116,6 @@ components:
       - display
       - id
       - name
-      - prefix_count
       - slug
       - url
       - vlan_count
@@ -131850,7 +131826,6 @@ components:
       - display
       - id
       - name
-      - prefix_count
       - url
     VRFRequest:
       type: object

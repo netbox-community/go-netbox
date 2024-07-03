@@ -7,24 +7,24 @@ Name | Type | Description | Notes
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
-**Name** | Pointer to **NullableString** |  | [optional] 
-**DeviceType** | [**DeviceType**](DeviceType.md) |  | 
-**Role** | [**DeviceRole**](DeviceRole.md) |  | 
+**Name** | **NullableString** |  | 
+**DeviceType** | Pointer to [**DeviceType**](DeviceType.md) |  | [optional] 
+**Role** | Pointer to [**DeviceRole**](DeviceRole.md) |  | [optional] 
 **Tenant** | Pointer to [**NullableTenant**](Tenant.md) |  | [optional] 
 **Platform** | Pointer to [**NullablePlatform**](Platform.md) |  | [optional] 
 **Serial** | Pointer to **string** | Chassis serial number, assigned by the manufacturer | [optional] 
 **AssetTag** | Pointer to **NullableString** | A unique tag used to identify this device | [optional] 
-**Site** | [**Site**](Site.md) |  | 
+**Site** | Pointer to [**Site**](Site.md) |  | [optional] 
 **Location** | Pointer to [**NullableLocation**](Location.md) |  | [optional] 
 **Rack** | Pointer to [**NullableRack**](Rack.md) |  | [optional] 
 **Position** | Pointer to **NullableFloat64** |  | [optional] 
 **Face** | Pointer to [**DeviceFace**](DeviceFace.md) |  | [optional] 
 **Latitude** | Pointer to **NullableFloat64** | GPS coordinate in decimal format (xx.yyyyyy) | [optional] 
 **Longitude** | Pointer to **NullableFloat64** | GPS coordinate in decimal format (xx.yyyyyy) | [optional] 
-**ParentDevice** | [**NullableNestedDevice**](NestedDevice.md) |  | [readonly] 
+**ParentDevice** | Pointer to [**NullableNestedDevice**](NestedDevice.md) |  | [optional] [readonly] 
 **Status** | Pointer to [**DeviceStatus**](DeviceStatus.md) |  | [optional] 
 **Airflow** | Pointer to [**DeviceAirflow**](DeviceAirflow.md) |  | [optional] 
-**PrimaryIp** | [**NullableIPAddress**](IPAddress.md) |  | [readonly] 
+**PrimaryIp** | Pointer to [**NullableIPAddress**](IPAddress.md) |  | [optional] [readonly] 
 **PrimaryIp4** | Pointer to [**NullableIPAddress**](IPAddress.md) |  | [optional] 
 **PrimaryIp6** | Pointer to [**NullableIPAddress**](IPAddress.md) |  | [optional] 
 **OobIp** | Pointer to [**NullableIPAddress**](IPAddress.md) |  | [optional] 
@@ -32,30 +32,30 @@ Name | Type | Description | Notes
 **VirtualChassis** | Pointer to [**NullableVirtualChassis**](VirtualChassis.md) |  | [optional] 
 **VcPosition** | Pointer to **NullableInt32** |  | [optional] 
 **VcPriority** | Pointer to **NullableInt32** | Virtual chassis master election priority | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | **string** |  | 
 **Comments** | Pointer to **string** |  | [optional] 
 **ConfigTemplate** | Pointer to [**NullableConfigTemplate**](ConfigTemplate.md) |  | [optional] 
 **LocalContextData** | Pointer to **interface{}** | Local config context data takes precedence over source contexts in the final rendered config context | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
-**LastUpdated** | **NullableTime** |  | [readonly] 
-**ConsolePortCount** | **int32** |  | [readonly] 
-**ConsoleServerPortCount** | **int32** |  | [readonly] 
-**PowerPortCount** | **int32** |  | [readonly] 
-**PowerOutletCount** | **int32** |  | [readonly] 
-**InterfaceCount** | **int32** |  | [readonly] 
-**FrontPortCount** | **int32** |  | [readonly] 
-**RearPortCount** | **int32** |  | [readonly] 
-**DeviceBayCount** | **int32** |  | [readonly] 
-**ModuleBayCount** | **int32** |  | [readonly] 
-**InventoryItemCount** | **int32** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
+**LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
+**ConsolePortCount** | Pointer to **int32** |  | [optional] [readonly] 
+**ConsoleServerPortCount** | Pointer to **int32** |  | [optional] [readonly] 
+**PowerPortCount** | Pointer to **int32** |  | [optional] [readonly] 
+**PowerOutletCount** | Pointer to **int32** |  | [optional] [readonly] 
+**InterfaceCount** | Pointer to **int32** |  | [optional] [readonly] 
+**FrontPortCount** | Pointer to **int32** |  | [optional] [readonly] 
+**RearPortCount** | Pointer to **int32** |  | [optional] [readonly] 
+**DeviceBayCount** | Pointer to **int32** |  | [optional] [readonly] 
+**ModuleBayCount** | Pointer to **int32** |  | [optional] [readonly] 
+**InventoryItemCount** | Pointer to **int32** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewDevice
 
-`func NewDevice(id int32, url string, display string, deviceType DeviceType, role DeviceRole, site Site, parentDevice NullableNestedDevice, primaryIp NullableIPAddress, created NullableTime, lastUpdated NullableTime, consolePortCount int32, consoleServerPortCount int32, powerPortCount int32, powerOutletCount int32, interfaceCount int32, frontPortCount int32, rearPortCount int32, deviceBayCount int32, moduleBayCount int32, inventoryItemCount int32, ) *Device`
+`func NewDevice(id int32, url string, display string, name NullableString, description string, ) *Device`
 
 NewDevice instantiates a new Device object
 This constructor will assign default values to properties that have it defined,
@@ -149,11 +149,6 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
-### HasName
-
-`func (o *Device) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### SetNameNil
 
@@ -184,6 +179,11 @@ and a boolean to check if the value has been set.
 
 SetDeviceType sets DeviceType field to given value.
 
+### HasDeviceType
+
+`func (o *Device) HasDeviceType() bool`
+
+HasDeviceType returns a boolean if a field has been set.
 
 ### GetRole
 
@@ -204,6 +204,11 @@ and a boolean to check if the value has been set.
 
 SetRole sets Role field to given value.
 
+### HasRole
+
+`func (o *Device) HasRole() bool`
+
+HasRole returns a boolean if a field has been set.
 
 ### GetTenant
 
@@ -354,6 +359,11 @@ and a boolean to check if the value has been set.
 
 SetSite sets Site field to given value.
 
+### HasSite
+
+`func (o *Device) HasSite() bool`
+
+HasSite returns a boolean if a field has been set.
 
 ### GetLocation
 
@@ -574,6 +584,11 @@ and a boolean to check if the value has been set.
 
 SetParentDevice sets ParentDevice field to given value.
 
+### HasParentDevice
+
+`func (o *Device) HasParentDevice() bool`
+
+HasParentDevice returns a boolean if a field has been set.
 
 ### SetParentDeviceNil
 
@@ -654,6 +669,11 @@ and a boolean to check if the value has been set.
 
 SetPrimaryIp sets PrimaryIp field to given value.
 
+### HasPrimaryIp
+
+`func (o *Device) HasPrimaryIp() bool`
+
+HasPrimaryIp returns a boolean if a field has been set.
 
 ### SetPrimaryIpNil
 
@@ -929,11 +949,6 @@ and a boolean to check if the value has been set.
 
 SetDescription sets Description field to given value.
 
-### HasDescription
-
-`func (o *Device) HasDescription() bool`
-
-HasDescription returns a boolean if a field has been set.
 
 ### GetComments
 
@@ -1099,6 +1114,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *Device) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
@@ -1129,6 +1149,11 @@ and a boolean to check if the value has been set.
 
 SetLastUpdated sets LastUpdated field to given value.
 
+### HasLastUpdated
+
+`func (o *Device) HasLastUpdated() bool`
+
+HasLastUpdated returns a boolean if a field has been set.
 
 ### SetLastUpdatedNil
 
@@ -1159,6 +1184,11 @@ and a boolean to check if the value has been set.
 
 SetConsolePortCount sets ConsolePortCount field to given value.
 
+### HasConsolePortCount
+
+`func (o *Device) HasConsolePortCount() bool`
+
+HasConsolePortCount returns a boolean if a field has been set.
 
 ### GetConsoleServerPortCount
 
@@ -1179,6 +1209,11 @@ and a boolean to check if the value has been set.
 
 SetConsoleServerPortCount sets ConsoleServerPortCount field to given value.
 
+### HasConsoleServerPortCount
+
+`func (o *Device) HasConsoleServerPortCount() bool`
+
+HasConsoleServerPortCount returns a boolean if a field has been set.
 
 ### GetPowerPortCount
 
@@ -1199,6 +1234,11 @@ and a boolean to check if the value has been set.
 
 SetPowerPortCount sets PowerPortCount field to given value.
 
+### HasPowerPortCount
+
+`func (o *Device) HasPowerPortCount() bool`
+
+HasPowerPortCount returns a boolean if a field has been set.
 
 ### GetPowerOutletCount
 
@@ -1219,6 +1259,11 @@ and a boolean to check if the value has been set.
 
 SetPowerOutletCount sets PowerOutletCount field to given value.
 
+### HasPowerOutletCount
+
+`func (o *Device) HasPowerOutletCount() bool`
+
+HasPowerOutletCount returns a boolean if a field has been set.
 
 ### GetInterfaceCount
 
@@ -1239,6 +1284,11 @@ and a boolean to check if the value has been set.
 
 SetInterfaceCount sets InterfaceCount field to given value.
 
+### HasInterfaceCount
+
+`func (o *Device) HasInterfaceCount() bool`
+
+HasInterfaceCount returns a boolean if a field has been set.
 
 ### GetFrontPortCount
 
@@ -1259,6 +1309,11 @@ and a boolean to check if the value has been set.
 
 SetFrontPortCount sets FrontPortCount field to given value.
 
+### HasFrontPortCount
+
+`func (o *Device) HasFrontPortCount() bool`
+
+HasFrontPortCount returns a boolean if a field has been set.
 
 ### GetRearPortCount
 
@@ -1279,6 +1334,11 @@ and a boolean to check if the value has been set.
 
 SetRearPortCount sets RearPortCount field to given value.
 
+### HasRearPortCount
+
+`func (o *Device) HasRearPortCount() bool`
+
+HasRearPortCount returns a boolean if a field has been set.
 
 ### GetDeviceBayCount
 
@@ -1299,6 +1359,11 @@ and a boolean to check if the value has been set.
 
 SetDeviceBayCount sets DeviceBayCount field to given value.
 
+### HasDeviceBayCount
+
+`func (o *Device) HasDeviceBayCount() bool`
+
+HasDeviceBayCount returns a boolean if a field has been set.
 
 ### GetModuleBayCount
 
@@ -1319,6 +1384,11 @@ and a boolean to check if the value has been set.
 
 SetModuleBayCount sets ModuleBayCount field to given value.
 
+### HasModuleBayCount
+
+`func (o *Device) HasModuleBayCount() bool`
+
+HasModuleBayCount returns a boolean if a field has been set.
 
 ### GetInventoryItemCount
 
@@ -1339,6 +1409,11 @@ and a boolean to check if the value has been set.
 
 SetInventoryItemCount sets InventoryItemCount field to given value.
 
+### HasInventoryItemCount
+
+`func (o *Device) HasInventoryItemCount() bool`
+
+HasInventoryItemCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

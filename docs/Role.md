@@ -10,14 +10,14 @@ Name | Type | Description | Notes
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
-**PrefixCount** | **int64** |  | [readonly] 
+**PrefixCount** | Pointer to **int64** |  | [optional] [readonly] 
 **VlanCount** | **int64** |  | [readonly] 
 
 ## Methods
 
 ### NewRole
 
-`func NewRole(id int32, url string, display string, name string, slug string, prefixCount int64, vlanCount int64, ) *Role`
+`func NewRole(id int32, url string, display string, name string, slug string, vlanCount int64, ) *Role`
 
 NewRole instantiates a new Role object
 This constructor will assign default values to properties that have it defined,
@@ -176,6 +176,11 @@ and a boolean to check if the value has been set.
 
 SetPrefixCount sets PrefixCount field to given value.
 
+### HasPrefixCount
+
+`func (o *Role) HasPrefixCount() bool`
+
+HasPrefixCount returns a boolean if a field has been set.
 
 ### GetVlanCount
 
