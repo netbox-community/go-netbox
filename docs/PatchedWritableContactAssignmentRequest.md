@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ObjectType** | Pointer to **string** |  | [optional] 
 **ObjectId** | Pointer to **int64** |  | [optional] 
-**Contact** | Pointer to [**ContactRequest**](ContactRequest.md) |  | [optional] 
-**Role** | Pointer to [**NullableContactRoleRequest**](ContactRoleRequest.md) |  | [optional] 
-**Priority** | Pointer to [**ContactAssignmentPriorityValue**](ContactAssignmentPriorityValue.md) |  | [optional] 
+**Contact** | Pointer to [**BriefContactRequest**](BriefContactRequest.md) |  | [optional] 
+**Role** | Pointer to [**NullableBriefContactRoleRequest**](BriefContactRoleRequest.md) |  | [optional] 
+**Priority** | Pointer to [**BriefCircuitGroupAssignmentSerializerPriorityValue**](BriefCircuitGroupAssignmentSerializerPriorityValue.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 
@@ -83,20 +83,20 @@ HasObjectId returns a boolean if a field has been set.
 
 ### GetContact
 
-`func (o *PatchedWritableContactAssignmentRequest) GetContact() ContactRequest`
+`func (o *PatchedWritableContactAssignmentRequest) GetContact() BriefContactRequest`
 
 GetContact returns the Contact field if non-nil, zero value otherwise.
 
 ### GetContactOk
 
-`func (o *PatchedWritableContactAssignmentRequest) GetContactOk() (*ContactRequest, bool)`
+`func (o *PatchedWritableContactAssignmentRequest) GetContactOk() (*BriefContactRequest, bool)`
 
 GetContactOk returns a tuple with the Contact field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetContact
 
-`func (o *PatchedWritableContactAssignmentRequest) SetContact(v ContactRequest)`
+`func (o *PatchedWritableContactAssignmentRequest) SetContact(v BriefContactRequest)`
 
 SetContact sets Contact field to given value.
 
@@ -108,20 +108,20 @@ HasContact returns a boolean if a field has been set.
 
 ### GetRole
 
-`func (o *PatchedWritableContactAssignmentRequest) GetRole() ContactRoleRequest`
+`func (o *PatchedWritableContactAssignmentRequest) GetRole() BriefContactRoleRequest`
 
 GetRole returns the Role field if non-nil, zero value otherwise.
 
 ### GetRoleOk
 
-`func (o *PatchedWritableContactAssignmentRequest) GetRoleOk() (*ContactRoleRequest, bool)`
+`func (o *PatchedWritableContactAssignmentRequest) GetRoleOk() (*BriefContactRoleRequest, bool)`
 
 GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRole
 
-`func (o *PatchedWritableContactAssignmentRequest) SetRole(v ContactRoleRequest)`
+`func (o *PatchedWritableContactAssignmentRequest) SetRole(v BriefContactRoleRequest)`
 
 SetRole sets Role field to given value.
 
@@ -143,20 +143,20 @@ HasRole returns a boolean if a field has been set.
 UnsetRole ensures that no value is present for Role, not even an explicit nil
 ### GetPriority
 
-`func (o *PatchedWritableContactAssignmentRequest) GetPriority() ContactAssignmentPriorityValue`
+`func (o *PatchedWritableContactAssignmentRequest) GetPriority() BriefCircuitGroupAssignmentSerializerPriorityValue`
 
 GetPriority returns the Priority field if non-nil, zero value otherwise.
 
 ### GetPriorityOk
 
-`func (o *PatchedWritableContactAssignmentRequest) GetPriorityOk() (*ContactAssignmentPriorityValue, bool)`
+`func (o *PatchedWritableContactAssignmentRequest) GetPriorityOk() (*BriefCircuitGroupAssignmentSerializerPriorityValue, bool)`
 
 GetPriorityOk returns a tuple with the Priority field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPriority
 
-`func (o *PatchedWritableContactAssignmentRequest) SetPriority(v ContactAssignmentPriorityValue)`
+`func (o *PatchedWritableContactAssignmentRequest) SetPriority(v BriefCircuitGroupAssignmentSerializerPriorityValue)`
 
 SetPriority sets Priority field to given value.
 

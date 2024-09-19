@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Device** | [**DeviceRequest**](DeviceRequest.md) |  | 
-**Module** | Pointer to [**NullableModuleRequest**](ModuleRequest.md) |  | [optional] 
+**Device** | [**BriefDeviceRequest**](BriefDeviceRequest.md) |  | 
+**Module** | Pointer to [**NullableBriefModuleRequest**](BriefModuleRequest.md) |  | [optional] 
 **Name** | **string** |  | 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Type** | Pointer to [**NullablePowerOutletRequestType**](PowerOutletRequestType.md) |  | [optional] 
-**PowerPort** | Pointer to [**NullablePowerPortRequest**](PowerPortRequest.md) |  | [optional] 
+**PowerPort** | Pointer to [**NullableBriefPowerPortRequest**](BriefPowerPortRequest.md) |  | [optional] 
 **FeedLeg** | Pointer to [**NullablePowerOutletRequestFeedLeg**](PowerOutletRequestFeedLeg.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **MarkConnected** | Pointer to **bool** | Treat as if a cable is connected | [optional] 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewPowerOutletRequest
 
-`func NewPowerOutletRequest(device DeviceRequest, name string, ) *PowerOutletRequest`
+`func NewPowerOutletRequest(device BriefDeviceRequest, name string, ) *PowerOutletRequest`
 
 NewPowerOutletRequest instantiates a new PowerOutletRequest object
 This constructor will assign default values to properties that have it defined,
@@ -37,40 +37,40 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDevice
 
-`func (o *PowerOutletRequest) GetDevice() DeviceRequest`
+`func (o *PowerOutletRequest) GetDevice() BriefDeviceRequest`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *PowerOutletRequest) GetDeviceOk() (*DeviceRequest, bool)`
+`func (o *PowerOutletRequest) GetDeviceOk() (*BriefDeviceRequest, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *PowerOutletRequest) SetDevice(v DeviceRequest)`
+`func (o *PowerOutletRequest) SetDevice(v BriefDeviceRequest)`
 
 SetDevice sets Device field to given value.
 
 
 ### GetModule
 
-`func (o *PowerOutletRequest) GetModule() ModuleRequest`
+`func (o *PowerOutletRequest) GetModule() BriefModuleRequest`
 
 GetModule returns the Module field if non-nil, zero value otherwise.
 
 ### GetModuleOk
 
-`func (o *PowerOutletRequest) GetModuleOk() (*ModuleRequest, bool)`
+`func (o *PowerOutletRequest) GetModuleOk() (*BriefModuleRequest, bool)`
 
 GetModuleOk returns a tuple with the Module field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetModule
 
-`func (o *PowerOutletRequest) SetModule(v ModuleRequest)`
+`func (o *PowerOutletRequest) SetModule(v BriefModuleRequest)`
 
 SetModule sets Module field to given value.
 
@@ -172,20 +172,20 @@ HasType returns a boolean if a field has been set.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetPowerPort
 
-`func (o *PowerOutletRequest) GetPowerPort() PowerPortRequest`
+`func (o *PowerOutletRequest) GetPowerPort() BriefPowerPortRequest`
 
 GetPowerPort returns the PowerPort field if non-nil, zero value otherwise.
 
 ### GetPowerPortOk
 
-`func (o *PowerOutletRequest) GetPowerPortOk() (*PowerPortRequest, bool)`
+`func (o *PowerOutletRequest) GetPowerPortOk() (*BriefPowerPortRequest, bool)`
 
 GetPowerPortOk returns a tuple with the PowerPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPowerPort
 
-`func (o *PowerOutletRequest) SetPowerPort(v PowerPortRequest)`
+`func (o *PowerOutletRequest) SetPowerPort(v BriefPowerPortRequest)`
 
 SetPowerPort sets PowerPort field to given value.
 

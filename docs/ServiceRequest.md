@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Device** | Pointer to [**NullableDeviceRequest**](DeviceRequest.md) |  | [optional] 
-**VirtualMachine** | Pointer to [**NullableVirtualMachineRequest**](VirtualMachineRequest.md) |  | [optional] 
+**Device** | Pointer to [**NullableBriefDeviceRequest**](BriefDeviceRequest.md) |  | [optional] 
+**VirtualMachine** | Pointer to [**NullableBriefVirtualMachineRequest**](BriefVirtualMachineRequest.md) |  | [optional] 
 **Name** | **string** |  | 
 **Protocol** | Pointer to [**PatchedWritableServiceRequestProtocol**](PatchedWritableServiceRequestProtocol.md) |  | [optional] 
 **Ports** | **[]int32** |  | 
@@ -36,20 +36,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDevice
 
-`func (o *ServiceRequest) GetDevice() DeviceRequest`
+`func (o *ServiceRequest) GetDevice() BriefDeviceRequest`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *ServiceRequest) GetDeviceOk() (*DeviceRequest, bool)`
+`func (o *ServiceRequest) GetDeviceOk() (*BriefDeviceRequest, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *ServiceRequest) SetDevice(v DeviceRequest)`
+`func (o *ServiceRequest) SetDevice(v BriefDeviceRequest)`
 
 SetDevice sets Device field to given value.
 
@@ -71,20 +71,20 @@ HasDevice returns a boolean if a field has been set.
 UnsetDevice ensures that no value is present for Device, not even an explicit nil
 ### GetVirtualMachine
 
-`func (o *ServiceRequest) GetVirtualMachine() VirtualMachineRequest`
+`func (o *ServiceRequest) GetVirtualMachine() BriefVirtualMachineRequest`
 
 GetVirtualMachine returns the VirtualMachine field if non-nil, zero value otherwise.
 
 ### GetVirtualMachineOk
 
-`func (o *ServiceRequest) GetVirtualMachineOk() (*VirtualMachineRequest, bool)`
+`func (o *ServiceRequest) GetVirtualMachineOk() (*BriefVirtualMachineRequest, bool)`
 
 GetVirtualMachineOk returns a tuple with the VirtualMachine field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVirtualMachine
 
-`func (o *ServiceRequest) SetVirtualMachine(v VirtualMachineRequest)`
+`func (o *ServiceRequest) SetVirtualMachine(v BriefVirtualMachineRequest)`
 
 SetVirtualMachine sets VirtualMachine field to given value.
 

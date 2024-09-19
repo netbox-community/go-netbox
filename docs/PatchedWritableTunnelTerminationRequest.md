@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Tunnel** | Pointer to [**TunnelRequest**](TunnelRequest.md) |  | [optional] 
+**Tunnel** | Pointer to [**BriefTunnelRequest**](BriefTunnelRequest.md) |  | [optional] 
 **Role** | Pointer to [**PatchedWritableTunnelTerminationRequestRole**](PatchedWritableTunnelTerminationRequestRole.md) |  | [optional] 
 **TerminationType** | Pointer to **string** |  | [optional] 
 **TerminationId** | Pointer to **NullableInt64** |  | [optional] 
-**OutsideIp** | Pointer to [**NullableIPAddressRequest**](IPAddressRequest.md) |  | [optional] 
+**OutsideIp** | Pointer to [**NullableBriefIPAddressRequest**](BriefIPAddressRequest.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 
@@ -33,20 +33,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetTunnel
 
-`func (o *PatchedWritableTunnelTerminationRequest) GetTunnel() TunnelRequest`
+`func (o *PatchedWritableTunnelTerminationRequest) GetTunnel() BriefTunnelRequest`
 
 GetTunnel returns the Tunnel field if non-nil, zero value otherwise.
 
 ### GetTunnelOk
 
-`func (o *PatchedWritableTunnelTerminationRequest) GetTunnelOk() (*TunnelRequest, bool)`
+`func (o *PatchedWritableTunnelTerminationRequest) GetTunnelOk() (*BriefTunnelRequest, bool)`
 
 GetTunnelOk returns a tuple with the Tunnel field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTunnel
 
-`func (o *PatchedWritableTunnelTerminationRequest) SetTunnel(v TunnelRequest)`
+`func (o *PatchedWritableTunnelTerminationRequest) SetTunnel(v BriefTunnelRequest)`
 
 SetTunnel sets Tunnel field to given value.
 
@@ -143,20 +143,20 @@ HasTerminationId returns a boolean if a field has been set.
 UnsetTerminationId ensures that no value is present for TerminationId, not even an explicit nil
 ### GetOutsideIp
 
-`func (o *PatchedWritableTunnelTerminationRequest) GetOutsideIp() IPAddressRequest`
+`func (o *PatchedWritableTunnelTerminationRequest) GetOutsideIp() BriefIPAddressRequest`
 
 GetOutsideIp returns the OutsideIp field if non-nil, zero value otherwise.
 
 ### GetOutsideIpOk
 
-`func (o *PatchedWritableTunnelTerminationRequest) GetOutsideIpOk() (*IPAddressRequest, bool)`
+`func (o *PatchedWritableTunnelTerminationRequest) GetOutsideIpOk() (*BriefIPAddressRequest, bool)`
 
 GetOutsideIpOk returns a tuple with the OutsideIp field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOutsideIp
 
-`func (o *PatchedWritableTunnelTerminationRequest) SetOutsideIp(v IPAddressRequest)`
+`func (o *PatchedWritableTunnelTerminationRequest) SetOutsideIp(v BriefIPAddressRequest)`
 
 SetOutsideIp sets OutsideIp field to given value.
 

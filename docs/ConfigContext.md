@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
+**DisplayUrl** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
 **Name** | **string** |  | 
 **Weight** | Pointer to **int32** |  | [optional] 
@@ -24,9 +25,9 @@ Name | Type | Description | Notes
 **TenantGroups** | Pointer to [**[]TenantGroup**](TenantGroup.md) |  | [optional] 
 **Tenants** | Pointer to [**[]Tenant**](Tenant.md) |  | [optional] 
 **Tags** | Pointer to **[]string** |  | [optional] 
-**DataSource** | Pointer to [**DataSource**](DataSource.md) |  | [optional] 
+**DataSource** | Pointer to [**BriefDataSource**](BriefDataSource.md) |  | [optional] 
 **DataPath** | **string** | Path to remote file (relative to data source root) | [readonly] 
-**DataFile** | [**DataFile**](DataFile.md) |  | [readonly] 
+**DataFile** | [**BriefDataFile**](BriefDataFile.md) |  | [readonly] 
 **DataSynced** | **NullableTime** |  | [readonly] 
 **Data** | **interface{}** |  | 
 **Created** | **NullableTime** |  | [readonly] 
@@ -36,7 +37,7 @@ Name | Type | Description | Notes
 
 ### NewConfigContext
 
-`func NewConfigContext(id int32, url string, display string, name string, dataPath string, dataFile DataFile, dataSynced NullableTime, data interface{}, created NullableTime, lastUpdated NullableTime, ) *ConfigContext`
+`func NewConfigContext(id int32, url string, displayUrl string, display string, name string, dataPath string, dataFile BriefDataFile, dataSynced NullableTime, data interface{}, created NullableTime, lastUpdated NullableTime, ) *ConfigContext`
 
 NewConfigContext instantiates a new ConfigContext object
 This constructor will assign default values to properties that have it defined,
@@ -89,6 +90,26 @@ and a boolean to check if the value has been set.
 `func (o *ConfigContext) SetUrl(v string)`
 
 SetUrl sets Url field to given value.
+
+
+### GetDisplayUrl
+
+`func (o *ConfigContext) GetDisplayUrl() string`
+
+GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
+
+### GetDisplayUrlOk
+
+`func (o *ConfigContext) GetDisplayUrlOk() (*string, bool)`
+
+GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayUrl
+
+`func (o *ConfigContext) SetDisplayUrl(v string)`
+
+SetDisplayUrl sets DisplayUrl field to given value.
 
 
 ### GetDisplay
@@ -533,20 +554,20 @@ HasTags returns a boolean if a field has been set.
 
 ### GetDataSource
 
-`func (o *ConfigContext) GetDataSource() DataSource`
+`func (o *ConfigContext) GetDataSource() BriefDataSource`
 
 GetDataSource returns the DataSource field if non-nil, zero value otherwise.
 
 ### GetDataSourceOk
 
-`func (o *ConfigContext) GetDataSourceOk() (*DataSource, bool)`
+`func (o *ConfigContext) GetDataSourceOk() (*BriefDataSource, bool)`
 
 GetDataSourceOk returns a tuple with the DataSource field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDataSource
 
-`func (o *ConfigContext) SetDataSource(v DataSource)`
+`func (o *ConfigContext) SetDataSource(v BriefDataSource)`
 
 SetDataSource sets DataSource field to given value.
 
@@ -578,20 +599,20 @@ SetDataPath sets DataPath field to given value.
 
 ### GetDataFile
 
-`func (o *ConfigContext) GetDataFile() DataFile`
+`func (o *ConfigContext) GetDataFile() BriefDataFile`
 
 GetDataFile returns the DataFile field if non-nil, zero value otherwise.
 
 ### GetDataFileOk
 
-`func (o *ConfigContext) GetDataFileOk() (*DataFile, bool)`
+`func (o *ConfigContext) GetDataFileOk() (*BriefDataFile, bool)`
 
 GetDataFileOk returns a tuple with the DataFile field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDataFile
 
-`func (o *ConfigContext) SetDataFile(v DataFile)`
+`func (o *ConfigContext) SetDataFile(v BriefDataFile)`
 
 SetDataFile sets DataFile field to given value.
 

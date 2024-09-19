@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
+**DisplayUrl** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
 **Device** | [**NestedDevice**](NestedDevice.md) |  | [readonly] 
 **Name** | **string** |  | 
@@ -16,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewNestedInterface
 
-`func NewNestedInterface(id int32, url string, display string, device NestedDevice, name string, occupied bool, ) *NestedInterface`
+`func NewNestedInterface(id int32, url string, displayUrl string, display string, device NestedDevice, name string, occupied bool, ) *NestedInterface`
 
 NewNestedInterface instantiates a new NestedInterface object
 This constructor will assign default values to properties that have it defined,
@@ -69,6 +70,26 @@ and a boolean to check if the value has been set.
 `func (o *NestedInterface) SetUrl(v string)`
 
 SetUrl sets Url field to given value.
+
+
+### GetDisplayUrl
+
+`func (o *NestedInterface) GetDisplayUrl() string`
+
+GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
+
+### GetDisplayUrlOk
+
+`func (o *NestedInterface) GetDisplayUrlOk() (*string, bool)`
+
+GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayUrl
+
+`func (o *NestedInterface) SetDisplayUrl(v string)`
+
+SetDisplayUrl sets DisplayUrl field to given value.
 
 
 ### GetDisplay

@@ -6,13 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
+**DisplayUrl** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
 **Ssid** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
-**Group** | Pointer to [**NullableWirelessLANGroup**](WirelessLANGroup.md) |  | [optional] 
+**Group** | Pointer to [**NullableBriefWirelessLANGroup**](BriefWirelessLANGroup.md) |  | [optional] 
 **Status** | Pointer to [**WirelessLANStatus**](WirelessLANStatus.md) |  | [optional] 
-**Vlan** | Pointer to [**NullableVLAN**](VLAN.md) |  | [optional] 
-**Tenant** | Pointer to [**NullableTenant**](Tenant.md) |  | [optional] 
+**Vlan** | Pointer to [**NullableBriefVLAN**](BriefVLAN.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableBriefTenant**](BriefTenant.md) |  | [optional] 
 **AuthType** | Pointer to [**WirelessLANAuthType**](WirelessLANAuthType.md) |  | [optional] 
 **AuthCipher** | Pointer to [**WirelessLANAuthCipher**](WirelessLANAuthCipher.md) |  | [optional] 
 **AuthPsk** | Pointer to **string** |  | [optional] 
@@ -26,7 +27,7 @@ Name | Type | Description | Notes
 
 ### NewWirelessLAN
 
-`func NewWirelessLAN(id int32, url string, display string, ssid string, created NullableTime, lastUpdated NullableTime, ) *WirelessLAN`
+`func NewWirelessLAN(id int32, url string, displayUrl string, display string, ssid string, created NullableTime, lastUpdated NullableTime, ) *WirelessLAN`
 
 NewWirelessLAN instantiates a new WirelessLAN object
 This constructor will assign default values to properties that have it defined,
@@ -79,6 +80,26 @@ and a boolean to check if the value has been set.
 `func (o *WirelessLAN) SetUrl(v string)`
 
 SetUrl sets Url field to given value.
+
+
+### GetDisplayUrl
+
+`func (o *WirelessLAN) GetDisplayUrl() string`
+
+GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
+
+### GetDisplayUrlOk
+
+`func (o *WirelessLAN) GetDisplayUrlOk() (*string, bool)`
+
+GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayUrl
+
+`func (o *WirelessLAN) SetDisplayUrl(v string)`
+
+SetDisplayUrl sets DisplayUrl field to given value.
 
 
 ### GetDisplay
@@ -148,20 +169,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetGroup
 
-`func (o *WirelessLAN) GetGroup() WirelessLANGroup`
+`func (o *WirelessLAN) GetGroup() BriefWirelessLANGroup`
 
 GetGroup returns the Group field if non-nil, zero value otherwise.
 
 ### GetGroupOk
 
-`func (o *WirelessLAN) GetGroupOk() (*WirelessLANGroup, bool)`
+`func (o *WirelessLAN) GetGroupOk() (*BriefWirelessLANGroup, bool)`
 
 GetGroupOk returns a tuple with the Group field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGroup
 
-`func (o *WirelessLAN) SetGroup(v WirelessLANGroup)`
+`func (o *WirelessLAN) SetGroup(v BriefWirelessLANGroup)`
 
 SetGroup sets Group field to given value.
 
@@ -208,20 +229,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetVlan
 
-`func (o *WirelessLAN) GetVlan() VLAN`
+`func (o *WirelessLAN) GetVlan() BriefVLAN`
 
 GetVlan returns the Vlan field if non-nil, zero value otherwise.
 
 ### GetVlanOk
 
-`func (o *WirelessLAN) GetVlanOk() (*VLAN, bool)`
+`func (o *WirelessLAN) GetVlanOk() (*BriefVLAN, bool)`
 
 GetVlanOk returns a tuple with the Vlan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVlan
 
-`func (o *WirelessLAN) SetVlan(v VLAN)`
+`func (o *WirelessLAN) SetVlan(v BriefVLAN)`
 
 SetVlan sets Vlan field to given value.
 
@@ -243,20 +264,20 @@ HasVlan returns a boolean if a field has been set.
 UnsetVlan ensures that no value is present for Vlan, not even an explicit nil
 ### GetTenant
 
-`func (o *WirelessLAN) GetTenant() Tenant`
+`func (o *WirelessLAN) GetTenant() BriefTenant`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *WirelessLAN) GetTenantOk() (*Tenant, bool)`
+`func (o *WirelessLAN) GetTenantOk() (*BriefTenant, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *WirelessLAN) SetTenant(v Tenant)`
+`func (o *WirelessLAN) SetTenant(v BriefTenant)`
 
 SetTenant sets Tenant field to given value.
 

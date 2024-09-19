@@ -5,11 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** |  | [optional] 
-**Device** | Pointer to [**DeviceRequest**](DeviceRequest.md) |  | [optional] 
+**Device** | Pointer to [**BriefDeviceRequest**](BriefDeviceRequest.md) |  | [optional] 
 **Identifier** | Pointer to **NullableInt32** |  | [optional] 
-**Tenant** | Pointer to [**NullableTenantRequest**](TenantRequest.md) |  | [optional] 
-**PrimaryIp4** | Pointer to [**NullableIPAddressRequest**](IPAddressRequest.md) |  | [optional] 
-**PrimaryIp6** | Pointer to [**NullableIPAddressRequest**](IPAddressRequest.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
+**PrimaryIp4** | Pointer to [**NullableBriefIPAddressRequest**](BriefIPAddressRequest.md) |  | [optional] 
+**PrimaryIp6** | Pointer to [**NullableBriefIPAddressRequest**](BriefIPAddressRequest.md) |  | [optional] 
 **Status** | Pointer to [**PatchedWritableVirtualDeviceContextRequestStatus**](PatchedWritableVirtualDeviceContextRequestStatus.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
@@ -62,20 +62,20 @@ HasName returns a boolean if a field has been set.
 
 ### GetDevice
 
-`func (o *PatchedWritableVirtualDeviceContextRequest) GetDevice() DeviceRequest`
+`func (o *PatchedWritableVirtualDeviceContextRequest) GetDevice() BriefDeviceRequest`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *PatchedWritableVirtualDeviceContextRequest) GetDeviceOk() (*DeviceRequest, bool)`
+`func (o *PatchedWritableVirtualDeviceContextRequest) GetDeviceOk() (*BriefDeviceRequest, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *PatchedWritableVirtualDeviceContextRequest) SetDevice(v DeviceRequest)`
+`func (o *PatchedWritableVirtualDeviceContextRequest) SetDevice(v BriefDeviceRequest)`
 
 SetDevice sets Device field to given value.
 
@@ -122,20 +122,20 @@ HasIdentifier returns a boolean if a field has been set.
 UnsetIdentifier ensures that no value is present for Identifier, not even an explicit nil
 ### GetTenant
 
-`func (o *PatchedWritableVirtualDeviceContextRequest) GetTenant() TenantRequest`
+`func (o *PatchedWritableVirtualDeviceContextRequest) GetTenant() BriefTenantRequest`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *PatchedWritableVirtualDeviceContextRequest) GetTenantOk() (*TenantRequest, bool)`
+`func (o *PatchedWritableVirtualDeviceContextRequest) GetTenantOk() (*BriefTenantRequest, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *PatchedWritableVirtualDeviceContextRequest) SetTenant(v TenantRequest)`
+`func (o *PatchedWritableVirtualDeviceContextRequest) SetTenant(v BriefTenantRequest)`
 
 SetTenant sets Tenant field to given value.
 
@@ -157,20 +157,20 @@ HasTenant returns a boolean if a field has been set.
 UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
 ### GetPrimaryIp4
 
-`func (o *PatchedWritableVirtualDeviceContextRequest) GetPrimaryIp4() IPAddressRequest`
+`func (o *PatchedWritableVirtualDeviceContextRequest) GetPrimaryIp4() BriefIPAddressRequest`
 
 GetPrimaryIp4 returns the PrimaryIp4 field if non-nil, zero value otherwise.
 
 ### GetPrimaryIp4Ok
 
-`func (o *PatchedWritableVirtualDeviceContextRequest) GetPrimaryIp4Ok() (*IPAddressRequest, bool)`
+`func (o *PatchedWritableVirtualDeviceContextRequest) GetPrimaryIp4Ok() (*BriefIPAddressRequest, bool)`
 
 GetPrimaryIp4Ok returns a tuple with the PrimaryIp4 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrimaryIp4
 
-`func (o *PatchedWritableVirtualDeviceContextRequest) SetPrimaryIp4(v IPAddressRequest)`
+`func (o *PatchedWritableVirtualDeviceContextRequest) SetPrimaryIp4(v BriefIPAddressRequest)`
 
 SetPrimaryIp4 sets PrimaryIp4 field to given value.
 
@@ -192,20 +192,20 @@ HasPrimaryIp4 returns a boolean if a field has been set.
 UnsetPrimaryIp4 ensures that no value is present for PrimaryIp4, not even an explicit nil
 ### GetPrimaryIp6
 
-`func (o *PatchedWritableVirtualDeviceContextRequest) GetPrimaryIp6() IPAddressRequest`
+`func (o *PatchedWritableVirtualDeviceContextRequest) GetPrimaryIp6() BriefIPAddressRequest`
 
 GetPrimaryIp6 returns the PrimaryIp6 field if non-nil, zero value otherwise.
 
 ### GetPrimaryIp6Ok
 
-`func (o *PatchedWritableVirtualDeviceContextRequest) GetPrimaryIp6Ok() (*IPAddressRequest, bool)`
+`func (o *PatchedWritableVirtualDeviceContextRequest) GetPrimaryIp6Ok() (*BriefIPAddressRequest, bool)`
 
 GetPrimaryIp6Ok returns a tuple with the PrimaryIp6 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrimaryIp6
 
-`func (o *PatchedWritableVirtualDeviceContextRequest) SetPrimaryIp6(v IPAddressRequest)`
+`func (o *PatchedWritableVirtualDeviceContextRequest) SetPrimaryIp6(v BriefIPAddressRequest)`
 
 SetPrimaryIp6 sets PrimaryIp6 field to given value.
 

@@ -6,12 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
+**DisplayUrl** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
 **Mode** | [**IPSecProfileMode**](IPSecProfileMode.md) |  | 
-**IkePolicy** | [**IKEPolicy**](IKEPolicy.md) |  | 
-**IpsecPolicy** | [**IPSecPolicy**](IPSecPolicy.md) |  | 
+**IkePolicy** | [**BriefIKEPolicy**](BriefIKEPolicy.md) |  | 
+**IpsecPolicy** | [**BriefIPSecPolicy**](BriefIPSecPolicy.md) |  | 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -22,7 +23,7 @@ Name | Type | Description | Notes
 
 ### NewIPSecProfile
 
-`func NewIPSecProfile(id int32, url string, display string, name string, mode IPSecProfileMode, ikePolicy IKEPolicy, ipsecPolicy IPSecPolicy, created NullableTime, lastUpdated NullableTime, ) *IPSecProfile`
+`func NewIPSecProfile(id int32, url string, displayUrl string, display string, name string, mode IPSecProfileMode, ikePolicy BriefIKEPolicy, ipsecPolicy BriefIPSecPolicy, created NullableTime, lastUpdated NullableTime, ) *IPSecProfile`
 
 NewIPSecProfile instantiates a new IPSecProfile object
 This constructor will assign default values to properties that have it defined,
@@ -75,6 +76,26 @@ and a boolean to check if the value has been set.
 `func (o *IPSecProfile) SetUrl(v string)`
 
 SetUrl sets Url field to given value.
+
+
+### GetDisplayUrl
+
+`func (o *IPSecProfile) GetDisplayUrl() string`
+
+GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
+
+### GetDisplayUrlOk
+
+`func (o *IPSecProfile) GetDisplayUrlOk() (*string, bool)`
+
+GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayUrl
+
+`func (o *IPSecProfile) SetDisplayUrl(v string)`
+
+SetDisplayUrl sets DisplayUrl field to given value.
 
 
 ### GetDisplay
@@ -164,40 +185,40 @@ SetMode sets Mode field to given value.
 
 ### GetIkePolicy
 
-`func (o *IPSecProfile) GetIkePolicy() IKEPolicy`
+`func (o *IPSecProfile) GetIkePolicy() BriefIKEPolicy`
 
 GetIkePolicy returns the IkePolicy field if non-nil, zero value otherwise.
 
 ### GetIkePolicyOk
 
-`func (o *IPSecProfile) GetIkePolicyOk() (*IKEPolicy, bool)`
+`func (o *IPSecProfile) GetIkePolicyOk() (*BriefIKEPolicy, bool)`
 
 GetIkePolicyOk returns a tuple with the IkePolicy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIkePolicy
 
-`func (o *IPSecProfile) SetIkePolicy(v IKEPolicy)`
+`func (o *IPSecProfile) SetIkePolicy(v BriefIKEPolicy)`
 
 SetIkePolicy sets IkePolicy field to given value.
 
 
 ### GetIpsecPolicy
 
-`func (o *IPSecProfile) GetIpsecPolicy() IPSecPolicy`
+`func (o *IPSecProfile) GetIpsecPolicy() BriefIPSecPolicy`
 
 GetIpsecPolicy returns the IpsecPolicy field if non-nil, zero value otherwise.
 
 ### GetIpsecPolicyOk
 
-`func (o *IPSecProfile) GetIpsecPolicyOk() (*IPSecPolicy, bool)`
+`func (o *IPSecProfile) GetIpsecPolicyOk() (*BriefIPSecPolicy, bool)`
 
 GetIpsecPolicyOk returns a tuple with the IpsecPolicy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIpsecPolicy
 
-`func (o *IPSecProfile) SetIpsecPolicy(v IPSecPolicy)`
+`func (o *IPSecProfile) SetIpsecPolicy(v BriefIPSecPolicy)`
 
 SetIpsecPolicy sets IpsecPolicy field to given value.
 

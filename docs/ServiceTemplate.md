@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
+**DisplayUrl** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
 **Name** | **string** |  | 
 **Protocol** | Pointer to [**ServiceProtocol**](ServiceProtocol.md) |  | [optional] 
@@ -21,7 +22,7 @@ Name | Type | Description | Notes
 
 ### NewServiceTemplate
 
-`func NewServiceTemplate(id int32, url string, display string, name string, ports []int32, created NullableTime, lastUpdated NullableTime, ) *ServiceTemplate`
+`func NewServiceTemplate(id int32, url string, displayUrl string, display string, name string, ports []int32, created NullableTime, lastUpdated NullableTime, ) *ServiceTemplate`
 
 NewServiceTemplate instantiates a new ServiceTemplate object
 This constructor will assign default values to properties that have it defined,
@@ -74,6 +75,26 @@ and a boolean to check if the value has been set.
 `func (o *ServiceTemplate) SetUrl(v string)`
 
 SetUrl sets Url field to given value.
+
+
+### GetDisplayUrl
+
+`func (o *ServiceTemplate) GetDisplayUrl() string`
+
+GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
+
+### GetDisplayUrlOk
+
+`func (o *ServiceTemplate) GetDisplayUrlOk() (*string, bool)`
+
+GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayUrl
+
+`func (o *ServiceTemplate) SetDisplayUrl(v string)`
+
+SetDisplayUrl sets DisplayUrl field to given value.
 
 
 ### GetDisplay

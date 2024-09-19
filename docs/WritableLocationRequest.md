@@ -6,10 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
-**Site** | [**SiteRequest**](SiteRequest.md) |  | 
+**Site** | [**BriefSiteRequest**](BriefSiteRequest.md) |  | 
 **Parent** | **NullableInt32** |  | 
-**Status** | Pointer to [**PatchedWritableLocationRequestStatus**](PatchedWritableLocationRequestStatus.md) |  | [optional] 
-**Tenant** | Pointer to [**NullableTenantRequest**](TenantRequest.md) |  | [optional] 
+**Status** | Pointer to [**LocationStatusValue**](LocationStatusValue.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
 **Facility** | Pointer to **string** | Local facility ID or description | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewWritableLocationRequest
 
-`func NewWritableLocationRequest(name string, slug string, site SiteRequest, parent NullableInt32, ) *WritableLocationRequest`
+`func NewWritableLocationRequest(name string, slug string, site BriefSiteRequest, parent NullableInt32, ) *WritableLocationRequest`
 
 NewWritableLocationRequest instantiates a new WritableLocationRequest object
 This constructor will assign default values to properties that have it defined,
@@ -76,20 +76,20 @@ SetSlug sets Slug field to given value.
 
 ### GetSite
 
-`func (o *WritableLocationRequest) GetSite() SiteRequest`
+`func (o *WritableLocationRequest) GetSite() BriefSiteRequest`
 
 GetSite returns the Site field if non-nil, zero value otherwise.
 
 ### GetSiteOk
 
-`func (o *WritableLocationRequest) GetSiteOk() (*SiteRequest, bool)`
+`func (o *WritableLocationRequest) GetSiteOk() (*BriefSiteRequest, bool)`
 
 GetSiteOk returns a tuple with the Site field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSite
 
-`func (o *WritableLocationRequest) SetSite(v SiteRequest)`
+`func (o *WritableLocationRequest) SetSite(v BriefSiteRequest)`
 
 SetSite sets Site field to given value.
 
@@ -126,20 +126,20 @@ SetParent sets Parent field to given value.
 UnsetParent ensures that no value is present for Parent, not even an explicit nil
 ### GetStatus
 
-`func (o *WritableLocationRequest) GetStatus() PatchedWritableLocationRequestStatus`
+`func (o *WritableLocationRequest) GetStatus() LocationStatusValue`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *WritableLocationRequest) GetStatusOk() (*PatchedWritableLocationRequestStatus, bool)`
+`func (o *WritableLocationRequest) GetStatusOk() (*LocationStatusValue, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *WritableLocationRequest) SetStatus(v PatchedWritableLocationRequestStatus)`
+`func (o *WritableLocationRequest) SetStatus(v LocationStatusValue)`
 
 SetStatus sets Status field to given value.
 
@@ -151,20 +151,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetTenant
 
-`func (o *WritableLocationRequest) GetTenant() TenantRequest`
+`func (o *WritableLocationRequest) GetTenant() BriefTenantRequest`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *WritableLocationRequest) GetTenantOk() (*TenantRequest, bool)`
+`func (o *WritableLocationRequest) GetTenantOk() (*BriefTenantRequest, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *WritableLocationRequest) SetTenant(v TenantRequest)`
+`func (o *WritableLocationRequest) SetTenant(v BriefTenantRequest)`
 
 SetTenant sets Tenant field to given value.
 

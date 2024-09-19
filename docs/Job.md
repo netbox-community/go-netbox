@@ -6,17 +6,18 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
+**DisplayUrl** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
 **ObjectType** | **string** |  | [readonly] 
 **ObjectId** | Pointer to **NullableInt64** |  | [optional] 
 **Name** | **string** |  | 
-**Status** | [**JobStatus**](JobStatus.md) |  | 
+**Status** | [**BriefJobStatus**](BriefJobStatus.md) |  | 
 **Created** | **time.Time** |  | [readonly] 
 **Scheduled** | Pointer to **NullableTime** |  | [optional] 
 **Interval** | Pointer to **NullableInt32** | Recurrence interval (in minutes) | [optional] 
 **Started** | Pointer to **NullableTime** |  | [optional] 
 **Completed** | Pointer to **NullableTime** |  | [optional] 
-**User** | [**User**](User.md) |  | [readonly] 
+**User** | [**BriefUser**](BriefUser.md) |  | [readonly] 
 **Data** | Pointer to **interface{}** |  | [optional] 
 **Error** | **string** |  | [readonly] 
 **JobId** | **string** |  | 
@@ -25,7 +26,7 @@ Name | Type | Description | Notes
 
 ### NewJob
 
-`func NewJob(id int32, url string, display string, objectType string, name string, status JobStatus, created time.Time, user User, error_ string, jobId string, ) *Job`
+`func NewJob(id int32, url string, displayUrl string, display string, objectType string, name string, status BriefJobStatus, created time.Time, user BriefUser, error_ string, jobId string, ) *Job`
 
 NewJob instantiates a new Job object
 This constructor will assign default values to properties that have it defined,
@@ -78,6 +79,26 @@ and a boolean to check if the value has been set.
 `func (o *Job) SetUrl(v string)`
 
 SetUrl sets Url field to given value.
+
+
+### GetDisplayUrl
+
+`func (o *Job) GetDisplayUrl() string`
+
+GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
+
+### GetDisplayUrlOk
+
+`func (o *Job) GetDisplayUrlOk() (*string, bool)`
+
+GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayUrl
+
+`func (o *Job) SetDisplayUrl(v string)`
+
+SetDisplayUrl sets DisplayUrl field to given value.
 
 
 ### GetDisplay
@@ -177,20 +198,20 @@ SetName sets Name field to given value.
 
 ### GetStatus
 
-`func (o *Job) GetStatus() JobStatus`
+`func (o *Job) GetStatus() BriefJobStatus`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *Job) GetStatusOk() (*JobStatus, bool)`
+`func (o *Job) GetStatusOk() (*BriefJobStatus, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *Job) SetStatus(v JobStatus)`
+`func (o *Job) SetStatus(v BriefJobStatus)`
 
 SetStatus sets Status field to given value.
 
@@ -357,20 +378,20 @@ HasCompleted returns a boolean if a field has been set.
 UnsetCompleted ensures that no value is present for Completed, not even an explicit nil
 ### GetUser
 
-`func (o *Job) GetUser() User`
+`func (o *Job) GetUser() BriefUser`
 
 GetUser returns the User field if non-nil, zero value otherwise.
 
 ### GetUserOk
 
-`func (o *Job) GetUserOk() (*User, bool)`
+`func (o *Job) GetUserOk() (*BriefUser, bool)`
 
 GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUser
 
-`func (o *Job) SetUser(v User)`
+`func (o *Job) SetUser(v BriefUser)`
 
 SetUser sets User field to given value.
 

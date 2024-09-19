@@ -3,6 +3,10 @@
 ## Enum
 
 
+* `CS` (value: `"cs"`)
+
+* `DA` (value: `"da"`)
+
 * `DE` (value: `"de"`)
 
 * `EN` (value: `"en"`)
@@ -11,7 +15,13 @@
 
 * `FR` (value: `"fr"`)
 
+* `IT` (value: `"it"`)
+
 * `JA` (value: `"ja"`)
+
+* `NL` (value: `"nl"`)
+
+* `PL` (value: `"pl"`)
 
 * `PT` (value: `"pt"`)
 

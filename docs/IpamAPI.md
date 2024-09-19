@@ -182,7 +182,7 @@ import (
 )
 
 func main() {
-	aggregateRequest := []openapiclient.AggregateRequest{*openapiclient.NewAggregateRequest("Prefix_example", *openapiclient.NewRIRRequest("Name_example", "Slug_example"))} // []AggregateRequest | 
+	aggregateRequest := []openapiclient.AggregateRequest{*openapiclient.NewAggregateRequest("Prefix_example", *openapiclient.NewBriefRIRRequest("Name_example", "Slug_example"))} // []AggregateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -246,7 +246,7 @@ import (
 )
 
 func main() {
-	aggregateRequest := []openapiclient.AggregateRequest{*openapiclient.NewAggregateRequest("Prefix_example", *openapiclient.NewRIRRequest("Name_example", "Slug_example"))} // []AggregateRequest | 
+	aggregateRequest := []openapiclient.AggregateRequest{*openapiclient.NewAggregateRequest("Prefix_example", *openapiclient.NewBriefRIRRequest("Name_example", "Slug_example"))} // []AggregateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -312,7 +312,7 @@ import (
 )
 
 func main() {
-	aggregateRequest := []openapiclient.AggregateRequest{*openapiclient.NewAggregateRequest("Prefix_example", *openapiclient.NewRIRRequest("Name_example", "Slug_example"))} // []AggregateRequest | 
+	aggregateRequest := []openapiclient.AggregateRequest{*openapiclient.NewAggregateRequest("Prefix_example", *openapiclient.NewBriefRIRRequest("Name_example", "Slug_example"))} // []AggregateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -378,7 +378,7 @@ import (
 )
 
 func main() {
-	writableAggregateRequest := *openapiclient.NewWritableAggregateRequest("Prefix_example", *openapiclient.NewRIRRequest("Name_example", "Slug_example")) // WritableAggregateRequest | 
+	writableAggregateRequest := *openapiclient.NewWritableAggregateRequest("Prefix_example", *openapiclient.NewBriefRIRRequest("Name_example", "Slug_example")) // WritableAggregateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -568,10 +568,10 @@ func main() {
 	tagN := []string{"Inner_example"} // []string |  (optional)
 	tenant := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantN := []string{"Inner_example"} // []string | Tenant (slug) (optional)
-	tenantGroup := []int32{int32(123)} // []int32 | Tenant Group (slug) (optional)
-	tenantGroupN := []int32{int32(123)} // []int32 | Tenant Group (slug) (optional)
-	tenantGroupId := []int32{int32(123)} // []int32 | Tenant Group (ID) (optional)
-	tenantGroupIdN := []int32{int32(123)} // []int32 | Tenant Group (ID) (optional)
+	tenantGroup := []string{"Inner_example"} // []string |  (optional)
+	tenantGroupN := []string{"Inner_example"} // []string |  (optional)
+	tenantGroupId := []string{"Inner_example"} // []string |  (optional)
+	tenantGroupIdN := []string{"Inner_example"} // []string |  (optional)
 	tenantId := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
 	tenantIdN := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
@@ -654,10 +654,10 @@ Name | Type | Description  | Notes
  **tagN** | **[]string** |  | 
  **tenant** | **[]string** | Tenant (slug) | 
  **tenantN** | **[]string** | Tenant (slug) | 
- **tenantGroup** | **[]int32** | Tenant Group (slug) | 
- **tenantGroupN** | **[]int32** | Tenant Group (slug) | 
- **tenantGroupId** | **[]int32** | Tenant Group (ID) | 
- **tenantGroupIdN** | **[]int32** | Tenant Group (ID) | 
+ **tenantGroup** | **[]string** |  | 
+ **tenantGroupN** | **[]string** |  | 
+ **tenantGroupId** | **[]string** |  | 
+ **tenantGroupIdN** | **[]string** |  | 
  **tenantId** | **[]int32** | Tenant (ID) | 
  **tenantIdN** | **[]int32** | Tenant (ID) | 
  **updatedByRequest** | **string** |  | 
@@ -844,7 +844,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this aggregate.
-	writableAggregateRequest := *openapiclient.NewWritableAggregateRequest("Prefix_example", *openapiclient.NewRIRRequest("Name_example", "Slug_example")) // WritableAggregateRequest | 
+	writableAggregateRequest := *openapiclient.NewWritableAggregateRequest("Prefix_example", *openapiclient.NewBriefRIRRequest("Name_example", "Slug_example")) // WritableAggregateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1057,7 +1057,7 @@ import (
 )
 
 func main() {
-	aSNRangeRequest := []openapiclient.ASNRangeRequest{*openapiclient.NewASNRangeRequest("Name_example", "Slug_example", *openapiclient.NewRIRRequest("Name_example", "Slug_example"), int64(123), int64(123))} // []ASNRangeRequest | 
+	aSNRangeRequest := []openapiclient.ASNRangeRequest{*openapiclient.NewASNRangeRequest("Name_example", "Slug_example", *openapiclient.NewBriefRIRRequest("Name_example", "Slug_example"), int64(123), int64(123))} // []ASNRangeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1121,7 +1121,7 @@ import (
 )
 
 func main() {
-	aSNRangeRequest := []openapiclient.ASNRangeRequest{*openapiclient.NewASNRangeRequest("Name_example", "Slug_example", *openapiclient.NewRIRRequest("Name_example", "Slug_example"), int64(123), int64(123))} // []ASNRangeRequest | 
+	aSNRangeRequest := []openapiclient.ASNRangeRequest{*openapiclient.NewASNRangeRequest("Name_example", "Slug_example", *openapiclient.NewBriefRIRRequest("Name_example", "Slug_example"), int64(123), int64(123))} // []ASNRangeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1187,7 +1187,7 @@ import (
 )
 
 func main() {
-	aSNRangeRequest := []openapiclient.ASNRangeRequest{*openapiclient.NewASNRangeRequest("Name_example", "Slug_example", *openapiclient.NewRIRRequest("Name_example", "Slug_example"), int64(123), int64(123))} // []ASNRangeRequest | 
+	aSNRangeRequest := []openapiclient.ASNRangeRequest{*openapiclient.NewASNRangeRequest("Name_example", "Slug_example", *openapiclient.NewBriefRIRRequest("Name_example", "Slug_example"), int64(123), int64(123))} // []ASNRangeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1253,7 +1253,7 @@ import (
 )
 
 func main() {
-	aSNRangeRequest := *openapiclient.NewASNRangeRequest("Name_example", "Slug_example", *openapiclient.NewRIRRequest("Name_example", "Slug_example"), int64(123), int64(123)) // ASNRangeRequest | 
+	aSNRangeRequest := *openapiclient.NewASNRangeRequest("Name_example", "Slug_example", *openapiclient.NewBriefRIRRequest("Name_example", "Slug_example"), int64(123), int64(123)) // ASNRangeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1470,10 +1470,10 @@ func main() {
 	tagN := []string{"Inner_example"} // []string |  (optional)
 	tenant := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantN := []string{"Inner_example"} // []string | Tenant (slug) (optional)
-	tenantGroup := []int32{int32(123)} // []int32 | Tenant Group (slug) (optional)
-	tenantGroupN := []int32{int32(123)} // []int32 | Tenant Group (slug) (optional)
-	tenantGroupId := []int32{int32(123)} // []int32 | Tenant Group (ID) (optional)
-	tenantGroupIdN := []int32{int32(123)} // []int32 | Tenant Group (ID) (optional)
+	tenantGroup := []string{"Inner_example"} // []string |  (optional)
+	tenantGroupN := []string{"Inner_example"} // []string |  (optional)
+	tenantGroupId := []string{"Inner_example"} // []string |  (optional)
+	tenantGroupIdN := []string{"Inner_example"} // []string |  (optional)
 	tenantId := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
 	tenantIdN := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
@@ -1583,10 +1583,10 @@ Name | Type | Description  | Notes
  **tagN** | **[]string** |  | 
  **tenant** | **[]string** | Tenant (slug) | 
  **tenantN** | **[]string** | Tenant (slug) | 
- **tenantGroup** | **[]int32** | Tenant Group (slug) | 
- **tenantGroupN** | **[]int32** | Tenant Group (slug) | 
- **tenantGroupId** | **[]int32** | Tenant Group (ID) | 
- **tenantGroupIdN** | **[]int32** | Tenant Group (ID) | 
+ **tenantGroup** | **[]string** |  | 
+ **tenantGroupN** | **[]string** |  | 
+ **tenantGroupId** | **[]string** |  | 
+ **tenantGroupIdN** | **[]string** |  | 
  **tenantId** | **[]int32** | Tenant (ID) | 
  **tenantIdN** | **[]int32** | Tenant (ID) | 
  **updatedByRequest** | **string** |  | 
@@ -1773,7 +1773,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this ASN range.
-	aSNRangeRequest := *openapiclient.NewASNRangeRequest("Name_example", "Slug_example", *openapiclient.NewRIRRequest("Name_example", "Slug_example"), int64(123), int64(123)) // ASNRangeRequest | 
+	aSNRangeRequest := *openapiclient.NewASNRangeRequest("Name_example", "Slug_example", *openapiclient.NewBriefRIRRequest("Name_example", "Slug_example"), int64(123), int64(123)) // ASNRangeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2236,10 +2236,10 @@ func main() {
 	tagN := []string{"Inner_example"} // []string |  (optional)
 	tenant := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantN := []string{"Inner_example"} // []string | Tenant (slug) (optional)
-	tenantGroup := []int32{int32(123)} // []int32 | Tenant Group (slug) (optional)
-	tenantGroupN := []int32{int32(123)} // []int32 | Tenant Group (slug) (optional)
-	tenantGroupId := []int32{int32(123)} // []int32 | Tenant Group (ID) (optional)
-	tenantGroupIdN := []int32{int32(123)} // []int32 | Tenant Group (ID) (optional)
+	tenantGroup := []string{"Inner_example"} // []string |  (optional)
+	tenantGroupN := []string{"Inner_example"} // []string |  (optional)
+	tenantGroupId := []string{"Inner_example"} // []string |  (optional)
+	tenantGroupIdN := []string{"Inner_example"} // []string |  (optional)
 	tenantId := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
 	tenantIdN := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
@@ -2328,10 +2328,10 @@ Name | Type | Description  | Notes
  **tagN** | **[]string** |  | 
  **tenant** | **[]string** | Tenant (slug) | 
  **tenantN** | **[]string** | Tenant (slug) | 
- **tenantGroup** | **[]int32** | Tenant Group (slug) | 
- **tenantGroupN** | **[]int32** | Tenant Group (slug) | 
- **tenantGroupId** | **[]int32** | Tenant Group (ID) | 
- **tenantGroupIdN** | **[]int32** | Tenant Group (ID) | 
+ **tenantGroup** | **[]string** |  | 
+ **tenantGroupN** | **[]string** |  | 
+ **tenantGroupId** | **[]string** |  | 
+ **tenantGroupIdN** | **[]string** |  | 
  **tenantId** | **[]int32** | Tenant (ID) | 
  **tenantIdN** | **[]int32** | Tenant (ID) | 
  **updatedByRequest** | **string** |  | 
@@ -2589,7 +2589,7 @@ import (
 )
 
 func main() {
-	fHRPGroupAssignmentRequest := []openapiclient.FHRPGroupAssignmentRequest{*openapiclient.NewFHRPGroupAssignmentRequest(*openapiclient.NewFHRPGroupRequest(openapiclient.FHRPGroup_protocol("vrrp2"), int32(123)), "InterfaceType_example", int64(123), int32(123))} // []FHRPGroupAssignmentRequest | 
+	fHRPGroupAssignmentRequest := []openapiclient.FHRPGroupAssignmentRequest{*openapiclient.NewFHRPGroupAssignmentRequest(*openapiclient.NewBriefFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int32(123)), "InterfaceType_example", int64(123), int32(123))} // []FHRPGroupAssignmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2653,7 +2653,7 @@ import (
 )
 
 func main() {
-	fHRPGroupAssignmentRequest := []openapiclient.FHRPGroupAssignmentRequest{*openapiclient.NewFHRPGroupAssignmentRequest(*openapiclient.NewFHRPGroupRequest(openapiclient.FHRPGroup_protocol("vrrp2"), int32(123)), "InterfaceType_example", int64(123), int32(123))} // []FHRPGroupAssignmentRequest | 
+	fHRPGroupAssignmentRequest := []openapiclient.FHRPGroupAssignmentRequest{*openapiclient.NewFHRPGroupAssignmentRequest(*openapiclient.NewBriefFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int32(123)), "InterfaceType_example", int64(123), int32(123))} // []FHRPGroupAssignmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2719,7 +2719,7 @@ import (
 )
 
 func main() {
-	fHRPGroupAssignmentRequest := []openapiclient.FHRPGroupAssignmentRequest{*openapiclient.NewFHRPGroupAssignmentRequest(*openapiclient.NewFHRPGroupRequest(openapiclient.FHRPGroup_protocol("vrrp2"), int32(123)), "InterfaceType_example", int64(123), int32(123))} // []FHRPGroupAssignmentRequest | 
+	fHRPGroupAssignmentRequest := []openapiclient.FHRPGroupAssignmentRequest{*openapiclient.NewFHRPGroupAssignmentRequest(*openapiclient.NewBriefFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int32(123)), "InterfaceType_example", int64(123), int32(123))} // []FHRPGroupAssignmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2785,7 +2785,7 @@ import (
 )
 
 func main() {
-	fHRPGroupAssignmentRequest := *openapiclient.NewFHRPGroupAssignmentRequest(*openapiclient.NewFHRPGroupRequest(openapiclient.FHRPGroup_protocol("vrrp2"), int32(123)), "InterfaceType_example", int64(123), int32(123)) // FHRPGroupAssignmentRequest | 
+	fHRPGroupAssignmentRequest := *openapiclient.NewFHRPGroupAssignmentRequest(*openapiclient.NewBriefFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int32(123)), "InterfaceType_example", int64(123), int32(123)) // FHRPGroupAssignmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3225,7 +3225,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this FHRP group assignment.
-	fHRPGroupAssignmentRequest := *openapiclient.NewFHRPGroupAssignmentRequest(*openapiclient.NewFHRPGroupRequest(openapiclient.FHRPGroup_protocol("vrrp2"), int32(123)), "InterfaceType_example", int64(123), int32(123)) // FHRPGroupAssignmentRequest | 
+	fHRPGroupAssignmentRequest := *openapiclient.NewFHRPGroupAssignmentRequest(*openapiclient.NewBriefFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int32(123)), "InterfaceType_example", int64(123), int32(123)) // FHRPGroupAssignmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3296,7 +3296,7 @@ import (
 )
 
 func main() {
-	fHRPGroupRequest := []openapiclient.FHRPGroupRequest{*openapiclient.NewFHRPGroupRequest(openapiclient.FHRPGroup_protocol("vrrp2"), int32(123))} // []FHRPGroupRequest | 
+	fHRPGroupRequest := []openapiclient.FHRPGroupRequest{*openapiclient.NewFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int32(123))} // []FHRPGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3360,7 +3360,7 @@ import (
 )
 
 func main() {
-	fHRPGroupRequest := []openapiclient.FHRPGroupRequest{*openapiclient.NewFHRPGroupRequest(openapiclient.FHRPGroup_protocol("vrrp2"), int32(123))} // []FHRPGroupRequest | 
+	fHRPGroupRequest := []openapiclient.FHRPGroupRequest{*openapiclient.NewFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int32(123))} // []FHRPGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3426,7 +3426,7 @@ import (
 )
 
 func main() {
-	fHRPGroupRequest := []openapiclient.FHRPGroupRequest{*openapiclient.NewFHRPGroupRequest(openapiclient.FHRPGroup_protocol("vrrp2"), int32(123))} // []FHRPGroupRequest | 
+	fHRPGroupRequest := []openapiclient.FHRPGroupRequest{*openapiclient.NewFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int32(123))} // []FHRPGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3492,7 +3492,7 @@ import (
 )
 
 func main() {
-	fHRPGroupRequest := *openapiclient.NewFHRPGroupRequest(openapiclient.FHRPGroup_protocol("vrrp2"), int32(123)) // FHRPGroupRequest | 
+	fHRPGroupRequest := *openapiclient.NewFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int32(123)) // FHRPGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3984,7 +3984,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this FHRP group.
-	fHRPGroupRequest := *openapiclient.NewFHRPGroupRequest(openapiclient.FHRPGroup_protocol("vrrp2"), int32(123)) // FHRPGroupRequest | 
+	fHRPGroupRequest := *openapiclient.NewFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int32(123)) // FHRPGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4474,10 +4474,10 @@ func main() {
 	tagN := []string{"Inner_example"} // []string |  (optional)
 	tenant := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantN := []string{"Inner_example"} // []string | Tenant (slug) (optional)
-	tenantGroup := []int32{int32(123)} // []int32 | Tenant Group (slug) (optional)
-	tenantGroupN := []int32{int32(123)} // []int32 | Tenant Group (slug) (optional)
-	tenantGroupId := []int32{int32(123)} // []int32 | Tenant Group (ID) (optional)
-	tenantGroupIdN := []int32{int32(123)} // []int32 | Tenant Group (ID) (optional)
+	tenantGroup := []string{"Inner_example"} // []string |  (optional)
+	tenantGroupN := []string{"Inner_example"} // []string |  (optional)
+	tenantGroupId := []string{"Inner_example"} // []string |  (optional)
+	tenantGroupIdN := []string{"Inner_example"} // []string |  (optional)
 	tenantId := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
 	tenantIdN := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
@@ -4603,10 +4603,10 @@ Name | Type | Description  | Notes
  **tagN** | **[]string** |  | 
  **tenant** | **[]string** | Tenant (slug) | 
  **tenantN** | **[]string** | Tenant (slug) | 
- **tenantGroup** | **[]int32** | Tenant Group (slug) | 
- **tenantGroupN** | **[]int32** | Tenant Group (slug) | 
- **tenantGroupId** | **[]int32** | Tenant Group (ID) | 
- **tenantGroupIdN** | **[]int32** | Tenant Group (ID) | 
+ **tenantGroup** | **[]string** |  | 
+ **tenantGroupN** | **[]string** |  | 
+ **tenantGroupId** | **[]string** |  | 
+ **tenantGroupIdN** | **[]string** |  | 
  **tenantId** | **[]int32** | Tenant (ID) | 
  **tenantIdN** | **[]int32** | Tenant (ID) | 
  **updatedByRequest** | **string** |  | 
@@ -5408,10 +5408,10 @@ func main() {
 	tagN := []string{"Inner_example"} // []string |  (optional)
 	tenant := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantN := []string{"Inner_example"} // []string | Tenant (slug) (optional)
-	tenantGroup := []int32{int32(123)} // []int32 | Tenant Group (slug) (optional)
-	tenantGroupN := []int32{int32(123)} // []int32 | Tenant Group (slug) (optional)
-	tenantGroupId := []int32{int32(123)} // []int32 | Tenant Group (ID) (optional)
-	tenantGroupIdN := []int32{int32(123)} // []int32 | Tenant Group (ID) (optional)
+	tenantGroup := []string{"Inner_example"} // []string |  (optional)
+	tenantGroupN := []string{"Inner_example"} // []string |  (optional)
+	tenantGroupId := []string{"Inner_example"} // []string |  (optional)
+	tenantGroupIdN := []string{"Inner_example"} // []string |  (optional)
 	tenantId := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
 	tenantIdN := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
@@ -5504,10 +5504,10 @@ Name | Type | Description  | Notes
  **tagN** | **[]string** |  | 
  **tenant** | **[]string** | Tenant (slug) | 
  **tenantN** | **[]string** | Tenant (slug) | 
- **tenantGroup** | **[]int32** | Tenant Group (slug) | 
- **tenantGroupN** | **[]int32** | Tenant Group (slug) | 
- **tenantGroupId** | **[]int32** | Tenant Group (ID) | 
- **tenantGroupIdN** | **[]int32** | Tenant Group (ID) | 
+ **tenantGroup** | **[]string** |  | 
+ **tenantGroupN** | **[]string** |  | 
+ **tenantGroupId** | **[]string** |  | 
+ **tenantGroupIdN** | **[]string** |  | 
  **tenantId** | **[]int32** | Tenant (ID) | 
  **tenantIdN** | **[]int32** | Tenant (ID) | 
  **updatedByRequest** | **string** |  | 
@@ -6446,20 +6446,20 @@ func main() {
 	presentInVrf := "presentInVrf_example" // string |  (optional)
 	presentInVrfId := "presentInVrfId_example" // string |  (optional)
 	q := "q_example" // string | Search (optional)
-	region := []int32{int32(123)} // []int32 | Region (slug) (optional)
-	regionN := []int32{int32(123)} // []int32 | Region (slug) (optional)
-	regionId := []int32{int32(123)} // []int32 | Region (ID) (optional)
-	regionIdN := []int32{int32(123)} // []int32 | Region (ID) (optional)
+	region := []string{"Inner_example"} // []string |  (optional)
+	regionN := []string{"Inner_example"} // []string |  (optional)
+	regionId := []string{"Inner_example"} // []string |  (optional)
+	regionIdN := []string{"Inner_example"} // []string |  (optional)
 	role := []string{"Inner_example"} // []string | Role (slug) (optional)
 	roleN := []string{"Inner_example"} // []string | Role (slug) (optional)
 	roleId := []*int32{int32(123)} // []*int32 | Role (ID) (optional)
 	roleIdN := []*int32{int32(123)} // []*int32 | Role (ID) (optional)
 	site := []string{"Inner_example"} // []string | Site (slug) (optional)
 	siteN := []string{"Inner_example"} // []string | Site (slug) (optional)
-	siteGroup := []int32{int32(123)} // []int32 | Site group (slug) (optional)
-	siteGroupN := []int32{int32(123)} // []int32 | Site group (slug) (optional)
-	siteGroupId := []int32{int32(123)} // []int32 | Site group (ID) (optional)
-	siteGroupIdN := []int32{int32(123)} // []int32 | Site group (ID) (optional)
+	siteGroup := []string{"Inner_example"} // []string |  (optional)
+	siteGroupN := []string{"Inner_example"} // []string |  (optional)
+	siteGroupId := []string{"Inner_example"} // []string |  (optional)
+	siteGroupIdN := []string{"Inner_example"} // []string |  (optional)
 	siteId := []*int32{int32(123)} // []*int32 | Site (ID) (optional)
 	siteIdN := []*int32{int32(123)} // []*int32 | Site (ID) (optional)
 	status := []string{"Inner_example"} // []string | Operational status of this prefix (optional)
@@ -6468,10 +6468,10 @@ func main() {
 	tagN := []string{"Inner_example"} // []string |  (optional)
 	tenant := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantN := []string{"Inner_example"} // []string | Tenant (slug) (optional)
-	tenantGroup := []int32{int32(123)} // []int32 | Tenant Group (slug) (optional)
-	tenantGroupN := []int32{int32(123)} // []int32 | Tenant Group (slug) (optional)
-	tenantGroupId := []int32{int32(123)} // []int32 | Tenant Group (ID) (optional)
-	tenantGroupIdN := []int32{int32(123)} // []int32 | Tenant Group (ID) (optional)
+	tenantGroup := []string{"Inner_example"} // []string |  (optional)
+	tenantGroupN := []string{"Inner_example"} // []string |  (optional)
+	tenantGroupId := []string{"Inner_example"} // []string |  (optional)
+	tenantGroupIdN := []string{"Inner_example"} // []string |  (optional)
 	tenantId := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
 	tenantIdN := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
@@ -6576,20 +6576,20 @@ Name | Type | Description  | Notes
  **presentInVrf** | **string** |  | 
  **presentInVrfId** | **string** |  | 
  **q** | **string** | Search | 
- **region** | **[]int32** | Region (slug) | 
- **regionN** | **[]int32** | Region (slug) | 
- **regionId** | **[]int32** | Region (ID) | 
- **regionIdN** | **[]int32** | Region (ID) | 
+ **region** | **[]string** |  | 
+ **regionN** | **[]string** |  | 
+ **regionId** | **[]string** |  | 
+ **regionIdN** | **[]string** |  | 
  **role** | **[]string** | Role (slug) | 
  **roleN** | **[]string** | Role (slug) | 
  **roleId** | **[]int32** | Role (ID) | 
  **roleIdN** | **[]int32** | Role (ID) | 
  **site** | **[]string** | Site (slug) | 
  **siteN** | **[]string** | Site (slug) | 
- **siteGroup** | **[]int32** | Site group (slug) | 
- **siteGroupN** | **[]int32** | Site group (slug) | 
- **siteGroupId** | **[]int32** | Site group (ID) | 
- **siteGroupIdN** | **[]int32** | Site group (ID) | 
+ **siteGroup** | **[]string** |  | 
+ **siteGroupN** | **[]string** |  | 
+ **siteGroupId** | **[]string** |  | 
+ **siteGroupIdN** | **[]string** |  | 
  **siteId** | **[]int32** | Site (ID) | 
  **siteIdN** | **[]int32** | Site (ID) | 
  **status** | **[]string** | Operational status of this prefix | 
@@ -6598,10 +6598,10 @@ Name | Type | Description  | Notes
  **tagN** | **[]string** |  | 
  **tenant** | **[]string** | Tenant (slug) | 
  **tenantN** | **[]string** | Tenant (slug) | 
- **tenantGroup** | **[]int32** | Tenant Group (slug) | 
- **tenantGroupN** | **[]int32** | Tenant Group (slug) | 
- **tenantGroupId** | **[]int32** | Tenant Group (ID) | 
- **tenantGroupIdN** | **[]int32** | Tenant Group (ID) | 
+ **tenantGroup** | **[]string** |  | 
+ **tenantGroupN** | **[]string** |  | 
+ **tenantGroupId** | **[]string** |  | 
+ **tenantGroupIdN** | **[]string** |  | 
  **tenantId** | **[]int32** | Tenant (ID) | 
  **tenantIdN** | **[]int32** | Tenant (ID) | 
  **updatedByRequest** | **string** |  | 
@@ -8760,10 +8760,10 @@ func main() {
 	tagN := []string{"Inner_example"} // []string |  (optional)
 	tenant := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantN := []string{"Inner_example"} // []string | Tenant (slug) (optional)
-	tenantGroup := []int32{int32(123)} // []int32 | Tenant Group (slug) (optional)
-	tenantGroupN := []int32{int32(123)} // []int32 | Tenant Group (slug) (optional)
-	tenantGroupId := []int32{int32(123)} // []int32 | Tenant Group (ID) (optional)
-	tenantGroupIdN := []int32{int32(123)} // []int32 | Tenant Group (ID) (optional)
+	tenantGroup := []string{"Inner_example"} // []string |  (optional)
+	tenantGroupN := []string{"Inner_example"} // []string |  (optional)
+	tenantGroupId := []string{"Inner_example"} // []string |  (optional)
+	tenantGroupIdN := []string{"Inner_example"} // []string |  (optional)
 	tenantId := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
 	tenantIdN := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
@@ -8860,10 +8860,10 @@ Name | Type | Description  | Notes
  **tagN** | **[]string** |  | 
  **tenant** | **[]string** | Tenant (slug) | 
  **tenantN** | **[]string** | Tenant (slug) | 
- **tenantGroup** | **[]int32** | Tenant Group (slug) | 
- **tenantGroupN** | **[]int32** | Tenant Group (slug) | 
- **tenantGroupId** | **[]int32** | Tenant Group (ID) | 
- **tenantGroupIdN** | **[]int32** | Tenant Group (ID) | 
+ **tenantGroup** | **[]string** |  | 
+ **tenantGroupN** | **[]string** |  | 
+ **tenantGroupId** | **[]string** |  | 
+ **tenantGroupIdN** | **[]string** |  | 
  **tenantId** | **[]int32** | Tenant (ID) | 
  **tenantIdN** | **[]int32** | Tenant (ID) | 
  **updatedByRequest** | **string** |  | 
@@ -10151,7 +10151,7 @@ Name | Type | Description  | Notes
 
 ## IpamServicesList
 
-> PaginatedServiceList IpamServicesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IpAddress(ipAddress).IpAddressN(ipAddressN).IpAddressId(ipAddressId).IpAddressIdN(ipAddressIdN).Ipaddress(ipaddress).IpaddressN(ipaddressN).IpaddressId(ipaddressId).IpaddressIdN(ipaddressIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Port(port).Protocol(protocol).ProtocolN(protocolN).Q(q).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineN(virtualMachineN).VirtualMachineId(virtualMachineId).VirtualMachineIdN(virtualMachineIdN).Execute()
+> PaginatedServiceList IpamServicesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IpAddress(ipAddress).IpAddressN(ipAddressN).IpAddressId(ipAddressId).IpAddressIdN(ipAddressIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Port(port).Protocol(protocol).ProtocolN(protocolN).Q(q).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineN(virtualMachineN).VirtualMachineId(virtualMachineId).VirtualMachineIdN(virtualMachineIdN).Execute()
 
 
 
@@ -10205,10 +10205,6 @@ func main() {
 	ipAddressN := []string{"Inner_example"} // []string | IP address (optional)
 	ipAddressId := []int32{int32(123)} // []int32 | IP address (ID) (optional)
 	ipAddressIdN := []int32{int32(123)} // []int32 | IP address (ID) (optional)
-	ipaddress := []string{"Inner_example"} // []string | IP address (optional)
-	ipaddressN := []string{"Inner_example"} // []string | IP address (optional)
-	ipaddressId := []int32{int32(123)} // []int32 | IP address (ID) (optional)
-	ipaddressIdN := []int32{int32(123)} // []int32 | IP address (ID) (optional)
 	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -10245,7 +10241,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamServicesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IpAddress(ipAddress).IpAddressN(ipAddressN).IpAddressId(ipAddressId).IpAddressIdN(ipAddressIdN).Ipaddress(ipaddress).IpaddressN(ipaddressN).IpaddressId(ipaddressId).IpaddressIdN(ipaddressIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Port(port).Protocol(protocol).ProtocolN(protocolN).Q(q).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineN(virtualMachineN).VirtualMachineId(virtualMachineId).VirtualMachineIdN(virtualMachineIdN).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamServicesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Device(device).DeviceN(deviceN).DeviceId(deviceId).DeviceIdN(deviceIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IpAddress(ipAddress).IpAddressN(ipAddressN).IpAddressId(ipAddressId).IpAddressIdN(ipAddressIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Port(port).Protocol(protocol).ProtocolN(protocolN).Q(q).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).VirtualMachine(virtualMachine).VirtualMachineN(virtualMachineN).VirtualMachineId(virtualMachineId).VirtualMachineIdN(virtualMachineIdN).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamServicesList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10300,10 +10296,6 @@ Name | Type | Description  | Notes
  **ipAddressN** | **[]string** | IP address | 
  **ipAddressId** | **[]int32** | IP address (ID) | 
  **ipAddressIdN** | **[]int32** | IP address (ID) | 
- **ipaddress** | **[]string** | IP address | 
- **ipaddressN** | **[]string** | IP address | 
- **ipaddressId** | **[]int32** | IP address (ID) | 
- **ipaddressIdN** | **[]int32** | IP address (ID) | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
@@ -11044,7 +11036,7 @@ Name | Type | Description  | Notes
 
 ## IpamVlanGroupsList
 
-> PaginatedVLANGroupList IpamVlanGroupsList(ctx).Cluster(cluster).ClusterGroup(clusterGroup).Clustergroup(clustergroup).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).MaxVid(maxVid).MaxVidEmpty(maxVidEmpty).MaxVidGt(maxVidGt).MaxVidGte(maxVidGte).MaxVidLt(maxVidLt).MaxVidLte(maxVidLte).MaxVidN(maxVidN).MinVid(minVid).MinVidEmpty(minVidEmpty).MinVidGt(minVidGt).MinVidGte(minVidGte).MinVidLt(minVidLt).MinVidLte(minVidLte).MinVidN(minVidN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Rack(rack).Region(region).ScopeId(scopeId).ScopeIdEmpty(scopeIdEmpty).ScopeIdGt(scopeIdGt).ScopeIdGte(scopeIdGte).ScopeIdLt(scopeIdLt).ScopeIdLte(scopeIdLte).ScopeIdN(scopeIdN).ScopeType(scopeType).ScopeTypeN(scopeTypeN).Site(site).SiteGroup(siteGroup).Sitegroup(sitegroup).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedVLANGroupList IpamVlanGroupsList(ctx).Cluster(cluster).ClusterGroup(clusterGroup).ContainsVid(containsVid).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Rack(rack).Region(region).ScopeId(scopeId).ScopeIdEmpty(scopeIdEmpty).ScopeIdGt(scopeIdGt).ScopeIdGte(scopeIdGte).ScopeIdLt(scopeIdLt).ScopeIdLte(scopeIdLte).ScopeIdN(scopeIdN).ScopeType(scopeType).ScopeTypeN(scopeTypeN).Site(site).SiteGroup(siteGroup).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -11066,7 +11058,7 @@ import (
 func main() {
 	cluster := int32(56) // int32 |  (optional)
 	clusterGroup := int32(56) // int32 |  (optional)
-	clustergroup := int32(56) // int32 |  (optional)
+	containsVid := float32(8.14) // float32 |  (optional)
 	created := []time.Time{time.Now()} // []time.Time |  (optional)
 	createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
 	createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -11102,20 +11094,6 @@ func main() {
 	lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
 	limit := int32(56) // int32 | Number of results to return per page. (optional)
 	location := int32(56) // int32 |  (optional)
-	maxVid := []int32{int32(123)} // []int32 |  (optional)
-	maxVidEmpty := true // bool |  (optional)
-	maxVidGt := []int32{int32(123)} // []int32 |  (optional)
-	maxVidGte := []int32{int32(123)} // []int32 |  (optional)
-	maxVidLt := []int32{int32(123)} // []int32 |  (optional)
-	maxVidLte := []int32{int32(123)} // []int32 |  (optional)
-	maxVidN := []int32{int32(123)} // []int32 |  (optional)
-	minVid := []int32{int32(123)} // []int32 |  (optional)
-	minVidEmpty := true // bool |  (optional)
-	minVidGt := []int32{int32(123)} // []int32 |  (optional)
-	minVidGte := []int32{int32(123)} // []int32 |  (optional)
-	minVidLt := []int32{int32(123)} // []int32 |  (optional)
-	minVidLte := []int32{int32(123)} // []int32 |  (optional)
-	minVidN := []int32{int32(123)} // []int32 |  (optional)
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	name := []string{"Inner_example"} // []string |  (optional)
 	nameEmpty := true // bool |  (optional)
@@ -11144,7 +11122,6 @@ func main() {
 	scopeTypeN := "scopeTypeN_example" // string |  (optional)
 	site := int32(56) // int32 |  (optional)
 	siteGroup := int32(56) // int32 |  (optional)
-	sitegroup := int32(56) // int32 |  (optional)
 	slug := []string{"Inner_example"} // []string |  (optional)
 	slugEmpty := true // bool |  (optional)
 	slugIc := []string{"Inner_example"} // []string |  (optional)
@@ -11162,7 +11139,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IpamAPI.IpamVlanGroupsList(context.Background()).Cluster(cluster).ClusterGroup(clusterGroup).Clustergroup(clustergroup).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).MaxVid(maxVid).MaxVidEmpty(maxVidEmpty).MaxVidGt(maxVidGt).MaxVidGte(maxVidGte).MaxVidLt(maxVidLt).MaxVidLte(maxVidLte).MaxVidN(maxVidN).MinVid(minVid).MinVidEmpty(minVidEmpty).MinVidGt(minVidGt).MinVidGte(minVidGte).MinVidLt(minVidLt).MinVidLte(minVidLte).MinVidN(minVidN).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Rack(rack).Region(region).ScopeId(scopeId).ScopeIdEmpty(scopeIdEmpty).ScopeIdGt(scopeIdGt).ScopeIdGte(scopeIdGte).ScopeIdLt(scopeIdLt).ScopeIdLte(scopeIdLte).ScopeIdN(scopeIdN).ScopeType(scopeType).ScopeTypeN(scopeTypeN).Site(site).SiteGroup(siteGroup).Sitegroup(sitegroup).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.IpamAPI.IpamVlanGroupsList(context.Background()).Cluster(cluster).ClusterGroup(clusterGroup).ContainsVid(containsVid).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).Rack(rack).Region(region).ScopeId(scopeId).ScopeIdEmpty(scopeIdEmpty).ScopeIdGt(scopeIdGt).ScopeIdGte(scopeIdGte).ScopeIdLt(scopeIdLt).ScopeIdLte(scopeIdLte).ScopeIdN(scopeIdN).ScopeType(scopeType).ScopeTypeN(scopeTypeN).Site(site).SiteGroup(siteGroup).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).Tag(tag).TagN(tagN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IpamAPI.IpamVlanGroupsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11185,7 +11162,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cluster** | **int32** |  | 
  **clusterGroup** | **int32** |  | 
- **clustergroup** | **int32** |  | 
+ **containsVid** | **float32** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
  **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
@@ -11221,20 +11198,6 @@ Name | Type | Description  | Notes
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
  **location** | **int32** |  | 
- **maxVid** | **[]int32** |  | 
- **maxVidEmpty** | **bool** |  | 
- **maxVidGt** | **[]int32** |  | 
- **maxVidGte** | **[]int32** |  | 
- **maxVidLt** | **[]int32** |  | 
- **maxVidLte** | **[]int32** |  | 
- **maxVidN** | **[]int32** |  | 
- **minVid** | **[]int32** |  | 
- **minVidEmpty** | **bool** |  | 
- **minVidGt** | **[]int32** |  | 
- **minVidGte** | **[]int32** |  | 
- **minVidLt** | **[]int32** |  | 
- **minVidLte** | **[]int32** |  | 
- **minVidN** | **[]int32** |  | 
  **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
@@ -11263,7 +11226,6 @@ Name | Type | Description  | Notes
  **scopeTypeN** | **string** |  | 
  **site** | **int32** |  | 
  **siteGroup** | **int32** |  | 
- **sitegroup** | **int32** |  | 
  **slug** | **[]string** |  | 
  **slugEmpty** | **bool** |  | 
  **slugIc** | **[]string** |  | 
@@ -11923,20 +11885,20 @@ func main() {
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
 	q := "q_example" // string | Search (optional)
-	region := []int32{int32(123)} // []int32 | Region (slug) (optional)
-	regionN := []int32{int32(123)} // []int32 | Region (slug) (optional)
-	regionId := []int32{int32(123)} // []int32 | Region (ID) (optional)
-	regionIdN := []int32{int32(123)} // []int32 | Region (ID) (optional)
+	region := []string{"Inner_example"} // []string |  (optional)
+	regionN := []string{"Inner_example"} // []string |  (optional)
+	regionId := []string{"Inner_example"} // []string |  (optional)
+	regionIdN := []string{"Inner_example"} // []string |  (optional)
 	role := []string{"Inner_example"} // []string | Role (slug) (optional)
 	roleN := []string{"Inner_example"} // []string | Role (slug) (optional)
 	roleId := []*int32{int32(123)} // []*int32 | Role (ID) (optional)
 	roleIdN := []*int32{int32(123)} // []*int32 | Role (ID) (optional)
 	site := []string{"Inner_example"} // []string | Site (slug) (optional)
 	siteN := []string{"Inner_example"} // []string | Site (slug) (optional)
-	siteGroup := []int32{int32(123)} // []int32 | Site group (slug) (optional)
-	siteGroupN := []int32{int32(123)} // []int32 | Site group (slug) (optional)
-	siteGroupId := []int32{int32(123)} // []int32 | Site group (ID) (optional)
-	siteGroupIdN := []int32{int32(123)} // []int32 | Site group (ID) (optional)
+	siteGroup := []string{"Inner_example"} // []string |  (optional)
+	siteGroupN := []string{"Inner_example"} // []string |  (optional)
+	siteGroupId := []string{"Inner_example"} // []string |  (optional)
+	siteGroupIdN := []string{"Inner_example"} // []string |  (optional)
 	siteId := []*int32{int32(123)} // []*int32 | Site (ID) (optional)
 	siteIdN := []*int32{int32(123)} // []*int32 | Site (ID) (optional)
 	status := []string{"Inner_example"} // []string | Operational status of this VLAN (optional)
@@ -11945,10 +11907,10 @@ func main() {
 	tagN := []string{"Inner_example"} // []string |  (optional)
 	tenant := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantN := []string{"Inner_example"} // []string | Tenant (slug) (optional)
-	tenantGroup := []int32{int32(123)} // []int32 | Tenant Group (slug) (optional)
-	tenantGroupN := []int32{int32(123)} // []int32 | Tenant Group (slug) (optional)
-	tenantGroupId := []int32{int32(123)} // []int32 | Tenant Group (ID) (optional)
-	tenantGroupIdN := []int32{int32(123)} // []int32 | Tenant Group (ID) (optional)
+	tenantGroup := []string{"Inner_example"} // []string |  (optional)
+	tenantGroupN := []string{"Inner_example"} // []string |  (optional)
+	tenantGroupId := []string{"Inner_example"} // []string |  (optional)
+	tenantGroupIdN := []string{"Inner_example"} // []string |  (optional)
 	tenantId := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
 	tenantIdN := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
@@ -12043,20 +12005,20 @@ Name | Type | Description  | Notes
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **q** | **string** | Search | 
- **region** | **[]int32** | Region (slug) | 
- **regionN** | **[]int32** | Region (slug) | 
- **regionId** | **[]int32** | Region (ID) | 
- **regionIdN** | **[]int32** | Region (ID) | 
+ **region** | **[]string** |  | 
+ **regionN** | **[]string** |  | 
+ **regionId** | **[]string** |  | 
+ **regionIdN** | **[]string** |  | 
  **role** | **[]string** | Role (slug) | 
  **roleN** | **[]string** | Role (slug) | 
  **roleId** | **[]int32** | Role (ID) | 
  **roleIdN** | **[]int32** | Role (ID) | 
  **site** | **[]string** | Site (slug) | 
  **siteN** | **[]string** | Site (slug) | 
- **siteGroup** | **[]int32** | Site group (slug) | 
- **siteGroupN** | **[]int32** | Site group (slug) | 
- **siteGroupId** | **[]int32** | Site group (ID) | 
- **siteGroupIdN** | **[]int32** | Site group (ID) | 
+ **siteGroup** | **[]string** |  | 
+ **siteGroupN** | **[]string** |  | 
+ **siteGroupId** | **[]string** |  | 
+ **siteGroupIdN** | **[]string** |  | 
  **siteId** | **[]int32** | Site (ID) | 
  **siteIdN** | **[]int32** | Site (ID) | 
  **status** | **[]string** | Operational status of this VLAN | 
@@ -12065,10 +12027,10 @@ Name | Type | Description  | Notes
  **tagN** | **[]string** |  | 
  **tenant** | **[]string** | Tenant (slug) | 
  **tenantN** | **[]string** | Tenant (slug) | 
- **tenantGroup** | **[]int32** | Tenant Group (slug) | 
- **tenantGroupN** | **[]int32** | Tenant Group (slug) | 
- **tenantGroupId** | **[]int32** | Tenant Group (ID) | 
- **tenantGroupIdN** | **[]int32** | Tenant Group (ID) | 
+ **tenantGroup** | **[]string** |  | 
+ **tenantGroupN** | **[]string** |  | 
+ **tenantGroupId** | **[]string** |  | 
+ **tenantGroupIdN** | **[]string** |  | 
  **tenantId** | **[]int32** | Tenant (ID) | 
  **tenantIdN** | **[]int32** | Tenant (ID) | 
  **updatedByRequest** | **string** |  | 
@@ -12737,10 +12699,10 @@ func main() {
 	tagN := []string{"Inner_example"} // []string |  (optional)
 	tenant := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantN := []string{"Inner_example"} // []string | Tenant (slug) (optional)
-	tenantGroup := []int32{int32(123)} // []int32 | Tenant Group (slug) (optional)
-	tenantGroupN := []int32{int32(123)} // []int32 | Tenant Group (slug) (optional)
-	tenantGroupId := []int32{int32(123)} // []int32 | Tenant Group (ID) (optional)
-	tenantGroupIdN := []int32{int32(123)} // []int32 | Tenant Group (ID) (optional)
+	tenantGroup := []string{"Inner_example"} // []string |  (optional)
+	tenantGroupN := []string{"Inner_example"} // []string |  (optional)
+	tenantGroupId := []string{"Inner_example"} // []string |  (optional)
+	tenantGroupIdN := []string{"Inner_example"} // []string |  (optional)
 	tenantId := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
 	tenantIdN := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
@@ -12841,10 +12803,10 @@ Name | Type | Description  | Notes
  **tagN** | **[]string** |  | 
  **tenant** | **[]string** | Tenant (slug) | 
  **tenantN** | **[]string** | Tenant (slug) | 
- **tenantGroup** | **[]int32** | Tenant Group (slug) | 
- **tenantGroupN** | **[]int32** | Tenant Group (slug) | 
- **tenantGroupId** | **[]int32** | Tenant Group (ID) | 
- **tenantGroupIdN** | **[]int32** | Tenant Group (ID) | 
+ **tenantGroup** | **[]string** |  | 
+ **tenantGroupN** | **[]string** |  | 
+ **tenantGroupId** | **[]string** |  | 
+ **tenantGroupIdN** | **[]string** |  | 
  **tenantId** | **[]int32** | Tenant (ID) | 
  **tenantIdN** | **[]int32** | Tenant (ID) | 
  **updatedByRequest** | **string** |  | 

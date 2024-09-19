@@ -5,20 +5,20 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
-**Type** | [**DataSourceRequestType**](DataSourceRequestType.md) |  | 
+**Type** | [**DataSourceTypeValue**](DataSourceTypeValue.md) |  | 
 **SourceUrl** | **string** |  | 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**Comments** | Pointer to **string** |  | [optional] 
 **Parameters** | Pointer to **interface{}** |  | [optional] 
 **IgnoreRules** | Pointer to **string** | Patterns (one per line) matching files to ignore when syncing | [optional] 
+**Comments** | Pointer to **string** |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewDataSourceRequest
 
-`func NewDataSourceRequest(name string, type_ DataSourceRequestType, sourceUrl string, ) *DataSourceRequest`
+`func NewDataSourceRequest(name string, type_ DataSourceTypeValue, sourceUrl string, ) *DataSourceRequest`
 
 NewDataSourceRequest instantiates a new DataSourceRequest object
 This constructor will assign default values to properties that have it defined,
@@ -55,20 +55,20 @@ SetName sets Name field to given value.
 
 ### GetType
 
-`func (o *DataSourceRequest) GetType() DataSourceRequestType`
+`func (o *DataSourceRequest) GetType() DataSourceTypeValue`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *DataSourceRequest) GetTypeOk() (*DataSourceRequestType, bool)`
+`func (o *DataSourceRequest) GetTypeOk() (*DataSourceTypeValue, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *DataSourceRequest) SetType(v DataSourceRequestType)`
+`func (o *DataSourceRequest) SetType(v DataSourceTypeValue)`
 
 SetType sets Type field to given value.
 
@@ -143,31 +143,6 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
-### GetComments
-
-`func (o *DataSourceRequest) GetComments() string`
-
-GetComments returns the Comments field if non-nil, zero value otherwise.
-
-### GetCommentsOk
-
-`func (o *DataSourceRequest) GetCommentsOk() (*string, bool)`
-
-GetCommentsOk returns a tuple with the Comments field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetComments
-
-`func (o *DataSourceRequest) SetComments(v string)`
-
-SetComments sets Comments field to given value.
-
-### HasComments
-
-`func (o *DataSourceRequest) HasComments() bool`
-
-HasComments returns a boolean if a field has been set.
-
 ### GetParameters
 
 `func (o *DataSourceRequest) GetParameters() interface{}`
@@ -227,6 +202,31 @@ SetIgnoreRules sets IgnoreRules field to given value.
 `func (o *DataSourceRequest) HasIgnoreRules() bool`
 
 HasIgnoreRules returns a boolean if a field has been set.
+
+### GetComments
+
+`func (o *DataSourceRequest) GetComments() string`
+
+GetComments returns the Comments field if non-nil, zero value otherwise.
+
+### GetCommentsOk
+
+`func (o *DataSourceRequest) GetCommentsOk() (*string, bool)`
+
+GetCommentsOk returns a tuple with the Comments field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComments
+
+`func (o *DataSourceRequest) SetComments(v string)`
+
+SetComments sets Comments field to given value.
+
+### HasComments
+
+`func (o *DataSourceRequest) HasComments() bool`
+
+HasComments returns a boolean if a field has been set.
 
 ### GetCustomFields
 

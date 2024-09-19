@@ -6,15 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
+**DisplayUrl** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
-**InstalledModule** | Pointer to [**NullableModuleBayNestedModule**](ModuleBayNestedModule.md) |  | [optional] 
 **Name** | **string** |  | 
 
 ## Methods
 
 ### NewNestedModuleBay
 
-`func NewNestedModuleBay(id int32, url string, display string, name string, ) *NestedModuleBay`
+`func NewNestedModuleBay(id int32, url string, displayUrl string, display string, name string, ) *NestedModuleBay`
 
 NewNestedModuleBay instantiates a new NestedModuleBay object
 This constructor will assign default values to properties that have it defined,
@@ -69,6 +69,26 @@ and a boolean to check if the value has been set.
 SetUrl sets Url field to given value.
 
 
+### GetDisplayUrl
+
+`func (o *NestedModuleBay) GetDisplayUrl() string`
+
+GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
+
+### GetDisplayUrlOk
+
+`func (o *NestedModuleBay) GetDisplayUrlOk() (*string, bool)`
+
+GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayUrl
+
+`func (o *NestedModuleBay) SetDisplayUrl(v string)`
+
+SetDisplayUrl sets DisplayUrl field to given value.
+
+
 ### GetDisplay
 
 `func (o *NestedModuleBay) GetDisplay() string`
@@ -89,41 +109,6 @@ and a boolean to check if the value has been set.
 SetDisplay sets Display field to given value.
 
 
-### GetInstalledModule
-
-`func (o *NestedModuleBay) GetInstalledModule() ModuleBayNestedModule`
-
-GetInstalledModule returns the InstalledModule field if non-nil, zero value otherwise.
-
-### GetInstalledModuleOk
-
-`func (o *NestedModuleBay) GetInstalledModuleOk() (*ModuleBayNestedModule, bool)`
-
-GetInstalledModuleOk returns a tuple with the InstalledModule field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetInstalledModule
-
-`func (o *NestedModuleBay) SetInstalledModule(v ModuleBayNestedModule)`
-
-SetInstalledModule sets InstalledModule field to given value.
-
-### HasInstalledModule
-
-`func (o *NestedModuleBay) HasInstalledModule() bool`
-
-HasInstalledModule returns a boolean if a field has been set.
-
-### SetInstalledModuleNil
-
-`func (o *NestedModuleBay) SetInstalledModuleNil(b bool)`
-
- SetInstalledModuleNil sets the value for InstalledModule to be an explicit nil
-
-### UnsetInstalledModule
-`func (o *NestedModuleBay) UnsetInstalledModule()`
-
-UnsetInstalledModule ensures that no value is present for InstalledModule, not even an explicit nil
 ### GetName
 
 `func (o *NestedModuleBay) GetName() string`

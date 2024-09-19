@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
+**DisplayUrl** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
 **AssignedObjectType** | **string** |  | 
 **AssignedObjectId** | **int64** |  | 
@@ -22,7 +23,7 @@ Name | Type | Description | Notes
 
 ### NewJournalEntry
 
-`func NewJournalEntry(id int32, url string, display string, assignedObjectType string, assignedObjectId int64, assignedObject interface{}, created NullableTime, comments string, lastUpdated NullableTime, ) *JournalEntry`
+`func NewJournalEntry(id int32, url string, displayUrl string, display string, assignedObjectType string, assignedObjectId int64, assignedObject interface{}, created NullableTime, comments string, lastUpdated NullableTime, ) *JournalEntry`
 
 NewJournalEntry instantiates a new JournalEntry object
 This constructor will assign default values to properties that have it defined,
@@ -75,6 +76,26 @@ and a boolean to check if the value has been set.
 `func (o *JournalEntry) SetUrl(v string)`
 
 SetUrl sets Url field to given value.
+
+
+### GetDisplayUrl
+
+`func (o *JournalEntry) GetDisplayUrl() string`
+
+GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
+
+### GetDisplayUrlOk
+
+`func (o *JournalEntry) GetDisplayUrlOk() (*string, bool)`
+
+GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayUrl
+
+`func (o *JournalEntry) SetDisplayUrl(v string)`
+
+SetDisplayUrl sets DisplayUrl field to given value.
 
 
 ### GetDisplay

@@ -6,13 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ObjectType** | **string** |  | 
 **ObjectId** | **int64** |  | 
-**User** | [**UserRequest**](UserRequest.md) |  | 
+**User** | [**BriefUserRequest**](BriefUserRequest.md) |  | 
 
 ## Methods
 
 ### NewBookmarkRequest
 
-`func NewBookmarkRequest(objectType string, objectId int64, user UserRequest, ) *BookmarkRequest`
+`func NewBookmarkRequest(objectType string, objectId int64, user BriefUserRequest, ) *BookmarkRequest`
 
 NewBookmarkRequest instantiates a new BookmarkRequest object
 This constructor will assign default values to properties that have it defined,
@@ -69,20 +69,20 @@ SetObjectId sets ObjectId field to given value.
 
 ### GetUser
 
-`func (o *BookmarkRequest) GetUser() UserRequest`
+`func (o *BookmarkRequest) GetUser() BriefUserRequest`
 
 GetUser returns the User field if non-nil, zero value otherwise.
 
 ### GetUserOk
 
-`func (o *BookmarkRequest) GetUserOk() (*UserRequest, bool)`
+`func (o *BookmarkRequest) GetUserOk() (*BriefUserRequest, bool)`
 
 GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUser
 
-`func (o *BookmarkRequest) SetUser(v UserRequest)`
+`func (o *BookmarkRequest) SetUser(v BriefUserRequest)`
 
 SetUser sets User field to given value.
 

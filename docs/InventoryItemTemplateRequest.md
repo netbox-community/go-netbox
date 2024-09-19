@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DeviceType** | [**DeviceTypeRequest**](DeviceTypeRequest.md) |  | 
+**DeviceType** | [**BriefDeviceTypeRequest**](BriefDeviceTypeRequest.md) |  | 
 **Parent** | Pointer to **NullableInt32** |  | [optional] 
 **Name** | **string** | {module} is accepted as a substitution for the module bay position when attached to a module type. | 
 **Label** | Pointer to **string** | Physical label | [optional] 
-**Role** | Pointer to [**NullableInventoryItemRoleRequest**](InventoryItemRoleRequest.md) |  | [optional] 
-**Manufacturer** | Pointer to [**NullableManufacturerRequest**](ManufacturerRequest.md) |  | [optional] 
+**Role** | Pointer to [**NullableBriefInventoryItemRoleRequest**](BriefInventoryItemRoleRequest.md) |  | [optional] 
+**Manufacturer** | Pointer to [**NullableBriefManufacturerRequest**](BriefManufacturerRequest.md) |  | [optional] 
 **PartId** | Pointer to **string** | Manufacturer-assigned part identifier | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **ComponentType** | Pointer to **NullableString** |  | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewInventoryItemTemplateRequest
 
-`func NewInventoryItemTemplateRequest(deviceType DeviceTypeRequest, name string, ) *InventoryItemTemplateRequest`
+`func NewInventoryItemTemplateRequest(deviceType BriefDeviceTypeRequest, name string, ) *InventoryItemTemplateRequest`
 
 NewInventoryItemTemplateRequest instantiates a new InventoryItemTemplateRequest object
 This constructor will assign default values to properties that have it defined,
@@ -36,20 +36,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDeviceType
 
-`func (o *InventoryItemTemplateRequest) GetDeviceType() DeviceTypeRequest`
+`func (o *InventoryItemTemplateRequest) GetDeviceType() BriefDeviceTypeRequest`
 
 GetDeviceType returns the DeviceType field if non-nil, zero value otherwise.
 
 ### GetDeviceTypeOk
 
-`func (o *InventoryItemTemplateRequest) GetDeviceTypeOk() (*DeviceTypeRequest, bool)`
+`func (o *InventoryItemTemplateRequest) GetDeviceTypeOk() (*BriefDeviceTypeRequest, bool)`
 
 GetDeviceTypeOk returns a tuple with the DeviceType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeviceType
 
-`func (o *InventoryItemTemplateRequest) SetDeviceType(v DeviceTypeRequest)`
+`func (o *InventoryItemTemplateRequest) SetDeviceType(v BriefDeviceTypeRequest)`
 
 SetDeviceType sets DeviceType field to given value.
 
@@ -136,20 +136,20 @@ HasLabel returns a boolean if a field has been set.
 
 ### GetRole
 
-`func (o *InventoryItemTemplateRequest) GetRole() InventoryItemRoleRequest`
+`func (o *InventoryItemTemplateRequest) GetRole() BriefInventoryItemRoleRequest`
 
 GetRole returns the Role field if non-nil, zero value otherwise.
 
 ### GetRoleOk
 
-`func (o *InventoryItemTemplateRequest) GetRoleOk() (*InventoryItemRoleRequest, bool)`
+`func (o *InventoryItemTemplateRequest) GetRoleOk() (*BriefInventoryItemRoleRequest, bool)`
 
 GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRole
 
-`func (o *InventoryItemTemplateRequest) SetRole(v InventoryItemRoleRequest)`
+`func (o *InventoryItemTemplateRequest) SetRole(v BriefInventoryItemRoleRequest)`
 
 SetRole sets Role field to given value.
 
@@ -171,20 +171,20 @@ HasRole returns a boolean if a field has been set.
 UnsetRole ensures that no value is present for Role, not even an explicit nil
 ### GetManufacturer
 
-`func (o *InventoryItemTemplateRequest) GetManufacturer() ManufacturerRequest`
+`func (o *InventoryItemTemplateRequest) GetManufacturer() BriefManufacturerRequest`
 
 GetManufacturer returns the Manufacturer field if non-nil, zero value otherwise.
 
 ### GetManufacturerOk
 
-`func (o *InventoryItemTemplateRequest) GetManufacturerOk() (*ManufacturerRequest, bool)`
+`func (o *InventoryItemTemplateRequest) GetManufacturerOk() (*BriefManufacturerRequest, bool)`
 
 GetManufacturerOk returns a tuple with the Manufacturer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetManufacturer
 
-`func (o *InventoryItemTemplateRequest) SetManufacturer(v ManufacturerRequest)`
+`func (o *InventoryItemTemplateRequest) SetManufacturer(v BriefManufacturerRequest)`
 
 SetManufacturer sets Manufacturer field to given value.
 

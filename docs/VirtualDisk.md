@@ -6,8 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
+**DisplayUrl** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
-**VirtualMachine** | [**VirtualMachine**](VirtualMachine.md) |  | 
+**VirtualMachine** | [**BriefVirtualMachine**](BriefVirtualMachine.md) |  | 
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
 **Size** | **int32** |  | 
@@ -20,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewVirtualDisk
 
-`func NewVirtualDisk(id int32, url string, display string, virtualMachine VirtualMachine, name string, size int32, created NullableTime, lastUpdated NullableTime, ) *VirtualDisk`
+`func NewVirtualDisk(id int32, url string, displayUrl string, display string, virtualMachine BriefVirtualMachine, name string, size int32, created NullableTime, lastUpdated NullableTime, ) *VirtualDisk`
 
 NewVirtualDisk instantiates a new VirtualDisk object
 This constructor will assign default values to properties that have it defined,
@@ -75,6 +76,26 @@ and a boolean to check if the value has been set.
 SetUrl sets Url field to given value.
 
 
+### GetDisplayUrl
+
+`func (o *VirtualDisk) GetDisplayUrl() string`
+
+GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
+
+### GetDisplayUrlOk
+
+`func (o *VirtualDisk) GetDisplayUrlOk() (*string, bool)`
+
+GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayUrl
+
+`func (o *VirtualDisk) SetDisplayUrl(v string)`
+
+SetDisplayUrl sets DisplayUrl field to given value.
+
+
 ### GetDisplay
 
 `func (o *VirtualDisk) GetDisplay() string`
@@ -97,20 +118,20 @@ SetDisplay sets Display field to given value.
 
 ### GetVirtualMachine
 
-`func (o *VirtualDisk) GetVirtualMachine() VirtualMachine`
+`func (o *VirtualDisk) GetVirtualMachine() BriefVirtualMachine`
 
 GetVirtualMachine returns the VirtualMachine field if non-nil, zero value otherwise.
 
 ### GetVirtualMachineOk
 
-`func (o *VirtualDisk) GetVirtualMachineOk() (*VirtualMachine, bool)`
+`func (o *VirtualDisk) GetVirtualMachineOk() (*BriefVirtualMachine, bool)`
 
 GetVirtualMachineOk returns a tuple with the VirtualMachine field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVirtualMachine
 
-`func (o *VirtualDisk) SetVirtualMachine(v VirtualMachine)`
+`func (o *VirtualDisk) SetVirtualMachine(v BriefVirtualMachine)`
 
 SetVirtualMachine sets VirtualMachine field to given value.
 

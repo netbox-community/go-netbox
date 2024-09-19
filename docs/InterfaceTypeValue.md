@@ -19,6 +19,8 @@
 
 * `_1000BASE_T` (value: `"1000base-t"`)
 
+* `_1000BASE_TX` (value: `"1000base-tx"`)
+
 * `_2_5GBASE_T` (value: `"2.5gbase-t"`)
 
 * `_5GBASE_T` (value: `"5gbase-t"`)
@@ -124,6 +126,8 @@
 * `IEEE802_11AX` (value: `"ieee802.11ax"`)
 
 * `IEEE802_11AY` (value: `"ieee802.11ay"`)
+
+* `IEEE802_11BE` (value: `"ieee802.11be"`)
 
 * `IEEE802_15_1` (value: `"ieee802.15.1"`)
 
