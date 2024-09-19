@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**User** | [**UserRequest**](UserRequest.md) |  | 
+**User** | [**BriefUserRequest**](BriefUserRequest.md) |  | 
 **Expires** | Pointer to **NullableTime** |  | [optional] 
 **LastUsed** | Pointer to **NullableTime** |  | [optional] 
 **Key** | Pointer to **string** |  | [optional] 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewTokenRequest
 
-`func NewTokenRequest(user UserRequest, ) *TokenRequest`
+`func NewTokenRequest(user BriefUserRequest, ) *TokenRequest`
 
 NewTokenRequest instantiates a new TokenRequest object
 This constructor will assign default values to properties that have it defined,
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetUser
 
-`func (o *TokenRequest) GetUser() UserRequest`
+`func (o *TokenRequest) GetUser() BriefUserRequest`
 
 GetUser returns the User field if non-nil, zero value otherwise.
 
 ### GetUserOk
 
-`func (o *TokenRequest) GetUserOk() (*UserRequest, bool)`
+`func (o *TokenRequest) GetUserOk() (*BriefUserRequest, bool)`
 
 GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUser
 
-`func (o *TokenRequest) SetUser(v UserRequest)`
+`func (o *TokenRequest) SetUser(v BriefUserRequest)`
 
 SetUser sets User field to given value.
 

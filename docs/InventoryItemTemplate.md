@@ -7,12 +7,12 @@ Name | Type | Description | Notes
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
-**DeviceType** | [**DeviceType**](DeviceType.md) |  | 
+**DeviceType** | [**BriefDeviceType**](BriefDeviceType.md) |  | 
 **Parent** | Pointer to **NullableInt32** |  | [optional] 
 **Name** | **string** | {module} is accepted as a substitution for the module bay position when attached to a module type. | 
 **Label** | Pointer to **string** | Physical label | [optional] 
-**Role** | Pointer to [**NullableInventoryItemRole**](InventoryItemRole.md) |  | [optional] 
-**Manufacturer** | Pointer to [**NullableManufacturer**](Manufacturer.md) |  | [optional] 
+**Role** | Pointer to [**NullableBriefInventoryItemRole**](BriefInventoryItemRole.md) |  | [optional] 
+**Manufacturer** | Pointer to [**NullableBriefManufacturer**](BriefManufacturer.md) |  | [optional] 
 **PartId** | Pointer to **string** | Manufacturer-assigned part identifier | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **ComponentType** | Pointer to **NullableString** |  | [optional] 
@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 
 ### NewInventoryItemTemplate
 
-`func NewInventoryItemTemplate(id int32, url string, display string, deviceType DeviceType, name string, component interface{}, created NullableTime, lastUpdated NullableTime, depth int32, ) *InventoryItemTemplate`
+`func NewInventoryItemTemplate(id int32, url string, display string, deviceType BriefDeviceType, name string, component interface{}, created NullableTime, lastUpdated NullableTime, depth int32, ) *InventoryItemTemplate`
 
 NewInventoryItemTemplate instantiates a new InventoryItemTemplate object
 This constructor will assign default values to properties that have it defined,
@@ -103,20 +103,20 @@ SetDisplay sets Display field to given value.
 
 ### GetDeviceType
 
-`func (o *InventoryItemTemplate) GetDeviceType() DeviceType`
+`func (o *InventoryItemTemplate) GetDeviceType() BriefDeviceType`
 
 GetDeviceType returns the DeviceType field if non-nil, zero value otherwise.
 
 ### GetDeviceTypeOk
 
-`func (o *InventoryItemTemplate) GetDeviceTypeOk() (*DeviceType, bool)`
+`func (o *InventoryItemTemplate) GetDeviceTypeOk() (*BriefDeviceType, bool)`
 
 GetDeviceTypeOk returns a tuple with the DeviceType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeviceType
 
-`func (o *InventoryItemTemplate) SetDeviceType(v DeviceType)`
+`func (o *InventoryItemTemplate) SetDeviceType(v BriefDeviceType)`
 
 SetDeviceType sets DeviceType field to given value.
 
@@ -203,20 +203,20 @@ HasLabel returns a boolean if a field has been set.
 
 ### GetRole
 
-`func (o *InventoryItemTemplate) GetRole() InventoryItemRole`
+`func (o *InventoryItemTemplate) GetRole() BriefInventoryItemRole`
 
 GetRole returns the Role field if non-nil, zero value otherwise.
 
 ### GetRoleOk
 
-`func (o *InventoryItemTemplate) GetRoleOk() (*InventoryItemRole, bool)`
+`func (o *InventoryItemTemplate) GetRoleOk() (*BriefInventoryItemRole, bool)`
 
 GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRole
 
-`func (o *InventoryItemTemplate) SetRole(v InventoryItemRole)`
+`func (o *InventoryItemTemplate) SetRole(v BriefInventoryItemRole)`
 
 SetRole sets Role field to given value.
 
@@ -238,20 +238,20 @@ HasRole returns a boolean if a field has been set.
 UnsetRole ensures that no value is present for Role, not even an explicit nil
 ### GetManufacturer
 
-`func (o *InventoryItemTemplate) GetManufacturer() Manufacturer`
+`func (o *InventoryItemTemplate) GetManufacturer() BriefManufacturer`
 
 GetManufacturer returns the Manufacturer field if non-nil, zero value otherwise.
 
 ### GetManufacturerOk
 
-`func (o *InventoryItemTemplate) GetManufacturerOk() (*Manufacturer, bool)`
+`func (o *InventoryItemTemplate) GetManufacturerOk() (*BriefManufacturer, bool)`
 
 GetManufacturerOk returns a tuple with the Manufacturer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetManufacturer
 
-`func (o *InventoryItemTemplate) SetManufacturer(v Manufacturer)`
+`func (o *InventoryItemTemplate) SetManufacturer(v BriefManufacturer)`
 
 SetManufacturer sets Manufacturer field to given value.
 

@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
+**DisplayUrl** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
@@ -15,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewNestedSiteGroup
 
-`func NewNestedSiteGroup(id int32, url string, display string, name string, slug string, depth int32, ) *NestedSiteGroup`
+`func NewNestedSiteGroup(id int32, url string, displayUrl string, display string, name string, slug string, depth int32, ) *NestedSiteGroup`
 
 NewNestedSiteGroup instantiates a new NestedSiteGroup object
 This constructor will assign default values to properties that have it defined,
@@ -68,6 +69,26 @@ and a boolean to check if the value has been set.
 `func (o *NestedSiteGroup) SetUrl(v string)`
 
 SetUrl sets Url field to given value.
+
+
+### GetDisplayUrl
+
+`func (o *NestedSiteGroup) GetDisplayUrl() string`
+
+GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
+
+### GetDisplayUrlOk
+
+`func (o *NestedSiteGroup) GetDisplayUrlOk() (*string, bool)`
+
+GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayUrl
+
+`func (o *NestedSiteGroup) SetDisplayUrl(v string)`
+
+SetDisplayUrl sets DisplayUrl field to given value.
 
 
 ### GetDisplay

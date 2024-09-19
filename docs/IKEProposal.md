@@ -6,12 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
+**DisplayUrl** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
 **AuthenticationMethod** | [**IKEProposalAuthenticationMethod**](IKEProposalAuthenticationMethod.md) |  | 
 **EncryptionAlgorithm** | [**IKEProposalEncryptionAlgorithm**](IKEProposalEncryptionAlgorithm.md) |  | 
-**AuthenticationAlgorithm** | [**IKEProposalAuthenticationAlgorithm**](IKEProposalAuthenticationAlgorithm.md) |  | 
+**AuthenticationAlgorithm** | Pointer to [**IKEProposalAuthenticationAlgorithm**](IKEProposalAuthenticationAlgorithm.md) |  | [optional] 
 **Group** | [**IKEProposalGroup**](IKEProposalGroup.md) |  | 
 **SaLifetime** | Pointer to **NullableInt32** | Security association lifetime (in seconds) | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
@@ -24,7 +25,7 @@ Name | Type | Description | Notes
 
 ### NewIKEProposal
 
-`func NewIKEProposal(id int32, url string, display string, name string, authenticationMethod IKEProposalAuthenticationMethod, encryptionAlgorithm IKEProposalEncryptionAlgorithm, authenticationAlgorithm IKEProposalAuthenticationAlgorithm, group IKEProposalGroup, created NullableTime, lastUpdated NullableTime, ) *IKEProposal`
+`func NewIKEProposal(id int32, url string, displayUrl string, display string, name string, authenticationMethod IKEProposalAuthenticationMethod, encryptionAlgorithm IKEProposalEncryptionAlgorithm, group IKEProposalGroup, created NullableTime, lastUpdated NullableTime, ) *IKEProposal`
 
 NewIKEProposal instantiates a new IKEProposal object
 This constructor will assign default values to properties that have it defined,
@@ -77,6 +78,26 @@ and a boolean to check if the value has been set.
 `func (o *IKEProposal) SetUrl(v string)`
 
 SetUrl sets Url field to given value.
+
+
+### GetDisplayUrl
+
+`func (o *IKEProposal) GetDisplayUrl() string`
+
+GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
+
+### GetDisplayUrlOk
+
+`func (o *IKEProposal) GetDisplayUrlOk() (*string, bool)`
+
+GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayUrl
+
+`func (o *IKEProposal) SetDisplayUrl(v string)`
+
+SetDisplayUrl sets DisplayUrl field to given value.
 
 
 ### GetDisplay
@@ -203,6 +224,11 @@ and a boolean to check if the value has been set.
 
 SetAuthenticationAlgorithm sets AuthenticationAlgorithm field to given value.
 
+### HasAuthenticationAlgorithm
+
+`func (o *IKEProposal) HasAuthenticationAlgorithm() bool`
+
+HasAuthenticationAlgorithm returns a boolean if a field has been set.
 
 ### GetGroup
 

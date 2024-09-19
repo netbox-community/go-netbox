@@ -6,7 +6,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
+**Manufacturer** | Pointer to [**NullableBriefManufacturerRequest**](BriefManufacturerRequest.md) |  | [optional] 
+**ConfigTemplate** | Pointer to [**NullableBriefConfigTemplateRequest**](BriefConfigTemplateRequest.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
+**Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
+**CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
@@ -67,6 +71,76 @@ and a boolean to check if the value has been set.
 SetSlug sets Slug field to given value.
 
 
+### GetManufacturer
+
+`func (o *PlatformRequest) GetManufacturer() BriefManufacturerRequest`
+
+GetManufacturer returns the Manufacturer field if non-nil, zero value otherwise.
+
+### GetManufacturerOk
+
+`func (o *PlatformRequest) GetManufacturerOk() (*BriefManufacturerRequest, bool)`
+
+GetManufacturerOk returns a tuple with the Manufacturer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetManufacturer
+
+`func (o *PlatformRequest) SetManufacturer(v BriefManufacturerRequest)`
+
+SetManufacturer sets Manufacturer field to given value.
+
+### HasManufacturer
+
+`func (o *PlatformRequest) HasManufacturer() bool`
+
+HasManufacturer returns a boolean if a field has been set.
+
+### SetManufacturerNil
+
+`func (o *PlatformRequest) SetManufacturerNil(b bool)`
+
+ SetManufacturerNil sets the value for Manufacturer to be an explicit nil
+
+### UnsetManufacturer
+`func (o *PlatformRequest) UnsetManufacturer()`
+
+UnsetManufacturer ensures that no value is present for Manufacturer, not even an explicit nil
+### GetConfigTemplate
+
+`func (o *PlatformRequest) GetConfigTemplate() BriefConfigTemplateRequest`
+
+GetConfigTemplate returns the ConfigTemplate field if non-nil, zero value otherwise.
+
+### GetConfigTemplateOk
+
+`func (o *PlatformRequest) GetConfigTemplateOk() (*BriefConfigTemplateRequest, bool)`
+
+GetConfigTemplateOk returns a tuple with the ConfigTemplate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConfigTemplate
+
+`func (o *PlatformRequest) SetConfigTemplate(v BriefConfigTemplateRequest)`
+
+SetConfigTemplate sets ConfigTemplate field to given value.
+
+### HasConfigTemplate
+
+`func (o *PlatformRequest) HasConfigTemplate() bool`
+
+HasConfigTemplate returns a boolean if a field has been set.
+
+### SetConfigTemplateNil
+
+`func (o *PlatformRequest) SetConfigTemplateNil(b bool)`
+
+ SetConfigTemplateNil sets the value for ConfigTemplate to be an explicit nil
+
+### UnsetConfigTemplate
+`func (o *PlatformRequest) UnsetConfigTemplate()`
+
+UnsetConfigTemplate ensures that no value is present for ConfigTemplate, not even an explicit nil
 ### GetDescription
 
 `func (o *PlatformRequest) GetDescription() string`
@@ -91,6 +165,56 @@ SetDescription sets Description field to given value.
 `func (o *PlatformRequest) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetTags
+
+`func (o *PlatformRequest) GetTags() []NestedTagRequest`
+
+GetTags returns the Tags field if non-nil, zero value otherwise.
+
+### GetTagsOk
+
+`func (o *PlatformRequest) GetTagsOk() (*[]NestedTagRequest, bool)`
+
+GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTags
+
+`func (o *PlatformRequest) SetTags(v []NestedTagRequest)`
+
+SetTags sets Tags field to given value.
+
+### HasTags
+
+`func (o *PlatformRequest) HasTags() bool`
+
+HasTags returns a boolean if a field has been set.
+
+### GetCustomFields
+
+`func (o *PlatformRequest) GetCustomFields() map[string]interface{}`
+
+GetCustomFields returns the CustomFields field if non-nil, zero value otherwise.
+
+### GetCustomFieldsOk
+
+`func (o *PlatformRequest) GetCustomFieldsOk() (*map[string]interface{}, bool)`
+
+GetCustomFieldsOk returns a tuple with the CustomFields field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomFields
+
+`func (o *PlatformRequest) SetCustomFields(v map[string]interface{})`
+
+SetCustomFields sets CustomFields field to given value.
+
+### HasCustomFields
+
+`func (o *PlatformRequest) HasCustomFields() bool`
+
+HasCustomFields returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

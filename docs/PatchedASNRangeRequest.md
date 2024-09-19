@@ -6,10 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** |  | [optional] 
 **Slug** | Pointer to **string** |  | [optional] 
-**Rir** | Pointer to [**RIRRequest**](RIRRequest.md) |  | [optional] 
+**Rir** | Pointer to [**BriefRIRRequest**](BriefRIRRequest.md) |  | [optional] 
 **Start** | Pointer to **int64** |  | [optional] 
 **End** | Pointer to **int64** |  | [optional] 
-**Tenant** | Pointer to [**NullableTenantRequest**](TenantRequest.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -85,20 +85,20 @@ HasSlug returns a boolean if a field has been set.
 
 ### GetRir
 
-`func (o *PatchedASNRangeRequest) GetRir() RIRRequest`
+`func (o *PatchedASNRangeRequest) GetRir() BriefRIRRequest`
 
 GetRir returns the Rir field if non-nil, zero value otherwise.
 
 ### GetRirOk
 
-`func (o *PatchedASNRangeRequest) GetRirOk() (*RIRRequest, bool)`
+`func (o *PatchedASNRangeRequest) GetRirOk() (*BriefRIRRequest, bool)`
 
 GetRirOk returns a tuple with the Rir field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRir
 
-`func (o *PatchedASNRangeRequest) SetRir(v RIRRequest)`
+`func (o *PatchedASNRangeRequest) SetRir(v BriefRIRRequest)`
 
 SetRir sets Rir field to given value.
 
@@ -160,20 +160,20 @@ HasEnd returns a boolean if a field has been set.
 
 ### GetTenant
 
-`func (o *PatchedASNRangeRequest) GetTenant() TenantRequest`
+`func (o *PatchedASNRangeRequest) GetTenant() BriefTenantRequest`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *PatchedASNRangeRequest) GetTenantOk() (*TenantRequest, bool)`
+`func (o *PatchedASNRangeRequest) GetTenantOk() (*BriefTenantRequest, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *PatchedASNRangeRequest) SetTenant(v TenantRequest)`
+`func (o *PatchedASNRangeRequest) SetTenant(v BriefTenantRequest)`
 
 SetTenant sets Tenant field to given value.
 

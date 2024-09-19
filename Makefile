@@ -14,7 +14,7 @@ default: init up
 .PHONY: init
 init:
 	test -f .env || cp .env.example .env
-	$(call set_env,USER_ID,$(shell id -u))
+	$(call set_env,USER_ID,1000)
 
 .PHONY: up
 up:

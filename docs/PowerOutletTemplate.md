@@ -7,12 +7,12 @@ Name | Type | Description | Notes
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
-**DeviceType** | Pointer to [**NullableDeviceType**](DeviceType.md) |  | [optional] 
-**ModuleType** | Pointer to [**NullableModuleType**](ModuleType.md) |  | [optional] 
+**DeviceType** | Pointer to [**NullableBriefDeviceType**](BriefDeviceType.md) |  | [optional] 
+**ModuleType** | Pointer to [**NullableBriefModuleType**](BriefModuleType.md) |  | [optional] 
 **Name** | **string** | {module} is accepted as a substitution for the module bay position when attached to a module type. | 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Type** | Pointer to [**NullablePowerOutletType**](PowerOutletType.md) |  | [optional] 
-**PowerPort** | Pointer to [**NullablePowerPortTemplate**](PowerPortTemplate.md) |  | [optional] 
+**PowerPort** | Pointer to [**NullableBriefPowerPortTemplate**](BriefPowerPortTemplate.md) |  | [optional] 
 **FeedLeg** | Pointer to [**NullablePowerOutletFeedLeg**](PowerOutletFeedLeg.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
@@ -99,20 +99,20 @@ SetDisplay sets Display field to given value.
 
 ### GetDeviceType
 
-`func (o *PowerOutletTemplate) GetDeviceType() DeviceType`
+`func (o *PowerOutletTemplate) GetDeviceType() BriefDeviceType`
 
 GetDeviceType returns the DeviceType field if non-nil, zero value otherwise.
 
 ### GetDeviceTypeOk
 
-`func (o *PowerOutletTemplate) GetDeviceTypeOk() (*DeviceType, bool)`
+`func (o *PowerOutletTemplate) GetDeviceTypeOk() (*BriefDeviceType, bool)`
 
 GetDeviceTypeOk returns a tuple with the DeviceType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeviceType
 
-`func (o *PowerOutletTemplate) SetDeviceType(v DeviceType)`
+`func (o *PowerOutletTemplate) SetDeviceType(v BriefDeviceType)`
 
 SetDeviceType sets DeviceType field to given value.
 
@@ -134,20 +134,20 @@ HasDeviceType returns a boolean if a field has been set.
 UnsetDeviceType ensures that no value is present for DeviceType, not even an explicit nil
 ### GetModuleType
 
-`func (o *PowerOutletTemplate) GetModuleType() ModuleType`
+`func (o *PowerOutletTemplate) GetModuleType() BriefModuleType`
 
 GetModuleType returns the ModuleType field if non-nil, zero value otherwise.
 
 ### GetModuleTypeOk
 
-`func (o *PowerOutletTemplate) GetModuleTypeOk() (*ModuleType, bool)`
+`func (o *PowerOutletTemplate) GetModuleTypeOk() (*BriefModuleType, bool)`
 
 GetModuleTypeOk returns a tuple with the ModuleType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetModuleType
 
-`func (o *PowerOutletTemplate) SetModuleType(v ModuleType)`
+`func (o *PowerOutletTemplate) SetModuleType(v BriefModuleType)`
 
 SetModuleType sets ModuleType field to given value.
 
@@ -249,20 +249,20 @@ HasType returns a boolean if a field has been set.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetPowerPort
 
-`func (o *PowerOutletTemplate) GetPowerPort() PowerPortTemplate`
+`func (o *PowerOutletTemplate) GetPowerPort() BriefPowerPortTemplate`
 
 GetPowerPort returns the PowerPort field if non-nil, zero value otherwise.
 
 ### GetPowerPortOk
 
-`func (o *PowerOutletTemplate) GetPowerPortOk() (*PowerPortTemplate, bool)`
+`func (o *PowerOutletTemplate) GetPowerPortOk() (*BriefPowerPortTemplate, bool)`
 
 GetPowerPortOk returns a tuple with the PowerPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPowerPort
 
-`func (o *PowerOutletTemplate) SetPowerPort(v PowerPortTemplate)`
+`func (o *PowerOutletTemplate) SetPowerPort(v BriefPowerPortTemplate)`
 
 SetPowerPort sets PowerPort field to given value.
 

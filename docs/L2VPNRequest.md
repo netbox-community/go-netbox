@@ -7,8 +7,14 @@ Name | Type | Description | Notes
 **Identifier** | Pointer to **NullableInt64** |  | [optional] 
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
-**Type** | Pointer to [**L2VPNTypeValue**](L2VPNTypeValue.md) |  | [optional] 
+**Type** | Pointer to [**BriefL2VPNTypeValue**](BriefL2VPNTypeValue.md) |  | [optional] 
+**ImportTargets** | Pointer to **[]int32** |  | [optional] 
+**ExportTargets** | Pointer to **[]int32** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
+**Comments** | Pointer to **string** |  | [optional] 
+**Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
+**Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
+**CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
@@ -106,20 +112,20 @@ SetSlug sets Slug field to given value.
 
 ### GetType
 
-`func (o *L2VPNRequest) GetType() L2VPNTypeValue`
+`func (o *L2VPNRequest) GetType() BriefL2VPNTypeValue`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *L2VPNRequest) GetTypeOk() (*L2VPNTypeValue, bool)`
+`func (o *L2VPNRequest) GetTypeOk() (*BriefL2VPNTypeValue, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *L2VPNRequest) SetType(v L2VPNTypeValue)`
+`func (o *L2VPNRequest) SetType(v BriefL2VPNTypeValue)`
 
 SetType sets Type field to given value.
 
@@ -128,6 +134,56 @@ SetType sets Type field to given value.
 `func (o *L2VPNRequest) HasType() bool`
 
 HasType returns a boolean if a field has been set.
+
+### GetImportTargets
+
+`func (o *L2VPNRequest) GetImportTargets() []int32`
+
+GetImportTargets returns the ImportTargets field if non-nil, zero value otherwise.
+
+### GetImportTargetsOk
+
+`func (o *L2VPNRequest) GetImportTargetsOk() (*[]int32, bool)`
+
+GetImportTargetsOk returns a tuple with the ImportTargets field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImportTargets
+
+`func (o *L2VPNRequest) SetImportTargets(v []int32)`
+
+SetImportTargets sets ImportTargets field to given value.
+
+### HasImportTargets
+
+`func (o *L2VPNRequest) HasImportTargets() bool`
+
+HasImportTargets returns a boolean if a field has been set.
+
+### GetExportTargets
+
+`func (o *L2VPNRequest) GetExportTargets() []int32`
+
+GetExportTargets returns the ExportTargets field if non-nil, zero value otherwise.
+
+### GetExportTargetsOk
+
+`func (o *L2VPNRequest) GetExportTargetsOk() (*[]int32, bool)`
+
+GetExportTargetsOk returns a tuple with the ExportTargets field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExportTargets
+
+`func (o *L2VPNRequest) SetExportTargets(v []int32)`
+
+SetExportTargets sets ExportTargets field to given value.
+
+### HasExportTargets
+
+`func (o *L2VPNRequest) HasExportTargets() bool`
+
+HasExportTargets returns a boolean if a field has been set.
 
 ### GetDescription
 
@@ -153,6 +209,116 @@ SetDescription sets Description field to given value.
 `func (o *L2VPNRequest) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetComments
+
+`func (o *L2VPNRequest) GetComments() string`
+
+GetComments returns the Comments field if non-nil, zero value otherwise.
+
+### GetCommentsOk
+
+`func (o *L2VPNRequest) GetCommentsOk() (*string, bool)`
+
+GetCommentsOk returns a tuple with the Comments field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComments
+
+`func (o *L2VPNRequest) SetComments(v string)`
+
+SetComments sets Comments field to given value.
+
+### HasComments
+
+`func (o *L2VPNRequest) HasComments() bool`
+
+HasComments returns a boolean if a field has been set.
+
+### GetTenant
+
+`func (o *L2VPNRequest) GetTenant() BriefTenantRequest`
+
+GetTenant returns the Tenant field if non-nil, zero value otherwise.
+
+### GetTenantOk
+
+`func (o *L2VPNRequest) GetTenantOk() (*BriefTenantRequest, bool)`
+
+GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTenant
+
+`func (o *L2VPNRequest) SetTenant(v BriefTenantRequest)`
+
+SetTenant sets Tenant field to given value.
+
+### HasTenant
+
+`func (o *L2VPNRequest) HasTenant() bool`
+
+HasTenant returns a boolean if a field has been set.
+
+### SetTenantNil
+
+`func (o *L2VPNRequest) SetTenantNil(b bool)`
+
+ SetTenantNil sets the value for Tenant to be an explicit nil
+
+### UnsetTenant
+`func (o *L2VPNRequest) UnsetTenant()`
+
+UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
+### GetTags
+
+`func (o *L2VPNRequest) GetTags() []NestedTagRequest`
+
+GetTags returns the Tags field if non-nil, zero value otherwise.
+
+### GetTagsOk
+
+`func (o *L2VPNRequest) GetTagsOk() (*[]NestedTagRequest, bool)`
+
+GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTags
+
+`func (o *L2VPNRequest) SetTags(v []NestedTagRequest)`
+
+SetTags sets Tags field to given value.
+
+### HasTags
+
+`func (o *L2VPNRequest) HasTags() bool`
+
+HasTags returns a boolean if a field has been set.
+
+### GetCustomFields
+
+`func (o *L2VPNRequest) GetCustomFields() map[string]interface{}`
+
+GetCustomFields returns the CustomFields field if non-nil, zero value otherwise.
+
+### GetCustomFieldsOk
+
+`func (o *L2VPNRequest) GetCustomFieldsOk() (*map[string]interface{}, bool)`
+
+GetCustomFieldsOk returns a tuple with the CustomFields field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomFields
+
+`func (o *L2VPNRequest) SetCustomFields(v map[string]interface{})`
+
+SetCustomFields sets CustomFields field to given value.
+
+### HasCustomFields
+
+`func (o *L2VPNRequest) HasCustomFields() bool`
+
+HasCustomFields returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

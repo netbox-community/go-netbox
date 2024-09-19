@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
+**DisplayUrl** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
 **Ssid** | Pointer to **string** |  | [optional] 
 
@@ -13,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewNestedWirelessLink
 
-`func NewNestedWirelessLink(id int32, url string, display string, ) *NestedWirelessLink`
+`func NewNestedWirelessLink(id int32, url string, displayUrl string, display string, ) *NestedWirelessLink`
 
 NewNestedWirelessLink instantiates a new NestedWirelessLink object
 This constructor will assign default values to properties that have it defined,
@@ -66,6 +67,26 @@ and a boolean to check if the value has been set.
 `func (o *NestedWirelessLink) SetUrl(v string)`
 
 SetUrl sets Url field to given value.
+
+
+### GetDisplayUrl
+
+`func (o *NestedWirelessLink) GetDisplayUrl() string`
+
+GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
+
+### GetDisplayUrlOk
+
+`func (o *NestedWirelessLink) GetDisplayUrlOk() (*string, bool)`
+
+GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayUrl
+
+`func (o *NestedWirelessLink) SetDisplayUrl(v string)`
+
+SetDisplayUrl sets DisplayUrl field to given value.
 
 
 ### GetDisplay

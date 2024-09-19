@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **AuthenticationMethod** | [**IKEProposalAuthenticationMethodValue**](IKEProposalAuthenticationMethodValue.md) |  | 
 **EncryptionAlgorithm** | [**IKEProposalEncryptionAlgorithmValue**](IKEProposalEncryptionAlgorithmValue.md) |  | 
-**AuthenticationAlgorithm** | [**IKEProposalAuthenticationAlgorithmValue**](IKEProposalAuthenticationAlgorithmValue.md) |  | 
+**AuthenticationAlgorithm** | Pointer to [**IKEProposalAuthenticationAlgorithmValue**](IKEProposalAuthenticationAlgorithmValue.md) |  | [optional] 
 **Group** | [**IKEProposalGroupValue**](IKEProposalGroupValue.md) |  | 
 **SaLifetime** | Pointer to **NullableInt32** | Security association lifetime (in seconds) | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewIKEProposalRequest
 
-`func NewIKEProposalRequest(name string, authenticationMethod IKEProposalAuthenticationMethodValue, encryptionAlgorithm IKEProposalEncryptionAlgorithmValue, authenticationAlgorithm IKEProposalAuthenticationAlgorithmValue, group IKEProposalGroupValue, ) *IKEProposalRequest`
+`func NewIKEProposalRequest(name string, authenticationMethod IKEProposalAuthenticationMethodValue, encryptionAlgorithm IKEProposalEncryptionAlgorithmValue, group IKEProposalGroupValue, ) *IKEProposalRequest`
 
 NewIKEProposalRequest instantiates a new IKEProposalRequest object
 This constructor will assign default values to properties that have it defined,
@@ -138,6 +138,11 @@ and a boolean to check if the value has been set.
 
 SetAuthenticationAlgorithm sets AuthenticationAlgorithm field to given value.
 
+### HasAuthenticationAlgorithm
+
+`func (o *IKEProposalRequest) HasAuthenticationAlgorithm() bool`
+
+HasAuthenticationAlgorithm returns a boolean if a field has been set.
 
 ### GetGroup
 

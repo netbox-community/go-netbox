@@ -6,15 +6,16 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
+**DisplayUrl** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
 **Family** | [**AggregateFamily**](AggregateFamily.md) |  | 
 **Prefix** | **string** |  | 
-**Site** | Pointer to [**NullableSite**](Site.md) |  | [optional] 
-**Vrf** | Pointer to [**NullableVRF**](VRF.md) |  | [optional] 
-**Tenant** | Pointer to [**NullableTenant**](Tenant.md) |  | [optional] 
-**Vlan** | Pointer to [**NullableVLAN**](VLAN.md) |  | [optional] 
+**Site** | Pointer to [**NullableBriefSite**](BriefSite.md) |  | [optional] 
+**Vrf** | Pointer to [**NullableBriefVRF**](BriefVRF.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableBriefTenant**](BriefTenant.md) |  | [optional] 
+**Vlan** | Pointer to [**NullableBriefVLAN**](BriefVLAN.md) |  | [optional] 
 **Status** | Pointer to [**PrefixStatus**](PrefixStatus.md) |  | [optional] 
-**Role** | Pointer to [**NullableRole**](Role.md) |  | [optional] 
+**Role** | Pointer to [**NullableBriefRole**](BriefRole.md) |  | [optional] 
 **IsPool** | Pointer to **bool** | All IP addresses within this prefix are considered usable | [optional] 
 **MarkUtilized** | Pointer to **bool** | Treat as fully utilized | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -30,7 +31,7 @@ Name | Type | Description | Notes
 
 ### NewPrefix
 
-`func NewPrefix(id int32, url string, display string, family AggregateFamily, prefix string, created NullableTime, lastUpdated NullableTime, children int32, depth int32, ) *Prefix`
+`func NewPrefix(id int32, url string, displayUrl string, display string, family AggregateFamily, prefix string, created NullableTime, lastUpdated NullableTime, children int32, depth int32, ) *Prefix`
 
 NewPrefix instantiates a new Prefix object
 This constructor will assign default values to properties that have it defined,
@@ -83,6 +84,26 @@ and a boolean to check if the value has been set.
 `func (o *Prefix) SetUrl(v string)`
 
 SetUrl sets Url field to given value.
+
+
+### GetDisplayUrl
+
+`func (o *Prefix) GetDisplayUrl() string`
+
+GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
+
+### GetDisplayUrlOk
+
+`func (o *Prefix) GetDisplayUrlOk() (*string, bool)`
+
+GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayUrl
+
+`func (o *Prefix) SetDisplayUrl(v string)`
+
+SetDisplayUrl sets DisplayUrl field to given value.
 
 
 ### GetDisplay
@@ -147,20 +168,20 @@ SetPrefix sets Prefix field to given value.
 
 ### GetSite
 
-`func (o *Prefix) GetSite() Site`
+`func (o *Prefix) GetSite() BriefSite`
 
 GetSite returns the Site field if non-nil, zero value otherwise.
 
 ### GetSiteOk
 
-`func (o *Prefix) GetSiteOk() (*Site, bool)`
+`func (o *Prefix) GetSiteOk() (*BriefSite, bool)`
 
 GetSiteOk returns a tuple with the Site field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSite
 
-`func (o *Prefix) SetSite(v Site)`
+`func (o *Prefix) SetSite(v BriefSite)`
 
 SetSite sets Site field to given value.
 
@@ -182,20 +203,20 @@ HasSite returns a boolean if a field has been set.
 UnsetSite ensures that no value is present for Site, not even an explicit nil
 ### GetVrf
 
-`func (o *Prefix) GetVrf() VRF`
+`func (o *Prefix) GetVrf() BriefVRF`
 
 GetVrf returns the Vrf field if non-nil, zero value otherwise.
 
 ### GetVrfOk
 
-`func (o *Prefix) GetVrfOk() (*VRF, bool)`
+`func (o *Prefix) GetVrfOk() (*BriefVRF, bool)`
 
 GetVrfOk returns a tuple with the Vrf field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVrf
 
-`func (o *Prefix) SetVrf(v VRF)`
+`func (o *Prefix) SetVrf(v BriefVRF)`
 
 SetVrf sets Vrf field to given value.
 
@@ -217,20 +238,20 @@ HasVrf returns a boolean if a field has been set.
 UnsetVrf ensures that no value is present for Vrf, not even an explicit nil
 ### GetTenant
 
-`func (o *Prefix) GetTenant() Tenant`
+`func (o *Prefix) GetTenant() BriefTenant`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *Prefix) GetTenantOk() (*Tenant, bool)`
+`func (o *Prefix) GetTenantOk() (*BriefTenant, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *Prefix) SetTenant(v Tenant)`
+`func (o *Prefix) SetTenant(v BriefTenant)`
 
 SetTenant sets Tenant field to given value.
 
@@ -252,20 +273,20 @@ HasTenant returns a boolean if a field has been set.
 UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
 ### GetVlan
 
-`func (o *Prefix) GetVlan() VLAN`
+`func (o *Prefix) GetVlan() BriefVLAN`
 
 GetVlan returns the Vlan field if non-nil, zero value otherwise.
 
 ### GetVlanOk
 
-`func (o *Prefix) GetVlanOk() (*VLAN, bool)`
+`func (o *Prefix) GetVlanOk() (*BriefVLAN, bool)`
 
 GetVlanOk returns a tuple with the Vlan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVlan
 
-`func (o *Prefix) SetVlan(v VLAN)`
+`func (o *Prefix) SetVlan(v BriefVLAN)`
 
 SetVlan sets Vlan field to given value.
 
@@ -312,20 +333,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetRole
 
-`func (o *Prefix) GetRole() Role`
+`func (o *Prefix) GetRole() BriefRole`
 
 GetRole returns the Role field if non-nil, zero value otherwise.
 
 ### GetRoleOk
 
-`func (o *Prefix) GetRoleOk() (*Role, bool)`
+`func (o *Prefix) GetRoleOk() (*BriefRole, bool)`
 
 GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRole
 
-`func (o *Prefix) SetRole(v Role)`
+`func (o *Prefix) SetRole(v BriefRole)`
 
 SetRole sets Role field to given value.
 

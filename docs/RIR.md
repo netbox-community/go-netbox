@@ -6,17 +6,23 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
+**DisplayUrl** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
+**IsPrivate** | Pointer to **bool** | IP space managed by this RIR is considered private | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
+**Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
+**CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
+**Created** | **NullableTime** |  | [readonly] 
+**LastUpdated** | **NullableTime** |  | [readonly] 
 **AggregateCount** | **int64** |  | [readonly] 
 
 ## Methods
 
 ### NewRIR
 
-`func NewRIR(id int32, url string, display string, name string, slug string, aggregateCount int64, ) *RIR`
+`func NewRIR(id int32, url string, displayUrl string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, aggregateCount int64, ) *RIR`
 
 NewRIR instantiates a new RIR object
 This constructor will assign default values to properties that have it defined,
@@ -69,6 +75,26 @@ and a boolean to check if the value has been set.
 `func (o *RIR) SetUrl(v string)`
 
 SetUrl sets Url field to given value.
+
+
+### GetDisplayUrl
+
+`func (o *RIR) GetDisplayUrl() string`
+
+GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
+
+### GetDisplayUrlOk
+
+`func (o *RIR) GetDisplayUrlOk() (*string, bool)`
+
+GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayUrl
+
+`func (o *RIR) SetDisplayUrl(v string)`
+
+SetDisplayUrl sets DisplayUrl field to given value.
 
 
 ### GetDisplay
@@ -131,6 +157,31 @@ and a boolean to check if the value has been set.
 SetSlug sets Slug field to given value.
 
 
+### GetIsPrivate
+
+`func (o *RIR) GetIsPrivate() bool`
+
+GetIsPrivate returns the IsPrivate field if non-nil, zero value otherwise.
+
+### GetIsPrivateOk
+
+`func (o *RIR) GetIsPrivateOk() (*bool, bool)`
+
+GetIsPrivateOk returns a tuple with the IsPrivate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsPrivate
+
+`func (o *RIR) SetIsPrivate(v bool)`
+
+SetIsPrivate sets IsPrivate field to given value.
+
+### HasIsPrivate
+
+`func (o *RIR) HasIsPrivate() bool`
+
+HasIsPrivate returns a boolean if a field has been set.
+
 ### GetDescription
 
 `func (o *RIR) GetDescription() string`
@@ -156,6 +207,116 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### GetTags
+
+`func (o *RIR) GetTags() []NestedTag`
+
+GetTags returns the Tags field if non-nil, zero value otherwise.
+
+### GetTagsOk
+
+`func (o *RIR) GetTagsOk() (*[]NestedTag, bool)`
+
+GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTags
+
+`func (o *RIR) SetTags(v []NestedTag)`
+
+SetTags sets Tags field to given value.
+
+### HasTags
+
+`func (o *RIR) HasTags() bool`
+
+HasTags returns a boolean if a field has been set.
+
+### GetCustomFields
+
+`func (o *RIR) GetCustomFields() map[string]interface{}`
+
+GetCustomFields returns the CustomFields field if non-nil, zero value otherwise.
+
+### GetCustomFieldsOk
+
+`func (o *RIR) GetCustomFieldsOk() (*map[string]interface{}, bool)`
+
+GetCustomFieldsOk returns a tuple with the CustomFields field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomFields
+
+`func (o *RIR) SetCustomFields(v map[string]interface{})`
+
+SetCustomFields sets CustomFields field to given value.
+
+### HasCustomFields
+
+`func (o *RIR) HasCustomFields() bool`
+
+HasCustomFields returns a boolean if a field has been set.
+
+### GetCreated
+
+`func (o *RIR) GetCreated() time.Time`
+
+GetCreated returns the Created field if non-nil, zero value otherwise.
+
+### GetCreatedOk
+
+`func (o *RIR) GetCreatedOk() (*time.Time, bool)`
+
+GetCreatedOk returns a tuple with the Created field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreated
+
+`func (o *RIR) SetCreated(v time.Time)`
+
+SetCreated sets Created field to given value.
+
+
+### SetCreatedNil
+
+`func (o *RIR) SetCreatedNil(b bool)`
+
+ SetCreatedNil sets the value for Created to be an explicit nil
+
+### UnsetCreated
+`func (o *RIR) UnsetCreated()`
+
+UnsetCreated ensures that no value is present for Created, not even an explicit nil
+### GetLastUpdated
+
+`func (o *RIR) GetLastUpdated() time.Time`
+
+GetLastUpdated returns the LastUpdated field if non-nil, zero value otherwise.
+
+### GetLastUpdatedOk
+
+`func (o *RIR) GetLastUpdatedOk() (*time.Time, bool)`
+
+GetLastUpdatedOk returns a tuple with the LastUpdated field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastUpdated
+
+`func (o *RIR) SetLastUpdated(v time.Time)`
+
+SetLastUpdated sets LastUpdated field to given value.
+
+
+### SetLastUpdatedNil
+
+`func (o *RIR) SetLastUpdatedNil(b bool)`
+
+ SetLastUpdatedNil sets the value for LastUpdated to be an explicit nil
+
+### UnsetLastUpdated
+`func (o *RIR) UnsetLastUpdated()`
+
+UnsetLastUpdated ensures that no value is present for LastUpdated, not even an explicit nil
 ### GetAggregateCount
 
 `func (o *RIR) GetAggregateCount() int64`

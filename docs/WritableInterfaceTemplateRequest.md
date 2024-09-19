@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DeviceType** | Pointer to [**NullableDeviceTypeRequest**](DeviceTypeRequest.md) |  | [optional] 
-**ModuleType** | Pointer to [**NullableModuleTypeRequest**](ModuleTypeRequest.md) |  | [optional] 
+**DeviceType** | Pointer to [**NullableBriefDeviceTypeRequest**](BriefDeviceTypeRequest.md) |  | [optional] 
+**ModuleType** | Pointer to [**NullableBriefModuleTypeRequest**](BriefModuleTypeRequest.md) |  | [optional] 
 **Name** | **string** | {module} is accepted as a substitution for the module bay position when attached to a module type. | 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Type** | [**InterfaceTypeValue**](InterfaceTypeValue.md) |  | 
@@ -38,20 +38,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDeviceType
 
-`func (o *WritableInterfaceTemplateRequest) GetDeviceType() DeviceTypeRequest`
+`func (o *WritableInterfaceTemplateRequest) GetDeviceType() BriefDeviceTypeRequest`
 
 GetDeviceType returns the DeviceType field if non-nil, zero value otherwise.
 
 ### GetDeviceTypeOk
 
-`func (o *WritableInterfaceTemplateRequest) GetDeviceTypeOk() (*DeviceTypeRequest, bool)`
+`func (o *WritableInterfaceTemplateRequest) GetDeviceTypeOk() (*BriefDeviceTypeRequest, bool)`
 
 GetDeviceTypeOk returns a tuple with the DeviceType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeviceType
 
-`func (o *WritableInterfaceTemplateRequest) SetDeviceType(v DeviceTypeRequest)`
+`func (o *WritableInterfaceTemplateRequest) SetDeviceType(v BriefDeviceTypeRequest)`
 
 SetDeviceType sets DeviceType field to given value.
 
@@ -73,20 +73,20 @@ HasDeviceType returns a boolean if a field has been set.
 UnsetDeviceType ensures that no value is present for DeviceType, not even an explicit nil
 ### GetModuleType
 
-`func (o *WritableInterfaceTemplateRequest) GetModuleType() ModuleTypeRequest`
+`func (o *WritableInterfaceTemplateRequest) GetModuleType() BriefModuleTypeRequest`
 
 GetModuleType returns the ModuleType field if non-nil, zero value otherwise.
 
 ### GetModuleTypeOk
 
-`func (o *WritableInterfaceTemplateRequest) GetModuleTypeOk() (*ModuleTypeRequest, bool)`
+`func (o *WritableInterfaceTemplateRequest) GetModuleTypeOk() (*BriefModuleTypeRequest, bool)`
 
 GetModuleTypeOk returns a tuple with the ModuleType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetModuleType
 
-`func (o *WritableInterfaceTemplateRequest) SetModuleType(v ModuleTypeRequest)`
+`func (o *WritableInterfaceTemplateRequest) SetModuleType(v BriefModuleTypeRequest)`
 
 SetModuleType sets ModuleType field to given value.
 

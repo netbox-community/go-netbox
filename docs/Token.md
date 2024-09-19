@@ -6,8 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
+**DisplayUrl** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
-**User** | [**User**](User.md) |  | 
+**User** | [**BriefUser**](BriefUser.md) |  | 
 **Created** | **time.Time** |  | [readonly] 
 **Expires** | Pointer to **NullableTime** |  | [optional] 
 **LastUsed** | Pointer to **NullableTime** |  | [optional] 
@@ -19,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewToken
 
-`func NewToken(id int32, url string, display string, user User, created time.Time, ) *Token`
+`func NewToken(id int32, url string, displayUrl string, display string, user BriefUser, created time.Time, ) *Token`
 
 NewToken instantiates a new Token object
 This constructor will assign default values to properties that have it defined,
@@ -74,6 +75,26 @@ and a boolean to check if the value has been set.
 SetUrl sets Url field to given value.
 
 
+### GetDisplayUrl
+
+`func (o *Token) GetDisplayUrl() string`
+
+GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
+
+### GetDisplayUrlOk
+
+`func (o *Token) GetDisplayUrlOk() (*string, bool)`
+
+GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayUrl
+
+`func (o *Token) SetDisplayUrl(v string)`
+
+SetDisplayUrl sets DisplayUrl field to given value.
+
+
 ### GetDisplay
 
 `func (o *Token) GetDisplay() string`
@@ -96,20 +117,20 @@ SetDisplay sets Display field to given value.
 
 ### GetUser
 
-`func (o *Token) GetUser() User`
+`func (o *Token) GetUser() BriefUser`
 
 GetUser returns the User field if non-nil, zero value otherwise.
 
 ### GetUserOk
 
-`func (o *Token) GetUserOk() (*User, bool)`
+`func (o *Token) GetUserOk() (*BriefUser, bool)`
 
 GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUser
 
-`func (o *Token) SetUser(v User)`
+`func (o *Token) SetUser(v BriefUser)`
 
 SetUser sets User field to given value.
 

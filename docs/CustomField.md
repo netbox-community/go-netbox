@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
+**DisplayUrl** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
 **ObjectTypes** | **[]string** |  | 
 **Type** | [**CustomFieldType**](CustomFieldType.md) |  | 
@@ -15,18 +16,20 @@ Name | Type | Description | Notes
 **Label** | Pointer to **string** | Name of the field as displayed to users (if not provided, &#39;the field&#39;s name will be used) | [optional] 
 **GroupName** | Pointer to **string** | Custom fields within the same group will be displayed together | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**Required** | Pointer to **bool** | If true, this field is required when creating new objects or editing an existing object. | [optional] 
+**Required** | Pointer to **bool** | This field is required when creating new objects or editing an existing object. | [optional] 
+**Unique** | Pointer to **bool** | The value of this field must be unique for the assigned object | [optional] 
 **SearchWeight** | Pointer to **int32** | Weighting for search. Lower values are considered more important. Fields with a search weight of zero will be ignored. | [optional] 
 **FilterLogic** | Pointer to [**CustomFieldFilterLogic**](CustomFieldFilterLogic.md) |  | [optional] 
 **UiVisible** | Pointer to [**CustomFieldUiVisible**](CustomFieldUiVisible.md) |  | [optional] 
 **UiEditable** | Pointer to [**CustomFieldUiEditable**](CustomFieldUiEditable.md) |  | [optional] 
 **IsCloneable** | Pointer to **bool** | Replicate this value when cloning objects | [optional] 
 **Default** | Pointer to **interface{}** | Default value for the field (must be a JSON value). Encapsulate strings with double quotes (e.g. \&quot;Foo\&quot;). | [optional] 
+**RelatedObjectFilter** | Pointer to **interface{}** | Filter the object selection choices using a query_params dict (must be a JSON value).Encapsulate strings with double quotes (e.g. \&quot;Foo\&quot;). | [optional] 
 **Weight** | Pointer to **int32** | Fields with higher weights appear lower in a form. | [optional] 
 **ValidationMinimum** | Pointer to **NullableInt64** | Minimum allowed value (for numeric fields) | [optional] 
 **ValidationMaximum** | Pointer to **NullableInt64** | Maximum allowed value (for numeric fields) | [optional] 
 **ValidationRegex** | Pointer to **string** | Regular expression to enforce on text field values. Use ^ and $ to force matching of entire string. For example, &lt;code&gt;^[A-Z]{3}$&lt;/code&gt; will limit values to exactly three uppercase letters. | [optional] 
-**ChoiceSet** | Pointer to [**NullableCustomFieldChoiceSet**](CustomFieldChoiceSet.md) |  | [optional] 
+**ChoiceSet** | Pointer to [**NullableBriefCustomFieldChoiceSet**](BriefCustomFieldChoiceSet.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
@@ -35,7 +38,7 @@ Name | Type | Description | Notes
 
 ### NewCustomField
 
-`func NewCustomField(id int32, url string, display string, objectTypes []string, type_ CustomFieldType, dataType string, name string, created NullableTime, lastUpdated NullableTime, ) *CustomField`
+`func NewCustomField(id int32, url string, displayUrl string, display string, objectTypes []string, type_ CustomFieldType, dataType string, name string, created NullableTime, lastUpdated NullableTime, ) *CustomField`
 
 NewCustomField instantiates a new CustomField object
 This constructor will assign default values to properties that have it defined,
@@ -88,6 +91,26 @@ and a boolean to check if the value has been set.
 `func (o *CustomField) SetUrl(v string)`
 
 SetUrl sets Url field to given value.
+
+
+### GetDisplayUrl
+
+`func (o *CustomField) GetDisplayUrl() string`
+
+GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
+
+### GetDisplayUrlOk
+
+`func (o *CustomField) GetDisplayUrlOk() (*string, bool)`
+
+GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayUrl
+
+`func (o *CustomField) SetDisplayUrl(v string)`
+
+SetDisplayUrl sets DisplayUrl field to given value.
 
 
 ### GetDisplay
@@ -325,6 +348,31 @@ SetRequired sets Required field to given value.
 
 HasRequired returns a boolean if a field has been set.
 
+### GetUnique
+
+`func (o *CustomField) GetUnique() bool`
+
+GetUnique returns the Unique field if non-nil, zero value otherwise.
+
+### GetUniqueOk
+
+`func (o *CustomField) GetUniqueOk() (*bool, bool)`
+
+GetUniqueOk returns a tuple with the Unique field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUnique
+
+`func (o *CustomField) SetUnique(v bool)`
+
+SetUnique sets Unique field to given value.
+
+### HasUnique
+
+`func (o *CustomField) HasUnique() bool`
+
+HasUnique returns a boolean if a field has been set.
+
 ### GetSearchWeight
 
 `func (o *CustomField) GetSearchWeight() int32`
@@ -485,6 +533,41 @@ HasDefault returns a boolean if a field has been set.
 `func (o *CustomField) UnsetDefault()`
 
 UnsetDefault ensures that no value is present for Default, not even an explicit nil
+### GetRelatedObjectFilter
+
+`func (o *CustomField) GetRelatedObjectFilter() interface{}`
+
+GetRelatedObjectFilter returns the RelatedObjectFilter field if non-nil, zero value otherwise.
+
+### GetRelatedObjectFilterOk
+
+`func (o *CustomField) GetRelatedObjectFilterOk() (*interface{}, bool)`
+
+GetRelatedObjectFilterOk returns a tuple with the RelatedObjectFilter field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRelatedObjectFilter
+
+`func (o *CustomField) SetRelatedObjectFilter(v interface{})`
+
+SetRelatedObjectFilter sets RelatedObjectFilter field to given value.
+
+### HasRelatedObjectFilter
+
+`func (o *CustomField) HasRelatedObjectFilter() bool`
+
+HasRelatedObjectFilter returns a boolean if a field has been set.
+
+### SetRelatedObjectFilterNil
+
+`func (o *CustomField) SetRelatedObjectFilterNil(b bool)`
+
+ SetRelatedObjectFilterNil sets the value for RelatedObjectFilter to be an explicit nil
+
+### UnsetRelatedObjectFilter
+`func (o *CustomField) UnsetRelatedObjectFilter()`
+
+UnsetRelatedObjectFilter ensures that no value is present for RelatedObjectFilter, not even an explicit nil
 ### GetWeight
 
 `func (o *CustomField) GetWeight() int32`
@@ -607,20 +690,20 @@ HasValidationRegex returns a boolean if a field has been set.
 
 ### GetChoiceSet
 
-`func (o *CustomField) GetChoiceSet() CustomFieldChoiceSet`
+`func (o *CustomField) GetChoiceSet() BriefCustomFieldChoiceSet`
 
 GetChoiceSet returns the ChoiceSet field if non-nil, zero value otherwise.
 
 ### GetChoiceSetOk
 
-`func (o *CustomField) GetChoiceSetOk() (*CustomFieldChoiceSet, bool)`
+`func (o *CustomField) GetChoiceSetOk() (*BriefCustomFieldChoiceSet, bool)`
 
 GetChoiceSetOk returns a tuple with the ChoiceSet field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetChoiceSet
 
-`func (o *CustomField) SetChoiceSet(v CustomFieldChoiceSet)`
+`func (o *CustomField) SetChoiceSet(v BriefCustomFieldChoiceSet)`
 
 SetChoiceSet sets ChoiceSet field to given value.
 

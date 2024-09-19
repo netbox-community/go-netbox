@@ -5,31 +5,31 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **NullableString** |  | [optional] 
-**DeviceType** | Pointer to [**DeviceTypeRequest**](DeviceTypeRequest.md) |  | [optional] 
-**Role** | Pointer to [**DeviceRoleRequest**](DeviceRoleRequest.md) |  | [optional] 
-**Tenant** | Pointer to [**NullableTenantRequest**](TenantRequest.md) |  | [optional] 
-**Platform** | Pointer to [**NullablePlatformRequest**](PlatformRequest.md) |  | [optional] 
+**DeviceType** | Pointer to [**BriefDeviceTypeRequest**](BriefDeviceTypeRequest.md) |  | [optional] 
+**Role** | Pointer to [**BriefDeviceRoleRequest**](BriefDeviceRoleRequest.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
+**Platform** | Pointer to [**NullableBriefPlatformRequest**](BriefPlatformRequest.md) |  | [optional] 
 **Serial** | Pointer to **string** | Chassis serial number, assigned by the manufacturer | [optional] 
 **AssetTag** | Pointer to **NullableString** | A unique tag used to identify this device | [optional] 
-**Site** | Pointer to [**SiteRequest**](SiteRequest.md) |  | [optional] 
-**Location** | Pointer to [**NullableLocationRequest**](LocationRequest.md) |  | [optional] 
-**Rack** | Pointer to [**NullableRackRequest**](RackRequest.md) |  | [optional] 
+**Site** | Pointer to [**BriefSiteRequest**](BriefSiteRequest.md) |  | [optional] 
+**Location** | Pointer to [**NullableBriefLocationRequest**](BriefLocationRequest.md) |  | [optional] 
+**Rack** | Pointer to [**NullableBriefRackRequest**](BriefRackRequest.md) |  | [optional] 
 **Position** | Pointer to **NullableFloat64** |  | [optional] 
 **Face** | Pointer to [**RackFace1**](RackFace1.md) |  | [optional] 
 **Latitude** | Pointer to **NullableFloat64** | GPS coordinate in decimal format (xx.yyyyyy) | [optional] 
 **Longitude** | Pointer to **NullableFloat64** | GPS coordinate in decimal format (xx.yyyyyy) | [optional] 
 **Status** | Pointer to [**DeviceStatusValue**](DeviceStatusValue.md) |  | [optional] 
 **Airflow** | Pointer to [**DeviceAirflowValue**](DeviceAirflowValue.md) |  | [optional] 
-**PrimaryIp4** | Pointer to [**NullableIPAddressRequest**](IPAddressRequest.md) |  | [optional] 
-**PrimaryIp6** | Pointer to [**NullableIPAddressRequest**](IPAddressRequest.md) |  | [optional] 
-**OobIp** | Pointer to [**NullableIPAddressRequest**](IPAddressRequest.md) |  | [optional] 
-**Cluster** | Pointer to [**NullableClusterRequest**](ClusterRequest.md) |  | [optional] 
-**VirtualChassis** | Pointer to [**NullableVirtualChassisRequest**](VirtualChassisRequest.md) |  | [optional] 
+**PrimaryIp4** | Pointer to [**NullableBriefIPAddressRequest**](BriefIPAddressRequest.md) |  | [optional] 
+**PrimaryIp6** | Pointer to [**NullableBriefIPAddressRequest**](BriefIPAddressRequest.md) |  | [optional] 
+**OobIp** | Pointer to [**NullableBriefIPAddressRequest**](BriefIPAddressRequest.md) |  | [optional] 
+**Cluster** | Pointer to [**NullableBriefClusterRequest**](BriefClusterRequest.md) |  | [optional] 
+**VirtualChassis** | Pointer to [**NullableBriefVirtualChassisRequest**](BriefVirtualChassisRequest.md) |  | [optional] 
 **VcPosition** | Pointer to **NullableInt32** |  | [optional] 
 **VcPriority** | Pointer to **NullableInt32** | Virtual chassis master election priority | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
-**ConfigTemplate** | Pointer to [**NullableConfigTemplateRequest**](ConfigTemplateRequest.md) |  | [optional] 
+**ConfigTemplate** | Pointer to [**NullableBriefConfigTemplateRequest**](BriefConfigTemplateRequest.md) |  | [optional] 
 **LocalContextData** | Pointer to **interface{}** | Local config context data takes precedence over source contexts in the final rendered config context | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -90,20 +90,20 @@ HasName returns a boolean if a field has been set.
 UnsetName ensures that no value is present for Name, not even an explicit nil
 ### GetDeviceType
 
-`func (o *PatchedWritableDeviceWithConfigContextRequest) GetDeviceType() DeviceTypeRequest`
+`func (o *PatchedWritableDeviceWithConfigContextRequest) GetDeviceType() BriefDeviceTypeRequest`
 
 GetDeviceType returns the DeviceType field if non-nil, zero value otherwise.
 
 ### GetDeviceTypeOk
 
-`func (o *PatchedWritableDeviceWithConfigContextRequest) GetDeviceTypeOk() (*DeviceTypeRequest, bool)`
+`func (o *PatchedWritableDeviceWithConfigContextRequest) GetDeviceTypeOk() (*BriefDeviceTypeRequest, bool)`
 
 GetDeviceTypeOk returns a tuple with the DeviceType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeviceType
 
-`func (o *PatchedWritableDeviceWithConfigContextRequest) SetDeviceType(v DeviceTypeRequest)`
+`func (o *PatchedWritableDeviceWithConfigContextRequest) SetDeviceType(v BriefDeviceTypeRequest)`
 
 SetDeviceType sets DeviceType field to given value.
 
@@ -115,20 +115,20 @@ HasDeviceType returns a boolean if a field has been set.
 
 ### GetRole
 
-`func (o *PatchedWritableDeviceWithConfigContextRequest) GetRole() DeviceRoleRequest`
+`func (o *PatchedWritableDeviceWithConfigContextRequest) GetRole() BriefDeviceRoleRequest`
 
 GetRole returns the Role field if non-nil, zero value otherwise.
 
 ### GetRoleOk
 
-`func (o *PatchedWritableDeviceWithConfigContextRequest) GetRoleOk() (*DeviceRoleRequest, bool)`
+`func (o *PatchedWritableDeviceWithConfigContextRequest) GetRoleOk() (*BriefDeviceRoleRequest, bool)`
 
 GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRole
 
-`func (o *PatchedWritableDeviceWithConfigContextRequest) SetRole(v DeviceRoleRequest)`
+`func (o *PatchedWritableDeviceWithConfigContextRequest) SetRole(v BriefDeviceRoleRequest)`
 
 SetRole sets Role field to given value.
 
@@ -140,20 +140,20 @@ HasRole returns a boolean if a field has been set.
 
 ### GetTenant
 
-`func (o *PatchedWritableDeviceWithConfigContextRequest) GetTenant() TenantRequest`
+`func (o *PatchedWritableDeviceWithConfigContextRequest) GetTenant() BriefTenantRequest`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *PatchedWritableDeviceWithConfigContextRequest) GetTenantOk() (*TenantRequest, bool)`
+`func (o *PatchedWritableDeviceWithConfigContextRequest) GetTenantOk() (*BriefTenantRequest, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *PatchedWritableDeviceWithConfigContextRequest) SetTenant(v TenantRequest)`
+`func (o *PatchedWritableDeviceWithConfigContextRequest) SetTenant(v BriefTenantRequest)`
 
 SetTenant sets Tenant field to given value.
 
@@ -175,20 +175,20 @@ HasTenant returns a boolean if a field has been set.
 UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
 ### GetPlatform
 
-`func (o *PatchedWritableDeviceWithConfigContextRequest) GetPlatform() PlatformRequest`
+`func (o *PatchedWritableDeviceWithConfigContextRequest) GetPlatform() BriefPlatformRequest`
 
 GetPlatform returns the Platform field if non-nil, zero value otherwise.
 
 ### GetPlatformOk
 
-`func (o *PatchedWritableDeviceWithConfigContextRequest) GetPlatformOk() (*PlatformRequest, bool)`
+`func (o *PatchedWritableDeviceWithConfigContextRequest) GetPlatformOk() (*BriefPlatformRequest, bool)`
 
 GetPlatformOk returns a tuple with the Platform field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlatform
 
-`func (o *PatchedWritableDeviceWithConfigContextRequest) SetPlatform(v PlatformRequest)`
+`func (o *PatchedWritableDeviceWithConfigContextRequest) SetPlatform(v BriefPlatformRequest)`
 
 SetPlatform sets Platform field to given value.
 
@@ -270,20 +270,20 @@ HasAssetTag returns a boolean if a field has been set.
 UnsetAssetTag ensures that no value is present for AssetTag, not even an explicit nil
 ### GetSite
 
-`func (o *PatchedWritableDeviceWithConfigContextRequest) GetSite() SiteRequest`
+`func (o *PatchedWritableDeviceWithConfigContextRequest) GetSite() BriefSiteRequest`
 
 GetSite returns the Site field if non-nil, zero value otherwise.
 
 ### GetSiteOk
 
-`func (o *PatchedWritableDeviceWithConfigContextRequest) GetSiteOk() (*SiteRequest, bool)`
+`func (o *PatchedWritableDeviceWithConfigContextRequest) GetSiteOk() (*BriefSiteRequest, bool)`
 
 GetSiteOk returns a tuple with the Site field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSite
 
-`func (o *PatchedWritableDeviceWithConfigContextRequest) SetSite(v SiteRequest)`
+`func (o *PatchedWritableDeviceWithConfigContextRequest) SetSite(v BriefSiteRequest)`
 
 SetSite sets Site field to given value.
 
@@ -295,20 +295,20 @@ HasSite returns a boolean if a field has been set.
 
 ### GetLocation
 
-`func (o *PatchedWritableDeviceWithConfigContextRequest) GetLocation() LocationRequest`
+`func (o *PatchedWritableDeviceWithConfigContextRequest) GetLocation() BriefLocationRequest`
 
 GetLocation returns the Location field if non-nil, zero value otherwise.
 
 ### GetLocationOk
 
-`func (o *PatchedWritableDeviceWithConfigContextRequest) GetLocationOk() (*LocationRequest, bool)`
+`func (o *PatchedWritableDeviceWithConfigContextRequest) GetLocationOk() (*BriefLocationRequest, bool)`
 
 GetLocationOk returns a tuple with the Location field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLocation
 
-`func (o *PatchedWritableDeviceWithConfigContextRequest) SetLocation(v LocationRequest)`
+`func (o *PatchedWritableDeviceWithConfigContextRequest) SetLocation(v BriefLocationRequest)`
 
 SetLocation sets Location field to given value.
 
@@ -330,20 +330,20 @@ HasLocation returns a boolean if a field has been set.
 UnsetLocation ensures that no value is present for Location, not even an explicit nil
 ### GetRack
 
-`func (o *PatchedWritableDeviceWithConfigContextRequest) GetRack() RackRequest`
+`func (o *PatchedWritableDeviceWithConfigContextRequest) GetRack() BriefRackRequest`
 
 GetRack returns the Rack field if non-nil, zero value otherwise.
 
 ### GetRackOk
 
-`func (o *PatchedWritableDeviceWithConfigContextRequest) GetRackOk() (*RackRequest, bool)`
+`func (o *PatchedWritableDeviceWithConfigContextRequest) GetRackOk() (*BriefRackRequest, bool)`
 
 GetRackOk returns a tuple with the Rack field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRack
 
-`func (o *PatchedWritableDeviceWithConfigContextRequest) SetRack(v RackRequest)`
+`func (o *PatchedWritableDeviceWithConfigContextRequest) SetRack(v BriefRackRequest)`
 
 SetRack sets Rack field to given value.
 
@@ -545,20 +545,20 @@ HasAirflow returns a boolean if a field has been set.
 
 ### GetPrimaryIp4
 
-`func (o *PatchedWritableDeviceWithConfigContextRequest) GetPrimaryIp4() IPAddressRequest`
+`func (o *PatchedWritableDeviceWithConfigContextRequest) GetPrimaryIp4() BriefIPAddressRequest`
 
 GetPrimaryIp4 returns the PrimaryIp4 field if non-nil, zero value otherwise.
 
 ### GetPrimaryIp4Ok
 
-`func (o *PatchedWritableDeviceWithConfigContextRequest) GetPrimaryIp4Ok() (*IPAddressRequest, bool)`
+`func (o *PatchedWritableDeviceWithConfigContextRequest) GetPrimaryIp4Ok() (*BriefIPAddressRequest, bool)`
 
 GetPrimaryIp4Ok returns a tuple with the PrimaryIp4 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrimaryIp4
 
-`func (o *PatchedWritableDeviceWithConfigContextRequest) SetPrimaryIp4(v IPAddressRequest)`
+`func (o *PatchedWritableDeviceWithConfigContextRequest) SetPrimaryIp4(v BriefIPAddressRequest)`
 
 SetPrimaryIp4 sets PrimaryIp4 field to given value.
 
@@ -580,20 +580,20 @@ HasPrimaryIp4 returns a boolean if a field has been set.
 UnsetPrimaryIp4 ensures that no value is present for PrimaryIp4, not even an explicit nil
 ### GetPrimaryIp6
 
-`func (o *PatchedWritableDeviceWithConfigContextRequest) GetPrimaryIp6() IPAddressRequest`
+`func (o *PatchedWritableDeviceWithConfigContextRequest) GetPrimaryIp6() BriefIPAddressRequest`
 
 GetPrimaryIp6 returns the PrimaryIp6 field if non-nil, zero value otherwise.
 
 ### GetPrimaryIp6Ok
 
-`func (o *PatchedWritableDeviceWithConfigContextRequest) GetPrimaryIp6Ok() (*IPAddressRequest, bool)`
+`func (o *PatchedWritableDeviceWithConfigContextRequest) GetPrimaryIp6Ok() (*BriefIPAddressRequest, bool)`
 
 GetPrimaryIp6Ok returns a tuple with the PrimaryIp6 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrimaryIp6
 
-`func (o *PatchedWritableDeviceWithConfigContextRequest) SetPrimaryIp6(v IPAddressRequest)`
+`func (o *PatchedWritableDeviceWithConfigContextRequest) SetPrimaryIp6(v BriefIPAddressRequest)`
 
 SetPrimaryIp6 sets PrimaryIp6 field to given value.
 
@@ -615,20 +615,20 @@ HasPrimaryIp6 returns a boolean if a field has been set.
 UnsetPrimaryIp6 ensures that no value is present for PrimaryIp6, not even an explicit nil
 ### GetOobIp
 
-`func (o *PatchedWritableDeviceWithConfigContextRequest) GetOobIp() IPAddressRequest`
+`func (o *PatchedWritableDeviceWithConfigContextRequest) GetOobIp() BriefIPAddressRequest`
 
 GetOobIp returns the OobIp field if non-nil, zero value otherwise.
 
 ### GetOobIpOk
 
-`func (o *PatchedWritableDeviceWithConfigContextRequest) GetOobIpOk() (*IPAddressRequest, bool)`
+`func (o *PatchedWritableDeviceWithConfigContextRequest) GetOobIpOk() (*BriefIPAddressRequest, bool)`
 
 GetOobIpOk returns a tuple with the OobIp field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOobIp
 
-`func (o *PatchedWritableDeviceWithConfigContextRequest) SetOobIp(v IPAddressRequest)`
+`func (o *PatchedWritableDeviceWithConfigContextRequest) SetOobIp(v BriefIPAddressRequest)`
 
 SetOobIp sets OobIp field to given value.
 
@@ -650,20 +650,20 @@ HasOobIp returns a boolean if a field has been set.
 UnsetOobIp ensures that no value is present for OobIp, not even an explicit nil
 ### GetCluster
 
-`func (o *PatchedWritableDeviceWithConfigContextRequest) GetCluster() ClusterRequest`
+`func (o *PatchedWritableDeviceWithConfigContextRequest) GetCluster() BriefClusterRequest`
 
 GetCluster returns the Cluster field if non-nil, zero value otherwise.
 
 ### GetClusterOk
 
-`func (o *PatchedWritableDeviceWithConfigContextRequest) GetClusterOk() (*ClusterRequest, bool)`
+`func (o *PatchedWritableDeviceWithConfigContextRequest) GetClusterOk() (*BriefClusterRequest, bool)`
 
 GetClusterOk returns a tuple with the Cluster field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCluster
 
-`func (o *PatchedWritableDeviceWithConfigContextRequest) SetCluster(v ClusterRequest)`
+`func (o *PatchedWritableDeviceWithConfigContextRequest) SetCluster(v BriefClusterRequest)`
 
 SetCluster sets Cluster field to given value.
 
@@ -685,20 +685,20 @@ HasCluster returns a boolean if a field has been set.
 UnsetCluster ensures that no value is present for Cluster, not even an explicit nil
 ### GetVirtualChassis
 
-`func (o *PatchedWritableDeviceWithConfigContextRequest) GetVirtualChassis() VirtualChassisRequest`
+`func (o *PatchedWritableDeviceWithConfigContextRequest) GetVirtualChassis() BriefVirtualChassisRequest`
 
 GetVirtualChassis returns the VirtualChassis field if non-nil, zero value otherwise.
 
 ### GetVirtualChassisOk
 
-`func (o *PatchedWritableDeviceWithConfigContextRequest) GetVirtualChassisOk() (*VirtualChassisRequest, bool)`
+`func (o *PatchedWritableDeviceWithConfigContextRequest) GetVirtualChassisOk() (*BriefVirtualChassisRequest, bool)`
 
 GetVirtualChassisOk returns a tuple with the VirtualChassis field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVirtualChassis
 
-`func (o *PatchedWritableDeviceWithConfigContextRequest) SetVirtualChassis(v VirtualChassisRequest)`
+`func (o *PatchedWritableDeviceWithConfigContextRequest) SetVirtualChassis(v BriefVirtualChassisRequest)`
 
 SetVirtualChassis sets VirtualChassis field to given value.
 
@@ -840,20 +840,20 @@ HasComments returns a boolean if a field has been set.
 
 ### GetConfigTemplate
 
-`func (o *PatchedWritableDeviceWithConfigContextRequest) GetConfigTemplate() ConfigTemplateRequest`
+`func (o *PatchedWritableDeviceWithConfigContextRequest) GetConfigTemplate() BriefConfigTemplateRequest`
 
 GetConfigTemplate returns the ConfigTemplate field if non-nil, zero value otherwise.
 
 ### GetConfigTemplateOk
 
-`func (o *PatchedWritableDeviceWithConfigContextRequest) GetConfigTemplateOk() (*ConfigTemplateRequest, bool)`
+`func (o *PatchedWritableDeviceWithConfigContextRequest) GetConfigTemplateOk() (*BriefConfigTemplateRequest, bool)`
 
 GetConfigTemplateOk returns a tuple with the ConfigTemplate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfigTemplate
 
-`func (o *PatchedWritableDeviceWithConfigContextRequest) SetConfigTemplate(v ConfigTemplateRequest)`
+`func (o *PatchedWritableDeviceWithConfigContextRequest) SetConfigTemplate(v BriefConfigTemplateRequest)`
 
 SetConfigTemplate sets ConfigTemplate field to given value.
 

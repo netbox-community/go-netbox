@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 set -euo pipefail
-
+set -x
 NETBOX_VERSION="$1"
 NETBOX_DOCKER_VERSION="$2"
 

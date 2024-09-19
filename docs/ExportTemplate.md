@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
+**DisplayUrl** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
 **ObjectTypes** | **[]string** |  | 
 **Name** | **string** |  | 
@@ -14,9 +15,9 @@ Name | Type | Description | Notes
 **MimeType** | Pointer to **string** | Defaults to &lt;code&gt;text/plain; charset&#x3D;utf-8&lt;/code&gt; | [optional] 
 **FileExtension** | Pointer to **string** | Extension to append to the rendered filename | [optional] 
 **AsAttachment** | Pointer to **bool** | Download file as attachment | [optional] 
-**DataSource** | Pointer to [**DataSource**](DataSource.md) |  | [optional] 
+**DataSource** | Pointer to [**BriefDataSource**](BriefDataSource.md) |  | [optional] 
 **DataPath** | **string** | Path to remote file (relative to data source root) | [readonly] 
-**DataFile** | [**DataFile**](DataFile.md) |  | [readonly] 
+**DataFile** | [**BriefDataFile**](BriefDataFile.md) |  | [readonly] 
 **DataSynced** | **NullableTime** |  | [readonly] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
@@ -25,7 +26,7 @@ Name | Type | Description | Notes
 
 ### NewExportTemplate
 
-`func NewExportTemplate(id int32, url string, display string, objectTypes []string, name string, templateCode string, dataPath string, dataFile DataFile, dataSynced NullableTime, created NullableTime, lastUpdated NullableTime, ) *ExportTemplate`
+`func NewExportTemplate(id int32, url string, displayUrl string, display string, objectTypes []string, name string, templateCode string, dataPath string, dataFile BriefDataFile, dataSynced NullableTime, created NullableTime, lastUpdated NullableTime, ) *ExportTemplate`
 
 NewExportTemplate instantiates a new ExportTemplate object
 This constructor will assign default values to properties that have it defined,
@@ -78,6 +79,26 @@ and a boolean to check if the value has been set.
 `func (o *ExportTemplate) SetUrl(v string)`
 
 SetUrl sets Url field to given value.
+
+
+### GetDisplayUrl
+
+`func (o *ExportTemplate) GetDisplayUrl() string`
+
+GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
+
+### GetDisplayUrlOk
+
+`func (o *ExportTemplate) GetDisplayUrlOk() (*string, bool)`
+
+GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayUrl
+
+`func (o *ExportTemplate) SetDisplayUrl(v string)`
+
+SetDisplayUrl sets DisplayUrl field to given value.
 
 
 ### GetDisplay
@@ -262,20 +283,20 @@ HasAsAttachment returns a boolean if a field has been set.
 
 ### GetDataSource
 
-`func (o *ExportTemplate) GetDataSource() DataSource`
+`func (o *ExportTemplate) GetDataSource() BriefDataSource`
 
 GetDataSource returns the DataSource field if non-nil, zero value otherwise.
 
 ### GetDataSourceOk
 
-`func (o *ExportTemplate) GetDataSourceOk() (*DataSource, bool)`
+`func (o *ExportTemplate) GetDataSourceOk() (*BriefDataSource, bool)`
 
 GetDataSourceOk returns a tuple with the DataSource field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDataSource
 
-`func (o *ExportTemplate) SetDataSource(v DataSource)`
+`func (o *ExportTemplate) SetDataSource(v BriefDataSource)`
 
 SetDataSource sets DataSource field to given value.
 
@@ -307,20 +328,20 @@ SetDataPath sets DataPath field to given value.
 
 ### GetDataFile
 
-`func (o *ExportTemplate) GetDataFile() DataFile`
+`func (o *ExportTemplate) GetDataFile() BriefDataFile`
 
 GetDataFile returns the DataFile field if non-nil, zero value otherwise.
 
 ### GetDataFileOk
 
-`func (o *ExportTemplate) GetDataFileOk() (*DataFile, bool)`
+`func (o *ExportTemplate) GetDataFileOk() (*BriefDataFile, bool)`
 
 GetDataFileOk returns a tuple with the DataFile field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDataFile
 
-`func (o *ExportTemplate) SetDataFile(v DataFile)`
+`func (o *ExportTemplate) SetDataFile(v BriefDataFile)`
 
 SetDataFile sets DataFile field to given value.
 

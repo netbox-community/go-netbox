@@ -6,14 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
+**DisplayUrl** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
 **Name** | **string** |  | 
-**Device** | [**Device**](Device.md) |  | 
+**Device** | [**BriefDevice**](BriefDevice.md) |  | 
 **Identifier** | Pointer to **NullableInt32** |  | [optional] 
-**Tenant** | Pointer to [**NullableTenant**](Tenant.md) |  | [optional] 
-**PrimaryIp** | [**NullableIPAddress**](IPAddress.md) |  | [readonly] 
-**PrimaryIp4** | Pointer to [**NullableIPAddress**](IPAddress.md) |  | [optional] 
-**PrimaryIp6** | Pointer to [**NullableIPAddress**](IPAddress.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableBriefTenant**](BriefTenant.md) |  | [optional] 
+**PrimaryIp** | [**NullableBriefIPAddress**](BriefIPAddress.md) |  | [readonly] 
+**PrimaryIp4** | Pointer to [**NullableBriefIPAddress**](BriefIPAddress.md) |  | [optional] 
+**PrimaryIp6** | Pointer to [**NullableBriefIPAddress**](BriefIPAddress.md) |  | [optional] 
 **Status** | [**VirtualDeviceContextStatus**](VirtualDeviceContextStatus.md) |  | 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
@@ -27,7 +28,7 @@ Name | Type | Description | Notes
 
 ### NewVirtualDeviceContext
 
-`func NewVirtualDeviceContext(id int32, url string, display string, name string, device Device, primaryIp NullableIPAddress, status VirtualDeviceContextStatus, created NullableTime, lastUpdated NullableTime, interfaceCount int64, ) *VirtualDeviceContext`
+`func NewVirtualDeviceContext(id int32, url string, displayUrl string, display string, name string, device BriefDevice, primaryIp NullableBriefIPAddress, status VirtualDeviceContextStatus, created NullableTime, lastUpdated NullableTime, interfaceCount int64, ) *VirtualDeviceContext`
 
 NewVirtualDeviceContext instantiates a new VirtualDeviceContext object
 This constructor will assign default values to properties that have it defined,
@@ -82,6 +83,26 @@ and a boolean to check if the value has been set.
 SetUrl sets Url field to given value.
 
 
+### GetDisplayUrl
+
+`func (o *VirtualDeviceContext) GetDisplayUrl() string`
+
+GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
+
+### GetDisplayUrlOk
+
+`func (o *VirtualDeviceContext) GetDisplayUrlOk() (*string, bool)`
+
+GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayUrl
+
+`func (o *VirtualDeviceContext) SetDisplayUrl(v string)`
+
+SetDisplayUrl sets DisplayUrl field to given value.
+
+
 ### GetDisplay
 
 `func (o *VirtualDeviceContext) GetDisplay() string`
@@ -124,20 +145,20 @@ SetName sets Name field to given value.
 
 ### GetDevice
 
-`func (o *VirtualDeviceContext) GetDevice() Device`
+`func (o *VirtualDeviceContext) GetDevice() BriefDevice`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *VirtualDeviceContext) GetDeviceOk() (*Device, bool)`
+`func (o *VirtualDeviceContext) GetDeviceOk() (*BriefDevice, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *VirtualDeviceContext) SetDevice(v Device)`
+`func (o *VirtualDeviceContext) SetDevice(v BriefDevice)`
 
 SetDevice sets Device field to given value.
 
@@ -179,20 +200,20 @@ HasIdentifier returns a boolean if a field has been set.
 UnsetIdentifier ensures that no value is present for Identifier, not even an explicit nil
 ### GetTenant
 
-`func (o *VirtualDeviceContext) GetTenant() Tenant`
+`func (o *VirtualDeviceContext) GetTenant() BriefTenant`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *VirtualDeviceContext) GetTenantOk() (*Tenant, bool)`
+`func (o *VirtualDeviceContext) GetTenantOk() (*BriefTenant, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *VirtualDeviceContext) SetTenant(v Tenant)`
+`func (o *VirtualDeviceContext) SetTenant(v BriefTenant)`
 
 SetTenant sets Tenant field to given value.
 
@@ -214,20 +235,20 @@ HasTenant returns a boolean if a field has been set.
 UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
 ### GetPrimaryIp
 
-`func (o *VirtualDeviceContext) GetPrimaryIp() IPAddress`
+`func (o *VirtualDeviceContext) GetPrimaryIp() BriefIPAddress`
 
 GetPrimaryIp returns the PrimaryIp field if non-nil, zero value otherwise.
 
 ### GetPrimaryIpOk
 
-`func (o *VirtualDeviceContext) GetPrimaryIpOk() (*IPAddress, bool)`
+`func (o *VirtualDeviceContext) GetPrimaryIpOk() (*BriefIPAddress, bool)`
 
 GetPrimaryIpOk returns a tuple with the PrimaryIp field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrimaryIp
 
-`func (o *VirtualDeviceContext) SetPrimaryIp(v IPAddress)`
+`func (o *VirtualDeviceContext) SetPrimaryIp(v BriefIPAddress)`
 
 SetPrimaryIp sets PrimaryIp field to given value.
 
@@ -244,20 +265,20 @@ SetPrimaryIp sets PrimaryIp field to given value.
 UnsetPrimaryIp ensures that no value is present for PrimaryIp, not even an explicit nil
 ### GetPrimaryIp4
 
-`func (o *VirtualDeviceContext) GetPrimaryIp4() IPAddress`
+`func (o *VirtualDeviceContext) GetPrimaryIp4() BriefIPAddress`
 
 GetPrimaryIp4 returns the PrimaryIp4 field if non-nil, zero value otherwise.
 
 ### GetPrimaryIp4Ok
 
-`func (o *VirtualDeviceContext) GetPrimaryIp4Ok() (*IPAddress, bool)`
+`func (o *VirtualDeviceContext) GetPrimaryIp4Ok() (*BriefIPAddress, bool)`
 
 GetPrimaryIp4Ok returns a tuple with the PrimaryIp4 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrimaryIp4
 
-`func (o *VirtualDeviceContext) SetPrimaryIp4(v IPAddress)`
+`func (o *VirtualDeviceContext) SetPrimaryIp4(v BriefIPAddress)`
 
 SetPrimaryIp4 sets PrimaryIp4 field to given value.
 
@@ -279,20 +300,20 @@ HasPrimaryIp4 returns a boolean if a field has been set.
 UnsetPrimaryIp4 ensures that no value is present for PrimaryIp4, not even an explicit nil
 ### GetPrimaryIp6
 
-`func (o *VirtualDeviceContext) GetPrimaryIp6() IPAddress`
+`func (o *VirtualDeviceContext) GetPrimaryIp6() BriefIPAddress`
 
 GetPrimaryIp6 returns the PrimaryIp6 field if non-nil, zero value otherwise.
 
 ### GetPrimaryIp6Ok
 
-`func (o *VirtualDeviceContext) GetPrimaryIp6Ok() (*IPAddress, bool)`
+`func (o *VirtualDeviceContext) GetPrimaryIp6Ok() (*BriefIPAddress, bool)`
 
 GetPrimaryIp6Ok returns a tuple with the PrimaryIp6 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrimaryIp6
 
-`func (o *VirtualDeviceContext) SetPrimaryIp6(v IPAddress)`
+`func (o *VirtualDeviceContext) SetPrimaryIp6(v BriefIPAddress)`
 
 SetPrimaryIp6 sets PrimaryIp6 field to given value.
 

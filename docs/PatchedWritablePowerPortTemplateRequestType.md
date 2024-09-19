@@ -125,6 +125,8 @@
 
 * `NEMA_L21_30P` (value: `"nema-l21-30p"`)
 
+* `NEMA_L22_20P` (value: `"nema-l22-20p"`)
+
 * `NEMA_L22_30P` (value: `"nema-l22-30p"`)
 
 * `CS6361C` (value: `"cs6361c"`)

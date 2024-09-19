@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
+**DisplayUrl** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
@@ -21,7 +22,7 @@ Name | Type | Description | Notes
 
 ### NewInventoryItemRole
 
-`func NewInventoryItemRole(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, inventoryitemCount int64, ) *InventoryItemRole`
+`func NewInventoryItemRole(id int32, url string, displayUrl string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, inventoryitemCount int64, ) *InventoryItemRole`
 
 NewInventoryItemRole instantiates a new InventoryItemRole object
 This constructor will assign default values to properties that have it defined,
@@ -74,6 +75,26 @@ and a boolean to check if the value has been set.
 `func (o *InventoryItemRole) SetUrl(v string)`
 
 SetUrl sets Url field to given value.
+
+
+### GetDisplayUrl
+
+`func (o *InventoryItemRole) GetDisplayUrl() string`
+
+GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
+
+### GetDisplayUrlOk
+
+`func (o *InventoryItemRole) GetDisplayUrlOk() (*string, bool)`
+
+GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayUrl
+
+`func (o *InventoryItemRole) SetDisplayUrl(v string)`
+
+SetDisplayUrl sets DisplayUrl field to given value.
 
 
 ### GetDisplay

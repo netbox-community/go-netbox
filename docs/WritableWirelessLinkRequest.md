@@ -4,14 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**InterfaceA** | [**InterfaceRequest**](InterfaceRequest.md) |  | 
-**InterfaceB** | [**InterfaceRequest**](InterfaceRequest.md) |  | 
+**InterfaceA** | [**BriefInterfaceRequest**](BriefInterfaceRequest.md) |  | 
+**InterfaceB** | [**BriefInterfaceRequest**](BriefInterfaceRequest.md) |  | 
 **Ssid** | Pointer to **string** |  | [optional] 
-**Status** | Pointer to [**PatchedWritableCableRequestStatus**](PatchedWritableCableRequestStatus.md) |  | [optional] 
-**Tenant** | Pointer to [**NullableTenantRequest**](TenantRequest.md) |  | [optional] 
+**Status** | Pointer to [**CableStatusValue**](CableStatusValue.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
 **AuthType** | Pointer to [**AuthenticationType1**](AuthenticationType1.md) |  | [optional] 
 **AuthCipher** | Pointer to [**AuthenticationCipher**](AuthenticationCipher.md) |  | [optional] 
 **AuthPsk** | Pointer to **string** |  | [optional] 
+**Distance** | Pointer to **NullableFloat64** |  | [optional] 
+**DistanceUnit** | Pointer to [**PatchedWritableWirelessLinkRequestDistanceUnit**](PatchedWritableWirelessLinkRequestDistanceUnit.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
@@ -21,7 +23,7 @@ Name | Type | Description | Notes
 
 ### NewWritableWirelessLinkRequest
 
-`func NewWritableWirelessLinkRequest(interfaceA InterfaceRequest, interfaceB InterfaceRequest, ) *WritableWirelessLinkRequest`
+`func NewWritableWirelessLinkRequest(interfaceA BriefInterfaceRequest, interfaceB BriefInterfaceRequest, ) *WritableWirelessLinkRequest`
 
 NewWritableWirelessLinkRequest instantiates a new WritableWirelessLinkRequest object
 This constructor will assign default values to properties that have it defined,
@@ -38,40 +40,40 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetInterfaceA
 
-`func (o *WritableWirelessLinkRequest) GetInterfaceA() InterfaceRequest`
+`func (o *WritableWirelessLinkRequest) GetInterfaceA() BriefInterfaceRequest`
 
 GetInterfaceA returns the InterfaceA field if non-nil, zero value otherwise.
 
 ### GetInterfaceAOk
 
-`func (o *WritableWirelessLinkRequest) GetInterfaceAOk() (*InterfaceRequest, bool)`
+`func (o *WritableWirelessLinkRequest) GetInterfaceAOk() (*BriefInterfaceRequest, bool)`
 
 GetInterfaceAOk returns a tuple with the InterfaceA field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInterfaceA
 
-`func (o *WritableWirelessLinkRequest) SetInterfaceA(v InterfaceRequest)`
+`func (o *WritableWirelessLinkRequest) SetInterfaceA(v BriefInterfaceRequest)`
 
 SetInterfaceA sets InterfaceA field to given value.
 
 
 ### GetInterfaceB
 
-`func (o *WritableWirelessLinkRequest) GetInterfaceB() InterfaceRequest`
+`func (o *WritableWirelessLinkRequest) GetInterfaceB() BriefInterfaceRequest`
 
 GetInterfaceB returns the InterfaceB field if non-nil, zero value otherwise.
 
 ### GetInterfaceBOk
 
-`func (o *WritableWirelessLinkRequest) GetInterfaceBOk() (*InterfaceRequest, bool)`
+`func (o *WritableWirelessLinkRequest) GetInterfaceBOk() (*BriefInterfaceRequest, bool)`
 
 GetInterfaceBOk returns a tuple with the InterfaceB field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInterfaceB
 
-`func (o *WritableWirelessLinkRequest) SetInterfaceB(v InterfaceRequest)`
+`func (o *WritableWirelessLinkRequest) SetInterfaceB(v BriefInterfaceRequest)`
 
 SetInterfaceB sets InterfaceB field to given value.
 
@@ -103,20 +105,20 @@ HasSsid returns a boolean if a field has been set.
 
 ### GetStatus
 
-`func (o *WritableWirelessLinkRequest) GetStatus() PatchedWritableCableRequestStatus`
+`func (o *WritableWirelessLinkRequest) GetStatus() CableStatusValue`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *WritableWirelessLinkRequest) GetStatusOk() (*PatchedWritableCableRequestStatus, bool)`
+`func (o *WritableWirelessLinkRequest) GetStatusOk() (*CableStatusValue, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *WritableWirelessLinkRequest) SetStatus(v PatchedWritableCableRequestStatus)`
+`func (o *WritableWirelessLinkRequest) SetStatus(v CableStatusValue)`
 
 SetStatus sets Status field to given value.
 
@@ -128,20 +130,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetTenant
 
-`func (o *WritableWirelessLinkRequest) GetTenant() TenantRequest`
+`func (o *WritableWirelessLinkRequest) GetTenant() BriefTenantRequest`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *WritableWirelessLinkRequest) GetTenantOk() (*TenantRequest, bool)`
+`func (o *WritableWirelessLinkRequest) GetTenantOk() (*BriefTenantRequest, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *WritableWirelessLinkRequest) SetTenant(v TenantRequest)`
+`func (o *WritableWirelessLinkRequest) SetTenant(v BriefTenantRequest)`
 
 SetTenant sets Tenant field to given value.
 
@@ -235,6 +237,66 @@ SetAuthPsk sets AuthPsk field to given value.
 `func (o *WritableWirelessLinkRequest) HasAuthPsk() bool`
 
 HasAuthPsk returns a boolean if a field has been set.
+
+### GetDistance
+
+`func (o *WritableWirelessLinkRequest) GetDistance() float64`
+
+GetDistance returns the Distance field if non-nil, zero value otherwise.
+
+### GetDistanceOk
+
+`func (o *WritableWirelessLinkRequest) GetDistanceOk() (*float64, bool)`
+
+GetDistanceOk returns a tuple with the Distance field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDistance
+
+`func (o *WritableWirelessLinkRequest) SetDistance(v float64)`
+
+SetDistance sets Distance field to given value.
+
+### HasDistance
+
+`func (o *WritableWirelessLinkRequest) HasDistance() bool`
+
+HasDistance returns a boolean if a field has been set.
+
+### SetDistanceNil
+
+`func (o *WritableWirelessLinkRequest) SetDistanceNil(b bool)`
+
+ SetDistanceNil sets the value for Distance to be an explicit nil
+
+### UnsetDistance
+`func (o *WritableWirelessLinkRequest) UnsetDistance()`
+
+UnsetDistance ensures that no value is present for Distance, not even an explicit nil
+### GetDistanceUnit
+
+`func (o *WritableWirelessLinkRequest) GetDistanceUnit() PatchedWritableWirelessLinkRequestDistanceUnit`
+
+GetDistanceUnit returns the DistanceUnit field if non-nil, zero value otherwise.
+
+### GetDistanceUnitOk
+
+`func (o *WritableWirelessLinkRequest) GetDistanceUnitOk() (*PatchedWritableWirelessLinkRequestDistanceUnit, bool)`
+
+GetDistanceUnitOk returns a tuple with the DistanceUnit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDistanceUnit
+
+`func (o *WritableWirelessLinkRequest) SetDistanceUnit(v PatchedWritableWirelessLinkRequestDistanceUnit)`
+
+SetDistanceUnit sets DistanceUnit field to given value.
+
+### HasDistanceUnit
+
+`func (o *WritableWirelessLinkRequest) HasDistanceUnit() bool`
+
+HasDistanceUnit returns a boolean if a field has been set.
 
 ### GetDescription
 

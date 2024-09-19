@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Device** | Pointer to [**DeviceRequest**](DeviceRequest.md) |  | [optional] 
+**Device** | Pointer to [**BriefDeviceRequest**](BriefDeviceRequest.md) |  | [optional] 
 **Parent** | Pointer to **NullableInt32** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Label** | Pointer to **string** | Physical label | [optional] 
-**Role** | Pointer to [**NullableInventoryItemRoleRequest**](InventoryItemRoleRequest.md) |  | [optional] 
-**Manufacturer** | Pointer to [**NullableManufacturerRequest**](ManufacturerRequest.md) |  | [optional] 
+**Role** | Pointer to [**NullableBriefInventoryItemRoleRequest**](BriefInventoryItemRoleRequest.md) |  | [optional] 
+**Manufacturer** | Pointer to [**NullableBriefManufacturerRequest**](BriefManufacturerRequest.md) |  | [optional] 
 **PartId** | Pointer to **string** | Manufacturer-assigned part identifier | [optional] 
 **Serial** | Pointer to **string** |  | [optional] 
 **AssetTag** | Pointer to **NullableString** | A unique tag used to identify this item | [optional] 
@@ -41,20 +41,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDevice
 
-`func (o *PatchedInventoryItemRequest) GetDevice() DeviceRequest`
+`func (o *PatchedInventoryItemRequest) GetDevice() BriefDeviceRequest`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *PatchedInventoryItemRequest) GetDeviceOk() (*DeviceRequest, bool)`
+`func (o *PatchedInventoryItemRequest) GetDeviceOk() (*BriefDeviceRequest, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *PatchedInventoryItemRequest) SetDevice(v DeviceRequest)`
+`func (o *PatchedInventoryItemRequest) SetDevice(v BriefDeviceRequest)`
 
 SetDevice sets Device field to given value.
 
@@ -151,20 +151,20 @@ HasLabel returns a boolean if a field has been set.
 
 ### GetRole
 
-`func (o *PatchedInventoryItemRequest) GetRole() InventoryItemRoleRequest`
+`func (o *PatchedInventoryItemRequest) GetRole() BriefInventoryItemRoleRequest`
 
 GetRole returns the Role field if non-nil, zero value otherwise.
 
 ### GetRoleOk
 
-`func (o *PatchedInventoryItemRequest) GetRoleOk() (*InventoryItemRoleRequest, bool)`
+`func (o *PatchedInventoryItemRequest) GetRoleOk() (*BriefInventoryItemRoleRequest, bool)`
 
 GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRole
 
-`func (o *PatchedInventoryItemRequest) SetRole(v InventoryItemRoleRequest)`
+`func (o *PatchedInventoryItemRequest) SetRole(v BriefInventoryItemRoleRequest)`
 
 SetRole sets Role field to given value.
 
@@ -186,20 +186,20 @@ HasRole returns a boolean if a field has been set.
 UnsetRole ensures that no value is present for Role, not even an explicit nil
 ### GetManufacturer
 
-`func (o *PatchedInventoryItemRequest) GetManufacturer() ManufacturerRequest`
+`func (o *PatchedInventoryItemRequest) GetManufacturer() BriefManufacturerRequest`
 
 GetManufacturer returns the Manufacturer field if non-nil, zero value otherwise.
 
 ### GetManufacturerOk
 
-`func (o *PatchedInventoryItemRequest) GetManufacturerOk() (*ManufacturerRequest, bool)`
+`func (o *PatchedInventoryItemRequest) GetManufacturerOk() (*BriefManufacturerRequest, bool)`
 
 GetManufacturerOk returns a tuple with the Manufacturer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetManufacturer
 
-`func (o *PatchedInventoryItemRequest) SetManufacturer(v ManufacturerRequest)`
+`func (o *PatchedInventoryItemRequest) SetManufacturer(v BriefManufacturerRequest)`
 
 SetManufacturer sets Manufacturer field to given value.
 

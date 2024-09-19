@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Prefix** | **string** |  | 
-**Rir** | [**RIRRequest**](RIRRequest.md) |  | 
-**Tenant** | Pointer to [**NullableTenantRequest**](TenantRequest.md) |  | [optional] 
+**Rir** | [**BriefRIRRequest**](BriefRIRRequest.md) |  | 
+**Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
 **DateAdded** | Pointer to **NullableString** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewWritableAggregateRequest
 
-`func NewWritableAggregateRequest(prefix string, rir RIRRequest, ) *WritableAggregateRequest`
+`func NewWritableAggregateRequest(prefix string, rir BriefRIRRequest, ) *WritableAggregateRequest`
 
 NewWritableAggregateRequest instantiates a new WritableAggregateRequest object
 This constructor will assign default values to properties that have it defined,
@@ -54,40 +54,40 @@ SetPrefix sets Prefix field to given value.
 
 ### GetRir
 
-`func (o *WritableAggregateRequest) GetRir() RIRRequest`
+`func (o *WritableAggregateRequest) GetRir() BriefRIRRequest`
 
 GetRir returns the Rir field if non-nil, zero value otherwise.
 
 ### GetRirOk
 
-`func (o *WritableAggregateRequest) GetRirOk() (*RIRRequest, bool)`
+`func (o *WritableAggregateRequest) GetRirOk() (*BriefRIRRequest, bool)`
 
 GetRirOk returns a tuple with the Rir field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRir
 
-`func (o *WritableAggregateRequest) SetRir(v RIRRequest)`
+`func (o *WritableAggregateRequest) SetRir(v BriefRIRRequest)`
 
 SetRir sets Rir field to given value.
 
 
 ### GetTenant
 
-`func (o *WritableAggregateRequest) GetTenant() TenantRequest`
+`func (o *WritableAggregateRequest) GetTenant() BriefTenantRequest`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *WritableAggregateRequest) GetTenantOk() (*TenantRequest, bool)`
+`func (o *WritableAggregateRequest) GetTenantOk() (*BriefTenantRequest, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *WritableAggregateRequest) SetTenant(v TenantRequest)`
+`func (o *WritableAggregateRequest) SetTenant(v BriefTenantRequest)`
 
 SetTenant sets Tenant field to given value.
 

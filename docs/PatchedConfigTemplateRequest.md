@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **EnvironmentParams** | Pointer to **interface{}** | Any &lt;a href&#x3D;\&quot;https://jinja.palletsprojects.com/en/3.1.x/api/#jinja2.Environment\&quot;&gt;additional parameters&lt;/a&gt; to pass when constructing the Jinja2 environment. | [optional] 
 **TemplateCode** | Pointer to **string** | Jinja2 template code. | [optional] 
-**DataSource** | Pointer to [**DataSourceRequest**](DataSourceRequest.md) |  | [optional] 
+**DataSource** | Pointer to [**BriefDataSourceRequest**](BriefDataSourceRequest.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 
 ## Methods
@@ -142,20 +142,20 @@ HasTemplateCode returns a boolean if a field has been set.
 
 ### GetDataSource
 
-`func (o *PatchedConfigTemplateRequest) GetDataSource() DataSourceRequest`
+`func (o *PatchedConfigTemplateRequest) GetDataSource() BriefDataSourceRequest`
 
 GetDataSource returns the DataSource field if non-nil, zero value otherwise.
 
 ### GetDataSourceOk
 
-`func (o *PatchedConfigTemplateRequest) GetDataSourceOk() (*DataSourceRequest, bool)`
+`func (o *PatchedConfigTemplateRequest) GetDataSourceOk() (*BriefDataSourceRequest, bool)`
 
 GetDataSourceOk returns a tuple with the DataSource field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDataSource
 
-`func (o *PatchedConfigTemplateRequest) SetDataSource(v DataSourceRequest)`
+`func (o *PatchedConfigTemplateRequest) SetDataSource(v BriefDataSourceRequest)`
 
 SetDataSource sets DataSource field to given value.
 

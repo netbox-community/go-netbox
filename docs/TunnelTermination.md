@@ -6,13 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
+**DisplayUrl** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
-**Tunnel** | [**Tunnel**](Tunnel.md) |  | 
+**Tunnel** | [**BriefTunnel**](BriefTunnel.md) |  | 
 **Role** | [**TunnelTerminationRole**](TunnelTerminationRole.md) |  | 
 **TerminationType** | **string** |  | 
 **TerminationId** | **NullableInt64** |  | 
 **Termination** | **interface{}** |  | [readonly] 
-**OutsideIp** | Pointer to [**NullableIPAddress**](IPAddress.md) |  | [optional] 
+**OutsideIp** | Pointer to [**NullableBriefIPAddress**](BriefIPAddress.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
@@ -22,7 +23,7 @@ Name | Type | Description | Notes
 
 ### NewTunnelTermination
 
-`func NewTunnelTermination(id int32, url string, display string, tunnel Tunnel, role TunnelTerminationRole, terminationType string, terminationId NullableInt64, termination interface{}, created NullableTime, lastUpdated NullableTime, ) *TunnelTermination`
+`func NewTunnelTermination(id int32, url string, displayUrl string, display string, tunnel BriefTunnel, role TunnelTerminationRole, terminationType string, terminationId NullableInt64, termination interface{}, created NullableTime, lastUpdated NullableTime, ) *TunnelTermination`
 
 NewTunnelTermination instantiates a new TunnelTermination object
 This constructor will assign default values to properties that have it defined,
@@ -77,6 +78,26 @@ and a boolean to check if the value has been set.
 SetUrl sets Url field to given value.
 
 
+### GetDisplayUrl
+
+`func (o *TunnelTermination) GetDisplayUrl() string`
+
+GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
+
+### GetDisplayUrlOk
+
+`func (o *TunnelTermination) GetDisplayUrlOk() (*string, bool)`
+
+GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayUrl
+
+`func (o *TunnelTermination) SetDisplayUrl(v string)`
+
+SetDisplayUrl sets DisplayUrl field to given value.
+
+
 ### GetDisplay
 
 `func (o *TunnelTermination) GetDisplay() string`
@@ -99,20 +120,20 @@ SetDisplay sets Display field to given value.
 
 ### GetTunnel
 
-`func (o *TunnelTermination) GetTunnel() Tunnel`
+`func (o *TunnelTermination) GetTunnel() BriefTunnel`
 
 GetTunnel returns the Tunnel field if non-nil, zero value otherwise.
 
 ### GetTunnelOk
 
-`func (o *TunnelTermination) GetTunnelOk() (*Tunnel, bool)`
+`func (o *TunnelTermination) GetTunnelOk() (*BriefTunnel, bool)`
 
 GetTunnelOk returns a tuple with the Tunnel field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTunnel
 
-`func (o *TunnelTermination) SetTunnel(v Tunnel)`
+`func (o *TunnelTermination) SetTunnel(v BriefTunnel)`
 
 SetTunnel sets Tunnel field to given value.
 
@@ -219,20 +240,20 @@ SetTermination sets Termination field to given value.
 UnsetTermination ensures that no value is present for Termination, not even an explicit nil
 ### GetOutsideIp
 
-`func (o *TunnelTermination) GetOutsideIp() IPAddress`
+`func (o *TunnelTermination) GetOutsideIp() BriefIPAddress`
 
 GetOutsideIp returns the OutsideIp field if non-nil, zero value otherwise.
 
 ### GetOutsideIpOk
 
-`func (o *TunnelTermination) GetOutsideIpOk() (*IPAddress, bool)`
+`func (o *TunnelTermination) GetOutsideIpOk() (*BriefIPAddress, bool)`
 
 GetOutsideIpOk returns a tuple with the OutsideIp field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOutsideIp
 
-`func (o *TunnelTermination) SetOutsideIp(v IPAddress)`
+`func (o *TunnelTermination) SetOutsideIp(v BriefIPAddress)`
 
 SetOutsideIp sets OutsideIp field to given value.
 

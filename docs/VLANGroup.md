@@ -6,14 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
+**DisplayUrl** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
 **ScopeType** | Pointer to **NullableString** |  | [optional] 
 **ScopeId** | Pointer to **NullableInt32** |  | [optional] 
 **Scope** | **interface{}** |  | [readonly] 
-**MinVid** | Pointer to **int32** | Lowest permissible ID of a child VLAN | [optional] 
-**MaxVid** | Pointer to **int32** | Highest permissible ID of a child VLAN | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -26,7 +25,7 @@ Name | Type | Description | Notes
 
 ### NewVLANGroup
 
-`func NewVLANGroup(id int32, url string, display string, name string, slug string, scope interface{}, created NullableTime, lastUpdated NullableTime, vlanCount int64, utilization string, ) *VLANGroup`
+`func NewVLANGroup(id int32, url string, displayUrl string, display string, name string, slug string, scope interface{}, created NullableTime, lastUpdated NullableTime, vlanCount int64, utilization string, ) *VLANGroup`
 
 NewVLANGroup instantiates a new VLANGroup object
 This constructor will assign default values to properties that have it defined,
@@ -79,6 +78,26 @@ and a boolean to check if the value has been set.
 `func (o *VLANGroup) SetUrl(v string)`
 
 SetUrl sets Url field to given value.
+
+
+### GetDisplayUrl
+
+`func (o *VLANGroup) GetDisplayUrl() string`
+
+GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
+
+### GetDisplayUrlOk
+
+`func (o *VLANGroup) GetDisplayUrlOk() (*string, bool)`
+
+GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayUrl
+
+`func (o *VLANGroup) SetDisplayUrl(v string)`
+
+SetDisplayUrl sets DisplayUrl field to given value.
 
 
 ### GetDisplay
@@ -241,56 +260,6 @@ SetScope sets Scope field to given value.
 `func (o *VLANGroup) UnsetScope()`
 
 UnsetScope ensures that no value is present for Scope, not even an explicit nil
-### GetMinVid
-
-`func (o *VLANGroup) GetMinVid() int32`
-
-GetMinVid returns the MinVid field if non-nil, zero value otherwise.
-
-### GetMinVidOk
-
-`func (o *VLANGroup) GetMinVidOk() (*int32, bool)`
-
-GetMinVidOk returns a tuple with the MinVid field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMinVid
-
-`func (o *VLANGroup) SetMinVid(v int32)`
-
-SetMinVid sets MinVid field to given value.
-
-### HasMinVid
-
-`func (o *VLANGroup) HasMinVid() bool`
-
-HasMinVid returns a boolean if a field has been set.
-
-### GetMaxVid
-
-`func (o *VLANGroup) GetMaxVid() int32`
-
-GetMaxVid returns the MaxVid field if non-nil, zero value otherwise.
-
-### GetMaxVidOk
-
-`func (o *VLANGroup) GetMaxVidOk() (*int32, bool)`
-
-GetMaxVidOk returns a tuple with the MaxVid field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMaxVid
-
-`func (o *VLANGroup) SetMaxVid(v int32)`
-
-SetMaxVid sets MaxVid field to given value.
-
-### HasMaxVid
-
-`func (o *VLANGroup) HasMaxVid() bool`
-
-HasMaxVid returns a boolean if a field has been set.
-
 ### GetDescription
 
 `func (o *VLANGroup) GetDescription() string`
