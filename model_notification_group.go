@@ -20,14 +20,14 @@ var _ MappedNullable = &NotificationGroup{}
 
 // NotificationGroup Extends the built-in ModelSerializer to enforce calling full_clean() on a copy of the associated instance during validation. (DRF does not do this by default; see https://github.com/encode/django-rest-framework/issues/3144)
 type NotificationGroup struct {
-	Id int32 `json:"id"`
-	Url string `json:"url"`
-	Display string `json:"display"`
-	DisplayUrl string `json:"display_url"`
-	Name string `json:"name"`
-	Description *string `json:"description,omitempty"`
-	Groups []Group `json:"groups,omitempty"`
-	Users []User `json:"users,omitempty"`
+	Id                   int32   `json:"id"`
+	Url                  string  `json:"url"`
+	Display              string  `json:"display"`
+	DisplayUrl           string  `json:"display_url"`
+	Name                 string  `json:"name"`
+	Description          *string `json:"description,omitempty"`
+	Groups               []Group `json:"groups,omitempty"`
+	Users                []User  `json:"users,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -272,7 +272,7 @@ func (o *NotificationGroup) SetUsers(v []User) {
 }
 
 func (o NotificationGroup) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -320,10 +320,10 @@ func (o *NotificationGroup) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -391,5 +391,3 @@ func (v *NullableNotificationGroup) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

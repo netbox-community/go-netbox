@@ -19,10 +19,10 @@ var _ MappedNullable = &PatchedWritableCircuitGroupAssignmentRequest{}
 
 // PatchedWritableCircuitGroupAssignmentRequest Base serializer for group assignments under CircuitSerializer.
 type PatchedWritableCircuitGroupAssignmentRequest struct {
-	Group *BriefCircuitGroupRequest `json:"group,omitempty"`
-	Circuit *BriefCircuitRequest `json:"circuit,omitempty"`
-	Priority *BriefCircuitGroupAssignmentSerializerPriorityValue `json:"priority,omitempty"`
-	Tags []NestedTagRequest `json:"tags,omitempty"`
+	Group                *BriefCircuitGroupRequest                           `json:"group,omitempty"`
+	Circuit              *BriefCircuitRequest                                `json:"circuit,omitempty"`
+	Priority             *BriefCircuitGroupAssignmentSerializerPriorityValue `json:"priority,omitempty"`
+	Tags                 []NestedTagRequest                                  `json:"tags,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -174,7 +174,7 @@ func (o *PatchedWritableCircuitGroupAssignmentRequest) SetTags(v []NestedTagRequ
 }
 
 func (o PatchedWritableCircuitGroupAssignmentRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -262,5 +262,3 @@ func (v *NullablePatchedWritableCircuitGroupAssignmentRequest) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

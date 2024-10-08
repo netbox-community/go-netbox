@@ -20,14 +20,14 @@ type RackRequestFormFactor string
 
 // List of RackRequest_form_factor
 const (
-	RACKREQUESTFORMFACTOR__2_POST_FRAME RackRequestFormFactor = "2-post-frame"
-	RACKREQUESTFORMFACTOR__4_POST_FRAME RackRequestFormFactor = "4-post-frame"
-	RACKREQUESTFORMFACTOR__4_POST_CABINET RackRequestFormFactor = "4-post-cabinet"
-	RACKREQUESTFORMFACTOR_WALL_FRAME RackRequestFormFactor = "wall-frame"
-	RACKREQUESTFORMFACTOR_WALL_FRAME_VERTICAL RackRequestFormFactor = "wall-frame-vertical"
-	RACKREQUESTFORMFACTOR_WALL_CABINET RackRequestFormFactor = "wall-cabinet"
+	RACKREQUESTFORMFACTOR__2_POST_FRAME         RackRequestFormFactor = "2-post-frame"
+	RACKREQUESTFORMFACTOR__4_POST_FRAME         RackRequestFormFactor = "4-post-frame"
+	RACKREQUESTFORMFACTOR__4_POST_CABINET       RackRequestFormFactor = "4-post-cabinet"
+	RACKREQUESTFORMFACTOR_WALL_FRAME            RackRequestFormFactor = "wall-frame"
+	RACKREQUESTFORMFACTOR_WALL_FRAME_VERTICAL   RackRequestFormFactor = "wall-frame-vertical"
+	RACKREQUESTFORMFACTOR_WALL_CABINET          RackRequestFormFactor = "wall-cabinet"
 	RACKREQUESTFORMFACTOR_WALL_CABINET_VERTICAL RackRequestFormFactor = "wall-cabinet-vertical"
-	RACKREQUESTFORMFACTOR_EMPTY RackRequestFormFactor = ""
+	RACKREQUESTFORMFACTOR_EMPTY                 RackRequestFormFactor = ""
 )
 
 // All allowed values of RackRequestFormFactor enum
@@ -120,4 +120,3 @@ func (v *NullableRackRequestFormFactor) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

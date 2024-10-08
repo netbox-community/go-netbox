@@ -19,8 +19,8 @@ var _ MappedNullable = &BriefCircuitGroupAssignmentSerializerPriority{}
 
 // BriefCircuitGroupAssignmentSerializerPriority struct for BriefCircuitGroupAssignmentSerializerPriority
 type BriefCircuitGroupAssignmentSerializerPriority struct {
-	Value *BriefCircuitGroupAssignmentSerializerPriorityValue `json:"value,omitempty"`
-	Label *BriefCircuitGroupAssignmentSerializerPriorityLabel `json:"label,omitempty"`
+	Value                *BriefCircuitGroupAssignmentSerializerPriorityValue `json:"value,omitempty"`
+	Label                *BriefCircuitGroupAssignmentSerializerPriorityLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -108,7 +108,7 @@ func (o *BriefCircuitGroupAssignmentSerializerPriority) SetLabel(v BriefCircuitG
 }
 
 func (o BriefCircuitGroupAssignmentSerializerPriority) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -188,5 +188,3 @@ func (v *NullableBriefCircuitGroupAssignmentSerializerPriority) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

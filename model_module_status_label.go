@@ -20,11 +20,11 @@ type ModuleStatusLabel string
 
 // List of Module_status_label
 const (
-	MODULESTATUSLABEL_OFFLINE ModuleStatusLabel = "Offline"
-	MODULESTATUSLABEL_ACTIVE ModuleStatusLabel = "Active"
-	MODULESTATUSLABEL_PLANNED ModuleStatusLabel = "Planned"
-	MODULESTATUSLABEL_STAGED ModuleStatusLabel = "Staged"
-	MODULESTATUSLABEL_FAILED ModuleStatusLabel = "Failed"
+	MODULESTATUSLABEL_OFFLINE         ModuleStatusLabel = "Offline"
+	MODULESTATUSLABEL_ACTIVE          ModuleStatusLabel = "Active"
+	MODULESTATUSLABEL_PLANNED         ModuleStatusLabel = "Planned"
+	MODULESTATUSLABEL_STAGED          ModuleStatusLabel = "Staged"
+	MODULESTATUSLABEL_FAILED          ModuleStatusLabel = "Failed"
 	MODULESTATUSLABEL_DECOMMISSIONING ModuleStatusLabel = "Decommissioning"
 )
 
@@ -116,4 +116,3 @@ func (v *NullableModuleStatusLabel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

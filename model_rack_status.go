@@ -19,8 +19,8 @@ var _ MappedNullable = &RackStatus{}
 
 // RackStatus struct for RackStatus
 type RackStatus struct {
-	Value *PatchedWritableRackRequestStatus `json:"value,omitempty"`
-	Label *RackStatusLabel `json:"label,omitempty"`
+	Value                *PatchedWritableRackRequestStatus `json:"value,omitempty"`
+	Label                *RackStatusLabel                  `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -108,7 +108,7 @@ func (o *RackStatus) SetLabel(v RackStatusLabel) {
 }
 
 func (o RackStatus) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -188,5 +188,3 @@ func (v *NullableRackStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

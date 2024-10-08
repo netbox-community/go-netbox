@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**VirtualMachine** | [**BriefVirtualMachineRequest**](BriefVirtualMachineRequest.md) |  | 
+**VirtualMachine** | [**VirtualMachineRequest**](VirtualMachineRequest.md) |  | 
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
 **Size** | **int32** |  | 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewVirtualDiskRequest
 
-`func NewVirtualDiskRequest(virtualMachine BriefVirtualMachineRequest, name string, size int32, ) *VirtualDiskRequest`
+`func NewVirtualDiskRequest(virtualMachine VirtualMachineRequest, name string, size int32, ) *VirtualDiskRequest`
 
 NewVirtualDiskRequest instantiates a new VirtualDiskRequest object
 This constructor will assign default values to properties that have it defined,
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetVirtualMachine
 
-`func (o *VirtualDiskRequest) GetVirtualMachine() BriefVirtualMachineRequest`
+`func (o *VirtualDiskRequest) GetVirtualMachine() VirtualMachineRequest`
 
 GetVirtualMachine returns the VirtualMachine field if non-nil, zero value otherwise.
 
 ### GetVirtualMachineOk
 
-`func (o *VirtualDiskRequest) GetVirtualMachineOk() (*BriefVirtualMachineRequest, bool)`
+`func (o *VirtualDiskRequest) GetVirtualMachineOk() (*VirtualMachineRequest, bool)`
 
 GetVirtualMachineOk returns a tuple with the VirtualMachine field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVirtualMachine
 
-`func (o *VirtualDiskRequest) SetVirtualMachine(v BriefVirtualMachineRequest)`
+`func (o *VirtualDiskRequest) SetVirtualMachine(v VirtualMachineRequest)`
 
 SetVirtualMachine sets VirtualMachine field to given value.
 

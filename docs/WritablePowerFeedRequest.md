@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PowerPanel** | [**BriefPowerPanelRequest**](BriefPowerPanelRequest.md) |  | 
-**Rack** | Pointer to [**NullableBriefRackRequest**](BriefRackRequest.md) |  | [optional] 
+**PowerPanel** | [**PowerPanelRequest**](PowerPanelRequest.md) |  | 
+**Rack** | Pointer to [**NullableRackRequest**](RackRequest.md) |  | [optional] 
 **Name** | **string** |  | 
 **Status** | Pointer to [**PatchedWritablePowerFeedRequestStatus**](PatchedWritablePowerFeedRequestStatus.md) |  | [optional] 
 **Type** | Pointer to [**PatchedWritablePowerFeedRequestType**](PatchedWritablePowerFeedRequestType.md) |  | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **MaxUtilization** | Pointer to **int32** | Maximum permissible draw (percentage) | [optional] 
 **MarkConnected** | Pointer to **bool** | Treat as if a cable is connected | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableTenantRequest**](TenantRequest.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 
 ### NewWritablePowerFeedRequest
 
-`func NewWritablePowerFeedRequest(powerPanel BriefPowerPanelRequest, name string, ) *WritablePowerFeedRequest`
+`func NewWritablePowerFeedRequest(powerPanel PowerPanelRequest, name string, ) *WritablePowerFeedRequest`
 
 NewWritablePowerFeedRequest instantiates a new WritablePowerFeedRequest object
 This constructor will assign default values to properties that have it defined,
@@ -42,40 +42,40 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetPowerPanel
 
-`func (o *WritablePowerFeedRequest) GetPowerPanel() BriefPowerPanelRequest`
+`func (o *WritablePowerFeedRequest) GetPowerPanel() PowerPanelRequest`
 
 GetPowerPanel returns the PowerPanel field if non-nil, zero value otherwise.
 
 ### GetPowerPanelOk
 
-`func (o *WritablePowerFeedRequest) GetPowerPanelOk() (*BriefPowerPanelRequest, bool)`
+`func (o *WritablePowerFeedRequest) GetPowerPanelOk() (*PowerPanelRequest, bool)`
 
 GetPowerPanelOk returns a tuple with the PowerPanel field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPowerPanel
 
-`func (o *WritablePowerFeedRequest) SetPowerPanel(v BriefPowerPanelRequest)`
+`func (o *WritablePowerFeedRequest) SetPowerPanel(v PowerPanelRequest)`
 
 SetPowerPanel sets PowerPanel field to given value.
 
 
 ### GetRack
 
-`func (o *WritablePowerFeedRequest) GetRack() BriefRackRequest`
+`func (o *WritablePowerFeedRequest) GetRack() RackRequest`
 
 GetRack returns the Rack field if non-nil, zero value otherwise.
 
 ### GetRackOk
 
-`func (o *WritablePowerFeedRequest) GetRackOk() (*BriefRackRequest, bool)`
+`func (o *WritablePowerFeedRequest) GetRackOk() (*RackRequest, bool)`
 
 GetRackOk returns a tuple with the Rack field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRack
 
-`func (o *WritablePowerFeedRequest) SetRack(v BriefRackRequest)`
+`func (o *WritablePowerFeedRequest) SetRack(v RackRequest)`
 
 SetRack sets Rack field to given value.
 
@@ -342,20 +342,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetTenant
 
-`func (o *WritablePowerFeedRequest) GetTenant() BriefTenantRequest`
+`func (o *WritablePowerFeedRequest) GetTenant() TenantRequest`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *WritablePowerFeedRequest) GetTenantOk() (*BriefTenantRequest, bool)`
+`func (o *WritablePowerFeedRequest) GetTenantOk() (*TenantRequest, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *WritablePowerFeedRequest) SetTenant(v BriefTenantRequest)`
+`func (o *WritablePowerFeedRequest) SetTenant(v TenantRequest)`
 
 SetTenant sets Tenant field to given value.
 

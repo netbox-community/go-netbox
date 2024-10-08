@@ -20,12 +20,12 @@ var _ MappedNullable = &RackTypeRequest{}
 
 // RackTypeRequest Adds support for custom fields and tags.
 type RackTypeRequest struct {
-	Manufacturer BriefManufacturerRequest `json:"manufacturer"`
-	Model string `json:"model"`
-	Slug string `json:"slug"`
-	Description *string `json:"description,omitempty"`
-	FormFactor NullableRackRequestFormFactor `json:"form_factor,omitempty"`
-	Width *RackWidthValue `json:"width,omitempty"`
+	Manufacturer BriefManufacturerRequest      `json:"manufacturer"`
+	Model        string                        `json:"model"`
+	Slug         string                        `json:"slug"`
+	Description  *string                       `json:"description,omitempty"`
+	FormFactor   NullableRackRequestFormFactor `json:"form_factor,omitempty"`
+	Width        *RackWidthValue               `json:"width,omitempty"`
 	// Height in rack units
 	UHeight *int32 `json:"u_height,omitempty"`
 	// Starting unit for rack
@@ -35,17 +35,17 @@ type RackTypeRequest struct {
 	// Outer dimension of rack (width)
 	OuterWidth NullableInt32 `json:"outer_width,omitempty"`
 	// Outer dimension of rack (depth)
-	OuterDepth NullableInt32 `json:"outer_depth,omitempty"`
-	OuterUnit NullableRackRequestOuterUnit `json:"outer_unit,omitempty"`
-	Weight NullableFloat64 `json:"weight,omitempty"`
+	OuterDepth NullableInt32                `json:"outer_depth,omitempty"`
+	OuterUnit  NullableRackRequestOuterUnit `json:"outer_unit,omitempty"`
+	Weight     NullableFloat64              `json:"weight,omitempty"`
 	// Maximum load capacity for the rack
-	MaxWeight NullableInt32 `json:"max_weight,omitempty"`
+	MaxWeight  NullableInt32                       `json:"max_weight,omitempty"`
 	WeightUnit NullableDeviceTypeRequestWeightUnit `json:"weight_unit,omitempty"`
 	// Maximum depth of a mounted device, in millimeters. For four-post racks, this is the distance between the front and rear rails.
-	MountingDepth NullableInt32 `json:"mounting_depth,omitempty"`
-	Comments *string `json:"comments,omitempty"`
-	Tags []NestedTagRequest `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	MountingDepth        NullableInt32          `json:"mounting_depth,omitempty"`
+	Comments             *string                `json:"comments,omitempty"`
+	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
+	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -207,6 +207,7 @@ func (o *RackTypeRequest) HasFormFactor() bool {
 func (o *RackTypeRequest) SetFormFactor(v RackRequestFormFactor) {
 	o.FormFactor.Set(&v)
 }
+
 // SetFormFactorNil sets the value for FormFactor to be an explicit nil
 func (o *RackTypeRequest) SetFormFactorNil() {
 	o.FormFactor.Set(nil)
@@ -377,6 +378,7 @@ func (o *RackTypeRequest) HasOuterWidth() bool {
 func (o *RackTypeRequest) SetOuterWidth(v int32) {
 	o.OuterWidth.Set(&v)
 }
+
 // SetOuterWidthNil sets the value for OuterWidth to be an explicit nil
 func (o *RackTypeRequest) SetOuterWidthNil() {
 	o.OuterWidth.Set(nil)
@@ -419,6 +421,7 @@ func (o *RackTypeRequest) HasOuterDepth() bool {
 func (o *RackTypeRequest) SetOuterDepth(v int32) {
 	o.OuterDepth.Set(&v)
 }
+
 // SetOuterDepthNil sets the value for OuterDepth to be an explicit nil
 func (o *RackTypeRequest) SetOuterDepthNil() {
 	o.OuterDepth.Set(nil)
@@ -461,6 +464,7 @@ func (o *RackTypeRequest) HasOuterUnit() bool {
 func (o *RackTypeRequest) SetOuterUnit(v RackRequestOuterUnit) {
 	o.OuterUnit.Set(&v)
 }
+
 // SetOuterUnitNil sets the value for OuterUnit to be an explicit nil
 func (o *RackTypeRequest) SetOuterUnitNil() {
 	o.OuterUnit.Set(nil)
@@ -503,6 +507,7 @@ func (o *RackTypeRequest) HasWeight() bool {
 func (o *RackTypeRequest) SetWeight(v float64) {
 	o.Weight.Set(&v)
 }
+
 // SetWeightNil sets the value for Weight to be an explicit nil
 func (o *RackTypeRequest) SetWeightNil() {
 	o.Weight.Set(nil)
@@ -545,6 +550,7 @@ func (o *RackTypeRequest) HasMaxWeight() bool {
 func (o *RackTypeRequest) SetMaxWeight(v int32) {
 	o.MaxWeight.Set(&v)
 }
+
 // SetMaxWeightNil sets the value for MaxWeight to be an explicit nil
 func (o *RackTypeRequest) SetMaxWeightNil() {
 	o.MaxWeight.Set(nil)
@@ -587,6 +593,7 @@ func (o *RackTypeRequest) HasWeightUnit() bool {
 func (o *RackTypeRequest) SetWeightUnit(v DeviceTypeRequestWeightUnit) {
 	o.WeightUnit.Set(&v)
 }
+
 // SetWeightUnitNil sets the value for WeightUnit to be an explicit nil
 func (o *RackTypeRequest) SetWeightUnitNil() {
 	o.WeightUnit.Set(nil)
@@ -629,6 +636,7 @@ func (o *RackTypeRequest) HasMountingDepth() bool {
 func (o *RackTypeRequest) SetMountingDepth(v int32) {
 	o.MountingDepth.Set(&v)
 }
+
 // SetMountingDepthNil sets the value for MountingDepth to be an explicit nil
 func (o *RackTypeRequest) SetMountingDepthNil() {
 	o.MountingDepth.Set(nil)
@@ -736,7 +744,7 @@ func (o *RackTypeRequest) SetCustomFields(v map[string]interface{}) {
 }
 
 func (o RackTypeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -819,10 +827,10 @@ func (o *RackTypeRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -901,5 +909,3 @@ func (v *NullableRackTypeRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

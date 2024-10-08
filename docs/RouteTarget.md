@@ -6,10 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**DisplayUrl** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
 **Name** | **string** | Route target value (formatted in accordance with RFC 4360) | 
-**Tenant** | Pointer to [**NullableBriefTenant**](BriefTenant.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableTenant**](Tenant.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
@@ -21,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewRouteTarget
 
-`func NewRouteTarget(id int32, url string, displayUrl string, display string, name string, created NullableTime, lastUpdated NullableTime, ) *RouteTarget`
+`func NewRouteTarget(id int32, url string, display string, name string, created NullableTime, lastUpdated NullableTime, ) *RouteTarget`
 
 NewRouteTarget instantiates a new RouteTarget object
 This constructor will assign default values to properties that have it defined,
@@ -76,26 +75,6 @@ and a boolean to check if the value has been set.
 SetUrl sets Url field to given value.
 
 
-### GetDisplayUrl
-
-`func (o *RouteTarget) GetDisplayUrl() string`
-
-GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
-
-### GetDisplayUrlOk
-
-`func (o *RouteTarget) GetDisplayUrlOk() (*string, bool)`
-
-GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDisplayUrl
-
-`func (o *RouteTarget) SetDisplayUrl(v string)`
-
-SetDisplayUrl sets DisplayUrl field to given value.
-
-
 ### GetDisplay
 
 `func (o *RouteTarget) GetDisplay() string`
@@ -138,20 +117,20 @@ SetName sets Name field to given value.
 
 ### GetTenant
 
-`func (o *RouteTarget) GetTenant() BriefTenant`
+`func (o *RouteTarget) GetTenant() Tenant`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *RouteTarget) GetTenantOk() (*BriefTenant, bool)`
+`func (o *RouteTarget) GetTenantOk() (*Tenant, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *RouteTarget) SetTenant(v BriefTenant)`
+`func (o *RouteTarget) SetTenant(v Tenant)`
 
 SetTenant sets Tenant field to given value.
 

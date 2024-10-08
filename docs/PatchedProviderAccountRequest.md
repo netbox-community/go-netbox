@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Provider** | Pointer to [**BriefProviderRequest**](BriefProviderRequest.md) |  | [optional] 
+**Provider** | Pointer to [**ProviderRequest**](ProviderRequest.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] [default to ""]
 **Account** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -33,20 +33,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetProvider
 
-`func (o *PatchedProviderAccountRequest) GetProvider() BriefProviderRequest`
+`func (o *PatchedProviderAccountRequest) GetProvider() ProviderRequest`
 
 GetProvider returns the Provider field if non-nil, zero value otherwise.
 
 ### GetProviderOk
 
-`func (o *PatchedProviderAccountRequest) GetProviderOk() (*BriefProviderRequest, bool)`
+`func (o *PatchedProviderAccountRequest) GetProviderOk() (*ProviderRequest, bool)`
 
 GetProviderOk returns a tuple with the Provider field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProvider
 
-`func (o *PatchedProviderAccountRequest) SetProvider(v BriefProviderRequest)`
+`func (o *PatchedProviderAccountRequest) SetProvider(v ProviderRequest)`
 
 SetProvider sets Provider field to given value.
 

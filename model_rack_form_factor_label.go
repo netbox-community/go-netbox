@@ -20,12 +20,12 @@ type RackFormFactorLabel string
 
 // List of Rack_form_factor_label
 const (
-	RACKFORMFACTORLABEL__2_POST_FRAME RackFormFactorLabel = "2-post frame"
-	RACKFORMFACTORLABEL__4_POST_FRAME RackFormFactorLabel = "4-post frame"
-	RACKFORMFACTORLABEL__4_POST_CABINET RackFormFactorLabel = "4-post cabinet"
-	RACKFORMFACTORLABEL_WALL_MOUNTED_FRAME RackFormFactorLabel = "Wall-mounted frame"
-	RACKFORMFACTORLABEL_WALL_MOUNTED_FRAME__VERTICAL RackFormFactorLabel = "Wall-mounted frame (vertical)"
-	RACKFORMFACTORLABEL_WALL_MOUNTED_CABINET RackFormFactorLabel = "Wall-mounted cabinet"
+	RACKFORMFACTORLABEL__2_POST_FRAME                  RackFormFactorLabel = "2-post frame"
+	RACKFORMFACTORLABEL__4_POST_FRAME                  RackFormFactorLabel = "4-post frame"
+	RACKFORMFACTORLABEL__4_POST_CABINET                RackFormFactorLabel = "4-post cabinet"
+	RACKFORMFACTORLABEL_WALL_MOUNTED_FRAME             RackFormFactorLabel = "Wall-mounted frame"
+	RACKFORMFACTORLABEL_WALL_MOUNTED_FRAME__VERTICAL   RackFormFactorLabel = "Wall-mounted frame (vertical)"
+	RACKFORMFACTORLABEL_WALL_MOUNTED_CABINET           RackFormFactorLabel = "Wall-mounted cabinet"
 	RACKFORMFACTORLABEL_WALL_MOUNTED_CABINET__VERTICAL RackFormFactorLabel = "Wall-mounted cabinet (vertical)"
 )
 
@@ -118,4 +118,3 @@ func (v *NullableRackFormFactorLabel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

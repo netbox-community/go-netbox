@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ObjectType** | **string** |  | 
 **ObjectId** | **int64** |  | 
-**Contact** | [**BriefContactRequest**](BriefContactRequest.md) |  | 
-**Role** | Pointer to [**NullableBriefContactRoleRequest**](BriefContactRoleRequest.md) |  | [optional] 
-**Priority** | Pointer to [**BriefCircuitGroupAssignmentSerializerPriorityValue**](BriefCircuitGroupAssignmentSerializerPriorityValue.md) |  | [optional] 
+**Contact** | [**ContactRequest**](ContactRequest.md) |  | 
+**Role** | Pointer to [**NullableContactRoleRequest**](ContactRoleRequest.md) |  | [optional] 
+**Priority** | Pointer to [**ContactAssignmentPriorityValue**](ContactAssignmentPriorityValue.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewContactAssignmentRequest
 
-`func NewContactAssignmentRequest(objectType string, objectId int64, contact BriefContactRequest, ) *ContactAssignmentRequest`
+`func NewContactAssignmentRequest(objectType string, objectId int64, contact ContactRequest, ) *ContactAssignmentRequest`
 
 NewContactAssignmentRequest instantiates a new ContactAssignmentRequest object
 This constructor will assign default values to properties that have it defined,
@@ -73,40 +73,40 @@ SetObjectId sets ObjectId field to given value.
 
 ### GetContact
 
-`func (o *ContactAssignmentRequest) GetContact() BriefContactRequest`
+`func (o *ContactAssignmentRequest) GetContact() ContactRequest`
 
 GetContact returns the Contact field if non-nil, zero value otherwise.
 
 ### GetContactOk
 
-`func (o *ContactAssignmentRequest) GetContactOk() (*BriefContactRequest, bool)`
+`func (o *ContactAssignmentRequest) GetContactOk() (*ContactRequest, bool)`
 
 GetContactOk returns a tuple with the Contact field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetContact
 
-`func (o *ContactAssignmentRequest) SetContact(v BriefContactRequest)`
+`func (o *ContactAssignmentRequest) SetContact(v ContactRequest)`
 
 SetContact sets Contact field to given value.
 
 
 ### GetRole
 
-`func (o *ContactAssignmentRequest) GetRole() BriefContactRoleRequest`
+`func (o *ContactAssignmentRequest) GetRole() ContactRoleRequest`
 
 GetRole returns the Role field if non-nil, zero value otherwise.
 
 ### GetRoleOk
 
-`func (o *ContactAssignmentRequest) GetRoleOk() (*BriefContactRoleRequest, bool)`
+`func (o *ContactAssignmentRequest) GetRoleOk() (*ContactRoleRequest, bool)`
 
 GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRole
 
-`func (o *ContactAssignmentRequest) SetRole(v BriefContactRoleRequest)`
+`func (o *ContactAssignmentRequest) SetRole(v ContactRoleRequest)`
 
 SetRole sets Role field to given value.
 
@@ -128,20 +128,20 @@ HasRole returns a boolean if a field has been set.
 UnsetRole ensures that no value is present for Role, not even an explicit nil
 ### GetPriority
 
-`func (o *ContactAssignmentRequest) GetPriority() BriefCircuitGroupAssignmentSerializerPriorityValue`
+`func (o *ContactAssignmentRequest) GetPriority() ContactAssignmentPriorityValue`
 
 GetPriority returns the Priority field if non-nil, zero value otherwise.
 
 ### GetPriorityOk
 
-`func (o *ContactAssignmentRequest) GetPriorityOk() (*BriefCircuitGroupAssignmentSerializerPriorityValue, bool)`
+`func (o *ContactAssignmentRequest) GetPriorityOk() (*ContactAssignmentPriorityValue, bool)`
 
 GetPriorityOk returns a tuple with the Priority field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPriority
 
-`func (o *ContactAssignmentRequest) SetPriority(v BriefCircuitGroupAssignmentSerializerPriorityValue)`
+`func (o *ContactAssignmentRequest) SetPriority(v ContactAssignmentPriorityValue)`
 
 SetPriority sets Priority field to given value.
 

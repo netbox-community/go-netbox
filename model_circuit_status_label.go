@@ -20,10 +20,10 @@ type CircuitStatusLabel string
 
 // List of Circuit_status_label
 const (
-	CIRCUITSTATUSLABEL_PLANNED CircuitStatusLabel = "Planned"
-	CIRCUITSTATUSLABEL_PROVISIONING CircuitStatusLabel = "Provisioning"
-	CIRCUITSTATUSLABEL_ACTIVE CircuitStatusLabel = "Active"
-	CIRCUITSTATUSLABEL_OFFLINE CircuitStatusLabel = "Offline"
+	CIRCUITSTATUSLABEL_PLANNED        CircuitStatusLabel = "Planned"
+	CIRCUITSTATUSLABEL_PROVISIONING   CircuitStatusLabel = "Provisioning"
+	CIRCUITSTATUSLABEL_ACTIVE         CircuitStatusLabel = "Active"
+	CIRCUITSTATUSLABEL_OFFLINE        CircuitStatusLabel = "Offline"
 	CIRCUITSTATUSLABEL_DEPROVISIONING CircuitStatusLabel = "Deprovisioning"
 	CIRCUITSTATUSLABEL_DECOMMISSIONED CircuitStatusLabel = "Decommissioned"
 )
@@ -116,4 +116,3 @@ func (v *NullableCircuitStatusLabel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

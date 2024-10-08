@@ -20,10 +20,10 @@ type RackStatusLabel string
 
 // List of Rack_status_label
 const (
-	RACKSTATUSLABEL_RESERVED RackStatusLabel = "Reserved"
-	RACKSTATUSLABEL_AVAILABLE RackStatusLabel = "Available"
-	RACKSTATUSLABEL_PLANNED RackStatusLabel = "Planned"
-	RACKSTATUSLABEL_ACTIVE RackStatusLabel = "Active"
+	RACKSTATUSLABEL_RESERVED   RackStatusLabel = "Reserved"
+	RACKSTATUSLABEL_AVAILABLE  RackStatusLabel = "Available"
+	RACKSTATUSLABEL_PLANNED    RackStatusLabel = "Planned"
+	RACKSTATUSLABEL_ACTIVE     RackStatusLabel = "Active"
 	RACKSTATUSLABEL_DEPRECATED RackStatusLabel = "Deprecated"
 )
 
@@ -114,4 +114,3 @@ func (v *NullableRackStatusLabel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -19,8 +19,8 @@ var _ MappedNullable = &BriefL2VPNType{}
 
 // BriefL2VPNType struct for BriefL2VPNType
 type BriefL2VPNType struct {
-	Value *BriefL2VPNTypeValue `json:"value,omitempty"`
-	Label *BriefL2VPNTypeLabel `json:"label,omitempty"`
+	Value                *BriefL2VPNTypeValue `json:"value,omitempty"`
+	Label                *BriefL2VPNTypeLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -108,7 +108,7 @@ func (o *BriefL2VPNType) SetLabel(v BriefL2VPNTypeLabel) {
 }
 
 func (o BriefL2VPNType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -188,5 +188,3 @@ func (v *NullableBriefL2VPNType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

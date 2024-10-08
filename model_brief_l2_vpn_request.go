@@ -20,11 +20,11 @@ var _ MappedNullable = &BriefL2VPNRequest{}
 
 // BriefL2VPNRequest Adds support for custom fields and tags.
 type BriefL2VPNRequest struct {
-	Identifier NullableInt64 `json:"identifier,omitempty"`
-	Name string `json:"name"`
-	Slug string `json:"slug"`
-	Type *BriefL2VPNTypeValue `json:"type,omitempty"`
-	Description *string `json:"description,omitempty"`
+	Identifier           NullableInt64        `json:"identifier,omitempty"`
+	Name                 string               `json:"name"`
+	Slug                 string               `json:"slug"`
+	Type                 *BriefL2VPNTypeValue `json:"type,omitempty"`
+	Description          *string              `json:"description,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,6 +81,7 @@ func (o *BriefL2VPNRequest) HasIdentifier() bool {
 func (o *BriefL2VPNRequest) SetIdentifier(v int64) {
 	o.Identifier.Set(&v)
 }
+
 // SetIdentifierNil sets the value for Identifier to be an explicit nil
 func (o *BriefL2VPNRequest) SetIdentifierNil() {
 	o.Identifier.Set(nil)
@@ -204,7 +205,7 @@ func (o *BriefL2VPNRequest) SetDescription(v string) {
 }
 
 func (o BriefL2VPNRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -246,10 +247,10 @@ func (o *BriefL2VPNRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -314,5 +315,3 @@ func (v *NullableBriefL2VPNRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,8 +19,8 @@ var _ MappedNullable = &TunnelStatus{}
 
 // TunnelStatus struct for TunnelStatus
 type TunnelStatus struct {
-	Value *PatchedWritableTunnelRequestStatus `json:"value,omitempty"`
-	Label *TunnelStatusLabel `json:"label,omitempty"`
+	Value                *PatchedWritableTunnelRequestStatus `json:"value,omitempty"`
+	Label                *TunnelStatusLabel                  `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -108,7 +108,7 @@ func (o *TunnelStatus) SetLabel(v TunnelStatusLabel) {
 }
 
 func (o TunnelStatus) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -188,5 +188,3 @@ func (v *NullableTunnelStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

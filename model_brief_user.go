@@ -20,11 +20,11 @@ var _ MappedNullable = &BriefUser{}
 
 // BriefUser Extends the built-in ModelSerializer to enforce calling full_clean() on a copy of the associated instance during validation. (DRF does not do this by default; see https://github.com/encode/django-rest-framework/issues/3144)
 type BriefUser struct {
-	Id int32 `json:"id"`
-	Url string `json:"url"`
+	Id      int32  `json:"id"`
+	Url     string `json:"url"`
 	Display string `json:"display"`
 	// Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.
-	Username string `json:"username"`
+	Username             string `json:"username"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -148,7 +148,7 @@ func (o *BriefUser) SetUsername(v string) {
 }
 
 func (o BriefUser) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -185,10 +185,10 @@ func (o *BriefUser) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -252,5 +252,3 @@ func (v *NullableBriefUser) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

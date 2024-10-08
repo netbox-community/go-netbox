@@ -20,13 +20,13 @@ var _ MappedNullable = &BriefInventoryItemRole{}
 
 // BriefInventoryItemRole Adds support for custom fields and tags.
 type BriefInventoryItemRole struct {
-	Id int32 `json:"id"`
-	Url string `json:"url"`
-	Display string `json:"display"`
-	Name string `json:"name"`
-	Slug string `json:"slug"`
-	Description *string `json:"description,omitempty"`
-	InventoryitemCount int64 `json:"inventoryitem_count"`
+	Id                   int32   `json:"id"`
+	Url                  string  `json:"url"`
+	Display              string  `json:"display"`
+	Name                 string  `json:"name"`
+	Slug                 string  `json:"slug"`
+	Description          *string `json:"description,omitempty"`
+	InventoryitemCount   int64   `json:"inventoryitem_count"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -232,7 +232,7 @@ func (o *BriefInventoryItemRole) SetInventoryitemCount(v int64) {
 }
 
 func (o BriefInventoryItemRole) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -276,10 +276,10 @@ func (o *BriefInventoryItemRole) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -346,5 +346,3 @@ func (v *NullableBriefInventoryItemRole) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

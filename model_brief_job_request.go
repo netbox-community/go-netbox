@@ -20,7 +20,7 @@ var _ MappedNullable = &BriefJobRequest{}
 
 // BriefJobRequest struct for BriefJobRequest
 type BriefJobRequest struct {
-	Completed NullableTime `json:"completed,omitempty"`
+	Completed            NullableTime `json:"completed,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,6 +75,7 @@ func (o *BriefJobRequest) HasCompleted() bool {
 func (o *BriefJobRequest) SetCompleted(v time.Time) {
 	o.Completed.Set(&v)
 }
+
 // SetCompletedNil sets the value for Completed to be an explicit nil
 func (o *BriefJobRequest) SetCompletedNil() {
 	o.Completed.Set(nil)
@@ -86,7 +87,7 @@ func (o *BriefJobRequest) UnsetCompleted() {
 }
 
 func (o BriefJobRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -162,5 +163,3 @@ func (v *NullableBriefJobRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

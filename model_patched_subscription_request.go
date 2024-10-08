@@ -19,9 +19,9 @@ var _ MappedNullable = &PatchedSubscriptionRequest{}
 
 // PatchedSubscriptionRequest Extends the built-in ModelSerializer to enforce calling full_clean() on a copy of the associated instance during validation. (DRF does not do this by default; see https://github.com/encode/django-rest-framework/issues/3144)
 type PatchedSubscriptionRequest struct {
-	ObjectType *string `json:"object_type,omitempty"`
-	ObjectId *int64 `json:"object_id,omitempty"`
-	User *BriefUserRequest `json:"user,omitempty"`
+	ObjectType           *string           `json:"object_type,omitempty"`
+	ObjectId             *int64            `json:"object_id,omitempty"`
+	User                 *BriefUserRequest `json:"user,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -141,7 +141,7 @@ func (o *PatchedSubscriptionRequest) SetUser(v BriefUserRequest) {
 }
 
 func (o PatchedSubscriptionRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -225,5 +225,3 @@ func (v *NullablePatchedSubscriptionRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

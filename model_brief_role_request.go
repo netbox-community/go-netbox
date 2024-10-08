@@ -20,9 +20,9 @@ var _ MappedNullable = &BriefRoleRequest{}
 
 // BriefRoleRequest Adds support for custom fields and tags.
 type BriefRoleRequest struct {
-	Name string `json:"name"`
-	Slug string `json:"slug"`
-	Description *string `json:"description,omitempty"`
+	Name                 string  `json:"name"`
+	Slug                 string  `json:"slug"`
+	Description          *string `json:"description,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -128,7 +128,7 @@ func (o *BriefRoleRequest) SetDescription(v string) {
 }
 
 func (o BriefRoleRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -164,10 +164,10 @@ func (o *BriefRoleRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -230,5 +230,3 @@ func (v *NullableBriefRoleRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

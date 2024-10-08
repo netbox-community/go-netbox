@@ -22,10 +22,10 @@ type DcimModuleTypesListAirflowParameter string
 const (
 	DCIMMODULETYPESLISTAIRFLOWPARAMETER_FRONT_TO_REAR DcimModuleTypesListAirflowParameter = "front-to-rear"
 	DCIMMODULETYPESLISTAIRFLOWPARAMETER_LEFT_TO_RIGHT DcimModuleTypesListAirflowParameter = "left-to-right"
-	DCIMMODULETYPESLISTAIRFLOWPARAMETER_PASSIVE DcimModuleTypesListAirflowParameter = "passive"
+	DCIMMODULETYPESLISTAIRFLOWPARAMETER_PASSIVE       DcimModuleTypesListAirflowParameter = "passive"
 	DCIMMODULETYPESLISTAIRFLOWPARAMETER_REAR_TO_FRONT DcimModuleTypesListAirflowParameter = "rear-to-front"
 	DCIMMODULETYPESLISTAIRFLOWPARAMETER_RIGHT_TO_LEFT DcimModuleTypesListAirflowParameter = "right-to-left"
-	DCIMMODULETYPESLISTAIRFLOWPARAMETER_SIDE_TO_REAR DcimModuleTypesListAirflowParameter = "side-to-rear"
+	DCIMMODULETYPESLISTAIRFLOWPARAMETER_SIDE_TO_REAR  DcimModuleTypesListAirflowParameter = "side-to-rear"
 )
 
 // All allowed values of DcimModuleTypesListAirflowParameter enum
@@ -116,4 +116,3 @@ func (v *NullableDcimModuleTypesListAirflowParameter) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

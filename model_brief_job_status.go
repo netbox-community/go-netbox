@@ -19,8 +19,8 @@ var _ MappedNullable = &BriefJobStatus{}
 
 // BriefJobStatus struct for BriefJobStatus
 type BriefJobStatus struct {
-	Value *BriefJobStatusValue `json:"value,omitempty"`
-	Label *BriefJobStatusLabel `json:"label,omitempty"`
+	Value                *BriefJobStatusValue `json:"value,omitempty"`
+	Label                *BriefJobStatusLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -108,7 +108,7 @@ func (o *BriefJobStatus) SetLabel(v BriefJobStatusLabel) {
 }
 
 func (o BriefJobStatus) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -188,5 +188,3 @@ func (v *NullableBriefJobStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

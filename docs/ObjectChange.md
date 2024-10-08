@@ -6,10 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**DisplayUrl** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
 **Time** | **time.Time** |  | [readonly] 
-**User** | [**BriefUser**](BriefUser.md) |  | [readonly] 
+**User** | [**User**](User.md) |  | [readonly] 
 **UserName** | **string** |  | [readonly] 
 **RequestId** | **string** |  | [readonly] 
 **Action** | [**ObjectChangeAction**](ObjectChangeAction.md) |  | 
@@ -23,7 +22,7 @@ Name | Type | Description | Notes
 
 ### NewObjectChange
 
-`func NewObjectChange(id int32, url string, displayUrl string, display string, time time.Time, user BriefUser, userName string, requestId string, action ObjectChangeAction, changedObjectType string, changedObjectId int64, changedObject interface{}, prechangeData interface{}, postchangeData interface{}, ) *ObjectChange`
+`func NewObjectChange(id int32, url string, display string, time time.Time, user User, userName string, requestId string, action ObjectChangeAction, changedObjectType string, changedObjectId int64, changedObject interface{}, prechangeData interface{}, postchangeData interface{}, ) *ObjectChange`
 
 NewObjectChange instantiates a new ObjectChange object
 This constructor will assign default values to properties that have it defined,
@@ -78,26 +77,6 @@ and a boolean to check if the value has been set.
 SetUrl sets Url field to given value.
 
 
-### GetDisplayUrl
-
-`func (o *ObjectChange) GetDisplayUrl() string`
-
-GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
-
-### GetDisplayUrlOk
-
-`func (o *ObjectChange) GetDisplayUrlOk() (*string, bool)`
-
-GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDisplayUrl
-
-`func (o *ObjectChange) SetDisplayUrl(v string)`
-
-SetDisplayUrl sets DisplayUrl field to given value.
-
-
 ### GetDisplay
 
 `func (o *ObjectChange) GetDisplay() string`
@@ -140,20 +119,20 @@ SetTime sets Time field to given value.
 
 ### GetUser
 
-`func (o *ObjectChange) GetUser() BriefUser`
+`func (o *ObjectChange) GetUser() User`
 
 GetUser returns the User field if non-nil, zero value otherwise.
 
 ### GetUserOk
 
-`func (o *ObjectChange) GetUserOk() (*BriefUser, bool)`
+`func (o *ObjectChange) GetUserOk() (*User, bool)`
 
 GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUser
 
-`func (o *ObjectChange) SetUser(v BriefUser)`
+`func (o *ObjectChange) SetUser(v User)`
 
 SetUser sets User field to given value.
 

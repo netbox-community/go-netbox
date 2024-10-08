@@ -19,8 +19,8 @@ var _ MappedNullable = &CableStatus{}
 
 // CableStatus struct for CableStatus
 type CableStatus struct {
-	Value *CableStatusValue `json:"value,omitempty"`
-	Label *CableStatusLabel `json:"label,omitempty"`
+	Value                *CableStatusValue `json:"value,omitempty"`
+	Label                *CableStatusLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -108,7 +108,7 @@ func (o *CableStatus) SetLabel(v CableStatusLabel) {
 }
 
 func (o CableStatus) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -188,5 +188,3 @@ func (v *NullableCableStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

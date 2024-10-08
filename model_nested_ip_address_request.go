@@ -20,7 +20,7 @@ var _ MappedNullable = &NestedIPAddressRequest{}
 
 // NestedIPAddressRequest Represents an object related through a ForeignKey field. On write, it accepts a primary key (PK) value or a dictionary of attributes which can be used to uniquely identify the related object. This class should be subclassed to return a full representation of the related object on read.
 type NestedIPAddressRequest struct {
-	Address string `json:"address"`
+	Address              string `json:"address"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *NestedIPAddressRequest) SetAddress(v string) {
 }
 
 func (o NestedIPAddressRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -100,10 +100,10 @@ func (o *NestedIPAddressRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -164,5 +164,3 @@ func (v *NullableNestedIPAddressRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

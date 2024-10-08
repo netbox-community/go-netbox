@@ -21,9 +21,9 @@ type DeviceTypeWeightUnitLabel string
 // List of DeviceType_weight_unit_label
 const (
 	DEVICETYPEWEIGHTUNITLABEL_KILOGRAMS DeviceTypeWeightUnitLabel = "Kilograms"
-	DEVICETYPEWEIGHTUNITLABEL_GRAMS DeviceTypeWeightUnitLabel = "Grams"
-	DEVICETYPEWEIGHTUNITLABEL_POUNDS DeviceTypeWeightUnitLabel = "Pounds"
-	DEVICETYPEWEIGHTUNITLABEL_OUNCES DeviceTypeWeightUnitLabel = "Ounces"
+	DEVICETYPEWEIGHTUNITLABEL_GRAMS     DeviceTypeWeightUnitLabel = "Grams"
+	DEVICETYPEWEIGHTUNITLABEL_POUNDS    DeviceTypeWeightUnitLabel = "Pounds"
+	DEVICETYPEWEIGHTUNITLABEL_OUNCES    DeviceTypeWeightUnitLabel = "Ounces"
 )
 
 // All allowed values of DeviceTypeWeightUnitLabel enum
@@ -112,4 +112,3 @@ func (v *NullableDeviceTypeWeightUnitLabel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

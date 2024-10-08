@@ -20,8 +20,8 @@ type DataSourceTypeValue string
 
 // List of DataSource_type_value
 const (
-	DATASOURCETYPEVALUE_LOCAL DataSourceTypeValue = "local"
-	DATASOURCETYPEVALUE_GIT DataSourceTypeValue = "git"
+	DATASOURCETYPEVALUE_LOCAL     DataSourceTypeValue = "local"
+	DATASOURCETYPEVALUE_GIT       DataSourceTypeValue = "git"
 	DATASOURCETYPEVALUE_AMAZON_S3 DataSourceTypeValue = "amazon-s3"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableDataSourceTypeValue) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

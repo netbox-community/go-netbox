@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"time"
 	"fmt"
+	"time"
 )
 
 // checks if the CircuitGroup type satisfies the MappedNullable interface at compile time
@@ -21,19 +21,19 @@ var _ MappedNullable = &CircuitGroup{}
 
 // CircuitGroup Adds support for custom fields and tags.
 type CircuitGroup struct {
-	Id int32 `json:"id"`
-	Url string `json:"url"`
-	DisplayUrl string `json:"display_url"`
-	Display string `json:"display"`
-	Name string `json:"name"`
-	Slug string `json:"slug"`
-	Description *string `json:"description,omitempty"`
-	Tenant NullableBriefTenant `json:"tenant,omitempty"`
-	Tags []NestedTag `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	Created NullableTime `json:"created"`
-	LastUpdated NullableTime `json:"last_updated"`
-	CircuitCount int64 `json:"circuit_count"`
+	Id                   int32                  `json:"id"`
+	Url                  string                 `json:"url"`
+	DisplayUrl           string                 `json:"display_url"`
+	Display              string                 `json:"display"`
+	Name                 string                 `json:"name"`
+	Slug                 string                 `json:"slug"`
+	Description          *string                `json:"description,omitempty"`
+	Tenant               NullableBriefTenant    `json:"tenant,omitempty"`
+	Tags                 []NestedTag            `json:"tags,omitempty"`
+	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
+	Created              NullableTime           `json:"created"`
+	LastUpdated          NullableTime           `json:"last_updated"`
+	CircuitCount         int64                  `json:"circuit_count"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -273,6 +273,7 @@ func (o *CircuitGroup) HasTenant() bool {
 func (o *CircuitGroup) SetTenant(v BriefTenant) {
 	o.Tenant.Set(&v)
 }
+
 // SetTenantNil sets the value for Tenant to be an explicit nil
 func (o *CircuitGroup) SetTenantNil() {
 	o.Tenant.Set(nil)
@@ -424,7 +425,7 @@ func (o *CircuitGroup) SetCircuitCount(v int64) {
 }
 
 func (o CircuitGroup) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -483,10 +484,10 @@ func (o *CircuitGroup) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -559,5 +560,3 @@ func (v *NullableCircuitGroup) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

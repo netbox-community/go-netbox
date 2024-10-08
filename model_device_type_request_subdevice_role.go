@@ -21,8 +21,8 @@ type DeviceTypeRequestSubdeviceRole string
 // List of DeviceTypeRequest_subdevice_role
 const (
 	DEVICETYPEREQUESTSUBDEVICEROLE_PARENT DeviceTypeRequestSubdeviceRole = "parent"
-	DEVICETYPEREQUESTSUBDEVICEROLE_CHILD DeviceTypeRequestSubdeviceRole = "child"
-	DEVICETYPEREQUESTSUBDEVICEROLE_EMPTY DeviceTypeRequestSubdeviceRole = ""
+	DEVICETYPEREQUESTSUBDEVICEROLE_CHILD  DeviceTypeRequestSubdeviceRole = "child"
+	DEVICETYPEREQUESTSUBDEVICEROLE_EMPTY  DeviceTypeRequestSubdeviceRole = ""
 )
 
 // All allowed values of DeviceTypeRequestSubdeviceRole enum
@@ -110,4 +110,3 @@ func (v *NullableDeviceTypeRequestSubdeviceRole) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

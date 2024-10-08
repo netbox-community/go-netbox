@@ -19,10 +19,10 @@ var _ MappedNullable = &PatchedNotificationGroupRequest{}
 
 // PatchedNotificationGroupRequest Extends the built-in ModelSerializer to enforce calling full_clean() on a copy of the associated instance during validation. (DRF does not do this by default; see https://github.com/encode/django-rest-framework/issues/3144)
 type PatchedNotificationGroupRequest struct {
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Groups []int32 `json:"groups,omitempty"`
-	Users []int32 `json:"users,omitempty"`
+	Name                 *string `json:"name,omitempty"`
+	Description          *string `json:"description,omitempty"`
+	Groups               []int32 `json:"groups,omitempty"`
+	Users                []int32 `json:"users,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -174,7 +174,7 @@ func (o *PatchedNotificationGroupRequest) SetUsers(v []int32) {
 }
 
 func (o PatchedNotificationGroupRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -262,5 +262,3 @@ func (v *NullablePatchedNotificationGroupRequest) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,9 +20,9 @@ var _ MappedNullable = &BriefVirtualChassisRequest{}
 
 // BriefVirtualChassisRequest Adds support for custom fields and tags.
 type BriefVirtualChassisRequest struct {
-	Name string `json:"name"`
-	Master NullableNestedDeviceRequest `json:"master,omitempty"`
-	Description *string `json:"description,omitempty"`
+	Name                 string                      `json:"name"`
+	Master               NullableNestedDeviceRequest `json:"master,omitempty"`
+	Description          *string                     `json:"description,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -102,6 +102,7 @@ func (o *BriefVirtualChassisRequest) HasMaster() bool {
 func (o *BriefVirtualChassisRequest) SetMaster(v NestedDeviceRequest) {
 	o.Master.Set(&v)
 }
+
 // SetMasterNil sets the value for Master to be an explicit nil
 func (o *BriefVirtualChassisRequest) SetMasterNil() {
 	o.Master.Set(nil)
@@ -145,7 +146,7 @@ func (o *BriefVirtualChassisRequest) SetDescription(v string) {
 }
 
 func (o BriefVirtualChassisRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -182,10 +183,10 @@ func (o *BriefVirtualChassisRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -248,5 +249,3 @@ func (v *NullableBriefVirtualChassisRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

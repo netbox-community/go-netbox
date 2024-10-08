@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** | Route target value (formatted in accordance with RFC 4360) | [optional] 
-**Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableTenantRequest**](TenantRequest.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
@@ -57,20 +57,20 @@ HasName returns a boolean if a field has been set.
 
 ### GetTenant
 
-`func (o *PatchedRouteTargetRequest) GetTenant() BriefTenantRequest`
+`func (o *PatchedRouteTargetRequest) GetTenant() TenantRequest`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *PatchedRouteTargetRequest) GetTenantOk() (*BriefTenantRequest, bool)`
+`func (o *PatchedRouteTargetRequest) GetTenantOk() (*TenantRequest, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *PatchedRouteTargetRequest) SetTenant(v BriefTenantRequest)`
+`func (o *PatchedRouteTargetRequest) SetTenant(v TenantRequest)`
 
 SetTenant sets Tenant field to given value.
 

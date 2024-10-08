@@ -20,10 +20,10 @@ var _ MappedNullable = &BriefL2VPNTermination{}
 
 // BriefL2VPNTermination Adds support for custom fields and tags.
 type BriefL2VPNTermination struct {
-	Id int32 `json:"id"`
-	Url string `json:"url"`
-	Display string `json:"display"`
-	L2vpn BriefL2VPN `json:"l2vpn"`
+	Id                   int32      `json:"id"`
+	Url                  string     `json:"url"`
+	Display              string     `json:"display"`
+	L2vpn                BriefL2VPN `json:"l2vpn"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -147,7 +147,7 @@ func (o *BriefL2VPNTermination) SetL2vpn(v BriefL2VPN) {
 }
 
 func (o BriefL2VPNTermination) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -184,10 +184,10 @@ func (o *BriefL2VPNTermination) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -251,5 +251,3 @@ func (v *NullableBriefL2VPNTermination) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

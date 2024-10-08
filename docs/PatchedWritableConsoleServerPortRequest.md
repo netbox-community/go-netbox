@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Device** | Pointer to [**BriefDeviceRequest**](BriefDeviceRequest.md) |  | [optional] 
-**Module** | Pointer to [**NullableBriefModuleRequest**](BriefModuleRequest.md) |  | [optional] 
+**Device** | Pointer to [**DeviceRequest**](DeviceRequest.md) |  | [optional] 
+**Module** | Pointer to [**NullableModuleRequest**](ModuleRequest.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Type** | Pointer to [**PatchedWritableConsolePortRequestType**](PatchedWritableConsolePortRequestType.md) |  | [optional] 
@@ -36,20 +36,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDevice
 
-`func (o *PatchedWritableConsoleServerPortRequest) GetDevice() BriefDeviceRequest`
+`func (o *PatchedWritableConsoleServerPortRequest) GetDevice() DeviceRequest`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *PatchedWritableConsoleServerPortRequest) GetDeviceOk() (*BriefDeviceRequest, bool)`
+`func (o *PatchedWritableConsoleServerPortRequest) GetDeviceOk() (*DeviceRequest, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *PatchedWritableConsoleServerPortRequest) SetDevice(v BriefDeviceRequest)`
+`func (o *PatchedWritableConsoleServerPortRequest) SetDevice(v DeviceRequest)`
 
 SetDevice sets Device field to given value.
 
@@ -61,20 +61,20 @@ HasDevice returns a boolean if a field has been set.
 
 ### GetModule
 
-`func (o *PatchedWritableConsoleServerPortRequest) GetModule() BriefModuleRequest`
+`func (o *PatchedWritableConsoleServerPortRequest) GetModule() ModuleRequest`
 
 GetModule returns the Module field if non-nil, zero value otherwise.
 
 ### GetModuleOk
 
-`func (o *PatchedWritableConsoleServerPortRequest) GetModuleOk() (*BriefModuleRequest, bool)`
+`func (o *PatchedWritableConsoleServerPortRequest) GetModuleOk() (*ModuleRequest, bool)`
 
 GetModuleOk returns a tuple with the Module field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetModule
 
-`func (o *PatchedWritableConsoleServerPortRequest) SetModule(v BriefModuleRequest)`
+`func (o *PatchedWritableConsoleServerPortRequest) SetModule(v ModuleRequest)`
 
 SetModule sets Module field to given value.
 

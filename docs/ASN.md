@@ -6,11 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**DisplayUrl** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
 **Asn** | **int64** | 16- or 32-bit autonomous system number | 
-**Rir** | Pointer to [**NullableBriefRIR**](BriefRIR.md) |  | [optional] 
-**Tenant** | Pointer to [**NullableBriefTenant**](BriefTenant.md) |  | [optional] 
+**Rir** | Pointer to [**NullableRIR**](RIR.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableTenant**](Tenant.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
@@ -24,7 +23,7 @@ Name | Type | Description | Notes
 
 ### NewASN
 
-`func NewASN(id int32, url string, displayUrl string, display string, asn int64, created NullableTime, lastUpdated NullableTime, siteCount int64, providerCount int64, ) *ASN`
+`func NewASN(id int32, url string, display string, asn int64, created NullableTime, lastUpdated NullableTime, siteCount int64, providerCount int64, ) *ASN`
 
 NewASN instantiates a new ASN object
 This constructor will assign default values to properties that have it defined,
@@ -79,26 +78,6 @@ and a boolean to check if the value has been set.
 SetUrl sets Url field to given value.
 
 
-### GetDisplayUrl
-
-`func (o *ASN) GetDisplayUrl() string`
-
-GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
-
-### GetDisplayUrlOk
-
-`func (o *ASN) GetDisplayUrlOk() (*string, bool)`
-
-GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDisplayUrl
-
-`func (o *ASN) SetDisplayUrl(v string)`
-
-SetDisplayUrl sets DisplayUrl field to given value.
-
-
 ### GetDisplay
 
 `func (o *ASN) GetDisplay() string`
@@ -141,20 +120,20 @@ SetAsn sets Asn field to given value.
 
 ### GetRir
 
-`func (o *ASN) GetRir() BriefRIR`
+`func (o *ASN) GetRir() RIR`
 
 GetRir returns the Rir field if non-nil, zero value otherwise.
 
 ### GetRirOk
 
-`func (o *ASN) GetRirOk() (*BriefRIR, bool)`
+`func (o *ASN) GetRirOk() (*RIR, bool)`
 
 GetRirOk returns a tuple with the Rir field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRir
 
-`func (o *ASN) SetRir(v BriefRIR)`
+`func (o *ASN) SetRir(v RIR)`
 
 SetRir sets Rir field to given value.
 
@@ -176,20 +155,20 @@ HasRir returns a boolean if a field has been set.
 UnsetRir ensures that no value is present for Rir, not even an explicit nil
 ### GetTenant
 
-`func (o *ASN) GetTenant() BriefTenant`
+`func (o *ASN) GetTenant() Tenant`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *ASN) GetTenantOk() (*BriefTenant, bool)`
+`func (o *ASN) GetTenantOk() (*Tenant, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *ASN) SetTenant(v BriefTenant)`
+`func (o *ASN) SetTenant(v Tenant)`
 
 SetTenant sets Tenant field to given value.
 

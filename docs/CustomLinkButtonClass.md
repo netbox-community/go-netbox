@@ -3,7 +3,7 @@
 ## Enum
 
 
-* `DEFAULT` (value: `"default"`)
+* `OUTLINE_DARK` (value: `"outline-dark"`)
 
 * `BLUE` (value: `"blue"`)
 

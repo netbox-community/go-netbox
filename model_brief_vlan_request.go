@@ -21,9 +21,9 @@ var _ MappedNullable = &BriefVLANRequest{}
 // BriefVLANRequest Adds support for custom fields and tags.
 type BriefVLANRequest struct {
 	// Numeric VLAN ID (1-4094)
-	Vid int32 `json:"vid"`
-	Name string `json:"name"`
-	Description *string `json:"description,omitempty"`
+	Vid                  int32   `json:"vid"`
+	Name                 string  `json:"name"`
+	Description          *string `json:"description,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -129,7 +129,7 @@ func (o *BriefVLANRequest) SetDescription(v string) {
 }
 
 func (o BriefVLANRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -165,10 +165,10 @@ func (o *BriefVLANRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -231,5 +231,3 @@ func (v *NullableBriefVLANRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,13 +20,13 @@ var _ MappedNullable = &BriefVirtualChassis{}
 
 // BriefVirtualChassis Adds support for custom fields and tags.
 type BriefVirtualChassis struct {
-	Id int32 `json:"id"`
-	Url string `json:"url"`
-	Display string `json:"display"`
-	Name string `json:"name"`
-	Master NullableNestedDevice `json:"master,omitempty"`
-	Description *string `json:"description,omitempty"`
-	MemberCount int32 `json:"member_count"`
+	Id                   int32                `json:"id"`
+	Url                  string               `json:"url"`
+	Display              string               `json:"display"`
+	Name                 string               `json:"name"`
+	Master               NullableNestedDevice `json:"master,omitempty"`
+	Description          *string              `json:"description,omitempty"`
+	MemberCount          int32                `json:"member_count"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -182,6 +182,7 @@ func (o *BriefVirtualChassis) HasMaster() bool {
 func (o *BriefVirtualChassis) SetMaster(v NestedDevice) {
 	o.Master.Set(&v)
 }
+
 // SetMasterNil sets the value for Master to be an explicit nil
 func (o *BriefVirtualChassis) SetMasterNil() {
 	o.Master.Set(nil)
@@ -249,7 +250,7 @@ func (o *BriefVirtualChassis) SetMemberCount(v int32) {
 }
 
 func (o BriefVirtualChassis) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -294,10 +295,10 @@ func (o *BriefVirtualChassis) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -364,5 +365,3 @@ func (v *NullableBriefVirtualChassis) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

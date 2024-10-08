@@ -20,9 +20,9 @@ var _ MappedNullable = &BriefFHRPGroupRequest{}
 
 // BriefFHRPGroupRequest Adds support for custom fields and tags.
 type BriefFHRPGroupRequest struct {
-	Protocol BriefFHRPGroupProtocol `json:"protocol"`
-	GroupId int32 `json:"group_id"`
-	Description *string `json:"description,omitempty"`
+	Protocol             BriefFHRPGroupProtocol `json:"protocol"`
+	GroupId              int32                  `json:"group_id"`
+	Description          *string                `json:"description,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -128,7 +128,7 @@ func (o *BriefFHRPGroupRequest) SetDescription(v string) {
 }
 
 func (o BriefFHRPGroupRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -164,10 +164,10 @@ func (o *BriefFHRPGroupRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -230,5 +230,3 @@ func (v *NullableBriefFHRPGroupRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

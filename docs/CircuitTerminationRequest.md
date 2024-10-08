@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Circuit** | [**BriefCircuitRequest**](BriefCircuitRequest.md) |  | 
+**Circuit** | [**CircuitRequest**](CircuitRequest.md) |  | 
 **TermSide** | [**Termination1**](Termination1.md) |  | 
-**Site** | Pointer to [**NullableBriefSiteRequest**](BriefSiteRequest.md) |  | [optional] 
-**ProviderNetwork** | Pointer to [**NullableBriefProviderNetworkRequest**](BriefProviderNetworkRequest.md) |  | [optional] 
+**Site** | Pointer to [**NullableSiteRequest**](SiteRequest.md) |  | [optional] 
+**ProviderNetwork** | Pointer to [**NullableProviderNetworkRequest**](ProviderNetworkRequest.md) |  | [optional] 
 **PortSpeed** | Pointer to **NullableInt32** | Physical circuit speed | [optional] 
 **UpstreamSpeed** | Pointer to **NullableInt32** | Upstream speed, if different from port speed | [optional] 
 **XconnectId** | Pointer to **string** | ID of the local cross-connect | [optional] 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewCircuitTerminationRequest
 
-`func NewCircuitTerminationRequest(circuit BriefCircuitRequest, termSide Termination1, ) *CircuitTerminationRequest`
+`func NewCircuitTerminationRequest(circuit CircuitRequest, termSide Termination1, ) *CircuitTerminationRequest`
 
 NewCircuitTerminationRequest instantiates a new CircuitTerminationRequest object
 This constructor will assign default values to properties that have it defined,
@@ -38,20 +38,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetCircuit
 
-`func (o *CircuitTerminationRequest) GetCircuit() BriefCircuitRequest`
+`func (o *CircuitTerminationRequest) GetCircuit() CircuitRequest`
 
 GetCircuit returns the Circuit field if non-nil, zero value otherwise.
 
 ### GetCircuitOk
 
-`func (o *CircuitTerminationRequest) GetCircuitOk() (*BriefCircuitRequest, bool)`
+`func (o *CircuitTerminationRequest) GetCircuitOk() (*CircuitRequest, bool)`
 
 GetCircuitOk returns a tuple with the Circuit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCircuit
 
-`func (o *CircuitTerminationRequest) SetCircuit(v BriefCircuitRequest)`
+`func (o *CircuitTerminationRequest) SetCircuit(v CircuitRequest)`
 
 SetCircuit sets Circuit field to given value.
 
@@ -78,20 +78,20 @@ SetTermSide sets TermSide field to given value.
 
 ### GetSite
 
-`func (o *CircuitTerminationRequest) GetSite() BriefSiteRequest`
+`func (o *CircuitTerminationRequest) GetSite() SiteRequest`
 
 GetSite returns the Site field if non-nil, zero value otherwise.
 
 ### GetSiteOk
 
-`func (o *CircuitTerminationRequest) GetSiteOk() (*BriefSiteRequest, bool)`
+`func (o *CircuitTerminationRequest) GetSiteOk() (*SiteRequest, bool)`
 
 GetSiteOk returns a tuple with the Site field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSite
 
-`func (o *CircuitTerminationRequest) SetSite(v BriefSiteRequest)`
+`func (o *CircuitTerminationRequest) SetSite(v SiteRequest)`
 
 SetSite sets Site field to given value.
 
@@ -113,20 +113,20 @@ HasSite returns a boolean if a field has been set.
 UnsetSite ensures that no value is present for Site, not even an explicit nil
 ### GetProviderNetwork
 
-`func (o *CircuitTerminationRequest) GetProviderNetwork() BriefProviderNetworkRequest`
+`func (o *CircuitTerminationRequest) GetProviderNetwork() ProviderNetworkRequest`
 
 GetProviderNetwork returns the ProviderNetwork field if non-nil, zero value otherwise.
 
 ### GetProviderNetworkOk
 
-`func (o *CircuitTerminationRequest) GetProviderNetworkOk() (*BriefProviderNetworkRequest, bool)`
+`func (o *CircuitTerminationRequest) GetProviderNetworkOk() (*ProviderNetworkRequest, bool)`
 
 GetProviderNetworkOk returns a tuple with the ProviderNetwork field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProviderNetwork
 
-`func (o *CircuitTerminationRequest) SetProviderNetwork(v BriefProviderNetworkRequest)`
+`func (o *CircuitTerminationRequest) SetProviderNetwork(v ProviderNetworkRequest)`
 
 SetProviderNetwork sets ProviderNetwork field to given value.
 

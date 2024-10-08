@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**DisplayUrl** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
 **VirtualMachine** | [**NestedVirtualMachine**](NestedVirtualMachine.md) |  | [readonly] 
 **Name** | **string** |  | 
@@ -15,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewNestedVMInterface
 
-`func NewNestedVMInterface(id int32, url string, displayUrl string, display string, virtualMachine NestedVirtualMachine, name string, ) *NestedVMInterface`
+`func NewNestedVMInterface(id int32, url string, display string, virtualMachine NestedVirtualMachine, name string, ) *NestedVMInterface`
 
 NewNestedVMInterface instantiates a new NestedVMInterface object
 This constructor will assign default values to properties that have it defined,
@@ -68,26 +67,6 @@ and a boolean to check if the value has been set.
 `func (o *NestedVMInterface) SetUrl(v string)`
 
 SetUrl sets Url field to given value.
-
-
-### GetDisplayUrl
-
-`func (o *NestedVMInterface) GetDisplayUrl() string`
-
-GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
-
-### GetDisplayUrlOk
-
-`func (o *NestedVMInterface) GetDisplayUrlOk() (*string, bool)`
-
-GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDisplayUrl
-
-`func (o *NestedVMInterface) SetDisplayUrl(v string)`
-
-SetDisplayUrl sets DisplayUrl field to given value.
 
 
 ### GetDisplay

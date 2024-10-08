@@ -6,22 +6,21 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**DisplayUrl** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
-**Circuit** | [**BriefCircuit**](BriefCircuit.md) |  | 
+**Circuit** | [**Circuit**](Circuit.md) |  | 
 **TermSide** | [**Termination1**](Termination1.md) |  | 
-**Site** | Pointer to [**NullableBriefSite**](BriefSite.md) |  | [optional] 
-**ProviderNetwork** | Pointer to [**NullableBriefProviderNetwork**](BriefProviderNetwork.md) |  | [optional] 
+**Site** | Pointer to [**NullableSite**](Site.md) |  | [optional] 
+**ProviderNetwork** | Pointer to [**NullableProviderNetwork**](ProviderNetwork.md) |  | [optional] 
 **PortSpeed** | Pointer to **NullableInt32** | Physical circuit speed | [optional] 
 **UpstreamSpeed** | Pointer to **NullableInt32** | Upstream speed, if different from port speed | [optional] 
 **XconnectId** | Pointer to **string** | ID of the local cross-connect | [optional] 
 **PpInfo** | Pointer to **string** | Patch panel ID and port number(s) | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **MarkConnected** | Pointer to **bool** | Treat as if a cable is connected | [optional] 
-**Cable** | [**NullableBriefCable**](BriefCable.md) |  | [readonly] 
+**Cable** | [**NullableCable**](Cable.md) |  | [readonly] 
 **CableEnd** | **string** |  | [readonly] 
 **LinkPeers** | **[]interface{}** |  | [readonly] 
-**LinkPeersType** | **NullableString** | Return the type of the peer link terminations, or None. | [readonly] 
+**LinkPeersType** | **string** | Return the type of the peer link terminations, or None. | [readonly] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
@@ -32,7 +31,7 @@ Name | Type | Description | Notes
 
 ### NewCircuitTermination
 
-`func NewCircuitTermination(id int32, url string, displayUrl string, display string, circuit BriefCircuit, termSide Termination1, cable NullableBriefCable, cableEnd string, linkPeers []interface{}, linkPeersType NullableString, created NullableTime, lastUpdated NullableTime, occupied bool, ) *CircuitTermination`
+`func NewCircuitTermination(id int32, url string, display string, circuit Circuit, termSide Termination1, cable NullableCable, cableEnd string, linkPeers []interface{}, linkPeersType string, created NullableTime, lastUpdated NullableTime, occupied bool, ) *CircuitTermination`
 
 NewCircuitTermination instantiates a new CircuitTermination object
 This constructor will assign default values to properties that have it defined,
@@ -87,26 +86,6 @@ and a boolean to check if the value has been set.
 SetUrl sets Url field to given value.
 
 
-### GetDisplayUrl
-
-`func (o *CircuitTermination) GetDisplayUrl() string`
-
-GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
-
-### GetDisplayUrlOk
-
-`func (o *CircuitTermination) GetDisplayUrlOk() (*string, bool)`
-
-GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDisplayUrl
-
-`func (o *CircuitTermination) SetDisplayUrl(v string)`
-
-SetDisplayUrl sets DisplayUrl field to given value.
-
-
 ### GetDisplay
 
 `func (o *CircuitTermination) GetDisplay() string`
@@ -129,20 +108,20 @@ SetDisplay sets Display field to given value.
 
 ### GetCircuit
 
-`func (o *CircuitTermination) GetCircuit() BriefCircuit`
+`func (o *CircuitTermination) GetCircuit() Circuit`
 
 GetCircuit returns the Circuit field if non-nil, zero value otherwise.
 
 ### GetCircuitOk
 
-`func (o *CircuitTermination) GetCircuitOk() (*BriefCircuit, bool)`
+`func (o *CircuitTermination) GetCircuitOk() (*Circuit, bool)`
 
 GetCircuitOk returns a tuple with the Circuit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCircuit
 
-`func (o *CircuitTermination) SetCircuit(v BriefCircuit)`
+`func (o *CircuitTermination) SetCircuit(v Circuit)`
 
 SetCircuit sets Circuit field to given value.
 
@@ -169,20 +148,20 @@ SetTermSide sets TermSide field to given value.
 
 ### GetSite
 
-`func (o *CircuitTermination) GetSite() BriefSite`
+`func (o *CircuitTermination) GetSite() Site`
 
 GetSite returns the Site field if non-nil, zero value otherwise.
 
 ### GetSiteOk
 
-`func (o *CircuitTermination) GetSiteOk() (*BriefSite, bool)`
+`func (o *CircuitTermination) GetSiteOk() (*Site, bool)`
 
 GetSiteOk returns a tuple with the Site field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSite
 
-`func (o *CircuitTermination) SetSite(v BriefSite)`
+`func (o *CircuitTermination) SetSite(v Site)`
 
 SetSite sets Site field to given value.
 
@@ -204,20 +183,20 @@ HasSite returns a boolean if a field has been set.
 UnsetSite ensures that no value is present for Site, not even an explicit nil
 ### GetProviderNetwork
 
-`func (o *CircuitTermination) GetProviderNetwork() BriefProviderNetwork`
+`func (o *CircuitTermination) GetProviderNetwork() ProviderNetwork`
 
 GetProviderNetwork returns the ProviderNetwork field if non-nil, zero value otherwise.
 
 ### GetProviderNetworkOk
 
-`func (o *CircuitTermination) GetProviderNetworkOk() (*BriefProviderNetwork, bool)`
+`func (o *CircuitTermination) GetProviderNetworkOk() (*ProviderNetwork, bool)`
 
 GetProviderNetworkOk returns a tuple with the ProviderNetwork field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProviderNetwork
 
-`func (o *CircuitTermination) SetProviderNetwork(v BriefProviderNetwork)`
+`func (o *CircuitTermination) SetProviderNetwork(v ProviderNetwork)`
 
 SetProviderNetwork sets ProviderNetwork field to given value.
 
@@ -409,20 +388,20 @@ HasMarkConnected returns a boolean if a field has been set.
 
 ### GetCable
 
-`func (o *CircuitTermination) GetCable() BriefCable`
+`func (o *CircuitTermination) GetCable() Cable`
 
 GetCable returns the Cable field if non-nil, zero value otherwise.
 
 ### GetCableOk
 
-`func (o *CircuitTermination) GetCableOk() (*BriefCable, bool)`
+`func (o *CircuitTermination) GetCableOk() (*Cable, bool)`
 
 GetCableOk returns a tuple with the Cable field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCable
 
-`func (o *CircuitTermination) SetCable(v BriefCable)`
+`func (o *CircuitTermination) SetCable(v Cable)`
 
 SetCable sets Cable field to given value.
 
@@ -497,16 +476,6 @@ and a boolean to check if the value has been set.
 SetLinkPeersType sets LinkPeersType field to given value.
 
 
-### SetLinkPeersTypeNil
-
-`func (o *CircuitTermination) SetLinkPeersTypeNil(b bool)`
-
- SetLinkPeersTypeNil sets the value for LinkPeersType to be an explicit nil
-
-### UnsetLinkPeersType
-`func (o *CircuitTermination) UnsetLinkPeersType()`
-
-UnsetLinkPeersType ensures that no value is present for LinkPeersType, not even an explicit nil
 ### GetTags
 
 `func (o *CircuitTermination) GetTags() []NestedTag`

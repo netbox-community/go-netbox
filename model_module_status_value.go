@@ -20,11 +20,11 @@ type ModuleStatusValue string
 
 // List of Module_status_value
 const (
-	MODULESTATUSVALUE_OFFLINE ModuleStatusValue = "offline"
-	MODULESTATUSVALUE_ACTIVE ModuleStatusValue = "active"
-	MODULESTATUSVALUE_PLANNED ModuleStatusValue = "planned"
-	MODULESTATUSVALUE_STAGED ModuleStatusValue = "staged"
-	MODULESTATUSVALUE_FAILED ModuleStatusValue = "failed"
+	MODULESTATUSVALUE_OFFLINE         ModuleStatusValue = "offline"
+	MODULESTATUSVALUE_ACTIVE          ModuleStatusValue = "active"
+	MODULESTATUSVALUE_PLANNED         ModuleStatusValue = "planned"
+	MODULESTATUSVALUE_STAGED          ModuleStatusValue = "staged"
+	MODULESTATUSVALUE_FAILED          ModuleStatusValue = "failed"
 	MODULESTATUSVALUE_DECOMMISSIONING ModuleStatusValue = "decommissioning"
 )
 
@@ -116,4 +116,3 @@ func (v *NullableModuleStatusValue) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

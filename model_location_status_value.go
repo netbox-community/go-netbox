@@ -20,11 +20,11 @@ type LocationStatusValue string
 
 // List of Location_status_value
 const (
-	LOCATIONSTATUSVALUE_PLANNED LocationStatusValue = "planned"
-	LOCATIONSTATUSVALUE_STAGING LocationStatusValue = "staging"
-	LOCATIONSTATUSVALUE_ACTIVE LocationStatusValue = "active"
+	LOCATIONSTATUSVALUE_PLANNED         LocationStatusValue = "planned"
+	LOCATIONSTATUSVALUE_STAGING         LocationStatusValue = "staging"
+	LOCATIONSTATUSVALUE_ACTIVE          LocationStatusValue = "active"
 	LOCATIONSTATUSVALUE_DECOMMISSIONING LocationStatusValue = "decommissioning"
-	LOCATIONSTATUSVALUE_RETIRED LocationStatusValue = "retired"
+	LOCATIONSTATUSVALUE_RETIRED         LocationStatusValue = "retired"
 )
 
 // All allowed values of LocationStatusValue enum
@@ -114,4 +114,3 @@ func (v *NullableLocationStatusValue) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

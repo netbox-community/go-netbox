@@ -20,10 +20,10 @@ type WirelessLinkRequestDistanceUnit string
 
 // List of WirelessLinkRequest_distance_unit
 const (
-	WIRELESSLINKREQUESTDISTANCEUNIT_KM WirelessLinkRequestDistanceUnit = "km"
-	WIRELESSLINKREQUESTDISTANCEUNIT_M WirelessLinkRequestDistanceUnit = "m"
-	WIRELESSLINKREQUESTDISTANCEUNIT_MI WirelessLinkRequestDistanceUnit = "mi"
-	WIRELESSLINKREQUESTDISTANCEUNIT_FT WirelessLinkRequestDistanceUnit = "ft"
+	WIRELESSLINKREQUESTDISTANCEUNIT_KM    WirelessLinkRequestDistanceUnit = "km"
+	WIRELESSLINKREQUESTDISTANCEUNIT_M     WirelessLinkRequestDistanceUnit = "m"
+	WIRELESSLINKREQUESTDISTANCEUNIT_MI    WirelessLinkRequestDistanceUnit = "mi"
+	WIRELESSLINKREQUESTDISTANCEUNIT_FT    WirelessLinkRequestDistanceUnit = "ft"
 	WIRELESSLINKREQUESTDISTANCEUNIT_EMPTY WirelessLinkRequestDistanceUnit = ""
 )
 
@@ -114,4 +114,3 @@ func (v *NullableWirelessLinkRequestDistanceUnit) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

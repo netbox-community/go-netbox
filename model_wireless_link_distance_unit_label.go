@@ -21,9 +21,9 @@ type WirelessLinkDistanceUnitLabel string
 // List of WirelessLink_distance_unit_label
 const (
 	WIRELESSLINKDISTANCEUNITLABEL_KILOMETERS WirelessLinkDistanceUnitLabel = "Kilometers"
-	WIRELESSLINKDISTANCEUNITLABEL_METERS WirelessLinkDistanceUnitLabel = "Meters"
-	WIRELESSLINKDISTANCEUNITLABEL_MILES WirelessLinkDistanceUnitLabel = "Miles"
-	WIRELESSLINKDISTANCEUNITLABEL_FEET WirelessLinkDistanceUnitLabel = "Feet"
+	WIRELESSLINKDISTANCEUNITLABEL_METERS     WirelessLinkDistanceUnitLabel = "Meters"
+	WIRELESSLINKDISTANCEUNITLABEL_MILES      WirelessLinkDistanceUnitLabel = "Miles"
+	WIRELESSLINKDISTANCEUNITLABEL_FEET       WirelessLinkDistanceUnitLabel = "Feet"
 )
 
 // All allowed values of WirelessLinkDistanceUnitLabel enum
@@ -112,4 +112,3 @@ func (v *NullableWirelessLinkDistanceUnitLabel) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

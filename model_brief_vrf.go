@@ -20,14 +20,14 @@ var _ MappedNullable = &BriefVRF{}
 
 // BriefVRF Adds support for custom fields and tags.
 type BriefVRF struct {
-	Id int32 `json:"id"`
-	Url string `json:"url"`
+	Id      int32  `json:"id"`
+	Url     string `json:"url"`
 	Display string `json:"display"`
-	Name string `json:"name"`
+	Name    string `json:"name"`
 	// Unique route distinguisher (as defined in RFC 4364)
-	Rd NullableString `json:"rd,omitempty"`
-	Description *string `json:"description,omitempty"`
-	PrefixCount *int64 `json:"prefix_count,omitempty"`
+	Rd                   NullableString `json:"rd,omitempty"`
+	Description          *string        `json:"description,omitempty"`
+	PrefixCount          *int64         `json:"prefix_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -182,6 +182,7 @@ func (o *BriefVRF) HasRd() bool {
 func (o *BriefVRF) SetRd(v string) {
 	o.Rd.Set(&v)
 }
+
 // SetRdNil sets the value for Rd to be an explicit nil
 func (o *BriefVRF) SetRdNil() {
 	o.Rd.Set(nil)
@@ -257,7 +258,7 @@ func (o *BriefVRF) SetPrefixCount(v int64) {
 }
 
 func (o BriefVRF) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -303,10 +304,10 @@ func (o *BriefVRF) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -373,5 +374,3 @@ func (v *NullableBriefVRF) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

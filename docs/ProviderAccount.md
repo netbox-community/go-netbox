@@ -6,9 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**DisplayUrl** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
-**Provider** | [**BriefProvider**](BriefProvider.md) |  | 
+**Provider** | [**Provider**](Provider.md) |  | 
 **Name** | Pointer to **string** |  | [optional] [default to ""]
 **Account** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
@@ -22,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewProviderAccount
 
-`func NewProviderAccount(id int32, url string, displayUrl string, display string, provider BriefProvider, account string, created NullableTime, lastUpdated NullableTime, ) *ProviderAccount`
+`func NewProviderAccount(id int32, url string, display string, provider Provider, account string, created NullableTime, lastUpdated NullableTime, ) *ProviderAccount`
 
 NewProviderAccount instantiates a new ProviderAccount object
 This constructor will assign default values to properties that have it defined,
@@ -77,26 +76,6 @@ and a boolean to check if the value has been set.
 SetUrl sets Url field to given value.
 
 
-### GetDisplayUrl
-
-`func (o *ProviderAccount) GetDisplayUrl() string`
-
-GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
-
-### GetDisplayUrlOk
-
-`func (o *ProviderAccount) GetDisplayUrlOk() (*string, bool)`
-
-GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDisplayUrl
-
-`func (o *ProviderAccount) SetDisplayUrl(v string)`
-
-SetDisplayUrl sets DisplayUrl field to given value.
-
-
 ### GetDisplay
 
 `func (o *ProviderAccount) GetDisplay() string`
@@ -119,20 +98,20 @@ SetDisplay sets Display field to given value.
 
 ### GetProvider
 
-`func (o *ProviderAccount) GetProvider() BriefProvider`
+`func (o *ProviderAccount) GetProvider() Provider`
 
 GetProvider returns the Provider field if non-nil, zero value otherwise.
 
 ### GetProviderOk
 
-`func (o *ProviderAccount) GetProviderOk() (*BriefProvider, bool)`
+`func (o *ProviderAccount) GetProviderOk() (*Provider, bool)`
 
 GetProviderOk returns a tuple with the Provider field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProvider
 
-`func (o *ProviderAccount) SetProvider(v BriefProvider)`
+`func (o *ProviderAccount) SetProvider(v Provider)`
 
 SetProvider sets Provider field to given value.
 

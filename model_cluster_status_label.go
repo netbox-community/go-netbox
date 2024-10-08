@@ -20,11 +20,11 @@ type ClusterStatusLabel string
 
 // List of Cluster_status_label
 const (
-	CLUSTERSTATUSLABEL_PLANNED ClusterStatusLabel = "Planned"
-	CLUSTERSTATUSLABEL_STAGING ClusterStatusLabel = "Staging"
-	CLUSTERSTATUSLABEL_ACTIVE ClusterStatusLabel = "Active"
+	CLUSTERSTATUSLABEL_PLANNED         ClusterStatusLabel = "Planned"
+	CLUSTERSTATUSLABEL_STAGING         ClusterStatusLabel = "Staging"
+	CLUSTERSTATUSLABEL_ACTIVE          ClusterStatusLabel = "Active"
 	CLUSTERSTATUSLABEL_DECOMMISSIONING ClusterStatusLabel = "Decommissioning"
-	CLUSTERSTATUSLABEL_OFFLINE ClusterStatusLabel = "Offline"
+	CLUSTERSTATUSLABEL_OFFLINE         ClusterStatusLabel = "Offline"
 )
 
 // All allowed values of ClusterStatusLabel enum
@@ -114,4 +114,3 @@ func (v *NullableClusterStatusLabel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

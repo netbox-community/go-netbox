@@ -20,12 +20,12 @@ var _ MappedNullable = &WritableRackTypeRequest{}
 
 // WritableRackTypeRequest Adds support for custom fields and tags.
 type WritableRackTypeRequest struct {
-	Manufacturer BriefManufacturerRequest `json:"manufacturer"`
-	Model string `json:"model"`
-	Slug string `json:"slug"`
-	Description *string `json:"description,omitempty"`
-	FormFactor PatchedWritableRackTypeRequestFormFactor `json:"form_factor"`
-	Width *PatchedWritableRackRequestWidth `json:"width,omitempty"`
+	Manufacturer BriefManufacturerRequest                 `json:"manufacturer"`
+	Model        string                                   `json:"model"`
+	Slug         string                                   `json:"slug"`
+	Description  *string                                  `json:"description,omitempty"`
+	FormFactor   PatchedWritableRackTypeRequestFormFactor `json:"form_factor"`
+	Width        *PatchedWritableRackRequestWidth         `json:"width,omitempty"`
 	// Height in rack units
 	UHeight *int32 `json:"u_height,omitempty"`
 	// Starting unit for rack
@@ -35,17 +35,17 @@ type WritableRackTypeRequest struct {
 	// Outer dimension of rack (width)
 	OuterWidth NullableInt32 `json:"outer_width,omitempty"`
 	// Outer dimension of rack (depth)
-	OuterDepth NullableInt32 `json:"outer_depth,omitempty"`
-	OuterUnit *PatchedWritableRackRequestOuterUnit `json:"outer_unit,omitempty"`
-	Weight NullableFloat64 `json:"weight,omitempty"`
+	OuterDepth NullableInt32                        `json:"outer_depth,omitempty"`
+	OuterUnit  *PatchedWritableRackRequestOuterUnit `json:"outer_unit,omitempty"`
+	Weight     NullableFloat64                      `json:"weight,omitempty"`
 	// Maximum load capacity for the rack
-	MaxWeight NullableInt32 `json:"max_weight,omitempty"`
+	MaxWeight  NullableInt32              `json:"max_weight,omitempty"`
 	WeightUnit *DeviceTypeWeightUnitValue `json:"weight_unit,omitempty"`
 	// Maximum depth of a mounted device, in millimeters. For four-post racks, this is the distance between the front and rear rails.
-	MountingDepth NullableInt32 `json:"mounting_depth,omitempty"`
-	Comments *string `json:"comments,omitempty"`
-	Tags []NestedTagRequest `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	MountingDepth        NullableInt32          `json:"mounting_depth,omitempty"`
+	Comments             *string                `json:"comments,omitempty"`
+	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
+	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -360,6 +360,7 @@ func (o *WritableRackTypeRequest) HasOuterWidth() bool {
 func (o *WritableRackTypeRequest) SetOuterWidth(v int32) {
 	o.OuterWidth.Set(&v)
 }
+
 // SetOuterWidthNil sets the value for OuterWidth to be an explicit nil
 func (o *WritableRackTypeRequest) SetOuterWidthNil() {
 	o.OuterWidth.Set(nil)
@@ -402,6 +403,7 @@ func (o *WritableRackTypeRequest) HasOuterDepth() bool {
 func (o *WritableRackTypeRequest) SetOuterDepth(v int32) {
 	o.OuterDepth.Set(&v)
 }
+
 // SetOuterDepthNil sets the value for OuterDepth to be an explicit nil
 func (o *WritableRackTypeRequest) SetOuterDepthNil() {
 	o.OuterDepth.Set(nil)
@@ -476,6 +478,7 @@ func (o *WritableRackTypeRequest) HasWeight() bool {
 func (o *WritableRackTypeRequest) SetWeight(v float64) {
 	o.Weight.Set(&v)
 }
+
 // SetWeightNil sets the value for Weight to be an explicit nil
 func (o *WritableRackTypeRequest) SetWeightNil() {
 	o.Weight.Set(nil)
@@ -518,6 +521,7 @@ func (o *WritableRackTypeRequest) HasMaxWeight() bool {
 func (o *WritableRackTypeRequest) SetMaxWeight(v int32) {
 	o.MaxWeight.Set(&v)
 }
+
 // SetMaxWeightNil sets the value for MaxWeight to be an explicit nil
 func (o *WritableRackTypeRequest) SetMaxWeightNil() {
 	o.MaxWeight.Set(nil)
@@ -592,6 +596,7 @@ func (o *WritableRackTypeRequest) HasMountingDepth() bool {
 func (o *WritableRackTypeRequest) SetMountingDepth(v int32) {
 	o.MountingDepth.Set(&v)
 }
+
 // SetMountingDepthNil sets the value for MountingDepth to be an explicit nil
 func (o *WritableRackTypeRequest) SetMountingDepthNil() {
 	o.MountingDepth.Set(nil)
@@ -699,7 +704,7 @@ func (o *WritableRackTypeRequest) SetCustomFields(v map[string]interface{}) {
 }
 
 func (o WritableRackTypeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -781,10 +786,10 @@ func (o *WritableRackTypeRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -863,5 +868,3 @@ func (v *NullableWritableRackTypeRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,10 +20,10 @@ type BriefCircuitGroupAssignmentSerializerPriorityLabel string
 
 // List of BriefCircuitGroupAssignmentSerializer__priority_label
 const (
-	BRIEFCIRCUITGROUPASSIGNMENTSERIALIZERPRIORITYLABEL_PRIMARY BriefCircuitGroupAssignmentSerializerPriorityLabel = "Primary"
+	BRIEFCIRCUITGROUPASSIGNMENTSERIALIZERPRIORITYLABEL_PRIMARY   BriefCircuitGroupAssignmentSerializerPriorityLabel = "Primary"
 	BRIEFCIRCUITGROUPASSIGNMENTSERIALIZERPRIORITYLABEL_SECONDARY BriefCircuitGroupAssignmentSerializerPriorityLabel = "Secondary"
-	BRIEFCIRCUITGROUPASSIGNMENTSERIALIZERPRIORITYLABEL_TERTIARY BriefCircuitGroupAssignmentSerializerPriorityLabel = "Tertiary"
-	BRIEFCIRCUITGROUPASSIGNMENTSERIALIZERPRIORITYLABEL_INACTIVE BriefCircuitGroupAssignmentSerializerPriorityLabel = "Inactive"
+	BRIEFCIRCUITGROUPASSIGNMENTSERIALIZERPRIORITYLABEL_TERTIARY  BriefCircuitGroupAssignmentSerializerPriorityLabel = "Tertiary"
+	BRIEFCIRCUITGROUPASSIGNMENTSERIALIZERPRIORITYLABEL_INACTIVE  BriefCircuitGroupAssignmentSerializerPriorityLabel = "Inactive"
 )
 
 // All allowed values of BriefCircuitGroupAssignmentSerializerPriorityLabel enum
@@ -112,4 +112,3 @@ func (v *NullableBriefCircuitGroupAssignmentSerializerPriorityLabel) UnmarshalJS
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

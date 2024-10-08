@@ -20,11 +20,11 @@ type DataSourceStatusValue string
 
 // List of DataSource_status_value
 const (
-	DATASOURCESTATUSVALUE_NEW DataSourceStatusValue = "new"
-	DATASOURCESTATUSVALUE_QUEUED DataSourceStatusValue = "queued"
-	DATASOURCESTATUSVALUE_SYNCING DataSourceStatusValue = "syncing"
+	DATASOURCESTATUSVALUE_NEW       DataSourceStatusValue = "new"
+	DATASOURCESTATUSVALUE_QUEUED    DataSourceStatusValue = "queued"
+	DATASOURCESTATUSVALUE_SYNCING   DataSourceStatusValue = "syncing"
 	DATASOURCESTATUSVALUE_COMPLETED DataSourceStatusValue = "completed"
-	DATASOURCESTATUSVALUE_FAILED DataSourceStatusValue = "failed"
+	DATASOURCESTATUSVALUE_FAILED    DataSourceStatusValue = "failed"
 )
 
 // All allowed values of DataSourceStatusValue enum
@@ -114,4 +114,3 @@ func (v *NullableDataSourceStatusValue) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

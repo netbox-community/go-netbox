@@ -21,7 +21,7 @@ type DeviceTypeSubdeviceRoleLabel string
 // List of DeviceType_subdevice_role_label
 const (
 	DEVICETYPESUBDEVICEROLELABEL_PARENT DeviceTypeSubdeviceRoleLabel = "Parent"
-	DEVICETYPESUBDEVICEROLELABEL_CHILD DeviceTypeSubdeviceRoleLabel = "Child"
+	DEVICETYPESUBDEVICEROLELABEL_CHILD  DeviceTypeSubdeviceRoleLabel = "Child"
 )
 
 // All allowed values of DeviceTypeSubdeviceRoleLabel enum
@@ -108,4 +108,3 @@ func (v *NullableDeviceTypeSubdeviceRoleLabel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

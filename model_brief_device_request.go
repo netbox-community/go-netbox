@@ -19,8 +19,8 @@ var _ MappedNullable = &BriefDeviceRequest{}
 
 // BriefDeviceRequest Adds support for custom fields and tags.
 type BriefDeviceRequest struct {
-	Name NullableString `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
+	Name                 NullableString `json:"name,omitempty"`
+	Description          *string        `json:"description,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,6 +75,7 @@ func (o *BriefDeviceRequest) HasName() bool {
 func (o *BriefDeviceRequest) SetName(v string) {
 	o.Name.Set(&v)
 }
+
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *BriefDeviceRequest) SetNameNil() {
 	o.Name.Set(nil)
@@ -118,7 +119,7 @@ func (o *BriefDeviceRequest) SetDescription(v string) {
 }
 
 func (o BriefDeviceRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -198,5 +199,3 @@ func (v *NullableBriefDeviceRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

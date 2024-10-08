@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"time"
 	"fmt"
+	"time"
 )
 
 // checks if the NotificationRequest type satisfies the MappedNullable interface at compile time
@@ -21,11 +21,11 @@ var _ MappedNullable = &NotificationRequest{}
 
 // NotificationRequest Extends the built-in ModelSerializer to enforce calling full_clean() on a copy of the associated instance during validation. (DRF does not do this by default; see https://github.com/encode/django-rest-framework/issues/3144)
 type NotificationRequest struct {
-	ObjectType string `json:"object_type"`
-	ObjectId int64 `json:"object_id"`
-	User BriefUserRequest `json:"user"`
-	Read NullableTime `json:"read,omitempty"`
-	EventType Event `json:"event_type"`
+	ObjectType           string           `json:"object_type"`
+	ObjectId             int64            `json:"object_id"`
+	User                 BriefUserRequest `json:"user"`
+	Read                 NullableTime     `json:"read,omitempty"`
+	EventType            Event            `json:"event_type"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -156,6 +156,7 @@ func (o *NotificationRequest) HasRead() bool {
 func (o *NotificationRequest) SetRead(v time.Time) {
 	o.Read.Set(&v)
 }
+
 // SetReadNil sets the value for Read to be an explicit nil
 func (o *NotificationRequest) SetReadNil() {
 	o.Read.Set(nil)
@@ -191,7 +192,7 @@ func (o *NotificationRequest) SetEventType(v Event) {
 }
 
 func (o NotificationRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -231,10 +232,10 @@ func (o *NotificationRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -299,5 +300,3 @@ func (v *NullableNotificationRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

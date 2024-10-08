@@ -21,7 +21,7 @@ type RackOuterUnitLabel string
 // List of Rack_outer_unit_label
 const (
 	RACKOUTERUNITLABEL_MILLIMETERS RackOuterUnitLabel = "Millimeters"
-	RACKOUTERUNITLABEL_INCHES RackOuterUnitLabel = "Inches"
+	RACKOUTERUNITLABEL_INCHES      RackOuterUnitLabel = "Inches"
 )
 
 // All allowed values of RackOuterUnitLabel enum
@@ -108,4 +108,3 @@ func (v *NullableRackOuterUnitLabel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

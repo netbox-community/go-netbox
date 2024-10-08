@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Rack** | [**BriefRackRequest**](BriefRackRequest.md) |  | 
+**Rack** | [**RackRequest**](RackRequest.md) |  | 
 **Units** | **[]int32** |  | 
-**User** | [**BriefUserRequest**](BriefUserRequest.md) |  | 
-**Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
+**User** | [**UserRequest**](UserRequest.md) |  | 
+**Tenant** | Pointer to [**NullableTenantRequest**](TenantRequest.md) |  | [optional] 
 **Description** | **string** |  | 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewRackReservationRequest
 
-`func NewRackReservationRequest(rack BriefRackRequest, units []int32, user BriefUserRequest, description string, ) *RackReservationRequest`
+`func NewRackReservationRequest(rack RackRequest, units []int32, user UserRequest, description string, ) *RackReservationRequest`
 
 NewRackReservationRequest instantiates a new RackReservationRequest object
 This constructor will assign default values to properties that have it defined,
@@ -34,20 +34,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetRack
 
-`func (o *RackReservationRequest) GetRack() BriefRackRequest`
+`func (o *RackReservationRequest) GetRack() RackRequest`
 
 GetRack returns the Rack field if non-nil, zero value otherwise.
 
 ### GetRackOk
 
-`func (o *RackReservationRequest) GetRackOk() (*BriefRackRequest, bool)`
+`func (o *RackReservationRequest) GetRackOk() (*RackRequest, bool)`
 
 GetRackOk returns a tuple with the Rack field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRack
 
-`func (o *RackReservationRequest) SetRack(v BriefRackRequest)`
+`func (o *RackReservationRequest) SetRack(v RackRequest)`
 
 SetRack sets Rack field to given value.
 
@@ -74,40 +74,40 @@ SetUnits sets Units field to given value.
 
 ### GetUser
 
-`func (o *RackReservationRequest) GetUser() BriefUserRequest`
+`func (o *RackReservationRequest) GetUser() UserRequest`
 
 GetUser returns the User field if non-nil, zero value otherwise.
 
 ### GetUserOk
 
-`func (o *RackReservationRequest) GetUserOk() (*BriefUserRequest, bool)`
+`func (o *RackReservationRequest) GetUserOk() (*UserRequest, bool)`
 
 GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUser
 
-`func (o *RackReservationRequest) SetUser(v BriefUserRequest)`
+`func (o *RackReservationRequest) SetUser(v UserRequest)`
 
 SetUser sets User field to given value.
 
 
 ### GetTenant
 
-`func (o *RackReservationRequest) GetTenant() BriefTenantRequest`
+`func (o *RackReservationRequest) GetTenant() TenantRequest`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *RackReservationRequest) GetTenantOk() (*BriefTenantRequest, bool)`
+`func (o *RackReservationRequest) GetTenantOk() (*TenantRequest, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *RackReservationRequest) SetTenant(v BriefTenantRequest)`
+`func (o *RackReservationRequest) SetTenant(v TenantRequest)`
 
 SetTenant sets Tenant field to given value.
 

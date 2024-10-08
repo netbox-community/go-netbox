@@ -4,12 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Manufacturer** | [**BriefManufacturerRequest**](BriefManufacturerRequest.md) |  | 
+**Manufacturer** | [**ManufacturerRequest**](ManufacturerRequest.md) |  | 
 **Model** | **string** |  | 
 **PartNumber** | Pointer to **string** | Discrete part number (optional) | [optional] 
-**Airflow** | Pointer to [**ModuleTypeAirflowValue**](ModuleTypeAirflowValue.md) |  | [optional] 
 **Weight** | Pointer to **NullableFloat64** |  | [optional] 
-**WeightUnit** | Pointer to [**DeviceTypeWeightUnitValue**](DeviceTypeWeightUnitValue.md) |  | [optional] 
+**WeightUnit** | Pointer to [**PatchedWritableDeviceTypeRequestWeightUnit**](PatchedWritableDeviceTypeRequestWeightUnit.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
@@ -19,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewWritableModuleTypeRequest
 
-`func NewWritableModuleTypeRequest(manufacturer BriefManufacturerRequest, model string, ) *WritableModuleTypeRequest`
+`func NewWritableModuleTypeRequest(manufacturer ManufacturerRequest, model string, ) *WritableModuleTypeRequest`
 
 NewWritableModuleTypeRequest instantiates a new WritableModuleTypeRequest object
 This constructor will assign default values to properties that have it defined,
@@ -36,20 +35,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetManufacturer
 
-`func (o *WritableModuleTypeRequest) GetManufacturer() BriefManufacturerRequest`
+`func (o *WritableModuleTypeRequest) GetManufacturer() ManufacturerRequest`
 
 GetManufacturer returns the Manufacturer field if non-nil, zero value otherwise.
 
 ### GetManufacturerOk
 
-`func (o *WritableModuleTypeRequest) GetManufacturerOk() (*BriefManufacturerRequest, bool)`
+`func (o *WritableModuleTypeRequest) GetManufacturerOk() (*ManufacturerRequest, bool)`
 
 GetManufacturerOk returns a tuple with the Manufacturer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetManufacturer
 
-`func (o *WritableModuleTypeRequest) SetManufacturer(v BriefManufacturerRequest)`
+`func (o *WritableModuleTypeRequest) SetManufacturer(v ManufacturerRequest)`
 
 SetManufacturer sets Manufacturer field to given value.
 
@@ -99,31 +98,6 @@ SetPartNumber sets PartNumber field to given value.
 
 HasPartNumber returns a boolean if a field has been set.
 
-### GetAirflow
-
-`func (o *WritableModuleTypeRequest) GetAirflow() ModuleTypeAirflowValue`
-
-GetAirflow returns the Airflow field if non-nil, zero value otherwise.
-
-### GetAirflowOk
-
-`func (o *WritableModuleTypeRequest) GetAirflowOk() (*ModuleTypeAirflowValue, bool)`
-
-GetAirflowOk returns a tuple with the Airflow field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAirflow
-
-`func (o *WritableModuleTypeRequest) SetAirflow(v ModuleTypeAirflowValue)`
-
-SetAirflow sets Airflow field to given value.
-
-### HasAirflow
-
-`func (o *WritableModuleTypeRequest) HasAirflow() bool`
-
-HasAirflow returns a boolean if a field has been set.
-
 ### GetWeight
 
 `func (o *WritableModuleTypeRequest) GetWeight() float64`
@@ -161,20 +135,20 @@ HasWeight returns a boolean if a field has been set.
 UnsetWeight ensures that no value is present for Weight, not even an explicit nil
 ### GetWeightUnit
 
-`func (o *WritableModuleTypeRequest) GetWeightUnit() DeviceTypeWeightUnitValue`
+`func (o *WritableModuleTypeRequest) GetWeightUnit() PatchedWritableDeviceTypeRequestWeightUnit`
 
 GetWeightUnit returns the WeightUnit field if non-nil, zero value otherwise.
 
 ### GetWeightUnitOk
 
-`func (o *WritableModuleTypeRequest) GetWeightUnitOk() (*DeviceTypeWeightUnitValue, bool)`
+`func (o *WritableModuleTypeRequest) GetWeightUnitOk() (*PatchedWritableDeviceTypeRequestWeightUnit, bool)`
 
 GetWeightUnitOk returns a tuple with the WeightUnit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWeightUnit
 
-`func (o *WritableModuleTypeRequest) SetWeightUnit(v DeviceTypeWeightUnitValue)`
+`func (o *WritableModuleTypeRequest) SetWeightUnit(v PatchedWritableDeviceTypeRequestWeightUnit)`
 
 SetWeightUnit sets WeightUnit field to given value.
 

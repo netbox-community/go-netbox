@@ -6,14 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**DisplayUrl** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
-**Rir** | [**BriefRIR**](BriefRIR.md) |  | 
+**Rir** | [**RIR**](RIR.md) |  | 
 **Start** | **int64** |  | 
 **End** | **int64** |  | 
-**Tenant** | Pointer to [**NullableBriefTenant**](BriefTenant.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableTenant**](Tenant.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -25,7 +24,7 @@ Name | Type | Description | Notes
 
 ### NewASNRange
 
-`func NewASNRange(id int32, url string, displayUrl string, display string, name string, slug string, rir BriefRIR, start int64, end int64, created NullableTime, lastUpdated NullableTime, asnCount int32, ) *ASNRange`
+`func NewASNRange(id int32, url string, display string, name string, slug string, rir RIR, start int64, end int64, created NullableTime, lastUpdated NullableTime, asnCount int32, ) *ASNRange`
 
 NewASNRange instantiates a new ASNRange object
 This constructor will assign default values to properties that have it defined,
@@ -78,26 +77,6 @@ and a boolean to check if the value has been set.
 `func (o *ASNRange) SetUrl(v string)`
 
 SetUrl sets Url field to given value.
-
-
-### GetDisplayUrl
-
-`func (o *ASNRange) GetDisplayUrl() string`
-
-GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
-
-### GetDisplayUrlOk
-
-`func (o *ASNRange) GetDisplayUrlOk() (*string, bool)`
-
-GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDisplayUrl
-
-`func (o *ASNRange) SetDisplayUrl(v string)`
-
-SetDisplayUrl sets DisplayUrl field to given value.
 
 
 ### GetDisplay
@@ -162,20 +141,20 @@ SetSlug sets Slug field to given value.
 
 ### GetRir
 
-`func (o *ASNRange) GetRir() BriefRIR`
+`func (o *ASNRange) GetRir() RIR`
 
 GetRir returns the Rir field if non-nil, zero value otherwise.
 
 ### GetRirOk
 
-`func (o *ASNRange) GetRirOk() (*BriefRIR, bool)`
+`func (o *ASNRange) GetRirOk() (*RIR, bool)`
 
 GetRirOk returns a tuple with the Rir field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRir
 
-`func (o *ASNRange) SetRir(v BriefRIR)`
+`func (o *ASNRange) SetRir(v RIR)`
 
 SetRir sets Rir field to given value.
 
@@ -222,20 +201,20 @@ SetEnd sets End field to given value.
 
 ### GetTenant
 
-`func (o *ASNRange) GetTenant() BriefTenant`
+`func (o *ASNRange) GetTenant() Tenant`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *ASNRange) GetTenantOk() (*BriefTenant, bool)`
+`func (o *ASNRange) GetTenantOk() (*Tenant, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *ASNRange) SetTenant(v BriefTenant)`
+`func (o *ASNRange) SetTenant(v Tenant)`
 
 SetTenant sets Tenant field to given value.
 

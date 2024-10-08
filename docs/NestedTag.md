@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**DisplayUrl** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
@@ -16,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewNestedTag
 
-`func NewNestedTag(id int32, url string, displayUrl string, display string, name string, slug string, ) *NestedTag`
+`func NewNestedTag(id int32, url string, display string, name string, slug string, ) *NestedTag`
 
 NewNestedTag instantiates a new NestedTag object
 This constructor will assign default values to properties that have it defined,
@@ -69,26 +68,6 @@ and a boolean to check if the value has been set.
 `func (o *NestedTag) SetUrl(v string)`
 
 SetUrl sets Url field to given value.
-
-
-### GetDisplayUrl
-
-`func (o *NestedTag) GetDisplayUrl() string`
-
-GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
-
-### GetDisplayUrlOk
-
-`func (o *NestedTag) GetDisplayUrlOk() (*string, bool)`
-
-GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDisplayUrl
-
-`func (o *NestedTag) SetDisplayUrl(v string)`
-
-SetDisplayUrl sets DisplayUrl field to given value.
 
 
 ### GetDisplay

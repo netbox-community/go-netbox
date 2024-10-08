@@ -20,15 +20,15 @@ type IPAddressRoleValue string
 
 // List of IPAddress_role_value
 const (
-	IPADDRESSROLEVALUE_LOOPBACK IPAddressRoleValue = "loopback"
+	IPADDRESSROLEVALUE_LOOPBACK  IPAddressRoleValue = "loopback"
 	IPADDRESSROLEVALUE_SECONDARY IPAddressRoleValue = "secondary"
-	IPADDRESSROLEVALUE_ANYCAST IPAddressRoleValue = "anycast"
-	IPADDRESSROLEVALUE_VIP IPAddressRoleValue = "vip"
-	IPADDRESSROLEVALUE_VRRP IPAddressRoleValue = "vrrp"
-	IPADDRESSROLEVALUE_HSRP IPAddressRoleValue = "hsrp"
-	IPADDRESSROLEVALUE_GLBP IPAddressRoleValue = "glbp"
-	IPADDRESSROLEVALUE_CARP IPAddressRoleValue = "carp"
-	IPADDRESSROLEVALUE_EMPTY IPAddressRoleValue = ""
+	IPADDRESSROLEVALUE_ANYCAST   IPAddressRoleValue = "anycast"
+	IPADDRESSROLEVALUE_VIP       IPAddressRoleValue = "vip"
+	IPADDRESSROLEVALUE_VRRP      IPAddressRoleValue = "vrrp"
+	IPADDRESSROLEVALUE_HSRP      IPAddressRoleValue = "hsrp"
+	IPADDRESSROLEVALUE_GLBP      IPAddressRoleValue = "glbp"
+	IPADDRESSROLEVALUE_CARP      IPAddressRoleValue = "carp"
+	IPADDRESSROLEVALUE_EMPTY     IPAddressRoleValue = ""
 )
 
 // All allowed values of IPAddressRoleValue enum
@@ -122,4 +122,3 @@ func (v *NullableIPAddressRoleValue) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

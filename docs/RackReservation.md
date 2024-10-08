@@ -6,14 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**DisplayUrl** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
-**Rack** | [**BriefRack**](BriefRack.md) |  | 
+**Rack** | [**Rack**](Rack.md) |  | 
 **Units** | **[]int32** |  | 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**User** | [**BriefUser**](BriefUser.md) |  | 
-**Tenant** | Pointer to [**NullableBriefTenant**](BriefTenant.md) |  | [optional] 
+**User** | [**User**](User.md) |  | 
+**Tenant** | Pointer to [**NullableTenant**](Tenant.md) |  | [optional] 
 **Description** | **string** |  | 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
@@ -23,7 +22,7 @@ Name | Type | Description | Notes
 
 ### NewRackReservation
 
-`func NewRackReservation(id int32, url string, displayUrl string, display string, rack BriefRack, units []int32, created NullableTime, lastUpdated NullableTime, user BriefUser, description string, ) *RackReservation`
+`func NewRackReservation(id int32, url string, display string, rack Rack, units []int32, created NullableTime, lastUpdated NullableTime, user User, description string, ) *RackReservation`
 
 NewRackReservation instantiates a new RackReservation object
 This constructor will assign default values to properties that have it defined,
@@ -78,26 +77,6 @@ and a boolean to check if the value has been set.
 SetUrl sets Url field to given value.
 
 
-### GetDisplayUrl
-
-`func (o *RackReservation) GetDisplayUrl() string`
-
-GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
-
-### GetDisplayUrlOk
-
-`func (o *RackReservation) GetDisplayUrlOk() (*string, bool)`
-
-GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDisplayUrl
-
-`func (o *RackReservation) SetDisplayUrl(v string)`
-
-SetDisplayUrl sets DisplayUrl field to given value.
-
-
 ### GetDisplay
 
 `func (o *RackReservation) GetDisplay() string`
@@ -120,20 +99,20 @@ SetDisplay sets Display field to given value.
 
 ### GetRack
 
-`func (o *RackReservation) GetRack() BriefRack`
+`func (o *RackReservation) GetRack() Rack`
 
 GetRack returns the Rack field if non-nil, zero value otherwise.
 
 ### GetRackOk
 
-`func (o *RackReservation) GetRackOk() (*BriefRack, bool)`
+`func (o *RackReservation) GetRackOk() (*Rack, bool)`
 
 GetRackOk returns a tuple with the Rack field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRack
 
-`func (o *RackReservation) SetRack(v BriefRack)`
+`func (o *RackReservation) SetRack(v Rack)`
 
 SetRack sets Rack field to given value.
 
@@ -220,40 +199,40 @@ SetLastUpdated sets LastUpdated field to given value.
 UnsetLastUpdated ensures that no value is present for LastUpdated, not even an explicit nil
 ### GetUser
 
-`func (o *RackReservation) GetUser() BriefUser`
+`func (o *RackReservation) GetUser() User`
 
 GetUser returns the User field if non-nil, zero value otherwise.
 
 ### GetUserOk
 
-`func (o *RackReservation) GetUserOk() (*BriefUser, bool)`
+`func (o *RackReservation) GetUserOk() (*User, bool)`
 
 GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUser
 
-`func (o *RackReservation) SetUser(v BriefUser)`
+`func (o *RackReservation) SetUser(v User)`
 
 SetUser sets User field to given value.
 
 
 ### GetTenant
 
-`func (o *RackReservation) GetTenant() BriefTenant`
+`func (o *RackReservation) GetTenant() Tenant`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *RackReservation) GetTenantOk() (*BriefTenant, bool)`
+`func (o *RackReservation) GetTenantOk() (*Tenant, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *RackReservation) SetTenant(v BriefTenant)`
+`func (o *RackReservation) SetTenant(v Tenant)`
 
 SetTenant sets Tenant field to given value.
 

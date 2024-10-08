@@ -20,31 +20,31 @@ type CableType string
 
 // List of Cable_type
 const (
-	CABLETYPE_CAT3 CableType = "cat3"
-	CABLETYPE_CAT5 CableType = "cat5"
-	CABLETYPE_CAT5E CableType = "cat5e"
-	CABLETYPE_CAT6 CableType = "cat6"
-	CABLETYPE_CAT6A CableType = "cat6a"
-	CABLETYPE_CAT7 CableType = "cat7"
-	CABLETYPE_CAT7A CableType = "cat7a"
-	CABLETYPE_CAT8 CableType = "cat8"
-	CABLETYPE_DAC_ACTIVE CableType = "dac-active"
+	CABLETYPE_CAT3        CableType = "cat3"
+	CABLETYPE_CAT5        CableType = "cat5"
+	CABLETYPE_CAT5E       CableType = "cat5e"
+	CABLETYPE_CAT6        CableType = "cat6"
+	CABLETYPE_CAT6A       CableType = "cat6a"
+	CABLETYPE_CAT7        CableType = "cat7"
+	CABLETYPE_CAT7A       CableType = "cat7a"
+	CABLETYPE_CAT8        CableType = "cat8"
+	CABLETYPE_DAC_ACTIVE  CableType = "dac-active"
 	CABLETYPE_DAC_PASSIVE CableType = "dac-passive"
 	CABLETYPE_MRJ21_TRUNK CableType = "mrj21-trunk"
-	CABLETYPE_COAXIAL CableType = "coaxial"
-	CABLETYPE_MMF CableType = "mmf"
-	CABLETYPE_MMF_OM1 CableType = "mmf-om1"
-	CABLETYPE_MMF_OM2 CableType = "mmf-om2"
-	CABLETYPE_MMF_OM3 CableType = "mmf-om3"
-	CABLETYPE_MMF_OM4 CableType = "mmf-om4"
-	CABLETYPE_MMF_OM5 CableType = "mmf-om5"
-	CABLETYPE_SMF CableType = "smf"
-	CABLETYPE_SMF_OS1 CableType = "smf-os1"
-	CABLETYPE_SMF_OS2 CableType = "smf-os2"
-	CABLETYPE_AOC CableType = "aoc"
-	CABLETYPE_USB CableType = "usb"
-	CABLETYPE_POWER CableType = "power"
-	CABLETYPE_EMPTY CableType = ""
+	CABLETYPE_COAXIAL     CableType = "coaxial"
+	CABLETYPE_MMF         CableType = "mmf"
+	CABLETYPE_MMF_OM1     CableType = "mmf-om1"
+	CABLETYPE_MMF_OM2     CableType = "mmf-om2"
+	CABLETYPE_MMF_OM3     CableType = "mmf-om3"
+	CABLETYPE_MMF_OM4     CableType = "mmf-om4"
+	CABLETYPE_MMF_OM5     CableType = "mmf-om5"
+	CABLETYPE_SMF         CableType = "smf"
+	CABLETYPE_SMF_OS1     CableType = "smf-os1"
+	CABLETYPE_SMF_OS2     CableType = "smf-os2"
+	CABLETYPE_AOC         CableType = "aoc"
+	CABLETYPE_USB         CableType = "usb"
+	CABLETYPE_POWER       CableType = "power"
+	CABLETYPE_EMPTY       CableType = ""
 )
 
 // All allowed values of CableType enum
@@ -154,4 +154,3 @@ func (v *NullableCableType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

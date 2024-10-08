@@ -9,8 +9,6 @@
 
 * `CYAN` (value: `"cyan"`)
 
-* `DEFAULT` (value: `"default"`)
-
 * `GHOST_DARK` (value: `"ghost-dark"`)
 
 * `GRAY` (value: `"gray"`)
@@ -20,6 +18,8 @@
 * `INDIGO` (value: `"indigo"`)
 
 * `ORANGE` (value: `"orange"`)
+
+* `OUTLINE_DARK` (value: `"outline-dark"`)
 
 * `PINK` (value: `"pink"`)
 

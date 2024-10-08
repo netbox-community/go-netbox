@@ -20,11 +20,11 @@ var _ MappedNullable = &PatchedNotificationRequest{}
 
 // PatchedNotificationRequest Extends the built-in ModelSerializer to enforce calling full_clean() on a copy of the associated instance during validation. (DRF does not do this by default; see https://github.com/encode/django-rest-framework/issues/3144)
 type PatchedNotificationRequest struct {
-	ObjectType *string `json:"object_type,omitempty"`
-	ObjectId *int64 `json:"object_id,omitempty"`
-	User *BriefUserRequest `json:"user,omitempty"`
-	Read NullableTime `json:"read,omitempty"`
-	EventType *Event `json:"event_type,omitempty"`
+	ObjectType           *string           `json:"object_type,omitempty"`
+	ObjectId             *int64            `json:"object_id,omitempty"`
+	User                 *BriefUserRequest `json:"user,omitempty"`
+	Read                 NullableTime      `json:"read,omitempty"`
+	EventType            *Event            `json:"event_type,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -175,6 +175,7 @@ func (o *PatchedNotificationRequest) HasRead() bool {
 func (o *PatchedNotificationRequest) SetRead(v time.Time) {
 	o.Read.Set(&v)
 }
+
 // SetReadNil sets the value for Read to be an explicit nil
 func (o *PatchedNotificationRequest) SetReadNil() {
 	o.Read.Set(nil)
@@ -218,7 +219,7 @@ func (o *PatchedNotificationRequest) SetEventType(v Event) {
 }
 
 func (o PatchedNotificationRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -310,5 +311,3 @@ func (v *NullablePatchedNotificationRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

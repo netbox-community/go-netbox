@@ -24,10 +24,10 @@ const (
 	DEVICETYPEREQUESTAIRFLOW_REAR_TO_FRONT DeviceTypeRequestAirflow = "rear-to-front"
 	DEVICETYPEREQUESTAIRFLOW_LEFT_TO_RIGHT DeviceTypeRequestAirflow = "left-to-right"
 	DEVICETYPEREQUESTAIRFLOW_RIGHT_TO_LEFT DeviceTypeRequestAirflow = "right-to-left"
-	DEVICETYPEREQUESTAIRFLOW_SIDE_TO_REAR DeviceTypeRequestAirflow = "side-to-rear"
-	DEVICETYPEREQUESTAIRFLOW_PASSIVE DeviceTypeRequestAirflow = "passive"
-	DEVICETYPEREQUESTAIRFLOW_MIXED DeviceTypeRequestAirflow = "mixed"
-	DEVICETYPEREQUESTAIRFLOW_EMPTY DeviceTypeRequestAirflow = ""
+	DEVICETYPEREQUESTAIRFLOW_SIDE_TO_REAR  DeviceTypeRequestAirflow = "side-to-rear"
+	DEVICETYPEREQUESTAIRFLOW_PASSIVE       DeviceTypeRequestAirflow = "passive"
+	DEVICETYPEREQUESTAIRFLOW_MIXED         DeviceTypeRequestAirflow = "mixed"
+	DEVICETYPEREQUESTAIRFLOW_EMPTY         DeviceTypeRequestAirflow = ""
 )
 
 // All allowed values of DeviceTypeRequestAirflow enum
@@ -120,4 +120,3 @@ func (v *NullableDeviceTypeRequestAirflow) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

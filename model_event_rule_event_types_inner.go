@@ -23,10 +23,10 @@ const (
 	EVENTRULEEVENTTYPESINNER_OBJECT_CREATED EventRuleEventTypesInner = "object_created"
 	EVENTRULEEVENTTYPESINNER_OBJECT_UPDATED EventRuleEventTypesInner = "object_updated"
 	EVENTRULEEVENTTYPESINNER_OBJECT_DELETED EventRuleEventTypesInner = "object_deleted"
-	EVENTRULEEVENTTYPESINNER_JOB_STARTED EventRuleEventTypesInner = "job_started"
-	EVENTRULEEVENTTYPESINNER_JOB_COMPLETED EventRuleEventTypesInner = "job_completed"
-	EVENTRULEEVENTTYPESINNER_JOB_FAILED EventRuleEventTypesInner = "job_failed"
-	EVENTRULEEVENTTYPESINNER_JOB_ERRORED EventRuleEventTypesInner = "job_errored"
+	EVENTRULEEVENTTYPESINNER_JOB_STARTED    EventRuleEventTypesInner = "job_started"
+	EVENTRULEEVENTTYPESINNER_JOB_COMPLETED  EventRuleEventTypesInner = "job_completed"
+	EVENTRULEEVENTTYPESINNER_JOB_FAILED     EventRuleEventTypesInner = "job_failed"
+	EVENTRULEEVENTTYPESINNER_JOB_ERRORED    EventRuleEventTypesInner = "job_errored"
 )
 
 // All allowed values of EventRuleEventTypesInner enum
@@ -118,4 +118,3 @@ func (v *NullableEventRuleEventTypesInner) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

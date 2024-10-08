@@ -20,18 +20,18 @@ type BriefL2VPNTypeValue string
 
 // List of BriefL2VPN_type_value
 const (
-	BRIEFL2VPNTYPEVALUE_VPWS BriefL2VPNTypeValue = "vpws"
-	BRIEFL2VPNTYPEVALUE_VPLS BriefL2VPNTypeValue = "vpls"
-	BRIEFL2VPNTYPEVALUE_VXLAN BriefL2VPNTypeValue = "vxlan"
+	BRIEFL2VPNTYPEVALUE_VPWS       BriefL2VPNTypeValue = "vpws"
+	BRIEFL2VPNTYPEVALUE_VPLS       BriefL2VPNTypeValue = "vpls"
+	BRIEFL2VPNTYPEVALUE_VXLAN      BriefL2VPNTypeValue = "vxlan"
 	BRIEFL2VPNTYPEVALUE_VXLAN_EVPN BriefL2VPNTypeValue = "vxlan-evpn"
-	BRIEFL2VPNTYPEVALUE_MPLS_EVPN BriefL2VPNTypeValue = "mpls-evpn"
-	BRIEFL2VPNTYPEVALUE_PBB_EVPN BriefL2VPNTypeValue = "pbb-evpn"
-	BRIEFL2VPNTYPEVALUE_EPL BriefL2VPNTypeValue = "epl"
-	BRIEFL2VPNTYPEVALUE_EVPL BriefL2VPNTypeValue = "evpl"
-	BRIEFL2VPNTYPEVALUE_EP_LAN BriefL2VPNTypeValue = "ep-lan"
-	BRIEFL2VPNTYPEVALUE_EVP_LAN BriefL2VPNTypeValue = "evp-lan"
-	BRIEFL2VPNTYPEVALUE_EP_TREE BriefL2VPNTypeValue = "ep-tree"
-	BRIEFL2VPNTYPEVALUE_EVP_TREE BriefL2VPNTypeValue = "evp-tree"
+	BRIEFL2VPNTYPEVALUE_MPLS_EVPN  BriefL2VPNTypeValue = "mpls-evpn"
+	BRIEFL2VPNTYPEVALUE_PBB_EVPN   BriefL2VPNTypeValue = "pbb-evpn"
+	BRIEFL2VPNTYPEVALUE_EPL        BriefL2VPNTypeValue = "epl"
+	BRIEFL2VPNTYPEVALUE_EVPL       BriefL2VPNTypeValue = "evpl"
+	BRIEFL2VPNTYPEVALUE_EP_LAN     BriefL2VPNTypeValue = "ep-lan"
+	BRIEFL2VPNTYPEVALUE_EVP_LAN    BriefL2VPNTypeValue = "evp-lan"
+	BRIEFL2VPNTYPEVALUE_EP_TREE    BriefL2VPNTypeValue = "ep-tree"
+	BRIEFL2VPNTYPEVALUE_EVP_TREE   BriefL2VPNTypeValue = "evp-tree"
 )
 
 // All allowed values of BriefL2VPNTypeValue enum
@@ -128,4 +128,3 @@ func (v *NullableBriefL2VPNTypeValue) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -12,8 +12,8 @@ package netbox
 
 import (
 	"encoding/json"
-	"time"
 	"fmt"
+	"time"
 )
 
 // checks if the ScriptInputRequest type satisfies the MappedNullable interface at compile time
@@ -21,10 +21,10 @@ var _ MappedNullable = &ScriptInputRequest{}
 
 // ScriptInputRequest struct for ScriptInputRequest
 type ScriptInputRequest struct {
-	Data interface{} `json:"data"`
-	Commit bool `json:"commit"`
-	ScheduleAt NullableTime `json:"schedule_at,omitempty"`
-	Interval NullableInt32 `json:"interval,omitempty"`
+	Data                 interface{}   `json:"data"`
+	Commit               bool          `json:"commit"`
+	ScheduleAt           NullableTime  `json:"schedule_at,omitempty"`
+	Interval             NullableInt32 `json:"interval,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -131,6 +131,7 @@ func (o *ScriptInputRequest) HasScheduleAt() bool {
 func (o *ScriptInputRequest) SetScheduleAt(v time.Time) {
 	o.ScheduleAt.Set(&v)
 }
+
 // SetScheduleAtNil sets the value for ScheduleAt to be an explicit nil
 func (o *ScriptInputRequest) SetScheduleAtNil() {
 	o.ScheduleAt.Set(nil)
@@ -173,6 +174,7 @@ func (o *ScriptInputRequest) HasInterval() bool {
 func (o *ScriptInputRequest) SetInterval(v int32) {
 	o.Interval.Set(&v)
 }
+
 // SetIntervalNil sets the value for Interval to be an explicit nil
 func (o *ScriptInputRequest) SetIntervalNil() {
 	o.Interval.Set(nil)
@@ -184,7 +186,7 @@ func (o *ScriptInputRequest) UnsetInterval() {
 }
 
 func (o ScriptInputRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -225,10 +227,10 @@ func (o *ScriptInputRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -292,5 +294,3 @@ func (v *NullableScriptInputRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

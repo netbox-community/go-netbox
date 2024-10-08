@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Device** | [**BriefDeviceRequest**](BriefDeviceRequest.md) |  | 
+**Device** | [**DeviceRequest**](DeviceRequest.md) |  | 
 **Parent** | Pointer to **NullableInt32** |  | [optional] 
 **Name** | **string** |  | 
 **Label** | Pointer to **string** | Physical label | [optional] 
-**Role** | Pointer to [**NullableBriefInventoryItemRoleRequest**](BriefInventoryItemRoleRequest.md) |  | [optional] 
-**Manufacturer** | Pointer to [**NullableBriefManufacturerRequest**](BriefManufacturerRequest.md) |  | [optional] 
+**Role** | Pointer to [**NullableInventoryItemRoleRequest**](InventoryItemRoleRequest.md) |  | [optional] 
+**Manufacturer** | Pointer to [**NullableManufacturerRequest**](ManufacturerRequest.md) |  | [optional] 
 **PartId** | Pointer to **string** | Manufacturer-assigned part identifier | [optional] 
 **Serial** | Pointer to **string** |  | [optional] 
 **AssetTag** | Pointer to **NullableString** | A unique tag used to identify this item | [optional] 
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 
 ### NewInventoryItemRequest
 
-`func NewInventoryItemRequest(device BriefDeviceRequest, name string, ) *InventoryItemRequest`
+`func NewInventoryItemRequest(device DeviceRequest, name string, ) *InventoryItemRequest`
 
 NewInventoryItemRequest instantiates a new InventoryItemRequest object
 This constructor will assign default values to properties that have it defined,
@@ -41,20 +41,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDevice
 
-`func (o *InventoryItemRequest) GetDevice() BriefDeviceRequest`
+`func (o *InventoryItemRequest) GetDevice() DeviceRequest`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *InventoryItemRequest) GetDeviceOk() (*BriefDeviceRequest, bool)`
+`func (o *InventoryItemRequest) GetDeviceOk() (*DeviceRequest, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *InventoryItemRequest) SetDevice(v BriefDeviceRequest)`
+`func (o *InventoryItemRequest) SetDevice(v DeviceRequest)`
 
 SetDevice sets Device field to given value.
 
@@ -141,20 +141,20 @@ HasLabel returns a boolean if a field has been set.
 
 ### GetRole
 
-`func (o *InventoryItemRequest) GetRole() BriefInventoryItemRoleRequest`
+`func (o *InventoryItemRequest) GetRole() InventoryItemRoleRequest`
 
 GetRole returns the Role field if non-nil, zero value otherwise.
 
 ### GetRoleOk
 
-`func (o *InventoryItemRequest) GetRoleOk() (*BriefInventoryItemRoleRequest, bool)`
+`func (o *InventoryItemRequest) GetRoleOk() (*InventoryItemRoleRequest, bool)`
 
 GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRole
 
-`func (o *InventoryItemRequest) SetRole(v BriefInventoryItemRoleRequest)`
+`func (o *InventoryItemRequest) SetRole(v InventoryItemRoleRequest)`
 
 SetRole sets Role field to given value.
 
@@ -176,20 +176,20 @@ HasRole returns a boolean if a field has been set.
 UnsetRole ensures that no value is present for Role, not even an explicit nil
 ### GetManufacturer
 
-`func (o *InventoryItemRequest) GetManufacturer() BriefManufacturerRequest`
+`func (o *InventoryItemRequest) GetManufacturer() ManufacturerRequest`
 
 GetManufacturer returns the Manufacturer field if non-nil, zero value otherwise.
 
 ### GetManufacturerOk
 
-`func (o *InventoryItemRequest) GetManufacturerOk() (*BriefManufacturerRequest, bool)`
+`func (o *InventoryItemRequest) GetManufacturerOk() (*ManufacturerRequest, bool)`
 
 GetManufacturerOk returns a tuple with the Manufacturer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetManufacturer
 
-`func (o *InventoryItemRequest) SetManufacturer(v BriefManufacturerRequest)`
+`func (o *InventoryItemRequest) SetManufacturer(v ManufacturerRequest)`
 
 SetManufacturer sets Manufacturer field to given value.
 

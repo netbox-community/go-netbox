@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Device** | Pointer to [**BriefDeviceRequest**](BriefDeviceRequest.md) |  | [optional] 
-**Module** | Pointer to [**NullableBriefModuleRequest**](BriefModuleRequest.md) |  | [optional] 
+**Device** | Pointer to [**DeviceRequest**](DeviceRequest.md) |  | [optional] 
+**Module** | Pointer to [**NullableModuleRequest**](ModuleRequest.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Type** | Pointer to [**PatchedWritablePowerOutletRequestType**](PatchedWritablePowerOutletRequestType.md) |  | [optional] 
-**PowerPort** | Pointer to [**NullableBriefPowerPortRequest**](BriefPowerPortRequest.md) |  | [optional] 
+**PowerPort** | Pointer to [**NullablePowerPortRequest**](PowerPortRequest.md) |  | [optional] 
 **FeedLeg** | Pointer to [**PatchedWritablePowerOutletRequestFeedLeg**](PatchedWritablePowerOutletRequestFeedLeg.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **MarkConnected** | Pointer to **bool** | Treat as if a cable is connected | [optional] 
@@ -37,20 +37,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDevice
 
-`func (o *PatchedWritablePowerOutletRequest) GetDevice() BriefDeviceRequest`
+`func (o *PatchedWritablePowerOutletRequest) GetDevice() DeviceRequest`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *PatchedWritablePowerOutletRequest) GetDeviceOk() (*BriefDeviceRequest, bool)`
+`func (o *PatchedWritablePowerOutletRequest) GetDeviceOk() (*DeviceRequest, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *PatchedWritablePowerOutletRequest) SetDevice(v BriefDeviceRequest)`
+`func (o *PatchedWritablePowerOutletRequest) SetDevice(v DeviceRequest)`
 
 SetDevice sets Device field to given value.
 
@@ -62,20 +62,20 @@ HasDevice returns a boolean if a field has been set.
 
 ### GetModule
 
-`func (o *PatchedWritablePowerOutletRequest) GetModule() BriefModuleRequest`
+`func (o *PatchedWritablePowerOutletRequest) GetModule() ModuleRequest`
 
 GetModule returns the Module field if non-nil, zero value otherwise.
 
 ### GetModuleOk
 
-`func (o *PatchedWritablePowerOutletRequest) GetModuleOk() (*BriefModuleRequest, bool)`
+`func (o *PatchedWritablePowerOutletRequest) GetModuleOk() (*ModuleRequest, bool)`
 
 GetModuleOk returns a tuple with the Module field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetModule
 
-`func (o *PatchedWritablePowerOutletRequest) SetModule(v BriefModuleRequest)`
+`func (o *PatchedWritablePowerOutletRequest) SetModule(v ModuleRequest)`
 
 SetModule sets Module field to given value.
 
@@ -172,20 +172,20 @@ HasType returns a boolean if a field has been set.
 
 ### GetPowerPort
 
-`func (o *PatchedWritablePowerOutletRequest) GetPowerPort() BriefPowerPortRequest`
+`func (o *PatchedWritablePowerOutletRequest) GetPowerPort() PowerPortRequest`
 
 GetPowerPort returns the PowerPort field if non-nil, zero value otherwise.
 
 ### GetPowerPortOk
 
-`func (o *PatchedWritablePowerOutletRequest) GetPowerPortOk() (*BriefPowerPortRequest, bool)`
+`func (o *PatchedWritablePowerOutletRequest) GetPowerPortOk() (*PowerPortRequest, bool)`
 
 GetPowerPortOk returns a tuple with the PowerPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPowerPort
 
-`func (o *PatchedWritablePowerOutletRequest) SetPowerPort(v BriefPowerPortRequest)`
+`func (o *PatchedWritablePowerOutletRequest) SetPowerPort(v PowerPortRequest)`
 
 SetPowerPort sets PowerPort field to given value.
 

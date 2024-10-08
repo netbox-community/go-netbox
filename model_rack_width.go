@@ -19,8 +19,8 @@ var _ MappedNullable = &RackWidth{}
 
 // RackWidth struct for RackWidth
 type RackWidth struct {
-	Value *RackWidthValue `json:"value,omitempty"`
-	Label *RackWidthLabel `json:"label,omitempty"`
+	Value                *RackWidthValue `json:"value,omitempty"`
+	Label                *RackWidthLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -108,7 +108,7 @@ func (o *RackWidth) SetLabel(v RackWidthLabel) {
 }
 
 func (o RackWidth) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -188,5 +188,3 @@ func (v *NullableRackWidth) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

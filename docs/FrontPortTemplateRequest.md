@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DeviceType** | Pointer to [**NullableBriefDeviceTypeRequest**](BriefDeviceTypeRequest.md) |  | [optional] 
-**ModuleType** | Pointer to [**NullableBriefModuleTypeRequest**](BriefModuleTypeRequest.md) |  | [optional] 
+**DeviceType** | Pointer to [**NullableDeviceTypeRequest**](DeviceTypeRequest.md) |  | [optional] 
+**ModuleType** | Pointer to [**NullableModuleTypeRequest**](ModuleTypeRequest.md) |  | [optional] 
 **Name** | **string** | {module} is accepted as a substitution for the module bay position when attached to a module type. | 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Type** | [**FrontPortTypeValue**](FrontPortTypeValue.md) |  | 
 **Color** | Pointer to **string** |  | [optional] 
-**RearPort** | [**BriefRearPortTemplateRequest**](BriefRearPortTemplateRequest.md) |  | 
+**RearPort** | [**RearPortTemplateRequest**](RearPortTemplateRequest.md) |  | 
 **RearPortPosition** | Pointer to **int32** |  | [optional] [default to 1]
 **Description** | Pointer to **string** |  | [optional] 
 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewFrontPortTemplateRequest
 
-`func NewFrontPortTemplateRequest(name string, type_ FrontPortTypeValue, rearPort BriefRearPortTemplateRequest, ) *FrontPortTemplateRequest`
+`func NewFrontPortTemplateRequest(name string, type_ FrontPortTypeValue, rearPort RearPortTemplateRequest, ) *FrontPortTemplateRequest`
 
 NewFrontPortTemplateRequest instantiates a new FrontPortTemplateRequest object
 This constructor will assign default values to properties that have it defined,
@@ -35,20 +35,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDeviceType
 
-`func (o *FrontPortTemplateRequest) GetDeviceType() BriefDeviceTypeRequest`
+`func (o *FrontPortTemplateRequest) GetDeviceType() DeviceTypeRequest`
 
 GetDeviceType returns the DeviceType field if non-nil, zero value otherwise.
 
 ### GetDeviceTypeOk
 
-`func (o *FrontPortTemplateRequest) GetDeviceTypeOk() (*BriefDeviceTypeRequest, bool)`
+`func (o *FrontPortTemplateRequest) GetDeviceTypeOk() (*DeviceTypeRequest, bool)`
 
 GetDeviceTypeOk returns a tuple with the DeviceType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeviceType
 
-`func (o *FrontPortTemplateRequest) SetDeviceType(v BriefDeviceTypeRequest)`
+`func (o *FrontPortTemplateRequest) SetDeviceType(v DeviceTypeRequest)`
 
 SetDeviceType sets DeviceType field to given value.
 
@@ -70,20 +70,20 @@ HasDeviceType returns a boolean if a field has been set.
 UnsetDeviceType ensures that no value is present for DeviceType, not even an explicit nil
 ### GetModuleType
 
-`func (o *FrontPortTemplateRequest) GetModuleType() BriefModuleTypeRequest`
+`func (o *FrontPortTemplateRequest) GetModuleType() ModuleTypeRequest`
 
 GetModuleType returns the ModuleType field if non-nil, zero value otherwise.
 
 ### GetModuleTypeOk
 
-`func (o *FrontPortTemplateRequest) GetModuleTypeOk() (*BriefModuleTypeRequest, bool)`
+`func (o *FrontPortTemplateRequest) GetModuleTypeOk() (*ModuleTypeRequest, bool)`
 
 GetModuleTypeOk returns a tuple with the ModuleType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetModuleType
 
-`func (o *FrontPortTemplateRequest) SetModuleType(v BriefModuleTypeRequest)`
+`func (o *FrontPortTemplateRequest) SetModuleType(v ModuleTypeRequest)`
 
 SetModuleType sets ModuleType field to given value.
 
@@ -195,20 +195,20 @@ HasColor returns a boolean if a field has been set.
 
 ### GetRearPort
 
-`func (o *FrontPortTemplateRequest) GetRearPort() BriefRearPortTemplateRequest`
+`func (o *FrontPortTemplateRequest) GetRearPort() RearPortTemplateRequest`
 
 GetRearPort returns the RearPort field if non-nil, zero value otherwise.
 
 ### GetRearPortOk
 
-`func (o *FrontPortTemplateRequest) GetRearPortOk() (*BriefRearPortTemplateRequest, bool)`
+`func (o *FrontPortTemplateRequest) GetRearPortOk() (*RearPortTemplateRequest, bool)`
 
 GetRearPortOk returns a tuple with the RearPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRearPort
 
-`func (o *FrontPortTemplateRequest) SetRearPort(v BriefRearPortTemplateRequest)`
+`func (o *FrontPortTemplateRequest) SetRearPort(v RearPortTemplateRequest)`
 
 SetRearPort sets RearPort field to given value.
 

@@ -20,11 +20,11 @@ type IPAddressStatusValue string
 
 // List of IPAddress_status_value
 const (
-	IPADDRESSSTATUSVALUE_ACTIVE IPAddressStatusValue = "active"
-	IPADDRESSSTATUSVALUE_RESERVED IPAddressStatusValue = "reserved"
+	IPADDRESSSTATUSVALUE_ACTIVE     IPAddressStatusValue = "active"
+	IPADDRESSSTATUSVALUE_RESERVED   IPAddressStatusValue = "reserved"
 	IPADDRESSSTATUSVALUE_DEPRECATED IPAddressStatusValue = "deprecated"
-	IPADDRESSSTATUSVALUE_DHCP IPAddressStatusValue = "dhcp"
-	IPADDRESSSTATUSVALUE_SLAAC IPAddressStatusValue = "slaac"
+	IPADDRESSSTATUSVALUE_DHCP       IPAddressStatusValue = "dhcp"
+	IPADDRESSSTATUSVALUE_SLAAC      IPAddressStatusValue = "slaac"
 )
 
 // All allowed values of IPAddressStatusValue enum
@@ -114,4 +114,3 @@ func (v *NullableIPAddressStatusValue) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

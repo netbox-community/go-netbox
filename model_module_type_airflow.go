@@ -19,8 +19,8 @@ var _ MappedNullable = &ModuleTypeAirflow{}
 
 // ModuleTypeAirflow struct for ModuleTypeAirflow
 type ModuleTypeAirflow struct {
-	Value *ModuleTypeAirflowValue `json:"value,omitempty"`
-	Label *ModuleTypeAirflowLabel `json:"label,omitempty"`
+	Value                *ModuleTypeAirflowValue `json:"value,omitempty"`
+	Label                *ModuleTypeAirflowLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -108,7 +108,7 @@ func (o *ModuleTypeAirflow) SetLabel(v ModuleTypeAirflowLabel) {
 }
 
 func (o ModuleTypeAirflow) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -188,5 +188,3 @@ func (v *NullableModuleTypeAirflow) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

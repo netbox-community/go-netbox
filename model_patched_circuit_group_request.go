@@ -19,12 +19,12 @@ var _ MappedNullable = &PatchedCircuitGroupRequest{}
 
 // PatchedCircuitGroupRequest Adds support for custom fields and tags.
 type PatchedCircuitGroupRequest struct {
-	Name *string `json:"name,omitempty"`
-	Slug *string `json:"slug,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Tenant NullableBriefTenantRequest `json:"tenant,omitempty"`
-	Tags []NestedTagRequest `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	Name                 *string                    `json:"name,omitempty"`
+	Slug                 *string                    `json:"slug,omitempty"`
+	Description          *string                    `json:"description,omitempty"`
+	Tenant               NullableBriefTenantRequest `json:"tenant,omitempty"`
+	Tags                 []NestedTagRequest         `json:"tags,omitempty"`
+	CustomFields         map[string]interface{}     `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -175,6 +175,7 @@ func (o *PatchedCircuitGroupRequest) HasTenant() bool {
 func (o *PatchedCircuitGroupRequest) SetTenant(v BriefTenantRequest) {
 	o.Tenant.Set(&v)
 }
+
 // SetTenantNil sets the value for Tenant to be an explicit nil
 func (o *PatchedCircuitGroupRequest) SetTenantNil() {
 	o.Tenant.Set(nil)
@@ -250,7 +251,7 @@ func (o *PatchedCircuitGroupRequest) SetCustomFields(v map[string]interface{}) {
 }
 
 func (o PatchedCircuitGroupRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -346,5 +347,3 @@ func (v *NullablePatchedCircuitGroupRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

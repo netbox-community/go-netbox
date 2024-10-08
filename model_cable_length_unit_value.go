@@ -20,12 +20,12 @@ type CableLengthUnitValue string
 
 // List of Cable_length_unit_value
 const (
-	CABLELENGTHUNITVALUE_KM CableLengthUnitValue = "km"
-	CABLELENGTHUNITVALUE_M CableLengthUnitValue = "m"
-	CABLELENGTHUNITVALUE_CM CableLengthUnitValue = "cm"
-	CABLELENGTHUNITVALUE_MI CableLengthUnitValue = "mi"
-	CABLELENGTHUNITVALUE_FT CableLengthUnitValue = "ft"
-	CABLELENGTHUNITVALUE_IN CableLengthUnitValue = "in"
+	CABLELENGTHUNITVALUE_KM    CableLengthUnitValue = "km"
+	CABLELENGTHUNITVALUE_M     CableLengthUnitValue = "m"
+	CABLELENGTHUNITVALUE_CM    CableLengthUnitValue = "cm"
+	CABLELENGTHUNITVALUE_MI    CableLengthUnitValue = "mi"
+	CABLELENGTHUNITVALUE_FT    CableLengthUnitValue = "ft"
+	CABLELENGTHUNITVALUE_IN    CableLengthUnitValue = "in"
 	CABLELENGTHUNITVALUE_EMPTY CableLengthUnitValue = ""
 )
 
@@ -118,4 +118,3 @@ func (v *NullableCableLengthUnitValue) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

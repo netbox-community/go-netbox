@@ -20,11 +20,11 @@ type LocationStatusLabel string
 
 // List of Location_status_label
 const (
-	LOCATIONSTATUSLABEL_PLANNED LocationStatusLabel = "Planned"
-	LOCATIONSTATUSLABEL_STAGING LocationStatusLabel = "Staging"
-	LOCATIONSTATUSLABEL_ACTIVE LocationStatusLabel = "Active"
+	LOCATIONSTATUSLABEL_PLANNED         LocationStatusLabel = "Planned"
+	LOCATIONSTATUSLABEL_STAGING         LocationStatusLabel = "Staging"
+	LOCATIONSTATUSLABEL_ACTIVE          LocationStatusLabel = "Active"
 	LOCATIONSTATUSLABEL_DECOMMISSIONING LocationStatusLabel = "Decommissioning"
-	LOCATIONSTATUSLABEL_RETIRED LocationStatusLabel = "Retired"
+	LOCATIONSTATUSLABEL_RETIRED         LocationStatusLabel = "Retired"
 )
 
 // All allowed values of LocationStatusLabel enum
@@ -114,4 +114,3 @@ func (v *NullableLocationStatusLabel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

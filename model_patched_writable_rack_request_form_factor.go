@@ -20,14 +20,14 @@ type PatchedWritableRackRequestFormFactor string
 
 // List of PatchedWritableRackRequest_form_factor
 const (
-	PATCHEDWRITABLERACKREQUESTFORMFACTOR__2_POST_FRAME PatchedWritableRackRequestFormFactor = "2-post-frame"
-	PATCHEDWRITABLERACKREQUESTFORMFACTOR__4_POST_FRAME PatchedWritableRackRequestFormFactor = "4-post-frame"
-	PATCHEDWRITABLERACKREQUESTFORMFACTOR__4_POST_CABINET PatchedWritableRackRequestFormFactor = "4-post-cabinet"
-	PATCHEDWRITABLERACKREQUESTFORMFACTOR_WALL_FRAME PatchedWritableRackRequestFormFactor = "wall-frame"
-	PATCHEDWRITABLERACKREQUESTFORMFACTOR_WALL_FRAME_VERTICAL PatchedWritableRackRequestFormFactor = "wall-frame-vertical"
-	PATCHEDWRITABLERACKREQUESTFORMFACTOR_WALL_CABINET PatchedWritableRackRequestFormFactor = "wall-cabinet"
+	PATCHEDWRITABLERACKREQUESTFORMFACTOR__2_POST_FRAME         PatchedWritableRackRequestFormFactor = "2-post-frame"
+	PATCHEDWRITABLERACKREQUESTFORMFACTOR__4_POST_FRAME         PatchedWritableRackRequestFormFactor = "4-post-frame"
+	PATCHEDWRITABLERACKREQUESTFORMFACTOR__4_POST_CABINET       PatchedWritableRackRequestFormFactor = "4-post-cabinet"
+	PATCHEDWRITABLERACKREQUESTFORMFACTOR_WALL_FRAME            PatchedWritableRackRequestFormFactor = "wall-frame"
+	PATCHEDWRITABLERACKREQUESTFORMFACTOR_WALL_FRAME_VERTICAL   PatchedWritableRackRequestFormFactor = "wall-frame-vertical"
+	PATCHEDWRITABLERACKREQUESTFORMFACTOR_WALL_CABINET          PatchedWritableRackRequestFormFactor = "wall-cabinet"
 	PATCHEDWRITABLERACKREQUESTFORMFACTOR_WALL_CABINET_VERTICAL PatchedWritableRackRequestFormFactor = "wall-cabinet-vertical"
-	PATCHEDWRITABLERACKREQUESTFORMFACTOR_EMPTY PatchedWritableRackRequestFormFactor = ""
+	PATCHEDWRITABLERACKREQUESTFORMFACTOR_EMPTY                 PatchedWritableRackRequestFormFactor = ""
 )
 
 // All allowed values of PatchedWritableRackRequestFormFactor enum
@@ -120,4 +120,3 @@ func (v *NullablePatchedWritableRackRequestFormFactor) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

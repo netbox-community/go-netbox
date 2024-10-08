@@ -22,7 +22,7 @@ type WirelessWirelessLinksListDistanceUnitParameter string
 const (
 	WIRELESSWIRELESSLINKSLISTDISTANCEUNITPARAMETER_FT WirelessWirelessLinksListDistanceUnitParameter = "ft"
 	WIRELESSWIRELESSLINKSLISTDISTANCEUNITPARAMETER_KM WirelessWirelessLinksListDistanceUnitParameter = "km"
-	WIRELESSWIRELESSLINKSLISTDISTANCEUNITPARAMETER_M WirelessWirelessLinksListDistanceUnitParameter = "m"
+	WIRELESSWIRELESSLINKSLISTDISTANCEUNITPARAMETER_M  WirelessWirelessLinksListDistanceUnitParameter = "m"
 	WIRELESSWIRELESSLINKSLISTDISTANCEUNITPARAMETER_MI WirelessWirelessLinksListDistanceUnitParameter = "mi"
 )
 
@@ -112,4 +112,3 @@ func (v *NullableWirelessWirelessLinksListDistanceUnitParameter) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -20,8 +20,8 @@ type CableStatusValue string
 
 // List of Cable_status_value
 const (
-	CABLESTATUSVALUE_CONNECTED CableStatusValue = "connected"
-	CABLESTATUSVALUE_PLANNED CableStatusValue = "planned"
+	CABLESTATUSVALUE_CONNECTED       CableStatusValue = "connected"
+	CABLESTATUSVALUE_PLANNED         CableStatusValue = "planned"
 	CABLESTATUSVALUE_DECOMMISSIONING CableStatusValue = "decommissioning"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableCableStatusValue) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

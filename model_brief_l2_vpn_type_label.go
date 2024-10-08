@@ -20,17 +20,17 @@ type BriefL2VPNTypeLabel string
 
 // List of BriefL2VPN_type_label
 const (
-	BRIEFL2VPNTYPELABEL_VPWS BriefL2VPNTypeLabel = "VPWS"
-	BRIEFL2VPNTYPELABEL_VPLS BriefL2VPNTypeLabel = "VPLS"
-	BRIEFL2VPNTYPELABEL_VXLAN BriefL2VPNTypeLabel = "VXLAN"
-	BRIEFL2VPNTYPELABEL_VXLAN_EVPN BriefL2VPNTypeLabel = "VXLAN-EVPN"
-	BRIEFL2VPNTYPELABEL_MPLS_EVPN BriefL2VPNTypeLabel = "MPLS EVPN"
-	BRIEFL2VPNTYPELABEL_PBB_EVPN BriefL2VPNTypeLabel = "PBB EVPN"
-	BRIEFL2VPNTYPELABEL_EPL BriefL2VPNTypeLabel = "EPL"
-	BRIEFL2VPNTYPELABEL_EVPL BriefL2VPNTypeLabel = "EVPL"
-	BRIEFL2VPNTYPELABEL_ETHERNET_PRIVATE_LAN BriefL2VPNTypeLabel = "Ethernet Private LAN"
-	BRIEFL2VPNTYPELABEL_ETHERNET_VIRTUAL_PRIVATE_LAN BriefL2VPNTypeLabel = "Ethernet Virtual Private LAN"
-	BRIEFL2VPNTYPELABEL_ETHERNET_PRIVATE_TREE BriefL2VPNTypeLabel = "Ethernet Private Tree"
+	BRIEFL2VPNTYPELABEL_VPWS                          BriefL2VPNTypeLabel = "VPWS"
+	BRIEFL2VPNTYPELABEL_VPLS                          BriefL2VPNTypeLabel = "VPLS"
+	BRIEFL2VPNTYPELABEL_VXLAN                         BriefL2VPNTypeLabel = "VXLAN"
+	BRIEFL2VPNTYPELABEL_VXLAN_EVPN                    BriefL2VPNTypeLabel = "VXLAN-EVPN"
+	BRIEFL2VPNTYPELABEL_MPLS_EVPN                     BriefL2VPNTypeLabel = "MPLS EVPN"
+	BRIEFL2VPNTYPELABEL_PBB_EVPN                      BriefL2VPNTypeLabel = "PBB EVPN"
+	BRIEFL2VPNTYPELABEL_EPL                           BriefL2VPNTypeLabel = "EPL"
+	BRIEFL2VPNTYPELABEL_EVPL                          BriefL2VPNTypeLabel = "EVPL"
+	BRIEFL2VPNTYPELABEL_ETHERNET_PRIVATE_LAN          BriefL2VPNTypeLabel = "Ethernet Private LAN"
+	BRIEFL2VPNTYPELABEL_ETHERNET_VIRTUAL_PRIVATE_LAN  BriefL2VPNTypeLabel = "Ethernet Virtual Private LAN"
+	BRIEFL2VPNTYPELABEL_ETHERNET_PRIVATE_TREE         BriefL2VPNTypeLabel = "Ethernet Private Tree"
 	BRIEFL2VPNTYPELABEL_ETHERNET_VIRTUAL_PRIVATE_TREE BriefL2VPNTypeLabel = "Ethernet Virtual Private Tree"
 )
 
@@ -128,4 +128,3 @@ func (v *NullableBriefL2VPNTypeLabel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

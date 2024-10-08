@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**VirtualMachine** | Pointer to [**BriefVirtualMachineRequest**](BriefVirtualMachineRequest.md) |  | [optional] 
+**VirtualMachine** | Pointer to [**VirtualMachineRequest**](VirtualMachineRequest.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Size** | Pointer to **int32** |  | [optional] 
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetVirtualMachine
 
-`func (o *PatchedVirtualDiskRequest) GetVirtualMachine() BriefVirtualMachineRequest`
+`func (o *PatchedVirtualDiskRequest) GetVirtualMachine() VirtualMachineRequest`
 
 GetVirtualMachine returns the VirtualMachine field if non-nil, zero value otherwise.
 
 ### GetVirtualMachineOk
 
-`func (o *PatchedVirtualDiskRequest) GetVirtualMachineOk() (*BriefVirtualMachineRequest, bool)`
+`func (o *PatchedVirtualDiskRequest) GetVirtualMachineOk() (*VirtualMachineRequest, bool)`
 
 GetVirtualMachineOk returns a tuple with the VirtualMachine field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVirtualMachine
 
-`func (o *PatchedVirtualDiskRequest) SetVirtualMachine(v BriefVirtualMachineRequest)`
+`func (o *PatchedVirtualDiskRequest) SetVirtualMachine(v VirtualMachineRequest)`
 
 SetVirtualMachine sets VirtualMachine field to given value.
 

@@ -24,9 +24,9 @@ const (
 	MODULETYPEAIRFLOWVALUE_REAR_TO_FRONT ModuleTypeAirflowValue = "rear-to-front"
 	MODULETYPEAIRFLOWVALUE_LEFT_TO_RIGHT ModuleTypeAirflowValue = "left-to-right"
 	MODULETYPEAIRFLOWVALUE_RIGHT_TO_LEFT ModuleTypeAirflowValue = "right-to-left"
-	MODULETYPEAIRFLOWVALUE_SIDE_TO_REAR ModuleTypeAirflowValue = "side-to-rear"
-	MODULETYPEAIRFLOWVALUE_PASSIVE ModuleTypeAirflowValue = "passive"
-	MODULETYPEAIRFLOWVALUE_EMPTY ModuleTypeAirflowValue = ""
+	MODULETYPEAIRFLOWVALUE_SIDE_TO_REAR  ModuleTypeAirflowValue = "side-to-rear"
+	MODULETYPEAIRFLOWVALUE_PASSIVE       ModuleTypeAirflowValue = "passive"
+	MODULETYPEAIRFLOWVALUE_EMPTY         ModuleTypeAirflowValue = ""
 )
 
 // All allowed values of ModuleTypeAirflowValue enum
@@ -118,4 +118,3 @@ func (v *NullableModuleTypeAirflowValue) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -20,10 +20,10 @@ var _ MappedNullable = &BriefRackTypeRequest{}
 
 // BriefRackTypeRequest Adds support for custom fields and tags.
 type BriefRackTypeRequest struct {
-	Manufacturer BriefManufacturerRequest `json:"manufacturer"`
-	Model string `json:"model"`
-	Slug string `json:"slug"`
-	Description *string `json:"description,omitempty"`
+	Manufacturer         BriefManufacturerRequest `json:"manufacturer"`
+	Model                string                   `json:"model"`
+	Slug                 string                   `json:"slug"`
+	Description          *string                  `json:"description,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -154,7 +154,7 @@ func (o *BriefRackTypeRequest) SetDescription(v string) {
 }
 
 func (o BriefRackTypeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -192,10 +192,10 @@ func (o *BriefRackTypeRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -259,5 +259,3 @@ func (v *NullableBriefRackTypeRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

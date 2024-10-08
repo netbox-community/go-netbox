@@ -20,12 +20,12 @@ var _ MappedNullable = &BriefCustomFieldChoiceSet{}
 
 // BriefCustomFieldChoiceSet Extends the built-in ModelSerializer to enforce calling full_clean() on a copy of the associated instance during validation. (DRF does not do this by default; see https://github.com/encode/django-rest-framework/issues/3144)
 type BriefCustomFieldChoiceSet struct {
-	Id int32 `json:"id"`
-	Url string `json:"url"`
-	Display string `json:"display"`
-	Name string `json:"name"`
-	Description *string `json:"description,omitempty"`
-	ChoicesCount string `json:"choices_count"`
+	Id                   int32   `json:"id"`
+	Url                  string  `json:"url"`
+	Display              string  `json:"display"`
+	Name                 string  `json:"name"`
+	Description          *string `json:"description,omitempty"`
+	ChoicesCount         string  `json:"choices_count"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -206,7 +206,7 @@ func (o *BriefCustomFieldChoiceSet) SetChoicesCount(v string) {
 }
 
 func (o BriefCustomFieldChoiceSet) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -248,10 +248,10 @@ func (o *BriefCustomFieldChoiceSet) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -317,5 +317,3 @@ func (v *NullableBriefCustomFieldChoiceSet) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

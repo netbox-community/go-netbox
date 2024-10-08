@@ -6,10 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **StartAddress** | Pointer to **string** |  | [optional] 
 **EndAddress** | Pointer to **string** |  | [optional] 
-**Vrf** | Pointer to [**NullableBriefVRFRequest**](BriefVRFRequest.md) |  | [optional] 
-**Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
+**Vrf** | Pointer to [**NullableVRFRequest**](VRFRequest.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableTenantRequest**](TenantRequest.md) |  | [optional] 
 **Status** | Pointer to [**PatchedWritableIPRangeRequestStatus**](PatchedWritableIPRangeRequestStatus.md) |  | [optional] 
-**Role** | Pointer to [**NullableBriefRoleRequest**](BriefRoleRequest.md) |  | [optional] 
+**Role** | Pointer to [**NullableRoleRequest**](RoleRequest.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
@@ -87,20 +87,20 @@ HasEndAddress returns a boolean if a field has been set.
 
 ### GetVrf
 
-`func (o *PatchedWritableIPRangeRequest) GetVrf() BriefVRFRequest`
+`func (o *PatchedWritableIPRangeRequest) GetVrf() VRFRequest`
 
 GetVrf returns the Vrf field if non-nil, zero value otherwise.
 
 ### GetVrfOk
 
-`func (o *PatchedWritableIPRangeRequest) GetVrfOk() (*BriefVRFRequest, bool)`
+`func (o *PatchedWritableIPRangeRequest) GetVrfOk() (*VRFRequest, bool)`
 
 GetVrfOk returns a tuple with the Vrf field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVrf
 
-`func (o *PatchedWritableIPRangeRequest) SetVrf(v BriefVRFRequest)`
+`func (o *PatchedWritableIPRangeRequest) SetVrf(v VRFRequest)`
 
 SetVrf sets Vrf field to given value.
 
@@ -122,20 +122,20 @@ HasVrf returns a boolean if a field has been set.
 UnsetVrf ensures that no value is present for Vrf, not even an explicit nil
 ### GetTenant
 
-`func (o *PatchedWritableIPRangeRequest) GetTenant() BriefTenantRequest`
+`func (o *PatchedWritableIPRangeRequest) GetTenant() TenantRequest`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *PatchedWritableIPRangeRequest) GetTenantOk() (*BriefTenantRequest, bool)`
+`func (o *PatchedWritableIPRangeRequest) GetTenantOk() (*TenantRequest, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *PatchedWritableIPRangeRequest) SetTenant(v BriefTenantRequest)`
+`func (o *PatchedWritableIPRangeRequest) SetTenant(v TenantRequest)`
 
 SetTenant sets Tenant field to given value.
 
@@ -182,20 +182,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetRole
 
-`func (o *PatchedWritableIPRangeRequest) GetRole() BriefRoleRequest`
+`func (o *PatchedWritableIPRangeRequest) GetRole() RoleRequest`
 
 GetRole returns the Role field if non-nil, zero value otherwise.
 
 ### GetRoleOk
 
-`func (o *PatchedWritableIPRangeRequest) GetRoleOk() (*BriefRoleRequest, bool)`
+`func (o *PatchedWritableIPRangeRequest) GetRoleOk() (*RoleRequest, bool)`
 
 GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRole
 
-`func (o *PatchedWritableIPRangeRequest) SetRole(v BriefRoleRequest)`
+`func (o *PatchedWritableIPRangeRequest) SetRole(v RoleRequest)`
 
 SetRole sets Role field to given value.
 

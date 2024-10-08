@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Family** | **int32** |  | [readonly] 
 **Address** | **string** |  | [readonly] 
-**Vrf** | [**NullableBriefVRF**](BriefVRF.md) |  | [readonly] 
+**Vrf** | [**NullableVRF**](VRF.md) |  | [readonly] 
 **Description** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewAvailableIP
 
-`func NewAvailableIP(family int32, address string, vrf NullableBriefVRF, ) *AvailableIP`
+`func NewAvailableIP(family int32, address string, vrf NullableVRF, ) *AvailableIP`
 
 NewAvailableIP instantiates a new AvailableIP object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetAddress sets Address field to given value.
 
 ### GetVrf
 
-`func (o *AvailableIP) GetVrf() BriefVRF`
+`func (o *AvailableIP) GetVrf() VRF`
 
 GetVrf returns the Vrf field if non-nil, zero value otherwise.
 
 ### GetVrfOk
 
-`func (o *AvailableIP) GetVrfOk() (*BriefVRF, bool)`
+`func (o *AvailableIP) GetVrfOk() (*VRF, bool)`
 
 GetVrfOk returns a tuple with the Vrf field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVrf
 
-`func (o *AvailableIP) SetVrf(v BriefVRF)`
+`func (o *AvailableIP) SetVrf(v VRF)`
 
 SetVrf sets Vrf field to given value.
 

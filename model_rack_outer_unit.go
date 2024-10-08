@@ -19,8 +19,8 @@ var _ MappedNullable = &RackOuterUnit{}
 
 // RackOuterUnit struct for RackOuterUnit
 type RackOuterUnit struct {
-	Value *PatchedWritableRackRequestOuterUnit `json:"value,omitempty"`
-	Label *RackOuterUnitLabel `json:"label,omitempty"`
+	Value                *PatchedWritableRackRequestOuterUnit `json:"value,omitempty"`
+	Label                *RackOuterUnitLabel                  `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -108,7 +108,7 @@ func (o *RackOuterUnit) SetLabel(v RackOuterUnitLabel) {
 }
 
 func (o RackOuterUnit) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -188,5 +188,3 @@ func (v *NullableRackOuterUnit) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

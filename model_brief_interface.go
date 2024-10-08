@@ -20,14 +20,14 @@ var _ MappedNullable = &BriefInterface{}
 
 // BriefInterface Adds support for custom fields and tags.
 type BriefInterface struct {
-	Id int32 `json:"id"`
-	Url string `json:"url"`
-	Display string `json:"display"`
-	Device BriefDevice `json:"device"`
-	Name string `json:"name"`
-	Description *string `json:"description,omitempty"`
-	Cable NullableBriefCable `json:"cable"`
-	Occupied bool `json:"_occupied"`
+	Id                   int32              `json:"id"`
+	Url                  string             `json:"url"`
+	Display              string             `json:"display"`
+	Device               BriefDevice        `json:"device"`
+	Name                 string             `json:"name"`
+	Description          *string            `json:"description,omitempty"`
+	Cable                NullableBriefCable `json:"cable"`
+	Occupied             bool               `json:"_occupied"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -260,7 +260,7 @@ func (o *BriefInterface) SetOccupied(v bool) {
 }
 
 func (o BriefInterface) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -306,10 +306,10 @@ func (o *BriefInterface) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -377,5 +377,3 @@ func (v *NullableBriefInterface) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

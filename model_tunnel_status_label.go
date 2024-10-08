@@ -20,8 +20,8 @@ type TunnelStatusLabel string
 
 // List of Tunnel_status_label
 const (
-	TUNNELSTATUSLABEL_PLANNED TunnelStatusLabel = "Planned"
-	TUNNELSTATUSLABEL_ACTIVE TunnelStatusLabel = "Active"
+	TUNNELSTATUSLABEL_PLANNED  TunnelStatusLabel = "Planned"
+	TUNNELSTATUSLABEL_ACTIVE   TunnelStatusLabel = "Active"
 	TUNNELSTATUSLABEL_DISABLED TunnelStatusLabel = "Disabled"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableTunnelStatusLabel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

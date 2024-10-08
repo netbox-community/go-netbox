@@ -20,13 +20,13 @@ type BriefFHRPGroupProtocol string
 
 // List of BriefFHRPGroup_protocol
 const (
-	BRIEFFHRPGROUPPROTOCOL_VRRP2 BriefFHRPGroupProtocol = "vrrp2"
-	BRIEFFHRPGROUPPROTOCOL_VRRP3 BriefFHRPGroupProtocol = "vrrp3"
-	BRIEFFHRPGROUPPROTOCOL_CARP BriefFHRPGroupProtocol = "carp"
+	BRIEFFHRPGROUPPROTOCOL_VRRP2     BriefFHRPGroupProtocol = "vrrp2"
+	BRIEFFHRPGROUPPROTOCOL_VRRP3     BriefFHRPGroupProtocol = "vrrp3"
+	BRIEFFHRPGROUPPROTOCOL_CARP      BriefFHRPGroupProtocol = "carp"
 	BRIEFFHRPGROUPPROTOCOL_CLUSTERXL BriefFHRPGroupProtocol = "clusterxl"
-	BRIEFFHRPGROUPPROTOCOL_HSRP BriefFHRPGroupProtocol = "hsrp"
-	BRIEFFHRPGROUPPROTOCOL_GLBP BriefFHRPGroupProtocol = "glbp"
-	BRIEFFHRPGROUPPROTOCOL_OTHER BriefFHRPGroupProtocol = "other"
+	BRIEFFHRPGROUPPROTOCOL_HSRP      BriefFHRPGroupProtocol = "hsrp"
+	BRIEFFHRPGROUPPROTOCOL_GLBP      BriefFHRPGroupProtocol = "glbp"
+	BRIEFFHRPGROUPPROTOCOL_OTHER     BriefFHRPGroupProtocol = "other"
 )
 
 // All allowed values of BriefFHRPGroupProtocol enum
@@ -118,4 +118,3 @@ func (v *NullableBriefFHRPGroupProtocol) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -20,12 +20,12 @@ type BriefJobStatusLabel string
 
 // List of BriefJob_status_label
 const (
-	BRIEFJOBSTATUSLABEL_PENDING BriefJobStatusLabel = "Pending"
+	BRIEFJOBSTATUSLABEL_PENDING   BriefJobStatusLabel = "Pending"
 	BRIEFJOBSTATUSLABEL_SCHEDULED BriefJobStatusLabel = "Scheduled"
-	BRIEFJOBSTATUSLABEL_RUNNING BriefJobStatusLabel = "Running"
+	BRIEFJOBSTATUSLABEL_RUNNING   BriefJobStatusLabel = "Running"
 	BRIEFJOBSTATUSLABEL_COMPLETED BriefJobStatusLabel = "Completed"
-	BRIEFJOBSTATUSLABEL_ERRORED BriefJobStatusLabel = "Errored"
-	BRIEFJOBSTATUSLABEL_FAILED BriefJobStatusLabel = "Failed"
+	BRIEFJOBSTATUSLABEL_ERRORED   BriefJobStatusLabel = "Errored"
+	BRIEFJOBSTATUSLABEL_FAILED    BriefJobStatusLabel = "Failed"
 )
 
 // All allowed values of BriefJobStatusLabel enum
@@ -116,4 +116,3 @@ func (v *NullableBriefJobStatusLabel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

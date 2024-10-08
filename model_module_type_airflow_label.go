@@ -24,8 +24,8 @@ const (
 	MODULETYPEAIRFLOWLABEL_REAR_TO_FRONT ModuleTypeAirflowLabel = "Rear to front"
 	MODULETYPEAIRFLOWLABEL_LEFT_TO_RIGHT ModuleTypeAirflowLabel = "Left to right"
 	MODULETYPEAIRFLOWLABEL_RIGHT_TO_LEFT ModuleTypeAirflowLabel = "Right to left"
-	MODULETYPEAIRFLOWLABEL_SIDE_TO_REAR ModuleTypeAirflowLabel = "Side to rear"
-	MODULETYPEAIRFLOWLABEL_PASSIVE ModuleTypeAirflowLabel = "Passive"
+	MODULETYPEAIRFLOWLABEL_SIDE_TO_REAR  ModuleTypeAirflowLabel = "Side to rear"
+	MODULETYPEAIRFLOWLABEL_PASSIVE       ModuleTypeAirflowLabel = "Passive"
 )
 
 // All allowed values of ModuleTypeAirflowLabel enum
@@ -116,4 +116,3 @@ func (v *NullableModuleTypeAirflowLabel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

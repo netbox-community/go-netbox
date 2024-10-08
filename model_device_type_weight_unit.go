@@ -19,8 +19,8 @@ var _ MappedNullable = &DeviceTypeWeightUnit{}
 
 // DeviceTypeWeightUnit struct for DeviceTypeWeightUnit
 type DeviceTypeWeightUnit struct {
-	Value *DeviceTypeWeightUnitValue `json:"value,omitempty"`
-	Label *DeviceTypeWeightUnitLabel `json:"label,omitempty"`
+	Value                *DeviceTypeWeightUnitValue `json:"value,omitempty"`
+	Label                *DeviceTypeWeightUnitLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -108,7 +108,7 @@ func (o *DeviceTypeWeightUnit) SetLabel(v DeviceTypeWeightUnitLabel) {
 }
 
 func (o DeviceTypeWeightUnit) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -188,5 +188,3 @@ func (v *NullableDeviceTypeWeightUnit) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

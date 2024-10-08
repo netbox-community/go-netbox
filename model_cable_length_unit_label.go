@@ -20,12 +20,12 @@ type CableLengthUnitLabel string
 
 // List of Cable_length_unit_label
 const (
-	CABLELENGTHUNITLABEL_KILOMETERS CableLengthUnitLabel = "Kilometers"
-	CABLELENGTHUNITLABEL_METERS CableLengthUnitLabel = "Meters"
+	CABLELENGTHUNITLABEL_KILOMETERS  CableLengthUnitLabel = "Kilometers"
+	CABLELENGTHUNITLABEL_METERS      CableLengthUnitLabel = "Meters"
 	CABLELENGTHUNITLABEL_CENTIMETERS CableLengthUnitLabel = "Centimeters"
-	CABLELENGTHUNITLABEL_MILES CableLengthUnitLabel = "Miles"
-	CABLELENGTHUNITLABEL_FEET CableLengthUnitLabel = "Feet"
-	CABLELENGTHUNITLABEL_INCHES CableLengthUnitLabel = "Inches"
+	CABLELENGTHUNITLABEL_MILES       CableLengthUnitLabel = "Miles"
+	CABLELENGTHUNITLABEL_FEET        CableLengthUnitLabel = "Feet"
+	CABLELENGTHUNITLABEL_INCHES      CableLengthUnitLabel = "Inches"
 )
 
 // All allowed values of CableLengthUnitLabel enum
@@ -116,4 +116,3 @@ func (v *NullableCableLengthUnitLabel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

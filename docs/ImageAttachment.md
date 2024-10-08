@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 **Parent** | **interface{}** |  | [readonly] 
 **Name** | Pointer to **string** |  | [optional] 
 **Image** | **string** |  | 
-**ImageHeight** | **int32** |  | [readonly] 
-**ImageWidth** | **int32** |  | [readonly] 
+**ImageHeight** | **int32** |  | 
+**ImageWidth** | **int32** |  | 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 

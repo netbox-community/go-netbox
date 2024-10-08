@@ -125,8 +125,6 @@
 
 * `NEMA_L21_30R` (value: `"nema-l21-30r"`)
 
-* `NEMA_L22_20R` (value: `"nema-l22-20r"`)
-
 * `NEMA_L22_30R` (value: `"nema-l22-30r"`)
 
 * `CS6360_C` (value: `"CS6360C"`)

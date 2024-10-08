@@ -20,10 +20,10 @@ type CircuitsCircuitGroupAssignmentsListPriorityParameter string
 
 // List of circuits_circuit_group_assignments_list_priority_parameter
 const (
-	CIRCUITSCIRCUITGROUPASSIGNMENTSLISTPRIORITYPARAMETER_INACTIVE CircuitsCircuitGroupAssignmentsListPriorityParameter = "inactive"
-	CIRCUITSCIRCUITGROUPASSIGNMENTSLISTPRIORITYPARAMETER_PRIMARY CircuitsCircuitGroupAssignmentsListPriorityParameter = "primary"
+	CIRCUITSCIRCUITGROUPASSIGNMENTSLISTPRIORITYPARAMETER_INACTIVE  CircuitsCircuitGroupAssignmentsListPriorityParameter = "inactive"
+	CIRCUITSCIRCUITGROUPASSIGNMENTSLISTPRIORITYPARAMETER_PRIMARY   CircuitsCircuitGroupAssignmentsListPriorityParameter = "primary"
 	CIRCUITSCIRCUITGROUPASSIGNMENTSLISTPRIORITYPARAMETER_SECONDARY CircuitsCircuitGroupAssignmentsListPriorityParameter = "secondary"
-	CIRCUITSCIRCUITGROUPASSIGNMENTSLISTPRIORITYPARAMETER_TERTIARY CircuitsCircuitGroupAssignmentsListPriorityParameter = "tertiary"
+	CIRCUITSCIRCUITGROUPASSIGNMENTSLISTPRIORITYPARAMETER_TERTIARY  CircuitsCircuitGroupAssignmentsListPriorityParameter = "tertiary"
 )
 
 // All allowed values of CircuitsCircuitGroupAssignmentsListPriorityParameter enum
@@ -112,4 +112,3 @@ func (v *NullableCircuitsCircuitGroupAssignmentsListPriorityParameter) Unmarshal
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -19,8 +19,8 @@ var _ MappedNullable = &BriefCableRequest{}
 
 // BriefCableRequest Adds support for custom fields and tags.
 type BriefCableRequest struct {
-	Label *string `json:"label,omitempty"`
-	Description *string `json:"description,omitempty"`
+	Label                *string `json:"label,omitempty"`
+	Description          *string `json:"description,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -108,7 +108,7 @@ func (o *BriefCableRequest) SetDescription(v string) {
 }
 
 func (o BriefCableRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -188,5 +188,3 @@ func (v *NullableBriefCableRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

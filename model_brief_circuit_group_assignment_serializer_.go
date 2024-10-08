@@ -20,11 +20,11 @@ var _ MappedNullable = &BriefCircuitGroupAssignmentSerializer{}
 
 // BriefCircuitGroupAssignmentSerializer Base serializer for group assignments under CircuitSerializer.
 type BriefCircuitGroupAssignmentSerializer struct {
-	Id int32 `json:"id"`
-	Url string `json:"url"`
-	Display string `json:"display"`
-	Group BriefCircuitGroup `json:"group"`
-	Priority *BriefCircuitGroupAssignmentSerializerPriority `json:"priority,omitempty"`
+	Id                   int32                                          `json:"id"`
+	Url                  string                                         `json:"url"`
+	Display              string                                         `json:"display"`
+	Group                BriefCircuitGroup                              `json:"group"`
+	Priority             *BriefCircuitGroupAssignmentSerializerPriority `json:"priority,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -180,7 +180,7 @@ func (o *BriefCircuitGroupAssignmentSerializer) SetPriority(v BriefCircuitGroupA
 }
 
 func (o BriefCircuitGroupAssignmentSerializer) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -220,10 +220,10 @@ func (o *BriefCircuitGroupAssignmentSerializer) UnmarshalJSON(data []byte) (err 
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -288,5 +288,3 @@ func (v *NullableBriefCircuitGroupAssignmentSerializer) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

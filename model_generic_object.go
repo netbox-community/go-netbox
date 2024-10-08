@@ -20,9 +20,9 @@ var _ MappedNullable = &GenericObject{}
 
 // GenericObject Minimal representation of some generic object identified by ContentType and PK.
 type GenericObject struct {
-	ObjectType string `json:"object_type"`
-	ObjectId int32 `json:"object_id"`
-	Object interface{} `json:"object"`
+	ObjectType           string      `json:"object_type"`
+	ObjectId             int32       `json:"object_id"`
+	Object               interface{} `json:"object"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -123,7 +123,7 @@ func (o *GenericObject) SetObject(v interface{}) {
 }
 
 func (o GenericObject) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -160,10 +160,10 @@ func (o *GenericObject) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -226,5 +226,3 @@ func (v *NullableGenericObject) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

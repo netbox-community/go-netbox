@@ -18,8 +18,6 @@ Method | HTTP request | Description
 [**CoreDataSourcesUpdate**](CoreAPI.md#CoreDataSourcesUpdate) | **Put** /api/core/data-sources/{id}/ | 
 [**CoreJobsList**](CoreAPI.md#CoreJobsList) | **Get** /api/core/jobs/ | 
 [**CoreJobsRetrieve**](CoreAPI.md#CoreJobsRetrieve) | **Get** /api/core/jobs/{id}/ | 
-[**CoreObjectChangesList**](CoreAPI.md#CoreObjectChangesList) | **Get** /api/core/object-changes/ | 
-[**CoreObjectChangesRetrieve**](CoreAPI.md#CoreObjectChangesRetrieve) | **Get** /api/core/object-changes/{id}/ | 
 
 
 
@@ -301,7 +299,7 @@ import (
 )
 
 func main() {
-	dataSourceRequest := []openapiclient.DataSourceRequest{*openapiclient.NewDataSourceRequest("Name_example", openapiclient.DataSource_type_value("local"), "SourceUrl_example")} // []DataSourceRequest | 
+	dataSourceRequest := []openapiclient.DataSourceRequest{*openapiclient.NewDataSourceRequest("Name_example", openapiclient.DataSourceRequest_type("local"), "SourceUrl_example")} // []DataSourceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -365,7 +363,7 @@ import (
 )
 
 func main() {
-	dataSourceRequest := []openapiclient.DataSourceRequest{*openapiclient.NewDataSourceRequest("Name_example", openapiclient.DataSource_type_value("local"), "SourceUrl_example")} // []DataSourceRequest | 
+	dataSourceRequest := []openapiclient.DataSourceRequest{*openapiclient.NewDataSourceRequest("Name_example", openapiclient.DataSourceRequest_type("local"), "SourceUrl_example")} // []DataSourceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -431,7 +429,7 @@ import (
 )
 
 func main() {
-	dataSourceRequest := []openapiclient.DataSourceRequest{*openapiclient.NewDataSourceRequest("Name_example", openapiclient.DataSource_type_value("local"), "SourceUrl_example")} // []DataSourceRequest | 
+	dataSourceRequest := []openapiclient.DataSourceRequest{*openapiclient.NewDataSourceRequest("Name_example", openapiclient.DataSourceRequest_type("local"), "SourceUrl_example")} // []DataSourceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1341,265 +1339,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Job**](Job.md)
-
-### Authorization
-
-[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## CoreObjectChangesList
-
-> PaginatedObjectChangeList CoreObjectChangesList(ctx).Action(action).ActionN(actionN).ChangedObjectId(changedObjectId).ChangedObjectIdEmpty(changedObjectIdEmpty).ChangedObjectIdGt(changedObjectIdGt).ChangedObjectIdGte(changedObjectIdGte).ChangedObjectIdLt(changedObjectIdLt).ChangedObjectIdLte(changedObjectIdLte).ChangedObjectIdN(changedObjectIdN).ChangedObjectType(changedObjectType).ChangedObjectTypeN(changedObjectTypeN).ChangedObjectTypeId(changedObjectTypeId).ChangedObjectTypeIdN(changedObjectTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).ObjectRepr(objectRepr).ObjectReprEmpty(objectReprEmpty).ObjectReprIc(objectReprIc).ObjectReprIe(objectReprIe).ObjectReprIew(objectReprIew).ObjectReprIsw(objectReprIsw).ObjectReprN(objectReprN).ObjectReprNic(objectReprNic).ObjectReprNie(objectReprNie).ObjectReprNiew(objectReprNiew).ObjectReprNisw(objectReprNisw).Offset(offset).Ordering(ordering).Q(q).RelatedObjectId(relatedObjectId).RelatedObjectIdEmpty(relatedObjectIdEmpty).RelatedObjectIdGt(relatedObjectIdGt).RelatedObjectIdGte(relatedObjectIdGte).RelatedObjectIdLt(relatedObjectIdLt).RelatedObjectIdLte(relatedObjectIdLte).RelatedObjectIdN(relatedObjectIdN).RelatedObjectType(relatedObjectType).RelatedObjectTypeN(relatedObjectTypeN).RequestId(requestId).TimeAfter(timeAfter).TimeBefore(timeBefore).User(user).UserN(userN).UserId(userId).UserIdN(userIdN).UserName(userName).UserNameEmpty(userNameEmpty).UserNameIc(userNameIc).UserNameIe(userNameIe).UserNameIew(userNameIew).UserNameIsw(userNameIsw).UserNameN(userNameN).UserNameNic(userNameNic).UserNameNie(userNameNie).UserNameNiew(userNameNiew).UserNameNisw(userNameNisw).Execute()
-
-
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-    "time"
-	openapiclient "github.com/netbox-community/go-netbox/v4"
-)
-
-func main() {
-	action := openapiclient.core_object_changes_list_action_parameter("create") // CoreObjectChangesListActionParameter | * `create` - Created * `update` - Updated * `delete` - Deleted (optional)
-	actionN := openapiclient.core_object_changes_list_action_parameter("create") // CoreObjectChangesListActionParameter | * `create` - Created * `update` - Updated * `delete` - Deleted (optional)
-	changedObjectId := []int32{int32(123)} // []int32 |  (optional)
-	changedObjectIdEmpty := true // bool |  (optional)
-	changedObjectIdGt := []int32{int32(123)} // []int32 |  (optional)
-	changedObjectIdGte := []int32{int32(123)} // []int32 |  (optional)
-	changedObjectIdLt := []int32{int32(123)} // []int32 |  (optional)
-	changedObjectIdLte := []int32{int32(123)} // []int32 |  (optional)
-	changedObjectIdN := []int32{int32(123)} // []int32 |  (optional)
-	changedObjectType := "changedObjectType_example" // string |  (optional)
-	changedObjectTypeN := "changedObjectTypeN_example" // string |  (optional)
-	changedObjectTypeId := []int32{int32(123)} // []int32 |  (optional)
-	changedObjectTypeIdN := []int32{int32(123)} // []int32 |  (optional)
-	id := []int32{int32(123)} // []int32 |  (optional)
-	idEmpty := true // bool |  (optional)
-	idGt := []int32{int32(123)} // []int32 |  (optional)
-	idGte := []int32{int32(123)} // []int32 |  (optional)
-	idLt := []int32{int32(123)} // []int32 |  (optional)
-	idLte := []int32{int32(123)} // []int32 |  (optional)
-	idN := []int32{int32(123)} // []int32 |  (optional)
-	limit := int32(56) // int32 | Number of results to return per page. (optional)
-	objectRepr := []string{"Inner_example"} // []string |  (optional)
-	objectReprEmpty := true // bool |  (optional)
-	objectReprIc := []string{"Inner_example"} // []string |  (optional)
-	objectReprIe := []string{"Inner_example"} // []string |  (optional)
-	objectReprIew := []string{"Inner_example"} // []string |  (optional)
-	objectReprIsw := []string{"Inner_example"} // []string |  (optional)
-	objectReprN := []string{"Inner_example"} // []string |  (optional)
-	objectReprNic := []string{"Inner_example"} // []string |  (optional)
-	objectReprNie := []string{"Inner_example"} // []string |  (optional)
-	objectReprNiew := []string{"Inner_example"} // []string |  (optional)
-	objectReprNisw := []string{"Inner_example"} // []string |  (optional)
-	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
-	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
-	q := "q_example" // string | Search (optional)
-	relatedObjectId := []int32{int32(123)} // []int32 |  (optional)
-	relatedObjectIdEmpty := true // bool |  (optional)
-	relatedObjectIdGt := []int32{int32(123)} // []int32 |  (optional)
-	relatedObjectIdGte := []int32{int32(123)} // []int32 |  (optional)
-	relatedObjectIdLt := []int32{int32(123)} // []int32 |  (optional)
-	relatedObjectIdLte := []int32{int32(123)} // []int32 |  (optional)
-	relatedObjectIdN := []int32{int32(123)} // []int32 |  (optional)
-	relatedObjectType := int32(56) // int32 |  (optional)
-	relatedObjectTypeN := int32(56) // int32 |  (optional)
-	requestId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
-	timeAfter := time.Now() // time.Time |  (optional)
-	timeBefore := time.Now() // time.Time |  (optional)
-	user := []string{"Inner_example"} // []string | User name (optional)
-	userN := []string{"Inner_example"} // []string | User name (optional)
-	userId := []*int32{int32(123)} // []*int32 | User (ID) (optional)
-	userIdN := []*int32{int32(123)} // []*int32 | User (ID) (optional)
-	userName := []string{"Inner_example"} // []string |  (optional)
-	userNameEmpty := true // bool |  (optional)
-	userNameIc := []string{"Inner_example"} // []string |  (optional)
-	userNameIe := []string{"Inner_example"} // []string |  (optional)
-	userNameIew := []string{"Inner_example"} // []string |  (optional)
-	userNameIsw := []string{"Inner_example"} // []string |  (optional)
-	userNameN := []string{"Inner_example"} // []string |  (optional)
-	userNameNic := []string{"Inner_example"} // []string |  (optional)
-	userNameNie := []string{"Inner_example"} // []string |  (optional)
-	userNameNiew := []string{"Inner_example"} // []string |  (optional)
-	userNameNisw := []string{"Inner_example"} // []string |  (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CoreAPI.CoreObjectChangesList(context.Background()).Action(action).ActionN(actionN).ChangedObjectId(changedObjectId).ChangedObjectIdEmpty(changedObjectIdEmpty).ChangedObjectIdGt(changedObjectIdGt).ChangedObjectIdGte(changedObjectIdGte).ChangedObjectIdLt(changedObjectIdLt).ChangedObjectIdLte(changedObjectIdLte).ChangedObjectIdN(changedObjectIdN).ChangedObjectType(changedObjectType).ChangedObjectTypeN(changedObjectTypeN).ChangedObjectTypeId(changedObjectTypeId).ChangedObjectTypeIdN(changedObjectTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).ObjectRepr(objectRepr).ObjectReprEmpty(objectReprEmpty).ObjectReprIc(objectReprIc).ObjectReprIe(objectReprIe).ObjectReprIew(objectReprIew).ObjectReprIsw(objectReprIsw).ObjectReprN(objectReprN).ObjectReprNic(objectReprNic).ObjectReprNie(objectReprNie).ObjectReprNiew(objectReprNiew).ObjectReprNisw(objectReprNisw).Offset(offset).Ordering(ordering).Q(q).RelatedObjectId(relatedObjectId).RelatedObjectIdEmpty(relatedObjectIdEmpty).RelatedObjectIdGt(relatedObjectIdGt).RelatedObjectIdGte(relatedObjectIdGte).RelatedObjectIdLt(relatedObjectIdLt).RelatedObjectIdLte(relatedObjectIdLte).RelatedObjectIdN(relatedObjectIdN).RelatedObjectType(relatedObjectType).RelatedObjectTypeN(relatedObjectTypeN).RequestId(requestId).TimeAfter(timeAfter).TimeBefore(timeBefore).User(user).UserN(userN).UserId(userId).UserIdN(userIdN).UserName(userName).UserNameEmpty(userNameEmpty).UserNameIc(userNameIc).UserNameIe(userNameIe).UserNameIew(userNameIew).UserNameIsw(userNameIsw).UserNameN(userNameN).UserNameNic(userNameNic).UserNameNie(userNameNie).UserNameNiew(userNameNiew).UserNameNisw(userNameNisw).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CoreAPI.CoreObjectChangesList``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `CoreObjectChangesList`: PaginatedObjectChangeList
-	fmt.Fprintf(os.Stdout, "Response from `CoreAPI.CoreObjectChangesList`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiCoreObjectChangesListRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **action** | [**CoreObjectChangesListActionParameter**](CoreObjectChangesListActionParameter.md) | * &#x60;create&#x60; - Created * &#x60;update&#x60; - Updated * &#x60;delete&#x60; - Deleted | 
- **actionN** | [**CoreObjectChangesListActionParameter**](CoreObjectChangesListActionParameter.md) | * &#x60;create&#x60; - Created * &#x60;update&#x60; - Updated * &#x60;delete&#x60; - Deleted | 
- **changedObjectId** | **[]int32** |  | 
- **changedObjectIdEmpty** | **bool** |  | 
- **changedObjectIdGt** | **[]int32** |  | 
- **changedObjectIdGte** | **[]int32** |  | 
- **changedObjectIdLt** | **[]int32** |  | 
- **changedObjectIdLte** | **[]int32** |  | 
- **changedObjectIdN** | **[]int32** |  | 
- **changedObjectType** | **string** |  | 
- **changedObjectTypeN** | **string** |  | 
- **changedObjectTypeId** | **[]int32** |  | 
- **changedObjectTypeIdN** | **[]int32** |  | 
- **id** | **[]int32** |  | 
- **idEmpty** | **bool** |  | 
- **idGt** | **[]int32** |  | 
- **idGte** | **[]int32** |  | 
- **idLt** | **[]int32** |  | 
- **idLte** | **[]int32** |  | 
- **idN** | **[]int32** |  | 
- **limit** | **int32** | Number of results to return per page. | 
- **objectRepr** | **[]string** |  | 
- **objectReprEmpty** | **bool** |  | 
- **objectReprIc** | **[]string** |  | 
- **objectReprIe** | **[]string** |  | 
- **objectReprIew** | **[]string** |  | 
- **objectReprIsw** | **[]string** |  | 
- **objectReprN** | **[]string** |  | 
- **objectReprNic** | **[]string** |  | 
- **objectReprNie** | **[]string** |  | 
- **objectReprNiew** | **[]string** |  | 
- **objectReprNisw** | **[]string** |  | 
- **offset** | **int32** | The initial index from which to return the results. | 
- **ordering** | **string** | Which field to use when ordering the results. | 
- **q** | **string** | Search | 
- **relatedObjectId** | **[]int32** |  | 
- **relatedObjectIdEmpty** | **bool** |  | 
- **relatedObjectIdGt** | **[]int32** |  | 
- **relatedObjectIdGte** | **[]int32** |  | 
- **relatedObjectIdLt** | **[]int32** |  | 
- **relatedObjectIdLte** | **[]int32** |  | 
- **relatedObjectIdN** | **[]int32** |  | 
- **relatedObjectType** | **int32** |  | 
- **relatedObjectTypeN** | **int32** |  | 
- **requestId** | **string** |  | 
- **timeAfter** | **time.Time** |  | 
- **timeBefore** | **time.Time** |  | 
- **user** | **[]string** | User name | 
- **userN** | **[]string** | User name | 
- **userId** | **[]int32** | User (ID) | 
- **userIdN** | **[]int32** | User (ID) | 
- **userName** | **[]string** |  | 
- **userNameEmpty** | **bool** |  | 
- **userNameIc** | **[]string** |  | 
- **userNameIe** | **[]string** |  | 
- **userNameIew** | **[]string** |  | 
- **userNameIsw** | **[]string** |  | 
- **userNameN** | **[]string** |  | 
- **userNameNic** | **[]string** |  | 
- **userNameNie** | **[]string** |  | 
- **userNameNiew** | **[]string** |  | 
- **userNameNisw** | **[]string** |  | 
-
-### Return type
-
-[**PaginatedObjectChangeList**](PaginatedObjectChangeList.md)
-
-### Authorization
-
-[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## CoreObjectChangesRetrieve
-
-> ObjectChange CoreObjectChangesRetrieve(ctx, id).Execute()
-
-
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/netbox-community/go-netbox/v4"
-)
-
-func main() {
-	id := int32(56) // int32 | A unique integer value identifying this object change.
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CoreAPI.CoreObjectChangesRetrieve(context.Background(), id).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CoreAPI.CoreObjectChangesRetrieve``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `CoreObjectChangesRetrieve`: ObjectChange
-	fmt.Fprintf(os.Stdout, "Response from `CoreAPI.CoreObjectChangesRetrieve`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this object change. | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiCoreObjectChangesRetrieveRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**ObjectChange**](ObjectChange.md)
 
 ### Authorization
 

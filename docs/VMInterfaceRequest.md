@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**VirtualMachine** | [**BriefVirtualMachineRequest**](BriefVirtualMachineRequest.md) |  | 
+**VirtualMachine** | [**VirtualMachineRequest**](VirtualMachineRequest.md) |  | 
 **Name** | **string** |  | 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Parent** | Pointer to [**NullableNestedVMInterfaceRequest**](NestedVMInterfaceRequest.md) |  | [optional] 
@@ -13,9 +13,9 @@ Name | Type | Description | Notes
 **MacAddress** | Pointer to **NullableString** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Mode** | Pointer to [**InterfaceModeValue**](InterfaceModeValue.md) |  | [optional] 
-**UntaggedVlan** | Pointer to [**NullableBriefVLANRequest**](BriefVLANRequest.md) |  | [optional] 
+**UntaggedVlan** | Pointer to [**NullableVLANRequest**](VLANRequest.md) |  | [optional] 
 **TaggedVlans** | Pointer to **[]int32** |  | [optional] 
-**Vrf** | Pointer to [**NullableBriefVRFRequest**](BriefVRFRequest.md) |  | [optional] 
+**Vrf** | Pointer to [**NullableVRFRequest**](VRFRequest.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 
 ### NewVMInterfaceRequest
 
-`func NewVMInterfaceRequest(virtualMachine BriefVirtualMachineRequest, name string, ) *VMInterfaceRequest`
+`func NewVMInterfaceRequest(virtualMachine VirtualMachineRequest, name string, ) *VMInterfaceRequest`
 
 NewVMInterfaceRequest instantiates a new VMInterfaceRequest object
 This constructor will assign default values to properties that have it defined,
@@ -40,20 +40,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetVirtualMachine
 
-`func (o *VMInterfaceRequest) GetVirtualMachine() BriefVirtualMachineRequest`
+`func (o *VMInterfaceRequest) GetVirtualMachine() VirtualMachineRequest`
 
 GetVirtualMachine returns the VirtualMachine field if non-nil, zero value otherwise.
 
 ### GetVirtualMachineOk
 
-`func (o *VMInterfaceRequest) GetVirtualMachineOk() (*BriefVirtualMachineRequest, bool)`
+`func (o *VMInterfaceRequest) GetVirtualMachineOk() (*VirtualMachineRequest, bool)`
 
 GetVirtualMachineOk returns a tuple with the VirtualMachine field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVirtualMachine
 
-`func (o *VMInterfaceRequest) SetVirtualMachine(v BriefVirtualMachineRequest)`
+`func (o *VMInterfaceRequest) SetVirtualMachine(v VirtualMachineRequest)`
 
 SetVirtualMachine sets VirtualMachine field to given value.
 
@@ -295,20 +295,20 @@ HasMode returns a boolean if a field has been set.
 
 ### GetUntaggedVlan
 
-`func (o *VMInterfaceRequest) GetUntaggedVlan() BriefVLANRequest`
+`func (o *VMInterfaceRequest) GetUntaggedVlan() VLANRequest`
 
 GetUntaggedVlan returns the UntaggedVlan field if non-nil, zero value otherwise.
 
 ### GetUntaggedVlanOk
 
-`func (o *VMInterfaceRequest) GetUntaggedVlanOk() (*BriefVLANRequest, bool)`
+`func (o *VMInterfaceRequest) GetUntaggedVlanOk() (*VLANRequest, bool)`
 
 GetUntaggedVlanOk returns a tuple with the UntaggedVlan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUntaggedVlan
 
-`func (o *VMInterfaceRequest) SetUntaggedVlan(v BriefVLANRequest)`
+`func (o *VMInterfaceRequest) SetUntaggedVlan(v VLANRequest)`
 
 SetUntaggedVlan sets UntaggedVlan field to given value.
 
@@ -355,20 +355,20 @@ HasTaggedVlans returns a boolean if a field has been set.
 
 ### GetVrf
 
-`func (o *VMInterfaceRequest) GetVrf() BriefVRFRequest`
+`func (o *VMInterfaceRequest) GetVrf() VRFRequest`
 
 GetVrf returns the Vrf field if non-nil, zero value otherwise.
 
 ### GetVrfOk
 
-`func (o *VMInterfaceRequest) GetVrfOk() (*BriefVRFRequest, bool)`
+`func (o *VMInterfaceRequest) GetVrfOk() (*VRFRequest, bool)`
 
 GetVrfOk returns a tuple with the Vrf field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVrf
 
-`func (o *VMInterfaceRequest) SetVrf(v BriefVRFRequest)`
+`func (o *VMInterfaceRequest) SetVrf(v VRFRequest)`
 
 SetVrf sets Vrf field to given value.
 

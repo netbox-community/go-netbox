@@ -20,8 +20,8 @@ type RackRequestOuterUnit string
 
 // List of RackRequest_outer_unit
 const (
-	RACKREQUESTOUTERUNIT_MM RackRequestOuterUnit = "mm"
-	RACKREQUESTOUTERUNIT_IN RackRequestOuterUnit = "in"
+	RACKREQUESTOUTERUNIT_MM    RackRequestOuterUnit = "mm"
+	RACKREQUESTOUTERUNIT_IN    RackRequestOuterUnit = "in"
 	RACKREQUESTOUTERUNIT_EMPTY RackRequestOuterUnit = ""
 )
 
@@ -110,4 +110,3 @@ func (v *NullableRackRequestOuterUnit) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

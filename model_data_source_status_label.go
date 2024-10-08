@@ -20,11 +20,11 @@ type DataSourceStatusLabel string
 
 // List of DataSource_status_label
 const (
-	DATASOURCESTATUSLABEL_NEW DataSourceStatusLabel = "New"
-	DATASOURCESTATUSLABEL_QUEUED DataSourceStatusLabel = "Queued"
-	DATASOURCESTATUSLABEL_SYNCING DataSourceStatusLabel = "Syncing"
+	DATASOURCESTATUSLABEL_NEW       DataSourceStatusLabel = "New"
+	DATASOURCESTATUSLABEL_QUEUED    DataSourceStatusLabel = "Queued"
+	DATASOURCESTATUSLABEL_SYNCING   DataSourceStatusLabel = "Syncing"
 	DATASOURCESTATUSLABEL_COMPLETED DataSourceStatusLabel = "Completed"
-	DATASOURCESTATUSLABEL_FAILED DataSourceStatusLabel = "Failed"
+	DATASOURCESTATUSLABEL_FAILED    DataSourceStatusLabel = "Failed"
 )
 
 // All allowed values of DataSourceStatusLabel enum
@@ -114,4 +114,3 @@ func (v *NullableDataSourceStatusLabel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

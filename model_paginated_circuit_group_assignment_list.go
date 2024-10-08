@@ -20,10 +20,10 @@ var _ MappedNullable = &PaginatedCircuitGroupAssignmentList{}
 
 // PaginatedCircuitGroupAssignmentList struct for PaginatedCircuitGroupAssignmentList
 type PaginatedCircuitGroupAssignmentList struct {
-	Count int32 `json:"count"`
-	Next NullableString `json:"next,omitempty"`
-	Previous NullableString `json:"previous,omitempty"`
-	Results []CircuitGroupAssignment `json:"results"`
+	Count                int32                    `json:"count"`
+	Next                 NullableString           `json:"next,omitempty"`
+	Previous             NullableString           `json:"previous,omitempty"`
+	Results              []CircuitGroupAssignment `json:"results"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -104,6 +104,7 @@ func (o *PaginatedCircuitGroupAssignmentList) HasNext() bool {
 func (o *PaginatedCircuitGroupAssignmentList) SetNext(v string) {
 	o.Next.Set(&v)
 }
+
 // SetNextNil sets the value for Next to be an explicit nil
 func (o *PaginatedCircuitGroupAssignmentList) SetNextNil() {
 	o.Next.Set(nil)
@@ -146,6 +147,7 @@ func (o *PaginatedCircuitGroupAssignmentList) HasPrevious() bool {
 func (o *PaginatedCircuitGroupAssignmentList) SetPrevious(v string) {
 	o.Previous.Set(&v)
 }
+
 // SetPreviousNil sets the value for Previous to be an explicit nil
 func (o *PaginatedCircuitGroupAssignmentList) SetPreviousNil() {
 	o.Previous.Set(nil)
@@ -181,7 +183,7 @@ func (o *PaginatedCircuitGroupAssignmentList) SetResults(v []CircuitGroupAssignm
 }
 
 func (o PaginatedCircuitGroupAssignmentList) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -220,10 +222,10 @@ func (o *PaginatedCircuitGroupAssignmentList) UnmarshalJSON(data []byte) (err er
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -287,5 +289,3 @@ func (v *NullablePaginatedCircuitGroupAssignmentList) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

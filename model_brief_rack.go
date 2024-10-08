@@ -20,12 +20,12 @@ var _ MappedNullable = &BriefRack{}
 
 // BriefRack Adds support for custom fields and tags.
 type BriefRack struct {
-	Id int32 `json:"id"`
-	Url string `json:"url"`
-	Display string `json:"display"`
-	Name string `json:"name"`
-	Description *string `json:"description,omitempty"`
-	DeviceCount *int64 `json:"device_count,omitempty"`
+	Id                   int32   `json:"id"`
+	Url                  string  `json:"url"`
+	Display              string  `json:"display"`
+	Name                 string  `json:"name"`
+	Description          *string `json:"description,omitempty"`
+	DeviceCount          *int64  `json:"device_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -213,7 +213,7 @@ func (o *BriefRack) SetDeviceCount(v int64) {
 }
 
 func (o BriefRack) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -256,10 +256,10 @@ func (o *BriefRack) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -325,5 +325,3 @@ func (v *NullableBriefRack) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,12 +20,12 @@ type BriefJobStatusValue string
 
 // List of BriefJob_status_value
 const (
-	BRIEFJOBSTATUSVALUE_PENDING BriefJobStatusValue = "pending"
+	BRIEFJOBSTATUSVALUE_PENDING   BriefJobStatusValue = "pending"
 	BRIEFJOBSTATUSVALUE_SCHEDULED BriefJobStatusValue = "scheduled"
-	BRIEFJOBSTATUSVALUE_RUNNING BriefJobStatusValue = "running"
+	BRIEFJOBSTATUSVALUE_RUNNING   BriefJobStatusValue = "running"
 	BRIEFJOBSTATUSVALUE_COMPLETED BriefJobStatusValue = "completed"
-	BRIEFJOBSTATUSVALUE_ERRORED BriefJobStatusValue = "errored"
-	BRIEFJOBSTATUSVALUE_FAILED BriefJobStatusValue = "failed"
+	BRIEFJOBSTATUSVALUE_ERRORED   BriefJobStatusValue = "errored"
+	BRIEFJOBSTATUSVALUE_FAILED    BriefJobStatusValue = "failed"
 )
 
 // All allowed values of BriefJobStatusValue enum
@@ -116,4 +116,3 @@ func (v *NullableBriefJobStatusValue) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

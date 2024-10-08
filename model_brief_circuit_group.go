@@ -20,10 +20,10 @@ var _ MappedNullable = &BriefCircuitGroup{}
 
 // BriefCircuitGroup Adds support for custom fields and tags.
 type BriefCircuitGroup struct {
-	Id int32 `json:"id"`
-	Url string `json:"url"`
-	Display string `json:"display"`
-	Name string `json:"name"`
+	Id                   int32  `json:"id"`
+	Url                  string `json:"url"`
+	Display              string `json:"display"`
+	Name                 string `json:"name"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -147,7 +147,7 @@ func (o *BriefCircuitGroup) SetName(v string) {
 }
 
 func (o BriefCircuitGroup) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -184,10 +184,10 @@ func (o *BriefCircuitGroup) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -251,5 +251,3 @@ func (v *NullableBriefCircuitGroup) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

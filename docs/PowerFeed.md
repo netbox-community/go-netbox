@@ -6,10 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**DisplayUrl** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
-**PowerPanel** | [**BriefPowerPanel**](BriefPowerPanel.md) |  | 
-**Rack** | Pointer to [**NullableBriefRack**](BriefRack.md) |  | [optional] 
+**PowerPanel** | [**PowerPanel**](PowerPanel.md) |  | 
+**Rack** | Pointer to [**NullableRack**](Rack.md) |  | [optional] 
 **Name** | **string** |  | 
 **Status** | Pointer to [**PowerFeedStatus**](PowerFeedStatus.md) |  | [optional] 
 **Type** | Pointer to [**PowerFeedType**](PowerFeedType.md) |  | [optional] 
@@ -19,15 +18,15 @@ Name | Type | Description | Notes
 **Amperage** | Pointer to **int32** |  | [optional] 
 **MaxUtilization** | Pointer to **int32** | Maximum permissible draw (percentage) | [optional] 
 **MarkConnected** | Pointer to **bool** | Treat as if a cable is connected | [optional] 
-**Cable** | [**NullableBriefCable**](BriefCable.md) |  | [readonly] 
+**Cable** | [**NullableCable**](Cable.md) |  | [readonly] 
 **CableEnd** | **string** |  | [readonly] 
 **LinkPeers** | **[]interface{}** |  | [readonly] 
-**LinkPeersType** | **NullableString** | Return the type of the peer link terminations, or None. | [readonly] 
+**LinkPeersType** | **string** | Return the type of the peer link terminations, or None. | [readonly] 
 **ConnectedEndpoints** | **[]interface{}** |  | [readonly] 
-**ConnectedEndpointsType** | **NullableString** |  | [readonly] 
+**ConnectedEndpointsType** | **string** |  | [readonly] 
 **ConnectedEndpointsReachable** | **bool** |  | [readonly] 
 **Description** | Pointer to **string** |  | [optional] 
-**Tenant** | Pointer to [**NullableBriefTenant**](BriefTenant.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableTenant**](Tenant.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -39,7 +38,7 @@ Name | Type | Description | Notes
 
 ### NewPowerFeed
 
-`func NewPowerFeed(id int32, url string, displayUrl string, display string, powerPanel BriefPowerPanel, name string, cable NullableBriefCable, cableEnd string, linkPeers []interface{}, linkPeersType NullableString, connectedEndpoints []interface{}, connectedEndpointsType NullableString, connectedEndpointsReachable bool, created NullableTime, lastUpdated NullableTime, occupied bool, ) *PowerFeed`
+`func NewPowerFeed(id int32, url string, display string, powerPanel PowerPanel, name string, cable NullableCable, cableEnd string, linkPeers []interface{}, linkPeersType string, connectedEndpoints []interface{}, connectedEndpointsType string, connectedEndpointsReachable bool, created NullableTime, lastUpdated NullableTime, occupied bool, ) *PowerFeed`
 
 NewPowerFeed instantiates a new PowerFeed object
 This constructor will assign default values to properties that have it defined,
@@ -94,26 +93,6 @@ and a boolean to check if the value has been set.
 SetUrl sets Url field to given value.
 
 
-### GetDisplayUrl
-
-`func (o *PowerFeed) GetDisplayUrl() string`
-
-GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
-
-### GetDisplayUrlOk
-
-`func (o *PowerFeed) GetDisplayUrlOk() (*string, bool)`
-
-GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDisplayUrl
-
-`func (o *PowerFeed) SetDisplayUrl(v string)`
-
-SetDisplayUrl sets DisplayUrl field to given value.
-
-
 ### GetDisplay
 
 `func (o *PowerFeed) GetDisplay() string`
@@ -136,40 +115,40 @@ SetDisplay sets Display field to given value.
 
 ### GetPowerPanel
 
-`func (o *PowerFeed) GetPowerPanel() BriefPowerPanel`
+`func (o *PowerFeed) GetPowerPanel() PowerPanel`
 
 GetPowerPanel returns the PowerPanel field if non-nil, zero value otherwise.
 
 ### GetPowerPanelOk
 
-`func (o *PowerFeed) GetPowerPanelOk() (*BriefPowerPanel, bool)`
+`func (o *PowerFeed) GetPowerPanelOk() (*PowerPanel, bool)`
 
 GetPowerPanelOk returns a tuple with the PowerPanel field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPowerPanel
 
-`func (o *PowerFeed) SetPowerPanel(v BriefPowerPanel)`
+`func (o *PowerFeed) SetPowerPanel(v PowerPanel)`
 
 SetPowerPanel sets PowerPanel field to given value.
 
 
 ### GetRack
 
-`func (o *PowerFeed) GetRack() BriefRack`
+`func (o *PowerFeed) GetRack() Rack`
 
 GetRack returns the Rack field if non-nil, zero value otherwise.
 
 ### GetRackOk
 
-`func (o *PowerFeed) GetRackOk() (*BriefRack, bool)`
+`func (o *PowerFeed) GetRackOk() (*Rack, bool)`
 
 GetRackOk returns a tuple with the Rack field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRack
 
-`func (o *PowerFeed) SetRack(v BriefRack)`
+`func (o *PowerFeed) SetRack(v Rack)`
 
 SetRack sets Rack field to given value.
 
@@ -411,20 +390,20 @@ HasMarkConnected returns a boolean if a field has been set.
 
 ### GetCable
 
-`func (o *PowerFeed) GetCable() BriefCable`
+`func (o *PowerFeed) GetCable() Cable`
 
 GetCable returns the Cable field if non-nil, zero value otherwise.
 
 ### GetCableOk
 
-`func (o *PowerFeed) GetCableOk() (*BriefCable, bool)`
+`func (o *PowerFeed) GetCableOk() (*Cable, bool)`
 
 GetCableOk returns a tuple with the Cable field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCable
 
-`func (o *PowerFeed) SetCable(v BriefCable)`
+`func (o *PowerFeed) SetCable(v Cable)`
 
 SetCable sets Cable field to given value.
 
@@ -499,16 +478,6 @@ and a boolean to check if the value has been set.
 SetLinkPeersType sets LinkPeersType field to given value.
 
 
-### SetLinkPeersTypeNil
-
-`func (o *PowerFeed) SetLinkPeersTypeNil(b bool)`
-
- SetLinkPeersTypeNil sets the value for LinkPeersType to be an explicit nil
-
-### UnsetLinkPeersType
-`func (o *PowerFeed) UnsetLinkPeersType()`
-
-UnsetLinkPeersType ensures that no value is present for LinkPeersType, not even an explicit nil
 ### GetConnectedEndpoints
 
 `func (o *PowerFeed) GetConnectedEndpoints() []interface{}`
@@ -529,16 +498,6 @@ and a boolean to check if the value has been set.
 SetConnectedEndpoints sets ConnectedEndpoints field to given value.
 
 
-### SetConnectedEndpointsNil
-
-`func (o *PowerFeed) SetConnectedEndpointsNil(b bool)`
-
- SetConnectedEndpointsNil sets the value for ConnectedEndpoints to be an explicit nil
-
-### UnsetConnectedEndpoints
-`func (o *PowerFeed) UnsetConnectedEndpoints()`
-
-UnsetConnectedEndpoints ensures that no value is present for ConnectedEndpoints, not even an explicit nil
 ### GetConnectedEndpointsType
 
 `func (o *PowerFeed) GetConnectedEndpointsType() string`
@@ -559,16 +518,6 @@ and a boolean to check if the value has been set.
 SetConnectedEndpointsType sets ConnectedEndpointsType field to given value.
 
 
-### SetConnectedEndpointsTypeNil
-
-`func (o *PowerFeed) SetConnectedEndpointsTypeNil(b bool)`
-
- SetConnectedEndpointsTypeNil sets the value for ConnectedEndpointsType to be an explicit nil
-
-### UnsetConnectedEndpointsType
-`func (o *PowerFeed) UnsetConnectedEndpointsType()`
-
-UnsetConnectedEndpointsType ensures that no value is present for ConnectedEndpointsType, not even an explicit nil
 ### GetConnectedEndpointsReachable
 
 `func (o *PowerFeed) GetConnectedEndpointsReachable() bool`
@@ -616,20 +565,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetTenant
 
-`func (o *PowerFeed) GetTenant() BriefTenant`
+`func (o *PowerFeed) GetTenant() Tenant`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *PowerFeed) GetTenantOk() (*BriefTenant, bool)`
+`func (o *PowerFeed) GetTenantOk() (*Tenant, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *PowerFeed) SetTenant(v BriefTenant)`
+`func (o *PowerFeed) SetTenant(v Tenant)`
 
 SetTenant sets Tenant field to given value.
 

@@ -19,8 +19,8 @@ var _ MappedNullable = &IPAddressRole{}
 
 // IPAddressRole struct for IPAddressRole
 type IPAddressRole struct {
-	Value *IPAddressRoleValue `json:"value,omitempty"`
-	Label *IPAddressRoleLabel `json:"label,omitempty"`
+	Value                *IPAddressRoleValue `json:"value,omitempty"`
+	Label                *IPAddressRoleLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -108,7 +108,7 @@ func (o *IPAddressRole) SetLabel(v IPAddressRoleLabel) {
 }
 
 func (o IPAddressRole) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -188,5 +188,3 @@ func (v *NullableIPAddressRole) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

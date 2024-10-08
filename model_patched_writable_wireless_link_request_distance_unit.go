@@ -20,10 +20,10 @@ type PatchedWritableWirelessLinkRequestDistanceUnit string
 
 // List of PatchedWritableWirelessLinkRequest_distance_unit
 const (
-	PATCHEDWRITABLEWIRELESSLINKREQUESTDISTANCEUNIT_KM PatchedWritableWirelessLinkRequestDistanceUnit = "km"
-	PATCHEDWRITABLEWIRELESSLINKREQUESTDISTANCEUNIT_M PatchedWritableWirelessLinkRequestDistanceUnit = "m"
-	PATCHEDWRITABLEWIRELESSLINKREQUESTDISTANCEUNIT_MI PatchedWritableWirelessLinkRequestDistanceUnit = "mi"
-	PATCHEDWRITABLEWIRELESSLINKREQUESTDISTANCEUNIT_FT PatchedWritableWirelessLinkRequestDistanceUnit = "ft"
+	PATCHEDWRITABLEWIRELESSLINKREQUESTDISTANCEUNIT_KM    PatchedWritableWirelessLinkRequestDistanceUnit = "km"
+	PATCHEDWRITABLEWIRELESSLINKREQUESTDISTANCEUNIT_M     PatchedWritableWirelessLinkRequestDistanceUnit = "m"
+	PATCHEDWRITABLEWIRELESSLINKREQUESTDISTANCEUNIT_MI    PatchedWritableWirelessLinkRequestDistanceUnit = "mi"
+	PATCHEDWRITABLEWIRELESSLINKREQUESTDISTANCEUNIT_FT    PatchedWritableWirelessLinkRequestDistanceUnit = "ft"
 	PATCHEDWRITABLEWIRELESSLINKREQUESTDISTANCEUNIT_EMPTY PatchedWritableWirelessLinkRequestDistanceUnit = ""
 )
 
@@ -114,4 +114,3 @@ func (v *NullablePatchedWritableWirelessLinkRequestDistanceUnit) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

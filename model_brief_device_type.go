@@ -20,14 +20,14 @@ var _ MappedNullable = &BriefDeviceType{}
 
 // BriefDeviceType Adds support for custom fields and tags.
 type BriefDeviceType struct {
-	Id int32 `json:"id"`
-	Url string `json:"url"`
-	Display string `json:"display"`
-	Manufacturer BriefManufacturer `json:"manufacturer"`
-	Model string `json:"model"`
-	Slug string `json:"slug"`
-	Description *string `json:"description,omitempty"`
-	DeviceCount *int64 `json:"device_count,omitempty"`
+	Id                   int32             `json:"id"`
+	Url                  string            `json:"url"`
+	Display              string            `json:"display"`
+	Manufacturer         BriefManufacturer `json:"manufacturer"`
+	Model                string            `json:"model"`
+	Slug                 string            `json:"slug"`
+	Description          *string           `json:"description,omitempty"`
+	DeviceCount          *int64            `json:"device_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -265,7 +265,7 @@ func (o *BriefDeviceType) SetDeviceCount(v int64) {
 }
 
 func (o BriefDeviceType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -312,10 +312,10 @@ func (o *BriefDeviceType) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -383,5 +383,3 @@ func (v *NullableBriefDeviceType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

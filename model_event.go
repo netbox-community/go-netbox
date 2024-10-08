@@ -23,10 +23,10 @@ const (
 	EVENT_OBJECT_CREATED Event = "object_created"
 	EVENT_OBJECT_UPDATED Event = "object_updated"
 	EVENT_OBJECT_DELETED Event = "object_deleted"
-	EVENT_JOB_STARTED Event = "job_started"
-	EVENT_JOB_COMPLETED Event = "job_completed"
-	EVENT_JOB_FAILED Event = "job_failed"
-	EVENT_JOB_ERRORED Event = "job_errored"
+	EVENT_JOB_STARTED    Event = "job_started"
+	EVENT_JOB_COMPLETED  Event = "job_completed"
+	EVENT_JOB_FAILED     Event = "job_failed"
+	EVENT_JOB_ERRORED    Event = "job_errored"
 )
 
 // All allowed values of Event enum
@@ -118,4 +118,3 @@ func (v *NullableEvent) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

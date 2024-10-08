@@ -20,10 +20,10 @@ type DeviceTypeRequestWeightUnit string
 
 // List of DeviceTypeRequest_weight_unit
 const (
-	DEVICETYPEREQUESTWEIGHTUNIT_KG DeviceTypeRequestWeightUnit = "kg"
-	DEVICETYPEREQUESTWEIGHTUNIT_G DeviceTypeRequestWeightUnit = "g"
-	DEVICETYPEREQUESTWEIGHTUNIT_LB DeviceTypeRequestWeightUnit = "lb"
-	DEVICETYPEREQUESTWEIGHTUNIT_OZ DeviceTypeRequestWeightUnit = "oz"
+	DEVICETYPEREQUESTWEIGHTUNIT_KG    DeviceTypeRequestWeightUnit = "kg"
+	DEVICETYPEREQUESTWEIGHTUNIT_G     DeviceTypeRequestWeightUnit = "g"
+	DEVICETYPEREQUESTWEIGHTUNIT_LB    DeviceTypeRequestWeightUnit = "lb"
+	DEVICETYPEREQUESTWEIGHTUNIT_OZ    DeviceTypeRequestWeightUnit = "oz"
 	DEVICETYPEREQUESTWEIGHTUNIT_EMPTY DeviceTypeRequestWeightUnit = ""
 )
 
@@ -114,4 +114,3 @@ func (v *NullableDeviceTypeRequestWeightUnit) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

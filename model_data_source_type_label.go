@@ -20,9 +20,9 @@ type DataSourceTypeLabel string
 
 // List of DataSource_type_label
 const (
-	DATASOURCETYPELABEL________ DataSourceTypeLabel = "---------"
-	DATASOURCETYPELABEL_LOCAL DataSourceTypeLabel = "Local"
-	DATASOURCETYPELABEL_GIT DataSourceTypeLabel = "Git"
+	DATASOURCETYPELABEL________   DataSourceTypeLabel = "---------"
+	DATASOURCETYPELABEL_LOCAL     DataSourceTypeLabel = "Local"
+	DATASOURCETYPELABEL_GIT       DataSourceTypeLabel = "Git"
 	DATASOURCETYPELABEL_AMAZON_S3 DataSourceTypeLabel = "Amazon S3"
 )
 
@@ -112,4 +112,3 @@ func (v *NullableDataSourceTypeLabel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

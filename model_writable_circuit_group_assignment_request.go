@@ -20,10 +20,10 @@ var _ MappedNullable = &WritableCircuitGroupAssignmentRequest{}
 
 // WritableCircuitGroupAssignmentRequest Base serializer for group assignments under CircuitSerializer.
 type WritableCircuitGroupAssignmentRequest struct {
-	Group BriefCircuitGroupRequest `json:"group"`
-	Circuit BriefCircuitRequest `json:"circuit"`
-	Priority *BriefCircuitGroupAssignmentSerializerPriorityValue `json:"priority,omitempty"`
-	Tags []NestedTagRequest `json:"tags,omitempty"`
+	Group                BriefCircuitGroupRequest                            `json:"group"`
+	Circuit              BriefCircuitRequest                                 `json:"circuit"`
+	Priority             *BriefCircuitGroupAssignmentSerializerPriorityValue `json:"priority,omitempty"`
+	Tags                 []NestedTagRequest                                  `json:"tags,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -161,7 +161,7 @@ func (o *WritableCircuitGroupAssignmentRequest) SetTags(v []NestedTagRequest) {
 }
 
 func (o WritableCircuitGroupAssignmentRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -200,10 +200,10 @@ func (o *WritableCircuitGroupAssignmentRequest) UnmarshalJSON(data []byte) (err 
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -267,5 +267,3 @@ func (v *NullableWritableCircuitGroupAssignmentRequest) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

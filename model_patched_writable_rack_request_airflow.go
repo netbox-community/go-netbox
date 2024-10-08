@@ -22,7 +22,7 @@ type PatchedWritableRackRequestAirflow string
 const (
 	PATCHEDWRITABLERACKREQUESTAIRFLOW_FRONT_TO_REAR PatchedWritableRackRequestAirflow = "front-to-rear"
 	PATCHEDWRITABLERACKREQUESTAIRFLOW_REAR_TO_FRONT PatchedWritableRackRequestAirflow = "rear-to-front"
-	PATCHEDWRITABLERACKREQUESTAIRFLOW_EMPTY PatchedWritableRackRequestAirflow = ""
+	PATCHEDWRITABLERACKREQUESTAIRFLOW_EMPTY         PatchedWritableRackRequestAirflow = ""
 )
 
 // All allowed values of PatchedWritableRackRequestAirflow enum
@@ -110,4 +110,3 @@ func (v *NullablePatchedWritableRackRequestAirflow) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

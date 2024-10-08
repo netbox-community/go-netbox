@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
 **Version** | [**IKEPolicyVersionValue**](IKEPolicyVersionValue.md) |  | 
-**Mode** | Pointer to [**IKEPolicyModeValue**](IKEPolicyModeValue.md) |  | [optional] 
+**Mode** | [**IKEPolicyModeValue**](IKEPolicyModeValue.md) |  | 
 **Proposals** | Pointer to **[]int32** |  | [optional] 
 **PresharedKey** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewIKEPolicyRequest
 
-`func NewIKEPolicyRequest(name string, version IKEPolicyVersionValue, ) *IKEPolicyRequest`
+`func NewIKEPolicyRequest(name string, version IKEPolicyVersionValue, mode IKEPolicyModeValue, ) *IKEPolicyRequest`
 
 NewIKEPolicyRequest instantiates a new IKEPolicyRequest object
 This constructor will assign default values to properties that have it defined,
@@ -117,11 +117,6 @@ and a boolean to check if the value has been set.
 
 SetMode sets Mode field to given value.
 
-### HasMode
-
-`func (o *IKEPolicyRequest) HasMode() bool`
-
-HasMode returns a boolean if a field has been set.
 
 ### GetProposals
 

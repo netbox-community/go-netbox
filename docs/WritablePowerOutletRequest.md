@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Device** | [**BriefDeviceRequest**](BriefDeviceRequest.md) |  | 
-**Module** | Pointer to [**NullableBriefModuleRequest**](BriefModuleRequest.md) |  | [optional] 
+**Device** | [**DeviceRequest**](DeviceRequest.md) |  | 
+**Module** | Pointer to [**NullableModuleRequest**](ModuleRequest.md) |  | [optional] 
 **Name** | **string** |  | 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Type** | Pointer to [**PatchedWritablePowerOutletRequestType**](PatchedWritablePowerOutletRequestType.md) |  | [optional] 
-**PowerPort** | Pointer to [**NullableBriefPowerPortRequest**](BriefPowerPortRequest.md) |  | [optional] 
+**PowerPort** | Pointer to [**NullablePowerPortRequest**](PowerPortRequest.md) |  | [optional] 
 **FeedLeg** | Pointer to [**PatchedWritablePowerOutletRequestFeedLeg**](PatchedWritablePowerOutletRequestFeedLeg.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **MarkConnected** | Pointer to **bool** | Treat as if a cable is connected | [optional] 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewWritablePowerOutletRequest
 
-`func NewWritablePowerOutletRequest(device BriefDeviceRequest, name string, ) *WritablePowerOutletRequest`
+`func NewWritablePowerOutletRequest(device DeviceRequest, name string, ) *WritablePowerOutletRequest`
 
 NewWritablePowerOutletRequest instantiates a new WritablePowerOutletRequest object
 This constructor will assign default values to properties that have it defined,
@@ -37,40 +37,40 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDevice
 
-`func (o *WritablePowerOutletRequest) GetDevice() BriefDeviceRequest`
+`func (o *WritablePowerOutletRequest) GetDevice() DeviceRequest`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *WritablePowerOutletRequest) GetDeviceOk() (*BriefDeviceRequest, bool)`
+`func (o *WritablePowerOutletRequest) GetDeviceOk() (*DeviceRequest, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *WritablePowerOutletRequest) SetDevice(v BriefDeviceRequest)`
+`func (o *WritablePowerOutletRequest) SetDevice(v DeviceRequest)`
 
 SetDevice sets Device field to given value.
 
 
 ### GetModule
 
-`func (o *WritablePowerOutletRequest) GetModule() BriefModuleRequest`
+`func (o *WritablePowerOutletRequest) GetModule() ModuleRequest`
 
 GetModule returns the Module field if non-nil, zero value otherwise.
 
 ### GetModuleOk
 
-`func (o *WritablePowerOutletRequest) GetModuleOk() (*BriefModuleRequest, bool)`
+`func (o *WritablePowerOutletRequest) GetModuleOk() (*ModuleRequest, bool)`
 
 GetModuleOk returns a tuple with the Module field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetModule
 
-`func (o *WritablePowerOutletRequest) SetModule(v BriefModuleRequest)`
+`func (o *WritablePowerOutletRequest) SetModule(v ModuleRequest)`
 
 SetModule sets Module field to given value.
 
@@ -162,20 +162,20 @@ HasType returns a boolean if a field has been set.
 
 ### GetPowerPort
 
-`func (o *WritablePowerOutletRequest) GetPowerPort() BriefPowerPortRequest`
+`func (o *WritablePowerOutletRequest) GetPowerPort() PowerPortRequest`
 
 GetPowerPort returns the PowerPort field if non-nil, zero value otherwise.
 
 ### GetPowerPortOk
 
-`func (o *WritablePowerOutletRequest) GetPowerPortOk() (*BriefPowerPortRequest, bool)`
+`func (o *WritablePowerOutletRequest) GetPowerPortOk() (*PowerPortRequest, bool)`
 
 GetPowerPortOk returns a tuple with the PowerPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPowerPort
 
-`func (o *WritablePowerOutletRequest) SetPowerPort(v BriefPowerPortRequest)`
+`func (o *WritablePowerOutletRequest) SetPowerPort(v PowerPortRequest)`
 
 SetPowerPort sets PowerPort field to given value.
 
