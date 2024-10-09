@@ -130118,7 +130118,6 @@ components:
       - name
       - slug
       - url
-      - vlan_count
     RoleRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -131547,7 +131546,6 @@ components:
       - slug
       - url
       - utilization
-      - vlan_count
     VLANGroupRequest:
       type: object
       description: Adds support for custom fields and tags.

@@ -19,14 +19,14 @@ Name | Type | Description | Notes
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**VlanCount** | **int64** |  | [readonly] 
+**VlanCount** | Pointer to **int64** |  | [optional] [readonly] 
 **Utilization** | **string** |  | [readonly] 
 
 ## Methods
 
 ### NewVLANGroup
 
-`func NewVLANGroup(id int32, url string, display string, name string, slug string, scope interface{}, created NullableTime, lastUpdated NullableTime, vlanCount int64, utilization string, ) *VLANGroup`
+`func NewVLANGroup(id int32, url string, display string, name string, slug string, scope interface{}, created NullableTime, lastUpdated NullableTime, utilization string, ) *VLANGroup`
 
 NewVLANGroup instantiates a new VLANGroup object
 This constructor will assign default values to properties that have it defined,
@@ -445,6 +445,11 @@ and a boolean to check if the value has been set.
 
 SetVlanCount sets VlanCount field to given value.
 
+### HasVlanCount
+
+`func (o *VLANGroup) HasVlanCount() bool`
+
+HasVlanCount returns a boolean if a field has been set.
 
 ### GetUtilization
 

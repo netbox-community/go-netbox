@@ -27,7 +27,7 @@ type Role struct {
 	Slug                 string  `json:"slug"`
 	Description          *string `json:"description,omitempty"`
 	PrefixCount          *int64  `json:"prefix_count,omitempty"`
-	VlanCount            int64   `json:"vlan_count"`
+	VlanCount            *int64  `json:"vlan_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -37,14 +37,13 @@ type _Role Role
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRole(id int32, url string, display string, name string, slug string, vlanCount int64) *Role {
+func NewRole(id int32, url string, display string, name string, slug string) *Role {
 	this := Role{}
 	this.Id = id
 	this.Url = url
 	this.Display = display
 	this.Name = name
 	this.Slug = slug
-	this.VlanCount = vlanCount
 	return &this
 }
 
@@ -240,28 +239,36 @@ func (o *Role) SetPrefixCount(v int64) {
 	o.PrefixCount = &v
 }
 
-// GetVlanCount returns the VlanCount field value
+// GetVlanCount returns the VlanCount field value if set, zero value otherwise.
 func (o *Role) GetVlanCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.VlanCount) {
 		var ret int64
 		return ret
 	}
-
-	return o.VlanCount
+	return *o.VlanCount
 }
 
-// GetVlanCountOk returns a tuple with the VlanCount field value
+// GetVlanCountOk returns a tuple with the VlanCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Role) GetVlanCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.VlanCount) {
 		return nil, false
 	}
-	return &o.VlanCount, true
+	return o.VlanCount, true
 }
 
-// SetVlanCount sets field value
+// HasVlanCount returns a boolean if a field has been set.
+func (o *Role) HasVlanCount() bool {
+	if o != nil && !IsNil(o.VlanCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetVlanCount gets a reference to the given int64 and assigns it to the VlanCount field.
 func (o *Role) SetVlanCount(v int64) {
-	o.VlanCount = v
+	o.VlanCount = &v
 }
 
 func (o Role) MarshalJSON() ([]byte, error) {
@@ -285,7 +292,9 @@ func (o Role) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.PrefixCount) {
 		toSerialize["prefix_count"] = o.PrefixCount
 	}
-	toSerialize["vlan_count"] = o.VlanCount
+	if !IsNil(o.VlanCount) {
+		toSerialize["vlan_count"] = o.VlanCount
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -304,7 +313,6 @@ func (o *Role) UnmarshalJSON(data []byte) (err error) {
 		"display",
 		"name",
 		"slug",
-		"vlan_count",
 	}
 
 	allProperties := make(map[string]interface{})
