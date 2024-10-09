@@ -6,17 +6,18 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
+**DisplayUrl** | Pointer to **string** |  | [optional] [readonly] 
 **Display** | **string** |  | [readonly] 
 **Name** | **NullableString** |  | 
-**DeviceType** | Pointer to [**DeviceType**](DeviceType.md) |  | [optional] 
-**Role** | Pointer to [**DeviceRole**](DeviceRole.md) |  | [optional] 
-**Tenant** | Pointer to [**NullableTenant**](Tenant.md) |  | [optional] 
-**Platform** | Pointer to [**NullablePlatform**](Platform.md) |  | [optional] 
+**DeviceType** | Pointer to [**BriefDeviceType**](BriefDeviceType.md) |  | [optional] 
+**Role** | Pointer to [**BriefDeviceRole**](BriefDeviceRole.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableBriefTenant**](BriefTenant.md) |  | [optional] 
+**Platform** | Pointer to [**NullableBriefPlatform**](BriefPlatform.md) |  | [optional] 
 **Serial** | Pointer to **string** | Chassis serial number, assigned by the manufacturer | [optional] 
 **AssetTag** | Pointer to **NullableString** | A unique tag used to identify this device | [optional] 
-**Site** | Pointer to [**Site**](Site.md) |  | [optional] 
-**Location** | Pointer to [**NullableLocation**](Location.md) |  | [optional] 
-**Rack** | Pointer to [**NullableRack**](Rack.md) |  | [optional] 
+**Site** | Pointer to [**BriefSite**](BriefSite.md) |  | [optional] 
+**Location** | Pointer to [**NullableBriefLocation**](BriefLocation.md) |  | [optional] 
+**Rack** | Pointer to [**NullableBriefRack**](BriefRack.md) |  | [optional] 
 **Position** | Pointer to **NullableFloat64** |  | [optional] 
 **Face** | Pointer to [**DeviceFace**](DeviceFace.md) |  | [optional] 
 **Latitude** | Pointer to **NullableFloat64** | GPS coordinate in decimal format (xx.yyyyyy) | [optional] 
@@ -24,17 +25,17 @@ Name | Type | Description | Notes
 **ParentDevice** | Pointer to [**NullableNestedDevice**](NestedDevice.md) |  | [optional] [readonly] 
 **Status** | Pointer to [**DeviceStatus**](DeviceStatus.md) |  | [optional] 
 **Airflow** | Pointer to [**DeviceAirflow**](DeviceAirflow.md) |  | [optional] 
-**PrimaryIp** | Pointer to [**NullableIPAddress**](IPAddress.md) |  | [optional] [readonly] 
-**PrimaryIp4** | Pointer to [**NullableIPAddress**](IPAddress.md) |  | [optional] 
-**PrimaryIp6** | Pointer to [**NullableIPAddress**](IPAddress.md) |  | [optional] 
-**OobIp** | Pointer to [**NullableIPAddress**](IPAddress.md) |  | [optional] 
-**Cluster** | Pointer to [**NullableCluster**](Cluster.md) |  | [optional] 
-**VirtualChassis** | Pointer to [**NullableVirtualChassis**](VirtualChassis.md) |  | [optional] 
+**PrimaryIp** | Pointer to [**NullableBriefIPAddress**](BriefIPAddress.md) |  | [optional] [readonly] 
+**PrimaryIp4** | Pointer to [**NullableBriefIPAddress**](BriefIPAddress.md) |  | [optional] 
+**PrimaryIp6** | Pointer to [**NullableBriefIPAddress**](BriefIPAddress.md) |  | [optional] 
+**OobIp** | Pointer to [**NullableBriefIPAddress**](BriefIPAddress.md) |  | [optional] 
+**Cluster** | Pointer to [**NullableBriefCluster**](BriefCluster.md) |  | [optional] 
+**VirtualChassis** | Pointer to [**NullableBriefVirtualChassis**](BriefVirtualChassis.md) |  | [optional] 
 **VcPosition** | Pointer to **NullableInt32** |  | [optional] 
 **VcPriority** | Pointer to **NullableInt32** | Virtual chassis master election priority | [optional] 
 **Description** | **string** |  | 
 **Comments** | Pointer to **string** |  | [optional] 
-**ConfigTemplate** | Pointer to [**NullableConfigTemplate**](ConfigTemplate.md) |  | [optional] 
+**ConfigTemplate** | Pointer to [**NullableBriefConfigTemplate**](BriefConfigTemplate.md) |  | [optional] 
 **LocalContextData** | Pointer to **interface{}** | Local config context data takes precedence over source contexts in the final rendered config context | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -110,6 +111,31 @@ and a boolean to check if the value has been set.
 SetUrl sets Url field to given value.
 
 
+### GetDisplayUrl
+
+`func (o *Device) GetDisplayUrl() string`
+
+GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
+
+### GetDisplayUrlOk
+
+`func (o *Device) GetDisplayUrlOk() (*string, bool)`
+
+GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayUrl
+
+`func (o *Device) SetDisplayUrl(v string)`
+
+SetDisplayUrl sets DisplayUrl field to given value.
+
+### HasDisplayUrl
+
+`func (o *Device) HasDisplayUrl() bool`
+
+HasDisplayUrl returns a boolean if a field has been set.
+
 ### GetDisplay
 
 `func (o *Device) GetDisplay() string`
@@ -162,20 +188,20 @@ SetName sets Name field to given value.
 UnsetName ensures that no value is present for Name, not even an explicit nil
 ### GetDeviceType
 
-`func (o *Device) GetDeviceType() DeviceType`
+`func (o *Device) GetDeviceType() BriefDeviceType`
 
 GetDeviceType returns the DeviceType field if non-nil, zero value otherwise.
 
 ### GetDeviceTypeOk
 
-`func (o *Device) GetDeviceTypeOk() (*DeviceType, bool)`
+`func (o *Device) GetDeviceTypeOk() (*BriefDeviceType, bool)`
 
 GetDeviceTypeOk returns a tuple with the DeviceType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeviceType
 
-`func (o *Device) SetDeviceType(v DeviceType)`
+`func (o *Device) SetDeviceType(v BriefDeviceType)`
 
 SetDeviceType sets DeviceType field to given value.
 
@@ -187,20 +213,20 @@ HasDeviceType returns a boolean if a field has been set.
 
 ### GetRole
 
-`func (o *Device) GetRole() DeviceRole`
+`func (o *Device) GetRole() BriefDeviceRole`
 
 GetRole returns the Role field if non-nil, zero value otherwise.
 
 ### GetRoleOk
 
-`func (o *Device) GetRoleOk() (*DeviceRole, bool)`
+`func (o *Device) GetRoleOk() (*BriefDeviceRole, bool)`
 
 GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRole
 
-`func (o *Device) SetRole(v DeviceRole)`
+`func (o *Device) SetRole(v BriefDeviceRole)`
 
 SetRole sets Role field to given value.
 
@@ -212,20 +238,20 @@ HasRole returns a boolean if a field has been set.
 
 ### GetTenant
 
-`func (o *Device) GetTenant() Tenant`
+`func (o *Device) GetTenant() BriefTenant`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *Device) GetTenantOk() (*Tenant, bool)`
+`func (o *Device) GetTenantOk() (*BriefTenant, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *Device) SetTenant(v Tenant)`
+`func (o *Device) SetTenant(v BriefTenant)`
 
 SetTenant sets Tenant field to given value.
 
@@ -247,20 +273,20 @@ HasTenant returns a boolean if a field has been set.
 UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
 ### GetPlatform
 
-`func (o *Device) GetPlatform() Platform`
+`func (o *Device) GetPlatform() BriefPlatform`
 
 GetPlatform returns the Platform field if non-nil, zero value otherwise.
 
 ### GetPlatformOk
 
-`func (o *Device) GetPlatformOk() (*Platform, bool)`
+`func (o *Device) GetPlatformOk() (*BriefPlatform, bool)`
 
 GetPlatformOk returns a tuple with the Platform field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlatform
 
-`func (o *Device) SetPlatform(v Platform)`
+`func (o *Device) SetPlatform(v BriefPlatform)`
 
 SetPlatform sets Platform field to given value.
 
@@ -342,20 +368,20 @@ HasAssetTag returns a boolean if a field has been set.
 UnsetAssetTag ensures that no value is present for AssetTag, not even an explicit nil
 ### GetSite
 
-`func (o *Device) GetSite() Site`
+`func (o *Device) GetSite() BriefSite`
 
 GetSite returns the Site field if non-nil, zero value otherwise.
 
 ### GetSiteOk
 
-`func (o *Device) GetSiteOk() (*Site, bool)`
+`func (o *Device) GetSiteOk() (*BriefSite, bool)`
 
 GetSiteOk returns a tuple with the Site field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSite
 
-`func (o *Device) SetSite(v Site)`
+`func (o *Device) SetSite(v BriefSite)`
 
 SetSite sets Site field to given value.
 
@@ -367,20 +393,20 @@ HasSite returns a boolean if a field has been set.
 
 ### GetLocation
 
-`func (o *Device) GetLocation() Location`
+`func (o *Device) GetLocation() BriefLocation`
 
 GetLocation returns the Location field if non-nil, zero value otherwise.
 
 ### GetLocationOk
 
-`func (o *Device) GetLocationOk() (*Location, bool)`
+`func (o *Device) GetLocationOk() (*BriefLocation, bool)`
 
 GetLocationOk returns a tuple with the Location field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLocation
 
-`func (o *Device) SetLocation(v Location)`
+`func (o *Device) SetLocation(v BriefLocation)`
 
 SetLocation sets Location field to given value.
 
@@ -402,20 +428,20 @@ HasLocation returns a boolean if a field has been set.
 UnsetLocation ensures that no value is present for Location, not even an explicit nil
 ### GetRack
 
-`func (o *Device) GetRack() Rack`
+`func (o *Device) GetRack() BriefRack`
 
 GetRack returns the Rack field if non-nil, zero value otherwise.
 
 ### GetRackOk
 
-`func (o *Device) GetRackOk() (*Rack, bool)`
+`func (o *Device) GetRackOk() (*BriefRack, bool)`
 
 GetRackOk returns a tuple with the Rack field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRack
 
-`func (o *Device) SetRack(v Rack)`
+`func (o *Device) SetRack(v BriefRack)`
 
 SetRack sets Rack field to given value.
 
@@ -652,20 +678,20 @@ HasAirflow returns a boolean if a field has been set.
 
 ### GetPrimaryIp
 
-`func (o *Device) GetPrimaryIp() IPAddress`
+`func (o *Device) GetPrimaryIp() BriefIPAddress`
 
 GetPrimaryIp returns the PrimaryIp field if non-nil, zero value otherwise.
 
 ### GetPrimaryIpOk
 
-`func (o *Device) GetPrimaryIpOk() (*IPAddress, bool)`
+`func (o *Device) GetPrimaryIpOk() (*BriefIPAddress, bool)`
 
 GetPrimaryIpOk returns a tuple with the PrimaryIp field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrimaryIp
 
-`func (o *Device) SetPrimaryIp(v IPAddress)`
+`func (o *Device) SetPrimaryIp(v BriefIPAddress)`
 
 SetPrimaryIp sets PrimaryIp field to given value.
 
@@ -687,20 +713,20 @@ HasPrimaryIp returns a boolean if a field has been set.
 UnsetPrimaryIp ensures that no value is present for PrimaryIp, not even an explicit nil
 ### GetPrimaryIp4
 
-`func (o *Device) GetPrimaryIp4() IPAddress`
+`func (o *Device) GetPrimaryIp4() BriefIPAddress`
 
 GetPrimaryIp4 returns the PrimaryIp4 field if non-nil, zero value otherwise.
 
 ### GetPrimaryIp4Ok
 
-`func (o *Device) GetPrimaryIp4Ok() (*IPAddress, bool)`
+`func (o *Device) GetPrimaryIp4Ok() (*BriefIPAddress, bool)`
 
 GetPrimaryIp4Ok returns a tuple with the PrimaryIp4 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrimaryIp4
 
-`func (o *Device) SetPrimaryIp4(v IPAddress)`
+`func (o *Device) SetPrimaryIp4(v BriefIPAddress)`
 
 SetPrimaryIp4 sets PrimaryIp4 field to given value.
 
@@ -722,20 +748,20 @@ HasPrimaryIp4 returns a boolean if a field has been set.
 UnsetPrimaryIp4 ensures that no value is present for PrimaryIp4, not even an explicit nil
 ### GetPrimaryIp6
 
-`func (o *Device) GetPrimaryIp6() IPAddress`
+`func (o *Device) GetPrimaryIp6() BriefIPAddress`
 
 GetPrimaryIp6 returns the PrimaryIp6 field if non-nil, zero value otherwise.
 
 ### GetPrimaryIp6Ok
 
-`func (o *Device) GetPrimaryIp6Ok() (*IPAddress, bool)`
+`func (o *Device) GetPrimaryIp6Ok() (*BriefIPAddress, bool)`
 
 GetPrimaryIp6Ok returns a tuple with the PrimaryIp6 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrimaryIp6
 
-`func (o *Device) SetPrimaryIp6(v IPAddress)`
+`func (o *Device) SetPrimaryIp6(v BriefIPAddress)`
 
 SetPrimaryIp6 sets PrimaryIp6 field to given value.
 
@@ -757,20 +783,20 @@ HasPrimaryIp6 returns a boolean if a field has been set.
 UnsetPrimaryIp6 ensures that no value is present for PrimaryIp6, not even an explicit nil
 ### GetOobIp
 
-`func (o *Device) GetOobIp() IPAddress`
+`func (o *Device) GetOobIp() BriefIPAddress`
 
 GetOobIp returns the OobIp field if non-nil, zero value otherwise.
 
 ### GetOobIpOk
 
-`func (o *Device) GetOobIpOk() (*IPAddress, bool)`
+`func (o *Device) GetOobIpOk() (*BriefIPAddress, bool)`
 
 GetOobIpOk returns a tuple with the OobIp field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOobIp
 
-`func (o *Device) SetOobIp(v IPAddress)`
+`func (o *Device) SetOobIp(v BriefIPAddress)`
 
 SetOobIp sets OobIp field to given value.
 
@@ -792,20 +818,20 @@ HasOobIp returns a boolean if a field has been set.
 UnsetOobIp ensures that no value is present for OobIp, not even an explicit nil
 ### GetCluster
 
-`func (o *Device) GetCluster() Cluster`
+`func (o *Device) GetCluster() BriefCluster`
 
 GetCluster returns the Cluster field if non-nil, zero value otherwise.
 
 ### GetClusterOk
 
-`func (o *Device) GetClusterOk() (*Cluster, bool)`
+`func (o *Device) GetClusterOk() (*BriefCluster, bool)`
 
 GetClusterOk returns a tuple with the Cluster field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCluster
 
-`func (o *Device) SetCluster(v Cluster)`
+`func (o *Device) SetCluster(v BriefCluster)`
 
 SetCluster sets Cluster field to given value.
 
@@ -827,20 +853,20 @@ HasCluster returns a boolean if a field has been set.
 UnsetCluster ensures that no value is present for Cluster, not even an explicit nil
 ### GetVirtualChassis
 
-`func (o *Device) GetVirtualChassis() VirtualChassis`
+`func (o *Device) GetVirtualChassis() BriefVirtualChassis`
 
 GetVirtualChassis returns the VirtualChassis field if non-nil, zero value otherwise.
 
 ### GetVirtualChassisOk
 
-`func (o *Device) GetVirtualChassisOk() (*VirtualChassis, bool)`
+`func (o *Device) GetVirtualChassisOk() (*BriefVirtualChassis, bool)`
 
 GetVirtualChassisOk returns a tuple with the VirtualChassis field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVirtualChassis
 
-`func (o *Device) SetVirtualChassis(v VirtualChassis)`
+`func (o *Device) SetVirtualChassis(v BriefVirtualChassis)`
 
 SetVirtualChassis sets VirtualChassis field to given value.
 
@@ -977,20 +1003,20 @@ HasComments returns a boolean if a field has been set.
 
 ### GetConfigTemplate
 
-`func (o *Device) GetConfigTemplate() ConfigTemplate`
+`func (o *Device) GetConfigTemplate() BriefConfigTemplate`
 
 GetConfigTemplate returns the ConfigTemplate field if non-nil, zero value otherwise.
 
 ### GetConfigTemplateOk
 
-`func (o *Device) GetConfigTemplateOk() (*ConfigTemplate, bool)`
+`func (o *Device) GetConfigTemplateOk() (*BriefConfigTemplate, bool)`
 
 GetConfigTemplateOk returns a tuple with the ConfigTemplate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfigTemplate
 
-`func (o *Device) SetConfigTemplate(v ConfigTemplate)`
+`func (o *Device) SetConfigTemplate(v BriefConfigTemplate)`
 
 SetConfigTemplate sets ConfigTemplate field to given value.
 

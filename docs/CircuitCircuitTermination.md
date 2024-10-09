@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**DisplayUrl** | **string** |  | [readonly] 
+**DisplayUrl** | Pointer to **string** |  | [optional] [readonly] 
 **Display** | **string** |  | [readonly] 
 **Site** | [**NullableBriefSite**](BriefSite.md) |  | 
 **ProviderNetwork** | [**NullableBriefProviderNetwork**](BriefProviderNetwork.md) |  | 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewCircuitCircuitTermination
 
-`func NewCircuitCircuitTermination(id int32, url string, displayUrl string, display string, site NullableBriefSite, providerNetwork NullableBriefProviderNetwork, ) *CircuitCircuitTermination`
+`func NewCircuitCircuitTermination(id int32, url string, display string, site NullableBriefSite, providerNetwork NullableBriefProviderNetwork, ) *CircuitCircuitTermination`
 
 NewCircuitCircuitTermination instantiates a new CircuitCircuitTermination object
 This constructor will assign default values to properties that have it defined,
@@ -93,6 +93,11 @@ and a boolean to check if the value has been set.
 
 SetDisplayUrl sets DisplayUrl field to given value.
 
+### HasDisplayUrl
+
+`func (o *CircuitCircuitTermination) HasDisplayUrl() bool`
+
+HasDisplayUrl returns a boolean if a field has been set.
 
 ### GetDisplay
 

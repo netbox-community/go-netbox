@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-NETBOX_VERSION='4.0.3'
+NETBOX_VERSION='4.1.3'
 NETBOX_DOCKER_VERSION='auto'
 
 set -euo pipefail

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DeviceType** | [**DeviceTypeRequest**](DeviceTypeRequest.md) |  | 
+**DeviceType** | [**BriefDeviceTypeRequest**](BriefDeviceTypeRequest.md) |  | 
 **Name** | **string** | {module} is accepted as a substitution for the module bay position when attached to a module type. | 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 
 ### NewDeviceBayTemplateRequest
 
-`func NewDeviceBayTemplateRequest(deviceType DeviceTypeRequest, name string, ) *DeviceBayTemplateRequest`
+`func NewDeviceBayTemplateRequest(deviceType BriefDeviceTypeRequest, name string, ) *DeviceBayTemplateRequest`
 
 NewDeviceBayTemplateRequest instantiates a new DeviceBayTemplateRequest object
 This constructor will assign default values to properties that have it defined,
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDeviceType
 
-`func (o *DeviceBayTemplateRequest) GetDeviceType() DeviceTypeRequest`
+`func (o *DeviceBayTemplateRequest) GetDeviceType() BriefDeviceTypeRequest`
 
 GetDeviceType returns the DeviceType field if non-nil, zero value otherwise.
 
 ### GetDeviceTypeOk
 
-`func (o *DeviceBayTemplateRequest) GetDeviceTypeOk() (*DeviceTypeRequest, bool)`
+`func (o *DeviceBayTemplateRequest) GetDeviceTypeOk() (*BriefDeviceTypeRequest, bool)`
 
 GetDeviceTypeOk returns a tuple with the DeviceType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeviceType
 
-`func (o *DeviceBayTemplateRequest) SetDeviceType(v DeviceTypeRequest)`
+`func (o *DeviceBayTemplateRequest) SetDeviceType(v BriefDeviceTypeRequest)`
 
 SetDeviceType sets DeviceType field to given value.
 

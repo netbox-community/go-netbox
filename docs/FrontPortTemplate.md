@@ -7,13 +7,13 @@ Name | Type | Description | Notes
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
-**DeviceType** | Pointer to [**NullableDeviceType**](DeviceType.md) |  | [optional] 
-**ModuleType** | Pointer to [**NullableModuleType**](ModuleType.md) |  | [optional] 
+**DeviceType** | Pointer to [**NullableBriefDeviceType**](BriefDeviceType.md) |  | [optional] 
+**ModuleType** | Pointer to [**NullableBriefModuleType**](BriefModuleType.md) |  | [optional] 
 **Name** | **string** | {module} is accepted as a substitution for the module bay position when attached to a module type. | 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Type** | [**FrontPortType**](FrontPortType.md) |  | 
 **Color** | Pointer to **string** |  | [optional] 
-**RearPort** | [**RearPortTemplate**](RearPortTemplate.md) |  | 
+**RearPort** | [**BriefRearPortTemplate**](BriefRearPortTemplate.md) |  | 
 **RearPortPosition** | Pointer to **int32** |  | [optional] [default to 1]
 **Description** | Pointer to **string** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 
 ### NewFrontPortTemplate
 
-`func NewFrontPortTemplate(id int32, url string, display string, name string, type_ FrontPortType, rearPort RearPortTemplate, created NullableTime, lastUpdated NullableTime, ) *FrontPortTemplate`
+`func NewFrontPortTemplate(id int32, url string, display string, name string, type_ FrontPortType, rearPort BriefRearPortTemplate, created NullableTime, lastUpdated NullableTime, ) *FrontPortTemplate`
 
 NewFrontPortTemplate instantiates a new FrontPortTemplate object
 This constructor will assign default values to properties that have it defined,
@@ -100,20 +100,20 @@ SetDisplay sets Display field to given value.
 
 ### GetDeviceType
 
-`func (o *FrontPortTemplate) GetDeviceType() DeviceType`
+`func (o *FrontPortTemplate) GetDeviceType() BriefDeviceType`
 
 GetDeviceType returns the DeviceType field if non-nil, zero value otherwise.
 
 ### GetDeviceTypeOk
 
-`func (o *FrontPortTemplate) GetDeviceTypeOk() (*DeviceType, bool)`
+`func (o *FrontPortTemplate) GetDeviceTypeOk() (*BriefDeviceType, bool)`
 
 GetDeviceTypeOk returns a tuple with the DeviceType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeviceType
 
-`func (o *FrontPortTemplate) SetDeviceType(v DeviceType)`
+`func (o *FrontPortTemplate) SetDeviceType(v BriefDeviceType)`
 
 SetDeviceType sets DeviceType field to given value.
 
@@ -135,20 +135,20 @@ HasDeviceType returns a boolean if a field has been set.
 UnsetDeviceType ensures that no value is present for DeviceType, not even an explicit nil
 ### GetModuleType
 
-`func (o *FrontPortTemplate) GetModuleType() ModuleType`
+`func (o *FrontPortTemplate) GetModuleType() BriefModuleType`
 
 GetModuleType returns the ModuleType field if non-nil, zero value otherwise.
 
 ### GetModuleTypeOk
 
-`func (o *FrontPortTemplate) GetModuleTypeOk() (*ModuleType, bool)`
+`func (o *FrontPortTemplate) GetModuleTypeOk() (*BriefModuleType, bool)`
 
 GetModuleTypeOk returns a tuple with the ModuleType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetModuleType
 
-`func (o *FrontPortTemplate) SetModuleType(v ModuleType)`
+`func (o *FrontPortTemplate) SetModuleType(v BriefModuleType)`
 
 SetModuleType sets ModuleType field to given value.
 
@@ -260,20 +260,20 @@ HasColor returns a boolean if a field has been set.
 
 ### GetRearPort
 
-`func (o *FrontPortTemplate) GetRearPort() RearPortTemplate`
+`func (o *FrontPortTemplate) GetRearPort() BriefRearPortTemplate`
 
 GetRearPort returns the RearPort field if non-nil, zero value otherwise.
 
 ### GetRearPortOk
 
-`func (o *FrontPortTemplate) GetRearPortOk() (*RearPortTemplate, bool)`
+`func (o *FrontPortTemplate) GetRearPortOk() (*BriefRearPortTemplate, bool)`
 
 GetRearPortOk returns a tuple with the RearPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRearPort
 
-`func (o *FrontPortTemplate) SetRearPort(v RearPortTemplate)`
+`func (o *FrontPortTemplate) SetRearPort(v BriefRearPortTemplate)`
 
 SetRearPort sets RearPort field to given value.
 

@@ -19,6 +19,8 @@
 
 * `_1000_BASE_T__1_GE` (value: `"1000BASE-T (1GE)"`)
 
+* `_1000_BASE_TX__1_GE` (value: `"1000BASE-TX (1GE)"`)
+
 * `_2_5_GBASE_T__2_5_GE` (value: `"2.5GBASE-T (2.5GE)"`)
 
 * `_5_GBASE_T__5_GE` (value: `"5GBASE-T (5GE)"`)
@@ -26,6 +28,8 @@
 * `_10_GBASE_T__10_GE` (value: `"10GBASE-T (10GE)"`)
 
 * `_10_GBASE_CX4__10_GE` (value: `"10GBASE-CX4 (10GE)"`)
+
+* `SFP__100_ME` (value: `"SFP (100ME)"`)
 
 * `GBIC__1_GE` (value: `"GBIC (1GE)"`)
 
@@ -125,7 +129,11 @@
 
 * `IEEE_802_11AY` (value: `"IEEE 802.11ay"`)
 
+* `IEEE_802_11BE` (value: `"IEEE 802.11be"`)
+
 * `IEEE_802_15_1__BLUETOOTH` (value: `"IEEE 802.15.1 (Bluetooth)"`)
+
+* `IEEE_802_15_4__LR_WPAN` (value: `"IEEE 802.15.4 (LR-WPAN)"`)
 
 * `OTHER__WIRELESS` (value: `"Other (Wireless)"`)
 

@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
+**DisplayUrl** | Pointer to **string** |  | [optional] [readonly] 
 **Display** | **string** |  | [readonly] 
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
@@ -74,6 +75,31 @@ and a boolean to check if the value has been set.
 
 SetUrl sets Url field to given value.
 
+
+### GetDisplayUrl
+
+`func (o *ObjectPermission) GetDisplayUrl() string`
+
+GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
+
+### GetDisplayUrlOk
+
+`func (o *ObjectPermission) GetDisplayUrlOk() (*string, bool)`
+
+GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayUrl
+
+`func (o *ObjectPermission) SetDisplayUrl(v string)`
+
+SetDisplayUrl sets DisplayUrl field to given value.
+
+### HasDisplayUrl
+
+`func (o *ObjectPermission) HasDisplayUrl() bool`
+
+HasDisplayUrl returns a boolean if a field has been set.
 
 ### GetDisplay
 

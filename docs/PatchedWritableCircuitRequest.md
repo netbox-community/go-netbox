@@ -5,11 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Cid** | Pointer to **string** | Unique circuit ID | [optional] 
-**Provider** | Pointer to [**ProviderRequest**](ProviderRequest.md) |  | [optional] 
-**ProviderAccount** | Pointer to [**NullableProviderAccountRequest**](ProviderAccountRequest.md) |  | [optional] 
-**Type** | Pointer to [**CircuitTypeRequest**](CircuitTypeRequest.md) |  | [optional] 
-**Status** | Pointer to [**PatchedWritableCircuitRequestStatus**](PatchedWritableCircuitRequestStatus.md) |  | [optional] 
-**Tenant** | Pointer to [**NullableTenantRequest**](TenantRequest.md) |  | [optional] 
+**Provider** | Pointer to [**BriefProviderRequest**](BriefProviderRequest.md) |  | [optional] 
+**ProviderAccount** | Pointer to [**NullableBriefProviderAccountRequest**](BriefProviderAccountRequest.md) |  | [optional] 
+**Type** | Pointer to [**BriefCircuitTypeRequest**](BriefCircuitTypeRequest.md) |  | [optional] 
+**Status** | Pointer to [**CircuitStatusValue**](CircuitStatusValue.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
 **InstallDate** | Pointer to **NullableString** |  | [optional] 
 **TerminationDate** | Pointer to **NullableString** |  | [optional] 
 **CommitRate** | Pointer to **NullableInt32** | Committed rate | [optional] 
@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
+**Assignments** | Pointer to [**[]BriefCircuitGroupAssignmentSerializerRequest**](BriefCircuitGroupAssignmentSerializerRequest.md) |  | [optional] 
 
 ## Methods
 
@@ -64,20 +65,20 @@ HasCid returns a boolean if a field has been set.
 
 ### GetProvider
 
-`func (o *PatchedWritableCircuitRequest) GetProvider() ProviderRequest`
+`func (o *PatchedWritableCircuitRequest) GetProvider() BriefProviderRequest`
 
 GetProvider returns the Provider field if non-nil, zero value otherwise.
 
 ### GetProviderOk
 
-`func (o *PatchedWritableCircuitRequest) GetProviderOk() (*ProviderRequest, bool)`
+`func (o *PatchedWritableCircuitRequest) GetProviderOk() (*BriefProviderRequest, bool)`
 
 GetProviderOk returns a tuple with the Provider field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProvider
 
-`func (o *PatchedWritableCircuitRequest) SetProvider(v ProviderRequest)`
+`func (o *PatchedWritableCircuitRequest) SetProvider(v BriefProviderRequest)`
 
 SetProvider sets Provider field to given value.
 
@@ -89,20 +90,20 @@ HasProvider returns a boolean if a field has been set.
 
 ### GetProviderAccount
 
-`func (o *PatchedWritableCircuitRequest) GetProviderAccount() ProviderAccountRequest`
+`func (o *PatchedWritableCircuitRequest) GetProviderAccount() BriefProviderAccountRequest`
 
 GetProviderAccount returns the ProviderAccount field if non-nil, zero value otherwise.
 
 ### GetProviderAccountOk
 
-`func (o *PatchedWritableCircuitRequest) GetProviderAccountOk() (*ProviderAccountRequest, bool)`
+`func (o *PatchedWritableCircuitRequest) GetProviderAccountOk() (*BriefProviderAccountRequest, bool)`
 
 GetProviderAccountOk returns a tuple with the ProviderAccount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProviderAccount
 
-`func (o *PatchedWritableCircuitRequest) SetProviderAccount(v ProviderAccountRequest)`
+`func (o *PatchedWritableCircuitRequest) SetProviderAccount(v BriefProviderAccountRequest)`
 
 SetProviderAccount sets ProviderAccount field to given value.
 
@@ -124,20 +125,20 @@ HasProviderAccount returns a boolean if a field has been set.
 UnsetProviderAccount ensures that no value is present for ProviderAccount, not even an explicit nil
 ### GetType
 
-`func (o *PatchedWritableCircuitRequest) GetType() CircuitTypeRequest`
+`func (o *PatchedWritableCircuitRequest) GetType() BriefCircuitTypeRequest`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *PatchedWritableCircuitRequest) GetTypeOk() (*CircuitTypeRequest, bool)`
+`func (o *PatchedWritableCircuitRequest) GetTypeOk() (*BriefCircuitTypeRequest, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *PatchedWritableCircuitRequest) SetType(v CircuitTypeRequest)`
+`func (o *PatchedWritableCircuitRequest) SetType(v BriefCircuitTypeRequest)`
 
 SetType sets Type field to given value.
 
@@ -149,20 +150,20 @@ HasType returns a boolean if a field has been set.
 
 ### GetStatus
 
-`func (o *PatchedWritableCircuitRequest) GetStatus() PatchedWritableCircuitRequestStatus`
+`func (o *PatchedWritableCircuitRequest) GetStatus() CircuitStatusValue`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *PatchedWritableCircuitRequest) GetStatusOk() (*PatchedWritableCircuitRequestStatus, bool)`
+`func (o *PatchedWritableCircuitRequest) GetStatusOk() (*CircuitStatusValue, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *PatchedWritableCircuitRequest) SetStatus(v PatchedWritableCircuitRequestStatus)`
+`func (o *PatchedWritableCircuitRequest) SetStatus(v CircuitStatusValue)`
 
 SetStatus sets Status field to given value.
 
@@ -174,20 +175,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetTenant
 
-`func (o *PatchedWritableCircuitRequest) GetTenant() TenantRequest`
+`func (o *PatchedWritableCircuitRequest) GetTenant() BriefTenantRequest`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *PatchedWritableCircuitRequest) GetTenantOk() (*TenantRequest, bool)`
+`func (o *PatchedWritableCircuitRequest) GetTenantOk() (*BriefTenantRequest, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *PatchedWritableCircuitRequest) SetTenant(v TenantRequest)`
+`func (o *PatchedWritableCircuitRequest) SetTenant(v BriefTenantRequest)`
 
 SetTenant sets Tenant field to given value.
 
@@ -411,6 +412,31 @@ SetCustomFields sets CustomFields field to given value.
 `func (o *PatchedWritableCircuitRequest) HasCustomFields() bool`
 
 HasCustomFields returns a boolean if a field has been set.
+
+### GetAssignments
+
+`func (o *PatchedWritableCircuitRequest) GetAssignments() []BriefCircuitGroupAssignmentSerializerRequest`
+
+GetAssignments returns the Assignments field if non-nil, zero value otherwise.
+
+### GetAssignmentsOk
+
+`func (o *PatchedWritableCircuitRequest) GetAssignmentsOk() (*[]BriefCircuitGroupAssignmentSerializerRequest, bool)`
+
+GetAssignmentsOk returns a tuple with the Assignments field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAssignments
+
+`func (o *PatchedWritableCircuitRequest) SetAssignments(v []BriefCircuitGroupAssignmentSerializerRequest)`
+
+SetAssignments sets Assignments field to given value.
+
+### HasAssignments
+
+`func (o *PatchedWritableCircuitRequest) HasAssignments() bool`
+
+HasAssignments returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

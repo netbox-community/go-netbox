@@ -3,6 +3,10 @@
 ## Enum
 
 
+* `EMPTY` (value: `""`)
+
+* `_3DES_CBC` (value: `"3des-cbc"`)
+
 * `AES_128_CBC` (value: `"aes-128-cbc"`)
 
 * `AES_128_GCM` (value: `"aes-128-gcm"`)
@@ -15,11 +19,7 @@
 
 * `AES_256_GCM` (value: `"aes-256-gcm"`)
 
-* `_3DES_CBC` (value: `"3des-cbc"`)
-
 * `DES_CBC` (value: `"des-cbc"`)
-
-* `EMPTY` (value: `""`)
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -6,12 +6,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Ssid** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**Group** | Pointer to [**NullableWirelessLANGroupRequest**](WirelessLANGroupRequest.md) |  | [optional] 
+**Group** | Pointer to [**NullableBriefWirelessLANGroupRequest**](BriefWirelessLANGroupRequest.md) |  | [optional] 
 **Status** | Pointer to [**PatchedWritableWirelessLANRequestStatus**](PatchedWritableWirelessLANRequestStatus.md) |  | [optional] 
-**Vlan** | Pointer to [**NullableVLANRequest**](VLANRequest.md) |  | [optional] 
-**Tenant** | Pointer to [**NullableTenantRequest**](TenantRequest.md) |  | [optional] 
-**AuthType** | Pointer to [**AuthenticationType1**](AuthenticationType1.md) |  | [optional] 
-**AuthCipher** | Pointer to [**AuthenticationCipher**](AuthenticationCipher.md) |  | [optional] 
+**Vlan** | Pointer to [**NullableBriefVLANRequest**](BriefVLANRequest.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
+**AuthType** | Pointer to [**AuthenticationType3**](AuthenticationType3.md) |  | [optional] 
+**AuthCipher** | Pointer to [**AuthenticationCipher1**](AuthenticationCipher1.md) |  | [optional] 
 **AuthPsk** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
@@ -88,20 +88,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetGroup
 
-`func (o *PatchedWritableWirelessLANRequest) GetGroup() WirelessLANGroupRequest`
+`func (o *PatchedWritableWirelessLANRequest) GetGroup() BriefWirelessLANGroupRequest`
 
 GetGroup returns the Group field if non-nil, zero value otherwise.
 
 ### GetGroupOk
 
-`func (o *PatchedWritableWirelessLANRequest) GetGroupOk() (*WirelessLANGroupRequest, bool)`
+`func (o *PatchedWritableWirelessLANRequest) GetGroupOk() (*BriefWirelessLANGroupRequest, bool)`
 
 GetGroupOk returns a tuple with the Group field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGroup
 
-`func (o *PatchedWritableWirelessLANRequest) SetGroup(v WirelessLANGroupRequest)`
+`func (o *PatchedWritableWirelessLANRequest) SetGroup(v BriefWirelessLANGroupRequest)`
 
 SetGroup sets Group field to given value.
 
@@ -148,20 +148,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetVlan
 
-`func (o *PatchedWritableWirelessLANRequest) GetVlan() VLANRequest`
+`func (o *PatchedWritableWirelessLANRequest) GetVlan() BriefVLANRequest`
 
 GetVlan returns the Vlan field if non-nil, zero value otherwise.
 
 ### GetVlanOk
 
-`func (o *PatchedWritableWirelessLANRequest) GetVlanOk() (*VLANRequest, bool)`
+`func (o *PatchedWritableWirelessLANRequest) GetVlanOk() (*BriefVLANRequest, bool)`
 
 GetVlanOk returns a tuple with the Vlan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVlan
 
-`func (o *PatchedWritableWirelessLANRequest) SetVlan(v VLANRequest)`
+`func (o *PatchedWritableWirelessLANRequest) SetVlan(v BriefVLANRequest)`
 
 SetVlan sets Vlan field to given value.
 
@@ -183,20 +183,20 @@ HasVlan returns a boolean if a field has been set.
 UnsetVlan ensures that no value is present for Vlan, not even an explicit nil
 ### GetTenant
 
-`func (o *PatchedWritableWirelessLANRequest) GetTenant() TenantRequest`
+`func (o *PatchedWritableWirelessLANRequest) GetTenant() BriefTenantRequest`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *PatchedWritableWirelessLANRequest) GetTenantOk() (*TenantRequest, bool)`
+`func (o *PatchedWritableWirelessLANRequest) GetTenantOk() (*BriefTenantRequest, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *PatchedWritableWirelessLANRequest) SetTenant(v TenantRequest)`
+`func (o *PatchedWritableWirelessLANRequest) SetTenant(v BriefTenantRequest)`
 
 SetTenant sets Tenant field to given value.
 
@@ -218,20 +218,20 @@ HasTenant returns a boolean if a field has been set.
 UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
 ### GetAuthType
 
-`func (o *PatchedWritableWirelessLANRequest) GetAuthType() AuthenticationType1`
+`func (o *PatchedWritableWirelessLANRequest) GetAuthType() AuthenticationType3`
 
 GetAuthType returns the AuthType field if non-nil, zero value otherwise.
 
 ### GetAuthTypeOk
 
-`func (o *PatchedWritableWirelessLANRequest) GetAuthTypeOk() (*AuthenticationType1, bool)`
+`func (o *PatchedWritableWirelessLANRequest) GetAuthTypeOk() (*AuthenticationType3, bool)`
 
 GetAuthTypeOk returns a tuple with the AuthType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthType
 
-`func (o *PatchedWritableWirelessLANRequest) SetAuthType(v AuthenticationType1)`
+`func (o *PatchedWritableWirelessLANRequest) SetAuthType(v AuthenticationType3)`
 
 SetAuthType sets AuthType field to given value.
 
@@ -243,20 +243,20 @@ HasAuthType returns a boolean if a field has been set.
 
 ### GetAuthCipher
 
-`func (o *PatchedWritableWirelessLANRequest) GetAuthCipher() AuthenticationCipher`
+`func (o *PatchedWritableWirelessLANRequest) GetAuthCipher() AuthenticationCipher1`
 
 GetAuthCipher returns the AuthCipher field if non-nil, zero value otherwise.
 
 ### GetAuthCipherOk
 
-`func (o *PatchedWritableWirelessLANRequest) GetAuthCipherOk() (*AuthenticationCipher, bool)`
+`func (o *PatchedWritableWirelessLANRequest) GetAuthCipherOk() (*AuthenticationCipher1, bool)`
 
 GetAuthCipherOk returns a tuple with the AuthCipher field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthCipher
 
-`func (o *PatchedWritableWirelessLANRequest) SetAuthCipher(v AuthenticationCipher)`
+`func (o *PatchedWritableWirelessLANRequest) SetAuthCipher(v AuthenticationCipher1)`
 
 SetAuthCipher sets AuthCipher field to given value.
 

@@ -19,6 +19,8 @@
 
 * `_1000BASE_T` (value: `"1000base-t"`)
 
+* `_1000BASE_TX` (value: `"1000base-tx"`)
+
 * `_2_5GBASE_T` (value: `"2.5gbase-t"`)
 
 * `_5GBASE_T` (value: `"5gbase-t"`)
@@ -26,6 +28,8 @@
 * `_10GBASE_T` (value: `"10gbase-t"`)
 
 * `_10GBASE_CX4` (value: `"10gbase-cx4"`)
+
+* `_100BASE_X_SFP` (value: `"100base-x-sfp"`)
 
 * `_1000BASE_X_GBIC` (value: `"1000base-x-gbic"`)
 
@@ -125,7 +129,11 @@
 
 * `IEEE802_11AY` (value: `"ieee802.11ay"`)
 
+* `IEEE802_11BE` (value: `"ieee802.11be"`)
+
 * `IEEE802_15_1` (value: `"ieee802.15.1"`)
+
+* `IEEE802_15_4` (value: `"ieee802.15.4"`)
 
 * `OTHER_WIRELESS` (value: `"other-wireless"`)
 

@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**EncryptionAlgorithm** | Pointer to [**Encryption**](Encryption.md) |  | [optional] 
-**AuthenticationAlgorithm** | Pointer to [**Authentication**](Authentication.md) |  | [optional] 
+**EncryptionAlgorithm** | Pointer to [**Encryption1**](Encryption1.md) |  | [optional] 
+**AuthenticationAlgorithm** | Pointer to [**Authentication1**](Authentication1.md) |  | [optional] 
 **SaLifetimeSeconds** | Pointer to **NullableInt32** | Security association lifetime (seconds) | [optional] 
 **SaLifetimeData** | Pointer to **NullableInt32** | Security association lifetime (in kilobytes) | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
@@ -85,20 +85,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetEncryptionAlgorithm
 
-`func (o *PatchedWritableIPSecProposalRequest) GetEncryptionAlgorithm() Encryption`
+`func (o *PatchedWritableIPSecProposalRequest) GetEncryptionAlgorithm() Encryption1`
 
 GetEncryptionAlgorithm returns the EncryptionAlgorithm field if non-nil, zero value otherwise.
 
 ### GetEncryptionAlgorithmOk
 
-`func (o *PatchedWritableIPSecProposalRequest) GetEncryptionAlgorithmOk() (*Encryption, bool)`
+`func (o *PatchedWritableIPSecProposalRequest) GetEncryptionAlgorithmOk() (*Encryption1, bool)`
 
 GetEncryptionAlgorithmOk returns a tuple with the EncryptionAlgorithm field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEncryptionAlgorithm
 
-`func (o *PatchedWritableIPSecProposalRequest) SetEncryptionAlgorithm(v Encryption)`
+`func (o *PatchedWritableIPSecProposalRequest) SetEncryptionAlgorithm(v Encryption1)`
 
 SetEncryptionAlgorithm sets EncryptionAlgorithm field to given value.
 
@@ -110,20 +110,20 @@ HasEncryptionAlgorithm returns a boolean if a field has been set.
 
 ### GetAuthenticationAlgorithm
 
-`func (o *PatchedWritableIPSecProposalRequest) GetAuthenticationAlgorithm() Authentication`
+`func (o *PatchedWritableIPSecProposalRequest) GetAuthenticationAlgorithm() Authentication1`
 
 GetAuthenticationAlgorithm returns the AuthenticationAlgorithm field if non-nil, zero value otherwise.
 
 ### GetAuthenticationAlgorithmOk
 
-`func (o *PatchedWritableIPSecProposalRequest) GetAuthenticationAlgorithmOk() (*Authentication, bool)`
+`func (o *PatchedWritableIPSecProposalRequest) GetAuthenticationAlgorithmOk() (*Authentication1, bool)`
 
 GetAuthenticationAlgorithmOk returns a tuple with the AuthenticationAlgorithm field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthenticationAlgorithm
 
-`func (o *PatchedWritableIPSecProposalRequest) SetAuthenticationAlgorithm(v Authentication)`
+`func (o *PatchedWritableIPSecProposalRequest) SetAuthenticationAlgorithm(v Authentication1)`
 
 SetAuthenticationAlgorithm sets AuthenticationAlgorithm field to given value.
 

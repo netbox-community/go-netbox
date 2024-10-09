@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Device** | Pointer to [**DeviceRequest**](DeviceRequest.md) |  | [optional] 
+**Device** | Pointer to [**BriefDeviceRequest**](BriefDeviceRequest.md) |  | [optional] 
 **Vdcs** | Pointer to **[]int32** |  | [optional] 
-**Module** | Pointer to [**NullableModuleRequest**](ModuleRequest.md) |  | [optional] 
+**Module** | Pointer to [**NullableBriefModuleRequest**](BriefModuleRequest.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Type** | Pointer to [**InterfaceTypeValue**](InterfaceTypeValue.md) |  | [optional] 
@@ -22,18 +22,18 @@ Name | Type | Description | Notes
 **MgmtOnly** | Pointer to **bool** | This interface is used only for out-of-band management | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Mode** | Pointer to [**PatchedWritableInterfaceRequestMode**](PatchedWritableInterfaceRequestMode.md) |  | [optional] 
-**RfRole** | Pointer to [**WirelessRole**](WirelessRole.md) |  | [optional] 
-**RfChannel** | Pointer to [**WirelessChannel**](WirelessChannel.md) |  | [optional] 
+**RfRole** | Pointer to [**WirelessRole1**](WirelessRole1.md) |  | [optional] 
+**RfChannel** | Pointer to [**WirelessChannel1**](WirelessChannel1.md) |  | [optional] 
 **PoeMode** | Pointer to [**InterfacePoeModeValue**](InterfacePoeModeValue.md) |  | [optional] 
 **PoeType** | Pointer to [**InterfacePoeTypeValue**](InterfacePoeTypeValue.md) |  | [optional] 
 **RfChannelFrequency** | Pointer to **NullableFloat64** | Populated by selected channel (if set) | [optional] 
 **RfChannelWidth** | Pointer to **NullableFloat64** | Populated by selected channel (if set) | [optional] 
 **TxPower** | Pointer to **NullableInt32** |  | [optional] 
-**UntaggedVlan** | Pointer to [**NullableVLANRequest**](VLANRequest.md) |  | [optional] 
+**UntaggedVlan** | Pointer to [**NullableBriefVLANRequest**](BriefVLANRequest.md) |  | [optional] 
 **TaggedVlans** | Pointer to **[]int32** |  | [optional] 
 **MarkConnected** | Pointer to **bool** | Treat as if a cable is connected | [optional] 
 **WirelessLans** | Pointer to **[]int32** |  | [optional] 
-**Vrf** | Pointer to [**NullableVRFRequest**](VRFRequest.md) |  | [optional] 
+**Vrf** | Pointer to [**NullableBriefVRFRequest**](BriefVRFRequest.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 
@@ -58,20 +58,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDevice
 
-`func (o *PatchedWritableInterfaceRequest) GetDevice() DeviceRequest`
+`func (o *PatchedWritableInterfaceRequest) GetDevice() BriefDeviceRequest`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *PatchedWritableInterfaceRequest) GetDeviceOk() (*DeviceRequest, bool)`
+`func (o *PatchedWritableInterfaceRequest) GetDeviceOk() (*BriefDeviceRequest, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *PatchedWritableInterfaceRequest) SetDevice(v DeviceRequest)`
+`func (o *PatchedWritableInterfaceRequest) SetDevice(v BriefDeviceRequest)`
 
 SetDevice sets Device field to given value.
 
@@ -108,20 +108,20 @@ HasVdcs returns a boolean if a field has been set.
 
 ### GetModule
 
-`func (o *PatchedWritableInterfaceRequest) GetModule() ModuleRequest`
+`func (o *PatchedWritableInterfaceRequest) GetModule() BriefModuleRequest`
 
 GetModule returns the Module field if non-nil, zero value otherwise.
 
 ### GetModuleOk
 
-`func (o *PatchedWritableInterfaceRequest) GetModuleOk() (*ModuleRequest, bool)`
+`func (o *PatchedWritableInterfaceRequest) GetModuleOk() (*BriefModuleRequest, bool)`
 
 GetModuleOk returns a tuple with the Module field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetModule
 
-`func (o *PatchedWritableInterfaceRequest) SetModule(v ModuleRequest)`
+`func (o *PatchedWritableInterfaceRequest) SetModule(v BriefModuleRequest)`
 
 SetModule sets Module field to given value.
 
@@ -598,20 +598,20 @@ HasMode returns a boolean if a field has been set.
 
 ### GetRfRole
 
-`func (o *PatchedWritableInterfaceRequest) GetRfRole() WirelessRole`
+`func (o *PatchedWritableInterfaceRequest) GetRfRole() WirelessRole1`
 
 GetRfRole returns the RfRole field if non-nil, zero value otherwise.
 
 ### GetRfRoleOk
 
-`func (o *PatchedWritableInterfaceRequest) GetRfRoleOk() (*WirelessRole, bool)`
+`func (o *PatchedWritableInterfaceRequest) GetRfRoleOk() (*WirelessRole1, bool)`
 
 GetRfRoleOk returns a tuple with the RfRole field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRfRole
 
-`func (o *PatchedWritableInterfaceRequest) SetRfRole(v WirelessRole)`
+`func (o *PatchedWritableInterfaceRequest) SetRfRole(v WirelessRole1)`
 
 SetRfRole sets RfRole field to given value.
 
@@ -623,20 +623,20 @@ HasRfRole returns a boolean if a field has been set.
 
 ### GetRfChannel
 
-`func (o *PatchedWritableInterfaceRequest) GetRfChannel() WirelessChannel`
+`func (o *PatchedWritableInterfaceRequest) GetRfChannel() WirelessChannel1`
 
 GetRfChannel returns the RfChannel field if non-nil, zero value otherwise.
 
 ### GetRfChannelOk
 
-`func (o *PatchedWritableInterfaceRequest) GetRfChannelOk() (*WirelessChannel, bool)`
+`func (o *PatchedWritableInterfaceRequest) GetRfChannelOk() (*WirelessChannel1, bool)`
 
 GetRfChannelOk returns a tuple with the RfChannel field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRfChannel
 
-`func (o *PatchedWritableInterfaceRequest) SetRfChannel(v WirelessChannel)`
+`func (o *PatchedWritableInterfaceRequest) SetRfChannel(v WirelessChannel1)`
 
 SetRfChannel sets RfChannel field to given value.
 
@@ -803,20 +803,20 @@ HasTxPower returns a boolean if a field has been set.
 UnsetTxPower ensures that no value is present for TxPower, not even an explicit nil
 ### GetUntaggedVlan
 
-`func (o *PatchedWritableInterfaceRequest) GetUntaggedVlan() VLANRequest`
+`func (o *PatchedWritableInterfaceRequest) GetUntaggedVlan() BriefVLANRequest`
 
 GetUntaggedVlan returns the UntaggedVlan field if non-nil, zero value otherwise.
 
 ### GetUntaggedVlanOk
 
-`func (o *PatchedWritableInterfaceRequest) GetUntaggedVlanOk() (*VLANRequest, bool)`
+`func (o *PatchedWritableInterfaceRequest) GetUntaggedVlanOk() (*BriefVLANRequest, bool)`
 
 GetUntaggedVlanOk returns a tuple with the UntaggedVlan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUntaggedVlan
 
-`func (o *PatchedWritableInterfaceRequest) SetUntaggedVlan(v VLANRequest)`
+`func (o *PatchedWritableInterfaceRequest) SetUntaggedVlan(v BriefVLANRequest)`
 
 SetUntaggedVlan sets UntaggedVlan field to given value.
 
@@ -913,20 +913,20 @@ HasWirelessLans returns a boolean if a field has been set.
 
 ### GetVrf
 
-`func (o *PatchedWritableInterfaceRequest) GetVrf() VRFRequest`
+`func (o *PatchedWritableInterfaceRequest) GetVrf() BriefVRFRequest`
 
 GetVrf returns the Vrf field if non-nil, zero value otherwise.
 
 ### GetVrfOk
 
-`func (o *PatchedWritableInterfaceRequest) GetVrfOk() (*VRFRequest, bool)`
+`func (o *PatchedWritableInterfaceRequest) GetVrfOk() (*BriefVRFRequest, bool)`
 
 GetVrfOk returns a tuple with the Vrf field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVrf
 
-`func (o *PatchedWritableInterfaceRequest) SetVrf(v VRFRequest)`
+`func (o *PatchedWritableInterfaceRequest) SetVrf(v BriefVRFRequest)`
 
 SetVrf sets Vrf field to given value.
 

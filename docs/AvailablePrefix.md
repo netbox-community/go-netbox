@@ -6,13 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Family** | **int32** |  | [readonly] 
 **Prefix** | **string** |  | [readonly] 
-**Vrf** | [**NullableVRF**](VRF.md) |  | [readonly] 
+**Vrf** | [**NullableBriefVRF**](BriefVRF.md) |  | [readonly] 
 
 ## Methods
 
 ### NewAvailablePrefix
 
-`func NewAvailablePrefix(family int32, prefix string, vrf NullableVRF, ) *AvailablePrefix`
+`func NewAvailablePrefix(family int32, prefix string, vrf NullableBriefVRF, ) *AvailablePrefix`
 
 NewAvailablePrefix instantiates a new AvailablePrefix object
 This constructor will assign default values to properties that have it defined,
@@ -69,20 +69,20 @@ SetPrefix sets Prefix field to given value.
 
 ### GetVrf
 
-`func (o *AvailablePrefix) GetVrf() VRF`
+`func (o *AvailablePrefix) GetVrf() BriefVRF`
 
 GetVrf returns the Vrf field if non-nil, zero value otherwise.
 
 ### GetVrfOk
 
-`func (o *AvailablePrefix) GetVrfOk() (*VRF, bool)`
+`func (o *AvailablePrefix) GetVrfOk() (*BriefVRF, bool)`
 
 GetVrfOk returns a tuple with the Vrf field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVrf
 
-`func (o *AvailablePrefix) SetVrf(v VRF)`
+`func (o *AvailablePrefix) SetVrf(v BriefVRF)`
 
 SetVrf sets Vrf field to given value.
 

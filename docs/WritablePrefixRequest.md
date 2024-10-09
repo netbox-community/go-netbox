@@ -5,12 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Prefix** | **string** |  | 
-**Site** | Pointer to [**NullableSiteRequest**](SiteRequest.md) |  | [optional] 
-**Vrf** | Pointer to [**NullableVRFRequest**](VRFRequest.md) |  | [optional] 
-**Tenant** | Pointer to [**NullableTenantRequest**](TenantRequest.md) |  | [optional] 
-**Vlan** | Pointer to [**NullableVLANRequest**](VLANRequest.md) |  | [optional] 
+**Site** | Pointer to [**NullableBriefSiteRequest**](BriefSiteRequest.md) |  | [optional] 
+**Vrf** | Pointer to [**NullableBriefVRFRequest**](BriefVRFRequest.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
+**Vlan** | Pointer to [**NullableBriefVLANRequest**](BriefVLANRequest.md) |  | [optional] 
 **Status** | Pointer to [**PatchedWritablePrefixRequestStatus**](PatchedWritablePrefixRequestStatus.md) |  | [optional] 
-**Role** | Pointer to [**NullableRoleRequest**](RoleRequest.md) |  | [optional] 
+**Role** | Pointer to [**NullableBriefRoleRequest**](BriefRoleRequest.md) |  | [optional] 
 **IsPool** | Pointer to **bool** | All IP addresses within this prefix are considered usable | [optional] 
 **MarkUtilized** | Pointer to **bool** | Treat as fully utilized | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -59,20 +59,20 @@ SetPrefix sets Prefix field to given value.
 
 ### GetSite
 
-`func (o *WritablePrefixRequest) GetSite() SiteRequest`
+`func (o *WritablePrefixRequest) GetSite() BriefSiteRequest`
 
 GetSite returns the Site field if non-nil, zero value otherwise.
 
 ### GetSiteOk
 
-`func (o *WritablePrefixRequest) GetSiteOk() (*SiteRequest, bool)`
+`func (o *WritablePrefixRequest) GetSiteOk() (*BriefSiteRequest, bool)`
 
 GetSiteOk returns a tuple with the Site field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSite
 
-`func (o *WritablePrefixRequest) SetSite(v SiteRequest)`
+`func (o *WritablePrefixRequest) SetSite(v BriefSiteRequest)`
 
 SetSite sets Site field to given value.
 
@@ -94,20 +94,20 @@ HasSite returns a boolean if a field has been set.
 UnsetSite ensures that no value is present for Site, not even an explicit nil
 ### GetVrf
 
-`func (o *WritablePrefixRequest) GetVrf() VRFRequest`
+`func (o *WritablePrefixRequest) GetVrf() BriefVRFRequest`
 
 GetVrf returns the Vrf field if non-nil, zero value otherwise.
 
 ### GetVrfOk
 
-`func (o *WritablePrefixRequest) GetVrfOk() (*VRFRequest, bool)`
+`func (o *WritablePrefixRequest) GetVrfOk() (*BriefVRFRequest, bool)`
 
 GetVrfOk returns a tuple with the Vrf field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVrf
 
-`func (o *WritablePrefixRequest) SetVrf(v VRFRequest)`
+`func (o *WritablePrefixRequest) SetVrf(v BriefVRFRequest)`
 
 SetVrf sets Vrf field to given value.
 
@@ -129,20 +129,20 @@ HasVrf returns a boolean if a field has been set.
 UnsetVrf ensures that no value is present for Vrf, not even an explicit nil
 ### GetTenant
 
-`func (o *WritablePrefixRequest) GetTenant() TenantRequest`
+`func (o *WritablePrefixRequest) GetTenant() BriefTenantRequest`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *WritablePrefixRequest) GetTenantOk() (*TenantRequest, bool)`
+`func (o *WritablePrefixRequest) GetTenantOk() (*BriefTenantRequest, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *WritablePrefixRequest) SetTenant(v TenantRequest)`
+`func (o *WritablePrefixRequest) SetTenant(v BriefTenantRequest)`
 
 SetTenant sets Tenant field to given value.
 
@@ -164,20 +164,20 @@ HasTenant returns a boolean if a field has been set.
 UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
 ### GetVlan
 
-`func (o *WritablePrefixRequest) GetVlan() VLANRequest`
+`func (o *WritablePrefixRequest) GetVlan() BriefVLANRequest`
 
 GetVlan returns the Vlan field if non-nil, zero value otherwise.
 
 ### GetVlanOk
 
-`func (o *WritablePrefixRequest) GetVlanOk() (*VLANRequest, bool)`
+`func (o *WritablePrefixRequest) GetVlanOk() (*BriefVLANRequest, bool)`
 
 GetVlanOk returns a tuple with the Vlan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVlan
 
-`func (o *WritablePrefixRequest) SetVlan(v VLANRequest)`
+`func (o *WritablePrefixRequest) SetVlan(v BriefVLANRequest)`
 
 SetVlan sets Vlan field to given value.
 
@@ -224,20 +224,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetRole
 
-`func (o *WritablePrefixRequest) GetRole() RoleRequest`
+`func (o *WritablePrefixRequest) GetRole() BriefRoleRequest`
 
 GetRole returns the Role field if non-nil, zero value otherwise.
 
 ### GetRoleOk
 
-`func (o *WritablePrefixRequest) GetRoleOk() (*RoleRequest, bool)`
+`func (o *WritablePrefixRequest) GetRoleOk() (*BriefRoleRequest, bool)`
 
 GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRole
 
-`func (o *WritablePrefixRequest) SetRole(v RoleRequest)`
+`func (o *WritablePrefixRequest) SetRole(v BriefRoleRequest)`
 
 SetRole sets Role field to given value.
 

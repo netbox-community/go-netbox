@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Site** | Pointer to [**SiteRequest**](SiteRequest.md) |  | [optional] 
-**Location** | Pointer to [**NullableLocationRequest**](LocationRequest.md) |  | [optional] 
+**Site** | Pointer to [**BriefSiteRequest**](BriefSiteRequest.md) |  | [optional] 
+**Location** | Pointer to [**NullableBriefLocationRequest**](BriefLocationRequest.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
@@ -33,20 +33,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetSite
 
-`func (o *PatchedPowerPanelRequest) GetSite() SiteRequest`
+`func (o *PatchedPowerPanelRequest) GetSite() BriefSiteRequest`
 
 GetSite returns the Site field if non-nil, zero value otherwise.
 
 ### GetSiteOk
 
-`func (o *PatchedPowerPanelRequest) GetSiteOk() (*SiteRequest, bool)`
+`func (o *PatchedPowerPanelRequest) GetSiteOk() (*BriefSiteRequest, bool)`
 
 GetSiteOk returns a tuple with the Site field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSite
 
-`func (o *PatchedPowerPanelRequest) SetSite(v SiteRequest)`
+`func (o *PatchedPowerPanelRequest) SetSite(v BriefSiteRequest)`
 
 SetSite sets Site field to given value.
 
@@ -58,20 +58,20 @@ HasSite returns a boolean if a field has been set.
 
 ### GetLocation
 
-`func (o *PatchedPowerPanelRequest) GetLocation() LocationRequest`
+`func (o *PatchedPowerPanelRequest) GetLocation() BriefLocationRequest`
 
 GetLocation returns the Location field if non-nil, zero value otherwise.
 
 ### GetLocationOk
 
-`func (o *PatchedPowerPanelRequest) GetLocationOk() (*LocationRequest, bool)`
+`func (o *PatchedPowerPanelRequest) GetLocationOk() (*BriefLocationRequest, bool)`
 
 GetLocationOk returns a tuple with the Location field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLocation
 
-`func (o *PatchedPowerPanelRequest) SetLocation(v LocationRequest)`
+`func (o *PatchedPowerPanelRequest) SetLocation(v BriefLocationRequest)`
 
 SetLocation sets Location field to given value.
 

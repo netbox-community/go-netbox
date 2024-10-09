@@ -6,10 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** |  | [optional] 
 **Status** | Pointer to [**PatchedWritableTunnelRequestStatus**](PatchedWritableTunnelRequestStatus.md) |  | [optional] 
-**Group** | Pointer to [**NullableTunnelGroupRequest**](TunnelGroupRequest.md) |  | [optional] 
+**Group** | Pointer to [**NullableBriefTunnelGroupRequest**](BriefTunnelGroupRequest.md) |  | [optional] 
 **Encapsulation** | Pointer to [**PatchedWritableTunnelRequestEncapsulation**](PatchedWritableTunnelRequestEncapsulation.md) |  | [optional] 
-**IpsecProfile** | Pointer to [**NullableIPSecProfileRequest**](IPSecProfileRequest.md) |  | [optional] 
-**Tenant** | Pointer to [**NullableTenantRequest**](TenantRequest.md) |  | [optional] 
+**IpsecProfile** | Pointer to [**NullableBriefIPSecProfileRequest**](BriefIPSecProfileRequest.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
 **TunnelId** | Pointer to **NullableInt64** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
@@ -87,20 +87,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetGroup
 
-`func (o *PatchedWritableTunnelRequest) GetGroup() TunnelGroupRequest`
+`func (o *PatchedWritableTunnelRequest) GetGroup() BriefTunnelGroupRequest`
 
 GetGroup returns the Group field if non-nil, zero value otherwise.
 
 ### GetGroupOk
 
-`func (o *PatchedWritableTunnelRequest) GetGroupOk() (*TunnelGroupRequest, bool)`
+`func (o *PatchedWritableTunnelRequest) GetGroupOk() (*BriefTunnelGroupRequest, bool)`
 
 GetGroupOk returns a tuple with the Group field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGroup
 
-`func (o *PatchedWritableTunnelRequest) SetGroup(v TunnelGroupRequest)`
+`func (o *PatchedWritableTunnelRequest) SetGroup(v BriefTunnelGroupRequest)`
 
 SetGroup sets Group field to given value.
 
@@ -147,20 +147,20 @@ HasEncapsulation returns a boolean if a field has been set.
 
 ### GetIpsecProfile
 
-`func (o *PatchedWritableTunnelRequest) GetIpsecProfile() IPSecProfileRequest`
+`func (o *PatchedWritableTunnelRequest) GetIpsecProfile() BriefIPSecProfileRequest`
 
 GetIpsecProfile returns the IpsecProfile field if non-nil, zero value otherwise.
 
 ### GetIpsecProfileOk
 
-`func (o *PatchedWritableTunnelRequest) GetIpsecProfileOk() (*IPSecProfileRequest, bool)`
+`func (o *PatchedWritableTunnelRequest) GetIpsecProfileOk() (*BriefIPSecProfileRequest, bool)`
 
 GetIpsecProfileOk returns a tuple with the IpsecProfile field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIpsecProfile
 
-`func (o *PatchedWritableTunnelRequest) SetIpsecProfile(v IPSecProfileRequest)`
+`func (o *PatchedWritableTunnelRequest) SetIpsecProfile(v BriefIPSecProfileRequest)`
 
 SetIpsecProfile sets IpsecProfile field to given value.
 
@@ -182,20 +182,20 @@ HasIpsecProfile returns a boolean if a field has been set.
 UnsetIpsecProfile ensures that no value is present for IpsecProfile, not even an explicit nil
 ### GetTenant
 
-`func (o *PatchedWritableTunnelRequest) GetTenant() TenantRequest`
+`func (o *PatchedWritableTunnelRequest) GetTenant() BriefTenantRequest`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *PatchedWritableTunnelRequest) GetTenantOk() (*TenantRequest, bool)`
+`func (o *PatchedWritableTunnelRequest) GetTenantOk() (*BriefTenantRequest, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *PatchedWritableTunnelRequest) SetTenant(v TenantRequest)`
+`func (o *PatchedWritableTunnelRequest) SetTenant(v BriefTenantRequest)`
 
 SetTenant sets Tenant field to given value.
 

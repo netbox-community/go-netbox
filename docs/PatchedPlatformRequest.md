@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** |  | [optional] 
 **Slug** | Pointer to **string** |  | [optional] 
-**Manufacturer** | Pointer to [**NullableManufacturerRequest**](ManufacturerRequest.md) |  | [optional] 
-**ConfigTemplate** | Pointer to [**NullableConfigTemplateRequest**](ConfigTemplateRequest.md) |  | [optional] 
+**Manufacturer** | Pointer to [**NullableBriefManufacturerRequest**](BriefManufacturerRequest.md) |  | [optional] 
+**ConfigTemplate** | Pointer to [**NullableBriefConfigTemplateRequest**](BriefConfigTemplateRequest.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -83,20 +83,20 @@ HasSlug returns a boolean if a field has been set.
 
 ### GetManufacturer
 
-`func (o *PatchedPlatformRequest) GetManufacturer() ManufacturerRequest`
+`func (o *PatchedPlatformRequest) GetManufacturer() BriefManufacturerRequest`
 
 GetManufacturer returns the Manufacturer field if non-nil, zero value otherwise.
 
 ### GetManufacturerOk
 
-`func (o *PatchedPlatformRequest) GetManufacturerOk() (*ManufacturerRequest, bool)`
+`func (o *PatchedPlatformRequest) GetManufacturerOk() (*BriefManufacturerRequest, bool)`
 
 GetManufacturerOk returns a tuple with the Manufacturer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetManufacturer
 
-`func (o *PatchedPlatformRequest) SetManufacturer(v ManufacturerRequest)`
+`func (o *PatchedPlatformRequest) SetManufacturer(v BriefManufacturerRequest)`
 
 SetManufacturer sets Manufacturer field to given value.
 
@@ -118,20 +118,20 @@ HasManufacturer returns a boolean if a field has been set.
 UnsetManufacturer ensures that no value is present for Manufacturer, not even an explicit nil
 ### GetConfigTemplate
 
-`func (o *PatchedPlatformRequest) GetConfigTemplate() ConfigTemplateRequest`
+`func (o *PatchedPlatformRequest) GetConfigTemplate() BriefConfigTemplateRequest`
 
 GetConfigTemplate returns the ConfigTemplate field if non-nil, zero value otherwise.
 
 ### GetConfigTemplateOk
 
-`func (o *PatchedPlatformRequest) GetConfigTemplateOk() (*ConfigTemplateRequest, bool)`
+`func (o *PatchedPlatformRequest) GetConfigTemplateOk() (*BriefConfigTemplateRequest, bool)`
 
 GetConfigTemplateOk returns a tuple with the ConfigTemplate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfigTemplate
 
-`func (o *PatchedPlatformRequest) SetConfigTemplate(v ConfigTemplateRequest)`
+`func (o *PatchedPlatformRequest) SetConfigTemplate(v BriefConfigTemplateRequest)`
 
 SetConfigTemplate sets ConfigTemplate field to given value.
 

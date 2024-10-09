@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**DisplayUrl** | **string** |  | [readonly] 
+**DisplayUrl** | Pointer to **string** |  | [optional] [readonly] 
 **Display** | **string** |  | [readonly] 
 **Group** | [**BriefCircuitGroup**](BriefCircuitGroup.md) |  | 
 **Circuit** | [**BriefCircuit**](BriefCircuit.md) |  | 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewCircuitGroupAssignment
 
-`func NewCircuitGroupAssignment(id int32, url string, displayUrl string, display string, group BriefCircuitGroup, circuit BriefCircuit, created NullableTime, lastUpdated NullableTime, ) *CircuitGroupAssignment`
+`func NewCircuitGroupAssignment(id int32, url string, display string, group BriefCircuitGroup, circuit BriefCircuit, created NullableTime, lastUpdated NullableTime, ) *CircuitGroupAssignment`
 
 NewCircuitGroupAssignment instantiates a new CircuitGroupAssignment object
 This constructor will assign default values to properties that have it defined,
@@ -93,6 +93,11 @@ and a boolean to check if the value has been set.
 
 SetDisplayUrl sets DisplayUrl field to given value.
 
+### HasDisplayUrl
+
+`func (o *CircuitGroupAssignment) HasDisplayUrl() bool`
+
+HasDisplayUrl returns a boolean if a field has been set.
 
 ### GetDisplay
 
