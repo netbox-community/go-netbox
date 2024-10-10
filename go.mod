@@ -1,4 +1,4 @@
-module github.com/netbox-community/go-netbox
+module github.com/asama-ai/go-netbox
 
 go 1.18
 
