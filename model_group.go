@@ -27,7 +27,7 @@ type Group struct {
 	Name                 string             `json:"name"`
 	Description          *string            `json:"description,omitempty"`
 	Permissions          []ObjectPermission `json:"permissions,omitempty"`
-	UserCount            int32              `json:"user_count"`
+	UserCount            *int32             `json:"user_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -37,13 +37,12 @@ type _Group Group
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGroup(id int32, url string, display string, name string, userCount int32) *Group {
+func NewGroup(id int32, url string, display string, name string) *Group {
 	this := Group{}
 	this.Id = id
 	this.Url = url
 	this.Display = display
 	this.Name = name
-	this.UserCount = userCount
 	return &this
 }
 
@@ -247,28 +246,36 @@ func (o *Group) SetPermissions(v []ObjectPermission) {
 	o.Permissions = v
 }
 
-// GetUserCount returns the UserCount field value
+// GetUserCount returns the UserCount field value if set, zero value otherwise.
 func (o *Group) GetUserCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.UserCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.UserCount
+	return *o.UserCount
 }
 
-// GetUserCountOk returns a tuple with the UserCount field value
+// GetUserCountOk returns a tuple with the UserCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Group) GetUserCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.UserCount) {
 		return nil, false
 	}
-	return &o.UserCount, true
+	return o.UserCount, true
 }
 
-// SetUserCount sets field value
+// HasUserCount returns a boolean if a field has been set.
+func (o *Group) HasUserCount() bool {
+	if o != nil && !IsNil(o.UserCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetUserCount gets a reference to the given int32 and assigns it to the UserCount field.
 func (o *Group) SetUserCount(v int32) {
-	o.UserCount = v
+	o.UserCount = &v
 }
 
 func (o Group) MarshalJSON() ([]byte, error) {
@@ -294,7 +301,9 @@ func (o Group) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Permissions) {
 		toSerialize["permissions"] = o.Permissions
 	}
-	toSerialize["user_count"] = o.UserCount
+	if !IsNil(o.UserCount) {
+		toSerialize["user_count"] = o.UserCount
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -312,7 +321,6 @@ func (o *Group) UnmarshalJSON(data []byte) (err error) {
 		"url",
 		"display",
 		"name",
-		"user_count",
 	}
 
 	allProperties := make(map[string]interface{})
