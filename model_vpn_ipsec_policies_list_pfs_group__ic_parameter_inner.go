@@ -44,7 +44,7 @@ const (
 	VPNIPSECPOLICIESLISTPFSGROUPICPARAMETERINNER__33 VpnIpsecPoliciesListPfsGroupIcParameterInner = 33
 	VPNIPSECPOLICIESLISTPFSGROUPICPARAMETERINNER__34 VpnIpsecPoliciesListPfsGroupIcParameterInner = 34
 	VPNIPSECPOLICIESLISTPFSGROUPICPARAMETERINNER__5 VpnIpsecPoliciesListPfsGroupIcParameterInner = 5
-	VPNIPSECPOLICIESLISTPFSGROUPICPARAMETERINNER__null VpnIpsecPoliciesListPfsGroupIcParameterInner = null
+	VPNIPSECPOLICIESLISTPFSGROUPICPARAMETERINNER__null VpnIpsecPoliciesListPfsGroupIcParameterInner = nil
 )
 
 // All allowed values of VpnIpsecPoliciesListPfsGroupIcParameterInner enum
