@@ -73,7 +73,7 @@ var AllowedVpnIpsecPoliciesListPfsGroupIcParameterInnerEnumValues = []VpnIpsecPo
 	33,
 	34,
 	5,
-	null,
+	nil,
 }
 
 func (v *VpnIpsecPoliciesListPfsGroupIcParameterInner) UnmarshalJSON(src []byte) error {
