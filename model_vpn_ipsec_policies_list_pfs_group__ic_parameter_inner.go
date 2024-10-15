@@ -44,7 +44,7 @@ const (
 	VPNIPSECPOLICIESLISTPFSGROUPICPARAMETERINNER__33 VpnIpsecPoliciesListPfsGroupIcParameterInner = 33
 	VPNIPSECPOLICIESLISTPFSGROUPICPARAMETERINNER__34 VpnIpsecPoliciesListPfsGroupIcParameterInner = 34
 	VPNIPSECPOLICIESLISTPFSGROUPICPARAMETERINNER__5 VpnIpsecPoliciesListPfsGroupIcParameterInner = 5
-	VPNIPSECPOLICIESLISTPFSGROUPICPARAMETERINNER__null VpnIpsecPoliciesListPfsGroupIcParameterInner = nil
+	VPNIPSECPOLICIESLISTPFSGROUPICPARAMETERINNER__null VpnIpsecPoliciesListPfsGroupIcParameterInner = 0
 )
 
 // All allowed values of VpnIpsecPoliciesListPfsGroupIcParameterInner enum
@@ -73,7 +73,7 @@ var AllowedVpnIpsecPoliciesListPfsGroupIcParameterInnerEnumValues = []VpnIpsecPo
 	33,
 	34,
 	5,
-	nil,
+	0,
 }
 
 func (v *VpnIpsecPoliciesListPfsGroupIcParameterInner) UnmarshalJSON(src []byte) error {
