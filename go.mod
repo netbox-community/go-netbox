@@ -1,4 +1,4 @@
-module github.com/torstenfellhauer/go-netbox
+module github.com/torstenfellhauer/go-netbox/v3
 
 go 1.20
 
