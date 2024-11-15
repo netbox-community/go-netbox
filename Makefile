@@ -38,6 +38,12 @@ build:
 	$(EXEC) go mod tidy
 	$(EXEC) goimports -w .
 
+generate:
+	$(EXEC) ./scripts/fix-spec.py
+	./scripts/generate-code.sh
+	$(EXEC) go mod tidy
+	$(EXEC) goimports -w .
+
 .PHONY: test
 test:
 	$(EXEC) go test -v ./...
