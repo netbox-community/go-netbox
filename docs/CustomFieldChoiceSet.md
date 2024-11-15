@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **BaseChoices** | Pointer to [**CustomFieldChoiceSetBaseChoices**](CustomFieldChoiceSetBaseChoices.md) |  | [optional] 
 **ExtraChoices** | **[][]interface{}** |  | 
 **OrderAlphabetically** | Pointer to **bool** | Choices are automatically ordered alphabetically | [optional] 
-**ChoicesCount** | **string** |  | [readonly] 
+**ChoicesCount** | **int32** |  | [readonly] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewCustomFieldChoiceSet
 
-`func NewCustomFieldChoiceSet(id int32, url string, display string, name string, extraChoices [][]interface{}, choicesCount string, created NullableTime, lastUpdated NullableTime, ) *CustomFieldChoiceSet`
+`func NewCustomFieldChoiceSet(id int32, url string, display string, name string, extraChoices [][]interface{}, choicesCount int32, created NullableTime, lastUpdated NullableTime, ) *CustomFieldChoiceSet`
 
 NewCustomFieldChoiceSet instantiates a new CustomFieldChoiceSet object
 This constructor will assign default values to properties that have it defined,
@@ -212,20 +212,20 @@ HasOrderAlphabetically returns a boolean if a field has been set.
 
 ### GetChoicesCount
 
-`func (o *CustomFieldChoiceSet) GetChoicesCount() string`
+`func (o *CustomFieldChoiceSet) GetChoicesCount() int32`
 
 GetChoicesCount returns the ChoicesCount field if non-nil, zero value otherwise.
 
 ### GetChoicesCountOk
 
-`func (o *CustomFieldChoiceSet) GetChoicesCountOk() (*string, bool)`
+`func (o *CustomFieldChoiceSet) GetChoicesCountOk() (*int32, bool)`
 
 GetChoicesCountOk returns a tuple with the ChoicesCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetChoicesCount
 
-`func (o *CustomFieldChoiceSet) SetChoicesCount(v string)`
+`func (o *CustomFieldChoiceSet) SetChoicesCount(v int32)`
 
 SetChoicesCount sets ChoicesCount field to given value.
 

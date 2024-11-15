@@ -30,7 +30,7 @@ type CustomFieldChoiceSet struct {
 	ExtraChoices [][]interface{}                  `json:"extra_choices"`
 	// Choices are automatically ordered alphabetically
 	OrderAlphabetically  *bool        `json:"order_alphabetically,omitempty"`
-	ChoicesCount         string       `json:"choices_count"`
+	ChoicesCount         int32        `json:"choices_count"`
 	Created              NullableTime `json:"created"`
 	LastUpdated          NullableTime `json:"last_updated"`
 	AdditionalProperties map[string]interface{}
@@ -42,7 +42,7 @@ type _CustomFieldChoiceSet CustomFieldChoiceSet
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomFieldChoiceSet(id int32, url string, display string, name string, extraChoices [][]interface{}, choicesCount string, created NullableTime, lastUpdated NullableTime) *CustomFieldChoiceSet {
+func NewCustomFieldChoiceSet(id int32, url string, display string, name string, extraChoices [][]interface{}, choicesCount int32, created NullableTime, lastUpdated NullableTime) *CustomFieldChoiceSet {
 	this := CustomFieldChoiceSet{}
 	this.Id = id
 	this.Url = url
@@ -280,9 +280,9 @@ func (o *CustomFieldChoiceSet) SetOrderAlphabetically(v bool) {
 }
 
 // GetChoicesCount returns the ChoicesCount field value
-func (o *CustomFieldChoiceSet) GetChoicesCount() string {
+func (o *CustomFieldChoiceSet) GetChoicesCount() int32 {
 	if o == nil {
-		var ret string
+		var ret int32
 		return ret
 	}
 
@@ -291,7 +291,7 @@ func (o *CustomFieldChoiceSet) GetChoicesCount() string {
 
 // GetChoicesCountOk returns a tuple with the ChoicesCount field value
 // and a boolean to check if the value has been set.
-func (o *CustomFieldChoiceSet) GetChoicesCountOk() (*string, bool) {
+func (o *CustomFieldChoiceSet) GetChoicesCountOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -299,7 +299,7 @@ func (o *CustomFieldChoiceSet) GetChoicesCountOk() (*string, bool) {
 }
 
 // SetChoicesCount sets field value
-func (o *CustomFieldChoiceSet) SetChoicesCount(v string) {
+func (o *CustomFieldChoiceSet) SetChoicesCount(v int32) {
 	o.ChoicesCount = v
 }
 

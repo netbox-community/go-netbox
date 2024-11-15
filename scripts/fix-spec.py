@@ -10,7 +10,7 @@ with open(SPEC_PATH, 'r') as file:
 
 # Traverse schemas
 if 'components' in data and 'schemas' in data['components']:
-    for name, schema in data['components']['schemas'].items():
+    for component_name, schema in data['components']['schemas'].items():
         if 'properties' in schema:
             # Remove "null" item from nullable enums
             for name, prop in schema['properties'].items():
@@ -39,7 +39,22 @@ if 'components' in data and 'schemas' in data['components']:
             for ntype in non_nullable_types:
                 if ntype in schema['properties']:
                     if schema['properties'][ntype]['format'] == 'binary':
-                        schema['properties'][ntype].pop('nullable')
+                        if 'nullable' in schema['properties'][ntype]:
+                            schema['properties'][ntype].pop('nullable')
+
+            change_type = {
+                "BriefCustomFieldChoiceSet": {
+                    "choices_count": "integer"
+                },
+                "CustomFieldChoiceSet": {
+                    "choices_count": "integer"
+                }
+            }
+
+            if component_name in change_type.keys():
+                for propertie in change_type[component_name].keys():
+                    schema['properties'][propertie]['type'] = change_type[component_name][propertie]
+
 
 # Save the spec file
 with open(SPEC_PATH, 'w') as file:

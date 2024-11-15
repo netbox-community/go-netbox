@@ -25,7 +25,7 @@ type BriefCustomFieldChoiceSet struct {
 	Display              string  `json:"display"`
 	Name                 string  `json:"name"`
 	Description          *string `json:"description,omitempty"`
-	ChoicesCount         string  `json:"choices_count"`
+	ChoicesCount         int32   `json:"choices_count"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -35,7 +35,7 @@ type _BriefCustomFieldChoiceSet BriefCustomFieldChoiceSet
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBriefCustomFieldChoiceSet(id int32, url string, display string, name string, choicesCount string) *BriefCustomFieldChoiceSet {
+func NewBriefCustomFieldChoiceSet(id int32, url string, display string, name string, choicesCount int32) *BriefCustomFieldChoiceSet {
 	this := BriefCustomFieldChoiceSet{}
 	this.Id = id
 	this.Url = url
@@ -182,9 +182,9 @@ func (o *BriefCustomFieldChoiceSet) SetDescription(v string) {
 }
 
 // GetChoicesCount returns the ChoicesCount field value
-func (o *BriefCustomFieldChoiceSet) GetChoicesCount() string {
+func (o *BriefCustomFieldChoiceSet) GetChoicesCount() int32 {
 	if o == nil {
-		var ret string
+		var ret int32
 		return ret
 	}
 
@@ -193,7 +193,7 @@ func (o *BriefCustomFieldChoiceSet) GetChoicesCount() string {
 
 // GetChoicesCountOk returns a tuple with the ChoicesCount field value
 // and a boolean to check if the value has been set.
-func (o *BriefCustomFieldChoiceSet) GetChoicesCountOk() (*string, bool) {
+func (o *BriefCustomFieldChoiceSet) GetChoicesCountOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -201,7 +201,7 @@ func (o *BriefCustomFieldChoiceSet) GetChoicesCountOk() (*string, bool) {
 }
 
 // SetChoicesCount sets field value
-func (o *BriefCustomFieldChoiceSet) SetChoicesCount(v string) {
+func (o *BriefCustomFieldChoiceSet) SetChoicesCount(v int32) {
 	o.ChoicesCount = v
 }
 

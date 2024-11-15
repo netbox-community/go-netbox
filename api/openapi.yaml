@@ -102433,7 +102433,7 @@ components:
           type: string
           maxLength: 200
         choices_count:
-          type: string
+          type: integer
           readOnly: true
       required:
       - choices_count
@@ -108173,7 +108173,7 @@ components:
           type: boolean
           description: Choices are automatically ordered alphabetically
         choices_count:
-          type: string
+          type: integer
           readOnly: true
         created:
           type: string
