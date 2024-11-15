@@ -7,12 +7,12 @@ Name | Type | Description | Notes
 **Identifier** | Pointer to **NullableInt64** |  | [optional] 
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
-**Type** | [**L2VPNTypeValue**](L2VPNTypeValue.md) |  | 
+**Type** | [**BriefL2VPNTypeValue**](BriefL2VPNTypeValue.md) |  | 
 **ImportTargets** | Pointer to **[]int32** |  | [optional] 
 **ExportTargets** | Pointer to **[]int32** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
-**Tenant** | Pointer to [**NullableTenantRequest**](TenantRequest.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewWritableL2VPNRequest
 
-`func NewWritableL2VPNRequest(name string, slug string, type_ L2VPNTypeValue, ) *WritableL2VPNRequest`
+`func NewWritableL2VPNRequest(name string, slug string, type_ BriefL2VPNTypeValue, ) *WritableL2VPNRequest`
 
 NewWritableL2VPNRequest instantiates a new WritableL2VPNRequest object
 This constructor will assign default values to properties that have it defined,
@@ -112,20 +112,20 @@ SetSlug sets Slug field to given value.
 
 ### GetType
 
-`func (o *WritableL2VPNRequest) GetType() L2VPNTypeValue`
+`func (o *WritableL2VPNRequest) GetType() BriefL2VPNTypeValue`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *WritableL2VPNRequest) GetTypeOk() (*L2VPNTypeValue, bool)`
+`func (o *WritableL2VPNRequest) GetTypeOk() (*BriefL2VPNTypeValue, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *WritableL2VPNRequest) SetType(v L2VPNTypeValue)`
+`func (o *WritableL2VPNRequest) SetType(v BriefL2VPNTypeValue)`
 
 SetType sets Type field to given value.
 
@@ -232,20 +232,20 @@ HasComments returns a boolean if a field has been set.
 
 ### GetTenant
 
-`func (o *WritableL2VPNRequest) GetTenant() TenantRequest`
+`func (o *WritableL2VPNRequest) GetTenant() BriefTenantRequest`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *WritableL2VPNRequest) GetTenantOk() (*TenantRequest, bool)`
+`func (o *WritableL2VPNRequest) GetTenantOk() (*BriefTenantRequest, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *WritableL2VPNRequest) SetTenant(v TenantRequest)`
+`func (o *WritableL2VPNRequest) SetTenant(v BriefTenantRequest)`
 
 SetTenant sets Tenant field to given value.
 

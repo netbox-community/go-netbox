@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **Display** | **string** |  | [readonly] 
 **Family** | [**AggregateFamily**](AggregateFamily.md) |  | 
 **Prefix** | **string** |  | 
-**Rir** | [**RIR**](RIR.md) |  | 
-**Tenant** | Pointer to [**NullableTenant**](Tenant.md) |  | [optional] 
+**Rir** | [**BriefRIR**](BriefRIR.md) |  | 
+**Tenant** | Pointer to [**NullableBriefTenant**](BriefTenant.md) |  | [optional] 
 **DateAdded** | Pointer to **NullableString** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 
 ### NewAggregate
 
-`func NewAggregate(id int32, url string, display string, family AggregateFamily, prefix string, rir RIR, created NullableTime, lastUpdated NullableTime, ) *Aggregate`
+`func NewAggregate(id int32, url string, display string, family AggregateFamily, prefix string, rir BriefRIR, created NullableTime, lastUpdated NullableTime, ) *Aggregate`
 
 NewAggregate instantiates a new Aggregate object
 This constructor will assign default values to properties that have it defined,
@@ -140,40 +140,40 @@ SetPrefix sets Prefix field to given value.
 
 ### GetRir
 
-`func (o *Aggregate) GetRir() RIR`
+`func (o *Aggregate) GetRir() BriefRIR`
 
 GetRir returns the Rir field if non-nil, zero value otherwise.
 
 ### GetRirOk
 
-`func (o *Aggregate) GetRirOk() (*RIR, bool)`
+`func (o *Aggregate) GetRirOk() (*BriefRIR, bool)`
 
 GetRirOk returns a tuple with the Rir field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRir
 
-`func (o *Aggregate) SetRir(v RIR)`
+`func (o *Aggregate) SetRir(v BriefRIR)`
 
 SetRir sets Rir field to given value.
 
 
 ### GetTenant
 
-`func (o *Aggregate) GetTenant() Tenant`
+`func (o *Aggregate) GetTenant() BriefTenant`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *Aggregate) GetTenantOk() (*Tenant, bool)`
+`func (o *Aggregate) GetTenantOk() (*BriefTenant, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *Aggregate) SetTenant(v Tenant)`
+`func (o *Aggregate) SetTenant(v BriefTenant)`
 
 SetTenant sets Tenant field to given value.
 

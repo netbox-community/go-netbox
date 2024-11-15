@@ -9,7 +9,12 @@ Name | Type | Description | Notes
 **Display** | **string** |  | [readonly] 
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
+**Weight** | Pointer to **int32** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
+**Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
+**CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
+**Created** | **NullableTime** |  | [readonly] 
+**LastUpdated** | **NullableTime** |  | [readonly] 
 **PrefixCount** | **int64** |  | [readonly] 
 **VlanCount** | **int64** |  | [readonly] 
 
@@ -17,7 +22,7 @@ Name | Type | Description | Notes
 
 ### NewRole
 
-`func NewRole(id int32, url string, display string, name string, slug string, prefixCount int64, vlanCount int64, ) *Role`
+`func NewRole(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, prefixCount int64, vlanCount int64, ) *Role`
 
 NewRole instantiates a new Role object
 This constructor will assign default values to properties that have it defined,
@@ -132,6 +137,31 @@ and a boolean to check if the value has been set.
 SetSlug sets Slug field to given value.
 
 
+### GetWeight
+
+`func (o *Role) GetWeight() int32`
+
+GetWeight returns the Weight field if non-nil, zero value otherwise.
+
+### GetWeightOk
+
+`func (o *Role) GetWeightOk() (*int32, bool)`
+
+GetWeightOk returns a tuple with the Weight field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWeight
+
+`func (o *Role) SetWeight(v int32)`
+
+SetWeight sets Weight field to given value.
+
+### HasWeight
+
+`func (o *Role) HasWeight() bool`
+
+HasWeight returns a boolean if a field has been set.
+
 ### GetDescription
 
 `func (o *Role) GetDescription() string`
@@ -157,6 +187,116 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### GetTags
+
+`func (o *Role) GetTags() []NestedTag`
+
+GetTags returns the Tags field if non-nil, zero value otherwise.
+
+### GetTagsOk
+
+`func (o *Role) GetTagsOk() (*[]NestedTag, bool)`
+
+GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTags
+
+`func (o *Role) SetTags(v []NestedTag)`
+
+SetTags sets Tags field to given value.
+
+### HasTags
+
+`func (o *Role) HasTags() bool`
+
+HasTags returns a boolean if a field has been set.
+
+### GetCustomFields
+
+`func (o *Role) GetCustomFields() map[string]interface{}`
+
+GetCustomFields returns the CustomFields field if non-nil, zero value otherwise.
+
+### GetCustomFieldsOk
+
+`func (o *Role) GetCustomFieldsOk() (*map[string]interface{}, bool)`
+
+GetCustomFieldsOk returns a tuple with the CustomFields field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomFields
+
+`func (o *Role) SetCustomFields(v map[string]interface{})`
+
+SetCustomFields sets CustomFields field to given value.
+
+### HasCustomFields
+
+`func (o *Role) HasCustomFields() bool`
+
+HasCustomFields returns a boolean if a field has been set.
+
+### GetCreated
+
+`func (o *Role) GetCreated() time.Time`
+
+GetCreated returns the Created field if non-nil, zero value otherwise.
+
+### GetCreatedOk
+
+`func (o *Role) GetCreatedOk() (*time.Time, bool)`
+
+GetCreatedOk returns a tuple with the Created field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreated
+
+`func (o *Role) SetCreated(v time.Time)`
+
+SetCreated sets Created field to given value.
+
+
+### SetCreatedNil
+
+`func (o *Role) SetCreatedNil(b bool)`
+
+ SetCreatedNil sets the value for Created to be an explicit nil
+
+### UnsetCreated
+`func (o *Role) UnsetCreated()`
+
+UnsetCreated ensures that no value is present for Created, not even an explicit nil
+### GetLastUpdated
+
+`func (o *Role) GetLastUpdated() time.Time`
+
+GetLastUpdated returns the LastUpdated field if non-nil, zero value otherwise.
+
+### GetLastUpdatedOk
+
+`func (o *Role) GetLastUpdatedOk() (*time.Time, bool)`
+
+GetLastUpdatedOk returns a tuple with the LastUpdated field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastUpdated
+
+`func (o *Role) SetLastUpdated(v time.Time)`
+
+SetLastUpdated sets LastUpdated field to given value.
+
+
+### SetLastUpdatedNil
+
+`func (o *Role) SetLastUpdatedNil(b bool)`
+
+ SetLastUpdatedNil sets the value for LastUpdated to be an explicit nil
+
+### UnsetLastUpdated
+`func (o *Role) UnsetLastUpdated()`
+
+UnsetLastUpdated ensures that no value is present for LastUpdated, not even an explicit nil
 ### GetPrefixCount
 
 `func (o *Role) GetPrefixCount() int64`

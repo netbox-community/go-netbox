@@ -164,7 +164,7 @@ import (
 )
 
 func main() {
-	bookmarkRequest := []openapiclient.BookmarkRequest{*openapiclient.NewBookmarkRequest("ObjectType_example", int64(123), *openapiclient.NewUserRequest("Username_example"))} // []BookmarkRequest | 
+	bookmarkRequest := []openapiclient.BookmarkRequest{*openapiclient.NewBookmarkRequest("ObjectType_example", int64(123), *openapiclient.NewBriefUserRequest("Username_example"))} // []BookmarkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-	bookmarkRequest := []openapiclient.BookmarkRequest{*openapiclient.NewBookmarkRequest("ObjectType_example", int64(123), *openapiclient.NewUserRequest("Username_example"))} // []BookmarkRequest | 
+	bookmarkRequest := []openapiclient.BookmarkRequest{*openapiclient.NewBookmarkRequest("ObjectType_example", int64(123), *openapiclient.NewBriefUserRequest("Username_example"))} // []BookmarkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -294,7 +294,7 @@ import (
 )
 
 func main() {
-	bookmarkRequest := []openapiclient.BookmarkRequest{*openapiclient.NewBookmarkRequest("ObjectType_example", int64(123), *openapiclient.NewUserRequest("Username_example"))} // []BookmarkRequest | 
+	bookmarkRequest := []openapiclient.BookmarkRequest{*openapiclient.NewBookmarkRequest("ObjectType_example", int64(123), *openapiclient.NewBriefUserRequest("Username_example"))} // []BookmarkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -360,7 +360,7 @@ import (
 )
 
 func main() {
-	bookmarkRequest := *openapiclient.NewBookmarkRequest("ObjectType_example", int64(123), *openapiclient.NewUserRequest("Username_example")) // BookmarkRequest | 
+	bookmarkRequest := *openapiclient.NewBookmarkRequest("ObjectType_example", int64(123), *openapiclient.NewBriefUserRequest("Username_example")) // BookmarkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -764,7 +764,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this bookmark.
-	bookmarkRequest := *openapiclient.NewBookmarkRequest("ObjectType_example", int64(123), *openapiclient.NewUserRequest("Username_example")) // BookmarkRequest | 
+	bookmarkRequest := *openapiclient.NewBookmarkRequest("ObjectType_example", int64(123), *openapiclient.NewBriefUserRequest("Username_example")) // BookmarkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1760,7 +1760,7 @@ import (
 )
 
 func main() {
-	configTemplateRequest := []openapiclient.ConfigTemplateRequest{*openapiclient.NewConfigTemplateRequest("Name_example")} // []ConfigTemplateRequest | 
+	configTemplateRequest := []openapiclient.ConfigTemplateRequest{*openapiclient.NewConfigTemplateRequest("Name_example", "TemplateCode_example")} // []ConfigTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1824,7 +1824,7 @@ import (
 )
 
 func main() {
-	configTemplateRequest := []openapiclient.ConfigTemplateRequest{*openapiclient.NewConfigTemplateRequest("Name_example")} // []ConfigTemplateRequest | 
+	configTemplateRequest := []openapiclient.ConfigTemplateRequest{*openapiclient.NewConfigTemplateRequest("Name_example", "TemplateCode_example")} // []ConfigTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1890,7 +1890,7 @@ import (
 )
 
 func main() {
-	configTemplateRequest := []openapiclient.ConfigTemplateRequest{*openapiclient.NewConfigTemplateRequest("Name_example")} // []ConfigTemplateRequest | 
+	configTemplateRequest := []openapiclient.ConfigTemplateRequest{*openapiclient.NewConfigTemplateRequest("Name_example", "TemplateCode_example")} // []ConfigTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1956,7 +1956,7 @@ import (
 )
 
 func main() {
-	configTemplateRequest := *openapiclient.NewConfigTemplateRequest("Name_example") // ConfigTemplateRequest | 
+	configTemplateRequest := *openapiclient.NewConfigTemplateRequest("Name_example", "TemplateCode_example") // ConfigTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2356,7 +2356,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this config template.
-	configTemplateRequest := *openapiclient.NewConfigTemplateRequest("Name_example") // ConfigTemplateRequest | 
+	configTemplateRequest := *openapiclient.NewConfigTemplateRequest("Name_example", "TemplateCode_example") // ConfigTemplateRequest | 
 	format := openapiclient.dcim_devices_render_config_create_format_parameter("json") // DcimDevicesRenderConfigCreateFormatParameter |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -2500,7 +2500,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this config template.
-	configTemplateRequest := *openapiclient.NewConfigTemplateRequest("Name_example") // ConfigTemplateRequest | 
+	configTemplateRequest := *openapiclient.NewConfigTemplateRequest("Name_example", "TemplateCode_example") // ConfigTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2572,7 +2572,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this config template.
-	configTemplateRequest := *openapiclient.NewConfigTemplateRequest("Name_example") // ConfigTemplateRequest | 
+	configTemplateRequest := *openapiclient.NewConfigTemplateRequest("Name_example", "TemplateCode_example") // ConfigTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4652,8 +4652,8 @@ import (
 )
 
 func main() {
-	buttonClass := openapiclient.extras_custom_links_list_button_class_parameter("black") // ExtrasCustomLinksListButtonClassParameter | The class of the first link in a group will be used for the dropdown button  * `outline-dark` - Default * `blue` - Blue * `indigo` - Indigo * `purple` - Purple * `pink` - Pink * `red` - Red * `orange` - Orange * `yellow` - Yellow * `green` - Green * `teal` - Teal * `cyan` - Cyan * `gray` - Gray * `black` - Black * `white` - White * `ghost-dark` - Link (optional)
-	buttonClassN := openapiclient.extras_custom_links_list_button_class_parameter("black") // ExtrasCustomLinksListButtonClassParameter | The class of the first link in a group will be used for the dropdown button  * `outline-dark` - Default * `blue` - Blue * `indigo` - Indigo * `purple` - Purple * `pink` - Pink * `red` - Red * `orange` - Orange * `yellow` - Yellow * `green` - Green * `teal` - Teal * `cyan` - Cyan * `gray` - Gray * `black` - Black * `white` - White * `ghost-dark` - Link (optional)
+	buttonClass := openapiclient.extras_custom_links_list_button_class_parameter("black") // ExtrasCustomLinksListButtonClassParameter | The class of the first link in a group will be used for the dropdown button  * `default` - Default * `blue` - Blue * `indigo` - Indigo * `purple` - Purple * `pink` - Pink * `red` - Red * `orange` - Orange * `yellow` - Yellow * `green` - Green * `teal` - Teal * `cyan` - Cyan * `gray` - Gray * `black` - Black * `white` - White * `ghost-dark` - Link (optional)
+	buttonClassN := openapiclient.extras_custom_links_list_button_class_parameter("black") // ExtrasCustomLinksListButtonClassParameter | The class of the first link in a group will be used for the dropdown button  * `default` - Default * `blue` - Blue * `indigo` - Indigo * `purple` - Purple * `pink` - Pink * `red` - Red * `orange` - Orange * `yellow` - Yellow * `green` - Green * `teal` - Teal * `cyan` - Cyan * `gray` - Gray * `black` - Black * `white` - White * `ghost-dark` - Link (optional)
 	created := []time.Time{time.Now()} // []time.Time |  (optional)
 	createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
 	createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -4769,8 +4769,8 @@ Other parameters are passed through a pointer to a apiExtrasCustomLinksListReque
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **buttonClass** | [**ExtrasCustomLinksListButtonClassParameter**](ExtrasCustomLinksListButtonClassParameter.md) | The class of the first link in a group will be used for the dropdown button  * &#x60;outline-dark&#x60; - Default * &#x60;blue&#x60; - Blue * &#x60;indigo&#x60; - Indigo * &#x60;purple&#x60; - Purple * &#x60;pink&#x60; - Pink * &#x60;red&#x60; - Red * &#x60;orange&#x60; - Orange * &#x60;yellow&#x60; - Yellow * &#x60;green&#x60; - Green * &#x60;teal&#x60; - Teal * &#x60;cyan&#x60; - Cyan * &#x60;gray&#x60; - Gray * &#x60;black&#x60; - Black * &#x60;white&#x60; - White * &#x60;ghost-dark&#x60; - Link | 
- **buttonClassN** | [**ExtrasCustomLinksListButtonClassParameter**](ExtrasCustomLinksListButtonClassParameter.md) | The class of the first link in a group will be used for the dropdown button  * &#x60;outline-dark&#x60; - Default * &#x60;blue&#x60; - Blue * &#x60;indigo&#x60; - Indigo * &#x60;purple&#x60; - Purple * &#x60;pink&#x60; - Pink * &#x60;red&#x60; - Red * &#x60;orange&#x60; - Orange * &#x60;yellow&#x60; - Yellow * &#x60;green&#x60; - Green * &#x60;teal&#x60; - Teal * &#x60;cyan&#x60; - Cyan * &#x60;gray&#x60; - Gray * &#x60;black&#x60; - Black * &#x60;white&#x60; - White * &#x60;ghost-dark&#x60; - Link | 
+ **buttonClass** | [**ExtrasCustomLinksListButtonClassParameter**](ExtrasCustomLinksListButtonClassParameter.md) | The class of the first link in a group will be used for the dropdown button  * &#x60;default&#x60; - Default * &#x60;blue&#x60; - Blue * &#x60;indigo&#x60; - Indigo * &#x60;purple&#x60; - Purple * &#x60;pink&#x60; - Pink * &#x60;red&#x60; - Red * &#x60;orange&#x60; - Orange * &#x60;yellow&#x60; - Yellow * &#x60;green&#x60; - Green * &#x60;teal&#x60; - Teal * &#x60;cyan&#x60; - Cyan * &#x60;gray&#x60; - Gray * &#x60;black&#x60; - Black * &#x60;white&#x60; - White * &#x60;ghost-dark&#x60; - Link | 
+ **buttonClassN** | [**ExtrasCustomLinksListButtonClassParameter**](ExtrasCustomLinksListButtonClassParameter.md) | The class of the first link in a group will be used for the dropdown button  * &#x60;default&#x60; - Default * &#x60;blue&#x60; - Blue * &#x60;indigo&#x60; - Indigo * &#x60;purple&#x60; - Purple * &#x60;pink&#x60; - Pink * &#x60;red&#x60; - Red * &#x60;orange&#x60; - Orange * &#x60;yellow&#x60; - Yellow * &#x60;green&#x60; - Green * &#x60;teal&#x60; - Teal * &#x60;cyan&#x60; - Cyan * &#x60;gray&#x60; - Gray * &#x60;black&#x60; - Black * &#x60;white&#x60; - White * &#x60;ghost-dark&#x60; - Link | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
  **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
@@ -7014,7 +7014,7 @@ import (
 )
 
 func main() {
-	imageAttachmentRequest := []openapiclient.ImageAttachmentRequest{*openapiclient.NewImageAttachmentRequest("ObjectType_example", int64(123), "TODO", int32(123), int32(123))} // []ImageAttachmentRequest | 
+	imageAttachmentRequest := []openapiclient.ImageAttachmentRequest{*openapiclient.NewImageAttachmentRequest("ObjectType_example", int64(123), "TODO")} // []ImageAttachmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7078,7 +7078,7 @@ import (
 )
 
 func main() {
-	imageAttachmentRequest := []openapiclient.ImageAttachmentRequest{*openapiclient.NewImageAttachmentRequest("ObjectType_example", int64(123), "TODO", int32(123), int32(123))} // []ImageAttachmentRequest | 
+	imageAttachmentRequest := []openapiclient.ImageAttachmentRequest{*openapiclient.NewImageAttachmentRequest("ObjectType_example", int64(123), "TODO")} // []ImageAttachmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7144,7 +7144,7 @@ import (
 )
 
 func main() {
-	imageAttachmentRequest := []openapiclient.ImageAttachmentRequest{*openapiclient.NewImageAttachmentRequest("ObjectType_example", int64(123), "TODO", int32(123), int32(123))} // []ImageAttachmentRequest | 
+	imageAttachmentRequest := []openapiclient.ImageAttachmentRequest{*openapiclient.NewImageAttachmentRequest("ObjectType_example", int64(123), "TODO")} // []ImageAttachmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7210,7 +7210,7 @@ import (
 )
 
 func main() {
-	imageAttachmentRequest := *openapiclient.NewImageAttachmentRequest("ObjectType_example", int64(123), "TODO", int32(123), int32(123)) // ImageAttachmentRequest | 
+	imageAttachmentRequest := *openapiclient.NewImageAttachmentRequest("ObjectType_example", int64(123), "TODO") // ImageAttachmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7680,7 +7680,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this image attachment.
-	imageAttachmentRequest := *openapiclient.NewImageAttachmentRequest("ObjectType_example", int64(123), "TODO", int32(123), int32(123)) // ImageAttachmentRequest | 
+	imageAttachmentRequest := *openapiclient.NewImageAttachmentRequest("ObjectType_example", int64(123), "TODO") // ImageAttachmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

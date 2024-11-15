@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
-**Device** | Pointer to [**NullableDevice**](Device.md) |  | [optional] 
-**VirtualMachine** | Pointer to [**NullableVirtualMachine**](VirtualMachine.md) |  | [optional] 
+**Device** | Pointer to [**NullableBriefDevice**](BriefDevice.md) |  | [optional] 
+**VirtualMachine** | Pointer to [**NullableBriefVirtualMachine**](BriefVirtualMachine.md) |  | [optional] 
 **Name** | **string** |  | 
 **Protocol** | Pointer to [**ServiceProtocol**](ServiceProtocol.md) |  | [optional] 
 **Ports** | **[]int32** |  | 
@@ -101,20 +101,20 @@ SetDisplay sets Display field to given value.
 
 ### GetDevice
 
-`func (o *Service) GetDevice() Device`
+`func (o *Service) GetDevice() BriefDevice`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *Service) GetDeviceOk() (*Device, bool)`
+`func (o *Service) GetDeviceOk() (*BriefDevice, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *Service) SetDevice(v Device)`
+`func (o *Service) SetDevice(v BriefDevice)`
 
 SetDevice sets Device field to given value.
 
@@ -136,20 +136,20 @@ HasDevice returns a boolean if a field has been set.
 UnsetDevice ensures that no value is present for Device, not even an explicit nil
 ### GetVirtualMachine
 
-`func (o *Service) GetVirtualMachine() VirtualMachine`
+`func (o *Service) GetVirtualMachine() BriefVirtualMachine`
 
 GetVirtualMachine returns the VirtualMachine field if non-nil, zero value otherwise.
 
 ### GetVirtualMachineOk
 
-`func (o *Service) GetVirtualMachineOk() (*VirtualMachine, bool)`
+`func (o *Service) GetVirtualMachineOk() (*BriefVirtualMachine, bool)`
 
 GetVirtualMachineOk returns a tuple with the VirtualMachine field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVirtualMachine
 
-`func (o *Service) SetVirtualMachine(v VirtualMachine)`
+`func (o *Service) SetVirtualMachine(v BriefVirtualMachine)`
 
 SetVirtualMachine sets VirtualMachine field to given value.
 

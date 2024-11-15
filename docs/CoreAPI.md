@@ -299,7 +299,7 @@ import (
 )
 
 func main() {
-	dataSourceRequest := []openapiclient.DataSourceRequest{*openapiclient.NewDataSourceRequest("Name_example", openapiclient.DataSourceRequest_type("local"), "SourceUrl_example")} // []DataSourceRequest | 
+	dataSourceRequest := []openapiclient.DataSourceRequest{*openapiclient.NewDataSourceRequest("Name_example", openapiclient.DataSource_type_value("local"), "SourceUrl_example")} // []DataSourceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -363,7 +363,7 @@ import (
 )
 
 func main() {
-	dataSourceRequest := []openapiclient.DataSourceRequest{*openapiclient.NewDataSourceRequest("Name_example", openapiclient.DataSourceRequest_type("local"), "SourceUrl_example")} // []DataSourceRequest | 
+	dataSourceRequest := []openapiclient.DataSourceRequest{*openapiclient.NewDataSourceRequest("Name_example", openapiclient.DataSource_type_value("local"), "SourceUrl_example")} // []DataSourceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -429,7 +429,7 @@ import (
 )
 
 func main() {
-	dataSourceRequest := []openapiclient.DataSourceRequest{*openapiclient.NewDataSourceRequest("Name_example", openapiclient.DataSourceRequest_type("local"), "SourceUrl_example")} // []DataSourceRequest | 
+	dataSourceRequest := []openapiclient.DataSourceRequest{*openapiclient.NewDataSourceRequest("Name_example", openapiclient.DataSource_type_value("local"), "SourceUrl_example")} // []DataSourceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

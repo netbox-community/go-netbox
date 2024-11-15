@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Device** | Pointer to [**DeviceRequest**](DeviceRequest.md) |  | [optional] 
+**Device** | Pointer to [**BriefDeviceRequest**](BriefDeviceRequest.md) |  | [optional] 
 **ModuleBay** | Pointer to **int32** |  | [optional] 
-**ModuleType** | Pointer to [**ModuleTypeRequest**](ModuleTypeRequest.md) |  | [optional] 
-**Status** | Pointer to [**PatchedWritableModuleRequestStatus**](PatchedWritableModuleRequestStatus.md) |  | [optional] 
+**ModuleType** | Pointer to [**BriefModuleTypeRequest**](BriefModuleTypeRequest.md) |  | [optional] 
+**Status** | Pointer to [**ModuleStatusValue**](ModuleStatusValue.md) |  | [optional] 
 **Serial** | Pointer to **string** |  | [optional] 
 **AssetTag** | Pointer to **NullableString** | A unique tag used to identify this device | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -36,20 +36,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDevice
 
-`func (o *PatchedWritableModuleRequest) GetDevice() DeviceRequest`
+`func (o *PatchedWritableModuleRequest) GetDevice() BriefDeviceRequest`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *PatchedWritableModuleRequest) GetDeviceOk() (*DeviceRequest, bool)`
+`func (o *PatchedWritableModuleRequest) GetDeviceOk() (*BriefDeviceRequest, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *PatchedWritableModuleRequest) SetDevice(v DeviceRequest)`
+`func (o *PatchedWritableModuleRequest) SetDevice(v BriefDeviceRequest)`
 
 SetDevice sets Device field to given value.
 
@@ -86,20 +86,20 @@ HasModuleBay returns a boolean if a field has been set.
 
 ### GetModuleType
 
-`func (o *PatchedWritableModuleRequest) GetModuleType() ModuleTypeRequest`
+`func (o *PatchedWritableModuleRequest) GetModuleType() BriefModuleTypeRequest`
 
 GetModuleType returns the ModuleType field if non-nil, zero value otherwise.
 
 ### GetModuleTypeOk
 
-`func (o *PatchedWritableModuleRequest) GetModuleTypeOk() (*ModuleTypeRequest, bool)`
+`func (o *PatchedWritableModuleRequest) GetModuleTypeOk() (*BriefModuleTypeRequest, bool)`
 
 GetModuleTypeOk returns a tuple with the ModuleType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetModuleType
 
-`func (o *PatchedWritableModuleRequest) SetModuleType(v ModuleTypeRequest)`
+`func (o *PatchedWritableModuleRequest) SetModuleType(v BriefModuleTypeRequest)`
 
 SetModuleType sets ModuleType field to given value.
 
@@ -111,20 +111,20 @@ HasModuleType returns a boolean if a field has been set.
 
 ### GetStatus
 
-`func (o *PatchedWritableModuleRequest) GetStatus() PatchedWritableModuleRequestStatus`
+`func (o *PatchedWritableModuleRequest) GetStatus() ModuleStatusValue`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *PatchedWritableModuleRequest) GetStatusOk() (*PatchedWritableModuleRequestStatus, bool)`
+`func (o *PatchedWritableModuleRequest) GetStatusOk() (*ModuleStatusValue, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *PatchedWritableModuleRequest) SetStatus(v PatchedWritableModuleRequestStatus)`
+`func (o *PatchedWritableModuleRequest) SetStatus(v ModuleStatusValue)`
 
 SetStatus sets Status field to given value.
 

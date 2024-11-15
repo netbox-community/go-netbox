@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Circuit** | Pointer to [**CircuitRequest**](CircuitRequest.md) |  | [optional] 
+**Circuit** | Pointer to [**BriefCircuitRequest**](BriefCircuitRequest.md) |  | [optional] 
 **TermSide** | Pointer to [**Termination1**](Termination1.md) |  | [optional] 
-**Site** | Pointer to [**NullableSiteRequest**](SiteRequest.md) |  | [optional] 
-**ProviderNetwork** | Pointer to [**NullableProviderNetworkRequest**](ProviderNetworkRequest.md) |  | [optional] 
+**Site** | Pointer to [**NullableBriefSiteRequest**](BriefSiteRequest.md) |  | [optional] 
+**ProviderNetwork** | Pointer to [**NullableBriefProviderNetworkRequest**](BriefProviderNetworkRequest.md) |  | [optional] 
 **PortSpeed** | Pointer to **NullableInt32** | Physical circuit speed | [optional] 
 **UpstreamSpeed** | Pointer to **NullableInt32** | Upstream speed, if different from port speed | [optional] 
 **XconnectId** | Pointer to **string** | ID of the local cross-connect | [optional] 
@@ -38,20 +38,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetCircuit
 
-`func (o *PatchedCircuitTerminationRequest) GetCircuit() CircuitRequest`
+`func (o *PatchedCircuitTerminationRequest) GetCircuit() BriefCircuitRequest`
 
 GetCircuit returns the Circuit field if non-nil, zero value otherwise.
 
 ### GetCircuitOk
 
-`func (o *PatchedCircuitTerminationRequest) GetCircuitOk() (*CircuitRequest, bool)`
+`func (o *PatchedCircuitTerminationRequest) GetCircuitOk() (*BriefCircuitRequest, bool)`
 
 GetCircuitOk returns a tuple with the Circuit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCircuit
 
-`func (o *PatchedCircuitTerminationRequest) SetCircuit(v CircuitRequest)`
+`func (o *PatchedCircuitTerminationRequest) SetCircuit(v BriefCircuitRequest)`
 
 SetCircuit sets Circuit field to given value.
 
@@ -88,20 +88,20 @@ HasTermSide returns a boolean if a field has been set.
 
 ### GetSite
 
-`func (o *PatchedCircuitTerminationRequest) GetSite() SiteRequest`
+`func (o *PatchedCircuitTerminationRequest) GetSite() BriefSiteRequest`
 
 GetSite returns the Site field if non-nil, zero value otherwise.
 
 ### GetSiteOk
 
-`func (o *PatchedCircuitTerminationRequest) GetSiteOk() (*SiteRequest, bool)`
+`func (o *PatchedCircuitTerminationRequest) GetSiteOk() (*BriefSiteRequest, bool)`
 
 GetSiteOk returns a tuple with the Site field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSite
 
-`func (o *PatchedCircuitTerminationRequest) SetSite(v SiteRequest)`
+`func (o *PatchedCircuitTerminationRequest) SetSite(v BriefSiteRequest)`
 
 SetSite sets Site field to given value.
 
@@ -123,20 +123,20 @@ HasSite returns a boolean if a field has been set.
 UnsetSite ensures that no value is present for Site, not even an explicit nil
 ### GetProviderNetwork
 
-`func (o *PatchedCircuitTerminationRequest) GetProviderNetwork() ProviderNetworkRequest`
+`func (o *PatchedCircuitTerminationRequest) GetProviderNetwork() BriefProviderNetworkRequest`
 
 GetProviderNetwork returns the ProviderNetwork field if non-nil, zero value otherwise.
 
 ### GetProviderNetworkOk
 
-`func (o *PatchedCircuitTerminationRequest) GetProviderNetworkOk() (*ProviderNetworkRequest, bool)`
+`func (o *PatchedCircuitTerminationRequest) GetProviderNetworkOk() (*BriefProviderNetworkRequest, bool)`
 
 GetProviderNetworkOk returns a tuple with the ProviderNetwork field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProviderNetwork
 
-`func (o *PatchedCircuitTerminationRequest) SetProviderNetwork(v ProviderNetworkRequest)`
+`func (o *PatchedCircuitTerminationRequest) SetProviderNetwork(v BriefProviderNetworkRequest)`
 
 SetProviderNetwork sets ProviderNetwork field to given value.
 

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Slug** | Pointer to **string** |  | [optional] 
 **Color** | Pointer to **string** |  | [optional] 
 **VmRole** | Pointer to **bool** | Virtual machines may be assigned to this role | [optional] 
-**ConfigTemplate** | Pointer to [**NullableConfigTemplateRequest**](ConfigTemplateRequest.md) |  | [optional] 
+**ConfigTemplate** | Pointer to [**NullableBriefConfigTemplateRequest**](BriefConfigTemplateRequest.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -134,20 +134,20 @@ HasVmRole returns a boolean if a field has been set.
 
 ### GetConfigTemplate
 
-`func (o *PatchedDeviceRoleRequest) GetConfigTemplate() ConfigTemplateRequest`
+`func (o *PatchedDeviceRoleRequest) GetConfigTemplate() BriefConfigTemplateRequest`
 
 GetConfigTemplate returns the ConfigTemplate field if non-nil, zero value otherwise.
 
 ### GetConfigTemplateOk
 
-`func (o *PatchedDeviceRoleRequest) GetConfigTemplateOk() (*ConfigTemplateRequest, bool)`
+`func (o *PatchedDeviceRoleRequest) GetConfigTemplateOk() (*BriefConfigTemplateRequest, bool)`
 
 GetConfigTemplateOk returns a tuple with the ConfigTemplate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfigTemplate
 
-`func (o *PatchedDeviceRoleRequest) SetConfigTemplate(v ConfigTemplateRequest)`
+`func (o *PatchedDeviceRoleRequest) SetConfigTemplate(v BriefConfigTemplateRequest)`
 
 SetConfigTemplate sets ConfigTemplate field to given value.
 

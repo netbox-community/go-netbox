@@ -7,11 +7,11 @@ Name | Type | Description | Notes
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
-**InterfaceA** | [**Interface**](Interface.md) |  | 
-**InterfaceB** | [**Interface**](Interface.md) |  | 
+**InterfaceA** | [**BriefInterface**](BriefInterface.md) |  | 
+**InterfaceB** | [**BriefInterface**](BriefInterface.md) |  | 
 **Ssid** | Pointer to **string** |  | [optional] 
-**Status** | Pointer to [**WirelessLinkStatus**](WirelessLinkStatus.md) |  | [optional] 
-**Tenant** | Pointer to [**NullableTenant**](Tenant.md) |  | [optional] 
+**Status** | Pointer to [**CableStatus**](CableStatus.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableBriefTenant**](BriefTenant.md) |  | [optional] 
 **AuthType** | Pointer to [**WirelessLANAuthType**](WirelessLANAuthType.md) |  | [optional] 
 **AuthCipher** | Pointer to [**WirelessLANAuthCipher**](WirelessLANAuthCipher.md) |  | [optional] 
 **AuthPsk** | Pointer to **string** |  | [optional] 
@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 
 ### NewWirelessLink
 
-`func NewWirelessLink(id int32, url string, display string, interfaceA Interface, interfaceB Interface, created NullableTime, lastUpdated NullableTime, ) *WirelessLink`
+`func NewWirelessLink(id int32, url string, display string, interfaceA BriefInterface, interfaceB BriefInterface, created NullableTime, lastUpdated NullableTime, ) *WirelessLink`
 
 NewWirelessLink instantiates a new WirelessLink object
 This constructor will assign default values to properties that have it defined,
@@ -103,40 +103,40 @@ SetDisplay sets Display field to given value.
 
 ### GetInterfaceA
 
-`func (o *WirelessLink) GetInterfaceA() Interface`
+`func (o *WirelessLink) GetInterfaceA() BriefInterface`
 
 GetInterfaceA returns the InterfaceA field if non-nil, zero value otherwise.
 
 ### GetInterfaceAOk
 
-`func (o *WirelessLink) GetInterfaceAOk() (*Interface, bool)`
+`func (o *WirelessLink) GetInterfaceAOk() (*BriefInterface, bool)`
 
 GetInterfaceAOk returns a tuple with the InterfaceA field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInterfaceA
 
-`func (o *WirelessLink) SetInterfaceA(v Interface)`
+`func (o *WirelessLink) SetInterfaceA(v BriefInterface)`
 
 SetInterfaceA sets InterfaceA field to given value.
 
 
 ### GetInterfaceB
 
-`func (o *WirelessLink) GetInterfaceB() Interface`
+`func (o *WirelessLink) GetInterfaceB() BriefInterface`
 
 GetInterfaceB returns the InterfaceB field if non-nil, zero value otherwise.
 
 ### GetInterfaceBOk
 
-`func (o *WirelessLink) GetInterfaceBOk() (*Interface, bool)`
+`func (o *WirelessLink) GetInterfaceBOk() (*BriefInterface, bool)`
 
 GetInterfaceBOk returns a tuple with the InterfaceB field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInterfaceB
 
-`func (o *WirelessLink) SetInterfaceB(v Interface)`
+`func (o *WirelessLink) SetInterfaceB(v BriefInterface)`
 
 SetInterfaceB sets InterfaceB field to given value.
 
@@ -168,20 +168,20 @@ HasSsid returns a boolean if a field has been set.
 
 ### GetStatus
 
-`func (o *WirelessLink) GetStatus() WirelessLinkStatus`
+`func (o *WirelessLink) GetStatus() CableStatus`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *WirelessLink) GetStatusOk() (*WirelessLinkStatus, bool)`
+`func (o *WirelessLink) GetStatusOk() (*CableStatus, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *WirelessLink) SetStatus(v WirelessLinkStatus)`
+`func (o *WirelessLink) SetStatus(v CableStatus)`
 
 SetStatus sets Status field to given value.
 
@@ -193,20 +193,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetTenant
 
-`func (o *WirelessLink) GetTenant() Tenant`
+`func (o *WirelessLink) GetTenant() BriefTenant`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *WirelessLink) GetTenantOk() (*Tenant, bool)`
+`func (o *WirelessLink) GetTenantOk() (*BriefTenant, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *WirelessLink) SetTenant(v Tenant)`
+`func (o *WirelessLink) SetTenant(v BriefTenant)`
 
 SetTenant sets Tenant field to given value.
 

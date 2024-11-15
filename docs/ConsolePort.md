@@ -7,20 +7,20 @@ Name | Type | Description | Notes
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
-**Device** | [**Device**](Device.md) |  | 
-**Module** | Pointer to [**NullableModule**](Module.md) |  | [optional] 
+**Device** | [**BriefDevice**](BriefDevice.md) |  | 
+**Module** | Pointer to [**NullableBriefModule**](BriefModule.md) |  | [optional] 
 **Name** | **string** |  | 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Type** | Pointer to [**ConsolePortType**](ConsolePortType.md) |  | [optional] 
 **Speed** | Pointer to [**NullableConsolePortSpeed**](ConsolePortSpeed.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **MarkConnected** | Pointer to **bool** | Treat as if a cable is connected | [optional] 
-**Cable** | [**NullableCable**](Cable.md) |  | [readonly] 
+**Cable** | [**NullableBriefCable**](BriefCable.md) |  | [readonly] 
 **CableEnd** | **string** |  | [readonly] 
 **LinkPeers** | **[]interface{}** |  | [readonly] 
-**LinkPeersType** | **string** | Return the type of the peer link terminations, or None. | [readonly] 
+**LinkPeersType** | **NullableString** | Return the type of the peer link terminations, or None. | [readonly] 
 **ConnectedEndpoints** | **[]interface{}** |  | [readonly] 
-**ConnectedEndpointsType** | **string** |  | [readonly] 
+**ConnectedEndpointsType** | **NullableString** |  | [readonly] 
 **ConnectedEndpointsReachable** | **bool** |  | [readonly] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 
 ### NewConsolePort
 
-`func NewConsolePort(id int32, url string, display string, device Device, name string, cable NullableCable, cableEnd string, linkPeers []interface{}, linkPeersType string, connectedEndpoints []interface{}, connectedEndpointsType string, connectedEndpointsReachable bool, created NullableTime, lastUpdated NullableTime, occupied bool, ) *ConsolePort`
+`func NewConsolePort(id int32, url string, display string, device BriefDevice, name string, cable NullableBriefCable, cableEnd string, linkPeers []interface{}, linkPeersType NullableString, connectedEndpoints []interface{}, connectedEndpointsType NullableString, connectedEndpointsReachable bool, created NullableTime, lastUpdated NullableTime, occupied bool, ) *ConsolePort`
 
 NewConsolePort instantiates a new ConsolePort object
 This constructor will assign default values to properties that have it defined,
@@ -109,40 +109,40 @@ SetDisplay sets Display field to given value.
 
 ### GetDevice
 
-`func (o *ConsolePort) GetDevice() Device`
+`func (o *ConsolePort) GetDevice() BriefDevice`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *ConsolePort) GetDeviceOk() (*Device, bool)`
+`func (o *ConsolePort) GetDeviceOk() (*BriefDevice, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *ConsolePort) SetDevice(v Device)`
+`func (o *ConsolePort) SetDevice(v BriefDevice)`
 
 SetDevice sets Device field to given value.
 
 
 ### GetModule
 
-`func (o *ConsolePort) GetModule() Module`
+`func (o *ConsolePort) GetModule() BriefModule`
 
 GetModule returns the Module field if non-nil, zero value otherwise.
 
 ### GetModuleOk
 
-`func (o *ConsolePort) GetModuleOk() (*Module, bool)`
+`func (o *ConsolePort) GetModuleOk() (*BriefModule, bool)`
 
 GetModuleOk returns a tuple with the Module field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetModule
 
-`func (o *ConsolePort) SetModule(v Module)`
+`func (o *ConsolePort) SetModule(v BriefModule)`
 
 SetModule sets Module field to given value.
 
@@ -319,20 +319,20 @@ HasMarkConnected returns a boolean if a field has been set.
 
 ### GetCable
 
-`func (o *ConsolePort) GetCable() Cable`
+`func (o *ConsolePort) GetCable() BriefCable`
 
 GetCable returns the Cable field if non-nil, zero value otherwise.
 
 ### GetCableOk
 
-`func (o *ConsolePort) GetCableOk() (*Cable, bool)`
+`func (o *ConsolePort) GetCableOk() (*BriefCable, bool)`
 
 GetCableOk returns a tuple with the Cable field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCable
 
-`func (o *ConsolePort) SetCable(v Cable)`
+`func (o *ConsolePort) SetCable(v BriefCable)`
 
 SetCable sets Cable field to given value.
 
@@ -407,6 +407,16 @@ and a boolean to check if the value has been set.
 SetLinkPeersType sets LinkPeersType field to given value.
 
 
+### SetLinkPeersTypeNil
+
+`func (o *ConsolePort) SetLinkPeersTypeNil(b bool)`
+
+ SetLinkPeersTypeNil sets the value for LinkPeersType to be an explicit nil
+
+### UnsetLinkPeersType
+`func (o *ConsolePort) UnsetLinkPeersType()`
+
+UnsetLinkPeersType ensures that no value is present for LinkPeersType, not even an explicit nil
 ### GetConnectedEndpoints
 
 `func (o *ConsolePort) GetConnectedEndpoints() []interface{}`
@@ -427,6 +437,16 @@ and a boolean to check if the value has been set.
 SetConnectedEndpoints sets ConnectedEndpoints field to given value.
 
 
+### SetConnectedEndpointsNil
+
+`func (o *ConsolePort) SetConnectedEndpointsNil(b bool)`
+
+ SetConnectedEndpointsNil sets the value for ConnectedEndpoints to be an explicit nil
+
+### UnsetConnectedEndpoints
+`func (o *ConsolePort) UnsetConnectedEndpoints()`
+
+UnsetConnectedEndpoints ensures that no value is present for ConnectedEndpoints, not even an explicit nil
 ### GetConnectedEndpointsType
 
 `func (o *ConsolePort) GetConnectedEndpointsType() string`
@@ -447,6 +467,16 @@ and a boolean to check if the value has been set.
 SetConnectedEndpointsType sets ConnectedEndpointsType field to given value.
 
 
+### SetConnectedEndpointsTypeNil
+
+`func (o *ConsolePort) SetConnectedEndpointsTypeNil(b bool)`
+
+ SetConnectedEndpointsTypeNil sets the value for ConnectedEndpointsType to be an explicit nil
+
+### UnsetConnectedEndpointsType
+`func (o *ConsolePort) UnsetConnectedEndpointsType()`
+
+UnsetConnectedEndpointsType ensures that no value is present for ConnectedEndpointsType, not even an explicit nil
 ### GetConnectedEndpointsReachable
 
 `func (o *ConsolePort) GetConnectedEndpointsReachable() bool`

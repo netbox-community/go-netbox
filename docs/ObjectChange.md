@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Url** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
 **Time** | **time.Time** |  | [readonly] 
-**User** | [**User**](User.md) |  | [readonly] 
+**User** | [**BriefUser**](BriefUser.md) |  | [readonly] 
 **UserName** | **string** |  | [readonly] 
 **RequestId** | **string** |  | [readonly] 
 **Action** | [**ObjectChangeAction**](ObjectChangeAction.md) |  | 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 
 ### NewObjectChange
 
-`func NewObjectChange(id int32, url string, display string, time time.Time, user User, userName string, requestId string, action ObjectChangeAction, changedObjectType string, changedObjectId int64, changedObject interface{}, prechangeData interface{}, postchangeData interface{}, ) *ObjectChange`
+`func NewObjectChange(id int32, url string, display string, time time.Time, user BriefUser, userName string, requestId string, action ObjectChangeAction, changedObjectType string, changedObjectId int64, changedObject interface{}, prechangeData interface{}, postchangeData interface{}, ) *ObjectChange`
 
 NewObjectChange instantiates a new ObjectChange object
 This constructor will assign default values to properties that have it defined,
@@ -119,20 +119,20 @@ SetTime sets Time field to given value.
 
 ### GetUser
 
-`func (o *ObjectChange) GetUser() User`
+`func (o *ObjectChange) GetUser() BriefUser`
 
 GetUser returns the User field if non-nil, zero value otherwise.
 
 ### GetUserOk
 
-`func (o *ObjectChange) GetUserOk() (*User, bool)`
+`func (o *ObjectChange) GetUserOk() (*BriefUser, bool)`
 
 GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUser
 
-`func (o *ObjectChange) SetUser(v User)`
+`func (o *ObjectChange) SetUser(v BriefUser)`
 
 SetUser sets User field to given value.
 

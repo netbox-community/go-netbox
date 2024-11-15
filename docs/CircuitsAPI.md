@@ -83,7 +83,7 @@ import (
 )
 
 func main() {
-	circuitTerminationRequest := []openapiclient.CircuitTerminationRequest{*openapiclient.NewCircuitTerminationRequest(*openapiclient.NewCircuitRequest("Cid_example"), openapiclient.Termination_1("A"))} // []CircuitTerminationRequest | 
+	circuitTerminationRequest := []openapiclient.CircuitTerminationRequest{*openapiclient.NewCircuitTerminationRequest(*openapiclient.NewBriefCircuitRequest("Cid_example"), openapiclient.Termination_1("A"))} // []CircuitTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -147,7 +147,7 @@ import (
 )
 
 func main() {
-	circuitTerminationRequest := []openapiclient.CircuitTerminationRequest{*openapiclient.NewCircuitTerminationRequest(*openapiclient.NewCircuitRequest("Cid_example"), openapiclient.Termination_1("A"))} // []CircuitTerminationRequest | 
+	circuitTerminationRequest := []openapiclient.CircuitTerminationRequest{*openapiclient.NewCircuitTerminationRequest(*openapiclient.NewBriefCircuitRequest("Cid_example"), openapiclient.Termination_1("A"))} // []CircuitTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -213,7 +213,7 @@ import (
 )
 
 func main() {
-	circuitTerminationRequest := []openapiclient.CircuitTerminationRequest{*openapiclient.NewCircuitTerminationRequest(*openapiclient.NewCircuitRequest("Cid_example"), openapiclient.Termination_1("A"))} // []CircuitTerminationRequest | 
+	circuitTerminationRequest := []openapiclient.CircuitTerminationRequest{*openapiclient.NewCircuitTerminationRequest(*openapiclient.NewBriefCircuitRequest("Cid_example"), openapiclient.Termination_1("A"))} // []CircuitTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -279,7 +279,7 @@ import (
 )
 
 func main() {
-	circuitTerminationRequest := *openapiclient.NewCircuitTerminationRequest(*openapiclient.NewCircuitRequest("Cid_example"), openapiclient.Termination_1("A")) // CircuitTerminationRequest | 
+	circuitTerminationRequest := *openapiclient.NewCircuitTerminationRequest(*openapiclient.NewBriefCircuitRequest("Cid_example"), openapiclient.Termination_1("A")) // CircuitTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -887,7 +887,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this circuit termination.
-	circuitTerminationRequest := *openapiclient.NewCircuitTerminationRequest(*openapiclient.NewCircuitRequest("Cid_example"), openapiclient.Termination_1("A")) // CircuitTerminationRequest | 
+	circuitTerminationRequest := *openapiclient.NewCircuitTerminationRequest(*openapiclient.NewBriefCircuitRequest("Cid_example"), openapiclient.Termination_1("A")) // CircuitTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1715,7 +1715,7 @@ import (
 )
 
 func main() {
-	circuitRequest := []openapiclient.CircuitRequest{*openapiclient.NewCircuitRequest("Cid_example")} // []CircuitRequest | 
+	circuitRequest := []openapiclient.CircuitRequest{*openapiclient.NewCircuitRequest("Cid_example", *openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), *openapiclient.NewBriefCircuitTypeRequest("Name_example", "Slug_example"))} // []CircuitRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1779,7 +1779,7 @@ import (
 )
 
 func main() {
-	circuitRequest := []openapiclient.CircuitRequest{*openapiclient.NewCircuitRequest("Cid_example")} // []CircuitRequest | 
+	circuitRequest := []openapiclient.CircuitRequest{*openapiclient.NewCircuitRequest("Cid_example", *openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), *openapiclient.NewBriefCircuitTypeRequest("Name_example", "Slug_example"))} // []CircuitRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1845,7 +1845,7 @@ import (
 )
 
 func main() {
-	circuitRequest := []openapiclient.CircuitRequest{*openapiclient.NewCircuitRequest("Cid_example")} // []CircuitRequest | 
+	circuitRequest := []openapiclient.CircuitRequest{*openapiclient.NewCircuitRequest("Cid_example", *openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), *openapiclient.NewBriefCircuitTypeRequest("Name_example", "Slug_example"))} // []CircuitRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1911,7 +1911,7 @@ import (
 )
 
 func main() {
-	writableCircuitRequest := *openapiclient.NewWritableCircuitRequest("Cid_example", *openapiclient.NewProviderRequest("Name_example", "Slug_example"), *openapiclient.NewCircuitTypeRequest("Name_example", "Slug_example")) // WritableCircuitRequest | 
+	writableCircuitRequest := *openapiclient.NewWritableCircuitRequest("Cid_example", *openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), *openapiclient.NewBriefCircuitTypeRequest("Name_example", "Slug_example")) // WritableCircuitRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2066,8 +2066,8 @@ func main() {
 	commitRateN := []int32{int32(123)} // []int32 |  (optional)
 	contact := []int32{int32(123)} // []int32 | Contact (optional)
 	contactN := []int32{int32(123)} // []int32 | Contact (optional)
-	contactGroup := []int32{int32(123)} // []int32 | Contact group (optional)
-	contactGroupN := []int32{int32(123)} // []int32 | Contact group (optional)
+	contactGroup := []string{"Inner_example"} // []string |  (optional)
+	contactGroupN := []string{"Inner_example"} // []string |  (optional)
 	contactRole := []int32{int32(123)} // []int32 | Contact Role (optional)
 	contactRoleN := []int32{int32(123)} // []int32 | Contact Role (optional)
 	created := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -2125,16 +2125,16 @@ func main() {
 	providerNetworkId := []int32{int32(123)} // []int32 | Provider network (ID) (optional)
 	providerNetworkIdN := []int32{int32(123)} // []int32 | Provider network (ID) (optional)
 	q := "q_example" // string | Search (optional)
-	region := []int32{int32(123)} // []int32 | Region (slug) (optional)
-	regionN := []int32{int32(123)} // []int32 | Region (slug) (optional)
-	regionId := []int32{int32(123)} // []int32 | Region (ID) (optional)
-	regionIdN := []int32{int32(123)} // []int32 | Region (ID) (optional)
+	region := []string{"Inner_example"} // []string |  (optional)
+	regionN := []string{"Inner_example"} // []string |  (optional)
+	regionId := []string{"Inner_example"} // []string |  (optional)
+	regionIdN := []string{"Inner_example"} // []string |  (optional)
 	site := []string{"Inner_example"} // []string | Site (slug) (optional)
 	siteN := []string{"Inner_example"} // []string | Site (slug) (optional)
-	siteGroup := []int32{int32(123)} // []int32 | Site group (slug) (optional)
-	siteGroupN := []int32{int32(123)} // []int32 | Site group (slug) (optional)
-	siteGroupId := []int32{int32(123)} // []int32 | Site group (ID) (optional)
-	siteGroupIdN := []int32{int32(123)} // []int32 | Site group (ID) (optional)
+	siteGroup := []string{"Inner_example"} // []string |  (optional)
+	siteGroupN := []string{"Inner_example"} // []string |  (optional)
+	siteGroupId := []string{"Inner_example"} // []string |  (optional)
+	siteGroupIdN := []string{"Inner_example"} // []string |  (optional)
 	siteId := []int32{int32(123)} // []int32 | Site (ID) (optional)
 	siteIdN := []int32{int32(123)} // []int32 | Site (ID) (optional)
 	status := []string{"Inner_example"} // []string |  (optional)
@@ -2143,10 +2143,10 @@ func main() {
 	tagN := []string{"Inner_example"} // []string |  (optional)
 	tenant := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantN := []string{"Inner_example"} // []string | Tenant (slug) (optional)
-	tenantGroup := []int32{int32(123)} // []int32 | Tenant Group (slug) (optional)
-	tenantGroupN := []int32{int32(123)} // []int32 | Tenant Group (slug) (optional)
-	tenantGroupId := []int32{int32(123)} // []int32 | Tenant Group (ID) (optional)
-	tenantGroupIdN := []int32{int32(123)} // []int32 | Tenant Group (ID) (optional)
+	tenantGroup := []string{"Inner_example"} // []string |  (optional)
+	tenantGroupN := []string{"Inner_example"} // []string |  (optional)
+	tenantGroupId := []string{"Inner_example"} // []string |  (optional)
+	tenantGroupIdN := []string{"Inner_example"} // []string |  (optional)
 	tenantId := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
 	tenantIdN := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
 	terminationAId := []*int32{int32(123)} // []*int32 | Termination A (ID) (optional)
@@ -2209,8 +2209,8 @@ Name | Type | Description  | Notes
  **commitRateN** | **[]int32** |  | 
  **contact** | **[]int32** | Contact | 
  **contactN** | **[]int32** | Contact | 
- **contactGroup** | **[]int32** | Contact group | 
- **contactGroupN** | **[]int32** | Contact group | 
+ **contactGroup** | **[]string** |  | 
+ **contactGroupN** | **[]string** |  | 
  **contactRole** | **[]int32** | Contact Role | 
  **contactRoleN** | **[]int32** | Contact Role | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
@@ -2268,16 +2268,16 @@ Name | Type | Description  | Notes
  **providerNetworkId** | **[]int32** | Provider network (ID) | 
  **providerNetworkIdN** | **[]int32** | Provider network (ID) | 
  **q** | **string** | Search | 
- **region** | **[]int32** | Region (slug) | 
- **regionN** | **[]int32** | Region (slug) | 
- **regionId** | **[]int32** | Region (ID) | 
- **regionIdN** | **[]int32** | Region (ID) | 
+ **region** | **[]string** |  | 
+ **regionN** | **[]string** |  | 
+ **regionId** | **[]string** |  | 
+ **regionIdN** | **[]string** |  | 
  **site** | **[]string** | Site (slug) | 
  **siteN** | **[]string** | Site (slug) | 
- **siteGroup** | **[]int32** | Site group (slug) | 
- **siteGroupN** | **[]int32** | Site group (slug) | 
- **siteGroupId** | **[]int32** | Site group (ID) | 
- **siteGroupIdN** | **[]int32** | Site group (ID) | 
+ **siteGroup** | **[]string** |  | 
+ **siteGroupN** | **[]string** |  | 
+ **siteGroupId** | **[]string** |  | 
+ **siteGroupIdN** | **[]string** |  | 
  **siteId** | **[]int32** | Site (ID) | 
  **siteIdN** | **[]int32** | Site (ID) | 
  **status** | **[]string** |  | 
@@ -2286,10 +2286,10 @@ Name | Type | Description  | Notes
  **tagN** | **[]string** |  | 
  **tenant** | **[]string** | Tenant (slug) | 
  **tenantN** | **[]string** | Tenant (slug) | 
- **tenantGroup** | **[]int32** | Tenant Group (slug) | 
- **tenantGroupN** | **[]int32** | Tenant Group (slug) | 
- **tenantGroupId** | **[]int32** | Tenant Group (ID) | 
- **tenantGroupIdN** | **[]int32** | Tenant Group (ID) | 
+ **tenantGroup** | **[]string** |  | 
+ **tenantGroupN** | **[]string** |  | 
+ **tenantGroupId** | **[]string** |  | 
+ **tenantGroupIdN** | **[]string** |  | 
  **tenantId** | **[]int32** | Tenant (ID) | 
  **tenantIdN** | **[]int32** | Tenant (ID) | 
  **terminationAId** | **[]int32** | Termination A (ID) | 
@@ -2491,7 +2491,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this circuit.
-	writableCircuitRequest := *openapiclient.NewWritableCircuitRequest("Cid_example", *openapiclient.NewProviderRequest("Name_example", "Slug_example"), *openapiclient.NewCircuitTypeRequest("Name_example", "Slug_example")) // WritableCircuitRequest | 
+	writableCircuitRequest := *openapiclient.NewWritableCircuitRequest("Cid_example", *openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), *openapiclient.NewBriefCircuitTypeRequest("Name_example", "Slug_example")) // WritableCircuitRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2562,7 +2562,7 @@ import (
 )
 
 func main() {
-	providerAccountRequest := []openapiclient.ProviderAccountRequest{*openapiclient.NewProviderAccountRequest("Account_example")} // []ProviderAccountRequest | 
+	providerAccountRequest := []openapiclient.ProviderAccountRequest{*openapiclient.NewProviderAccountRequest(*openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), "Account_example")} // []ProviderAccountRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2626,7 +2626,7 @@ import (
 )
 
 func main() {
-	providerAccountRequest := []openapiclient.ProviderAccountRequest{*openapiclient.NewProviderAccountRequest("Account_example")} // []ProviderAccountRequest | 
+	providerAccountRequest := []openapiclient.ProviderAccountRequest{*openapiclient.NewProviderAccountRequest(*openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), "Account_example")} // []ProviderAccountRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2692,7 +2692,7 @@ import (
 )
 
 func main() {
-	providerAccountRequest := []openapiclient.ProviderAccountRequest{*openapiclient.NewProviderAccountRequest("Account_example")} // []ProviderAccountRequest | 
+	providerAccountRequest := []openapiclient.ProviderAccountRequest{*openapiclient.NewProviderAccountRequest(*openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), "Account_example")} // []ProviderAccountRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2758,7 +2758,7 @@ import (
 )
 
 func main() {
-	providerAccountRequest := *openapiclient.NewProviderAccountRequest("Account_example") // ProviderAccountRequest | 
+	providerAccountRequest := *openapiclient.NewProviderAccountRequest(*openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), "Account_example") // ProviderAccountRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3234,7 +3234,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this provider account.
-	providerAccountRequest := *openapiclient.NewProviderAccountRequest("Account_example") // ProviderAccountRequest | 
+	providerAccountRequest := *openapiclient.NewProviderAccountRequest(*openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), "Account_example") // ProviderAccountRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3305,7 +3305,7 @@ import (
 )
 
 func main() {
-	providerNetworkRequest := []openapiclient.ProviderNetworkRequest{*openapiclient.NewProviderNetworkRequest("Name_example")} // []ProviderNetworkRequest | 
+	providerNetworkRequest := []openapiclient.ProviderNetworkRequest{*openapiclient.NewProviderNetworkRequest(*openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), "Name_example")} // []ProviderNetworkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3369,7 +3369,7 @@ import (
 )
 
 func main() {
-	providerNetworkRequest := []openapiclient.ProviderNetworkRequest{*openapiclient.NewProviderNetworkRequest("Name_example")} // []ProviderNetworkRequest | 
+	providerNetworkRequest := []openapiclient.ProviderNetworkRequest{*openapiclient.NewProviderNetworkRequest(*openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), "Name_example")} // []ProviderNetworkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3435,7 +3435,7 @@ import (
 )
 
 func main() {
-	providerNetworkRequest := []openapiclient.ProviderNetworkRequest{*openapiclient.NewProviderNetworkRequest("Name_example")} // []ProviderNetworkRequest | 
+	providerNetworkRequest := []openapiclient.ProviderNetworkRequest{*openapiclient.NewProviderNetworkRequest(*openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), "Name_example")} // []ProviderNetworkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3501,7 +3501,7 @@ import (
 )
 
 func main() {
-	providerNetworkRequest := *openapiclient.NewProviderNetworkRequest("Name_example") // ProviderNetworkRequest | 
+	providerNetworkRequest := *openapiclient.NewProviderNetworkRequest(*openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), "Name_example") // ProviderNetworkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3977,7 +3977,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this provider network.
-	providerNetworkRequest := *openapiclient.NewProviderNetworkRequest("Name_example") // ProviderNetworkRequest | 
+	providerNetworkRequest := *openapiclient.NewProviderNetworkRequest(*openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), "Name_example") // ProviderNetworkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4385,8 +4385,8 @@ func main() {
 	asnIdN := []int32{int32(123)} // []int32 | ASN (ID) (optional)
 	contact := []int32{int32(123)} // []int32 | Contact (optional)
 	contactN := []int32{int32(123)} // []int32 | Contact (optional)
-	contactGroup := []int32{int32(123)} // []int32 | Contact group (optional)
-	contactGroupN := []int32{int32(123)} // []int32 | Contact group (optional)
+	contactGroup := []string{"Inner_example"} // []string |  (optional)
+	contactGroupN := []string{"Inner_example"} // []string |  (optional)
 	contactRole := []int32{int32(123)} // []int32 | Contact Role (optional)
 	contactRoleN := []int32{int32(123)} // []int32 | Contact Role (optional)
 	created := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -4438,16 +4438,16 @@ func main() {
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
 	q := "q_example" // string | Search (optional)
-	region := []int32{int32(123)} // []int32 | Region (slug) (optional)
-	regionN := []int32{int32(123)} // []int32 | Region (slug) (optional)
-	regionId := []int32{int32(123)} // []int32 | Region (ID) (optional)
-	regionIdN := []int32{int32(123)} // []int32 | Region (ID) (optional)
+	region := []string{"Inner_example"} // []string |  (optional)
+	regionN := []string{"Inner_example"} // []string |  (optional)
+	regionId := []string{"Inner_example"} // []string |  (optional)
+	regionIdN := []string{"Inner_example"} // []string |  (optional)
 	site := []string{"Inner_example"} // []string | Site (slug) (optional)
 	siteN := []string{"Inner_example"} // []string | Site (slug) (optional)
-	siteGroup := []int32{int32(123)} // []int32 | Site group (slug) (optional)
-	siteGroupN := []int32{int32(123)} // []int32 | Site group (slug) (optional)
-	siteGroupId := []int32{int32(123)} // []int32 | Site group (ID) (optional)
-	siteGroupIdN := []int32{int32(123)} // []int32 | Site group (ID) (optional)
+	siteGroup := []string{"Inner_example"} // []string |  (optional)
+	siteGroupN := []string{"Inner_example"} // []string |  (optional)
+	siteGroupId := []string{"Inner_example"} // []string |  (optional)
+	siteGroupIdN := []string{"Inner_example"} // []string |  (optional)
 	siteId := []int32{int32(123)} // []int32 | Site (optional)
 	siteIdN := []int32{int32(123)} // []int32 | Site (optional)
 	slug := []string{"Inner_example"} // []string |  (optional)
@@ -4494,8 +4494,8 @@ Name | Type | Description  | Notes
  **asnIdN** | **[]int32** | ASN (ID) | 
  **contact** | **[]int32** | Contact | 
  **contactN** | **[]int32** | Contact | 
- **contactGroup** | **[]int32** | Contact group | 
- **contactGroupN** | **[]int32** | Contact group | 
+ **contactGroup** | **[]string** |  | 
+ **contactGroupN** | **[]string** |  | 
  **contactRole** | **[]int32** | Contact Role | 
  **contactRoleN** | **[]int32** | Contact Role | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
@@ -4547,16 +4547,16 @@ Name | Type | Description  | Notes
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **q** | **string** | Search | 
- **region** | **[]int32** | Region (slug) | 
- **regionN** | **[]int32** | Region (slug) | 
- **regionId** | **[]int32** | Region (ID) | 
- **regionIdN** | **[]int32** | Region (ID) | 
+ **region** | **[]string** |  | 
+ **regionN** | **[]string** |  | 
+ **regionId** | **[]string** |  | 
+ **regionIdN** | **[]string** |  | 
  **site** | **[]string** | Site (slug) | 
  **siteN** | **[]string** | Site (slug) | 
- **siteGroup** | **[]int32** | Site group (slug) | 
- **siteGroupN** | **[]int32** | Site group (slug) | 
- **siteGroupId** | **[]int32** | Site group (ID) | 
- **siteGroupIdN** | **[]int32** | Site group (ID) | 
+ **siteGroup** | **[]string** |  | 
+ **siteGroupN** | **[]string** |  | 
+ **siteGroupId** | **[]string** |  | 
+ **siteGroupIdN** | **[]string** |  | 
  **siteId** | **[]int32** | Site | 
  **siteIdN** | **[]int32** | Site | 
  **slug** | **[]string** |  | 

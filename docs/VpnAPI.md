@@ -118,7 +118,7 @@ import (
 )
 
 func main() {
-	iKEPolicyRequest := []openapiclient.IKEPolicyRequest{*openapiclient.NewIKEPolicyRequest("Name_example", openapiclient.IKEPolicy_version_value(1), openapiclient.IKEPolicy_mode_value("aggressive"))} // []IKEPolicyRequest | 
+	iKEPolicyRequest := []openapiclient.IKEPolicyRequest{*openapiclient.NewIKEPolicyRequest("Name_example", openapiclient.IKEPolicy_version_value(1))} // []IKEPolicyRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -182,7 +182,7 @@ import (
 )
 
 func main() {
-	iKEPolicyRequest := []openapiclient.IKEPolicyRequest{*openapiclient.NewIKEPolicyRequest("Name_example", openapiclient.IKEPolicy_version_value(1), openapiclient.IKEPolicy_mode_value("aggressive"))} // []IKEPolicyRequest | 
+	iKEPolicyRequest := []openapiclient.IKEPolicyRequest{*openapiclient.NewIKEPolicyRequest("Name_example", openapiclient.IKEPolicy_version_value(1))} // []IKEPolicyRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -248,7 +248,7 @@ import (
 )
 
 func main() {
-	iKEPolicyRequest := []openapiclient.IKEPolicyRequest{*openapiclient.NewIKEPolicyRequest("Name_example", openapiclient.IKEPolicy_version_value(1), openapiclient.IKEPolicy_mode_value("aggressive"))} // []IKEPolicyRequest | 
+	iKEPolicyRequest := []openapiclient.IKEPolicyRequest{*openapiclient.NewIKEPolicyRequest("Name_example", openapiclient.IKEPolicy_version_value(1))} // []IKEPolicyRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -875,7 +875,7 @@ import (
 )
 
 func main() {
-	iKEProposalRequest := []openapiclient.IKEProposalRequest{*openapiclient.NewIKEProposalRequest("Name_example", openapiclient.IKEProposal_authentication_method_value("preshared-keys"), openapiclient.IKEProposal_encryption_algorithm_value("aes-128-cbc"), openapiclient.IKEProposal_authentication_algorithm_value("hmac-sha1"), openapiclient.IKEProposal_group_value(1))} // []IKEProposalRequest | 
+	iKEProposalRequest := []openapiclient.IKEProposalRequest{*openapiclient.NewIKEProposalRequest("Name_example", openapiclient.IKEProposal_authentication_method_value("preshared-keys"), openapiclient.IKEProposal_encryption_algorithm_value("aes-128-cbc"), openapiclient.IKEProposal_group_value(1))} // []IKEProposalRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -939,7 +939,7 @@ import (
 )
 
 func main() {
-	iKEProposalRequest := []openapiclient.IKEProposalRequest{*openapiclient.NewIKEProposalRequest("Name_example", openapiclient.IKEProposal_authentication_method_value("preshared-keys"), openapiclient.IKEProposal_encryption_algorithm_value("aes-128-cbc"), openapiclient.IKEProposal_authentication_algorithm_value("hmac-sha1"), openapiclient.IKEProposal_group_value(1))} // []IKEProposalRequest | 
+	iKEProposalRequest := []openapiclient.IKEProposalRequest{*openapiclient.NewIKEProposalRequest("Name_example", openapiclient.IKEProposal_authentication_method_value("preshared-keys"), openapiclient.IKEProposal_encryption_algorithm_value("aes-128-cbc"), openapiclient.IKEProposal_group_value(1))} // []IKEProposalRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1005,7 +1005,7 @@ import (
 )
 
 func main() {
-	iKEProposalRequest := []openapiclient.IKEProposalRequest{*openapiclient.NewIKEProposalRequest("Name_example", openapiclient.IKEProposal_authentication_method_value("preshared-keys"), openapiclient.IKEProposal_encryption_algorithm_value("aes-128-cbc"), openapiclient.IKEProposal_authentication_algorithm_value("hmac-sha1"), openapiclient.IKEProposal_group_value(1))} // []IKEProposalRequest | 
+	iKEProposalRequest := []openapiclient.IKEProposalRequest{*openapiclient.NewIKEProposalRequest("Name_example", openapiclient.IKEProposal_authentication_method_value("preshared-keys"), openapiclient.IKEProposal_encryption_algorithm_value("aes-128-cbc"), openapiclient.IKEProposal_group_value(1))} // []IKEProposalRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2359,7 +2359,7 @@ import (
 )
 
 func main() {
-	iPSecProfileRequest := []openapiclient.IPSecProfileRequest{*openapiclient.NewIPSecProfileRequest("Name_example", openapiclient.IPSecProfile_mode_value("esp"), *openapiclient.NewIKEPolicyRequest("Name_example", openapiclient.IKEPolicy_version_value(1), openapiclient.IKEPolicy_mode_value("aggressive")), *openapiclient.NewIPSecPolicyRequest("Name_example"))} // []IPSecProfileRequest | 
+	iPSecProfileRequest := []openapiclient.IPSecProfileRequest{*openapiclient.NewIPSecProfileRequest("Name_example", openapiclient.IPSecProfile_mode_value("esp"), *openapiclient.NewBriefIKEPolicyRequest("Name_example"), *openapiclient.NewBriefIPSecPolicyRequest("Name_example"))} // []IPSecProfileRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2423,7 +2423,7 @@ import (
 )
 
 func main() {
-	iPSecProfileRequest := []openapiclient.IPSecProfileRequest{*openapiclient.NewIPSecProfileRequest("Name_example", openapiclient.IPSecProfile_mode_value("esp"), *openapiclient.NewIKEPolicyRequest("Name_example", openapiclient.IKEPolicy_version_value(1), openapiclient.IKEPolicy_mode_value("aggressive")), *openapiclient.NewIPSecPolicyRequest("Name_example"))} // []IPSecProfileRequest | 
+	iPSecProfileRequest := []openapiclient.IPSecProfileRequest{*openapiclient.NewIPSecProfileRequest("Name_example", openapiclient.IPSecProfile_mode_value("esp"), *openapiclient.NewBriefIKEPolicyRequest("Name_example"), *openapiclient.NewBriefIPSecPolicyRequest("Name_example"))} // []IPSecProfileRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2489,7 +2489,7 @@ import (
 )
 
 func main() {
-	iPSecProfileRequest := []openapiclient.IPSecProfileRequest{*openapiclient.NewIPSecProfileRequest("Name_example", openapiclient.IPSecProfile_mode_value("esp"), *openapiclient.NewIKEPolicyRequest("Name_example", openapiclient.IKEPolicy_version_value(1), openapiclient.IKEPolicy_mode_value("aggressive")), *openapiclient.NewIPSecPolicyRequest("Name_example"))} // []IPSecProfileRequest | 
+	iPSecProfileRequest := []openapiclient.IPSecProfileRequest{*openapiclient.NewIPSecProfileRequest("Name_example", openapiclient.IPSecProfile_mode_value("esp"), *openapiclient.NewBriefIKEPolicyRequest("Name_example"), *openapiclient.NewBriefIPSecPolicyRequest("Name_example"))} // []IPSecProfileRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2555,7 +2555,7 @@ import (
 )
 
 func main() {
-	writableIPSecProfileRequest := *openapiclient.NewWritableIPSecProfileRequest("Name_example", openapiclient.IPSecProfile_mode_value("esp"), *openapiclient.NewIKEPolicyRequest("Name_example", openapiclient.IKEPolicy_version_value(1), openapiclient.IKEPolicy_mode_value("aggressive")), *openapiclient.NewIPSecPolicyRequest("Name_example")) // WritableIPSecProfileRequest | 
+	writableIPSecProfileRequest := *openapiclient.NewWritableIPSecProfileRequest("Name_example", openapiclient.IPSecProfile_mode_value("esp"), *openapiclient.NewBriefIKEPolicyRequest("Name_example"), *openapiclient.NewBriefIPSecPolicyRequest("Name_example")) // WritableIPSecProfileRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3021,7 +3021,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this IPSec profile.
-	writableIPSecProfileRequest := *openapiclient.NewWritableIPSecProfileRequest("Name_example", openapiclient.IPSecProfile_mode_value("esp"), *openapiclient.NewIKEPolicyRequest("Name_example", openapiclient.IKEPolicy_version_value(1), openapiclient.IKEPolicy_mode_value("aggressive")), *openapiclient.NewIPSecPolicyRequest("Name_example")) // WritableIPSecProfileRequest | 
+	writableIPSecProfileRequest := *openapiclient.NewWritableIPSecProfileRequest("Name_example", openapiclient.IPSecProfile_mode_value("esp"), *openapiclient.NewBriefIKEPolicyRequest("Name_example"), *openapiclient.NewBriefIPSecPolicyRequest("Name_example")) // WritableIPSecProfileRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3849,7 +3849,7 @@ import (
 )
 
 func main() {
-	l2VPNTerminationRequest := []openapiclient.L2VPNTerminationRequest{*openapiclient.NewL2VPNTerminationRequest(*openapiclient.NewL2VPNRequest("Name_example", "Slug_example"))} // []L2VPNTerminationRequest | 
+	l2VPNTerminationRequest := []openapiclient.L2VPNTerminationRequest{*openapiclient.NewL2VPNTerminationRequest(*openapiclient.NewBriefL2VPNRequest("Name_example", "Slug_example"), "AssignedObjectType_example", int64(123))} // []L2VPNTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3913,7 +3913,7 @@ import (
 )
 
 func main() {
-	l2VPNTerminationRequest := []openapiclient.L2VPNTerminationRequest{*openapiclient.NewL2VPNTerminationRequest(*openapiclient.NewL2VPNRequest("Name_example", "Slug_example"))} // []L2VPNTerminationRequest | 
+	l2VPNTerminationRequest := []openapiclient.L2VPNTerminationRequest{*openapiclient.NewL2VPNTerminationRequest(*openapiclient.NewBriefL2VPNRequest("Name_example", "Slug_example"), "AssignedObjectType_example", int64(123))} // []L2VPNTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3979,7 +3979,7 @@ import (
 )
 
 func main() {
-	l2VPNTerminationRequest := []openapiclient.L2VPNTerminationRequest{*openapiclient.NewL2VPNTerminationRequest(*openapiclient.NewL2VPNRequest("Name_example", "Slug_example"))} // []L2VPNTerminationRequest | 
+	l2VPNTerminationRequest := []openapiclient.L2VPNTerminationRequest{*openapiclient.NewL2VPNTerminationRequest(*openapiclient.NewBriefL2VPNRequest("Name_example", "Slug_example"), "AssignedObjectType_example", int64(123))} // []L2VPNTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4045,7 +4045,7 @@ import (
 )
 
 func main() {
-	l2VPNTerminationRequest := *openapiclient.NewL2VPNTerminationRequest(*openapiclient.NewL2VPNRequest("Name_example", "Slug_example")) // L2VPNTerminationRequest | 
+	l2VPNTerminationRequest := *openapiclient.NewL2VPNTerminationRequest(*openapiclient.NewBriefL2VPNRequest("Name_example", "Slug_example"), "AssignedObjectType_example", int64(123)) // L2VPNTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4535,7 +4535,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this L2VPN termination.
-	l2VPNTerminationRequest := *openapiclient.NewL2VPNTerminationRequest(*openapiclient.NewL2VPNRequest("Name_example", "Slug_example")) // L2VPNTerminationRequest | 
+	l2VPNTerminationRequest := *openapiclient.NewL2VPNTerminationRequest(*openapiclient.NewBriefL2VPNRequest("Name_example", "Slug_example"), "AssignedObjectType_example", int64(123)) // L2VPNTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4802,7 +4802,7 @@ import (
 )
 
 func main() {
-	writableL2VPNRequest := *openapiclient.NewWritableL2VPNRequest("Name_example", "Slug_example", openapiclient.L2VPN_type_value("vpws")) // WritableL2VPNRequest | 
+	writableL2VPNRequest := *openapiclient.NewWritableL2VPNRequest("Name_example", "Slug_example", openapiclient.BriefL2VPN_type_value("vpws")) // WritableL2VPNRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5016,10 +5016,10 @@ func main() {
 	tagN := []string{"Inner_example"} // []string |  (optional)
 	tenant := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantN := []string{"Inner_example"} // []string | Tenant (slug) (optional)
-	tenantGroup := []int32{int32(123)} // []int32 | Tenant Group (slug) (optional)
-	tenantGroupN := []int32{int32(123)} // []int32 | Tenant Group (slug) (optional)
-	tenantGroupId := []int32{int32(123)} // []int32 | Tenant Group (ID) (optional)
-	tenantGroupIdN := []int32{int32(123)} // []int32 | Tenant Group (ID) (optional)
+	tenantGroup := []string{"Inner_example"} // []string |  (optional)
+	tenantGroupN := []string{"Inner_example"} // []string |  (optional)
+	tenantGroupId := []string{"Inner_example"} // []string |  (optional)
+	tenantGroupIdN := []string{"Inner_example"} // []string |  (optional)
 	tenantId := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
 	tenantIdN := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
 	type_ := []string{"Inner_example"} // []string |  (optional)
@@ -5128,10 +5128,10 @@ Name | Type | Description  | Notes
  **tagN** | **[]string** |  | 
  **tenant** | **[]string** | Tenant (slug) | 
  **tenantN** | **[]string** | Tenant (slug) | 
- **tenantGroup** | **[]int32** | Tenant Group (slug) | 
- **tenantGroupN** | **[]int32** | Tenant Group (slug) | 
- **tenantGroupId** | **[]int32** | Tenant Group (ID) | 
- **tenantGroupIdN** | **[]int32** | Tenant Group (ID) | 
+ **tenantGroup** | **[]string** |  | 
+ **tenantGroupN** | **[]string** |  | 
+ **tenantGroupId** | **[]string** |  | 
+ **tenantGroupIdN** | **[]string** |  | 
  **tenantId** | **[]int32** | Tenant (ID) | 
  **tenantIdN** | **[]int32** | Tenant (ID) | 
  **type_** | **[]string** |  | 
@@ -5320,7 +5320,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this L2VPN.
-	writableL2VPNRequest := *openapiclient.NewWritableL2VPNRequest("Name_example", "Slug_example", openapiclient.L2VPN_type_value("vpws")) // WritableL2VPNRequest | 
+	writableL2VPNRequest := *openapiclient.NewWritableL2VPNRequest("Name_example", "Slug_example", openapiclient.BriefL2VPN_type_value("vpws")) // WritableL2VPNRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6126,7 +6126,7 @@ import (
 )
 
 func main() {
-	tunnelTerminationRequest := []openapiclient.TunnelTerminationRequest{*openapiclient.NewTunnelTerminationRequest(*openapiclient.NewTunnelRequest("Name_example"), openapiclient.PatchedWritableTunnelTerminationRequest_role("peer"), "TerminationType_example", NullableInt64(123))} // []TunnelTerminationRequest | 
+	tunnelTerminationRequest := []openapiclient.TunnelTerminationRequest{*openapiclient.NewTunnelTerminationRequest(*openapiclient.NewBriefTunnelRequest("Name_example"), openapiclient.PatchedWritableTunnelTerminationRequest_role("peer"), "TerminationType_example", NullableInt64(123))} // []TunnelTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6190,7 +6190,7 @@ import (
 )
 
 func main() {
-	tunnelTerminationRequest := []openapiclient.TunnelTerminationRequest{*openapiclient.NewTunnelTerminationRequest(*openapiclient.NewTunnelRequest("Name_example"), openapiclient.PatchedWritableTunnelTerminationRequest_role("peer"), "TerminationType_example", NullableInt64(123))} // []TunnelTerminationRequest | 
+	tunnelTerminationRequest := []openapiclient.TunnelTerminationRequest{*openapiclient.NewTunnelTerminationRequest(*openapiclient.NewBriefTunnelRequest("Name_example"), openapiclient.PatchedWritableTunnelTerminationRequest_role("peer"), "TerminationType_example", NullableInt64(123))} // []TunnelTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6256,7 +6256,7 @@ import (
 )
 
 func main() {
-	tunnelTerminationRequest := []openapiclient.TunnelTerminationRequest{*openapiclient.NewTunnelTerminationRequest(*openapiclient.NewTunnelRequest("Name_example"), openapiclient.PatchedWritableTunnelTerminationRequest_role("peer"), "TerminationType_example", NullableInt64(123))} // []TunnelTerminationRequest | 
+	tunnelTerminationRequest := []openapiclient.TunnelTerminationRequest{*openapiclient.NewTunnelTerminationRequest(*openapiclient.NewBriefTunnelRequest("Name_example"), openapiclient.PatchedWritableTunnelTerminationRequest_role("peer"), "TerminationType_example", NullableInt64(123))} // []TunnelTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6322,7 +6322,7 @@ import (
 )
 
 func main() {
-	writableTunnelTerminationRequest := *openapiclient.NewWritableTunnelTerminationRequest(*openapiclient.NewTunnelRequest("Name_example"), "TerminationType_example", NullableInt64(123)) // WritableTunnelTerminationRequest | 
+	writableTunnelTerminationRequest := *openapiclient.NewWritableTunnelTerminationRequest(*openapiclient.NewBriefTunnelRequest("Name_example"), "TerminationType_example", NullableInt64(123)) // WritableTunnelTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6774,7 +6774,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this tunnel termination.
-	writableTunnelTerminationRequest := *openapiclient.NewWritableTunnelTerminationRequest(*openapiclient.NewTunnelRequest("Name_example"), "TerminationType_example", NullableInt64(123)) // WritableTunnelTerminationRequest | 
+	writableTunnelTerminationRequest := *openapiclient.NewWritableTunnelTerminationRequest(*openapiclient.NewBriefTunnelRequest("Name_example"), "TerminationType_example", NullableInt64(123)) // WritableTunnelTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6845,7 +6845,7 @@ import (
 )
 
 func main() {
-	tunnelRequest := []openapiclient.TunnelRequest{*openapiclient.NewTunnelRequest("Name_example")} // []TunnelRequest | 
+	tunnelRequest := []openapiclient.TunnelRequest{*openapiclient.NewTunnelRequest("Name_example", openapiclient.PatchedWritableTunnelRequest_status("planned"), openapiclient.PatchedWritableTunnelRequest_encapsulation("ipsec-transport"))} // []TunnelRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6909,7 +6909,7 @@ import (
 )
 
 func main() {
-	tunnelRequest := []openapiclient.TunnelRequest{*openapiclient.NewTunnelRequest("Name_example")} // []TunnelRequest | 
+	tunnelRequest := []openapiclient.TunnelRequest{*openapiclient.NewTunnelRequest("Name_example", openapiclient.PatchedWritableTunnelRequest_status("planned"), openapiclient.PatchedWritableTunnelRequest_encapsulation("ipsec-transport"))} // []TunnelRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6975,7 +6975,7 @@ import (
 )
 
 func main() {
-	tunnelRequest := []openapiclient.TunnelRequest{*openapiclient.NewTunnelRequest("Name_example")} // []TunnelRequest | 
+	tunnelRequest := []openapiclient.TunnelRequest{*openapiclient.NewTunnelRequest("Name_example", openapiclient.PatchedWritableTunnelRequest_status("planned"), openapiclient.PatchedWritableTunnelRequest_encapsulation("ipsec-transport"))} // []TunnelRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7241,10 +7241,10 @@ func main() {
 	tagN := []string{"Inner_example"} // []string |  (optional)
 	tenant := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantN := []string{"Inner_example"} // []string | Tenant (slug) (optional)
-	tenantGroup := []int32{int32(123)} // []int32 | Tenant Group (slug) (optional)
-	tenantGroupN := []int32{int32(123)} // []int32 | Tenant Group (slug) (optional)
-	tenantGroupId := []int32{int32(123)} // []int32 | Tenant Group (ID) (optional)
-	tenantGroupIdN := []int32{int32(123)} // []int32 | Tenant Group (ID) (optional)
+	tenantGroup := []string{"Inner_example"} // []string |  (optional)
+	tenantGroupN := []string{"Inner_example"} // []string |  (optional)
+	tenantGroupId := []string{"Inner_example"} // []string |  (optional)
+	tenantGroupIdN := []string{"Inner_example"} // []string |  (optional)
 	tenantId := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
 	tenantIdN := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
 	tunnelId := []int32{int32(123)} // []int32 |  (optional)
@@ -7344,10 +7344,10 @@ Name | Type | Description  | Notes
  **tagN** | **[]string** |  | 
  **tenant** | **[]string** | Tenant (slug) | 
  **tenantN** | **[]string** | Tenant (slug) | 
- **tenantGroup** | **[]int32** | Tenant Group (slug) | 
- **tenantGroupN** | **[]int32** | Tenant Group (slug) | 
- **tenantGroupId** | **[]int32** | Tenant Group (ID) | 
- **tenantGroupIdN** | **[]int32** | Tenant Group (ID) | 
+ **tenantGroup** | **[]string** |  | 
+ **tenantGroupN** | **[]string** |  | 
+ **tenantGroupId** | **[]string** |  | 
+ **tenantGroupIdN** | **[]string** |  | 
  **tenantId** | **[]int32** | Tenant (ID) | 
  **tenantIdN** | **[]int32** | Tenant (ID) | 
  **tunnelId** | **[]int32** |  | 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
-**Type** | [**DataSourceRequestType**](DataSourceRequestType.md) |  | 
+**Type** | [**DataSourceTypeValue**](DataSourceTypeValue.md) |  | 
 **SourceUrl** | **string** |  | 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewDataSourceRequest
 
-`func NewDataSourceRequest(name string, type_ DataSourceRequestType, sourceUrl string, ) *DataSourceRequest`
+`func NewDataSourceRequest(name string, type_ DataSourceTypeValue, sourceUrl string, ) *DataSourceRequest`
 
 NewDataSourceRequest instantiates a new DataSourceRequest object
 This constructor will assign default values to properties that have it defined,
@@ -55,20 +55,20 @@ SetName sets Name field to given value.
 
 ### GetType
 
-`func (o *DataSourceRequest) GetType() DataSourceRequestType`
+`func (o *DataSourceRequest) GetType() DataSourceTypeValue`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *DataSourceRequest) GetTypeOk() (*DataSourceRequestType, bool)`
+`func (o *DataSourceRequest) GetTypeOk() (*DataSourceTypeValue, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *DataSourceRequest) SetType(v DataSourceRequestType)`
+`func (o *DataSourceRequest) SetType(v DataSourceTypeValue)`
 
 SetType sets Type field to given value.
 

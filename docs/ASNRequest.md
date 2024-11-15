@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Asn** | **int64** | 16- or 32-bit autonomous system number | 
-**Rir** | Pointer to [**NullableRIRRequest**](RIRRequest.md) |  | [optional] 
-**Tenant** | Pointer to [**NullableTenantRequest**](TenantRequest.md) |  | [optional] 
+**Rir** | Pointer to [**NullableBriefRIRRequest**](BriefRIRRequest.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
@@ -53,20 +53,20 @@ SetAsn sets Asn field to given value.
 
 ### GetRir
 
-`func (o *ASNRequest) GetRir() RIRRequest`
+`func (o *ASNRequest) GetRir() BriefRIRRequest`
 
 GetRir returns the Rir field if non-nil, zero value otherwise.
 
 ### GetRirOk
 
-`func (o *ASNRequest) GetRirOk() (*RIRRequest, bool)`
+`func (o *ASNRequest) GetRirOk() (*BriefRIRRequest, bool)`
 
 GetRirOk returns a tuple with the Rir field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRir
 
-`func (o *ASNRequest) SetRir(v RIRRequest)`
+`func (o *ASNRequest) SetRir(v BriefRIRRequest)`
 
 SetRir sets Rir field to given value.
 
@@ -88,20 +88,20 @@ HasRir returns a boolean if a field has been set.
 UnsetRir ensures that no value is present for Rir, not even an explicit nil
 ### GetTenant
 
-`func (o *ASNRequest) GetTenant() TenantRequest`
+`func (o *ASNRequest) GetTenant() BriefTenantRequest`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *ASNRequest) GetTenantOk() (*TenantRequest, bool)`
+`func (o *ASNRequest) GetTenantOk() (*BriefTenantRequest, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *ASNRequest) SetTenant(v TenantRequest)`
+`func (o *ASNRequest) SetTenant(v BriefTenantRequest)`
 
 SetTenant sets Tenant field to given value.
 

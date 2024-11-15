@@ -8,14 +8,12 @@ Name | Type | Description | Notes
 **ObjectId** | **int64** |  | 
 **Name** | Pointer to **string** |  | [optional] 
 **Image** | ***os.File** |  | 
-**ImageHeight** | **int32** |  | 
-**ImageWidth** | **int32** |  | 
 
 ## Methods
 
 ### NewImageAttachmentRequest
 
-`func NewImageAttachmentRequest(objectType string, objectId int64, image *os.File, imageHeight int32, imageWidth int32, ) *ImageAttachmentRequest`
+`func NewImageAttachmentRequest(objectType string, objectId int64, image *os.File, ) *ImageAttachmentRequest`
 
 NewImageAttachmentRequest instantiates a new ImageAttachmentRequest object
 This constructor will assign default values to properties that have it defined,
@@ -113,46 +111,6 @@ and a boolean to check if the value has been set.
 `func (o *ImageAttachmentRequest) SetImage(v *os.File)`
 
 SetImage sets Image field to given value.
-
-
-### GetImageHeight
-
-`func (o *ImageAttachmentRequest) GetImageHeight() int32`
-
-GetImageHeight returns the ImageHeight field if non-nil, zero value otherwise.
-
-### GetImageHeightOk
-
-`func (o *ImageAttachmentRequest) GetImageHeightOk() (*int32, bool)`
-
-GetImageHeightOk returns a tuple with the ImageHeight field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetImageHeight
-
-`func (o *ImageAttachmentRequest) SetImageHeight(v int32)`
-
-SetImageHeight sets ImageHeight field to given value.
-
-
-### GetImageWidth
-
-`func (o *ImageAttachmentRequest) GetImageWidth() int32`
-
-GetImageWidth returns the ImageWidth field if non-nil, zero value otherwise.
-
-### GetImageWidthOk
-
-`func (o *ImageAttachmentRequest) GetImageWidthOk() (*int32, bool)`
-
-GetImageWidthOk returns a tuple with the ImageWidth field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetImageWidth
-
-`func (o *ImageAttachmentRequest) SetImageWidth(v int32)`
-
-SetImageWidth sets ImageWidth field to given value.
 
 
 

@@ -9,7 +9,14 @@ Name | Type | Description | Notes
 **Display** | **string** |  | [readonly] 
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
+**Color** | Pointer to **string** |  | [optional] 
+**VmRole** | Pointer to **bool** | Virtual machines may be assigned to this role | [optional] 
+**ConfigTemplate** | Pointer to [**NullableBriefConfigTemplate**](BriefConfigTemplate.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
+**Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
+**CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
+**Created** | **NullableTime** |  | [readonly] 
+**LastUpdated** | **NullableTime** |  | [readonly] 
 **DeviceCount** | **int64** |  | [readonly] 
 **VirtualmachineCount** | **int64** |  | [readonly] 
 
@@ -17,7 +24,7 @@ Name | Type | Description | Notes
 
 ### NewDeviceRole
 
-`func NewDeviceRole(id int32, url string, display string, name string, slug string, deviceCount int64, virtualmachineCount int64, ) *DeviceRole`
+`func NewDeviceRole(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, deviceCount int64, virtualmachineCount int64, ) *DeviceRole`
 
 NewDeviceRole instantiates a new DeviceRole object
 This constructor will assign default values to properties that have it defined,
@@ -132,6 +139,91 @@ and a boolean to check if the value has been set.
 SetSlug sets Slug field to given value.
 
 
+### GetColor
+
+`func (o *DeviceRole) GetColor() string`
+
+GetColor returns the Color field if non-nil, zero value otherwise.
+
+### GetColorOk
+
+`func (o *DeviceRole) GetColorOk() (*string, bool)`
+
+GetColorOk returns a tuple with the Color field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetColor
+
+`func (o *DeviceRole) SetColor(v string)`
+
+SetColor sets Color field to given value.
+
+### HasColor
+
+`func (o *DeviceRole) HasColor() bool`
+
+HasColor returns a boolean if a field has been set.
+
+### GetVmRole
+
+`func (o *DeviceRole) GetVmRole() bool`
+
+GetVmRole returns the VmRole field if non-nil, zero value otherwise.
+
+### GetVmRoleOk
+
+`func (o *DeviceRole) GetVmRoleOk() (*bool, bool)`
+
+GetVmRoleOk returns a tuple with the VmRole field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVmRole
+
+`func (o *DeviceRole) SetVmRole(v bool)`
+
+SetVmRole sets VmRole field to given value.
+
+### HasVmRole
+
+`func (o *DeviceRole) HasVmRole() bool`
+
+HasVmRole returns a boolean if a field has been set.
+
+### GetConfigTemplate
+
+`func (o *DeviceRole) GetConfigTemplate() BriefConfigTemplate`
+
+GetConfigTemplate returns the ConfigTemplate field if non-nil, zero value otherwise.
+
+### GetConfigTemplateOk
+
+`func (o *DeviceRole) GetConfigTemplateOk() (*BriefConfigTemplate, bool)`
+
+GetConfigTemplateOk returns a tuple with the ConfigTemplate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConfigTemplate
+
+`func (o *DeviceRole) SetConfigTemplate(v BriefConfigTemplate)`
+
+SetConfigTemplate sets ConfigTemplate field to given value.
+
+### HasConfigTemplate
+
+`func (o *DeviceRole) HasConfigTemplate() bool`
+
+HasConfigTemplate returns a boolean if a field has been set.
+
+### SetConfigTemplateNil
+
+`func (o *DeviceRole) SetConfigTemplateNil(b bool)`
+
+ SetConfigTemplateNil sets the value for ConfigTemplate to be an explicit nil
+
+### UnsetConfigTemplate
+`func (o *DeviceRole) UnsetConfigTemplate()`
+
+UnsetConfigTemplate ensures that no value is present for ConfigTemplate, not even an explicit nil
 ### GetDescription
 
 `func (o *DeviceRole) GetDescription() string`
@@ -157,6 +249,116 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### GetTags
+
+`func (o *DeviceRole) GetTags() []NestedTag`
+
+GetTags returns the Tags field if non-nil, zero value otherwise.
+
+### GetTagsOk
+
+`func (o *DeviceRole) GetTagsOk() (*[]NestedTag, bool)`
+
+GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTags
+
+`func (o *DeviceRole) SetTags(v []NestedTag)`
+
+SetTags sets Tags field to given value.
+
+### HasTags
+
+`func (o *DeviceRole) HasTags() bool`
+
+HasTags returns a boolean if a field has been set.
+
+### GetCustomFields
+
+`func (o *DeviceRole) GetCustomFields() map[string]interface{}`
+
+GetCustomFields returns the CustomFields field if non-nil, zero value otherwise.
+
+### GetCustomFieldsOk
+
+`func (o *DeviceRole) GetCustomFieldsOk() (*map[string]interface{}, bool)`
+
+GetCustomFieldsOk returns a tuple with the CustomFields field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomFields
+
+`func (o *DeviceRole) SetCustomFields(v map[string]interface{})`
+
+SetCustomFields sets CustomFields field to given value.
+
+### HasCustomFields
+
+`func (o *DeviceRole) HasCustomFields() bool`
+
+HasCustomFields returns a boolean if a field has been set.
+
+### GetCreated
+
+`func (o *DeviceRole) GetCreated() time.Time`
+
+GetCreated returns the Created field if non-nil, zero value otherwise.
+
+### GetCreatedOk
+
+`func (o *DeviceRole) GetCreatedOk() (*time.Time, bool)`
+
+GetCreatedOk returns a tuple with the Created field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreated
+
+`func (o *DeviceRole) SetCreated(v time.Time)`
+
+SetCreated sets Created field to given value.
+
+
+### SetCreatedNil
+
+`func (o *DeviceRole) SetCreatedNil(b bool)`
+
+ SetCreatedNil sets the value for Created to be an explicit nil
+
+### UnsetCreated
+`func (o *DeviceRole) UnsetCreated()`
+
+UnsetCreated ensures that no value is present for Created, not even an explicit nil
+### GetLastUpdated
+
+`func (o *DeviceRole) GetLastUpdated() time.Time`
+
+GetLastUpdated returns the LastUpdated field if non-nil, zero value otherwise.
+
+### GetLastUpdatedOk
+
+`func (o *DeviceRole) GetLastUpdatedOk() (*time.Time, bool)`
+
+GetLastUpdatedOk returns a tuple with the LastUpdated field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastUpdated
+
+`func (o *DeviceRole) SetLastUpdated(v time.Time)`
+
+SetLastUpdated sets LastUpdated field to given value.
+
+
+### SetLastUpdatedNil
+
+`func (o *DeviceRole) SetLastUpdatedNil(b bool)`
+
+ SetLastUpdatedNil sets the value for LastUpdated to be an explicit nil
+
+### UnsetLastUpdated
+`func (o *DeviceRole) UnsetLastUpdated()`
+
+UnsetLastUpdated ensures that no value is present for LastUpdated, not even an explicit nil
 ### GetDeviceCount
 
 `func (o *DeviceRole) GetDeviceCount() int64`

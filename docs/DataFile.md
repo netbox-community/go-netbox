@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
-**Source** | [**DataSource**](DataSource.md) |  | [readonly] 
+**Source** | [**BriefDataSource**](BriefDataSource.md) |  | [readonly] 
 **Path** | **string** | File path relative to the data source&#39;s root | [readonly] 
 **LastUpdated** | **time.Time** |  | [readonly] 
 **Size** | **int32** |  | [readonly] 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewDataFile
 
-`func NewDataFile(id int32, url string, display string, source DataSource, path string, lastUpdated time.Time, size int32, hash string, ) *DataFile`
+`func NewDataFile(id int32, url string, display string, source BriefDataSource, path string, lastUpdated time.Time, size int32, hash string, ) *DataFile`
 
 NewDataFile instantiates a new DataFile object
 This constructor will assign default values to properties that have it defined,
@@ -94,20 +94,20 @@ SetDisplay sets Display field to given value.
 
 ### GetSource
 
-`func (o *DataFile) GetSource() DataSource`
+`func (o *DataFile) GetSource() BriefDataSource`
 
 GetSource returns the Source field if non-nil, zero value otherwise.
 
 ### GetSourceOk
 
-`func (o *DataFile) GetSourceOk() (*DataSource, bool)`
+`func (o *DataFile) GetSourceOk() (*BriefDataSource, bool)`
 
 GetSourceOk returns a tuple with the Source field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSource
 
-`func (o *DataFile) SetSource(v DataSource)`
+`func (o *DataFile) SetSource(v BriefDataSource)`
 
 SetSource sets Source field to given value.
 

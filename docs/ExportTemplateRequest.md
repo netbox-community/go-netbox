@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **MimeType** | Pointer to **string** | Defaults to &lt;code&gt;text/plain; charset&#x3D;utf-8&lt;/code&gt; | [optional] 
 **FileExtension** | Pointer to **string** | Extension to append to the rendered filename | [optional] 
 **AsAttachment** | Pointer to **bool** | Download file as attachment | [optional] 
-**DataSource** | Pointer to [**DataSourceRequest**](DataSourceRequest.md) |  | [optional] 
+**DataSource** | Pointer to [**BriefDataSourceRequest**](BriefDataSourceRequest.md) |  | [optional] 
 
 ## Methods
 
@@ -194,20 +194,20 @@ HasAsAttachment returns a boolean if a field has been set.
 
 ### GetDataSource
 
-`func (o *ExportTemplateRequest) GetDataSource() DataSourceRequest`
+`func (o *ExportTemplateRequest) GetDataSource() BriefDataSourceRequest`
 
 GetDataSource returns the DataSource field if non-nil, zero value otherwise.
 
 ### GetDataSourceOk
 
-`func (o *ExportTemplateRequest) GetDataSourceOk() (*DataSourceRequest, bool)`
+`func (o *ExportTemplateRequest) GetDataSourceOk() (*BriefDataSourceRequest, bool)`
 
 GetDataSourceOk returns a tuple with the DataSource field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDataSource
 
-`func (o *ExportTemplateRequest) SetDataSource(v DataSourceRequest)`
+`func (o *ExportTemplateRequest) SetDataSource(v BriefDataSourceRequest)`
 
 SetDataSource sets DataSource field to given value.
 

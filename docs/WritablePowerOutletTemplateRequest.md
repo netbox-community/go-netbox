@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DeviceType** | Pointer to [**NullableDeviceTypeRequest**](DeviceTypeRequest.md) |  | [optional] 
-**ModuleType** | Pointer to [**NullableModuleTypeRequest**](ModuleTypeRequest.md) |  | [optional] 
+**DeviceType** | Pointer to [**NullableBriefDeviceTypeRequest**](BriefDeviceTypeRequest.md) |  | [optional] 
+**ModuleType** | Pointer to [**NullableBriefModuleTypeRequest**](BriefModuleTypeRequest.md) |  | [optional] 
 **Name** | **string** | {module} is accepted as a substitution for the module bay position when attached to a module type. | 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Type** | Pointer to [**PatchedWritablePowerOutletTemplateRequestType**](PatchedWritablePowerOutletTemplateRequestType.md) |  | [optional] 
-**PowerPort** | Pointer to [**NullablePowerPortTemplateRequest**](PowerPortTemplateRequest.md) |  | [optional] 
+**PowerPort** | Pointer to [**NullableBriefPowerPortTemplateRequest**](BriefPowerPortTemplateRequest.md) |  | [optional] 
 **FeedLeg** | Pointer to [**PatchedWritablePowerOutletRequestFeedLeg**](PatchedWritablePowerOutletRequestFeedLeg.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 
@@ -34,20 +34,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDeviceType
 
-`func (o *WritablePowerOutletTemplateRequest) GetDeviceType() DeviceTypeRequest`
+`func (o *WritablePowerOutletTemplateRequest) GetDeviceType() BriefDeviceTypeRequest`
 
 GetDeviceType returns the DeviceType field if non-nil, zero value otherwise.
 
 ### GetDeviceTypeOk
 
-`func (o *WritablePowerOutletTemplateRequest) GetDeviceTypeOk() (*DeviceTypeRequest, bool)`
+`func (o *WritablePowerOutletTemplateRequest) GetDeviceTypeOk() (*BriefDeviceTypeRequest, bool)`
 
 GetDeviceTypeOk returns a tuple with the DeviceType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeviceType
 
-`func (o *WritablePowerOutletTemplateRequest) SetDeviceType(v DeviceTypeRequest)`
+`func (o *WritablePowerOutletTemplateRequest) SetDeviceType(v BriefDeviceTypeRequest)`
 
 SetDeviceType sets DeviceType field to given value.
 
@@ -69,20 +69,20 @@ HasDeviceType returns a boolean if a field has been set.
 UnsetDeviceType ensures that no value is present for DeviceType, not even an explicit nil
 ### GetModuleType
 
-`func (o *WritablePowerOutletTemplateRequest) GetModuleType() ModuleTypeRequest`
+`func (o *WritablePowerOutletTemplateRequest) GetModuleType() BriefModuleTypeRequest`
 
 GetModuleType returns the ModuleType field if non-nil, zero value otherwise.
 
 ### GetModuleTypeOk
 
-`func (o *WritablePowerOutletTemplateRequest) GetModuleTypeOk() (*ModuleTypeRequest, bool)`
+`func (o *WritablePowerOutletTemplateRequest) GetModuleTypeOk() (*BriefModuleTypeRequest, bool)`
 
 GetModuleTypeOk returns a tuple with the ModuleType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetModuleType
 
-`func (o *WritablePowerOutletTemplateRequest) SetModuleType(v ModuleTypeRequest)`
+`func (o *WritablePowerOutletTemplateRequest) SetModuleType(v BriefModuleTypeRequest)`
 
 SetModuleType sets ModuleType field to given value.
 
@@ -174,20 +174,20 @@ HasType returns a boolean if a field has been set.
 
 ### GetPowerPort
 
-`func (o *WritablePowerOutletTemplateRequest) GetPowerPort() PowerPortTemplateRequest`
+`func (o *WritablePowerOutletTemplateRequest) GetPowerPort() BriefPowerPortTemplateRequest`
 
 GetPowerPort returns the PowerPort field if non-nil, zero value otherwise.
 
 ### GetPowerPortOk
 
-`func (o *WritablePowerOutletTemplateRequest) GetPowerPortOk() (*PowerPortTemplateRequest, bool)`
+`func (o *WritablePowerOutletTemplateRequest) GetPowerPortOk() (*BriefPowerPortTemplateRequest, bool)`
 
 GetPowerPortOk returns a tuple with the PowerPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPowerPort
 
-`func (o *WritablePowerOutletTemplateRequest) SetPowerPort(v PowerPortTemplateRequest)`
+`func (o *WritablePowerOutletTemplateRequest) SetPowerPort(v BriefPowerPortTemplateRequest)`
 
 SetPowerPort sets PowerPort field to given value.
 

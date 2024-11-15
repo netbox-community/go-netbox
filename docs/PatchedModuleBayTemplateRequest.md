@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DeviceType** | Pointer to [**DeviceTypeRequest**](DeviceTypeRequest.md) |  | [optional] 
+**DeviceType** | Pointer to [**BriefDeviceTypeRequest**](BriefDeviceTypeRequest.md) |  | [optional] 
 **Name** | Pointer to **string** | {module} is accepted as a substitution for the module bay position when attached to a module type. | [optional] 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Position** | Pointer to **string** | Identifier to reference when renaming installed components | [optional] 
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDeviceType
 
-`func (o *PatchedModuleBayTemplateRequest) GetDeviceType() DeviceTypeRequest`
+`func (o *PatchedModuleBayTemplateRequest) GetDeviceType() BriefDeviceTypeRequest`
 
 GetDeviceType returns the DeviceType field if non-nil, zero value otherwise.
 
 ### GetDeviceTypeOk
 
-`func (o *PatchedModuleBayTemplateRequest) GetDeviceTypeOk() (*DeviceTypeRequest, bool)`
+`func (o *PatchedModuleBayTemplateRequest) GetDeviceTypeOk() (*BriefDeviceTypeRequest, bool)`
 
 GetDeviceTypeOk returns a tuple with the DeviceType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeviceType
 
-`func (o *PatchedModuleBayTemplateRequest) SetDeviceType(v DeviceTypeRequest)`
+`func (o *PatchedModuleBayTemplateRequest) SetDeviceType(v BriefDeviceTypeRequest)`
 
 SetDeviceType sets DeviceType field to given value.
 

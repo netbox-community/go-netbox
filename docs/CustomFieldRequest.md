@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **ValidationMinimum** | Pointer to **NullableInt64** | Minimum allowed value (for numeric fields) | [optional] 
 **ValidationMaximum** | Pointer to **NullableInt64** | Maximum allowed value (for numeric fields) | [optional] 
 **ValidationRegex** | Pointer to **string** | Regular expression to enforce on text field values. Use ^ and $ to force matching of entire string. For example, &lt;code&gt;^[A-Z]{3}$&lt;/code&gt; will limit values to exactly three uppercase letters. | [optional] 
-**ChoiceSet** | Pointer to [**NullableCustomFieldChoiceSetRequest**](CustomFieldChoiceSetRequest.md) |  | [optional] 
+**ChoiceSet** | Pointer to [**NullableBriefCustomFieldChoiceSetRequest**](BriefCustomFieldChoiceSetRequest.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -521,20 +521,20 @@ HasValidationRegex returns a boolean if a field has been set.
 
 ### GetChoiceSet
 
-`func (o *CustomFieldRequest) GetChoiceSet() CustomFieldChoiceSetRequest`
+`func (o *CustomFieldRequest) GetChoiceSet() BriefCustomFieldChoiceSetRequest`
 
 GetChoiceSet returns the ChoiceSet field if non-nil, zero value otherwise.
 
 ### GetChoiceSetOk
 
-`func (o *CustomFieldRequest) GetChoiceSetOk() (*CustomFieldChoiceSetRequest, bool)`
+`func (o *CustomFieldRequest) GetChoiceSetOk() (*BriefCustomFieldChoiceSetRequest, bool)`
 
 GetChoiceSetOk returns a tuple with the ChoiceSet field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetChoiceSet
 
-`func (o *CustomFieldRequest) SetChoiceSet(v CustomFieldChoiceSetRequest)`
+`func (o *CustomFieldRequest) SetChoiceSet(v BriefCustomFieldChoiceSetRequest)`
 
 SetChoiceSet sets ChoiceSet field to given value.
 
