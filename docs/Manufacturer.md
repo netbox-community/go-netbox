@@ -16,14 +16,14 @@ Name | Type | Description | Notes
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 **DevicetypeCount** | Pointer to **int64** |  | [optional] [readonly] 
-**InventoryitemCount** | **int64** |  | [readonly] 
-**PlatformCount** | **int64** |  | [readonly] 
+**InventoryitemCount** | Pointer to **int64** |  | [optional] [readonly] 
+**PlatformCount** | Pointer to **int64** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewManufacturer
 
-`func NewManufacturer(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, inventoryitemCount int64, platformCount int64, ) *Manufacturer`
+`func NewManufacturer(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, ) *Manufacturer`
 
 NewManufacturer instantiates a new Manufacturer object
 This constructor will assign default values to properties that have it defined,
@@ -342,6 +342,11 @@ and a boolean to check if the value has been set.
 
 SetInventoryitemCount sets InventoryitemCount field to given value.
 
+### HasInventoryitemCount
+
+`func (o *Manufacturer) HasInventoryitemCount() bool`
+
+HasInventoryitemCount returns a boolean if a field has been set.
 
 ### GetPlatformCount
 
@@ -362,6 +367,11 @@ and a boolean to check if the value has been set.
 
 SetPlatformCount sets PlatformCount field to given value.
 
+### HasPlatformCount
+
+`func (o *Manufacturer) HasPlatformCount() bool`
+
+HasPlatformCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

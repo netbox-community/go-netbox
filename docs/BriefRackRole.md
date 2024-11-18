@@ -10,13 +10,13 @@ Name | Type | Description | Notes
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
-**RackCount** | **int64** |  | [readonly] 
+**RackCount** | Pointer to **int64** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewBriefRackRole
 
-`func NewBriefRackRole(id int32, url string, display string, name string, slug string, rackCount int64, ) *BriefRackRole`
+`func NewBriefRackRole(id int32, url string, display string, name string, slug string, ) *BriefRackRole`
 
 NewBriefRackRole instantiates a new BriefRackRole object
 This constructor will assign default values to properties that have it defined,
@@ -175,6 +175,11 @@ and a boolean to check if the value has been set.
 
 SetRackCount sets RackCount field to given value.
 
+### HasRackCount
+
+`func (o *BriefRackRole) HasRackCount() bool`
+
+HasRackCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

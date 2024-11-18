@@ -34,16 +34,16 @@ type Tenant struct {
 	CustomFields         map[string]interface{}   `json:"custom_fields,omitempty"`
 	Created              NullableTime             `json:"created"`
 	LastUpdated          NullableTime             `json:"last_updated"`
-	CircuitCount         int64                    `json:"circuit_count"`
+	CircuitCount         *int64                   `json:"circuit_count,omitempty"`
 	DeviceCount          *int64                   `json:"device_count,omitempty"`
-	IpaddressCount       int64                    `json:"ipaddress_count"`
+	IpaddressCount       *int64                   `json:"ipaddress_count,omitempty"`
 	PrefixCount          *int64                   `json:"prefix_count,omitempty"`
-	RackCount            int64                    `json:"rack_count"`
-	SiteCount            int64                    `json:"site_count"`
+	RackCount            *int64                   `json:"rack_count,omitempty"`
+	SiteCount            *int64                   `json:"site_count,omitempty"`
 	VirtualmachineCount  *int64                   `json:"virtualmachine_count,omitempty"`
 	VlanCount            *int64                   `json:"vlan_count,omitempty"`
-	VrfCount             int64                    `json:"vrf_count"`
-	ClusterCount         int64                    `json:"cluster_count"`
+	VrfCount             *int64                   `json:"vrf_count,omitempty"`
+	ClusterCount         *int64                   `json:"cluster_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -53,7 +53,7 @@ type _Tenant Tenant
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTenant(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, circuitCount int64, ipaddressCount int64, rackCount int64, siteCount int64, vrfCount int64, clusterCount int64) *Tenant {
+func NewTenant(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime) *Tenant {
 	this := Tenant{}
 	this.Id = id
 	this.Url = url
@@ -62,12 +62,6 @@ func NewTenant(id int32, url string, display string, name string, slug string, c
 	this.Slug = slug
 	this.Created = created
 	this.LastUpdated = lastUpdated
-	this.CircuitCount = circuitCount
-	this.IpaddressCount = ipaddressCount
-	this.RackCount = rackCount
-	this.SiteCount = siteCount
-	this.VrfCount = vrfCount
-	this.ClusterCount = clusterCount
 	return &this
 }
 
@@ -454,28 +448,36 @@ func (o *Tenant) SetLastUpdated(v time.Time) {
 	o.LastUpdated.Set(&v)
 }
 
-// GetCircuitCount returns the CircuitCount field value
+// GetCircuitCount returns the CircuitCount field value if set, zero value otherwise.
 func (o *Tenant) GetCircuitCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.CircuitCount) {
 		var ret int64
 		return ret
 	}
-
-	return o.CircuitCount
+	return *o.CircuitCount
 }
 
-// GetCircuitCountOk returns a tuple with the CircuitCount field value
+// GetCircuitCountOk returns a tuple with the CircuitCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Tenant) GetCircuitCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.CircuitCount) {
 		return nil, false
 	}
-	return &o.CircuitCount, true
+	return o.CircuitCount, true
 }
 
-// SetCircuitCount sets field value
+// HasCircuitCount returns a boolean if a field has been set.
+func (o *Tenant) HasCircuitCount() bool {
+	if o != nil && !IsNil(o.CircuitCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetCircuitCount gets a reference to the given int64 and assigns it to the CircuitCount field.
 func (o *Tenant) SetCircuitCount(v int64) {
-	o.CircuitCount = v
+	o.CircuitCount = &v
 }
 
 // GetDeviceCount returns the DeviceCount field value if set, zero value otherwise.
@@ -510,28 +512,36 @@ func (o *Tenant) SetDeviceCount(v int64) {
 	o.DeviceCount = &v
 }
 
-// GetIpaddressCount returns the IpaddressCount field value
+// GetIpaddressCount returns the IpaddressCount field value if set, zero value otherwise.
 func (o *Tenant) GetIpaddressCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.IpaddressCount) {
 		var ret int64
 		return ret
 	}
-
-	return o.IpaddressCount
+	return *o.IpaddressCount
 }
 
-// GetIpaddressCountOk returns a tuple with the IpaddressCount field value
+// GetIpaddressCountOk returns a tuple with the IpaddressCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Tenant) GetIpaddressCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.IpaddressCount) {
 		return nil, false
 	}
-	return &o.IpaddressCount, true
+	return o.IpaddressCount, true
 }
 
-// SetIpaddressCount sets field value
+// HasIpaddressCount returns a boolean if a field has been set.
+func (o *Tenant) HasIpaddressCount() bool {
+	if o != nil && !IsNil(o.IpaddressCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetIpaddressCount gets a reference to the given int64 and assigns it to the IpaddressCount field.
 func (o *Tenant) SetIpaddressCount(v int64) {
-	o.IpaddressCount = v
+	o.IpaddressCount = &v
 }
 
 // GetPrefixCount returns the PrefixCount field value if set, zero value otherwise.
@@ -566,52 +576,68 @@ func (o *Tenant) SetPrefixCount(v int64) {
 	o.PrefixCount = &v
 }
 
-// GetRackCount returns the RackCount field value
+// GetRackCount returns the RackCount field value if set, zero value otherwise.
 func (o *Tenant) GetRackCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.RackCount) {
 		var ret int64
 		return ret
 	}
-
-	return o.RackCount
+	return *o.RackCount
 }
 
-// GetRackCountOk returns a tuple with the RackCount field value
+// GetRackCountOk returns a tuple with the RackCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Tenant) GetRackCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.RackCount) {
 		return nil, false
 	}
-	return &o.RackCount, true
+	return o.RackCount, true
 }
 
-// SetRackCount sets field value
+// HasRackCount returns a boolean if a field has been set.
+func (o *Tenant) HasRackCount() bool {
+	if o != nil && !IsNil(o.RackCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetRackCount gets a reference to the given int64 and assigns it to the RackCount field.
 func (o *Tenant) SetRackCount(v int64) {
-	o.RackCount = v
+	o.RackCount = &v
 }
 
-// GetSiteCount returns the SiteCount field value
+// GetSiteCount returns the SiteCount field value if set, zero value otherwise.
 func (o *Tenant) GetSiteCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.SiteCount) {
 		var ret int64
 		return ret
 	}
-
-	return o.SiteCount
+	return *o.SiteCount
 }
 
-// GetSiteCountOk returns a tuple with the SiteCount field value
+// GetSiteCountOk returns a tuple with the SiteCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Tenant) GetSiteCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.SiteCount) {
 		return nil, false
 	}
-	return &o.SiteCount, true
+	return o.SiteCount, true
 }
 
-// SetSiteCount sets field value
+// HasSiteCount returns a boolean if a field has been set.
+func (o *Tenant) HasSiteCount() bool {
+	if o != nil && !IsNil(o.SiteCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetSiteCount gets a reference to the given int64 and assigns it to the SiteCount field.
 func (o *Tenant) SetSiteCount(v int64) {
-	o.SiteCount = v
+	o.SiteCount = &v
 }
 
 // GetVirtualmachineCount returns the VirtualmachineCount field value if set, zero value otherwise.
@@ -678,52 +704,68 @@ func (o *Tenant) SetVlanCount(v int64) {
 	o.VlanCount = &v
 }
 
-// GetVrfCount returns the VrfCount field value
+// GetVrfCount returns the VrfCount field value if set, zero value otherwise.
 func (o *Tenant) GetVrfCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.VrfCount) {
 		var ret int64
 		return ret
 	}
-
-	return o.VrfCount
+	return *o.VrfCount
 }
 
-// GetVrfCountOk returns a tuple with the VrfCount field value
+// GetVrfCountOk returns a tuple with the VrfCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Tenant) GetVrfCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.VrfCount) {
 		return nil, false
 	}
-	return &o.VrfCount, true
+	return o.VrfCount, true
 }
 
-// SetVrfCount sets field value
+// HasVrfCount returns a boolean if a field has been set.
+func (o *Tenant) HasVrfCount() bool {
+	if o != nil && !IsNil(o.VrfCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetVrfCount gets a reference to the given int64 and assigns it to the VrfCount field.
 func (o *Tenant) SetVrfCount(v int64) {
-	o.VrfCount = v
+	o.VrfCount = &v
 }
 
-// GetClusterCount returns the ClusterCount field value
+// GetClusterCount returns the ClusterCount field value if set, zero value otherwise.
 func (o *Tenant) GetClusterCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.ClusterCount) {
 		var ret int64
 		return ret
 	}
-
-	return o.ClusterCount
+	return *o.ClusterCount
 }
 
-// GetClusterCountOk returns a tuple with the ClusterCount field value
+// GetClusterCountOk returns a tuple with the ClusterCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Tenant) GetClusterCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ClusterCount) {
 		return nil, false
 	}
-	return &o.ClusterCount, true
+	return o.ClusterCount, true
 }
 
-// SetClusterCount sets field value
+// HasClusterCount returns a boolean if a field has been set.
+func (o *Tenant) HasClusterCount() bool {
+	if o != nil && !IsNil(o.ClusterCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetClusterCount gets a reference to the given int64 and assigns it to the ClusterCount field.
 func (o *Tenant) SetClusterCount(v int64) {
-	o.ClusterCount = v
+	o.ClusterCount = &v
 }
 
 func (o Tenant) MarshalJSON() ([]byte, error) {
@@ -761,24 +803,36 @@ func (o Tenant) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	toSerialize["circuit_count"] = o.CircuitCount
+	if !IsNil(o.CircuitCount) {
+		toSerialize["circuit_count"] = o.CircuitCount
+	}
 	if !IsNil(o.DeviceCount) {
 		toSerialize["device_count"] = o.DeviceCount
 	}
-	toSerialize["ipaddress_count"] = o.IpaddressCount
+	if !IsNil(o.IpaddressCount) {
+		toSerialize["ipaddress_count"] = o.IpaddressCount
+	}
 	if !IsNil(o.PrefixCount) {
 		toSerialize["prefix_count"] = o.PrefixCount
 	}
-	toSerialize["rack_count"] = o.RackCount
-	toSerialize["site_count"] = o.SiteCount
+	if !IsNil(o.RackCount) {
+		toSerialize["rack_count"] = o.RackCount
+	}
+	if !IsNil(o.SiteCount) {
+		toSerialize["site_count"] = o.SiteCount
+	}
 	if !IsNil(o.VirtualmachineCount) {
 		toSerialize["virtualmachine_count"] = o.VirtualmachineCount
 	}
 	if !IsNil(o.VlanCount) {
 		toSerialize["vlan_count"] = o.VlanCount
 	}
-	toSerialize["vrf_count"] = o.VrfCount
-	toSerialize["cluster_count"] = o.ClusterCount
+	if !IsNil(o.VrfCount) {
+		toSerialize["vrf_count"] = o.VrfCount
+	}
+	if !IsNil(o.ClusterCount) {
+		toSerialize["cluster_count"] = o.ClusterCount
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -799,12 +853,6 @@ func (o *Tenant) UnmarshalJSON(data []byte) (err error) {
 		"slug",
 		"created",
 		"last_updated",
-		"circuit_count",
-		"ipaddress_count",
-		"rack_count",
-		"site_count",
-		"vrf_count",
-		"cluster_count",
 	}
 
 	allProperties := make(map[string]interface{})

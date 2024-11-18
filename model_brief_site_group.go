@@ -26,7 +26,7 @@ type BriefSiteGroup struct {
 	Name                 string  `json:"name"`
 	Slug                 string  `json:"slug"`
 	Description          *string `json:"description,omitempty"`
-	SiteCount            int32   `json:"site_count"`
+	SiteCount            *int32  `json:"site_count,omitempty"`
 	Depth                int32   `json:"_depth"`
 	AdditionalProperties map[string]interface{}
 }
@@ -37,14 +37,13 @@ type _BriefSiteGroup BriefSiteGroup
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBriefSiteGroup(id int32, url string, display string, name string, slug string, siteCount int32, depth int32) *BriefSiteGroup {
+func NewBriefSiteGroup(id int32, url string, display string, name string, slug string, depth int32) *BriefSiteGroup {
 	this := BriefSiteGroup{}
 	this.Id = id
 	this.Url = url
 	this.Display = display
 	this.Name = name
 	this.Slug = slug
-	this.SiteCount = siteCount
 	this.Depth = depth
 	return &this
 }
@@ -209,28 +208,36 @@ func (o *BriefSiteGroup) SetDescription(v string) {
 	o.Description = &v
 }
 
-// GetSiteCount returns the SiteCount field value
+// GetSiteCount returns the SiteCount field value if set, zero value otherwise.
 func (o *BriefSiteGroup) GetSiteCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.SiteCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.SiteCount
+	return *o.SiteCount
 }
 
-// GetSiteCountOk returns a tuple with the SiteCount field value
+// GetSiteCountOk returns a tuple with the SiteCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BriefSiteGroup) GetSiteCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.SiteCount) {
 		return nil, false
 	}
-	return &o.SiteCount, true
+	return o.SiteCount, true
 }
 
-// SetSiteCount sets field value
+// HasSiteCount returns a boolean if a field has been set.
+func (o *BriefSiteGroup) HasSiteCount() bool {
+	if o != nil && !IsNil(o.SiteCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetSiteCount gets a reference to the given int32 and assigns it to the SiteCount field.
 func (o *BriefSiteGroup) SetSiteCount(v int32) {
-	o.SiteCount = v
+	o.SiteCount = &v
 }
 
 // GetDepth returns the Depth field value
@@ -275,7 +282,9 @@ func (o BriefSiteGroup) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	toSerialize["site_count"] = o.SiteCount
+	if !IsNil(o.SiteCount) {
+		toSerialize["site_count"] = o.SiteCount
+	}
 	toSerialize["_depth"] = o.Depth
 
 	for key, value := range o.AdditionalProperties {
@@ -295,7 +304,6 @@ func (o *BriefSiteGroup) UnmarshalJSON(data []byte) (err error) {
 		"display",
 		"name",
 		"slug",
-		"site_count",
 		"_depth",
 	}
 

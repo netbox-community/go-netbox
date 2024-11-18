@@ -34,7 +34,7 @@ type VirtualChassis struct {
 	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
 	Created              NullableTime           `json:"created"`
 	LastUpdated          NullableTime           `json:"last_updated"`
-	MemberCount          int32                  `json:"member_count"`
+	MemberCount          *int32                 `json:"member_count,omitempty"`
 	Members              []NestedDevice         `json:"members"`
 	AdditionalProperties map[string]interface{}
 }
@@ -45,7 +45,7 @@ type _VirtualChassis VirtualChassis
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVirtualChassis(id int32, url string, display string, name string, created NullableTime, lastUpdated NullableTime, memberCount int32, members []NestedDevice) *VirtualChassis {
+func NewVirtualChassis(id int32, url string, display string, name string, created NullableTime, lastUpdated NullableTime, members []NestedDevice) *VirtualChassis {
 	this := VirtualChassis{}
 	this.Id = id
 	this.Url = url
@@ -53,7 +53,6 @@ func NewVirtualChassis(id int32, url string, display string, name string, create
 	this.Name = name
 	this.Created = created
 	this.LastUpdated = lastUpdated
-	this.MemberCount = memberCount
 	this.Members = members
 	return &this
 }
@@ -449,28 +448,36 @@ func (o *VirtualChassis) SetLastUpdated(v time.Time) {
 	o.LastUpdated.Set(&v)
 }
 
-// GetMemberCount returns the MemberCount field value
+// GetMemberCount returns the MemberCount field value if set, zero value otherwise.
 func (o *VirtualChassis) GetMemberCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.MemberCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.MemberCount
+	return *o.MemberCount
 }
 
-// GetMemberCountOk returns a tuple with the MemberCount field value
+// GetMemberCountOk returns a tuple with the MemberCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VirtualChassis) GetMemberCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.MemberCount) {
 		return nil, false
 	}
-	return &o.MemberCount, true
+	return o.MemberCount, true
 }
 
-// SetMemberCount sets field value
+// HasMemberCount returns a boolean if a field has been set.
+func (o *VirtualChassis) HasMemberCount() bool {
+	if o != nil && !IsNil(o.MemberCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetMemberCount gets a reference to the given int32 and assigns it to the MemberCount field.
 func (o *VirtualChassis) SetMemberCount(v int32) {
-	o.MemberCount = v
+	o.MemberCount = &v
 }
 
 // GetMembers returns the Members field value
@@ -534,7 +541,9 @@ func (o VirtualChassis) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	toSerialize["member_count"] = o.MemberCount
+	if !IsNil(o.MemberCount) {
+		toSerialize["member_count"] = o.MemberCount
+	}
 	toSerialize["members"] = o.Members
 
 	for key, value := range o.AdditionalProperties {
@@ -555,7 +564,6 @@ func (o *VirtualChassis) UnmarshalJSON(data []byte) (err error) {
 		"name",
 		"created",
 		"last_updated",
-		"member_count",
 		"members",
 	}
 

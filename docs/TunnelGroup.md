@@ -15,13 +15,13 @@ Name | Type | Description | Notes
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**TunnelCount** | **int64** |  | [readonly] 
+**TunnelCount** | Pointer to **int64** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewTunnelGroup
 
-`func NewTunnelGroup(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, tunnelCount int64, ) *TunnelGroup`
+`func NewTunnelGroup(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, ) *TunnelGroup`
 
 NewTunnelGroup instantiates a new TunnelGroup object
 This constructor will assign default values to properties that have it defined,
@@ -315,6 +315,11 @@ and a boolean to check if the value has been set.
 
 SetTunnelCount sets TunnelCount field to given value.
 
+### HasTunnelCount
+
+`func (o *TunnelGroup) HasTunnelCount() bool`
+
+HasTunnelCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

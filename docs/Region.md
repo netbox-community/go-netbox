@@ -16,14 +16,14 @@ Name | Type | Description | Notes
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**SiteCount** | **int32** |  | [readonly] [default to 0]
+**SiteCount** | Pointer to **int32** |  | [optional] [readonly] [default to 0]
 **Depth** | **int32** |  | [readonly] 
 
 ## Methods
 
 ### NewRegion
 
-`func NewRegion(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, siteCount int32, depth int32, ) *Region`
+`func NewRegion(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, depth int32, ) *Region`
 
 NewRegion instantiates a new Region object
 This constructor will assign default values to properties that have it defined,
@@ -352,6 +352,11 @@ and a boolean to check if the value has been set.
 
 SetSiteCount sets SiteCount field to given value.
 
+### HasSiteCount
+
+`func (o *Region) HasSiteCount() bool`
+
+HasSiteCount returns a boolean if a field has been set.
 
 ### GetDepth
 

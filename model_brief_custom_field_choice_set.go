@@ -25,7 +25,7 @@ type BriefCustomFieldChoiceSet struct {
 	Display              string  `json:"display"`
 	Name                 string  `json:"name"`
 	Description          *string `json:"description,omitempty"`
-	ChoicesCount         string  `json:"choices_count"`
+	ChoicesCount         *string `json:"choices_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -35,13 +35,12 @@ type _BriefCustomFieldChoiceSet BriefCustomFieldChoiceSet
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBriefCustomFieldChoiceSet(id int32, url string, display string, name string, choicesCount string) *BriefCustomFieldChoiceSet {
+func NewBriefCustomFieldChoiceSet(id int32, url string, display string, name string) *BriefCustomFieldChoiceSet {
 	this := BriefCustomFieldChoiceSet{}
 	this.Id = id
 	this.Url = url
 	this.Display = display
 	this.Name = name
-	this.ChoicesCount = choicesCount
 	return &this
 }
 
@@ -181,28 +180,36 @@ func (o *BriefCustomFieldChoiceSet) SetDescription(v string) {
 	o.Description = &v
 }
 
-// GetChoicesCount returns the ChoicesCount field value
+// GetChoicesCount returns the ChoicesCount field value if set, zero value otherwise.
 func (o *BriefCustomFieldChoiceSet) GetChoicesCount() string {
-	if o == nil {
+	if o == nil || IsNil(o.ChoicesCount) {
 		var ret string
 		return ret
 	}
-
-	return o.ChoicesCount
+	return *o.ChoicesCount
 }
 
-// GetChoicesCountOk returns a tuple with the ChoicesCount field value
+// GetChoicesCountOk returns a tuple with the ChoicesCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BriefCustomFieldChoiceSet) GetChoicesCountOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ChoicesCount) {
 		return nil, false
 	}
-	return &o.ChoicesCount, true
+	return o.ChoicesCount, true
 }
 
-// SetChoicesCount sets field value
+// HasChoicesCount returns a boolean if a field has been set.
+func (o *BriefCustomFieldChoiceSet) HasChoicesCount() bool {
+	if o != nil && !IsNil(o.ChoicesCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetChoicesCount gets a reference to the given string and assigns it to the ChoicesCount field.
 func (o *BriefCustomFieldChoiceSet) SetChoicesCount(v string) {
-	o.ChoicesCount = v
+	o.ChoicesCount = &v
 }
 
 func (o BriefCustomFieldChoiceSet) MarshalJSON() ([]byte, error) {
@@ -222,7 +229,9 @@ func (o BriefCustomFieldChoiceSet) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	toSerialize["choices_count"] = o.ChoicesCount
+	if !IsNil(o.ChoicesCount) {
+		toSerialize["choices_count"] = o.ChoicesCount
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -240,7 +249,6 @@ func (o *BriefCustomFieldChoiceSet) UnmarshalJSON(data []byte) (err error) {
 		"url",
 		"display",
 		"name",
-		"choices_count",
 	}
 
 	allProperties := make(map[string]interface{})

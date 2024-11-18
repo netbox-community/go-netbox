@@ -33,7 +33,7 @@ type SiteGroup struct {
 	CustomFields         map[string]interface{}  `json:"custom_fields,omitempty"`
 	Created              NullableTime            `json:"created"`
 	LastUpdated          NullableTime            `json:"last_updated"`
-	SiteCount            int32                   `json:"site_count"`
+	SiteCount            *int32                  `json:"site_count,omitempty"`
 	Depth                int32                   `json:"_depth"`
 	AdditionalProperties map[string]interface{}
 }
@@ -44,7 +44,7 @@ type _SiteGroup SiteGroup
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSiteGroup(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, siteCount int32, depth int32) *SiteGroup {
+func NewSiteGroup(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, depth int32) *SiteGroup {
 	this := SiteGroup{}
 	this.Id = id
 	this.Url = url
@@ -53,7 +53,6 @@ func NewSiteGroup(id int32, url string, display string, name string, slug string
 	this.Slug = slug
 	this.Created = created
 	this.LastUpdated = lastUpdated
-	this.SiteCount = siteCount
 	this.Depth = depth
 	return &this
 }
@@ -409,28 +408,36 @@ func (o *SiteGroup) SetLastUpdated(v time.Time) {
 	o.LastUpdated.Set(&v)
 }
 
-// GetSiteCount returns the SiteCount field value
+// GetSiteCount returns the SiteCount field value if set, zero value otherwise.
 func (o *SiteGroup) GetSiteCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.SiteCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.SiteCount
+	return *o.SiteCount
 }
 
-// GetSiteCountOk returns a tuple with the SiteCount field value
+// GetSiteCountOk returns a tuple with the SiteCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SiteGroup) GetSiteCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.SiteCount) {
 		return nil, false
 	}
-	return &o.SiteCount, true
+	return o.SiteCount, true
 }
 
-// SetSiteCount sets field value
+// HasSiteCount returns a boolean if a field has been set.
+func (o *SiteGroup) HasSiteCount() bool {
+	if o != nil && !IsNil(o.SiteCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetSiteCount gets a reference to the given int32 and assigns it to the SiteCount field.
 func (o *SiteGroup) SetSiteCount(v int32) {
-	o.SiteCount = v
+	o.SiteCount = &v
 }
 
 // GetDepth returns the Depth field value
@@ -489,7 +496,9 @@ func (o SiteGroup) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	toSerialize["site_count"] = o.SiteCount
+	if !IsNil(o.SiteCount) {
+		toSerialize["site_count"] = o.SiteCount
+	}
 	toSerialize["_depth"] = o.Depth
 
 	for key, value := range o.AdditionalProperties {
@@ -511,7 +520,6 @@ func (o *SiteGroup) UnmarshalJSON(data []byte) (err error) {
 		"slug",
 		"created",
 		"last_updated",
-		"site_count",
 		"_depth",
 	}
 

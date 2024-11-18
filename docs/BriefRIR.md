@@ -10,13 +10,13 @@ Name | Type | Description | Notes
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
-**AggregateCount** | **int64** |  | [readonly] 
+**AggregateCount** | Pointer to **int64** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewBriefRIR
 
-`func NewBriefRIR(id int32, url string, display string, name string, slug string, aggregateCount int64, ) *BriefRIR`
+`func NewBriefRIR(id int32, url string, display string, name string, slug string, ) *BriefRIR`
 
 NewBriefRIR instantiates a new BriefRIR object
 This constructor will assign default values to properties that have it defined,
@@ -175,6 +175,11 @@ and a boolean to check if the value has been set.
 
 SetAggregateCount sets AggregateCount field to given value.
 
+### HasAggregateCount
+
+`func (o *BriefRIR) HasAggregateCount() bool`
+
+HasAggregateCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

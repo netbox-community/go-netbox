@@ -10,13 +10,13 @@ Name | Type | Description | Notes
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
-**ClusterCount** | **int64** |  | [readonly] 
+**ClusterCount** | Pointer to **int64** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewBriefClusterGroup
 
-`func NewBriefClusterGroup(id int32, url string, display string, name string, slug string, clusterCount int64, ) *BriefClusterGroup`
+`func NewBriefClusterGroup(id int32, url string, display string, name string, slug string, ) *BriefClusterGroup`
 
 NewBriefClusterGroup instantiates a new BriefClusterGroup object
 This constructor will assign default values to properties that have it defined,
@@ -175,6 +175,11 @@ and a boolean to check if the value has been set.
 
 SetClusterCount sets ClusterCount field to given value.
 
+### HasClusterCount
+
+`func (o *BriefClusterGroup) HasClusterCount() bool`
+
+HasClusterCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -16,14 +16,14 @@ Name | Type | Description | Notes
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**ContactCount** | **int32** |  | [readonly] [default to 0]
+**ContactCount** | Pointer to **int32** |  | [optional] [readonly] [default to 0]
 **Depth** | **int32** |  | [readonly] 
 
 ## Methods
 
 ### NewContactGroup
 
-`func NewContactGroup(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, contactCount int32, depth int32, ) *ContactGroup`
+`func NewContactGroup(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, depth int32, ) *ContactGroup`
 
 NewContactGroup instantiates a new ContactGroup object
 This constructor will assign default values to properties that have it defined,
@@ -352,6 +352,11 @@ and a boolean to check if the value has been set.
 
 SetContactCount sets ContactCount field to given value.
 
+### HasContactCount
+
+`func (o *ContactGroup) HasContactCount() bool`
+
+HasContactCount returns a boolean if a field has been set.
 
 ### GetDepth
 

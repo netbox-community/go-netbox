@@ -33,8 +33,8 @@ type Manufacturer struct {
 	Created              NullableTime           `json:"created"`
 	LastUpdated          NullableTime           `json:"last_updated"`
 	DevicetypeCount      *int64                 `json:"devicetype_count,omitempty"`
-	InventoryitemCount   int64                  `json:"inventoryitem_count"`
-	PlatformCount        int64                  `json:"platform_count"`
+	InventoryitemCount   *int64                 `json:"inventoryitem_count,omitempty"`
+	PlatformCount        *int64                 `json:"platform_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -44,7 +44,7 @@ type _Manufacturer Manufacturer
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewManufacturer(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, inventoryitemCount int64, platformCount int64) *Manufacturer {
+func NewManufacturer(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime) *Manufacturer {
 	this := Manufacturer{}
 	this.Id = id
 	this.Url = url
@@ -53,8 +53,6 @@ func NewManufacturer(id int32, url string, display string, name string, slug str
 	this.Slug = slug
 	this.Created = created
 	this.LastUpdated = lastUpdated
-	this.InventoryitemCount = inventoryitemCount
-	this.PlatformCount = platformCount
 	return &this
 }
 
@@ -398,52 +396,68 @@ func (o *Manufacturer) SetDevicetypeCount(v int64) {
 	o.DevicetypeCount = &v
 }
 
-// GetInventoryitemCount returns the InventoryitemCount field value
+// GetInventoryitemCount returns the InventoryitemCount field value if set, zero value otherwise.
 func (o *Manufacturer) GetInventoryitemCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.InventoryitemCount) {
 		var ret int64
 		return ret
 	}
-
-	return o.InventoryitemCount
+	return *o.InventoryitemCount
 }
 
-// GetInventoryitemCountOk returns a tuple with the InventoryitemCount field value
+// GetInventoryitemCountOk returns a tuple with the InventoryitemCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Manufacturer) GetInventoryitemCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.InventoryitemCount) {
 		return nil, false
 	}
-	return &o.InventoryitemCount, true
+	return o.InventoryitemCount, true
 }
 
-// SetInventoryitemCount sets field value
+// HasInventoryitemCount returns a boolean if a field has been set.
+func (o *Manufacturer) HasInventoryitemCount() bool {
+	if o != nil && !IsNil(o.InventoryitemCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetInventoryitemCount gets a reference to the given int64 and assigns it to the InventoryitemCount field.
 func (o *Manufacturer) SetInventoryitemCount(v int64) {
-	o.InventoryitemCount = v
+	o.InventoryitemCount = &v
 }
 
-// GetPlatformCount returns the PlatformCount field value
+// GetPlatformCount returns the PlatformCount field value if set, zero value otherwise.
 func (o *Manufacturer) GetPlatformCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.PlatformCount) {
 		var ret int64
 		return ret
 	}
-
-	return o.PlatformCount
+	return *o.PlatformCount
 }
 
-// GetPlatformCountOk returns a tuple with the PlatformCount field value
+// GetPlatformCountOk returns a tuple with the PlatformCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Manufacturer) GetPlatformCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.PlatformCount) {
 		return nil, false
 	}
-	return &o.PlatformCount, true
+	return o.PlatformCount, true
 }
 
-// SetPlatformCount sets field value
+// HasPlatformCount returns a boolean if a field has been set.
+func (o *Manufacturer) HasPlatformCount() bool {
+	if o != nil && !IsNil(o.PlatformCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetPlatformCount gets a reference to the given int64 and assigns it to the PlatformCount field.
 func (o *Manufacturer) SetPlatformCount(v int64) {
-	o.PlatformCount = v
+	o.PlatformCount = &v
 }
 
 func (o Manufacturer) MarshalJSON() ([]byte, error) {
@@ -478,8 +492,12 @@ func (o Manufacturer) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.DevicetypeCount) {
 		toSerialize["devicetype_count"] = o.DevicetypeCount
 	}
-	toSerialize["inventoryitem_count"] = o.InventoryitemCount
-	toSerialize["platform_count"] = o.PlatformCount
+	if !IsNil(o.InventoryitemCount) {
+		toSerialize["inventoryitem_count"] = o.InventoryitemCount
+	}
+	if !IsNil(o.PlatformCount) {
+		toSerialize["platform_count"] = o.PlatformCount
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -500,8 +518,6 @@ func (o *Manufacturer) UnmarshalJSON(data []byte) (err error) {
 		"slug",
 		"created",
 		"last_updated",
-		"inventoryitem_count",
-		"platform_count",
 	}
 
 	allProperties := make(map[string]interface{})

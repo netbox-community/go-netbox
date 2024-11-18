@@ -26,7 +26,7 @@ type BriefClusterGroup struct {
 	Name                 string  `json:"name"`
 	Slug                 string  `json:"slug"`
 	Description          *string `json:"description,omitempty"`
-	ClusterCount         int64   `json:"cluster_count"`
+	ClusterCount         *int64  `json:"cluster_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -36,14 +36,13 @@ type _BriefClusterGroup BriefClusterGroup
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBriefClusterGroup(id int32, url string, display string, name string, slug string, clusterCount int64) *BriefClusterGroup {
+func NewBriefClusterGroup(id int32, url string, display string, name string, slug string) *BriefClusterGroup {
 	this := BriefClusterGroup{}
 	this.Id = id
 	this.Url = url
 	this.Display = display
 	this.Name = name
 	this.Slug = slug
-	this.ClusterCount = clusterCount
 	return &this
 }
 
@@ -207,28 +206,36 @@ func (o *BriefClusterGroup) SetDescription(v string) {
 	o.Description = &v
 }
 
-// GetClusterCount returns the ClusterCount field value
+// GetClusterCount returns the ClusterCount field value if set, zero value otherwise.
 func (o *BriefClusterGroup) GetClusterCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.ClusterCount) {
 		var ret int64
 		return ret
 	}
-
-	return o.ClusterCount
+	return *o.ClusterCount
 }
 
-// GetClusterCountOk returns a tuple with the ClusterCount field value
+// GetClusterCountOk returns a tuple with the ClusterCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BriefClusterGroup) GetClusterCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ClusterCount) {
 		return nil, false
 	}
-	return &o.ClusterCount, true
+	return o.ClusterCount, true
 }
 
-// SetClusterCount sets field value
+// HasClusterCount returns a boolean if a field has been set.
+func (o *BriefClusterGroup) HasClusterCount() bool {
+	if o != nil && !IsNil(o.ClusterCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetClusterCount gets a reference to the given int64 and assigns it to the ClusterCount field.
 func (o *BriefClusterGroup) SetClusterCount(v int64) {
-	o.ClusterCount = v
+	o.ClusterCount = &v
 }
 
 func (o BriefClusterGroup) MarshalJSON() ([]byte, error) {
@@ -249,7 +256,9 @@ func (o BriefClusterGroup) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	toSerialize["cluster_count"] = o.ClusterCount
+	if !IsNil(o.ClusterCount) {
+		toSerialize["cluster_count"] = o.ClusterCount
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -268,7 +277,6 @@ func (o *BriefClusterGroup) UnmarshalJSON(data []byte) (err error) {
 		"display",
 		"name",
 		"slug",
-		"cluster_count",
 	}
 
 	allProperties := make(map[string]interface{})

@@ -16,13 +16,13 @@ Name | Type | Description | Notes
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**AggregateCount** | **int64** |  | [readonly] 
+**AggregateCount** | Pointer to **int64** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewRIR
 
-`func NewRIR(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, aggregateCount int64, ) *RIR`
+`func NewRIR(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, ) *RIR`
 
 NewRIR instantiates a new RIR object
 This constructor will assign default values to properties that have it defined,
@@ -341,6 +341,11 @@ and a boolean to check if the value has been set.
 
 SetAggregateCount sets AggregateCount field to given value.
 
+### HasAggregateCount
+
+`func (o *RIR) HasAggregateCount() bool`
+
+HasAggregateCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

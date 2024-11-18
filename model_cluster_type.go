@@ -32,7 +32,7 @@ type ClusterType struct {
 	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
 	Created              NullableTime           `json:"created"`
 	LastUpdated          NullableTime           `json:"last_updated"`
-	ClusterCount         int64                  `json:"cluster_count"`
+	ClusterCount         *int64                 `json:"cluster_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -42,7 +42,7 @@ type _ClusterType ClusterType
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewClusterType(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, clusterCount int64) *ClusterType {
+func NewClusterType(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime) *ClusterType {
 	this := ClusterType{}
 	this.Id = id
 	this.Url = url
@@ -51,7 +51,6 @@ func NewClusterType(id int32, url string, display string, name string, slug stri
 	this.Slug = slug
 	this.Created = created
 	this.LastUpdated = lastUpdated
-	this.ClusterCount = clusterCount
 	return &this
 }
 
@@ -363,28 +362,36 @@ func (o *ClusterType) SetLastUpdated(v time.Time) {
 	o.LastUpdated.Set(&v)
 }
 
-// GetClusterCount returns the ClusterCount field value
+// GetClusterCount returns the ClusterCount field value if set, zero value otherwise.
 func (o *ClusterType) GetClusterCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.ClusterCount) {
 		var ret int64
 		return ret
 	}
-
-	return o.ClusterCount
+	return *o.ClusterCount
 }
 
-// GetClusterCountOk returns a tuple with the ClusterCount field value
+// GetClusterCountOk returns a tuple with the ClusterCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClusterType) GetClusterCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ClusterCount) {
 		return nil, false
 	}
-	return &o.ClusterCount, true
+	return o.ClusterCount, true
 }
 
-// SetClusterCount sets field value
+// HasClusterCount returns a boolean if a field has been set.
+func (o *ClusterType) HasClusterCount() bool {
+	if o != nil && !IsNil(o.ClusterCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetClusterCount gets a reference to the given int64 and assigns it to the ClusterCount field.
 func (o *ClusterType) SetClusterCount(v int64) {
-	o.ClusterCount = v
+	o.ClusterCount = &v
 }
 
 func (o ClusterType) MarshalJSON() ([]byte, error) {
@@ -416,7 +423,9 @@ func (o ClusterType) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	toSerialize["cluster_count"] = o.ClusterCount
+	if !IsNil(o.ClusterCount) {
+		toSerialize["cluster_count"] = o.ClusterCount
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -437,7 +446,6 @@ func (o *ClusterType) UnmarshalJSON(data []byte) (err error) {
 		"slug",
 		"created",
 		"last_updated",
-		"cluster_count",
 	}
 
 	allProperties := make(map[string]interface{})

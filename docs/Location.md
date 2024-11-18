@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**RackCount** | **int32** |  | [readonly] [default to 0]
+**RackCount** | Pointer to **int32** |  | [optional] [readonly] [default to 0]
 **DeviceCount** | Pointer to **int32** |  | [optional] [readonly] [default to 0]
 **Depth** | **int32** |  | [readonly] 
 
@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 
 ### NewLocation
 
-`func NewLocation(id int32, url string, display string, name string, slug string, site BriefSite, created NullableTime, lastUpdated NullableTime, rackCount int32, depth int32, ) *Location`
+`func NewLocation(id int32, url string, display string, name string, slug string, site BriefSite, created NullableTime, lastUpdated NullableTime, depth int32, ) *Location`
 
 NewLocation instantiates a new Location object
 This constructor will assign default values to properties that have it defined,
@@ -462,6 +462,11 @@ and a boolean to check if the value has been set.
 
 SetRackCount sets RackCount field to given value.
 
+### HasRackCount
+
+`func (o *Location) HasRackCount() bool`
+
+HasRackCount returns a boolean if a field has been set.
 
 ### GetDeviceCount
 

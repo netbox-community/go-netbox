@@ -20,14 +20,14 @@ Name | Type | Description | Notes
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**IpaddressCount** | **int64** |  | [readonly] 
+**IpaddressCount** | Pointer to **int64** |  | [optional] [readonly] 
 **PrefixCount** | Pointer to **int64** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewVRF
 
-`func NewVRF(id int32, url string, display string, name string, created NullableTime, lastUpdated NullableTime, ipaddressCount int64, ) *VRF`
+`func NewVRF(id int32, url string, display string, name string, created NullableTime, lastUpdated NullableTime, ) *VRF`
 
 NewVRF instantiates a new VRF object
 This constructor will assign default values to properties that have it defined,
@@ -471,6 +471,11 @@ and a boolean to check if the value has been set.
 
 SetIpaddressCount sets IpaddressCount field to given value.
 
+### HasIpaddressCount
+
+`func (o *VRF) HasIpaddressCount() bool`
+
+HasIpaddressCount returns a boolean if a field has been set.
 
 ### GetPrefixCount
 

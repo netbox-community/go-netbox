@@ -21,13 +21,13 @@ Name | Type | Description | Notes
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**TerminationsCount** | **int64** |  | [readonly] 
+**TerminationsCount** | Pointer to **int64** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewTunnel
 
-`func NewTunnel(id int32, url string, display string, name string, status TunnelStatus, encapsulation TunnelEncapsulation, created NullableTime, lastUpdated NullableTime, terminationsCount int64, ) *Tunnel`
+`func NewTunnel(id int32, url string, display string, name string, status TunnelStatus, encapsulation TunnelEncapsulation, created NullableTime, lastUpdated NullableTime, ) *Tunnel`
 
 NewTunnel instantiates a new Tunnel object
 This constructor will assign default values to properties that have it defined,
@@ -506,6 +506,11 @@ and a boolean to check if the value has been set.
 
 SetTerminationsCount sets TerminationsCount field to given value.
 
+### HasTerminationsCount
+
+`func (o *Tunnel) HasTerminationsCount() bool`
+
+HasTerminationsCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -33,7 +33,7 @@ type TenantGroup struct {
 	CustomFields         map[string]interface{}    `json:"custom_fields,omitempty"`
 	Created              NullableTime              `json:"created"`
 	LastUpdated          NullableTime              `json:"last_updated"`
-	TenantCount          int32                     `json:"tenant_count"`
+	TenantCount          *int32                    `json:"tenant_count,omitempty"`
 	Depth                int32                     `json:"_depth"`
 	AdditionalProperties map[string]interface{}
 }
@@ -44,7 +44,7 @@ type _TenantGroup TenantGroup
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTenantGroup(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, tenantCount int32, depth int32) *TenantGroup {
+func NewTenantGroup(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, depth int32) *TenantGroup {
 	this := TenantGroup{}
 	this.Id = id
 	this.Url = url
@@ -53,7 +53,6 @@ func NewTenantGroup(id int32, url string, display string, name string, slug stri
 	this.Slug = slug
 	this.Created = created
 	this.LastUpdated = lastUpdated
-	this.TenantCount = tenantCount
 	this.Depth = depth
 	return &this
 }
@@ -409,28 +408,36 @@ func (o *TenantGroup) SetLastUpdated(v time.Time) {
 	o.LastUpdated.Set(&v)
 }
 
-// GetTenantCount returns the TenantCount field value
+// GetTenantCount returns the TenantCount field value if set, zero value otherwise.
 func (o *TenantGroup) GetTenantCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.TenantCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.TenantCount
+	return *o.TenantCount
 }
 
-// GetTenantCountOk returns a tuple with the TenantCount field value
+// GetTenantCountOk returns a tuple with the TenantCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TenantGroup) GetTenantCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.TenantCount) {
 		return nil, false
 	}
-	return &o.TenantCount, true
+	return o.TenantCount, true
 }
 
-// SetTenantCount sets field value
+// HasTenantCount returns a boolean if a field has been set.
+func (o *TenantGroup) HasTenantCount() bool {
+	if o != nil && !IsNil(o.TenantCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetTenantCount gets a reference to the given int32 and assigns it to the TenantCount field.
 func (o *TenantGroup) SetTenantCount(v int32) {
-	o.TenantCount = v
+	o.TenantCount = &v
 }
 
 // GetDepth returns the Depth field value
@@ -489,7 +496,9 @@ func (o TenantGroup) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	toSerialize["tenant_count"] = o.TenantCount
+	if !IsNil(o.TenantCount) {
+		toSerialize["tenant_count"] = o.TenantCount
+	}
 	toSerialize["_depth"] = o.Depth
 
 	for key, value := range o.AdditionalProperties {
@@ -511,7 +520,6 @@ func (o *TenantGroup) UnmarshalJSON(data []byte) (err error) {
 		"slug",
 		"created",
 		"last_updated",
-		"tenant_count",
 		"_depth",
 	}
 

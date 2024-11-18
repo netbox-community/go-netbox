@@ -33,7 +33,7 @@ type ContactGroup struct {
 	CustomFields         map[string]interface{}     `json:"custom_fields,omitempty"`
 	Created              NullableTime               `json:"created"`
 	LastUpdated          NullableTime               `json:"last_updated"`
-	ContactCount         int32                      `json:"contact_count"`
+	ContactCount         *int32                     `json:"contact_count,omitempty"`
 	Depth                int32                      `json:"_depth"`
 	AdditionalProperties map[string]interface{}
 }
@@ -44,7 +44,7 @@ type _ContactGroup ContactGroup
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewContactGroup(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, contactCount int32, depth int32) *ContactGroup {
+func NewContactGroup(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, depth int32) *ContactGroup {
 	this := ContactGroup{}
 	this.Id = id
 	this.Url = url
@@ -53,7 +53,6 @@ func NewContactGroup(id int32, url string, display string, name string, slug str
 	this.Slug = slug
 	this.Created = created
 	this.LastUpdated = lastUpdated
-	this.ContactCount = contactCount
 	this.Depth = depth
 	return &this
 }
@@ -409,28 +408,36 @@ func (o *ContactGroup) SetLastUpdated(v time.Time) {
 	o.LastUpdated.Set(&v)
 }
 
-// GetContactCount returns the ContactCount field value
+// GetContactCount returns the ContactCount field value if set, zero value otherwise.
 func (o *ContactGroup) GetContactCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.ContactCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.ContactCount
+	return *o.ContactCount
 }
 
-// GetContactCountOk returns a tuple with the ContactCount field value
+// GetContactCountOk returns a tuple with the ContactCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContactGroup) GetContactCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ContactCount) {
 		return nil, false
 	}
-	return &o.ContactCount, true
+	return o.ContactCount, true
 }
 
-// SetContactCount sets field value
+// HasContactCount returns a boolean if a field has been set.
+func (o *ContactGroup) HasContactCount() bool {
+	if o != nil && !IsNil(o.ContactCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetContactCount gets a reference to the given int32 and assigns it to the ContactCount field.
 func (o *ContactGroup) SetContactCount(v int32) {
-	o.ContactCount = v
+	o.ContactCount = &v
 }
 
 // GetDepth returns the Depth field value
@@ -489,7 +496,9 @@ func (o ContactGroup) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	toSerialize["contact_count"] = o.ContactCount
+	if !IsNil(o.ContactCount) {
+		toSerialize["contact_count"] = o.ContactCount
+	}
 	toSerialize["_depth"] = o.Depth
 
 	for key, value := range o.AdditionalProperties {
@@ -511,7 +520,6 @@ func (o *ContactGroup) UnmarshalJSON(data []byte) (err error) {
 		"slug",
 		"created",
 		"last_updated",
-		"contact_count",
 		"_depth",
 	}
 

@@ -16,13 +16,13 @@ Name | Type | Description | Notes
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**CircuitCount** | **int64** |  | [readonly] 
+**CircuitCount** | Pointer to **int64** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewCircuitGroup
 
-`func NewCircuitGroup(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, circuitCount int64, ) *CircuitGroup`
+`func NewCircuitGroup(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, ) *CircuitGroup`
 
 NewCircuitGroup instantiates a new CircuitGroup object
 This constructor will assign default values to properties that have it defined,
@@ -351,6 +351,11 @@ and a boolean to check if the value has been set.
 
 SetCircuitCount sets CircuitCount field to given value.
 
+### HasCircuitCount
+
+`func (o *CircuitGroup) HasCircuitCount() bool`
+
+HasCircuitCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
