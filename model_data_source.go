@@ -39,7 +39,7 @@ type DataSource struct {
 	Created NullableTime `json:"created,omitempty"`
 	LastUpdated NullableTime `json:"last_updated,omitempty"`
 	LastSynced NullableTime `json:"last_synced,omitempty"`
-	FileCount int64 `json:"file_count"`
+	FileCount *int64 `json:"file_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -49,7 +49,7 @@ type _DataSource DataSource
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDataSource(id int32, url string, display string, name string, type_ DataSourceType, sourceUrl string, status DataSourceStatus, fileCount int64) *DataSource {
+func NewDataSource(id int32, url string, display string, name string, type_ DataSourceType, sourceUrl string, status DataSourceStatus) *DataSource {
 	this := DataSource{}
 	this.Id = id
 	this.Url = url
@@ -58,7 +58,6 @@ func NewDataSource(id int32, url string, display string, name string, type_ Data
 	this.Type = type_
 	this.SourceUrl = sourceUrl
 	this.Status = status
-	this.FileCount = fileCount
 	return &this
 }
 
@@ -596,30 +595,37 @@ func (o *DataSource) UnsetLastSynced() {
 	o.LastSynced.Unset()
 }
 
-// GetFileCount returns the FileCount field value
+// GetFileCount returns the FileCount field value if set, zero value otherwise.
 func (o *DataSource) GetFileCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.FileCount) {
 		var ret int64
 		return ret
 	}
-
-	return o.FileCount
+	return *o.FileCount
 }
 
-// GetFileCountOk returns a tuple with the FileCount field value
+// GetFileCountOk returns a tuple with the FileCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataSource) GetFileCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.FileCount) {
 		return nil, false
 	}
-	return &o.FileCount, true
+	return o.FileCount, true
 }
 
-// SetFileCount sets field value
+// HasFileCount returns a boolean if a field has been set.
+func (o *DataSource) HasFileCount() bool {
+	if o != nil && !IsNil(o.FileCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetFileCount gets a reference to the given int64 and assigns it to the FileCount field.
 func (o *DataSource) SetFileCount(v int64) {
-	o.FileCount = v
+	o.FileCount = &v
 }
-
 
 func (o DataSource) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
@@ -668,7 +674,9 @@ func (o DataSource) ToMap() (map[string]interface{}, error) {
 	if o.LastSynced.IsSet() {
 		toSerialize["last_synced"] = o.LastSynced.Get()
 	}
-	toSerialize["file_count"] = o.FileCount
+	if !IsNil(o.FileCount) {
+		toSerialize["file_count"] = o.FileCount
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -689,7 +697,6 @@ func (o *DataSource) UnmarshalJSON(data []byte) (err error) {
 		"type",
 		"source_url",
 		"status",
-		"file_count",
 	}
 
 	// defaultValueFuncMap captures the default values for required properties.

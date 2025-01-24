@@ -33,7 +33,7 @@ type WirelessLANGroup struct {
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	Created NullableTime `json:"created,omitempty"`
 	LastUpdated NullableTime `json:"last_updated,omitempty"`
-	WirelesslanCount int32 `json:"wirelesslan_count"`
+	WirelesslanCount *int32 `json:"wirelesslan_count,omitempty"`
 	Depth int32 `json:"_depth"`
 	AdditionalProperties map[string]interface{}
 }
@@ -44,14 +44,13 @@ type _WirelessLANGroup WirelessLANGroup
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWirelessLANGroup(id int32, url string, display string, name string, slug string, wirelesslanCount int32, depth int32) *WirelessLANGroup {
+func NewWirelessLANGroup(id int32, url string, display string, name string, slug string, depth int32) *WirelessLANGroup {
 	this := WirelessLANGroup{}
 	this.Id = id
 	this.Url = url
 	this.Display = display
 	this.Name = name
 	this.Slug = slug
-	this.WirelesslanCount = wirelesslanCount
 	this.Depth = depth
 	return &this
 }
@@ -443,30 +442,37 @@ func (o *WirelessLANGroup) UnsetLastUpdated() {
 	o.LastUpdated.Unset()
 }
 
-// GetWirelesslanCount returns the WirelesslanCount field value
+// GetWirelesslanCount returns the WirelesslanCount field value if set, zero value otherwise.
 func (o *WirelessLANGroup) GetWirelesslanCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.WirelesslanCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.WirelesslanCount
+	return *o.WirelesslanCount
 }
 
-// GetWirelesslanCountOk returns a tuple with the WirelesslanCount field value
+// GetWirelesslanCountOk returns a tuple with the WirelesslanCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WirelessLANGroup) GetWirelesslanCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.WirelesslanCount) {
 		return nil, false
 	}
-	return &o.WirelesslanCount, true
+	return o.WirelesslanCount, true
 }
 
-// SetWirelesslanCount sets field value
+// HasWirelesslanCount returns a boolean if a field has been set.
+func (o *WirelessLANGroup) HasWirelesslanCount() bool {
+	if o != nil && !IsNil(o.WirelesslanCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetWirelesslanCount gets a reference to the given int32 and assigns it to the WirelesslanCount field.
 func (o *WirelessLANGroup) SetWirelesslanCount(v int32) {
-	o.WirelesslanCount = v
+	o.WirelesslanCount = &v
 }
-
 
 // GetDepth returns the Depth field value
 func (o *WirelessLANGroup) GetDepth() int32 {
@@ -529,7 +535,9 @@ func (o WirelessLANGroup) ToMap() (map[string]interface{}, error) {
 	if o.LastUpdated.IsSet() {
 		toSerialize["last_updated"] = o.LastUpdated.Get()
 	}
-	toSerialize["wirelesslan_count"] = o.WirelesslanCount
+	if !IsNil(o.WirelesslanCount) {
+		toSerialize["wirelesslan_count"] = o.WirelesslanCount
+	}
 	toSerialize["_depth"] = o.Depth
 
 	for key, value := range o.AdditionalProperties {
@@ -549,7 +557,6 @@ func (o *WirelessLANGroup) UnmarshalJSON(data []byte) (err error) {
 		"display",
 		"name",
 		"slug",
-		"wirelesslan_count",
 		"_depth",
 	}
 

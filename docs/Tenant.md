@@ -17,9 +17,9 @@ Name | Type | Description | Notes
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
-**CircuitCount** | **int64** |  | [readonly] 
+**CircuitCount** | Pointer to **int64** |  | [optional] [readonly] 
 **DeviceCount** | Pointer to **int64** |  | [optional] [readonly] 
-**IpaddressCount** | **int64** |  | [readonly] 
+**IpaddressCount** | Pointer to **int64** |  | [optional] [readonly] 
 **PrefixCount** | Pointer to **int64** |  | [optional] [readonly] 
 **RackCount** | Pointer to **int64** |  | [optional] [readonly] 
 **SiteCount** | Pointer to **int64** |  | [optional] [readonly] 
@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 
 ### NewTenant
 
-`func NewTenant(id int32, url string, display string, name string, slug string, circuitCount int64, ipaddressCount int64, ) *Tenant`
+`func NewTenant(id int32, url string, display string, name string, slug string, ) *Tenant`
 
 NewTenant instantiates a new Tenant object
 This constructor will assign default values to properties that have it defined,
@@ -396,6 +396,11 @@ and a boolean to check if the value has been set.
 
 SetCircuitCount sets CircuitCount field to given value.
 
+### HasCircuitCount
+
+`func (o *Tenant) HasCircuitCount() bool`
+
+HasCircuitCount returns a boolean if a field has been set.
 
 ### GetDeviceCount
 
@@ -441,6 +446,11 @@ and a boolean to check if the value has been set.
 
 SetIpaddressCount sets IpaddressCount field to given value.
 
+### HasIpaddressCount
+
+`func (o *Tenant) HasIpaddressCount() bool`
+
+HasIpaddressCount returns a boolean if a field has been set.
 
 ### GetPrefixCount
 

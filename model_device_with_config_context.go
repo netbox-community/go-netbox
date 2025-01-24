@@ -69,7 +69,7 @@ type DeviceWithConfigContext struct {
 	ConsoleServerPortCount int32 `json:"console_server_port_count"`
 	PowerPortCount int32 `json:"power_port_count"`
 	PowerOutletCount int32 `json:"power_outlet_count"`
-	InterfaceCount int32 `json:"interface_count"`
+	InterfaceCount *int32 `json:"interface_count,omitempty"`
 	FrontPortCount int32 `json:"front_port_count"`
 	RearPortCount int32 `json:"rear_port_count"`
 	DeviceBayCount int32 `json:"device_bay_count"`
@@ -84,7 +84,7 @@ type _DeviceWithConfigContext DeviceWithConfigContext
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDeviceWithConfigContext(id int32, url string, display string, deviceType BriefDeviceType, role BriefDeviceRole, site BriefSite, consolePortCount int32, consoleServerPortCount int32, powerPortCount int32, powerOutletCount int32, interfaceCount int32, frontPortCount int32, rearPortCount int32, deviceBayCount int32, moduleBayCount int32, inventoryItemCount int32) *DeviceWithConfigContext {
+func NewDeviceWithConfigContext(id int32, url string, display string, deviceType BriefDeviceType, role BriefDeviceRole, site BriefSite, consolePortCount int32, consoleServerPortCount int32, powerPortCount int32, powerOutletCount int32, frontPortCount int32, rearPortCount int32, deviceBayCount int32, moduleBayCount int32, inventoryItemCount int32) *DeviceWithConfigContext {
 	this := DeviceWithConfigContext{}
 	this.Id = id
 	this.Url = url
@@ -96,7 +96,6 @@ func NewDeviceWithConfigContext(id int32, url string, display string, deviceType
 	this.ConsoleServerPortCount = consoleServerPortCount
 	this.PowerPortCount = powerPortCount
 	this.PowerOutletCount = powerOutletCount
-	this.InterfaceCount = interfaceCount
 	this.FrontPortCount = frontPortCount
 	this.RearPortCount = rearPortCount
 	this.DeviceBayCount = deviceBayCount
@@ -1599,30 +1598,37 @@ func (o *DeviceWithConfigContext) SetPowerOutletCount(v int32) {
 }
 
 
-// GetInterfaceCount returns the InterfaceCount field value
+// GetInterfaceCount returns the InterfaceCount field value if set, zero value otherwise.
 func (o *DeviceWithConfigContext) GetInterfaceCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.InterfaceCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.InterfaceCount
+	return *o.InterfaceCount
 }
 
-// GetInterfaceCountOk returns a tuple with the InterfaceCount field value
+// GetInterfaceCountOk returns a tuple with the InterfaceCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeviceWithConfigContext) GetInterfaceCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.InterfaceCount) {
 		return nil, false
 	}
-	return &o.InterfaceCount, true
+	return o.InterfaceCount, true
 }
 
-// SetInterfaceCount sets field value
+// HasInterfaceCount returns a boolean if a field has been set.
+func (o *DeviceWithConfigContext) HasInterfaceCount() bool {
+	if o != nil && !IsNil(o.InterfaceCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetInterfaceCount gets a reference to the given int32 and assigns it to the InterfaceCount field.
 func (o *DeviceWithConfigContext) SetInterfaceCount(v int32) {
-	o.InterfaceCount = v
+	o.InterfaceCount = &v
 }
-
 
 // GetFrontPortCount returns the FrontPortCount field value
 func (o *DeviceWithConfigContext) GetFrontPortCount() int32 {
@@ -1865,7 +1871,9 @@ func (o DeviceWithConfigContext) ToMap() (map[string]interface{}, error) {
 	toSerialize["console_server_port_count"] = o.ConsoleServerPortCount
 	toSerialize["power_port_count"] = o.PowerPortCount
 	toSerialize["power_outlet_count"] = o.PowerOutletCount
-	toSerialize["interface_count"] = o.InterfaceCount
+	if !IsNil(o.InterfaceCount) {
+		toSerialize["interface_count"] = o.InterfaceCount
+	}
 	toSerialize["front_port_count"] = o.FrontPortCount
 	toSerialize["rear_port_count"] = o.RearPortCount
 	toSerialize["device_bay_count"] = o.DeviceBayCount
@@ -1894,7 +1902,6 @@ func (o *DeviceWithConfigContext) UnmarshalJSON(data []byte) (err error) {
 		"console_server_port_count",
 		"power_port_count",
 		"power_outlet_count",
-		"interface_count",
 		"front_port_count",
 		"rear_port_count",
 		"device_bay_count",

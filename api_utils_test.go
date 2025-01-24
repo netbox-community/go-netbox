@@ -11,10 +11,10 @@ func HGetClient(t *testing.T) *APIClient {
 	token := os.Getenv("NETBOX_TOKEN")
 
 	if srv == "" {
-		t.Fatal("NETBOX_URL is not set")
+		t.Skip("NETBOX_URL is not set")
 	}
 	if token == "" {
-		t.Fatal("NETBOX_TOKEN is not set")
+		t.Skip("NETBOX_TOKEN is not set")
 	}
 
 	cfg := NewConfiguration()

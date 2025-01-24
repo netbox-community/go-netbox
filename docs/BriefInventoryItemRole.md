@@ -10,13 +10,13 @@ Name | Type | Description | Notes
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
-**InventoryitemCount** | **int64** |  | [readonly] 
+**InventoryitemCount** | Pointer to **int64** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewBriefInventoryItemRole
 
-`func NewBriefInventoryItemRole(id int32, url string, display string, name string, slug string, inventoryitemCount int64, ) *BriefInventoryItemRole`
+`func NewBriefInventoryItemRole(id int32, url string, display string, name string, slug string, ) *BriefInventoryItemRole`
 
 NewBriefInventoryItemRole instantiates a new BriefInventoryItemRole object
 This constructor will assign default values to properties that have it defined,
@@ -175,6 +175,11 @@ and a boolean to check if the value has been set.
 
 SetInventoryitemCount sets InventoryitemCount field to given value.
 
+### HasInventoryitemCount
+
+`func (o *BriefInventoryItemRole) HasInventoryitemCount() bool`
+
+HasInventoryitemCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

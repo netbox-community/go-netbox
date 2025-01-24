@@ -116668,7 +116668,6 @@ components:
           type: integer
           readOnly: true
       required:
-      - asn_count
       - display
       - end
       - id
@@ -117200,7 +117199,6 @@ components:
           format: int64
           readOnly: true
       required:
-      - circuit_count
       - display
       - id
       - name
@@ -117476,7 +117474,6 @@ components:
           title: ' depth'
       required:
       - _depth
-      - contact_count
       - display
       - id
       - name
@@ -117590,7 +117587,6 @@ components:
           type: string
           readOnly: true
       required:
-      - choices_count
       - display
       - id
       - name
@@ -118167,7 +118163,6 @@ components:
       required:
       - display
       - id
-      - inventoryitem_count
       - name
       - slug
       - url
@@ -118757,7 +118752,6 @@ components:
       - display
       - id
       - name
-      - powerfeed_count
       - url
     BriefPowerPanelRequest:
       type: object
@@ -118904,7 +118898,6 @@ components:
           format: int64
           readOnly: true
       required:
-      - circuit_count
       - display
       - id
       - name
@@ -119045,7 +119038,6 @@ components:
           format: int64
           readOnly: true
       required:
-      - aggregate_count
       - display
       - id
       - name
@@ -119560,7 +119552,6 @@ components:
       - id
       - name
       - slug
-      - tenant_count
       - url
     BriefTenantGroupRequest:
       type: object
@@ -119658,7 +119649,6 @@ components:
       - id
       - name
       - slug
-      - tunnel_count
       - url
     BriefTunnelGroupRequest:
       type: object
@@ -119963,7 +119953,6 @@ components:
       required:
       - display
       - id
-      - member_count
       - name
       - url
     BriefVirtualChassisRequest:
@@ -120162,7 +120151,6 @@ components:
       - name
       - slug
       - url
-      - wirelesslan_count
     BriefWirelessLANGroupRequest:
       type: object
       description: Extends PrimaryModelSerializer to include MPTT support.
@@ -120937,7 +120925,6 @@ components:
           format: int64
           readOnly: true
       required:
-      - circuit_count
       - display
       - id
       - name
@@ -121424,7 +121411,6 @@ components:
           format: int64
           readOnly: true
       required:
-      - circuit_count
       - display
       - id
       - name
@@ -123398,7 +123384,6 @@ components:
           title: ' depth'
       required:
       - _depth
-      - contact_count
       - display
       - id
       - name
@@ -123875,7 +123860,6 @@ components:
           readOnly: true
           nullable: true
       required:
-      - choices_count
       - display
       - extra_choices
       - id
@@ -124473,7 +124457,6 @@ components:
           readOnly: true
       required:
       - display
-      - file_count
       - id
       - name
       - source_url
@@ -125747,7 +125730,6 @@ components:
       - display
       - front_port_count
       - id
-      - interface_count
       - inventory_item_count
       - module_bay_count
       - power_outlet_count
@@ -127665,7 +127647,6 @@ components:
       - id
       - name
       - url
-      - user_count
     GroupRequest:
       type: object
       description: 'Extends the built-in ModelSerializer to enforce calling full_clean()
@@ -133623,7 +133604,6 @@ components:
       required:
       - display
       - id
-      - inventoryitem_count
       - name
       - slug
       - url
@@ -134635,9 +134615,7 @@ components:
       required:
       - display
       - id
-      - inventoryitem_count
       - name
-      - platform_count
       - slug
       - url
     ManufacturerRequest:
@@ -151359,7 +151337,6 @@ components:
       - display
       - id
       - name
-      - powerfeed_count
       - site
       - url
     PowerPanelRequest:
@@ -153398,7 +153375,6 @@ components:
           format: int64
           readOnly: true
       required:
-      - circuit_count
       - display
       - id
       - name
@@ -153663,7 +153639,6 @@ components:
           format: int64
           readOnly: true
       required:
-      - aggregate_count
       - display
       - id
       - name
@@ -153990,7 +153965,6 @@ components:
       - display
       - id
       - name
-      - powerfeed_count
       - site
       - url
     RackRequest:
@@ -156679,7 +156653,6 @@ components:
           format: int64
           readOnly: true
       required:
-      - circuit_count
       - display
       - id
       - name
@@ -157123,10 +157096,8 @@ components:
           format: int64
           readOnly: true
       required:
-      - circuit_count
       - display
       - id
-      - ipaddress_count
       - name
       - slug
       - url
@@ -157193,7 +157164,6 @@ components:
       - id
       - name
       - slug
-      - tenant_count
       - url
     TenantGroupRequest:
       type: object
@@ -157550,7 +157520,6 @@ components:
       - id
       - name
       - status
-      - terminations_count
       - url
     TunnelGroup:
       type: object
@@ -157606,7 +157575,6 @@ components:
       - id
       - name
       - slug
-      - tunnel_count
       - url
     TunnelGroupRequest:
       type: object
@@ -158650,7 +158618,6 @@ components:
       required:
       - display
       - id
-      - ipaddress_count
       - name
       - url
     VRFRequest:
@@ -158758,7 +158725,6 @@ components:
       required:
       - display
       - id
-      - member_count
       - members
       - name
       - url
@@ -159235,7 +159201,6 @@ components:
       - device
       - display
       - id
-      - interface_count
       - name
       - status
       - url
@@ -159534,7 +159499,6 @@ components:
       required:
       - display
       - id
-      - interface_count
       - name
       - url
       - virtual_disk_count
@@ -160039,7 +160003,6 @@ components:
       - name
       - slug
       - url
-      - wirelesslan_count
     WirelessLANGroupRequest:
       type: object
       description: Extends PrimaryModelSerializer to include MPTT support.

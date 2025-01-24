@@ -10,14 +10,14 @@ Name | Type | Description | Notes
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
-**WirelesslanCount** | **int32** |  | [readonly] [default to 0]
+**WirelesslanCount** | Pointer to **int32** |  | [optional] [readonly] [default to 0]
 **Depth** | **int32** |  | [readonly] 
 
 ## Methods
 
 ### NewBriefWirelessLANGroup
 
-`func NewBriefWirelessLANGroup(id int32, url string, display string, name string, slug string, wirelesslanCount int32, depth int32, ) *BriefWirelessLANGroup`
+`func NewBriefWirelessLANGroup(id int32, url string, display string, name string, slug string, depth int32, ) *BriefWirelessLANGroup`
 
 NewBriefWirelessLANGroup instantiates a new BriefWirelessLANGroup object
 This constructor will assign default values to properties that have it defined,
@@ -176,6 +176,11 @@ and a boolean to check if the value has been set.
 
 SetWirelesslanCount sets WirelesslanCount field to given value.
 
+### HasWirelesslanCount
+
+`func (o *BriefWirelessLANGroup) HasWirelesslanCount() bool`
+
+HasWirelesslanCount returns a boolean if a field has been set.
 
 ### GetDepth
 

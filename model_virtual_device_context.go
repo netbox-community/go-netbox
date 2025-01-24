@@ -39,7 +39,7 @@ type VirtualDeviceContext struct {
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	Created NullableTime `json:"created,omitempty"`
 	LastUpdated NullableTime `json:"last_updated,omitempty"`
-	InterfaceCount int64 `json:"interface_count"`
+	InterfaceCount *int64 `json:"interface_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -49,7 +49,7 @@ type _VirtualDeviceContext VirtualDeviceContext
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVirtualDeviceContext(id int32, url string, display string, name string, device BriefDevice, status VirtualDeviceContextStatus, interfaceCount int64) *VirtualDeviceContext {
+func NewVirtualDeviceContext(id int32, url string, display string, name string, device BriefDevice, status VirtualDeviceContextStatus) *VirtualDeviceContext {
 	this := VirtualDeviceContext{}
 	this.Id = id
 	this.Url = url
@@ -57,7 +57,6 @@ func NewVirtualDeviceContext(id int32, url string, display string, name string, 
 	this.Name = name
 	this.Device = device
 	this.Status = status
-	this.InterfaceCount = interfaceCount
 	return &this
 }
 
@@ -673,30 +672,37 @@ func (o *VirtualDeviceContext) UnsetLastUpdated() {
 	o.LastUpdated.Unset()
 }
 
-// GetInterfaceCount returns the InterfaceCount field value
+// GetInterfaceCount returns the InterfaceCount field value if set, zero value otherwise.
 func (o *VirtualDeviceContext) GetInterfaceCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.InterfaceCount) {
 		var ret int64
 		return ret
 	}
-
-	return o.InterfaceCount
+	return *o.InterfaceCount
 }
 
-// GetInterfaceCountOk returns a tuple with the InterfaceCount field value
+// GetInterfaceCountOk returns a tuple with the InterfaceCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VirtualDeviceContext) GetInterfaceCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.InterfaceCount) {
 		return nil, false
 	}
-	return &o.InterfaceCount, true
+	return o.InterfaceCount, true
 }
 
-// SetInterfaceCount sets field value
+// HasInterfaceCount returns a boolean if a field has been set.
+func (o *VirtualDeviceContext) HasInterfaceCount() bool {
+	if o != nil && !IsNil(o.InterfaceCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetInterfaceCount gets a reference to the given int64 and assigns it to the InterfaceCount field.
 func (o *VirtualDeviceContext) SetInterfaceCount(v int64) {
-	o.InterfaceCount = v
+	o.InterfaceCount = &v
 }
-
 
 func (o VirtualDeviceContext) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
@@ -750,7 +756,9 @@ func (o VirtualDeviceContext) ToMap() (map[string]interface{}, error) {
 	if o.LastUpdated.IsSet() {
 		toSerialize["last_updated"] = o.LastUpdated.Get()
 	}
-	toSerialize["interface_count"] = o.InterfaceCount
+	if !IsNil(o.InterfaceCount) {
+		toSerialize["interface_count"] = o.InterfaceCount
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -770,7 +778,6 @@ func (o *VirtualDeviceContext) UnmarshalJSON(data []byte) (err error) {
 		"name",
 		"device",
 		"status",
-		"interface_count",
 	}
 
 	// defaultValueFuncMap captures the default values for required properties.

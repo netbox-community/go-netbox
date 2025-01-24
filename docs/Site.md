@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
-**CircuitCount** | **int64** |  | [readonly] 
+**CircuitCount** | Pointer to **int64** |  | [optional] [readonly] 
 **DeviceCount** | Pointer to **int64** |  | [optional] [readonly] 
 **PrefixCount** | Pointer to **int64** |  | [optional] [readonly] 
 **RackCount** | Pointer to **int64** |  | [optional] [readonly] 
@@ -38,7 +38,7 @@ Name | Type | Description | Notes
 
 ### NewSite
 
-`func NewSite(id int32, url string, display string, name string, slug string, circuitCount int64, ) *Site`
+`func NewSite(id int32, url string, display string, name string, slug string, ) *Site`
 
 NewSite instantiates a new Site object
 This constructor will assign default values to properties that have it defined,
@@ -702,6 +702,11 @@ and a boolean to check if the value has been set.
 
 SetCircuitCount sets CircuitCount field to given value.
 
+### HasCircuitCount
+
+`func (o *Site) HasCircuitCount() bool`
+
+HasCircuitCount returns a boolean if a field has been set.
 
 ### GetDeviceCount
 

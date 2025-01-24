@@ -38,7 +38,7 @@ type Tunnel struct {
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	Created NullableTime `json:"created,omitempty"`
 	LastUpdated NullableTime `json:"last_updated,omitempty"`
-	TerminationsCount int64 `json:"terminations_count"`
+	TerminationsCount *int64 `json:"terminations_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -48,7 +48,7 @@ type _Tunnel Tunnel
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTunnel(id int32, url string, display string, name string, status TunnelStatus, encapsulation TunnelEncapsulation, terminationsCount int64) *Tunnel {
+func NewTunnel(id int32, url string, display string, name string, status TunnelStatus, encapsulation TunnelEncapsulation) *Tunnel {
 	this := Tunnel{}
 	this.Id = id
 	this.Url = url
@@ -56,7 +56,6 @@ func NewTunnel(id int32, url string, display string, name string, status TunnelS
 	this.Name = name
 	this.Status = status
 	this.Encapsulation = encapsulation
-	this.TerminationsCount = terminationsCount
 	return &this
 }
 
@@ -630,30 +629,37 @@ func (o *Tunnel) UnsetLastUpdated() {
 	o.LastUpdated.Unset()
 }
 
-// GetTerminationsCount returns the TerminationsCount field value
+// GetTerminationsCount returns the TerminationsCount field value if set, zero value otherwise.
 func (o *Tunnel) GetTerminationsCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.TerminationsCount) {
 		var ret int64
 		return ret
 	}
-
-	return o.TerminationsCount
+	return *o.TerminationsCount
 }
 
-// GetTerminationsCountOk returns a tuple with the TerminationsCount field value
+// GetTerminationsCountOk returns a tuple with the TerminationsCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Tunnel) GetTerminationsCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.TerminationsCount) {
 		return nil, false
 	}
-	return &o.TerminationsCount, true
+	return o.TerminationsCount, true
 }
 
-// SetTerminationsCount sets field value
+// HasTerminationsCount returns a boolean if a field has been set.
+func (o *Tunnel) HasTerminationsCount() bool {
+	if o != nil && !IsNil(o.TerminationsCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetTerminationsCount gets a reference to the given int64 and assigns it to the TerminationsCount field.
 func (o *Tunnel) SetTerminationsCount(v int64) {
-	o.TerminationsCount = v
+	o.TerminationsCount = &v
 }
-
 
 func (o Tunnel) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
@@ -704,7 +710,9 @@ func (o Tunnel) ToMap() (map[string]interface{}, error) {
 	if o.LastUpdated.IsSet() {
 		toSerialize["last_updated"] = o.LastUpdated.Get()
 	}
-	toSerialize["terminations_count"] = o.TerminationsCount
+	if !IsNil(o.TerminationsCount) {
+		toSerialize["terminations_count"] = o.TerminationsCount
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -724,7 +732,6 @@ func (o *Tunnel) UnmarshalJSON(data []byte) (err error) {
 		"name",
 		"status",
 		"encapsulation",
-		"terminations_count",
 	}
 
 	// defaultValueFuncMap captures the default values for required properties.

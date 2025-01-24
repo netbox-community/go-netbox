@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**PowerfeedCount** | **int64** |  | [readonly] 
+**PowerfeedCount** | Pointer to **int64** |  | [optional] [readonly] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 
 ### NewPowerPanel
 
-`func NewPowerPanel(id int32, url string, display string, site BriefSite, name string, powerfeedCount int64, ) *PowerPanel`
+`func NewPowerPanel(id int32, url string, display string, site BriefSite, name string, ) *PowerPanel`
 
 NewPowerPanel instantiates a new PowerPanel object
 This constructor will assign default values to properties that have it defined,
@@ -317,6 +317,11 @@ and a boolean to check if the value has been set.
 
 SetPowerfeedCount sets PowerfeedCount field to given value.
 
+### HasPowerfeedCount
+
+`func (o *PowerPanel) HasPowerfeedCount() bool`
+
+HasPowerfeedCount returns a boolean if a field has been set.
 
 ### GetCreated
 

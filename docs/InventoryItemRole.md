@@ -16,13 +16,13 @@ Name | Type | Description | Notes
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
-**InventoryitemCount** | **int64** |  | [readonly] 
+**InventoryitemCount** | Pointer to **int64** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewInventoryItemRole
 
-`func NewInventoryItemRole(id int32, url string, display string, name string, slug string, inventoryitemCount int64, ) *InventoryItemRole`
+`func NewInventoryItemRole(id int32, url string, display string, name string, slug string, ) *InventoryItemRole`
 
 NewInventoryItemRole instantiates a new InventoryItemRole object
 This constructor will assign default values to properties that have it defined,
@@ -351,6 +351,11 @@ and a boolean to check if the value has been set.
 
 SetInventoryitemCount sets InventoryitemCount field to given value.
 
+### HasInventoryitemCount
+
+`func (o *InventoryItemRole) HasInventoryitemCount() bool`
+
+HasInventoryitemCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

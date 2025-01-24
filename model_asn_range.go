@@ -36,7 +36,7 @@ type ASNRange struct {
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	Created NullableTime `json:"created,omitempty"`
 	LastUpdated NullableTime `json:"last_updated,omitempty"`
-	AsnCount int32 `json:"asn_count"`
+	AsnCount *int32 `json:"asn_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -46,7 +46,7 @@ type _ASNRange ASNRange
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewASNRange(id int32, url string, display string, name string, slug string, rir BriefRIR, start int64, end int64, asnCount int32) *ASNRange {
+func NewASNRange(id int32, url string, display string, name string, slug string, rir BriefRIR, start int64, end int64) *ASNRange {
 	this := ASNRange{}
 	this.Id = id
 	this.Url = url
@@ -56,7 +56,6 @@ func NewASNRange(id int32, url string, display string, name string, slug string,
 	this.Rir = rir
 	this.Start = start
 	this.End = end
-	this.AsnCount = asnCount
 	return &this
 }
 
@@ -522,30 +521,37 @@ func (o *ASNRange) UnsetLastUpdated() {
 	o.LastUpdated.Unset()
 }
 
-// GetAsnCount returns the AsnCount field value
+// GetAsnCount returns the AsnCount field value if set, zero value otherwise.
 func (o *ASNRange) GetAsnCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.AsnCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.AsnCount
+	return *o.AsnCount
 }
 
-// GetAsnCountOk returns a tuple with the AsnCount field value
+// GetAsnCountOk returns a tuple with the AsnCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ASNRange) GetAsnCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.AsnCount) {
 		return nil, false
 	}
-	return &o.AsnCount, true
+	return o.AsnCount, true
 }
 
-// SetAsnCount sets field value
+// HasAsnCount returns a boolean if a field has been set.
+func (o *ASNRange) HasAsnCount() bool {
+	if o != nil && !IsNil(o.AsnCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetAsnCount gets a reference to the given int32 and assigns it to the AsnCount field.
 func (o *ASNRange) SetAsnCount(v int32) {
-	o.AsnCount = v
+	o.AsnCount = &v
 }
-
 
 func (o ASNRange) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
@@ -586,7 +592,9 @@ func (o ASNRange) ToMap() (map[string]interface{}, error) {
 	if o.LastUpdated.IsSet() {
 		toSerialize["last_updated"] = o.LastUpdated.Get()
 	}
-	toSerialize["asn_count"] = o.AsnCount
+	if !IsNil(o.AsnCount) {
+		toSerialize["asn_count"] = o.AsnCount
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -608,7 +616,6 @@ func (o *ASNRange) UnmarshalJSON(data []byte) (err error) {
 		"rir",
 		"start",
 		"end",
-		"asn_count",
 	}
 
 	// defaultValueFuncMap captures the default values for required properties.

@@ -46,7 +46,7 @@ Name | Type | Description | Notes
 **ConsoleServerPortCount** | **int32** |  | [readonly] 
 **PowerPortCount** | **int32** |  | [readonly] 
 **PowerOutletCount** | **int32** |  | [readonly] 
-**InterfaceCount** | **int32** |  | [readonly] 
+**InterfaceCount** | Pointer to **int32** |  | [optional] [readonly] 
 **FrontPortCount** | **int32** |  | [readonly] 
 **RearPortCount** | **int32** |  | [readonly] 
 **DeviceBayCount** | **int32** |  | [readonly] 
@@ -57,7 +57,7 @@ Name | Type | Description | Notes
 
 ### NewDeviceWithConfigContext
 
-`func NewDeviceWithConfigContext(id int32, url string, display string, deviceType BriefDeviceType, role BriefDeviceRole, site BriefSite, consolePortCount int32, consoleServerPortCount int32, powerPortCount int32, powerOutletCount int32, interfaceCount int32, frontPortCount int32, rearPortCount int32, deviceBayCount int32, moduleBayCount int32, inventoryItemCount int32, ) *DeviceWithConfigContext`
+`func NewDeviceWithConfigContext(id int32, url string, display string, deviceType BriefDeviceType, role BriefDeviceRole, site BriefSite, consolePortCount int32, consoleServerPortCount int32, powerPortCount int32, powerOutletCount int32, frontPortCount int32, rearPortCount int32, deviceBayCount int32, moduleBayCount int32, inventoryItemCount int32, ) *DeviceWithConfigContext`
 
 NewDeviceWithConfigContext instantiates a new DeviceWithConfigContext object
 This constructor will assign default values to properties that have it defined,
@@ -1321,6 +1321,11 @@ and a boolean to check if the value has been set.
 
 SetInterfaceCount sets InterfaceCount field to given value.
 
+### HasInterfaceCount
+
+`func (o *DeviceWithConfigContext) HasInterfaceCount() bool`
+
+HasInterfaceCount returns a boolean if a field has been set.
 
 ### GetFrontPortCount
 

@@ -19,13 +19,13 @@ Name | Type | Description | Notes
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
-**AsnCount** | **int32** |  | [readonly] 
+**AsnCount** | Pointer to **int32** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewASNRange
 
-`func NewASNRange(id int32, url string, display string, name string, slug string, rir BriefRIR, start int64, end int64, asnCount int32, ) *ASNRange`
+`func NewASNRange(id int32, url string, display string, name string, slug string, rir BriefRIR, start int64, end int64, ) *ASNRange`
 
 NewASNRange instantiates a new ASNRange object
 This constructor will assign default values to properties that have it defined,
@@ -424,6 +424,11 @@ and a boolean to check if the value has been set.
 
 SetAsnCount sets AsnCount field to given value.
 
+### HasAsnCount
+
+`func (o *ASNRange) HasAsnCount() bool`
+
+HasAsnCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

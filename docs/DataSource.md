@@ -21,13 +21,13 @@ Name | Type | Description | Notes
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastSynced** | Pointer to **NullableTime** |  | [optional] [readonly] 
-**FileCount** | **int64** |  | [readonly] 
+**FileCount** | Pointer to **int64** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewDataSource
 
-`func NewDataSource(id int32, url string, display string, name string, type_ DataSourceType, sourceUrl string, status DataSourceStatus, fileCount int64, ) *DataSource`
+`func NewDataSource(id int32, url string, display string, name string, type_ DataSourceType, sourceUrl string, status DataSourceStatus, ) *DataSource`
 
 NewDataSource instantiates a new DataSource object
 This constructor will assign default values to properties that have it defined,
@@ -491,6 +491,11 @@ and a boolean to check if the value has been set.
 
 SetFileCount sets FileCount field to given value.
 
+### HasFileCount
+
+`func (o *DataSource) HasFileCount() bool`
+
+HasFileCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -34,9 +34,9 @@ type Tenant struct {
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	Created NullableTime `json:"created,omitempty"`
 	LastUpdated NullableTime `json:"last_updated,omitempty"`
-	CircuitCount int64 `json:"circuit_count"`
+	CircuitCount *int64 `json:"circuit_count,omitempty"`
 	DeviceCount *int64 `json:"device_count,omitempty"`
-	IpaddressCount int64 `json:"ipaddress_count"`
+	IpaddressCount *int64 `json:"ipaddress_count,omitempty"`
 	PrefixCount *int64 `json:"prefix_count,omitempty"`
 	RackCount *int64 `json:"rack_count,omitempty"`
 	SiteCount *int64 `json:"site_count,omitempty"`
@@ -53,15 +53,13 @@ type _Tenant Tenant
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTenant(id int32, url string, display string, name string, slug string, circuitCount int64, ipaddressCount int64) *Tenant {
+func NewTenant(id int32, url string, display string, name string, slug string) *Tenant {
 	this := Tenant{}
 	this.Id = id
 	this.Url = url
 	this.Display = display
 	this.Name = name
 	this.Slug = slug
-	this.CircuitCount = circuitCount
-	this.IpaddressCount = ipaddressCount
 	return &this
 }
 
@@ -484,30 +482,37 @@ func (o *Tenant) UnsetLastUpdated() {
 	o.LastUpdated.Unset()
 }
 
-// GetCircuitCount returns the CircuitCount field value
+// GetCircuitCount returns the CircuitCount field value if set, zero value otherwise.
 func (o *Tenant) GetCircuitCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.CircuitCount) {
 		var ret int64
 		return ret
 	}
-
-	return o.CircuitCount
+	return *o.CircuitCount
 }
 
-// GetCircuitCountOk returns a tuple with the CircuitCount field value
+// GetCircuitCountOk returns a tuple with the CircuitCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Tenant) GetCircuitCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.CircuitCount) {
 		return nil, false
 	}
-	return &o.CircuitCount, true
+	return o.CircuitCount, true
 }
 
-// SetCircuitCount sets field value
+// HasCircuitCount returns a boolean if a field has been set.
+func (o *Tenant) HasCircuitCount() bool {
+	if o != nil && !IsNil(o.CircuitCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetCircuitCount gets a reference to the given int64 and assigns it to the CircuitCount field.
 func (o *Tenant) SetCircuitCount(v int64) {
-	o.CircuitCount = v
+	o.CircuitCount = &v
 }
-
 
 // GetDeviceCount returns the DeviceCount field value if set, zero value otherwise.
 func (o *Tenant) GetDeviceCount() int64 {
@@ -541,30 +546,37 @@ func (o *Tenant) SetDeviceCount(v int64) {
 	o.DeviceCount = &v
 }
 
-// GetIpaddressCount returns the IpaddressCount field value
+// GetIpaddressCount returns the IpaddressCount field value if set, zero value otherwise.
 func (o *Tenant) GetIpaddressCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.IpaddressCount) {
 		var ret int64
 		return ret
 	}
-
-	return o.IpaddressCount
+	return *o.IpaddressCount
 }
 
-// GetIpaddressCountOk returns a tuple with the IpaddressCount field value
+// GetIpaddressCountOk returns a tuple with the IpaddressCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Tenant) GetIpaddressCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.IpaddressCount) {
 		return nil, false
 	}
-	return &o.IpaddressCount, true
+	return o.IpaddressCount, true
 }
 
-// SetIpaddressCount sets field value
+// HasIpaddressCount returns a boolean if a field has been set.
+func (o *Tenant) HasIpaddressCount() bool {
+	if o != nil && !IsNil(o.IpaddressCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetIpaddressCount gets a reference to the given int64 and assigns it to the IpaddressCount field.
 func (o *Tenant) SetIpaddressCount(v int64) {
-	o.IpaddressCount = v
+	o.IpaddressCount = &v
 }
-
 
 // GetPrefixCount returns the PrefixCount field value if set, zero value otherwise.
 func (o *Tenant) GetPrefixCount() int64 {
@@ -829,11 +841,15 @@ func (o Tenant) ToMap() (map[string]interface{}, error) {
 	if o.LastUpdated.IsSet() {
 		toSerialize["last_updated"] = o.LastUpdated.Get()
 	}
-	toSerialize["circuit_count"] = o.CircuitCount
+	if !IsNil(o.CircuitCount) {
+		toSerialize["circuit_count"] = o.CircuitCount
+	}
 	if !IsNil(o.DeviceCount) {
 		toSerialize["device_count"] = o.DeviceCount
 	}
-	toSerialize["ipaddress_count"] = o.IpaddressCount
+	if !IsNil(o.IpaddressCount) {
+		toSerialize["ipaddress_count"] = o.IpaddressCount
+	}
 	if !IsNil(o.PrefixCount) {
 		toSerialize["prefix_count"] = o.PrefixCount
 	}
@@ -873,8 +889,6 @@ func (o *Tenant) UnmarshalJSON(data []byte) (err error) {
 		"display",
 		"name",
 		"slug",
-		"circuit_count",
-		"ipaddress_count",
 	}
 
 	// defaultValueFuncMap captures the default values for required properties.

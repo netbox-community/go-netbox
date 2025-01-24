@@ -26,7 +26,7 @@ type BriefInventoryItemRole struct {
 	Name string `json:"name"`
 	Slug string `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
 	Description *string `json:"description,omitempty"`
-	InventoryitemCount int64 `json:"inventoryitem_count"`
+	InventoryitemCount *int64 `json:"inventoryitem_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -36,14 +36,13 @@ type _BriefInventoryItemRole BriefInventoryItemRole
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBriefInventoryItemRole(id int32, url string, display string, name string, slug string, inventoryitemCount int64) *BriefInventoryItemRole {
+func NewBriefInventoryItemRole(id int32, url string, display string, name string, slug string) *BriefInventoryItemRole {
 	this := BriefInventoryItemRole{}
 	this.Id = id
 	this.Url = url
 	this.Display = display
 	this.Name = name
 	this.Slug = slug
-	this.InventoryitemCount = inventoryitemCount
 	return &this
 }
 
@@ -212,30 +211,37 @@ func (o *BriefInventoryItemRole) SetDescription(v string) {
 	o.Description = &v
 }
 
-// GetInventoryitemCount returns the InventoryitemCount field value
+// GetInventoryitemCount returns the InventoryitemCount field value if set, zero value otherwise.
 func (o *BriefInventoryItemRole) GetInventoryitemCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.InventoryitemCount) {
 		var ret int64
 		return ret
 	}
-
-	return o.InventoryitemCount
+	return *o.InventoryitemCount
 }
 
-// GetInventoryitemCountOk returns a tuple with the InventoryitemCount field value
+// GetInventoryitemCountOk returns a tuple with the InventoryitemCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BriefInventoryItemRole) GetInventoryitemCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.InventoryitemCount) {
 		return nil, false
 	}
-	return &o.InventoryitemCount, true
+	return o.InventoryitemCount, true
 }
 
-// SetInventoryitemCount sets field value
+// HasInventoryitemCount returns a boolean if a field has been set.
+func (o *BriefInventoryItemRole) HasInventoryitemCount() bool {
+	if o != nil && !IsNil(o.InventoryitemCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetInventoryitemCount gets a reference to the given int64 and assigns it to the InventoryitemCount field.
 func (o *BriefInventoryItemRole) SetInventoryitemCount(v int64) {
-	o.InventoryitemCount = v
+	o.InventoryitemCount = &v
 }
-
 
 func (o BriefInventoryItemRole) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
@@ -255,7 +261,9 @@ func (o BriefInventoryItemRole) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	toSerialize["inventoryitem_count"] = o.InventoryitemCount
+	if !IsNil(o.InventoryitemCount) {
+		toSerialize["inventoryitem_count"] = o.InventoryitemCount
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -274,7 +282,6 @@ func (o *BriefInventoryItemRole) UnmarshalJSON(data []byte) (err error) {
 		"display",
 		"name",
 		"slug",
-		"inventoryitem_count",
 	}
 
 	// defaultValueFuncMap captures the default values for required properties.

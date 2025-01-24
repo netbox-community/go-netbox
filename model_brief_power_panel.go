@@ -25,7 +25,7 @@ type BriefPowerPanel struct {
 	Display string `json:"display"`
 	Name string `json:"name"`
 	Description *string `json:"description,omitempty"`
-	PowerfeedCount int64 `json:"powerfeed_count"`
+	PowerfeedCount *int64 `json:"powerfeed_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -35,13 +35,12 @@ type _BriefPowerPanel BriefPowerPanel
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBriefPowerPanel(id int32, url string, display string, name string, powerfeedCount int64) *BriefPowerPanel {
+func NewBriefPowerPanel(id int32, url string, display string, name string) *BriefPowerPanel {
 	this := BriefPowerPanel{}
 	this.Id = id
 	this.Url = url
 	this.Display = display
 	this.Name = name
-	this.PowerfeedCount = powerfeedCount
 	return &this
 }
 
@@ -185,30 +184,37 @@ func (o *BriefPowerPanel) SetDescription(v string) {
 	o.Description = &v
 }
 
-// GetPowerfeedCount returns the PowerfeedCount field value
+// GetPowerfeedCount returns the PowerfeedCount field value if set, zero value otherwise.
 func (o *BriefPowerPanel) GetPowerfeedCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.PowerfeedCount) {
 		var ret int64
 		return ret
 	}
-
-	return o.PowerfeedCount
+	return *o.PowerfeedCount
 }
 
-// GetPowerfeedCountOk returns a tuple with the PowerfeedCount field value
+// GetPowerfeedCountOk returns a tuple with the PowerfeedCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BriefPowerPanel) GetPowerfeedCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.PowerfeedCount) {
 		return nil, false
 	}
-	return &o.PowerfeedCount, true
+	return o.PowerfeedCount, true
 }
 
-// SetPowerfeedCount sets field value
+// HasPowerfeedCount returns a boolean if a field has been set.
+func (o *BriefPowerPanel) HasPowerfeedCount() bool {
+	if o != nil && !IsNil(o.PowerfeedCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetPowerfeedCount gets a reference to the given int64 and assigns it to the PowerfeedCount field.
 func (o *BriefPowerPanel) SetPowerfeedCount(v int64) {
-	o.PowerfeedCount = v
+	o.PowerfeedCount = &v
 }
-
 
 func (o BriefPowerPanel) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
@@ -227,7 +233,9 @@ func (o BriefPowerPanel) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	toSerialize["powerfeed_count"] = o.PowerfeedCount
+	if !IsNil(o.PowerfeedCount) {
+		toSerialize["powerfeed_count"] = o.PowerfeedCount
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -245,7 +253,6 @@ func (o *BriefPowerPanel) UnmarshalJSON(data []byte) (err error) {
 		"url",
 		"display",
 		"name",
-		"powerfeed_count",
 	}
 
 	// defaultValueFuncMap captures the default values for required properties.

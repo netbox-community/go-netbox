@@ -34,7 +34,7 @@ type RIR struct {
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	Created NullableTime `json:"created,omitempty"`
 	LastUpdated NullableTime `json:"last_updated,omitempty"`
-	AggregateCount int64 `json:"aggregate_count"`
+	AggregateCount *int64 `json:"aggregate_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -44,14 +44,13 @@ type _RIR RIR
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRIR(id int32, url string, display string, name string, slug string, aggregateCount int64) *RIR {
+func NewRIR(id int32, url string, display string, name string, slug string) *RIR {
 	this := RIR{}
 	this.Id = id
 	this.Url = url
 	this.Display = display
 	this.Name = name
 	this.Slug = slug
-	this.AggregateCount = aggregateCount
 	return &this
 }
 
@@ -432,30 +431,37 @@ func (o *RIR) UnsetLastUpdated() {
 	o.LastUpdated.Unset()
 }
 
-// GetAggregateCount returns the AggregateCount field value
+// GetAggregateCount returns the AggregateCount field value if set, zero value otherwise.
 func (o *RIR) GetAggregateCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.AggregateCount) {
 		var ret int64
 		return ret
 	}
-
-	return o.AggregateCount
+	return *o.AggregateCount
 }
 
-// GetAggregateCountOk returns a tuple with the AggregateCount field value
+// GetAggregateCountOk returns a tuple with the AggregateCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RIR) GetAggregateCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.AggregateCount) {
 		return nil, false
 	}
-	return &o.AggregateCount, true
+	return o.AggregateCount, true
 }
 
-// SetAggregateCount sets field value
+// HasAggregateCount returns a boolean if a field has been set.
+func (o *RIR) HasAggregateCount() bool {
+	if o != nil && !IsNil(o.AggregateCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetAggregateCount gets a reference to the given int64 and assigns it to the AggregateCount field.
 func (o *RIR) SetAggregateCount(v int64) {
-	o.AggregateCount = v
+	o.AggregateCount = &v
 }
-
 
 func (o RIR) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
@@ -493,7 +499,9 @@ func (o RIR) ToMap() (map[string]interface{}, error) {
 	if o.LastUpdated.IsSet() {
 		toSerialize["last_updated"] = o.LastUpdated.Get()
 	}
-	toSerialize["aggregate_count"] = o.AggregateCount
+	if !IsNil(o.AggregateCount) {
+		toSerialize["aggregate_count"] = o.AggregateCount
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -512,7 +520,6 @@ func (o *RIR) UnmarshalJSON(data []byte) (err error) {
 		"display",
 		"name",
 		"slug",
-		"aggregate_count",
 	}
 
 	// defaultValueFuncMap captures the default values for required properties.
