@@ -7,19 +7,19 @@ Name | Type | Description | Notes
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
-**Group** | [**FHRPGroup**](FHRPGroup.md) |  | 
+**Group** | [**BriefFHRPGroup**](BriefFHRPGroup.md) |  | 
 **InterfaceType** | **string** |  | 
 **InterfaceId** | **int64** |  | 
-**Interface** | **interface{}** |  | [readonly] 
+**Interface** | Pointer to **interface{}** |  | [optional] [readonly] 
 **Priority** | **int32** |  | 
-**Created** | **NullableTime** |  | [readonly] 
-**LastUpdated** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
+**LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewFHRPGroupAssignment
 
-`func NewFHRPGroupAssignment(id int32, url string, display string, group FHRPGroup, interfaceType string, interfaceId int64, interface_ interface{}, priority int32, created NullableTime, lastUpdated NullableTime, ) *FHRPGroupAssignment`
+`func NewFHRPGroupAssignment(id int32, url string, display string, group BriefFHRPGroup, interfaceType string, interfaceId int64, priority int32, ) *FHRPGroupAssignment`
 
 NewFHRPGroupAssignment instantiates a new FHRPGroupAssignment object
 This constructor will assign default values to properties that have it defined,
@@ -96,20 +96,20 @@ SetDisplay sets Display field to given value.
 
 ### GetGroup
 
-`func (o *FHRPGroupAssignment) GetGroup() FHRPGroup`
+`func (o *FHRPGroupAssignment) GetGroup() BriefFHRPGroup`
 
 GetGroup returns the Group field if non-nil, zero value otherwise.
 
 ### GetGroupOk
 
-`func (o *FHRPGroupAssignment) GetGroupOk() (*FHRPGroup, bool)`
+`func (o *FHRPGroupAssignment) GetGroupOk() (*BriefFHRPGroup, bool)`
 
 GetGroupOk returns a tuple with the Group field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGroup
 
-`func (o *FHRPGroupAssignment) SetGroup(v FHRPGroup)`
+`func (o *FHRPGroupAssignment) SetGroup(v BriefFHRPGroup)`
 
 SetGroup sets Group field to given value.
 
@@ -173,6 +173,11 @@ and a boolean to check if the value has been set.
 
 SetInterface sets Interface field to given value.
 
+### HasInterface
+
+`func (o *FHRPGroupAssignment) HasInterface() bool`
+
+HasInterface returns a boolean if a field has been set.
 
 ### SetInterfaceNil
 
@@ -223,6 +228,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *FHRPGroupAssignment) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
@@ -253,6 +263,11 @@ and a boolean to check if the value has been set.
 
 SetLastUpdated sets LastUpdated field to given value.
 
+### HasLastUpdated
+
+`func (o *FHRPGroupAssignment) HasLastUpdated() bool`
+
+HasLastUpdated returns a boolean if a field has been set.
 
 ### SetLastUpdatedNil
 

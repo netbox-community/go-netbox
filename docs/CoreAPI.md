@@ -4,6 +4,16 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**CoreBackgroundQueuesRetrieve**](CoreAPI.md#CoreBackgroundQueuesRetrieve) | **Get** /api/core/background-queues/ | 
+[**CoreBackgroundQueuesRetrieve2**](CoreAPI.md#CoreBackgroundQueuesRetrieve2) | **Get** /api/core/background-queues/{name}/ | 
+[**CoreBackgroundTasksDeleteCreate**](CoreAPI.md#CoreBackgroundTasksDeleteCreate) | **Post** /api/core/background-tasks/{id}/delete/ | 
+[**CoreBackgroundTasksEnqueueCreate**](CoreAPI.md#CoreBackgroundTasksEnqueueCreate) | **Post** /api/core/background-tasks/{id}/enqueue/ | 
+[**CoreBackgroundTasksRequeueCreate**](CoreAPI.md#CoreBackgroundTasksRequeueCreate) | **Post** /api/core/background-tasks/{id}/requeue/ | 
+[**CoreBackgroundTasksRetrieve**](CoreAPI.md#CoreBackgroundTasksRetrieve) | **Get** /api/core/background-tasks/ | 
+[**CoreBackgroundTasksRetrieve2**](CoreAPI.md#CoreBackgroundTasksRetrieve2) | **Get** /api/core/background-tasks/{id}/ | 
+[**CoreBackgroundTasksStopCreate**](CoreAPI.md#CoreBackgroundTasksStopCreate) | **Post** /api/core/background-tasks/{id}/stop/ | 
+[**CoreBackgroundWorkersRetrieve**](CoreAPI.md#CoreBackgroundWorkersRetrieve) | **Get** /api/core/background-workers/ | 
+[**CoreBackgroundWorkersRetrieve2**](CoreAPI.md#CoreBackgroundWorkersRetrieve2) | **Get** /api/core/background-workers/{name}/ | 
 [**CoreDataFilesList**](CoreAPI.md#CoreDataFilesList) | **Get** /api/core/data-files/ | 
 [**CoreDataFilesRetrieve**](CoreAPI.md#CoreDataFilesRetrieve) | **Get** /api/core/data-files/{id}/ | 
 [**CoreDataSourcesBulkDestroy**](CoreAPI.md#CoreDataSourcesBulkDestroy) | **Delete** /api/core/data-sources/ | 
@@ -18,7 +28,672 @@ Method | HTTP request | Description
 [**CoreDataSourcesUpdate**](CoreAPI.md#CoreDataSourcesUpdate) | **Put** /api/core/data-sources/{id}/ | 
 [**CoreJobsList**](CoreAPI.md#CoreJobsList) | **Get** /api/core/jobs/ | 
 [**CoreJobsRetrieve**](CoreAPI.md#CoreJobsRetrieve) | **Get** /api/core/jobs/{id}/ | 
+[**CoreObjectChangesList**](CoreAPI.md#CoreObjectChangesList) | **Get** /api/core/object-changes/ | 
+[**CoreObjectChangesRetrieve**](CoreAPI.md#CoreObjectChangesRetrieve) | **Get** /api/core/object-changes/{id}/ | 
 
+
+
+## CoreBackgroundQueuesRetrieve
+
+> map[string]interface{} CoreBackgroundQueuesRetrieve(ctx).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CoreAPI.CoreBackgroundQueuesRetrieve(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CoreAPI.CoreBackgroundQueuesRetrieve``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CoreBackgroundQueuesRetrieve`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `CoreAPI.CoreBackgroundQueuesRetrieve`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCoreBackgroundQueuesRetrieveRequest struct via the builder pattern
+
+
+### Return type
+
+**map[string]interface{}**
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CoreBackgroundQueuesRetrieve2
+
+> map[string]interface{} CoreBackgroundQueuesRetrieve2(ctx, name).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
+)
+
+func main() {
+	name := "name_example" // string | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CoreAPI.CoreBackgroundQueuesRetrieve2(context.Background(), name).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CoreAPI.CoreBackgroundQueuesRetrieve2``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CoreBackgroundQueuesRetrieve2`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `CoreAPI.CoreBackgroundQueuesRetrieve2`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**name** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCoreBackgroundQueuesRetrieve2Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+**map[string]interface{}**
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CoreBackgroundTasksDeleteCreate
+
+> CoreBackgroundTasksDeleteCreate(ctx, id).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
+)
+
+func main() {
+	id := "id_example" // string | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CoreAPI.CoreBackgroundTasksDeleteCreate(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CoreAPI.CoreBackgroundTasksDeleteCreate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCoreBackgroundTasksDeleteCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CoreBackgroundTasksEnqueueCreate
+
+> CoreBackgroundTasksEnqueueCreate(ctx, id).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
+)
+
+func main() {
+	id := "id_example" // string | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CoreAPI.CoreBackgroundTasksEnqueueCreate(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CoreAPI.CoreBackgroundTasksEnqueueCreate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCoreBackgroundTasksEnqueueCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CoreBackgroundTasksRequeueCreate
+
+> CoreBackgroundTasksRequeueCreate(ctx, id).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
+)
+
+func main() {
+	id := "id_example" // string | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CoreAPI.CoreBackgroundTasksRequeueCreate(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CoreAPI.CoreBackgroundTasksRequeueCreate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCoreBackgroundTasksRequeueCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CoreBackgroundTasksRetrieve
+
+> map[string]interface{} CoreBackgroundTasksRetrieve(ctx).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CoreAPI.CoreBackgroundTasksRetrieve(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CoreAPI.CoreBackgroundTasksRetrieve``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CoreBackgroundTasksRetrieve`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `CoreAPI.CoreBackgroundTasksRetrieve`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCoreBackgroundTasksRetrieveRequest struct via the builder pattern
+
+
+### Return type
+
+**map[string]interface{}**
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CoreBackgroundTasksRetrieve2
+
+> map[string]interface{} CoreBackgroundTasksRetrieve2(ctx, id).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
+)
+
+func main() {
+	id := "id_example" // string | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CoreAPI.CoreBackgroundTasksRetrieve2(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CoreAPI.CoreBackgroundTasksRetrieve2``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CoreBackgroundTasksRetrieve2`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `CoreAPI.CoreBackgroundTasksRetrieve2`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCoreBackgroundTasksRetrieve2Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+**map[string]interface{}**
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CoreBackgroundTasksStopCreate
+
+> CoreBackgroundTasksStopCreate(ctx, id).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
+)
+
+func main() {
+	id := "id_example" // string | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CoreAPI.CoreBackgroundTasksStopCreate(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CoreAPI.CoreBackgroundTasksStopCreate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCoreBackgroundTasksStopCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CoreBackgroundWorkersRetrieve
+
+> map[string]interface{} CoreBackgroundWorkersRetrieve(ctx).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CoreAPI.CoreBackgroundWorkersRetrieve(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CoreAPI.CoreBackgroundWorkersRetrieve``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CoreBackgroundWorkersRetrieve`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `CoreAPI.CoreBackgroundWorkersRetrieve`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCoreBackgroundWorkersRetrieveRequest struct via the builder pattern
+
+
+### Return type
+
+**map[string]interface{}**
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CoreBackgroundWorkersRetrieve2
+
+> CoreBackgroundWorkersRetrieve2(ctx, name).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
+)
+
+func main() {
+	name := "name_example" // string | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CoreAPI.CoreBackgroundWorkersRetrieve2(context.Background(), name).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CoreAPI.CoreBackgroundWorkersRetrieve2``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**name** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCoreBackgroundWorkersRetrieve2Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## CoreDataFilesList
@@ -299,7 +974,7 @@ import (
 )
 
 func main() {
-	dataSourceRequest := []openapiclient.DataSourceRequest{*openapiclient.NewDataSourceRequest("Name_example", openapiclient.DataSourceRequest_type("local"), "SourceUrl_example")} // []DataSourceRequest | 
+	dataSourceRequest := []openapiclient.DataSourceRequest{*openapiclient.NewDataSourceRequest("Name_example", openapiclient.DataSource_type_value("local"), "SourceUrl_example")} // []DataSourceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -363,7 +1038,7 @@ import (
 )
 
 func main() {
-	dataSourceRequest := []openapiclient.DataSourceRequest{*openapiclient.NewDataSourceRequest("Name_example", openapiclient.DataSourceRequest_type("local"), "SourceUrl_example")} // []DataSourceRequest | 
+	dataSourceRequest := []openapiclient.DataSourceRequest{*openapiclient.NewDataSourceRequest("Name_example", openapiclient.DataSource_type_value("local"), "SourceUrl_example")} // []DataSourceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -429,7 +1104,7 @@ import (
 )
 
 func main() {
-	dataSourceRequest := []openapiclient.DataSourceRequest{*openapiclient.NewDataSourceRequest("Name_example", openapiclient.DataSourceRequest_type("local"), "SourceUrl_example")} // []DataSourceRequest | 
+	dataSourceRequest := []openapiclient.DataSourceRequest{*openapiclient.NewDataSourceRequest("Name_example", openapiclient.DataSource_type_value("local"), "SourceUrl_example")} // []DataSourceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -610,7 +1285,7 @@ Name | Type | Description  | Notes
 
 ## CoreDataSourcesList
 
-> PaginatedDataSourceList CoreDataSourcesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Enabled(enabled).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastSynced(lastSynced).LastSyncedEmpty(lastSyncedEmpty).LastSyncedGt(lastSyncedGt).LastSyncedGte(lastSyncedGte).LastSyncedLt(lastSyncedLt).LastSyncedLte(lastSyncedLte).LastSyncedN(lastSyncedN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).SourceUrl(sourceUrl).SourceUrlEmpty(sourceUrlEmpty).SourceUrlIc(sourceUrlIc).SourceUrlIe(sourceUrlIe).SourceUrlIew(sourceUrlIew).SourceUrlIsw(sourceUrlIsw).SourceUrlN(sourceUrlN).SourceUrlNic(sourceUrlNic).SourceUrlNie(sourceUrlNie).SourceUrlNiew(sourceUrlNiew).SourceUrlNisw(sourceUrlNisw).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedDataSourceList CoreDataSourcesList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Enabled(enabled).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastSynced(lastSynced).LastSyncedEmpty(lastSyncedEmpty).LastSyncedGt(lastSyncedGt).LastSyncedGte(lastSyncedGte).LastSyncedLt(lastSyncedLt).LastSyncedLte(lastSyncedLte).LastSyncedN(lastSyncedN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).SourceUrl(sourceUrl).SourceUrlEmpty(sourceUrlEmpty).SourceUrlIc(sourceUrlIc).SourceUrlIe(sourceUrlIe).SourceUrlIew(sourceUrlIew).SourceUrlIsw(sourceUrlIsw).SourceUrlN(sourceUrlN).SourceUrlNic(sourceUrlNic).SourceUrlNie(sourceUrlNie).SourceUrlNiew(sourceUrlNiew).SourceUrlNisw(sourceUrlNisw).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).Tag(tag).TagN(tagN).Type_(type_).TypeEmpty(typeEmpty).TypeIc(typeIc).TypeIe(typeIe).TypeIew(typeIew).TypeIsw(typeIsw).TypeN(typeN).TypeNic(typeNic).TypeNie(typeNie).TypeNiew(typeNiew).TypeNisw(typeNisw).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -699,16 +1374,34 @@ func main() {
 	sourceUrlNiew := []string{"Inner_example"} // []string |  (optional)
 	sourceUrlNisw := []string{"Inner_example"} // []string |  (optional)
 	status := []string{"Inner_example"} // []string |  (optional)
+	statusEmpty := true // bool |  (optional)
+	statusIc := []string{"Inner_example"} // []string |  (optional)
+	statusIe := []string{"Inner_example"} // []string |  (optional)
+	statusIew := []string{"Inner_example"} // []string |  (optional)
+	statusIsw := []string{"Inner_example"} // []string |  (optional)
 	statusN := []string{"Inner_example"} // []string |  (optional)
+	statusNic := []string{"Inner_example"} // []string |  (optional)
+	statusNie := []string{"Inner_example"} // []string |  (optional)
+	statusNiew := []string{"Inner_example"} // []string |  (optional)
+	statusNisw := []string{"Inner_example"} // []string |  (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
 	type_ := []string{"Inner_example"} // []string |  (optional)
+	typeEmpty := true // bool |  (optional)
+	typeIc := []string{"Inner_example"} // []string |  (optional)
+	typeIe := []string{"Inner_example"} // []string |  (optional)
+	typeIew := []string{"Inner_example"} // []string |  (optional)
+	typeIsw := []string{"Inner_example"} // []string |  (optional)
 	typeN := []string{"Inner_example"} // []string |  (optional)
+	typeNic := []string{"Inner_example"} // []string |  (optional)
+	typeNie := []string{"Inner_example"} // []string |  (optional)
+	typeNiew := []string{"Inner_example"} // []string |  (optional)
+	typeNisw := []string{"Inner_example"} // []string |  (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CoreAPI.CoreDataSourcesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Enabled(enabled).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastSynced(lastSynced).LastSyncedEmpty(lastSyncedEmpty).LastSyncedGt(lastSyncedGt).LastSyncedGte(lastSyncedGte).LastSyncedLt(lastSyncedLt).LastSyncedLte(lastSyncedLte).LastSyncedN(lastSyncedN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).SourceUrl(sourceUrl).SourceUrlEmpty(sourceUrlEmpty).SourceUrlIc(sourceUrlIc).SourceUrlIe(sourceUrlIe).SourceUrlIew(sourceUrlIew).SourceUrlIsw(sourceUrlIsw).SourceUrlN(sourceUrlN).SourceUrlNic(sourceUrlNic).SourceUrlNie(sourceUrlNie).SourceUrlNiew(sourceUrlNiew).SourceUrlNisw(sourceUrlNisw).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Type_(type_).TypeN(typeN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.CoreAPI.CoreDataSourcesList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Enabled(enabled).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastSynced(lastSynced).LastSyncedEmpty(lastSyncedEmpty).LastSyncedGt(lastSyncedGt).LastSyncedGte(lastSyncedGte).LastSyncedLt(lastSyncedLt).LastSyncedLte(lastSyncedLte).LastSyncedN(lastSyncedN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).Q(q).SourceUrl(sourceUrl).SourceUrlEmpty(sourceUrlEmpty).SourceUrlIc(sourceUrlIc).SourceUrlIe(sourceUrlIe).SourceUrlIew(sourceUrlIew).SourceUrlIsw(sourceUrlIsw).SourceUrlN(sourceUrlN).SourceUrlNic(sourceUrlNic).SourceUrlNie(sourceUrlNie).SourceUrlNiew(sourceUrlNiew).SourceUrlNisw(sourceUrlNisw).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).Tag(tag).TagN(tagN).Type_(type_).TypeEmpty(typeEmpty).TypeIc(typeIc).TypeIe(typeIe).TypeIew(typeIew).TypeIsw(typeIsw).TypeN(typeN).TypeNic(typeNic).TypeNie(typeNie).TypeNiew(typeNiew).TypeNisw(typeNisw).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CoreAPI.CoreDataSourcesList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -798,11 +1491,29 @@ Name | Type | Description  | Notes
  **sourceUrlNiew** | **[]string** |  | 
  **sourceUrlNisw** | **[]string** |  | 
  **status** | **[]string** |  | 
+ **statusEmpty** | **bool** |  | 
+ **statusIc** | **[]string** |  | 
+ **statusIe** | **[]string** |  | 
+ **statusIew** | **[]string** |  | 
+ **statusIsw** | **[]string** |  | 
  **statusN** | **[]string** |  | 
+ **statusNic** | **[]string** |  | 
+ **statusNie** | **[]string** |  | 
+ **statusNiew** | **[]string** |  | 
+ **statusNisw** | **[]string** |  | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
  **type_** | **[]string** |  | 
+ **typeEmpty** | **bool** |  | 
+ **typeIc** | **[]string** |  | 
+ **typeIe** | **[]string** |  | 
+ **typeIew** | **[]string** |  | 
+ **typeIsw** | **[]string** |  | 
  **typeN** | **[]string** |  | 
+ **typeNic** | **[]string** |  | 
+ **typeNie** | **[]string** |  | 
+ **typeNiew** | **[]string** |  | 
+ **typeNisw** | **[]string** |  | 
  **updatedByRequest** | **string** |  | 
 
 ### Return type
@@ -1111,7 +1822,7 @@ Name | Type | Description  | Notes
 
 ## CoreJobsList
 
-> PaginatedJobList CoreJobsList(ctx).Completed(completed).CompletedAfter(completedAfter).CompletedBefore(completedBefore).Created(created).CreatedAfter(createdAfter).CreatedBefore(createdBefore).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interval(interval).IntervalEmpty(intervalEmpty).IntervalGt(intervalGt).IntervalGte(intervalGte).IntervalLt(intervalLt).IntervalLte(intervalLte).IntervalN(intervalN).JobId(jobId).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).ObjectId(objectId).ObjectIdEmpty(objectIdEmpty).ObjectIdGt(objectIdGt).ObjectIdGte(objectIdGte).ObjectIdLt(objectIdLt).ObjectIdLte(objectIdLte).ObjectIdN(objectIdN).ObjectType(objectType).ObjectTypeN(objectTypeN).Offset(offset).Ordering(ordering).Q(q).Scheduled(scheduled).ScheduledAfter(scheduledAfter).ScheduledBefore(scheduledBefore).Started(started).StartedAfter(startedAfter).StartedBefore(startedBefore).Status(status).StatusN(statusN).User(user).UserN(userN).Execute()
+> PaginatedJobList CoreJobsList(ctx).Completed(completed).CompletedAfter(completedAfter).CompletedBefore(completedBefore).Created(created).CreatedAfter(createdAfter).CreatedBefore(createdBefore).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interval(interval).IntervalEmpty(intervalEmpty).IntervalGt(intervalGt).IntervalGte(intervalGte).IntervalLt(intervalLt).IntervalLte(intervalLte).IntervalN(intervalN).JobId(jobId).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).ObjectId(objectId).ObjectIdEmpty(objectIdEmpty).ObjectIdGt(objectIdGt).ObjectIdGte(objectIdGte).ObjectIdLt(objectIdLt).ObjectIdLte(objectIdLte).ObjectIdN(objectIdN).ObjectType(objectType).ObjectTypeN(objectTypeN).Offset(offset).Ordering(ordering).Q(q).Scheduled(scheduled).ScheduledAfter(scheduledAfter).ScheduledBefore(scheduledBefore).Started(started).StartedAfter(startedAfter).StartedBefore(startedBefore).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).User(user).UserN(userN).Execute()
 
 
 
@@ -1183,13 +1894,22 @@ func main() {
 	startedAfter := time.Now() // time.Time |  (optional)
 	startedBefore := time.Now() // time.Time |  (optional)
 	status := []string{"Inner_example"} // []string |  (optional)
+	statusEmpty := true // bool |  (optional)
+	statusIc := []string{"Inner_example"} // []string |  (optional)
+	statusIe := []string{"Inner_example"} // []string |  (optional)
+	statusIew := []string{"Inner_example"} // []string |  (optional)
+	statusIsw := []string{"Inner_example"} // []string |  (optional)
 	statusN := []string{"Inner_example"} // []string |  (optional)
+	statusNic := []string{"Inner_example"} // []string |  (optional)
+	statusNie := []string{"Inner_example"} // []string |  (optional)
+	statusNiew := []string{"Inner_example"} // []string |  (optional)
+	statusNisw := []string{"Inner_example"} // []string |  (optional)
 	user := int32(56) // int32 |  (optional)
 	userN := int32(56) // int32 |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CoreAPI.CoreJobsList(context.Background()).Completed(completed).CompletedAfter(completedAfter).CompletedBefore(completedBefore).Created(created).CreatedAfter(createdAfter).CreatedBefore(createdBefore).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interval(interval).IntervalEmpty(intervalEmpty).IntervalGt(intervalGt).IntervalGte(intervalGte).IntervalLt(intervalLt).IntervalLte(intervalLte).IntervalN(intervalN).JobId(jobId).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).ObjectId(objectId).ObjectIdEmpty(objectIdEmpty).ObjectIdGt(objectIdGt).ObjectIdGte(objectIdGte).ObjectIdLt(objectIdLt).ObjectIdLte(objectIdLte).ObjectIdN(objectIdN).ObjectType(objectType).ObjectTypeN(objectTypeN).Offset(offset).Ordering(ordering).Q(q).Scheduled(scheduled).ScheduledAfter(scheduledAfter).ScheduledBefore(scheduledBefore).Started(started).StartedAfter(startedAfter).StartedBefore(startedBefore).Status(status).StatusN(statusN).User(user).UserN(userN).Execute()
+	resp, r, err := apiClient.CoreAPI.CoreJobsList(context.Background()).Completed(completed).CompletedAfter(completedAfter).CompletedBefore(completedBefore).Created(created).CreatedAfter(createdAfter).CreatedBefore(createdBefore).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Interval(interval).IntervalEmpty(intervalEmpty).IntervalGt(intervalGt).IntervalGte(intervalGte).IntervalLt(intervalLt).IntervalLte(intervalLte).IntervalN(intervalN).JobId(jobId).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).ObjectId(objectId).ObjectIdEmpty(objectIdEmpty).ObjectIdGt(objectIdGt).ObjectIdGte(objectIdGte).ObjectIdLt(objectIdLt).ObjectIdLte(objectIdLte).ObjectIdN(objectIdN).ObjectType(objectType).ObjectTypeN(objectTypeN).Offset(offset).Ordering(ordering).Q(q).Scheduled(scheduled).ScheduledAfter(scheduledAfter).ScheduledBefore(scheduledBefore).Started(started).StartedAfter(startedAfter).StartedBefore(startedBefore).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).User(user).UserN(userN).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CoreAPI.CoreJobsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1262,7 +1982,16 @@ Name | Type | Description  | Notes
  **startedAfter** | **time.Time** |  | 
  **startedBefore** | **time.Time** |  | 
  **status** | **[]string** |  | 
+ **statusEmpty** | **bool** |  | 
+ **statusIc** | **[]string** |  | 
+ **statusIe** | **[]string** |  | 
+ **statusIew** | **[]string** |  | 
+ **statusIsw** | **[]string** |  | 
  **statusN** | **[]string** |  | 
+ **statusNic** | **[]string** |  | 
+ **statusNie** | **[]string** |  | 
+ **statusNiew** | **[]string** |  | 
+ **statusNisw** | **[]string** |  | 
  **user** | **int32** |  | 
  **userN** | **int32** |  | 
 
@@ -1339,6 +2068,263 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Job**](Job.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CoreObjectChangesList
+
+> PaginatedObjectChangeList CoreObjectChangesList(ctx).Action(action).ChangedObjectId(changedObjectId).ChangedObjectIdEmpty(changedObjectIdEmpty).ChangedObjectIdGt(changedObjectIdGt).ChangedObjectIdGte(changedObjectIdGte).ChangedObjectIdLt(changedObjectIdLt).ChangedObjectIdLte(changedObjectIdLte).ChangedObjectIdN(changedObjectIdN).ChangedObjectType(changedObjectType).ChangedObjectTypeN(changedObjectTypeN).ChangedObjectTypeId(changedObjectTypeId).ChangedObjectTypeIdN(changedObjectTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).ObjectRepr(objectRepr).ObjectReprEmpty(objectReprEmpty).ObjectReprIc(objectReprIc).ObjectReprIe(objectReprIe).ObjectReprIew(objectReprIew).ObjectReprIsw(objectReprIsw).ObjectReprN(objectReprN).ObjectReprNic(objectReprNic).ObjectReprNie(objectReprNie).ObjectReprNiew(objectReprNiew).ObjectReprNisw(objectReprNisw).Offset(offset).Ordering(ordering).Q(q).RelatedObjectId(relatedObjectId).RelatedObjectIdEmpty(relatedObjectIdEmpty).RelatedObjectIdGt(relatedObjectIdGt).RelatedObjectIdGte(relatedObjectIdGte).RelatedObjectIdLt(relatedObjectIdLt).RelatedObjectIdLte(relatedObjectIdLte).RelatedObjectIdN(relatedObjectIdN).RelatedObjectType(relatedObjectType).RelatedObjectTypeN(relatedObjectTypeN).RequestId(requestId).TimeAfter(timeAfter).TimeBefore(timeBefore).User(user).UserN(userN).UserId(userId).UserIdN(userIdN).UserName(userName).UserNameEmpty(userNameEmpty).UserNameIc(userNameIc).UserNameIe(userNameIe).UserNameIew(userNameIew).UserNameIsw(userNameIsw).UserNameN(userNameN).UserNameNic(userNameNic).UserNameNie(userNameNie).UserNameNiew(userNameNiew).UserNameNisw(userNameNisw).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+    "time"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
+)
+
+func main() {
+	action := openapiclient.core_object_changes_list_action_parameter("create") // CoreObjectChangesListActionParameter | * `create` - Created * `update` - Updated * `delete` - Deleted (optional)
+	changedObjectId := []int32{int32(123)} // []int32 |  (optional)
+	changedObjectIdEmpty := true // bool |  (optional)
+	changedObjectIdGt := []int32{int32(123)} // []int32 |  (optional)
+	changedObjectIdGte := []int32{int32(123)} // []int32 |  (optional)
+	changedObjectIdLt := []int32{int32(123)} // []int32 |  (optional)
+	changedObjectIdLte := []int32{int32(123)} // []int32 |  (optional)
+	changedObjectIdN := []int32{int32(123)} // []int32 |  (optional)
+	changedObjectType := "changedObjectType_example" // string |  (optional)
+	changedObjectTypeN := "changedObjectTypeN_example" // string |  (optional)
+	changedObjectTypeId := []int32{int32(123)} // []int32 |  (optional)
+	changedObjectTypeIdN := []int32{int32(123)} // []int32 |  (optional)
+	id := []int32{int32(123)} // []int32 |  (optional)
+	idEmpty := true // bool |  (optional)
+	idGt := []int32{int32(123)} // []int32 |  (optional)
+	idGte := []int32{int32(123)} // []int32 |  (optional)
+	idLt := []int32{int32(123)} // []int32 |  (optional)
+	idLte := []int32{int32(123)} // []int32 |  (optional)
+	idN := []int32{int32(123)} // []int32 |  (optional)
+	limit := int32(56) // int32 | Number of results to return per page. (optional)
+	objectRepr := []string{"Inner_example"} // []string |  (optional)
+	objectReprEmpty := true // bool |  (optional)
+	objectReprIc := []string{"Inner_example"} // []string |  (optional)
+	objectReprIe := []string{"Inner_example"} // []string |  (optional)
+	objectReprIew := []string{"Inner_example"} // []string |  (optional)
+	objectReprIsw := []string{"Inner_example"} // []string |  (optional)
+	objectReprN := []string{"Inner_example"} // []string |  (optional)
+	objectReprNic := []string{"Inner_example"} // []string |  (optional)
+	objectReprNie := []string{"Inner_example"} // []string |  (optional)
+	objectReprNiew := []string{"Inner_example"} // []string |  (optional)
+	objectReprNisw := []string{"Inner_example"} // []string |  (optional)
+	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
+	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
+	q := "q_example" // string | Search (optional)
+	relatedObjectId := []int32{int32(123)} // []int32 |  (optional)
+	relatedObjectIdEmpty := true // bool |  (optional)
+	relatedObjectIdGt := []int32{int32(123)} // []int32 |  (optional)
+	relatedObjectIdGte := []int32{int32(123)} // []int32 |  (optional)
+	relatedObjectIdLt := []int32{int32(123)} // []int32 |  (optional)
+	relatedObjectIdLte := []int32{int32(123)} // []int32 |  (optional)
+	relatedObjectIdN := []int32{int32(123)} // []int32 |  (optional)
+	relatedObjectType := int32(56) // int32 |  (optional)
+	relatedObjectTypeN := int32(56) // int32 |  (optional)
+	requestId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+	timeAfter := time.Now() // time.Time |  (optional)
+	timeBefore := time.Now() // time.Time |  (optional)
+	user := []string{"Inner_example"} // []string | User name (optional)
+	userN := []string{"Inner_example"} // []string | User name (optional)
+	userId := []*int32{int32(123)} // []*int32 | User (ID) (optional)
+	userIdN := []*int32{int32(123)} // []*int32 | User (ID) (optional)
+	userName := []string{"Inner_example"} // []string |  (optional)
+	userNameEmpty := true // bool |  (optional)
+	userNameIc := []string{"Inner_example"} // []string |  (optional)
+	userNameIe := []string{"Inner_example"} // []string |  (optional)
+	userNameIew := []string{"Inner_example"} // []string |  (optional)
+	userNameIsw := []string{"Inner_example"} // []string |  (optional)
+	userNameN := []string{"Inner_example"} // []string |  (optional)
+	userNameNic := []string{"Inner_example"} // []string |  (optional)
+	userNameNie := []string{"Inner_example"} // []string |  (optional)
+	userNameNiew := []string{"Inner_example"} // []string |  (optional)
+	userNameNisw := []string{"Inner_example"} // []string |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CoreAPI.CoreObjectChangesList(context.Background()).Action(action).ChangedObjectId(changedObjectId).ChangedObjectIdEmpty(changedObjectIdEmpty).ChangedObjectIdGt(changedObjectIdGt).ChangedObjectIdGte(changedObjectIdGte).ChangedObjectIdLt(changedObjectIdLt).ChangedObjectIdLte(changedObjectIdLte).ChangedObjectIdN(changedObjectIdN).ChangedObjectType(changedObjectType).ChangedObjectTypeN(changedObjectTypeN).ChangedObjectTypeId(changedObjectTypeId).ChangedObjectTypeIdN(changedObjectTypeIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).ObjectRepr(objectRepr).ObjectReprEmpty(objectReprEmpty).ObjectReprIc(objectReprIc).ObjectReprIe(objectReprIe).ObjectReprIew(objectReprIew).ObjectReprIsw(objectReprIsw).ObjectReprN(objectReprN).ObjectReprNic(objectReprNic).ObjectReprNie(objectReprNie).ObjectReprNiew(objectReprNiew).ObjectReprNisw(objectReprNisw).Offset(offset).Ordering(ordering).Q(q).RelatedObjectId(relatedObjectId).RelatedObjectIdEmpty(relatedObjectIdEmpty).RelatedObjectIdGt(relatedObjectIdGt).RelatedObjectIdGte(relatedObjectIdGte).RelatedObjectIdLt(relatedObjectIdLt).RelatedObjectIdLte(relatedObjectIdLte).RelatedObjectIdN(relatedObjectIdN).RelatedObjectType(relatedObjectType).RelatedObjectTypeN(relatedObjectTypeN).RequestId(requestId).TimeAfter(timeAfter).TimeBefore(timeBefore).User(user).UserN(userN).UserId(userId).UserIdN(userIdN).UserName(userName).UserNameEmpty(userNameEmpty).UserNameIc(userNameIc).UserNameIe(userNameIe).UserNameIew(userNameIew).UserNameIsw(userNameIsw).UserNameN(userNameN).UserNameNic(userNameNic).UserNameNie(userNameNie).UserNameNiew(userNameNiew).UserNameNisw(userNameNisw).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CoreAPI.CoreObjectChangesList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CoreObjectChangesList`: PaginatedObjectChangeList
+	fmt.Fprintf(os.Stdout, "Response from `CoreAPI.CoreObjectChangesList`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCoreObjectChangesListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **action** | [**CoreObjectChangesListActionParameter**](CoreObjectChangesListActionParameter.md) | * &#x60;create&#x60; - Created * &#x60;update&#x60; - Updated * &#x60;delete&#x60; - Deleted | 
+ **changedObjectId** | **[]int32** |  | 
+ **changedObjectIdEmpty** | **bool** |  | 
+ **changedObjectIdGt** | **[]int32** |  | 
+ **changedObjectIdGte** | **[]int32** |  | 
+ **changedObjectIdLt** | **[]int32** |  | 
+ **changedObjectIdLte** | **[]int32** |  | 
+ **changedObjectIdN** | **[]int32** |  | 
+ **changedObjectType** | **string** |  | 
+ **changedObjectTypeN** | **string** |  | 
+ **changedObjectTypeId** | **[]int32** |  | 
+ **changedObjectTypeIdN** | **[]int32** |  | 
+ **id** | **[]int32** |  | 
+ **idEmpty** | **bool** |  | 
+ **idGt** | **[]int32** |  | 
+ **idGte** | **[]int32** |  | 
+ **idLt** | **[]int32** |  | 
+ **idLte** | **[]int32** |  | 
+ **idN** | **[]int32** |  | 
+ **limit** | **int32** | Number of results to return per page. | 
+ **objectRepr** | **[]string** |  | 
+ **objectReprEmpty** | **bool** |  | 
+ **objectReprIc** | **[]string** |  | 
+ **objectReprIe** | **[]string** |  | 
+ **objectReprIew** | **[]string** |  | 
+ **objectReprIsw** | **[]string** |  | 
+ **objectReprN** | **[]string** |  | 
+ **objectReprNic** | **[]string** |  | 
+ **objectReprNie** | **[]string** |  | 
+ **objectReprNiew** | **[]string** |  | 
+ **objectReprNisw** | **[]string** |  | 
+ **offset** | **int32** | The initial index from which to return the results. | 
+ **ordering** | **string** | Which field to use when ordering the results. | 
+ **q** | **string** | Search | 
+ **relatedObjectId** | **[]int32** |  | 
+ **relatedObjectIdEmpty** | **bool** |  | 
+ **relatedObjectIdGt** | **[]int32** |  | 
+ **relatedObjectIdGte** | **[]int32** |  | 
+ **relatedObjectIdLt** | **[]int32** |  | 
+ **relatedObjectIdLte** | **[]int32** |  | 
+ **relatedObjectIdN** | **[]int32** |  | 
+ **relatedObjectType** | **int32** |  | 
+ **relatedObjectTypeN** | **int32** |  | 
+ **requestId** | **string** |  | 
+ **timeAfter** | **time.Time** |  | 
+ **timeBefore** | **time.Time** |  | 
+ **user** | **[]string** | User name | 
+ **userN** | **[]string** | User name | 
+ **userId** | **[]int32** | User (ID) | 
+ **userIdN** | **[]int32** | User (ID) | 
+ **userName** | **[]string** |  | 
+ **userNameEmpty** | **bool** |  | 
+ **userNameIc** | **[]string** |  | 
+ **userNameIe** | **[]string** |  | 
+ **userNameIew** | **[]string** |  | 
+ **userNameIsw** | **[]string** |  | 
+ **userNameN** | **[]string** |  | 
+ **userNameNic** | **[]string** |  | 
+ **userNameNie** | **[]string** |  | 
+ **userNameNiew** | **[]string** |  | 
+ **userNameNisw** | **[]string** |  | 
+
+### Return type
+
+[**PaginatedObjectChangeList**](PaginatedObjectChangeList.md)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CoreObjectChangesRetrieve
+
+> ObjectChange CoreObjectChangesRetrieve(ctx, id).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this object change.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CoreAPI.CoreObjectChangesRetrieve(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CoreAPI.CoreObjectChangesRetrieve``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CoreObjectChangesRetrieve`: ObjectChange
+	fmt.Fprintf(os.Stdout, "Response from `CoreAPI.CoreObjectChangesRetrieve`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this object change. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCoreObjectChangesRetrieveRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**ObjectChange**](ObjectChange.md)
 
 ### Authorization
 

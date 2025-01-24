@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Group** | [**FHRPGroupRequest**](FHRPGroupRequest.md) |  | 
+**Group** | [**BriefFHRPGroupRequest**](BriefFHRPGroupRequest.md) |  | 
 **InterfaceType** | **string** |  | 
 **InterfaceId** | **int64** |  | 
 **Priority** | **int32** |  | 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 
 ### NewFHRPGroupAssignmentRequest
 
-`func NewFHRPGroupAssignmentRequest(group FHRPGroupRequest, interfaceType string, interfaceId int64, priority int32, ) *FHRPGroupAssignmentRequest`
+`func NewFHRPGroupAssignmentRequest(group BriefFHRPGroupRequest, interfaceType string, interfaceId int64, priority int32, ) *FHRPGroupAssignmentRequest`
 
 NewFHRPGroupAssignmentRequest instantiates a new FHRPGroupAssignmentRequest object
 This constructor will assign default values to properties that have it defined,
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetGroup
 
-`func (o *FHRPGroupAssignmentRequest) GetGroup() FHRPGroupRequest`
+`func (o *FHRPGroupAssignmentRequest) GetGroup() BriefFHRPGroupRequest`
 
 GetGroup returns the Group field if non-nil, zero value otherwise.
 
 ### GetGroupOk
 
-`func (o *FHRPGroupAssignmentRequest) GetGroupOk() (*FHRPGroupRequest, bool)`
+`func (o *FHRPGroupAssignmentRequest) GetGroupOk() (*BriefFHRPGroupRequest, bool)`
 
 GetGroupOk returns a tuple with the Group field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGroup
 
-`func (o *FHRPGroupAssignmentRequest) SetGroup(v FHRPGroupRequest)`
+`func (o *FHRPGroupAssignmentRequest) SetGroup(v BriefFHRPGroupRequest)`
 
 SetGroup sets Group field to given value.
 

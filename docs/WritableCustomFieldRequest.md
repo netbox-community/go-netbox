@@ -11,18 +11,20 @@ Name | Type | Description | Notes
 **Label** | Pointer to **string** | Name of the field as displayed to users (if not provided, &#39;the field&#39;s name will be used) | [optional] 
 **GroupName** | Pointer to **string** | Custom fields within the same group will be displayed together | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**Required** | Pointer to **bool** | If true, this field is required when creating new objects or editing an existing object. | [optional] 
+**Required** | Pointer to **bool** | This field is required when creating new objects or editing an existing object. | [optional] 
+**Unique** | Pointer to **bool** | The value of this field must be unique for the assigned object | [optional] 
 **SearchWeight** | Pointer to **int32** | Weighting for search. Lower values are considered more important. Fields with a search weight of zero will be ignored. | [optional] 
 **FilterLogic** | Pointer to [**PatchedWritableCustomFieldRequestFilterLogic**](PatchedWritableCustomFieldRequestFilterLogic.md) |  | [optional] 
 **UiVisible** | Pointer to [**PatchedWritableCustomFieldRequestUiVisible**](PatchedWritableCustomFieldRequestUiVisible.md) |  | [optional] 
 **UiEditable** | Pointer to [**PatchedWritableCustomFieldRequestUiEditable**](PatchedWritableCustomFieldRequestUiEditable.md) |  | [optional] 
 **IsCloneable** | Pointer to **bool** | Replicate this value when cloning objects | [optional] 
 **Default** | Pointer to **interface{}** | Default value for the field (must be a JSON value). Encapsulate strings with double quotes (e.g. \&quot;Foo\&quot;). | [optional] 
+**RelatedObjectFilter** | Pointer to **interface{}** | Filter the object selection choices using a query_params dict (must be a JSON value).Encapsulate strings with double quotes (e.g. \&quot;Foo\&quot;). | [optional] 
 **Weight** | Pointer to **int32** | Fields with higher weights appear lower in a form. | [optional] 
 **ValidationMinimum** | Pointer to **NullableInt64** | Minimum allowed value (for numeric fields) | [optional] 
 **ValidationMaximum** | Pointer to **NullableInt64** | Maximum allowed value (for numeric fields) | [optional] 
 **ValidationRegex** | Pointer to **string** | Regular expression to enforce on text field values. Use ^ and $ to force matching of entire string. For example, &lt;code&gt;^[A-Z]{3}$&lt;/code&gt; will limit values to exactly three uppercase letters. | [optional] 
-**ChoiceSet** | Pointer to [**NullableCustomFieldChoiceSetRequest**](CustomFieldChoiceSetRequest.md) |  | [optional] 
+**ChoiceSet** | Pointer to [**NullableBriefCustomFieldChoiceSetRequest**](BriefCustomFieldChoiceSetRequest.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -244,6 +246,31 @@ SetRequired sets Required field to given value.
 
 HasRequired returns a boolean if a field has been set.
 
+### GetUnique
+
+`func (o *WritableCustomFieldRequest) GetUnique() bool`
+
+GetUnique returns the Unique field if non-nil, zero value otherwise.
+
+### GetUniqueOk
+
+`func (o *WritableCustomFieldRequest) GetUniqueOk() (*bool, bool)`
+
+GetUniqueOk returns a tuple with the Unique field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUnique
+
+`func (o *WritableCustomFieldRequest) SetUnique(v bool)`
+
+SetUnique sets Unique field to given value.
+
+### HasUnique
+
+`func (o *WritableCustomFieldRequest) HasUnique() bool`
+
+HasUnique returns a boolean if a field has been set.
+
 ### GetSearchWeight
 
 `func (o *WritableCustomFieldRequest) GetSearchWeight() int32`
@@ -404,6 +431,41 @@ HasDefault returns a boolean if a field has been set.
 `func (o *WritableCustomFieldRequest) UnsetDefault()`
 
 UnsetDefault ensures that no value is present for Default, not even an explicit nil
+### GetRelatedObjectFilter
+
+`func (o *WritableCustomFieldRequest) GetRelatedObjectFilter() interface{}`
+
+GetRelatedObjectFilter returns the RelatedObjectFilter field if non-nil, zero value otherwise.
+
+### GetRelatedObjectFilterOk
+
+`func (o *WritableCustomFieldRequest) GetRelatedObjectFilterOk() (*interface{}, bool)`
+
+GetRelatedObjectFilterOk returns a tuple with the RelatedObjectFilter field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRelatedObjectFilter
+
+`func (o *WritableCustomFieldRequest) SetRelatedObjectFilter(v interface{})`
+
+SetRelatedObjectFilter sets RelatedObjectFilter field to given value.
+
+### HasRelatedObjectFilter
+
+`func (o *WritableCustomFieldRequest) HasRelatedObjectFilter() bool`
+
+HasRelatedObjectFilter returns a boolean if a field has been set.
+
+### SetRelatedObjectFilterNil
+
+`func (o *WritableCustomFieldRequest) SetRelatedObjectFilterNil(b bool)`
+
+ SetRelatedObjectFilterNil sets the value for RelatedObjectFilter to be an explicit nil
+
+### UnsetRelatedObjectFilter
+`func (o *WritableCustomFieldRequest) UnsetRelatedObjectFilter()`
+
+UnsetRelatedObjectFilter ensures that no value is present for RelatedObjectFilter, not even an explicit nil
 ### GetWeight
 
 `func (o *WritableCustomFieldRequest) GetWeight() int32`
@@ -526,20 +588,20 @@ HasValidationRegex returns a boolean if a field has been set.
 
 ### GetChoiceSet
 
-`func (o *WritableCustomFieldRequest) GetChoiceSet() CustomFieldChoiceSetRequest`
+`func (o *WritableCustomFieldRequest) GetChoiceSet() BriefCustomFieldChoiceSetRequest`
 
 GetChoiceSet returns the ChoiceSet field if non-nil, zero value otherwise.
 
 ### GetChoiceSetOk
 
-`func (o *WritableCustomFieldRequest) GetChoiceSetOk() (*CustomFieldChoiceSetRequest, bool)`
+`func (o *WritableCustomFieldRequest) GetChoiceSetOk() (*BriefCustomFieldChoiceSetRequest, bool)`
 
 GetChoiceSetOk returns a tuple with the ChoiceSet field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetChoiceSet
 
-`func (o *WritableCustomFieldRequest) SetChoiceSet(v CustomFieldChoiceSetRequest)`
+`func (o *WritableCustomFieldRequest) SetChoiceSet(v BriefCustomFieldChoiceSetRequest)`
 
 SetChoiceSet sets ChoiceSet field to given value.
 

@@ -5,7 +5,7 @@ define set_env
 	sed $(if $(IS_DARWIN),-i "",-i) -e "s/^#*\($(1)=\).*/$(if $(2),,#)\1$(2)/" .env
 endef
 
-EXEC := docker compose exec main
+
 
 # Environment recipes
 .PHONY: default

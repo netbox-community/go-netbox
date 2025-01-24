@@ -6,10 +6,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Ssid** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
-**Group** | Pointer to [**NullableWirelessLANGroupRequest**](WirelessLANGroupRequest.md) |  | [optional] 
+**Group** | Pointer to [**NullableBriefWirelessLANGroupRequest**](BriefWirelessLANGroupRequest.md) |  | [optional] 
 **Status** | Pointer to [**WirelessLANStatusValue**](WirelessLANStatusValue.md) |  | [optional] 
-**Vlan** | Pointer to [**NullableVLANRequest**](VLANRequest.md) |  | [optional] 
-**Tenant** | Pointer to [**NullableTenantRequest**](TenantRequest.md) |  | [optional] 
+**Vlan** | Pointer to [**NullableBriefVLANRequest**](BriefVLANRequest.md) |  | [optional] 
+**ScopeType** | Pointer to **NullableString** |  | [optional] 
+**ScopeId** | Pointer to **NullableInt32** |  | [optional] 
+**Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
 **AuthType** | Pointer to [**WirelessLANAuthTypeValue**](WirelessLANAuthTypeValue.md) |  | [optional] 
 **AuthCipher** | Pointer to [**WirelessLANAuthCipherValue**](WirelessLANAuthCipherValue.md) |  | [optional] 
 **AuthPsk** | Pointer to **string** |  | [optional] 
@@ -83,20 +85,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetGroup
 
-`func (o *WirelessLANRequest) GetGroup() WirelessLANGroupRequest`
+`func (o *WirelessLANRequest) GetGroup() BriefWirelessLANGroupRequest`
 
 GetGroup returns the Group field if non-nil, zero value otherwise.
 
 ### GetGroupOk
 
-`func (o *WirelessLANRequest) GetGroupOk() (*WirelessLANGroupRequest, bool)`
+`func (o *WirelessLANRequest) GetGroupOk() (*BriefWirelessLANGroupRequest, bool)`
 
 GetGroupOk returns a tuple with the Group field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGroup
 
-`func (o *WirelessLANRequest) SetGroup(v WirelessLANGroupRequest)`
+`func (o *WirelessLANRequest) SetGroup(v BriefWirelessLANGroupRequest)`
 
 SetGroup sets Group field to given value.
 
@@ -143,20 +145,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetVlan
 
-`func (o *WirelessLANRequest) GetVlan() VLANRequest`
+`func (o *WirelessLANRequest) GetVlan() BriefVLANRequest`
 
 GetVlan returns the Vlan field if non-nil, zero value otherwise.
 
 ### GetVlanOk
 
-`func (o *WirelessLANRequest) GetVlanOk() (*VLANRequest, bool)`
+`func (o *WirelessLANRequest) GetVlanOk() (*BriefVLANRequest, bool)`
 
 GetVlanOk returns a tuple with the Vlan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVlan
 
-`func (o *WirelessLANRequest) SetVlan(v VLANRequest)`
+`func (o *WirelessLANRequest) SetVlan(v BriefVLANRequest)`
 
 SetVlan sets Vlan field to given value.
 
@@ -176,22 +178,92 @@ HasVlan returns a boolean if a field has been set.
 `func (o *WirelessLANRequest) UnsetVlan()`
 
 UnsetVlan ensures that no value is present for Vlan, not even an explicit nil
+### GetScopeType
+
+`func (o *WirelessLANRequest) GetScopeType() string`
+
+GetScopeType returns the ScopeType field if non-nil, zero value otherwise.
+
+### GetScopeTypeOk
+
+`func (o *WirelessLANRequest) GetScopeTypeOk() (*string, bool)`
+
+GetScopeTypeOk returns a tuple with the ScopeType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetScopeType
+
+`func (o *WirelessLANRequest) SetScopeType(v string)`
+
+SetScopeType sets ScopeType field to given value.
+
+### HasScopeType
+
+`func (o *WirelessLANRequest) HasScopeType() bool`
+
+HasScopeType returns a boolean if a field has been set.
+
+### SetScopeTypeNil
+
+`func (o *WirelessLANRequest) SetScopeTypeNil(b bool)`
+
+ SetScopeTypeNil sets the value for ScopeType to be an explicit nil
+
+### UnsetScopeType
+`func (o *WirelessLANRequest) UnsetScopeType()`
+
+UnsetScopeType ensures that no value is present for ScopeType, not even an explicit nil
+### GetScopeId
+
+`func (o *WirelessLANRequest) GetScopeId() int32`
+
+GetScopeId returns the ScopeId field if non-nil, zero value otherwise.
+
+### GetScopeIdOk
+
+`func (o *WirelessLANRequest) GetScopeIdOk() (*int32, bool)`
+
+GetScopeIdOk returns a tuple with the ScopeId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetScopeId
+
+`func (o *WirelessLANRequest) SetScopeId(v int32)`
+
+SetScopeId sets ScopeId field to given value.
+
+### HasScopeId
+
+`func (o *WirelessLANRequest) HasScopeId() bool`
+
+HasScopeId returns a boolean if a field has been set.
+
+### SetScopeIdNil
+
+`func (o *WirelessLANRequest) SetScopeIdNil(b bool)`
+
+ SetScopeIdNil sets the value for ScopeId to be an explicit nil
+
+### UnsetScopeId
+`func (o *WirelessLANRequest) UnsetScopeId()`
+
+UnsetScopeId ensures that no value is present for ScopeId, not even an explicit nil
 ### GetTenant
 
-`func (o *WirelessLANRequest) GetTenant() TenantRequest`
+`func (o *WirelessLANRequest) GetTenant() BriefTenantRequest`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *WirelessLANRequest) GetTenantOk() (*TenantRequest, bool)`
+`func (o *WirelessLANRequest) GetTenantOk() (*BriefTenantRequest, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *WirelessLANRequest) SetTenant(v TenantRequest)`
+`func (o *WirelessLANRequest) SetTenant(v BriefTenantRequest)`
 
 SetTenant sets Tenant field to given value.
 

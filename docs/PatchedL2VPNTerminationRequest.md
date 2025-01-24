@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**L2vpn** | Pointer to [**L2VPNRequest**](L2VPNRequest.md) |  | [optional] 
+**L2vpn** | Pointer to [**BriefL2VPNRequest**](BriefL2VPNRequest.md) |  | [optional] 
 **AssignedObjectType** | Pointer to **string** |  | [optional] 
 **AssignedObjectId** | Pointer to **int64** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetL2vpn
 
-`func (o *PatchedL2VPNTerminationRequest) GetL2vpn() L2VPNRequest`
+`func (o *PatchedL2VPNTerminationRequest) GetL2vpn() BriefL2VPNRequest`
 
 GetL2vpn returns the L2vpn field if non-nil, zero value otherwise.
 
 ### GetL2vpnOk
 
-`func (o *PatchedL2VPNTerminationRequest) GetL2vpnOk() (*L2VPNRequest, bool)`
+`func (o *PatchedL2VPNTerminationRequest) GetL2vpnOk() (*BriefL2VPNRequest, bool)`
 
 GetL2vpnOk returns a tuple with the L2vpn field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetL2vpn
 
-`func (o *PatchedL2VPNTerminationRequest) SetL2vpn(v L2VPNRequest)`
+`func (o *PatchedL2VPNTerminationRequest) SetL2vpn(v BriefL2VPNRequest)`
 
 SetL2vpn sets L2vpn field to given value.
 

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
-**BaseChoices** | Pointer to [**PatchedWritableCustomFieldChoiceSetRequestBaseChoices**](PatchedWritableCustomFieldChoiceSetRequestBaseChoices.md) |  | [optional] 
+**BaseChoices** | Pointer to [**NullablePatchedWritableCustomFieldChoiceSetRequestBaseChoices**](PatchedWritableCustomFieldChoiceSetRequestBaseChoices.md) |  | [optional] 
 **ExtraChoices** | **[][]interface{}** |  | 
 **OrderAlphabetically** | Pointer to **bool** | Choices are automatically ordered alphabetically | [optional] 
 
@@ -99,6 +99,16 @@ SetBaseChoices sets BaseChoices field to given value.
 
 HasBaseChoices returns a boolean if a field has been set.
 
+### SetBaseChoicesNil
+
+`func (o *WritableCustomFieldChoiceSetRequest) SetBaseChoicesNil(b bool)`
+
+ SetBaseChoicesNil sets the value for BaseChoices to be an explicit nil
+
+### UnsetBaseChoices
+`func (o *WritableCustomFieldChoiceSetRequest) UnsetBaseChoices()`
+
+UnsetBaseChoices ensures that no value is present for BaseChoices, not even an explicit nil
 ### GetExtraChoices
 
 `func (o *WritableCustomFieldChoiceSetRequest) GetExtraChoices() [][]interface{}`

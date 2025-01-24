@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to [**PatchedWritablePowerOutletTemplateRequestType**](PatchedWritablePowerOutletTemplateRequestType.md) |  | [optional] 
+**Value** | Pointer to [**PowerOutletTypeValue**](PowerOutletTypeValue.md) |  | [optional] 
 **Label** | Pointer to [**PowerOutletTypeLabel**](PowerOutletTypeLabel.md) |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *PowerOutletType) GetValue() PatchedWritablePowerOutletTemplateRequestType`
+`func (o *PowerOutletType) GetValue() PowerOutletTypeValue`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *PowerOutletType) GetValueOk() (*PatchedWritablePowerOutletTemplateRequestType, bool)`
+`func (o *PowerOutletType) GetValueOk() (*PowerOutletTypeValue, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *PowerOutletType) SetValue(v PatchedWritablePowerOutletTemplateRequestType)`
+`func (o *PowerOutletType) SetValue(v PowerOutletTypeValue)`
 
 SetValue sets Value field to given value.
 

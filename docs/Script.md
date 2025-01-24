@@ -6,11 +6,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
+**DisplayUrl** | Pointer to **string** |  | [optional] [readonly] 
 **Module** | **int32** |  | [readonly] 
 **Name** | **string** |  | [readonly] 
-**Description** | **string** |  | [readonly] 
-**Vars** | **interface{}** |  | [readonly] 
-**Result** | [**Job**](Job.md) |  | [readonly] 
+**Description** | Pointer to **NullableString** |  | [optional] [readonly] 
+**Vars** | Pointer to **interface{}** |  | [optional] [readonly] 
+**Result** | [**BriefJob**](BriefJob.md) |  | [readonly] 
 **Display** | **string** |  | [readonly] 
 **IsExecutable** | **bool** |  | [readonly] 
 
@@ -18,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewScript
 
-`func NewScript(id int32, url string, module int32, name string, description string, vars interface{}, result Job, display string, isExecutable bool, ) *Script`
+`func NewScript(id int32, url string, module int32, name string, result BriefJob, display string, isExecutable bool, ) *Script`
 
 NewScript instantiates a new Script object
 This constructor will assign default values to properties that have it defined,
@@ -72,6 +73,31 @@ and a boolean to check if the value has been set.
 
 SetUrl sets Url field to given value.
 
+
+### GetDisplayUrl
+
+`func (o *Script) GetDisplayUrl() string`
+
+GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
+
+### GetDisplayUrlOk
+
+`func (o *Script) GetDisplayUrlOk() (*string, bool)`
+
+GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayUrl
+
+`func (o *Script) SetDisplayUrl(v string)`
+
+SetDisplayUrl sets DisplayUrl field to given value.
+
+### HasDisplayUrl
+
+`func (o *Script) HasDisplayUrl() bool`
+
+HasDisplayUrl returns a boolean if a field has been set.
 
 ### GetModule
 
@@ -132,7 +158,22 @@ and a boolean to check if the value has been set.
 
 SetDescription sets Description field to given value.
 
+### HasDescription
 
+`func (o *Script) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
+
+### SetDescriptionNil
+
+`func (o *Script) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *Script) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetVars
 
 `func (o *Script) GetVars() interface{}`
@@ -152,6 +193,11 @@ and a boolean to check if the value has been set.
 
 SetVars sets Vars field to given value.
 
+### HasVars
+
+`func (o *Script) HasVars() bool`
+
+HasVars returns a boolean if a field has been set.
 
 ### SetVarsNil
 
@@ -165,20 +211,20 @@ SetVars sets Vars field to given value.
 UnsetVars ensures that no value is present for Vars, not even an explicit nil
 ### GetResult
 
-`func (o *Script) GetResult() Job`
+`func (o *Script) GetResult() BriefJob`
 
 GetResult returns the Result field if non-nil, zero value otherwise.
 
 ### GetResultOk
 
-`func (o *Script) GetResultOk() (*Job, bool)`
+`func (o *Script) GetResultOk() (*BriefJob, bool)`
 
 GetResultOk returns a tuple with the Result field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResult
 
-`func (o *Script) SetResult(v Job)`
+`func (o *Script) SetResult(v BriefJob)`
 
 SetResult sets Result field to given value.
 

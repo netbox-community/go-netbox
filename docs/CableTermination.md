@@ -11,15 +11,15 @@ Name | Type | Description | Notes
 **CableEnd** | [**End1**](End1.md) |  | 
 **TerminationType** | **string** |  | 
 **TerminationId** | **int64** |  | 
-**Termination** | **interface{}** |  | [readonly] 
-**Created** | **NullableTime** |  | [readonly] 
-**LastUpdated** | **NullableTime** |  | [readonly] 
+**Termination** | Pointer to **interface{}** |  | [optional] [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
+**LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewCableTermination
 
-`func NewCableTermination(id int32, url string, display string, cable int32, cableEnd End1, terminationType string, terminationId int64, termination interface{}, created NullableTime, lastUpdated NullableTime, ) *CableTermination`
+`func NewCableTermination(id int32, url string, display string, cable int32, cableEnd End1, terminationType string, terminationId int64, ) *CableTermination`
 
 NewCableTermination instantiates a new CableTermination object
 This constructor will assign default values to properties that have it defined,
@@ -193,6 +193,11 @@ and a boolean to check if the value has been set.
 
 SetTermination sets Termination field to given value.
 
+### HasTermination
+
+`func (o *CableTermination) HasTermination() bool`
+
+HasTermination returns a boolean if a field has been set.
 
 ### SetTerminationNil
 
@@ -223,6 +228,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *CableTermination) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
@@ -253,6 +263,11 @@ and a boolean to check if the value has been set.
 
 SetLastUpdated sets LastUpdated field to given value.
 
+### HasLastUpdated
+
+`func (o *CableTermination) HasLastUpdated() bool`
+
+HasLastUpdated returns a boolean if a field has been set.
 
 ### SetLastUpdatedNil
 

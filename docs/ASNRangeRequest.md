@@ -6,10 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
-**Rir** | [**RIRRequest**](RIRRequest.md) |  | 
+**Rir** | [**BriefRIRRequest**](BriefRIRRequest.md) |  | 
 **Start** | **int64** |  | 
 **End** | **int64** |  | 
-**Tenant** | Pointer to [**NullableTenantRequest**](TenantRequest.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewASNRangeRequest
 
-`func NewASNRangeRequest(name string, slug string, rir RIRRequest, start int64, end int64, ) *ASNRangeRequest`
+`func NewASNRangeRequest(name string, slug string, rir BriefRIRRequest, start int64, end int64, ) *ASNRangeRequest`
 
 NewASNRangeRequest instantiates a new ASNRangeRequest object
 This constructor will assign default values to properties that have it defined,
@@ -75,20 +75,20 @@ SetSlug sets Slug field to given value.
 
 ### GetRir
 
-`func (o *ASNRangeRequest) GetRir() RIRRequest`
+`func (o *ASNRangeRequest) GetRir() BriefRIRRequest`
 
 GetRir returns the Rir field if non-nil, zero value otherwise.
 
 ### GetRirOk
 
-`func (o *ASNRangeRequest) GetRirOk() (*RIRRequest, bool)`
+`func (o *ASNRangeRequest) GetRirOk() (*BriefRIRRequest, bool)`
 
 GetRirOk returns a tuple with the Rir field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRir
 
-`func (o *ASNRangeRequest) SetRir(v RIRRequest)`
+`func (o *ASNRangeRequest) SetRir(v BriefRIRRequest)`
 
 SetRir sets Rir field to given value.
 
@@ -135,20 +135,20 @@ SetEnd sets End field to given value.
 
 ### GetTenant
 
-`func (o *ASNRangeRequest) GetTenant() TenantRequest`
+`func (o *ASNRangeRequest) GetTenant() BriefTenantRequest`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *ASNRangeRequest) GetTenantOk() (*TenantRequest, bool)`
+`func (o *ASNRangeRequest) GetTenantOk() (*BriefTenantRequest, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *ASNRangeRequest) SetTenant(v TenantRequest)`
+`func (o *ASNRangeRequest) SetTenant(v BriefTenantRequest)`
 
 SetTenant sets Tenant field to given value.
 

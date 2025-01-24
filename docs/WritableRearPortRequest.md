@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Device** | [**DeviceRequest**](DeviceRequest.md) |  | 
-**Module** | Pointer to [**NullableModuleRequest**](ModuleRequest.md) |  | [optional] 
+**Device** | [**BriefDeviceRequest**](BriefDeviceRequest.md) |  | 
+**Module** | Pointer to [**NullableBriefModuleRequest**](BriefModuleRequest.md) |  | [optional] 
 **Name** | **string** |  | 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Type** | [**FrontPortTypeValue**](FrontPortTypeValue.md) |  | 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewWritableRearPortRequest
 
-`func NewWritableRearPortRequest(device DeviceRequest, name string, type_ FrontPortTypeValue, ) *WritableRearPortRequest`
+`func NewWritableRearPortRequest(device BriefDeviceRequest, name string, type_ FrontPortTypeValue, ) *WritableRearPortRequest`
 
 NewWritableRearPortRequest instantiates a new WritableRearPortRequest object
 This constructor will assign default values to properties that have it defined,
@@ -37,40 +37,40 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDevice
 
-`func (o *WritableRearPortRequest) GetDevice() DeviceRequest`
+`func (o *WritableRearPortRequest) GetDevice() BriefDeviceRequest`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *WritableRearPortRequest) GetDeviceOk() (*DeviceRequest, bool)`
+`func (o *WritableRearPortRequest) GetDeviceOk() (*BriefDeviceRequest, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *WritableRearPortRequest) SetDevice(v DeviceRequest)`
+`func (o *WritableRearPortRequest) SetDevice(v BriefDeviceRequest)`
 
 SetDevice sets Device field to given value.
 
 
 ### GetModule
 
-`func (o *WritableRearPortRequest) GetModule() ModuleRequest`
+`func (o *WritableRearPortRequest) GetModule() BriefModuleRequest`
 
 GetModule returns the Module field if non-nil, zero value otherwise.
 
 ### GetModuleOk
 
-`func (o *WritableRearPortRequest) GetModuleOk() (*ModuleRequest, bool)`
+`func (o *WritableRearPortRequest) GetModuleOk() (*BriefModuleRequest, bool)`
 
 GetModuleOk returns a tuple with the Module field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetModule
 
-`func (o *WritableRearPortRequest) SetModule(v ModuleRequest)`
+`func (o *WritableRearPortRequest) SetModule(v BriefModuleRequest)`
 
 SetModule sets Module field to given value.
 

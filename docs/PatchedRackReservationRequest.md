@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Rack** | Pointer to [**RackRequest**](RackRequest.md) |  | [optional] 
+**Rack** | Pointer to [**BriefRackRequest**](BriefRackRequest.md) |  | [optional] 
 **Units** | Pointer to **[]int32** |  | [optional] 
-**User** | Pointer to [**UserRequest**](UserRequest.md) |  | [optional] 
-**Tenant** | Pointer to [**NullableTenantRequest**](TenantRequest.md) |  | [optional] 
+**User** | Pointer to [**BriefUserRequest**](BriefUserRequest.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
@@ -34,20 +34,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetRack
 
-`func (o *PatchedRackReservationRequest) GetRack() RackRequest`
+`func (o *PatchedRackReservationRequest) GetRack() BriefRackRequest`
 
 GetRack returns the Rack field if non-nil, zero value otherwise.
 
 ### GetRackOk
 
-`func (o *PatchedRackReservationRequest) GetRackOk() (*RackRequest, bool)`
+`func (o *PatchedRackReservationRequest) GetRackOk() (*BriefRackRequest, bool)`
 
 GetRackOk returns a tuple with the Rack field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRack
 
-`func (o *PatchedRackReservationRequest) SetRack(v RackRequest)`
+`func (o *PatchedRackReservationRequest) SetRack(v BriefRackRequest)`
 
 SetRack sets Rack field to given value.
 
@@ -84,20 +84,20 @@ HasUnits returns a boolean if a field has been set.
 
 ### GetUser
 
-`func (o *PatchedRackReservationRequest) GetUser() UserRequest`
+`func (o *PatchedRackReservationRequest) GetUser() BriefUserRequest`
 
 GetUser returns the User field if non-nil, zero value otherwise.
 
 ### GetUserOk
 
-`func (o *PatchedRackReservationRequest) GetUserOk() (*UserRequest, bool)`
+`func (o *PatchedRackReservationRequest) GetUserOk() (*BriefUserRequest, bool)`
 
 GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUser
 
-`func (o *PatchedRackReservationRequest) SetUser(v UserRequest)`
+`func (o *PatchedRackReservationRequest) SetUser(v BriefUserRequest)`
 
 SetUser sets User field to given value.
 
@@ -109,20 +109,20 @@ HasUser returns a boolean if a field has been set.
 
 ### GetTenant
 
-`func (o *PatchedRackReservationRequest) GetTenant() TenantRequest`
+`func (o *PatchedRackReservationRequest) GetTenant() BriefTenantRequest`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *PatchedRackReservationRequest) GetTenantOk() (*TenantRequest, bool)`
+`func (o *PatchedRackReservationRequest) GetTenantOk() (*BriefTenantRequest, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *PatchedRackReservationRequest) SetTenant(v TenantRequest)`
+`func (o *PatchedRackReservationRequest) SetTenant(v BriefTenantRequest)`
 
 SetTenant sets Tenant field to given value.
 

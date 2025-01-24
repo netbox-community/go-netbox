@@ -125,6 +125,8 @@
 
 * `NEMA_L21_30_R` (value: `"NEMA L21-30R"`)
 
+* `NEMA_L22_20_R` (value: `"NEMA L22-20R"`)
+
 * `NEMA_L22_30_R` (value: `"NEMA L22-30R"`)
 
 * `CS6360_C` (value: `"CS6360C"`)
@@ -176,6 +178,8 @@
 * `MOLEX_MICRO_FIT_2X4` (value: `"Molex Micro-Fit 2x4"`)
 
 * `DC_TERMINAL` (value: `"DC Terminal"`)
+
+* `EATON_C39` (value: `"Eaton C39"`)
 
 * `HDOT_CX` (value: `"HDOT Cx"`)
 

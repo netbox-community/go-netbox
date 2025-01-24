@@ -6,28 +6,29 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
+**DisplayUrl** | Pointer to **string** |  | [optional] [readonly] 
 **Display** | **string** |  | [readonly] 
 **Family** | [**AggregateFamily**](AggregateFamily.md) |  | 
 **StartAddress** | **string** |  | 
 **EndAddress** | **string** |  | 
 **Size** | **int32** |  | [readonly] 
-**Vrf** | Pointer to [**NullableVRF**](VRF.md) |  | [optional] 
-**Tenant** | Pointer to [**NullableTenant**](Tenant.md) |  | [optional] 
+**Vrf** | Pointer to [**NullableBriefVRF**](BriefVRF.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableBriefTenant**](BriefTenant.md) |  | [optional] 
 **Status** | Pointer to [**IPRangeStatus**](IPRangeStatus.md) |  | [optional] 
-**Role** | Pointer to [**NullableRole**](Role.md) |  | [optional] 
+**Role** | Pointer to [**NullableBriefRole**](BriefRole.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
-**LastUpdated** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
+**LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **MarkUtilized** | Pointer to **bool** | Treat as fully utilized | [optional] 
 
 ## Methods
 
 ### NewIPRange
 
-`func NewIPRange(id int32, url string, display string, family AggregateFamily, startAddress string, endAddress string, size int32, created NullableTime, lastUpdated NullableTime, ) *IPRange`
+`func NewIPRange(id int32, url string, display string, family AggregateFamily, startAddress string, endAddress string, size int32, ) *IPRange`
 
 NewIPRange instantiates a new IPRange object
 This constructor will assign default values to properties that have it defined,
@@ -81,6 +82,31 @@ and a boolean to check if the value has been set.
 
 SetUrl sets Url field to given value.
 
+
+### GetDisplayUrl
+
+`func (o *IPRange) GetDisplayUrl() string`
+
+GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
+
+### GetDisplayUrlOk
+
+`func (o *IPRange) GetDisplayUrlOk() (*string, bool)`
+
+GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayUrl
+
+`func (o *IPRange) SetDisplayUrl(v string)`
+
+SetDisplayUrl sets DisplayUrl field to given value.
+
+### HasDisplayUrl
+
+`func (o *IPRange) HasDisplayUrl() bool`
+
+HasDisplayUrl returns a boolean if a field has been set.
 
 ### GetDisplay
 
@@ -184,20 +210,20 @@ SetSize sets Size field to given value.
 
 ### GetVrf
 
-`func (o *IPRange) GetVrf() VRF`
+`func (o *IPRange) GetVrf() BriefVRF`
 
 GetVrf returns the Vrf field if non-nil, zero value otherwise.
 
 ### GetVrfOk
 
-`func (o *IPRange) GetVrfOk() (*VRF, bool)`
+`func (o *IPRange) GetVrfOk() (*BriefVRF, bool)`
 
 GetVrfOk returns a tuple with the Vrf field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVrf
 
-`func (o *IPRange) SetVrf(v VRF)`
+`func (o *IPRange) SetVrf(v BriefVRF)`
 
 SetVrf sets Vrf field to given value.
 
@@ -219,20 +245,20 @@ HasVrf returns a boolean if a field has been set.
 UnsetVrf ensures that no value is present for Vrf, not even an explicit nil
 ### GetTenant
 
-`func (o *IPRange) GetTenant() Tenant`
+`func (o *IPRange) GetTenant() BriefTenant`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *IPRange) GetTenantOk() (*Tenant, bool)`
+`func (o *IPRange) GetTenantOk() (*BriefTenant, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *IPRange) SetTenant(v Tenant)`
+`func (o *IPRange) SetTenant(v BriefTenant)`
 
 SetTenant sets Tenant field to given value.
 
@@ -279,20 +305,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetRole
 
-`func (o *IPRange) GetRole() Role`
+`func (o *IPRange) GetRole() BriefRole`
 
 GetRole returns the Role field if non-nil, zero value otherwise.
 
 ### GetRoleOk
 
-`func (o *IPRange) GetRoleOk() (*Role, bool)`
+`func (o *IPRange) GetRoleOk() (*BriefRole, bool)`
 
 GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRole
 
-`func (o *IPRange) SetRole(v Role)`
+`func (o *IPRange) SetRole(v BriefRole)`
 
 SetRole sets Role field to given value.
 
@@ -431,6 +457,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *IPRange) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
@@ -461,6 +492,11 @@ and a boolean to check if the value has been set.
 
 SetLastUpdated sets LastUpdated field to given value.
 
+### HasLastUpdated
+
+`func (o *IPRange) HasLastUpdated() bool`
+
+HasLastUpdated returns a boolean if a field has been set.
 
 ### SetLastUpdatedNil
 

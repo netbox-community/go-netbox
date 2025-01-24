@@ -9,19 +9,19 @@ Name | Type | Description | Notes
 **Display** | **string** |  | [readonly] 
 **ObjectType** | **string** |  | 
 **ObjectId** | **int64** |  | 
-**Parent** | **interface{}** |  | [readonly] 
+**Parent** | Pointer to **interface{}** |  | [optional] [readonly] 
 **Name** | Pointer to **string** |  | [optional] 
 **Image** | **string** |  | 
-**ImageHeight** | **int32** |  | 
-**ImageWidth** | **int32** |  | 
-**Created** | **NullableTime** |  | [readonly] 
-**LastUpdated** | **NullableTime** |  | [readonly] 
+**ImageHeight** | **int32** |  | [readonly] 
+**ImageWidth** | **int32** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
+**LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewImageAttachment
 
-`func NewImageAttachment(id int32, url string, display string, objectType string, objectId int64, parent interface{}, image string, imageHeight int32, imageWidth int32, created NullableTime, lastUpdated NullableTime, ) *ImageAttachment`
+`func NewImageAttachment(id int32, url string, display string, objectType string, objectId int64, image string, imageHeight int32, imageWidth int32, ) *ImageAttachment`
 
 NewImageAttachment instantiates a new ImageAttachment object
 This constructor will assign default values to properties that have it defined,
@@ -155,6 +155,11 @@ and a boolean to check if the value has been set.
 
 SetParent sets Parent field to given value.
 
+### HasParent
+
+`func (o *ImageAttachment) HasParent() bool`
+
+HasParent returns a boolean if a field has been set.
 
 ### SetParentNil
 
@@ -270,6 +275,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *ImageAttachment) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
@@ -300,6 +310,11 @@ and a boolean to check if the value has been set.
 
 SetLastUpdated sets LastUpdated field to given value.
 
+### HasLastUpdated
+
+`func (o *ImageAttachment) HasLastUpdated() bool`
+
+HasLastUpdated returns a boolean if a field has been set.
 
 ### SetLastUpdatedNil
 

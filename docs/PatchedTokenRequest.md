@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**User** | Pointer to [**UserRequest**](UserRequest.md) |  | [optional] 
+**User** | Pointer to [**BriefUserRequest**](BriefUserRequest.md) |  | [optional] 
 **Expires** | Pointer to **NullableTime** |  | [optional] 
 **LastUsed** | Pointer to **NullableTime** |  | [optional] 
 **Key** | Pointer to **string** |  | [optional] 
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetUser
 
-`func (o *PatchedTokenRequest) GetUser() UserRequest`
+`func (o *PatchedTokenRequest) GetUser() BriefUserRequest`
 
 GetUser returns the User field if non-nil, zero value otherwise.
 
 ### GetUserOk
 
-`func (o *PatchedTokenRequest) GetUserOk() (*UserRequest, bool)`
+`func (o *PatchedTokenRequest) GetUserOk() (*BriefUserRequest, bool)`
 
 GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUser
 
-`func (o *PatchedTokenRequest) SetUser(v UserRequest)`
+`func (o *PatchedTokenRequest) SetUser(v BriefUserRequest)`
 
 SetUser sets User field to given value.
 

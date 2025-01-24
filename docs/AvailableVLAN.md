@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Vid** | **int32** |  | [readonly] 
-**Group** | [**NullableVLANGroup**](VLANGroup.md) |  | [readonly] 
+**Group** | Pointer to [**NullableBriefVLANGroup**](BriefVLANGroup.md) |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewAvailableVLAN
 
-`func NewAvailableVLAN(vid int32, group NullableVLANGroup, ) *AvailableVLAN`
+`func NewAvailableVLAN(vid int32, ) *AvailableVLAN`
 
 NewAvailableVLAN instantiates a new AvailableVLAN object
 This constructor will assign default values to properties that have it defined,
@@ -48,23 +48,28 @@ SetVid sets Vid field to given value.
 
 ### GetGroup
 
-`func (o *AvailableVLAN) GetGroup() VLANGroup`
+`func (o *AvailableVLAN) GetGroup() BriefVLANGroup`
 
 GetGroup returns the Group field if non-nil, zero value otherwise.
 
 ### GetGroupOk
 
-`func (o *AvailableVLAN) GetGroupOk() (*VLANGroup, bool)`
+`func (o *AvailableVLAN) GetGroupOk() (*BriefVLANGroup, bool)`
 
 GetGroupOk returns a tuple with the Group field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGroup
 
-`func (o *AvailableVLAN) SetGroup(v VLANGroup)`
+`func (o *AvailableVLAN) SetGroup(v BriefVLANGroup)`
 
 SetGroup sets Group field to given value.
 
+### HasGroup
+
+`func (o *AvailableVLAN) HasGroup() bool`
+
+HasGroup returns a boolean if a field has been set.
 
 ### SetGroupNil
 

@@ -9,15 +9,15 @@ Name | Type | Description | Notes
 **Display** | **string** |  | [readonly] 
 **ObjectType** | **string** |  | 
 **ObjectId** | **int64** |  | 
-**Object** | **interface{}** |  | [readonly] 
-**User** | [**User**](User.md) |  | 
-**Created** | **time.Time** |  | [readonly] 
+**Object** | Pointer to **interface{}** |  | [optional] [readonly] 
+**User** | [**BriefUser**](BriefUser.md) |  | 
+**Created** | Pointer to **time.Time** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewBookmark
 
-`func NewBookmark(id int32, url string, display string, objectType string, objectId int64, object interface{}, user User, created time.Time, ) *Bookmark`
+`func NewBookmark(id int32, url string, display string, objectType string, objectId int64, user BriefUser, ) *Bookmark`
 
 NewBookmark instantiates a new Bookmark object
 This constructor will assign default values to properties that have it defined,
@@ -151,6 +151,11 @@ and a boolean to check if the value has been set.
 
 SetObject sets Object field to given value.
 
+### HasObject
+
+`func (o *Bookmark) HasObject() bool`
+
+HasObject returns a boolean if a field has been set.
 
 ### SetObjectNil
 
@@ -164,20 +169,20 @@ SetObject sets Object field to given value.
 UnsetObject ensures that no value is present for Object, not even an explicit nil
 ### GetUser
 
-`func (o *Bookmark) GetUser() User`
+`func (o *Bookmark) GetUser() BriefUser`
 
 GetUser returns the User field if non-nil, zero value otherwise.
 
 ### GetUserOk
 
-`func (o *Bookmark) GetUserOk() (*User, bool)`
+`func (o *Bookmark) GetUserOk() (*BriefUser, bool)`
 
 GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUser
 
-`func (o *Bookmark) SetUser(v User)`
+`func (o *Bookmark) SetUser(v BriefUser)`
 
 SetUser sets User field to given value.
 
@@ -201,6 +206,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *Bookmark) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

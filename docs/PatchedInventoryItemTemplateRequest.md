@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DeviceType** | Pointer to [**DeviceTypeRequest**](DeviceTypeRequest.md) |  | [optional] 
+**DeviceType** | Pointer to [**BriefDeviceTypeRequest**](BriefDeviceTypeRequest.md) |  | [optional] 
 **Parent** | Pointer to **NullableInt32** |  | [optional] 
 **Name** | Pointer to **string** | {module} is accepted as a substitution for the module bay position when attached to a module type. | [optional] 
 **Label** | Pointer to **string** | Physical label | [optional] 
-**Role** | Pointer to [**NullableInventoryItemRoleRequest**](InventoryItemRoleRequest.md) |  | [optional] 
-**Manufacturer** | Pointer to [**NullableManufacturerRequest**](ManufacturerRequest.md) |  | [optional] 
+**Role** | Pointer to [**NullableBriefInventoryItemRoleRequest**](BriefInventoryItemRoleRequest.md) |  | [optional] 
+**Manufacturer** | Pointer to [**NullableBriefManufacturerRequest**](BriefManufacturerRequest.md) |  | [optional] 
 **PartId** | Pointer to **string** | Manufacturer-assigned part identifier | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **ComponentType** | Pointer to **NullableString** |  | [optional] 
@@ -36,20 +36,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDeviceType
 
-`func (o *PatchedInventoryItemTemplateRequest) GetDeviceType() DeviceTypeRequest`
+`func (o *PatchedInventoryItemTemplateRequest) GetDeviceType() BriefDeviceTypeRequest`
 
 GetDeviceType returns the DeviceType field if non-nil, zero value otherwise.
 
 ### GetDeviceTypeOk
 
-`func (o *PatchedInventoryItemTemplateRequest) GetDeviceTypeOk() (*DeviceTypeRequest, bool)`
+`func (o *PatchedInventoryItemTemplateRequest) GetDeviceTypeOk() (*BriefDeviceTypeRequest, bool)`
 
 GetDeviceTypeOk returns a tuple with the DeviceType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeviceType
 
-`func (o *PatchedInventoryItemTemplateRequest) SetDeviceType(v DeviceTypeRequest)`
+`func (o *PatchedInventoryItemTemplateRequest) SetDeviceType(v BriefDeviceTypeRequest)`
 
 SetDeviceType sets DeviceType field to given value.
 
@@ -146,20 +146,20 @@ HasLabel returns a boolean if a field has been set.
 
 ### GetRole
 
-`func (o *PatchedInventoryItemTemplateRequest) GetRole() InventoryItemRoleRequest`
+`func (o *PatchedInventoryItemTemplateRequest) GetRole() BriefInventoryItemRoleRequest`
 
 GetRole returns the Role field if non-nil, zero value otherwise.
 
 ### GetRoleOk
 
-`func (o *PatchedInventoryItemTemplateRequest) GetRoleOk() (*InventoryItemRoleRequest, bool)`
+`func (o *PatchedInventoryItemTemplateRequest) GetRoleOk() (*BriefInventoryItemRoleRequest, bool)`
 
 GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRole
 
-`func (o *PatchedInventoryItemTemplateRequest) SetRole(v InventoryItemRoleRequest)`
+`func (o *PatchedInventoryItemTemplateRequest) SetRole(v BriefInventoryItemRoleRequest)`
 
 SetRole sets Role field to given value.
 
@@ -181,20 +181,20 @@ HasRole returns a boolean if a field has been set.
 UnsetRole ensures that no value is present for Role, not even an explicit nil
 ### GetManufacturer
 
-`func (o *PatchedInventoryItemTemplateRequest) GetManufacturer() ManufacturerRequest`
+`func (o *PatchedInventoryItemTemplateRequest) GetManufacturer() BriefManufacturerRequest`
 
 GetManufacturer returns the Manufacturer field if non-nil, zero value otherwise.
 
 ### GetManufacturerOk
 
-`func (o *PatchedInventoryItemTemplateRequest) GetManufacturerOk() (*ManufacturerRequest, bool)`
+`func (o *PatchedInventoryItemTemplateRequest) GetManufacturerOk() (*BriefManufacturerRequest, bool)`
 
 GetManufacturerOk returns a tuple with the Manufacturer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetManufacturer
 
-`func (o *PatchedInventoryItemTemplateRequest) SetManufacturer(v ManufacturerRequest)`
+`func (o *PatchedInventoryItemTemplateRequest) SetManufacturer(v BriefManufacturerRequest)`
 
 SetManufacturer sets Manufacturer field to given value.
 

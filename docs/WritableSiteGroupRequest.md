@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
-**Parent** | **NullableInt32** |  | 
+**Parent** | Pointer to **NullableInt32** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewWritableSiteGroupRequest
 
-`func NewWritableSiteGroupRequest(name string, slug string, parent NullableInt32, ) *WritableSiteGroupRequest`
+`func NewWritableSiteGroupRequest(name string, slug string, ) *WritableSiteGroupRequest`
 
 NewWritableSiteGroupRequest instantiates a new WritableSiteGroupRequest object
 This constructor will assign default values to properties that have it defined,
@@ -89,6 +89,11 @@ and a boolean to check if the value has been set.
 
 SetParent sets Parent field to given value.
 
+### HasParent
+
+`func (o *WritableSiteGroupRequest) HasParent() bool`
+
+HasParent returns a boolean if a field has been set.
 
 ### SetParentNil
 

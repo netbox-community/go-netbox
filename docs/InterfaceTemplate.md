@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
-**DeviceType** | Pointer to [**NullableDeviceType**](DeviceType.md) |  | [optional] 
-**ModuleType** | Pointer to [**NullableModuleType**](ModuleType.md) |  | [optional] 
+**DeviceType** | Pointer to [**NullableBriefDeviceType**](BriefDeviceType.md) |  | [optional] 
+**ModuleType** | Pointer to [**NullableBriefModuleType**](BriefModuleType.md) |  | [optional] 
 **Name** | **string** | {module} is accepted as a substitution for the module bay position when attached to a module type. | 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Type** | [**InterfaceType**](InterfaceType.md) |  | 
@@ -19,14 +19,14 @@ Name | Type | Description | Notes
 **PoeMode** | Pointer to [**NullableInterfaceTemplatePoeMode**](InterfaceTemplatePoeMode.md) |  | [optional] 
 **PoeType** | Pointer to [**NullableInterfaceTemplatePoeType**](InterfaceTemplatePoeType.md) |  | [optional] 
 **RfRole** | Pointer to [**NullableInterfaceTemplateRfRole**](InterfaceTemplateRfRole.md) |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
-**LastUpdated** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
+**LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewInterfaceTemplate
 
-`func NewInterfaceTemplate(id int32, url string, display string, name string, type_ InterfaceType, created NullableTime, lastUpdated NullableTime, ) *InterfaceTemplate`
+`func NewInterfaceTemplate(id int32, url string, display string, name string, type_ InterfaceType, ) *InterfaceTemplate`
 
 NewInterfaceTemplate instantiates a new InterfaceTemplate object
 This constructor will assign default values to properties that have it defined,
@@ -103,20 +103,20 @@ SetDisplay sets Display field to given value.
 
 ### GetDeviceType
 
-`func (o *InterfaceTemplate) GetDeviceType() DeviceType`
+`func (o *InterfaceTemplate) GetDeviceType() BriefDeviceType`
 
 GetDeviceType returns the DeviceType field if non-nil, zero value otherwise.
 
 ### GetDeviceTypeOk
 
-`func (o *InterfaceTemplate) GetDeviceTypeOk() (*DeviceType, bool)`
+`func (o *InterfaceTemplate) GetDeviceTypeOk() (*BriefDeviceType, bool)`
 
 GetDeviceTypeOk returns a tuple with the DeviceType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeviceType
 
-`func (o *InterfaceTemplate) SetDeviceType(v DeviceType)`
+`func (o *InterfaceTemplate) SetDeviceType(v BriefDeviceType)`
 
 SetDeviceType sets DeviceType field to given value.
 
@@ -138,20 +138,20 @@ HasDeviceType returns a boolean if a field has been set.
 UnsetDeviceType ensures that no value is present for DeviceType, not even an explicit nil
 ### GetModuleType
 
-`func (o *InterfaceTemplate) GetModuleType() ModuleType`
+`func (o *InterfaceTemplate) GetModuleType() BriefModuleType`
 
 GetModuleType returns the ModuleType field if non-nil, zero value otherwise.
 
 ### GetModuleTypeOk
 
-`func (o *InterfaceTemplate) GetModuleTypeOk() (*ModuleType, bool)`
+`func (o *InterfaceTemplate) GetModuleTypeOk() (*BriefModuleType, bool)`
 
 GetModuleTypeOk returns a tuple with the ModuleType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetModuleType
 
-`func (o *InterfaceTemplate) SetModuleType(v ModuleType)`
+`func (o *InterfaceTemplate) SetModuleType(v BriefModuleType)`
 
 SetModuleType sets ModuleType field to given value.
 
@@ -470,6 +470,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *InterfaceTemplate) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
@@ -500,6 +505,11 @@ and a boolean to check if the value has been set.
 
 SetLastUpdated sets LastUpdated field to given value.
 
+### HasLastUpdated
+
+`func (o *InterfaceTemplate) HasLastUpdated() bool`
+
+HasLastUpdated returns a boolean if a field has been set.
 
 ### SetLastUpdatedNil
 

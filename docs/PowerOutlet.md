@@ -6,34 +6,36 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
+**DisplayUrl** | Pointer to **string** |  | [optional] [readonly] 
 **Display** | **string** |  | [readonly] 
-**Device** | [**Device**](Device.md) |  | 
-**Module** | Pointer to [**NullableModule**](Module.md) |  | [optional] 
+**Device** | [**BriefDevice**](BriefDevice.md) |  | 
+**Module** | Pointer to [**NullableBriefModule**](BriefModule.md) |  | [optional] 
 **Name** | **string** |  | 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Type** | Pointer to [**NullablePowerOutletType**](PowerOutletType.md) |  | [optional] 
-**PowerPort** | Pointer to [**NullablePowerPort**](PowerPort.md) |  | [optional] 
+**Color** | Pointer to **string** |  | [optional] 
+**PowerPort** | Pointer to [**NullableBriefPowerPort**](BriefPowerPort.md) |  | [optional] 
 **FeedLeg** | Pointer to [**NullablePowerOutletFeedLeg**](PowerOutletFeedLeg.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **MarkConnected** | Pointer to **bool** | Treat as if a cable is connected | [optional] 
-**Cable** | [**NullableCable**](Cable.md) |  | [readonly] 
+**Cable** | Pointer to [**NullableBriefCable**](BriefCable.md) |  | [optional] [readonly] 
 **CableEnd** | **string** |  | [readonly] 
 **LinkPeers** | **[]interface{}** |  | [readonly] 
-**LinkPeersType** | **string** | Return the type of the peer link terminations, or None. | [readonly] 
-**ConnectedEndpoints** | **[]interface{}** |  | [readonly] 
-**ConnectedEndpointsType** | **string** |  | [readonly] 
+**LinkPeersType** | Pointer to **NullableString** | Return the type of the peer link terminations, or None. | [optional] [readonly] 
+**ConnectedEndpoints** | Pointer to **[]interface{}** |  | [optional] [readonly] 
+**ConnectedEndpointsType** | Pointer to **NullableString** |  | [optional] [readonly] 
 **ConnectedEndpointsReachable** | **bool** |  | [readonly] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
-**LastUpdated** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
+**LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **Occupied** | **bool** |  | [readonly] 
 
 ## Methods
 
 ### NewPowerOutlet
 
-`func NewPowerOutlet(id int32, url string, display string, device Device, name string, cable NullableCable, cableEnd string, linkPeers []interface{}, linkPeersType string, connectedEndpoints []interface{}, connectedEndpointsType string, connectedEndpointsReachable bool, created NullableTime, lastUpdated NullableTime, occupied bool, ) *PowerOutlet`
+`func NewPowerOutlet(id int32, url string, display string, device BriefDevice, name string, cableEnd string, linkPeers []interface{}, connectedEndpointsReachable bool, occupied bool, ) *PowerOutlet`
 
 NewPowerOutlet instantiates a new PowerOutlet object
 This constructor will assign default values to properties that have it defined,
@@ -88,6 +90,31 @@ and a boolean to check if the value has been set.
 SetUrl sets Url field to given value.
 
 
+### GetDisplayUrl
+
+`func (o *PowerOutlet) GetDisplayUrl() string`
+
+GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
+
+### GetDisplayUrlOk
+
+`func (o *PowerOutlet) GetDisplayUrlOk() (*string, bool)`
+
+GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayUrl
+
+`func (o *PowerOutlet) SetDisplayUrl(v string)`
+
+SetDisplayUrl sets DisplayUrl field to given value.
+
+### HasDisplayUrl
+
+`func (o *PowerOutlet) HasDisplayUrl() bool`
+
+HasDisplayUrl returns a boolean if a field has been set.
+
 ### GetDisplay
 
 `func (o *PowerOutlet) GetDisplay() string`
@@ -110,40 +137,40 @@ SetDisplay sets Display field to given value.
 
 ### GetDevice
 
-`func (o *PowerOutlet) GetDevice() Device`
+`func (o *PowerOutlet) GetDevice() BriefDevice`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *PowerOutlet) GetDeviceOk() (*Device, bool)`
+`func (o *PowerOutlet) GetDeviceOk() (*BriefDevice, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *PowerOutlet) SetDevice(v Device)`
+`func (o *PowerOutlet) SetDevice(v BriefDevice)`
 
 SetDevice sets Device field to given value.
 
 
 ### GetModule
 
-`func (o *PowerOutlet) GetModule() Module`
+`func (o *PowerOutlet) GetModule() BriefModule`
 
 GetModule returns the Module field if non-nil, zero value otherwise.
 
 ### GetModuleOk
 
-`func (o *PowerOutlet) GetModuleOk() (*Module, bool)`
+`func (o *PowerOutlet) GetModuleOk() (*BriefModule, bool)`
 
 GetModuleOk returns a tuple with the Module field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetModule
 
-`func (o *PowerOutlet) SetModule(v Module)`
+`func (o *PowerOutlet) SetModule(v BriefModule)`
 
 SetModule sets Module field to given value.
 
@@ -243,22 +270,47 @@ HasType returns a boolean if a field has been set.
 `func (o *PowerOutlet) UnsetType()`
 
 UnsetType ensures that no value is present for Type, not even an explicit nil
+### GetColor
+
+`func (o *PowerOutlet) GetColor() string`
+
+GetColor returns the Color field if non-nil, zero value otherwise.
+
+### GetColorOk
+
+`func (o *PowerOutlet) GetColorOk() (*string, bool)`
+
+GetColorOk returns a tuple with the Color field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetColor
+
+`func (o *PowerOutlet) SetColor(v string)`
+
+SetColor sets Color field to given value.
+
+### HasColor
+
+`func (o *PowerOutlet) HasColor() bool`
+
+HasColor returns a boolean if a field has been set.
+
 ### GetPowerPort
 
-`func (o *PowerOutlet) GetPowerPort() PowerPort`
+`func (o *PowerOutlet) GetPowerPort() BriefPowerPort`
 
 GetPowerPort returns the PowerPort field if non-nil, zero value otherwise.
 
 ### GetPowerPortOk
 
-`func (o *PowerOutlet) GetPowerPortOk() (*PowerPort, bool)`
+`func (o *PowerOutlet) GetPowerPortOk() (*BriefPowerPort, bool)`
 
 GetPowerPortOk returns a tuple with the PowerPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPowerPort
 
-`func (o *PowerOutlet) SetPowerPort(v PowerPort)`
+`func (o *PowerOutlet) SetPowerPort(v BriefPowerPort)`
 
 SetPowerPort sets PowerPort field to given value.
 
@@ -365,23 +417,28 @@ HasMarkConnected returns a boolean if a field has been set.
 
 ### GetCable
 
-`func (o *PowerOutlet) GetCable() Cable`
+`func (o *PowerOutlet) GetCable() BriefCable`
 
 GetCable returns the Cable field if non-nil, zero value otherwise.
 
 ### GetCableOk
 
-`func (o *PowerOutlet) GetCableOk() (*Cable, bool)`
+`func (o *PowerOutlet) GetCableOk() (*BriefCable, bool)`
 
 GetCableOk returns a tuple with the Cable field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCable
 
-`func (o *PowerOutlet) SetCable(v Cable)`
+`func (o *PowerOutlet) SetCable(v BriefCable)`
 
 SetCable sets Cable field to given value.
 
+### HasCable
+
+`func (o *PowerOutlet) HasCable() bool`
+
+HasCable returns a boolean if a field has been set.
 
 ### SetCableNil
 
@@ -452,7 +509,22 @@ and a boolean to check if the value has been set.
 
 SetLinkPeersType sets LinkPeersType field to given value.
 
+### HasLinkPeersType
 
+`func (o *PowerOutlet) HasLinkPeersType() bool`
+
+HasLinkPeersType returns a boolean if a field has been set.
+
+### SetLinkPeersTypeNil
+
+`func (o *PowerOutlet) SetLinkPeersTypeNil(b bool)`
+
+ SetLinkPeersTypeNil sets the value for LinkPeersType to be an explicit nil
+
+### UnsetLinkPeersType
+`func (o *PowerOutlet) UnsetLinkPeersType()`
+
+UnsetLinkPeersType ensures that no value is present for LinkPeersType, not even an explicit nil
 ### GetConnectedEndpoints
 
 `func (o *PowerOutlet) GetConnectedEndpoints() []interface{}`
@@ -472,7 +544,22 @@ and a boolean to check if the value has been set.
 
 SetConnectedEndpoints sets ConnectedEndpoints field to given value.
 
+### HasConnectedEndpoints
 
+`func (o *PowerOutlet) HasConnectedEndpoints() bool`
+
+HasConnectedEndpoints returns a boolean if a field has been set.
+
+### SetConnectedEndpointsNil
+
+`func (o *PowerOutlet) SetConnectedEndpointsNil(b bool)`
+
+ SetConnectedEndpointsNil sets the value for ConnectedEndpoints to be an explicit nil
+
+### UnsetConnectedEndpoints
+`func (o *PowerOutlet) UnsetConnectedEndpoints()`
+
+UnsetConnectedEndpoints ensures that no value is present for ConnectedEndpoints, not even an explicit nil
 ### GetConnectedEndpointsType
 
 `func (o *PowerOutlet) GetConnectedEndpointsType() string`
@@ -492,7 +579,22 @@ and a boolean to check if the value has been set.
 
 SetConnectedEndpointsType sets ConnectedEndpointsType field to given value.
 
+### HasConnectedEndpointsType
 
+`func (o *PowerOutlet) HasConnectedEndpointsType() bool`
+
+HasConnectedEndpointsType returns a boolean if a field has been set.
+
+### SetConnectedEndpointsTypeNil
+
+`func (o *PowerOutlet) SetConnectedEndpointsTypeNil(b bool)`
+
+ SetConnectedEndpointsTypeNil sets the value for ConnectedEndpointsType to be an explicit nil
+
+### UnsetConnectedEndpointsType
+`func (o *PowerOutlet) UnsetConnectedEndpointsType()`
+
+UnsetConnectedEndpointsType ensures that no value is present for ConnectedEndpointsType, not even an explicit nil
 ### GetConnectedEndpointsReachable
 
 `func (o *PowerOutlet) GetConnectedEndpointsReachable() bool`
@@ -582,6 +684,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *PowerOutlet) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
@@ -612,6 +719,11 @@ and a boolean to check if the value has been set.
 
 SetLastUpdated sets LastUpdated field to given value.
 
+### HasLastUpdated
+
+`func (o *PowerOutlet) HasLastUpdated() bool`
+
+HasLastUpdated returns a boolean if a field has been set.
 
 ### SetLastUpdatedNil
 
