@@ -6,24 +6,25 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
+**DisplayUrl** | Pointer to **string** |  | [optional] [readonly] 
 **Display** | **string** |  | [readonly] 
 **Asn** | **int64** | 16- or 32-bit autonomous system number | 
-**Rir** | Pointer to [**NullableRIR**](RIR.md) |  | [optional] 
-**Tenant** | Pointer to [**NullableTenant**](Tenant.md) |  | [optional] 
+**Rir** | Pointer to [**NullableBriefRIR**](BriefRIR.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableBriefTenant**](BriefTenant.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
-**LastUpdated** | **NullableTime** |  | [readonly] 
-**SiteCount** | **int64** |  | [readonly] 
-**ProviderCount** | **int64** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
+**LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
+**SiteCount** | Pointer to **int64** |  | [optional] [readonly] 
+**ProviderCount** | Pointer to **int64** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewASN
 
-`func NewASN(id int32, url string, display string, asn int64, created NullableTime, lastUpdated NullableTime, siteCount int64, providerCount int64, ) *ASN`
+`func NewASN(id int32, url string, display string, asn int64, ) *ASN`
 
 NewASN instantiates a new ASN object
 This constructor will assign default values to properties that have it defined,
@@ -78,6 +79,31 @@ and a boolean to check if the value has been set.
 SetUrl sets Url field to given value.
 
 
+### GetDisplayUrl
+
+`func (o *ASN) GetDisplayUrl() string`
+
+GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
+
+### GetDisplayUrlOk
+
+`func (o *ASN) GetDisplayUrlOk() (*string, bool)`
+
+GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayUrl
+
+`func (o *ASN) SetDisplayUrl(v string)`
+
+SetDisplayUrl sets DisplayUrl field to given value.
+
+### HasDisplayUrl
+
+`func (o *ASN) HasDisplayUrl() bool`
+
+HasDisplayUrl returns a boolean if a field has been set.
+
 ### GetDisplay
 
 `func (o *ASN) GetDisplay() string`
@@ -120,20 +146,20 @@ SetAsn sets Asn field to given value.
 
 ### GetRir
 
-`func (o *ASN) GetRir() RIR`
+`func (o *ASN) GetRir() BriefRIR`
 
 GetRir returns the Rir field if non-nil, zero value otherwise.
 
 ### GetRirOk
 
-`func (o *ASN) GetRirOk() (*RIR, bool)`
+`func (o *ASN) GetRirOk() (*BriefRIR, bool)`
 
 GetRirOk returns a tuple with the Rir field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRir
 
-`func (o *ASN) SetRir(v RIR)`
+`func (o *ASN) SetRir(v BriefRIR)`
 
 SetRir sets Rir field to given value.
 
@@ -155,20 +181,20 @@ HasRir returns a boolean if a field has been set.
 UnsetRir ensures that no value is present for Rir, not even an explicit nil
 ### GetTenant
 
-`func (o *ASN) GetTenant() Tenant`
+`func (o *ASN) GetTenant() BriefTenant`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *ASN) GetTenantOk() (*Tenant, bool)`
+`func (o *ASN) GetTenantOk() (*BriefTenant, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *ASN) SetTenant(v Tenant)`
+`func (o *ASN) SetTenant(v BriefTenant)`
 
 SetTenant sets Tenant field to given value.
 
@@ -307,6 +333,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *ASN) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
@@ -337,6 +368,11 @@ and a boolean to check if the value has been set.
 
 SetLastUpdated sets LastUpdated field to given value.
 
+### HasLastUpdated
+
+`func (o *ASN) HasLastUpdated() bool`
+
+HasLastUpdated returns a boolean if a field has been set.
 
 ### SetLastUpdatedNil
 
@@ -367,6 +403,11 @@ and a boolean to check if the value has been set.
 
 SetSiteCount sets SiteCount field to given value.
 
+### HasSiteCount
+
+`func (o *ASN) HasSiteCount() bool`
+
+HasSiteCount returns a boolean if a field has been set.
 
 ### GetProviderCount
 
@@ -387,6 +428,11 @@ and a boolean to check if the value has been set.
 
 SetProviderCount sets ProviderCount field to given value.
 
+### HasProviderCount
+
+`func (o *ASN) HasProviderCount() bool`
+
+HasProviderCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

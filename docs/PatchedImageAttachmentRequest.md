@@ -8,8 +8,6 @@ Name | Type | Description | Notes
 **ObjectId** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Image** | Pointer to ***os.File** |  | [optional] 
-**ImageHeight** | Pointer to **int32** |  | [optional] 
-**ImageWidth** | Pointer to **int32** |  | [optional] 
 
 ## Methods
 
@@ -129,56 +127,6 @@ SetImage sets Image field to given value.
 `func (o *PatchedImageAttachmentRequest) HasImage() bool`
 
 HasImage returns a boolean if a field has been set.
-
-### GetImageHeight
-
-`func (o *PatchedImageAttachmentRequest) GetImageHeight() int32`
-
-GetImageHeight returns the ImageHeight field if non-nil, zero value otherwise.
-
-### GetImageHeightOk
-
-`func (o *PatchedImageAttachmentRequest) GetImageHeightOk() (*int32, bool)`
-
-GetImageHeightOk returns a tuple with the ImageHeight field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetImageHeight
-
-`func (o *PatchedImageAttachmentRequest) SetImageHeight(v int32)`
-
-SetImageHeight sets ImageHeight field to given value.
-
-### HasImageHeight
-
-`func (o *PatchedImageAttachmentRequest) HasImageHeight() bool`
-
-HasImageHeight returns a boolean if a field has been set.
-
-### GetImageWidth
-
-`func (o *PatchedImageAttachmentRequest) GetImageWidth() int32`
-
-GetImageWidth returns the ImageWidth field if non-nil, zero value otherwise.
-
-### GetImageWidthOk
-
-`func (o *PatchedImageAttachmentRequest) GetImageWidthOk() (*int32, bool)`
-
-GetImageWidthOk returns a tuple with the ImageWidth field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetImageWidth
-
-`func (o *PatchedImageAttachmentRequest) SetImageWidth(v int32)`
-
-SetImageWidth sets ImageWidth field to given value.
-
-### HasImageWidth
-
-`func (o *PatchedImageAttachmentRequest) HasImageWidth() bool`
-
-HasImageWidth returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

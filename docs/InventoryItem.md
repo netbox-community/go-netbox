@@ -6,13 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
+**DisplayUrl** | Pointer to **string** |  | [optional] [readonly] 
 **Display** | **string** |  | [readonly] 
-**Device** | [**Device**](Device.md) |  | 
+**Device** | [**BriefDevice**](BriefDevice.md) |  | 
 **Parent** | Pointer to **NullableInt32** |  | [optional] 
 **Name** | **string** |  | 
 **Label** | Pointer to **string** | Physical label | [optional] 
-**Role** | Pointer to [**NullableInventoryItemRole**](InventoryItemRole.md) |  | [optional] 
-**Manufacturer** | Pointer to [**NullableManufacturer**](Manufacturer.md) |  | [optional] 
+**Status** | Pointer to [**InventoryItemStatus**](InventoryItemStatus.md) |  | [optional] 
+**Role** | Pointer to [**NullableBriefInventoryItemRole**](BriefInventoryItemRole.md) |  | [optional] 
+**Manufacturer** | Pointer to [**NullableBriefManufacturer**](BriefManufacturer.md) |  | [optional] 
 **PartId** | Pointer to **string** | Manufacturer-assigned part identifier | [optional] 
 **Serial** | Pointer to **string** |  | [optional] 
 **AssetTag** | Pointer to **NullableString** | A unique tag used to identify this item | [optional] 
@@ -20,18 +22,18 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **ComponentType** | Pointer to **NullableString** |  | [optional] 
 **ComponentId** | Pointer to **NullableInt64** |  | [optional] 
-**Component** | **interface{}** |  | [readonly] 
+**Component** | Pointer to **interface{}** |  | [optional] [readonly] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
-**LastUpdated** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
+**LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **Depth** | **int32** |  | [readonly] 
 
 ## Methods
 
 ### NewInventoryItem
 
-`func NewInventoryItem(id int32, url string, display string, device Device, name string, component interface{}, created NullableTime, lastUpdated NullableTime, depth int32, ) *InventoryItem`
+`func NewInventoryItem(id int32, url string, display string, device BriefDevice, name string, depth int32, ) *InventoryItem`
 
 NewInventoryItem instantiates a new InventoryItem object
 This constructor will assign default values to properties that have it defined,
@@ -86,6 +88,31 @@ and a boolean to check if the value has been set.
 SetUrl sets Url field to given value.
 
 
+### GetDisplayUrl
+
+`func (o *InventoryItem) GetDisplayUrl() string`
+
+GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
+
+### GetDisplayUrlOk
+
+`func (o *InventoryItem) GetDisplayUrlOk() (*string, bool)`
+
+GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayUrl
+
+`func (o *InventoryItem) SetDisplayUrl(v string)`
+
+SetDisplayUrl sets DisplayUrl field to given value.
+
+### HasDisplayUrl
+
+`func (o *InventoryItem) HasDisplayUrl() bool`
+
+HasDisplayUrl returns a boolean if a field has been set.
+
 ### GetDisplay
 
 `func (o *InventoryItem) GetDisplay() string`
@@ -108,20 +135,20 @@ SetDisplay sets Display field to given value.
 
 ### GetDevice
 
-`func (o *InventoryItem) GetDevice() Device`
+`func (o *InventoryItem) GetDevice() BriefDevice`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *InventoryItem) GetDeviceOk() (*Device, bool)`
+`func (o *InventoryItem) GetDeviceOk() (*BriefDevice, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *InventoryItem) SetDevice(v Device)`
+`func (o *InventoryItem) SetDevice(v BriefDevice)`
 
 SetDevice sets Device field to given value.
 
@@ -206,22 +233,47 @@ SetLabel sets Label field to given value.
 
 HasLabel returns a boolean if a field has been set.
 
+### GetStatus
+
+`func (o *InventoryItem) GetStatus() InventoryItemStatus`
+
+GetStatus returns the Status field if non-nil, zero value otherwise.
+
+### GetStatusOk
+
+`func (o *InventoryItem) GetStatusOk() (*InventoryItemStatus, bool)`
+
+GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatus
+
+`func (o *InventoryItem) SetStatus(v InventoryItemStatus)`
+
+SetStatus sets Status field to given value.
+
+### HasStatus
+
+`func (o *InventoryItem) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
+
 ### GetRole
 
-`func (o *InventoryItem) GetRole() InventoryItemRole`
+`func (o *InventoryItem) GetRole() BriefInventoryItemRole`
 
 GetRole returns the Role field if non-nil, zero value otherwise.
 
 ### GetRoleOk
 
-`func (o *InventoryItem) GetRoleOk() (*InventoryItemRole, bool)`
+`func (o *InventoryItem) GetRoleOk() (*BriefInventoryItemRole, bool)`
 
 GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRole
 
-`func (o *InventoryItem) SetRole(v InventoryItemRole)`
+`func (o *InventoryItem) SetRole(v BriefInventoryItemRole)`
 
 SetRole sets Role field to given value.
 
@@ -243,20 +295,20 @@ HasRole returns a boolean if a field has been set.
 UnsetRole ensures that no value is present for Role, not even an explicit nil
 ### GetManufacturer
 
-`func (o *InventoryItem) GetManufacturer() Manufacturer`
+`func (o *InventoryItem) GetManufacturer() BriefManufacturer`
 
 GetManufacturer returns the Manufacturer field if non-nil, zero value otherwise.
 
 ### GetManufacturerOk
 
-`func (o *InventoryItem) GetManufacturerOk() (*Manufacturer, bool)`
+`func (o *InventoryItem) GetManufacturerOk() (*BriefManufacturer, bool)`
 
 GetManufacturerOk returns a tuple with the Manufacturer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetManufacturer
 
-`func (o *InventoryItem) SetManufacturer(v Manufacturer)`
+`func (o *InventoryItem) SetManufacturer(v BriefManufacturer)`
 
 SetManufacturer sets Manufacturer field to given value.
 
@@ -500,6 +552,11 @@ and a boolean to check if the value has been set.
 
 SetComponent sets Component field to given value.
 
+### HasComponent
+
+`func (o *InventoryItem) HasComponent() bool`
+
+HasComponent returns a boolean if a field has been set.
 
 ### SetComponentNil
 
@@ -580,6 +637,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *InventoryItem) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
@@ -610,6 +672,11 @@ and a boolean to check if the value has been set.
 
 SetLastUpdated sets LastUpdated field to given value.
 
+### HasLastUpdated
+
+`func (o *InventoryItem) HasLastUpdated() bool`
+
+HasLastUpdated returns a boolean if a field has been set.
 
 ### SetLastUpdatedNil
 

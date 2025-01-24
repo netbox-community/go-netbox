@@ -11,11 +11,10 @@ package netbox
 
 import (
 	"context"
-	"testing"
-
-	openapiclient "github.com/netbox-community/go-netbox/v4"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"testing"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func Test_netbox_CoreAPIService(t *testing.T) {
@@ -23,9 +22,138 @@ func Test_netbox_CoreAPIService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
+	t.Run("Test CoreAPIService CoreBackgroundQueuesRetrieve", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.CoreAPI.CoreBackgroundQueuesRetrieve(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CoreAPIService CoreBackgroundQueuesRetrieve2", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var name string
+
+		resp, httpRes, err := apiClient.CoreAPI.CoreBackgroundQueuesRetrieve2(context.Background(), name).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CoreAPIService CoreBackgroundTasksDeleteCreate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var id string
+
+		httpRes, err := apiClient.CoreAPI.CoreBackgroundTasksDeleteCreate(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CoreAPIService CoreBackgroundTasksEnqueueCreate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var id string
+
+		httpRes, err := apiClient.CoreAPI.CoreBackgroundTasksEnqueueCreate(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CoreAPIService CoreBackgroundTasksRequeueCreate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var id string
+
+		httpRes, err := apiClient.CoreAPI.CoreBackgroundTasksRequeueCreate(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CoreAPIService CoreBackgroundTasksRetrieve", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.CoreAPI.CoreBackgroundTasksRetrieve(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CoreAPIService CoreBackgroundTasksRetrieve2", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var id string
+
+		resp, httpRes, err := apiClient.CoreAPI.CoreBackgroundTasksRetrieve2(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CoreAPIService CoreBackgroundTasksStopCreate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var id string
+
+		httpRes, err := apiClient.CoreAPI.CoreBackgroundTasksStopCreate(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CoreAPIService CoreBackgroundWorkersRetrieve", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.CoreAPI.CoreBackgroundWorkersRetrieve(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CoreAPIService CoreBackgroundWorkersRetrieve2", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var name string
+
+		httpRes, err := apiClient.CoreAPI.CoreBackgroundWorkersRetrieve2(context.Background(), name).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test CoreAPIService CoreDataFilesList", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.CoreAPI.CoreDataFilesList(context.Background()).Execute()
 
@@ -37,7 +165,7 @@ func Test_netbox_CoreAPIService(t *testing.T) {
 
 	t.Run("Test CoreAPIService CoreDataFilesRetrieve", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var id int32
 
@@ -51,7 +179,7 @@ func Test_netbox_CoreAPIService(t *testing.T) {
 
 	t.Run("Test CoreAPIService CoreDataSourcesBulkDestroy", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		httpRes, err := apiClient.CoreAPI.CoreDataSourcesBulkDestroy(context.Background()).Execute()
 
@@ -62,7 +190,7 @@ func Test_netbox_CoreAPIService(t *testing.T) {
 
 	t.Run("Test CoreAPIService CoreDataSourcesBulkPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.CoreAPI.CoreDataSourcesBulkPartialUpdate(context.Background()).Execute()
 
@@ -74,7 +202,7 @@ func Test_netbox_CoreAPIService(t *testing.T) {
 
 	t.Run("Test CoreAPIService CoreDataSourcesBulkUpdate", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.CoreAPI.CoreDataSourcesBulkUpdate(context.Background()).Execute()
 
@@ -86,7 +214,7 @@ func Test_netbox_CoreAPIService(t *testing.T) {
 
 	t.Run("Test CoreAPIService CoreDataSourcesCreate", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.CoreAPI.CoreDataSourcesCreate(context.Background()).Execute()
 
@@ -98,7 +226,7 @@ func Test_netbox_CoreAPIService(t *testing.T) {
 
 	t.Run("Test CoreAPIService CoreDataSourcesDestroy", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var id int32
 
@@ -111,7 +239,7 @@ func Test_netbox_CoreAPIService(t *testing.T) {
 
 	t.Run("Test CoreAPIService CoreDataSourcesList", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.CoreAPI.CoreDataSourcesList(context.Background()).Execute()
 
@@ -123,7 +251,7 @@ func Test_netbox_CoreAPIService(t *testing.T) {
 
 	t.Run("Test CoreAPIService CoreDataSourcesPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var id int32
 
@@ -137,7 +265,7 @@ func Test_netbox_CoreAPIService(t *testing.T) {
 
 	t.Run("Test CoreAPIService CoreDataSourcesRetrieve", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var id int32
 
@@ -151,7 +279,7 @@ func Test_netbox_CoreAPIService(t *testing.T) {
 
 	t.Run("Test CoreAPIService CoreDataSourcesSyncCreate", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var id int32
 
@@ -165,7 +293,7 @@ func Test_netbox_CoreAPIService(t *testing.T) {
 
 	t.Run("Test CoreAPIService CoreDataSourcesUpdate", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var id int32
 
@@ -179,7 +307,7 @@ func Test_netbox_CoreAPIService(t *testing.T) {
 
 	t.Run("Test CoreAPIService CoreJobsList", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.CoreAPI.CoreJobsList(context.Background()).Execute()
 
@@ -191,11 +319,37 @@ func Test_netbox_CoreAPIService(t *testing.T) {
 
 	t.Run("Test CoreAPIService CoreJobsRetrieve", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var id int32
 
 		resp, httpRes, err := apiClient.CoreAPI.CoreJobsRetrieve(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CoreAPIService CoreObjectChangesList", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.CoreAPI.CoreObjectChangesList(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CoreAPIService CoreObjectChangesRetrieve", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var id int32
+
+		resp, httpRes, err := apiClient.CoreAPI.CoreObjectChangesRetrieve(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

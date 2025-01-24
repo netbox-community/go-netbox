@@ -438,7 +438,7 @@ Name | Type | Description  | Notes
 
 ## UsersGroupsList
 
-> PaginatedGroupList UsersGroupsList(ctx).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).PermissionId(permissionId).PermissionIdN(permissionIdN).Q(q).UserId(userId).UserIdN(userIdN).Execute()
+> PaginatedGroupList UsersGroupsList(ctx).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NotificationGroupId(notificationGroupId).NotificationGroupIdN(notificationGroupIdN).Offset(offset).Ordering(ordering).PermissionId(permissionId).PermissionIdN(permissionIdN).Q(q).UserId(userId).UserIdN(userIdN).Execute()
 
 
 
@@ -487,6 +487,8 @@ func main() {
 	nameNie := []string{"Inner_example"} // []string |  (optional)
 	nameNiew := []string{"Inner_example"} // []string |  (optional)
 	nameNisw := []string{"Inner_example"} // []string |  (optional)
+	notificationGroupId := []int32{int32(123)} // []int32 | Notification group (ID) (optional)
+	notificationGroupIdN := []int32{int32(123)} // []int32 | Notification group (ID) (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
 	permissionId := []int32{int32(123)} // []int32 | Permission (ID) (optional)
@@ -497,7 +499,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UsersAPI.UsersGroupsList(context.Background()).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).Offset(offset).Ordering(ordering).PermissionId(permissionId).PermissionIdN(permissionIdN).Q(q).UserId(userId).UserIdN(userIdN).Execute()
+	resp, r, err := apiClient.UsersAPI.UsersGroupsList(context.Background()).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NotificationGroupId(notificationGroupId).NotificationGroupIdN(notificationGroupIdN).Offset(offset).Ordering(ordering).PermissionId(permissionId).PermissionIdN(permissionIdN).Q(q).UserId(userId).UserIdN(userIdN).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersGroupsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -548,6 +550,8 @@ Name | Type | Description  | Notes
  **nameNie** | **[]string** |  | 
  **nameNiew** | **[]string** |  | 
  **nameNisw** | **[]string** |  | 
+ **notificationGroupId** | **[]int32** | Notification group (ID) | 
+ **notificationGroupIdN** | **[]int32** | Notification group (ID) | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **permissionId** | **[]int32** | Permission (ID) | 
@@ -1537,7 +1541,7 @@ import (
 )
 
 func main() {
-	tokenRequest := []openapiclient.TokenRequest{*openapiclient.NewTokenRequest(*openapiclient.NewUserRequest("Username_example"))} // []TokenRequest | 
+	tokenRequest := []openapiclient.TokenRequest{*openapiclient.NewTokenRequest(*openapiclient.NewBriefUserRequest("Username_example"))} // []TokenRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1601,7 +1605,7 @@ import (
 )
 
 func main() {
-	tokenRequest := []openapiclient.TokenRequest{*openapiclient.NewTokenRequest(*openapiclient.NewUserRequest("Username_example"))} // []TokenRequest | 
+	tokenRequest := []openapiclient.TokenRequest{*openapiclient.NewTokenRequest(*openapiclient.NewBriefUserRequest("Username_example"))} // []TokenRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1667,7 +1671,7 @@ import (
 )
 
 func main() {
-	tokenRequest := []openapiclient.TokenRequest{*openapiclient.NewTokenRequest(*openapiclient.NewUserRequest("Username_example"))} // []TokenRequest | 
+	tokenRequest := []openapiclient.TokenRequest{*openapiclient.NewTokenRequest(*openapiclient.NewBriefUserRequest("Username_example"))} // []TokenRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1733,7 +1737,7 @@ import (
 )
 
 func main() {
-	tokenRequest := *openapiclient.NewTokenRequest(*openapiclient.NewUserRequest("Username_example")) // TokenRequest | 
+	tokenRequest := *openapiclient.NewTokenRequest(*openapiclient.NewBriefUserRequest("Username_example")) // TokenRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2243,7 +2247,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this token.
-	tokenRequest := *openapiclient.NewTokenRequest(*openapiclient.NewUserRequest("Username_example")) // TokenRequest | 
+	tokenRequest := *openapiclient.NewTokenRequest(*openapiclient.NewBriefUserRequest("Username_example")) // TokenRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2314,7 +2318,7 @@ import (
 )
 
 func main() {
-	userRequest := []openapiclient.UserRequest{*openapiclient.NewUserRequest("Username_example")} // []UserRequest | 
+	userRequest := []openapiclient.UserRequest{*openapiclient.NewUserRequest("Username_example", "Password_example")} // []UserRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2378,7 +2382,7 @@ import (
 )
 
 func main() {
-	userRequest := []openapiclient.UserRequest{*openapiclient.NewUserRequest("Username_example")} // []UserRequest | 
+	userRequest := []openapiclient.UserRequest{*openapiclient.NewUserRequest("Username_example", "Password_example")} // []UserRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2444,7 +2448,7 @@ import (
 )
 
 func main() {
-	userRequest := []openapiclient.UserRequest{*openapiclient.NewUserRequest("Username_example")} // []UserRequest | 
+	userRequest := []openapiclient.UserRequest{*openapiclient.NewUserRequest("Username_example", "Password_example")} // []UserRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2510,7 +2514,7 @@ import (
 )
 
 func main() {
-	userRequest := *openapiclient.NewUserRequest("Username_example") // UserRequest | 
+	userRequest := *openapiclient.NewUserRequest("Username_example", "Password_example") // UserRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2625,7 +2629,7 @@ Name | Type | Description  | Notes
 
 ## UsersUsersList
 
-> PaginatedUserList UsersUsersList(ctx).DateJoined(dateJoined).DateJoinedEmpty(dateJoinedEmpty).DateJoinedGt(dateJoinedGt).DateJoinedGte(dateJoinedGte).DateJoinedLt(dateJoinedLt).DateJoinedLte(dateJoinedLte).DateJoinedN(dateJoinedN).Email(email).EmailEmpty(emailEmpty).EmailIc(emailIc).EmailIe(emailIe).EmailIew(emailIew).EmailIsw(emailIsw).EmailN(emailN).EmailNic(emailNic).EmailNie(emailNie).EmailNiew(emailNiew).EmailNisw(emailNisw).FirstName(firstName).FirstNameEmpty(firstNameEmpty).FirstNameIc(firstNameIc).FirstNameIe(firstNameIe).FirstNameIew(firstNameIew).FirstNameIsw(firstNameIsw).FirstNameN(firstNameN).FirstNameNic(firstNameNic).FirstNameNie(firstNameNie).FirstNameNiew(firstNameNiew).FirstNameNisw(firstNameNisw).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsActive(isActive).IsStaff(isStaff).IsSuperuser(isSuperuser).LastLogin(lastLogin).LastLoginEmpty(lastLoginEmpty).LastLoginGt(lastLoginGt).LastLoginGte(lastLoginGte).LastLoginLt(lastLoginLt).LastLoginLte(lastLoginLte).LastLoginN(lastLoginN).LastName(lastName).LastNameEmpty(lastNameEmpty).LastNameIc(lastNameIc).LastNameIe(lastNameIe).LastNameIew(lastNameIew).LastNameIsw(lastNameIsw).LastNameN(lastNameN).LastNameNic(lastNameNic).LastNameNie(lastNameNie).LastNameNiew(lastNameNiew).LastNameNisw(lastNameNisw).Limit(limit).Offset(offset).Ordering(ordering).PermissionId(permissionId).PermissionIdN(permissionIdN).Q(q).Username(username).UsernameEmpty(usernameEmpty).UsernameIc(usernameIc).UsernameIe(usernameIe).UsernameIew(usernameIew).UsernameIsw(usernameIsw).UsernameN(usernameN).UsernameNic(usernameNic).UsernameNie(usernameNie).UsernameNiew(usernameNiew).UsernameNisw(usernameNisw).Execute()
+> PaginatedUserList UsersUsersList(ctx).DateJoined(dateJoined).DateJoinedEmpty(dateJoinedEmpty).DateJoinedGt(dateJoinedGt).DateJoinedGte(dateJoinedGte).DateJoinedLt(dateJoinedLt).DateJoinedLte(dateJoinedLte).DateJoinedN(dateJoinedN).Email(email).EmailEmpty(emailEmpty).EmailIc(emailIc).EmailIe(emailIe).EmailIew(emailIew).EmailIsw(emailIsw).EmailN(emailN).EmailNic(emailNic).EmailNie(emailNie).EmailNiew(emailNiew).EmailNisw(emailNisw).FirstName(firstName).FirstNameEmpty(firstNameEmpty).FirstNameIc(firstNameIc).FirstNameIe(firstNameIe).FirstNameIew(firstNameIew).FirstNameIsw(firstNameIsw).FirstNameN(firstNameN).FirstNameNic(firstNameNic).FirstNameNie(firstNameNie).FirstNameNiew(firstNameNiew).FirstNameNisw(firstNameNisw).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsActive(isActive).IsStaff(isStaff).IsSuperuser(isSuperuser).LastLogin(lastLogin).LastLoginEmpty(lastLoginEmpty).LastLoginGt(lastLoginGt).LastLoginGte(lastLoginGte).LastLoginLt(lastLoginLt).LastLoginLte(lastLoginLte).LastLoginN(lastLoginN).LastName(lastName).LastNameEmpty(lastNameEmpty).LastNameIc(lastNameIc).LastNameIe(lastNameIe).LastNameIew(lastNameIew).LastNameIsw(lastNameIsw).LastNameN(lastNameN).LastNameNic(lastNameNic).LastNameNie(lastNameNie).LastNameNiew(lastNameNiew).LastNameNisw(lastNameNisw).Limit(limit).NotificationGroupId(notificationGroupId).NotificationGroupIdN(notificationGroupIdN).Offset(offset).Ordering(ordering).PermissionId(permissionId).PermissionIdN(permissionIdN).Q(q).Username(username).UsernameEmpty(usernameEmpty).UsernameIc(usernameIc).UsernameIe(usernameIe).UsernameIew(usernameIew).UsernameIsw(usernameIsw).UsernameN(usernameN).UsernameNic(usernameNic).UsernameNie(usernameNie).UsernameNiew(usernameNiew).UsernameNisw(usernameNisw).Execute()
 
 
 
@@ -2707,6 +2711,8 @@ func main() {
 	lastNameNiew := []string{"Inner_example"} // []string |  (optional)
 	lastNameNisw := []string{"Inner_example"} // []string |  (optional)
 	limit := int32(56) // int32 | Number of results to return per page. (optional)
+	notificationGroupId := []int32{int32(123)} // []int32 | Notification group (ID) (optional)
+	notificationGroupIdN := []int32{int32(123)} // []int32 | Notification group (ID) (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
 	permissionId := []int32{int32(123)} // []int32 | Permission (ID) (optional)
@@ -2726,7 +2732,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UsersAPI.UsersUsersList(context.Background()).DateJoined(dateJoined).DateJoinedEmpty(dateJoinedEmpty).DateJoinedGt(dateJoinedGt).DateJoinedGte(dateJoinedGte).DateJoinedLt(dateJoinedLt).DateJoinedLte(dateJoinedLte).DateJoinedN(dateJoinedN).Email(email).EmailEmpty(emailEmpty).EmailIc(emailIc).EmailIe(emailIe).EmailIew(emailIew).EmailIsw(emailIsw).EmailN(emailN).EmailNic(emailNic).EmailNie(emailNie).EmailNiew(emailNiew).EmailNisw(emailNisw).FirstName(firstName).FirstNameEmpty(firstNameEmpty).FirstNameIc(firstNameIc).FirstNameIe(firstNameIe).FirstNameIew(firstNameIew).FirstNameIsw(firstNameIsw).FirstNameN(firstNameN).FirstNameNic(firstNameNic).FirstNameNie(firstNameNie).FirstNameNiew(firstNameNiew).FirstNameNisw(firstNameNisw).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsActive(isActive).IsStaff(isStaff).IsSuperuser(isSuperuser).LastLogin(lastLogin).LastLoginEmpty(lastLoginEmpty).LastLoginGt(lastLoginGt).LastLoginGte(lastLoginGte).LastLoginLt(lastLoginLt).LastLoginLte(lastLoginLte).LastLoginN(lastLoginN).LastName(lastName).LastNameEmpty(lastNameEmpty).LastNameIc(lastNameIc).LastNameIe(lastNameIe).LastNameIew(lastNameIew).LastNameIsw(lastNameIsw).LastNameN(lastNameN).LastNameNic(lastNameNic).LastNameNie(lastNameNie).LastNameNiew(lastNameNiew).LastNameNisw(lastNameNisw).Limit(limit).Offset(offset).Ordering(ordering).PermissionId(permissionId).PermissionIdN(permissionIdN).Q(q).Username(username).UsernameEmpty(usernameEmpty).UsernameIc(usernameIc).UsernameIe(usernameIe).UsernameIew(usernameIew).UsernameIsw(usernameIsw).UsernameN(usernameN).UsernameNic(usernameNic).UsernameNie(usernameNie).UsernameNiew(usernameNiew).UsernameNisw(usernameNisw).Execute()
+	resp, r, err := apiClient.UsersAPI.UsersUsersList(context.Background()).DateJoined(dateJoined).DateJoinedEmpty(dateJoinedEmpty).DateJoinedGt(dateJoinedGt).DateJoinedGte(dateJoinedGte).DateJoinedLt(dateJoinedLt).DateJoinedLte(dateJoinedLte).DateJoinedN(dateJoinedN).Email(email).EmailEmpty(emailEmpty).EmailIc(emailIc).EmailIe(emailIe).EmailIew(emailIew).EmailIsw(emailIsw).EmailN(emailN).EmailNic(emailNic).EmailNie(emailNie).EmailNiew(emailNiew).EmailNisw(emailNisw).FirstName(firstName).FirstNameEmpty(firstNameEmpty).FirstNameIc(firstNameIc).FirstNameIe(firstNameIe).FirstNameIew(firstNameIew).FirstNameIsw(firstNameIsw).FirstNameN(firstNameN).FirstNameNic(firstNameNic).FirstNameNie(firstNameNie).FirstNameNiew(firstNameNiew).FirstNameNisw(firstNameNisw).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsActive(isActive).IsStaff(isStaff).IsSuperuser(isSuperuser).LastLogin(lastLogin).LastLoginEmpty(lastLoginEmpty).LastLoginGt(lastLoginGt).LastLoginGte(lastLoginGte).LastLoginLt(lastLoginLt).LastLoginLte(lastLoginLte).LastLoginN(lastLoginN).LastName(lastName).LastNameEmpty(lastNameEmpty).LastNameIc(lastNameIc).LastNameIe(lastNameIe).LastNameIew(lastNameIew).LastNameIsw(lastNameIsw).LastNameN(lastNameN).LastNameNic(lastNameNic).LastNameNie(lastNameNie).LastNameNiew(lastNameNiew).LastNameNisw(lastNameNisw).Limit(limit).NotificationGroupId(notificationGroupId).NotificationGroupIdN(notificationGroupIdN).Offset(offset).Ordering(ordering).PermissionId(permissionId).PermissionIdN(permissionIdN).Q(q).Username(username).UsernameEmpty(usernameEmpty).UsernameIc(usernameIc).UsernameIe(usernameIe).UsernameIew(usernameIew).UsernameIsw(usernameIsw).UsernameN(usernameN).UsernameNic(usernameNic).UsernameNie(usernameNie).UsernameNiew(usernameNiew).UsernameNisw(usernameNisw).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersUsersList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2809,6 +2815,8 @@ Name | Type | Description  | Notes
  **lastNameNiew** | **[]string** |  | 
  **lastNameNisw** | **[]string** |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **notificationGroupId** | **[]int32** | Notification group (ID) | 
+ **notificationGroupIdN** | **[]int32** | Notification group (ID) | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **permissionId** | **[]int32** | Permission (ID) | 
@@ -3008,7 +3016,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this user.
-	userRequest := *openapiclient.NewUserRequest("Username_example") // UserRequest | 
+	userRequest := *openapiclient.NewUserRequest("Username_example", "Password_example") // UserRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

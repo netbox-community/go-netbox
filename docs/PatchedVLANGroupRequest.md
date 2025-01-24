@@ -8,8 +8,6 @@ Name | Type | Description | Notes
 **Slug** | Pointer to **string** |  | [optional] 
 **ScopeType** | Pointer to **NullableString** |  | [optional] 
 **ScopeId** | Pointer to **NullableInt32** |  | [optional] 
-**MinVid** | Pointer to **int32** | Lowest permissible ID of a child VLAN | [optional] 
-**MaxVid** | Pointer to **int32** | Highest permissible ID of a child VLAN | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -153,56 +151,6 @@ HasScopeId returns a boolean if a field has been set.
 `func (o *PatchedVLANGroupRequest) UnsetScopeId()`
 
 UnsetScopeId ensures that no value is present for ScopeId, not even an explicit nil
-### GetMinVid
-
-`func (o *PatchedVLANGroupRequest) GetMinVid() int32`
-
-GetMinVid returns the MinVid field if non-nil, zero value otherwise.
-
-### GetMinVidOk
-
-`func (o *PatchedVLANGroupRequest) GetMinVidOk() (*int32, bool)`
-
-GetMinVidOk returns a tuple with the MinVid field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMinVid
-
-`func (o *PatchedVLANGroupRequest) SetMinVid(v int32)`
-
-SetMinVid sets MinVid field to given value.
-
-### HasMinVid
-
-`func (o *PatchedVLANGroupRequest) HasMinVid() bool`
-
-HasMinVid returns a boolean if a field has been set.
-
-### GetMaxVid
-
-`func (o *PatchedVLANGroupRequest) GetMaxVid() int32`
-
-GetMaxVid returns the MaxVid field if non-nil, zero value otherwise.
-
-### GetMaxVidOk
-
-`func (o *PatchedVLANGroupRequest) GetMaxVidOk() (*int32, bool)`
-
-GetMaxVidOk returns a tuple with the MaxVid field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMaxVid
-
-`func (o *PatchedVLANGroupRequest) SetMaxVid(v int32)`
-
-SetMaxVid sets MaxVid field to given value.
-
-### HasMaxVid
-
-`func (o *PatchedVLANGroupRequest) HasMaxVid() bool`
-
-HasMaxVid returns a boolean if a field has been set.
-
 ### GetDescription
 
 `func (o *PatchedVLANGroupRequest) GetDescription() string`

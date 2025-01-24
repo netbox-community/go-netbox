@@ -6,23 +6,24 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
+**DisplayUrl** | Pointer to **string** |  | [optional] [readonly] 
 **Display** | **string** |  | [readonly] 
 **Time** | **time.Time** |  | [readonly] 
-**User** | [**User**](User.md) |  | [readonly] 
+**User** | [**BriefUser**](BriefUser.md) |  | [readonly] 
 **UserName** | **string** |  | [readonly] 
 **RequestId** | **string** |  | [readonly] 
 **Action** | [**ObjectChangeAction**](ObjectChangeAction.md) |  | 
 **ChangedObjectType** | **string** |  | [readonly] 
 **ChangedObjectId** | **int64** |  | 
-**ChangedObject** | **interface{}** |  | [readonly] 
-**PrechangeData** | **interface{}** |  | [readonly] 
-**PostchangeData** | **interface{}** |  | [readonly] 
+**ChangedObject** | Pointer to **interface{}** |  | [optional] [readonly] 
+**PrechangeData** | Pointer to **interface{}** |  | [optional] [readonly] 
+**PostchangeData** | Pointer to **interface{}** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewObjectChange
 
-`func NewObjectChange(id int32, url string, display string, time time.Time, user User, userName string, requestId string, action ObjectChangeAction, changedObjectType string, changedObjectId int64, changedObject interface{}, prechangeData interface{}, postchangeData interface{}, ) *ObjectChange`
+`func NewObjectChange(id int32, url string, display string, time time.Time, user BriefUser, userName string, requestId string, action ObjectChangeAction, changedObjectType string, changedObjectId int64, ) *ObjectChange`
 
 NewObjectChange instantiates a new ObjectChange object
 This constructor will assign default values to properties that have it defined,
@@ -77,6 +78,31 @@ and a boolean to check if the value has been set.
 SetUrl sets Url field to given value.
 
 
+### GetDisplayUrl
+
+`func (o *ObjectChange) GetDisplayUrl() string`
+
+GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
+
+### GetDisplayUrlOk
+
+`func (o *ObjectChange) GetDisplayUrlOk() (*string, bool)`
+
+GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayUrl
+
+`func (o *ObjectChange) SetDisplayUrl(v string)`
+
+SetDisplayUrl sets DisplayUrl field to given value.
+
+### HasDisplayUrl
+
+`func (o *ObjectChange) HasDisplayUrl() bool`
+
+HasDisplayUrl returns a boolean if a field has been set.
+
 ### GetDisplay
 
 `func (o *ObjectChange) GetDisplay() string`
@@ -119,20 +145,20 @@ SetTime sets Time field to given value.
 
 ### GetUser
 
-`func (o *ObjectChange) GetUser() User`
+`func (o *ObjectChange) GetUser() BriefUser`
 
 GetUser returns the User field if non-nil, zero value otherwise.
 
 ### GetUserOk
 
-`func (o *ObjectChange) GetUserOk() (*User, bool)`
+`func (o *ObjectChange) GetUserOk() (*BriefUser, bool)`
 
 GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUser
 
-`func (o *ObjectChange) SetUser(v User)`
+`func (o *ObjectChange) SetUser(v BriefUser)`
 
 SetUser sets User field to given value.
 
@@ -256,6 +282,11 @@ and a boolean to check if the value has been set.
 
 SetChangedObject sets ChangedObject field to given value.
 
+### HasChangedObject
+
+`func (o *ObjectChange) HasChangedObject() bool`
+
+HasChangedObject returns a boolean if a field has been set.
 
 ### SetChangedObjectNil
 
@@ -286,6 +317,11 @@ and a boolean to check if the value has been set.
 
 SetPrechangeData sets PrechangeData field to given value.
 
+### HasPrechangeData
+
+`func (o *ObjectChange) HasPrechangeData() bool`
+
+HasPrechangeData returns a boolean if a field has been set.
 
 ### SetPrechangeDataNil
 
@@ -316,6 +352,11 @@ and a boolean to check if the value has been set.
 
 SetPostchangeData sets PostchangeData field to given value.
 
+### HasPostchangeData
+
+`func (o *ObjectChange) HasPostchangeData() bool`
+
+HasPostchangeData returns a boolean if a field has been set.
 
 ### SetPostchangeDataNil
 

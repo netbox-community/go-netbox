@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Device** | [**DeviceRequest**](DeviceRequest.md) |  | 
+**Device** | [**BriefDeviceRequest**](BriefDeviceRequest.md) |  | 
 **Vdcs** | Pointer to **[]int32** |  | [optional] 
-**Module** | Pointer to [**NullableModuleRequest**](ModuleRequest.md) |  | [optional] 
+**Module** | Pointer to [**NullableBriefModuleRequest**](BriefModuleRequest.md) |  | [optional] 
 **Name** | **string** |  | 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Type** | [**InterfaceTypeValue**](InterfaceTypeValue.md) |  | 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **Bridge** | Pointer to [**NullableNestedInterfaceRequest**](NestedInterfaceRequest.md) |  | [optional] 
 **Lag** | Pointer to [**NullableNestedInterfaceRequest**](NestedInterfaceRequest.md) |  | [optional] 
 **Mtu** | Pointer to **NullableInt32** |  | [optional] 
-**MacAddress** | Pointer to **NullableString** |  | [optional] 
+**PrimaryMacAddress** | Pointer to [**NullableBriefMACAddressRequest**](BriefMACAddressRequest.md) |  | [optional] 
 **Speed** | Pointer to **NullableInt32** |  | [optional] 
 **Duplex** | Pointer to [**NullableInterfaceRequestDuplex**](InterfaceRequestDuplex.md) |  | [optional] 
 **Wwn** | Pointer to **NullableString** |  | [optional] 
@@ -29,11 +29,13 @@ Name | Type | Description | Notes
 **RfChannelFrequency** | Pointer to **NullableFloat64** | Populated by selected channel (if set) | [optional] 
 **RfChannelWidth** | Pointer to **NullableFloat64** | Populated by selected channel (if set) | [optional] 
 **TxPower** | Pointer to **NullableInt32** |  | [optional] 
-**UntaggedVlan** | Pointer to [**NullableVLANRequest**](VLANRequest.md) |  | [optional] 
+**UntaggedVlan** | Pointer to [**NullableBriefVLANRequest**](BriefVLANRequest.md) |  | [optional] 
 **TaggedVlans** | Pointer to **[]int32** |  | [optional] 
+**QinqSvlan** | Pointer to [**NullableBriefVLANRequest**](BriefVLANRequest.md) |  | [optional] 
+**VlanTranslationPolicy** | Pointer to [**NullableBriefVLANTranslationPolicyRequest**](BriefVLANTranslationPolicyRequest.md) |  | [optional] 
 **MarkConnected** | Pointer to **bool** | Treat as if a cable is connected | [optional] 
 **WirelessLans** | Pointer to **[]int32** |  | [optional] 
-**Vrf** | Pointer to [**NullableVRFRequest**](VRFRequest.md) |  | [optional] 
+**Vrf** | Pointer to [**NullableBriefVRFRequest**](BriefVRFRequest.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 
@@ -41,7 +43,7 @@ Name | Type | Description | Notes
 
 ### NewInterfaceRequest
 
-`func NewInterfaceRequest(device DeviceRequest, name string, type_ InterfaceTypeValue, ) *InterfaceRequest`
+`func NewInterfaceRequest(device BriefDeviceRequest, name string, type_ InterfaceTypeValue, ) *InterfaceRequest`
 
 NewInterfaceRequest instantiates a new InterfaceRequest object
 This constructor will assign default values to properties that have it defined,
@@ -58,20 +60,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDevice
 
-`func (o *InterfaceRequest) GetDevice() DeviceRequest`
+`func (o *InterfaceRequest) GetDevice() BriefDeviceRequest`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *InterfaceRequest) GetDeviceOk() (*DeviceRequest, bool)`
+`func (o *InterfaceRequest) GetDeviceOk() (*BriefDeviceRequest, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *InterfaceRequest) SetDevice(v DeviceRequest)`
+`func (o *InterfaceRequest) SetDevice(v BriefDeviceRequest)`
 
 SetDevice sets Device field to given value.
 
@@ -103,20 +105,20 @@ HasVdcs returns a boolean if a field has been set.
 
 ### GetModule
 
-`func (o *InterfaceRequest) GetModule() ModuleRequest`
+`func (o *InterfaceRequest) GetModule() BriefModuleRequest`
 
 GetModule returns the Module field if non-nil, zero value otherwise.
 
 ### GetModuleOk
 
-`func (o *InterfaceRequest) GetModuleOk() (*ModuleRequest, bool)`
+`func (o *InterfaceRequest) GetModuleOk() (*BriefModuleRequest, bool)`
 
 GetModuleOk returns a tuple with the Module field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetModule
 
-`func (o *InterfaceRequest) SetModule(v ModuleRequest)`
+`func (o *InterfaceRequest) SetModule(v BriefModuleRequest)`
 
 SetModule sets Module field to given value.
 
@@ -366,41 +368,41 @@ HasMtu returns a boolean if a field has been set.
 `func (o *InterfaceRequest) UnsetMtu()`
 
 UnsetMtu ensures that no value is present for Mtu, not even an explicit nil
-### GetMacAddress
+### GetPrimaryMacAddress
 
-`func (o *InterfaceRequest) GetMacAddress() string`
+`func (o *InterfaceRequest) GetPrimaryMacAddress() BriefMACAddressRequest`
 
-GetMacAddress returns the MacAddress field if non-nil, zero value otherwise.
+GetPrimaryMacAddress returns the PrimaryMacAddress field if non-nil, zero value otherwise.
 
-### GetMacAddressOk
+### GetPrimaryMacAddressOk
 
-`func (o *InterfaceRequest) GetMacAddressOk() (*string, bool)`
+`func (o *InterfaceRequest) GetPrimaryMacAddressOk() (*BriefMACAddressRequest, bool)`
 
-GetMacAddressOk returns a tuple with the MacAddress field if it's non-nil, zero value otherwise
+GetPrimaryMacAddressOk returns a tuple with the PrimaryMacAddress field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetMacAddress
+### SetPrimaryMacAddress
 
-`func (o *InterfaceRequest) SetMacAddress(v string)`
+`func (o *InterfaceRequest) SetPrimaryMacAddress(v BriefMACAddressRequest)`
 
-SetMacAddress sets MacAddress field to given value.
+SetPrimaryMacAddress sets PrimaryMacAddress field to given value.
 
-### HasMacAddress
+### HasPrimaryMacAddress
 
-`func (o *InterfaceRequest) HasMacAddress() bool`
+`func (o *InterfaceRequest) HasPrimaryMacAddress() bool`
 
-HasMacAddress returns a boolean if a field has been set.
+HasPrimaryMacAddress returns a boolean if a field has been set.
 
-### SetMacAddressNil
+### SetPrimaryMacAddressNil
 
-`func (o *InterfaceRequest) SetMacAddressNil(b bool)`
+`func (o *InterfaceRequest) SetPrimaryMacAddressNil(b bool)`
 
- SetMacAddressNil sets the value for MacAddress to be an explicit nil
+ SetPrimaryMacAddressNil sets the value for PrimaryMacAddress to be an explicit nil
 
-### UnsetMacAddress
-`func (o *InterfaceRequest) UnsetMacAddress()`
+### UnsetPrimaryMacAddress
+`func (o *InterfaceRequest) UnsetPrimaryMacAddress()`
 
-UnsetMacAddress ensures that no value is present for MacAddress, not even an explicit nil
+UnsetPrimaryMacAddress ensures that no value is present for PrimaryMacAddress, not even an explicit nil
 ### GetSpeed
 
 `func (o *InterfaceRequest) GetSpeed() int32`
@@ -788,20 +790,20 @@ HasTxPower returns a boolean if a field has been set.
 UnsetTxPower ensures that no value is present for TxPower, not even an explicit nil
 ### GetUntaggedVlan
 
-`func (o *InterfaceRequest) GetUntaggedVlan() VLANRequest`
+`func (o *InterfaceRequest) GetUntaggedVlan() BriefVLANRequest`
 
 GetUntaggedVlan returns the UntaggedVlan field if non-nil, zero value otherwise.
 
 ### GetUntaggedVlanOk
 
-`func (o *InterfaceRequest) GetUntaggedVlanOk() (*VLANRequest, bool)`
+`func (o *InterfaceRequest) GetUntaggedVlanOk() (*BriefVLANRequest, bool)`
 
 GetUntaggedVlanOk returns a tuple with the UntaggedVlan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUntaggedVlan
 
-`func (o *InterfaceRequest) SetUntaggedVlan(v VLANRequest)`
+`func (o *InterfaceRequest) SetUntaggedVlan(v BriefVLANRequest)`
 
 SetUntaggedVlan sets UntaggedVlan field to given value.
 
@@ -846,6 +848,76 @@ SetTaggedVlans sets TaggedVlans field to given value.
 
 HasTaggedVlans returns a boolean if a field has been set.
 
+### GetQinqSvlan
+
+`func (o *InterfaceRequest) GetQinqSvlan() BriefVLANRequest`
+
+GetQinqSvlan returns the QinqSvlan field if non-nil, zero value otherwise.
+
+### GetQinqSvlanOk
+
+`func (o *InterfaceRequest) GetQinqSvlanOk() (*BriefVLANRequest, bool)`
+
+GetQinqSvlanOk returns a tuple with the QinqSvlan field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQinqSvlan
+
+`func (o *InterfaceRequest) SetQinqSvlan(v BriefVLANRequest)`
+
+SetQinqSvlan sets QinqSvlan field to given value.
+
+### HasQinqSvlan
+
+`func (o *InterfaceRequest) HasQinqSvlan() bool`
+
+HasQinqSvlan returns a boolean if a field has been set.
+
+### SetQinqSvlanNil
+
+`func (o *InterfaceRequest) SetQinqSvlanNil(b bool)`
+
+ SetQinqSvlanNil sets the value for QinqSvlan to be an explicit nil
+
+### UnsetQinqSvlan
+`func (o *InterfaceRequest) UnsetQinqSvlan()`
+
+UnsetQinqSvlan ensures that no value is present for QinqSvlan, not even an explicit nil
+### GetVlanTranslationPolicy
+
+`func (o *InterfaceRequest) GetVlanTranslationPolicy() BriefVLANTranslationPolicyRequest`
+
+GetVlanTranslationPolicy returns the VlanTranslationPolicy field if non-nil, zero value otherwise.
+
+### GetVlanTranslationPolicyOk
+
+`func (o *InterfaceRequest) GetVlanTranslationPolicyOk() (*BriefVLANTranslationPolicyRequest, bool)`
+
+GetVlanTranslationPolicyOk returns a tuple with the VlanTranslationPolicy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVlanTranslationPolicy
+
+`func (o *InterfaceRequest) SetVlanTranslationPolicy(v BriefVLANTranslationPolicyRequest)`
+
+SetVlanTranslationPolicy sets VlanTranslationPolicy field to given value.
+
+### HasVlanTranslationPolicy
+
+`func (o *InterfaceRequest) HasVlanTranslationPolicy() bool`
+
+HasVlanTranslationPolicy returns a boolean if a field has been set.
+
+### SetVlanTranslationPolicyNil
+
+`func (o *InterfaceRequest) SetVlanTranslationPolicyNil(b bool)`
+
+ SetVlanTranslationPolicyNil sets the value for VlanTranslationPolicy to be an explicit nil
+
+### UnsetVlanTranslationPolicy
+`func (o *InterfaceRequest) UnsetVlanTranslationPolicy()`
+
+UnsetVlanTranslationPolicy ensures that no value is present for VlanTranslationPolicy, not even an explicit nil
 ### GetMarkConnected
 
 `func (o *InterfaceRequest) GetMarkConnected() bool`
@@ -898,20 +970,20 @@ HasWirelessLans returns a boolean if a field has been set.
 
 ### GetVrf
 
-`func (o *InterfaceRequest) GetVrf() VRFRequest`
+`func (o *InterfaceRequest) GetVrf() BriefVRFRequest`
 
 GetVrf returns the Vrf field if non-nil, zero value otherwise.
 
 ### GetVrfOk
 
-`func (o *InterfaceRequest) GetVrfOk() (*VRFRequest, bool)`
+`func (o *InterfaceRequest) GetVrfOk() (*BriefVRFRequest, bool)`
 
 GetVrfOk returns a tuple with the Vrf field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVrf
 
-`func (o *InterfaceRequest) SetVrf(v VRFRequest)`
+`func (o *InterfaceRequest) SetVrf(v BriefVRFRequest)`
 
 SetVrf sets Vrf field to given value.
 

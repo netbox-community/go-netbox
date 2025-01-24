@@ -95,6 +95,22 @@
 
 * `SPLICE` (value: `"Splice"`)
 
+* `USB_TYPE_A` (value: `"USB Type A"`)
+
+* `USB_TYPE_B` (value: `"USB Type B"`)
+
+* `USB_TYPE_C` (value: `"USB Type C"`)
+
+* `USB_MINI_A` (value: `"USB Mini A"`)
+
+* `USB_MINI_B` (value: `"USB Mini B"`)
+
+* `USB_MICRO_A` (value: `"USB Micro A"`)
+
+* `USB_MICRO_B` (value: `"USB Micro B"`)
+
+* `USB_MICRO_AB` (value: `"USB Micro AB"`)
+
 * `OTHER` (value: `"Other"`)
 
 

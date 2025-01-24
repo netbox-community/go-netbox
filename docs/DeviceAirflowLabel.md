@@ -13,6 +13,12 @@
 
 * `SIDE_TO_REAR` (value: `"Side to rear"`)
 
+* `REAR_TO_SIDE` (value: `"Rear to side"`)
+
+* `BOTTOM_TO_TOP` (value: `"Bottom to top"`)
+
+* `TOP_TO_BOTTOM` (value: `"Top to bottom"`)
+
 * `PASSIVE` (value: `"Passive"`)
 
 * `MIXED` (value: `"Mixed"`)

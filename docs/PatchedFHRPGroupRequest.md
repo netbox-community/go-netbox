@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** |  | [optional] 
-**Protocol** | Pointer to [**FHRPGroupProtocol**](FHRPGroupProtocol.md) |  | [optional] 
+**Protocol** | Pointer to [**BriefFHRPGroupProtocol**](BriefFHRPGroupProtocol.md) |  | [optional] 
 **GroupId** | Pointer to **int32** |  | [optional] 
-**AuthType** | Pointer to [**AuthenticationType**](AuthenticationType.md) |  | [optional] 
+**AuthType** | Pointer to [**NullableAuthenticationType**](AuthenticationType.md) |  | [optional] 
 **AuthKey** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
@@ -60,20 +60,20 @@ HasName returns a boolean if a field has been set.
 
 ### GetProtocol
 
-`func (o *PatchedFHRPGroupRequest) GetProtocol() FHRPGroupProtocol`
+`func (o *PatchedFHRPGroupRequest) GetProtocol() BriefFHRPGroupProtocol`
 
 GetProtocol returns the Protocol field if non-nil, zero value otherwise.
 
 ### GetProtocolOk
 
-`func (o *PatchedFHRPGroupRequest) GetProtocolOk() (*FHRPGroupProtocol, bool)`
+`func (o *PatchedFHRPGroupRequest) GetProtocolOk() (*BriefFHRPGroupProtocol, bool)`
 
 GetProtocolOk returns a tuple with the Protocol field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProtocol
 
-`func (o *PatchedFHRPGroupRequest) SetProtocol(v FHRPGroupProtocol)`
+`func (o *PatchedFHRPGroupRequest) SetProtocol(v BriefFHRPGroupProtocol)`
 
 SetProtocol sets Protocol field to given value.
 
@@ -133,6 +133,16 @@ SetAuthType sets AuthType field to given value.
 
 HasAuthType returns a boolean if a field has been set.
 
+### SetAuthTypeNil
+
+`func (o *PatchedFHRPGroupRequest) SetAuthTypeNil(b bool)`
+
+ SetAuthTypeNil sets the value for AuthType to be an explicit nil
+
+### UnsetAuthType
+`func (o *PatchedFHRPGroupRequest) UnsetAuthType()`
+
+UnsetAuthType ensures that no value is present for AuthType, not even an explicit nil
 ### GetAuthKey
 
 `func (o *PatchedFHRPGroupRequest) GetAuthKey() string`

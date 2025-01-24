@@ -6,22 +6,23 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
+**DisplayUrl** | Pointer to **string** |  | [optional] [readonly] 
 **Display** | **string** |  | [readonly] 
-**Provider** | [**Provider**](Provider.md) |  | 
+**Provider** | [**BriefProvider**](BriefProvider.md) |  | 
 **Name** | Pointer to **string** |  | [optional] [default to ""]
 **Account** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
-**LastUpdated** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
+**LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewProviderAccount
 
-`func NewProviderAccount(id int32, url string, display string, provider Provider, account string, created NullableTime, lastUpdated NullableTime, ) *ProviderAccount`
+`func NewProviderAccount(id int32, url string, display string, provider BriefProvider, account string, ) *ProviderAccount`
 
 NewProviderAccount instantiates a new ProviderAccount object
 This constructor will assign default values to properties that have it defined,
@@ -76,6 +77,31 @@ and a boolean to check if the value has been set.
 SetUrl sets Url field to given value.
 
 
+### GetDisplayUrl
+
+`func (o *ProviderAccount) GetDisplayUrl() string`
+
+GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
+
+### GetDisplayUrlOk
+
+`func (o *ProviderAccount) GetDisplayUrlOk() (*string, bool)`
+
+GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayUrl
+
+`func (o *ProviderAccount) SetDisplayUrl(v string)`
+
+SetDisplayUrl sets DisplayUrl field to given value.
+
+### HasDisplayUrl
+
+`func (o *ProviderAccount) HasDisplayUrl() bool`
+
+HasDisplayUrl returns a boolean if a field has been set.
+
 ### GetDisplay
 
 `func (o *ProviderAccount) GetDisplay() string`
@@ -98,20 +124,20 @@ SetDisplay sets Display field to given value.
 
 ### GetProvider
 
-`func (o *ProviderAccount) GetProvider() Provider`
+`func (o *ProviderAccount) GetProvider() BriefProvider`
 
 GetProvider returns the Provider field if non-nil, zero value otherwise.
 
 ### GetProviderOk
 
-`func (o *ProviderAccount) GetProviderOk() (*Provider, bool)`
+`func (o *ProviderAccount) GetProviderOk() (*BriefProvider, bool)`
 
 GetProviderOk returns a tuple with the Provider field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProvider
 
-`func (o *ProviderAccount) SetProvider(v Provider)`
+`func (o *ProviderAccount) SetProvider(v BriefProvider)`
 
 SetProvider sets Provider field to given value.
 
@@ -280,6 +306,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *ProviderAccount) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
@@ -310,6 +341,11 @@ and a boolean to check if the value has been set.
 
 SetLastUpdated sets LastUpdated field to given value.
 
+### HasLastUpdated
+
+`func (o *ProviderAccount) HasLastUpdated() bool`
+
+HasLastUpdated returns a boolean if a field has been set.
 
 ### SetLastUpdatedNil
 

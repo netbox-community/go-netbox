@@ -11,11 +11,10 @@ package netbox
 
 import (
 	"context"
-	"testing"
-
-	openapiclient "github.com/netbox-community/go-netbox/v4"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"testing"
+	openapiclient "github.com/netbox-community/go-netbox/v4"
 )
 
 func Test_netbox_CircuitsAPIService(t *testing.T) {
@@ -23,9 +22,237 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
+	t.Run("Test CircuitsAPIService CircuitsCircuitGroupAssignmentsBulkDestroy", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		httpRes, err := apiClient.CircuitsAPI.CircuitsCircuitGroupAssignmentsBulkDestroy(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsCircuitGroupAssignmentsBulkPartialUpdate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsCircuitGroupAssignmentsBulkPartialUpdate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsCircuitGroupAssignmentsBulkUpdate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsCircuitGroupAssignmentsBulkUpdate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsCircuitGroupAssignmentsCreate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsCircuitGroupAssignmentsCreate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsCircuitGroupAssignmentsDestroy", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var id int32
+
+		httpRes, err := apiClient.CircuitsAPI.CircuitsCircuitGroupAssignmentsDestroy(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsCircuitGroupAssignmentsList", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsCircuitGroupAssignmentsList(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsCircuitGroupAssignmentsPartialUpdate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var id int32
+
+		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsCircuitGroupAssignmentsPartialUpdate(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsCircuitGroupAssignmentsRetrieve", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var id int32
+
+		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsCircuitGroupAssignmentsRetrieve(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsCircuitGroupAssignmentsUpdate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var id int32
+
+		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsCircuitGroupAssignmentsUpdate(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsCircuitGroupsBulkDestroy", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		httpRes, err := apiClient.CircuitsAPI.CircuitsCircuitGroupsBulkDestroy(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsCircuitGroupsBulkPartialUpdate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsCircuitGroupsBulkPartialUpdate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsCircuitGroupsBulkUpdate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsCircuitGroupsBulkUpdate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsCircuitGroupsCreate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsCircuitGroupsCreate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsCircuitGroupsDestroy", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var id int32
+
+		httpRes, err := apiClient.CircuitsAPI.CircuitsCircuitGroupsDestroy(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsCircuitGroupsList", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsCircuitGroupsList(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsCircuitGroupsPartialUpdate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var id int32
+
+		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsCircuitGroupsPartialUpdate(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsCircuitGroupsRetrieve", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var id int32
+
+		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsCircuitGroupsRetrieve(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsCircuitGroupsUpdate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var id int32
+
+		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsCircuitGroupsUpdate(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test CircuitsAPIService CircuitsCircuitTerminationsBulkDestroy", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		httpRes, err := apiClient.CircuitsAPI.CircuitsCircuitTerminationsBulkDestroy(context.Background()).Execute()
 
@@ -36,7 +263,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsCircuitTerminationsBulkPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsCircuitTerminationsBulkPartialUpdate(context.Background()).Execute()
 
@@ -48,7 +275,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsCircuitTerminationsBulkUpdate", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsCircuitTerminationsBulkUpdate(context.Background()).Execute()
 
@@ -60,7 +287,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsCircuitTerminationsCreate", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsCircuitTerminationsCreate(context.Background()).Execute()
 
@@ -72,7 +299,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsCircuitTerminationsDestroy", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var id int32
 
@@ -85,7 +312,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsCircuitTerminationsList", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsCircuitTerminationsList(context.Background()).Execute()
 
@@ -97,7 +324,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsCircuitTerminationsPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var id int32
 
@@ -111,7 +338,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsCircuitTerminationsPathsRetrieve", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var id int32
 
@@ -125,7 +352,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsCircuitTerminationsRetrieve", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var id int32
 
@@ -139,7 +366,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsCircuitTerminationsUpdate", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var id int32
 
@@ -153,7 +380,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsCircuitTypesBulkDestroy", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		httpRes, err := apiClient.CircuitsAPI.CircuitsCircuitTypesBulkDestroy(context.Background()).Execute()
 
@@ -164,7 +391,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsCircuitTypesBulkPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsCircuitTypesBulkPartialUpdate(context.Background()).Execute()
 
@@ -176,7 +403,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsCircuitTypesBulkUpdate", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsCircuitTypesBulkUpdate(context.Background()).Execute()
 
@@ -188,7 +415,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsCircuitTypesCreate", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsCircuitTypesCreate(context.Background()).Execute()
 
@@ -200,7 +427,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsCircuitTypesDestroy", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var id int32
 
@@ -213,7 +440,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsCircuitTypesList", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsCircuitTypesList(context.Background()).Execute()
 
@@ -225,7 +452,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsCircuitTypesPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var id int32
 
@@ -239,7 +466,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsCircuitTypesRetrieve", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var id int32
 
@@ -253,7 +480,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsCircuitTypesUpdate", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var id int32
 
@@ -267,7 +494,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsCircuitsBulkDestroy", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		httpRes, err := apiClient.CircuitsAPI.CircuitsCircuitsBulkDestroy(context.Background()).Execute()
 
@@ -278,7 +505,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsCircuitsBulkPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsCircuitsBulkPartialUpdate(context.Background()).Execute()
 
@@ -290,7 +517,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsCircuitsBulkUpdate", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsCircuitsBulkUpdate(context.Background()).Execute()
 
@@ -302,7 +529,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsCircuitsCreate", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsCircuitsCreate(context.Background()).Execute()
 
@@ -314,7 +541,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsCircuitsDestroy", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var id int32
 
@@ -327,7 +554,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsCircuitsList", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsCircuitsList(context.Background()).Execute()
 
@@ -339,7 +566,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsCircuitsPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var id int32
 
@@ -353,7 +580,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsCircuitsRetrieve", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var id int32
 
@@ -367,7 +594,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsCircuitsUpdate", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var id int32
 
@@ -381,7 +608,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsProviderAccountsBulkDestroy", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		httpRes, err := apiClient.CircuitsAPI.CircuitsProviderAccountsBulkDestroy(context.Background()).Execute()
 
@@ -392,7 +619,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsProviderAccountsBulkPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsProviderAccountsBulkPartialUpdate(context.Background()).Execute()
 
@@ -404,7 +631,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsProviderAccountsBulkUpdate", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsProviderAccountsBulkUpdate(context.Background()).Execute()
 
@@ -416,7 +643,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsProviderAccountsCreate", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsProviderAccountsCreate(context.Background()).Execute()
 
@@ -428,7 +655,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsProviderAccountsDestroy", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var id int32
 
@@ -441,7 +668,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsProviderAccountsList", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsProviderAccountsList(context.Background()).Execute()
 
@@ -453,7 +680,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsProviderAccountsPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var id int32
 
@@ -467,7 +694,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsProviderAccountsRetrieve", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var id int32
 
@@ -481,7 +708,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsProviderAccountsUpdate", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var id int32
 
@@ -495,7 +722,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsProviderNetworksBulkDestroy", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		httpRes, err := apiClient.CircuitsAPI.CircuitsProviderNetworksBulkDestroy(context.Background()).Execute()
 
@@ -506,7 +733,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsProviderNetworksBulkPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsProviderNetworksBulkPartialUpdate(context.Background()).Execute()
 
@@ -518,7 +745,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsProviderNetworksBulkUpdate", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsProviderNetworksBulkUpdate(context.Background()).Execute()
 
@@ -530,7 +757,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsProviderNetworksCreate", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsProviderNetworksCreate(context.Background()).Execute()
 
@@ -542,7 +769,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsProviderNetworksDestroy", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var id int32
 
@@ -555,7 +782,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsProviderNetworksList", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsProviderNetworksList(context.Background()).Execute()
 
@@ -567,7 +794,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsProviderNetworksPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var id int32
 
@@ -581,7 +808,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsProviderNetworksRetrieve", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var id int32
 
@@ -595,7 +822,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsProviderNetworksUpdate", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var id int32
 
@@ -609,7 +836,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsProvidersBulkDestroy", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		httpRes, err := apiClient.CircuitsAPI.CircuitsProvidersBulkDestroy(context.Background()).Execute()
 
@@ -620,7 +847,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsProvidersBulkPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsProvidersBulkPartialUpdate(context.Background()).Execute()
 
@@ -632,7 +859,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsProvidersBulkUpdate", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsProvidersBulkUpdate(context.Background()).Execute()
 
@@ -644,7 +871,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsProvidersCreate", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsProvidersCreate(context.Background()).Execute()
 
@@ -656,7 +883,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsProvidersDestroy", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var id int32
 
@@ -669,7 +896,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsProvidersList", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsProvidersList(context.Background()).Execute()
 
@@ -681,7 +908,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsProvidersPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var id int32
 
@@ -695,7 +922,7 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsProvidersRetrieve", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var id int32
 
@@ -709,11 +936,367 @@ func Test_netbox_CircuitsAPIService(t *testing.T) {
 
 	t.Run("Test CircuitsAPIService CircuitsProvidersUpdate", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var id int32
 
 		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsProvidersUpdate(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsVirtualCircuitTerminationsBulkDestroy", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		httpRes, err := apiClient.CircuitsAPI.CircuitsVirtualCircuitTerminationsBulkDestroy(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsVirtualCircuitTerminationsBulkPartialUpdate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsVirtualCircuitTerminationsBulkPartialUpdate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsVirtualCircuitTerminationsBulkUpdate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsVirtualCircuitTerminationsBulkUpdate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsVirtualCircuitTerminationsCreate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsVirtualCircuitTerminationsCreate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsVirtualCircuitTerminationsDestroy", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var id int32
+
+		httpRes, err := apiClient.CircuitsAPI.CircuitsVirtualCircuitTerminationsDestroy(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsVirtualCircuitTerminationsList", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsVirtualCircuitTerminationsList(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsVirtualCircuitTerminationsPartialUpdate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var id int32
+
+		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsVirtualCircuitTerminationsPartialUpdate(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsVirtualCircuitTerminationsPathsRetrieve", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var id int32
+
+		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsVirtualCircuitTerminationsPathsRetrieve(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsVirtualCircuitTerminationsRetrieve", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var id int32
+
+		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsVirtualCircuitTerminationsRetrieve(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsVirtualCircuitTerminationsUpdate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var id int32
+
+		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsVirtualCircuitTerminationsUpdate(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsVirtualCircuitTypesBulkDestroy", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		httpRes, err := apiClient.CircuitsAPI.CircuitsVirtualCircuitTypesBulkDestroy(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsVirtualCircuitTypesBulkPartialUpdate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsVirtualCircuitTypesBulkPartialUpdate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsVirtualCircuitTypesBulkUpdate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsVirtualCircuitTypesBulkUpdate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsVirtualCircuitTypesCreate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsVirtualCircuitTypesCreate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsVirtualCircuitTypesDestroy", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var id int32
+
+		httpRes, err := apiClient.CircuitsAPI.CircuitsVirtualCircuitTypesDestroy(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsVirtualCircuitTypesList", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsVirtualCircuitTypesList(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsVirtualCircuitTypesPartialUpdate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var id int32
+
+		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsVirtualCircuitTypesPartialUpdate(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsVirtualCircuitTypesRetrieve", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var id int32
+
+		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsVirtualCircuitTypesRetrieve(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsVirtualCircuitTypesUpdate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var id int32
+
+		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsVirtualCircuitTypesUpdate(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsVirtualCircuitsBulkDestroy", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		httpRes, err := apiClient.CircuitsAPI.CircuitsVirtualCircuitsBulkDestroy(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsVirtualCircuitsBulkPartialUpdate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsVirtualCircuitsBulkPartialUpdate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsVirtualCircuitsBulkUpdate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsVirtualCircuitsBulkUpdate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsVirtualCircuitsCreate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsVirtualCircuitsCreate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsVirtualCircuitsDestroy", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var id int32
+
+		httpRes, err := apiClient.CircuitsAPI.CircuitsVirtualCircuitsDestroy(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsVirtualCircuitsList", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsVirtualCircuitsList(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsVirtualCircuitsPartialUpdate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var id int32
+
+		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsVirtualCircuitsPartialUpdate(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsVirtualCircuitsRetrieve", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var id int32
+
+		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsVirtualCircuitsRetrieve(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CircuitsAPIService CircuitsVirtualCircuitsUpdate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var id int32
+
+		resp, httpRes, err := apiClient.CircuitsAPI.CircuitsVirtualCircuitsUpdate(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

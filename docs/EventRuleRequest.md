@@ -6,12 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ObjectTypes** | **[]string** |  | 
 **Name** | **string** |  | 
-**TypeCreate** | Pointer to **bool** | Triggers when a matching object is created. | [optional] 
-**TypeUpdate** | Pointer to **bool** | Triggers when a matching object is updated. | [optional] 
-**TypeDelete** | Pointer to **bool** | Triggers when a matching object is deleted. | [optional] 
-**TypeJobStart** | Pointer to **bool** | Triggers when a job for a matching object is started. | [optional] 
-**TypeJobEnd** | Pointer to **bool** | Triggers when a job for a matching object terminates. | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
+**EventTypes** | [**[]EventRuleEventTypesInner**](EventRuleEventTypesInner.md) | The types of event which will trigger this rule. | 
 **Conditions** | Pointer to **interface{}** | A set of conditions which determine whether the event will be generated. | [optional] 
 **ActionType** | [**EventRuleActionTypeValue**](EventRuleActionTypeValue.md) |  | 
 **ActionObjectType** | **string** |  | 
@@ -24,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewEventRuleRequest
 
-`func NewEventRuleRequest(objectTypes []string, name string, actionType EventRuleActionTypeValue, actionObjectType string, ) *EventRuleRequest`
+`func NewEventRuleRequest(objectTypes []string, name string, eventTypes []EventRuleEventTypesInner, actionType EventRuleActionTypeValue, actionObjectType string, ) *EventRuleRequest`
 
 NewEventRuleRequest instantiates a new EventRuleRequest object
 This constructor will assign default values to properties that have it defined,
@@ -79,131 +75,6 @@ and a boolean to check if the value has been set.
 SetName sets Name field to given value.
 
 
-### GetTypeCreate
-
-`func (o *EventRuleRequest) GetTypeCreate() bool`
-
-GetTypeCreate returns the TypeCreate field if non-nil, zero value otherwise.
-
-### GetTypeCreateOk
-
-`func (o *EventRuleRequest) GetTypeCreateOk() (*bool, bool)`
-
-GetTypeCreateOk returns a tuple with the TypeCreate field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTypeCreate
-
-`func (o *EventRuleRequest) SetTypeCreate(v bool)`
-
-SetTypeCreate sets TypeCreate field to given value.
-
-### HasTypeCreate
-
-`func (o *EventRuleRequest) HasTypeCreate() bool`
-
-HasTypeCreate returns a boolean if a field has been set.
-
-### GetTypeUpdate
-
-`func (o *EventRuleRequest) GetTypeUpdate() bool`
-
-GetTypeUpdate returns the TypeUpdate field if non-nil, zero value otherwise.
-
-### GetTypeUpdateOk
-
-`func (o *EventRuleRequest) GetTypeUpdateOk() (*bool, bool)`
-
-GetTypeUpdateOk returns a tuple with the TypeUpdate field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTypeUpdate
-
-`func (o *EventRuleRequest) SetTypeUpdate(v bool)`
-
-SetTypeUpdate sets TypeUpdate field to given value.
-
-### HasTypeUpdate
-
-`func (o *EventRuleRequest) HasTypeUpdate() bool`
-
-HasTypeUpdate returns a boolean if a field has been set.
-
-### GetTypeDelete
-
-`func (o *EventRuleRequest) GetTypeDelete() bool`
-
-GetTypeDelete returns the TypeDelete field if non-nil, zero value otherwise.
-
-### GetTypeDeleteOk
-
-`func (o *EventRuleRequest) GetTypeDeleteOk() (*bool, bool)`
-
-GetTypeDeleteOk returns a tuple with the TypeDelete field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTypeDelete
-
-`func (o *EventRuleRequest) SetTypeDelete(v bool)`
-
-SetTypeDelete sets TypeDelete field to given value.
-
-### HasTypeDelete
-
-`func (o *EventRuleRequest) HasTypeDelete() bool`
-
-HasTypeDelete returns a boolean if a field has been set.
-
-### GetTypeJobStart
-
-`func (o *EventRuleRequest) GetTypeJobStart() bool`
-
-GetTypeJobStart returns the TypeJobStart field if non-nil, zero value otherwise.
-
-### GetTypeJobStartOk
-
-`func (o *EventRuleRequest) GetTypeJobStartOk() (*bool, bool)`
-
-GetTypeJobStartOk returns a tuple with the TypeJobStart field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTypeJobStart
-
-`func (o *EventRuleRequest) SetTypeJobStart(v bool)`
-
-SetTypeJobStart sets TypeJobStart field to given value.
-
-### HasTypeJobStart
-
-`func (o *EventRuleRequest) HasTypeJobStart() bool`
-
-HasTypeJobStart returns a boolean if a field has been set.
-
-### GetTypeJobEnd
-
-`func (o *EventRuleRequest) GetTypeJobEnd() bool`
-
-GetTypeJobEnd returns the TypeJobEnd field if non-nil, zero value otherwise.
-
-### GetTypeJobEndOk
-
-`func (o *EventRuleRequest) GetTypeJobEndOk() (*bool, bool)`
-
-GetTypeJobEndOk returns a tuple with the TypeJobEnd field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTypeJobEnd
-
-`func (o *EventRuleRequest) SetTypeJobEnd(v bool)`
-
-SetTypeJobEnd sets TypeJobEnd field to given value.
-
-### HasTypeJobEnd
-
-`func (o *EventRuleRequest) HasTypeJobEnd() bool`
-
-HasTypeJobEnd returns a boolean if a field has been set.
-
 ### GetEnabled
 
 `func (o *EventRuleRequest) GetEnabled() bool`
@@ -228,6 +99,26 @@ SetEnabled sets Enabled field to given value.
 `func (o *EventRuleRequest) HasEnabled() bool`
 
 HasEnabled returns a boolean if a field has been set.
+
+### GetEventTypes
+
+`func (o *EventRuleRequest) GetEventTypes() []EventRuleEventTypesInner`
+
+GetEventTypes returns the EventTypes field if non-nil, zero value otherwise.
+
+### GetEventTypesOk
+
+`func (o *EventRuleRequest) GetEventTypesOk() (*[]EventRuleEventTypesInner, bool)`
+
+GetEventTypesOk returns a tuple with the EventTypes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEventTypes
+
+`func (o *EventRuleRequest) SetEventTypes(v []EventRuleEventTypesInner)`
+
+SetEventTypes sets EventTypes field to given value.
+
 
 ### GetConditions
 

@@ -4,13 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Device** | [**DeviceRequest**](DeviceRequest.md) |  | 
-**Module** | Pointer to [**NullableModuleRequest**](ModuleRequest.md) |  | [optional] 
+**Device** | [**BriefDeviceRequest**](BriefDeviceRequest.md) |  | 
+**Module** | Pointer to [**NullableBriefModuleRequest**](BriefModuleRequest.md) |  | [optional] 
 **Name** | **string** |  | 
 **Label** | Pointer to **string** | Physical label | [optional] 
-**Type** | Pointer to [**PatchedWritablePowerOutletRequestType**](PatchedWritablePowerOutletRequestType.md) |  | [optional] 
-**PowerPort** | Pointer to [**NullablePowerPortRequest**](PowerPortRequest.md) |  | [optional] 
-**FeedLeg** | Pointer to [**PatchedWritablePowerOutletRequestFeedLeg**](PatchedWritablePowerOutletRequestFeedLeg.md) |  | [optional] 
+**Type** | Pointer to [**NullablePatchedWritablePowerOutletRequestType**](PatchedWritablePowerOutletRequestType.md) |  | [optional] 
+**Color** | Pointer to **string** |  | [optional] 
+**PowerPort** | Pointer to [**NullableBriefPowerPortRequest**](BriefPowerPortRequest.md) |  | [optional] 
+**FeedLeg** | Pointer to [**NullablePatchedWritablePowerOutletRequestFeedLeg**](PatchedWritablePowerOutletRequestFeedLeg.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **MarkConnected** | Pointer to **bool** | Treat as if a cable is connected | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
@@ -20,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewWritablePowerOutletRequest
 
-`func NewWritablePowerOutletRequest(device DeviceRequest, name string, ) *WritablePowerOutletRequest`
+`func NewWritablePowerOutletRequest(device BriefDeviceRequest, name string, ) *WritablePowerOutletRequest`
 
 NewWritablePowerOutletRequest instantiates a new WritablePowerOutletRequest object
 This constructor will assign default values to properties that have it defined,
@@ -37,40 +38,40 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDevice
 
-`func (o *WritablePowerOutletRequest) GetDevice() DeviceRequest`
+`func (o *WritablePowerOutletRequest) GetDevice() BriefDeviceRequest`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *WritablePowerOutletRequest) GetDeviceOk() (*DeviceRequest, bool)`
+`func (o *WritablePowerOutletRequest) GetDeviceOk() (*BriefDeviceRequest, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *WritablePowerOutletRequest) SetDevice(v DeviceRequest)`
+`func (o *WritablePowerOutletRequest) SetDevice(v BriefDeviceRequest)`
 
 SetDevice sets Device field to given value.
 
 
 ### GetModule
 
-`func (o *WritablePowerOutletRequest) GetModule() ModuleRequest`
+`func (o *WritablePowerOutletRequest) GetModule() BriefModuleRequest`
 
 GetModule returns the Module field if non-nil, zero value otherwise.
 
 ### GetModuleOk
 
-`func (o *WritablePowerOutletRequest) GetModuleOk() (*ModuleRequest, bool)`
+`func (o *WritablePowerOutletRequest) GetModuleOk() (*BriefModuleRequest, bool)`
 
 GetModuleOk returns a tuple with the Module field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetModule
 
-`func (o *WritablePowerOutletRequest) SetModule(v ModuleRequest)`
+`func (o *WritablePowerOutletRequest) SetModule(v BriefModuleRequest)`
 
 SetModule sets Module field to given value.
 
@@ -160,22 +161,57 @@ SetType sets Type field to given value.
 
 HasType returns a boolean if a field has been set.
 
+### SetTypeNil
+
+`func (o *WritablePowerOutletRequest) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *WritablePowerOutletRequest) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
+### GetColor
+
+`func (o *WritablePowerOutletRequest) GetColor() string`
+
+GetColor returns the Color field if non-nil, zero value otherwise.
+
+### GetColorOk
+
+`func (o *WritablePowerOutletRequest) GetColorOk() (*string, bool)`
+
+GetColorOk returns a tuple with the Color field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetColor
+
+`func (o *WritablePowerOutletRequest) SetColor(v string)`
+
+SetColor sets Color field to given value.
+
+### HasColor
+
+`func (o *WritablePowerOutletRequest) HasColor() bool`
+
+HasColor returns a boolean if a field has been set.
+
 ### GetPowerPort
 
-`func (o *WritablePowerOutletRequest) GetPowerPort() PowerPortRequest`
+`func (o *WritablePowerOutletRequest) GetPowerPort() BriefPowerPortRequest`
 
 GetPowerPort returns the PowerPort field if non-nil, zero value otherwise.
 
 ### GetPowerPortOk
 
-`func (o *WritablePowerOutletRequest) GetPowerPortOk() (*PowerPortRequest, bool)`
+`func (o *WritablePowerOutletRequest) GetPowerPortOk() (*BriefPowerPortRequest, bool)`
 
 GetPowerPortOk returns a tuple with the PowerPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPowerPort
 
-`func (o *WritablePowerOutletRequest) SetPowerPort(v PowerPortRequest)`
+`func (o *WritablePowerOutletRequest) SetPowerPort(v BriefPowerPortRequest)`
 
 SetPowerPort sets PowerPort field to given value.
 
@@ -220,6 +256,16 @@ SetFeedLeg sets FeedLeg field to given value.
 
 HasFeedLeg returns a boolean if a field has been set.
 
+### SetFeedLegNil
+
+`func (o *WritablePowerOutletRequest) SetFeedLegNil(b bool)`
+
+ SetFeedLegNil sets the value for FeedLeg to be an explicit nil
+
+### UnsetFeedLeg
+`func (o *WritablePowerOutletRequest) UnsetFeedLeg()`
+
+UnsetFeedLeg ensures that no value is present for FeedLeg, not even an explicit nil
 ### GetDescription
 
 `func (o *WritablePowerOutletRequest) GetDescription() string`

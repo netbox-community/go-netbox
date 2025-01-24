@@ -6,21 +6,22 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
+**DisplayUrl** | Pointer to **string** |  | [optional] [readonly] 
 **Display** | **string** |  | [readonly] 
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
 **BaseChoices** | Pointer to [**CustomFieldChoiceSetBaseChoices**](CustomFieldChoiceSetBaseChoices.md) |  | [optional] 
 **ExtraChoices** | **[][]interface{}** |  | 
 **OrderAlphabetically** | Pointer to **bool** | Choices are automatically ordered alphabetically | [optional] 
-**ChoicesCount** | **string** |  | [readonly] 
-**Created** | **NullableTime** |  | [readonly] 
-**LastUpdated** | **NullableTime** |  | [readonly] 
+**ChoicesCount** | Pointer to **string** |  | [optional] [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
+**LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewCustomFieldChoiceSet
 
-`func NewCustomFieldChoiceSet(id int32, url string, display string, name string, extraChoices [][]interface{}, choicesCount string, created NullableTime, lastUpdated NullableTime, ) *CustomFieldChoiceSet`
+`func NewCustomFieldChoiceSet(id int32, url string, display string, name string, extraChoices [][]interface{}, ) *CustomFieldChoiceSet`
 
 NewCustomFieldChoiceSet instantiates a new CustomFieldChoiceSet object
 This constructor will assign default values to properties that have it defined,
@@ -74,6 +75,31 @@ and a boolean to check if the value has been set.
 
 SetUrl sets Url field to given value.
 
+
+### GetDisplayUrl
+
+`func (o *CustomFieldChoiceSet) GetDisplayUrl() string`
+
+GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
+
+### GetDisplayUrlOk
+
+`func (o *CustomFieldChoiceSet) GetDisplayUrlOk() (*string, bool)`
+
+GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayUrl
+
+`func (o *CustomFieldChoiceSet) SetDisplayUrl(v string)`
+
+SetDisplayUrl sets DisplayUrl field to given value.
+
+### HasDisplayUrl
+
+`func (o *CustomFieldChoiceSet) HasDisplayUrl() bool`
+
+HasDisplayUrl returns a boolean if a field has been set.
 
 ### GetDisplay
 
@@ -229,6 +255,11 @@ and a boolean to check if the value has been set.
 
 SetChoicesCount sets ChoicesCount field to given value.
 
+### HasChoicesCount
+
+`func (o *CustomFieldChoiceSet) HasChoicesCount() bool`
+
+HasChoicesCount returns a boolean if a field has been set.
 
 ### GetCreated
 
@@ -249,6 +280,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *CustomFieldChoiceSet) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
@@ -279,6 +315,11 @@ and a boolean to check if the value has been set.
 
 SetLastUpdated sets LastUpdated field to given value.
 
+### HasLastUpdated
+
+`func (o *CustomFieldChoiceSet) HasLastUpdated() bool`
+
+HasLastUpdated returns a boolean if a field has been set.
 
 ### SetLastUpdatedNil
 

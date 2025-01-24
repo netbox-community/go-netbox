@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **AuthenticationMethod** | Pointer to [**IKEProposalAuthenticationMethodValue**](IKEProposalAuthenticationMethodValue.md) |  | [optional] 
 **EncryptionAlgorithm** | Pointer to [**IKEProposalEncryptionAlgorithmValue**](IKEProposalEncryptionAlgorithmValue.md) |  | [optional] 
-**AuthenticationAlgorithm** | Pointer to [**PatchedWritableIKEProposalRequestAuthenticationAlgorithm**](PatchedWritableIKEProposalRequestAuthenticationAlgorithm.md) |  | [optional] 
+**AuthenticationAlgorithm** | Pointer to [**NullablePatchedWritableIKEProposalRequestAuthenticationAlgorithm**](PatchedWritableIKEProposalRequestAuthenticationAlgorithm.md) |  | [optional] 
 **Group** | Pointer to [**PatchedWritableIKEProposalRequestGroup**](PatchedWritableIKEProposalRequestGroup.md) |  | [optional] 
 **SaLifetime** | Pointer to **NullableInt32** | Security association lifetime (in seconds) | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
@@ -159,6 +159,16 @@ SetAuthenticationAlgorithm sets AuthenticationAlgorithm field to given value.
 
 HasAuthenticationAlgorithm returns a boolean if a field has been set.
 
+### SetAuthenticationAlgorithmNil
+
+`func (o *PatchedWritableIKEProposalRequest) SetAuthenticationAlgorithmNil(b bool)`
+
+ SetAuthenticationAlgorithmNil sets the value for AuthenticationAlgorithm to be an explicit nil
+
+### UnsetAuthenticationAlgorithm
+`func (o *PatchedWritableIKEProposalRequest) UnsetAuthenticationAlgorithm()`
+
+UnsetAuthenticationAlgorithm ensures that no value is present for AuthenticationAlgorithm, not even an explicit nil
 ### GetGroup
 
 `func (o *PatchedWritableIKEProposalRequest) GetGroup() PatchedWritableIKEProposalRequestGroup`

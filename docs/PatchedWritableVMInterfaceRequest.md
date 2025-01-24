@@ -4,18 +4,20 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**VirtualMachine** | Pointer to [**VirtualMachineRequest**](VirtualMachineRequest.md) |  | [optional] 
+**VirtualMachine** | Pointer to [**BriefVirtualMachineRequest**](BriefVirtualMachineRequest.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Parent** | Pointer to **NullableInt32** |  | [optional] 
 **Bridge** | Pointer to **NullableInt32** |  | [optional] 
 **Mtu** | Pointer to **NullableInt32** |  | [optional] 
-**MacAddress** | Pointer to **NullableString** |  | [optional] 
+**PrimaryMacAddress** | Pointer to [**NullableBriefMACAddressRequest**](BriefMACAddressRequest.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**Mode** | Pointer to [**PatchedWritableInterfaceRequestMode**](PatchedWritableInterfaceRequestMode.md) |  | [optional] 
-**UntaggedVlan** | Pointer to [**NullableVLANRequest**](VLANRequest.md) |  | [optional] 
+**Mode** | Pointer to [**NullablePatchedWritableInterfaceRequestMode**](PatchedWritableInterfaceRequestMode.md) |  | [optional] 
+**UntaggedVlan** | Pointer to [**NullableBriefVLANRequest**](BriefVLANRequest.md) |  | [optional] 
 **TaggedVlans** | Pointer to **[]int32** |  | [optional] 
-**Vrf** | Pointer to [**NullableVRFRequest**](VRFRequest.md) |  | [optional] 
+**QinqSvlan** | Pointer to [**NullableBriefVLANRequest**](BriefVLANRequest.md) |  | [optional] 
+**VlanTranslationPolicy** | Pointer to [**NullableBriefVLANTranslationPolicyRequest**](BriefVLANTranslationPolicyRequest.md) |  | [optional] 
+**Vrf** | Pointer to [**NullableBriefVRFRequest**](BriefVRFRequest.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 
@@ -40,20 +42,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetVirtualMachine
 
-`func (o *PatchedWritableVMInterfaceRequest) GetVirtualMachine() VirtualMachineRequest`
+`func (o *PatchedWritableVMInterfaceRequest) GetVirtualMachine() BriefVirtualMachineRequest`
 
 GetVirtualMachine returns the VirtualMachine field if non-nil, zero value otherwise.
 
 ### GetVirtualMachineOk
 
-`func (o *PatchedWritableVMInterfaceRequest) GetVirtualMachineOk() (*VirtualMachineRequest, bool)`
+`func (o *PatchedWritableVMInterfaceRequest) GetVirtualMachineOk() (*BriefVirtualMachineRequest, bool)`
 
 GetVirtualMachineOk returns a tuple with the VirtualMachine field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVirtualMachine
 
-`func (o *PatchedWritableVMInterfaceRequest) SetVirtualMachine(v VirtualMachineRequest)`
+`func (o *PatchedWritableVMInterfaceRequest) SetVirtualMachine(v BriefVirtualMachineRequest)`
 
 SetVirtualMachine sets VirtualMachine field to given value.
 
@@ -218,41 +220,41 @@ HasMtu returns a boolean if a field has been set.
 `func (o *PatchedWritableVMInterfaceRequest) UnsetMtu()`
 
 UnsetMtu ensures that no value is present for Mtu, not even an explicit nil
-### GetMacAddress
+### GetPrimaryMacAddress
 
-`func (o *PatchedWritableVMInterfaceRequest) GetMacAddress() string`
+`func (o *PatchedWritableVMInterfaceRequest) GetPrimaryMacAddress() BriefMACAddressRequest`
 
-GetMacAddress returns the MacAddress field if non-nil, zero value otherwise.
+GetPrimaryMacAddress returns the PrimaryMacAddress field if non-nil, zero value otherwise.
 
-### GetMacAddressOk
+### GetPrimaryMacAddressOk
 
-`func (o *PatchedWritableVMInterfaceRequest) GetMacAddressOk() (*string, bool)`
+`func (o *PatchedWritableVMInterfaceRequest) GetPrimaryMacAddressOk() (*BriefMACAddressRequest, bool)`
 
-GetMacAddressOk returns a tuple with the MacAddress field if it's non-nil, zero value otherwise
+GetPrimaryMacAddressOk returns a tuple with the PrimaryMacAddress field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetMacAddress
+### SetPrimaryMacAddress
 
-`func (o *PatchedWritableVMInterfaceRequest) SetMacAddress(v string)`
+`func (o *PatchedWritableVMInterfaceRequest) SetPrimaryMacAddress(v BriefMACAddressRequest)`
 
-SetMacAddress sets MacAddress field to given value.
+SetPrimaryMacAddress sets PrimaryMacAddress field to given value.
 
-### HasMacAddress
+### HasPrimaryMacAddress
 
-`func (o *PatchedWritableVMInterfaceRequest) HasMacAddress() bool`
+`func (o *PatchedWritableVMInterfaceRequest) HasPrimaryMacAddress() bool`
 
-HasMacAddress returns a boolean if a field has been set.
+HasPrimaryMacAddress returns a boolean if a field has been set.
 
-### SetMacAddressNil
+### SetPrimaryMacAddressNil
 
-`func (o *PatchedWritableVMInterfaceRequest) SetMacAddressNil(b bool)`
+`func (o *PatchedWritableVMInterfaceRequest) SetPrimaryMacAddressNil(b bool)`
 
- SetMacAddressNil sets the value for MacAddress to be an explicit nil
+ SetPrimaryMacAddressNil sets the value for PrimaryMacAddress to be an explicit nil
 
-### UnsetMacAddress
-`func (o *PatchedWritableVMInterfaceRequest) UnsetMacAddress()`
+### UnsetPrimaryMacAddress
+`func (o *PatchedWritableVMInterfaceRequest) UnsetPrimaryMacAddress()`
 
-UnsetMacAddress ensures that no value is present for MacAddress, not even an explicit nil
+UnsetPrimaryMacAddress ensures that no value is present for PrimaryMacAddress, not even an explicit nil
 ### GetDescription
 
 `func (o *PatchedWritableVMInterfaceRequest) GetDescription() string`
@@ -303,22 +305,32 @@ SetMode sets Mode field to given value.
 
 HasMode returns a boolean if a field has been set.
 
+### SetModeNil
+
+`func (o *PatchedWritableVMInterfaceRequest) SetModeNil(b bool)`
+
+ SetModeNil sets the value for Mode to be an explicit nil
+
+### UnsetMode
+`func (o *PatchedWritableVMInterfaceRequest) UnsetMode()`
+
+UnsetMode ensures that no value is present for Mode, not even an explicit nil
 ### GetUntaggedVlan
 
-`func (o *PatchedWritableVMInterfaceRequest) GetUntaggedVlan() VLANRequest`
+`func (o *PatchedWritableVMInterfaceRequest) GetUntaggedVlan() BriefVLANRequest`
 
 GetUntaggedVlan returns the UntaggedVlan field if non-nil, zero value otherwise.
 
 ### GetUntaggedVlanOk
 
-`func (o *PatchedWritableVMInterfaceRequest) GetUntaggedVlanOk() (*VLANRequest, bool)`
+`func (o *PatchedWritableVMInterfaceRequest) GetUntaggedVlanOk() (*BriefVLANRequest, bool)`
 
 GetUntaggedVlanOk returns a tuple with the UntaggedVlan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUntaggedVlan
 
-`func (o *PatchedWritableVMInterfaceRequest) SetUntaggedVlan(v VLANRequest)`
+`func (o *PatchedWritableVMInterfaceRequest) SetUntaggedVlan(v BriefVLANRequest)`
 
 SetUntaggedVlan sets UntaggedVlan field to given value.
 
@@ -363,22 +375,92 @@ SetTaggedVlans sets TaggedVlans field to given value.
 
 HasTaggedVlans returns a boolean if a field has been set.
 
+### GetQinqSvlan
+
+`func (o *PatchedWritableVMInterfaceRequest) GetQinqSvlan() BriefVLANRequest`
+
+GetQinqSvlan returns the QinqSvlan field if non-nil, zero value otherwise.
+
+### GetQinqSvlanOk
+
+`func (o *PatchedWritableVMInterfaceRequest) GetQinqSvlanOk() (*BriefVLANRequest, bool)`
+
+GetQinqSvlanOk returns a tuple with the QinqSvlan field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQinqSvlan
+
+`func (o *PatchedWritableVMInterfaceRequest) SetQinqSvlan(v BriefVLANRequest)`
+
+SetQinqSvlan sets QinqSvlan field to given value.
+
+### HasQinqSvlan
+
+`func (o *PatchedWritableVMInterfaceRequest) HasQinqSvlan() bool`
+
+HasQinqSvlan returns a boolean if a field has been set.
+
+### SetQinqSvlanNil
+
+`func (o *PatchedWritableVMInterfaceRequest) SetQinqSvlanNil(b bool)`
+
+ SetQinqSvlanNil sets the value for QinqSvlan to be an explicit nil
+
+### UnsetQinqSvlan
+`func (o *PatchedWritableVMInterfaceRequest) UnsetQinqSvlan()`
+
+UnsetQinqSvlan ensures that no value is present for QinqSvlan, not even an explicit nil
+### GetVlanTranslationPolicy
+
+`func (o *PatchedWritableVMInterfaceRequest) GetVlanTranslationPolicy() BriefVLANTranslationPolicyRequest`
+
+GetVlanTranslationPolicy returns the VlanTranslationPolicy field if non-nil, zero value otherwise.
+
+### GetVlanTranslationPolicyOk
+
+`func (o *PatchedWritableVMInterfaceRequest) GetVlanTranslationPolicyOk() (*BriefVLANTranslationPolicyRequest, bool)`
+
+GetVlanTranslationPolicyOk returns a tuple with the VlanTranslationPolicy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVlanTranslationPolicy
+
+`func (o *PatchedWritableVMInterfaceRequest) SetVlanTranslationPolicy(v BriefVLANTranslationPolicyRequest)`
+
+SetVlanTranslationPolicy sets VlanTranslationPolicy field to given value.
+
+### HasVlanTranslationPolicy
+
+`func (o *PatchedWritableVMInterfaceRequest) HasVlanTranslationPolicy() bool`
+
+HasVlanTranslationPolicy returns a boolean if a field has been set.
+
+### SetVlanTranslationPolicyNil
+
+`func (o *PatchedWritableVMInterfaceRequest) SetVlanTranslationPolicyNil(b bool)`
+
+ SetVlanTranslationPolicyNil sets the value for VlanTranslationPolicy to be an explicit nil
+
+### UnsetVlanTranslationPolicy
+`func (o *PatchedWritableVMInterfaceRequest) UnsetVlanTranslationPolicy()`
+
+UnsetVlanTranslationPolicy ensures that no value is present for VlanTranslationPolicy, not even an explicit nil
 ### GetVrf
 
-`func (o *PatchedWritableVMInterfaceRequest) GetVrf() VRFRequest`
+`func (o *PatchedWritableVMInterfaceRequest) GetVrf() BriefVRFRequest`
 
 GetVrf returns the Vrf field if non-nil, zero value otherwise.
 
 ### GetVrfOk
 
-`func (o *PatchedWritableVMInterfaceRequest) GetVrfOk() (*VRFRequest, bool)`
+`func (o *PatchedWritableVMInterfaceRequest) GetVrfOk() (*BriefVRFRequest, bool)`
 
 GetVrfOk returns a tuple with the Vrf field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVrf
 
-`func (o *PatchedWritableVMInterfaceRequest) SetVrf(v VRFRequest)`
+`func (o *PatchedWritableVMInterfaceRequest) SetVrf(v BriefVRFRequest)`
 
 SetVrf sets Vrf field to given value.
 

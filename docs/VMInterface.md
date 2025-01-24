@@ -6,24 +6,29 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
+**DisplayUrl** | Pointer to **string** |  | [optional] [readonly] 
 **Display** | **string** |  | [readonly] 
-**VirtualMachine** | [**VirtualMachine**](VirtualMachine.md) |  | 
+**VirtualMachine** | [**BriefVirtualMachine**](BriefVirtualMachine.md) |  | 
 **Name** | **string** |  | 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Parent** | Pointer to [**NullableNestedVMInterface**](NestedVMInterface.md) |  | [optional] 
 **Bridge** | Pointer to [**NullableNestedVMInterface**](NestedVMInterface.md) |  | [optional] 
 **Mtu** | Pointer to **NullableInt32** |  | [optional] 
-**MacAddress** | Pointer to **NullableString** |  | [optional] 
+**MacAddress** | Pointer to **NullableString** |  | [optional] [readonly] 
+**PrimaryMacAddress** | Pointer to [**NullableBriefMACAddress**](BriefMACAddress.md) |  | [optional] 
+**MacAddresses** | Pointer to [**[]BriefMACAddress**](BriefMACAddress.md) |  | [optional] [readonly] 
 **Description** | Pointer to **string** |  | [optional] 
 **Mode** | Pointer to [**InterfaceMode**](InterfaceMode.md) |  | [optional] 
-**UntaggedVlan** | Pointer to [**NullableVLAN**](VLAN.md) |  | [optional] 
+**UntaggedVlan** | Pointer to [**NullableBriefVLAN**](BriefVLAN.md) |  | [optional] 
 **TaggedVlans** | Pointer to [**[]VLAN**](VLAN.md) |  | [optional] 
-**Vrf** | Pointer to [**NullableVRF**](VRF.md) |  | [optional] 
-**L2vpnTermination** | [**NullableL2VPNTermination**](L2VPNTermination.md) |  | [readonly] 
+**QinqSvlan** | Pointer to [**NullableBriefVLAN**](BriefVLAN.md) |  | [optional] 
+**VlanTranslationPolicy** | Pointer to [**NullableBriefVLANTranslationPolicy**](BriefVLANTranslationPolicy.md) |  | [optional] 
+**Vrf** | Pointer to [**NullableBriefVRF**](BriefVRF.md) |  | [optional] 
+**L2vpnTermination** | Pointer to [**NullableBriefL2VPNTermination**](BriefL2VPNTermination.md) |  | [optional] [readonly] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
-**LastUpdated** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
+**LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **CountIpaddresses** | **int32** |  | [readonly] 
 **CountFhrpGroups** | **int32** |  | [readonly] 
 
@@ -31,7 +36,7 @@ Name | Type | Description | Notes
 
 ### NewVMInterface
 
-`func NewVMInterface(id int32, url string, display string, virtualMachine VirtualMachine, name string, l2vpnTermination NullableL2VPNTermination, created NullableTime, lastUpdated NullableTime, countIpaddresses int32, countFhrpGroups int32, ) *VMInterface`
+`func NewVMInterface(id int32, url string, display string, virtualMachine BriefVirtualMachine, name string, countIpaddresses int32, countFhrpGroups int32, ) *VMInterface`
 
 NewVMInterface instantiates a new VMInterface object
 This constructor will assign default values to properties that have it defined,
@@ -86,6 +91,31 @@ and a boolean to check if the value has been set.
 SetUrl sets Url field to given value.
 
 
+### GetDisplayUrl
+
+`func (o *VMInterface) GetDisplayUrl() string`
+
+GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
+
+### GetDisplayUrlOk
+
+`func (o *VMInterface) GetDisplayUrlOk() (*string, bool)`
+
+GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayUrl
+
+`func (o *VMInterface) SetDisplayUrl(v string)`
+
+SetDisplayUrl sets DisplayUrl field to given value.
+
+### HasDisplayUrl
+
+`func (o *VMInterface) HasDisplayUrl() bool`
+
+HasDisplayUrl returns a boolean if a field has been set.
+
 ### GetDisplay
 
 `func (o *VMInterface) GetDisplay() string`
@@ -108,20 +138,20 @@ SetDisplay sets Display field to given value.
 
 ### GetVirtualMachine
 
-`func (o *VMInterface) GetVirtualMachine() VirtualMachine`
+`func (o *VMInterface) GetVirtualMachine() BriefVirtualMachine`
 
 GetVirtualMachine returns the VirtualMachine field if non-nil, zero value otherwise.
 
 ### GetVirtualMachineOk
 
-`func (o *VMInterface) GetVirtualMachineOk() (*VirtualMachine, bool)`
+`func (o *VMInterface) GetVirtualMachineOk() (*BriefVirtualMachine, bool)`
 
 GetVirtualMachineOk returns a tuple with the VirtualMachine field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVirtualMachine
 
-`func (o *VMInterface) SetVirtualMachine(v VirtualMachine)`
+`func (o *VMInterface) SetVirtualMachine(v BriefVirtualMachine)`
 
 SetVirtualMachine sets VirtualMachine field to given value.
 
@@ -311,6 +341,76 @@ HasMacAddress returns a boolean if a field has been set.
 `func (o *VMInterface) UnsetMacAddress()`
 
 UnsetMacAddress ensures that no value is present for MacAddress, not even an explicit nil
+### GetPrimaryMacAddress
+
+`func (o *VMInterface) GetPrimaryMacAddress() BriefMACAddress`
+
+GetPrimaryMacAddress returns the PrimaryMacAddress field if non-nil, zero value otherwise.
+
+### GetPrimaryMacAddressOk
+
+`func (o *VMInterface) GetPrimaryMacAddressOk() (*BriefMACAddress, bool)`
+
+GetPrimaryMacAddressOk returns a tuple with the PrimaryMacAddress field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPrimaryMacAddress
+
+`func (o *VMInterface) SetPrimaryMacAddress(v BriefMACAddress)`
+
+SetPrimaryMacAddress sets PrimaryMacAddress field to given value.
+
+### HasPrimaryMacAddress
+
+`func (o *VMInterface) HasPrimaryMacAddress() bool`
+
+HasPrimaryMacAddress returns a boolean if a field has been set.
+
+### SetPrimaryMacAddressNil
+
+`func (o *VMInterface) SetPrimaryMacAddressNil(b bool)`
+
+ SetPrimaryMacAddressNil sets the value for PrimaryMacAddress to be an explicit nil
+
+### UnsetPrimaryMacAddress
+`func (o *VMInterface) UnsetPrimaryMacAddress()`
+
+UnsetPrimaryMacAddress ensures that no value is present for PrimaryMacAddress, not even an explicit nil
+### GetMacAddresses
+
+`func (o *VMInterface) GetMacAddresses() []BriefMACAddress`
+
+GetMacAddresses returns the MacAddresses field if non-nil, zero value otherwise.
+
+### GetMacAddressesOk
+
+`func (o *VMInterface) GetMacAddressesOk() (*[]BriefMACAddress, bool)`
+
+GetMacAddressesOk returns a tuple with the MacAddresses field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMacAddresses
+
+`func (o *VMInterface) SetMacAddresses(v []BriefMACAddress)`
+
+SetMacAddresses sets MacAddresses field to given value.
+
+### HasMacAddresses
+
+`func (o *VMInterface) HasMacAddresses() bool`
+
+HasMacAddresses returns a boolean if a field has been set.
+
+### SetMacAddressesNil
+
+`func (o *VMInterface) SetMacAddressesNil(b bool)`
+
+ SetMacAddressesNil sets the value for MacAddresses to be an explicit nil
+
+### UnsetMacAddresses
+`func (o *VMInterface) UnsetMacAddresses()`
+
+UnsetMacAddresses ensures that no value is present for MacAddresses, not even an explicit nil
 ### GetDescription
 
 `func (o *VMInterface) GetDescription() string`
@@ -363,20 +463,20 @@ HasMode returns a boolean if a field has been set.
 
 ### GetUntaggedVlan
 
-`func (o *VMInterface) GetUntaggedVlan() VLAN`
+`func (o *VMInterface) GetUntaggedVlan() BriefVLAN`
 
 GetUntaggedVlan returns the UntaggedVlan field if non-nil, zero value otherwise.
 
 ### GetUntaggedVlanOk
 
-`func (o *VMInterface) GetUntaggedVlanOk() (*VLAN, bool)`
+`func (o *VMInterface) GetUntaggedVlanOk() (*BriefVLAN, bool)`
 
 GetUntaggedVlanOk returns a tuple with the UntaggedVlan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUntaggedVlan
 
-`func (o *VMInterface) SetUntaggedVlan(v VLAN)`
+`func (o *VMInterface) SetUntaggedVlan(v BriefVLAN)`
 
 SetUntaggedVlan sets UntaggedVlan field to given value.
 
@@ -421,22 +521,92 @@ SetTaggedVlans sets TaggedVlans field to given value.
 
 HasTaggedVlans returns a boolean if a field has been set.
 
+### GetQinqSvlan
+
+`func (o *VMInterface) GetQinqSvlan() BriefVLAN`
+
+GetQinqSvlan returns the QinqSvlan field if non-nil, zero value otherwise.
+
+### GetQinqSvlanOk
+
+`func (o *VMInterface) GetQinqSvlanOk() (*BriefVLAN, bool)`
+
+GetQinqSvlanOk returns a tuple with the QinqSvlan field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQinqSvlan
+
+`func (o *VMInterface) SetQinqSvlan(v BriefVLAN)`
+
+SetQinqSvlan sets QinqSvlan field to given value.
+
+### HasQinqSvlan
+
+`func (o *VMInterface) HasQinqSvlan() bool`
+
+HasQinqSvlan returns a boolean if a field has been set.
+
+### SetQinqSvlanNil
+
+`func (o *VMInterface) SetQinqSvlanNil(b bool)`
+
+ SetQinqSvlanNil sets the value for QinqSvlan to be an explicit nil
+
+### UnsetQinqSvlan
+`func (o *VMInterface) UnsetQinqSvlan()`
+
+UnsetQinqSvlan ensures that no value is present for QinqSvlan, not even an explicit nil
+### GetVlanTranslationPolicy
+
+`func (o *VMInterface) GetVlanTranslationPolicy() BriefVLANTranslationPolicy`
+
+GetVlanTranslationPolicy returns the VlanTranslationPolicy field if non-nil, zero value otherwise.
+
+### GetVlanTranslationPolicyOk
+
+`func (o *VMInterface) GetVlanTranslationPolicyOk() (*BriefVLANTranslationPolicy, bool)`
+
+GetVlanTranslationPolicyOk returns a tuple with the VlanTranslationPolicy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVlanTranslationPolicy
+
+`func (o *VMInterface) SetVlanTranslationPolicy(v BriefVLANTranslationPolicy)`
+
+SetVlanTranslationPolicy sets VlanTranslationPolicy field to given value.
+
+### HasVlanTranslationPolicy
+
+`func (o *VMInterface) HasVlanTranslationPolicy() bool`
+
+HasVlanTranslationPolicy returns a boolean if a field has been set.
+
+### SetVlanTranslationPolicyNil
+
+`func (o *VMInterface) SetVlanTranslationPolicyNil(b bool)`
+
+ SetVlanTranslationPolicyNil sets the value for VlanTranslationPolicy to be an explicit nil
+
+### UnsetVlanTranslationPolicy
+`func (o *VMInterface) UnsetVlanTranslationPolicy()`
+
+UnsetVlanTranslationPolicy ensures that no value is present for VlanTranslationPolicy, not even an explicit nil
 ### GetVrf
 
-`func (o *VMInterface) GetVrf() VRF`
+`func (o *VMInterface) GetVrf() BriefVRF`
 
 GetVrf returns the Vrf field if non-nil, zero value otherwise.
 
 ### GetVrfOk
 
-`func (o *VMInterface) GetVrfOk() (*VRF, bool)`
+`func (o *VMInterface) GetVrfOk() (*BriefVRF, bool)`
 
 GetVrfOk returns a tuple with the Vrf field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVrf
 
-`func (o *VMInterface) SetVrf(v VRF)`
+`func (o *VMInterface) SetVrf(v BriefVRF)`
 
 SetVrf sets Vrf field to given value.
 
@@ -458,23 +628,28 @@ HasVrf returns a boolean if a field has been set.
 UnsetVrf ensures that no value is present for Vrf, not even an explicit nil
 ### GetL2vpnTermination
 
-`func (o *VMInterface) GetL2vpnTermination() L2VPNTermination`
+`func (o *VMInterface) GetL2vpnTermination() BriefL2VPNTermination`
 
 GetL2vpnTermination returns the L2vpnTermination field if non-nil, zero value otherwise.
 
 ### GetL2vpnTerminationOk
 
-`func (o *VMInterface) GetL2vpnTerminationOk() (*L2VPNTermination, bool)`
+`func (o *VMInterface) GetL2vpnTerminationOk() (*BriefL2VPNTermination, bool)`
 
 GetL2vpnTerminationOk returns a tuple with the L2vpnTermination field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetL2vpnTermination
 
-`func (o *VMInterface) SetL2vpnTermination(v L2VPNTermination)`
+`func (o *VMInterface) SetL2vpnTermination(v BriefL2VPNTermination)`
 
 SetL2vpnTermination sets L2vpnTermination field to given value.
 
+### HasL2vpnTermination
+
+`func (o *VMInterface) HasL2vpnTermination() bool`
+
+HasL2vpnTermination returns a boolean if a field has been set.
 
 ### SetL2vpnTerminationNil
 
@@ -555,6 +730,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *VMInterface) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
@@ -585,6 +765,11 @@ and a boolean to check if the value has been set.
 
 SetLastUpdated sets LastUpdated field to given value.
 
+### HasLastUpdated
+
+`func (o *VMInterface) HasLastUpdated() bool`
+
+HasLastUpdated returns a boolean if a field has been set.
 
 ### SetLastUpdatedNil
 

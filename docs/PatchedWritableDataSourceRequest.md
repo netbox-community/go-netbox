@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 **SourceUrl** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**Comments** | Pointer to **string** |  | [optional] 
 **Parameters** | Pointer to **interface{}** |  | [optional] 
 **IgnoreRules** | Pointer to **string** | Patterns (one per line) matching files to ignore when syncing | [optional] 
+**Comments** | Pointer to **string** |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
@@ -158,31 +158,6 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
-### GetComments
-
-`func (o *PatchedWritableDataSourceRequest) GetComments() string`
-
-GetComments returns the Comments field if non-nil, zero value otherwise.
-
-### GetCommentsOk
-
-`func (o *PatchedWritableDataSourceRequest) GetCommentsOk() (*string, bool)`
-
-GetCommentsOk returns a tuple with the Comments field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetComments
-
-`func (o *PatchedWritableDataSourceRequest) SetComments(v string)`
-
-SetComments sets Comments field to given value.
-
-### HasComments
-
-`func (o *PatchedWritableDataSourceRequest) HasComments() bool`
-
-HasComments returns a boolean if a field has been set.
-
 ### GetParameters
 
 `func (o *PatchedWritableDataSourceRequest) GetParameters() interface{}`
@@ -242,6 +217,31 @@ SetIgnoreRules sets IgnoreRules field to given value.
 `func (o *PatchedWritableDataSourceRequest) HasIgnoreRules() bool`
 
 HasIgnoreRules returns a boolean if a field has been set.
+
+### GetComments
+
+`func (o *PatchedWritableDataSourceRequest) GetComments() string`
+
+GetComments returns the Comments field if non-nil, zero value otherwise.
+
+### GetCommentsOk
+
+`func (o *PatchedWritableDataSourceRequest) GetCommentsOk() (*string, bool)`
+
+GetCommentsOk returns a tuple with the Comments field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComments
+
+`func (o *PatchedWritableDataSourceRequest) SetComments(v string)`
+
+SetComments sets Comments field to given value.
+
+### HasComments
+
+`func (o *PatchedWritableDataSourceRequest) HasComments() bool`
+
+HasComments returns a boolean if a field has been set.
 
 ### GetCustomFields
 

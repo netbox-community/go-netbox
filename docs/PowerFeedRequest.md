@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PowerPanel** | [**PowerPanelRequest**](PowerPanelRequest.md) |  | 
-**Rack** | Pointer to [**NullableRackRequest**](RackRequest.md) |  | [optional] 
+**PowerPanel** | [**BriefPowerPanelRequest**](BriefPowerPanelRequest.md) |  | 
+**Rack** | Pointer to [**NullableBriefRackRequest**](BriefRackRequest.md) |  | [optional] 
 **Name** | **string** |  | 
 **Status** | Pointer to [**PatchedWritablePowerFeedRequestStatus**](PatchedWritablePowerFeedRequestStatus.md) |  | [optional] 
 **Type** | Pointer to [**PatchedWritablePowerFeedRequestType**](PatchedWritablePowerFeedRequestType.md) |  | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **MaxUtilization** | Pointer to **int32** | Maximum permissible draw (percentage) | [optional] 
 **MarkConnected** | Pointer to **bool** | Treat as if a cable is connected | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**Tenant** | Pointer to [**NullableTenantRequest**](TenantRequest.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 
 ### NewPowerFeedRequest
 
-`func NewPowerFeedRequest(powerPanel PowerPanelRequest, name string, ) *PowerFeedRequest`
+`func NewPowerFeedRequest(powerPanel BriefPowerPanelRequest, name string, ) *PowerFeedRequest`
 
 NewPowerFeedRequest instantiates a new PowerFeedRequest object
 This constructor will assign default values to properties that have it defined,
@@ -42,40 +42,40 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetPowerPanel
 
-`func (o *PowerFeedRequest) GetPowerPanel() PowerPanelRequest`
+`func (o *PowerFeedRequest) GetPowerPanel() BriefPowerPanelRequest`
 
 GetPowerPanel returns the PowerPanel field if non-nil, zero value otherwise.
 
 ### GetPowerPanelOk
 
-`func (o *PowerFeedRequest) GetPowerPanelOk() (*PowerPanelRequest, bool)`
+`func (o *PowerFeedRequest) GetPowerPanelOk() (*BriefPowerPanelRequest, bool)`
 
 GetPowerPanelOk returns a tuple with the PowerPanel field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPowerPanel
 
-`func (o *PowerFeedRequest) SetPowerPanel(v PowerPanelRequest)`
+`func (o *PowerFeedRequest) SetPowerPanel(v BriefPowerPanelRequest)`
 
 SetPowerPanel sets PowerPanel field to given value.
 
 
 ### GetRack
 
-`func (o *PowerFeedRequest) GetRack() RackRequest`
+`func (o *PowerFeedRequest) GetRack() BriefRackRequest`
 
 GetRack returns the Rack field if non-nil, zero value otherwise.
 
 ### GetRackOk
 
-`func (o *PowerFeedRequest) GetRackOk() (*RackRequest, bool)`
+`func (o *PowerFeedRequest) GetRackOk() (*BriefRackRequest, bool)`
 
 GetRackOk returns a tuple with the Rack field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRack
 
-`func (o *PowerFeedRequest) SetRack(v RackRequest)`
+`func (o *PowerFeedRequest) SetRack(v BriefRackRequest)`
 
 SetRack sets Rack field to given value.
 
@@ -342,20 +342,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetTenant
 
-`func (o *PowerFeedRequest) GetTenant() TenantRequest`
+`func (o *PowerFeedRequest) GetTenant() BriefTenantRequest`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *PowerFeedRequest) GetTenantOk() (*TenantRequest, bool)`
+`func (o *PowerFeedRequest) GetTenantOk() (*BriefTenantRequest, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *PowerFeedRequest) SetTenant(v TenantRequest)`
+`func (o *PowerFeedRequest) SetTenant(v BriefTenantRequest)`
 
 SetTenant sets Tenant field to given value.
 

@@ -7,20 +7,20 @@ Name | Type | Description | Notes
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
-**DeviceType** | Pointer to [**NullableDeviceType**](DeviceType.md) |  | [optional] 
-**ModuleType** | Pointer to [**NullableModuleType**](ModuleType.md) |  | [optional] 
+**DeviceType** | Pointer to [**NullableBriefDeviceType**](BriefDeviceType.md) |  | [optional] 
+**ModuleType** | Pointer to [**NullableBriefModuleType**](BriefModuleType.md) |  | [optional] 
 **Name** | **string** | {module} is accepted as a substitution for the module bay position when attached to a module type. | 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Type** | Pointer to [**ConsolePortType**](ConsolePortType.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
-**LastUpdated** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
+**LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewConsoleServerPortTemplate
 
-`func NewConsoleServerPortTemplate(id int32, url string, display string, name string, created NullableTime, lastUpdated NullableTime, ) *ConsoleServerPortTemplate`
+`func NewConsoleServerPortTemplate(id int32, url string, display string, name string, ) *ConsoleServerPortTemplate`
 
 NewConsoleServerPortTemplate instantiates a new ConsoleServerPortTemplate object
 This constructor will assign default values to properties that have it defined,
@@ -97,20 +97,20 @@ SetDisplay sets Display field to given value.
 
 ### GetDeviceType
 
-`func (o *ConsoleServerPortTemplate) GetDeviceType() DeviceType`
+`func (o *ConsoleServerPortTemplate) GetDeviceType() BriefDeviceType`
 
 GetDeviceType returns the DeviceType field if non-nil, zero value otherwise.
 
 ### GetDeviceTypeOk
 
-`func (o *ConsoleServerPortTemplate) GetDeviceTypeOk() (*DeviceType, bool)`
+`func (o *ConsoleServerPortTemplate) GetDeviceTypeOk() (*BriefDeviceType, bool)`
 
 GetDeviceTypeOk returns a tuple with the DeviceType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeviceType
 
-`func (o *ConsoleServerPortTemplate) SetDeviceType(v DeviceType)`
+`func (o *ConsoleServerPortTemplate) SetDeviceType(v BriefDeviceType)`
 
 SetDeviceType sets DeviceType field to given value.
 
@@ -132,20 +132,20 @@ HasDeviceType returns a boolean if a field has been set.
 UnsetDeviceType ensures that no value is present for DeviceType, not even an explicit nil
 ### GetModuleType
 
-`func (o *ConsoleServerPortTemplate) GetModuleType() ModuleType`
+`func (o *ConsoleServerPortTemplate) GetModuleType() BriefModuleType`
 
 GetModuleType returns the ModuleType field if non-nil, zero value otherwise.
 
 ### GetModuleTypeOk
 
-`func (o *ConsoleServerPortTemplate) GetModuleTypeOk() (*ModuleType, bool)`
+`func (o *ConsoleServerPortTemplate) GetModuleTypeOk() (*BriefModuleType, bool)`
 
 GetModuleTypeOk returns a tuple with the ModuleType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetModuleType
 
-`func (o *ConsoleServerPortTemplate) SetModuleType(v ModuleType)`
+`func (o *ConsoleServerPortTemplate) SetModuleType(v BriefModuleType)`
 
 SetModuleType sets ModuleType field to given value.
 
@@ -279,6 +279,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *ConsoleServerPortTemplate) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
@@ -309,6 +314,11 @@ and a boolean to check if the value has been set.
 
 SetLastUpdated sets LastUpdated field to given value.
 
+### HasLastUpdated
+
+`func (o *ConsoleServerPortTemplate) HasLastUpdated() bool`
+
+HasLastUpdated returns a boolean if a field has been set.
 
 ### SetLastUpdatedNil
 

@@ -7,12 +7,14 @@ gitRepoId: go-netbox/v4
 packageName: netbox
 
 globalProperty:
-  apiDocs: false
-  modelDocs: false
-  apiTests: false
-  modelTests: false
+  apiDocs: "false"
+  modelDocs: "false"
+  apiTests: "false"
+  modelTests: "false"
 
 additionalProperties:
   disallowAdditionalPropertiesIfNotPresent: "false"
-  packageVersion: "3"
-  enumClassPrefix: true
+  generateInterfaces: "true"
+  packageVersion: "4"
+  enumClassPrefix: "true"
+  useDefaultValuesForRequiredVars: "true"

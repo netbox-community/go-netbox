@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
+**DisplayUrl** | Pointer to **string** |  | [optional] [readonly] 
 **Display** | **string** |  | [readonly] 
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
@@ -13,16 +14,17 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
-**LastUpdated** | **NullableTime** |  | [readonly] 
-**SiteCount** | **int32** |  | [readonly] [default to 0]
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
+**LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
+**SiteCount** | Pointer to **int32** |  | [optional] [readonly] [default to 0]
+**PrefixCount** | Pointer to **int64** |  | [optional] [readonly] 
 **Depth** | **int32** |  | [readonly] 
 
 ## Methods
 
 ### NewSiteGroup
 
-`func NewSiteGroup(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, siteCount int32, depth int32, ) *SiteGroup`
+`func NewSiteGroup(id int32, url string, display string, name string, slug string, depth int32, ) *SiteGroup`
 
 NewSiteGroup instantiates a new SiteGroup object
 This constructor will assign default values to properties that have it defined,
@@ -76,6 +78,31 @@ and a boolean to check if the value has been set.
 
 SetUrl sets Url field to given value.
 
+
+### GetDisplayUrl
+
+`func (o *SiteGroup) GetDisplayUrl() string`
+
+GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
+
+### GetDisplayUrlOk
+
+`func (o *SiteGroup) GetDisplayUrlOk() (*string, bool)`
+
+GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayUrl
+
+`func (o *SiteGroup) SetDisplayUrl(v string)`
+
+SetDisplayUrl sets DisplayUrl field to given value.
+
+### HasDisplayUrl
+
+`func (o *SiteGroup) HasDisplayUrl() bool`
+
+HasDisplayUrl returns a boolean if a field has been set.
 
 ### GetDisplay
 
@@ -266,6 +293,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *SiteGroup) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
@@ -296,6 +328,11 @@ and a boolean to check if the value has been set.
 
 SetLastUpdated sets LastUpdated field to given value.
 
+### HasLastUpdated
+
+`func (o *SiteGroup) HasLastUpdated() bool`
+
+HasLastUpdated returns a boolean if a field has been set.
 
 ### SetLastUpdatedNil
 
@@ -326,6 +363,36 @@ and a boolean to check if the value has been set.
 
 SetSiteCount sets SiteCount field to given value.
 
+### HasSiteCount
+
+`func (o *SiteGroup) HasSiteCount() bool`
+
+HasSiteCount returns a boolean if a field has been set.
+
+### GetPrefixCount
+
+`func (o *SiteGroup) GetPrefixCount() int64`
+
+GetPrefixCount returns the PrefixCount field if non-nil, zero value otherwise.
+
+### GetPrefixCountOk
+
+`func (o *SiteGroup) GetPrefixCountOk() (*int64, bool)`
+
+GetPrefixCountOk returns a tuple with the PrefixCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPrefixCount
+
+`func (o *SiteGroup) SetPrefixCount(v int64)`
+
+SetPrefixCount sets PrefixCount field to given value.
+
+### HasPrefixCount
+
+`func (o *SiteGroup) HasPrefixCount() bool`
+
+HasPrefixCount returns a boolean if a field has been set.
 
 ### GetDepth
 

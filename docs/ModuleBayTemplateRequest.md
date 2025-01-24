@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DeviceType** | [**DeviceTypeRequest**](DeviceTypeRequest.md) |  | 
+**DeviceType** | Pointer to [**NullableBriefDeviceTypeRequest**](BriefDeviceTypeRequest.md) |  | [optional] 
+**ModuleType** | Pointer to [**NullableBriefModuleTypeRequest**](BriefModuleTypeRequest.md) |  | [optional] 
 **Name** | **string** | {module} is accepted as a substitution for the module bay position when attached to a module type. | 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Position** | Pointer to **string** | Identifier to reference when renaming installed components | [optional] 
@@ -14,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewModuleBayTemplateRequest
 
-`func NewModuleBayTemplateRequest(deviceType DeviceTypeRequest, name string, ) *ModuleBayTemplateRequest`
+`func NewModuleBayTemplateRequest(name string, ) *ModuleBayTemplateRequest`
 
 NewModuleBayTemplateRequest instantiates a new ModuleBayTemplateRequest object
 This constructor will assign default values to properties that have it defined,
@@ -31,24 +32,74 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDeviceType
 
-`func (o *ModuleBayTemplateRequest) GetDeviceType() DeviceTypeRequest`
+`func (o *ModuleBayTemplateRequest) GetDeviceType() BriefDeviceTypeRequest`
 
 GetDeviceType returns the DeviceType field if non-nil, zero value otherwise.
 
 ### GetDeviceTypeOk
 
-`func (o *ModuleBayTemplateRequest) GetDeviceTypeOk() (*DeviceTypeRequest, bool)`
+`func (o *ModuleBayTemplateRequest) GetDeviceTypeOk() (*BriefDeviceTypeRequest, bool)`
 
 GetDeviceTypeOk returns a tuple with the DeviceType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeviceType
 
-`func (o *ModuleBayTemplateRequest) SetDeviceType(v DeviceTypeRequest)`
+`func (o *ModuleBayTemplateRequest) SetDeviceType(v BriefDeviceTypeRequest)`
 
 SetDeviceType sets DeviceType field to given value.
 
+### HasDeviceType
 
+`func (o *ModuleBayTemplateRequest) HasDeviceType() bool`
+
+HasDeviceType returns a boolean if a field has been set.
+
+### SetDeviceTypeNil
+
+`func (o *ModuleBayTemplateRequest) SetDeviceTypeNil(b bool)`
+
+ SetDeviceTypeNil sets the value for DeviceType to be an explicit nil
+
+### UnsetDeviceType
+`func (o *ModuleBayTemplateRequest) UnsetDeviceType()`
+
+UnsetDeviceType ensures that no value is present for DeviceType, not even an explicit nil
+### GetModuleType
+
+`func (o *ModuleBayTemplateRequest) GetModuleType() BriefModuleTypeRequest`
+
+GetModuleType returns the ModuleType field if non-nil, zero value otherwise.
+
+### GetModuleTypeOk
+
+`func (o *ModuleBayTemplateRequest) GetModuleTypeOk() (*BriefModuleTypeRequest, bool)`
+
+GetModuleTypeOk returns a tuple with the ModuleType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetModuleType
+
+`func (o *ModuleBayTemplateRequest) SetModuleType(v BriefModuleTypeRequest)`
+
+SetModuleType sets ModuleType field to given value.
+
+### HasModuleType
+
+`func (o *ModuleBayTemplateRequest) HasModuleType() bool`
+
+HasModuleType returns a boolean if a field has been set.
+
+### SetModuleTypeNil
+
+`func (o *ModuleBayTemplateRequest) SetModuleTypeNil(b bool)`
+
+ SetModuleTypeNil sets the value for ModuleType to be an explicit nil
+
+### UnsetModuleType
+`func (o *ModuleBayTemplateRequest) UnsetModuleType()`
+
+UnsetModuleType ensures that no value is present for ModuleType, not even an explicit nil
 ### GetName
 
 `func (o *ModuleBayTemplateRequest) GetName() string`

@@ -251,7 +251,7 @@ import (
 )
 
 func main() {
-	writableWirelessLANGroupRequest := *openapiclient.NewWritableWirelessLANGroupRequest("Name_example", "Slug_example", NullableInt32(123)) // WritableWirelessLANGroupRequest | 
+	writableWirelessLANGroupRequest := *openapiclient.NewWritableWirelessLANGroupRequest("Name_example", "Slug_example") // WritableWirelessLANGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -386,10 +386,10 @@ import (
 )
 
 func main() {
-	ancestor := []int32{int32(123)} // []int32 |  (optional)
-	ancestorN := []int32{int32(123)} // []int32 |  (optional)
-	ancestorId := []int32{int32(123)} // []int32 |  (optional)
-	ancestorIdN := []int32{int32(123)} // []int32 |  (optional)
+	ancestor := []string{"Inner_example"} // []string |  (optional)
+	ancestorN := []string{"Inner_example"} // []string |  (optional)
+	ancestorId := []string{"Inner_example"} // []string |  (optional)
+	ancestorIdN := []string{"Inner_example"} // []string |  (optional)
 	created := []time.Time{time.Now()} // []time.Time |  (optional)
 	createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
 	createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -481,10 +481,10 @@ Other parameters are passed through a pointer to a apiWirelessWirelessLanGroupsL
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ancestor** | **[]int32** |  | 
- **ancestorN** | **[]int32** |  | 
- **ancestorId** | **[]int32** |  | 
- **ancestorIdN** | **[]int32** |  | 
+ **ancestor** | **[]string** |  | 
+ **ancestorN** | **[]string** |  | 
+ **ancestorId** | **[]string** |  | 
+ **ancestorIdN** | **[]string** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
  **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
@@ -735,7 +735,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this wireless LAN group.
-	writableWirelessLANGroupRequest := *openapiclient.NewWritableWirelessLANGroupRequest("Name_example", "Slug_example", NullableInt32(123)) // WritableWirelessLANGroupRequest | 
+	writableWirelessLANGroupRequest := *openapiclient.NewWritableWirelessLANGroupRequest("Name_example", "Slug_example") // WritableWirelessLANGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1117,7 +1117,7 @@ Name | Type | Description  | Notes
 
 ## WirelessWirelessLansList
 
-> PaginatedWirelessLANList WirelessWirelessLansList(ctx).AuthCipher(authCipher).AuthCipherN(authCipherN).AuthPsk(authPsk).AuthPskEmpty(authPskEmpty).AuthPskIc(authPskIc).AuthPskIe(authPskIe).AuthPskIew(authPskIew).AuthPskIsw(authPskIsw).AuthPskN(authPskN).AuthPskNic(authPskNic).AuthPskNie(authPskNie).AuthPskNiew(authPskNiew).AuthPskNisw(authPskNisw).AuthType(authType).AuthTypeN(authTypeN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InterfaceId(interfaceId).InterfaceIdN(interfaceIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Q(q).Ssid(ssid).SsidEmpty(ssidEmpty).SsidIc(ssidIc).SsidIe(ssidIe).SsidIew(ssidIew).SsidIsw(ssidIsw).SsidN(ssidN).SsidNic(ssidNic).SsidNie(ssidNie).SsidNiew(ssidNiew).SsidNisw(ssidNisw).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).VlanId(vlanId).VlanIdN(vlanIdN).Execute()
+> PaginatedWirelessLANList WirelessWirelessLansList(ctx).AuthCipher(authCipher).AuthCipherEmpty(authCipherEmpty).AuthCipherIc(authCipherIc).AuthCipherIe(authCipherIe).AuthCipherIew(authCipherIew).AuthCipherIsw(authCipherIsw).AuthCipherN(authCipherN).AuthCipherNic(authCipherNic).AuthCipherNie(authCipherNie).AuthCipherNiew(authCipherNiew).AuthCipherNisw(authCipherNisw).AuthPsk(authPsk).AuthPskEmpty(authPskEmpty).AuthPskIc(authPskIc).AuthPskIe(authPskIe).AuthPskIew(authPskIew).AuthPskIsw(authPskIsw).AuthPskN(authPskN).AuthPskNic(authPskNic).AuthPskNie(authPskNie).AuthPskNiew(authPskNiew).AuthPskNisw(authPskNisw).AuthType(authType).AuthTypeEmpty(authTypeEmpty).AuthTypeIc(authTypeIc).AuthTypeIe(authTypeIe).AuthTypeIew(authTypeIew).AuthTypeIsw(authTypeIsw).AuthTypeN(authTypeN).AuthTypeNic(authTypeNic).AuthTypeNie(authTypeNie).AuthTypeNiew(authTypeNiew).AuthTypeNisw(authTypeNisw).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InterfaceId(interfaceId).InterfaceIdN(interfaceIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).ScopeId(scopeId).ScopeIdEmpty(scopeIdEmpty).ScopeIdGt(scopeIdGt).ScopeIdGte(scopeIdGte).ScopeIdLt(scopeIdLt).ScopeIdLte(scopeIdLte).ScopeIdN(scopeIdN).ScopeType(scopeType).ScopeTypeN(scopeTypeN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Ssid(ssid).SsidEmpty(ssidEmpty).SsidIc(ssidIc).SsidIe(ssidIe).SsidIew(ssidIew).SsidIsw(ssidIsw).SsidN(ssidN).SsidNic(ssidNic).SsidNie(ssidNie).SsidNiew(ssidNiew).SsidNisw(ssidNisw).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).VlanId(vlanId).VlanIdN(vlanIdN).Execute()
 
 
 
@@ -1137,8 +1137,17 @@ import (
 )
 
 func main() {
-	authCipher := []string{"Inner_example"} // []string |  (optional)
-	authCipherN := []string{"Inner_example"} // []string |  (optional)
+	authCipher := []*string{"Inner_example"} // []*string |  (optional)
+	authCipherEmpty := true // bool |  (optional)
+	authCipherIc := []*string{"Inner_example"} // []*string |  (optional)
+	authCipherIe := []*string{"Inner_example"} // []*string |  (optional)
+	authCipherIew := []*string{"Inner_example"} // []*string |  (optional)
+	authCipherIsw := []*string{"Inner_example"} // []*string |  (optional)
+	authCipherN := []*string{"Inner_example"} // []*string |  (optional)
+	authCipherNic := []*string{"Inner_example"} // []*string |  (optional)
+	authCipherNie := []*string{"Inner_example"} // []*string |  (optional)
+	authCipherNiew := []*string{"Inner_example"} // []*string |  (optional)
+	authCipherNisw := []*string{"Inner_example"} // []*string |  (optional)
 	authPsk := []string{"Inner_example"} // []string |  (optional)
 	authPskEmpty := true // bool |  (optional)
 	authPskIc := []string{"Inner_example"} // []string |  (optional)
@@ -1150,8 +1159,17 @@ func main() {
 	authPskNie := []string{"Inner_example"} // []string |  (optional)
 	authPskNiew := []string{"Inner_example"} // []string |  (optional)
 	authPskNisw := []string{"Inner_example"} // []string |  (optional)
-	authType := []string{"Inner_example"} // []string |  (optional)
-	authTypeN := []string{"Inner_example"} // []string |  (optional)
+	authType := []*string{"Inner_example"} // []*string |  (optional)
+	authTypeEmpty := true // bool |  (optional)
+	authTypeIc := []*string{"Inner_example"} // []*string |  (optional)
+	authTypeIe := []*string{"Inner_example"} // []*string |  (optional)
+	authTypeIew := []*string{"Inner_example"} // []*string |  (optional)
+	authTypeIsw := []*string{"Inner_example"} // []*string |  (optional)
+	authTypeN := []*string{"Inner_example"} // []*string |  (optional)
+	authTypeNic := []*string{"Inner_example"} // []*string |  (optional)
+	authTypeNie := []*string{"Inner_example"} // []*string |  (optional)
+	authTypeNiew := []*string{"Inner_example"} // []*string |  (optional)
+	authTypeNisw := []*string{"Inner_example"} // []*string |  (optional)
 	created := []time.Time{time.Now()} // []time.Time |  (optional)
 	createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
 	createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -1171,10 +1189,10 @@ func main() {
 	descriptionNie := []string{"Inner_example"} // []string |  (optional)
 	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
 	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
-	group := []int32{int32(123)} // []int32 |  (optional)
-	groupN := []int32{int32(123)} // []int32 |  (optional)
-	groupId := []int32{int32(123)} // []int32 |  (optional)
-	groupIdN := []int32{int32(123)} // []int32 |  (optional)
+	group := []string{"Inner_example"} // []string |  (optional)
+	groupN := []string{"Inner_example"} // []string |  (optional)
+	groupId := []string{"Inner_example"} // []string |  (optional)
+	groupIdN := []string{"Inner_example"} // []string |  (optional)
 	id := []int32{int32(123)} // []int32 |  (optional)
 	idEmpty := true // bool |  (optional)
 	idGt := []int32{int32(123)} // []int32 |  (optional)
@@ -1192,10 +1210,35 @@ func main() {
 	lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
 	limit := int32(56) // int32 | Number of results to return per page. (optional)
+	location := []string{"Inner_example"} // []string |  (optional)
+	locationN := []string{"Inner_example"} // []string |  (optional)
+	locationId := []string{"Inner_example"} // []string |  (optional)
+	locationIdN := []string{"Inner_example"} // []string |  (optional)
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
 	q := "q_example" // string | Search (optional)
+	region := []string{"Inner_example"} // []string |  (optional)
+	regionN := []string{"Inner_example"} // []string |  (optional)
+	regionId := []string{"Inner_example"} // []string |  (optional)
+	regionIdN := []string{"Inner_example"} // []string |  (optional)
+	scopeId := []int32{int32(123)} // []int32 |  (optional)
+	scopeIdEmpty := true // bool |  (optional)
+	scopeIdGt := []int32{int32(123)} // []int32 |  (optional)
+	scopeIdGte := []int32{int32(123)} // []int32 |  (optional)
+	scopeIdLt := []int32{int32(123)} // []int32 |  (optional)
+	scopeIdLte := []int32{int32(123)} // []int32 |  (optional)
+	scopeIdN := []int32{int32(123)} // []int32 |  (optional)
+	scopeType := "scopeType_example" // string |  (optional)
+	scopeTypeN := "scopeTypeN_example" // string |  (optional)
+	site := []string{"Inner_example"} // []string | Site (slug) (optional)
+	siteN := []string{"Inner_example"} // []string | Site (slug) (optional)
+	siteGroup := []string{"Inner_example"} // []string |  (optional)
+	siteGroupN := []string{"Inner_example"} // []string |  (optional)
+	siteGroupId := []string{"Inner_example"} // []string |  (optional)
+	siteGroupIdN := []string{"Inner_example"} // []string |  (optional)
+	siteId := []int32{int32(123)} // []int32 | Site (ID) (optional)
+	siteIdN := []int32{int32(123)} // []int32 | Site (ID) (optional)
 	ssid := []string{"Inner_example"} // []string |  (optional)
 	ssidEmpty := true // bool |  (optional)
 	ssidIc := []string{"Inner_example"} // []string |  (optional)
@@ -1208,15 +1251,24 @@ func main() {
 	ssidNiew := []string{"Inner_example"} // []string |  (optional)
 	ssidNisw := []string{"Inner_example"} // []string |  (optional)
 	status := []string{"Inner_example"} // []string |  (optional)
+	statusEmpty := true // bool |  (optional)
+	statusIc := []string{"Inner_example"} // []string |  (optional)
+	statusIe := []string{"Inner_example"} // []string |  (optional)
+	statusIew := []string{"Inner_example"} // []string |  (optional)
+	statusIsw := []string{"Inner_example"} // []string |  (optional)
 	statusN := []string{"Inner_example"} // []string |  (optional)
+	statusNic := []string{"Inner_example"} // []string |  (optional)
+	statusNie := []string{"Inner_example"} // []string |  (optional)
+	statusNiew := []string{"Inner_example"} // []string |  (optional)
+	statusNisw := []string{"Inner_example"} // []string |  (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
 	tenant := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantN := []string{"Inner_example"} // []string | Tenant (slug) (optional)
-	tenantGroup := []int32{int32(123)} // []int32 | Tenant Group (slug) (optional)
-	tenantGroupN := []int32{int32(123)} // []int32 | Tenant Group (slug) (optional)
-	tenantGroupId := []int32{int32(123)} // []int32 | Tenant Group (ID) (optional)
-	tenantGroupIdN := []int32{int32(123)} // []int32 | Tenant Group (ID) (optional)
+	tenantGroup := []string{"Inner_example"} // []string |  (optional)
+	tenantGroupN := []string{"Inner_example"} // []string |  (optional)
+	tenantGroupId := []string{"Inner_example"} // []string |  (optional)
+	tenantGroupIdN := []string{"Inner_example"} // []string |  (optional)
 	tenantId := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
 	tenantIdN := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
@@ -1225,7 +1277,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.WirelessAPI.WirelessWirelessLansList(context.Background()).AuthCipher(authCipher).AuthCipherN(authCipherN).AuthPsk(authPsk).AuthPskEmpty(authPskEmpty).AuthPskIc(authPskIc).AuthPskIe(authPskIe).AuthPskIew(authPskIew).AuthPskIsw(authPskIsw).AuthPskN(authPskN).AuthPskNic(authPskNic).AuthPskNie(authPskNie).AuthPskNiew(authPskNiew).AuthPskNisw(authPskNisw).AuthType(authType).AuthTypeN(authTypeN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InterfaceId(interfaceId).InterfaceIdN(interfaceIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Q(q).Ssid(ssid).SsidEmpty(ssidEmpty).SsidIc(ssidIc).SsidIe(ssidIe).SsidIew(ssidIew).SsidIsw(ssidIsw).SsidN(ssidN).SsidNic(ssidNic).SsidNie(ssidNie).SsidNiew(ssidNiew).SsidNisw(ssidNisw).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).VlanId(vlanId).VlanIdN(vlanIdN).Execute()
+	resp, r, err := apiClient.WirelessAPI.WirelessWirelessLansList(context.Background()).AuthCipher(authCipher).AuthCipherEmpty(authCipherEmpty).AuthCipherIc(authCipherIc).AuthCipherIe(authCipherIe).AuthCipherIew(authCipherIew).AuthCipherIsw(authCipherIsw).AuthCipherN(authCipherN).AuthCipherNic(authCipherNic).AuthCipherNie(authCipherNie).AuthCipherNiew(authCipherNiew).AuthCipherNisw(authCipherNisw).AuthPsk(authPsk).AuthPskEmpty(authPskEmpty).AuthPskIc(authPskIc).AuthPskIe(authPskIe).AuthPskIew(authPskIew).AuthPskIsw(authPskIsw).AuthPskN(authPskN).AuthPskNic(authPskNic).AuthPskNie(authPskNie).AuthPskNiew(authPskNiew).AuthPskNisw(authPskNisw).AuthType(authType).AuthTypeEmpty(authTypeEmpty).AuthTypeIc(authTypeIc).AuthTypeIe(authTypeIe).AuthTypeIew(authTypeIew).AuthTypeIsw(authTypeIsw).AuthTypeN(authTypeN).AuthTypeNic(authTypeNic).AuthTypeNie(authTypeNie).AuthTypeNiew(authTypeNiew).AuthTypeNisw(authTypeNisw).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InterfaceId(interfaceId).InterfaceIdN(interfaceIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).ScopeId(scopeId).ScopeIdEmpty(scopeIdEmpty).ScopeIdGt(scopeIdGt).ScopeIdGte(scopeIdGte).ScopeIdLt(scopeIdLt).ScopeIdLte(scopeIdLte).ScopeIdN(scopeIdN).ScopeType(scopeType).ScopeTypeN(scopeTypeN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Ssid(ssid).SsidEmpty(ssidEmpty).SsidIc(ssidIc).SsidIe(ssidIe).SsidIew(ssidIew).SsidIsw(ssidIsw).SsidN(ssidN).SsidNic(ssidNic).SsidNie(ssidNie).SsidNiew(ssidNiew).SsidNisw(ssidNisw).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).VlanId(vlanId).VlanIdN(vlanIdN).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `WirelessAPI.WirelessWirelessLansList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1247,7 +1299,16 @@ Other parameters are passed through a pointer to a apiWirelessWirelessLansListRe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authCipher** | **[]string** |  | 
+ **authCipherEmpty** | **bool** |  | 
+ **authCipherIc** | **[]string** |  | 
+ **authCipherIe** | **[]string** |  | 
+ **authCipherIew** | **[]string** |  | 
+ **authCipherIsw** | **[]string** |  | 
  **authCipherN** | **[]string** |  | 
+ **authCipherNic** | **[]string** |  | 
+ **authCipherNie** | **[]string** |  | 
+ **authCipherNiew** | **[]string** |  | 
+ **authCipherNisw** | **[]string** |  | 
  **authPsk** | **[]string** |  | 
  **authPskEmpty** | **bool** |  | 
  **authPskIc** | **[]string** |  | 
@@ -1260,7 +1321,16 @@ Name | Type | Description  | Notes
  **authPskNiew** | **[]string** |  | 
  **authPskNisw** | **[]string** |  | 
  **authType** | **[]string** |  | 
+ **authTypeEmpty** | **bool** |  | 
+ **authTypeIc** | **[]string** |  | 
+ **authTypeIe** | **[]string** |  | 
+ **authTypeIew** | **[]string** |  | 
+ **authTypeIsw** | **[]string** |  | 
  **authTypeN** | **[]string** |  | 
+ **authTypeNic** | **[]string** |  | 
+ **authTypeNie** | **[]string** |  | 
+ **authTypeNiew** | **[]string** |  | 
+ **authTypeNisw** | **[]string** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
  **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
@@ -1280,10 +1350,10 @@ Name | Type | Description  | Notes
  **descriptionNie** | **[]string** |  | 
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
- **group** | **[]int32** |  | 
- **groupN** | **[]int32** |  | 
- **groupId** | **[]int32** |  | 
- **groupIdN** | **[]int32** |  | 
+ **group** | **[]string** |  | 
+ **groupN** | **[]string** |  | 
+ **groupId** | **[]string** |  | 
+ **groupIdN** | **[]string** |  | 
  **id** | **[]int32** |  | 
  **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
@@ -1301,10 +1371,35 @@ Name | Type | Description  | Notes
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **location** | **[]string** |  | 
+ **locationN** | **[]string** |  | 
+ **locationId** | **[]string** |  | 
+ **locationIdN** | **[]string** |  | 
  **modifiedByRequest** | **string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **q** | **string** | Search | 
+ **region** | **[]string** |  | 
+ **regionN** | **[]string** |  | 
+ **regionId** | **[]string** |  | 
+ **regionIdN** | **[]string** |  | 
+ **scopeId** | **[]int32** |  | 
+ **scopeIdEmpty** | **bool** |  | 
+ **scopeIdGt** | **[]int32** |  | 
+ **scopeIdGte** | **[]int32** |  | 
+ **scopeIdLt** | **[]int32** |  | 
+ **scopeIdLte** | **[]int32** |  | 
+ **scopeIdN** | **[]int32** |  | 
+ **scopeType** | **string** |  | 
+ **scopeTypeN** | **string** |  | 
+ **site** | **[]string** | Site (slug) | 
+ **siteN** | **[]string** | Site (slug) | 
+ **siteGroup** | **[]string** |  | 
+ **siteGroupN** | **[]string** |  | 
+ **siteGroupId** | **[]string** |  | 
+ **siteGroupIdN** | **[]string** |  | 
+ **siteId** | **[]int32** | Site (ID) | 
+ **siteIdN** | **[]int32** | Site (ID) | 
  **ssid** | **[]string** |  | 
  **ssidEmpty** | **bool** |  | 
  **ssidIc** | **[]string** |  | 
@@ -1317,15 +1412,24 @@ Name | Type | Description  | Notes
  **ssidNiew** | **[]string** |  | 
  **ssidNisw** | **[]string** |  | 
  **status** | **[]string** |  | 
+ **statusEmpty** | **bool** |  | 
+ **statusIc** | **[]string** |  | 
+ **statusIe** | **[]string** |  | 
+ **statusIew** | **[]string** |  | 
+ **statusIsw** | **[]string** |  | 
  **statusN** | **[]string** |  | 
+ **statusNic** | **[]string** |  | 
+ **statusNie** | **[]string** |  | 
+ **statusNiew** | **[]string** |  | 
+ **statusNisw** | **[]string** |  | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
  **tenant** | **[]string** | Tenant (slug) | 
  **tenantN** | **[]string** | Tenant (slug) | 
- **tenantGroup** | **[]int32** | Tenant Group (slug) | 
- **tenantGroupN** | **[]int32** | Tenant Group (slug) | 
- **tenantGroupId** | **[]int32** | Tenant Group (ID) | 
- **tenantGroupIdN** | **[]int32** | Tenant Group (ID) | 
+ **tenantGroup** | **[]string** |  | 
+ **tenantGroupN** | **[]string** |  | 
+ **tenantGroupId** | **[]string** |  | 
+ **tenantGroupIdN** | **[]string** |  | 
  **tenantId** | **[]int32** | Tenant (ID) | 
  **tenantIdN** | **[]int32** | Tenant (ID) | 
  **updatedByRequest** | **string** |  | 
@@ -1585,7 +1689,7 @@ import (
 )
 
 func main() {
-	wirelessLinkRequest := []openapiclient.WirelessLinkRequest{*openapiclient.NewWirelessLinkRequest(*openapiclient.NewInterfaceRequest(*openapiclient.NewDeviceRequest(), "Name_example", openapiclient.Interface_type_value("virtual")), *openapiclient.NewInterfaceRequest(*openapiclient.NewDeviceRequest(), "Name_example", openapiclient.Interface_type_value("virtual")))} // []WirelessLinkRequest | 
+	wirelessLinkRequest := []openapiclient.WirelessLinkRequest{*openapiclient.NewWirelessLinkRequest(*openapiclient.NewBriefInterfaceRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example"), *openapiclient.NewBriefInterfaceRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example"))} // []WirelessLinkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1649,7 +1753,7 @@ import (
 )
 
 func main() {
-	wirelessLinkRequest := []openapiclient.WirelessLinkRequest{*openapiclient.NewWirelessLinkRequest(*openapiclient.NewInterfaceRequest(*openapiclient.NewDeviceRequest(), "Name_example", openapiclient.Interface_type_value("virtual")), *openapiclient.NewInterfaceRequest(*openapiclient.NewDeviceRequest(), "Name_example", openapiclient.Interface_type_value("virtual")))} // []WirelessLinkRequest | 
+	wirelessLinkRequest := []openapiclient.WirelessLinkRequest{*openapiclient.NewWirelessLinkRequest(*openapiclient.NewBriefInterfaceRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example"), *openapiclient.NewBriefInterfaceRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example"))} // []WirelessLinkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1715,7 +1819,7 @@ import (
 )
 
 func main() {
-	wirelessLinkRequest := []openapiclient.WirelessLinkRequest{*openapiclient.NewWirelessLinkRequest(*openapiclient.NewInterfaceRequest(*openapiclient.NewDeviceRequest(), "Name_example", openapiclient.Interface_type_value("virtual")), *openapiclient.NewInterfaceRequest(*openapiclient.NewDeviceRequest(), "Name_example", openapiclient.Interface_type_value("virtual")))} // []WirelessLinkRequest | 
+	wirelessLinkRequest := []openapiclient.WirelessLinkRequest{*openapiclient.NewWirelessLinkRequest(*openapiclient.NewBriefInterfaceRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example"), *openapiclient.NewBriefInterfaceRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example"))} // []WirelessLinkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1781,7 +1885,7 @@ import (
 )
 
 func main() {
-	writableWirelessLinkRequest := *openapiclient.NewWritableWirelessLinkRequest(*openapiclient.NewInterfaceRequest(*openapiclient.NewDeviceRequest(), "Name_example", openapiclient.Interface_type_value("virtual")), *openapiclient.NewInterfaceRequest(*openapiclient.NewDeviceRequest(), "Name_example", openapiclient.Interface_type_value("virtual"))) // WritableWirelessLinkRequest | 
+	writableWirelessLinkRequest := *openapiclient.NewWritableWirelessLinkRequest(*openapiclient.NewBriefInterfaceRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example"), *openapiclient.NewBriefInterfaceRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example")) // WritableWirelessLinkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1896,7 +2000,7 @@ Name | Type | Description  | Notes
 
 ## WirelessWirelessLinksList
 
-> PaginatedWirelessLinkList WirelessWirelessLinksList(ctx).AuthCipher(authCipher).AuthCipherN(authCipherN).AuthPsk(authPsk).AuthPskEmpty(authPskEmpty).AuthPskIc(authPskIc).AuthPskIe(authPskIe).AuthPskIew(authPskIew).AuthPskIsw(authPskIsw).AuthPskN(authPskN).AuthPskNic(authPskNic).AuthPskNie(authPskNie).AuthPskNiew(authPskNiew).AuthPskNisw(authPskNisw).AuthType(authType).AuthTypeN(authTypeN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InterfaceAId(interfaceAId).InterfaceAIdN(interfaceAIdN).InterfaceBId(interfaceBId).InterfaceBIdN(interfaceBIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Q(q).Ssid(ssid).SsidEmpty(ssidEmpty).SsidIc(ssidIc).SsidIe(ssidIe).SsidIew(ssidIew).SsidIsw(ssidIsw).SsidN(ssidN).SsidNic(ssidNic).SsidNie(ssidNie).SsidNiew(ssidNiew).SsidNisw(ssidNisw).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedWirelessLinkList WirelessWirelessLinksList(ctx).AuthCipher(authCipher).AuthCipherEmpty(authCipherEmpty).AuthCipherIc(authCipherIc).AuthCipherIe(authCipherIe).AuthCipherIew(authCipherIew).AuthCipherIsw(authCipherIsw).AuthCipherN(authCipherN).AuthCipherNic(authCipherNic).AuthCipherNie(authCipherNie).AuthCipherNiew(authCipherNiew).AuthCipherNisw(authCipherNisw).AuthPsk(authPsk).AuthPskEmpty(authPskEmpty).AuthPskIc(authPskIc).AuthPskIe(authPskIe).AuthPskIew(authPskIew).AuthPskIsw(authPskIsw).AuthPskN(authPskN).AuthPskNic(authPskNic).AuthPskNie(authPskNie).AuthPskNiew(authPskNiew).AuthPskNisw(authPskNisw).AuthType(authType).AuthTypeEmpty(authTypeEmpty).AuthTypeIc(authTypeIc).AuthTypeIe(authTypeIe).AuthTypeIew(authTypeIew).AuthTypeIsw(authTypeIsw).AuthTypeN(authTypeN).AuthTypeNic(authTypeNic).AuthTypeNie(authTypeNie).AuthTypeNiew(authTypeNiew).AuthTypeNisw(authTypeNisw).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Distance(distance).DistanceEmpty(distanceEmpty).DistanceGt(distanceGt).DistanceGte(distanceGte).DistanceLt(distanceLt).DistanceLte(distanceLte).DistanceN(distanceN).DistanceUnit(distanceUnit).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InterfaceAId(interfaceAId).InterfaceAIdN(interfaceAIdN).InterfaceBId(interfaceBId).InterfaceBIdN(interfaceBIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Q(q).Ssid(ssid).SsidEmpty(ssidEmpty).SsidIc(ssidIc).SsidIe(ssidIe).SsidIew(ssidIew).SsidIsw(ssidIsw).SsidN(ssidN).SsidNic(ssidNic).SsidNie(ssidNie).SsidNiew(ssidNiew).SsidNisw(ssidNisw).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -1916,8 +2020,17 @@ import (
 )
 
 func main() {
-	authCipher := []string{"Inner_example"} // []string |  (optional)
-	authCipherN := []string{"Inner_example"} // []string |  (optional)
+	authCipher := []*string{"Inner_example"} // []*string |  (optional)
+	authCipherEmpty := true // bool |  (optional)
+	authCipherIc := []*string{"Inner_example"} // []*string |  (optional)
+	authCipherIe := []*string{"Inner_example"} // []*string |  (optional)
+	authCipherIew := []*string{"Inner_example"} // []*string |  (optional)
+	authCipherIsw := []*string{"Inner_example"} // []*string |  (optional)
+	authCipherN := []*string{"Inner_example"} // []*string |  (optional)
+	authCipherNic := []*string{"Inner_example"} // []*string |  (optional)
+	authCipherNie := []*string{"Inner_example"} // []*string |  (optional)
+	authCipherNiew := []*string{"Inner_example"} // []*string |  (optional)
+	authCipherNisw := []*string{"Inner_example"} // []*string |  (optional)
 	authPsk := []string{"Inner_example"} // []string |  (optional)
 	authPskEmpty := true // bool |  (optional)
 	authPskIc := []string{"Inner_example"} // []string |  (optional)
@@ -1929,8 +2042,17 @@ func main() {
 	authPskNie := []string{"Inner_example"} // []string |  (optional)
 	authPskNiew := []string{"Inner_example"} // []string |  (optional)
 	authPskNisw := []string{"Inner_example"} // []string |  (optional)
-	authType := []string{"Inner_example"} // []string |  (optional)
-	authTypeN := []string{"Inner_example"} // []string |  (optional)
+	authType := []*string{"Inner_example"} // []*string |  (optional)
+	authTypeEmpty := true // bool |  (optional)
+	authTypeIc := []*string{"Inner_example"} // []*string |  (optional)
+	authTypeIe := []*string{"Inner_example"} // []*string |  (optional)
+	authTypeIew := []*string{"Inner_example"} // []*string |  (optional)
+	authTypeIsw := []*string{"Inner_example"} // []*string |  (optional)
+	authTypeN := []*string{"Inner_example"} // []*string |  (optional)
+	authTypeNic := []*string{"Inner_example"} // []*string |  (optional)
+	authTypeNie := []*string{"Inner_example"} // []*string |  (optional)
+	authTypeNiew := []*string{"Inner_example"} // []*string |  (optional)
+	authTypeNisw := []*string{"Inner_example"} // []*string |  (optional)
 	created := []time.Time{time.Now()} // []time.Time |  (optional)
 	createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
 	createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -1950,6 +2072,14 @@ func main() {
 	descriptionNie := []string{"Inner_example"} // []string |  (optional)
 	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
 	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
+	distance := []float64{float64(123)} // []float64 |  (optional)
+	distanceEmpty := true // bool |  (optional)
+	distanceGt := []float64{float64(123)} // []float64 |  (optional)
+	distanceGte := []float64{float64(123)} // []float64 |  (optional)
+	distanceLt := []float64{float64(123)} // []float64 |  (optional)
+	distanceLte := []float64{float64(123)} // []float64 |  (optional)
+	distanceN := []float64{float64(123)} // []float64 |  (optional)
+	distanceUnit := openapiclient.circuits_circuits_list_distance_unit_parameter("ft") // CircuitsCircuitsListDistanceUnitParameter | * `km` - Kilometers * `m` - Meters * `mi` - Miles * `ft` - Feet (optional)
 	id := []int32{int32(123)} // []int32 |  (optional)
 	idEmpty := true // bool |  (optional)
 	idGt := []int32{int32(123)} // []int32 |  (optional)
@@ -1985,22 +2115,31 @@ func main() {
 	ssidNiew := []string{"Inner_example"} // []string |  (optional)
 	ssidNisw := []string{"Inner_example"} // []string |  (optional)
 	status := []string{"Inner_example"} // []string |  (optional)
+	statusEmpty := true // bool |  (optional)
+	statusIc := []string{"Inner_example"} // []string |  (optional)
+	statusIe := []string{"Inner_example"} // []string |  (optional)
+	statusIew := []string{"Inner_example"} // []string |  (optional)
+	statusIsw := []string{"Inner_example"} // []string |  (optional)
 	statusN := []string{"Inner_example"} // []string |  (optional)
+	statusNic := []string{"Inner_example"} // []string |  (optional)
+	statusNie := []string{"Inner_example"} // []string |  (optional)
+	statusNiew := []string{"Inner_example"} // []string |  (optional)
+	statusNisw := []string{"Inner_example"} // []string |  (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
 	tenant := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantN := []string{"Inner_example"} // []string | Tenant (slug) (optional)
-	tenantGroup := []int32{int32(123)} // []int32 | Tenant Group (slug) (optional)
-	tenantGroupN := []int32{int32(123)} // []int32 | Tenant Group (slug) (optional)
-	tenantGroupId := []int32{int32(123)} // []int32 | Tenant Group (ID) (optional)
-	tenantGroupIdN := []int32{int32(123)} // []int32 | Tenant Group (ID) (optional)
+	tenantGroup := []string{"Inner_example"} // []string |  (optional)
+	tenantGroupN := []string{"Inner_example"} // []string |  (optional)
+	tenantGroupId := []string{"Inner_example"} // []string |  (optional)
+	tenantGroupIdN := []string{"Inner_example"} // []string |  (optional)
 	tenantId := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
 	tenantIdN := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.WirelessAPI.WirelessWirelessLinksList(context.Background()).AuthCipher(authCipher).AuthCipherN(authCipherN).AuthPsk(authPsk).AuthPskEmpty(authPskEmpty).AuthPskIc(authPskIc).AuthPskIe(authPskIe).AuthPskIew(authPskIew).AuthPskIsw(authPskIsw).AuthPskN(authPskN).AuthPskNic(authPskNic).AuthPskNie(authPskNie).AuthPskNiew(authPskNiew).AuthPskNisw(authPskNisw).AuthType(authType).AuthTypeN(authTypeN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InterfaceAId(interfaceAId).InterfaceAIdN(interfaceAIdN).InterfaceBId(interfaceBId).InterfaceBIdN(interfaceBIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Q(q).Ssid(ssid).SsidEmpty(ssidEmpty).SsidIc(ssidIc).SsidIe(ssidIe).SsidIew(ssidIew).SsidIsw(ssidIsw).SsidN(ssidN).SsidNic(ssidNic).SsidNie(ssidNie).SsidNiew(ssidNiew).SsidNisw(ssidNisw).Status(status).StatusN(statusN).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.WirelessAPI.WirelessWirelessLinksList(context.Background()).AuthCipher(authCipher).AuthCipherEmpty(authCipherEmpty).AuthCipherIc(authCipherIc).AuthCipherIe(authCipherIe).AuthCipherIew(authCipherIew).AuthCipherIsw(authCipherIsw).AuthCipherN(authCipherN).AuthCipherNic(authCipherNic).AuthCipherNie(authCipherNie).AuthCipherNiew(authCipherNiew).AuthCipherNisw(authCipherNisw).AuthPsk(authPsk).AuthPskEmpty(authPskEmpty).AuthPskIc(authPskIc).AuthPskIe(authPskIe).AuthPskIew(authPskIew).AuthPskIsw(authPskIsw).AuthPskN(authPskN).AuthPskNic(authPskNic).AuthPskNie(authPskNie).AuthPskNiew(authPskNiew).AuthPskNisw(authPskNisw).AuthType(authType).AuthTypeEmpty(authTypeEmpty).AuthTypeIc(authTypeIc).AuthTypeIe(authTypeIe).AuthTypeIew(authTypeIew).AuthTypeIsw(authTypeIsw).AuthTypeN(authTypeN).AuthTypeNic(authTypeNic).AuthTypeNie(authTypeNie).AuthTypeNiew(authTypeNiew).AuthTypeNisw(authTypeNisw).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Distance(distance).DistanceEmpty(distanceEmpty).DistanceGt(distanceGt).DistanceGte(distanceGte).DistanceLt(distanceLt).DistanceLte(distanceLte).DistanceN(distanceN).DistanceUnit(distanceUnit).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InterfaceAId(interfaceAId).InterfaceAIdN(interfaceAIdN).InterfaceBId(interfaceBId).InterfaceBIdN(interfaceBIdN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Q(q).Ssid(ssid).SsidEmpty(ssidEmpty).SsidIc(ssidIc).SsidIe(ssidIe).SsidIew(ssidIew).SsidIsw(ssidIsw).SsidN(ssidN).SsidNic(ssidNic).SsidNie(ssidNie).SsidNiew(ssidNiew).SsidNisw(ssidNisw).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `WirelessAPI.WirelessWirelessLinksList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2022,7 +2161,16 @@ Other parameters are passed through a pointer to a apiWirelessWirelessLinksListR
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authCipher** | **[]string** |  | 
+ **authCipherEmpty** | **bool** |  | 
+ **authCipherIc** | **[]string** |  | 
+ **authCipherIe** | **[]string** |  | 
+ **authCipherIew** | **[]string** |  | 
+ **authCipherIsw** | **[]string** |  | 
  **authCipherN** | **[]string** |  | 
+ **authCipherNic** | **[]string** |  | 
+ **authCipherNie** | **[]string** |  | 
+ **authCipherNiew** | **[]string** |  | 
+ **authCipherNisw** | **[]string** |  | 
  **authPsk** | **[]string** |  | 
  **authPskEmpty** | **bool** |  | 
  **authPskIc** | **[]string** |  | 
@@ -2035,7 +2183,16 @@ Name | Type | Description  | Notes
  **authPskNiew** | **[]string** |  | 
  **authPskNisw** | **[]string** |  | 
  **authType** | **[]string** |  | 
+ **authTypeEmpty** | **bool** |  | 
+ **authTypeIc** | **[]string** |  | 
+ **authTypeIe** | **[]string** |  | 
+ **authTypeIew** | **[]string** |  | 
+ **authTypeIsw** | **[]string** |  | 
  **authTypeN** | **[]string** |  | 
+ **authTypeNic** | **[]string** |  | 
+ **authTypeNie** | **[]string** |  | 
+ **authTypeNiew** | **[]string** |  | 
+ **authTypeNisw** | **[]string** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
  **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
@@ -2055,6 +2212,14 @@ Name | Type | Description  | Notes
  **descriptionNie** | **[]string** |  | 
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
+ **distance** | **[]float64** |  | 
+ **distanceEmpty** | **bool** |  | 
+ **distanceGt** | **[]float64** |  | 
+ **distanceGte** | **[]float64** |  | 
+ **distanceLt** | **[]float64** |  | 
+ **distanceLte** | **[]float64** |  | 
+ **distanceN** | **[]float64** |  | 
+ **distanceUnit** | [**CircuitsCircuitsListDistanceUnitParameter**](CircuitsCircuitsListDistanceUnitParameter.md) | * &#x60;km&#x60; - Kilometers * &#x60;m&#x60; - Meters * &#x60;mi&#x60; - Miles * &#x60;ft&#x60; - Feet | 
  **id** | **[]int32** |  | 
  **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
@@ -2090,15 +2255,24 @@ Name | Type | Description  | Notes
  **ssidNiew** | **[]string** |  | 
  **ssidNisw** | **[]string** |  | 
  **status** | **[]string** |  | 
+ **statusEmpty** | **bool** |  | 
+ **statusIc** | **[]string** |  | 
+ **statusIe** | **[]string** |  | 
+ **statusIew** | **[]string** |  | 
+ **statusIsw** | **[]string** |  | 
  **statusN** | **[]string** |  | 
+ **statusNic** | **[]string** |  | 
+ **statusNie** | **[]string** |  | 
+ **statusNiew** | **[]string** |  | 
+ **statusNisw** | **[]string** |  | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
  **tenant** | **[]string** | Tenant (slug) | 
  **tenantN** | **[]string** | Tenant (slug) | 
- **tenantGroup** | **[]int32** | Tenant Group (slug) | 
- **tenantGroupN** | **[]int32** | Tenant Group (slug) | 
- **tenantGroupId** | **[]int32** | Tenant Group (ID) | 
- **tenantGroupIdN** | **[]int32** | Tenant Group (ID) | 
+ **tenantGroup** | **[]string** |  | 
+ **tenantGroupN** | **[]string** |  | 
+ **tenantGroupId** | **[]string** |  | 
+ **tenantGroupIdN** | **[]string** |  | 
  **tenantId** | **[]int32** | Tenant (ID) | 
  **tenantIdN** | **[]int32** | Tenant (ID) | 
  **updatedByRequest** | **string** |  | 
@@ -2285,7 +2459,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this wireless link.
-	writableWirelessLinkRequest := *openapiclient.NewWritableWirelessLinkRequest(*openapiclient.NewInterfaceRequest(*openapiclient.NewDeviceRequest(), "Name_example", openapiclient.Interface_type_value("virtual")), *openapiclient.NewInterfaceRequest(*openapiclient.NewDeviceRequest(), "Name_example", openapiclient.Interface_type_value("virtual"))) // WritableWirelessLinkRequest | 
+	writableWirelessLinkRequest := *openapiclient.NewWritableWirelessLinkRequest(*openapiclient.NewBriefInterfaceRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example"), *openapiclient.NewBriefInterfaceRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example")) // WritableWirelessLinkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

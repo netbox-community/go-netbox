@@ -6,24 +6,25 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
+**DisplayUrl** | Pointer to **string** |  | [optional] [readonly] 
 **Display** | **string** |  | [readonly] 
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
 **Version** | [**IKEPolicyVersion**](IKEPolicyVersion.md) |  | 
-**Mode** | [**IKEPolicyMode**](IKEPolicyMode.md) |  | 
+**Mode** | Pointer to [**IKEPolicyMode**](IKEPolicyMode.md) |  | [optional] 
 **Proposals** | Pointer to [**[]IKEProposal**](IKEProposal.md) |  | [optional] 
 **PresharedKey** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
-**LastUpdated** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
+**LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewIKEPolicy
 
-`func NewIKEPolicy(id int32, url string, display string, name string, version IKEPolicyVersion, mode IKEPolicyMode, created NullableTime, lastUpdated NullableTime, ) *IKEPolicy`
+`func NewIKEPolicy(id int32, url string, display string, name string, version IKEPolicyVersion, ) *IKEPolicy`
 
 NewIKEPolicy instantiates a new IKEPolicy object
 This constructor will assign default values to properties that have it defined,
@@ -77,6 +78,31 @@ and a boolean to check if the value has been set.
 
 SetUrl sets Url field to given value.
 
+
+### GetDisplayUrl
+
+`func (o *IKEPolicy) GetDisplayUrl() string`
+
+GetDisplayUrl returns the DisplayUrl field if non-nil, zero value otherwise.
+
+### GetDisplayUrlOk
+
+`func (o *IKEPolicy) GetDisplayUrlOk() (*string, bool)`
+
+GetDisplayUrlOk returns a tuple with the DisplayUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayUrl
+
+`func (o *IKEPolicy) SetDisplayUrl(v string)`
+
+SetDisplayUrl sets DisplayUrl field to given value.
+
+### HasDisplayUrl
+
+`func (o *IKEPolicy) HasDisplayUrl() bool`
+
+HasDisplayUrl returns a boolean if a field has been set.
 
 ### GetDisplay
 
@@ -182,6 +208,11 @@ and a boolean to check if the value has been set.
 
 SetMode sets Mode field to given value.
 
+### HasMode
+
+`func (o *IKEPolicy) HasMode() bool`
+
+HasMode returns a boolean if a field has been set.
 
 ### GetProposals
 
@@ -327,6 +358,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *IKEPolicy) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
@@ -357,6 +393,11 @@ and a boolean to check if the value has been set.
 
 SetLastUpdated sets LastUpdated field to given value.
 
+### HasLastUpdated
+
+`func (o *IKEPolicy) HasLastUpdated() bool`
+
+HasLastUpdated returns a boolean if a field has been set.
 
 ### SetLastUpdatedNil
 
