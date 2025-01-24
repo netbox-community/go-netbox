@@ -14,7 +14,7 @@ Use `go get` to add the library as a dependency to your project. Do not forget t
 go get github.com/netbox-community/go-netbox/v4
 
 # Or install a specific version
-go get github.com/netbox-community/go-netbox/v4@v4.0.3-0
+go get github.com/netbox-community/go-netbox/v4@v4.2.2-0
 ```
 
 **Note:** dependencies should be managed with [Go modules](https://go.dev/doc/modules/managing-dependencies).
