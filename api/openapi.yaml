@@ -134000,7 +134000,6 @@ components:
       - display
       - family
       - id
-      - nat_outside
       - url
     IPAddressRequest:
       type: object
