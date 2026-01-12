@@ -19,7 +19,7 @@ func HGetClient(t *testing.T) *APIClient {
 
 	cfg := NewConfiguration()
 	cfg.Servers[0].URL = srv
-	cfg.AddDefaultHeader("Authorization", "Token "+token)
+	cfg.AddDefaultHeader("Authorization", GetFormattedAPIToken(token))
 
 	client := NewAPIClient(cfg)
 	return client

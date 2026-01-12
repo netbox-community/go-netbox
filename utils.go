@@ -15,8 +15,13 @@ import (
 	"encoding/json"
 	"fmt"
 	"reflect"
+	"strings"
 	"time"
 )
+
+const v1HeaderFormat = "Token %s"
+const v2HeaderFormat = "Bearer %s"
+const v2Prefix = "nbt_"
 
 // PtrBool is a helper routine that returns a pointer to given boolean value.
 func PtrBool(v bool) *bool { return &v }
@@ -342,6 +347,16 @@ func IsNil(i interface{}) bool {
 		return reflect.ValueOf(i).IsZero()
 	}
 	return false
+}
+
+func GetFormattedAPIToken(token string) string {
+	var authHeaderFormat string
+	if strings.HasPrefix(token, v2Prefix) {
+		authHeaderFormat = v2HeaderFormat
+	} else {
+		authHeaderFormat = v1HeaderFormat
+	}
+	return fmt.Sprintf(authHeaderFormat, token)
 }
 
 type MappedNullable interface {
