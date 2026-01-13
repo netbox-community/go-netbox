@@ -5,7 +5,7 @@ set -euo pipefail
 NETBOX_VERSION="$1"
 NETBOX_DOCKER_VERSION="$2"
 
-REPO_DIR='/tmp/netbox-docker'
+REPO_DIR='/Users/anshulkamath/tmp'
 
 rm -rf "${REPO_DIR}"
 
