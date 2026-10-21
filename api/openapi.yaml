@@ -134000,7 +134000,6 @@ components:
       - display
       - family
       - id
-      - nat_outside
       - url
     IPAddressRequest:
       type: object
@@ -135003,41 +135002,63 @@ components:
               - virtual
               - bridge
               - lag
+              - channel
               - 100base-fx
               - 100base-lfx
               - 100base-tx
               - 100base-t1
-              - 1000base-t
+              - 1000base-bx10-d
+              - 1000base-bx10-u
+              - 1000base-cwdm
+              - 1000base-cx
+              - 1000base-dwdm
+              - 1000base-ex
+              - 1000base-sx
+              - 1000base-lsx
               - 1000base-lx
+              - 1000base-lx10
+              - 1000base-t
               - 1000base-tx
+              - 1000base-zx
               - 2.5gbase-t
               - 5gbase-t
-              - 10gbase-t
+              - 10gbase-br-d
+              - 10gbase-br-u
+              - 10gbase-cu
               - 10gbase-cx4
+              - 10gbase-er
+              - 10gbase-lr
+              - 10gbase-lrm
+              - 10gbase-lx4
+              - 10gbase-sr
+              - 10gbase-t
+              - 10gbase-zr
               - 100base-x-sfp
               - 1000base-x-gbic
               - 1000base-x-sfp
+              - 2.5gbase-x-sfp
               - 10gbase-x-sfpp
               - 10gbase-x-xfp
               - 10gbase-x-xenpak
               - 10gbase-x-x2
               - 25gbase-x-sfp28
-              - 50gbase-x-sfp56
               - 40gbase-x-qsfpp
+              - 50gbase-x-sfp56
               - 50gbase-x-sfp28
               - 100gbase-x-cfp
               - 100gbase-x-cfp2
-              - 200gbase-x-cfp2
-              - 400gbase-x-cfp2
               - 100gbase-x-cfp4
               - 100gbase-x-cxp
               - 100gbase-x-cpak
               - 100gbase-x-dsfp
+              - 100gbase-x-sfp112
               - 100gbase-x-sfpdd
               - 100gbase-x-qsfp28
               - 100gbase-x-qsfpdd
+              - 200gbase-x-cfp2
               - 200gbase-x-qsfp56
               - 200gbase-x-qsfpdd
+              - 400gbase-x-cfp2
               - 400gbase-x-qsfp112
               - 400gbase-x-qsfpdd
               - 400gbase-x-osfp
@@ -135046,6 +135067,9 @@ components:
               - 400gbase-x-cfp8
               - 800gbase-x-qsfpdd
               - 800gbase-x-osfp
+              - 1.6tbase-x-osfp1600
+              - 1.6tbase-x-osfp1600-rhs
+              - 1.6tbase-x-qsfpdd1600
               - 1000base-kx
               - 2.5gbase-kx
               - 5gbase-kr
@@ -135057,6 +135081,68 @@ components:
               - 100gbase-kp4
               - 100gbase-kr2
               - 100gbase-kr4
+              - 1.6tbase-kr8
+              - 25gbase-cr
+              - 25gbase-er
+              - 25gbase-lr
+              - 25gbase-sr
+              - 25gbase-t
+              - 40gbase-cr4
+              - 40gbase-er4
+              - 40gbase-fr4
+              - 40gbase-lr4
+              - 40gbase-sr4
+              - 40gbase-sr4-bd
+              - 50gbase-cr
+              - 50gbase-er
+              - 50gbase-fr
+              - 50gbase-lr
+              - 50gbase-sr
+              - 100gbase-cr1
+              - 100gbase-cr2
+              - 100gbase-cr4
+              - 100gbase-cr10
+              - 100gbase-cwdm4
+              - 100gbase-dr
+              - 100gbase-fr1
+              - 100gbase-er4
+              - 100gbase-lr1
+              - 100gbase-lr4
+              - 100gbase-sr1
+              - 100gbase-sr1.2
+              - 100gbase-sr2
+              - 100gbase-sr4
+              - 100gbase-sr10
+              - 100gbase-zr
+              - 200gbase-cr2
+              - 200gbase-cr4
+              - 200gbase-sr2
+              - 200gbase-sr4
+              - 200gbase-dr4
+              - 200gbase-fr4
+              - 200gbase-lr4
+              - 200gbase-er4
+              - 200gbase-vr2
+              - 400gbase-cr4
+              - 400gbase-dr4
+              - 400gbase-er8
+              - 400gbase-fr4
+              - 400gbase-fr8
+              - 400gbase-lr4
+              - 400gbase-lr8
+              - 400gbase-sr4
+              - 400gbase-sr4_2
+              - 400gbase-sr8
+              - 400gbase-sr16
+              - 400gbase-vr4
+              - 400gbase-zr
+              - 800gbase-cr8
+              - 800gbase-dr8
+              - 800gbase-sr8
+              - 800gbase-vr8
+              - 1.6tbase-cr8
+              - 1.6tbase-dr8
+              - 1.6tbase-dr8-2
               - ieee802.11a
               - ieee802.11g
               - ieee802.11n
@@ -135100,6 +135186,18 @@ components:
               - infiniband-hdr
               - infiniband-ndr
               - infiniband-xdr
+              - infiniband-hdr-2x
+              - infiniband-ndr-2x
+              - infiniband-xdr-2x
+              - infiniband-sdr-4x
+              - infiniband-ddr-4x
+              - infiniband-qdr-4x
+              - infiniband-fdr10-4x
+              - infiniband-fdr-4x
+              - infiniband-edr-4x
+              - infiniband-hdr-4x
+              - infiniband-ndr-4x
+              - infiniband-xdr-4x
               - t1
               - e1
               - t3
@@ -135130,6 +135228,7 @@ components:
               - extreme-summitstack-128
               - extreme-summitstack-256
               - extreme-summitstack-512
+              - hpe-synergy-interconnect-link
               - other
               type: string
               description: '* `virtual` - Virtual
@@ -135138,33 +135237,75 @@ components:
 
                 * `lag` - Link Aggregation Group (LAG)
 
-                * `100base-fx` - 100BASE-FX (10/100ME FIBER)
+                * `channel` - Channel
 
-                * `100base-lfx` - 100BASE-LFX (10/100ME FIBER)
+                * `100base-fx` - 100BASE-FX (10/100ME)
+
+                * `100base-lfx` - 100BASE-LFX (10/100ME)
 
                 * `100base-tx` - 100BASE-TX (10/100ME)
 
-                * `100base-t1` - 100BASE-T1 (10/100ME Single Pair)
+                * `100base-t1` - 100BASE-T1 (10/100ME)
 
-                * `1000base-t` - 1000BASE-T (1GE)
+                * `1000base-bx10-d` - 1000BASE-BX10-D (1GE BiDi Down)
+
+                * `1000base-bx10-u` - 1000BASE-BX10-U (1GE BiDi Up)
+
+                * `1000base-cwdm` - 1000BASE-CWDM (1GE)
+
+                * `1000base-cx` - 1000BASE-CX (1GE DAC)
+
+                * `1000base-dwdm` - 1000BASE-DWDM (1GE)
+
+                * `1000base-ex` - 1000BASE-EX (1GE)
+
+                * `1000base-sx` - 1000BASE-SX (1GE)
+
+                * `1000base-lsx` - 1000BASE-LSX (1GE)
 
                 * `1000base-lx` - 1000BASE-LX (1GE)
 
+                * `1000base-lx10` - 1000BASE-LX10/LH (1GE)
+
+                * `1000base-t` - 1000BASE-T (1GE)
+
                 * `1000base-tx` - 1000BASE-TX (1GE)
+
+                * `1000base-zx` - 1000BASE-ZX (1GE)
 
                 * `2.5gbase-t` - 2.5GBASE-T (2.5GE)
 
                 * `5gbase-t` - 5GBASE-T (5GE)
 
-                * `10gbase-t` - 10GBASE-T (10GE)
+                * `10gbase-br-d` - 10GBASE-BR-D (10GE BiDi Down)
 
-                * `10gbase-cx4` - 10GBASE-CX4 (10GE)
+                * `10gbase-br-u` - 10GBASE-BR-U (10GE BiDi Up)
+
+                * `10gbase-cu` - 10GBASE-CU (10GE DAC Passive Twinax)
+
+                * `10gbase-cx4` - 10GBASE-CX4 (10GE DAC)
+
+                * `10gbase-er` - 10GBASE-ER (10GE)
+
+                * `10gbase-lr` - 10GBASE-LR (10GE)
+
+                * `10gbase-lrm` - 10GBASE-LRM (10GE)
+
+                * `10gbase-lx4` - 10GBASE-LX4 (10GE)
+
+                * `10gbase-sr` - 10GBASE-SR (10GE)
+
+                * `10gbase-t` - 10GBASE-T (10GE)                
+
+                * `10gbase-zr` - 10GBASE-ZR (10GE)
 
                 * `100base-x-sfp` - SFP (100ME)
 
                 * `1000base-x-gbic` - GBIC (1GE)
 
                 * `1000base-x-sfp` - SFP (1GE)
+
+                * `2.5gbase-x-sfp` - SFP (2.5GE)
 
                 * `10gbase-x-sfpp` - SFP+ (10GE)
 
@@ -135176,19 +135317,15 @@ components:
 
                 * `25gbase-x-sfp28` - SFP28 (25GE)
 
-                * `50gbase-x-sfp56` - SFP56 (50GE)
-
                 * `40gbase-x-qsfpp` - QSFP+ (40GE)
+
+                * `50gbase-x-sfp56` - SFP56 (50GE)
 
                 * `50gbase-x-sfp28` - QSFP28 (50GE)
 
                 * `100gbase-x-cfp` - CFP (100GE)
 
                 * `100gbase-x-cfp2` - CFP2 (100GE)
-
-                * `200gbase-x-cfp2` - CFP2 (200GE)
-
-                * `400gbase-x-cfp2` - CFP2 (400GE)
 
                 * `100gbase-x-cfp4` - CFP4 (100GE)
 
@@ -135198,15 +135335,21 @@ components:
 
                 * `100gbase-x-dsfp` - DSFP (100GE)
 
+                * `100gbase-x-sfp112` - SFP112 (100GE)
+
                 * `100gbase-x-sfpdd` - SFP-DD (100GE)
 
                 * `100gbase-x-qsfp28` - QSFP28 (100GE)
 
                 * `100gbase-x-qsfpdd` - QSFP-DD (100GE)
 
+                * `200gbase-x-cfp2` - CFP2 (200GE)
+
                 * `200gbase-x-qsfp56` - QSFP56 (200GE)
 
                 * `200gbase-x-qsfpdd` - QSFP-DD (200GE)
+
+                * `400gbase-x-cfp2` - CFP2 (400GE)
 
                 * `400gbase-x-qsfp112` - QSFP112 (400GE)
 
@@ -135223,6 +135366,12 @@ components:
                 * `800gbase-x-qsfpdd` - QSFP-DD (800GE)
 
                 * `800gbase-x-osfp` - OSFP (800GE)
+
+                * `1.6tbase-x-osfp1600` - OSFP1600 (1.6TE)
+
+                * `1.6tbase-x-osfp1600-rhs` - OSFP1600-RHS (1.6TE)
+
+                * `1.6tbase-x-qsfpdd1600` - QSFP-DD1600 (1.6TE)
 
                 * `1000base-kx` - 1000BASE-KX (1GE)
 
@@ -135246,21 +135395,145 @@ components:
 
                 * `100gbase-kr4` - 100GBASE-KR4 (100GE)
 
+                * `1.6tbase-kr8` - 1.6TBASE-KR8 (1.6TE)
+
+                * `25gbase-cr` - 25GBASE-CR (25GE DAC)
+
+                * `25gbase-er` - 25GBASE-ER (25GE)
+
+                * `25gbase-lr` - 25GBASE-LR (25GE)
+
+                * `25gbase-sr` - 25GBASE-SR (25GE)
+
+                * `25gbase-t` - 25GBASE-T (25GE)
+
+                * `40gbase-cr4` - 40GBASE-CR4 (40GE DAC)
+
+                * `40gbase-er4` - 40GBASE-ER4 (40GE)
+
+                * `40gbase-fr4` - 40GBASE-FR4 (40GE)
+
+                * `40gbase-lr4` - 40GBASE-LR4 (40GE)
+
+                * `40gbase-sr4` - 40GBASE-SR4 (40GE)
+
+                * `40gbase-sr4-bd` - 40GBASE-SR4 (40GE BiDi)
+
+                * `50gbase-cr` - 50GBASE-CR (50GE DAC)
+
+                * `50gbase-er` - 50GBASE-ER (50GE)
+
+                * `50gbase-fr` - 50GBASE-FR (50GE)
+
+                * `50gbase-lr` - 50GBASE-LR (50GE)
+
+                * `50gbase-sr` - 50GBASE-SR (50GE)
+
+                * `100gbase-cr1` - 100GBASE-CR1 (100GE DAC)
+
+                * `100gbase-cr2` - 100GBASE-CR2 (100GE DAC)
+
+                * `100gbase-cr4` - 100GBASE-CR4 (100GE DAC)
+
+                * `100gbase-cr10` - 100GBASE-CR10 (100GE DAC)
+
+                * `100gbase-cwdm4` - 100GBASE-CWDM4 (100GE)
+
+                * `100gbase-dr` - 100GBASE-DR (100GE)
+
+                * `100gbase-fr1` - 100GBASE-FR1 (100GE)
+
+                * `100gbase-er4` - 100GBASE-ER4 (100GE)
+
+                * `100gbase-lr1` - 100GBASE-LR1 (100GE)
+
+                * `100gbase-lr4` - 100GBASE-LR4 (100GE)
+
+                * `100gbase-sr1` - 100GBASE-SR1 (100GE)
+
+                * `100gbase-sr1.2` - 100GBASE-SR1.2 (100GE BiDi)
+
+                * `100gbase-sr2` - 100GBASE-SR2 (100GE)
+
+                * `100gbase-sr4` - 100GBASE-SR4 (100GE)
+
+                * `100gbase-sr10` - 100GBASE-SR10 (100GE)
+
+                * `100gbase-zr` - 100GBASE-ZR (100GE)
+
+                * `200gbase-cr2` - 200GBASE-CR2 (200GE)
+
+                * `200gbase-cr4` - 200GBASE-CR4 (200GE)
+
+                * `200gbase-sr2` - 200GBASE-SR2 (200GE)
+
+                * `200gbase-sr4` - 200GBASE-SR4 (200GE)
+
+                * `200gbase-dr4` - 200GBASE-DR4 (200GE)
+
+                * `200gbase-fr4` - 200GBASE-FR4 (200GE)
+
+                * `200gbase-lr4` - 200GBASE-LR4 (200GE)
+
+                * `200gbase-er4` - 200GBASE-ER4 (200GE)
+
+                * `200gbase-vr2` - 200GBASE-VR2 (200GE)
+
+                * `400gbase-cr4` - 400GBASE-CR4 (400GE)
+
+                * `400gbase-dr4` - 400GBASE-DR4 (400GE)
+
+                * `400gbase-er8` - 400GBASE-ER8 (400GE)
+
+                * `400gbase-fr4` - 400GBASE-FR4 (400GE)
+
+                * `400gbase-fr8` - 400GBASE-FR8 (400GE)
+
+                * `400gbase-lr4` - 400GBASE-LR4 (400GE)
+
+                * `400gbase-lr8` - 400GBASE-LR8 (400GE)
+
+                * `400gbase-sr4` - 400GBASE-SR4 (400GE)
+
+                * `400gbase-sr4_2` - 400GBASE-SR4.2 (400GE BiDi)
+
+                * `400gbase-sr8` - 400GBASE-SR8 (400GE)
+
+                * `400gbase-sr16` - 400GBASE-SR16 (400GE)
+
+                * `400gbase-vr4` - 400GBASE-VR4 (400GE)
+
+                * `400gbase-zr` - 400GBASE-ZR (400GE)
+
+                * `800gbase-cr8` - 800GBASE-CR8 (800GE)
+
+                * `800gbase-dr8` - 800GBASE-DR8 (800GE)
+
+                * `800gbase-sr8` - 800GBASE-SR8 (800GE)
+
+                * `800gbase-vr8` - 800GBASE-VR8 (800GE)
+
+                * `1.6tbase-cr8` - 1.6TBASE-CR8 (1.6TE)
+
+                * `1.6tbase-dr8` - 1.6TBASE-DR8 (1.6TE)
+
+                * `1.6tbase-dr8-2` - 1.6TBASE-DR8-2 (1.6TE)
+
                 * `ieee802.11a` - IEEE 802.11a
 
                 * `ieee802.11g` - IEEE 802.11b/g
 
-                * `ieee802.11n` - IEEE 802.11n
+                * `ieee802.11n` - IEEE 802.11n (Wi-Fi 4)
 
-                * `ieee802.11ac` - IEEE 802.11ac
+                * `ieee802.11ac` - IEEE 802.11ac (Wi-Fi 5)
 
-                * `ieee802.11ad` - IEEE 802.11ad
+                * `ieee802.11ad` - IEEE 802.11ad (WiGig)
 
-                * `ieee802.11ax` - IEEE 802.11ax
+                * `ieee802.11ax` - IEEE 802.11ax (Wi-Fi 6)
 
-                * `ieee802.11ay` - IEEE 802.11ay
+                * `ieee802.11ay` - IEEE 802.11ay (WiGig)
 
-                * `ieee802.11be` - IEEE 802.11be
+                * `ieee802.11be` - IEEE 802.11be (Wi-Fi 7)
 
                 * `ieee802.15.1` - IEEE 802.15.1 (Bluetooth)
 
@@ -135330,7 +135603,31 @@ components:
 
                 * `infiniband-ndr` - NDR (100 Gbps)
 
-                * `infiniband-xdr` - XDR (250 Gbps)
+                * `infiniband-xdr` - XDR (200 Gbps)
+
+                * `infiniband-hdr-2x` - HDR 2X (100 Gbps)
+
+                * `infiniband-ndr-2x` - NDR 2X (200 Gbps)
+
+                * `infiniband-xdr-2x` - XDR 2X (400 Gbps)
+
+                * `infiniband-sdr-4x` - SDR 4X (8 Gbps)
+
+                * `infiniband-ddr-4x` - DDR 4X (16 Gbps)
+
+                * `infiniband-qdr-4x` - QDR 4X (32 Gbps)
+
+                * `infiniband-fdr10-4x` - FDR10 4X (40 Gbps)
+
+                * `infiniband-fdr-4x` - FDR 4X (56 Gbps)
+
+                * `infiniband-edr-4x` - EDR 4X (100 Gbps)
+
+                * `infiniband-hdr-4x` - HDR 4X (200 Gbps)
+
+                * `infiniband-ndr-4x` - NDR 4X (400 Gbps)
+
+                * `infiniband-xdr-4x` - XDR 4X (800 Gbps)
 
                 * `t1` - T1 (1.544 Mbps)
 
@@ -135392,6 +135689,8 @@ components:
 
                 * `extreme-summitstack-512` - Extreme SummitStack-512
 
+                * `hpe-synergy-interconnect-link` - HPE Synergy Interconnect Link
+
                 * `other` - Other'
               x-spec-enum-id: 017cd578206eb6ae
             label:
@@ -135400,41 +135699,63 @@ components:
               - Virtual
               - Bridge
               - Link Aggregation Group (LAG)
-              - 100BASE-FX (10/100ME FIBER)
-              - 100BASE-LFX (10/100ME FIBER)
+              - Channel
+              - 100BASE-FX (10/100ME)
+              - 100BASE-LFX (10/100ME)
               - 100BASE-TX (10/100ME)
-              - 100BASE-T1 (10/100ME Single Pair)
-              - 1000BASE-T (1GE)
+              - 100BASE-T1 (10/100ME)
+              - 1000BASE-BX10-D (1GE BiDi Down)
+              - 1000BASE-BX10-U (1GE BiDi Up)
+              - 1000BASE-CWDM (1GE)
+              - 1000BASE-CX (1GE DAC)
+              - 1000BASE-DWDM (1GE)
+              - 1000BASE-EX (1GE)
+              - 1000BASE-SX (1GE)
+              - 1000BASE-LSX (1GE)
               - 1000BASE-LX (1GE)
+              - 1000BASE-LX10/LH (1GE)
+              - 1000BASE-T (1GE)
               - 1000BASE-TX (1GE)
+              - 1000BASE-ZX (1GE)
               - 2.5GBASE-T (2.5GE)
               - 5GBASE-T (5GE)
-              - 10GBASE-T (10GE)
-              - 10GBASE-CX4 (10GE)
+              - 10GBASE-BR-D (10GE BiDi Down)
+              - 10GBASE-BR-U (10GE BiDi Up)
+              - 10GBASE-CU (10GE DAC Passive Twinax)
+              - 10GBASE-CX4 (10GE DAC)
+              - 10GBASE-ER (10GE)
+              - 10GBASE-LR (10GE)
+              - 10GBASE-LRM (10GE)
+              - 10GBASE-LX4 (10GE)
+              - 10GBASE-SR (10GE)
+              - 10GBASE-T (10GE)              
+              - 10GBASE-ZR (10GE)
               - SFP (100ME)
               - GBIC (1GE)
               - SFP (1GE)
+              - SFP (2.5GE)
               - SFP+ (10GE)
               - XFP (10GE)
               - XENPAK (10GE)
               - X2 (10GE)
               - SFP28 (25GE)
-              - SFP56 (50GE)
               - QSFP+ (40GE)
+              - SFP56 (50GE)
               - QSFP28 (50GE)
               - CFP (100GE)
               - CFP2 (100GE)
-              - CFP2 (200GE)
-              - CFP2 (400GE)
               - CFP4 (100GE)
               - CXP (100GE)
               - Cisco CPAK (100GE)
               - DSFP (100GE)
+              - SFP112 (100GE)
               - SFP-DD (100GE)
               - QSFP28 (100GE)
               - QSFP-DD (100GE)
+              - CFP2 (200GE)
               - QSFP56 (200GE)
               - QSFP-DD (200GE)
+              - CFP2 (400GE)
               - QSFP112 (400GE)
               - QSFP-DD (400GE)
               - OSFP (400GE)
@@ -135443,6 +135764,9 @@ components:
               - CPF8 (400GE)
               - QSFP-DD (800GE)
               - OSFP (800GE)
+              - OSFP1600 (1.6TE)
+              - OSFP1600-RHS (1.6TE)
+              - QSFP-DD1600 (1.6TE)
               - 1000BASE-KX (1GE)
               - 2.5GBASE-KX (2.5GE)
               - 5GBASE-KR (5GE)
@@ -135454,14 +135778,76 @@ components:
               - 100GBASE-KP4 (100GE)
               - 100GBASE-KR2 (100GE)
               - 100GBASE-KR4 (100GE)
+              - 1.6TBASE-KR8 (1.6TE)
+              - 25GBASE-CR (25GE DAC)
+              - 25GBASE-ER (25GE)
+              - 25GBASE-LR (25GE)
+              - 25GBASE-SR (25GE)
+              - 25GBASE-T (25GE)
+              - 40GBASE-CR4 (40GE DAC)
+              - 40GBASE-ER4 (40GE)
+              - 40GBASE-FR4 (40GE)
+              - 40GBASE-LR4 (40GE)
+              - 40GBASE-SR4 (40GE)
+              - 40GBASE-SR4 (40GE BiDi)
+              - 50GBASE-CR (50GE DAC)
+              - 50GBASE-ER (50GE)
+              - 50GBASE-FR (50GE)
+              - 50GBASE-LR (50GE)
+              - 50GBASE-SR (50GE)
+              - 100GBASE-CR1 (100GE DAC)
+              - 100GBASE-CR2 (100GE DAC)
+              - 100GBASE-CR4 (100GE DAC)
+              - 100GBASE-CR10 (100GE DAC)
+              - 100GBASE-CWDM4 (100GE)
+              - 100GBASE-DR (100GE)
+              - 100GBASE-FR1 (100GE)
+              - 100GBASE-ER4 (100GE)
+              - 100GBASE-LR1 (100GE)
+              - 100GBASE-LR4 (100GE)
+              - 100GBASE-SR1 (100GE)
+              - 100GBASE-SR1.2 (100GE BiDi)
+              - 100GBASE-SR2 (100GE)
+              - 100GBASE-SR4 (100GE)
+              - 100GBASE-SR10 (100GE)
+              - 100GBASE-ZR (100GE)
+              - 200GBASE-CR2 (200GE)
+              - 200GBASE-CR4 (200GE)
+              - 200GBASE-SR2 (200GE)
+              - 200GBASE-SR4 (200GE)
+              - 200GBASE-DR4 (200GE)
+              - 200GBASE-FR4 (200GE)
+              - 200GBASE-LR4 (200GE)
+              - 200GBASE-ER4 (200GE)
+              - 200GBASE-VR2 (200GE)
+              - 400GBASE-CR4 (400GE)
+              - 400GBASE-DR4 (400GE)
+              - 400GBASE-ER8 (400GE)
+              - 400GBASE-FR4 (400GE)
+              - 400GBASE-FR8 (400GE)
+              - 400GBASE-LR4 (400GE)
+              - 400GBASE-LR8 (400GE)
+              - 400GBASE-SR4 (400GE)
+              - 400GBASE-SR4.2 (400GE BiDi)
+              - 400GBASE-SR8 (400GE)
+              - 400GBASE-SR16 (400GE)
+              - 400GBASE-VR4 (400GE)
+              - 400GBASE-ZR (400GE)
+              - 800GBASE-CR8 (800GE)
+              - 800GBASE-DR8 (800GE)
+              - 800GBASE-SR8 (800GE)
+              - 800GBASE-VR8 (800GE)
+              - 1.6TBASE-CR8 (1.6TE)
+              - 1.6TBASE-DR8 (1.6TE)
+              - 1.6TBASE-DR8-2 (1.6TE)
               - IEEE 802.11a
               - IEEE 802.11b/g
-              - IEEE 802.11n
-              - IEEE 802.11ac
-              - IEEE 802.11ad
-              - IEEE 802.11ax
-              - IEEE 802.11ay
-              - IEEE 802.11be
+              - IEEE 802.11n (Wi-Fi 4)
+              - IEEE 802.11ac (Wi-Fi 5)
+              - IEEE 802.11ad (WiGig)
+              - IEEE 802.11ax (Wi-Fi 6)
+              - IEEE 802.11ay (WiGig)
+              - IEEE 802.11be (Wi-Fi 7)
               - IEEE 802.15.1 (Bluetooth)
               - IEEE 802.15.4 (LR-WPAN)
               - Other (Wireless)
@@ -135496,7 +135882,19 @@ components:
               - EDR (25 Gbps)
               - HDR (50 Gbps)
               - NDR (100 Gbps)
-              - XDR (250 Gbps)
+              - XDR (200 Gbps)
+              - HDR 2X (100 Gbps)
+              - NDR 2X (200 Gbps)
+              - XDR 2X (400 Gbps)
+              - SDR 4X (8 Gbps)
+              - DDR 4X (16 Gbps)
+              - QDR 4X (32 Gbps)
+              - FDR10 4X (40 Gbps)
+              - FDR 4X (56 Gbps)
+              - EDR 4X (100 Gbps)
+              - HDR 4X (200 Gbps)
+              - NDR 4X (400 Gbps)
+              - XDR 4X (800 Gbps)
               - T1 (1.544 Mbps)
               - E1 (2.048 Mbps)
               - T3 (45 Mbps)
@@ -135527,6 +135925,7 @@ components:
               - Extreme SummitStack-128
               - Extreme SummitStack-256
               - Extreme SummitStack-512
+              - HPE Synergy Interconnect Link
               - Other
         enabled:
           type: boolean
@@ -136665,41 +137064,63 @@ components:
           - virtual
           - bridge
           - lag
+          - channel
           - 100base-fx
           - 100base-lfx
           - 100base-tx
           - 100base-t1
-          - 1000base-t
+          - 1000base-bx10-d
+          - 1000base-bx10-u
+          - 1000base-cwdm
+          - 1000base-cx
+          - 1000base-dwdm
+          - 1000base-ex
+          - 1000base-sx
+          - 1000base-lsx
           - 1000base-lx
+          - 1000base-lx10
+          - 1000base-t
           - 1000base-tx
+          - 1000base-zx
           - 2.5gbase-t
           - 5gbase-t
-          - 10gbase-t
+          - 10gbase-br-d
+          - 10gbase-br-u
+          - 10gbase-cu
           - 10gbase-cx4
+          - 10gbase-er
+          - 10gbase-lr
+          - 10gbase-lrm
+          - 10gbase-lx4
+          - 10gbase-sr
+          - 10gbase-t
+          - 10gbase-zr
           - 100base-x-sfp
           - 1000base-x-gbic
           - 1000base-x-sfp
+          - 2.5gbase-x-sfp
           - 10gbase-x-sfpp
           - 10gbase-x-xfp
           - 10gbase-x-xenpak
           - 10gbase-x-x2
           - 25gbase-x-sfp28
-          - 50gbase-x-sfp56
           - 40gbase-x-qsfpp
+          - 50gbase-x-sfp56
           - 50gbase-x-sfp28
           - 100gbase-x-cfp
           - 100gbase-x-cfp2
-          - 200gbase-x-cfp2
-          - 400gbase-x-cfp2
           - 100gbase-x-cfp4
           - 100gbase-x-cxp
           - 100gbase-x-cpak
           - 100gbase-x-dsfp
+          - 100gbase-x-sfp112
           - 100gbase-x-sfpdd
           - 100gbase-x-qsfp28
           - 100gbase-x-qsfpdd
+          - 200gbase-x-cfp2
           - 200gbase-x-qsfp56
           - 200gbase-x-qsfpdd
+          - 400gbase-x-cfp2
           - 400gbase-x-qsfp112
           - 400gbase-x-qsfpdd
           - 400gbase-x-osfp
@@ -136708,6 +137129,9 @@ components:
           - 400gbase-x-cfp8
           - 800gbase-x-qsfpdd
           - 800gbase-x-osfp
+          - 1.6tbase-x-osfp1600
+          - 1.6tbase-x-osfp1600-rhs
+          - 1.6tbase-x-qsfpdd1600
           - 1000base-kx
           - 2.5gbase-kx
           - 5gbase-kr
@@ -136719,6 +137143,68 @@ components:
           - 100gbase-kp4
           - 100gbase-kr2
           - 100gbase-kr4
+          - 1.6tbase-kr8
+          - 25gbase-cr
+          - 25gbase-er
+          - 25gbase-lr
+          - 25gbase-sr
+          - 25gbase-t
+          - 40gbase-cr4
+          - 40gbase-er4
+          - 40gbase-fr4
+          - 40gbase-lr4
+          - 40gbase-sr4
+          - 40gbase-sr4-bd
+          - 50gbase-cr
+          - 50gbase-er
+          - 50gbase-fr
+          - 50gbase-lr
+          - 50gbase-sr
+          - 100gbase-cr1
+          - 100gbase-cr2
+          - 100gbase-cr4
+          - 100gbase-cr10
+          - 100gbase-cwdm4
+          - 100gbase-dr
+          - 100gbase-fr1
+          - 100gbase-er4
+          - 100gbase-lr1
+          - 100gbase-lr4
+          - 100gbase-sr1
+          - 100gbase-sr1.2
+          - 100gbase-sr2
+          - 100gbase-sr4
+          - 100gbase-sr10
+          - 100gbase-zr
+          - 200gbase-cr2
+          - 200gbase-cr4
+          - 200gbase-sr2
+          - 200gbase-sr4
+          - 200gbase-dr4
+          - 200gbase-fr4
+          - 200gbase-lr4
+          - 200gbase-er4
+          - 200gbase-vr2
+          - 400gbase-cr4
+          - 400gbase-dr4
+          - 400gbase-er8
+          - 400gbase-fr4
+          - 400gbase-fr8
+          - 400gbase-lr4
+          - 400gbase-lr8
+          - 400gbase-sr4
+          - 400gbase-sr4_2
+          - 400gbase-sr8
+          - 400gbase-sr16
+          - 400gbase-vr4
+          - 400gbase-zr
+          - 800gbase-cr8
+          - 800gbase-dr8
+          - 800gbase-sr8
+          - 800gbase-vr8
+          - 1.6tbase-cr8
+          - 1.6tbase-dr8
+          - 1.6tbase-dr8-2
           - ieee802.11a
           - ieee802.11g
           - ieee802.11n
@@ -136762,6 +137248,18 @@ components:
           - infiniband-hdr
           - infiniband-ndr
           - infiniband-xdr
+          - infiniband-hdr-2x
+          - infiniband-ndr-2x
+          - infiniband-xdr-2x
+          - infiniband-sdr-4x
+          - infiniband-ddr-4x
+          - infiniband-qdr-4x
+          - infiniband-fdr10-4x
+          - infiniband-fdr-4x
+          - infiniband-edr-4x
+          - infiniband-hdr-4x
+          - infiniband-ndr-4x
+          - infiniband-xdr-4x
           - t1
           - e1
           - t3
@@ -136792,6 +137290,7 @@ components:
           - extreme-summitstack-128
           - extreme-summitstack-256
           - extreme-summitstack-512
+          - hpe-synergy-interconnect-link
           - other
           type: string
           description: '* `virtual` - Virtual
@@ -136800,33 +137299,75 @@ components:
 
             * `lag` - Link Aggregation Group (LAG)
 
-            * `100base-fx` - 100BASE-FX (10/100ME FIBER)
+            * `channel` - Channel
 
-            * `100base-lfx` - 100BASE-LFX (10/100ME FIBER)
+            * `100base-fx` - 100BASE-FX (10/100ME)
+
+            * `100base-lfx` - 100BASE-LFX (10/100ME)
 
             * `100base-tx` - 100BASE-TX (10/100ME)
 
-            * `100base-t1` - 100BASE-T1 (10/100ME Single Pair)
+            * `100base-t1` - 100BASE-T1 (10/100ME)
 
-            * `1000base-t` - 1000BASE-T (1GE)
+            * `1000base-bx10-d` - 1000BASE-BX10-D (1GE BiDi Down)
+
+            * `1000base-bx10-u` - 1000BASE-BX10-U (1GE BiDi Up)
+
+            * `1000base-cwdm` - 1000BASE-CWDM (1GE)
+
+            * `1000base-cx` - 1000BASE-CX (1GE DAC)
+
+            * `1000base-dwdm` - 1000BASE-DWDM (1GE)
+
+            * `1000base-ex` - 1000BASE-EX (1GE)
+
+            * `1000base-sx` - 1000BASE-SX (1GE)
+
+            * `1000base-lsx` - 1000BASE-LSX (1GE)
 
             * `1000base-lx` - 1000BASE-LX (1GE)
 
+            * `1000base-lx10` - 1000BASE-LX10/LH (1GE)
+
+            * `1000base-t` - 1000BASE-T (1GE)
+
             * `1000base-tx` - 1000BASE-TX (1GE)
+
+            * `1000base-zx` - 1000BASE-ZX (1GE)
 
             * `2.5gbase-t` - 2.5GBASE-T (2.5GE)
 
             * `5gbase-t` - 5GBASE-T (5GE)
 
-            * `10gbase-t` - 10GBASE-T (10GE)
+            * `10gbase-br-d` - 10GBASE-BR-D (10GE BiDi Down)
 
-            * `10gbase-cx4` - 10GBASE-CX4 (10GE)
+            * `10gbase-br-u` - 10GBASE-BR-U (10GE BiDi Up)
+
+            * `10gbase-cu` - 10GBASE-CU (10GE DAC Passive Twinax)
+
+            * `10gbase-cx4` - 10GBASE-CX4 (10GE DAC)
+
+            * `10gbase-er` - 10GBASE-ER (10GE)
+
+            * `10gbase-lr` - 10GBASE-LR (10GE)
+
+            * `10gbase-lrm` - 10GBASE-LRM (10GE)
+
+            * `10gbase-lx4` - 10GBASE-LX4 (10GE)
+
+            * `10gbase-sr` - 10GBASE-SR (10GE)
+
+            * `10gbase-t` - 10GBASE-T (10GE)                
+
+            * `10gbase-zr` - 10GBASE-ZR (10GE)
 
             * `100base-x-sfp` - SFP (100ME)
 
             * `1000base-x-gbic` - GBIC (1GE)
 
             * `1000base-x-sfp` - SFP (1GE)
+
+            * `2.5gbase-x-sfp` - SFP (2.5GE)
 
             * `10gbase-x-sfpp` - SFP+ (10GE)
 
@@ -136838,19 +137379,15 @@ components:
 
             * `25gbase-x-sfp28` - SFP28 (25GE)
 
-            * `50gbase-x-sfp56` - SFP56 (50GE)
-
             * `40gbase-x-qsfpp` - QSFP+ (40GE)
+
+            * `50gbase-x-sfp56` - SFP56 (50GE)
 
             * `50gbase-x-sfp28` - QSFP28 (50GE)
 
             * `100gbase-x-cfp` - CFP (100GE)
 
             * `100gbase-x-cfp2` - CFP2 (100GE)
-
-            * `200gbase-x-cfp2` - CFP2 (200GE)
-
-            * `400gbase-x-cfp2` - CFP2 (400GE)
 
             * `100gbase-x-cfp4` - CFP4 (100GE)
 
@@ -136860,15 +137397,21 @@ components:
 
             * `100gbase-x-dsfp` - DSFP (100GE)
 
+            * `100gbase-x-sfp112` - SFP112 (100GE)
+
             * `100gbase-x-sfpdd` - SFP-DD (100GE)
 
             * `100gbase-x-qsfp28` - QSFP28 (100GE)
 
             * `100gbase-x-qsfpdd` - QSFP-DD (100GE)
 
+            * `200gbase-x-cfp2` - CFP2 (200GE)
+
             * `200gbase-x-qsfp56` - QSFP56 (200GE)
 
             * `200gbase-x-qsfpdd` - QSFP-DD (200GE)
+
+            * `400gbase-x-cfp2` - CFP2 (400GE)
 
             * `400gbase-x-qsfp112` - QSFP112 (400GE)
 
@@ -136885,6 +137428,12 @@ components:
             * `800gbase-x-qsfpdd` - QSFP-DD (800GE)
 
             * `800gbase-x-osfp` - OSFP (800GE)
+
+            * `1.6tbase-x-osfp1600` - OSFP1600 (1.6TE)
+
+            * `1.6tbase-x-osfp1600-rhs` - OSFP1600-RHS (1.6TE)
+
+            * `1.6tbase-x-qsfpdd1600` - QSFP-DD1600 (1.6TE)
 
             * `1000base-kx` - 1000BASE-KX (1GE)
 
@@ -136908,21 +137457,145 @@ components:
 
             * `100gbase-kr4` - 100GBASE-KR4 (100GE)
 
+            * `1.6tbase-kr8` - 1.6TBASE-KR8 (1.6TE)
+
+            * `25gbase-cr` - 25GBASE-CR (25GE DAC)
+
+            * `25gbase-er` - 25GBASE-ER (25GE)
+
+            * `25gbase-lr` - 25GBASE-LR (25GE)
+
+            * `25gbase-sr` - 25GBASE-SR (25GE)
+
+            * `25gbase-t` - 25GBASE-T (25GE)
+
+            * `40gbase-cr4` - 40GBASE-CR4 (40GE DAC)
+
+            * `40gbase-er4` - 40GBASE-ER4 (40GE)
+
+            * `40gbase-fr4` - 40GBASE-FR4 (40GE)
+
+            * `40gbase-lr4` - 40GBASE-LR4 (40GE)
+
+            * `40gbase-sr4` - 40GBASE-SR4 (40GE)
+
+            * `40gbase-sr4-bd` - 40GBASE-SR4 (40GE BiDi)
+
+            * `50gbase-cr` - 50GBASE-CR (50GE DAC)
+
+            * `50gbase-er` - 50GBASE-ER (50GE)
+
+            * `50gbase-fr` - 50GBASE-FR (50GE)
+
+            * `50gbase-lr` - 50GBASE-LR (50GE)
+
+            * `50gbase-sr` - 50GBASE-SR (50GE)
+
+            * `100gbase-cr1` - 100GBASE-CR1 (100GE DAC)
+
+            * `100gbase-cr2` - 100GBASE-CR2 (100GE DAC)
+
+            * `100gbase-cr4` - 100GBASE-CR4 (100GE DAC)
+
+            * `100gbase-cr10` - 100GBASE-CR10 (100GE DAC)
+
+            * `100gbase-cwdm4` - 100GBASE-CWDM4 (100GE)
+
+            * `100gbase-dr` - 100GBASE-DR (100GE)
+
+            * `100gbase-fr1` - 100GBASE-FR1 (100GE)
+
+            * `100gbase-er4` - 100GBASE-ER4 (100GE)
+
+            * `100gbase-lr1` - 100GBASE-LR1 (100GE)
+
+            * `100gbase-lr4` - 100GBASE-LR4 (100GE)
+
+            * `100gbase-sr1` - 100GBASE-SR1 (100GE)
+
+            * `100gbase-sr1.2` - 100GBASE-SR1.2 (100GE BiDi)
+
+            * `100gbase-sr2` - 100GBASE-SR2 (100GE)
+
+            * `100gbase-sr4` - 100GBASE-SR4 (100GE)
+
+            * `100gbase-sr10` - 100GBASE-SR10 (100GE)
+
+            * `100gbase-zr` - 100GBASE-ZR (100GE)
+
+            * `200gbase-cr2` - 200GBASE-CR2 (200GE)
+
+            * `200gbase-cr4` - 200GBASE-CR4 (200GE)
+
+            * `200gbase-sr2` - 200GBASE-SR2 (200GE)
+
+            * `200gbase-sr4` - 200GBASE-SR4 (200GE)
+
+            * `200gbase-dr4` - 200GBASE-DR4 (200GE)
+
+            * `200gbase-fr4` - 200GBASE-FR4 (200GE)
+
+            * `200gbase-lr4` - 200GBASE-LR4 (200GE)
+
+            * `200gbase-er4` - 200GBASE-ER4 (200GE)
+
+            * `200gbase-vr2` - 200GBASE-VR2 (200GE)
+
+            * `400gbase-cr4` - 400GBASE-CR4 (400GE)
+
+            * `400gbase-dr4` - 400GBASE-DR4 (400GE)
+
+            * `400gbase-er8` - 400GBASE-ER8 (400GE)
+
+            * `400gbase-fr4` - 400GBASE-FR4 (400GE)
+
+            * `400gbase-fr8` - 400GBASE-FR8 (400GE)
+
+            * `400gbase-lr4` - 400GBASE-LR4 (400GE)
+
+            * `400gbase-lr8` - 400GBASE-LR8 (400GE)
+
+            * `400gbase-sr4` - 400GBASE-SR4 (400GE)
+
+            * `400gbase-sr4_2` - 400GBASE-SR4.2 (400GE BiDi)
+
+            * `400gbase-sr8` - 400GBASE-SR8 (400GE)
+
+            * `400gbase-sr16` - 400GBASE-SR16 (400GE)
+
+            * `400gbase-vr4` - 400GBASE-VR4 (400GE)
+
+            * `400gbase-zr` - 400GBASE-ZR (400GE)
+
+            * `800gbase-cr8` - 800GBASE-CR8 (800GE)
+
+            * `800gbase-dr8` - 800GBASE-DR8 (800GE)
+
+            * `800gbase-sr8` - 800GBASE-SR8 (800GE)
+
+            * `800gbase-vr8` - 800GBASE-VR8 (800GE)
+
+            * `1.6tbase-cr8` - 1.6TBASE-CR8 (1.6TE)
+
+            * `1.6tbase-dr8` - 1.6TBASE-DR8 (1.6TE)
+
+            * `1.6tbase-dr8-2` - 1.6TBASE-DR8-2 (1.6TE)
+
             * `ieee802.11a` - IEEE 802.11a
 
             * `ieee802.11g` - IEEE 802.11b/g
 
-            * `ieee802.11n` - IEEE 802.11n
+            * `ieee802.11n` - IEEE 802.11n (Wi-Fi 4)
 
-            * `ieee802.11ac` - IEEE 802.11ac
+            * `ieee802.11ac` - IEEE 802.11ac (Wi-Fi 5)
 
-            * `ieee802.11ad` - IEEE 802.11ad
+            * `ieee802.11ad` - IEEE 802.11ad (WiGig)
 
-            * `ieee802.11ax` - IEEE 802.11ax
+            * `ieee802.11ax` - IEEE 802.11ax (Wi-Fi 6)
 
-            * `ieee802.11ay` - IEEE 802.11ay
+            * `ieee802.11ay` - IEEE 802.11ay (WiGig)
 
-            * `ieee802.11be` - IEEE 802.11be
+            * `ieee802.11be` - IEEE 802.11be (Wi-Fi 7)
 
             * `ieee802.15.1` - IEEE 802.15.1 (Bluetooth)
 
@@ -136992,7 +137665,31 @@ components:
 
             * `infiniband-ndr` - NDR (100 Gbps)
 
-            * `infiniband-xdr` - XDR (250 Gbps)
+            * `infiniband-xdr` - XDR (200 Gbps)
+
+            * `infiniband-hdr-2x` - HDR 2X (100 Gbps)
+
+            * `infiniband-ndr-2x` - NDR 2X (200 Gbps)
+
+            * `infiniband-xdr-2x` - XDR 2X (400 Gbps)
+
+            * `infiniband-sdr-4x` - SDR 4X (8 Gbps)
+
+            * `infiniband-ddr-4x` - DDR 4X (16 Gbps)
+
+            * `infiniband-qdr-4x` - QDR 4X (32 Gbps)
+
+            * `infiniband-fdr10-4x` - FDR10 4X (40 Gbps)
+
+            * `infiniband-fdr-4x` - FDR 4X (56 Gbps)
+
+            * `infiniband-edr-4x` - EDR 4X (100 Gbps)
+
+            * `infiniband-hdr-4x` - HDR 4X (200 Gbps)
+
+            * `infiniband-ndr-4x` - NDR 4X (400 Gbps)
+
+            * `infiniband-xdr-4x` - XDR 4X (800 Gbps)
 
             * `t1` - T1 (1.544 Mbps)
 
@@ -137053,6 +137750,8 @@ components:
             * `extreme-summitstack-256` - Extreme SummitStack-256
 
             * `extreme-summitstack-512` - Extreme SummitStack-512
+
+            * `hpe-synergy-interconnect-link` - HPE Synergy Interconnect Link
 
             * `other` - Other'
           x-spec-enum-id: 017cd578206eb6ae
@@ -137889,41 +138588,63 @@ components:
               - virtual
               - bridge
               - lag
+              - channel
               - 100base-fx
               - 100base-lfx
               - 100base-tx
               - 100base-t1
-              - 1000base-t
+              - 1000base-bx10-d
+              - 1000base-bx10-u
+              - 1000base-cwdm
+              - 1000base-cx
+              - 1000base-dwdm
+              - 1000base-ex
+              - 1000base-sx
+              - 1000base-lsx
               - 1000base-lx
+              - 1000base-lx10
+              - 1000base-t
               - 1000base-tx
+              - 1000base-zx
               - 2.5gbase-t
               - 5gbase-t
-              - 10gbase-t
+              - 10gbase-br-d
+              - 10gbase-br-u
+              - 10gbase-cu
               - 10gbase-cx4
+              - 10gbase-er
+              - 10gbase-lr
+              - 10gbase-lrm
+              - 10gbase-lx4
+              - 10gbase-sr
+              - 10gbase-t
+              - 10gbase-zr
               - 100base-x-sfp
               - 1000base-x-gbic
               - 1000base-x-sfp
+              - 2.5gbase-x-sfp
               - 10gbase-x-sfpp
               - 10gbase-x-xfp
               - 10gbase-x-xenpak
               - 10gbase-x-x2
               - 25gbase-x-sfp28
-              - 50gbase-x-sfp56
               - 40gbase-x-qsfpp
+              - 50gbase-x-sfp56
               - 50gbase-x-sfp28
               - 100gbase-x-cfp
               - 100gbase-x-cfp2
-              - 200gbase-x-cfp2
-              - 400gbase-x-cfp2
               - 100gbase-x-cfp4
               - 100gbase-x-cxp
               - 100gbase-x-cpak
               - 100gbase-x-dsfp
+              - 100gbase-x-sfp112
               - 100gbase-x-sfpdd
               - 100gbase-x-qsfp28
               - 100gbase-x-qsfpdd
+              - 200gbase-x-cfp2
               - 200gbase-x-qsfp56
               - 200gbase-x-qsfpdd
+              - 400gbase-x-cfp2
               - 400gbase-x-qsfp112
               - 400gbase-x-qsfpdd
               - 400gbase-x-osfp
@@ -137932,6 +138653,9 @@ components:
               - 400gbase-x-cfp8
               - 800gbase-x-qsfpdd
               - 800gbase-x-osfp
+              - 1.6tbase-x-osfp1600
+              - 1.6tbase-x-osfp1600-rhs
+              - 1.6tbase-x-qsfpdd1600
               - 1000base-kx
               - 2.5gbase-kx
               - 5gbase-kr
@@ -137943,6 +138667,68 @@ components:
               - 100gbase-kp4
               - 100gbase-kr2
               - 100gbase-kr4
+              - 1.6tbase-kr8
+              - 25gbase-cr
+              - 25gbase-er
+              - 25gbase-lr
+              - 25gbase-sr
+              - 25gbase-t
+              - 40gbase-cr4
+              - 40gbase-er4
+              - 40gbase-fr4
+              - 40gbase-lr4
+              - 40gbase-sr4
+              - 40gbase-sr4-bd
+              - 50gbase-cr
+              - 50gbase-er
+              - 50gbase-fr
+              - 50gbase-lr
+              - 50gbase-sr
+              - 100gbase-cr1
+              - 100gbase-cr2
+              - 100gbase-cr4
+              - 100gbase-cr10
+              - 100gbase-cwdm4
+              - 100gbase-dr
+              - 100gbase-fr1
+              - 100gbase-er4
+              - 100gbase-lr1
+              - 100gbase-lr4
+              - 100gbase-sr1
+              - 100gbase-sr1.2
+              - 100gbase-sr2
+              - 100gbase-sr4
+              - 100gbase-sr10
+              - 100gbase-zr
+              - 200gbase-cr2
+              - 200gbase-cr4
+              - 200gbase-sr2
+              - 200gbase-sr4
+              - 200gbase-dr4
+              - 200gbase-fr4
+              - 200gbase-lr4
+              - 200gbase-er4
+              - 200gbase-vr2
+              - 400gbase-cr4
+              - 400gbase-dr4
+              - 400gbase-er8
+              - 400gbase-fr4
+              - 400gbase-fr8
+              - 400gbase-lr4
+              - 400gbase-lr8
+              - 400gbase-sr4
+              - 400gbase-sr4_2
+              - 400gbase-sr8
+              - 400gbase-sr16
+              - 400gbase-vr4
+              - 400gbase-zr
+              - 800gbase-cr8
+              - 800gbase-dr8
+              - 800gbase-sr8
+              - 800gbase-vr8
+              - 1.6tbase-cr8
+              - 1.6tbase-dr8
+              - 1.6tbase-dr8-2
               - ieee802.11a
               - ieee802.11g
               - ieee802.11n
@@ -137986,6 +138772,18 @@ components:
               - infiniband-hdr
               - infiniband-ndr
               - infiniband-xdr
+              - infiniband-hdr-2x
+              - infiniband-ndr-2x
+              - infiniband-xdr-2x
+              - infiniband-sdr-4x
+              - infiniband-ddr-4x
+              - infiniband-qdr-4x
+              - infiniband-fdr10-4x
+              - infiniband-fdr-4x
+              - infiniband-edr-4x
+              - infiniband-hdr-4x
+              - infiniband-ndr-4x
+              - infiniband-xdr-4x
               - t1
               - e1
               - t3
@@ -138016,6 +138814,7 @@ components:
               - extreme-summitstack-128
               - extreme-summitstack-256
               - extreme-summitstack-512
+              - hpe-synergy-interconnect-link
               - other
               type: string
               description: '* `virtual` - Virtual
@@ -138024,33 +138823,75 @@ components:
 
                 * `lag` - Link Aggregation Group (LAG)
 
-                * `100base-fx` - 100BASE-FX (10/100ME FIBER)
+                * `channel` - Channel
 
-                * `100base-lfx` - 100BASE-LFX (10/100ME FIBER)
+                * `100base-fx` - 100BASE-FX (10/100ME)
+
+                * `100base-lfx` - 100BASE-LFX (10/100ME)
 
                 * `100base-tx` - 100BASE-TX (10/100ME)
 
-                * `100base-t1` - 100BASE-T1 (10/100ME Single Pair)
+                * `100base-t1` - 100BASE-T1 (10/100ME)
 
-                * `1000base-t` - 1000BASE-T (1GE)
+                * `1000base-bx10-d` - 1000BASE-BX10-D (1GE BiDi Down)
+
+                * `1000base-bx10-u` - 1000BASE-BX10-U (1GE BiDi Up)
+
+                * `1000base-cwdm` - 1000BASE-CWDM (1GE)
+
+                * `1000base-cx` - 1000BASE-CX (1GE DAC)
+
+                * `1000base-dwdm` - 1000BASE-DWDM (1GE)
+
+                * `1000base-ex` - 1000BASE-EX (1GE)
+
+                * `1000base-sx` - 1000BASE-SX (1GE)
+
+                * `1000base-lsx` - 1000BASE-LSX (1GE)
 
                 * `1000base-lx` - 1000BASE-LX (1GE)
 
+                * `1000base-lx10` - 1000BASE-LX10/LH (1GE)
+
+                * `1000base-t` - 1000BASE-T (1GE)
+
                 * `1000base-tx` - 1000BASE-TX (1GE)
+
+                * `1000base-zx` - 1000BASE-ZX (1GE)
 
                 * `2.5gbase-t` - 2.5GBASE-T (2.5GE)
 
                 * `5gbase-t` - 5GBASE-T (5GE)
 
-                * `10gbase-t` - 10GBASE-T (10GE)
+                * `10gbase-br-d` - 10GBASE-BR-D (10GE BiDi Down)
 
-                * `10gbase-cx4` - 10GBASE-CX4 (10GE)
+                * `10gbase-br-u` - 10GBASE-BR-U (10GE BiDi Up)
+
+                * `10gbase-cu` - 10GBASE-CU (10GE DAC Passive Twinax)
+
+                * `10gbase-cx4` - 10GBASE-CX4 (10GE DAC)
+
+                * `10gbase-er` - 10GBASE-ER (10GE)
+
+                * `10gbase-lr` - 10GBASE-LR (10GE)
+
+                * `10gbase-lrm` - 10GBASE-LRM (10GE)
+
+                * `10gbase-lx4` - 10GBASE-LX4 (10GE)
+
+                * `10gbase-sr` - 10GBASE-SR (10GE)
+
+                * `10gbase-t` - 10GBASE-T (10GE)                
+
+                * `10gbase-zr` - 10GBASE-ZR (10GE)
 
                 * `100base-x-sfp` - SFP (100ME)
 
                 * `1000base-x-gbic` - GBIC (1GE)
 
                 * `1000base-x-sfp` - SFP (1GE)
+
+                * `2.5gbase-x-sfp` - SFP (2.5GE)
 
                 * `10gbase-x-sfpp` - SFP+ (10GE)
 
@@ -138062,19 +138903,15 @@ components:
 
                 * `25gbase-x-sfp28` - SFP28 (25GE)
 
-                * `50gbase-x-sfp56` - SFP56 (50GE)
-
                 * `40gbase-x-qsfpp` - QSFP+ (40GE)
+
+                * `50gbase-x-sfp56` - SFP56 (50GE)
 
                 * `50gbase-x-sfp28` - QSFP28 (50GE)
 
                 * `100gbase-x-cfp` - CFP (100GE)
 
                 * `100gbase-x-cfp2` - CFP2 (100GE)
-
-                * `200gbase-x-cfp2` - CFP2 (200GE)
-
-                * `400gbase-x-cfp2` - CFP2 (400GE)
 
                 * `100gbase-x-cfp4` - CFP4 (100GE)
 
@@ -138084,15 +138921,21 @@ components:
 
                 * `100gbase-x-dsfp` - DSFP (100GE)
 
+                * `100gbase-x-sfp112` - SFP112 (100GE)
+
                 * `100gbase-x-sfpdd` - SFP-DD (100GE)
 
                 * `100gbase-x-qsfp28` - QSFP28 (100GE)
 
                 * `100gbase-x-qsfpdd` - QSFP-DD (100GE)
 
+                * `200gbase-x-cfp2` - CFP2 (200GE)
+
                 * `200gbase-x-qsfp56` - QSFP56 (200GE)
 
                 * `200gbase-x-qsfpdd` - QSFP-DD (200GE)
+
+                * `400gbase-x-cfp2` - CFP2 (400GE)
 
                 * `400gbase-x-qsfp112` - QSFP112 (400GE)
 
@@ -138109,6 +138952,12 @@ components:
                 * `800gbase-x-qsfpdd` - QSFP-DD (800GE)
 
                 * `800gbase-x-osfp` - OSFP (800GE)
+
+                * `1.6tbase-x-osfp1600` - OSFP1600 (1.6TE)
+
+                * `1.6tbase-x-osfp1600-rhs` - OSFP1600-RHS (1.6TE)
+
+                * `1.6tbase-x-qsfpdd1600` - QSFP-DD1600 (1.6TE)
 
                 * `1000base-kx` - 1000BASE-KX (1GE)
 
@@ -138132,21 +138981,145 @@ components:
 
                 * `100gbase-kr4` - 100GBASE-KR4 (100GE)
 
+                * `1.6tbase-kr8` - 1.6TBASE-KR8 (1.6TE)
+
+                * `25gbase-cr` - 25GBASE-CR (25GE DAC)
+
+                * `25gbase-er` - 25GBASE-ER (25GE)
+
+                * `25gbase-lr` - 25GBASE-LR (25GE)
+
+                * `25gbase-sr` - 25GBASE-SR (25GE)
+
+                * `25gbase-t` - 25GBASE-T (25GE)
+
+                * `40gbase-cr4` - 40GBASE-CR4 (40GE DAC)
+
+                * `40gbase-er4` - 40GBASE-ER4 (40GE)
+
+                * `40gbase-fr4` - 40GBASE-FR4 (40GE)
+
+                * `40gbase-lr4` - 40GBASE-LR4 (40GE)
+
+                * `40gbase-sr4` - 40GBASE-SR4 (40GE)
+
+                * `40gbase-sr4-bd` - 40GBASE-SR4 (40GE BiDi)
+
+                * `50gbase-cr` - 50GBASE-CR (50GE DAC)
+
+                * `50gbase-er` - 50GBASE-ER (50GE)
+
+                * `50gbase-fr` - 50GBASE-FR (50GE)
+
+                * `50gbase-lr` - 50GBASE-LR (50GE)
+
+                * `50gbase-sr` - 50GBASE-SR (50GE)
+
+                * `100gbase-cr1` - 100GBASE-CR1 (100GE DAC)
+
+                * `100gbase-cr2` - 100GBASE-CR2 (100GE DAC)
+
+                * `100gbase-cr4` - 100GBASE-CR4 (100GE DAC)
+
+                * `100gbase-cr10` - 100GBASE-CR10 (100GE DAC)
+
+                * `100gbase-cwdm4` - 100GBASE-CWDM4 (100GE)
+
+                * `100gbase-dr` - 100GBASE-DR (100GE)
+
+                * `100gbase-fr1` - 100GBASE-FR1 (100GE)
+
+                * `100gbase-er4` - 100GBASE-ER4 (100GE)
+
+                * `100gbase-lr1` - 100GBASE-LR1 (100GE)
+
+                * `100gbase-lr4` - 100GBASE-LR4 (100GE)
+
+                * `100gbase-sr1` - 100GBASE-SR1 (100GE)
+
+                * `100gbase-sr1.2` - 100GBASE-SR1.2 (100GE BiDi)
+
+                * `100gbase-sr2` - 100GBASE-SR2 (100GE)
+
+                * `100gbase-sr4` - 100GBASE-SR4 (100GE)
+
+                * `100gbase-sr10` - 100GBASE-SR10 (100GE)
+
+                * `100gbase-zr` - 100GBASE-ZR (100GE)
+
+                * `200gbase-cr2` - 200GBASE-CR2 (200GE)
+
+                * `200gbase-cr4` - 200GBASE-CR4 (200GE)
+
+                * `200gbase-sr2` - 200GBASE-SR2 (200GE)
+
+                * `200gbase-sr4` - 200GBASE-SR4 (200GE)
+
+                * `200gbase-dr4` - 200GBASE-DR4 (200GE)
+
+                * `200gbase-fr4` - 200GBASE-FR4 (200GE)
+
+                * `200gbase-lr4` - 200GBASE-LR4 (200GE)
+
+                * `200gbase-er4` - 200GBASE-ER4 (200GE)
+
+                * `200gbase-vr2` - 200GBASE-VR2 (200GE)
+
+                * `400gbase-cr4` - 400GBASE-CR4 (400GE)
+
+                * `400gbase-dr4` - 400GBASE-DR4 (400GE)
+
+                * `400gbase-er8` - 400GBASE-ER8 (400GE)
+
+                * `400gbase-fr4` - 400GBASE-FR4 (400GE)
+
+                * `400gbase-fr8` - 400GBASE-FR8 (400GE)
+
+                * `400gbase-lr4` - 400GBASE-LR4 (400GE)
+
+                * `400gbase-lr8` - 400GBASE-LR8 (400GE)
+
+                * `400gbase-sr4` - 400GBASE-SR4 (400GE)
+
+                * `400gbase-sr4_2` - 400GBASE-SR4.2 (400GE BiDi)
+
+                * `400gbase-sr8` - 400GBASE-SR8 (400GE)
+
+                * `400gbase-sr16` - 400GBASE-SR16 (400GE)
+
+                * `400gbase-vr4` - 400GBASE-VR4 (400GE)
+
+                * `400gbase-zr` - 400GBASE-ZR (400GE)
+
+                * `800gbase-cr8` - 800GBASE-CR8 (800GE)
+
+                * `800gbase-dr8` - 800GBASE-DR8 (800GE)
+
+                * `800gbase-sr8` - 800GBASE-SR8 (800GE)
+
+                * `800gbase-vr8` - 800GBASE-VR8 (800GE)
+
+                * `1.6tbase-cr8` - 1.6TBASE-CR8 (1.6TE)
+
+                * `1.6tbase-dr8` - 1.6TBASE-DR8 (1.6TE)
+
+                * `1.6tbase-dr8-2` - 1.6TBASE-DR8-2 (1.6TE)
+
                 * `ieee802.11a` - IEEE 802.11a
 
                 * `ieee802.11g` - IEEE 802.11b/g
 
-                * `ieee802.11n` - IEEE 802.11n
+                * `ieee802.11n` - IEEE 802.11n (Wi-Fi 4)
 
-                * `ieee802.11ac` - IEEE 802.11ac
+                * `ieee802.11ac` - IEEE 802.11ac (Wi-Fi 5)
 
-                * `ieee802.11ad` - IEEE 802.11ad
+                * `ieee802.11ad` - IEEE 802.11ad (WiGig)
 
-                * `ieee802.11ax` - IEEE 802.11ax
+                * `ieee802.11ax` - IEEE 802.11ax (Wi-Fi 6)
 
-                * `ieee802.11ay` - IEEE 802.11ay
+                * `ieee802.11ay` - IEEE 802.11ay (WiGig)
 
-                * `ieee802.11be` - IEEE 802.11be
+                * `ieee802.11be` - IEEE 802.11be (Wi-Fi 7)
 
                 * `ieee802.15.1` - IEEE 802.15.1 (Bluetooth)
 
@@ -138216,7 +139189,31 @@ components:
 
                 * `infiniband-ndr` - NDR (100 Gbps)
 
-                * `infiniband-xdr` - XDR (250 Gbps)
+                * `infiniband-xdr` - XDR (200 Gbps)
+
+                * `infiniband-hdr-2x` - HDR 2X (100 Gbps)
+
+                * `infiniband-ndr-2x` - NDR 2X (200 Gbps)
+
+                * `infiniband-xdr-2x` - XDR 2X (400 Gbps)
+
+                * `infiniband-sdr-4x` - SDR 4X (8 Gbps)
+
+                * `infiniband-ddr-4x` - DDR 4X (16 Gbps)
+
+                * `infiniband-qdr-4x` - QDR 4X (32 Gbps)
+
+                * `infiniband-fdr10-4x` - FDR10 4X (40 Gbps)
+
+                * `infiniband-fdr-4x` - FDR 4X (56 Gbps)
+
+                * `infiniband-edr-4x` - EDR 4X (100 Gbps)
+
+                * `infiniband-hdr-4x` - HDR 4X (200 Gbps)
+
+                * `infiniband-ndr-4x` - NDR 4X (400 Gbps)
+
+                * `infiniband-xdr-4x` - XDR 4X (800 Gbps)
 
                 * `t1` - T1 (1.544 Mbps)
 
@@ -138278,6 +139275,8 @@ components:
 
                 * `extreme-summitstack-512` - Extreme SummitStack-512
 
+                * `hpe-synergy-interconnect-link` - HPE Synergy Interconnect Link
+
                 * `other` - Other'
               x-spec-enum-id: 017cd578206eb6ae
             label:
@@ -138286,41 +139285,63 @@ components:
               - Virtual
               - Bridge
               - Link Aggregation Group (LAG)
-              - 100BASE-FX (10/100ME FIBER)
-              - 100BASE-LFX (10/100ME FIBER)
+              - Channel
+              - 100BASE-FX (10/100ME)
+              - 100BASE-LFX (10/100ME)
               - 100BASE-TX (10/100ME)
-              - 100BASE-T1 (10/100ME Single Pair)
-              - 1000BASE-T (1GE)
+              - 100BASE-T1 (10/100ME)
+              - 1000BASE-BX10-D (1GE BiDi Down)
+              - 1000BASE-BX10-U (1GE BiDi Up)
+              - 1000BASE-CWDM (1GE)
+              - 1000BASE-CX (1GE DAC)
+              - 1000BASE-DWDM (1GE)
+              - 1000BASE-EX (1GE)
+              - 1000BASE-SX (1GE)
+              - 1000BASE-LSX (1GE)
               - 1000BASE-LX (1GE)
+              - 1000BASE-LX10/LH (1GE)
+              - 1000BASE-T (1GE)
               - 1000BASE-TX (1GE)
+              - 1000BASE-ZX (1GE)
               - 2.5GBASE-T (2.5GE)
               - 5GBASE-T (5GE)
-              - 10GBASE-T (10GE)
-              - 10GBASE-CX4 (10GE)
+              - 10GBASE-BR-D (10GE BiDi Down)
+              - 10GBASE-BR-U (10GE BiDi Up)
+              - 10GBASE-CU (10GE DAC Passive Twinax)
+              - 10GBASE-CX4 (10GE DAC)
+              - 10GBASE-ER (10GE)
+              - 10GBASE-LR (10GE)
+              - 10GBASE-LRM (10GE)
+              - 10GBASE-LX4 (10GE)
+              - 10GBASE-SR (10GE)
+              - 10GBASE-T (10GE)              
+              - 10GBASE-ZR (10GE)
               - SFP (100ME)
               - GBIC (1GE)
               - SFP (1GE)
+              - SFP (2.5GE)
               - SFP+ (10GE)
               - XFP (10GE)
               - XENPAK (10GE)
               - X2 (10GE)
               - SFP28 (25GE)
-              - SFP56 (50GE)
               - QSFP+ (40GE)
+              - SFP56 (50GE)
               - QSFP28 (50GE)
               - CFP (100GE)
               - CFP2 (100GE)
-              - CFP2 (200GE)
-              - CFP2 (400GE)
               - CFP4 (100GE)
               - CXP (100GE)
               - Cisco CPAK (100GE)
               - DSFP (100GE)
+              - SFP112 (100GE)
               - SFP-DD (100GE)
               - QSFP28 (100GE)
               - QSFP-DD (100GE)
+              - CFP2 (200GE)
               - QSFP56 (200GE)
               - QSFP-DD (200GE)
+              - CFP2 (400GE)
               - QSFP112 (400GE)
               - QSFP-DD (400GE)
               - OSFP (400GE)
@@ -138329,6 +139350,9 @@ components:
               - CPF8 (400GE)
               - QSFP-DD (800GE)
               - OSFP (800GE)
+              - OSFP1600 (1.6TE)
+              - OSFP1600-RHS (1.6TE)
+              - QSFP-DD1600 (1.6TE)
               - 1000BASE-KX (1GE)
               - 2.5GBASE-KX (2.5GE)
               - 5GBASE-KR (5GE)
@@ -138340,14 +139364,76 @@ components:
               - 100GBASE-KP4 (100GE)
               - 100GBASE-KR2 (100GE)
               - 100GBASE-KR4 (100GE)
+              - 1.6TBASE-KR8 (1.6TE)
+              - 25GBASE-CR (25GE DAC)
+              - 25GBASE-ER (25GE)
+              - 25GBASE-LR (25GE)
+              - 25GBASE-SR (25GE)
+              - 25GBASE-T (25GE)
+              - 40GBASE-CR4 (40GE DAC)
+              - 40GBASE-ER4 (40GE)
+              - 40GBASE-FR4 (40GE)
+              - 40GBASE-LR4 (40GE)
+              - 40GBASE-SR4 (40GE)
+              - 40GBASE-SR4 (40GE BiDi)
+              - 50GBASE-CR (50GE DAC)
+              - 50GBASE-ER (50GE)
+              - 50GBASE-FR (50GE)
+              - 50GBASE-LR (50GE)
+              - 50GBASE-SR (50GE)
+              - 100GBASE-CR1 (100GE DAC)
+              - 100GBASE-CR2 (100GE DAC)
+              - 100GBASE-CR4 (100GE DAC)
+              - 100GBASE-CR10 (100GE DAC)
+              - 100GBASE-CWDM4 (100GE)
+              - 100GBASE-DR (100GE)
+              - 100GBASE-FR1 (100GE)
+              - 100GBASE-ER4 (100GE)
+              - 100GBASE-LR1 (100GE)
+              - 100GBASE-LR4 (100GE)
+              - 100GBASE-SR1 (100GE)
+              - 100GBASE-SR1.2 (100GE BiDi)
+              - 100GBASE-SR2 (100GE)
+              - 100GBASE-SR4 (100GE)
+              - 100GBASE-SR10 (100GE)
+              - 100GBASE-ZR (100GE)
+              - 200GBASE-CR2 (200GE)
+              - 200GBASE-CR4 (200GE)
+              - 200GBASE-SR2 (200GE)
+              - 200GBASE-SR4 (200GE)
+              - 200GBASE-DR4 (200GE)
+              - 200GBASE-FR4 (200GE)
+              - 200GBASE-LR4 (200GE)
+              - 200GBASE-ER4 (200GE)
+              - 200GBASE-VR2 (200GE)
+              - 400GBASE-CR4 (400GE)
+              - 400GBASE-DR4 (400GE)
+              - 400GBASE-ER8 (400GE)
+              - 400GBASE-FR4 (400GE)
+              - 400GBASE-FR8 (400GE)
+              - 400GBASE-LR4 (400GE)
+              - 400GBASE-LR8 (400GE)
+              - 400GBASE-SR4 (400GE)
+              - 400GBASE-SR4.2 (400GE BiDi)
+              - 400GBASE-SR8 (400GE)
+              - 400GBASE-SR16 (400GE)
+              - 400GBASE-VR4 (400GE)
+              - 400GBASE-ZR (400GE)
+              - 800GBASE-CR8 (800GE)
+              - 800GBASE-DR8 (800GE)
+              - 800GBASE-SR8 (800GE)
+              - 800GBASE-VR8 (800GE)
+              - 1.6TBASE-CR8 (1.6TE)
+              - 1.6TBASE-DR8 (1.6TE)
+              - 1.6TBASE-DR8-2 (1.6TE)
               - IEEE 802.11a
               - IEEE 802.11b/g
-              - IEEE 802.11n
-              - IEEE 802.11ac
-              - IEEE 802.11ad
-              - IEEE 802.11ax
-              - IEEE 802.11ay
-              - IEEE 802.11be
+              - IEEE 802.11n (Wi-Fi 4)
+              - IEEE 802.11ac (Wi-Fi 5)
+              - IEEE 802.11ad (WiGig)
+              - IEEE 802.11ax (Wi-Fi 6)
+              - IEEE 802.11ay (WiGig)
+              - IEEE 802.11be (Wi-Fi 7)
               - IEEE 802.15.1 (Bluetooth)
               - IEEE 802.15.4 (LR-WPAN)
               - Other (Wireless)
@@ -138382,7 +139468,19 @@ components:
               - EDR (25 Gbps)
               - HDR (50 Gbps)
               - NDR (100 Gbps)
-              - XDR (250 Gbps)
+              - XDR (200 Gbps)
+              - HDR 2X (100 Gbps)
+              - NDR 2X (200 Gbps)
+              - XDR 2X (400 Gbps)
+              - SDR 4X (8 Gbps)
+              - DDR 4X (16 Gbps)
+              - QDR 4X (32 Gbps)
+              - FDR10 4X (40 Gbps)
+              - FDR 4X (56 Gbps)
+              - EDR 4X (100 Gbps)
+              - HDR 4X (200 Gbps)
+              - NDR 4X (400 Gbps)
+              - XDR 4X (800 Gbps)
               - T1 (1.544 Mbps)
               - E1 (2.048 Mbps)
               - T3 (45 Mbps)
@@ -138413,6 +139511,7 @@ components:
               - Extreme SummitStack-128
               - Extreme SummitStack-256
               - Extreme SummitStack-512
+              - HPE Synergy Interconnect Link
               - Other
         enabled:
           type: boolean
@@ -138559,41 +139658,63 @@ components:
           - virtual
           - bridge
           - lag
+          - channel
           - 100base-fx
           - 100base-lfx
           - 100base-tx
           - 100base-t1
-          - 1000base-t
+          - 1000base-bx10-d
+          - 1000base-bx10-u
+          - 1000base-cwdm
+          - 1000base-cx
+          - 1000base-dwdm
+          - 1000base-ex
+          - 1000base-sx
+          - 1000base-lsx
           - 1000base-lx
+          - 1000base-lx10
+          - 1000base-t
           - 1000base-tx
+          - 1000base-zx
           - 2.5gbase-t
           - 5gbase-t
-          - 10gbase-t
+          - 10gbase-br-d
+          - 10gbase-br-u
+          - 10gbase-cu
           - 10gbase-cx4
+          - 10gbase-er
+          - 10gbase-lr
+          - 10gbase-lrm
+          - 10gbase-lx4
+          - 10gbase-sr
+          - 10gbase-t
+          - 10gbase-zr
           - 100base-x-sfp
           - 1000base-x-gbic
           - 1000base-x-sfp
+          - 2.5gbase-x-sfp
           - 10gbase-x-sfpp
           - 10gbase-x-xfp
           - 10gbase-x-xenpak
           - 10gbase-x-x2
           - 25gbase-x-sfp28
-          - 50gbase-x-sfp56
           - 40gbase-x-qsfpp
+          - 50gbase-x-sfp56
           - 50gbase-x-sfp28
           - 100gbase-x-cfp
           - 100gbase-x-cfp2
-          - 200gbase-x-cfp2
-          - 400gbase-x-cfp2
           - 100gbase-x-cfp4
           - 100gbase-x-cxp
           - 100gbase-x-cpak
           - 100gbase-x-dsfp
+          - 100gbase-x-sfp112
           - 100gbase-x-sfpdd
           - 100gbase-x-qsfp28
           - 100gbase-x-qsfpdd
+          - 200gbase-x-cfp2
           - 200gbase-x-qsfp56
           - 200gbase-x-qsfpdd
+          - 400gbase-x-cfp2
           - 400gbase-x-qsfp112
           - 400gbase-x-qsfpdd
           - 400gbase-x-osfp
@@ -138602,6 +139723,9 @@ components:
           - 400gbase-x-cfp8
           - 800gbase-x-qsfpdd
           - 800gbase-x-osfp
+          - 1.6tbase-x-osfp1600
+          - 1.6tbase-x-osfp1600-rhs
+          - 1.6tbase-x-qsfpdd1600
           - 1000base-kx
           - 2.5gbase-kx
           - 5gbase-kr
@@ -138613,6 +139737,68 @@ components:
           - 100gbase-kp4
           - 100gbase-kr2
           - 100gbase-kr4
+          - 1.6tbase-kr8
+          - 25gbase-cr
+          - 25gbase-er
+          - 25gbase-lr
+          - 25gbase-sr
+          - 25gbase-t
+          - 40gbase-cr4
+          - 40gbase-er4
+          - 40gbase-fr4
+          - 40gbase-lr4
+          - 40gbase-sr4
+          - 40gbase-sr4-bd
+          - 50gbase-cr
+          - 50gbase-er
+          - 50gbase-fr
+          - 50gbase-lr
+          - 50gbase-sr
+          - 100gbase-cr1
+          - 100gbase-cr2
+          - 100gbase-cr4
+          - 100gbase-cr10
+          - 100gbase-cwdm4
+          - 100gbase-dr
+          - 100gbase-fr1
+          - 100gbase-er4
+          - 100gbase-lr1
+          - 100gbase-lr4
+          - 100gbase-sr1
+          - 100gbase-sr1.2
+          - 100gbase-sr2
+          - 100gbase-sr4
+          - 100gbase-sr10
+          - 100gbase-zr
+          - 200gbase-cr2
+          - 200gbase-cr4
+          - 200gbase-sr2
+          - 200gbase-sr4
+          - 200gbase-dr4
+          - 200gbase-fr4
+          - 200gbase-lr4
+          - 200gbase-er4
+          - 200gbase-vr2
+          - 400gbase-cr4
+          - 400gbase-dr4
+          - 400gbase-er8
+          - 400gbase-fr4
+          - 400gbase-fr8
+          - 400gbase-lr4
+          - 400gbase-lr8
+          - 400gbase-sr4
+          - 400gbase-sr4_2
+          - 400gbase-sr8
+          - 400gbase-sr16
+          - 400gbase-vr4
+          - 400gbase-zr
+          - 800gbase-cr8
+          - 800gbase-dr8
+          - 800gbase-sr8
+          - 800gbase-vr8
+          - 1.6tbase-cr8
+          - 1.6tbase-dr8
+          - 1.6tbase-dr8-2
           - ieee802.11a
           - ieee802.11g
           - ieee802.11n
@@ -138656,6 +139842,18 @@ components:
           - infiniband-hdr
           - infiniband-ndr
           - infiniband-xdr
+          - infiniband-hdr-2x
+          - infiniband-ndr-2x
+          - infiniband-xdr-2x
+          - infiniband-sdr-4x
+          - infiniband-ddr-4x
+          - infiniband-qdr-4x
+          - infiniband-fdr10-4x
+          - infiniband-fdr-4x
+          - infiniband-edr-4x
+          - infiniband-hdr-4x
+          - infiniband-ndr-4x
+          - infiniband-xdr-4x
           - t1
           - e1
           - t3
@@ -138686,6 +139884,7 @@ components:
           - extreme-summitstack-128
           - extreme-summitstack-256
           - extreme-summitstack-512
+          - hpe-synergy-interconnect-link
           - other
           type: string
           description: '* `virtual` - Virtual
@@ -138694,33 +139893,75 @@ components:
 
             * `lag` - Link Aggregation Group (LAG)
 
-            * `100base-fx` - 100BASE-FX (10/100ME FIBER)
+            * `channel` - Channel
 
-            * `100base-lfx` - 100BASE-LFX (10/100ME FIBER)
+            * `100base-fx` - 100BASE-FX (10/100ME)
+
+            * `100base-lfx` - 100BASE-LFX (10/100ME)
 
             * `100base-tx` - 100BASE-TX (10/100ME)
 
-            * `100base-t1` - 100BASE-T1 (10/100ME Single Pair)
+            * `100base-t1` - 100BASE-T1 (10/100ME)
 
-            * `1000base-t` - 1000BASE-T (1GE)
+            * `1000base-bx10-d` - 1000BASE-BX10-D (1GE BiDi Down)
+
+            * `1000base-bx10-u` - 1000BASE-BX10-U (1GE BiDi Up)
+
+            * `1000base-cwdm` - 1000BASE-CWDM (1GE)
+
+            * `1000base-cx` - 1000BASE-CX (1GE DAC)
+
+            * `1000base-dwdm` - 1000BASE-DWDM (1GE)
+
+            * `1000base-ex` - 1000BASE-EX (1GE)
+
+            * `1000base-sx` - 1000BASE-SX (1GE)
+
+            * `1000base-lsx` - 1000BASE-LSX (1GE)
 
             * `1000base-lx` - 1000BASE-LX (1GE)
 
+            * `1000base-lx10` - 1000BASE-LX10/LH (1GE)
+
+            * `1000base-t` - 1000BASE-T (1GE)
+
             * `1000base-tx` - 1000BASE-TX (1GE)
+
+            * `1000base-zx` - 1000BASE-ZX (1GE)
 
             * `2.5gbase-t` - 2.5GBASE-T (2.5GE)
 
             * `5gbase-t` - 5GBASE-T (5GE)
 
-            * `10gbase-t` - 10GBASE-T (10GE)
+            * `10gbase-br-d` - 10GBASE-BR-D (10GE BiDi Down)
 
-            * `10gbase-cx4` - 10GBASE-CX4 (10GE)
+            * `10gbase-br-u` - 10GBASE-BR-U (10GE BiDi Up)
+
+            * `10gbase-cu` - 10GBASE-CU (10GE DAC Passive Twinax)
+
+            * `10gbase-cx4` - 10GBASE-CX4 (10GE DAC)
+
+            * `10gbase-er` - 10GBASE-ER (10GE)
+
+            * `10gbase-lr` - 10GBASE-LR (10GE)
+
+            * `10gbase-lrm` - 10GBASE-LRM (10GE)
+
+            * `10gbase-lx4` - 10GBASE-LX4 (10GE)
+
+            * `10gbase-sr` - 10GBASE-SR (10GE)
+
+            * `10gbase-t` - 10GBASE-T (10GE)                
+
+            * `10gbase-zr` - 10GBASE-ZR (10GE)
 
             * `100base-x-sfp` - SFP (100ME)
 
             * `1000base-x-gbic` - GBIC (1GE)
 
             * `1000base-x-sfp` - SFP (1GE)
+
+            * `2.5gbase-x-sfp` - SFP (2.5GE)
 
             * `10gbase-x-sfpp` - SFP+ (10GE)
 
@@ -138732,19 +139973,15 @@ components:
 
             * `25gbase-x-sfp28` - SFP28 (25GE)
 
-            * `50gbase-x-sfp56` - SFP56 (50GE)
-
             * `40gbase-x-qsfpp` - QSFP+ (40GE)
+
+            * `50gbase-x-sfp56` - SFP56 (50GE)
 
             * `50gbase-x-sfp28` - QSFP28 (50GE)
 
             * `100gbase-x-cfp` - CFP (100GE)
 
             * `100gbase-x-cfp2` - CFP2 (100GE)
-
-            * `200gbase-x-cfp2` - CFP2 (200GE)
-
-            * `400gbase-x-cfp2` - CFP2 (400GE)
 
             * `100gbase-x-cfp4` - CFP4 (100GE)
 
@@ -138754,15 +139991,21 @@ components:
 
             * `100gbase-x-dsfp` - DSFP (100GE)
 
+            * `100gbase-x-sfp112` - SFP112 (100GE)
+
             * `100gbase-x-sfpdd` - SFP-DD (100GE)
 
             * `100gbase-x-qsfp28` - QSFP28 (100GE)
 
             * `100gbase-x-qsfpdd` - QSFP-DD (100GE)
 
+            * `200gbase-x-cfp2` - CFP2 (200GE)
+
             * `200gbase-x-qsfp56` - QSFP56 (200GE)
 
             * `200gbase-x-qsfpdd` - QSFP-DD (200GE)
+
+            * `400gbase-x-cfp2` - CFP2 (400GE)
 
             * `400gbase-x-qsfp112` - QSFP112 (400GE)
 
@@ -138779,6 +140022,12 @@ components:
             * `800gbase-x-qsfpdd` - QSFP-DD (800GE)
 
             * `800gbase-x-osfp` - OSFP (800GE)
+
+            * `1.6tbase-x-osfp1600` - OSFP1600 (1.6TE)
+
+            * `1.6tbase-x-osfp1600-rhs` - OSFP1600-RHS (1.6TE)
+
+            * `1.6tbase-x-qsfpdd1600` - QSFP-DD1600 (1.6TE)
 
             * `1000base-kx` - 1000BASE-KX (1GE)
 
@@ -138802,21 +140051,145 @@ components:
 
             * `100gbase-kr4` - 100GBASE-KR4 (100GE)
 
+            * `1.6tbase-kr8` - 1.6TBASE-KR8 (1.6TE)
+
+            * `25gbase-cr` - 25GBASE-CR (25GE DAC)
+
+            * `25gbase-er` - 25GBASE-ER (25GE)
+
+            * `25gbase-lr` - 25GBASE-LR (25GE)
+
+            * `25gbase-sr` - 25GBASE-SR (25GE)
+
+            * `25gbase-t` - 25GBASE-T (25GE)
+
+            * `40gbase-cr4` - 40GBASE-CR4 (40GE DAC)
+
+            * `40gbase-er4` - 40GBASE-ER4 (40GE)
+
+            * `40gbase-fr4` - 40GBASE-FR4 (40GE)
+
+            * `40gbase-lr4` - 40GBASE-LR4 (40GE)
+
+            * `40gbase-sr4` - 40GBASE-SR4 (40GE)
+
+            * `40gbase-sr4-bd` - 40GBASE-SR4 (40GE BiDi)
+
+            * `50gbase-cr` - 50GBASE-CR (50GE DAC)
+
+            * `50gbase-er` - 50GBASE-ER (50GE)
+
+            * `50gbase-fr` - 50GBASE-FR (50GE)
+
+            * `50gbase-lr` - 50GBASE-LR (50GE)
+
+            * `50gbase-sr` - 50GBASE-SR (50GE)
+
+            * `100gbase-cr1` - 100GBASE-CR1 (100GE DAC)
+
+            * `100gbase-cr2` - 100GBASE-CR2 (100GE DAC)
+
+            * `100gbase-cr4` - 100GBASE-CR4 (100GE DAC)
+
+            * `100gbase-cr10` - 100GBASE-CR10 (100GE DAC)
+
+            * `100gbase-cwdm4` - 100GBASE-CWDM4 (100GE)
+
+            * `100gbase-dr` - 100GBASE-DR (100GE)
+
+            * `100gbase-fr1` - 100GBASE-FR1 (100GE)
+
+            * `100gbase-er4` - 100GBASE-ER4 (100GE)
+
+            * `100gbase-lr1` - 100GBASE-LR1 (100GE)
+
+            * `100gbase-lr4` - 100GBASE-LR4 (100GE)
+
+            * `100gbase-sr1` - 100GBASE-SR1 (100GE)
+
+            * `100gbase-sr1.2` - 100GBASE-SR1.2 (100GE BiDi)
+
+            * `100gbase-sr2` - 100GBASE-SR2 (100GE)
+
+            * `100gbase-sr4` - 100GBASE-SR4 (100GE)
+
+            * `100gbase-sr10` - 100GBASE-SR10 (100GE)
+
+            * `100gbase-zr` - 100GBASE-ZR (100GE)
+
+            * `200gbase-cr2` - 200GBASE-CR2 (200GE)
+
+            * `200gbase-cr4` - 200GBASE-CR4 (200GE)
+
+            * `200gbase-sr2` - 200GBASE-SR2 (200GE)
+
+            * `200gbase-sr4` - 200GBASE-SR4 (200GE)
+
+            * `200gbase-dr4` - 200GBASE-DR4 (200GE)
+
+            * `200gbase-fr4` - 200GBASE-FR4 (200GE)
+
+            * `200gbase-lr4` - 200GBASE-LR4 (200GE)
+
+            * `200gbase-er4` - 200GBASE-ER4 (200GE)
+
+            * `200gbase-vr2` - 200GBASE-VR2 (200GE)
+
+            * `400gbase-cr4` - 400GBASE-CR4 (400GE)
+
+            * `400gbase-dr4` - 400GBASE-DR4 (400GE)
+
+            * `400gbase-er8` - 400GBASE-ER8 (400GE)
+
+            * `400gbase-fr4` - 400GBASE-FR4 (400GE)
+
+            * `400gbase-fr8` - 400GBASE-FR8 (400GE)
+
+            * `400gbase-lr4` - 400GBASE-LR4 (400GE)
+
+            * `400gbase-lr8` - 400GBASE-LR8 (400GE)
+
+            * `400gbase-sr4` - 400GBASE-SR4 (400GE)
+
+            * `400gbase-sr4_2` - 400GBASE-SR4.2 (400GE BiDi)
+
+            * `400gbase-sr8` - 400GBASE-SR8 (400GE)
+
+            * `400gbase-sr16` - 400GBASE-SR16 (400GE)
+
+            * `400gbase-vr4` - 400GBASE-VR4 (400GE)
+
+            * `400gbase-zr` - 400GBASE-ZR (400GE)
+
+            * `800gbase-cr8` - 800GBASE-CR8 (800GE)
+
+            * `800gbase-dr8` - 800GBASE-DR8 (800GE)
+
+            * `800gbase-sr8` - 800GBASE-SR8 (800GE)
+
+            * `800gbase-vr8` - 800GBASE-VR8 (800GE)
+
+            * `1.6tbase-cr8` - 1.6TBASE-CR8 (1.6TE)
+
+            * `1.6tbase-dr8` - 1.6TBASE-DR8 (1.6TE)
+
+            * `1.6tbase-dr8-2` - 1.6TBASE-DR8-2 (1.6TE)
+
             * `ieee802.11a` - IEEE 802.11a
 
             * `ieee802.11g` - IEEE 802.11b/g
 
-            * `ieee802.11n` - IEEE 802.11n
+            * `ieee802.11n` - IEEE 802.11n (Wi-Fi 4)
 
-            * `ieee802.11ac` - IEEE 802.11ac
+            * `ieee802.11ac` - IEEE 802.11ac (Wi-Fi 5)
 
-            * `ieee802.11ad` - IEEE 802.11ad
+            * `ieee802.11ad` - IEEE 802.11ad (WiGig)
 
-            * `ieee802.11ax` - IEEE 802.11ax
+            * `ieee802.11ax` - IEEE 802.11ax (Wi-Fi 6)
 
-            * `ieee802.11ay` - IEEE 802.11ay
+            * `ieee802.11ay` - IEEE 802.11ay (WiGig)
 
-            * `ieee802.11be` - IEEE 802.11be
+            * `ieee802.11be` - IEEE 802.11be (Wi-Fi 7)
 
             * `ieee802.15.1` - IEEE 802.15.1 (Bluetooth)
 
@@ -138886,7 +140259,31 @@ components:
 
             * `infiniband-ndr` - NDR (100 Gbps)
 
-            * `infiniband-xdr` - XDR (250 Gbps)
+            * `infiniband-xdr` - XDR (200 Gbps)
+
+            * `infiniband-hdr-2x` - HDR 2X (100 Gbps)
+
+            * `infiniband-ndr-2x` - NDR 2X (200 Gbps)
+
+            * `infiniband-xdr-2x` - XDR 2X (400 Gbps)
+
+            * `infiniband-sdr-4x` - SDR 4X (8 Gbps)
+
+            * `infiniband-ddr-4x` - DDR 4X (16 Gbps)
+
+            * `infiniband-qdr-4x` - QDR 4X (32 Gbps)
+
+            * `infiniband-fdr10-4x` - FDR10 4X (40 Gbps)
+
+            * `infiniband-fdr-4x` - FDR 4X (56 Gbps)
+
+            * `infiniband-edr-4x` - EDR 4X (100 Gbps)
+
+            * `infiniband-hdr-4x` - HDR 4X (200 Gbps)
+
+            * `infiniband-ndr-4x` - NDR 4X (400 Gbps)
+
+            * `infiniband-xdr-4x` - XDR 4X (800 Gbps)
 
             * `t1` - T1 (1.544 Mbps)
 
@@ -138947,6 +140344,8 @@ components:
             * `extreme-summitstack-256` - Extreme SummitStack-256
 
             * `extreme-summitstack-512` - Extreme SummitStack-512
+
+            * `hpe-synergy-interconnect-link` - HPE Synergy Interconnect Link
 
             * `other` - Other'
           x-spec-enum-id: 017cd578206eb6ae
@@ -150166,41 +151565,63 @@ components:
           - virtual
           - bridge
           - lag
+          - channel
           - 100base-fx
           - 100base-lfx
           - 100base-tx
           - 100base-t1
-          - 1000base-t
+          - 1000base-bx10-d
+          - 1000base-bx10-u
+          - 1000base-cwdm
+          - 1000base-cx
+          - 1000base-dwdm
+          - 1000base-ex
+          - 1000base-sx
+          - 1000base-lsx
           - 1000base-lx
+          - 1000base-lx10
+          - 1000base-t
           - 1000base-tx
+          - 1000base-zx
           - 2.5gbase-t
           - 5gbase-t
-          - 10gbase-t
+          - 10gbase-br-d
+          - 10gbase-br-u
+          - 10gbase-cu
           - 10gbase-cx4
+          - 10gbase-er
+          - 10gbase-lr
+          - 10gbase-lrm
+          - 10gbase-lx4
+          - 10gbase-sr
+          - 10gbase-t
+          - 10gbase-zr
           - 100base-x-sfp
           - 1000base-x-gbic
           - 1000base-x-sfp
+          - 2.5gbase-x-sfp
           - 10gbase-x-sfpp
           - 10gbase-x-xfp
           - 10gbase-x-xenpak
           - 10gbase-x-x2
           - 25gbase-x-sfp28
-          - 50gbase-x-sfp56
           - 40gbase-x-qsfpp
+          - 50gbase-x-sfp56
           - 50gbase-x-sfp28
           - 100gbase-x-cfp
           - 100gbase-x-cfp2
-          - 200gbase-x-cfp2
-          - 400gbase-x-cfp2
           - 100gbase-x-cfp4
           - 100gbase-x-cxp
           - 100gbase-x-cpak
           - 100gbase-x-dsfp
+          - 100gbase-x-sfp112
           - 100gbase-x-sfpdd
           - 100gbase-x-qsfp28
           - 100gbase-x-qsfpdd
+          - 200gbase-x-cfp2
           - 200gbase-x-qsfp56
           - 200gbase-x-qsfpdd
+          - 400gbase-x-cfp2
           - 400gbase-x-qsfp112
           - 400gbase-x-qsfpdd
           - 400gbase-x-osfp
@@ -150209,6 +151630,9 @@ components:
           - 400gbase-x-cfp8
           - 800gbase-x-qsfpdd
           - 800gbase-x-osfp
+          - 1.6tbase-x-osfp1600
+          - 1.6tbase-x-osfp1600-rhs
+          - 1.6tbase-x-qsfpdd1600
           - 1000base-kx
           - 2.5gbase-kx
           - 5gbase-kr
@@ -150220,6 +151644,68 @@ components:
           - 100gbase-kp4
           - 100gbase-kr2
           - 100gbase-kr4
+          - 1.6tbase-kr8
+          - 25gbase-cr
+          - 25gbase-er
+          - 25gbase-lr
+          - 25gbase-sr
+          - 25gbase-t
+          - 40gbase-cr4
+          - 40gbase-er4
+          - 40gbase-fr4
+          - 40gbase-lr4
+          - 40gbase-sr4
+          - 40gbase-sr4-bd
+          - 50gbase-cr
+          - 50gbase-er
+          - 50gbase-fr
+          - 50gbase-lr
+          - 50gbase-sr
+          - 100gbase-cr1
+          - 100gbase-cr2
+          - 100gbase-cr4
+          - 100gbase-cr10
+          - 100gbase-cwdm4
+          - 100gbase-dr
+          - 100gbase-fr1
+          - 100gbase-er4
+          - 100gbase-lr1
+          - 100gbase-lr4
+          - 100gbase-sr1
+          - 100gbase-sr1.2
+          - 100gbase-sr2
+          - 100gbase-sr4
+          - 100gbase-sr10
+          - 100gbase-zr
+          - 200gbase-cr2
+          - 200gbase-cr4
+          - 200gbase-sr2
+          - 200gbase-sr4
+          - 200gbase-dr4
+          - 200gbase-fr4
+          - 200gbase-lr4
+          - 200gbase-er4
+          - 200gbase-vr2
+          - 400gbase-cr4
+          - 400gbase-dr4
+          - 400gbase-er8
+          - 400gbase-fr4
+          - 400gbase-fr8
+          - 400gbase-lr4
+          - 400gbase-lr8
+          - 400gbase-sr4
+          - 400gbase-sr4_2
+          - 400gbase-sr8
+          - 400gbase-sr16
+          - 400gbase-vr4
+          - 400gbase-zr
+          - 800gbase-cr8
+          - 800gbase-dr8
+          - 800gbase-sr8
+          - 800gbase-vr8
+          - 1.6tbase-cr8
+          - 1.6tbase-dr8
+          - 1.6tbase-dr8-2
           - ieee802.11a
           - ieee802.11g
           - ieee802.11n
@@ -150263,6 +151749,18 @@ components:
           - infiniband-hdr
           - infiniband-ndr
           - infiniband-xdr
+          - infiniband-hdr-2x
+          - infiniband-ndr-2x
+          - infiniband-xdr-2x
+          - infiniband-sdr-4x
+          - infiniband-ddr-4x
+          - infiniband-qdr-4x
+          - infiniband-fdr10-4x
+          - infiniband-fdr-4x
+          - infiniband-edr-4x
+          - infiniband-hdr-4x
+          - infiniband-ndr-4x
+          - infiniband-xdr-4x
           - t1
           - e1
           - t3
@@ -150293,6 +151791,7 @@ components:
           - extreme-summitstack-128
           - extreme-summitstack-256
           - extreme-summitstack-512
+          - hpe-synergy-interconnect-link
           - other
           type: string
           description: '* `virtual` - Virtual
@@ -150301,33 +151800,75 @@ components:
 
             * `lag` - Link Aggregation Group (LAG)
 
-            * `100base-fx` - 100BASE-FX (10/100ME FIBER)
+            * `channel` - Channel
 
-            * `100base-lfx` - 100BASE-LFX (10/100ME FIBER)
+            * `100base-fx` - 100BASE-FX (10/100ME)
+
+            * `100base-lfx` - 100BASE-LFX (10/100ME)
 
             * `100base-tx` - 100BASE-TX (10/100ME)
 
-            * `100base-t1` - 100BASE-T1 (10/100ME Single Pair)
+            * `100base-t1` - 100BASE-T1 (10/100ME)
 
-            * `1000base-t` - 1000BASE-T (1GE)
+            * `1000base-bx10-d` - 1000BASE-BX10-D (1GE BiDi Down)
+
+            * `1000base-bx10-u` - 1000BASE-BX10-U (1GE BiDi Up)
+
+            * `1000base-cwdm` - 1000BASE-CWDM (1GE)
+
+            * `1000base-cx` - 1000BASE-CX (1GE DAC)
+
+            * `1000base-dwdm` - 1000BASE-DWDM (1GE)
+
+            * `1000base-ex` - 1000BASE-EX (1GE)
+
+            * `1000base-sx` - 1000BASE-SX (1GE)
+
+            * `1000base-lsx` - 1000BASE-LSX (1GE)
 
             * `1000base-lx` - 1000BASE-LX (1GE)
 
+            * `1000base-lx10` - 1000BASE-LX10/LH (1GE)
+
+            * `1000base-t` - 1000BASE-T (1GE)
+
             * `1000base-tx` - 1000BASE-TX (1GE)
+
+            * `1000base-zx` - 1000BASE-ZX (1GE)
 
             * `2.5gbase-t` - 2.5GBASE-T (2.5GE)
 
             * `5gbase-t` - 5GBASE-T (5GE)
 
-            * `10gbase-t` - 10GBASE-T (10GE)
+            * `10gbase-br-d` - 10GBASE-BR-D (10GE BiDi Down)
 
-            * `10gbase-cx4` - 10GBASE-CX4 (10GE)
+            * `10gbase-br-u` - 10GBASE-BR-U (10GE BiDi Up)
+
+            * `10gbase-cu` - 10GBASE-CU (10GE DAC Passive Twinax)
+
+            * `10gbase-cx4` - 10GBASE-CX4 (10GE DAC)
+
+            * `10gbase-er` - 10GBASE-ER (10GE)
+
+            * `10gbase-lr` - 10GBASE-LR (10GE)
+
+            * `10gbase-lrm` - 10GBASE-LRM (10GE)
+
+            * `10gbase-lx4` - 10GBASE-LX4 (10GE)
+
+            * `10gbase-sr` - 10GBASE-SR (10GE)
+
+            * `10gbase-t` - 10GBASE-T (10GE)                
+
+            * `10gbase-zr` - 10GBASE-ZR (10GE)
 
             * `100base-x-sfp` - SFP (100ME)
 
             * `1000base-x-gbic` - GBIC (1GE)
 
             * `1000base-x-sfp` - SFP (1GE)
+
+            * `2.5gbase-x-sfp` - SFP (2.5GE)
 
             * `10gbase-x-sfpp` - SFP+ (10GE)
 
@@ -150339,19 +151880,15 @@ components:
 
             * `25gbase-x-sfp28` - SFP28 (25GE)
 
-            * `50gbase-x-sfp56` - SFP56 (50GE)
-
             * `40gbase-x-qsfpp` - QSFP+ (40GE)
+
+            * `50gbase-x-sfp56` - SFP56 (50GE)
 
             * `50gbase-x-sfp28` - QSFP28 (50GE)
 
             * `100gbase-x-cfp` - CFP (100GE)
 
             * `100gbase-x-cfp2` - CFP2 (100GE)
-
-            * `200gbase-x-cfp2` - CFP2 (200GE)
-
-            * `400gbase-x-cfp2` - CFP2 (400GE)
 
             * `100gbase-x-cfp4` - CFP4 (100GE)
 
@@ -150361,15 +151898,21 @@ components:
 
             * `100gbase-x-dsfp` - DSFP (100GE)
 
+            * `100gbase-x-sfp112` - SFP112 (100GE)
+
             * `100gbase-x-sfpdd` - SFP-DD (100GE)
 
             * `100gbase-x-qsfp28` - QSFP28 (100GE)
 
             * `100gbase-x-qsfpdd` - QSFP-DD (100GE)
 
+            * `200gbase-x-cfp2` - CFP2 (200GE)
+
             * `200gbase-x-qsfp56` - QSFP56 (200GE)
 
             * `200gbase-x-qsfpdd` - QSFP-DD (200GE)
+
+            * `400gbase-x-cfp2` - CFP2 (400GE)
 
             * `400gbase-x-qsfp112` - QSFP112 (400GE)
 
@@ -150386,6 +151929,12 @@ components:
             * `800gbase-x-qsfpdd` - QSFP-DD (800GE)
 
             * `800gbase-x-osfp` - OSFP (800GE)
+
+            * `1.6tbase-x-osfp1600` - OSFP1600 (1.6TE)
+
+            * `1.6tbase-x-osfp1600-rhs` - OSFP1600-RHS (1.6TE)
+
+            * `1.6tbase-x-qsfpdd1600` - QSFP-DD1600 (1.6TE)
 
             * `1000base-kx` - 1000BASE-KX (1GE)
 
@@ -150409,21 +151958,145 @@ components:
 
             * `100gbase-kr4` - 100GBASE-KR4 (100GE)
 
+            * `1.6tbase-kr8` - 1.6TBASE-KR8 (1.6TE)
+
+            * `25gbase-cr` - 25GBASE-CR (25GE DAC)
+
+            * `25gbase-er` - 25GBASE-ER (25GE)
+
+            * `25gbase-lr` - 25GBASE-LR (25GE)
+
+            * `25gbase-sr` - 25GBASE-SR (25GE)
+
+            * `25gbase-t` - 25GBASE-T (25GE)
+
+            * `40gbase-cr4` - 40GBASE-CR4 (40GE DAC)
+
+            * `40gbase-er4` - 40GBASE-ER4 (40GE)
+
+            * `40gbase-fr4` - 40GBASE-FR4 (40GE)
+
+            * `40gbase-lr4` - 40GBASE-LR4 (40GE)
+
+            * `40gbase-sr4` - 40GBASE-SR4 (40GE)
+
+            * `40gbase-sr4-bd` - 40GBASE-SR4 (40GE BiDi)
+
+            * `50gbase-cr` - 50GBASE-CR (50GE DAC)
+
+            * `50gbase-er` - 50GBASE-ER (50GE)
+
+            * `50gbase-fr` - 50GBASE-FR (50GE)
+
+            * `50gbase-lr` - 50GBASE-LR (50GE)
+
+            * `50gbase-sr` - 50GBASE-SR (50GE)
+
+            * `100gbase-cr1` - 100GBASE-CR1 (100GE DAC)
+
+            * `100gbase-cr2` - 100GBASE-CR2 (100GE DAC)
+
+            * `100gbase-cr4` - 100GBASE-CR4 (100GE DAC)
+
+            * `100gbase-cr10` - 100GBASE-CR10 (100GE DAC)
+
+            * `100gbase-cwdm4` - 100GBASE-CWDM4 (100GE)
+
+            * `100gbase-dr` - 100GBASE-DR (100GE)
+
+            * `100gbase-fr1` - 100GBASE-FR1 (100GE)
+
+            * `100gbase-er4` - 100GBASE-ER4 (100GE)
+
+            * `100gbase-lr1` - 100GBASE-LR1 (100GE)
+
+            * `100gbase-lr4` - 100GBASE-LR4 (100GE)
+
+            * `100gbase-sr1` - 100GBASE-SR1 (100GE)
+
+            * `100gbase-sr1.2` - 100GBASE-SR1.2 (100GE BiDi)
+
+            * `100gbase-sr2` - 100GBASE-SR2 (100GE)
+
+            * `100gbase-sr4` - 100GBASE-SR4 (100GE)
+
+            * `100gbase-sr10` - 100GBASE-SR10 (100GE)
+
+            * `100gbase-zr` - 100GBASE-ZR (100GE)
+
+            * `200gbase-cr2` - 200GBASE-CR2 (200GE)
+
+            * `200gbase-cr4` - 200GBASE-CR4 (200GE)
+
+            * `200gbase-sr2` - 200GBASE-SR2 (200GE)
+
+            * `200gbase-sr4` - 200GBASE-SR4 (200GE)
+
+            * `200gbase-dr4` - 200GBASE-DR4 (200GE)
+
+            * `200gbase-fr4` - 200GBASE-FR4 (200GE)
+
+            * `200gbase-lr4` - 200GBASE-LR4 (200GE)
+
+            * `200gbase-er4` - 200GBASE-ER4 (200GE)
+
+            * `200gbase-vr2` - 200GBASE-VR2 (200GE)
+
+            * `400gbase-cr4` - 400GBASE-CR4 (400GE)
+
+            * `400gbase-dr4` - 400GBASE-DR4 (400GE)
+
+            * `400gbase-er8` - 400GBASE-ER8 (400GE)
+
+            * `400gbase-fr4` - 400GBASE-FR4 (400GE)
+
+            * `400gbase-fr8` - 400GBASE-FR8 (400GE)
+
+            * `400gbase-lr4` - 400GBASE-LR4 (400GE)
+
+            * `400gbase-lr8` - 400GBASE-LR8 (400GE)
+
+            * `400gbase-sr4` - 400GBASE-SR4 (400GE)
+
+            * `400gbase-sr4_2` - 400GBASE-SR4.2 (400GE BiDi)
+
+            * `400gbase-sr8` - 400GBASE-SR8 (400GE)
+
+            * `400gbase-sr16` - 400GBASE-SR16 (400GE)
+
+            * `400gbase-vr4` - 400GBASE-VR4 (400GE)
+
+            * `400gbase-zr` - 400GBASE-ZR (400GE)
+
+            * `800gbase-cr8` - 800GBASE-CR8 (800GE)
+
+            * `800gbase-dr8` - 800GBASE-DR8 (800GE)
+
+            * `800gbase-sr8` - 800GBASE-SR8 (800GE)
+
+            * `800gbase-vr8` - 800GBASE-VR8 (800GE)
+
+            * `1.6tbase-cr8` - 1.6TBASE-CR8 (1.6TE)
+
+            * `1.6tbase-dr8` - 1.6TBASE-DR8 (1.6TE)
+
+            * `1.6tbase-dr8-2` - 1.6TBASE-DR8-2 (1.6TE)
+
             * `ieee802.11a` - IEEE 802.11a
 
             * `ieee802.11g` - IEEE 802.11b/g
 
-            * `ieee802.11n` - IEEE 802.11n
+            * `ieee802.11n` - IEEE 802.11n (Wi-Fi 4)
 
-            * `ieee802.11ac` - IEEE 802.11ac
+            * `ieee802.11ac` - IEEE 802.11ac (Wi-Fi 5)
 
-            * `ieee802.11ad` - IEEE 802.11ad
+            * `ieee802.11ad` - IEEE 802.11ad (WiGig)
 
-            * `ieee802.11ax` - IEEE 802.11ax
+            * `ieee802.11ax` - IEEE 802.11ax (Wi-Fi 6)
 
-            * `ieee802.11ay` - IEEE 802.11ay
+            * `ieee802.11ay` - IEEE 802.11ay (WiGig)
 
-            * `ieee802.11be` - IEEE 802.11be
+            * `ieee802.11be` - IEEE 802.11be (Wi-Fi 7)
 
             * `ieee802.15.1` - IEEE 802.15.1 (Bluetooth)
 
@@ -150493,7 +152166,31 @@ components:
 
             * `infiniband-ndr` - NDR (100 Gbps)
 
-            * `infiniband-xdr` - XDR (250 Gbps)
+            * `infiniband-xdr` - XDR (200 Gbps)
+
+            * `infiniband-hdr-2x` - HDR 2X (100 Gbps)
+
+            * `infiniband-ndr-2x` - NDR 2X (200 Gbps)
+
+            * `infiniband-xdr-2x` - XDR 2X (400 Gbps)
+
+            * `infiniband-sdr-4x` - SDR 4X (8 Gbps)
+
+            * `infiniband-ddr-4x` - DDR 4X (16 Gbps)
+
+            * `infiniband-qdr-4x` - QDR 4X (32 Gbps)
+
+            * `infiniband-fdr10-4x` - FDR10 4X (40 Gbps)
+
+            * `infiniband-fdr-4x` - FDR 4X (56 Gbps)
+
+            * `infiniband-edr-4x` - EDR 4X (100 Gbps)
+
+            * `infiniband-hdr-4x` - HDR 4X (200 Gbps)
+
+            * `infiniband-ndr-4x` - NDR 4X (400 Gbps)
+
+            * `infiniband-xdr-4x` - XDR 4X (800 Gbps)
 
             * `t1` - T1 (1.544 Mbps)
 
@@ -150554,6 +152251,8 @@ components:
             * `extreme-summitstack-256` - Extreme SummitStack-256
 
             * `extreme-summitstack-512` - Extreme SummitStack-512
+
+            * `hpe-synergy-interconnect-link` - HPE Synergy Interconnect Link
 
             * `other` - Other'
           x-spec-enum-id: 017cd578206eb6ae
@@ -151390,41 +153089,63 @@ components:
           - virtual
           - bridge
           - lag
+          - channel
           - 100base-fx
           - 100base-lfx
           - 100base-tx
           - 100base-t1
-          - 1000base-t
+          - 1000base-bx10-d
+          - 1000base-bx10-u
+          - 1000base-cwdm
+          - 1000base-cx
+          - 1000base-dwdm
+          - 1000base-ex
+          - 1000base-sx
+          - 1000base-lsx
           - 1000base-lx
+          - 1000base-lx10
+          - 1000base-t
           - 1000base-tx
+          - 1000base-zx
           - 2.5gbase-t
           - 5gbase-t
-          - 10gbase-t
+          - 10gbase-br-d
+          - 10gbase-br-u
+          - 10gbase-cu
           - 10gbase-cx4
+          - 10gbase-er
+          - 10gbase-lr
+          - 10gbase-lrm
+          - 10gbase-lx4
+          - 10gbase-sr
+          - 10gbase-t
+          - 10gbase-zr
           - 100base-x-sfp
           - 1000base-x-gbic
           - 1000base-x-sfp
+          - 2.5gbase-x-sfp
           - 10gbase-x-sfpp
           - 10gbase-x-xfp
           - 10gbase-x-xenpak
           - 10gbase-x-x2
           - 25gbase-x-sfp28
-          - 50gbase-x-sfp56
           - 40gbase-x-qsfpp
+          - 50gbase-x-sfp56
           - 50gbase-x-sfp28
           - 100gbase-x-cfp
           - 100gbase-x-cfp2
-          - 200gbase-x-cfp2
-          - 400gbase-x-cfp2
           - 100gbase-x-cfp4
           - 100gbase-x-cxp
           - 100gbase-x-cpak
           - 100gbase-x-dsfp
+          - 100gbase-x-sfp112
           - 100gbase-x-sfpdd
           - 100gbase-x-qsfp28
           - 100gbase-x-qsfpdd
+          - 200gbase-x-cfp2
           - 200gbase-x-qsfp56
           - 200gbase-x-qsfpdd
+          - 400gbase-x-cfp2
           - 400gbase-x-qsfp112
           - 400gbase-x-qsfpdd
           - 400gbase-x-osfp
@@ -151433,6 +153154,9 @@ components:
           - 400gbase-x-cfp8
           - 800gbase-x-qsfpdd
           - 800gbase-x-osfp
+          - 1.6tbase-x-osfp1600
+          - 1.6tbase-x-osfp1600-rhs
+          - 1.6tbase-x-qsfpdd1600
           - 1000base-kx
           - 2.5gbase-kx
           - 5gbase-kr
@@ -151444,6 +153168,68 @@ components:
           - 100gbase-kp4
           - 100gbase-kr2
           - 100gbase-kr4
+          - 1.6tbase-kr8
+          - 25gbase-cr
+          - 25gbase-er
+          - 25gbase-lr
+          - 25gbase-sr
+          - 25gbase-t
+          - 40gbase-cr4
+          - 40gbase-er4
+          - 40gbase-fr4
+          - 40gbase-lr4
+          - 40gbase-sr4
+          - 40gbase-sr4-bd
+          - 50gbase-cr
+          - 50gbase-er
+          - 50gbase-fr
+          - 50gbase-lr
+          - 50gbase-sr
+          - 100gbase-cr1
+          - 100gbase-cr2
+          - 100gbase-cr4
+          - 100gbase-cr10
+          - 100gbase-cwdm4
+          - 100gbase-dr
+          - 100gbase-fr1
+          - 100gbase-er4
+          - 100gbase-lr1
+          - 100gbase-lr4
+          - 100gbase-sr1
+          - 100gbase-sr1.2
+          - 100gbase-sr2
+          - 100gbase-sr4
+          - 100gbase-sr10
+          - 100gbase-zr
+          - 200gbase-cr2
+          - 200gbase-cr4
+          - 200gbase-sr2
+          - 200gbase-sr4
+          - 200gbase-dr4
+          - 200gbase-fr4
+          - 200gbase-lr4
+          - 200gbase-er4
+          - 200gbase-vr2
+          - 400gbase-cr4
+          - 400gbase-dr4
+          - 400gbase-er8
+          - 400gbase-fr4
+          - 400gbase-fr8
+          - 400gbase-lr4
+          - 400gbase-lr8
+          - 400gbase-sr4
+          - 400gbase-sr4_2
+          - 400gbase-sr8
+          - 400gbase-sr16
+          - 400gbase-vr4
+          - 400gbase-zr
+          - 800gbase-cr8
+          - 800gbase-dr8
+          - 800gbase-sr8
+          - 800gbase-vr8
+          - 1.6tbase-cr8
+          - 1.6tbase-dr8
+          - 1.6tbase-dr8-2
           - ieee802.11a
           - ieee802.11g
           - ieee802.11n
@@ -151487,6 +153273,18 @@ components:
           - infiniband-hdr
           - infiniband-ndr
           - infiniband-xdr
+          - infiniband-hdr-2x
+          - infiniband-ndr-2x
+          - infiniband-xdr-2x
+          - infiniband-sdr-4x
+          - infiniband-ddr-4x
+          - infiniband-qdr-4x
+          - infiniband-fdr10-4x
+          - infiniband-fdr-4x
+          - infiniband-edr-4x
+          - infiniband-hdr-4x
+          - infiniband-ndr-4x
+          - infiniband-xdr-4x
           - t1
           - e1
           - t3
@@ -151517,6 +153315,7 @@ components:
           - extreme-summitstack-128
           - extreme-summitstack-256
           - extreme-summitstack-512
+          - hpe-synergy-interconnect-link
           - other
           type: string
           description: '* `virtual` - Virtual
@@ -151525,33 +153324,75 @@ components:
 
             * `lag` - Link Aggregation Group (LAG)
 
-            * `100base-fx` - 100BASE-FX (10/100ME FIBER)
+            * `channel` - Channel
 
-            * `100base-lfx` - 100BASE-LFX (10/100ME FIBER)
+            * `100base-fx` - 100BASE-FX (10/100ME)
+
+            * `100base-lfx` - 100BASE-LFX (10/100ME)
 
             * `100base-tx` - 100BASE-TX (10/100ME)
 
-            * `100base-t1` - 100BASE-T1 (10/100ME Single Pair)
+            * `100base-t1` - 100BASE-T1 (10/100ME)
 
-            * `1000base-t` - 1000BASE-T (1GE)
+            * `1000base-bx10-d` - 1000BASE-BX10-D (1GE BiDi Down)
+
+            * `1000base-bx10-u` - 1000BASE-BX10-U (1GE BiDi Up)
+
+            * `1000base-cwdm` - 1000BASE-CWDM (1GE)
+
+            * `1000base-cx` - 1000BASE-CX (1GE DAC)
+
+            * `1000base-dwdm` - 1000BASE-DWDM (1GE)
+
+            * `1000base-ex` - 1000BASE-EX (1GE)
+
+            * `1000base-sx` - 1000BASE-SX (1GE)
+
+            * `1000base-lsx` - 1000BASE-LSX (1GE)
 
             * `1000base-lx` - 1000BASE-LX (1GE)
 
+            * `1000base-lx10` - 1000BASE-LX10/LH (1GE)
+
+            * `1000base-t` - 1000BASE-T (1GE)
+
             * `1000base-tx` - 1000BASE-TX (1GE)
+
+            * `1000base-zx` - 1000BASE-ZX (1GE)
 
             * `2.5gbase-t` - 2.5GBASE-T (2.5GE)
 
             * `5gbase-t` - 5GBASE-T (5GE)
 
-            * `10gbase-t` - 10GBASE-T (10GE)
+            * `10gbase-br-d` - 10GBASE-BR-D (10GE BiDi Down)
 
-            * `10gbase-cx4` - 10GBASE-CX4 (10GE)
+            * `10gbase-br-u` - 10GBASE-BR-U (10GE BiDi Up)
+
+            * `10gbase-cu` - 10GBASE-CU (10GE DAC Passive Twinax)
+
+            * `10gbase-cx4` - 10GBASE-CX4 (10GE DAC)
+
+            * `10gbase-er` - 10GBASE-ER (10GE)
+
+            * `10gbase-lr` - 10GBASE-LR (10GE)
+
+            * `10gbase-lrm` - 10GBASE-LRM (10GE)
+
+            * `10gbase-lx4` - 10GBASE-LX4 (10GE)
+
+            * `10gbase-sr` - 10GBASE-SR (10GE)
+
+            * `10gbase-t` - 10GBASE-T (10GE)                
+
+            * `10gbase-zr` - 10GBASE-ZR (10GE)
 
             * `100base-x-sfp` - SFP (100ME)
 
             * `1000base-x-gbic` - GBIC (1GE)
 
             * `1000base-x-sfp` - SFP (1GE)
+
+            * `2.5gbase-x-sfp` - SFP (2.5GE)
 
             * `10gbase-x-sfpp` - SFP+ (10GE)
 
@@ -151563,19 +153404,15 @@ components:
 
             * `25gbase-x-sfp28` - SFP28 (25GE)
 
-            * `50gbase-x-sfp56` - SFP56 (50GE)
-
             * `40gbase-x-qsfpp` - QSFP+ (40GE)
+
+            * `50gbase-x-sfp56` - SFP56 (50GE)
 
             * `50gbase-x-sfp28` - QSFP28 (50GE)
 
             * `100gbase-x-cfp` - CFP (100GE)
 
             * `100gbase-x-cfp2` - CFP2 (100GE)
-
-            * `200gbase-x-cfp2` - CFP2 (200GE)
-
-            * `400gbase-x-cfp2` - CFP2 (400GE)
 
             * `100gbase-x-cfp4` - CFP4 (100GE)
 
@@ -151585,15 +153422,21 @@ components:
 
             * `100gbase-x-dsfp` - DSFP (100GE)
 
+            * `100gbase-x-sfp112` - SFP112 (100GE)
+
             * `100gbase-x-sfpdd` - SFP-DD (100GE)
 
             * `100gbase-x-qsfp28` - QSFP28 (100GE)
 
             * `100gbase-x-qsfpdd` - QSFP-DD (100GE)
 
+            * `200gbase-x-cfp2` - CFP2 (200GE)
+
             * `200gbase-x-qsfp56` - QSFP56 (200GE)
 
             * `200gbase-x-qsfpdd` - QSFP-DD (200GE)
+
+            * `400gbase-x-cfp2` - CFP2 (400GE)
 
             * `400gbase-x-qsfp112` - QSFP112 (400GE)
 
@@ -151610,6 +153453,12 @@ components:
             * `800gbase-x-qsfpdd` - QSFP-DD (800GE)
 
             * `800gbase-x-osfp` - OSFP (800GE)
+
+            * `1.6tbase-x-osfp1600` - OSFP1600 (1.6TE)
+
+            * `1.6tbase-x-osfp1600-rhs` - OSFP1600-RHS (1.6TE)
+
+            * `1.6tbase-x-qsfpdd1600` - QSFP-DD1600 (1.6TE)
 
             * `1000base-kx` - 1000BASE-KX (1GE)
 
@@ -151633,21 +153482,145 @@ components:
 
             * `100gbase-kr4` - 100GBASE-KR4 (100GE)
 
+            * `1.6tbase-kr8` - 1.6TBASE-KR8 (1.6TE)
+
+            * `25gbase-cr` - 25GBASE-CR (25GE DAC)
+
+            * `25gbase-er` - 25GBASE-ER (25GE)
+
+            * `25gbase-lr` - 25GBASE-LR (25GE)
+
+            * `25gbase-sr` - 25GBASE-SR (25GE)
+
+            * `25gbase-t` - 25GBASE-T (25GE)
+
+            * `40gbase-cr4` - 40GBASE-CR4 (40GE DAC)
+
+            * `40gbase-er4` - 40GBASE-ER4 (40GE)
+
+            * `40gbase-fr4` - 40GBASE-FR4 (40GE)
+
+            * `40gbase-lr4` - 40GBASE-LR4 (40GE)
+
+            * `40gbase-sr4` - 40GBASE-SR4 (40GE)
+
+            * `40gbase-sr4-bd` - 40GBASE-SR4 (40GE BiDi)
+
+            * `50gbase-cr` - 50GBASE-CR (50GE DAC)
+
+            * `50gbase-er` - 50GBASE-ER (50GE)
+
+            * `50gbase-fr` - 50GBASE-FR (50GE)
+
+            * `50gbase-lr` - 50GBASE-LR (50GE)
+
+            * `50gbase-sr` - 50GBASE-SR (50GE)
+
+            * `100gbase-cr1` - 100GBASE-CR1 (100GE DAC)
+
+            * `100gbase-cr2` - 100GBASE-CR2 (100GE DAC)
+
+            * `100gbase-cr4` - 100GBASE-CR4 (100GE DAC)
+
+            * `100gbase-cr10` - 100GBASE-CR10 (100GE DAC)
+
+            * `100gbase-cwdm4` - 100GBASE-CWDM4 (100GE)
+
+            * `100gbase-dr` - 100GBASE-DR (100GE)
+
+            * `100gbase-fr1` - 100GBASE-FR1 (100GE)
+
+            * `100gbase-er4` - 100GBASE-ER4 (100GE)
+
+            * `100gbase-lr1` - 100GBASE-LR1 (100GE)
+
+            * `100gbase-lr4` - 100GBASE-LR4 (100GE)
+
+            * `100gbase-sr1` - 100GBASE-SR1 (100GE)
+
+            * `100gbase-sr1.2` - 100GBASE-SR1.2 (100GE BiDi)
+
+            * `100gbase-sr2` - 100GBASE-SR2 (100GE)
+
+            * `100gbase-sr4` - 100GBASE-SR4 (100GE)
+
+            * `100gbase-sr10` - 100GBASE-SR10 (100GE)
+
+            * `100gbase-zr` - 100GBASE-ZR (100GE)
+
+            * `200gbase-cr2` - 200GBASE-CR2 (200GE)
+
+            * `200gbase-cr4` - 200GBASE-CR4 (200GE)
+
+            * `200gbase-sr2` - 200GBASE-SR2 (200GE)
+
+            * `200gbase-sr4` - 200GBASE-SR4 (200GE)
+
+            * `200gbase-dr4` - 200GBASE-DR4 (200GE)
+
+            * `200gbase-fr4` - 200GBASE-FR4 (200GE)
+
+            * `200gbase-lr4` - 200GBASE-LR4 (200GE)
+
+            * `200gbase-er4` - 200GBASE-ER4 (200GE)
+
+            * `200gbase-vr2` - 200GBASE-VR2 (200GE)
+
+            * `400gbase-cr4` - 400GBASE-CR4 (400GE)
+
+            * `400gbase-dr4` - 400GBASE-DR4 (400GE)
+
+            * `400gbase-er8` - 400GBASE-ER8 (400GE)
+
+            * `400gbase-fr4` - 400GBASE-FR4 (400GE)
+
+            * `400gbase-fr8` - 400GBASE-FR8 (400GE)
+
+            * `400gbase-lr4` - 400GBASE-LR4 (400GE)
+
+            * `400gbase-lr8` - 400GBASE-LR8 (400GE)
+
+            * `400gbase-sr4` - 400GBASE-SR4 (400GE)
+
+            * `400gbase-sr4_2` - 400GBASE-SR4.2 (400GE BiDi)
+
+            * `400gbase-sr8` - 400GBASE-SR8 (400GE)
+
+            * `400gbase-sr16` - 400GBASE-SR16 (400GE)
+
+            * `400gbase-vr4` - 400GBASE-VR4 (400GE)
+
+            * `400gbase-zr` - 400GBASE-ZR (400GE)
+
+            * `800gbase-cr8` - 800GBASE-CR8 (800GE)
+
+            * `800gbase-dr8` - 800GBASE-DR8 (800GE)
+
+            * `800gbase-sr8` - 800GBASE-SR8 (800GE)
+
+            * `800gbase-vr8` - 800GBASE-VR8 (800GE)
+
+            * `1.6tbase-cr8` - 1.6TBASE-CR8 (1.6TE)
+
+            * `1.6tbase-dr8` - 1.6TBASE-DR8 (1.6TE)
+
+            * `1.6tbase-dr8-2` - 1.6TBASE-DR8-2 (1.6TE)
+
             * `ieee802.11a` - IEEE 802.11a
 
             * `ieee802.11g` - IEEE 802.11b/g
 
-            * `ieee802.11n` - IEEE 802.11n
+            * `ieee802.11n` - IEEE 802.11n (Wi-Fi 4)
 
-            * `ieee802.11ac` - IEEE 802.11ac
+            * `ieee802.11ac` - IEEE 802.11ac (Wi-Fi 5)
 
-            * `ieee802.11ad` - IEEE 802.11ad
+            * `ieee802.11ad` - IEEE 802.11ad (WiGig)
 
-            * `ieee802.11ax` - IEEE 802.11ax
+            * `ieee802.11ax` - IEEE 802.11ax (Wi-Fi 6)
 
-            * `ieee802.11ay` - IEEE 802.11ay
+            * `ieee802.11ay` - IEEE 802.11ay (WiGig)
 
-            * `ieee802.11be` - IEEE 802.11be
+            * `ieee802.11be` - IEEE 802.11be (Wi-Fi 7)
 
             * `ieee802.15.1` - IEEE 802.15.1 (Bluetooth)
 
@@ -151717,7 +153690,31 @@ components:
 
             * `infiniband-ndr` - NDR (100 Gbps)
 
-            * `infiniband-xdr` - XDR (250 Gbps)
+            * `infiniband-xdr` - XDR (200 Gbps)
+
+            * `infiniband-hdr-2x` - HDR 2X (100 Gbps)
+
+            * `infiniband-ndr-2x` - NDR 2X (200 Gbps)
+
+            * `infiniband-xdr-2x` - XDR 2X (400 Gbps)
+
+            * `infiniband-sdr-4x` - SDR 4X (8 Gbps)
+
+            * `infiniband-ddr-4x` - DDR 4X (16 Gbps)
+
+            * `infiniband-qdr-4x` - QDR 4X (32 Gbps)
+
+            * `infiniband-fdr10-4x` - FDR10 4X (40 Gbps)
+
+            * `infiniband-fdr-4x` - FDR 4X (56 Gbps)
+
+            * `infiniband-edr-4x` - EDR 4X (100 Gbps)
+
+            * `infiniband-hdr-4x` - HDR 4X (200 Gbps)
+
+            * `infiniband-ndr-4x` - NDR 4X (400 Gbps)
+
+            * `infiniband-xdr-4x` - XDR 4X (800 Gbps)
 
             * `t1` - T1 (1.544 Mbps)
 
@@ -151778,6 +153775,8 @@ components:
             * `extreme-summitstack-256` - Extreme SummitStack-256
 
             * `extreme-summitstack-512` - Extreme SummitStack-512
+
+            * `hpe-synergy-interconnect-link` - HPE Synergy Interconnect Link
 
             * `other` - Other'
           x-spec-enum-id: 017cd578206eb6ae
@@ -170441,41 +172440,63 @@ components:
           - virtual
           - bridge
           - lag
+          - channel
           - 100base-fx
           - 100base-lfx
           - 100base-tx
           - 100base-t1
-          - 1000base-t
+          - 1000base-bx10-d
+          - 1000base-bx10-u
+          - 1000base-cwdm
+          - 1000base-cx
+          - 1000base-dwdm
+          - 1000base-ex
+          - 1000base-sx
+          - 1000base-lsx
           - 1000base-lx
+          - 1000base-lx10
+          - 1000base-t
           - 1000base-tx
+          - 1000base-zx
           - 2.5gbase-t
           - 5gbase-t
-          - 10gbase-t
+          - 10gbase-br-d
+          - 10gbase-br-u
+          - 10gbase-cu
           - 10gbase-cx4
+          - 10gbase-er
+          - 10gbase-lr
+          - 10gbase-lrm
+          - 10gbase-lx4
+          - 10gbase-sr
+          - 10gbase-t
+          - 10gbase-zr
           - 100base-x-sfp
           - 1000base-x-gbic
           - 1000base-x-sfp
+          - 2.5gbase-x-sfp
           - 10gbase-x-sfpp
           - 10gbase-x-xfp
           - 10gbase-x-xenpak
           - 10gbase-x-x2
           - 25gbase-x-sfp28
-          - 50gbase-x-sfp56
           - 40gbase-x-qsfpp
+          - 50gbase-x-sfp56
           - 50gbase-x-sfp28
           - 100gbase-x-cfp
           - 100gbase-x-cfp2
-          - 200gbase-x-cfp2
-          - 400gbase-x-cfp2
           - 100gbase-x-cfp4
           - 100gbase-x-cxp
           - 100gbase-x-cpak
           - 100gbase-x-dsfp
+          - 100gbase-x-sfp112
           - 100gbase-x-sfpdd
           - 100gbase-x-qsfp28
           - 100gbase-x-qsfpdd
+          - 200gbase-x-cfp2
           - 200gbase-x-qsfp56
           - 200gbase-x-qsfpdd
+          - 400gbase-x-cfp2
           - 400gbase-x-qsfp112
           - 400gbase-x-qsfpdd
           - 400gbase-x-osfp
@@ -170484,6 +172505,9 @@ components:
           - 400gbase-x-cfp8
           - 800gbase-x-qsfpdd
           - 800gbase-x-osfp
+          - 1.6tbase-x-osfp1600
+          - 1.6tbase-x-osfp1600-rhs
+          - 1.6tbase-x-qsfpdd1600
           - 1000base-kx
           - 2.5gbase-kx
           - 5gbase-kr
@@ -170495,6 +172519,68 @@ components:
           - 100gbase-kp4
           - 100gbase-kr2
           - 100gbase-kr4
+          - 1.6tbase-kr8
+          - 25gbase-cr
+          - 25gbase-er
+          - 25gbase-lr
+          - 25gbase-sr
+          - 25gbase-t
+          - 40gbase-cr4
+          - 40gbase-er4
+          - 40gbase-fr4
+          - 40gbase-lr4
+          - 40gbase-sr4
+          - 40gbase-sr4-bd
+          - 50gbase-cr
+          - 50gbase-er
+          - 50gbase-fr
+          - 50gbase-lr
+          - 50gbase-sr
+          - 100gbase-cr1
+          - 100gbase-cr2
+          - 100gbase-cr4
+          - 100gbase-cr10
+          - 100gbase-cwdm4
+          - 100gbase-dr
+          - 100gbase-fr1
+          - 100gbase-er4
+          - 100gbase-lr1
+          - 100gbase-lr4
+          - 100gbase-sr1
+          - 100gbase-sr1.2
+          - 100gbase-sr2
+          - 100gbase-sr4
+          - 100gbase-sr10
+          - 100gbase-zr
+          - 200gbase-cr2
+          - 200gbase-cr4
+          - 200gbase-sr2
+          - 200gbase-sr4
+          - 200gbase-dr4
+          - 200gbase-fr4
+          - 200gbase-lr4
+          - 200gbase-er4
+          - 200gbase-vr2
+          - 400gbase-cr4
+          - 400gbase-dr4
+          - 400gbase-er8
+          - 400gbase-fr4
+          - 400gbase-fr8
+          - 400gbase-lr4
+          - 400gbase-lr8
+          - 400gbase-sr4
+          - 400gbase-sr4_2
+          - 400gbase-sr8
+          - 400gbase-sr16
+          - 400gbase-vr4
+          - 400gbase-zr
+          - 800gbase-cr8
+          - 800gbase-dr8
+          - 800gbase-sr8
+          - 800gbase-vr8
+          - 1.6tbase-cr8
+          - 1.6tbase-dr8
+          - 1.6tbase-dr8-2
           - ieee802.11a
           - ieee802.11g
           - ieee802.11n
@@ -170538,6 +172624,18 @@ components:
           - infiniband-hdr
           - infiniband-ndr
           - infiniband-xdr
+          - infiniband-hdr-2x
+          - infiniband-ndr-2x
+          - infiniband-xdr-2x
+          - infiniband-sdr-4x
+          - infiniband-ddr-4x
+          - infiniband-qdr-4x
+          - infiniband-fdr10-4x
+          - infiniband-fdr-4x
+          - infiniband-edr-4x
+          - infiniband-hdr-4x
+          - infiniband-ndr-4x
+          - infiniband-xdr-4x
           - t1
           - e1
           - t3
@@ -170568,6 +172666,7 @@ components:
           - extreme-summitstack-128
           - extreme-summitstack-256
           - extreme-summitstack-512
+          - hpe-synergy-interconnect-link
           - other
           type: string
           description: '* `virtual` - Virtual
@@ -170576,33 +172675,75 @@ components:
 
             * `lag` - Link Aggregation Group (LAG)
 
-            * `100base-fx` - 100BASE-FX (10/100ME FIBER)
+            * `channel` - Channel
 
-            * `100base-lfx` - 100BASE-LFX (10/100ME FIBER)
+            * `100base-fx` - 100BASE-FX (10/100ME)
+
+            * `100base-lfx` - 100BASE-LFX (10/100ME)
 
             * `100base-tx` - 100BASE-TX (10/100ME)
 
-            * `100base-t1` - 100BASE-T1 (10/100ME Single Pair)
+            * `100base-t1` - 100BASE-T1 (10/100ME)
 
-            * `1000base-t` - 1000BASE-T (1GE)
+            * `1000base-bx10-d` - 1000BASE-BX10-D (1GE BiDi Down)
+
+            * `1000base-bx10-u` - 1000BASE-BX10-U (1GE BiDi Up)
+
+            * `1000base-cwdm` - 1000BASE-CWDM (1GE)
+
+            * `1000base-cx` - 1000BASE-CX (1GE DAC)
+
+            * `1000base-dwdm` - 1000BASE-DWDM (1GE)
+
+            * `1000base-ex` - 1000BASE-EX (1GE)
+
+            * `1000base-sx` - 1000BASE-SX (1GE)
+
+            * `1000base-lsx` - 1000BASE-LSX (1GE)
 
             * `1000base-lx` - 1000BASE-LX (1GE)
 
+            * `1000base-lx10` - 1000BASE-LX10/LH (1GE)
+
+            * `1000base-t` - 1000BASE-T (1GE)
+
             * `1000base-tx` - 1000BASE-TX (1GE)
+
+            * `1000base-zx` - 1000BASE-ZX (1GE)
 
             * `2.5gbase-t` - 2.5GBASE-T (2.5GE)
 
             * `5gbase-t` - 5GBASE-T (5GE)
 
-            * `10gbase-t` - 10GBASE-T (10GE)
+            * `10gbase-br-d` - 10GBASE-BR-D (10GE BiDi Down)
 
-            * `10gbase-cx4` - 10GBASE-CX4 (10GE)
+            * `10gbase-br-u` - 10GBASE-BR-U (10GE BiDi Up)
+
+            * `10gbase-cu` - 10GBASE-CU (10GE DAC Passive Twinax)
+
+            * `10gbase-cx4` - 10GBASE-CX4 (10GE DAC)
+
+            * `10gbase-er` - 10GBASE-ER (10GE)
+
+            * `10gbase-lr` - 10GBASE-LR (10GE)
+
+            * `10gbase-lrm` - 10GBASE-LRM (10GE)
+
+            * `10gbase-lx4` - 10GBASE-LX4 (10GE)
+
+            * `10gbase-sr` - 10GBASE-SR (10GE)
+
+            * `10gbase-t` - 10GBASE-T (10GE)                
+
+            * `10gbase-zr` - 10GBASE-ZR (10GE)
 
             * `100base-x-sfp` - SFP (100ME)
 
             * `1000base-x-gbic` - GBIC (1GE)
 
             * `1000base-x-sfp` - SFP (1GE)
+
+            * `2.5gbase-x-sfp` - SFP (2.5GE)
 
             * `10gbase-x-sfpp` - SFP+ (10GE)
 
@@ -170614,19 +172755,15 @@ components:
 
             * `25gbase-x-sfp28` - SFP28 (25GE)
 
-            * `50gbase-x-sfp56` - SFP56 (50GE)
-
             * `40gbase-x-qsfpp` - QSFP+ (40GE)
+
+            * `50gbase-x-sfp56` - SFP56 (50GE)
 
             * `50gbase-x-sfp28` - QSFP28 (50GE)
 
             * `100gbase-x-cfp` - CFP (100GE)
 
             * `100gbase-x-cfp2` - CFP2 (100GE)
-
-            * `200gbase-x-cfp2` - CFP2 (200GE)
-
-            * `400gbase-x-cfp2` - CFP2 (400GE)
 
             * `100gbase-x-cfp4` - CFP4 (100GE)
 
@@ -170636,15 +172773,21 @@ components:
 
             * `100gbase-x-dsfp` - DSFP (100GE)
 
+            * `100gbase-x-sfp112` - SFP112 (100GE)
+
             * `100gbase-x-sfpdd` - SFP-DD (100GE)
 
             * `100gbase-x-qsfp28` - QSFP28 (100GE)
 
             * `100gbase-x-qsfpdd` - QSFP-DD (100GE)
 
+            * `200gbase-x-cfp2` - CFP2 (200GE)
+
             * `200gbase-x-qsfp56` - QSFP56 (200GE)
 
             * `200gbase-x-qsfpdd` - QSFP-DD (200GE)
+
+            * `400gbase-x-cfp2` - CFP2 (400GE)
 
             * `400gbase-x-qsfp112` - QSFP112 (400GE)
 
@@ -170661,6 +172804,12 @@ components:
             * `800gbase-x-qsfpdd` - QSFP-DD (800GE)
 
             * `800gbase-x-osfp` - OSFP (800GE)
+
+            * `1.6tbase-x-osfp1600` - OSFP1600 (1.6TE)
+
+            * `1.6tbase-x-osfp1600-rhs` - OSFP1600-RHS (1.6TE)
+
+            * `1.6tbase-x-qsfpdd1600` - QSFP-DD1600 (1.6TE)
 
             * `1000base-kx` - 1000BASE-KX (1GE)
 
@@ -170684,21 +172833,145 @@ components:
 
             * `100gbase-kr4` - 100GBASE-KR4 (100GE)
 
+            * `1.6tbase-kr8` - 1.6TBASE-KR8 (1.6TE)
+
+            * `25gbase-cr` - 25GBASE-CR (25GE DAC)
+
+            * `25gbase-er` - 25GBASE-ER (25GE)
+
+            * `25gbase-lr` - 25GBASE-LR (25GE)
+
+            * `25gbase-sr` - 25GBASE-SR (25GE)
+
+            * `25gbase-t` - 25GBASE-T (25GE)
+
+            * `40gbase-cr4` - 40GBASE-CR4 (40GE DAC)
+
+            * `40gbase-er4` - 40GBASE-ER4 (40GE)
+
+            * `40gbase-fr4` - 40GBASE-FR4 (40GE)
+
+            * `40gbase-lr4` - 40GBASE-LR4 (40GE)
+
+            * `40gbase-sr4` - 40GBASE-SR4 (40GE)
+
+            * `40gbase-sr4-bd` - 40GBASE-SR4 (40GE BiDi)
+
+            * `50gbase-cr` - 50GBASE-CR (50GE DAC)
+
+            * `50gbase-er` - 50GBASE-ER (50GE)
+
+            * `50gbase-fr` - 50GBASE-FR (50GE)
+
+            * `50gbase-lr` - 50GBASE-LR (50GE)
+
+            * `50gbase-sr` - 50GBASE-SR (50GE)
+
+            * `100gbase-cr1` - 100GBASE-CR1 (100GE DAC)
+
+            * `100gbase-cr2` - 100GBASE-CR2 (100GE DAC)
+
+            * `100gbase-cr4` - 100GBASE-CR4 (100GE DAC)
+
+            * `100gbase-cr10` - 100GBASE-CR10 (100GE DAC)
+
+            * `100gbase-cwdm4` - 100GBASE-CWDM4 (100GE)
+
+            * `100gbase-dr` - 100GBASE-DR (100GE)
+
+            * `100gbase-fr1` - 100GBASE-FR1 (100GE)
+
+            * `100gbase-er4` - 100GBASE-ER4 (100GE)
+
+            * `100gbase-lr1` - 100GBASE-LR1 (100GE)
+
+            * `100gbase-lr4` - 100GBASE-LR4 (100GE)
+
+            * `100gbase-sr1` - 100GBASE-SR1 (100GE)
+
+            * `100gbase-sr1.2` - 100GBASE-SR1.2 (100GE BiDi)
+
+            * `100gbase-sr2` - 100GBASE-SR2 (100GE)
+
+            * `100gbase-sr4` - 100GBASE-SR4 (100GE)
+
+            * `100gbase-sr10` - 100GBASE-SR10 (100GE)
+
+            * `100gbase-zr` - 100GBASE-ZR (100GE)
+
+            * `200gbase-cr2` - 200GBASE-CR2 (200GE)
+
+            * `200gbase-cr4` - 200GBASE-CR4 (200GE)
+
+            * `200gbase-sr2` - 200GBASE-SR2 (200GE)
+
+            * `200gbase-sr4` - 200GBASE-SR4 (200GE)
+
+            * `200gbase-dr4` - 200GBASE-DR4 (200GE)
+
+            * `200gbase-fr4` - 200GBASE-FR4 (200GE)
+
+            * `200gbase-lr4` - 200GBASE-LR4 (200GE)
+
+            * `200gbase-er4` - 200GBASE-ER4 (200GE)
+
+            * `200gbase-vr2` - 200GBASE-VR2 (200GE)
+
+            * `400gbase-cr4` - 400GBASE-CR4 (400GE)
+
+            * `400gbase-dr4` - 400GBASE-DR4 (400GE)
+
+            * `400gbase-er8` - 400GBASE-ER8 (400GE)
+
+            * `400gbase-fr4` - 400GBASE-FR4 (400GE)
+
+            * `400gbase-fr8` - 400GBASE-FR8 (400GE)
+
+            * `400gbase-lr4` - 400GBASE-LR4 (400GE)
+
+            * `400gbase-lr8` - 400GBASE-LR8 (400GE)
+
+            * `400gbase-sr4` - 400GBASE-SR4 (400GE)
+
+            * `400gbase-sr4_2` - 400GBASE-SR4.2 (400GE BiDi)
+
+            * `400gbase-sr8` - 400GBASE-SR8 (400GE)
+
+            * `400gbase-sr16` - 400GBASE-SR16 (400GE)
+
+            * `400gbase-vr4` - 400GBASE-VR4 (400GE)
+
+            * `400gbase-zr` - 400GBASE-ZR (400GE)
+
+            * `800gbase-cr8` - 800GBASE-CR8 (800GE)
+
+            * `800gbase-dr8` - 800GBASE-DR8 (800GE)
+
+            * `800gbase-sr8` - 800GBASE-SR8 (800GE)
+
+            * `800gbase-vr8` - 800GBASE-VR8 (800GE)
+
+            * `1.6tbase-cr8` - 1.6TBASE-CR8 (1.6TE)
+
+            * `1.6tbase-dr8` - 1.6TBASE-DR8 (1.6TE)
+
+            * `1.6tbase-dr8-2` - 1.6TBASE-DR8-2 (1.6TE)
+
             * `ieee802.11a` - IEEE 802.11a
 
             * `ieee802.11g` - IEEE 802.11b/g
 
-            * `ieee802.11n` - IEEE 802.11n
+            * `ieee802.11n` - IEEE 802.11n (Wi-Fi 4)
 
-            * `ieee802.11ac` - IEEE 802.11ac
+            * `ieee802.11ac` - IEEE 802.11ac (Wi-Fi 5)
 
-            * `ieee802.11ad` - IEEE 802.11ad
+            * `ieee802.11ad` - IEEE 802.11ad (WiGig)
 
-            * `ieee802.11ax` - IEEE 802.11ax
+            * `ieee802.11ax` - IEEE 802.11ax (Wi-Fi 6)
 
-            * `ieee802.11ay` - IEEE 802.11ay
+            * `ieee802.11ay` - IEEE 802.11ay (WiGig)
 
-            * `ieee802.11be` - IEEE 802.11be
+            * `ieee802.11be` - IEEE 802.11be (Wi-Fi 7)
 
             * `ieee802.15.1` - IEEE 802.15.1 (Bluetooth)
 
@@ -170768,7 +173041,31 @@ components:
 
             * `infiniband-ndr` - NDR (100 Gbps)
 
-            * `infiniband-xdr` - XDR (250 Gbps)
+            * `infiniband-xdr` - XDR (200 Gbps)
+
+            * `infiniband-hdr-2x` - HDR 2X (100 Gbps)
+
+            * `infiniband-ndr-2x` - NDR 2X (200 Gbps)
+
+            * `infiniband-xdr-2x` - XDR 2X (400 Gbps)
+
+            * `infiniband-sdr-4x` - SDR 4X (8 Gbps)
+
+            * `infiniband-ddr-4x` - DDR 4X (16 Gbps)
+
+            * `infiniband-qdr-4x` - QDR 4X (32 Gbps)
+
+            * `infiniband-fdr10-4x` - FDR10 4X (40 Gbps)
+
+            * `infiniband-fdr-4x` - FDR 4X (56 Gbps)
+
+            * `infiniband-edr-4x` - EDR 4X (100 Gbps)
+
+            * `infiniband-hdr-4x` - HDR 4X (200 Gbps)
+
+            * `infiniband-ndr-4x` - NDR 4X (400 Gbps)
+
+            * `infiniband-xdr-4x` - XDR 4X (800 Gbps)
 
             * `t1` - T1 (1.544 Mbps)
 
@@ -170829,6 +173126,8 @@ components:
             * `extreme-summitstack-256` - Extreme SummitStack-256
 
             * `extreme-summitstack-512` - Extreme SummitStack-512
+
+            * `hpe-synergy-interconnect-link` - HPE Synergy Interconnect Link
 
             * `other` - Other'
           x-spec-enum-id: 017cd578206eb6ae
@@ -171669,41 +173968,63 @@ components:
           - virtual
           - bridge
           - lag
+          - channel
           - 100base-fx
           - 100base-lfx
           - 100base-tx
           - 100base-t1
-          - 1000base-t
+          - 1000base-bx10-d
+          - 1000base-bx10-u
+          - 1000base-cwdm
+          - 1000base-cx
+          - 1000base-dwdm
+          - 1000base-ex
+          - 1000base-sx
+          - 1000base-lsx
           - 1000base-lx
+          - 1000base-lx10
+          - 1000base-t
           - 1000base-tx
+          - 1000base-zx
           - 2.5gbase-t
           - 5gbase-t
-          - 10gbase-t
+          - 10gbase-br-d
+          - 10gbase-br-u
+          - 10gbase-cu
           - 10gbase-cx4
+          - 10gbase-er
+          - 10gbase-lr
+          - 10gbase-lrm
+          - 10gbase-lx4
+          - 10gbase-sr
+          - 10gbase-t
+          - 10gbase-zr
           - 100base-x-sfp
           - 1000base-x-gbic
           - 1000base-x-sfp
+          - 2.5gbase-x-sfp
           - 10gbase-x-sfpp
           - 10gbase-x-xfp
           - 10gbase-x-xenpak
           - 10gbase-x-x2
           - 25gbase-x-sfp28
-          - 50gbase-x-sfp56
           - 40gbase-x-qsfpp
+          - 50gbase-x-sfp56
           - 50gbase-x-sfp28
           - 100gbase-x-cfp
           - 100gbase-x-cfp2
-          - 200gbase-x-cfp2
-          - 400gbase-x-cfp2
           - 100gbase-x-cfp4
           - 100gbase-x-cxp
           - 100gbase-x-cpak
           - 100gbase-x-dsfp
+          - 100gbase-x-sfp112
           - 100gbase-x-sfpdd
           - 100gbase-x-qsfp28
           - 100gbase-x-qsfpdd
+          - 200gbase-x-cfp2
           - 200gbase-x-qsfp56
           - 200gbase-x-qsfpdd
+          - 400gbase-x-cfp2
           - 400gbase-x-qsfp112
           - 400gbase-x-qsfpdd
           - 400gbase-x-osfp
@@ -171712,6 +174033,9 @@ components:
           - 400gbase-x-cfp8
           - 800gbase-x-qsfpdd
           - 800gbase-x-osfp
+          - 1.6tbase-x-osfp1600
+          - 1.6tbase-x-osfp1600-rhs
+          - 1.6tbase-x-qsfpdd1600
           - 1000base-kx
           - 2.5gbase-kx
           - 5gbase-kr
@@ -171723,6 +174047,68 @@ components:
           - 100gbase-kp4
           - 100gbase-kr2
           - 100gbase-kr4
+          - 1.6tbase-kr8
+          - 25gbase-cr
+          - 25gbase-er
+          - 25gbase-lr
+          - 25gbase-sr
+          - 25gbase-t
+          - 40gbase-cr4
+          - 40gbase-er4
+          - 40gbase-fr4
+          - 40gbase-lr4
+          - 40gbase-sr4
+          - 40gbase-sr4-bd
+          - 50gbase-cr
+          - 50gbase-er
+          - 50gbase-fr
+          - 50gbase-lr
+          - 50gbase-sr
+          - 100gbase-cr1
+          - 100gbase-cr2
+          - 100gbase-cr4
+          - 100gbase-cr10
+          - 100gbase-cwdm4
+          - 100gbase-dr
+          - 100gbase-fr1
+          - 100gbase-er4
+          - 100gbase-lr1
+          - 100gbase-lr4
+          - 100gbase-sr1
+          - 100gbase-sr1.2
+          - 100gbase-sr2
+          - 100gbase-sr4
+          - 100gbase-sr10
+          - 100gbase-zr
+          - 200gbase-cr2
+          - 200gbase-cr4
+          - 200gbase-sr2
+          - 200gbase-sr4
+          - 200gbase-dr4
+          - 200gbase-fr4
+          - 200gbase-lr4
+          - 200gbase-er4
+          - 200gbase-vr2
+          - 400gbase-cr4
+          - 400gbase-dr4
+          - 400gbase-er8
+          - 400gbase-fr4
+          - 400gbase-fr8
+          - 400gbase-lr4
+          - 400gbase-lr8
+          - 400gbase-sr4
+          - 400gbase-sr4_2
+          - 400gbase-sr8
+          - 400gbase-sr16
+          - 400gbase-vr4
+          - 400gbase-zr
+          - 800gbase-cr8
+          - 800gbase-dr8
+          - 800gbase-sr8
+          - 800gbase-vr8
+          - 1.6tbase-cr8
+          - 1.6tbase-dr8
+          - 1.6tbase-dr8-2
           - ieee802.11a
           - ieee802.11g
           - ieee802.11n
@@ -171766,6 +174152,18 @@ components:
           - infiniband-hdr
           - infiniband-ndr
           - infiniband-xdr
+          - infiniband-hdr-2x
+          - infiniband-ndr-2x
+          - infiniband-xdr-2x
+          - infiniband-sdr-4x
+          - infiniband-ddr-4x
+          - infiniband-qdr-4x
+          - infiniband-fdr10-4x
+          - infiniband-fdr-4x
+          - infiniband-edr-4x
+          - infiniband-hdr-4x
+          - infiniband-ndr-4x
+          - infiniband-xdr-4x
           - t1
           - e1
           - t3
@@ -171796,6 +174194,7 @@ components:
           - extreme-summitstack-128
           - extreme-summitstack-256
           - extreme-summitstack-512
+          - hpe-synergy-interconnect-link
           - other
           type: string
           description: '* `virtual` - Virtual
@@ -171804,33 +174203,75 @@ components:
 
             * `lag` - Link Aggregation Group (LAG)
 
-            * `100base-fx` - 100BASE-FX (10/100ME FIBER)
+            * `channel` - Channel
 
-            * `100base-lfx` - 100BASE-LFX (10/100ME FIBER)
+            * `100base-fx` - 100BASE-FX (10/100ME)
+
+            * `100base-lfx` - 100BASE-LFX (10/100ME)
 
             * `100base-tx` - 100BASE-TX (10/100ME)
 
-            * `100base-t1` - 100BASE-T1 (10/100ME Single Pair)
+            * `100base-t1` - 100BASE-T1 (10/100ME)
 
-            * `1000base-t` - 1000BASE-T (1GE)
+            * `1000base-bx10-d` - 1000BASE-BX10-D (1GE BiDi Down)
+
+            * `1000base-bx10-u` - 1000BASE-BX10-U (1GE BiDi Up)
+
+            * `1000base-cwdm` - 1000BASE-CWDM (1GE)
+
+            * `1000base-cx` - 1000BASE-CX (1GE DAC)
+
+            * `1000base-dwdm` - 1000BASE-DWDM (1GE)
+
+            * `1000base-ex` - 1000BASE-EX (1GE)
+
+            * `1000base-sx` - 1000BASE-SX (1GE)
+
+            * `1000base-lsx` - 1000BASE-LSX (1GE)
 
             * `1000base-lx` - 1000BASE-LX (1GE)
 
+            * `1000base-lx10` - 1000BASE-LX10/LH (1GE)
+
+            * `1000base-t` - 1000BASE-T (1GE)
+
             * `1000base-tx` - 1000BASE-TX (1GE)
+
+            * `1000base-zx` - 1000BASE-ZX (1GE)
 
             * `2.5gbase-t` - 2.5GBASE-T (2.5GE)
 
             * `5gbase-t` - 5GBASE-T (5GE)
 
-            * `10gbase-t` - 10GBASE-T (10GE)
+            * `10gbase-br-d` - 10GBASE-BR-D (10GE BiDi Down)
 
-            * `10gbase-cx4` - 10GBASE-CX4 (10GE)
+            * `10gbase-br-u` - 10GBASE-BR-U (10GE BiDi Up)
+
+            * `10gbase-cu` - 10GBASE-CU (10GE DAC Passive Twinax)
+
+            * `10gbase-cx4` - 10GBASE-CX4 (10GE DAC)
+
+            * `10gbase-er` - 10GBASE-ER (10GE)
+
+            * `10gbase-lr` - 10GBASE-LR (10GE)
+
+            * `10gbase-lrm` - 10GBASE-LRM (10GE)
+
+            * `10gbase-lx4` - 10GBASE-LX4 (10GE)
+
+            * `10gbase-sr` - 10GBASE-SR (10GE)
+
+            * `10gbase-t` - 10GBASE-T (10GE)                
+
+            * `10gbase-zr` - 10GBASE-ZR (10GE)
 
             * `100base-x-sfp` - SFP (100ME)
 
             * `1000base-x-gbic` - GBIC (1GE)
 
             * `1000base-x-sfp` - SFP (1GE)
+
+            * `2.5gbase-x-sfp` - SFP (2.5GE)
 
             * `10gbase-x-sfpp` - SFP+ (10GE)
 
@@ -171842,19 +174283,15 @@ components:
 
             * `25gbase-x-sfp28` - SFP28 (25GE)
 
-            * `50gbase-x-sfp56` - SFP56 (50GE)
-
             * `40gbase-x-qsfpp` - QSFP+ (40GE)
+
+            * `50gbase-x-sfp56` - SFP56 (50GE)
 
             * `50gbase-x-sfp28` - QSFP28 (50GE)
 
             * `100gbase-x-cfp` - CFP (100GE)
 
             * `100gbase-x-cfp2` - CFP2 (100GE)
-
-            * `200gbase-x-cfp2` - CFP2 (200GE)
-
-            * `400gbase-x-cfp2` - CFP2 (400GE)
 
             * `100gbase-x-cfp4` - CFP4 (100GE)
 
@@ -171864,15 +174301,21 @@ components:
 
             * `100gbase-x-dsfp` - DSFP (100GE)
 
+            * `100gbase-x-sfp112` - SFP112 (100GE)
+
             * `100gbase-x-sfpdd` - SFP-DD (100GE)
 
             * `100gbase-x-qsfp28` - QSFP28 (100GE)
 
             * `100gbase-x-qsfpdd` - QSFP-DD (100GE)
 
+            * `200gbase-x-cfp2` - CFP2 (200GE)
+
             * `200gbase-x-qsfp56` - QSFP56 (200GE)
 
             * `200gbase-x-qsfpdd` - QSFP-DD (200GE)
+
+            * `400gbase-x-cfp2` - CFP2 (400GE)
 
             * `400gbase-x-qsfp112` - QSFP112 (400GE)
 
@@ -171889,6 +174332,12 @@ components:
             * `800gbase-x-qsfpdd` - QSFP-DD (800GE)
 
             * `800gbase-x-osfp` - OSFP (800GE)
+
+            * `1.6tbase-x-osfp1600` - OSFP1600 (1.6TE)
+
+            * `1.6tbase-x-osfp1600-rhs` - OSFP1600-RHS (1.6TE)
+
+            * `1.6tbase-x-qsfpdd1600` - QSFP-DD1600 (1.6TE)
 
             * `1000base-kx` - 1000BASE-KX (1GE)
 
@@ -171912,21 +174361,145 @@ components:
 
             * `100gbase-kr4` - 100GBASE-KR4 (100GE)
 
+            * `1.6tbase-kr8` - 1.6TBASE-KR8 (1.6TE)
+
+            * `25gbase-cr` - 25GBASE-CR (25GE DAC)
+
+            * `25gbase-er` - 25GBASE-ER (25GE)
+
+            * `25gbase-lr` - 25GBASE-LR (25GE)
+
+            * `25gbase-sr` - 25GBASE-SR (25GE)
+
+            * `25gbase-t` - 25GBASE-T (25GE)
+
+            * `40gbase-cr4` - 40GBASE-CR4 (40GE DAC)
+
+            * `40gbase-er4` - 40GBASE-ER4 (40GE)
+
+            * `40gbase-fr4` - 40GBASE-FR4 (40GE)
+
+            * `40gbase-lr4` - 40GBASE-LR4 (40GE)
+
+            * `40gbase-sr4` - 40GBASE-SR4 (40GE)
+
+            * `40gbase-sr4-bd` - 40GBASE-SR4 (40GE BiDi)
+
+            * `50gbase-cr` - 50GBASE-CR (50GE DAC)
+
+            * `50gbase-er` - 50GBASE-ER (50GE)
+
+            * `50gbase-fr` - 50GBASE-FR (50GE)
+
+            * `50gbase-lr` - 50GBASE-LR (50GE)
+
+            * `50gbase-sr` - 50GBASE-SR (50GE)
+
+            * `100gbase-cr1` - 100GBASE-CR1 (100GE DAC)
+
+            * `100gbase-cr2` - 100GBASE-CR2 (100GE DAC)
+
+            * `100gbase-cr4` - 100GBASE-CR4 (100GE DAC)
+
+            * `100gbase-cr10` - 100GBASE-CR10 (100GE DAC)
+
+            * `100gbase-cwdm4` - 100GBASE-CWDM4 (100GE)
+
+            * `100gbase-dr` - 100GBASE-DR (100GE)
+
+            * `100gbase-fr1` - 100GBASE-FR1 (100GE)
+
+            * `100gbase-er4` - 100GBASE-ER4 (100GE)
+
+            * `100gbase-lr1` - 100GBASE-LR1 (100GE)
+
+            * `100gbase-lr4` - 100GBASE-LR4 (100GE)
+
+            * `100gbase-sr1` - 100GBASE-SR1 (100GE)
+
+            * `100gbase-sr1.2` - 100GBASE-SR1.2 (100GE BiDi)
+
+            * `100gbase-sr2` - 100GBASE-SR2 (100GE)
+
+            * `100gbase-sr4` - 100GBASE-SR4 (100GE)
+
+            * `100gbase-sr10` - 100GBASE-SR10 (100GE)
+
+            * `100gbase-zr` - 100GBASE-ZR (100GE)
+
+            * `200gbase-cr2` - 200GBASE-CR2 (200GE)
+
+            * `200gbase-cr4` - 200GBASE-CR4 (200GE)
+
+            * `200gbase-sr2` - 200GBASE-SR2 (200GE)
+
+            * `200gbase-sr4` - 200GBASE-SR4 (200GE)
+
+            * `200gbase-dr4` - 200GBASE-DR4 (200GE)
+
+            * `200gbase-fr4` - 200GBASE-FR4 (200GE)
+
+            * `200gbase-lr4` - 200GBASE-LR4 (200GE)
+
+            * `200gbase-er4` - 200GBASE-ER4 (200GE)
+
+            * `200gbase-vr2` - 200GBASE-VR2 (200GE)
+
+            * `400gbase-cr4` - 400GBASE-CR4 (400GE)
+
+            * `400gbase-dr4` - 400GBASE-DR4 (400GE)
+
+            * `400gbase-er8` - 400GBASE-ER8 (400GE)
+
+            * `400gbase-fr4` - 400GBASE-FR4 (400GE)
+
+            * `400gbase-fr8` - 400GBASE-FR8 (400GE)
+
+            * `400gbase-lr4` - 400GBASE-LR4 (400GE)
+
+            * `400gbase-lr8` - 400GBASE-LR8 (400GE)
+
+            * `400gbase-sr4` - 400GBASE-SR4 (400GE)
+
+            * `400gbase-sr4_2` - 400GBASE-SR4.2 (400GE BiDi)
+
+            * `400gbase-sr8` - 400GBASE-SR8 (400GE)
+
+            * `400gbase-sr16` - 400GBASE-SR16 (400GE)
+
+            * `400gbase-vr4` - 400GBASE-VR4 (400GE)
+
+            * `400gbase-zr` - 400GBASE-ZR (400GE)
+
+            * `800gbase-cr8` - 800GBASE-CR8 (800GE)
+
+            * `800gbase-dr8` - 800GBASE-DR8 (800GE)
+
+            * `800gbase-sr8` - 800GBASE-SR8 (800GE)
+
+            * `800gbase-vr8` - 800GBASE-VR8 (800GE)
+
+            * `1.6tbase-cr8` - 1.6TBASE-CR8 (1.6TE)
+
+            * `1.6tbase-dr8` - 1.6TBASE-DR8 (1.6TE)
+
+            * `1.6tbase-dr8-2` - 1.6TBASE-DR8-2 (1.6TE)
+
             * `ieee802.11a` - IEEE 802.11a
 
             * `ieee802.11g` - IEEE 802.11b/g
 
-            * `ieee802.11n` - IEEE 802.11n
+            * `ieee802.11n` - IEEE 802.11n (Wi-Fi 4)
 
-            * `ieee802.11ac` - IEEE 802.11ac
+            * `ieee802.11ac` - IEEE 802.11ac (Wi-Fi 5)
 
-            * `ieee802.11ad` - IEEE 802.11ad
+            * `ieee802.11ad` - IEEE 802.11ad (WiGig)
 
-            * `ieee802.11ax` - IEEE 802.11ax
+            * `ieee802.11ax` - IEEE 802.11ax (Wi-Fi 6)
 
-            * `ieee802.11ay` - IEEE 802.11ay
+            * `ieee802.11ay` - IEEE 802.11ay (WiGig)
 
-            * `ieee802.11be` - IEEE 802.11be
+            * `ieee802.11be` - IEEE 802.11be (Wi-Fi 7)
 
             * `ieee802.15.1` - IEEE 802.15.1 (Bluetooth)
 
@@ -171996,7 +174569,31 @@ components:
 
             * `infiniband-ndr` - NDR (100 Gbps)
 
-            * `infiniband-xdr` - XDR (250 Gbps)
+            * `infiniband-xdr` - XDR (200 Gbps)
+
+            * `infiniband-hdr-2x` - HDR 2X (100 Gbps)
+
+            * `infiniband-ndr-2x` - NDR 2X (200 Gbps)
+
+            * `infiniband-xdr-2x` - XDR 2X (400 Gbps)
+
+            * `infiniband-sdr-4x` - SDR 4X (8 Gbps)
+
+            * `infiniband-ddr-4x` - DDR 4X (16 Gbps)
+
+            * `infiniband-qdr-4x` - QDR 4X (32 Gbps)
+
+            * `infiniband-fdr10-4x` - FDR10 4X (40 Gbps)
+
+            * `infiniband-fdr-4x` - FDR 4X (56 Gbps)
+
+            * `infiniband-edr-4x` - EDR 4X (100 Gbps)
+
+            * `infiniband-hdr-4x` - HDR 4X (200 Gbps)
+
+            * `infiniband-ndr-4x` - NDR 4X (400 Gbps)
+
+            * `infiniband-xdr-4x` - XDR 4X (800 Gbps)
 
             * `t1` - T1 (1.544 Mbps)
 
@@ -172057,6 +174654,8 @@ components:
             * `extreme-summitstack-256` - Extreme SummitStack-256
 
             * `extreme-summitstack-512` - Extreme SummitStack-512
+
+            * `hpe-synergy-interconnect-link` - HPE Synergy Interconnect Link
 
             * `other` - Other'
           x-spec-enum-id: 017cd578206eb6ae
