@@ -35,7 +35,7 @@ type IPAddress struct {
 	AssignedObjectId   NullableInt64           `json:"assigned_object_id,omitempty"`
 	AssignedObject     interface{}             `json:"assigned_object,omitempty"`
 	NatInside          NullableNestedIPAddress `json:"nat_inside,omitempty"`
-	NatOutside         []NestedIPAddress       `json:"nat_outside"`
+	NatOutside         []NestedIPAddress       `json:"nat_outside,omitempty"`
 	// Hostname or FQDN (not case-sensitive)
 	DnsName              *string                `json:"dns_name,omitempty" validate:"regexp=^([0-9A-Za-z_-]+|\\\\*)(\\\\.[0-9A-Za-z_-]+)*\\\\.?$"`
 	Description          *string                `json:"description,omitempty"`
@@ -53,14 +53,13 @@ type _IPAddress IPAddress
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIPAddress(id int32, url string, display string, family AggregateFamily, address string, natOutside []NestedIPAddress) *IPAddress {
+func NewIPAddress(id int32, url string, display string, family AggregateFamily, address string) *IPAddress {
 	this := IPAddress{}
 	this.Id = id
 	this.Url = url
 	this.Display = display
 	this.Family = family
 	this.Address = address
-	this.NatOutside = natOutside
 	return &this
 }
 
@@ -536,26 +535,34 @@ func (o *IPAddress) UnsetNatInside() {
 	o.NatInside.Unset()
 }
 
-// GetNatOutside returns the NatOutside field value
+// GetNatOutside returns the NatOutside field value if set, zero value otherwise.
 func (o *IPAddress) GetNatOutside() []NestedIPAddress {
-	if o == nil {
+	if o == nil || IsNil(o.NatOutside) {
 		var ret []NestedIPAddress
 		return ret
 	}
-
 	return o.NatOutside
 }
 
-// GetNatOutsideOk returns a tuple with the NatOutside field value
+// GetNatOutsideOk returns a tuple with the NatOutside field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IPAddress) GetNatOutsideOk() ([]NestedIPAddress, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.NatOutside) {
 		return nil, false
 	}
 	return o.NatOutside, true
 }
 
-// SetNatOutside sets field value
+// HasNatOutside returns a boolean if a field has been set.
+func (o *IPAddress) HasNatOutside() bool {
+	if o != nil && !IsNil(o.NatOutside) {
+		return true
+	}
+
+	return false
+}
+
+// SetNatOutside gets a reference to the given []NestedIPAddress and assigns it to the NatOutside field.
 func (o *IPAddress) SetNatOutside(v []NestedIPAddress) {
 	o.NatOutside = v
 }
@@ -848,7 +855,9 @@ func (o IPAddress) ToMap() (map[string]interface{}, error) {
 	if o.NatInside.IsSet() {
 		toSerialize["nat_inside"] = o.NatInside.Get()
 	}
-	toSerialize["nat_outside"] = o.NatOutside
+	if !IsNil(o.NatOutside) {
+		toSerialize["nat_outside"] = o.NatOutside
+	}
 	if !IsNil(o.DnsName) {
 		toSerialize["dns_name"] = o.DnsName
 	}
@@ -888,7 +897,6 @@ func (o *IPAddress) UnmarshalJSON(data []byte) (err error) {
 		"display",
 		"family",
 		"address",
-		"nat_outside",
 	}
 
 	// defaultValueFuncMap captures the default values for required properties.
